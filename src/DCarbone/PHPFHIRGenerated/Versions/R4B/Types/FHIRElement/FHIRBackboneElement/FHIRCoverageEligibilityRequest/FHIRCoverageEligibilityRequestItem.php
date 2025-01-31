@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
@@ -113,7 +113,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_ITEM;
 
-
+    /* class_default.php:48 */
     public const FIELD_SUPPORTING_INFO_SEQUENCE = 'supportingInfoSequence';
     public const FIELD_SUPPORTING_INFO_SEQUENCE_EXT = '_supportingInfoSequence';
     public const FIELD_CATEGORY = 'category';
@@ -122,10 +122,20 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
     public const FIELD_PROVIDER = 'provider';
     public const FIELD_QUANTITY = 'quantity';
     public const FIELD_UNIT_PRICE = 'unitPrice';
+    public const FIELD_UNIT_PRICE_EXT = '_unitPrice';
     public const FIELD_FACILITY = 'facility';
     public const FIELD_DIAGNOSIS = 'diagnosis';
     public const FIELD_DETAIL = 'detail';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_UNIT_PRICE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -238,10 +248,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      */
     protected array $detail;
 
-    /** Default validation map for fields in type CoverageEligibilityRequest.Item */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRCoverageEligibilityRequestItem Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -310,6 +317,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -318,6 +326,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -338,7 +347,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      */
     public function getSupportingInfoSequenceIterator(): iterable
     {
-        if (!isset($this->supportingInfoSequence) || [] === $this->supportingInfoSequence) {
+        if (!isset($this->supportingInfoSequence)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->supportingInfoSequence);
@@ -380,6 +389,10 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      */
     public function setSupportingInfoSequence(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$supportingInfoSequence): self
     {
+        if ([] === $supportingInfoSequence) {
+            unset($this->supportingInfoSequence);
+            return $this;
+        }
         $this->supportingInfoSequence = [];
         foreach($supportingInfoSequence as $v) {
             if ($v instanceof FHIRPositiveInt) {
@@ -486,7 +499,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      */
     public function getModifierIterator(): iterable
     {
-        if (!isset($this->modifier) || [] === $this->modifier) {
+        if (!isset($this->modifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->modifier);
@@ -527,6 +540,10 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      */
     public function setModifier(FHIRCodeableConcept ...$modifier): self
     {
+        if ([] === $modifier) {
+            unset($this->modifier);
+            return $this;
+        }
         $this->modifier = $modifier;
         return $this;
     }
@@ -627,15 +644,44 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * The amount charged to the patient by the provider for a single unit.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $unitPrice
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUnitPrice(null|FHIRMoney $unitPrice): self
+    public function setUnitPrice(null|FHIRMoney $unitPrice,
+                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $unitPrice) {
             unset($this->unitPrice);
             return $this;
         }
         $this->unitPrice = $unitPrice;
+        if ($this->_valueXMLLocations[self::FIELD_UNIT_PRICE] !== $valueXMLLocation) {
+            $this->_setUnitPriceValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the unitPrice element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getUnitPriceValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_UNIT_PRICE];
+    }
+
+    /**
+     * Set the location the "value" field of the unitPrice element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setUnitPriceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_UNIT_PRICE] = $valueXMLLocation;
         return $this;
     }
 
@@ -694,7 +740,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      */
     public function getDiagnosisIterator(): iterable
     {
-        if (!isset($this->diagnosis) || [] === $this->diagnosis) {
+        if (!isset($this->diagnosis)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->diagnosis);
@@ -735,6 +781,10 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      */
     public function setDiagnosis(FHIRCoverageEligibilityRequestDiagnosis ...$diagnosis): self
     {
+        if ([] === $diagnosis) {
+            unset($this->diagnosis);
+            return $this;
+        }
         $this->diagnosis = $diagnosis;
         return $this;
     }
@@ -758,7 +808,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      */
     public function getDetailIterator(): iterable
     {
-        if (!isset($this->detail) || [] === $this->detail) {
+        if (!isset($this->detail)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->detail);
@@ -795,10 +845,15 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      */
     public function setDetail(FHIRReference ...$detail): self
     {
+        if ([] === $detail) {
+            unset($this->detail);
+            return $this;
+        }
         $this->detail = $detail;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -807,7 +862,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -981,16 +1036,17 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1002,126 +1058,71 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SUPPORTING_INFO_SEQUENCE === $childName) {
-                $v = new FHIRPositiveInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addSupportingInfoSequence(FHIRPositiveInt::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CATEGORY === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setCategory(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PRODUCT_OR_SERVICE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setProductOrService(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MODIFIER === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addModifier(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PROVIDER === $childName) {
-                $v = new FHIRReference();
-                $type->setProvider(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_QUANTITY === $childName) {
-                $v = new FHIRQuantity();
-                $type->setQuantity(FHIRQuantity::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_UNIT_PRICE === $childName) {
-                $v = new FHIRMoney();
-                $type->setUnitPrice(FHIRMoney::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_FACILITY === $childName) {
-                $v = new FHIRReference();
-                $type->setFacility(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DIAGNOSIS === $childName) {
-                $v = new FHIRCoverageEligibilityRequestDiagnosis();
-                $type->addDiagnosis(FHIRCoverageEligibilityRequestDiagnosis::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DETAIL === $childName) {
-                $v = new FHIRReference();
-                $type->addDetail(FHIRReference::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SUPPORTING_INFO_SEQUENCE === $cen) {
+                $type->addSupportingInfoSequence(FHIRPositiveInt::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CATEGORY === $cen) {
+                $type->setCategory(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PRODUCT_OR_SERVICE === $cen) {
+                $type->setProductOrService(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MODIFIER === $cen) {
+                $type->addModifier(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PROVIDER === $cen) {
+                $type->setProvider(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_QUANTITY === $cen) {
+                $type->setQuantity(FHIRQuantity::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_UNIT_PRICE === $cen) {
+                $type->setUnitPrice(FHIRMoney::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_FACILITY === $cen) {
+                $type->setFacility(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DIAGNOSIS === $cen) {
+                $type->addDiagnosis(FHIRCoverageEligibilityRequestDiagnosis::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DETAIL === $cen) {
+                $type->addDetail(FHIRReference::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
-        if (isset($attributes[self::FIELD_SUPPORTING_INFO_SEQUENCE])) {
-            $v = new FHIRPositiveInt(value: (string)$attributes[self::FIELD_SUPPORTING_INFO_SEQUENCE],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addSupportingInfoSequence($v);
+        if (isset($attributes[self::FIELD_UNIT_PRICE])) {
+            if (isset($type->unitPrice)) {
+                $type->unitPrice->setValue((string)$attributes[self::FIELD_UNIT_PRICE]);
+                $type->_setUnitPriceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setUnitPrice((string)$attributes[self::FIELD_UNIT_PRICE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('CoverageEligibilityRequestItem', $this->_getSourceXMLNS());
-        }
-        if (isset($this->supportingInfoSequence)) {
-           foreach($this->supportingInfoSequence as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_SUPPORTING_INFO_SEQUENCE, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
+        if (isset($this->unitPrice) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_UNIT_PRICE]) {
+            $xw->writeAttribute(self::FIELD_UNIT_PRICE, $this->unitPrice->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->supportingInfoSequence)) {
+        if (isset($this->supportingInfoSequence) && [] !== $this->supportingInfoSequence) {
             foreach($this->supportingInfoSequence as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_SUPPORTING_INFO_SEQUENCE);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_SUPPORTING_INFO_SEQUENCE);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
         if (isset($this->category)) {
@@ -1151,9 +1152,11 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
             $this->quantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->unitPrice)) {
+        if (isset($this->unitPrice)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_UNIT_PRICE]
+                || $this->unitPrice->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_UNIT_PRICE);
-            $this->unitPrice->xmlSerialize($xw, $config);
+            $this->unitPrice->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_UNIT_PRICE]);
             $xw->endElement();
         }
         if (isset($this->facility)) {
@@ -1175,25 +1178,18 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1213,7 +1209,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_SUPPORTING_INFO_SEQUENCE]) || isset($json[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT]) || array_key_exists(self::FIELD_SUPPORTING_INFO_SEQUENCE, $json) || array_key_exists(self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT, $json)) {
             $value = $json[self::FIELD_SUPPORTING_INFO_SEQUENCE] ?? null;
             $ext = (array)($json[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT] ?? []);
@@ -1268,9 +1264,11 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
                 config: $config,
             ));
         }
-        if (isset($json[self::FIELD_UNIT_PRICE]) || array_key_exists(self::FIELD_UNIT_PRICE, $json)) {
+        if (isset($json[self::FIELD_UNIT_PRICE]) || isset($json[self::FIELD_UNIT_PRICE_EXT]) || array_key_exists(self::FIELD_UNIT_PRICE, $json) || array_key_exists(self::FIELD_UNIT_PRICE_EXT, $json)) {
+            $value = $json[self::FIELD_UNIT_PRICE] ?? null;
+            $ext = (array)($json[self::FIELD_UNIT_PRICE_EXT] ?? []);
             $type->setUnitPrice(FHIRMoney::jsonUnserialize(
-                json: $json[self::FIELD_UNIT_PRICE],
+                json: [FHIRMoney::FIELD_VALUE => $value] + $ext,
                 config: $config,
             ));
         }
@@ -1350,7 +1348,14 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
             $out->quantity = $this->quantity;
         }
         if (isset($this->unitPrice)) {
-            $out->unitPrice = $this->unitPrice;
+            if (null !== ($val = $this->unitPrice->getValue())) {
+                $out->unitPrice = $val;
+            }
+            $ext = $this->unitPrice->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_unitPrice = $ext;
+            }
         }
         if (isset($this->facility)) {
             $out->facility = $this->facility;
@@ -1363,7 +1368,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

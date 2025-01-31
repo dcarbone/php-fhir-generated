@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
@@ -109,7 +109,7 @@ class FHIRRelatedArtifact extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RELATED_ARTIFACT;
 
-
+    /* class_default.php:48 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_LABEL = 'label';
@@ -124,6 +124,24 @@ class FHIRRelatedArtifact extends FHIRElement
     public const FIELD_RESOURCE = 'resource';
     public const FIELD_RESOURCE_EXT = '_resource';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_TYPE => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_LABEL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_DISPLAY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_CITATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_RESOURCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * The type of relationship to the related artifact.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -204,14 +222,7 @@ class FHIRRelatedArtifact extends FHIRElement
      */
     protected FHIRCanonical $resource;
 
-    /** Default validation map for fields in type RelatedArtifact */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_TYPE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRRelatedArtifact Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -262,6 +273,7 @@ class FHIRRelatedArtifact extends FHIRElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -270,6 +282,7 @@ class FHIRRelatedArtifact extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * The type of relationship to the related artifact.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -290,15 +303,44 @@ class FHIRRelatedArtifact extends FHIRElement
      * The type of relationship to the related artifact.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifactType $type
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRRelatedArtifactType $type): self
+    public function setType(null|FHIRRelatedArtifactType $type,
+                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
         }
         $this->type = $type;
+        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
+            $this->_setTypeValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the type element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_TYPE];
+    }
+
+    /**
+     * Set the location the "value" field of the type element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -326,11 +368,11 @@ class FHIRRelatedArtifact extends FHIRElement
      * containing artifact, such as a footnote index.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $label
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label,
-                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $label) {
             unset($this->label);
@@ -339,12 +381,34 @@ class FHIRRelatedArtifact extends FHIRElement
         if (!($label instanceof FHIRString)) {
             $label = new FHIRString(value: $label);
         }
-        if (null !== $valueXMLLocation) {
-            $label->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $label->_getValueXMLLocation()) {
-            $label->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->label = $label;
+        if ($this->_valueXMLLocations[self::FIELD_LABEL] !== $valueXMLLocation) {
+            $this->_setLabelValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the label element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getLabelValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_LABEL];
+    }
+
+    /**
+     * Set the location the "value" field of the label element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setLabelValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_LABEL] = $valueXMLLocation;
         return $this;
     }
 
@@ -372,11 +436,11 @@ class FHIRRelatedArtifact extends FHIRElement
      * suitable for display to a consumer.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $display
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display,
-                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $display) {
             unset($this->display);
@@ -385,12 +449,34 @@ class FHIRRelatedArtifact extends FHIRElement
         if (!($display instanceof FHIRString)) {
             $display = new FHIRString(value: $display);
         }
-        if (null !== $valueXMLLocation) {
-            $display->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $display->_getValueXMLLocation()) {
-            $display->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->display = $display;
+        if ($this->_valueXMLLocations[self::FIELD_DISPLAY] !== $valueXMLLocation) {
+            $this->_setDisplayValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the display element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getDisplayValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_DISPLAY];
+    }
+
+    /**
+     * Set the location the "value" field of the display element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setDisplayValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_DISPLAY] = $valueXMLLocation;
         return $this;
     }
 
@@ -426,11 +512,11 @@ class FHIRRelatedArtifact extends FHIRElement
      * according to an accepted citation format.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $citation
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setCitation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $citation,
-                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $citation) {
             unset($this->citation);
@@ -439,12 +525,34 @@ class FHIRRelatedArtifact extends FHIRElement
         if (!($citation instanceof FHIRMarkdown)) {
             $citation = new FHIRMarkdown(value: $citation);
         }
-        if (null !== $valueXMLLocation) {
-            $citation->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $citation->_getValueXMLLocation()) {
-            $citation->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->citation = $citation;
+        if ($this->_valueXMLLocations[self::FIELD_CITATION] !== $valueXMLLocation) {
+            $this->_setCitationValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the citation element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getCitationValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_CITATION];
+    }
+
+    /**
+     * Set the location the "value" field of the citation element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setCitationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_CITATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -470,11 +578,11 @@ class FHIRRelatedArtifact extends FHIRElement
      * A url for the artifact that can be followed to access the actual content.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUrl $url
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setUrl(null|string|FHIRUrlPrimitive|FHIRUrl $url,
-                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $url) {
             unset($this->url);
@@ -483,12 +591,34 @@ class FHIRRelatedArtifact extends FHIRElement
         if (!($url instanceof FHIRUrl)) {
             $url = new FHIRUrl(value: $url);
         }
-        if (null !== $valueXMLLocation) {
-            $url->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $url->_getValueXMLLocation()) {
-            $url->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->url = $url;
+        if ($this->_valueXMLLocations[self::FIELD_URL] !== $valueXMLLocation) {
+            $this->_setUrlValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the url element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getUrlValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_URL];
+    }
+
+    /**
+     * Set the location the "value" field of the url element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setUrlValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_URL] = $valueXMLLocation;
         return $this;
     }
 
@@ -554,11 +684,11 @@ class FHIRRelatedArtifact extends FHIRElement
      * resource.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $resource
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setResource(null|string|FHIRCanonicalPrimitive|FHIRCanonical $resource,
-                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $resource) {
             unset($this->resource);
@@ -567,15 +697,38 @@ class FHIRRelatedArtifact extends FHIRElement
         if (!($resource instanceof FHIRCanonical)) {
             $resource = new FHIRCanonical(value: $resource);
         }
-        if (null !== $valueXMLLocation) {
-            $resource->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $resource->_getValueXMLLocation()) {
-            $resource->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->resource = $resource;
+        if ($this->_valueXMLLocations[self::FIELD_RESOURCE] !== $valueXMLLocation) {
+            $this->_setResourceValueXMLLocation($valueXMLLocation);
+        }
         return $this;
     }
 
+    /**
+     * Return the current location the "value" field of the resource element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getResourceValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_RESOURCE];
+    }
+
+    /**
+     * Set the location the "value" field of the resource element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setResourceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_RESOURCE] = $valueXMLLocation;
+        return $this;
+    }
+
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -584,7 +737,7 @@ class FHIRRelatedArtifact extends FHIRElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -715,16 +868,17 @@ class FHIRRelatedArtifact extends FHIRElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -736,192 +890,146 @@ class FHIRRelatedArtifact extends FHIRElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRRelatedArtifactType(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setType(FHIRRelatedArtifactType::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LABEL === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setLabel(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DISPLAY === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setDisplay(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CITATION === $childName) {
-                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setCitation(FHIRMarkdown::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_URL === $childName) {
-                $v = new FHIRUrl(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setUrl(FHIRUrl::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DOCUMENT === $childName) {
-                $v = new FHIRAttachment();
-                $type->setDocument(FHIRAttachment::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RESOURCE === $childName) {
-                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setResource(FHIRCanonical::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->setType(FHIRRelatedArtifactType::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LABEL === $cen) {
+                $type->setLabel(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DISPLAY === $cen) {
+                $type->setDisplay(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CITATION === $cen) {
+                $type->setCitation(FHIRMarkdown::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_URL === $cen) {
+                $type->setUrl(FHIRUrl::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DOCUMENT === $cen) {
+                $type->setDocument(FHIRAttachment::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RESOURCE === $cen) {
+                $type->setResource(FHIRCanonical::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_TYPE])) {
+            if (isset($type->type)) {
+                $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
+                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_LABEL])) {
-            $pt = $type->getLabel();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_LABEL]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->label)) {
+                $type->label->setValue((string)$attributes[self::FIELD_LABEL]);
+                $type->_setLabelValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLabel(new FHIRString(
-                    value: (string)$attributes[self::FIELD_LABEL],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setLabel((string)$attributes[self::FIELD_LABEL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_DISPLAY])) {
-            $pt = $type->getDisplay();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_DISPLAY]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->display)) {
+                $type->display->setValue((string)$attributes[self::FIELD_DISPLAY]);
+                $type->_setDisplayValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDisplay(new FHIRString(
-                    value: (string)$attributes[self::FIELD_DISPLAY],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setDisplay((string)$attributes[self::FIELD_DISPLAY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_CITATION])) {
-            $pt = $type->getCitation();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_CITATION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->citation)) {
+                $type->citation->setValue((string)$attributes[self::FIELD_CITATION]);
+                $type->_setCitationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCitation(new FHIRMarkdown(
-                    value: (string)$attributes[self::FIELD_CITATION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setCitation((string)$attributes[self::FIELD_CITATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_URL])) {
-            $pt = $type->getUrl();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_URL]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->url)) {
+                $type->url->setValue((string)$attributes[self::FIELD_URL]);
+                $type->_setUrlValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUrl(new FHIRUrl(
-                    value: (string)$attributes[self::FIELD_URL],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setUrl((string)$attributes[self::FIELD_URL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_RESOURCE])) {
-            $pt = $type->getResource();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_RESOURCE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->resource)) {
+                $type->resource->setValue((string)$attributes[self::FIELD_RESOURCE]);
+                $type->_setResourceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setResource(new FHIRCanonical(
-                    value: (string)$attributes[self::FIELD_RESOURCE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setResource((string)$attributes[self::FIELD_RESOURCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->label) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LABEL]) {
+            $xw->writeAttribute(self::FIELD_LABEL, $this->label->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
+        if (isset($this->display) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DISPLAY]) {
+            $xw->writeAttribute(self::FIELD_DISPLAY, $this->display->_getFormattedValue());
         }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
+        if (isset($this->citation) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CITATION]) {
+            $xw->writeAttribute(self::FIELD_CITATION, $this->citation->_getFormattedValue());
         }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('RelatedArtifact', $this->_getSourceXMLNS());
+        if (isset($this->url) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_URL]) {
+            $xw->writeAttribute(self::FIELD_URL, $this->url->_getFormattedValue());
         }
-        if (isset($this->label) && $this->label->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_LABEL, $this->label->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->display) && $this->display->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DISPLAY, $this->display->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->citation) && $this->citation->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CITATION, $this->citation->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->url) && $this->url->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_URL, $this->url->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->resource) && $this->resource->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RESOURCE, $this->resource->getValue()?->_getFormattedValue());
+        if (isset($this->resource) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RESOURCE]) {
+            $xw->writeAttribute(self::FIELD_RESOURCE, $this->resource->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->type)) {
+        if (isset($this->type)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TYPE]
+                || $this->type->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_TYPE);
-            $this->type->xmlSerialize($xw, $config);
+            $this->type->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TYPE]);
             $xw->endElement();
         }
-        if (isset($this->label) && $this->label->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->label)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_LABEL]
+                || $this->label->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_LABEL);
-            $this->label->xmlSerialize($xw, $config);
+            $this->label->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_LABEL]);
             $xw->endElement();
         }
-        if (isset($this->display) && $this->display->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->display)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DISPLAY]
+                || $this->display->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_DISPLAY);
-            $this->display->xmlSerialize($xw, $config);
+            $this->display->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DISPLAY]);
             $xw->endElement();
         }
-        if (isset($this->citation) && $this->citation->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->citation)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_CITATION]
+                || $this->citation->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_CITATION);
-            $this->citation->xmlSerialize($xw, $config);
+            $this->citation->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_CITATION]);
             $xw->endElement();
         }
-        if (isset($this->url) && $this->url->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->url)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_URL]
+                || $this->url->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_URL);
-            $this->url->xmlSerialize($xw, $config);
+            $this->url->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_URL]);
             $xw->endElement();
         }
         if (isset($this->document)) {
@@ -929,30 +1037,25 @@ class FHIRRelatedArtifact extends FHIRElement
             $this->document->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->resource) && $this->resource->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->resource)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_RESOURCE]
+                || $this->resource->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_RESOURCE);
-            $this->resource->xmlSerialize($xw, $config);
+            $this->resource->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_RESOURCE]);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -972,7 +1075,7 @@ class FHIRRelatedArtifact extends FHIRElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
             $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
@@ -1101,7 +1204,7 @@ class FHIRRelatedArtifact extends FHIRElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

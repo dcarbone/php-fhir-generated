@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,7 +66,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
@@ -91,7 +91,7 @@ class FHIRContractAsset extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONTRACT_DOT_ASSET;
 
-
+    /* class_default.php:48 */
     public const FIELD_SCOPE = 'scope';
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_REFERENCE = 'typeReference';
@@ -112,6 +112,16 @@ class FHIRContractAsset extends FHIRBackboneElement
     public const FIELD_SECURITY_LABEL_NUMBER_EXT = '_securityLabelNumber';
     public const FIELD_VALUED_ITEM = 'valuedItem';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_CONDITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_TEXT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -269,10 +279,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     protected array $valuedItem;
 
-    /** Default validation map for fields in type Contract.Asset */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRContractAsset Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -366,6 +373,7 @@ class FHIRContractAsset extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -374,6 +382,7 @@ class FHIRContractAsset extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -430,7 +439,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getTypeIterator(): iterable
     {
-        if (!isset($this->type) || [] === $this->type) {
+        if (!isset($this->type)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->type);
@@ -469,6 +478,10 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
+        if ([] === $type) {
+            unset($this->type);
+            return $this;
+        }
         $this->type = $type;
         return $this;
     }
@@ -492,7 +505,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getTypeReferenceIterator(): iterable
     {
-        if (!isset($this->typeReference) || [] === $this->typeReference) {
+        if (!isset($this->typeReference)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->typeReference);
@@ -529,6 +542,10 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setTypeReference(FHIRReference ...$typeReference): self
     {
+        if ([] === $typeReference) {
+            unset($this->typeReference);
+            return $this;
+        }
         $this->typeReference = $typeReference;
         return $this;
     }
@@ -553,7 +570,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getSubtypeIterator(): iterable
     {
-        if (!isset($this->subtype) || [] === $this->subtype) {
+        if (!isset($this->subtype)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->subtype);
@@ -592,6 +609,10 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setSubtype(FHIRCodeableConcept ...$subtype): self
     {
+        if ([] === $subtype) {
+            unset($this->subtype);
+            return $this;
+        }
         $this->subtype = $subtype;
         return $this;
     }
@@ -652,7 +673,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getContextIterator(): iterable
     {
-        if (!isset($this->context) || [] === $this->context) {
+        if (!isset($this->context)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->context);
@@ -687,6 +708,10 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setContext(FHIRContractContext ...$context): self
     {
+        if ([] === $context) {
+            unset($this->context);
+            return $this;
+        }
         $this->context = $context;
         return $this;
     }
@@ -715,11 +740,11 @@ class FHIRContractAsset extends FHIRBackboneElement
      * in its valuation.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $condition
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition,
-                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $condition) {
             unset($this->condition);
@@ -728,12 +753,34 @@ class FHIRContractAsset extends FHIRBackboneElement
         if (!($condition instanceof FHIRString)) {
             $condition = new FHIRString(value: $condition);
         }
-        if (null !== $valueXMLLocation) {
-            $condition->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $condition->_getValueXMLLocation()) {
-            $condition->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->condition = $condition;
+        if ($this->_valueXMLLocations[self::FIELD_CONDITION] !== $valueXMLLocation) {
+            $this->_setConditionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the condition element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getConditionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_CONDITION];
+    }
+
+    /**
+     * Set the location the "value" field of the condition element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setConditionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_CONDITION] = $valueXMLLocation;
         return $this;
     }
 
@@ -757,7 +804,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getPeriodTypeIterator(): iterable
     {
-        if (!isset($this->periodType) || [] === $this->periodType) {
+        if (!isset($this->periodType)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->periodType);
@@ -796,6 +843,10 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setPeriodType(FHIRCodeableConcept ...$periodType): self
     {
+        if ([] === $periodType) {
+            unset($this->periodType);
+            return $this;
+        }
         $this->periodType = $periodType;
         return $this;
     }
@@ -819,7 +870,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getPeriodIterator(): iterable
     {
-        if (!isset($this->period) || [] === $this->period) {
+        if (!isset($this->period)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->period);
@@ -856,6 +907,10 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setPeriod(FHIRPeriod ...$period): self
     {
+        if ([] === $period) {
+            unset($this->period);
+            return $this;
+        }
         $this->period = $period;
         return $this;
     }
@@ -879,7 +934,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getUsePeriodIterator(): iterable
     {
-        if (!isset($this->usePeriod) || [] === $this->usePeriod) {
+        if (!isset($this->usePeriod)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->usePeriod);
@@ -916,6 +971,10 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setUsePeriod(FHIRPeriod ...$usePeriod): self
     {
+        if ([] === $usePeriod) {
+            unset($this->usePeriod);
+            return $this;
+        }
         $this->usePeriod = $usePeriod;
         return $this;
     }
@@ -944,11 +1003,11 @@ class FHIRContractAsset extends FHIRBackboneElement
      * such as a QuestionnaireResponse used in the formation of the contract.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text,
-                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $text) {
             unset($this->text);
@@ -957,12 +1016,34 @@ class FHIRContractAsset extends FHIRBackboneElement
         if (!($text instanceof FHIRString)) {
             $text = new FHIRString(value: $text);
         }
-        if (null !== $valueXMLLocation) {
-            $text->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $text->_getValueXMLLocation()) {
-            $text->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->text = $text;
+        if ($this->_valueXMLLocations[self::FIELD_TEXT] !== $valueXMLLocation) {
+            $this->_setTextValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the text element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getTextValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_TEXT];
+    }
+
+    /**
+     * Set the location the "value" field of the text element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setTextValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_TEXT] = $valueXMLLocation;
         return $this;
     }
 
@@ -986,7 +1067,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getLinkIdIterator(): iterable
     {
-        if (!isset($this->linkId) || [] === $this->linkId) {
+        if (!isset($this->linkId)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->linkId);
@@ -1028,6 +1109,10 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setLinkId(string|FHIRStringPrimitive|FHIRString ...$linkId): self
     {
+        if ([] === $linkId) {
+            unset($this->linkId);
+            return $this;
+        }
         $this->linkId = [];
         foreach($linkId as $v) {
             if ($v instanceof FHIRString) {
@@ -1057,7 +1142,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getAnswerIterator(): iterable
     {
-        if (!isset($this->answer) || [] === $this->answer) {
+        if (!isset($this->answer)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->answer);
@@ -1092,6 +1177,10 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setAnswer(FHIRContractAnswer ...$answer): self
     {
+        if ([] === $answer) {
+            unset($this->answer);
+            return $this;
+        }
         $this->answer = $answer;
         return $this;
     }
@@ -1115,7 +1204,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getSecurityLabelNumberIterator(): iterable
     {
-        if (!isset($this->securityLabelNumber) || [] === $this->securityLabelNumber) {
+        if (!isset($this->securityLabelNumber)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->securityLabelNumber);
@@ -1155,6 +1244,10 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt ...$securityLabelNumber): self
     {
+        if ([] === $securityLabelNumber) {
+            unset($this->securityLabelNumber);
+            return $this;
+        }
         $this->securityLabelNumber = [];
         foreach($securityLabelNumber as $v) {
             if ($v instanceof FHIRUnsignedInt) {
@@ -1184,7 +1277,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function getValuedItemIterator(): iterable
     {
-        if (!isset($this->valuedItem) || [] === $this->valuedItem) {
+        if (!isset($this->valuedItem)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->valuedItem);
@@ -1219,10 +1312,15 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function setValuedItem(FHIRContractValuedItem ...$valuedItem): self
     {
+        if ([] === $valuedItem) {
+            unset($this->valuedItem);
+            return $this;
+        }
         $this->valuedItem = $valuedItem;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1231,7 +1329,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1465,16 +1563,17 @@ class FHIRContractAsset extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAsset $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAsset
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1486,175 +1585,85 @@ class FHIRContractAsset extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SCOPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setScope(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE_REFERENCE === $childName) {
-                $v = new FHIRReference();
-                $type->addTypeReference(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SUBTYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addSubtype(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RELATIONSHIP === $childName) {
-                $v = new FHIRCoding();
-                $type->setRelationship(FHIRCoding::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTEXT === $childName) {
-                $v = new FHIRContractContext();
-                $type->addContext(FHIRContractContext::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONDITION === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setCondition(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PERIOD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addPeriodType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PERIOD === $childName) {
-                $v = new FHIRPeriod();
-                $type->addPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_USE_PERIOD === $childName) {
-                $v = new FHIRPeriod();
-                $type->addUsePeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TEXT === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setText(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LINK_ID === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addLinkId(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ANSWER === $childName) {
-                $v = new FHIRContractAnswer();
-                $type->addAnswer(FHIRContractAnswer::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SECURITY_LABEL_NUMBER === $childName) {
-                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addSecurityLabelNumber(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VALUED_ITEM === $childName) {
-                $v = new FHIRContractValuedItem();
-                $type->addValuedItem(FHIRContractValuedItem::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SCOPE === $cen) {
+                $type->setScope(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->addType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE_REFERENCE === $cen) {
+                $type->addTypeReference(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SUBTYPE === $cen) {
+                $type->addSubtype(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RELATIONSHIP === $cen) {
+                $type->setRelationship(FHIRCoding::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTEXT === $cen) {
+                $type->addContext(FHIRContractContext::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONDITION === $cen) {
+                $type->setCondition(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PERIOD_TYPE === $cen) {
+                $type->addPeriodType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PERIOD === $cen) {
+                $type->addPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_USE_PERIOD === $cen) {
+                $type->addUsePeriod(FHIRPeriod::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TEXT === $cen) {
+                $type->setText(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LINK_ID === $cen) {
+                $type->addLinkId(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ANSWER === $cen) {
+                $type->addAnswer(FHIRContractAnswer::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SECURITY_LABEL_NUMBER === $cen) {
+                $type->addSecurityLabelNumber(FHIRUnsignedInt::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VALUED_ITEM === $cen) {
+                $type->addValuedItem(FHIRContractValuedItem::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CONDITION])) {
-            $pt = $type->getCondition();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_CONDITION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->condition)) {
+                $type->condition->setValue((string)$attributes[self::FIELD_CONDITION]);
+                $type->_setConditionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCondition(new FHIRString(
-                    value: (string)$attributes[self::FIELD_CONDITION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setCondition((string)$attributes[self::FIELD_CONDITION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_TEXT])) {
-            $pt = $type->getText();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_TEXT]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->text)) {
+                $type->text->setValue((string)$attributes[self::FIELD_TEXT]);
+                $type->_setTextValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setText(new FHIRString(
-                    value: (string)$attributes[self::FIELD_TEXT],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setText((string)$attributes[self::FIELD_TEXT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
-        }
-        if (isset($attributes[self::FIELD_LINK_ID])) {
-            $v = new FHIRString(value: (string)$attributes[self::FIELD_LINK_ID],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addLinkId($v);
-        }
-        if (isset($attributes[self::FIELD_SECURITY_LABEL_NUMBER])) {
-            $v = new FHIRUnsignedInt(value: (string)$attributes[self::FIELD_SECURITY_LABEL_NUMBER],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addSecurityLabelNumber($v);
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->condition) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CONDITION]) {
+            $xw->writeAttribute(self::FIELD_CONDITION, $this->condition->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('ContractAsset', $this->_getSourceXMLNS());
-        }
-        if (isset($this->condition) && $this->condition->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CONDITION, $this->condition->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->text) && $this->text->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TEXT, $this->text->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->linkId)) {
-           foreach($this->linkId as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_LINK_ID, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
-        }
-        if (isset($this->securityLabelNumber)) {
-           foreach($this->securityLabelNumber as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_SECURITY_LABEL_NUMBER, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
+        if (isset($this->text) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TEXT]) {
+            $xw->writeAttribute(self::FIELD_TEXT, $this->text->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->scope)) {
@@ -1695,9 +1704,11 @@ class FHIRContractAsset extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->condition) && $this->condition->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->condition)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_CONDITION]
+                || $this->condition->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_CONDITION);
-            $this->condition->xmlSerialize($xw, $config);
+            $this->condition->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_CONDITION]);
             $xw->endElement();
         }
         if (isset($this->periodType)) {
@@ -1721,18 +1732,18 @@ class FHIRContractAsset extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->text) && $this->text->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->text)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TEXT]
+                || $this->text->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_TEXT);
-            $this->text->xmlSerialize($xw, $config);
+            $this->text->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TEXT]);
             $xw->endElement();
         }
-        if (isset($this->linkId)) {
+        if (isset($this->linkId) && [] !== $this->linkId) {
             foreach($this->linkId as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_LINK_ID);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_LINK_ID);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
         if (isset($this->answer)) {
@@ -1742,13 +1753,11 @@ class FHIRContractAsset extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->securityLabelNumber)) {
+        if (isset($this->securityLabelNumber) && [] !== $this->securityLabelNumber) {
             foreach($this->securityLabelNumber as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_SECURITY_LABEL_NUMBER);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_SECURITY_LABEL_NUMBER);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
         if (isset($this->valuedItem)) {
@@ -1758,25 +1767,18 @@ class FHIRContractAsset extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAsset $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAsset
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1796,7 +1798,7 @@ class FHIRContractAsset extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_SCOPE]) || array_key_exists(self::FIELD_SCOPE, $json)) {
             $type->setScope(FHIRCodeableConcept::jsonUnserialize(
                 json: $json[self::FIELD_SCOPE],
@@ -2075,7 +2077,7 @@ class FHIRContractAsset extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

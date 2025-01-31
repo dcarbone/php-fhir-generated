@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -30,22 +30,13 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 
-interface TypeInterface extends \JsonSerializable
-{
+interface TypeInterface{
     /**
      * Returns the FHIR name represented by this Type
      *
      * @return string
      */
     public function _getFHIRTypeName(): string;
-
-    /**
-     * Returns the root XMLNS value found in the source.  Null indicates no "xmlns" was found.  Only defined when
-     * unserializing XML, and only used when serializing XML.
-     *
-     * @return null|string
-     */
-    public function _getSourceXMLNS(): null|string;
 
     /**
      * Must return an associative array in structure ["field" => ["rule" => {constraint}]] to be used during validation
@@ -61,34 +52,6 @@ interface TypeInterface extends \JsonSerializable
      * @return array
      */
     public function _getValidationErrors(): array;
-
-    /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|static $type Instance of this class to unserialize into.  If left null, a new instance will be created.
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
-     * @return static
-     */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self;
-
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
-    public function xmlSerialize(null|XMLWriter $xw = null,
-                                 null|SerializeConfig $config = null): XMLWriter;
-
-    /**
-     * @param string|array|\stdClass $json Raw or already un-encoded JSON
-     * @param null|static $type Instance of this class to unserialize into.  If left null, a new instance will be created.
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
-     * @return static
-     */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self;
 
     /**
      * @return string

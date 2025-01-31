@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,15 +83,8 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
-use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
-use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationTrait;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
 
 class FHIRObservationDataTypeEnum extends FHIRCodePrimitive
@@ -101,8 +94,8 @@ class FHIRObservationDataTypeEnum extends FHIRCodePrimitive
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OBSERVATION_DATA_TYPE_ENUM;
 
 
-    /** Default validation map for fields in type ObservationDataTypeEnum */
-    private const _DEFAULT_VALIDATION_RULES = [
+    /* class_default.php:67 */
+    private static array $_validationRules = [
         self::FIELD_VALUE => [
             Constants::VALIDATE_PATTERN => '/^[^\\s]+( [^\\s]+)*$/',
             Constants::VALIDATE_MIN_LENGTH => 1,
@@ -122,6 +115,7 @@ class FHIRObservationDataTypeEnum extends FHIRCodePrimitive
         ],
     ];
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -130,6 +124,7 @@ class FHIRObservationDataTypeEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -138,7 +133,7 @@ class FHIRObservationDataTypeEnum extends FHIRCodePrimitive
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -167,4 +162,6 @@ class FHIRObservationDataTypeEnum extends FHIRCodePrimitive
         }
         return $errs;
     }
+
+    /* class_default.php:213 */
 }

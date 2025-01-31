@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,7 +66,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAddress;
@@ -92,16 +92,26 @@ class FHIRPatientContact extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PATIENT_DOT_CONTACT;
 
-
+    /* class_default.php:48 */
     public const FIELD_RELATIONSHIP = 'relationship';
     public const FIELD_NAME = 'name';
     public const FIELD_TELECOM = 'telecom';
+    public const FIELD_TELECOM_EXT = '_telecom';
     public const FIELD_ADDRESS = 'address';
     public const FIELD_GENDER = 'gender';
     public const FIELD_GENDER_EXT = '_gender';
     public const FIELD_ORGANIZATION = 'organization';
     public const FIELD_PERIOD = 'period';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_GENDER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -180,10 +190,7 @@ class FHIRPatientContact extends FHIRBackboneElement
      */
     protected FHIRPeriod $period;
 
-    /** Default validation map for fields in type Patient.Contact */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRPatientContact Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
@@ -237,6 +244,7 @@ class FHIRPatientContact extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -245,6 +253,7 @@ class FHIRPatientContact extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -265,7 +274,7 @@ class FHIRPatientContact extends FHIRBackboneElement
      */
     public function getRelationshipIterator(): iterable
     {
-        if (!isset($this->relationship) || [] === $this->relationship) {
+        if (!isset($this->relationship)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->relationship);
@@ -304,6 +313,10 @@ class FHIRPatientContact extends FHIRBackboneElement
      */
     public function setRelationship(FHIRCodeableConcept ...$relationship): self
     {
+        if ([] === $relationship) {
+            unset($this->relationship);
+            return $this;
+        }
         $this->relationship = $relationship;
         return $this;
     }
@@ -362,7 +375,7 @@ class FHIRPatientContact extends FHIRBackboneElement
      */
     public function getTelecomIterator(): iterable
     {
-        if (!isset($this->telecom) || [] === $this->telecom) {
+        if (!isset($this->telecom)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->telecom);
@@ -401,7 +414,18 @@ class FHIRPatientContact extends FHIRBackboneElement
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
-        $this->telecom = $telecom;
+        if ([] === $telecom) {
+            unset($this->telecom);
+            return $this;
+        }
+        $this->telecom = [];
+        foreach($telecom as $v) {
+            if ($v instanceof FHIRContactPoint) {
+                $this->telecom[] = $v;
+            } else {
+                $this->telecom[] = new FHIRContactPoint(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -467,11 +491,11 @@ class FHIRPatientContact extends FHIRBackboneElement
      * for administration and record keeping purposes.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $gender
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setGender(null|string|FHIRCodePrimitive|FHIRCode $gender,
-                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $gender) {
             unset($this->gender);
@@ -480,12 +504,34 @@ class FHIRPatientContact extends FHIRBackboneElement
         if (!($gender instanceof FHIRCode)) {
             $gender = new FHIRCode(value: $gender);
         }
-        if (null !== $valueXMLLocation) {
-            $gender->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $gender->_getValueXMLLocation()) {
-            $gender->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->gender = $gender;
+        if ($this->_valueXMLLocations[self::FIELD_GENDER] !== $valueXMLLocation) {
+            $this->_setGenderValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the gender element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getGenderValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_GENDER];
+    }
+
+    /**
+     * Set the location the "value" field of the gender element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setGenderValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_GENDER] = $valueXMLLocation;
         return $this;
     }
 
@@ -561,6 +607,7 @@ class FHIRPatientContact extends FHIRBackboneElement
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -569,7 +616,7 @@ class FHIRPatientContact extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -707,16 +754,17 @@ class FHIRPatientContact extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -728,110 +776,58 @@ class FHIRPatientContact extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RELATIONSHIP === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addRelationship(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NAME === $childName) {
-                $v = new FHIRHumanName();
-                $type->setName(FHIRHumanName::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TELECOM === $childName) {
-                $v = new FHIRContactPoint();
-                $type->addTelecom(FHIRContactPoint::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ADDRESS === $childName) {
-                $v = new FHIRAddress();
-                $type->setAddress(FHIRAddress::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_GENDER === $childName) {
-                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setGender(FHIRCode::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ORGANIZATION === $childName) {
-                $v = new FHIRReference();
-                $type->setOrganization(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PERIOD === $childName) {
-                $v = new FHIRPeriod();
-                $type->setPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RELATIONSHIP === $cen) {
+                $type->addRelationship(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NAME === $cen) {
+                $type->setName(FHIRHumanName::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TELECOM === $cen) {
+                $type->addTelecom(FHIRContactPoint::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ADDRESS === $cen) {
+                $type->setAddress(FHIRAddress::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_GENDER === $cen) {
+                $type->setGender(FHIRCode::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ORGANIZATION === $cen) {
+                $type->setOrganization(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PERIOD === $cen) {
+                $type->setPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRIdPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_GENDER])) {
-            $pt = $type->getGender();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_GENDER]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->gender)) {
+                $type->gender->setValue((string)$attributes[self::FIELD_GENDER]);
+                $type->_setGenderValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setGender(new FHIRCode(
-                    value: (string)$attributes[self::FIELD_GENDER],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setGender((string)$attributes[self::FIELD_GENDER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('PatientContact', $this->_getSourceXMLNS());
-        }
-        if (isset($this->gender) && $this->gender->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_GENDER, $this->gender->getValue()?->_getFormattedValue());
+        if (isset($this->gender) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_GENDER]) {
+            $xw->writeAttribute(self::FIELD_GENDER, $this->gender->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->relationship)) {
@@ -846,8 +842,8 @@ class FHIRPatientContact extends FHIRBackboneElement
             $this->name->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->telecom)) {
-            foreach ($this->telecom as $v) {
+        if (isset($this->telecom) && [] !== $this->telecom) {
+            foreach($this->telecom as $v) {
                 $xw->startElement(self::FIELD_TELECOM);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -858,9 +854,11 @@ class FHIRPatientContact extends FHIRBackboneElement
             $this->address->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->gender) && $this->gender->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->gender)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_GENDER]
+                || $this->gender->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_GENDER);
-            $this->gender->xmlSerialize($xw, $config);
+            $this->gender->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_GENDER]);
             $xw->endElement();
         }
         if (isset($this->organization)) {
@@ -873,25 +871,18 @@ class FHIRPatientContact extends FHIRBackboneElement
             $this->period->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -911,7 +902,7 @@ class FHIRPatientContact extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_RELATIONSHIP]) || array_key_exists(self::FIELD_RELATIONSHIP, $json)) {
             $vs = $json[self::FIELD_RELATIONSHIP];
             if (!is_int(key($vs))) {
@@ -930,14 +921,20 @@ class FHIRPatientContact extends FHIRBackboneElement
                 config: $config,
             ));
         }
-        if (isset($json[self::FIELD_TELECOM]) || array_key_exists(self::FIELD_TELECOM, $json)) {
-            $vs = $json[self::FIELD_TELECOM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json[self::FIELD_TELECOM]) || isset($json[self::FIELD_TELECOM_EXT]) || array_key_exists(self::FIELD_TELECOM, $json) || array_key_exists(self::FIELD_TELECOM_EXT, $json)) {
+            $value = $json[self::FIELD_TELECOM] ?? null;
+            $ext = (array)($json[self::FIELD_TELECOM_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addTelecom(FHIRContactPoint::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -984,7 +981,25 @@ class FHIRPatientContact extends FHIRBackboneElement
             $out->name = $this->name;
         }
         if (isset($this->telecom) && [] !== $this->telecom) {
-            $out->telecom = $this->telecom;
+            $vals = [];
+            $exts = [];
+            foreach ($this->telecom as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->telecom = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_telecom = $exts;
+            }
         }
         if (isset($this->address)) {
             $out->address = $this->address;
@@ -1007,7 +1022,7 @@ class FHIRPatientContact extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

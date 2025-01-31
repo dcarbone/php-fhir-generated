@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,7 +67,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus;
@@ -106,8 +106,9 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICINAL_PRODUCT;
 
-
+    /* class_default.php:48 */
     public const FIELD_IDENTIFIER = 'identifier';
+    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_TYPE = 'type';
     public const FIELD_DOMAIN = 'domain';
     public const FIELD_COMBINED_PHARMACEUTICAL_DOSE_FORM = 'combinedPharmaceuticalDoseForm';
@@ -126,9 +127,22 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
     public const FIELD_CLINICAL_TRIAL = 'clinicalTrial';
     public const FIELD_NAME = 'name';
     public const FIELD_CROSS_REFERENCE = 'crossReference';
+    public const FIELD_CROSS_REFERENCE_EXT = '_crossReference';
     public const FIELD_MANUFACTURING_BUSINESS_OPERATION = 'manufacturingBusinessOperation';
     public const FIELD_SPECIAL_DESIGNATION = 'specialDesignation';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_NAME => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+    ];
+
+    /* class_default.php:108 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -345,14 +359,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     protected array $specialDesignation;
 
-    /** Default validation map for fields in type MedicinalProduct */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_NAME => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRMedicinalProduct Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
@@ -486,6 +493,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -494,6 +502,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:149 */
     /**
      * @return string
      */
@@ -502,6 +511,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
         return static::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -522,7 +532,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getIdentifierIterator(): iterable
     {
-        if (!isset($this->identifier) || [] === $this->identifier) {
+        if (!isset($this->identifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->identifier);
@@ -561,7 +571,18 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
-        $this->identifier = $identifier;
+        if ([] === $identifier) {
+            unset($this->identifier);
+            return $this;
+        }
+        $this->identifier = [];
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->identifier[] = $v;
+            } else {
+                $this->identifier[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -769,7 +790,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getSpecialMeasuresIterator(): iterable
     {
-        if (!isset($this->specialMeasures) || [] === $this->specialMeasures) {
+        if (!isset($this->specialMeasures)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->specialMeasures);
@@ -811,6 +832,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setSpecialMeasures(string|FHIRStringPrimitive|FHIRString ...$specialMeasures): self
     {
+        if ([] === $specialMeasures) {
+            unset($this->specialMeasures);
+            return $this;
+        }
         $this->specialMeasures = [];
         foreach($specialMeasures as $v) {
             if ($v instanceof FHIRString) {
@@ -878,7 +903,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getProductClassificationIterator(): iterable
     {
-        if (!isset($this->productClassification) || [] === $this->productClassification) {
+        if (!isset($this->productClassification)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->productClassification);
@@ -917,6 +942,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setProductClassification(FHIRCodeableConcept ...$productClassification): self
     {
+        if ([] === $productClassification) {
+            unset($this->productClassification);
+            return $this;
+        }
         $this->productClassification = $productClassification;
         return $this;
     }
@@ -942,7 +971,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getMarketingStatusIterator(): iterable
     {
-        if (!isset($this->marketingStatus) || [] === $this->marketingStatus) {
+        if (!isset($this->marketingStatus)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->marketingStatus);
@@ -983,6 +1012,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
     {
+        if ([] === $marketingStatus) {
+            unset($this->marketingStatus);
+            return $this;
+        }
         $this->marketingStatus = $marketingStatus;
         return $this;
     }
@@ -1006,7 +1039,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getPharmaceuticalProductIterator(): iterable
     {
-        if (!isset($this->pharmaceuticalProduct) || [] === $this->pharmaceuticalProduct) {
+        if (!isset($this->pharmaceuticalProduct)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->pharmaceuticalProduct);
@@ -1043,6 +1076,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setPharmaceuticalProduct(FHIRReference ...$pharmaceuticalProduct): self
     {
+        if ([] === $pharmaceuticalProduct) {
+            unset($this->pharmaceuticalProduct);
+            return $this;
+        }
         $this->pharmaceuticalProduct = $pharmaceuticalProduct;
         return $this;
     }
@@ -1066,7 +1103,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getPackagedMedicinalProductIterator(): iterable
     {
-        if (!isset($this->packagedMedicinalProduct) || [] === $this->packagedMedicinalProduct) {
+        if (!isset($this->packagedMedicinalProduct)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->packagedMedicinalProduct);
@@ -1103,6 +1140,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setPackagedMedicinalProduct(FHIRReference ...$packagedMedicinalProduct): self
     {
+        if ([] === $packagedMedicinalProduct) {
+            unset($this->packagedMedicinalProduct);
+            return $this;
+        }
         $this->packagedMedicinalProduct = $packagedMedicinalProduct;
         return $this;
     }
@@ -1126,7 +1167,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getAttachedDocumentIterator(): iterable
     {
-        if (!isset($this->attachedDocument) || [] === $this->attachedDocument) {
+        if (!isset($this->attachedDocument)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->attachedDocument);
@@ -1163,6 +1204,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setAttachedDocument(FHIRReference ...$attachedDocument): self
     {
+        if ([] === $attachedDocument) {
+            unset($this->attachedDocument);
+            return $this;
+        }
         $this->attachedDocument = $attachedDocument;
         return $this;
     }
@@ -1187,7 +1232,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getMasterFileIterator(): iterable
     {
-        if (!isset($this->masterFile) || [] === $this->masterFile) {
+        if (!isset($this->masterFile)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->masterFile);
@@ -1226,6 +1271,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setMasterFile(FHIRReference ...$masterFile): self
     {
+        if ([] === $masterFile) {
+            unset($this->masterFile);
+            return $this;
+        }
         $this->masterFile = $masterFile;
         return $this;
     }
@@ -1249,7 +1298,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getContactIterator(): iterable
     {
-        if (!isset($this->contact) || [] === $this->contact) {
+        if (!isset($this->contact)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->contact);
@@ -1286,6 +1335,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setContact(FHIRReference ...$contact): self
     {
+        if ([] === $contact) {
+            unset($this->contact);
+            return $this;
+        }
         $this->contact = $contact;
         return $this;
     }
@@ -1309,7 +1362,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getClinicalTrialIterator(): iterable
     {
-        if (!isset($this->clinicalTrial) || [] === $this->clinicalTrial) {
+        if (!isset($this->clinicalTrial)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->clinicalTrial);
@@ -1346,6 +1399,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setClinicalTrial(FHIRReference ...$clinicalTrial): self
     {
+        if ([] === $clinicalTrial) {
+            unset($this->clinicalTrial);
+            return $this;
+        }
         $this->clinicalTrial = $clinicalTrial;
         return $this;
     }
@@ -1368,7 +1425,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getNameIterator(): iterable
     {
-        if (!isset($this->name) || [] === $this->name) {
+        if (!isset($this->name)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->name);
@@ -1403,6 +1460,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setName(FHIRMedicinalProductName ...$name): self
     {
+        if ([] === $name) {
+            unset($this->name);
+            return $this;
+        }
         $this->name = $name;
         return $this;
     }
@@ -1428,7 +1489,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getCrossReferenceIterator(): iterable
     {
-        if (!isset($this->crossReference) || [] === $this->crossReference) {
+        if (!isset($this->crossReference)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->crossReference);
@@ -1469,7 +1530,18 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setCrossReference(FHIRIdentifier ...$crossReference): self
     {
-        $this->crossReference = $crossReference;
+        if ([] === $crossReference) {
+            unset($this->crossReference);
+            return $this;
+        }
+        $this->crossReference = [];
+        foreach($crossReference as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->crossReference[] = $v;
+            } else {
+                $this->crossReference[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -1492,7 +1564,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getManufacturingBusinessOperationIterator(): iterable
     {
-        if (!isset($this->manufacturingBusinessOperation) || [] === $this->manufacturingBusinessOperation) {
+        if (!isset($this->manufacturingBusinessOperation)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->manufacturingBusinessOperation);
@@ -1529,6 +1601,10 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setManufacturingBusinessOperation(FHIRMedicinalProductManufacturingBusinessOperation ...$manufacturingBusinessOperation): self
     {
+        if ([] === $manufacturingBusinessOperation) {
+            unset($this->manufacturingBusinessOperation);
+            return $this;
+        }
         $this->manufacturingBusinessOperation = $manufacturingBusinessOperation;
         return $this;
     }
@@ -1552,7 +1628,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function getSpecialDesignationIterator(): iterable
     {
-        if (!isset($this->specialDesignation) || [] === $this->specialDesignation) {
+        if (!isset($this->specialDesignation)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->specialDesignation);
@@ -1589,10 +1665,15 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function setSpecialDesignation(FHIRMedicinalProductSpecialDesignation ...$specialDesignation): self
     {
+        if ([] === $specialDesignation) {
+            unset($this->specialDesignation);
+            return $this;
+        }
         $this->specialDesignation = $specialDesignation;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1601,7 +1682,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1962,16 +2043,17 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
      * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct $type
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+                                          null|UnserializeConfig $config = null,
+                                          null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1992,138 +2074,93 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
         if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
             $type->_setSourceXMLNS((string)$ns);
         }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_META === $childName) {
-                $v = new FHIRMeta();
-                $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TEXT === $childName) {
-                $v = new FHIRNarrative();
-                $type->setText(FHIRNarrative::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTAINED === $childName) {
-                foreach ($n->children() as $nn) {
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_ID === $cen) {
+                $type->setId(FHIRId::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_META === $cen) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IMPLICIT_RULES === $cen) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LANGUAGE === $cen) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TEXT === $cen) {
+                $type->setText(FHIRNarrative::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTAINED === $cen) {
+                foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
-                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($nn);
-                    $type->addContained($cn::xmlUnserialize($nn, null, $config));
+                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($cen);
+                    $type->addContained($cn::xmlUnserialize($cen, $config));
                 }
-            } else if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DOMAIN === $childName) {
-                $v = new FHIRCoding();
-                $type->setDomain(FHIRCoding::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_COMBINED_PHARMACEUTICAL_DOSE_FORM === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setCombinedPharmaceuticalDoseForm(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LEGAL_STATUS_OF_SUPPLY === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setLegalStatusOfSupply(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ADDITIONAL_MONITORING_INDICATOR === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setAdditionalMonitoringIndicator(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SPECIAL_MEASURES === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addSpecialMeasures(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PAEDIATRIC_USE_INDICATOR === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setPaediatricUseIndicator(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PRODUCT_CLASSIFICATION === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addProductClassification(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MARKETING_STATUS === $childName) {
-                $v = new FHIRMarketingStatus();
-                $type->addMarketingStatus(FHIRMarketingStatus::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PHARMACEUTICAL_PRODUCT === $childName) {
-                $v = new FHIRReference();
-                $type->addPharmaceuticalProduct(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PACKAGED_MEDICINAL_PRODUCT === $childName) {
-                $v = new FHIRReference();
-                $type->addPackagedMedicinalProduct(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ATTACHED_DOCUMENT === $childName) {
-                $v = new FHIRReference();
-                $type->addAttachedDocument(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MASTER_FILE === $childName) {
-                $v = new FHIRReference();
-                $type->addMasterFile(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTACT === $childName) {
-                $v = new FHIRReference();
-                $type->addContact(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CLINICAL_TRIAL === $childName) {
-                $v = new FHIRReference();
-                $type->addClinicalTrial(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NAME === $childName) {
-                $v = new FHIRMedicinalProductName();
-                $type->addName(FHIRMedicinalProductName::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CROSS_REFERENCE === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addCrossReference(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MANUFACTURING_BUSINESS_OPERATION === $childName) {
-                $v = new FHIRMedicinalProductManufacturingBusinessOperation();
-                $type->addManufacturingBusinessOperation(FHIRMedicinalProductManufacturingBusinessOperation::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SPECIAL_DESIGNATION === $childName) {
-                $v = new FHIRMedicinalProductSpecialDesignation();
-                $type->addSpecialDesignation(FHIRMedicinalProductSpecialDesignation::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IDENTIFIER === $cen) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DOMAIN === $cen) {
+                $type->setDomain(FHIRCoding::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_COMBINED_PHARMACEUTICAL_DOSE_FORM === $cen) {
+                $type->setCombinedPharmaceuticalDoseForm(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LEGAL_STATUS_OF_SUPPLY === $cen) {
+                $type->setLegalStatusOfSupply(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ADDITIONAL_MONITORING_INDICATOR === $cen) {
+                $type->setAdditionalMonitoringIndicator(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SPECIAL_MEASURES === $cen) {
+                $type->addSpecialMeasures(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PAEDIATRIC_USE_INDICATOR === $cen) {
+                $type->setPaediatricUseIndicator(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PRODUCT_CLASSIFICATION === $cen) {
+                $type->addProductClassification(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MARKETING_STATUS === $cen) {
+                $type->addMarketingStatus(FHIRMarketingStatus::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PHARMACEUTICAL_PRODUCT === $cen) {
+                $type->addPharmaceuticalProduct(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PACKAGED_MEDICINAL_PRODUCT === $cen) {
+                $type->addPackagedMedicinalProduct(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ATTACHED_DOCUMENT === $cen) {
+                $type->addAttachedDocument(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MASTER_FILE === $cen) {
+                $type->addMasterFile(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTACT === $cen) {
+                $type->addContact(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CLINICAL_TRIAL === $cen) {
+                $type->addClinicalTrial(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NAME === $cen) {
+                $type->addName(FHIRMedicinalProductName::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CROSS_REFERENCE === $cen) {
+                $type->addCrossReference(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MANUFACTURING_BUSINESS_OPERATION === $cen) {
+                $type->addManufacturingBusinessOperation(FHIRMedicinalProductManufacturingBusinessOperation::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SPECIAL_DESIGNATION === $cen) {
+                $type->addSpecialDesignation(FHIRMedicinalProductSpecialDesignation::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->id)) {
+                $type->id->setValue((string)$attributes[self::FIELD_ID]);
+                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRId(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
-            $pt = $type->getImplicitRules();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->implicitRules)) {
+                $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
-            $pt = $type->getLanguage();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->language)) {
+                $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
+                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage(new FHIRCode(
-                    value: (string)$attributes[self::FIELD_LANGUAGE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
-        }
-        if (isset($attributes[self::FIELD_SPECIAL_MEASURES])) {
-            $v = new FHIRString(value: (string)$attributes[self::FIELD_SPECIAL_MEASURES],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addSpecialMeasures($v);
         }
         return $type;
     }
@@ -2133,7 +2170,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(null|XMLWriter $xw = null,
+                                 null|SerializeConfig $config = null): XMLWriter
     {
         if (null === $config) {
             $config = (new Version())->getConfig()->getSerializeConfig();
@@ -2152,17 +2190,9 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
             $rootOpened = true;
             $xw->openRootNode('MedicinalProduct', $this->_getSourceXMLNS());
         }
-        if (isset($this->specialMeasures)) {
-           foreach($this->specialMeasures as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_SPECIAL_MEASURES, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
-        }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier)) {
-            foreach ($this->identifier as $v) {
+        if (isset($this->identifier) && [] !== $this->identifier) {
+            foreach($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2193,13 +2223,11 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
             $this->additionalMonitoringIndicator->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->specialMeasures)) {
+        if (isset($this->specialMeasures) && [] !== $this->specialMeasures) {
             foreach($this->specialMeasures as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_SPECIAL_MEASURES);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_SPECIAL_MEASURES);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
         if (isset($this->paediatricUseIndicator)) {
@@ -2270,8 +2298,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
                 $xw->endElement();
             }
         }
-        if (isset($this->crossReference)) {
-            foreach ($this->crossReference as $v) {
+        if (isset($this->crossReference) && [] !== $this->crossReference) {
+            foreach($this->crossReference as $v) {
                 $xw->startElement(self::FIELD_CROSS_REFERENCE);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2301,15 +2329,15 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|array|\stdClass $json
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct $type
+     * @param string|\stdClass|array $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(string|\stdClass|array $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -2329,15 +2357,21 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        parent::jsonUnserialize($json, $config, $type);
+        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -2504,14 +2538,20 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
                 ));
             }
         }
-        if (isset($json[self::FIELD_CROSS_REFERENCE]) || array_key_exists(self::FIELD_CROSS_REFERENCE, $json)) {
-            $vs = $json[self::FIELD_CROSS_REFERENCE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json[self::FIELD_CROSS_REFERENCE]) || isset($json[self::FIELD_CROSS_REFERENCE_EXT]) || array_key_exists(self::FIELD_CROSS_REFERENCE, $json) || array_key_exists(self::FIELD_CROSS_REFERENCE_EXT, $json)) {
+            $value = $json[self::FIELD_CROSS_REFERENCE] ?? null;
+            $ext = (array)($json[self::FIELD_CROSS_REFERENCE_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addCrossReference(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -2550,7 +2590,25 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            $vals = [];
+            $exts = [];
+            foreach ($this->identifier as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->identifier = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_identifier = $exts;
+            }
         }
         if (isset($this->type)) {
             $out->type = $this->type;
@@ -2619,7 +2677,25 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
             $out->name = $this->name;
         }
         if (isset($this->crossReference) && [] !== $this->crossReference) {
-            $out->crossReference = $this->crossReference;
+            $vals = [];
+            $exts = [];
+            foreach ($this->crossReference as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->crossReference = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_crossReference = $exts;
+            }
         }
         if (isset($this->manufacturingBusinessOperation) && [] !== $this->manufacturingBusinessOperation) {
             $out->manufacturingBusinessOperation = $this->manufacturingBusinessOperation;
@@ -2630,7 +2706,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

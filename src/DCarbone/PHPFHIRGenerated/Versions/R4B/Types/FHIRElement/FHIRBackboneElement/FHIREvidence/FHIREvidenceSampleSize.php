@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
@@ -110,7 +110,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EVIDENCE_DOT_SAMPLE_SIZE;
 
-
+    /* class_default.php:48 */
     public const FIELD_DESCRIPTION = 'description';
     public const FIELD_DESCRIPTION_EXT = '_description';
     public const FIELD_NOTE = 'note';
@@ -121,6 +121,18 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
     public const FIELD_KNOWN_DATA_COUNT = 'knownDataCount';
     public const FIELD_KNOWN_DATA_COUNT_EXT = '_knownDataCount';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_NUMBER_OF_STUDIES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_NUMBER_OF_PARTICIPANTS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_KNOWN_DATA_COUNT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -173,10 +185,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      */
     protected FHIRUnsignedInt $knownDataCount;
 
-    /** Default validation map for fields in type Evidence.SampleSize */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIREvidenceSampleSize Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -220,6 +229,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -228,6 +238,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -250,11 +261,11 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * Human-readable summary of population sample size.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description,
-                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $description) {
             unset($this->description);
@@ -263,12 +274,34 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
         if (!($description instanceof FHIRString)) {
             $description = new FHIRString(value: $description);
         }
-        if (null !== $valueXMLLocation) {
-            $description->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $description->_getValueXMLLocation()) {
-            $description->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->description = $description;
+        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
+            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the description element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
+    }
+
+    /**
+     * Set the location the "value" field of the description element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -292,7 +325,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      */
     public function getNoteIterator(): iterable
     {
-        if (!isset($this->note) || [] === $this->note) {
+        if (!isset($this->note)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->note);
@@ -331,6 +364,10 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
+        if ([] === $note) {
+            unset($this->note);
+            return $this;
+        }
         $this->note = $note;
         return $this;
     }
@@ -357,11 +394,11 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * Number of participants in the population.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $numberOfStudies
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setNumberOfStudies(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfStudies,
-                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $numberOfStudies) {
             unset($this->numberOfStudies);
@@ -370,12 +407,34 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
         if (!($numberOfStudies instanceof FHIRUnsignedInt)) {
             $numberOfStudies = new FHIRUnsignedInt(value: $numberOfStudies);
         }
-        if (null !== $valueXMLLocation) {
-            $numberOfStudies->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $numberOfStudies->_getValueXMLLocation()) {
-            $numberOfStudies->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->numberOfStudies = $numberOfStudies;
+        if ($this->_valueXMLLocations[self::FIELD_NUMBER_OF_STUDIES] !== $valueXMLLocation) {
+            $this->_setNumberOfStudiesValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the numberOfStudies element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getNumberOfStudiesValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_NUMBER_OF_STUDIES];
+    }
+
+    /**
+     * Set the location the "value" field of the numberOfStudies element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setNumberOfStudiesValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_NUMBER_OF_STUDIES] = $valueXMLLocation;
         return $this;
     }
 
@@ -401,11 +460,11 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * A human-readable string to clarify or explain concepts about the sample size.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $numberOfParticipants
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setNumberOfParticipants(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfParticipants,
-                                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $numberOfParticipants) {
             unset($this->numberOfParticipants);
@@ -414,12 +473,34 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
         if (!($numberOfParticipants instanceof FHIRUnsignedInt)) {
             $numberOfParticipants = new FHIRUnsignedInt(value: $numberOfParticipants);
         }
-        if (null !== $valueXMLLocation) {
-            $numberOfParticipants->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $numberOfParticipants->_getValueXMLLocation()) {
-            $numberOfParticipants->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->numberOfParticipants = $numberOfParticipants;
+        if ($this->_valueXMLLocations[self::FIELD_NUMBER_OF_PARTICIPANTS] !== $valueXMLLocation) {
+            $this->_setNumberOfParticipantsValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the numberOfParticipants element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getNumberOfParticipantsValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_NUMBER_OF_PARTICIPANTS];
+    }
+
+    /**
+     * Set the location the "value" field of the numberOfParticipants element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setNumberOfParticipantsValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_NUMBER_OF_PARTICIPANTS] = $valueXMLLocation;
         return $this;
     }
 
@@ -445,11 +526,11 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * Number of participants with known results for measured variables.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $knownDataCount
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setKnownDataCount(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $knownDataCount,
-                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $knownDataCount) {
             unset($this->knownDataCount);
@@ -458,15 +539,38 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
         if (!($knownDataCount instanceof FHIRUnsignedInt)) {
             $knownDataCount = new FHIRUnsignedInt(value: $knownDataCount);
         }
-        if (null !== $valueXMLLocation) {
-            $knownDataCount->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $knownDataCount->_getValueXMLLocation()) {
-            $knownDataCount->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->knownDataCount = $knownDataCount;
+        if ($this->_valueXMLLocations[self::FIELD_KNOWN_DATA_COUNT] !== $valueXMLLocation) {
+            $this->_setKnownDataCountValueXMLLocation($valueXMLLocation);
+        }
         return $this;
     }
 
+    /**
+     * Return the current location the "value" field of the knownDataCount element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getKnownDataCountValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_KNOWN_DATA_COUNT];
+    }
+
+    /**
+     * Set the location the "value" field of the knownDataCount element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setKnownDataCountValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_KNOWN_DATA_COUNT] = $valueXMLLocation;
+        return $this;
+    }
+
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -475,7 +579,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -589,16 +693,17 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -610,154 +715,94 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DESCRIPTION === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setDescription(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NOTE === $childName) {
-                $v = new FHIRAnnotation();
-                $type->addNote(FHIRAnnotation::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NUMBER_OF_STUDIES === $childName) {
-                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setNumberOfStudies(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NUMBER_OF_PARTICIPANTS === $childName) {
-                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setNumberOfParticipants(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_KNOWN_DATA_COUNT === $childName) {
-                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setKnownDataCount(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DESCRIPTION === $cen) {
+                $type->setDescription(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NOTE === $cen) {
+                $type->addNote(FHIRAnnotation::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NUMBER_OF_STUDIES === $cen) {
+                $type->setNumberOfStudies(FHIRUnsignedInt::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NUMBER_OF_PARTICIPANTS === $cen) {
+                $type->setNumberOfParticipants(FHIRUnsignedInt::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_KNOWN_DATA_COUNT === $cen) {
+                $type->setKnownDataCount(FHIRUnsignedInt::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
-            $pt = $type->getDescription();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_DESCRIPTION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->description)) {
+                $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
+                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription(new FHIRString(
-                    value: (string)$attributes[self::FIELD_DESCRIPTION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_NUMBER_OF_STUDIES])) {
-            $pt = $type->getNumberOfStudies();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_NUMBER_OF_STUDIES]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->numberOfStudies)) {
+                $type->numberOfStudies->setValue((string)$attributes[self::FIELD_NUMBER_OF_STUDIES]);
+                $type->_setNumberOfStudiesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNumberOfStudies(new FHIRUnsignedInt(
-                    value: (string)$attributes[self::FIELD_NUMBER_OF_STUDIES],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setNumberOfStudies((string)$attributes[self::FIELD_NUMBER_OF_STUDIES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
-            $pt = $type->getNumberOfParticipants();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_NUMBER_OF_PARTICIPANTS]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->numberOfParticipants)) {
+                $type->numberOfParticipants->setValue((string)$attributes[self::FIELD_NUMBER_OF_PARTICIPANTS]);
+                $type->_setNumberOfParticipantsValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNumberOfParticipants(new FHIRUnsignedInt(
-                    value: (string)$attributes[self::FIELD_NUMBER_OF_PARTICIPANTS],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setNumberOfParticipants((string)$attributes[self::FIELD_NUMBER_OF_PARTICIPANTS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_KNOWN_DATA_COUNT])) {
-            $pt = $type->getKnownDataCount();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_KNOWN_DATA_COUNT]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->knownDataCount)) {
+                $type->knownDataCount->setValue((string)$attributes[self::FIELD_KNOWN_DATA_COUNT]);
+                $type->_setKnownDataCountValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setKnownDataCount(new FHIRUnsignedInt(
-                    value: (string)$attributes[self::FIELD_KNOWN_DATA_COUNT],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setKnownDataCount((string)$attributes[self::FIELD_KNOWN_DATA_COUNT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->numberOfStudies) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NUMBER_OF_STUDIES]) {
+            $xw->writeAttribute(self::FIELD_NUMBER_OF_STUDIES, $this->numberOfStudies->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
+        if (isset($this->numberOfParticipants) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NUMBER_OF_PARTICIPANTS]) {
+            $xw->writeAttribute(self::FIELD_NUMBER_OF_PARTICIPANTS, $this->numberOfParticipants->_getFormattedValue());
         }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('EvidenceSampleSize', $this->_getSourceXMLNS());
-        }
-        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->numberOfStudies) && $this->numberOfStudies->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NUMBER_OF_STUDIES, $this->numberOfStudies->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->numberOfParticipants) && $this->numberOfParticipants->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NUMBER_OF_PARTICIPANTS, $this->numberOfParticipants->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->knownDataCount) && $this->knownDataCount->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_KNOWN_DATA_COUNT, $this->knownDataCount->getValue()?->_getFormattedValue());
+        if (isset($this->knownDataCount) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_KNOWN_DATA_COUNT]) {
+            $xw->writeAttribute(self::FIELD_KNOWN_DATA_COUNT, $this->knownDataCount->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->description)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DESCRIPTION]
+                || $this->description->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
-            $this->description->xmlSerialize($xw, $config);
+            $this->description->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DESCRIPTION]);
             $xw->endElement();
         }
         if (isset($this->note)) {
@@ -767,40 +812,39 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->numberOfStudies) && $this->numberOfStudies->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->numberOfStudies)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_NUMBER_OF_STUDIES]
+                || $this->numberOfStudies->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_NUMBER_OF_STUDIES);
-            $this->numberOfStudies->xmlSerialize($xw, $config);
+            $this->numberOfStudies->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_NUMBER_OF_STUDIES]);
             $xw->endElement();
         }
-        if (isset($this->numberOfParticipants) && $this->numberOfParticipants->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->numberOfParticipants)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_NUMBER_OF_PARTICIPANTS]
+                || $this->numberOfParticipants->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_NUMBER_OF_PARTICIPANTS);
-            $this->numberOfParticipants->xmlSerialize($xw, $config);
+            $this->numberOfParticipants->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_NUMBER_OF_PARTICIPANTS]);
             $xw->endElement();
         }
-        if (isset($this->knownDataCount) && $this->knownDataCount->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->knownDataCount)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_KNOWN_DATA_COUNT]
+                || $this->knownDataCount->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_KNOWN_DATA_COUNT);
-            $this->knownDataCount->xmlSerialize($xw, $config);
+            $this->knownDataCount->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_KNOWN_DATA_COUNT]);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -820,7 +864,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
             $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
@@ -919,7 +963,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

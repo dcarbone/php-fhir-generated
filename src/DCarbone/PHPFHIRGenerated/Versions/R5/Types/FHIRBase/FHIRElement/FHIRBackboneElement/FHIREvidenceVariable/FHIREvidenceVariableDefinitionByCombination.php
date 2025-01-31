@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCharacteristicCombination;
@@ -108,13 +108,30 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_DEFINITION_BY_COMBINATION;
 
-
+    /* class_default.php:48 */
     public const FIELD_CODE = 'code';
     public const FIELD_CODE_EXT = '_code';
     public const FIELD_THRESHOLD = 'threshold';
     public const FIELD_THRESHOLD_EXT = '_threshold';
     public const FIELD_CHARACTERISTIC = 'characteristic';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_CODE => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_CHARACTERISTIC => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_CODE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_THRESHOLD => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -143,17 +160,7 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      */
     protected array $characteristic;
 
-    /** Default validation map for fields in type EvidenceVariable.DefinitionByCombination */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_CODE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_CHARACTERISTIC => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIREvidenceVariableDefinitionByCombination Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -187,6 +194,7 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -195,6 +203,7 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -213,15 +222,44 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * Used to specify if two or more characteristics are combined with OR or AND.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCharacteristicCombination $code
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCode(null|FHIRCharacteristicCombination $code): self
+    public function setCode(null|FHIRCharacteristicCombination $code,
+                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $code) {
             unset($this->code);
             return $this;
         }
         $this->code = $code;
+        if ($this->_valueXMLLocations[self::FIELD_CODE] !== $valueXMLLocation) {
+            $this->_setCodeValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the code element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getCodeValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_CODE];
+    }
+
+    /**
+     * Set the location the "value" field of the code element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setCodeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_CODE] = $valueXMLLocation;
         return $this;
     }
 
@@ -247,11 +285,11 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * Provides the value of "n" when "at-least" or "at-most" codes are used.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $threshold
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setThreshold(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $threshold,
-                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $threshold) {
             unset($this->threshold);
@@ -260,12 +298,34 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
         if (!($threshold instanceof FHIRPositiveInt)) {
             $threshold = new FHIRPositiveInt(value: $threshold);
         }
-        if (null !== $valueXMLLocation) {
-            $threshold->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $threshold->_getValueXMLLocation()) {
-            $threshold->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->threshold = $threshold;
+        if ($this->_valueXMLLocations[self::FIELD_THRESHOLD] !== $valueXMLLocation) {
+            $this->_setThresholdValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the threshold element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getThresholdValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_THRESHOLD];
+    }
+
+    /**
+     * Set the location the "value" field of the threshold element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setThresholdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_THRESHOLD] = $valueXMLLocation;
         return $this;
     }
 
@@ -287,7 +347,7 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      */
     public function getCharacteristicIterator(): iterable
     {
-        if (!isset($this->characteristic) || [] === $this->characteristic) {
+        if (!isset($this->characteristic)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->characteristic);
@@ -322,10 +382,15 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      */
     public function setCharacteristic(FHIREvidenceVariableCharacteristic ...$characteristic): self
     {
+        if ([] === $characteristic) {
+            unset($this->characteristic);
+            return $this;
+        }
         $this->characteristic = $characteristic;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -334,7 +399,7 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -436,16 +501,17 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -457,108 +523,75 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CODE === $childName) {
-                $v = new FHIRCharacteristicCombination(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setCode(FHIRCharacteristicCombination::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_THRESHOLD === $childName) {
-                $v = new FHIRPositiveInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setThreshold(FHIRPositiveInt::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CHARACTERISTIC === $childName) {
-                $v = new FHIREvidenceVariableCharacteristic();
-                $type->addCharacteristic(FHIREvidenceVariableCharacteristic::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CODE === $cen) {
+                $type->setCode(FHIRCharacteristicCombination::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_THRESHOLD === $cen) {
+                $type->setThreshold(FHIRPositiveInt::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CHARACTERISTIC === $cen) {
+                $type->addCharacteristic(FHIREvidenceVariableCharacteristic::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_CODE])) {
+            if (isset($type->code)) {
+                $type->code->setValue((string)$attributes[self::FIELD_CODE]);
+                $type->_setCodeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setCode((string)$attributes[self::FIELD_CODE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_THRESHOLD])) {
-            $pt = $type->getThreshold();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_THRESHOLD]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->threshold)) {
+                $type->threshold->setValue((string)$attributes[self::FIELD_THRESHOLD]);
+                $type->_setThresholdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setThreshold(new FHIRPositiveInt(
-                    value: (string)$attributes[self::FIELD_THRESHOLD],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setThreshold((string)$attributes[self::FIELD_THRESHOLD], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->code) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CODE]) {
+            $xw->writeAttribute(self::FIELD_CODE, $this->code->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('EvidenceVariableDefinitionByCombination', $this->_getSourceXMLNS());
-        }
-        if (isset($this->threshold) && $this->threshold->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_THRESHOLD, $this->threshold->getValue()?->_getFormattedValue());
+        if (isset($this->threshold) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_THRESHOLD]) {
+            $xw->writeAttribute(self::FIELD_THRESHOLD, $this->threshold->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->code)) {
+        if (isset($this->code)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_CODE]
+                || $this->code->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_CODE);
-            $this->code->xmlSerialize($xw, $config);
+            $this->code->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_CODE]);
             $xw->endElement();
         }
-        if (isset($this->threshold) && $this->threshold->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->threshold)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_THRESHOLD]
+                || $this->threshold->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_THRESHOLD);
-            $this->threshold->xmlSerialize($xw, $config);
+            $this->threshold->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_THRESHOLD]);
             $xw->endElement();
         }
         if (isset($this->characteristic)) {
@@ -568,25 +601,18 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -606,7 +632,7 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_CODE]) || isset($json[self::FIELD_CODE_EXT]) || array_key_exists(self::FIELD_CODE, $json) || array_key_exists(self::FIELD_CODE_EXT, $json)) {
             $value = $json[self::FIELD_CODE] ?? null;
             $ext = (array)($json[self::FIELD_CODE_EXT] ?? []);
@@ -669,7 +695,7 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,7 +67,8 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
@@ -86,13 +87,13 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  * identification of concepts, people, devices, etc. Represents a "System" used
  * within the Identifier and Coding data types.
  */
-class FHIRNamingSystemUniqueId extends FHIRBackboneElement
+class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueContainerTypeInterface
 {
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NAMING_SYSTEM_DOT_UNIQUE_ID;
 
-
+    /* class_default.php:48 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_VALUE = 'value';
@@ -101,6 +102,27 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
     public const FIELD_PREFERRED_EXT = '_preferred';
     public const FIELD_PERIOD = 'period';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_ID => [
+            Constants::VALIDATE_PATTERN => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+        ],
+        self::FIELD_TYPE => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_PREFERRED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * Identifies the style of unique identifier used to identify a namespace.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -143,20 +165,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      */
     protected FHIRPeriod $period;
 
-    /** Default validation map for fields in type NamingSystem.UniqueId */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_ID => [
-            Constants::VALIDATE_PATTERN => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
-        ],
-        self::FIELD_TYPE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRNamingSystemUniqueId Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
@@ -164,7 +173,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNamingSystemIdentifierType $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $value
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $preferred
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $period
      * @param null|string[] $fhirComments
@@ -174,7 +182,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRNamingSystemIdentifierType $type = null,
                                 null|string|FHIRStringPrimitive|FHIRString $value = null,
-                                null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred = null,
                                 null|FHIRPeriod $period = null,
                                 null|iterable $fhirComments = null)
@@ -197,6 +204,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -205,6 +213,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * Identifies the style of unique identifier used to identify a namespace.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -225,15 +234,44 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * Identifies the unique identifier scheme used for this particular identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNamingSystemIdentifierType $type
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRNamingSystemIdentifierType $type): self
+    public function setType(null|FHIRNamingSystemIdentifierType $type,
+                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
         }
         $this->type = $type;
+        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
+            $this->_setTypeValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the type element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_TYPE];
+    }
+
+    /**
+     * Set the location the "value" field of the type element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -261,11 +299,11 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * identifier system.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $value
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value,
-                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $value) {
             unset($this->value);
@@ -274,12 +312,34 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
         if (!($value instanceof FHIRString)) {
             $value = new FHIRString(value: $value);
         }
-        if (null !== $valueXMLLocation) {
-            $value->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $value->_getValueXMLLocation()) {
-            $value->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->value = $value;
+        if ($this->_valueXMLLocations[self::FIELD_VALUE] !== $valueXMLLocation) {
+            $this->_setValueValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the value element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getValueValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_VALUE];
+    }
+
+    /**
+     * Set the location the "value" field of the value element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setValueValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_VALUE] = $valueXMLLocation;
         return $this;
     }
 
@@ -303,11 +363,11 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * Indicates whether this identifier is the "preferred" identifier of this type.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $preferred
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred,
-                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $preferred) {
             unset($this->preferred);
@@ -316,12 +376,34 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
         if (!($preferred instanceof FHIRBoolean)) {
             $preferred = new FHIRBoolean(value: $preferred);
         }
-        if (null !== $valueXMLLocation) {
-            $preferred->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $preferred->_getValueXMLLocation()) {
-            $preferred->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->preferred = $preferred;
+        if ($this->_valueXMLLocations[self::FIELD_PREFERRED] !== $valueXMLLocation) {
+            $this->_setPreferredValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the preferred element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getPreferredValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_PREFERRED];
+    }
+
+    /**
+     * Set the location the "value" field of the preferred element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setPreferredValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_PREFERRED] = $valueXMLLocation;
         return $this;
     }
 
@@ -364,6 +446,19 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
     }
 
     /**
+     * Return the formatted value of this type's contained primitive type.
+     *
+     * @see \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
+     *
+     * @return string
+     */
+    public function _getFormattedValue(): string
+    {
+        return isset($this->value) ? $this->value->_getFormattedValue() : '';
+    }
+
+    /* class_default.php:189 */
+    /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
      *
@@ -371,7 +466,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -483,16 +578,28 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:202 */
+    public function _nonValueFieldDefined(): bool
+    {
+        return isset($this->extension)
+               || isset($this->id)
+               || isset($this->modifierExtension)
+               || isset($this->type)
+               || isset($this->preferred)
+               || isset($this->period);
+    }
+
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -504,131 +611,102 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRNamingSystemIdentifierType(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setType(FHIRNamingSystemIdentifierType::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VALUE === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setValue(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PREFERRED === $childName) {
-                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setPreferred(FHIRBoolean::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PERIOD === $childName) {
-                $v = new FHIRPeriod();
-                $type->setPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->setType(FHIRNamingSystemIdentifierType::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VALUE === $cen) {
+                $type->setValue(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PREFERRED === $cen) {
+                $type->setPreferred(FHIRBoolean::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PERIOD === $cen) {
+                $type->setPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_TYPE])) {
+            if (isset($type->type)) {
+                $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
+                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRIdPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_VALUE])) {
-            $pt = $type->getValue();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->value)) {
+                $type->value->setValue((string)$attributes[self::FIELD_VALUE]);
+                $type->_setValueValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValue(new FHIRString(
-                    value: (string)$attributes[self::FIELD_VALUE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setValue((string)$attributes[self::FIELD_VALUE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_PREFERRED])) {
-            $pt = $type->getPreferred();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_PREFERRED]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->preferred)) {
+                $type->preferred->setValue((string)$attributes[self::FIELD_PREFERRED]);
+                $type->_setPreferredValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPreferred(new FHIRBoolean(
-                    value: (string)$attributes[self::FIELD_PREFERRED],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setPreferred((string)$attributes[self::FIELD_PREFERRED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config,
+                                 null|ValueXMLLocationEnum $valueLocation = null): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
+        if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->value) && ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueLocation) {
+            $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('NamingSystemUniqueId', $this->_getSourceXMLNS());
-        }
-        if (isset($this->value) && $this->value->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE, $this->value->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->preferred) && $this->preferred->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PREFERRED, $this->preferred->getValue()?->_getFormattedValue());
+        if (isset($this->preferred) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PREFERRED]) {
+            $xw->writeAttribute(self::FIELD_PREFERRED, $this->preferred->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->type)) {
+        if (isset($this->type)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TYPE]
+                || $this->type->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_TYPE);
-            $this->type->xmlSerialize($xw, $config);
+            $this->type->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TYPE]);
             $xw->endElement();
         }
-        if (isset($this->value) && $this->value->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-            $xw->startElement(self::FIELD_VALUE);
-            $this->value->xmlSerialize($xw, $config);
-            $xw->endElement();
+        if (isset($this->value)) {
+            if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
+                $xw->text($this->value->_getFormattedValue());
+            } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
+                $xw->startElement(self::FIELD_VALUE);
+                $xw->writeAttribute(FHIRString::FIELD_VALUE, $this->value->_getFormattedValue());
+                $xw->endElement();
+            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
+                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
+            }
         }
-        if (isset($this->preferred) && $this->preferred->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->preferred)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PREFERRED]
+                || $this->preferred->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_PREFERRED);
-            $this->preferred->xmlSerialize($xw, $config);
+            $this->preferred->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PREFERRED]);
             $xw->endElement();
         }
         if (isset($this->period)) {
@@ -636,25 +714,18 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
             $this->period->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -674,7 +745,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
             $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
@@ -749,12 +820,12 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */
     public function __toString(): string
     {
-        return self::FHIR_TYPE_NAME;
+        return $this->_getFormattedValue();
     }
 }

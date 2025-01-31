@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,7 +66,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
@@ -87,7 +87,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC;
 
-
+    /* class_default.php:48 */
     public const FIELD_SCORE = 'score';
     public const FIELD_SCORE_EXT = '_score';
     public const FIELD_NUM_TP = 'numTP';
@@ -103,6 +103,14 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     public const FIELD_F_MEASURE = 'fMeasure';
     public const FIELD_F_MEASURE_EXT = '_fMeasure';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+    ];
+
+    /* class_default.php:108 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -180,10 +188,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     protected array $fMeasure;
 
-    /** Default validation map for fields in type MolecularSequence.Roc */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRMolecularSequenceRoc Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -237,6 +242,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -245,6 +251,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -264,7 +271,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function getScoreIterator(): iterable
     {
-        if (!isset($this->score) || [] === $this->score) {
+        if (!isset($this->score)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->score);
@@ -304,6 +311,10 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function setScore(string|int|float|FHIRIntegerPrimitive|FHIRInteger ...$score): self
     {
+        if ([] === $score) {
+            unset($this->score);
+            return $this;
+        }
         $this->score = [];
         foreach($score as $v) {
             if ($v instanceof FHIRInteger) {
@@ -335,7 +346,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function getNumTPIterator(): iterable
     {
-        if (!isset($this->numTP) || [] === $this->numTP) {
+        if (!isset($this->numTP)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->numTP);
@@ -377,6 +388,10 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function setNumTP(string|int|float|FHIRIntegerPrimitive|FHIRInteger ...$numTP): self
     {
+        if ([] === $numTP) {
+            unset($this->numTP);
+            return $this;
+        }
         $this->numTP = [];
         foreach($numTP as $v) {
             if ($v instanceof FHIRInteger) {
@@ -408,7 +423,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function getNumFPIterator(): iterable
     {
-        if (!isset($this->numFP) || [] === $this->numFP) {
+        if (!isset($this->numFP)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->numFP);
@@ -450,6 +465,10 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function setNumFP(string|int|float|FHIRIntegerPrimitive|FHIRInteger ...$numFP): self
     {
+        if ([] === $numFP) {
+            unset($this->numFP);
+            return $this;
+        }
         $this->numFP = [];
         foreach($numFP as $v) {
             if ($v instanceof FHIRInteger) {
@@ -481,7 +500,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function getNumFNIterator(): iterable
     {
-        if (!isset($this->numFN) || [] === $this->numFN) {
+        if (!isset($this->numFN)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->numFN);
@@ -523,6 +542,10 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function setNumFN(string|int|float|FHIRIntegerPrimitive|FHIRInteger ...$numFN): self
     {
+        if ([] === $numFN) {
+            unset($this->numFN);
+            return $this;
+        }
         $this->numFN = [];
         foreach($numFN as $v) {
             if ($v instanceof FHIRInteger) {
@@ -554,7 +577,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function getPrecisionIterator(): iterable
     {
-        if (!isset($this->precision) || [] === $this->precision) {
+        if (!isset($this->precision)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->precision);
@@ -596,6 +619,10 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function setPrecision(string|float|int|FHIRDecimalPrimitive|FHIRDecimal ...$precision): self
     {
+        if ([] === $precision) {
+            unset($this->precision);
+            return $this;
+        }
         $this->precision = [];
         foreach($precision as $v) {
             if ($v instanceof FHIRDecimal) {
@@ -627,7 +654,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function getSensitivityIterator(): iterable
     {
-        if (!isset($this->sensitivity) || [] === $this->sensitivity) {
+        if (!isset($this->sensitivity)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->sensitivity);
@@ -669,6 +696,10 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function setSensitivity(string|float|int|FHIRDecimalPrimitive|FHIRDecimal ...$sensitivity): self
     {
+        if ([] === $sensitivity) {
+            unset($this->sensitivity);
+            return $this;
+        }
         $this->sensitivity = [];
         foreach($sensitivity as $v) {
             if ($v instanceof FHIRDecimal) {
@@ -700,7 +731,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function getFMeasureIterator(): iterable
     {
-        if (!isset($this->fMeasure) || [] === $this->fMeasure) {
+        if (!isset($this->fMeasure)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->fMeasure);
@@ -742,6 +773,10 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function setFMeasure(string|float|int|FHIRDecimalPrimitive|FHIRDecimal ...$fMeasure): self
     {
+        if ([] === $fMeasure) {
+            unset($this->fMeasure);
+            return $this;
+        }
         $this->fMeasure = [];
         foreach($fMeasure as $v) {
             if ($v instanceof FHIRDecimal) {
@@ -753,6 +788,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -761,7 +797,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -899,16 +935,17 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -920,270 +957,110 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SCORE === $childName) {
-                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addScore(FHIRInteger::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NUM_TP === $childName) {
-                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addNumTP(FHIRInteger::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NUM_FP === $childName) {
-                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addNumFP(FHIRInteger::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NUM_FN === $childName) {
-                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addNumFN(FHIRInteger::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PRECISION === $childName) {
-                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addPrecision(FHIRDecimal::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SENSITIVITY === $childName) {
-                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addSensitivity(FHIRDecimal::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_F_MEASURE === $childName) {
-                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addFMeasure(FHIRDecimal::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SCORE === $cen) {
+                $type->addScore(FHIRInteger::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NUM_TP === $cen) {
+                $type->addNumTP(FHIRInteger::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NUM_FP === $cen) {
+                $type->addNumFP(FHIRInteger::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NUM_FN === $cen) {
+                $type->addNumFN(FHIRInteger::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PRECISION === $cen) {
+                $type->addPrecision(FHIRDecimal::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SENSITIVITY === $cen) {
+                $type->addSensitivity(FHIRDecimal::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_F_MEASURE === $cen) {
+                $type->addFMeasure(FHIRDecimal::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
-        }
-        if (isset($attributes[self::FIELD_SCORE])) {
-            $v = new FHIRInteger(value: (string)$attributes[self::FIELD_SCORE],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addScore($v);
-        }
-        if (isset($attributes[self::FIELD_NUM_TP])) {
-            $v = new FHIRInteger(value: (string)$attributes[self::FIELD_NUM_TP],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addNumTP($v);
-        }
-        if (isset($attributes[self::FIELD_NUM_FP])) {
-            $v = new FHIRInteger(value: (string)$attributes[self::FIELD_NUM_FP],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addNumFP($v);
-        }
-        if (isset($attributes[self::FIELD_NUM_FN])) {
-            $v = new FHIRInteger(value: (string)$attributes[self::FIELD_NUM_FN],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addNumFN($v);
-        }
-        if (isset($attributes[self::FIELD_PRECISION])) {
-            $v = new FHIRDecimal(value: (string)$attributes[self::FIELD_PRECISION],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addPrecision($v);
-        }
-        if (isset($attributes[self::FIELD_SENSITIVITY])) {
-            $v = new FHIRDecimal(value: (string)$attributes[self::FIELD_SENSITIVITY],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addSensitivity($v);
-        }
-        if (isset($attributes[self::FIELD_F_MEASURE])) {
-            $v = new FHIRDecimal(value: (string)$attributes[self::FIELD_F_MEASURE],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addFMeasure($v);
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('MolecularSequenceRoc', $this->_getSourceXMLNS());
-        }
-        if (isset($this->score)) {
-           foreach($this->score as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_SCORE, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
-        }
-        if (isset($this->numTP)) {
-           foreach($this->numTP as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_NUM_TP, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
-        }
-        if (isset($this->numFP)) {
-           foreach($this->numFP as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_NUM_FP, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
-        }
-        if (isset($this->numFN)) {
-           foreach($this->numFN as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_NUM_FN, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
-        }
-        if (isset($this->precision)) {
-           foreach($this->precision as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_PRECISION, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
-        }
-        if (isset($this->sensitivity)) {
-           foreach($this->sensitivity as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_SENSITIVITY, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
-        }
-        if (isset($this->fMeasure)) {
-           foreach($this->fMeasure as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_F_MEASURE, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
-        }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->score)) {
+        if (isset($this->score) && [] !== $this->score) {
             foreach($this->score as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_SCORE);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_SCORE);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
-        if (isset($this->numTP)) {
+        if (isset($this->numTP) && [] !== $this->numTP) {
             foreach($this->numTP as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_NUM_TP);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_NUM_TP);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
-        if (isset($this->numFP)) {
+        if (isset($this->numFP) && [] !== $this->numFP) {
             foreach($this->numFP as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_NUM_FP);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_NUM_FP);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
-        if (isset($this->numFN)) {
+        if (isset($this->numFN) && [] !== $this->numFN) {
             foreach($this->numFN as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_NUM_FN);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_NUM_FN);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
-        if (isset($this->precision)) {
+        if (isset($this->precision) && [] !== $this->precision) {
             foreach($this->precision as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_PRECISION);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_PRECISION);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
-        if (isset($this->sensitivity)) {
+        if (isset($this->sensitivity) && [] !== $this->sensitivity) {
             foreach($this->sensitivity as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_SENSITIVITY);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_SENSITIVITY);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
-        if (isset($this->fMeasure)) {
+        if (isset($this->fMeasure) && [] !== $this->fMeasure) {
             foreach($this->fMeasure as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_F_MEASURE);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_F_MEASURE);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1203,7 +1080,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_SCORE]) || isset($json[self::FIELD_SCORE_EXT]) || array_key_exists(self::FIELD_SCORE, $json) || array_key_exists(self::FIELD_SCORE_EXT, $json)) {
             $value = $json[self::FIELD_SCORE] ?? null;
             $ext = (array)($json[self::FIELD_SCORE_EXT] ?? []);
@@ -1488,7 +1365,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

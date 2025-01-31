@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical;
@@ -115,8 +115,9 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_GENOMIC_STUDY_DOT_ANALYSIS;
 
-
+    /* class_default.php:48 */
     public const FIELD_IDENTIFIER = 'identifier';
+    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_METHOD_TYPE = 'methodType';
     public const FIELD_CHANGE_TYPE = 'changeType';
     public const FIELD_GENOME_BUILD = 'genomeBuild';
@@ -139,6 +140,18 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
     public const FIELD_PERFORMER = 'performer';
     public const FIELD_DEVICE = 'device';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_INSTANTIATES_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_INSTANTIATES_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_TITLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -334,10 +347,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     protected array $device;
 
-    /** Default validation map for fields in type GenomicStudy.Analysis */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRGenomicStudyAnalysis Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -446,6 +456,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -454,6 +465,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -474,7 +486,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getIdentifierIterator(): iterable
     {
-        if (!isset($this->identifier) || [] === $this->identifier) {
+        if (!isset($this->identifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->identifier);
@@ -513,7 +525,18 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
-        $this->identifier = $identifier;
+        if ([] === $identifier) {
+            unset($this->identifier);
+            return $this;
+        }
+        $this->identifier = [];
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->identifier[] = $v;
+            } else {
+                $this->identifier[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -538,7 +561,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getMethodTypeIterator(): iterable
     {
-        if (!isset($this->methodType) || [] === $this->methodType) {
+        if (!isset($this->methodType)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->methodType);
@@ -579,6 +602,10 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setMethodType(FHIRCodeableConcept ...$methodType): self
     {
+        if ([] === $methodType) {
+            unset($this->methodType);
+            return $this;
+        }
         $this->methodType = $methodType;
         return $this;
     }
@@ -604,7 +631,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getChangeTypeIterator(): iterable
     {
-        if (!isset($this->changeType) || [] === $this->changeType) {
+        if (!isset($this->changeType)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->changeType);
@@ -645,6 +672,10 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setChangeType(FHIRCodeableConcept ...$changeType): self
     {
+        if ([] === $changeType) {
+            unset($this->changeType);
+            return $this;
+        }
         $this->changeType = $changeType;
         return $this;
     }
@@ -709,11 +740,11 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * The defined protocol that describes the analysis.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $instantiatesCanonical
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setInstantiatesCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical,
-                                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $instantiatesCanonical) {
             unset($this->instantiatesCanonical);
@@ -722,12 +753,34 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         if (!($instantiatesCanonical instanceof FHIRCanonical)) {
             $instantiatesCanonical = new FHIRCanonical(value: $instantiatesCanonical);
         }
-        if (null !== $valueXMLLocation) {
-            $instantiatesCanonical->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $instantiatesCanonical->_getValueXMLLocation()) {
-            $instantiatesCanonical->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->instantiatesCanonical = $instantiatesCanonical;
+        if ($this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL] !== $valueXMLLocation) {
+            $this->_setInstantiatesCanonicalValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the instantiatesCanonical element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getInstantiatesCanonicalValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL];
+    }
+
+    /**
+     * Set the location the "value" field of the instantiatesCanonical element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setInstantiatesCanonicalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -755,11 +808,11 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * analysis.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $instantiatesUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri,
-                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $instantiatesUri) {
             unset($this->instantiatesUri);
@@ -768,12 +821,34 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         if (!($instantiatesUri instanceof FHIRUri)) {
             $instantiatesUri = new FHIRUri(value: $instantiatesUri);
         }
-        if (null !== $valueXMLLocation) {
-            $instantiatesUri->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $instantiatesUri->_getValueXMLLocation()) {
-            $instantiatesUri->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->instantiatesUri = $instantiatesUri;
+        if ($this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI] !== $valueXMLLocation) {
+            $this->_setInstantiatesUriValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the instantiatesUri element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getInstantiatesUriValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI];
+    }
+
+    /**
+     * Set the location the "value" field of the instantiatesUri element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setInstantiatesUriValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI] = $valueXMLLocation;
         return $this;
     }
 
@@ -799,11 +874,11 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * Name of the analysis event (human friendly).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title,
-                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $title) {
             unset($this->title);
@@ -812,12 +887,34 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         if (!($title instanceof FHIRString)) {
             $title = new FHIRString(value: $title);
         }
-        if (null !== $valueXMLLocation) {
-            $title->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $title->_getValueXMLLocation()) {
-            $title->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->title = $title;
+        if ($this->_valueXMLLocations[self::FIELD_TITLE] !== $valueXMLLocation) {
+            $this->_setTitleValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the title element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getTitleValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_TITLE];
+    }
+
+    /**
+     * Set the location the "value" field of the title element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setTitleValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_TITLE] = $valueXMLLocation;
         return $this;
     }
 
@@ -844,7 +941,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getFocusIterator(): iterable
     {
-        if (!isset($this->focus) || [] === $this->focus) {
+        if (!isset($this->focus)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->focus);
@@ -889,6 +986,10 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setFocus(FHIRReference ...$focus): self
     {
+        if ([] === $focus) {
+            unset($this->focus);
+            return $this;
+        }
         $this->focus = $focus;
         return $this;
     }
@@ -912,7 +1013,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getSpecimenIterator(): iterable
     {
-        if (!isset($this->specimen) || [] === $this->specimen) {
+        if (!isset($this->specimen)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->specimen);
@@ -949,6 +1050,10 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setSpecimen(FHIRReference ...$specimen): self
     {
+        if ([] === $specimen) {
+            unset($this->specimen);
+            return $this;
+        }
         $this->specimen = $specimen;
         return $this;
     }
@@ -983,11 +1088,11 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * The date of the analysis event.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date,
-                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $date) {
             unset($this->date);
@@ -996,12 +1101,34 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         if (!($date instanceof FHIRDateTime)) {
             $date = new FHIRDateTime(value: $date);
         }
-        if (null !== $valueXMLLocation) {
-            $date->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $date->_getValueXMLLocation()) {
-            $date->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->date = $date;
+        if ($this->_valueXMLLocations[self::FIELD_DATE] !== $valueXMLLocation) {
+            $this->_setDateValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the date element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getDateValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_DATE];
+    }
+
+    /**
+     * Set the location the "value" field of the date element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1025,7 +1152,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getNoteIterator(): iterable
     {
-        if (!isset($this->note) || [] === $this->note) {
+        if (!isset($this->note)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->note);
@@ -1064,6 +1191,10 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
+        if ([] === $note) {
+            unset($this->note);
+            return $this;
+        }
         $this->note = $note;
         return $this;
     }
@@ -1121,7 +1252,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getRegionsStudiedIterator(): iterable
     {
-        if (!isset($this->regionsStudied) || [] === $this->regionsStudied) {
+        if (!isset($this->regionsStudied)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->regionsStudied);
@@ -1158,6 +1289,10 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setRegionsStudied(FHIRReference ...$regionsStudied): self
     {
+        if ([] === $regionsStudied) {
+            unset($this->regionsStudied);
+            return $this;
+        }
         $this->regionsStudied = $regionsStudied;
         return $this;
     }
@@ -1181,7 +1316,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getRegionsCalledIterator(): iterable
     {
-        if (!isset($this->regionsCalled) || [] === $this->regionsCalled) {
+        if (!isset($this->regionsCalled)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->regionsCalled);
@@ -1218,6 +1353,10 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setRegionsCalled(FHIRReference ...$regionsCalled): self
     {
+        if ([] === $regionsCalled) {
+            unset($this->regionsCalled);
+            return $this;
+        }
         $this->regionsCalled = $regionsCalled;
         return $this;
     }
@@ -1240,7 +1379,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getInputIterator(): iterable
     {
-        if (!isset($this->input) || [] === $this->input) {
+        if (!isset($this->input)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->input);
@@ -1275,6 +1414,10 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setInput(FHIRGenomicStudyInput ...$input): self
     {
+        if ([] === $input) {
+            unset($this->input);
+            return $this;
+        }
         $this->input = $input;
         return $this;
     }
@@ -1297,7 +1440,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getOutputIterator(): iterable
     {
-        if (!isset($this->output) || [] === $this->output) {
+        if (!isset($this->output)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->output);
@@ -1332,6 +1475,10 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setOutput(FHIRGenomicStudyOutput ...$output): self
     {
+        if ([] === $output) {
+            unset($this->output);
+            return $this;
+        }
         $this->output = $output;
         return $this;
     }
@@ -1354,7 +1501,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getPerformerIterator(): iterable
     {
-        if (!isset($this->performer) || [] === $this->performer) {
+        if (!isset($this->performer)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->performer);
@@ -1389,6 +1536,10 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setPerformer(FHIRGenomicStudyPerformer ...$performer): self
     {
+        if ([] === $performer) {
+            unset($this->performer);
+            return $this;
+        }
         $this->performer = $performer;
         return $this;
     }
@@ -1412,7 +1563,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function getDeviceIterator(): iterable
     {
-        if (!isset($this->device) || [] === $this->device) {
+        if (!isset($this->device)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->device);
@@ -1449,10 +1600,15 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function setDevice(FHIRGenomicStudyDevice ...$device): self
     {
+        if ([] === $device) {
+            unset($this->device);
+            return $this;
+        }
         $this->device = $device;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1461,7 +1617,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1731,16 +1887,17 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyAnalysis $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyAnalysis
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1752,192 +1909,117 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_METHOD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addMethodType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CHANGE_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addChangeType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_GENOME_BUILD === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setGenomeBuild(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INSTANTIATES_CANONICAL === $childName) {
-                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setInstantiatesCanonical(FHIRCanonical::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INSTANTIATES_URI === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setInstantiatesUri(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TITLE === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setTitle(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_FOCUS === $childName) {
-                $v = new FHIRReference();
-                $type->addFocus(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SPECIMEN === $childName) {
-                $v = new FHIRReference();
-                $type->addSpecimen(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DATE === $childName) {
-                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NOTE === $childName) {
-                $v = new FHIRAnnotation();
-                $type->addNote(FHIRAnnotation::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PROTOCOL_PERFORMED === $childName) {
-                $v = new FHIRReference();
-                $type->setProtocolPerformed(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_REGIONS_STUDIED === $childName) {
-                $v = new FHIRReference();
-                $type->addRegionsStudied(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_REGIONS_CALLED === $childName) {
-                $v = new FHIRReference();
-                $type->addRegionsCalled(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INPUT === $childName) {
-                $v = new FHIRGenomicStudyInput();
-                $type->addInput(FHIRGenomicStudyInput::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_OUTPUT === $childName) {
-                $v = new FHIRGenomicStudyOutput();
-                $type->addOutput(FHIRGenomicStudyOutput::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PERFORMER === $childName) {
-                $v = new FHIRGenomicStudyPerformer();
-                $type->addPerformer(FHIRGenomicStudyPerformer::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DEVICE === $childName) {
-                $v = new FHIRGenomicStudyDevice();
-                $type->addDevice(FHIRGenomicStudyDevice::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IDENTIFIER === $cen) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_METHOD_TYPE === $cen) {
+                $type->addMethodType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CHANGE_TYPE === $cen) {
+                $type->addChangeType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_GENOME_BUILD === $cen) {
+                $type->setGenomeBuild(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INSTANTIATES_CANONICAL === $cen) {
+                $type->setInstantiatesCanonical(FHIRCanonical::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INSTANTIATES_URI === $cen) {
+                $type->setInstantiatesUri(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TITLE === $cen) {
+                $type->setTitle(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_FOCUS === $cen) {
+                $type->addFocus(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SPECIMEN === $cen) {
+                $type->addSpecimen(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DATE === $cen) {
+                $type->setDate(FHIRDateTime::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NOTE === $cen) {
+                $type->addNote(FHIRAnnotation::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PROTOCOL_PERFORMED === $cen) {
+                $type->setProtocolPerformed(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_REGIONS_STUDIED === $cen) {
+                $type->addRegionsStudied(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_REGIONS_CALLED === $cen) {
+                $type->addRegionsCalled(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INPUT === $cen) {
+                $type->addInput(FHIRGenomicStudyInput::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_OUTPUT === $cen) {
+                $type->addOutput(FHIRGenomicStudyOutput::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PERFORMER === $cen) {
+                $type->addPerformer(FHIRGenomicStudyPerformer::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DEVICE === $cen) {
+                $type->addDevice(FHIRGenomicStudyDevice::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INSTANTIATES_CANONICAL])) {
-            $pt = $type->getInstantiatesCanonical();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_INSTANTIATES_CANONICAL]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->instantiatesCanonical)) {
+                $type->instantiatesCanonical->setValue((string)$attributes[self::FIELD_INSTANTIATES_CANONICAL]);
+                $type->_setInstantiatesCanonicalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInstantiatesCanonical(new FHIRCanonical(
-                    value: (string)$attributes[self::FIELD_INSTANTIATES_CANONICAL],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setInstantiatesCanonical((string)$attributes[self::FIELD_INSTANTIATES_CANONICAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_INSTANTIATES_URI])) {
-            $pt = $type->getInstantiatesUri();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_INSTANTIATES_URI]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->instantiatesUri)) {
+                $type->instantiatesUri->setValue((string)$attributes[self::FIELD_INSTANTIATES_URI]);
+                $type->_setInstantiatesUriValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInstantiatesUri(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_INSTANTIATES_URI],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setInstantiatesUri((string)$attributes[self::FIELD_INSTANTIATES_URI], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_TITLE])) {
-            $pt = $type->getTitle();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_TITLE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->title)) {
+                $type->title->setValue((string)$attributes[self::FIELD_TITLE]);
+                $type->_setTitleValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTitle(new FHIRString(
-                    value: (string)$attributes[self::FIELD_TITLE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setTitle((string)$attributes[self::FIELD_TITLE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_DATE])) {
-            $pt = $type->getDate();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_DATE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->date)) {
+                $type->date->setValue((string)$attributes[self::FIELD_DATE]);
+                $type->_setDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDate(new FHIRDateTime(
-                    value: (string)$attributes[self::FIELD_DATE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setDate((string)$attributes[self::FIELD_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->instantiatesCanonical) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL]) {
+            $xw->writeAttribute(self::FIELD_INSTANTIATES_CANONICAL, $this->instantiatesCanonical->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->instantiatesUri) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI]) {
+            $xw->writeAttribute(self::FIELD_INSTANTIATES_URI, $this->instantiatesUri->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
+        if (isset($this->title) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TITLE]) {
+            $xw->writeAttribute(self::FIELD_TITLE, $this->title->_getFormattedValue());
         }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('GenomicStudyAnalysis', $this->_getSourceXMLNS());
-        }
-        if (isset($this->instantiatesCanonical) && $this->instantiatesCanonical->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_INSTANTIATES_CANONICAL, $this->instantiatesCanonical->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->instantiatesUri) && $this->instantiatesUri->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_INSTANTIATES_URI, $this->instantiatesUri->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->title) && $this->title->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TITLE, $this->title->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->date) && $this->date->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DATE, $this->date->getValue()?->_getFormattedValue());
+        if (isset($this->date) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATE]) {
+            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier)) {
-            foreach ($this->identifier as $v) {
+        if (isset($this->identifier) && [] !== $this->identifier) {
+            foreach($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1962,19 +2044,25 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
             $this->genomeBuild->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->instantiatesCanonical) && $this->instantiatesCanonical->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->instantiatesCanonical)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL]
+                || $this->instantiatesCanonical->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_INSTANTIATES_CANONICAL);
-            $this->instantiatesCanonical->xmlSerialize($xw, $config);
+            $this->instantiatesCanonical->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL]);
             $xw->endElement();
         }
-        if (isset($this->instantiatesUri) && $this->instantiatesUri->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->instantiatesUri)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI]
+                || $this->instantiatesUri->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_INSTANTIATES_URI);
-            $this->instantiatesUri->xmlSerialize($xw, $config);
+            $this->instantiatesUri->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI]);
             $xw->endElement();
         }
-        if (isset($this->title) && $this->title->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->title)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TITLE]
+                || $this->title->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_TITLE);
-            $this->title->xmlSerialize($xw, $config);
+            $this->title->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TITLE]);
             $xw->endElement();
         }
         if (isset($this->focus)) {
@@ -1991,9 +2079,11 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->date) && $this->date->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->date)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DATE]
+                || $this->date->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_DATE);
-            $this->date->xmlSerialize($xw, $config);
+            $this->date->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DATE]);
             $xw->endElement();
         }
         if (isset($this->note)) {
@@ -2050,25 +2140,18 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyAnalysis $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyAnalysis
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -2088,15 +2171,21 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        parent::jsonUnserialize($json, $config, $type);
+        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -2287,7 +2376,25 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            $vals = [];
+            $exts = [];
+            foreach ($this->identifier as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->identifier = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_identifier = $exts;
+            }
         }
         if (isset($this->methodType) && [] !== $this->methodType) {
             $out->methodType = $this->methodType;
@@ -2370,7 +2477,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

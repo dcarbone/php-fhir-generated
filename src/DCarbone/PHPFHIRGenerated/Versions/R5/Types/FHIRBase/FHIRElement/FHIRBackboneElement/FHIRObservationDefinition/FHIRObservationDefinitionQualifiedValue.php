@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
@@ -111,7 +111,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OBSERVATION_DEFINITION_DOT_QUALIFIED_VALUE;
 
-
+    /* class_default.php:48 */
     public const FIELD_CONTEXT = 'context';
     public const FIELD_APPLIES_TO = 'appliesTo';
     public const FIELD_GENDER = 'gender';
@@ -132,6 +132,21 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
     public const FIELD_CRITICAL_CODED_VALUE_SET = 'criticalCodedValueSet';
     public const FIELD_CRITICAL_CODED_VALUE_SET_EXT = '_criticalCodedValueSet';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_GENDER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_CONDITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_RANGE_CATEGORY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_VALID_CODED_VALUE_SET => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_NORMAL_CODED_VALUE_SET => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_ABNORMAL_CODED_VALUE_SET => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_CRITICAL_CODED_VALUE_SET => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -261,10 +276,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      */
     protected FHIRCanonical $criticalCodedValueSet;
 
-    /** Default validation map for fields in type ObservationDefinition.QualifiedValue */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRObservationDefinitionQualifiedValue Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -343,6 +355,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -351,6 +364,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -407,7 +421,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      */
     public function getAppliesToIterator(): iterable
     {
-        if (!isset($this->appliesTo) || [] === $this->appliesTo) {
+        if (!isset($this->appliesTo)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->appliesTo);
@@ -446,6 +460,10 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      */
     public function setAppliesTo(FHIRCodeableConcept ...$appliesTo): self
     {
+        if ([] === $appliesTo) {
+            unset($this->appliesTo);
+            return $this;
+        }
         $this->appliesTo = $appliesTo;
         return $this;
     }
@@ -468,15 +486,44 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * The gender this set of qualified values applies to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender $gender
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGender(null|FHIRAdministrativeGender $gender): self
+    public function setGender(null|FHIRAdministrativeGender $gender,
+                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $gender) {
             unset($this->gender);
             return $this;
         }
         $this->gender = $gender;
+        if ($this->_valueXMLLocations[self::FIELD_GENDER] !== $valueXMLLocation) {
+            $this->_setGenderValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the gender element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getGenderValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_GENDER];
+    }
+
+    /**
+     * Set the location the "value" field of the gender element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setGenderValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_GENDER] = $valueXMLLocation;
         return $this;
     }
 
@@ -570,11 +617,11 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * Text based condition for which the the set of qualified values is valid.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $condition
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition,
-                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $condition) {
             unset($this->condition);
@@ -583,12 +630,34 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         if (!($condition instanceof FHIRString)) {
             $condition = new FHIRString(value: $condition);
         }
-        if (null !== $valueXMLLocation) {
-            $condition->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $condition->_getValueXMLLocation()) {
-            $condition->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->condition = $condition;
+        if ($this->_valueXMLLocations[self::FIELD_CONDITION] !== $valueXMLLocation) {
+            $this->_setConditionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the condition element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getConditionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_CONDITION];
+    }
+
+    /**
+     * Set the location the "value" field of the condition element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setConditionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_CONDITION] = $valueXMLLocation;
         return $this;
     }
 
@@ -612,15 +681,44 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * match the criteria of this set of qualified values.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationRangeCategory $rangeCategory
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRangeCategory(null|FHIRObservationRangeCategory $rangeCategory): self
+    public function setRangeCategory(null|FHIRObservationRangeCategory $rangeCategory,
+                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $rangeCategory) {
             unset($this->rangeCategory);
             return $this;
         }
         $this->rangeCategory = $rangeCategory;
+        if ($this->_valueXMLLocations[self::FIELD_RANGE_CATEGORY] !== $valueXMLLocation) {
+            $this->_setRangeCategoryValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the rangeCategory element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getRangeCategoryValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_RANGE_CATEGORY];
+    }
+
+    /**
+     * Set the location the "value" field of the rangeCategory element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setRangeCategoryValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_RANGE_CATEGORY] = $valueXMLLocation;
         return $this;
     }
 
@@ -686,11 +784,11 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * criteria of this set of qualified values.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $validCodedValueSet
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setValidCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $validCodedValueSet,
-                                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $validCodedValueSet) {
             unset($this->validCodedValueSet);
@@ -699,12 +797,34 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         if (!($validCodedValueSet instanceof FHIRCanonical)) {
             $validCodedValueSet = new FHIRCanonical(value: $validCodedValueSet);
         }
-        if (null !== $valueXMLLocation) {
-            $validCodedValueSet->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $validCodedValueSet->_getValueXMLLocation()) {
-            $validCodedValueSet->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->validCodedValueSet = $validCodedValueSet;
+        if ($this->_valueXMLLocations[self::FIELD_VALID_CODED_VALUE_SET] !== $valueXMLLocation) {
+            $this->_setValidCodedValueSetValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the validCodedValueSet element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getValidCodedValueSetValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_VALID_CODED_VALUE_SET];
+    }
+
+    /**
+     * Set the location the "value" field of the validCodedValueSet element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setValidCodedValueSetValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_VALID_CODED_VALUE_SET] = $valueXMLLocation;
         return $this;
     }
 
@@ -734,11 +854,11 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * criteria of this set of qualified values.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $normalCodedValueSet
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setNormalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $normalCodedValueSet,
-                                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $normalCodedValueSet) {
             unset($this->normalCodedValueSet);
@@ -747,12 +867,34 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         if (!($normalCodedValueSet instanceof FHIRCanonical)) {
             $normalCodedValueSet = new FHIRCanonical(value: $normalCodedValueSet);
         }
-        if (null !== $valueXMLLocation) {
-            $normalCodedValueSet->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $normalCodedValueSet->_getValueXMLLocation()) {
-            $normalCodedValueSet->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->normalCodedValueSet = $normalCodedValueSet;
+        if ($this->_valueXMLLocations[self::FIELD_NORMAL_CODED_VALUE_SET] !== $valueXMLLocation) {
+            $this->_setNormalCodedValueSetValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the normalCodedValueSet element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getNormalCodedValueSetValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_NORMAL_CODED_VALUE_SET];
+    }
+
+    /**
+     * Set the location the "value" field of the normalCodedValueSet element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setNormalCodedValueSetValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_NORMAL_CODED_VALUE_SET] = $valueXMLLocation;
         return $this;
     }
 
@@ -782,11 +924,11 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * criteria of this set of qualified values.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $abnormalCodedValueSet
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setAbnormalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $abnormalCodedValueSet,
-                                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $abnormalCodedValueSet) {
             unset($this->abnormalCodedValueSet);
@@ -795,12 +937,34 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         if (!($abnormalCodedValueSet instanceof FHIRCanonical)) {
             $abnormalCodedValueSet = new FHIRCanonical(value: $abnormalCodedValueSet);
         }
-        if (null !== $valueXMLLocation) {
-            $abnormalCodedValueSet->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $abnormalCodedValueSet->_getValueXMLLocation()) {
-            $abnormalCodedValueSet->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->abnormalCodedValueSet = $abnormalCodedValueSet;
+        if ($this->_valueXMLLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET] !== $valueXMLLocation) {
+            $this->_setAbnormalCodedValueSetValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the abnormalCodedValueSet element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getAbnormalCodedValueSetValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET];
+    }
+
+    /**
+     * Set the location the "value" field of the abnormalCodedValueSet element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setAbnormalCodedValueSetValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET] = $valueXMLLocation;
         return $this;
     }
 
@@ -830,11 +994,11 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * criteria of this set of qualified values.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $criticalCodedValueSet
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setCriticalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $criticalCodedValueSet,
-                                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $criticalCodedValueSet) {
             unset($this->criticalCodedValueSet);
@@ -843,15 +1007,38 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         if (!($criticalCodedValueSet instanceof FHIRCanonical)) {
             $criticalCodedValueSet = new FHIRCanonical(value: $criticalCodedValueSet);
         }
-        if (null !== $valueXMLLocation) {
-            $criticalCodedValueSet->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $criticalCodedValueSet->_getValueXMLLocation()) {
-            $criticalCodedValueSet->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->criticalCodedValueSet = $criticalCodedValueSet;
+        if ($this->_valueXMLLocations[self::FIELD_CRITICAL_CODED_VALUE_SET] !== $valueXMLLocation) {
+            $this->_setCriticalCodedValueSetValueXMLLocation($valueXMLLocation);
+        }
         return $this;
     }
 
+    /**
+     * Return the current location the "value" field of the criticalCodedValueSet element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getCriticalCodedValueSetValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_CRITICAL_CODED_VALUE_SET];
+    }
+
+    /**
+     * Set the location the "value" field of the criticalCodedValueSet element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setCriticalCodedValueSetValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_CRITICAL_CODED_VALUE_SET] = $valueXMLLocation;
+        return $this;
+    }
+
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -860,7 +1047,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1058,16 +1245,17 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1079,185 +1267,134 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTEXT === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setContext(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_APPLIES_TO === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addAppliesTo(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_GENDER === $childName) {
-                $v = new FHIRAdministrativeGender(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setGender(FHIRAdministrativeGender::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_AGE === $childName) {
-                $v = new FHIRRange();
-                $type->setAge(FHIRRange::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_GESTATIONAL_AGE === $childName) {
-                $v = new FHIRRange();
-                $type->setGestationalAge(FHIRRange::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONDITION === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setCondition(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RANGE_CATEGORY === $childName) {
-                $v = new FHIRObservationRangeCategory(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setRangeCategory(FHIRObservationRangeCategory::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RANGE === $childName) {
-                $v = new FHIRRange();
-                $type->setRange(FHIRRange::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VALID_CODED_VALUE_SET === $childName) {
-                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setValidCodedValueSet(FHIRCanonical::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NORMAL_CODED_VALUE_SET === $childName) {
-                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setNormalCodedValueSet(FHIRCanonical::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ABNORMAL_CODED_VALUE_SET === $childName) {
-                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setAbnormalCodedValueSet(FHIRCanonical::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CRITICAL_CODED_VALUE_SET === $childName) {
-                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setCriticalCodedValueSet(FHIRCanonical::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTEXT === $cen) {
+                $type->setContext(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_APPLIES_TO === $cen) {
+                $type->addAppliesTo(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_GENDER === $cen) {
+                $type->setGender(FHIRAdministrativeGender::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_AGE === $cen) {
+                $type->setAge(FHIRRange::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_GESTATIONAL_AGE === $cen) {
+                $type->setGestationalAge(FHIRRange::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONDITION === $cen) {
+                $type->setCondition(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RANGE_CATEGORY === $cen) {
+                $type->setRangeCategory(FHIRObservationRangeCategory::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RANGE === $cen) {
+                $type->setRange(FHIRRange::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VALID_CODED_VALUE_SET === $cen) {
+                $type->setValidCodedValueSet(FHIRCanonical::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NORMAL_CODED_VALUE_SET === $cen) {
+                $type->setNormalCodedValueSet(FHIRCanonical::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ABNORMAL_CODED_VALUE_SET === $cen) {
+                $type->setAbnormalCodedValueSet(FHIRCanonical::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CRITICAL_CODED_VALUE_SET === $cen) {
+                $type->setCriticalCodedValueSet(FHIRCanonical::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_GENDER])) {
+            if (isset($type->gender)) {
+                $type->gender->setValue((string)$attributes[self::FIELD_GENDER]);
+                $type->_setGenderValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setGender((string)$attributes[self::FIELD_GENDER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_CONDITION])) {
-            $pt = $type->getCondition();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_CONDITION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->condition)) {
+                $type->condition->setValue((string)$attributes[self::FIELD_CONDITION]);
+                $type->_setConditionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCondition(new FHIRString(
-                    value: (string)$attributes[self::FIELD_CONDITION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setCondition((string)$attributes[self::FIELD_CONDITION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_RANGE_CATEGORY])) {
+            if (isset($type->rangeCategory)) {
+                $type->rangeCategory->setValue((string)$attributes[self::FIELD_RANGE_CATEGORY]);
+                $type->_setRangeCategoryValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setRangeCategory((string)$attributes[self::FIELD_RANGE_CATEGORY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_VALID_CODED_VALUE_SET])) {
-            $pt = $type->getValidCodedValueSet();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_VALID_CODED_VALUE_SET]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->validCodedValueSet)) {
+                $type->validCodedValueSet->setValue((string)$attributes[self::FIELD_VALID_CODED_VALUE_SET]);
+                $type->_setValidCodedValueSetValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValidCodedValueSet(new FHIRCanonical(
-                    value: (string)$attributes[self::FIELD_VALID_CODED_VALUE_SET],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setValidCodedValueSet((string)$attributes[self::FIELD_VALID_CODED_VALUE_SET], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_NORMAL_CODED_VALUE_SET])) {
-            $pt = $type->getNormalCodedValueSet();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_NORMAL_CODED_VALUE_SET]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->normalCodedValueSet)) {
+                $type->normalCodedValueSet->setValue((string)$attributes[self::FIELD_NORMAL_CODED_VALUE_SET]);
+                $type->_setNormalCodedValueSetValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNormalCodedValueSet(new FHIRCanonical(
-                    value: (string)$attributes[self::FIELD_NORMAL_CODED_VALUE_SET],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setNormalCodedValueSet((string)$attributes[self::FIELD_NORMAL_CODED_VALUE_SET], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_ABNORMAL_CODED_VALUE_SET])) {
-            $pt = $type->getAbnormalCodedValueSet();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ABNORMAL_CODED_VALUE_SET]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->abnormalCodedValueSet)) {
+                $type->abnormalCodedValueSet->setValue((string)$attributes[self::FIELD_ABNORMAL_CODED_VALUE_SET]);
+                $type->_setAbnormalCodedValueSetValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAbnormalCodedValueSet(new FHIRCanonical(
-                    value: (string)$attributes[self::FIELD_ABNORMAL_CODED_VALUE_SET],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setAbnormalCodedValueSet((string)$attributes[self::FIELD_ABNORMAL_CODED_VALUE_SET], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_CRITICAL_CODED_VALUE_SET])) {
-            $pt = $type->getCriticalCodedValueSet();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_CRITICAL_CODED_VALUE_SET]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->criticalCodedValueSet)) {
+                $type->criticalCodedValueSet->setValue((string)$attributes[self::FIELD_CRITICAL_CODED_VALUE_SET]);
+                $type->_setCriticalCodedValueSetValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCriticalCodedValueSet(new FHIRCanonical(
-                    value: (string)$attributes[self::FIELD_CRITICAL_CODED_VALUE_SET],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setCriticalCodedValueSet((string)$attributes[self::FIELD_CRITICAL_CODED_VALUE_SET], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->gender) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_GENDER]) {
+            $xw->writeAttribute(self::FIELD_GENDER, $this->gender->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->condition) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CONDITION]) {
+            $xw->writeAttribute(self::FIELD_CONDITION, $this->condition->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
+        if (isset($this->rangeCategory) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RANGE_CATEGORY]) {
+            $xw->writeAttribute(self::FIELD_RANGE_CATEGORY, $this->rangeCategory->_getFormattedValue());
         }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
+        if (isset($this->validCodedValueSet) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALID_CODED_VALUE_SET]) {
+            $xw->writeAttribute(self::FIELD_VALID_CODED_VALUE_SET, $this->validCodedValueSet->_getFormattedValue());
         }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('ObservationDefinitionQualifiedValue', $this->_getSourceXMLNS());
+        if (isset($this->normalCodedValueSet) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NORMAL_CODED_VALUE_SET]) {
+            $xw->writeAttribute(self::FIELD_NORMAL_CODED_VALUE_SET, $this->normalCodedValueSet->_getFormattedValue());
         }
-        if (isset($this->condition) && $this->condition->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CONDITION, $this->condition->getValue()?->_getFormattedValue());
+        if (isset($this->abnormalCodedValueSet) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET]) {
+            $xw->writeAttribute(self::FIELD_ABNORMAL_CODED_VALUE_SET, $this->abnormalCodedValueSet->_getFormattedValue());
         }
-        if (isset($this->validCodedValueSet) && $this->validCodedValueSet->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALID_CODED_VALUE_SET, $this->validCodedValueSet->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->normalCodedValueSet) && $this->normalCodedValueSet->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NORMAL_CODED_VALUE_SET, $this->normalCodedValueSet->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->abnormalCodedValueSet) && $this->abnormalCodedValueSet->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ABNORMAL_CODED_VALUE_SET, $this->abnormalCodedValueSet->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->criticalCodedValueSet) && $this->criticalCodedValueSet->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CRITICAL_CODED_VALUE_SET, $this->criticalCodedValueSet->getValue()?->_getFormattedValue());
+        if (isset($this->criticalCodedValueSet) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CRITICAL_CODED_VALUE_SET]) {
+            $xw->writeAttribute(self::FIELD_CRITICAL_CODED_VALUE_SET, $this->criticalCodedValueSet->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->context)) {
@@ -1272,9 +1409,11 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->gender)) {
+        if (isset($this->gender)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_GENDER]
+                || $this->gender->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_GENDER);
-            $this->gender->xmlSerialize($xw, $config);
+            $this->gender->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_GENDER]);
             $xw->endElement();
         }
         if (isset($this->age)) {
@@ -1287,14 +1426,18 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             $this->gestationalAge->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->condition) && $this->condition->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->condition)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_CONDITION]
+                || $this->condition->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_CONDITION);
-            $this->condition->xmlSerialize($xw, $config);
+            $this->condition->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_CONDITION]);
             $xw->endElement();
         }
-        if (isset($this->rangeCategory)) {
+        if (isset($this->rangeCategory)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_RANGE_CATEGORY]
+                || $this->rangeCategory->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_RANGE_CATEGORY);
-            $this->rangeCategory->xmlSerialize($xw, $config);
+            $this->rangeCategory->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_RANGE_CATEGORY]);
             $xw->endElement();
         }
         if (isset($this->range)) {
@@ -1302,45 +1445,46 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             $this->range->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->validCodedValueSet) && $this->validCodedValueSet->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->validCodedValueSet)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VALID_CODED_VALUE_SET]
+                || $this->validCodedValueSet->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_VALID_CODED_VALUE_SET);
-            $this->validCodedValueSet->xmlSerialize($xw, $config);
+            $this->validCodedValueSet->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VALID_CODED_VALUE_SET]);
             $xw->endElement();
         }
-        if (isset($this->normalCodedValueSet) && $this->normalCodedValueSet->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->normalCodedValueSet)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_NORMAL_CODED_VALUE_SET]
+                || $this->normalCodedValueSet->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_NORMAL_CODED_VALUE_SET);
-            $this->normalCodedValueSet->xmlSerialize($xw, $config);
+            $this->normalCodedValueSet->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_NORMAL_CODED_VALUE_SET]);
             $xw->endElement();
         }
-        if (isset($this->abnormalCodedValueSet) && $this->abnormalCodedValueSet->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->abnormalCodedValueSet)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET]
+                || $this->abnormalCodedValueSet->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_ABNORMAL_CODED_VALUE_SET);
-            $this->abnormalCodedValueSet->xmlSerialize($xw, $config);
+            $this->abnormalCodedValueSet->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET]);
             $xw->endElement();
         }
-        if (isset($this->criticalCodedValueSet) && $this->criticalCodedValueSet->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->criticalCodedValueSet)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_CRITICAL_CODED_VALUE_SET]
+                || $this->criticalCodedValueSet->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_CRITICAL_CODED_VALUE_SET);
-            $this->criticalCodedValueSet->xmlSerialize($xw, $config);
+            $this->criticalCodedValueSet->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_CRITICAL_CODED_VALUE_SET]);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1360,7 +1504,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_CONTEXT]) || array_key_exists(self::FIELD_CONTEXT, $json)) {
             $type->setContext(FHIRCodeableConcept::jsonUnserialize(
                 json: $json[self::FIELD_CONTEXT],
@@ -1549,7 +1693,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

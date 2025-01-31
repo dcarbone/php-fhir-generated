@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -107,12 +107,22 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_GENOMIC_STUDY_DOT_INPUT;
 
-
+    /* class_default.php:48 */
     public const FIELD_FILE = 'file';
     public const FIELD_TYPE = 'type';
     public const FIELD_GENERATED_BY_IDENTIFIER = 'generatedByIdentifier';
+    public const FIELD_GENERATED_BY_IDENTIFIER_EXT = '_generatedByIdentifier';
     public const FIELD_GENERATED_BY_REFERENCE = 'generatedByReference';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_GENERATED_BY_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -156,10 +166,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      */
     protected FHIRReference $generatedByReference;
 
-    /** Default validation map for fields in type GenomicStudy.Input */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRGenomicStudyInput Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -198,6 +205,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -206,6 +214,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -300,15 +309,44 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * The analysis event or other GenomicStudy that generated this input file.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGeneratedByIdentifier(null|FHIRIdentifier $generatedByIdentifier): self
+    public function setGeneratedByIdentifier(null|FHIRIdentifier $generatedByIdentifier,
+                                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $generatedByIdentifier) {
             unset($this->generatedByIdentifier);
             return $this;
         }
         $this->generatedByIdentifier = $generatedByIdentifier;
+        if ($this->_valueXMLLocations[self::FIELD_GENERATED_BY_IDENTIFIER] !== $valueXMLLocation) {
+            $this->_setGeneratedByIdentifierValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the generatedByIdentifier element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getGeneratedByIdentifierValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_GENERATED_BY_IDENTIFIER];
+    }
+
+    /**
+     * Set the location the "value" field of the generatedByIdentifier element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setGeneratedByIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_GENERATED_BY_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -346,6 +384,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -354,7 +393,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -456,16 +495,17 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -477,86 +517,52 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_FILE === $childName) {
-                $v = new FHIRReference();
-                $type->setFile(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_GENERATED_BY_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->setGeneratedByIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_GENERATED_BY_REFERENCE === $childName) {
-                $v = new FHIRReference();
-                $type->setGeneratedByReference(FHIRReference::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_FILE === $cen) {
+                $type->setFile(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_GENERATED_BY_IDENTIFIER === $cen) {
+                $type->setGeneratedByIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_GENERATED_BY_REFERENCE === $cen) {
+                $type->setGeneratedByReference(FHIRReference::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_GENERATED_BY_IDENTIFIER])) {
+            if (isset($type->generatedByIdentifier)) {
+                $type->generatedByIdentifier->setValue((string)$attributes[self::FIELD_GENERATED_BY_IDENTIFIER]);
+                $type->_setGeneratedByIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setGeneratedByIdentifier((string)$attributes[self::FIELD_GENERATED_BY_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('GenomicStudyInput', $this->_getSourceXMLNS());
+        if (isset($this->generatedByIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_GENERATED_BY_IDENTIFIER]) {
+            $xw->writeAttribute(self::FIELD_GENERATED_BY_IDENTIFIER, $this->generatedByIdentifier->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->file)) {
@@ -569,9 +575,11 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->generatedByIdentifier)) {
+        if (isset($this->generatedByIdentifier)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_GENERATED_BY_IDENTIFIER]
+                || $this->generatedByIdentifier->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_GENERATED_BY_IDENTIFIER);
-            $this->generatedByIdentifier->xmlSerialize($xw, $config);
+            $this->generatedByIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_GENERATED_BY_IDENTIFIER]);
             $xw->endElement();
         }
         if (isset($this->generatedByReference)) {
@@ -579,25 +587,18 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
             $this->generatedByReference->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -617,7 +618,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_FILE]) || array_key_exists(self::FIELD_FILE, $json)) {
             $type->setFile(FHIRReference::jsonUnserialize(
                 json: $json[self::FIELD_FILE],
@@ -630,9 +631,11 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
                 config: $config,
             ));
         }
-        if (isset($json[self::FIELD_GENERATED_BY_IDENTIFIER]) || array_key_exists(self::FIELD_GENERATED_BY_IDENTIFIER, $json)) {
+        if (isset($json[self::FIELD_GENERATED_BY_IDENTIFIER]) || isset($json[self::FIELD_GENERATED_BY_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_GENERATED_BY_IDENTIFIER, $json) || array_key_exists(self::FIELD_GENERATED_BY_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_GENERATED_BY_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_GENERATED_BY_IDENTIFIER_EXT] ?? []);
             $type->setGeneratedByIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: $json[self::FIELD_GENERATED_BY_IDENTIFIER],
+                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
                 config: $config,
             ));
         }
@@ -658,14 +661,21 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
             $out->type = $this->type;
         }
         if (isset($this->generatedByIdentifier)) {
-            $out->generatedByIdentifier = $this->generatedByIdentifier;
+            if (null !== ($val = $this->generatedByIdentifier->getValue())) {
+                $out->generatedByIdentifier = $val;
+            }
+            $ext = $this->generatedByIdentifier->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_generatedByIdentifier = $ext;
+            }
         }
         if (isset($this->generatedByReference)) {
             $out->generatedByReference = $this->generatedByReference;
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

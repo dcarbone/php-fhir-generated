@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,7 +62,8 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive;
@@ -79,13 +80,13 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
-class FHIRDistance extends FHIRQuantity
+class FHIRDistance extends FHIRQuantity implements ValueContainerTypeInterface
 {
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DISTANCE;
 
-
+    /* class_default.php:48 */
     public const FIELD_VALUE = 'value';
     public const FIELD_VALUE_EXT = '_value';
     public const FIELD_COMPARATOR = 'comparator';
@@ -98,6 +99,24 @@ class FHIRDistance extends FHIRQuantity
     public const FIELD_CODE_EXT = '_code';
     public const FIELD_ID = 'id';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_ID => [
+            Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_VALUE,
+        self::FIELD_COMPARATOR => ValueXMLLocationEnum::CONTAINER_VALUE,
+        self::FIELD_UNITS => ValueXMLLocationEnum::CONTAINER_VALUE,
+        self::FIELD_SYSTEM => ValueXMLLocationEnum::CONTAINER_VALUE,
+        self::FIELD_CODE => ValueXMLLocationEnum::CONTAINER_VALUE,
+        self::FIELD_ID => ValueXMLLocationEnum::ELEMENT_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A rational number with implicit precision
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -151,20 +170,12 @@ class FHIRDistance extends FHIRQuantity
     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive */
     protected FHIRIdPrimitive $id;
 
-    /** Default validation map for fields in type Distance */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_ID => [
-            Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRDistance Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $value
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantityCompararator $comparator
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $units
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $system
@@ -174,7 +185,6 @@ class FHIRDistance extends FHIRQuantity
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $value = null,
-                                null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|FHIRQuantityCompararator $comparator = null,
                                 null|string|FHIRStringPrimitive|FHIRString $units = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $system = null,
@@ -203,6 +213,7 @@ class FHIRDistance extends FHIRQuantity
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -211,7 +222,21 @@ class FHIRDistance extends FHIRQuantity
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
 
+    /**
+     * Return the formatted value of this type's contained primitive type.
+     *
+     * @see \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
+     *
+     * @return string
+     */
+    public function _getFormattedValue(): string
+    {
+        return isset($this->value) ? $this->value->_getFormattedValue() : '';
+    }
+
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -220,7 +245,7 @@ class FHIRDistance extends FHIRQuantity
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -399,16 +424,28 @@ class FHIRDistance extends FHIRQuantity
         return $errs;
     }
 
+    /* class_default.php:202 */
+    public function _nonValueFieldDefined(): bool
+    {
+        return isset($this->extension)
+               || isset($this->id)
+               || isset($this->comparator)
+               || isset($this->units)
+               || isset($this->system)
+               || isset($this->code);
+    }
+
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRDistance $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRDistance
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -420,200 +457,164 @@ class FHIRDistance extends FHIRQuantity
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_VALUE === $childName) {
-                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setValue(FHIRDecimal::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_COMPARATOR === $childName) {
-                $v = new FHIRQuantityCompararator(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setComparator(FHIRQuantityCompararator::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_UNITS === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setUnits(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SYSTEM === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setSystem(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CODE === $childName) {
-                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setCode(FHIRCode::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_VALUE === $cen) {
+                $type->setValue(FHIRDecimal::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_COMPARATOR === $cen) {
+                $type->setComparator(FHIRQuantityCompararator::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_UNITS === $cen) {
+                $type->setUnits(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SYSTEM === $cen) {
+                $type->setSystem(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CODE === $cen) {
+                $type->setCode(FHIRCode::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRIdPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE])) {
-            $pt = $type->getValue();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->value)) {
+                $type->value->setValue((string)$attributes[self::FIELD_VALUE]);
+                $type->_setValueValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValue(new FHIRDecimal(
-                    value: (string)$attributes[self::FIELD_VALUE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setValue((string)$attributes[self::FIELD_VALUE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_COMPARATOR])) {
+            if (isset($type->comparator)) {
+                $type->comparator->setValue((string)$attributes[self::FIELD_COMPARATOR]);
+                $type->_setComparatorValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setComparator((string)$attributes[self::FIELD_COMPARATOR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_UNITS])) {
-            $pt = $type->getUnits();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_UNITS]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->units)) {
+                $type->units->setValue((string)$attributes[self::FIELD_UNITS]);
+                $type->_setUnitsValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUnits(new FHIRString(
-                    value: (string)$attributes[self::FIELD_UNITS],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setUnits((string)$attributes[self::FIELD_UNITS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_SYSTEM])) {
-            $pt = $type->getSystem();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_SYSTEM]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->system)) {
+                $type->system->setValue((string)$attributes[self::FIELD_SYSTEM]);
+                $type->_setSystemValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSystem(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_SYSTEM],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setSystem((string)$attributes[self::FIELD_SYSTEM], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_CODE])) {
-            $pt = $type->getCode();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_CODE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->code)) {
+                $type->code->setValue((string)$attributes[self::FIELD_CODE]);
+                $type->_setCodeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCode(new FHIRCode(
-                    value: (string)$attributes[self::FIELD_CODE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setCode((string)$attributes[self::FIELD_CODE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config,
+                                 null|ValueXMLLocationEnum $valueLocation = null): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
+        if (isset($this->value) && ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueLocation) {
+            $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->comparator) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COMPARATOR]) {
+            $xw->writeAttribute(self::FIELD_COMPARATOR, $this->comparator->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
+        if (isset($this->units) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_UNITS]) {
+            $xw->writeAttribute(self::FIELD_UNITS, $this->units->_getFormattedValue());
         }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
+        if (isset($this->system) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SYSTEM]) {
+            $xw->writeAttribute(self::FIELD_SYSTEM, $this->system->_getFormattedValue());
         }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('Distance', $this->_getSourceXMLNS());
+        if (isset($this->code) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CODE]) {
+            $xw->writeAttribute(self::FIELD_CODE, $this->code->_getFormattedValue());
         }
-        if (isset($this->value) && $this->value->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE, $this->value->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->units) && $this->units->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_UNITS, $this->units->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->system) && $this->system->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SYSTEM, $this->system->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->code) && $this->code->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CODE, $this->code->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->id) && $this->id->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+        if (isset($this->id) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ID]) {
             $xw->writeAttribute(self::FIELD_ID, $this->id->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->value) && $this->value->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-            $xw->startElement(self::FIELD_VALUE);
-            $this->value->xmlSerialize($xw, $config);
-            $xw->endElement();
+        if (isset($this->value)) {
+            if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
+                $xw->text($this->value->_getFormattedValue());
+            } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
+                $xw->startElement(self::FIELD_VALUE);
+                $xw->writeAttribute(FHIRDecimal::FIELD_VALUE, $this->value->_getFormattedValue());
+                $xw->endElement();
+            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
+                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
+            }
         }
-        if (isset($this->comparator)) {
+        if (isset($this->comparator)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_COMPARATOR]
+                || $this->comparator->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_COMPARATOR);
-            $this->comparator->xmlSerialize($xw, $config);
+            $this->comparator->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_COMPARATOR]);
             $xw->endElement();
         }
-        if (isset($this->units) && $this->units->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->units)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_UNITS]
+                || $this->units->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_UNITS);
-            $this->units->xmlSerialize($xw, $config);
+            $this->units->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_UNITS]);
             $xw->endElement();
         }
-        if (isset($this->system) && $this->system->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->system)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_SYSTEM]
+                || $this->system->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_SYSTEM);
-            $this->system->xmlSerialize($xw, $config);
+            $this->system->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_SYSTEM]);
             $xw->endElement();
         }
-        if (isset($this->code) && $this->code->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->code)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_CODE]
+                || $this->code->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_CODE);
-            $this->code->xmlSerialize($xw, $config);
+            $this->code->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_CODE]);
             $xw->endElement();
         }
-        if (isset($this->id) && $this->id->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-            $xw->startElement(self::FIELD_ID);
-            $xw->writeAttribute($this->id::FIELD_VALUE, $this->id->_getFormattedValue());
-            $xw->endElement();
+        if (isset($this->id)) {
+            if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ID]) {
+                $xw->startElement(self::FIELD_ID);
+                $xw->writeAttribute(FHIRIdPrimitive::FIELD_VALUE, $this->id->_getFormattedValue());
+                $xw->endElement();
+            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $this->_valueXMLLocations[self::FIELD_ID]) {
+                $xw->writeElement(self::FIELD_ID, $this->id->_getFormattedValue());
+            }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRDistance $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRDistance
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -633,7 +634,7 @@ class FHIRDistance extends FHIRQuantity
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_VALUE]) || isset($json[self::FIELD_VALUE_EXT]) || array_key_exists(self::FIELD_VALUE, $json) || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
             $value = $json[self::FIELD_VALUE] ?? null;
             $ext = (array)($json[self::FIELD_VALUE_EXT] ?? []);
@@ -695,12 +696,12 @@ class FHIRDistance extends FHIRQuantity
         $out = parent::jsonSerialize();
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */
     public function __toString(): string
     {
-        return self::FHIR_TYPE_NAME;
+        return $this->_getFormattedValue();
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
@@ -107,7 +107,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_VARIANT;
 
-
+    /* class_default.php:48 */
     public const FIELD_START = 'start';
     public const FIELD_START_EXT = '_start';
     public const FIELD_END = 'end';
@@ -120,6 +120,19 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
     public const FIELD_CIGAR_EXT = '_cigar';
     public const FIELD_VARIANT_POINTER = 'variantPointer';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_START => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_END => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_OBSERVED_ALLELE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_REFERENCE_ALLELE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_CIGAR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -197,10 +210,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      */
     protected FHIRReference $variantPointer;
 
-    /** Default validation map for fields in type MolecularSequence.Variant */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRMolecularSequenceVariant Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -249,6 +259,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -257,6 +268,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -281,11 +293,11 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * system is either 0-based or 1-based, then start position is inclusive.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $start
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setStart(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $start,
-                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $start) {
             unset($this->start);
@@ -294,12 +306,34 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         if (!($start instanceof FHIRInteger)) {
             $start = new FHIRInteger(value: $start);
         }
-        if (null !== $valueXMLLocation) {
-            $start->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $start->_getValueXMLLocation()) {
-            $start->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->start = $start;
+        if ($this->_valueXMLLocations[self::FIELD_START] !== $valueXMLLocation) {
+            $this->_setStartValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the start element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getStartValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_START];
+    }
+
+    /**
+     * Set the location the "value" field of the start element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setStartValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_START] = $valueXMLLocation;
         return $this;
     }
 
@@ -331,11 +365,11 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * position.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $end
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setEnd(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $end,
-                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $end) {
             unset($this->end);
@@ -344,12 +378,34 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         if (!($end instanceof FHIRInteger)) {
             $end = new FHIRInteger(value: $end);
         }
-        if (null !== $valueXMLLocation) {
-            $end->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $end->_getValueXMLLocation()) {
-            $end->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->end = $end;
+        if ($this->_valueXMLLocations[self::FIELD_END] !== $valueXMLLocation) {
+            $this->_setEndValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the end element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getEndValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_END];
+    }
+
+    /**
+     * Set the location the "value" field of the end element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setEndValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_END] = $valueXMLLocation;
         return $this;
     }
 
@@ -385,11 +441,11 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * in the range between variant.start and variant.end.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $observedAllele
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setObservedAllele(null|string|FHIRStringPrimitive|FHIRString $observedAllele,
-                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $observedAllele) {
             unset($this->observedAllele);
@@ -398,12 +454,34 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         if (!($observedAllele instanceof FHIRString)) {
             $observedAllele = new FHIRString(value: $observedAllele);
         }
-        if (null !== $valueXMLLocation) {
-            $observedAllele->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $observedAllele->_getValueXMLLocation()) {
-            $observedAllele->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->observedAllele = $observedAllele;
+        if ($this->_valueXMLLocations[self::FIELD_OBSERVED_ALLELE] !== $valueXMLLocation) {
+            $this->_setObservedAlleleValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the observedAllele element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getObservedAlleleValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_OBSERVED_ALLELE];
+    }
+
+    /**
+     * Set the location the "value" field of the observedAllele element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setObservedAlleleValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_OBSERVED_ALLELE] = $valueXMLLocation;
         return $this;
     }
 
@@ -439,11 +517,11 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * in the range between variant.start and variant.end.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $referenceAllele
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setReferenceAllele(null|string|FHIRStringPrimitive|FHIRString $referenceAllele,
-                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $referenceAllele) {
             unset($this->referenceAllele);
@@ -452,12 +530,34 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         if (!($referenceAllele instanceof FHIRString)) {
             $referenceAllele = new FHIRString(value: $referenceAllele);
         }
-        if (null !== $valueXMLLocation) {
-            $referenceAllele->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $referenceAllele->_getValueXMLLocation()) {
-            $referenceAllele->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->referenceAllele = $referenceAllele;
+        if ($this->_valueXMLLocations[self::FIELD_REFERENCE_ALLELE] !== $valueXMLLocation) {
+            $this->_setReferenceAlleleValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the referenceAllele element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getReferenceAlleleValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_REFERENCE_ALLELE];
+    }
+
+    /**
+     * Set the location the "value" field of the referenceAllele element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setReferenceAlleleValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_REFERENCE_ALLELE] = $valueXMLLocation;
         return $this;
     }
 
@@ -487,11 +587,11 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $cigar
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setCigar(null|string|FHIRStringPrimitive|FHIRString $cigar,
-                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $cigar) {
             unset($this->cigar);
@@ -500,12 +600,34 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         if (!($cigar instanceof FHIRString)) {
             $cigar = new FHIRString(value: $cigar);
         }
-        if (null !== $valueXMLLocation) {
-            $cigar->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $cigar->_getValueXMLLocation()) {
-            $cigar->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->cigar = $cigar;
+        if ($this->_valueXMLLocations[self::FIELD_CIGAR] !== $valueXMLLocation) {
+            $this->_setCigarValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the cigar element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getCigarValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_CIGAR];
+    }
+
+    /**
+     * Set the location the "value" field of the cigar element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setCigarValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_CIGAR] = $valueXMLLocation;
         return $this;
     }
 
@@ -543,6 +665,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -551,7 +674,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -677,16 +800,17 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -698,192 +822,135 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_START === $childName) {
-                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setStart(FHIRInteger::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_END === $childName) {
-                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setEnd(FHIRInteger::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_OBSERVED_ALLELE === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setObservedAllele(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_REFERENCE_ALLELE === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setReferenceAllele(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CIGAR === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setCigar(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VARIANT_POINTER === $childName) {
-                $v = new FHIRReference();
-                $type->setVariantPointer(FHIRReference::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_START === $cen) {
+                $type->setStart(FHIRInteger::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_END === $cen) {
+                $type->setEnd(FHIRInteger::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_OBSERVED_ALLELE === $cen) {
+                $type->setObservedAllele(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_REFERENCE_ALLELE === $cen) {
+                $type->setReferenceAllele(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CIGAR === $cen) {
+                $type->setCigar(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VARIANT_POINTER === $cen) {
+                $type->setVariantPointer(FHIRReference::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_START])) {
-            $pt = $type->getStart();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_START]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->start)) {
+                $type->start->setValue((string)$attributes[self::FIELD_START]);
+                $type->_setStartValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStart(new FHIRInteger(
-                    value: (string)$attributes[self::FIELD_START],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setStart((string)$attributes[self::FIELD_START], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_END])) {
-            $pt = $type->getEnd();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_END]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->end)) {
+                $type->end->setValue((string)$attributes[self::FIELD_END]);
+                $type->_setEndValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setEnd(new FHIRInteger(
-                    value: (string)$attributes[self::FIELD_END],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setEnd((string)$attributes[self::FIELD_END], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_OBSERVED_ALLELE])) {
-            $pt = $type->getObservedAllele();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_OBSERVED_ALLELE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->observedAllele)) {
+                $type->observedAllele->setValue((string)$attributes[self::FIELD_OBSERVED_ALLELE]);
+                $type->_setObservedAlleleValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setObservedAllele(new FHIRString(
-                    value: (string)$attributes[self::FIELD_OBSERVED_ALLELE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setObservedAllele((string)$attributes[self::FIELD_OBSERVED_ALLELE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_REFERENCE_ALLELE])) {
-            $pt = $type->getReferenceAllele();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_REFERENCE_ALLELE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->referenceAllele)) {
+                $type->referenceAllele->setValue((string)$attributes[self::FIELD_REFERENCE_ALLELE]);
+                $type->_setReferenceAlleleValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setReferenceAllele(new FHIRString(
-                    value: (string)$attributes[self::FIELD_REFERENCE_ALLELE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setReferenceAllele((string)$attributes[self::FIELD_REFERENCE_ALLELE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_CIGAR])) {
-            $pt = $type->getCigar();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_CIGAR]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->cigar)) {
+                $type->cigar->setValue((string)$attributes[self::FIELD_CIGAR]);
+                $type->_setCigarValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCigar(new FHIRString(
-                    value: (string)$attributes[self::FIELD_CIGAR],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setCigar((string)$attributes[self::FIELD_CIGAR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->start) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_START]) {
+            $xw->writeAttribute(self::FIELD_START, $this->start->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->end) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_END]) {
+            $xw->writeAttribute(self::FIELD_END, $this->end->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
+        if (isset($this->observedAllele) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_OBSERVED_ALLELE]) {
+            $xw->writeAttribute(self::FIELD_OBSERVED_ALLELE, $this->observedAllele->_getFormattedValue());
         }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
+        if (isset($this->referenceAllele) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REFERENCE_ALLELE]) {
+            $xw->writeAttribute(self::FIELD_REFERENCE_ALLELE, $this->referenceAllele->_getFormattedValue());
         }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('MolecularSequenceVariant', $this->_getSourceXMLNS());
-        }
-        if (isset($this->start) && $this->start->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_START, $this->start->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->end) && $this->end->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_END, $this->end->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->observedAllele) && $this->observedAllele->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_OBSERVED_ALLELE, $this->observedAllele->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->referenceAllele) && $this->referenceAllele->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_REFERENCE_ALLELE, $this->referenceAllele->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->cigar) && $this->cigar->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CIGAR, $this->cigar->getValue()?->_getFormattedValue());
+        if (isset($this->cigar) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CIGAR]) {
+            $xw->writeAttribute(self::FIELD_CIGAR, $this->cigar->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->start) && $this->start->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->start)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_START]
+                || $this->start->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_START);
-            $this->start->xmlSerialize($xw, $config);
+            $this->start->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_START]);
             $xw->endElement();
         }
-        if (isset($this->end) && $this->end->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->end)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_END]
+                || $this->end->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_END);
-            $this->end->xmlSerialize($xw, $config);
+            $this->end->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_END]);
             $xw->endElement();
         }
-        if (isset($this->observedAllele) && $this->observedAllele->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->observedAllele)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_OBSERVED_ALLELE]
+                || $this->observedAllele->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_OBSERVED_ALLELE);
-            $this->observedAllele->xmlSerialize($xw, $config);
+            $this->observedAllele->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_OBSERVED_ALLELE]);
             $xw->endElement();
         }
-        if (isset($this->referenceAllele) && $this->referenceAllele->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->referenceAllele)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_REFERENCE_ALLELE]
+                || $this->referenceAllele->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_REFERENCE_ALLELE);
-            $this->referenceAllele->xmlSerialize($xw, $config);
+            $this->referenceAllele->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_REFERENCE_ALLELE]);
             $xw->endElement();
         }
-        if (isset($this->cigar) && $this->cigar->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->cigar)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_CIGAR]
+                || $this->cigar->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_CIGAR);
-            $this->cigar->xmlSerialize($xw, $config);
+            $this->cigar->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_CIGAR]);
             $xw->endElement();
         }
         if (isset($this->variantPointer)) {
@@ -891,25 +958,18 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
             $this->variantPointer->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -929,7 +989,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_START]) || isset($json[self::FIELD_START_EXT]) || array_key_exists(self::FIELD_START, $json) || array_key_exists(self::FIELD_START_EXT, $json)) {
             $value = $json[self::FIELD_START] ?? null;
             $ext = (array)($json[self::FIELD_START_EXT] ?? []);
@@ -1040,7 +1100,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -107,7 +107,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MANUFACTURED_ITEM_DEFINITION_DOT_COMPONENT;
 
-
+    /* class_default.php:48 */
     public const FIELD_TYPE = 'type';
     public const FIELD_FUNCTION = 'function';
     public const FIELD_AMOUNT = 'amount';
@@ -115,6 +115,18 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
     public const FIELD_PROPERTY = 'property';
     public const FIELD_COMPONENT = 'component';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_TYPE => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+    ];
+
+    /* class_default.php:108 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -182,14 +194,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     protected array $component;
 
-    /** Default validation map for fields in type ManufacturedItemDefinition.Component */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_TYPE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRManufacturedItemDefinitionComponent Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -238,6 +243,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -246,6 +252,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -303,7 +310,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function getFunctionIterator(): iterable
     {
-        if (!isset($this->function) || [] === $this->function) {
+        if (!isset($this->function)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->function);
@@ -344,6 +351,10 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function setFunction(FHIRCodeableConcept ...$function): self
     {
+        if ([] === $function) {
+            unset($this->function);
+            return $this;
+        }
         $this->function = $function;
         return $this;
     }
@@ -370,7 +381,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function getAmountIterator(): iterable
     {
-        if (!isset($this->amount) || [] === $this->amount) {
+        if (!isset($this->amount)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->amount);
@@ -413,6 +424,10 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function setAmount(FHIRQuantity ...$amount): self
     {
+        if ([] === $amount) {
+            unset($this->amount);
+            return $this;
+        }
         $this->amount = $amount;
         return $this;
     }
@@ -438,7 +453,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function getConstituentIterator(): iterable
     {
-        if (!isset($this->constituent) || [] === $this->constituent) {
+        if (!isset($this->constituent)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->constituent);
@@ -479,6 +494,10 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function setConstituent(FHIRManufacturedItemDefinitionConstituent ...$constituent): self
     {
+        if ([] === $constituent) {
+            unset($this->constituent);
+            return $this;
+        }
         $this->constituent = $constituent;
         return $this;
     }
@@ -501,7 +520,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function getPropertyIterator(): iterable
     {
-        if (!isset($this->property) || [] === $this->property) {
+        if (!isset($this->property)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->property);
@@ -536,6 +555,10 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function setProperty(FHIRManufacturedItemDefinitionProperty ...$property): self
     {
+        if ([] === $property) {
+            unset($this->property);
+            return $this;
+        }
         $this->property = $property;
         return $this;
     }
@@ -558,7 +581,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function getComponentIterator(): iterable
     {
-        if (!isset($this->component) || [] === $this->component) {
+        if (!isset($this->component)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->component);
@@ -593,10 +616,15 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function setComponent(FHIRManufacturedItemDefinitionComponent ...$component): self
     {
+        if ([] === $component) {
+            unset($this->component);
+            return $this;
+        }
         $this->component = $component;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -605,7 +633,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -736,16 +764,17 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -757,93 +786,46 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_FUNCTION === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addFunction(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_AMOUNT === $childName) {
-                $v = new FHIRQuantity();
-                $type->addAmount(FHIRQuantity::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONSTITUENT === $childName) {
-                $v = new FHIRManufacturedItemDefinitionConstituent();
-                $type->addConstituent(FHIRManufacturedItemDefinitionConstituent::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PROPERTY === $childName) {
-                $v = new FHIRManufacturedItemDefinitionProperty();
-                $type->addProperty(FHIRManufacturedItemDefinitionProperty::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_COMPONENT === $childName) {
-                $v = new FHIRManufacturedItemDefinitionComponent();
-                $type->addComponent(FHIRManufacturedItemDefinitionComponent::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_FUNCTION === $cen) {
+                $type->addFunction(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_AMOUNT === $cen) {
+                $type->addAmount(FHIRQuantity::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONSTITUENT === $cen) {
+                $type->addConstituent(FHIRManufacturedItemDefinitionConstituent::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PROPERTY === $cen) {
+                $type->addProperty(FHIRManufacturedItemDefinitionProperty::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_COMPONENT === $cen) {
+                $type->addComponent(FHIRManufacturedItemDefinitionComponent::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('ManufacturedItemDefinitionComponent', $this->_getSourceXMLNS());
-        }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
             $xw->startElement(self::FIELD_TYPE);
@@ -885,25 +867,18 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -923,7 +898,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
             $type->setType(FHIRCodeableConcept::jsonUnserialize(
                 json: $json[self::FIELD_TYPE],
@@ -1019,7 +994,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -28,51 +28,12 @@ namespace DCarbone\PHPFHIRGenerated\Types;
 
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 
-interface PrimitiveTypeInterface extends \JsonSerializable
+interface PrimitiveTypeInterface extends TypeInterface, \JsonSerializable
 {
-    /**
-     * Returns the FHIR name represented by this Type
-     *
-     * @return string
-     */
-    public function _getFHIRTypeName(): string;
-
-    /**
-     * Must return an associative array in structure ["field" => ["rule" => {constraint}]] to be used during validation
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array;
-
-    /**
-     * Must return associative array where, if there are validation errors, the keys are the names of fields within the
-     * type that failed validation.  The value must be a string message describing the manner of error
-     *
-     * @return array
-     */
-    public function _getValidationErrors(): array;
-
     /**
      * Must return the appropriate "formatted" stringified version of this primitive type's value
      *
      * @return string
      */
     public function _getFormattedValue(): string;
-
-    /**
-     * Set the XML location of this element's value when serializing
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     */
-    public function _setValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation): void;
-
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueXMLLocation(): null|ValueXMLLocationEnum;
-
-    /**
-     * @return string
-     */
-    public function __toString(): string;
 }

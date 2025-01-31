@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types;
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -95,7 +95,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
-abstract class FHIRBase implements CommentContainerInterface, TypeInterface
+abstract class FHIRBase implements ElementTypeInterface, CommentContainerInterface
 {
     use CommentContainerTrait;
 
@@ -104,10 +104,14 @@ abstract class FHIRBase implements CommentContainerInterface, TypeInterface
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BASE;
 
 
-    /** Default validation map for fields in type Base */
-    private const _DEFAULT_VALIDATION_RULES = [];
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
 
-    /* constructor.php:66 */
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+    ];
+
+    /* constructor.php:63 */
     /**
      * FHIRBase Constructor
      * @param null|string[] $fhirComments
@@ -119,6 +123,7 @@ abstract class FHIRBase implements CommentContainerInterface, TypeInterface
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -127,6 +132,40 @@ abstract class FHIRBase implements CommentContainerInterface, TypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:213 */
+    /**
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase $type
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase
+     * @throws \Exception
+     */
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
+    {
+        if (null === $type) {
+            throw new \RuntimeException(sprintf('%s::xmlUnserialize: Cannot unserialize directly into root type', static::class));
+        } else if (!($type instanceof FHIRBase)) {
+            throw new \RuntimeException(sprintf(
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        return $type;
+    }
+
+    /**
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     */
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
+    {
+    }
+    /* class_default.php:238 */
     /**
      * @return string
      */

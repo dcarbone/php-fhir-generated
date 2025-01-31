@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,14 +61,114 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Client\Client;
+use DCarbone\PHPFHIRGenerated\Client\Config;
+use DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum;
+use DCarbone\PHPFHIRGenerated\Client\UnexpectedResponseCodeException;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRBundle;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionClient;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionTypesEnum;
 use PHPUnit\Framework\TestCase;
 
 class FHIRResourceTest extends TestCase
 {
+    protected Version $_version;
+
+    protected function setUp(): void
+    {
+        $this->_version = new Version();
+    }
+
+    protected function _getTestEndpoint(): string
+    {
+        return trim((string)getenv('PHPFHIR_TEST_SERVER_ADDR'));
+    }
+
+    protected function _getClient(): VersionClient
+    {
+        $testEndpoint = $this->_getTestEndpoint();
+        if ('' === $testEndpoint) {
+            $this->markTestSkipped('Environment variable PHPFHIR_TEST_SERVER_ADDR is not defined or empty');
+        }
+        return new VersionClient(
+            new Client(
+                new Config(
+                    address: $testEndpoint,
+                ),
+            ),
+            $this->_version,
+        );
+    }
+
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRResource();
         $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource', $type);
+    }
+
+    public function testCanTranscodeBundleJSON()
+    {
+        $client = $this->_getClient();
+        $rc = $client->readRaw(
+            resourceType: VersionTypesEnum::RESOURCE,
+            count: 5,
+            format: ResponseFormatEnum::JSON,
+        );
+        if (404 === $rc->getCode()) {
+            $this->markTestSkipped(sprintf(
+                'Configured test endpoint "%s" has no resources of type "Resource"',
+                $this->_getTestEndpoint(),
+            ));
+        }
+        $this->assertIsString($rc->getResp());
+        $this->assertJSON($rc->getResp());
+        $this->assertEquals(200, $rc->getCode(), sprintf('Configured test endpoint "%s" returned non-200 response code', $this->_getTestEndpoint()));
+        $bundle = FHIRBundle::jsonUnserialize(
+            json: $rc->getResp(),
+            config: $this->_version->getConfig()->getUnserializeConfig(),
+        );
+        $entry = $bundle->getEntry();
+        $this->assertNotCount(0, $entry);
+        foreach($entry as $ent) {
+            $resource = $ent->getResource();
+            $this->assertInstanceOf(FHIRResource::class, $resource);
+            $enc = json_encode($resource);
+            $this->assertJson($enc);
+        }
+        $enc = json_encode($bundle);
+        $this->assertJson($enc);
+        $this->assertJsonStringEqualsJsonString($rc->getResp(), $enc);
+    }
+
+    public function testCanTranscodeBundleXML()
+    {
+        $client = $this->_getClient();
+        $rc = $client->readRaw(
+            resourceType: VersionTypesEnum::RESOURCE,
+            count: 5,
+            format: ResponseFormatEnum::XML,
+        );
+        if (404 === $rc->getCode()) {
+            $this->markTestSkipped(sprintf(
+                'Configured test endpoint "%s" has no resources of type "Resource"',
+                $this->_getTestEndpoint(),
+            ));
+        }
+        $this->assertIsString($rc->getResp());
+        $this->assertEquals(200, $rc->getCode(), sprintf('Configured test endpoint "%s" returned non-200 response code', $this->_getTestEndpoint()));
+        $bundle = FHIRBundle::xmlUnserialize(
+            element: $rc->getResp(),
+            config: $this->_version->getConfig()->getUnserializeConfig(),
+        );
+        $entry = $bundle->getEntry();
+        $this->assertNotCount(0, $entry);
+        foreach($entry as $ent) {
+            $resource = $ent->getResource();
+            $this->assertInstanceOf(FHIRResource::class, $resource);
+        }
+        $xw = $bundle->xmlSerialize(config: $this->_version->getConfig()->getSerializeConfig());
+        $this->assertXmlStringEqualsXmlString($rc->getResp(), $xw->outputMemory());
     }
 }

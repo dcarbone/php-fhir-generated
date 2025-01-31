@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,15 +58,8 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
-use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
-use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationTrait;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
 class FHIRProcedureRelationshipTypeList extends FHIRStringPrimitive
@@ -75,13 +68,10 @@ class FHIRProcedureRelationshipTypeList extends FHIRStringPrimitive
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROCEDURE_RELATIONSHIP_TYPE_HYPHEN_LIST;
 
+    /* class_default.php:48 */
 
-
-    /** @var string */
-    protected string $value;
-
-    /** Default validation map for fields in type ProcedureRelationshipType-list */
-    private const _DEFAULT_VALIDATION_RULES = [
+    /* class_default.php:67 */
+    private static array $_validationRules = [
         self::FIELD_VALUE => [
             Constants::VALIDATE_ENUM => [
                 0 => 'caused-by',
@@ -90,6 +80,11 @@ class FHIRProcedureRelationshipTypeList extends FHIRStringPrimitive
         ],
     ];
 
+    /* class_default.php:108 */
+    /** @var string */
+    protected string $value;
+
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -98,6 +93,7 @@ class FHIRProcedureRelationshipTypeList extends FHIRStringPrimitive
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -106,7 +102,7 @@ class FHIRProcedureRelationshipTypeList extends FHIRStringPrimitive
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -158,6 +154,8 @@ class FHIRProcedureRelationshipTypeList extends FHIRStringPrimitive
         }
         return $errs;
     }
+
+    /* class_default.php:213 */
 
     /**
      * @return null|string

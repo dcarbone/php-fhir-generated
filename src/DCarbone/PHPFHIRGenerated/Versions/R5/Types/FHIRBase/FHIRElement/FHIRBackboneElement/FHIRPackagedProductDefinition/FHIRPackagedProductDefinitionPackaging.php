@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -111,8 +111,9 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PACKAGED_PRODUCT_DEFINITION_DOT_PACKAGING;
 
-
+    /* class_default.php:48 */
     public const FIELD_IDENTIFIER = 'identifier';
+    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_TYPE = 'type';
     public const FIELD_COMPONENT_PART = 'componentPart';
     public const FIELD_COMPONENT_PART_EXT = '_componentPart';
@@ -126,6 +127,16 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
     public const FIELD_CONTAINED_ITEM = 'containedItem';
     public const FIELD_PACKAGING = 'packaging';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_COMPONENT_PART => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_QUANTITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -247,10 +258,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     protected array $packaging;
 
-    /** Default validation map for fields in type PackagedProductDefinition.Packaging */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRPackagedProductDefinitionPackaging Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -324,6 +332,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -332,6 +341,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -354,7 +364,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function getIdentifierIterator(): iterable
     {
-        if (!isset($this->identifier) || [] === $this->identifier) {
+        if (!isset($this->identifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->identifier);
@@ -397,7 +407,18 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
-        $this->identifier = $identifier;
+        if ([] === $identifier) {
+            unset($this->identifier);
+            return $this;
+        }
+        $this->identifier = [];
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->identifier[] = $v;
+            } else {
+                $this->identifier[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -461,11 +482,11 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * container, but the former are not.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $componentPart
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setComponentPart(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $componentPart,
-                                     null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $componentPart) {
             unset($this->componentPart);
@@ -474,12 +495,34 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
         if (!($componentPart instanceof FHIRBoolean)) {
             $componentPart = new FHIRBoolean(value: $componentPart);
         }
-        if (null !== $valueXMLLocation) {
-            $componentPart->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $componentPart->_getValueXMLLocation()) {
-            $componentPart->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->componentPart = $componentPart;
+        if ($this->_valueXMLLocations[self::FIELD_COMPONENT_PART] !== $valueXMLLocation) {
+            $this->_setComponentPartValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the componentPart element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getComponentPartValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_COMPONENT_PART];
+    }
+
+    /**
+     * Set the location the "value" field of the componentPart element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setComponentPartValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_COMPONENT_PART] = $valueXMLLocation;
         return $this;
     }
 
@@ -511,11 +554,11 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * If there are two boxes within, at the next layer it would be 2.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setQuantity(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $quantity,
-                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $quantity) {
             unset($this->quantity);
@@ -524,12 +567,34 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
         if (!($quantity instanceof FHIRInteger)) {
             $quantity = new FHIRInteger(value: $quantity);
         }
-        if (null !== $valueXMLLocation) {
-            $quantity->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $quantity->_getValueXMLLocation()) {
-            $quantity->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->quantity = $quantity;
+        if ($this->_valueXMLLocations[self::FIELD_QUANTITY] !== $valueXMLLocation) {
+            $this->_setQuantityValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the quantity element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getQuantityValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_QUANTITY];
+    }
+
+    /**
+     * Set the location the "value" field of the quantity element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setQuantityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_QUANTITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -553,7 +618,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function getMaterialIterator(): iterable
     {
-        if (!isset($this->material) || [] === $this->material) {
+        if (!isset($this->material)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->material);
@@ -592,6 +657,10 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function setMaterial(FHIRCodeableConcept ...$material): self
     {
+        if ([] === $material) {
+            unset($this->material);
+            return $this;
+        }
         $this->material = $material;
         return $this;
     }
@@ -618,7 +687,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function getAlternateMaterialIterator(): iterable
     {
-        if (!isset($this->alternateMaterial) || [] === $this->alternateMaterial) {
+        if (!isset($this->alternateMaterial)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->alternateMaterial);
@@ -661,6 +730,10 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function setAlternateMaterial(FHIRCodeableConcept ...$alternateMaterial): self
     {
+        if ([] === $alternateMaterial) {
+            unset($this->alternateMaterial);
+            return $this;
+        }
         $this->alternateMaterial = $alternateMaterial;
         return $this;
     }
@@ -685,7 +758,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function getShelfLifeStorageIterator(): iterable
     {
-        if (!isset($this->shelfLifeStorage) || [] === $this->shelfLifeStorage) {
+        if (!isset($this->shelfLifeStorage)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->shelfLifeStorage);
@@ -724,6 +797,10 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function setShelfLifeStorage(FHIRProductShelfLife ...$shelfLifeStorage): self
     {
+        if ([] === $shelfLifeStorage) {
+            unset($this->shelfLifeStorage);
+            return $this;
+        }
         $this->shelfLifeStorage = $shelfLifeStorage;
         return $this;
     }
@@ -748,7 +825,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function getManufacturerIterator(): iterable
     {
-        if (!isset($this->manufacturer) || [] === $this->manufacturer) {
+        if (!isset($this->manufacturer)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->manufacturer);
@@ -787,6 +864,10 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
+        if ([] === $manufacturer) {
+            unset($this->manufacturer);
+            return $this;
+        }
         $this->manufacturer = $manufacturer;
         return $this;
     }
@@ -808,7 +889,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function getPropertyIterator(): iterable
     {
-        if (!isset($this->property) || [] === $this->property) {
+        if (!isset($this->property)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->property);
@@ -841,6 +922,10 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function setProperty(FHIRPackagedProductDefinitionProperty ...$property): self
     {
+        if ([] === $property) {
+            unset($this->property);
+            return $this;
+        }
         $this->property = $property;
         return $this;
     }
@@ -862,7 +947,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function getContainedItemIterator(): iterable
     {
-        if (!isset($this->containedItem) || [] === $this->containedItem) {
+        if (!isset($this->containedItem)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->containedItem);
@@ -895,6 +980,10 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function setContainedItem(FHIRPackagedProductDefinitionContainedItem ...$containedItem): self
     {
+        if ([] === $containedItem) {
+            unset($this->containedItem);
+            return $this;
+        }
         $this->containedItem = $containedItem;
         return $this;
     }
@@ -918,7 +1007,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function getPackagingIterator(): iterable
     {
-        if (!isset($this->packaging) || [] === $this->packaging) {
+        if (!isset($this->packaging)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->packaging);
@@ -955,10 +1044,15 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function setPackaging(FHIRPackagedProductDefinitionPackaging ...$packaging): self
     {
+        if ([] === $packaging) {
+            unset($this->packaging);
+            return $this;
+        }
         $this->packaging = $packaging;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -967,7 +1061,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1153,16 +1247,17 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionPackaging $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionPackaging
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1174,141 +1269,81 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_COMPONENT_PART === $childName) {
-                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setComponentPart(FHIRBoolean::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_QUANTITY === $childName) {
-                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setQuantity(FHIRInteger::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MATERIAL === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addMaterial(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ALTERNATE_MATERIAL === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addAlternateMaterial(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SHELF_LIFE_STORAGE === $childName) {
-                $v = new FHIRProductShelfLife();
-                $type->addShelfLifeStorage(FHIRProductShelfLife::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MANUFACTURER === $childName) {
-                $v = new FHIRReference();
-                $type->addManufacturer(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PROPERTY === $childName) {
-                $v = new FHIRPackagedProductDefinitionProperty();
-                $type->addProperty(FHIRPackagedProductDefinitionProperty::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTAINED_ITEM === $childName) {
-                $v = new FHIRPackagedProductDefinitionContainedItem();
-                $type->addContainedItem(FHIRPackagedProductDefinitionContainedItem::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PACKAGING === $childName) {
-                $v = new FHIRPackagedProductDefinitionPackaging();
-                $type->addPackaging(FHIRPackagedProductDefinitionPackaging::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IDENTIFIER === $cen) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_COMPONENT_PART === $cen) {
+                $type->setComponentPart(FHIRBoolean::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_QUANTITY === $cen) {
+                $type->setQuantity(FHIRInteger::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MATERIAL === $cen) {
+                $type->addMaterial(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ALTERNATE_MATERIAL === $cen) {
+                $type->addAlternateMaterial(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SHELF_LIFE_STORAGE === $cen) {
+                $type->addShelfLifeStorage(FHIRProductShelfLife::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MANUFACTURER === $cen) {
+                $type->addManufacturer(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PROPERTY === $cen) {
+                $type->addProperty(FHIRPackagedProductDefinitionProperty::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTAINED_ITEM === $cen) {
+                $type->addContainedItem(FHIRPackagedProductDefinitionContainedItem::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PACKAGING === $cen) {
+                $type->addPackaging(FHIRPackagedProductDefinitionPackaging::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_COMPONENT_PART])) {
-            $pt = $type->getComponentPart();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_COMPONENT_PART]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->componentPart)) {
+                $type->componentPart->setValue((string)$attributes[self::FIELD_COMPONENT_PART]);
+                $type->_setComponentPartValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setComponentPart(new FHIRBoolean(
-                    value: (string)$attributes[self::FIELD_COMPONENT_PART],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setComponentPart((string)$attributes[self::FIELD_COMPONENT_PART], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_QUANTITY])) {
-            $pt = $type->getQuantity();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_QUANTITY]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->quantity)) {
+                $type->quantity->setValue((string)$attributes[self::FIELD_QUANTITY]);
+                $type->_setQuantityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setQuantity(new FHIRInteger(
-                    value: (string)$attributes[self::FIELD_QUANTITY],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setQuantity((string)$attributes[self::FIELD_QUANTITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->componentPart) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COMPONENT_PART]) {
+            $xw->writeAttribute(self::FIELD_COMPONENT_PART, $this->componentPart->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('PackagedProductDefinitionPackaging', $this->_getSourceXMLNS());
-        }
-        if (isset($this->componentPart) && $this->componentPart->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_COMPONENT_PART, $this->componentPart->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->quantity) && $this->quantity->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_QUANTITY, $this->quantity->getValue()?->_getFormattedValue());
+        if (isset($this->quantity) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_QUANTITY]) {
+            $xw->writeAttribute(self::FIELD_QUANTITY, $this->quantity->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier)) {
-            foreach ($this->identifier as $v) {
+        if (isset($this->identifier) && [] !== $this->identifier) {
+            foreach($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1319,14 +1354,18 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->componentPart) && $this->componentPart->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->componentPart)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_COMPONENT_PART]
+                || $this->componentPart->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_COMPONENT_PART);
-            $this->componentPart->xmlSerialize($xw, $config);
+            $this->componentPart->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_COMPONENT_PART]);
             $xw->endElement();
         }
-        if (isset($this->quantity) && $this->quantity->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->quantity)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_QUANTITY]
+                || $this->quantity->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_QUANTITY);
-            $this->quantity->xmlSerialize($xw, $config);
+            $this->quantity->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_QUANTITY]);
             $xw->endElement();
         }
         if (isset($this->material)) {
@@ -1378,25 +1417,18 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionPackaging $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionPackaging
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1416,15 +1448,21 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        parent::jsonUnserialize($json, $config, $type);
+        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -1545,7 +1583,25 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            $vals = [];
+            $exts = [];
+            foreach ($this->identifier as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->identifier = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_identifier = $exts;
+            }
         }
         if (isset($this->type)) {
             $out->type = $this->type;
@@ -1593,7 +1649,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

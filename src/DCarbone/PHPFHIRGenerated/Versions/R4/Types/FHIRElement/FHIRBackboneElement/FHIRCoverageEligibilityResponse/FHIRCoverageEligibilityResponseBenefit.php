@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,7 +67,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
@@ -90,19 +90,39 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_BENEFIT;
 
-
+    /* class_default.php:48 */
     public const FIELD_TYPE = 'type';
     public const FIELD_ALLOWED_UNSIGNED_INT = 'allowedUnsignedInt';
     public const FIELD_ALLOWED_UNSIGNED_INT_EXT = '_allowedUnsignedInt';
     public const FIELD_ALLOWED_STRING = 'allowedString';
     public const FIELD_ALLOWED_STRING_EXT = '_allowedString';
     public const FIELD_ALLOWED_MONEY = 'allowedMoney';
+    public const FIELD_ALLOWED_MONEY_EXT = '_allowedMoney';
     public const FIELD_USED_UNSIGNED_INT = 'usedUnsignedInt';
     public const FIELD_USED_UNSIGNED_INT_EXT = '_usedUnsignedInt';
     public const FIELD_USED_STRING = 'usedString';
     public const FIELD_USED_STRING_EXT = '_usedString';
     public const FIELD_USED_MONEY = 'usedMoney';
+    public const FIELD_USED_MONEY_EXT = '_usedMoney';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_TYPE => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_ALLOWED_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_ALLOWED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_ALLOWED_MONEY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_USED_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_USED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_USED_MONEY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -175,14 +195,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      */
     protected FHIRMoney $usedMoney;
 
-    /** Default validation map for fields in type CoverageEligibilityResponse.Benefit */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_TYPE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRCoverageEligibilityResponseBenefit Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -236,6 +249,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -244,6 +258,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -302,11 +317,11 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * The quantity of the benefit which is permitted under the coverage.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setAllowedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $allowedUnsignedInt,
-                                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $allowedUnsignedInt) {
             unset($this->allowedUnsignedInt);
@@ -315,12 +330,34 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         if (!($allowedUnsignedInt instanceof FHIRUnsignedInt)) {
             $allowedUnsignedInt = new FHIRUnsignedInt(value: $allowedUnsignedInt);
         }
-        if (null !== $valueXMLLocation) {
-            $allowedUnsignedInt->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $allowedUnsignedInt->_getValueXMLLocation()) {
-            $allowedUnsignedInt->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->allowedUnsignedInt = $allowedUnsignedInt;
+        if ($this->_valueXMLLocations[self::FIELD_ALLOWED_UNSIGNED_INT] !== $valueXMLLocation) {
+            $this->_setAllowedUnsignedIntValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the allowedUnsignedInt element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getAllowedUnsignedIntValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_ALLOWED_UNSIGNED_INT];
+    }
+
+    /**
+     * Set the location the "value" field of the allowedUnsignedInt element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setAllowedUnsignedIntValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_ALLOWED_UNSIGNED_INT] = $valueXMLLocation;
         return $this;
     }
 
@@ -346,11 +383,11 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * The quantity of the benefit which is permitted under the coverage.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $allowedString
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setAllowedString(null|string|FHIRStringPrimitive|FHIRString $allowedString,
-                                     null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $allowedString) {
             unset($this->allowedString);
@@ -359,12 +396,34 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         if (!($allowedString instanceof FHIRString)) {
             $allowedString = new FHIRString(value: $allowedString);
         }
-        if (null !== $valueXMLLocation) {
-            $allowedString->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $allowedString->_getValueXMLLocation()) {
-            $allowedString->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->allowedString = $allowedString;
+        if ($this->_valueXMLLocations[self::FIELD_ALLOWED_STRING] !== $valueXMLLocation) {
+            $this->_setAllowedStringValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the allowedString element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getAllowedStringValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_ALLOWED_STRING];
+    }
+
+    /**
+     * Set the location the "value" field of the allowedString element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setAllowedStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_ALLOWED_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -390,15 +449,44 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * The quantity of the benefit which is permitted under the coverage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $allowedMoney
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAllowedMoney(null|FHIRMoney $allowedMoney): self
+    public function setAllowedMoney(null|FHIRMoney $allowedMoney,
+                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $allowedMoney) {
             unset($this->allowedMoney);
             return $this;
         }
         $this->allowedMoney = $allowedMoney;
+        if ($this->_valueXMLLocations[self::FIELD_ALLOWED_MONEY] !== $valueXMLLocation) {
+            $this->_setAllowedMoneyValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the allowedMoney element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getAllowedMoneyValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_ALLOWED_MONEY];
+    }
+
+    /**
+     * Set the location the "value" field of the allowedMoney element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setAllowedMoneyValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_ALLOWED_MONEY] = $valueXMLLocation;
         return $this;
     }
 
@@ -424,11 +512,11 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * The quantity of the benefit which have been consumed to date.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setUsedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $usedUnsignedInt,
-                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $usedUnsignedInt) {
             unset($this->usedUnsignedInt);
@@ -437,12 +525,34 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         if (!($usedUnsignedInt instanceof FHIRUnsignedInt)) {
             $usedUnsignedInt = new FHIRUnsignedInt(value: $usedUnsignedInt);
         }
-        if (null !== $valueXMLLocation) {
-            $usedUnsignedInt->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $usedUnsignedInt->_getValueXMLLocation()) {
-            $usedUnsignedInt->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->usedUnsignedInt = $usedUnsignedInt;
+        if ($this->_valueXMLLocations[self::FIELD_USED_UNSIGNED_INT] !== $valueXMLLocation) {
+            $this->_setUsedUnsignedIntValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the usedUnsignedInt element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getUsedUnsignedIntValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_USED_UNSIGNED_INT];
+    }
+
+    /**
+     * Set the location the "value" field of the usedUnsignedInt element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setUsedUnsignedIntValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_USED_UNSIGNED_INT] = $valueXMLLocation;
         return $this;
     }
 
@@ -468,11 +578,11 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * The quantity of the benefit which have been consumed to date.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $usedString
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setUsedString(null|string|FHIRStringPrimitive|FHIRString $usedString,
-                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $usedString) {
             unset($this->usedString);
@@ -481,12 +591,34 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         if (!($usedString instanceof FHIRString)) {
             $usedString = new FHIRString(value: $usedString);
         }
-        if (null !== $valueXMLLocation) {
-            $usedString->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $usedString->_getValueXMLLocation()) {
-            $usedString->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->usedString = $usedString;
+        if ($this->_valueXMLLocations[self::FIELD_USED_STRING] !== $valueXMLLocation) {
+            $this->_setUsedStringValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the usedString element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getUsedStringValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_USED_STRING];
+    }
+
+    /**
+     * Set the location the "value" field of the usedString element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setUsedStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_USED_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -512,18 +644,48 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * The quantity of the benefit which have been consumed to date.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $usedMoney
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUsedMoney(null|FHIRMoney $usedMoney): self
+    public function setUsedMoney(null|FHIRMoney $usedMoney,
+                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $usedMoney) {
             unset($this->usedMoney);
             return $this;
         }
         $this->usedMoney = $usedMoney;
+        if ($this->_valueXMLLocations[self::FIELD_USED_MONEY] !== $valueXMLLocation) {
+            $this->_setUsedMoneyValueXMLLocation($valueXMLLocation);
+        }
         return $this;
     }
 
+    /**
+     * Return the current location the "value" field of the usedMoney element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getUsedMoneyValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_USED_MONEY];
+    }
+
+    /**
+     * Set the location the "value" field of the usedMoney element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setUsedMoneyValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_USED_MONEY] = $valueXMLLocation;
+        return $this;
+    }
+
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -532,7 +694,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -675,16 +837,17 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -696,155 +859,113 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ALLOWED_UNSIGNED_INT === $childName) {
-                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setAllowedUnsignedInt(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ALLOWED_STRING === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setAllowedString(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ALLOWED_MONEY === $childName) {
-                $v = new FHIRMoney();
-                $type->setAllowedMoney(FHIRMoney::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_USED_UNSIGNED_INT === $childName) {
-                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setUsedUnsignedInt(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_USED_STRING === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setUsedString(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_USED_MONEY === $childName) {
-                $v = new FHIRMoney();
-                $type->setUsedMoney(FHIRMoney::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ALLOWED_UNSIGNED_INT === $cen) {
+                $type->setAllowedUnsignedInt(FHIRUnsignedInt::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ALLOWED_STRING === $cen) {
+                $type->setAllowedString(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ALLOWED_MONEY === $cen) {
+                $type->setAllowedMoney(FHIRMoney::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_USED_UNSIGNED_INT === $cen) {
+                $type->setUsedUnsignedInt(FHIRUnsignedInt::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_USED_STRING === $cen) {
+                $type->setUsedString(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_USED_MONEY === $cen) {
+                $type->setUsedMoney(FHIRMoney::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ALLOWED_UNSIGNED_INT])) {
-            $pt = $type->getAllowedUnsignedInt();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ALLOWED_UNSIGNED_INT]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->allowedUnsignedInt)) {
+                $type->allowedUnsignedInt->setValue((string)$attributes[self::FIELD_ALLOWED_UNSIGNED_INT]);
+                $type->_setAllowedUnsignedIntValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAllowedUnsignedInt(new FHIRUnsignedInt(
-                    value: (string)$attributes[self::FIELD_ALLOWED_UNSIGNED_INT],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setAllowedUnsignedInt((string)$attributes[self::FIELD_ALLOWED_UNSIGNED_INT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_ALLOWED_STRING])) {
-            $pt = $type->getAllowedString();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ALLOWED_STRING]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->allowedString)) {
+                $type->allowedString->setValue((string)$attributes[self::FIELD_ALLOWED_STRING]);
+                $type->_setAllowedStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAllowedString(new FHIRString(
-                    value: (string)$attributes[self::FIELD_ALLOWED_STRING],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setAllowedString((string)$attributes[self::FIELD_ALLOWED_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ALLOWED_MONEY])) {
+            if (isset($type->allowedMoney)) {
+                $type->allowedMoney->setValue((string)$attributes[self::FIELD_ALLOWED_MONEY]);
+                $type->_setAllowedMoneyValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setAllowedMoney((string)$attributes[self::FIELD_ALLOWED_MONEY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_USED_UNSIGNED_INT])) {
-            $pt = $type->getUsedUnsignedInt();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_USED_UNSIGNED_INT]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->usedUnsignedInt)) {
+                $type->usedUnsignedInt->setValue((string)$attributes[self::FIELD_USED_UNSIGNED_INT]);
+                $type->_setUsedUnsignedIntValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUsedUnsignedInt(new FHIRUnsignedInt(
-                    value: (string)$attributes[self::FIELD_USED_UNSIGNED_INT],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setUsedUnsignedInt((string)$attributes[self::FIELD_USED_UNSIGNED_INT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_USED_STRING])) {
-            $pt = $type->getUsedString();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_USED_STRING]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->usedString)) {
+                $type->usedString->setValue((string)$attributes[self::FIELD_USED_STRING]);
+                $type->_setUsedStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUsedString(new FHIRString(
-                    value: (string)$attributes[self::FIELD_USED_STRING],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setUsedString((string)$attributes[self::FIELD_USED_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_USED_MONEY])) {
+            if (isset($type->usedMoney)) {
+                $type->usedMoney->setValue((string)$attributes[self::FIELD_USED_MONEY]);
+                $type->_setUsedMoneyValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setUsedMoney((string)$attributes[self::FIELD_USED_MONEY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->allowedUnsignedInt) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ALLOWED_UNSIGNED_INT]) {
+            $xw->writeAttribute(self::FIELD_ALLOWED_UNSIGNED_INT, $this->allowedUnsignedInt->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->allowedString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ALLOWED_STRING]) {
+            $xw->writeAttribute(self::FIELD_ALLOWED_STRING, $this->allowedString->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
+        if (isset($this->allowedMoney) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ALLOWED_MONEY]) {
+            $xw->writeAttribute(self::FIELD_ALLOWED_MONEY, $this->allowedMoney->_getFormattedValue());
         }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
+        if (isset($this->usedUnsignedInt) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_USED_UNSIGNED_INT]) {
+            $xw->writeAttribute(self::FIELD_USED_UNSIGNED_INT, $this->usedUnsignedInt->_getFormattedValue());
         }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('CoverageEligibilityResponseBenefit', $this->_getSourceXMLNS());
+        if (isset($this->usedString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_USED_STRING]) {
+            $xw->writeAttribute(self::FIELD_USED_STRING, $this->usedString->_getFormattedValue());
         }
-        if (isset($this->allowedUnsignedInt) && $this->allowedUnsignedInt->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ALLOWED_UNSIGNED_INT, $this->allowedUnsignedInt->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->allowedString) && $this->allowedString->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ALLOWED_STRING, $this->allowedString->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->usedUnsignedInt) && $this->usedUnsignedInt->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_USED_UNSIGNED_INT, $this->usedUnsignedInt->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->usedString) && $this->usedString->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_USED_STRING, $this->usedString->getValue()?->_getFormattedValue());
+        if (isset($this->usedMoney) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_USED_MONEY]) {
+            $xw->writeAttribute(self::FIELD_USED_MONEY, $this->usedMoney->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -852,55 +973,60 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->allowedUnsignedInt) && $this->allowedUnsignedInt->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->allowedUnsignedInt)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ALLOWED_UNSIGNED_INT]
+                || $this->allowedUnsignedInt->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_ALLOWED_UNSIGNED_INT);
-            $this->allowedUnsignedInt->xmlSerialize($xw, $config);
+            $this->allowedUnsignedInt->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ALLOWED_UNSIGNED_INT]);
             $xw->endElement();
         }
-        if (isset($this->allowedString) && $this->allowedString->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->allowedString)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ALLOWED_STRING]
+                || $this->allowedString->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_ALLOWED_STRING);
-            $this->allowedString->xmlSerialize($xw, $config);
+            $this->allowedString->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ALLOWED_STRING]);
             $xw->endElement();
         }
-        if (isset($this->allowedMoney)) {
+        if (isset($this->allowedMoney)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ALLOWED_MONEY]
+                || $this->allowedMoney->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_ALLOWED_MONEY);
-            $this->allowedMoney->xmlSerialize($xw, $config);
+            $this->allowedMoney->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ALLOWED_MONEY]);
             $xw->endElement();
         }
-        if (isset($this->usedUnsignedInt) && $this->usedUnsignedInt->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->usedUnsignedInt)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_USED_UNSIGNED_INT]
+                || $this->usedUnsignedInt->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_USED_UNSIGNED_INT);
-            $this->usedUnsignedInt->xmlSerialize($xw, $config);
+            $this->usedUnsignedInt->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_USED_UNSIGNED_INT]);
             $xw->endElement();
         }
-        if (isset($this->usedString) && $this->usedString->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->usedString)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_USED_STRING]
+                || $this->usedString->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_USED_STRING);
-            $this->usedString->xmlSerialize($xw, $config);
+            $this->usedString->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_USED_STRING]);
             $xw->endElement();
         }
-        if (isset($this->usedMoney)) {
+        if (isset($this->usedMoney)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_USED_MONEY]
+                || $this->usedMoney->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_USED_MONEY);
-            $this->usedMoney->xmlSerialize($xw, $config);
+            $this->usedMoney->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_USED_MONEY]);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -920,7 +1046,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
             $type->setType(FHIRCodeableConcept::jsonUnserialize(
                 json: $json[self::FIELD_TYPE],
@@ -943,9 +1069,11 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
                 config: $config,
             ));
         }
-        if (isset($json[self::FIELD_ALLOWED_MONEY]) || array_key_exists(self::FIELD_ALLOWED_MONEY, $json)) {
+        if (isset($json[self::FIELD_ALLOWED_MONEY]) || isset($json[self::FIELD_ALLOWED_MONEY_EXT]) || array_key_exists(self::FIELD_ALLOWED_MONEY, $json) || array_key_exists(self::FIELD_ALLOWED_MONEY_EXT, $json)) {
+            $value = $json[self::FIELD_ALLOWED_MONEY] ?? null;
+            $ext = (array)($json[self::FIELD_ALLOWED_MONEY_EXT] ?? []);
             $type->setAllowedMoney(FHIRMoney::jsonUnserialize(
-                json: $json[self::FIELD_ALLOWED_MONEY],
+                json: [FHIRMoney::FIELD_VALUE => $value] + $ext,
                 config: $config,
             ));
         }
@@ -965,9 +1093,11 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
                 config: $config,
             ));
         }
-        if (isset($json[self::FIELD_USED_MONEY]) || array_key_exists(self::FIELD_USED_MONEY, $json)) {
+        if (isset($json[self::FIELD_USED_MONEY]) || isset($json[self::FIELD_USED_MONEY_EXT]) || array_key_exists(self::FIELD_USED_MONEY, $json) || array_key_exists(self::FIELD_USED_MONEY_EXT, $json)) {
+            $value = $json[self::FIELD_USED_MONEY] ?? null;
+            $ext = (array)($json[self::FIELD_USED_MONEY_EXT] ?? []);
             $type->setUsedMoney(FHIRMoney::jsonUnserialize(
-                json: $json[self::FIELD_USED_MONEY],
+                json: [FHIRMoney::FIELD_VALUE => $value] + $ext,
                 config: $config,
             ));
         }
@@ -1004,7 +1134,14 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             }
         }
         if (isset($this->allowedMoney)) {
-            $out->allowedMoney = $this->allowedMoney;
+            if (null !== ($val = $this->allowedMoney->getValue())) {
+                $out->allowedMoney = $val;
+            }
+            $ext = $this->allowedMoney->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_allowedMoney = $ext;
+            }
         }
         if (isset($this->usedUnsignedInt)) {
             if (null !== ($val = $this->usedUnsignedInt->getValue())) {
@@ -1027,11 +1164,18 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             }
         }
         if (isset($this->usedMoney)) {
-            $out->usedMoney = $this->usedMoney;
+            if (null !== ($val = $this->usedMoney->getValue())) {
+                $out->usedMoney = $val;
+            }
+            $ext = $this->usedMoney->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_usedMoney = $ext;
+            }
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

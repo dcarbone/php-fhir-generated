@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
@@ -112,7 +112,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSCRIPTION_TOPIC_DOT_CAN_FILTER_BY;
 
-
+    /* class_default.php:48 */
     public const FIELD_DESCRIPTION = 'description';
     public const FIELD_DESCRIPTION_EXT = '_description';
     public const FIELD_RESOURCE = 'resource';
@@ -124,6 +124,22 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
     public const FIELD_MODIFIER = 'modifier';
     public const FIELD_MODIFIER_EXT = '_modifier';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_FILTER_PARAMETER => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_RESOURCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_FILTER_PARAMETER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_FILTER_DEFINITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -190,14 +206,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      */
     protected array $modifier;
 
-    /** Default validation map for fields in type SubscriptionTopic.CanFilterBy */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_FILTER_PARAMETER => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRSubscriptionTopicCanFilterBy Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -241,6 +250,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -249,6 +259,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -279,11 +290,11 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * Description of how this filtering parameter is intended to be used.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description,
-                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $description) {
             unset($this->description);
@@ -292,12 +303,34 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         if (!($description instanceof FHIRMarkdown)) {
             $description = new FHIRMarkdown(value: $description);
         }
-        if (null !== $valueXMLLocation) {
-            $description->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $description->_getValueXMLLocation()) {
-            $description->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->description = $description;
+        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
+            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the description element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
+    }
+
+    /**
+     * Set the location the "value" field of the description element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -329,11 +362,11 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * SubscriptionTopic.eventTrigger.resource when they are present.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $resource
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setResource(null|string|FHIRUriPrimitive|FHIRUri $resource,
-                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $resource) {
             unset($this->resource);
@@ -342,12 +375,34 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         if (!($resource instanceof FHIRUri)) {
             $resource = new FHIRUri(value: $resource);
         }
-        if (null !== $valueXMLLocation) {
-            $resource->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $resource->_getValueXMLLocation()) {
-            $resource->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->resource = $resource;
+        if ($this->_valueXMLLocations[self::FIELD_RESOURCE] !== $valueXMLLocation) {
+            $this->_setResourceValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the resource element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getResourceValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_RESOURCE];
+    }
+
+    /**
+     * Set the location the "value" field of the resource element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setResourceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_RESOURCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -377,11 +432,11 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * parameter (like "hub.event") which is a label for the filter.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $filterParameter
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setFilterParameter(null|string|FHIRStringPrimitive|FHIRString $filterParameter,
-                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $filterParameter) {
             unset($this->filterParameter);
@@ -390,12 +445,34 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         if (!($filterParameter instanceof FHIRString)) {
             $filterParameter = new FHIRString(value: $filterParameter);
         }
-        if (null !== $valueXMLLocation) {
-            $filterParameter->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $filterParameter->_getValueXMLLocation()) {
-            $filterParameter->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->filterParameter = $filterParameter;
+        if ($this->_valueXMLLocations[self::FIELD_FILTER_PARAMETER] !== $valueXMLLocation) {
+            $this->_setFilterParameterValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the filterParameter element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getFilterParameterValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_FILTER_PARAMETER];
+    }
+
+    /**
+     * Set the location the "value" field of the filterParameter element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setFilterParameterValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_FILTER_PARAMETER] = $valueXMLLocation;
         return $this;
     }
 
@@ -427,11 +504,11 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * "http://example.org/concepts/shared-common-event").
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $filterDefinition
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setFilterDefinition(null|string|FHIRUriPrimitive|FHIRUri $filterDefinition,
-                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $filterDefinition) {
             unset($this->filterDefinition);
@@ -440,12 +517,34 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         if (!($filterDefinition instanceof FHIRUri)) {
             $filterDefinition = new FHIRUri(value: $filterDefinition);
         }
-        if (null !== $valueXMLLocation) {
-            $filterDefinition->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $filterDefinition->_getValueXMLLocation()) {
-            $filterDefinition->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->filterDefinition = $filterDefinition;
+        if ($this->_valueXMLLocations[self::FIELD_FILTER_DEFINITION] !== $valueXMLLocation) {
+            $this->_setFilterDefinitionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the filterDefinition element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getFilterDefinitionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_FILTER_DEFINITION];
+    }
+
+    /**
+     * Set the location the "value" field of the filterDefinition element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setFilterDefinitionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_FILTER_DEFINITION] = $valueXMLLocation;
         return $this;
     }
 
@@ -471,7 +570,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      */
     public function getModifierIterator(): iterable
     {
-        if (!isset($this->modifier) || [] === $this->modifier) {
+        if (!isset($this->modifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->modifier);
@@ -517,6 +616,10 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      */
     public function setModifier(string|FHIRCodePrimitive|FHIRCode ...$modifier): self
     {
+        if ([] === $modifier) {
+            unset($this->modifier);
+            return $this;
+        }
         $this->modifier = [];
         foreach($modifier as $v) {
             if ($v instanceof FHIRCode) {
@@ -528,6 +631,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -536,7 +640,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -655,16 +759,17 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -676,212 +781,136 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DESCRIPTION === $childName) {
-                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setDescription(FHIRMarkdown::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RESOURCE === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setResource(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_FILTER_PARAMETER === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setFilterParameter(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_FILTER_DEFINITION === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setFilterDefinition(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MODIFIER === $childName) {
-                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addModifier(FHIRCode::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DESCRIPTION === $cen) {
+                $type->setDescription(FHIRMarkdown::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RESOURCE === $cen) {
+                $type->setResource(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_FILTER_PARAMETER === $cen) {
+                $type->setFilterParameter(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_FILTER_DEFINITION === $cen) {
+                $type->setFilterDefinition(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MODIFIER === $cen) {
+                $type->addModifier(FHIRCode::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
-            $pt = $type->getDescription();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_DESCRIPTION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->description)) {
+                $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
+                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription(new FHIRMarkdown(
-                    value: (string)$attributes[self::FIELD_DESCRIPTION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_RESOURCE])) {
-            $pt = $type->getResource();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_RESOURCE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->resource)) {
+                $type->resource->setValue((string)$attributes[self::FIELD_RESOURCE]);
+                $type->_setResourceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setResource(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_RESOURCE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setResource((string)$attributes[self::FIELD_RESOURCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_FILTER_PARAMETER])) {
-            $pt = $type->getFilterParameter();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_FILTER_PARAMETER]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->filterParameter)) {
+                $type->filterParameter->setValue((string)$attributes[self::FIELD_FILTER_PARAMETER]);
+                $type->_setFilterParameterValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setFilterParameter(new FHIRString(
-                    value: (string)$attributes[self::FIELD_FILTER_PARAMETER],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setFilterParameter((string)$attributes[self::FIELD_FILTER_PARAMETER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_FILTER_DEFINITION])) {
-            $pt = $type->getFilterDefinition();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_FILTER_DEFINITION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->filterDefinition)) {
+                $type->filterDefinition->setValue((string)$attributes[self::FIELD_FILTER_DEFINITION]);
+                $type->_setFilterDefinitionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setFilterDefinition(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_FILTER_DEFINITION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setFilterDefinition((string)$attributes[self::FIELD_FILTER_DEFINITION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
-        }
-        if (isset($attributes[self::FIELD_MODIFIER])) {
-            $v = new FHIRCode(value: (string)$attributes[self::FIELD_MODIFIER],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addModifier($v);
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->resource) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RESOURCE]) {
+            $xw->writeAttribute(self::FIELD_RESOURCE, $this->resource->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
+        if (isset($this->filterParameter) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FILTER_PARAMETER]) {
+            $xw->writeAttribute(self::FIELD_FILTER_PARAMETER, $this->filterParameter->_getFormattedValue());
         }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('SubscriptionTopicCanFilterBy', $this->_getSourceXMLNS());
-        }
-        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->resource) && $this->resource->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RESOURCE, $this->resource->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->filterParameter) && $this->filterParameter->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_FILTER_PARAMETER, $this->filterParameter->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->filterDefinition) && $this->filterDefinition->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_FILTER_DEFINITION, $this->filterDefinition->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->modifier)) {
-           foreach($this->modifier as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_MODIFIER, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
+        if (isset($this->filterDefinition) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FILTER_DEFINITION]) {
+            $xw->writeAttribute(self::FIELD_FILTER_DEFINITION, $this->filterDefinition->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->description)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DESCRIPTION]
+                || $this->description->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
-            $this->description->xmlSerialize($xw, $config);
+            $this->description->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DESCRIPTION]);
             $xw->endElement();
         }
-        if (isset($this->resource) && $this->resource->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->resource)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_RESOURCE]
+                || $this->resource->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_RESOURCE);
-            $this->resource->xmlSerialize($xw, $config);
+            $this->resource->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_RESOURCE]);
             $xw->endElement();
         }
-        if (isset($this->filterParameter) && $this->filterParameter->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->filterParameter)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_FILTER_PARAMETER]
+                || $this->filterParameter->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_FILTER_PARAMETER);
-            $this->filterParameter->xmlSerialize($xw, $config);
+            $this->filterParameter->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_FILTER_PARAMETER]);
             $xw->endElement();
         }
-        if (isset($this->filterDefinition) && $this->filterDefinition->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->filterDefinition)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_FILTER_DEFINITION]
+                || $this->filterDefinition->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_FILTER_DEFINITION);
-            $this->filterDefinition->xmlSerialize($xw, $config);
+            $this->filterDefinition->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_FILTER_DEFINITION]);
             $xw->endElement();
         }
-        if (isset($this->modifier)) {
+        if (isset($this->modifier) && [] !== $this->modifier) {
             foreach($this->modifier as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_MODIFIER);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_MODIFIER);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -901,7 +930,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
             $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
@@ -1024,7 +1053,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

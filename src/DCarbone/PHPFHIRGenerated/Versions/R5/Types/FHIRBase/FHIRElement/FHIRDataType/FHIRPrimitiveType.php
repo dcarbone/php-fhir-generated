@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
@@ -108,10 +108,14 @@ class FHIRPrimitiveType extends FHIRDataType
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PRIMITIVE_TYPE;
 
 
-    /** Default validation map for fields in type PrimitiveType */
-    private const _DEFAULT_VALIDATION_RULES = [];
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
 
-    /* constructor.php:66 */
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+    ];
+
+    /* constructor.php:63 */
     /**
      * FHIRPrimitiveType Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -127,6 +131,7 @@ class FHIRPrimitiveType extends FHIRDataType
                             fhirComments: $fhirComments);
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -135,6 +140,7 @@ class FHIRPrimitiveType extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -143,7 +149,7 @@ class FHIRPrimitiveType extends FHIRDataType
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -185,6 +191,57 @@ class FHIRPrimitiveType extends FHIRDataType
         return $errs;
     }
 
+    /* class_default.php:213 */
+    /**
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPrimitiveType $type
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPrimitiveType
+     * @throws \Exception
+     */
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRPrimitiveType)) {
+            throw new \RuntimeException(sprintf(
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                } else {
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                }
+            }        }
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+        }
+        return $type;
+    }
+
+    /**
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     */
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
+    {
+        parent::xmlSerialize($xw, $config);
+    }
+    /* class_default.php:238 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskInput;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput;
@@ -136,14 +136,16 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TASK;
 
-
+    /* class_default.php:48 */
     public const FIELD_IDENTIFIER = 'identifier';
+    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_INSTANTIATES_CANONICAL = 'instantiatesCanonical';
     public const FIELD_INSTANTIATES_CANONICAL_EXT = '_instantiatesCanonical';
     public const FIELD_INSTANTIATES_URI = 'instantiatesUri';
     public const FIELD_INSTANTIATES_URI_EXT = '_instantiatesUri';
     public const FIELD_BASED_ON = 'basedOn';
     public const FIELD_GROUP_IDENTIFIER = 'groupIdentifier';
+    public const FIELD_GROUP_IDENTIFIER_EXT = '_groupIdentifier';
     public const FIELD_PART_OF = 'partOf';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
@@ -180,6 +182,31 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
     public const FIELD_INPUT = 'input';
     public const FIELD_OUTPUT = 'output';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_STATUS => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_INTENT => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_INSTANTIATES_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_INSTANTIATES_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_GROUP_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_INTENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_PRIORITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_DO_NOT_PERFORM => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_AUTHORED_ON => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_LAST_MODIFIED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -540,17 +567,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     protected array $output;
 
-    /** Default validation map for fields in type Task */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_STATUS => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_INTENT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRTask Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -749,6 +766,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -757,6 +775,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:149 */
     /**
      * @return string
      */
@@ -765,6 +784,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         return static::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -785,7 +805,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getIdentifierIterator(): iterable
     {
-        if (!isset($this->identifier) || [] === $this->identifier) {
+        if (!isset($this->identifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->identifier);
@@ -824,7 +844,18 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
-        $this->identifier = $identifier;
+        if ([] === $identifier) {
+            unset($this->identifier);
+            return $this;
+        }
+        $this->identifier = [];
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->identifier[] = $v;
+            } else {
+                $this->identifier[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -854,11 +885,11 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * definition that is adhered to in whole or in part by this Task.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $instantiatesCanonical
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setInstantiatesCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical,
-                                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $instantiatesCanonical) {
             unset($this->instantiatesCanonical);
@@ -867,12 +898,34 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         if (!($instantiatesCanonical instanceof FHIRCanonical)) {
             $instantiatesCanonical = new FHIRCanonical(value: $instantiatesCanonical);
         }
-        if (null !== $valueXMLLocation) {
-            $instantiatesCanonical->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $instantiatesCanonical->_getValueXMLLocation()) {
-            $instantiatesCanonical->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->instantiatesCanonical = $instantiatesCanonical;
+        if ($this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL] !== $valueXMLLocation) {
+            $this->_setInstantiatesCanonicalValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the instantiatesCanonical element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getInstantiatesCanonicalValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL];
+    }
+
+    /**
+     * Set the location the "value" field of the instantiatesCanonical element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setInstantiatesCanonicalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -900,11 +953,11 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * other definition that is adhered to in whole or in part by this Task.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $instantiatesUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri,
-                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $instantiatesUri) {
             unset($this->instantiatesUri);
@@ -913,12 +966,34 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         if (!($instantiatesUri instanceof FHIRUri)) {
             $instantiatesUri = new FHIRUri(value: $instantiatesUri);
         }
-        if (null !== $valueXMLLocation) {
-            $instantiatesUri->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $instantiatesUri->_getValueXMLLocation()) {
-            $instantiatesUri->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->instantiatesUri = $instantiatesUri;
+        if ($this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI] !== $valueXMLLocation) {
+            $this->_setInstantiatesUriValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the instantiatesUri element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getInstantiatesUriValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI];
+    }
+
+    /**
+     * Set the location the "value" field of the instantiatesUri element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setInstantiatesUriValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI] = $valueXMLLocation;
         return $this;
     }
 
@@ -946,7 +1021,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getBasedOnIterator(): iterable
     {
-        if (!isset($this->basedOn) || [] === $this->basedOn) {
+        if (!isset($this->basedOn)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->basedOn);
@@ -993,6 +1068,10 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
+        if ([] === $basedOn) {
+            unset($this->basedOn);
+            return $this;
+        }
         $this->basedOn = $basedOn;
         return $this;
     }
@@ -1031,15 +1110,44 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * a prescription number shared by all meds ordered at one time.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $groupIdentifier
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGroupIdentifier(null|FHIRIdentifier $groupIdentifier): self
+    public function setGroupIdentifier(null|FHIRIdentifier $groupIdentifier,
+                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $groupIdentifier) {
             unset($this->groupIdentifier);
             return $this;
         }
         $this->groupIdentifier = $groupIdentifier;
+        if ($this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER] !== $valueXMLLocation) {
+            $this->_setGroupIdentifierValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the groupIdentifier element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getGroupIdentifierValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER];
+    }
+
+    /**
+     * Set the location the "value" field of the groupIdentifier element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setGroupIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -1062,7 +1170,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getPartOfIterator(): iterable
     {
-        if (!isset($this->partOf) || [] === $this->partOf) {
+        if (!isset($this->partOf)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->partOf);
@@ -1099,6 +1207,10 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
+        if ([] === $partOf) {
+            unset($this->partOf);
+            return $this;
+        }
         $this->partOf = $partOf;
         return $this;
     }
@@ -1121,15 +1233,44 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * The current status of the task.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTaskStatus $status
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRTaskStatus $status): self
+    public function setStatus(null|FHIRTaskStatus $status,
+                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
         }
         $this->status = $status;
+        if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
+            $this->_setStatusValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the status element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getStatusValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_STATUS];
+    }
+
+    /**
+     * Set the location the "value" field of the status element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -1225,15 +1366,44 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * this a proposed task, a planned task, an actionable task, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTaskIntent $intent
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIntent(null|FHIRTaskIntent $intent): self
+    public function setIntent(null|FHIRTaskIntent $intent,
+                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $intent) {
             unset($this->intent);
             return $this;
         }
         $this->intent = $intent;
+        if ($this->_valueXMLLocations[self::FIELD_INTENT] !== $valueXMLLocation) {
+            $this->_setIntentValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the intent element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getIntentValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_INTENT];
+    }
+
+    /**
+     * Set the location the "value" field of the intent element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setIntentValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_INTENT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1257,15 +1427,44 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * requests.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority $priority
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPriority(null|FHIRRequestPriority $priority): self
+    public function setPriority(null|FHIRRequestPriority $priority,
+                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $priority) {
             unset($this->priority);
             return $this;
         }
         $this->priority = $priority;
+        if ($this->_valueXMLLocations[self::FIELD_PRIORITY] !== $valueXMLLocation) {
+            $this->_setPriorityValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the priority element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getPriorityValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_PRIORITY];
+    }
+
+    /**
+     * Set the location the "value" field of the priority element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setPriorityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_PRIORITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -1291,11 +1490,11 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * occur.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $doNotPerform
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setDoNotPerform(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform,
-                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $doNotPerform) {
             unset($this->doNotPerform);
@@ -1304,12 +1503,34 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         if (!($doNotPerform instanceof FHIRBoolean)) {
             $doNotPerform = new FHIRBoolean(value: $doNotPerform);
         }
-        if (null !== $valueXMLLocation) {
-            $doNotPerform->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $doNotPerform->_getValueXMLLocation()) {
-            $doNotPerform->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->doNotPerform = $doNotPerform;
+        if ($this->_valueXMLLocations[self::FIELD_DO_NOT_PERFORM] !== $valueXMLLocation) {
+            $this->_setDoNotPerformValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the doNotPerform element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getDoNotPerformValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_DO_NOT_PERFORM];
+    }
+
+    /**
+     * Set the location the "value" field of the doNotPerform element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setDoNotPerformValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_DO_NOT_PERFORM] = $valueXMLLocation;
         return $this;
     }
 
@@ -1371,11 +1592,11 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * A free-text description of what is to be performed.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description,
-                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $description) {
             unset($this->description);
@@ -1384,12 +1605,34 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         if (!($description instanceof FHIRString)) {
             $description = new FHIRString(value: $description);
         }
-        if (null !== $valueXMLLocation) {
-            $description->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $description->_getValueXMLLocation()) {
-            $description->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->description = $description;
+        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
+            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the description element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
+    }
+
+    /**
+     * Set the location the "value" field of the description element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -1605,11 +1848,11 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * The date and time this task was created.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $authoredOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn,
-                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $authoredOn) {
             unset($this->authoredOn);
@@ -1618,12 +1861,34 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         if (!($authoredOn instanceof FHIRDateTime)) {
             $authoredOn = new FHIRDateTime(value: $authoredOn);
         }
-        if (null !== $valueXMLLocation) {
-            $authoredOn->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $authoredOn->_getValueXMLLocation()) {
-            $authoredOn->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->authoredOn = $authoredOn;
+        if ($this->_valueXMLLocations[self::FIELD_AUTHORED_ON] !== $valueXMLLocation) {
+            $this->_setAuthoredOnValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the authoredOn element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getAuthoredOnValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_AUTHORED_ON];
+    }
+
+    /**
+     * Set the location the "value" field of the authoredOn element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setAuthoredOnValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_AUTHORED_ON] = $valueXMLLocation;
         return $this;
     }
 
@@ -1657,11 +1922,11 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * The date and time of last modification to this task.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $lastModified
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setLastModified(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastModified,
-                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $lastModified) {
             unset($this->lastModified);
@@ -1670,12 +1935,34 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         if (!($lastModified instanceof FHIRDateTime)) {
             $lastModified = new FHIRDateTime(value: $lastModified);
         }
-        if (null !== $valueXMLLocation) {
-            $lastModified->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $lastModified->_getValueXMLLocation()) {
-            $lastModified->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->lastModified = $lastModified;
+        if ($this->_valueXMLLocations[self::FIELD_LAST_MODIFIED] !== $valueXMLLocation) {
+            $this->_setLastModifiedValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the lastModified element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getLastModifiedValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_LAST_MODIFIED];
+    }
+
+    /**
+     * Set the location the "value" field of the lastModified element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setLastModifiedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_LAST_MODIFIED] = $valueXMLLocation;
         return $this;
     }
 
@@ -1733,7 +2020,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getRequestedPerformerIterator(): iterable
     {
-        if (!isset($this->requestedPerformer) || [] === $this->requestedPerformer) {
+        if (!isset($this->requestedPerformer)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->requestedPerformer);
@@ -1772,6 +2059,10 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setRequestedPerformer(FHIRCodeableReference ...$requestedPerformer): self
     {
+        if ([] === $requestedPerformer) {
+            unset($this->requestedPerformer);
+            return $this;
+        }
         $this->requestedPerformer = $requestedPerformer;
         return $this;
     }
@@ -1827,7 +2118,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getPerformerIterator(): iterable
     {
-        if (!isset($this->performer) || [] === $this->performer) {
+        if (!isset($this->performer)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->performer);
@@ -1860,6 +2151,10 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setPerformer(FHIRTaskPerformer ...$performer): self
     {
+        if ([] === $performer) {
+            unset($this->performer);
+            return $this;
+        }
         $this->performer = $performer;
         return $this;
     }
@@ -1919,7 +2214,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getReasonIterator(): iterable
     {
-        if (!isset($this->reason) || [] === $this->reason) {
+        if (!isset($this->reason)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->reason);
@@ -1960,6 +2255,10 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
+        if ([] === $reason) {
+            unset($this->reason);
+            return $this;
+        }
         $this->reason = $reason;
         return $this;
     }
@@ -1984,7 +2283,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getInsuranceIterator(): iterable
     {
-        if (!isset($this->insurance) || [] === $this->insurance) {
+        if (!isset($this->insurance)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->insurance);
@@ -2023,6 +2322,10 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setInsurance(FHIRReference ...$insurance): self
     {
+        if ([] === $insurance) {
+            unset($this->insurance);
+            return $this;
+        }
         $this->insurance = $insurance;
         return $this;
     }
@@ -2047,7 +2350,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getNoteIterator(): iterable
     {
-        if (!isset($this->note) || [] === $this->note) {
+        if (!isset($this->note)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->note);
@@ -2086,6 +2389,10 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
+        if ([] === $note) {
+            unset($this->note);
+            return $this;
+        }
         $this->note = $note;
         return $this;
     }
@@ -2111,7 +2418,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getRelevantHistoryIterator(): iterable
     {
-        if (!isset($this->relevantHistory) || [] === $this->relevantHistory) {
+        if (!isset($this->relevantHistory)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->relevantHistory);
@@ -2152,6 +2459,10 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setRelevantHistory(FHIRReference ...$relevantHistory): self
     {
+        if ([] === $relevantHistory) {
+            unset($this->relevantHistory);
+            return $this;
+        }
         $this->relevantHistory = $relevantHistory;
         return $this;
     }
@@ -2207,7 +2518,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getInputIterator(): iterable
     {
-        if (!isset($this->input) || [] === $this->input) {
+        if (!isset($this->input)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->input);
@@ -2240,6 +2551,10 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setInput(FHIRTaskInput ...$input): self
     {
+        if ([] === $input) {
+            unset($this->input);
+            return $this;
+        }
         $this->input = $input;
         return $this;
     }
@@ -2261,7 +2576,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function getOutputIterator(): iterable
     {
-        if (!isset($this->output) || [] === $this->output) {
+        if (!isset($this->output)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->output);
@@ -2294,10 +2609,15 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function setOutput(FHIRTaskOutput ...$output): self
     {
+        if ([] === $output) {
+            unset($this->output);
+            return $this;
+        }
         $this->output = $output;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -2306,7 +2626,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -2826,16 +3146,17 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
      * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRTask $type
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRTask $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRTask
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+                                          null|UnserializeConfig $config = null,
+                                          null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -2856,243 +3177,198 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
             $type->_setSourceXMLNS((string)$ns);
         }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_META === $childName) {
-                $v = new FHIRMeta();
-                $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TEXT === $childName) {
-                $v = new FHIRNarrative();
-                $type->setText(FHIRNarrative::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTAINED === $childName) {
-                foreach ($n->children() as $nn) {
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_ID === $cen) {
+                $type->setId(FHIRId::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_META === $cen) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IMPLICIT_RULES === $cen) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LANGUAGE === $cen) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TEXT === $cen) {
+                $type->setText(FHIRNarrative::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTAINED === $cen) {
+                foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
-                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($nn);
-                    $type->addContained($cn::xmlUnserialize($nn, null, $config));
+                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($cen);
+                    $type->addContained($cn::xmlUnserialize($cen, $config));
                 }
-            } else if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INSTANTIATES_CANONICAL === $childName) {
-                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setInstantiatesCanonical(FHIRCanonical::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INSTANTIATES_URI === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setInstantiatesUri(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_BASED_ON === $childName) {
-                $v = new FHIRReference();
-                $type->addBasedOn(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_GROUP_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->setGroupIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PART_OF === $childName) {
-                $v = new FHIRReference();
-                $type->addPartOf(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRTaskStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setStatus(FHIRTaskStatus::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STATUS_REASON === $childName) {
-                $v = new FHIRCodeableReference();
-                $type->setStatusReason(FHIRCodeableReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_BUSINESS_STATUS === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setBusinessStatus(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INTENT === $childName) {
-                $v = new FHIRTaskIntent(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setIntent(FHIRTaskIntent::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PRIORITY === $childName) {
-                $v = new FHIRRequestPriority(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setPriority(FHIRRequestPriority::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DO_NOT_PERFORM === $childName) {
-                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setDoNotPerform(FHIRBoolean::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CODE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setCode(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DESCRIPTION === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setDescription(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_FOCUS === $childName) {
-                $v = new FHIRReference();
-                $type->setFocus(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_FOR === $childName) {
-                $v = new FHIRReference();
-                $type->setFor(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ENCOUNTER === $childName) {
-                $v = new FHIRReference();
-                $type->setEncounter(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_REQUESTED_PERIOD === $childName) {
-                $v = new FHIRPeriod();
-                $type->setRequestedPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_EXECUTION_PERIOD === $childName) {
-                $v = new FHIRPeriod();
-                $type->setExecutionPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_AUTHORED_ON === $childName) {
-                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setAuthoredOn(FHIRDateTime::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LAST_MODIFIED === $childName) {
-                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setLastModified(FHIRDateTime::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_REQUESTER === $childName) {
-                $v = new FHIRReference();
-                $type->setRequester(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_REQUESTED_PERFORMER === $childName) {
-                $v = new FHIRCodeableReference();
-                $type->addRequestedPerformer(FHIRCodeableReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_OWNER === $childName) {
-                $v = new FHIRReference();
-                $type->setOwner(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PERFORMER === $childName) {
-                $v = new FHIRTaskPerformer();
-                $type->addPerformer(FHIRTaskPerformer::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LOCATION === $childName) {
-                $v = new FHIRReference();
-                $type->setLocation(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_REASON === $childName) {
-                $v = new FHIRCodeableReference();
-                $type->addReason(FHIRCodeableReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INSURANCE === $childName) {
-                $v = new FHIRReference();
-                $type->addInsurance(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NOTE === $childName) {
-                $v = new FHIRAnnotation();
-                $type->addNote(FHIRAnnotation::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RELEVANT_HISTORY === $childName) {
-                $v = new FHIRReference();
-                $type->addRelevantHistory(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RESTRICTION === $childName) {
-                $v = new FHIRTaskRestriction();
-                $type->setRestriction(FHIRTaskRestriction::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INPUT === $childName) {
-                $v = new FHIRTaskInput();
-                $type->addInput(FHIRTaskInput::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_OUTPUT === $childName) {
-                $v = new FHIRTaskOutput();
-                $type->addOutput(FHIRTaskOutput::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IDENTIFIER === $cen) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INSTANTIATES_CANONICAL === $cen) {
+                $type->setInstantiatesCanonical(FHIRCanonical::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INSTANTIATES_URI === $cen) {
+                $type->setInstantiatesUri(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_BASED_ON === $cen) {
+                $type->addBasedOn(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_GROUP_IDENTIFIER === $cen) {
+                $type->setGroupIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PART_OF === $cen) {
+                $type->addPartOf(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STATUS === $cen) {
+                $type->setStatus(FHIRTaskStatus::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STATUS_REASON === $cen) {
+                $type->setStatusReason(FHIRCodeableReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_BUSINESS_STATUS === $cen) {
+                $type->setBusinessStatus(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INTENT === $cen) {
+                $type->setIntent(FHIRTaskIntent::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PRIORITY === $cen) {
+                $type->setPriority(FHIRRequestPriority::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DO_NOT_PERFORM === $cen) {
+                $type->setDoNotPerform(FHIRBoolean::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CODE === $cen) {
+                $type->setCode(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DESCRIPTION === $cen) {
+                $type->setDescription(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_FOCUS === $cen) {
+                $type->setFocus(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_FOR === $cen) {
+                $type->setFor(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ENCOUNTER === $cen) {
+                $type->setEncounter(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_REQUESTED_PERIOD === $cen) {
+                $type->setRequestedPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_EXECUTION_PERIOD === $cen) {
+                $type->setExecutionPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_AUTHORED_ON === $cen) {
+                $type->setAuthoredOn(FHIRDateTime::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LAST_MODIFIED === $cen) {
+                $type->setLastModified(FHIRDateTime::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_REQUESTER === $cen) {
+                $type->setRequester(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_REQUESTED_PERFORMER === $cen) {
+                $type->addRequestedPerformer(FHIRCodeableReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_OWNER === $cen) {
+                $type->setOwner(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PERFORMER === $cen) {
+                $type->addPerformer(FHIRTaskPerformer::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LOCATION === $cen) {
+                $type->setLocation(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_REASON === $cen) {
+                $type->addReason(FHIRCodeableReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INSURANCE === $cen) {
+                $type->addInsurance(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NOTE === $cen) {
+                $type->addNote(FHIRAnnotation::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RELEVANT_HISTORY === $cen) {
+                $type->addRelevantHistory(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RESTRICTION === $cen) {
+                $type->setRestriction(FHIRTaskRestriction::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INPUT === $cen) {
+                $type->addInput(FHIRTaskInput::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_OUTPUT === $cen) {
+                $type->addOutput(FHIRTaskOutput::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->id)) {
+                $type->id->setValue((string)$attributes[self::FIELD_ID]);
+                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRId(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
-            $pt = $type->getImplicitRules();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->implicitRules)) {
+                $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
-            $pt = $type->getLanguage();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->language)) {
+                $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
+                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage(new FHIRCode(
-                    value: (string)$attributes[self::FIELD_LANGUAGE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_INSTANTIATES_CANONICAL])) {
-            $pt = $type->getInstantiatesCanonical();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_INSTANTIATES_CANONICAL]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->instantiatesCanonical)) {
+                $type->instantiatesCanonical->setValue((string)$attributes[self::FIELD_INSTANTIATES_CANONICAL]);
+                $type->_setInstantiatesCanonicalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInstantiatesCanonical(new FHIRCanonical(
-                    value: (string)$attributes[self::FIELD_INSTANTIATES_CANONICAL],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setInstantiatesCanonical((string)$attributes[self::FIELD_INSTANTIATES_CANONICAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_INSTANTIATES_URI])) {
-            $pt = $type->getInstantiatesUri();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_INSTANTIATES_URI]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->instantiatesUri)) {
+                $type->instantiatesUri->setValue((string)$attributes[self::FIELD_INSTANTIATES_URI]);
+                $type->_setInstantiatesUriValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInstantiatesUri(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_INSTANTIATES_URI],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setInstantiatesUri((string)$attributes[self::FIELD_INSTANTIATES_URI], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_GROUP_IDENTIFIER])) {
+            if (isset($type->groupIdentifier)) {
+                $type->groupIdentifier->setValue((string)$attributes[self::FIELD_GROUP_IDENTIFIER]);
+                $type->_setGroupIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setGroupIdentifier((string)$attributes[self::FIELD_GROUP_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_STATUS])) {
+            if (isset($type->status)) {
+                $type->status->setValue((string)$attributes[self::FIELD_STATUS]);
+                $type->_setStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setStatus((string)$attributes[self::FIELD_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_INTENT])) {
+            if (isset($type->intent)) {
+                $type->intent->setValue((string)$attributes[self::FIELD_INTENT]);
+                $type->_setIntentValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setIntent((string)$attributes[self::FIELD_INTENT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_PRIORITY])) {
+            if (isset($type->priority)) {
+                $type->priority->setValue((string)$attributes[self::FIELD_PRIORITY]);
+                $type->_setPriorityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setPriority((string)$attributes[self::FIELD_PRIORITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_DO_NOT_PERFORM])) {
-            $pt = $type->getDoNotPerform();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_DO_NOT_PERFORM]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->doNotPerform)) {
+                $type->doNotPerform->setValue((string)$attributes[self::FIELD_DO_NOT_PERFORM]);
+                $type->_setDoNotPerformValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDoNotPerform(new FHIRBoolean(
-                    value: (string)$attributes[self::FIELD_DO_NOT_PERFORM],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setDoNotPerform((string)$attributes[self::FIELD_DO_NOT_PERFORM], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
-            $pt = $type->getDescription();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_DESCRIPTION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->description)) {
+                $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
+                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription(new FHIRString(
-                    value: (string)$attributes[self::FIELD_DESCRIPTION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_AUTHORED_ON])) {
-            $pt = $type->getAuthoredOn();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_AUTHORED_ON]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->authoredOn)) {
+                $type->authoredOn->setValue((string)$attributes[self::FIELD_AUTHORED_ON]);
+                $type->_setAuthoredOnValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAuthoredOn(new FHIRDateTime(
-                    value: (string)$attributes[self::FIELD_AUTHORED_ON],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setAuthoredOn((string)$attributes[self::FIELD_AUTHORED_ON], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_LAST_MODIFIED])) {
-            $pt = $type->getLastModified();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_LAST_MODIFIED]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->lastModified)) {
+                $type->lastModified->setValue((string)$attributes[self::FIELD_LAST_MODIFIED]);
+                $type->_setLastModifiedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLastModified(new FHIRDateTime(
-                    value: (string)$attributes[self::FIELD_LAST_MODIFIED],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setLastModified((string)$attributes[self::FIELD_LAST_MODIFIED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
@@ -3103,7 +3379,8 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(null|XMLWriter $xw = null,
+                                 null|SerializeConfig $config = null): XMLWriter
     {
         if (null === $config) {
             $config = (new Version())->getConfig()->getSerializeConfig();
@@ -3122,40 +3399,56 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             $rootOpened = true;
             $xw->openRootNode('Task', $this->_getSourceXMLNS());
         }
-        if (isset($this->instantiatesCanonical) && $this->instantiatesCanonical->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_INSTANTIATES_CANONICAL, $this->instantiatesCanonical->getValue()?->_getFormattedValue());
+        if (isset($this->instantiatesCanonical) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL]) {
+            $xw->writeAttribute(self::FIELD_INSTANTIATES_CANONICAL, $this->instantiatesCanonical->_getFormattedValue());
         }
-        if (isset($this->instantiatesUri) && $this->instantiatesUri->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_INSTANTIATES_URI, $this->instantiatesUri->getValue()?->_getFormattedValue());
+        if (isset($this->instantiatesUri) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI]) {
+            $xw->writeAttribute(self::FIELD_INSTANTIATES_URI, $this->instantiatesUri->_getFormattedValue());
         }
-        if (isset($this->doNotPerform) && $this->doNotPerform->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DO_NOT_PERFORM, $this->doNotPerform->getValue()?->_getFormattedValue());
+        if (isset($this->groupIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER]) {
+            $xw->writeAttribute(self::FIELD_GROUP_IDENTIFIER, $this->groupIdentifier->_getFormattedValue());
         }
-        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->_getFormattedValue());
+        if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
+            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
         }
-        if (isset($this->authoredOn) && $this->authoredOn->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_AUTHORED_ON, $this->authoredOn->getValue()?->_getFormattedValue());
+        if (isset($this->intent) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INTENT]) {
+            $xw->writeAttribute(self::FIELD_INTENT, $this->intent->_getFormattedValue());
         }
-        if (isset($this->lastModified) && $this->lastModified->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_LAST_MODIFIED, $this->lastModified->getValue()?->_getFormattedValue());
+        if (isset($this->priority) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PRIORITY]) {
+            $xw->writeAttribute(self::FIELD_PRIORITY, $this->priority->_getFormattedValue());
+        }
+        if (isset($this->doNotPerform) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DO_NOT_PERFORM]) {
+            $xw->writeAttribute(self::FIELD_DO_NOT_PERFORM, $this->doNotPerform->_getFormattedValue());
+        }
+        if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
+        }
+        if (isset($this->authoredOn) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AUTHORED_ON]) {
+            $xw->writeAttribute(self::FIELD_AUTHORED_ON, $this->authoredOn->_getFormattedValue());
+        }
+        if (isset($this->lastModified) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LAST_MODIFIED]) {
+            $xw->writeAttribute(self::FIELD_LAST_MODIFIED, $this->lastModified->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier)) {
-            foreach ($this->identifier as $v) {
+        if (isset($this->identifier) && [] !== $this->identifier) {
+            foreach($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
             }
         }
-        if (isset($this->instantiatesCanonical) && $this->instantiatesCanonical->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->instantiatesCanonical)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL]
+                || $this->instantiatesCanonical->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_INSTANTIATES_CANONICAL);
-            $this->instantiatesCanonical->xmlSerialize($xw, $config);
+            $this->instantiatesCanonical->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_INSTANTIATES_CANONICAL]);
             $xw->endElement();
         }
-        if (isset($this->instantiatesUri) && $this->instantiatesUri->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->instantiatesUri)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI]
+                || $this->instantiatesUri->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_INSTANTIATES_URI);
-            $this->instantiatesUri->xmlSerialize($xw, $config);
+            $this->instantiatesUri->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_INSTANTIATES_URI]);
             $xw->endElement();
         }
         if (isset($this->basedOn)) {
@@ -3165,9 +3458,11 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $xw->endElement();
             }
         }
-        if (isset($this->groupIdentifier)) {
+        if (isset($this->groupIdentifier)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER]
+                || $this->groupIdentifier->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_GROUP_IDENTIFIER);
-            $this->groupIdentifier->xmlSerialize($xw, $config);
+            $this->groupIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER]);
             $xw->endElement();
         }
         if (isset($this->partOf)) {
@@ -3177,9 +3472,11 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $xw->endElement();
             }
         }
-        if (isset($this->status)) {
+        if (isset($this->status)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_STATUS]
+                || $this->status->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_STATUS);
-            $this->status->xmlSerialize($xw, $config);
+            $this->status->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_STATUS]);
             $xw->endElement();
         }
         if (isset($this->statusReason)) {
@@ -3192,19 +3489,25 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             $this->businessStatus->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->intent)) {
+        if (isset($this->intent)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_INTENT]
+                || $this->intent->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_INTENT);
-            $this->intent->xmlSerialize($xw, $config);
+            $this->intent->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_INTENT]);
             $xw->endElement();
         }
-        if (isset($this->priority)) {
+        if (isset($this->priority)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PRIORITY]
+                || $this->priority->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_PRIORITY);
-            $this->priority->xmlSerialize($xw, $config);
+            $this->priority->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PRIORITY]);
             $xw->endElement();
         }
-        if (isset($this->doNotPerform) && $this->doNotPerform->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->doNotPerform)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DO_NOT_PERFORM]
+                || $this->doNotPerform->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_DO_NOT_PERFORM);
-            $this->doNotPerform->xmlSerialize($xw, $config);
+            $this->doNotPerform->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DO_NOT_PERFORM]);
             $xw->endElement();
         }
         if (isset($this->code)) {
@@ -3212,9 +3515,11 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             $this->code->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->description)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DESCRIPTION]
+                || $this->description->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
-            $this->description->xmlSerialize($xw, $config);
+            $this->description->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DESCRIPTION]);
             $xw->endElement();
         }
         if (isset($this->focus)) {
@@ -3242,14 +3547,18 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             $this->executionPeriod->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->authoredOn) && $this->authoredOn->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->authoredOn)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_AUTHORED_ON]
+                || $this->authoredOn->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_AUTHORED_ON);
-            $this->authoredOn->xmlSerialize($xw, $config);
+            $this->authoredOn->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_AUTHORED_ON]);
             $xw->endElement();
         }
-        if (isset($this->lastModified) && $this->lastModified->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->lastModified)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_LAST_MODIFIED]
+                || $this->lastModified->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_LAST_MODIFIED);
-            $this->lastModified->xmlSerialize($xw, $config);
+            $this->lastModified->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_LAST_MODIFIED]);
             $xw->endElement();
         }
         if (isset($this->requester)) {
@@ -3338,15 +3647,15 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
     }
 
     /**
-     * @param string|array|\stdClass $json
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRTask $type
+     * @param string|\stdClass|array $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRTask $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRTask
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(string|\stdClass|array $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -3366,15 +3675,21 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        parent::jsonUnserialize($json, $config, $type);
+        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -3407,9 +3722,11 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
                 ));
             }
         }
-        if (isset($json[self::FIELD_GROUP_IDENTIFIER]) || array_key_exists(self::FIELD_GROUP_IDENTIFIER, $json)) {
+        if (isset($json[self::FIELD_GROUP_IDENTIFIER]) || isset($json[self::FIELD_GROUP_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_GROUP_IDENTIFIER, $json) || array_key_exists(self::FIELD_GROUP_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_GROUP_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_GROUP_IDENTIFIER_EXT] ?? []);
             $type->setGroupIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: $json[self::FIELD_GROUP_IDENTIFIER],
+                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
                 config: $config,
             ));
         }
@@ -3659,7 +3976,25 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            $vals = [];
+            $exts = [];
+            foreach ($this->identifier as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->identifier = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_identifier = $exts;
+            }
         }
         if (isset($this->instantiatesCanonical)) {
             if (null !== ($val = $this->instantiatesCanonical->getValue())) {
@@ -3685,7 +4020,14 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             $out->basedOn = $this->basedOn;
         }
         if (isset($this->groupIdentifier)) {
-            $out->groupIdentifier = $this->groupIdentifier;
+            if (null !== ($val = $this->groupIdentifier->getValue())) {
+                $out->groupIdentifier = $val;
+            }
+            $ext = $this->groupIdentifier->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_groupIdentifier = $ext;
+            }
         }
         if (isset($this->partOf) && [] !== $this->partOf) {
             $out->partOf = $this->partOf;
@@ -3823,7 +4165,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

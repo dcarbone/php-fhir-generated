@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,7 +62,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept;
@@ -85,16 +85,35 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_FAMILY_HISTORY_DOT_CONDITION;
 
-
+    /* class_default.php:48 */
     public const FIELD_TYPE = 'type';
     public const FIELD_OUTCOME = 'outcome';
     public const FIELD_ONSET_AGE = 'onsetAge';
+    public const FIELD_ONSET_AGE_EXT = '_onsetAge';
     public const FIELD_ONSET_RANGE = 'onsetRange';
     public const FIELD_ONSET_STRING = 'onsetString';
     public const FIELD_ONSET_STRING_EXT = '_onsetString';
     public const FIELD_NOTE = 'note';
     public const FIELD_NOTE_EXT = '_note';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_ID => [
+            Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
+        ],
+        self::FIELD_TYPE => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_ONSET_AGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_ONSET_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_NOTE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -161,17 +180,7 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
      */
     protected FHIRString $note;
 
-    /** Default validation map for fields in type FamilyHistory.Condition */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_ID => [
-            Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
-        ],
-        self::FIELD_TYPE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRFamilyHistoryCondition Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -220,6 +229,7 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -228,6 +238,7 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -324,15 +335,44 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
      * known occurrence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOnsetAge(null|FHIRAge $onsetAge): self
+    public function setOnsetAge(null|FHIRAge $onsetAge,
+                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $onsetAge) {
             unset($this->onsetAge);
             return $this;
         }
         $this->onsetAge = $onsetAge;
+        if ($this->_valueXMLLocations[self::FIELD_ONSET_AGE] !== $valueXMLLocation) {
+            $this->_setOnsetAgeValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the onsetAge element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getOnsetAgeValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_ONSET_AGE];
+    }
+
+    /**
+     * Set the location the "value" field of the onsetAge element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setOnsetAgeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_ONSET_AGE] = $valueXMLLocation;
         return $this;
     }
 
@@ -398,11 +438,11 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
      * known occurrence.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $onsetString
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setOnsetString(null|string|FHIRStringPrimitive|FHIRString $onsetString,
-                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $onsetString) {
             unset($this->onsetString);
@@ -411,12 +451,34 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
         if (!($onsetString instanceof FHIRString)) {
             $onsetString = new FHIRString(value: $onsetString);
         }
-        if (null !== $valueXMLLocation) {
-            $onsetString->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $onsetString->_getValueXMLLocation()) {
-            $onsetString->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->onsetString = $onsetString;
+        if ($this->_valueXMLLocations[self::FIELD_ONSET_STRING] !== $valueXMLLocation) {
+            $this->_setOnsetStringValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the onsetString element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getOnsetStringValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_ONSET_STRING];
+    }
+
+    /**
+     * Set the location the "value" field of the onsetString element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setOnsetStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_ONSET_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -440,11 +502,11 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
      * An area where general notes can be placed about this specific condition.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setNote(null|string|FHIRStringPrimitive|FHIRString $note,
-                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $note) {
             unset($this->note);
@@ -453,15 +515,38 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
         if (!($note instanceof FHIRString)) {
             $note = new FHIRString(value: $note);
         }
-        if (null !== $valueXMLLocation) {
-            $note->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $note->_getValueXMLLocation()) {
-            $note->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->note = $note;
+        if ($this->_valueXMLLocations[self::FIELD_NOTE] !== $valueXMLLocation) {
+            $this->_setNoteValueXMLLocation($valueXMLLocation);
+        }
         return $this;
     }
 
+    /**
+     * Return the current location the "value" field of the note element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getNoteValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_NOTE];
+    }
+
+    /**
+     * Set the location the "value" field of the note element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setNoteValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_NOTE] = $valueXMLLocation;
+        return $this;
+    }
+
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -470,7 +555,7 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -601,16 +686,17 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -622,122 +708,78 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_OUTCOME === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setOutcome(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ONSET_AGE === $childName) {
-                $v = new FHIRAge();
-                $type->setOnsetAge(FHIRAge::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ONSET_RANGE === $childName) {
-                $v = new FHIRRange();
-                $type->setOnsetRange(FHIRRange::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ONSET_STRING === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setOnsetString(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NOTE === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setNote(FHIRString::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_OUTCOME === $cen) {
+                $type->setOutcome(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ONSET_AGE === $cen) {
+                $type->setOnsetAge(FHIRAge::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ONSET_RANGE === $cen) {
+                $type->setOnsetRange(FHIRRange::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ONSET_STRING === $cen) {
+                $type->setOnsetString(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NOTE === $cen) {
+                $type->setNote(FHIRString::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_ONSET_AGE])) {
+            if (isset($type->onsetAge)) {
+                $type->onsetAge->setValue((string)$attributes[self::FIELD_ONSET_AGE]);
+                $type->_setOnsetAgeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRIdPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setOnsetAge((string)$attributes[self::FIELD_ONSET_AGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_ONSET_STRING])) {
-            $pt = $type->getOnsetString();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ONSET_STRING]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->onsetString)) {
+                $type->onsetString->setValue((string)$attributes[self::FIELD_ONSET_STRING]);
+                $type->_setOnsetStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOnsetString(new FHIRString(
-                    value: (string)$attributes[self::FIELD_ONSET_STRING],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setOnsetString((string)$attributes[self::FIELD_ONSET_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_NOTE])) {
-            $pt = $type->getNote();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_NOTE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->note)) {
+                $type->note->setValue((string)$attributes[self::FIELD_NOTE]);
+                $type->_setNoteValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNote(new FHIRString(
-                    value: (string)$attributes[self::FIELD_NOTE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setNote((string)$attributes[self::FIELD_NOTE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->onsetAge) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ONSET_AGE]) {
+            $xw->writeAttribute(self::FIELD_ONSET_AGE, $this->onsetAge->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->onsetString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ONSET_STRING]) {
+            $xw->writeAttribute(self::FIELD_ONSET_STRING, $this->onsetString->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('FamilyHistoryCondition', $this->_getSourceXMLNS());
-        }
-        if (isset($this->onsetString) && $this->onsetString->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ONSET_STRING, $this->onsetString->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->note) && $this->note->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NOTE, $this->note->getValue()?->_getFormattedValue());
+        if (isset($this->note) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NOTE]) {
+            $xw->writeAttribute(self::FIELD_NOTE, $this->note->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -750,9 +792,11 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
             $this->outcome->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->onsetAge)) {
+        if (isset($this->onsetAge)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ONSET_AGE]
+                || $this->onsetAge->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_ONSET_AGE);
-            $this->onsetAge->xmlSerialize($xw, $config);
+            $this->onsetAge->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ONSET_AGE]);
             $xw->endElement();
         }
         if (isset($this->onsetRange)) {
@@ -760,35 +804,32 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
             $this->onsetRange->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->onsetString) && $this->onsetString->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->onsetString)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ONSET_STRING]
+                || $this->onsetString->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_ONSET_STRING);
-            $this->onsetString->xmlSerialize($xw, $config);
+            $this->onsetString->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ONSET_STRING]);
             $xw->endElement();
         }
-        if (isset($this->note) && $this->note->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->note)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_NOTE]
+                || $this->note->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_NOTE);
-            $this->note->xmlSerialize($xw, $config);
+            $this->note->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_NOTE]);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -808,7 +849,7 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
             $type->setType(FHIRCodeableConcept::jsonUnserialize(
                 json: $json[self::FIELD_TYPE],
@@ -821,9 +862,11 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
                 config: $config,
             ));
         }
-        if (isset($json[self::FIELD_ONSET_AGE]) || array_key_exists(self::FIELD_ONSET_AGE, $json)) {
+        if (isset($json[self::FIELD_ONSET_AGE]) || isset($json[self::FIELD_ONSET_AGE_EXT]) || array_key_exists(self::FIELD_ONSET_AGE, $json) || array_key_exists(self::FIELD_ONSET_AGE_EXT, $json)) {
+            $value = $json[self::FIELD_ONSET_AGE] ?? null;
+            $ext = (array)($json[self::FIELD_ONSET_AGE_EXT] ?? []);
             $type->setOnsetAge(FHIRAge::jsonUnserialize(
-                json: $json[self::FIELD_ONSET_AGE],
+                json: [FHIRAge::FIELD_VALUE => $value] + $ext,
                 config: $config,
             ));
         }
@@ -865,7 +908,14 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
             $out->outcome = $this->outcome;
         }
         if (isset($this->onsetAge)) {
-            $out->onsetAge = $this->onsetAge;
+            if (null !== ($val = $this->onsetAge->getValue())) {
+                $out->onsetAge = $val;
+            }
+            $ext = $this->onsetAge->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_onsetAge = $ext;
+            }
         }
         if (isset($this->onsetRange)) {
             $out->onsetRange = $this->onsetRange;
@@ -892,7 +942,7 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

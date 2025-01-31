@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation;
@@ -130,8 +130,9 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_DEFINITION;
 
-
+    /* class_default.php:48 */
     public const FIELD_IDENTIFIER = 'identifier';
+    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_VERSION = 'version';
     public const FIELD_VERSION_EXT = '_version';
     public const FIELD_STATUS = 'status';
@@ -153,6 +154,16 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
     public const FIELD_RELATIONSHIP = 'relationship';
     public const FIELD_SOURCE_MATERIAL = 'sourceMaterial';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -351,10 +362,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     protected FHIRSubstanceDefinitionSourceMaterial $sourceMaterial;
 
-    /** Default validation map for fields in type SubstanceDefinition */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRSubstanceDefinition Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $id
@@ -483,6 +491,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -491,6 +500,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:149 */
     /**
      * @return string
      */
@@ -499,6 +509,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
         return static::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -519,7 +530,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getIdentifierIterator(): iterable
     {
-        if (!isset($this->identifier) || [] === $this->identifier) {
+        if (!isset($this->identifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->identifier);
@@ -558,7 +569,18 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
-        $this->identifier = $identifier;
+        if ([] === $identifier) {
+            unset($this->identifier);
+            return $this;
+        }
+        $this->identifier = [];
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->identifier[] = $v;
+            } else {
+                $this->identifier[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -584,11 +606,11 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * A business level version identifier of the substance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version,
-                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $version) {
             unset($this->version);
@@ -597,12 +619,34 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
         if (!($version instanceof FHIRString)) {
             $version = new FHIRString(value: $version);
         }
-        if (null !== $valueXMLLocation) {
-            $version->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $version->_getValueXMLLocation()) {
-            $version->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->version = $version;
+        if ($this->_valueXMLLocations[self::FIELD_VERSION] !== $valueXMLLocation) {
+            $this->_setVersionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the version element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getVersionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_VERSION];
+    }
+
+    /**
+     * Set the location the "value" field of the version element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setVersionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_VERSION] = $valueXMLLocation;
         return $this;
     }
 
@@ -664,7 +708,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getClassificationIterator(): iterable
     {
-        if (!isset($this->classification) || [] === $this->classification) {
+        if (!isset($this->classification)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->classification);
@@ -707,6 +751,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setClassification(FHIRCodeableConcept ...$classification): self
     {
+        if ([] === $classification) {
+            unset($this->classification);
+            return $this;
+        }
         $this->classification = $classification;
         return $this;
     }
@@ -768,7 +816,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getGradeIterator(): iterable
     {
-        if (!isset($this->grade) || [] === $this->grade) {
+        if (!isset($this->grade)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->grade);
@@ -809,6 +857,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setGrade(FHIRCodeableConcept ...$grade): self
     {
+        if ([] === $grade) {
+            unset($this->grade);
+            return $this;
+        }
         $this->grade = $grade;
         return $this;
     }
@@ -843,11 +895,11 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * Textual description of the substance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description,
-                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $description) {
             unset($this->description);
@@ -856,12 +908,34 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
         if (!($description instanceof FHIRMarkdown)) {
             $description = new FHIRMarkdown(value: $description);
         }
-        if (null !== $valueXMLLocation) {
-            $description->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $description->_getValueXMLLocation()) {
-            $description->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->description = $description;
+        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
+            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the description element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
+    }
+
+    /**
+     * Set the location the "value" field of the description element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -884,7 +958,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getInformationSourceIterator(): iterable
     {
-        if (!isset($this->informationSource) || [] === $this->informationSource) {
+        if (!isset($this->informationSource)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->informationSource);
@@ -921,6 +995,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setInformationSource(FHIRReference ...$informationSource): self
     {
+        if ([] === $informationSource) {
+            unset($this->informationSource);
+            return $this;
+        }
         $this->informationSource = $informationSource;
         return $this;
     }
@@ -945,7 +1023,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getNoteIterator(): iterable
     {
-        if (!isset($this->note) || [] === $this->note) {
+        if (!isset($this->note)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->note);
@@ -984,6 +1062,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
+        if ([] === $note) {
+            unset($this->note);
+            return $this;
+        }
         $this->note = $note;
         return $this;
     }
@@ -1008,7 +1090,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getManufacturerIterator(): iterable
     {
-        if (!isset($this->manufacturer) || [] === $this->manufacturer) {
+        if (!isset($this->manufacturer)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->manufacturer);
@@ -1047,6 +1129,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
+        if ([] === $manufacturer) {
+            unset($this->manufacturer);
+            return $this;
+        }
         $this->manufacturer = $manufacturer;
         return $this;
     }
@@ -1071,7 +1157,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getSupplierIterator(): iterable
     {
-        if (!isset($this->supplier) || [] === $this->supplier) {
+        if (!isset($this->supplier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->supplier);
@@ -1110,6 +1196,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setSupplier(FHIRReference ...$supplier): self
     {
+        if ([] === $supplier) {
+            unset($this->supplier);
+            return $this;
+        }
         $this->supplier = $supplier;
         return $this;
     }
@@ -1132,7 +1222,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getMoietyIterator(): iterable
     {
-        if (!isset($this->moiety) || [] === $this->moiety) {
+        if (!isset($this->moiety)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->moiety);
@@ -1167,6 +1257,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setMoiety(FHIRSubstanceDefinitionMoiety ...$moiety): self
     {
+        if ([] === $moiety) {
+            unset($this->moiety);
+            return $this;
+        }
         $this->moiety = $moiety;
         return $this;
     }
@@ -1189,7 +1283,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getPropertyIterator(): iterable
     {
-        if (!isset($this->property) || [] === $this->property) {
+        if (!isset($this->property)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->property);
@@ -1224,6 +1318,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setProperty(FHIRSubstanceDefinitionProperty ...$property): self
     {
+        if ([] === $property) {
+            unset($this->property);
+            return $this;
+        }
         $this->property = $property;
         return $this;
     }
@@ -1246,7 +1344,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getMolecularWeightIterator(): iterable
     {
-        if (!isset($this->molecularWeight) || [] === $this->molecularWeight) {
+        if (!isset($this->molecularWeight)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->molecularWeight);
@@ -1281,6 +1379,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setMolecularWeight(FHIRSubstanceDefinitionMolecularWeight ...$molecularWeight): self
     {
+        if ([] === $molecularWeight) {
+            unset($this->molecularWeight);
+            return $this;
+        }
         $this->molecularWeight = $molecularWeight;
         return $this;
     }
@@ -1335,7 +1437,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getCodeIterator(): iterable
     {
-        if (!isset($this->code) || [] === $this->code) {
+        if (!isset($this->code)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->code);
@@ -1370,6 +1472,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setCode(FHIRSubstanceDefinitionCode ...$code): self
     {
+        if ([] === $code) {
+            unset($this->code);
+            return $this;
+        }
         $this->code = $code;
         return $this;
     }
@@ -1392,7 +1498,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getNameIterator(): iterable
     {
-        if (!isset($this->name) || [] === $this->name) {
+        if (!isset($this->name)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->name);
@@ -1427,6 +1533,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setName(FHIRSubstanceDefinitionName ...$name): self
     {
+        if ([] === $name) {
+            unset($this->name);
+            return $this;
+        }
         $this->name = $name;
         return $this;
     }
@@ -1449,7 +1559,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function getRelationshipIterator(): iterable
     {
-        if (!isset($this->relationship) || [] === $this->relationship) {
+        if (!isset($this->relationship)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->relationship);
@@ -1484,6 +1594,10 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function setRelationship(FHIRSubstanceDefinitionRelationship ...$relationship): self
     {
+        if ([] === $relationship) {
+            unset($this->relationship);
+            return $this;
+        }
         $this->relationship = $relationship;
         return $this;
     }
@@ -1520,6 +1634,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1528,7 +1643,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1870,16 +1985,17 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
      * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceDefinition $type
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceDefinition $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+                                          null|UnserializeConfig $config = null,
+                                          null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1900,153 +2016,106 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
         if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
             $type->_setSourceXMLNS((string)$ns);
         }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_ID === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setId(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_META === $childName) {
-                $v = new FHIRMeta();
-                $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TEXT === $childName) {
-                $v = new FHIRNarrative();
-                $type->setText(FHIRNarrative::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTAINED === $childName) {
-                foreach ($n->children() as $nn) {
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_ID === $cen) {
+                $type->setId(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_META === $cen) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IMPLICIT_RULES === $cen) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LANGUAGE === $cen) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TEXT === $cen) {
+                $type->setText(FHIRNarrative::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTAINED === $cen) {
+                foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $cn */
-                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($nn);
-                    $type->addContained($cn::xmlUnserialize($nn, null, $config));
+                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($cen);
+                    $type->addContained($cn::xmlUnserialize($cen, $config));
                 }
-            } else if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VERSION === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setVersion(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setStatus(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CLASSIFICATION === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addClassification(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DOMAIN === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setDomain(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_GRADE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addGrade(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DESCRIPTION === $childName) {
-                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setDescription(FHIRMarkdown::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INFORMATION_SOURCE === $childName) {
-                $v = new FHIRReference();
-                $type->addInformationSource(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NOTE === $childName) {
-                $v = new FHIRAnnotation();
-                $type->addNote(FHIRAnnotation::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MANUFACTURER === $childName) {
-                $v = new FHIRReference();
-                $type->addManufacturer(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SUPPLIER === $childName) {
-                $v = new FHIRReference();
-                $type->addSupplier(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MOIETY === $childName) {
-                $v = new FHIRSubstanceDefinitionMoiety();
-                $type->addMoiety(FHIRSubstanceDefinitionMoiety::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PROPERTY === $childName) {
-                $v = new FHIRSubstanceDefinitionProperty();
-                $type->addProperty(FHIRSubstanceDefinitionProperty::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MOLECULAR_WEIGHT === $childName) {
-                $v = new FHIRSubstanceDefinitionMolecularWeight();
-                $type->addMolecularWeight(FHIRSubstanceDefinitionMolecularWeight::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STRUCTURE === $childName) {
-                $v = new FHIRSubstanceDefinitionStructure();
-                $type->setStructure(FHIRSubstanceDefinitionStructure::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CODE === $childName) {
-                $v = new FHIRSubstanceDefinitionCode();
-                $type->addCode(FHIRSubstanceDefinitionCode::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NAME === $childName) {
-                $v = new FHIRSubstanceDefinitionName();
-                $type->addName(FHIRSubstanceDefinitionName::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RELATIONSHIP === $childName) {
-                $v = new FHIRSubstanceDefinitionRelationship();
-                $type->addRelationship(FHIRSubstanceDefinitionRelationship::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SOURCE_MATERIAL === $childName) {
-                $v = new FHIRSubstanceDefinitionSourceMaterial();
-                $type->setSourceMaterial(FHIRSubstanceDefinitionSourceMaterial::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IDENTIFIER === $cen) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VERSION === $cen) {
+                $type->setVersion(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STATUS === $cen) {
+                $type->setStatus(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CLASSIFICATION === $cen) {
+                $type->addClassification(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DOMAIN === $cen) {
+                $type->setDomain(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_GRADE === $cen) {
+                $type->addGrade(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DESCRIPTION === $cen) {
+                $type->setDescription(FHIRMarkdown::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INFORMATION_SOURCE === $cen) {
+                $type->addInformationSource(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NOTE === $cen) {
+                $type->addNote(FHIRAnnotation::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MANUFACTURER === $cen) {
+                $type->addManufacturer(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SUPPLIER === $cen) {
+                $type->addSupplier(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MOIETY === $cen) {
+                $type->addMoiety(FHIRSubstanceDefinitionMoiety::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PROPERTY === $cen) {
+                $type->addProperty(FHIRSubstanceDefinitionProperty::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MOLECULAR_WEIGHT === $cen) {
+                $type->addMolecularWeight(FHIRSubstanceDefinitionMolecularWeight::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STRUCTURE === $cen) {
+                $type->setStructure(FHIRSubstanceDefinitionStructure::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CODE === $cen) {
+                $type->addCode(FHIRSubstanceDefinitionCode::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NAME === $cen) {
+                $type->addName(FHIRSubstanceDefinitionName::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RELATIONSHIP === $cen) {
+                $type->addRelationship(FHIRSubstanceDefinitionRelationship::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SOURCE_MATERIAL === $cen) {
+                $type->setSourceMaterial(FHIRSubstanceDefinitionSourceMaterial::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->id)) {
+                $type->id->setValue((string)$attributes[self::FIELD_ID]);
+                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRString(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
-            $pt = $type->getImplicitRules();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->implicitRules)) {
+                $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
-            $pt = $type->getLanguage();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->language)) {
+                $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
+                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage(new FHIRCode(
-                    value: (string)$attributes[self::FIELD_LANGUAGE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_VERSION])) {
-            $pt = $type->getVersion();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_VERSION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->version)) {
+                $type->version->setValue((string)$attributes[self::FIELD_VERSION]);
+                $type->_setVersionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setVersion(new FHIRString(
-                    value: (string)$attributes[self::FIELD_VERSION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setVersion((string)$attributes[self::FIELD_VERSION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
-            $pt = $type->getDescription();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_DESCRIPTION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->description)) {
+                $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
+                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription(new FHIRMarkdown(
-                    value: (string)$attributes[self::FIELD_DESCRIPTION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
@@ -2057,7 +2126,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(null|XMLWriter $xw = null,
+                                 null|SerializeConfig $config = null): XMLWriter
     {
         if (null === $config) {
             $config = (new Version())->getConfig()->getSerializeConfig();
@@ -2076,23 +2146,25 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
             $rootOpened = true;
             $xw->openRootNode('SubstanceDefinition', $this->_getSourceXMLNS());
         }
-        if (isset($this->version) && $this->version->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VERSION, $this->version->getValue()?->_getFormattedValue());
+        if (isset($this->version) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VERSION]) {
+            $xw->writeAttribute(self::FIELD_VERSION, $this->version->_getFormattedValue());
         }
-        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->_getFormattedValue());
+        if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier)) {
-            foreach ($this->identifier as $v) {
+        if (isset($this->identifier) && [] !== $this->identifier) {
+            foreach($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
             }
         }
-        if (isset($this->version) && $this->version->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->version)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VERSION]
+                || $this->version->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_VERSION);
-            $this->version->xmlSerialize($xw, $config);
+            $this->version->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VERSION]);
             $xw->endElement();
         }
         if (isset($this->status)) {
@@ -2119,9 +2191,11 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
                 $xw->endElement();
             }
         }
-        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->description)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DESCRIPTION]
+                || $this->description->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
-            $this->description->xmlSerialize($xw, $config);
+            $this->description->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DESCRIPTION]);
             $xw->endElement();
         }
         if (isset($this->informationSource)) {
@@ -2214,15 +2288,15 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
     }
 
     /**
-     * @param string|array|\stdClass $json
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceDefinition $type
+     * @param string|\stdClass|array $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceDefinition $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceDefinition
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(string|\stdClass|array $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -2242,15 +2316,21 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        parent::jsonUnserialize($json, $config, $type);
+        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -2449,7 +2529,25 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            $vals = [];
+            $exts = [];
+            foreach ($this->identifier as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->identifier = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_identifier = $exts;
+            }
         }
         if (isset($this->version)) {
             if (null !== ($val = $this->version->getValue())) {
@@ -2522,7 +2620,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
@@ -107,7 +107,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INGREDIENT_DOT_STRENGTH;
 
-
+    /* class_default.php:48 */
     public const FIELD_PRESENTATION_RATIO = 'presentationRatio';
     public const FIELD_PRESENTATION_RATIO_RANGE = 'presentationRatioRange';
     public const FIELD_TEXT_PRESENTATION = 'textPresentation';
@@ -121,6 +121,17 @@ class FHIRIngredientStrength extends FHIRBackboneElement
     public const FIELD_COUNTRY = 'country';
     public const FIELD_REFERENCE_STRENGTH = 'referenceStrength';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_TEXT_PRESENTATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_TEXT_CONCENTRATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_MEASUREMENT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
@@ -231,10 +242,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      */
     protected array $referenceStrength;
 
-    /** Default validation map for fields in type Ingredient.Strength */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRIngredientStrength Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -298,6 +306,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -306,6 +315,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
@@ -416,11 +426,11 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * part of it - with the rest being in Strength.presentation as a ratio.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $textPresentation
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setTextPresentation(null|string|FHIRStringPrimitive|FHIRString $textPresentation,
-                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $textPresentation) {
             unset($this->textPresentation);
@@ -429,12 +439,34 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         if (!($textPresentation instanceof FHIRString)) {
             $textPresentation = new FHIRString(value: $textPresentation);
         }
-        if (null !== $valueXMLLocation) {
-            $textPresentation->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $textPresentation->_getValueXMLLocation()) {
-            $textPresentation->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->textPresentation = $textPresentation;
+        if ($this->_valueXMLLocations[self::FIELD_TEXT_PRESENTATION] !== $valueXMLLocation) {
+            $this->_setTextPresentationValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the textPresentation element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getTextPresentationValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_TEXT_PRESENTATION];
+    }
+
+    /**
+     * Set the location the "value" field of the textPresentation element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setTextPresentationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_TEXT_PRESENTATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -532,11 +564,11 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * part of it - with the rest being in Strength.concentration as a ratio.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $textConcentration
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setTextConcentration(null|string|FHIRStringPrimitive|FHIRString $textConcentration,
-                                         null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $textConcentration) {
             unset($this->textConcentration);
@@ -545,12 +577,34 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         if (!($textConcentration instanceof FHIRString)) {
             $textConcentration = new FHIRString(value: $textConcentration);
         }
-        if (null !== $valueXMLLocation) {
-            $textConcentration->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $textConcentration->_getValueXMLLocation()) {
-            $textConcentration->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->textConcentration = $textConcentration;
+        if ($this->_valueXMLLocations[self::FIELD_TEXT_CONCENTRATION] !== $valueXMLLocation) {
+            $this->_setTextConcentrationValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the textConcentration element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getTextConcentrationValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_TEXT_CONCENTRATION];
+    }
+
+    /**
+     * Set the location the "value" field of the textConcentration element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setTextConcentrationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_TEXT_CONCENTRATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -582,11 +636,11 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * relative to the point of aerosolization.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $measurementPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint,
-                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $measurementPoint) {
             unset($this->measurementPoint);
@@ -595,12 +649,34 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         if (!($measurementPoint instanceof FHIRString)) {
             $measurementPoint = new FHIRString(value: $measurementPoint);
         }
-        if (null !== $valueXMLLocation) {
-            $measurementPoint->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $measurementPoint->_getValueXMLLocation()) {
-            $measurementPoint->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->measurementPoint = $measurementPoint;
+        if ($this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT] !== $valueXMLLocation) {
+            $this->_setMeasurementPointValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the measurementPoint element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getMeasurementPointValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT];
+    }
+
+    /**
+     * Set the location the "value" field of the measurementPoint element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setMeasurementPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -624,7 +700,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      */
     public function getCountryIterator(): iterable
     {
-        if (!isset($this->country) || [] === $this->country) {
+        if (!isset($this->country)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->country);
@@ -663,6 +739,10 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      */
     public function setCountry(FHIRCodeableConcept ...$country): self
     {
+        if ([] === $country) {
+            unset($this->country);
+            return $this;
+        }
         $this->country = $country;
         return $this;
     }
@@ -689,7 +769,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      */
     public function getReferenceStrengthIterator(): iterable
     {
-        if (!isset($this->referenceStrength) || [] === $this->referenceStrength) {
+        if (!isset($this->referenceStrength)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->referenceStrength);
@@ -732,10 +812,15 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      */
     public function setReferenceStrength(FHIRIngredientReferenceStrength ...$referenceStrength): self
     {
+        if ([] === $referenceStrength) {
+            unset($this->referenceStrength);
+            return $this;
+        }
         $this->referenceStrength = $referenceStrength;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -744,7 +829,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -906,16 +991,17 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -927,146 +1013,84 @@ class FHIRIngredientStrength extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PRESENTATION_RATIO === $childName) {
-                $v = new FHIRRatio();
-                $type->setPresentationRatio(FHIRRatio::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PRESENTATION_RATIO_RANGE === $childName) {
-                $v = new FHIRRatioRange();
-                $type->setPresentationRatioRange(FHIRRatioRange::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TEXT_PRESENTATION === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setTextPresentation(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONCENTRATION_RATIO === $childName) {
-                $v = new FHIRRatio();
-                $type->setConcentrationRatio(FHIRRatio::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONCENTRATION_RATIO_RANGE === $childName) {
-                $v = new FHIRRatioRange();
-                $type->setConcentrationRatioRange(FHIRRatioRange::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TEXT_CONCENTRATION === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setTextConcentration(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MEASUREMENT_POINT === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setMeasurementPoint(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_COUNTRY === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addCountry(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_REFERENCE_STRENGTH === $childName) {
-                $v = new FHIRIngredientReferenceStrength();
-                $type->addReferenceStrength(FHIRIngredientReferenceStrength::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PRESENTATION_RATIO === $cen) {
+                $type->setPresentationRatio(FHIRRatio::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PRESENTATION_RATIO_RANGE === $cen) {
+                $type->setPresentationRatioRange(FHIRRatioRange::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TEXT_PRESENTATION === $cen) {
+                $type->setTextPresentation(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONCENTRATION_RATIO === $cen) {
+                $type->setConcentrationRatio(FHIRRatio::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONCENTRATION_RATIO_RANGE === $cen) {
+                $type->setConcentrationRatioRange(FHIRRatioRange::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TEXT_CONCENTRATION === $cen) {
+                $type->setTextConcentration(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MEASUREMENT_POINT === $cen) {
+                $type->setMeasurementPoint(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_COUNTRY === $cen) {
+                $type->addCountry(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_REFERENCE_STRENGTH === $cen) {
+                $type->addReferenceStrength(FHIRIngredientReferenceStrength::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TEXT_PRESENTATION])) {
-            $pt = $type->getTextPresentation();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_TEXT_PRESENTATION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->textPresentation)) {
+                $type->textPresentation->setValue((string)$attributes[self::FIELD_TEXT_PRESENTATION]);
+                $type->_setTextPresentationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTextPresentation(new FHIRString(
-                    value: (string)$attributes[self::FIELD_TEXT_PRESENTATION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setTextPresentation((string)$attributes[self::FIELD_TEXT_PRESENTATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_TEXT_CONCENTRATION])) {
-            $pt = $type->getTextConcentration();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_TEXT_CONCENTRATION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->textConcentration)) {
+                $type->textConcentration->setValue((string)$attributes[self::FIELD_TEXT_CONCENTRATION]);
+                $type->_setTextConcentrationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTextConcentration(new FHIRString(
-                    value: (string)$attributes[self::FIELD_TEXT_CONCENTRATION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setTextConcentration((string)$attributes[self::FIELD_TEXT_CONCENTRATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_MEASUREMENT_POINT])) {
-            $pt = $type->getMeasurementPoint();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_MEASUREMENT_POINT]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->measurementPoint)) {
+                $type->measurementPoint->setValue((string)$attributes[self::FIELD_MEASUREMENT_POINT]);
+                $type->_setMeasurementPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMeasurementPoint(new FHIRString(
-                    value: (string)$attributes[self::FIELD_MEASUREMENT_POINT],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setMeasurementPoint((string)$attributes[self::FIELD_MEASUREMENT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->textPresentation) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TEXT_PRESENTATION]) {
+            $xw->writeAttribute(self::FIELD_TEXT_PRESENTATION, $this->textPresentation->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->textConcentration) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TEXT_CONCENTRATION]) {
+            $xw->writeAttribute(self::FIELD_TEXT_CONCENTRATION, $this->textConcentration->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('IngredientStrength', $this->_getSourceXMLNS());
-        }
-        if (isset($this->textPresentation) && $this->textPresentation->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TEXT_PRESENTATION, $this->textPresentation->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->textConcentration) && $this->textConcentration->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TEXT_CONCENTRATION, $this->textConcentration->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->measurementPoint) && $this->measurementPoint->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MEASUREMENT_POINT, $this->measurementPoint->getValue()?->_getFormattedValue());
+        if (isset($this->measurementPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT]) {
+            $xw->writeAttribute(self::FIELD_MEASUREMENT_POINT, $this->measurementPoint->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->presentationRatio)) {
@@ -1079,9 +1103,11 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             $this->presentationRatioRange->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->textPresentation) && $this->textPresentation->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->textPresentation)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TEXT_PRESENTATION]
+                || $this->textPresentation->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_TEXT_PRESENTATION);
-            $this->textPresentation->xmlSerialize($xw, $config);
+            $this->textPresentation->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TEXT_PRESENTATION]);
             $xw->endElement();
         }
         if (isset($this->concentrationRatio)) {
@@ -1094,14 +1120,18 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             $this->concentrationRatioRange->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->textConcentration) && $this->textConcentration->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->textConcentration)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TEXT_CONCENTRATION]
+                || $this->textConcentration->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_TEXT_CONCENTRATION);
-            $this->textConcentration->xmlSerialize($xw, $config);
+            $this->textConcentration->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TEXT_CONCENTRATION]);
             $xw->endElement();
         }
-        if (isset($this->measurementPoint) && $this->measurementPoint->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->measurementPoint)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT]
+                || $this->measurementPoint->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_MEASUREMENT_POINT);
-            $this->measurementPoint->xmlSerialize($xw, $config);
+            $this->measurementPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT]);
             $xw->endElement();
         }
         if (isset($this->country)) {
@@ -1118,25 +1148,18 @@ class FHIRIngredientStrength extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1156,7 +1179,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_PRESENTATION_RATIO]) || array_key_exists(self::FIELD_PRESENTATION_RATIO, $json)) {
             $type->setPresentationRatio(FHIRRatio::jsonUnserialize(
                 json: $json[self::FIELD_PRESENTATION_RATIO],
@@ -1288,7 +1311,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

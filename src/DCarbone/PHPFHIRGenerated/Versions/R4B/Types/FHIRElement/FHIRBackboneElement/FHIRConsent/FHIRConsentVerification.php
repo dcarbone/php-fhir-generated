@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive;
@@ -111,13 +111,27 @@ class FHIRConsentVerification extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONSENT_DOT_VERIFICATION;
 
-
+    /* class_default.php:48 */
     public const FIELD_VERIFIED = 'verified';
     public const FIELD_VERIFIED_EXT = '_verified';
     public const FIELD_VERIFIED_WITH = 'verifiedWith';
     public const FIELD_VERIFICATION_DATE = 'verificationDate';
     public const FIELD_VERIFICATION_DATE_EXT = '_verificationDate';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_VERIFIED => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_VERIFIED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_VERIFICATION_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -151,14 +165,7 @@ class FHIRConsentVerification extends FHIRBackboneElement
      */
     protected FHIRDateTime $verificationDate;
 
-    /** Default validation map for fields in type Consent.Verification */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_VERIFIED => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRConsentVerification Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -192,6 +199,7 @@ class FHIRConsentVerification extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -200,6 +208,7 @@ class FHIRConsentVerification extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -220,11 +229,11 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * Has the instruction been verified.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $verified
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setVerified(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $verified,
-                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $verified) {
             unset($this->verified);
@@ -233,12 +242,34 @@ class FHIRConsentVerification extends FHIRBackboneElement
         if (!($verified instanceof FHIRBoolean)) {
             $verified = new FHIRBoolean(value: $verified);
         }
-        if (null !== $valueXMLLocation) {
-            $verified->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $verified->_getValueXMLLocation()) {
-            $verified->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->verified = $verified;
+        if ($this->_valueXMLLocations[self::FIELD_VERIFIED] !== $valueXMLLocation) {
+            $this->_setVerifiedValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the verified element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getVerifiedValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_VERIFIED];
+    }
+
+    /**
+     * Set the location the "value" field of the verified element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setVerifiedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_VERIFIED] = $valueXMLLocation;
         return $this;
     }
 
@@ -304,11 +335,11 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * Date verification was collected.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $verificationDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setVerificationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $verificationDate,
-                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $verificationDate) {
             unset($this->verificationDate);
@@ -317,15 +348,38 @@ class FHIRConsentVerification extends FHIRBackboneElement
         if (!($verificationDate instanceof FHIRDateTime)) {
             $verificationDate = new FHIRDateTime(value: $verificationDate);
         }
-        if (null !== $valueXMLLocation) {
-            $verificationDate->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $verificationDate->_getValueXMLLocation()) {
-            $verificationDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->verificationDate = $verificationDate;
+        if ($this->_valueXMLLocations[self::FIELD_VERIFICATION_DATE] !== $valueXMLLocation) {
+            $this->_setVerificationDateValueXMLLocation($valueXMLLocation);
+        }
         return $this;
     }
 
+    /**
+     * Return the current location the "value" field of the verificationDate element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getVerificationDateValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_VERIFICATION_DATE];
+    }
+
+    /**
+     * Set the location the "value" field of the verificationDate element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setVerificationDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_VERIFICATION_DATE] = $valueXMLLocation;
+        return $this;
+    }
+
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -334,7 +388,7 @@ class FHIRConsentVerification extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -429,16 +483,17 @@ class FHIRConsentVerification extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -450,118 +505,68 @@ class FHIRConsentVerification extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VERIFIED === $childName) {
-                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setVerified(FHIRBoolean::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VERIFIED_WITH === $childName) {
-                $v = new FHIRReference();
-                $type->setVerifiedWith(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VERIFICATION_DATE === $childName) {
-                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setVerificationDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VERIFIED === $cen) {
+                $type->setVerified(FHIRBoolean::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VERIFIED_WITH === $cen) {
+                $type->setVerifiedWith(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VERIFICATION_DATE === $cen) {
+                $type->setVerificationDate(FHIRDateTime::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VERIFIED])) {
-            $pt = $type->getVerified();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_VERIFIED]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->verified)) {
+                $type->verified->setValue((string)$attributes[self::FIELD_VERIFIED]);
+                $type->_setVerifiedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setVerified(new FHIRBoolean(
-                    value: (string)$attributes[self::FIELD_VERIFIED],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setVerified((string)$attributes[self::FIELD_VERIFIED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_VERIFICATION_DATE])) {
-            $pt = $type->getVerificationDate();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_VERIFICATION_DATE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->verificationDate)) {
+                $type->verificationDate->setValue((string)$attributes[self::FIELD_VERIFICATION_DATE]);
+                $type->_setVerificationDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setVerificationDate(new FHIRDateTime(
-                    value: (string)$attributes[self::FIELD_VERIFICATION_DATE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setVerificationDate((string)$attributes[self::FIELD_VERIFICATION_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->verified) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VERIFIED]) {
+            $xw->writeAttribute(self::FIELD_VERIFIED, $this->verified->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('ConsentVerification', $this->_getSourceXMLNS());
-        }
-        if (isset($this->verified) && $this->verified->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VERIFIED, $this->verified->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->verificationDate) && $this->verificationDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VERIFICATION_DATE, $this->verificationDate->getValue()?->_getFormattedValue());
+        if (isset($this->verificationDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VERIFICATION_DATE]) {
+            $xw->writeAttribute(self::FIELD_VERIFICATION_DATE, $this->verificationDate->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->verified) && $this->verified->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->verified)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VERIFIED]
+                || $this->verified->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_VERIFIED);
-            $this->verified->xmlSerialize($xw, $config);
+            $this->verified->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VERIFIED]);
             $xw->endElement();
         }
         if (isset($this->verifiedWith)) {
@@ -569,30 +574,25 @@ class FHIRConsentVerification extends FHIRBackboneElement
             $this->verifiedWith->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->verificationDate) && $this->verificationDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->verificationDate)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VERIFICATION_DATE]
+                || $this->verificationDate->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_VERIFICATION_DATE);
-            $this->verificationDate->xmlSerialize($xw, $config);
+            $this->verificationDate->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VERIFICATION_DATE]);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -612,7 +612,7 @@ class FHIRConsentVerification extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_VERIFIED]) || isset($json[self::FIELD_VERIFIED_EXT]) || array_key_exists(self::FIELD_VERIFIED, $json) || array_key_exists(self::FIELD_VERIFIED_EXT, $json)) {
             $value = $json[self::FIELD_VERIFIED] ?? null;
             $ext = (array)($json[self::FIELD_VERIFIED_EXT] ?? []);
@@ -669,7 +669,7 @@ class FHIRConsentVerification extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

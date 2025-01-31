@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -56,11 +56,46 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRB
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\Client\Client;
+use DCarbone\PHPFHIRGenerated\Client\Config;
+use DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum;
+use DCarbone\PHPFHIRGenerated\Client\UnexpectedResponseCodeException;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRResource;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionClient;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypesEnum;
 use PHPUnit\Framework\TestCase;
 
 class FHIRResourceTest extends TestCase
 {
+    protected Version $_version;
+
+    protected function setUp(): void
+    {
+        $this->_version = new Version();
+    }
+
+    protected function _getTestEndpoint(): string
+    {
+        return trim((string)getenv('PHPFHIR_TEST_SERVER_ADDR'));
+    }
+
+    protected function _getClient(): VersionClient
+    {
+        $testEndpoint = $this->_getTestEndpoint();
+        if ('' === $testEndpoint) {
+            $this->markTestSkipped('Environment variable PHPFHIR_TEST_SERVER_ADDR is not defined or empty');
+        }
+        return new VersionClient(
+            new Client(
+                new Config(
+                    address: $testEndpoint,
+                ),
+            ),
+            $this->_version,
+        );
+    }
+
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRResource();

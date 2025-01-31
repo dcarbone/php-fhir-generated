@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,7 +67,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive;
@@ -100,7 +100,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESEARCH_ELEMENT_DEFINITION_DOT_CHARACTERISTIC;
 
-
+    /* class_default.php:48 */
     public const FIELD_DEFINITION_CODEABLE_CONCEPT = 'definitionCodeableConcept';
     public const FIELD_DEFINITION_CANONICAL = 'definitionCanonical';
     public const FIELD_DEFINITION_CANONICAL_EXT = '_definitionCanonical';
@@ -131,6 +131,35 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
     public const FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE = 'participantEffectiveGroupMeasure';
     public const FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE_EXT = '_participantEffectiveGroupMeasure';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_DEFINITION_CODEABLE_CONCEPT => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_DEFINITION_CANONICAL => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_DEFINITION_EXPRESSION => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_DEFINITION_DATA_REQUIREMENT => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_DEFINITION_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_EXCLUDE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_STUDY_EFFECTIVE_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_STUDY_EFFECTIVE_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -375,23 +404,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      */
     protected FHIRGroupMeasure $participantEffectiveGroupMeasure;
 
-    /** Default validation map for fields in type ResearchElementDefinition.Characteristic */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_DEFINITION_CODEABLE_CONCEPT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_DEFINITION_CANONICAL => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_DEFINITION_EXPRESSION => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_DEFINITION_DATA_REQUIREMENT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRResearchElementDefinitionCharacteristic Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -515,6 +528,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -523,6 +537,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -595,11 +610,11 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * last year).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $definitionCanonical
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical,
-                                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $definitionCanonical) {
             unset($this->definitionCanonical);
@@ -608,12 +623,34 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         if (!($definitionCanonical instanceof FHIRCanonical)) {
             $definitionCanonical = new FHIRCanonical(value: $definitionCanonical);
         }
-        if (null !== $valueXMLLocation) {
-            $definitionCanonical->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $definitionCanonical->_getValueXMLLocation()) {
-            $definitionCanonical->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->definitionCanonical = $definitionCanonical;
+        if ($this->_valueXMLLocations[self::FIELD_DEFINITION_CANONICAL] !== $valueXMLLocation) {
+            $this->_setDefinitionCanonicalValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the definitionCanonical element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getDefinitionCanonicalValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_DEFINITION_CANONICAL];
+    }
+
+    /**
+     * Set the location the "value" field of the definitionCanonical element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setDefinitionCanonicalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_DEFINITION_CANONICAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -726,7 +763,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      */
     public function getUsageContextIterator(): iterable
     {
-        if (!isset($this->usageContext) || [] === $this->usageContext) {
+        if (!isset($this->usageContext)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->usageContext);
@@ -771,6 +808,10 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      */
     public function setUsageContext(FHIRUsageContext ...$usageContext): self
     {
+        if ([] === $usageContext) {
+            unset($this->usageContext);
+            return $this;
+        }
         $this->usageContext = $usageContext;
         return $this;
     }
@@ -795,11 +836,11 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * When true, members with this characteristic are excluded from the element.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $exclude
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude,
-                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $exclude) {
             unset($this->exclude);
@@ -808,12 +849,34 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         if (!($exclude instanceof FHIRBoolean)) {
             $exclude = new FHIRBoolean(value: $exclude);
         }
-        if (null !== $valueXMLLocation) {
-            $exclude->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $exclude->_getValueXMLLocation()) {
-            $exclude->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->exclude = $exclude;
+        if ($this->_valueXMLLocations[self::FIELD_EXCLUDE] !== $valueXMLLocation) {
+            $this->_setExcludeValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the exclude element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getExcludeValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_EXCLUDE];
+    }
+
+    /**
+     * Set the location the "value" field of the exclude element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setExcludeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_EXCLUDE] = $valueXMLLocation;
         return $this;
     }
 
@@ -875,11 +938,11 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * A narrative description of the time period the study covers.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $studyEffectiveDescription
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setStudyEffectiveDescription(null|string|FHIRStringPrimitive|FHIRString $studyEffectiveDescription,
-                                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $studyEffectiveDescription) {
             unset($this->studyEffectiveDescription);
@@ -888,12 +951,34 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         if (!($studyEffectiveDescription instanceof FHIRString)) {
             $studyEffectiveDescription = new FHIRString(value: $studyEffectiveDescription);
         }
-        if (null !== $valueXMLLocation) {
-            $studyEffectiveDescription->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $studyEffectiveDescription->_getValueXMLLocation()) {
-            $studyEffectiveDescription->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->studyEffectiveDescription = $studyEffectiveDescription;
+        if ($this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] !== $valueXMLLocation) {
+            $this->_setStudyEffectiveDescriptionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the studyEffectiveDescription element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getStudyEffectiveDescriptionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION];
+    }
+
+    /**
+     * Set the location the "value" field of the studyEffectiveDescription element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setStudyEffectiveDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -925,11 +1010,11 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * Indicates what effective period the study covers.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $studyEffectiveDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setStudyEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $studyEffectiveDateTime,
-                                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $studyEffectiveDateTime) {
             unset($this->studyEffectiveDateTime);
@@ -938,12 +1023,34 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         if (!($studyEffectiveDateTime instanceof FHIRDateTime)) {
             $studyEffectiveDateTime = new FHIRDateTime(value: $studyEffectiveDateTime);
         }
-        if (null !== $valueXMLLocation) {
-            $studyEffectiveDateTime->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $studyEffectiveDateTime->_getValueXMLLocation()) {
-            $studyEffectiveDateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->studyEffectiveDateTime = $studyEffectiveDateTime;
+        if ($this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] !== $valueXMLLocation) {
+            $this->_setStudyEffectiveDateTimeValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the studyEffectiveDateTime element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getStudyEffectiveDateTimeValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME];
+    }
+
+    /**
+     * Set the location the "value" field of the studyEffectiveDateTime element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setStudyEffectiveDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -1111,15 +1218,44 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * Indicates how elements are aggregated within the study effective period.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGroupMeasure $studyEffectiveGroupMeasure
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStudyEffectiveGroupMeasure(null|FHIRGroupMeasure $studyEffectiveGroupMeasure): self
+    public function setStudyEffectiveGroupMeasure(null|FHIRGroupMeasure $studyEffectiveGroupMeasure,
+                                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $studyEffectiveGroupMeasure) {
             unset($this->studyEffectiveGroupMeasure);
             return $this;
         }
         $this->studyEffectiveGroupMeasure = $studyEffectiveGroupMeasure;
+        if ($this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE] !== $valueXMLLocation) {
+            $this->_setStudyEffectiveGroupMeasureValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the studyEffectiveGroupMeasure element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getStudyEffectiveGroupMeasureValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE];
+    }
+
+    /**
+     * Set the location the "value" field of the studyEffectiveGroupMeasure element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setStudyEffectiveGroupMeasureValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1145,11 +1281,11 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * A narrative description of the time period the study covers.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $participantEffectiveDescription
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setParticipantEffectiveDescription(null|string|FHIRStringPrimitive|FHIRString $participantEffectiveDescription,
-                                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $participantEffectiveDescription) {
             unset($this->participantEffectiveDescription);
@@ -1158,12 +1294,34 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         if (!($participantEffectiveDescription instanceof FHIRString)) {
             $participantEffectiveDescription = new FHIRString(value: $participantEffectiveDescription);
         }
-        if (null !== $valueXMLLocation) {
-            $participantEffectiveDescription->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $participantEffectiveDescription->_getValueXMLLocation()) {
-            $participantEffectiveDescription->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->participantEffectiveDescription = $participantEffectiveDescription;
+        if ($this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] !== $valueXMLLocation) {
+            $this->_setParticipantEffectiveDescriptionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the participantEffectiveDescription element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getParticipantEffectiveDescriptionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION];
+    }
+
+    /**
+     * Set the location the "value" field of the participantEffectiveDescription element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setParticipantEffectiveDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -1195,11 +1353,11 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * Indicates what effective period the study covers.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $participantEffectiveDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setParticipantEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $participantEffectiveDateTime,
-                                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $participantEffectiveDateTime) {
             unset($this->participantEffectiveDateTime);
@@ -1208,12 +1366,34 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         if (!($participantEffectiveDateTime instanceof FHIRDateTime)) {
             $participantEffectiveDateTime = new FHIRDateTime(value: $participantEffectiveDateTime);
         }
-        if (null !== $valueXMLLocation) {
-            $participantEffectiveDateTime->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $participantEffectiveDateTime->_getValueXMLLocation()) {
-            $participantEffectiveDateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->participantEffectiveDateTime = $participantEffectiveDateTime;
+        if ($this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] !== $valueXMLLocation) {
+            $this->_setParticipantEffectiveDateTimeValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the participantEffectiveDateTime element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getParticipantEffectiveDateTimeValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME];
+    }
+
+    /**
+     * Set the location the "value" field of the participantEffectiveDateTime element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setParticipantEffectiveDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -1381,18 +1561,48 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * Indicates how elements are aggregated within the study effective period.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGroupMeasure $participantEffectiveGroupMeasure
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setParticipantEffectiveGroupMeasure(null|FHIRGroupMeasure $participantEffectiveGroupMeasure): self
+    public function setParticipantEffectiveGroupMeasure(null|FHIRGroupMeasure $participantEffectiveGroupMeasure,
+                                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $participantEffectiveGroupMeasure) {
             unset($this->participantEffectiveGroupMeasure);
             return $this;
         }
         $this->participantEffectiveGroupMeasure = $participantEffectiveGroupMeasure;
+        if ($this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE] !== $valueXMLLocation) {
+            $this->_setParticipantEffectiveGroupMeasureValueXMLLocation($valueXMLLocation);
+        }
         return $this;
     }
 
+    /**
+     * Return the current location the "value" field of the participantEffectiveGroupMeasure element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getParticipantEffectiveGroupMeasureValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE];
+    }
+
+    /**
+     * Set the location the "value" field of the participantEffectiveGroupMeasure element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setParticipantEffectiveGroupMeasureValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE] = $valueXMLLocation;
+        return $this;
+    }
+
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1401,7 +1611,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1727,16 +1937,17 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRResearchElementDefinition\FHIRResearchElementDefinitionCharacteristic $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRResearchElementDefinition\FHIRResearchElementDefinitionCharacteristic
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1748,227 +1959,163 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DEFINITION_CODEABLE_CONCEPT === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setDefinitionCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DEFINITION_CANONICAL === $childName) {
-                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setDefinitionCanonical(FHIRCanonical::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DEFINITION_EXPRESSION === $childName) {
-                $v = new FHIRExpression();
-                $type->setDefinitionExpression(FHIRExpression::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DEFINITION_DATA_REQUIREMENT === $childName) {
-                $v = new FHIRDataRequirement();
-                $type->setDefinitionDataRequirement(FHIRDataRequirement::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_USAGE_CONTEXT === $childName) {
-                $v = new FHIRUsageContext();
-                $type->addUsageContext(FHIRUsageContext::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_EXCLUDE === $childName) {
-                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setExclude(FHIRBoolean::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_UNIT_OF_MEASURE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setUnitOfMeasure(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STUDY_EFFECTIVE_DESCRIPTION === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setStudyEffectiveDescription(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STUDY_EFFECTIVE_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setStudyEffectiveDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STUDY_EFFECTIVE_PERIOD === $childName) {
-                $v = new FHIRPeriod();
-                $type->setStudyEffectivePeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STUDY_EFFECTIVE_DURATION === $childName) {
-                $v = new FHIRDuration();
-                $type->setStudyEffectiveDuration(FHIRDuration::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STUDY_EFFECTIVE_TIMING === $childName) {
-                $v = new FHIRTiming();
-                $type->setStudyEffectiveTiming(FHIRTiming::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START === $childName) {
-                $v = new FHIRDuration();
-                $type->setStudyEffectiveTimeFromStart(FHIRDuration::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE === $childName) {
-                $v = new FHIRGroupMeasure(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setStudyEffectiveGroupMeasure(FHIRGroupMeasure::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setParticipantEffectiveDescription(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setParticipantEffectiveDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD === $childName) {
-                $v = new FHIRPeriod();
-                $type->setParticipantEffectivePeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_DURATION === $childName) {
-                $v = new FHIRDuration();
-                $type->setParticipantEffectiveDuration(FHIRDuration::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_TIMING === $childName) {
-                $v = new FHIRTiming();
-                $type->setParticipantEffectiveTiming(FHIRTiming::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START === $childName) {
-                $v = new FHIRDuration();
-                $type->setParticipantEffectiveTimeFromStart(FHIRDuration::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE === $childName) {
-                $v = new FHIRGroupMeasure(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setParticipantEffectiveGroupMeasure(FHIRGroupMeasure::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DEFINITION_CODEABLE_CONCEPT === $cen) {
+                $type->setDefinitionCodeableConcept(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DEFINITION_CANONICAL === $cen) {
+                $type->setDefinitionCanonical(FHIRCanonical::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DEFINITION_EXPRESSION === $cen) {
+                $type->setDefinitionExpression(FHIRExpression::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DEFINITION_DATA_REQUIREMENT === $cen) {
+                $type->setDefinitionDataRequirement(FHIRDataRequirement::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_USAGE_CONTEXT === $cen) {
+                $type->addUsageContext(FHIRUsageContext::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_EXCLUDE === $cen) {
+                $type->setExclude(FHIRBoolean::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_UNIT_OF_MEASURE === $cen) {
+                $type->setUnitOfMeasure(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STUDY_EFFECTIVE_DESCRIPTION === $cen) {
+                $type->setStudyEffectiveDescription(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STUDY_EFFECTIVE_DATE_TIME === $cen) {
+                $type->setStudyEffectiveDateTime(FHIRDateTime::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STUDY_EFFECTIVE_PERIOD === $cen) {
+                $type->setStudyEffectivePeriod(FHIRPeriod::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STUDY_EFFECTIVE_DURATION === $cen) {
+                $type->setStudyEffectiveDuration(FHIRDuration::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STUDY_EFFECTIVE_TIMING === $cen) {
+                $type->setStudyEffectiveTiming(FHIRTiming::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START === $cen) {
+                $type->setStudyEffectiveTimeFromStart(FHIRDuration::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE === $cen) {
+                $type->setStudyEffectiveGroupMeasure(FHIRGroupMeasure::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION === $cen) {
+                $type->setParticipantEffectiveDescription(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME === $cen) {
+                $type->setParticipantEffectiveDateTime(FHIRDateTime::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD === $cen) {
+                $type->setParticipantEffectivePeriod(FHIRPeriod::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_DURATION === $cen) {
+                $type->setParticipantEffectiveDuration(FHIRDuration::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_TIMING === $cen) {
+                $type->setParticipantEffectiveTiming(FHIRTiming::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START === $cen) {
+                $type->setParticipantEffectiveTimeFromStart(FHIRDuration::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE === $cen) {
+                $type->setParticipantEffectiveGroupMeasure(FHIRGroupMeasure::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DEFINITION_CANONICAL])) {
-            $pt = $type->getDefinitionCanonical();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_DEFINITION_CANONICAL]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->definitionCanonical)) {
+                $type->definitionCanonical->setValue((string)$attributes[self::FIELD_DEFINITION_CANONICAL]);
+                $type->_setDefinitionCanonicalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDefinitionCanonical(new FHIRCanonical(
-                    value: (string)$attributes[self::FIELD_DEFINITION_CANONICAL],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setDefinitionCanonical((string)$attributes[self::FIELD_DEFINITION_CANONICAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_EXCLUDE])) {
-            $pt = $type->getExclude();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_EXCLUDE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->exclude)) {
+                $type->exclude->setValue((string)$attributes[self::FIELD_EXCLUDE]);
+                $type->_setExcludeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setExclude(new FHIRBoolean(
-                    value: (string)$attributes[self::FIELD_EXCLUDE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setExclude((string)$attributes[self::FIELD_EXCLUDE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION])) {
-            $pt = $type->getStudyEffectiveDescription();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->studyEffectiveDescription)) {
+                $type->studyEffectiveDescription->setValue((string)$attributes[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION]);
+                $type->_setStudyEffectiveDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStudyEffectiveDescription(new FHIRString(
-                    value: (string)$attributes[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setStudyEffectiveDescription((string)$attributes[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_STUDY_EFFECTIVE_DATE_TIME])) {
-            $pt = $type->getStudyEffectiveDateTime();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_STUDY_EFFECTIVE_DATE_TIME]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->studyEffectiveDateTime)) {
+                $type->studyEffectiveDateTime->setValue((string)$attributes[self::FIELD_STUDY_EFFECTIVE_DATE_TIME]);
+                $type->_setStudyEffectiveDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStudyEffectiveDateTime(new FHIRDateTime(
-                    value: (string)$attributes[self::FIELD_STUDY_EFFECTIVE_DATE_TIME],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setStudyEffectiveDateTime((string)$attributes[self::FIELD_STUDY_EFFECTIVE_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE])) {
+            if (isset($type->studyEffectiveGroupMeasure)) {
+                $type->studyEffectiveGroupMeasure->setValue((string)$attributes[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE]);
+                $type->_setStudyEffectiveGroupMeasureValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setStudyEffectiveGroupMeasure((string)$attributes[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION])) {
-            $pt = $type->getParticipantEffectiveDescription();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->participantEffectiveDescription)) {
+                $type->participantEffectiveDescription->setValue((string)$attributes[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION]);
+                $type->_setParticipantEffectiveDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setParticipantEffectiveDescription(new FHIRString(
-                    value: (string)$attributes[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setParticipantEffectiveDescription((string)$attributes[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])) {
-            $pt = $type->getParticipantEffectiveDateTime();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->participantEffectiveDateTime)) {
+                $type->participantEffectiveDateTime->setValue((string)$attributes[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]);
+                $type->_setParticipantEffectiveDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setParticipantEffectiveDateTime(new FHIRDateTime(
-                    value: (string)$attributes[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setParticipantEffectiveDateTime((string)$attributes[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE])) {
+            if (isset($type->participantEffectiveGroupMeasure)) {
+                $type->participantEffectiveGroupMeasure->setValue((string)$attributes[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE]);
+                $type->_setParticipantEffectiveGroupMeasureValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setParticipantEffectiveGroupMeasure((string)$attributes[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->definitionCanonical) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFINITION_CANONICAL]) {
+            $xw->writeAttribute(self::FIELD_DEFINITION_CANONICAL, $this->definitionCanonical->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->exclude) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXCLUDE]) {
+            $xw->writeAttribute(self::FIELD_EXCLUDE, $this->exclude->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
+        if (isset($this->studyEffectiveDescription) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION]) {
+            $xw->writeAttribute(self::FIELD_STUDY_EFFECTIVE_DESCRIPTION, $this->studyEffectiveDescription->_getFormattedValue());
         }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
+        if (isset($this->studyEffectiveDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME]) {
+            $xw->writeAttribute(self::FIELD_STUDY_EFFECTIVE_DATE_TIME, $this->studyEffectiveDateTime->_getFormattedValue());
         }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('ResearchElementDefinitionCharacteristic', $this->_getSourceXMLNS());
+        if (isset($this->studyEffectiveGroupMeasure) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE]) {
+            $xw->writeAttribute(self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE, $this->studyEffectiveGroupMeasure->_getFormattedValue());
         }
-        if (isset($this->definitionCanonical) && $this->definitionCanonical->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DEFINITION_CANONICAL, $this->definitionCanonical->getValue()?->_getFormattedValue());
+        if (isset($this->participantEffectiveDescription) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION]) {
+            $xw->writeAttribute(self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION, $this->participantEffectiveDescription->_getFormattedValue());
         }
-        if (isset($this->exclude) && $this->exclude->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_EXCLUDE, $this->exclude->getValue()?->_getFormattedValue());
+        if (isset($this->participantEffectiveDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]) {
+            $xw->writeAttribute(self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME, $this->participantEffectiveDateTime->_getFormattedValue());
         }
-        if (isset($this->studyEffectiveDescription) && $this->studyEffectiveDescription->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_STUDY_EFFECTIVE_DESCRIPTION, $this->studyEffectiveDescription->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->studyEffectiveDateTime) && $this->studyEffectiveDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_STUDY_EFFECTIVE_DATE_TIME, $this->studyEffectiveDateTime->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->participantEffectiveDescription) && $this->participantEffectiveDescription->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION, $this->participantEffectiveDescription->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->participantEffectiveDateTime) && $this->participantEffectiveDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME, $this->participantEffectiveDateTime->getValue()?->_getFormattedValue());
+        if (isset($this->participantEffectiveGroupMeasure) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE]) {
+            $xw->writeAttribute(self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE, $this->participantEffectiveGroupMeasure->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->definitionCodeableConcept)) {
@@ -1976,9 +2123,11 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             $this->definitionCodeableConcept->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->definitionCanonical) && $this->definitionCanonical->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->definitionCanonical)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DEFINITION_CANONICAL]
+                || $this->definitionCanonical->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_DEFINITION_CANONICAL);
-            $this->definitionCanonical->xmlSerialize($xw, $config);
+            $this->definitionCanonical->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DEFINITION_CANONICAL]);
             $xw->endElement();
         }
         if (isset($this->definitionExpression)) {
@@ -1998,9 +2147,11 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->exclude) && $this->exclude->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->exclude)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_EXCLUDE]
+                || $this->exclude->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_EXCLUDE);
-            $this->exclude->xmlSerialize($xw, $config);
+            $this->exclude->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_EXCLUDE]);
             $xw->endElement();
         }
         if (isset($this->unitOfMeasure)) {
@@ -2008,14 +2159,18 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             $this->unitOfMeasure->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->studyEffectiveDescription) && $this->studyEffectiveDescription->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->studyEffectiveDescription)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION]
+                || $this->studyEffectiveDescription->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_STUDY_EFFECTIVE_DESCRIPTION);
-            $this->studyEffectiveDescription->xmlSerialize($xw, $config);
+            $this->studyEffectiveDescription->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION]);
             $xw->endElement();
         }
-        if (isset($this->studyEffectiveDateTime) && $this->studyEffectiveDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->studyEffectiveDateTime)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME]
+                || $this->studyEffectiveDateTime->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_STUDY_EFFECTIVE_DATE_TIME);
-            $this->studyEffectiveDateTime->xmlSerialize($xw, $config);
+            $this->studyEffectiveDateTime->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME]);
             $xw->endElement();
         }
         if (isset($this->studyEffectivePeriod)) {
@@ -2038,19 +2193,25 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             $this->studyEffectiveTimeFromStart->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->studyEffectiveGroupMeasure)) {
+        if (isset($this->studyEffectiveGroupMeasure)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE]
+                || $this->studyEffectiveGroupMeasure->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE);
-            $this->studyEffectiveGroupMeasure->xmlSerialize($xw, $config);
+            $this->studyEffectiveGroupMeasure->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE]);
             $xw->endElement();
         }
-        if (isset($this->participantEffectiveDescription) && $this->participantEffectiveDescription->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->participantEffectiveDescription)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION]
+                || $this->participantEffectiveDescription->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION);
-            $this->participantEffectiveDescription->xmlSerialize($xw, $config);
+            $this->participantEffectiveDescription->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION]);
             $xw->endElement();
         }
-        if (isset($this->participantEffectiveDateTime) && $this->participantEffectiveDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->participantEffectiveDateTime)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]
+                || $this->participantEffectiveDateTime->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME);
-            $this->participantEffectiveDateTime->xmlSerialize($xw, $config);
+            $this->participantEffectiveDateTime->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]);
             $xw->endElement();
         }
         if (isset($this->participantEffectivePeriod)) {
@@ -2073,30 +2234,25 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             $this->participantEffectiveTimeFromStart->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->participantEffectiveGroupMeasure)) {
+        if (isset($this->participantEffectiveGroupMeasure)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE]
+                || $this->participantEffectiveGroupMeasure->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE);
-            $this->participantEffectiveGroupMeasure->xmlSerialize($xw, $config);
+            $this->participantEffectiveGroupMeasure->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE]);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRResearchElementDefinition\FHIRResearchElementDefinitionCharacteristic $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRResearchElementDefinition\FHIRResearchElementDefinitionCharacteristic
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -2116,7 +2272,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_DEFINITION_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_DEFINITION_CODEABLE_CONCEPT, $json)) {
             $type->setDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
                 json: $json[self::FIELD_DEFINITION_CODEABLE_CONCEPT],
@@ -2395,7 +2551,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

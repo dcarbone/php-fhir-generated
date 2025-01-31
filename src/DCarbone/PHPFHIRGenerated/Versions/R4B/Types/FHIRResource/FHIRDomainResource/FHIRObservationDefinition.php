@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
@@ -124,10 +124,11 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OBSERVATION_DEFINITION;
 
-
+    /* class_default.php:48 */
     public const FIELD_CATEGORY = 'category';
     public const FIELD_CODE = 'code';
     public const FIELD_IDENTIFIER = 'identifier';
+    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_PERMITTED_DATA_TYPE = 'permittedDataType';
     public const FIELD_PERMITTED_DATA_TYPE_EXT = '_permittedDataType';
     public const FIELD_MULTIPLE_RESULTS_ALLOWED = 'multipleResultsAllowed';
@@ -142,6 +143,20 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
     public const FIELD_ABNORMAL_CODED_VALUE_SET = 'abnormalCodedValueSet';
     public const FIELD_CRITICAL_CODED_VALUE_SET = 'criticalCodedValueSet';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_CODE => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_MULTIPLE_RESULTS_ALLOWED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_PREFERRED_REPORT_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -281,14 +296,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      */
     protected FHIRReference $criticalCodedValueSet;
 
-    /** Default validation map for fields in type ObservationDefinition */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_CODE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRObservationDefinition Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $id
@@ -387,6 +395,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -395,6 +404,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:149 */
     /**
      * @return string
      */
@@ -403,6 +413,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         return static::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -423,7 +434,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      */
     public function getCategoryIterator(): iterable
     {
-        if (!isset($this->category) || [] === $this->category) {
+        if (!isset($this->category)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->category);
@@ -462,6 +473,10 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
+        if ([] === $category) {
+            unset($this->category);
+            return $this;
+        }
         $this->category = $category;
         return $this;
     }
@@ -524,7 +539,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      */
     public function getIdentifierIterator(): iterable
     {
-        if (!isset($this->identifier) || [] === $this->identifier) {
+        if (!isset($this->identifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->identifier);
@@ -563,7 +578,18 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
-        $this->identifier = $identifier;
+        if ([] === $identifier) {
+            unset($this->identifier);
+            return $this;
+        }
+        $this->identifier = [];
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->identifier[] = $v;
+            } else {
+                $this->identifier[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -585,7 +611,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      */
     public function getPermittedDataTypeIterator(): iterable
     {
-        if (!isset($this->permittedDataType) || [] === $this->permittedDataType) {
+        if (!isset($this->permittedDataType)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->permittedDataType);
@@ -620,6 +646,10 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      */
     public function setPermittedDataType(FHIRObservationDataType ...$permittedDataType): self
     {
+        if ([] === $permittedDataType) {
+            unset($this->permittedDataType);
+            return $this;
+        }
         $this->permittedDataType = [];
         foreach($permittedDataType as $v) {
             if ($v instanceof FHIRObservationDataType) {
@@ -653,11 +683,11 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * ObservationDefinition.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $multipleResultsAllowed
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setMultipleResultsAllowed(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $multipleResultsAllowed,
-                                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $multipleResultsAllowed) {
             unset($this->multipleResultsAllowed);
@@ -666,12 +696,34 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         if (!($multipleResultsAllowed instanceof FHIRBoolean)) {
             $multipleResultsAllowed = new FHIRBoolean(value: $multipleResultsAllowed);
         }
-        if (null !== $valueXMLLocation) {
-            $multipleResultsAllowed->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $multipleResultsAllowed->_getValueXMLLocation()) {
-            $multipleResultsAllowed->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->multipleResultsAllowed = $multipleResultsAllowed;
+        if ($this->_valueXMLLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED] !== $valueXMLLocation) {
+            $this->_setMultipleResultsAllowedValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the multipleResultsAllowed element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getMultipleResultsAllowedValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED];
+    }
+
+    /**
+     * Set the location the "value" field of the multipleResultsAllowed element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setMultipleResultsAllowedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED] = $valueXMLLocation;
         return $this;
     }
 
@@ -735,11 +787,11 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * conforming to this ObservationDefinition.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $preferredReportName
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setPreferredReportName(null|string|FHIRStringPrimitive|FHIRString $preferredReportName,
-                                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $preferredReportName) {
             unset($this->preferredReportName);
@@ -748,12 +800,34 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         if (!($preferredReportName instanceof FHIRString)) {
             $preferredReportName = new FHIRString(value: $preferredReportName);
         }
-        if (null !== $valueXMLLocation) {
-            $preferredReportName->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $preferredReportName->_getValueXMLLocation()) {
-            $preferredReportName->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->preferredReportName = $preferredReportName;
+        if ($this->_valueXMLLocations[self::FIELD_PREFERRED_REPORT_NAME] !== $valueXMLLocation) {
+            $this->_setPreferredReportNameValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the preferredReportName element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getPreferredReportNameValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_PREFERRED_REPORT_NAME];
+    }
+
+    /**
+     * Set the location the "value" field of the preferredReportName element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setPreferredReportNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_PREFERRED_REPORT_NAME] = $valueXMLLocation;
         return $this;
     }
 
@@ -808,7 +882,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      */
     public function getQualifiedIntervalIterator(): iterable
     {
-        if (!isset($this->qualifiedInterval) || [] === $this->qualifiedInterval) {
+        if (!isset($this->qualifiedInterval)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->qualifiedInterval);
@@ -845,6 +919,10 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      */
     public function setQualifiedInterval(FHIRObservationDefinitionQualifiedInterval ...$qualifiedInterval): self
     {
+        if ([] === $qualifiedInterval) {
+            unset($this->qualifiedInterval);
+            return $this;
+        }
         $this->qualifiedInterval = $qualifiedInterval;
         return $this;
     }
@@ -993,6 +1071,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1001,7 +1080,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1276,16 +1355,17 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
      * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRObservationDefinition $type
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRObservationDefinition $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+                                          null|UnserializeConfig $config = null,
+                                          null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1306,135 +1386,94 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
             $type->_setSourceXMLNS((string)$ns);
         }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_ID === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setId(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_META === $childName) {
-                $v = new FHIRMeta();
-                $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TEXT === $childName) {
-                $v = new FHIRNarrative();
-                $type->setText(FHIRNarrative::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTAINED === $childName) {
-                foreach ($n->children() as $nn) {
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_ID === $cen) {
+                $type->setId(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_META === $cen) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IMPLICIT_RULES === $cen) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LANGUAGE === $cen) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TEXT === $cen) {
+                $type->setText(FHIRNarrative::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTAINED === $cen) {
+                foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $cn */
-                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($nn);
-                    $type->addContained($cn::xmlUnserialize($nn, null, $config));
+                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($cen);
+                    $type->addContained($cn::xmlUnserialize($cen, $config));
                 }
-            } else if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CATEGORY === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addCategory(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CODE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setCode(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PERMITTED_DATA_TYPE === $childName) {
-                $v = new FHIRObservationDataType(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addPermittedDataType(FHIRObservationDataType::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MULTIPLE_RESULTS_ALLOWED === $childName) {
-                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setMultipleResultsAllowed(FHIRBoolean::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_METHOD === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setMethod(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PREFERRED_REPORT_NAME === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setPreferredReportName(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_QUANTITATIVE_DETAILS === $childName) {
-                $v = new FHIRObservationDefinitionQuantitativeDetails();
-                $type->setQuantitativeDetails(FHIRObservationDefinitionQuantitativeDetails::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_QUALIFIED_INTERVAL === $childName) {
-                $v = new FHIRObservationDefinitionQualifiedInterval();
-                $type->addQualifiedInterval(FHIRObservationDefinitionQualifiedInterval::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VALID_CODED_VALUE_SET === $childName) {
-                $v = new FHIRReference();
-                $type->setValidCodedValueSet(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NORMAL_CODED_VALUE_SET === $childName) {
-                $v = new FHIRReference();
-                $type->setNormalCodedValueSet(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ABNORMAL_CODED_VALUE_SET === $childName) {
-                $v = new FHIRReference();
-                $type->setAbnormalCodedValueSet(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CRITICAL_CODED_VALUE_SET === $childName) {
-                $v = new FHIRReference();
-                $type->setCriticalCodedValueSet(FHIRReference::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CATEGORY === $cen) {
+                $type->addCategory(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CODE === $cen) {
+                $type->setCode(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IDENTIFIER === $cen) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PERMITTED_DATA_TYPE === $cen) {
+                $type->addPermittedDataType(FHIRObservationDataType::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MULTIPLE_RESULTS_ALLOWED === $cen) {
+                $type->setMultipleResultsAllowed(FHIRBoolean::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_METHOD === $cen) {
+                $type->setMethod(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PREFERRED_REPORT_NAME === $cen) {
+                $type->setPreferredReportName(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_QUANTITATIVE_DETAILS === $cen) {
+                $type->setQuantitativeDetails(FHIRObservationDefinitionQuantitativeDetails::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_QUALIFIED_INTERVAL === $cen) {
+                $type->addQualifiedInterval(FHIRObservationDefinitionQualifiedInterval::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VALID_CODED_VALUE_SET === $cen) {
+                $type->setValidCodedValueSet(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NORMAL_CODED_VALUE_SET === $cen) {
+                $type->setNormalCodedValueSet(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ABNORMAL_CODED_VALUE_SET === $cen) {
+                $type->setAbnormalCodedValueSet(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CRITICAL_CODED_VALUE_SET === $cen) {
+                $type->setCriticalCodedValueSet(FHIRReference::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->id)) {
+                $type->id->setValue((string)$attributes[self::FIELD_ID]);
+                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRString(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
-            $pt = $type->getImplicitRules();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->implicitRules)) {
+                $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
-            $pt = $type->getLanguage();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->language)) {
+                $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
+                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage(new FHIRCode(
-                    value: (string)$attributes[self::FIELD_LANGUAGE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_MULTIPLE_RESULTS_ALLOWED])) {
-            $pt = $type->getMultipleResultsAllowed();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_MULTIPLE_RESULTS_ALLOWED]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->multipleResultsAllowed)) {
+                $type->multipleResultsAllowed->setValue((string)$attributes[self::FIELD_MULTIPLE_RESULTS_ALLOWED]);
+                $type->_setMultipleResultsAllowedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMultipleResultsAllowed(new FHIRBoolean(
-                    value: (string)$attributes[self::FIELD_MULTIPLE_RESULTS_ALLOWED],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setMultipleResultsAllowed((string)$attributes[self::FIELD_MULTIPLE_RESULTS_ALLOWED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_PREFERRED_REPORT_NAME])) {
-            $pt = $type->getPreferredReportName();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_PREFERRED_REPORT_NAME]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->preferredReportName)) {
+                $type->preferredReportName->setValue((string)$attributes[self::FIELD_PREFERRED_REPORT_NAME]);
+                $type->_setPreferredReportNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPreferredReportName(new FHIRString(
-                    value: (string)$attributes[self::FIELD_PREFERRED_REPORT_NAME],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setPreferredReportName((string)$attributes[self::FIELD_PREFERRED_REPORT_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
@@ -1445,7 +1484,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(null|XMLWriter $xw = null,
+                                 null|SerializeConfig $config = null): XMLWriter
     {
         if (null === $config) {
             $config = (new Version())->getConfig()->getSerializeConfig();
@@ -1464,11 +1504,11 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
             $rootOpened = true;
             $xw->openRootNode('ObservationDefinition', $this->_getSourceXMLNS());
         }
-        if (isset($this->multipleResultsAllowed) && $this->multipleResultsAllowed->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MULTIPLE_RESULTS_ALLOWED, $this->multipleResultsAllowed->getValue()?->_getFormattedValue());
+        if (isset($this->multipleResultsAllowed) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED]) {
+            $xw->writeAttribute(self::FIELD_MULTIPLE_RESULTS_ALLOWED, $this->multipleResultsAllowed->_getFormattedValue());
         }
-        if (isset($this->preferredReportName) && $this->preferredReportName->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PREFERRED_REPORT_NAME, $this->preferredReportName->getValue()?->_getFormattedValue());
+        if (isset($this->preferredReportName) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PREFERRED_REPORT_NAME]) {
+            $xw->writeAttribute(self::FIELD_PREFERRED_REPORT_NAME, $this->preferredReportName->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->category)) {
@@ -1483,23 +1523,25 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
             $this->code->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->identifier)) {
-            foreach ($this->identifier as $v) {
+        if (isset($this->identifier) && [] !== $this->identifier) {
+            foreach($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
             }
         }
-        if (isset($this->permittedDataType)) {
-            foreach ($this->permittedDataType as $v) {
+        if (isset($this->permittedDataType) && [] !== $this->permittedDataType) {
+            foreach($this->permittedDataType as $v) {
                 $xw->startElement(self::FIELD_PERMITTED_DATA_TYPE);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
             }
         }
-        if (isset($this->multipleResultsAllowed) && $this->multipleResultsAllowed->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->multipleResultsAllowed)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED]
+                || $this->multipleResultsAllowed->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_MULTIPLE_RESULTS_ALLOWED);
-            $this->multipleResultsAllowed->xmlSerialize($xw, $config);
+            $this->multipleResultsAllowed->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED]);
             $xw->endElement();
         }
         if (isset($this->method)) {
@@ -1507,9 +1549,11 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
             $this->method->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->preferredReportName) && $this->preferredReportName->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->preferredReportName)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PREFERRED_REPORT_NAME]
+                || $this->preferredReportName->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_PREFERRED_REPORT_NAME);
-            $this->preferredReportName->xmlSerialize($xw, $config);
+            $this->preferredReportName->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PREFERRED_REPORT_NAME]);
             $xw->endElement();
         }
         if (isset($this->quantitativeDetails)) {
@@ -1554,15 +1598,15 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
     }
 
     /**
-     * @param string|array|\stdClass $json
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRObservationDefinition $type
+     * @param string|\stdClass|array $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRObservationDefinition $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(string|\stdClass|array $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1582,7 +1626,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
             $vs = $json[self::FIELD_CATEGORY];
             if (!is_int(key($vs))) {
@@ -1601,14 +1645,20 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
                 config: $config,
             ));
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -1711,7 +1761,25 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
             $out->code = $this->code;
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            $vals = [];
+            $exts = [];
+            foreach ($this->identifier as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->identifier = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_identifier = $exts;
+            }
         }
         if (isset($this->permittedDataType) && [] !== $this->permittedDataType) {
             $vals = [];
@@ -1778,7 +1846,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

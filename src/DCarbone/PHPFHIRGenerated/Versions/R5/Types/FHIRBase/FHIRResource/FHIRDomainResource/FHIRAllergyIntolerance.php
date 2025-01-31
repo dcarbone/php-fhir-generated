@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAllergyIntoleranceCategory;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAllergyIntoleranceCriticality;
@@ -131,8 +131,9 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ALLERGY_INTOLERANCE;
 
-
+    /* class_default.php:48 */
     public const FIELD_IDENTIFIER = 'identifier';
+    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_CLINICAL_STATUS = 'clinicalStatus';
     public const FIELD_VERIFICATION_STATUS = 'verificationStatus';
     public const FIELD_TYPE = 'type';
@@ -158,6 +159,23 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
     public const FIELD_NOTE = 'note';
     public const FIELD_REACTION = 'reaction';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_PATIENT => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_CRITICALITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_ONSET_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_ONSET_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_RECORDED_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_LAST_OCCURRENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -391,14 +409,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     protected array $reaction;
 
-    /** Default validation map for fields in type AllergyIntolerance */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_PATIENT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRAllergyIntolerance Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -527,6 +538,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -535,6 +547,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:149 */
     /**
      * @return string
      */
@@ -543,6 +556,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         return static::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -565,7 +579,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function getIdentifierIterator(): iterable
     {
-        if (!isset($this->identifier) || [] === $this->identifier) {
+        if (!isset($this->identifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->identifier);
@@ -608,7 +622,18 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
-        $this->identifier = $identifier;
+        if ([] === $identifier) {
+            unset($this->identifier);
+            return $this;
+        }
+        $this->identifier = [];
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->identifier[] = $v;
+            } else {
+                $this->identifier[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -743,7 +768,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function getCategoryIterator(): iterable
     {
-        if (!isset($this->category) || [] === $this->category) {
+        if (!isset($this->category)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->category);
@@ -776,6 +801,10 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function setCategory(FHIRAllergyIntoleranceCategory ...$category): self
     {
+        if ([] === $category) {
+            unset($this->category);
+            return $this;
+        }
         $this->category = [];
         foreach($category as $v) {
             if ($v instanceof FHIRAllergyIntoleranceCategory) {
@@ -807,15 +836,44 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * identified substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAllergyIntoleranceCriticality $criticality
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCriticality(null|FHIRAllergyIntoleranceCriticality $criticality): self
+    public function setCriticality(null|FHIRAllergyIntoleranceCriticality $criticality,
+                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $criticality) {
             unset($this->criticality);
             return $this;
         }
         $this->criticality = $criticality;
+        if ($this->_valueXMLLocations[self::FIELD_CRITICALITY] !== $valueXMLLocation) {
+            $this->_setCriticalityValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the criticality element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getCriticalityValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_CRITICALITY];
+    }
+
+    /**
+     * Set the location the "value" field of the criticality element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setCriticalityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_CRITICALITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -983,11 +1041,11 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * identified.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $onsetDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setOnsetDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $onsetDateTime,
-                                     null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $onsetDateTime) {
             unset($this->onsetDateTime);
@@ -996,12 +1054,34 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         if (!($onsetDateTime instanceof FHIRDateTime)) {
             $onsetDateTime = new FHIRDateTime(value: $onsetDateTime);
         }
-        if (null !== $valueXMLLocation) {
-            $onsetDateTime->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $onsetDateTime->_getValueXMLLocation()) {
-            $onsetDateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->onsetDateTime = $onsetDateTime;
+        if ($this->_valueXMLLocations[self::FIELD_ONSET_DATE_TIME] !== $valueXMLLocation) {
+            $this->_setOnsetDateTimeValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the onsetDateTime element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getOnsetDateTimeValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_ONSET_DATE_TIME];
+    }
+
+    /**
+     * Set the location the "value" field of the onsetDateTime element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setOnsetDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_ONSET_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -1137,11 +1217,11 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * identified.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $onsetString
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setOnsetString(null|string|FHIRStringPrimitive|FHIRString $onsetString,
-                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $onsetString) {
             unset($this->onsetString);
@@ -1150,12 +1230,34 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         if (!($onsetString instanceof FHIRString)) {
             $onsetString = new FHIRString(value: $onsetString);
         }
-        if (null !== $valueXMLLocation) {
-            $onsetString->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $onsetString->_getValueXMLLocation()) {
-            $onsetString->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->onsetString = $onsetString;
+        if ($this->_valueXMLLocations[self::FIELD_ONSET_STRING] !== $valueXMLLocation) {
+            $this->_setOnsetStringValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the onsetString element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getOnsetStringValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_ONSET_STRING];
+    }
+
+    /**
+     * Set the location the "value" field of the onsetString element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setOnsetStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_ONSET_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -1191,11 +1293,11 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * created in the system, which is often a system-generated date.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $recordedDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setRecordedDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedDate,
-                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $recordedDate) {
             unset($this->recordedDate);
@@ -1204,12 +1306,34 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         if (!($recordedDate instanceof FHIRDateTime)) {
             $recordedDate = new FHIRDateTime(value: $recordedDate);
         }
-        if (null !== $valueXMLLocation) {
-            $recordedDate->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $recordedDate->_getValueXMLLocation()) {
-            $recordedDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->recordedDate = $recordedDate;
+        if ($this->_valueXMLLocations[self::FIELD_RECORDED_DATE] !== $valueXMLLocation) {
+            $this->_setRecordedDateValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the recordedDate element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getRecordedDateValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_RECORDED_DATE];
+    }
+
+    /**
+     * Set the location the "value" field of the recordedDate element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setRecordedDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_RECORDED_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1232,7 +1356,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function getParticipantIterator(): iterable
     {
-        if (!isset($this->participant) || [] === $this->participant) {
+        if (!isset($this->participant)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->participant);
@@ -1269,6 +1393,10 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function setParticipant(FHIRAllergyIntoleranceParticipant ...$participant): self
     {
+        if ([] === $participant) {
+            unset($this->participant);
+            return $this;
+        }
         $this->participant = $participant;
         return $this;
     }
@@ -1305,11 +1433,11 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * event.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $lastOccurrence
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setLastOccurrence(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastOccurrence,
-                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $lastOccurrence) {
             unset($this->lastOccurrence);
@@ -1318,12 +1446,34 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         if (!($lastOccurrence instanceof FHIRDateTime)) {
             $lastOccurrence = new FHIRDateTime(value: $lastOccurrence);
         }
-        if (null !== $valueXMLLocation) {
-            $lastOccurrence->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $lastOccurrence->_getValueXMLLocation()) {
-            $lastOccurrence->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->lastOccurrence = $lastOccurrence;
+        if ($this->_valueXMLLocations[self::FIELD_LAST_OCCURRENCE] !== $valueXMLLocation) {
+            $this->_setLastOccurrenceValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the lastOccurrence element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getLastOccurrenceValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_LAST_OCCURRENCE];
+    }
+
+    /**
+     * Set the location the "value" field of the lastOccurrence element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setLastOccurrenceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_LAST_OCCURRENCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1348,7 +1498,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function getNoteIterator(): iterable
     {
-        if (!isset($this->note) || [] === $this->note) {
+        if (!isset($this->note)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->note);
@@ -1389,6 +1539,10 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
+        if ([] === $note) {
+            unset($this->note);
+            return $this;
+        }
         $this->note = $note;
         return $this;
     }
@@ -1412,7 +1566,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function getReactionIterator(): iterable
     {
-        if (!isset($this->reaction) || [] === $this->reaction) {
+        if (!isset($this->reaction)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->reaction);
@@ -1449,10 +1603,15 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function setReaction(FHIRAllergyIntoleranceReaction ...$reaction): self
     {
+        if ([] === $reaction) {
+            unset($this->reaction);
+            return $this;
+        }
         $this->reaction = $reaction;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1461,7 +1620,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1808,16 +1967,17 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
      * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance $type
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+                                          null|UnserializeConfig $config = null,
+                                          null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1838,177 +1998,130 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
             $type->_setSourceXMLNS((string)$ns);
         }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_META === $childName) {
-                $v = new FHIRMeta();
-                $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TEXT === $childName) {
-                $v = new FHIRNarrative();
-                $type->setText(FHIRNarrative::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTAINED === $childName) {
-                foreach ($n->children() as $nn) {
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_ID === $cen) {
+                $type->setId(FHIRId::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_META === $cen) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IMPLICIT_RULES === $cen) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LANGUAGE === $cen) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TEXT === $cen) {
+                $type->setText(FHIRNarrative::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTAINED === $cen) {
+                foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
-                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($nn);
-                    $type->addContained($cn::xmlUnserialize($nn, null, $config));
+                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($cen);
+                    $type->addContained($cn::xmlUnserialize($cen, $config));
                 }
-            } else if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CLINICAL_STATUS === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setClinicalStatus(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VERIFICATION_STATUS === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setVerificationStatus(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CATEGORY === $childName) {
-                $v = new FHIRAllergyIntoleranceCategory(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addCategory(FHIRAllergyIntoleranceCategory::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CRITICALITY === $childName) {
-                $v = new FHIRAllergyIntoleranceCriticality(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setCriticality(FHIRAllergyIntoleranceCriticality::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CODE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setCode(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PATIENT === $childName) {
-                $v = new FHIRReference();
-                $type->setPatient(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ENCOUNTER === $childName) {
-                $v = new FHIRReference();
-                $type->setEncounter(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ONSET_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setOnsetDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ONSET_AGE === $childName) {
-                $v = new FHIRAge();
-                $type->setOnsetAge(FHIRAge::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ONSET_PERIOD === $childName) {
-                $v = new FHIRPeriod();
-                $type->setOnsetPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ONSET_RANGE === $childName) {
-                $v = new FHIRRange();
-                $type->setOnsetRange(FHIRRange::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ONSET_STRING === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setOnsetString(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RECORDED_DATE === $childName) {
-                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setRecordedDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PARTICIPANT === $childName) {
-                $v = new FHIRAllergyIntoleranceParticipant();
-                $type->addParticipant(FHIRAllergyIntoleranceParticipant::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LAST_OCCURRENCE === $childName) {
-                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setLastOccurrence(FHIRDateTime::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NOTE === $childName) {
-                $v = new FHIRAnnotation();
-                $type->addNote(FHIRAnnotation::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_REACTION === $childName) {
-                $v = new FHIRAllergyIntoleranceReaction();
-                $type->addReaction(FHIRAllergyIntoleranceReaction::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IDENTIFIER === $cen) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CLINICAL_STATUS === $cen) {
+                $type->setClinicalStatus(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VERIFICATION_STATUS === $cen) {
+                $type->setVerificationStatus(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CATEGORY === $cen) {
+                $type->addCategory(FHIRAllergyIntoleranceCategory::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CRITICALITY === $cen) {
+                $type->setCriticality(FHIRAllergyIntoleranceCriticality::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CODE === $cen) {
+                $type->setCode(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PATIENT === $cen) {
+                $type->setPatient(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ENCOUNTER === $cen) {
+                $type->setEncounter(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ONSET_DATE_TIME === $cen) {
+                $type->setOnsetDateTime(FHIRDateTime::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ONSET_AGE === $cen) {
+                $type->setOnsetAge(FHIRAge::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ONSET_PERIOD === $cen) {
+                $type->setOnsetPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ONSET_RANGE === $cen) {
+                $type->setOnsetRange(FHIRRange::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ONSET_STRING === $cen) {
+                $type->setOnsetString(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RECORDED_DATE === $cen) {
+                $type->setRecordedDate(FHIRDateTime::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PARTICIPANT === $cen) {
+                $type->addParticipant(FHIRAllergyIntoleranceParticipant::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LAST_OCCURRENCE === $cen) {
+                $type->setLastOccurrence(FHIRDateTime::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NOTE === $cen) {
+                $type->addNote(FHIRAnnotation::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_REACTION === $cen) {
+                $type->addReaction(FHIRAllergyIntoleranceReaction::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->id)) {
+                $type->id->setValue((string)$attributes[self::FIELD_ID]);
+                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRId(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
-            $pt = $type->getImplicitRules();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->implicitRules)) {
+                $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
-            $pt = $type->getLanguage();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->language)) {
+                $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
+                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage(new FHIRCode(
-                    value: (string)$attributes[self::FIELD_LANGUAGE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_CRITICALITY])) {
+            if (isset($type->criticality)) {
+                $type->criticality->setValue((string)$attributes[self::FIELD_CRITICALITY]);
+                $type->_setCriticalityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setCriticality((string)$attributes[self::FIELD_CRITICALITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_ONSET_DATE_TIME])) {
-            $pt = $type->getOnsetDateTime();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ONSET_DATE_TIME]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->onsetDateTime)) {
+                $type->onsetDateTime->setValue((string)$attributes[self::FIELD_ONSET_DATE_TIME]);
+                $type->_setOnsetDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOnsetDateTime(new FHIRDateTime(
-                    value: (string)$attributes[self::FIELD_ONSET_DATE_TIME],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setOnsetDateTime((string)$attributes[self::FIELD_ONSET_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_ONSET_STRING])) {
-            $pt = $type->getOnsetString();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ONSET_STRING]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->onsetString)) {
+                $type->onsetString->setValue((string)$attributes[self::FIELD_ONSET_STRING]);
+                $type->_setOnsetStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOnsetString(new FHIRString(
-                    value: (string)$attributes[self::FIELD_ONSET_STRING],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setOnsetString((string)$attributes[self::FIELD_ONSET_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_RECORDED_DATE])) {
-            $pt = $type->getRecordedDate();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_RECORDED_DATE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->recordedDate)) {
+                $type->recordedDate->setValue((string)$attributes[self::FIELD_RECORDED_DATE]);
+                $type->_setRecordedDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRecordedDate(new FHIRDateTime(
-                    value: (string)$attributes[self::FIELD_RECORDED_DATE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setRecordedDate((string)$attributes[self::FIELD_RECORDED_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_LAST_OCCURRENCE])) {
-            $pt = $type->getLastOccurrence();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_LAST_OCCURRENCE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->lastOccurrence)) {
+                $type->lastOccurrence->setValue((string)$attributes[self::FIELD_LAST_OCCURRENCE]);
+                $type->_setLastOccurrenceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLastOccurrence(new FHIRDateTime(
-                    value: (string)$attributes[self::FIELD_LAST_OCCURRENCE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setLastOccurrence((string)$attributes[self::FIELD_LAST_OCCURRENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
@@ -2019,7 +2132,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(null|XMLWriter $xw = null,
+                                 null|SerializeConfig $config = null): XMLWriter
     {
         if (null === $config) {
             $config = (new Version())->getConfig()->getSerializeConfig();
@@ -2038,21 +2152,24 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             $rootOpened = true;
             $xw->openRootNode('AllergyIntolerance', $this->_getSourceXMLNS());
         }
-        if (isset($this->onsetDateTime) && $this->onsetDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ONSET_DATE_TIME, $this->onsetDateTime->getValue()?->_getFormattedValue());
+        if (isset($this->criticality) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CRITICALITY]) {
+            $xw->writeAttribute(self::FIELD_CRITICALITY, $this->criticality->_getFormattedValue());
         }
-        if (isset($this->onsetString) && $this->onsetString->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ONSET_STRING, $this->onsetString->getValue()?->_getFormattedValue());
+        if (isset($this->onsetDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ONSET_DATE_TIME]) {
+            $xw->writeAttribute(self::FIELD_ONSET_DATE_TIME, $this->onsetDateTime->_getFormattedValue());
         }
-        if (isset($this->recordedDate) && $this->recordedDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RECORDED_DATE, $this->recordedDate->getValue()?->_getFormattedValue());
+        if (isset($this->onsetString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ONSET_STRING]) {
+            $xw->writeAttribute(self::FIELD_ONSET_STRING, $this->onsetString->_getFormattedValue());
         }
-        if (isset($this->lastOccurrence) && $this->lastOccurrence->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_LAST_OCCURRENCE, $this->lastOccurrence->getValue()?->_getFormattedValue());
+        if (isset($this->recordedDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RECORDED_DATE]) {
+            $xw->writeAttribute(self::FIELD_RECORDED_DATE, $this->recordedDate->_getFormattedValue());
+        }
+        if (isset($this->lastOccurrence) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LAST_OCCURRENCE]) {
+            $xw->writeAttribute(self::FIELD_LAST_OCCURRENCE, $this->lastOccurrence->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier)) {
-            foreach ($this->identifier as $v) {
+        if (isset($this->identifier) && [] !== $this->identifier) {
+            foreach($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2073,16 +2190,18 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->category)) {
-            foreach ($this->category as $v) {
+        if (isset($this->category) && [] !== $this->category) {
+            foreach($this->category as $v) {
                 $xw->startElement(self::FIELD_CATEGORY);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
             }
         }
-        if (isset($this->criticality)) {
+        if (isset($this->criticality)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_CRITICALITY]
+                || $this->criticality->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_CRITICALITY);
-            $this->criticality->xmlSerialize($xw, $config);
+            $this->criticality->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_CRITICALITY]);
             $xw->endElement();
         }
         if (isset($this->code)) {
@@ -2100,9 +2219,11 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             $this->encounter->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->onsetDateTime) && $this->onsetDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->onsetDateTime)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ONSET_DATE_TIME]
+                || $this->onsetDateTime->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_ONSET_DATE_TIME);
-            $this->onsetDateTime->xmlSerialize($xw, $config);
+            $this->onsetDateTime->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ONSET_DATE_TIME]);
             $xw->endElement();
         }
         if (isset($this->onsetAge)) {
@@ -2120,14 +2241,18 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             $this->onsetRange->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->onsetString) && $this->onsetString->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->onsetString)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ONSET_STRING]
+                || $this->onsetString->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_ONSET_STRING);
-            $this->onsetString->xmlSerialize($xw, $config);
+            $this->onsetString->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ONSET_STRING]);
             $xw->endElement();
         }
-        if (isset($this->recordedDate) && $this->recordedDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->recordedDate)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_RECORDED_DATE]
+                || $this->recordedDate->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_RECORDED_DATE);
-            $this->recordedDate->xmlSerialize($xw, $config);
+            $this->recordedDate->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_RECORDED_DATE]);
             $xw->endElement();
         }
         if (isset($this->participant)) {
@@ -2137,9 +2262,11 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
                 $xw->endElement();
             }
         }
-        if (isset($this->lastOccurrence) && $this->lastOccurrence->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->lastOccurrence)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_LAST_OCCURRENCE]
+                || $this->lastOccurrence->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_LAST_OCCURRENCE);
-            $this->lastOccurrence->xmlSerialize($xw, $config);
+            $this->lastOccurrence->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_LAST_OCCURRENCE]);
             $xw->endElement();
         }
         if (isset($this->note)) {
@@ -2166,15 +2293,15 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|array|\stdClass $json
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance $type
+     * @param string|\stdClass|array $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(string|\stdClass|array $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -2194,15 +2321,21 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        parent::jsonUnserialize($json, $config, $type);
+        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -2365,7 +2498,25 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            $vals = [];
+            $exts = [];
+            foreach ($this->identifier as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->identifier = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_identifier = $exts;
+            }
         }
         if (isset($this->clinicalStatus)) {
             $out->clinicalStatus = $this->clinicalStatus;
@@ -2477,7 +2628,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

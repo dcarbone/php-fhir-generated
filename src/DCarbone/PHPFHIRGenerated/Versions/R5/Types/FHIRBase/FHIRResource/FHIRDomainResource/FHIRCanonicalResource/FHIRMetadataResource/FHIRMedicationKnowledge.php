@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDefinitional;
@@ -136,8 +136,9 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_KNOWLEDGE;
 
-
+    /* class_default.php:48 */
     public const FIELD_IDENTIFIER = 'identifier';
+    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_CODE = 'code';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
@@ -161,6 +162,16 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
     public const FIELD_REGULATORY = 'regulatory';
     public const FIELD_DEFINITIONAL = 'definitional';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_PREPARATION_INSTRUCTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -366,10 +377,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     protected FHIRMedicationKnowledgeDefinitional $definitional;
 
-    /** Default validation map for fields in type MedicationKnowledge */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRMedicationKnowledge Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -503,6 +511,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -511,6 +520,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:149 */
     /**
      * @return string
      */
@@ -519,6 +529,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
         return static::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -539,7 +550,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getIdentifierIterator(): iterable
     {
-        if (!isset($this->identifier) || [] === $this->identifier) {
+        if (!isset($this->identifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->identifier);
@@ -578,7 +589,18 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
-        $this->identifier = $identifier;
+        if ([] === $identifier) {
+            unset($this->identifier);
+            return $this;
+        }
+        $this->identifier = [];
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->identifier[] = $v;
+            } else {
+                $this->identifier[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -648,15 +670,44 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      * properties.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMedicationKnowledgeStatusCodes $status
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRMedicationKnowledgeStatusCodes $status): self
+    public function setStatus(null|FHIRMedicationKnowledgeStatusCodes $status,
+                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
         }
         $this->status = $status;
+        if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
+            $this->_setStatusValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the status element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getStatusValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_STATUS];
+    }
+
+    /**
+     * Set the location the "value" field of the status element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -714,7 +765,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getIntendedJurisdictionIterator(): iterable
     {
-        if (!isset($this->intendedJurisdiction) || [] === $this->intendedJurisdiction) {
+        if (!isset($this->intendedJurisdiction)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->intendedJurisdiction);
@@ -753,6 +804,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setIntendedJurisdiction(FHIRCodeableConcept ...$intendedJurisdiction): self
     {
+        if ([] === $intendedJurisdiction) {
+            unset($this->intendedJurisdiction);
+            return $this;
+        }
         $this->intendedJurisdiction = $intendedJurisdiction;
         return $this;
     }
@@ -778,7 +833,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getNameIterator(): iterable
     {
-        if (!isset($this->name) || [] === $this->name) {
+        if (!isset($this->name)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->name);
@@ -822,6 +877,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setName(string|FHIRStringPrimitive|FHIRString ...$name): self
     {
+        if ([] === $name) {
+            unset($this->name);
+            return $this;
+        }
         $this->name = [];
         foreach($name as $v) {
             if ($v instanceof FHIRString) {
@@ -853,7 +912,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getRelatedMedicationKnowledgeIterator(): iterable
     {
-        if (!isset($this->relatedMedicationKnowledge) || [] === $this->relatedMedicationKnowledge) {
+        if (!isset($this->relatedMedicationKnowledge)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->relatedMedicationKnowledge);
@@ -892,6 +951,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setRelatedMedicationKnowledge(FHIRMedicationKnowledgeRelatedMedicationKnowledge ...$relatedMedicationKnowledge): self
     {
+        if ([] === $relatedMedicationKnowledge) {
+            unset($this->relatedMedicationKnowledge);
+            return $this;
+        }
         $this->relatedMedicationKnowledge = $relatedMedicationKnowledge;
         return $this;
     }
@@ -916,7 +979,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getAssociatedMedicationIterator(): iterable
     {
-        if (!isset($this->associatedMedication) || [] === $this->associatedMedication) {
+        if (!isset($this->associatedMedication)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->associatedMedication);
@@ -955,6 +1018,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setAssociatedMedication(FHIRReference ...$associatedMedication): self
     {
+        if ([] === $associatedMedication) {
+            unset($this->associatedMedication);
+            return $this;
+        }
         $this->associatedMedication = $associatedMedication;
         return $this;
     }
@@ -980,7 +1047,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getProductTypeIterator(): iterable
     {
-        if (!isset($this->productType) || [] === $this->productType) {
+        if (!isset($this->productType)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->productType);
@@ -1021,6 +1088,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setProductType(FHIRCodeableConcept ...$productType): self
     {
+        if ([] === $productType) {
+            unset($this->productType);
+            return $this;
+        }
         $this->productType = $productType;
         return $this;
     }
@@ -1042,7 +1113,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getMonographIterator(): iterable
     {
-        if (!isset($this->monograph) || [] === $this->monograph) {
+        if (!isset($this->monograph)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->monograph);
@@ -1075,6 +1146,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setMonograph(FHIRMedicationKnowledgeMonograph ...$monograph): self
     {
+        if ([] === $monograph) {
+            unset($this->monograph);
+            return $this;
+        }
         $this->monograph = $monograph;
         return $this;
     }
@@ -1109,11 +1184,11 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      * The instructions for preparing the medication.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $preparationInstruction
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setPreparationInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $preparationInstruction,
-                                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $preparationInstruction) {
             unset($this->preparationInstruction);
@@ -1122,12 +1197,34 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
         if (!($preparationInstruction instanceof FHIRMarkdown)) {
             $preparationInstruction = new FHIRMarkdown(value: $preparationInstruction);
         }
-        if (null !== $valueXMLLocation) {
-            $preparationInstruction->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $preparationInstruction->_getValueXMLLocation()) {
-            $preparationInstruction->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->preparationInstruction = $preparationInstruction;
+        if ($this->_valueXMLLocations[self::FIELD_PREPARATION_INSTRUCTION] !== $valueXMLLocation) {
+            $this->_setPreparationInstructionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the preparationInstruction element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getPreparationInstructionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_PREPARATION_INSTRUCTION];
+    }
+
+    /**
+     * Set the location the "value" field of the preparationInstruction element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setPreparationInstructionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_PREPARATION_INSTRUCTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -1148,7 +1245,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getCostIterator(): iterable
     {
-        if (!isset($this->cost) || [] === $this->cost) {
+        if (!isset($this->cost)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->cost);
@@ -1181,6 +1278,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setCost(FHIRMedicationKnowledgeCost ...$cost): self
     {
+        if ([] === $cost) {
+            unset($this->cost);
+            return $this;
+        }
         $this->cost = $cost;
         return $this;
     }
@@ -1202,7 +1303,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getMonitoringProgramIterator(): iterable
     {
-        if (!isset($this->monitoringProgram) || [] === $this->monitoringProgram) {
+        if (!isset($this->monitoringProgram)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->monitoringProgram);
@@ -1235,6 +1336,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setMonitoringProgram(FHIRMedicationKnowledgeMonitoringProgram ...$monitoringProgram): self
     {
+        if ([] === $monitoringProgram) {
+            unset($this->monitoringProgram);
+            return $this;
+        }
         $this->monitoringProgram = $monitoringProgram;
         return $this;
     }
@@ -1257,7 +1362,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getIndicationGuidelineIterator(): iterable
     {
-        if (!isset($this->indicationGuideline) || [] === $this->indicationGuideline) {
+        if (!isset($this->indicationGuideline)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->indicationGuideline);
@@ -1292,6 +1397,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setIndicationGuideline(FHIRMedicationKnowledgeIndicationGuideline ...$indicationGuideline): self
     {
+        if ([] === $indicationGuideline) {
+            unset($this->indicationGuideline);
+            return $this;
+        }
         $this->indicationGuideline = $indicationGuideline;
         return $this;
     }
@@ -1313,7 +1422,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getMedicineClassificationIterator(): iterable
     {
-        if (!isset($this->medicineClassification) || [] === $this->medicineClassification) {
+        if (!isset($this->medicineClassification)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->medicineClassification);
@@ -1346,6 +1455,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setMedicineClassification(FHIRMedicationKnowledgeMedicineClassification ...$medicineClassification): self
     {
+        if ([] === $medicineClassification) {
+            unset($this->medicineClassification);
+            return $this;
+        }
         $this->medicineClassification = $medicineClassification;
         return $this;
     }
@@ -1367,7 +1480,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getPackagingIterator(): iterable
     {
-        if (!isset($this->packaging) || [] === $this->packaging) {
+        if (!isset($this->packaging)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->packaging);
@@ -1400,6 +1513,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setPackaging(FHIRMedicationKnowledgePackaging ...$packaging): self
     {
+        if ([] === $packaging) {
+            unset($this->packaging);
+            return $this;
+        }
         $this->packaging = $packaging;
         return $this;
     }
@@ -1424,7 +1541,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getClinicalUseIssueIterator(): iterable
     {
-        if (!isset($this->clinicalUseIssue) || [] === $this->clinicalUseIssue) {
+        if (!isset($this->clinicalUseIssue)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->clinicalUseIssue);
@@ -1463,6 +1580,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setClinicalUseIssue(FHIRReference ...$clinicalUseIssue): self
     {
+        if ([] === $clinicalUseIssue) {
+            unset($this->clinicalUseIssue);
+            return $this;
+        }
         $this->clinicalUseIssue = $clinicalUseIssue;
         return $this;
     }
@@ -1485,7 +1606,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getStorageGuidelineIterator(): iterable
     {
-        if (!isset($this->storageGuideline) || [] === $this->storageGuideline) {
+        if (!isset($this->storageGuideline)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->storageGuideline);
@@ -1520,6 +1641,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setStorageGuideline(FHIRMedicationKnowledgeStorageGuideline ...$storageGuideline): self
     {
+        if ([] === $storageGuideline) {
+            unset($this->storageGuideline);
+            return $this;
+        }
         $this->storageGuideline = $storageGuideline;
         return $this;
     }
@@ -1541,7 +1666,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function getRegulatoryIterator(): iterable
     {
-        if (!isset($this->regulatory) || [] === $this->regulatory) {
+        if (!isset($this->regulatory)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->regulatory);
@@ -1574,6 +1699,10 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function setRegulatory(FHIRMedicationKnowledgeRegulatory ...$regulatory): self
     {
+        if ([] === $regulatory) {
+            unset($this->regulatory);
+            return $this;
+        }
         $this->regulatory = $regulatory;
         return $this;
     }
@@ -1612,6 +1741,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1620,7 +1750,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1974,16 +2104,17 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
      * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRMedicationKnowledge $type
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRMedicationKnowledge $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRMedicationKnowledge
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+                                          null|UnserializeConfig $config = null,
+                                          null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -2004,149 +2135,108 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
         if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
             $type->_setSourceXMLNS((string)$ns);
         }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_META === $childName) {
-                $v = new FHIRMeta();
-                $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TEXT === $childName) {
-                $v = new FHIRNarrative();
-                $type->setText(FHIRNarrative::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTAINED === $childName) {
-                foreach ($n->children() as $nn) {
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_ID === $cen) {
+                $type->setId(FHIRId::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_META === $cen) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IMPLICIT_RULES === $cen) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LANGUAGE === $cen) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TEXT === $cen) {
+                $type->setText(FHIRNarrative::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTAINED === $cen) {
+                foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
-                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($nn);
-                    $type->addContained($cn::xmlUnserialize($nn, null, $config));
+                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($cen);
+                    $type->addContained($cn::xmlUnserialize($cen, $config));
                 }
-            } else if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CODE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setCode(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRMedicationKnowledgeStatusCodes(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setStatus(FHIRMedicationKnowledgeStatusCodes::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_AUTHOR === $childName) {
-                $v = new FHIRReference();
-                $type->setAuthor(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INTENDED_JURISDICTION === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addIntendedJurisdiction(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NAME === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->addName(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RELATED_MEDICATION_KNOWLEDGE === $childName) {
-                $v = new FHIRMedicationKnowledgeRelatedMedicationKnowledge();
-                $type->addRelatedMedicationKnowledge(FHIRMedicationKnowledgeRelatedMedicationKnowledge::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ASSOCIATED_MEDICATION === $childName) {
-                $v = new FHIRReference();
-                $type->addAssociatedMedication(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PRODUCT_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addProductType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MONOGRAPH === $childName) {
-                $v = new FHIRMedicationKnowledgeMonograph();
-                $type->addMonograph(FHIRMedicationKnowledgeMonograph::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PREPARATION_INSTRUCTION === $childName) {
-                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setPreparationInstruction(FHIRMarkdown::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_COST === $childName) {
-                $v = new FHIRMedicationKnowledgeCost();
-                $type->addCost(FHIRMedicationKnowledgeCost::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MONITORING_PROGRAM === $childName) {
-                $v = new FHIRMedicationKnowledgeMonitoringProgram();
-                $type->addMonitoringProgram(FHIRMedicationKnowledgeMonitoringProgram::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INDICATION_GUIDELINE === $childName) {
-                $v = new FHIRMedicationKnowledgeIndicationGuideline();
-                $type->addIndicationGuideline(FHIRMedicationKnowledgeIndicationGuideline::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_MEDICINE_CLASSIFICATION === $childName) {
-                $v = new FHIRMedicationKnowledgeMedicineClassification();
-                $type->addMedicineClassification(FHIRMedicationKnowledgeMedicineClassification::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PACKAGING === $childName) {
-                $v = new FHIRMedicationKnowledgePackaging();
-                $type->addPackaging(FHIRMedicationKnowledgePackaging::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CLINICAL_USE_ISSUE === $childName) {
-                $v = new FHIRReference();
-                $type->addClinicalUseIssue(FHIRReference::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STORAGE_GUIDELINE === $childName) {
-                $v = new FHIRMedicationKnowledgeStorageGuideline();
-                $type->addStorageGuideline(FHIRMedicationKnowledgeStorageGuideline::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_REGULATORY === $childName) {
-                $v = new FHIRMedicationKnowledgeRegulatory();
-                $type->addRegulatory(FHIRMedicationKnowledgeRegulatory::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DEFINITIONAL === $childName) {
-                $v = new FHIRMedicationKnowledgeDefinitional();
-                $type->setDefinitional(FHIRMedicationKnowledgeDefinitional::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IDENTIFIER === $cen) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CODE === $cen) {
+                $type->setCode(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STATUS === $cen) {
+                $type->setStatus(FHIRMedicationKnowledgeStatusCodes::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_AUTHOR === $cen) {
+                $type->setAuthor(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INTENDED_JURISDICTION === $cen) {
+                $type->addIntendedJurisdiction(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NAME === $cen) {
+                $type->addName(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RELATED_MEDICATION_KNOWLEDGE === $cen) {
+                $type->addRelatedMedicationKnowledge(FHIRMedicationKnowledgeRelatedMedicationKnowledge::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ASSOCIATED_MEDICATION === $cen) {
+                $type->addAssociatedMedication(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PRODUCT_TYPE === $cen) {
+                $type->addProductType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MONOGRAPH === $cen) {
+                $type->addMonograph(FHIRMedicationKnowledgeMonograph::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PREPARATION_INSTRUCTION === $cen) {
+                $type->setPreparationInstruction(FHIRMarkdown::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_COST === $cen) {
+                $type->addCost(FHIRMedicationKnowledgeCost::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MONITORING_PROGRAM === $cen) {
+                $type->addMonitoringProgram(FHIRMedicationKnowledgeMonitoringProgram::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INDICATION_GUIDELINE === $cen) {
+                $type->addIndicationGuideline(FHIRMedicationKnowledgeIndicationGuideline::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_MEDICINE_CLASSIFICATION === $cen) {
+                $type->addMedicineClassification(FHIRMedicationKnowledgeMedicineClassification::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PACKAGING === $cen) {
+                $type->addPackaging(FHIRMedicationKnowledgePackaging::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CLINICAL_USE_ISSUE === $cen) {
+                $type->addClinicalUseIssue(FHIRReference::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STORAGE_GUIDELINE === $cen) {
+                $type->addStorageGuideline(FHIRMedicationKnowledgeStorageGuideline::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_REGULATORY === $cen) {
+                $type->addRegulatory(FHIRMedicationKnowledgeRegulatory::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DEFINITIONAL === $cen) {
+                $type->setDefinitional(FHIRMedicationKnowledgeDefinitional::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->id)) {
+                $type->id->setValue((string)$attributes[self::FIELD_ID]);
+                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId(new FHIRId(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
-            $pt = $type->getImplicitRules();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->implicitRules)) {
+                $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules(new FHIRUri(
-                    value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
-            $pt = $type->getLanguage();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->language)) {
+                $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
+                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage(new FHIRCode(
-                    value: (string)$attributes[self::FIELD_LANGUAGE],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_NAME])) {
-            $v = new FHIRString(value: (string)$attributes[self::FIELD_NAME],
-                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
-            $type->addName($v);
+        if (isset($attributes[self::FIELD_STATUS])) {
+            if (isset($type->status)) {
+                $type->status->setValue((string)$attributes[self::FIELD_STATUS]);
+                $type->_setStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setStatus((string)$attributes[self::FIELD_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
         }
         if (isset($attributes[self::FIELD_PREPARATION_INSTRUCTION])) {
-            $pt = $type->getPreparationInstruction();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_PREPARATION_INSTRUCTION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->preparationInstruction)) {
+                $type->preparationInstruction->setValue((string)$attributes[self::FIELD_PREPARATION_INSTRUCTION]);
+                $type->_setPreparationInstructionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPreparationInstruction(new FHIRMarkdown(
-                    value: (string)$attributes[self::FIELD_PREPARATION_INSTRUCTION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setPreparationInstruction((string)$attributes[self::FIELD_PREPARATION_INSTRUCTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
@@ -2157,7 +2247,8 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(null|XMLWriter $xw = null,
+                                 null|SerializeConfig $config = null): XMLWriter
     {
         if (null === $config) {
             $config = (new Version())->getConfig()->getSerializeConfig();
@@ -2176,20 +2267,15 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
             $rootOpened = true;
             $xw->openRootNode('MedicationKnowledge', $this->_getSourceXMLNS());
         }
-        if (isset($this->name)) {
-           foreach($this->name as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->_getFormattedValue());
-                    break;
-                }
-            }
+        if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
+            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
         }
-        if (isset($this->preparationInstruction) && $this->preparationInstruction->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PREPARATION_INSTRUCTION, $this->preparationInstruction->getValue()?->_getFormattedValue());
+        if (isset($this->preparationInstruction) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PREPARATION_INSTRUCTION]) {
+            $xw->writeAttribute(self::FIELD_PREPARATION_INSTRUCTION, $this->preparationInstruction->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier)) {
-            foreach ($this->identifier as $v) {
+        if (isset($this->identifier) && [] !== $this->identifier) {
+            foreach($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2200,9 +2286,11 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
             $this->code->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->status)) {
+        if (isset($this->status)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_STATUS]
+                || $this->status->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_STATUS);
-            $this->status->xmlSerialize($xw, $config);
+            $this->status->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_STATUS]);
             $xw->endElement();
         }
         if (isset($this->author)) {
@@ -2217,13 +2305,11 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
                 $xw->endElement();
             }
         }
-        if (isset($this->name)) {
+        if (isset($this->name) && [] !== $this->name) {
             foreach($this->name as $v) {
-                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
-                    $xw->startElement(self::FIELD_NAME);
-                    $v->xmlSerialize($xw, $config);
-                    $xw->endElement();
-                }
+                $xw->startElement(self::FIELD_NAME);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
             }
         }
         if (isset($this->relatedMedicationKnowledge)) {
@@ -2254,9 +2340,11 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
                 $xw->endElement();
             }
         }
-        if (isset($this->preparationInstruction) && $this->preparationInstruction->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->preparationInstruction)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PREPARATION_INSTRUCTION]
+                || $this->preparationInstruction->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_PREPARATION_INSTRUCTION);
-            $this->preparationInstruction->xmlSerialize($xw, $config);
+            $this->preparationInstruction->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PREPARATION_INSTRUCTION]);
             $xw->endElement();
         }
         if (isset($this->cost)) {
@@ -2330,15 +2418,15 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
     }
 
     /**
-     * @param string|array|\stdClass $json
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRMedicationKnowledge $type
+     * @param string|\stdClass|array $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRMedicationKnowledge $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRMedicationKnowledge
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(string|\stdClass|array $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -2358,15 +2446,21 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        parent::jsonUnserialize($json, $config, $type);
+        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -2589,7 +2683,25 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            $vals = [];
+            $exts = [];
+            foreach ($this->identifier as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->identifier = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_identifier = $exts;
+            }
         }
         if (isset($this->code)) {
             $out->code = $this->code;
@@ -2683,7 +2795,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements VersionCon
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

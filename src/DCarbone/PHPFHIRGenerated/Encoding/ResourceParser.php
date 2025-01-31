@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace DCarbone\PHPFHIRGenerated;
+namespace DCarbone\PHPFHIRGenerated\Encoding;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,10 +26,11 @@ namespace DCarbone\PHPFHIRGenerated;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Versions\VersionInterface;
 
-class ResponseParser
+class ResourceParser
 {
     private const XML_START = ['<'];
     private const JSON_START = ['{', '['];
@@ -39,11 +40,11 @@ class ResponseParser
      *
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param null|string|array|\stdClass|\SimpleXMLElement|\DOMDocument $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      * @throws \Exception
      */
     public static function parse(VersionInterface $version,
-                                 null|string|array|\stdClass|\SimpleXMLElement|\DOMDocument $input): null|TypeInterface
+                                 null|string|array|\stdClass|\SimpleXMLElement|\DOMDocument $input): null|ResourceTypeInterface
     {
         if (null === $input) {
             return null;
@@ -59,15 +60,15 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param array $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      */
-    public static function parseArray(VersionInterface $version,
-                                      array $input): null|TypeInterface
+    public static function parseArray(VersionInterface $version, array $input): null|ResourceTypeInterface
     {
         if ([] === $input) {
             return null;
         }
         if (isset($input[Constants::JSON_FIELD_RESOURCE_TYPE])) {
+            /** @var \DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface $className */
             $className = $version->getTypeMap()::getTypeClassName($input[Constants::JSON_FIELD_RESOURCE_TYPE]);
             if (null === $className) {
                 throw new \UnexpectedValueException(sprintf(
@@ -77,7 +78,7 @@ class ResponseParser
                     implode('","', array_keys($input))
                 ));
             }
-            return $className::jsonUnserialize($input, null, $version->getConfig()->getUnserializeConfig());
+            return $className::jsonUnserialize($input, $version->getConfig()->getUnserializeConfig());
         }
         throw new \DomainException(sprintf(
             'Unable to determine FHIR Type from provided array: missing "%s" key.  Available keys: ["%s"]',
@@ -89,10 +90,9 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param \stdClass $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      */
-    public static function parseStdClass(VersionInterface $version,
-                                         \stdClass $input): null|TypeInterface
+    public static function parseStdClass(VersionInterface $version, \stdClass $input): null|ResourceTypeInterface
     {
         return static::parseArray($version, (array)$input);
     }
@@ -100,13 +100,12 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param \SimpleXMLElement $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      */
-    public static function parseSimpleXMLElement(VersionInterface $version,
-                                                 \SimpleXMLElement $input): null|TypeInterface
+    public static function parseSimpleXMLElement(VersionInterface $version, \SimpleXMLElement $input): null|ResourceTypeInterface
     {
         $elementName = $input->getName();
-        /** @var \DCarbone\PHPFHIRGenerated\TypeInterface $fhirType */
+        /** @var \DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface $fhirType */
         $fhirType = $version->getTypeMap()::getTypeClassName($elementName);
         if (null === $fhirType) {
             throw new \UnexpectedValueException(sprintf(
@@ -115,16 +114,15 @@ class ResponseParser
                 static::getPrintableStringInput($input->saveXML())
             ));
         }
-        return $fhirType::xmlUnserialize($input, null, $version->getConfig()->getUnserializeConfig());
+        return $fhirType::xmlUnserialize($input, $version->getConfig()->getUnserializeConfig());
     }
 
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param \DOMDocument $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      */
-    public static function parseDOMDocument(VersionInterface $version,
-                                            \DOMDocument $input): null|TypeInterface
+    public static function parseDOMDocument(VersionInterface $version, \DOMDocument $input): null|ResourceTypeInterface
     {
         return static::parseSimpleXMLElement($version, simplexml_import_dom($input));
     }
@@ -132,10 +130,10 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param \stdClass|\SimpleXMLElement|\DOMDocument $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      */
     public static function parseObject(VersionInterface $version,
-                                       \stdClass|\SimpleXMLElement|\DOMDocument $input): null|TypeInterface
+                                       \stdClass|\SimpleXMLElement|\DOMDocument $input): null|ResourceTypeInterface
     {
         if ($input instanceof \stdClass) {
             return static::parseStdClass($version, $input);
@@ -149,11 +147,10 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param string $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      * @throws \Exception
      */
-    public static function parseXML(VersionInterface $version,
-                                    string $input): null|TypeInterface
+    public static function parseXML(VersionInterface $version, string $input): null|ResourceTypeInterface
     {
         return static::parseSimpleXMLElement(
             $version,
@@ -163,10 +160,9 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param string $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      */
-    public static function parseJSON(VersionInterface $version,
-                                     string $input): null|TypeInterface
+    public static function parseJSON(VersionInterface $version, string $input): null|ResourceTypeInterface
     {
         $decoded = json_decode($input, true, $version->getConfig()->getUnserializeConfig()->getJSONDecodeMaxDepth());
         $err = json_last_error();
@@ -184,13 +180,11 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param string $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      * @throws \Exception
      */
-    public static function parseString(VersionInterface $version,
-                                       string $input): null|TypeInterface
+    public static function parseString(VersionInterface $version, string $input): null|ResourceTypeInterface
     {
-        $input = trim($input);
         if ('' === $input) {
             return null;
         }

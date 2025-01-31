@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,13 +26,14 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * 
  */
 
+
 /**
  * Interface ContainedTypeInterface
  *
  * This is a meta interface that must never be directly implemented by a class.  It exists purely to ensure type safety
  * throughout the base package.
  */
-interface ContainedTypeInterface extends TypeInterface
+interface ContainedTypeInterface extends ResourceTypeInterface
 {
     /**
      * The return from this method is used only when json serializing this type

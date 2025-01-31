@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation;
@@ -111,17 +111,21 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CITATION_DOT_CITED_ARTIFACT;
 
-
+    /* class_default.php:48 */
     public const FIELD_IDENTIFIER = 'identifier';
+    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_RELATED_IDENTIFIER = 'relatedIdentifier';
+    public const FIELD_RELATED_IDENTIFIER_EXT = '_relatedIdentifier';
     public const FIELD_DATE_ACCESSED = 'dateAccessed';
     public const FIELD_DATE_ACCESSED_EXT = '_dateAccessed';
     public const FIELD_VERSION = 'version';
+    public const FIELD_VERSION_EXT = '_version';
     public const FIELD_CURRENT_STATE = 'currentState';
     public const FIELD_STATUS_DATE = 'statusDate';
     public const FIELD_TITLE = 'title';
     public const FIELD_ABSTRACT = 'abstract';
     public const FIELD_PART = 'part';
+    public const FIELD_PART_EXT = '_part';
     public const FIELD_RELATES_TO = 'relatesTo';
     public const FIELD_PUBLICATION_FORM = 'publicationForm';
     public const FIELD_WEB_LOCATION = 'webLocation';
@@ -129,6 +133,17 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
     public const FIELD_CONTRIBUTORSHIP = 'contributorship';
     public const FIELD_NOTE = 'note';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_DATE_ACCESSED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_PART => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -305,10 +320,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     protected array $note;
 
-    /** Default validation map for fields in type Citation.CitedArtifact */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRCitationCitedArtifact Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -402,6 +414,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -410,6 +423,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -432,7 +446,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getIdentifierIterator(): iterable
     {
-        if (!isset($this->identifier) || [] === $this->identifier) {
+        if (!isset($this->identifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->identifier);
@@ -475,7 +489,18 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
-        $this->identifier = $identifier;
+        if ([] === $identifier) {
+            unset($this->identifier);
+            return $this;
+        }
+        $this->identifier = [];
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->identifier[] = $v;
+            } else {
+                $this->identifier[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -500,7 +525,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getRelatedIdentifierIterator(): iterable
     {
-        if (!isset($this->relatedIdentifier) || [] === $this->relatedIdentifier) {
+        if (!isset($this->relatedIdentifier)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->relatedIdentifier);
@@ -541,7 +566,18 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setRelatedIdentifier(FHIRIdentifier ...$relatedIdentifier): self
     {
-        $this->relatedIdentifier = $relatedIdentifier;
+        if ([] === $relatedIdentifier) {
+            unset($this->relatedIdentifier);
+            return $this;
+        }
+        $this->relatedIdentifier = [];
+        foreach($relatedIdentifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->relatedIdentifier[] = $v;
+            } else {
+                $this->relatedIdentifier[] = new FHIRIdentifier(value: $v);
+            }
+        }
         return $this;
     }
 
@@ -575,11 +611,11 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * When the cited artifact was accessed.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $dateAccessed
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setDateAccessed(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateAccessed,
-                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $dateAccessed) {
             unset($this->dateAccessed);
@@ -588,12 +624,34 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         if (!($dateAccessed instanceof FHIRDateTime)) {
             $dateAccessed = new FHIRDateTime(value: $dateAccessed);
         }
-        if (null !== $valueXMLLocation) {
-            $dateAccessed->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $dateAccessed->_getValueXMLLocation()) {
-            $dateAccessed->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->dateAccessed = $dateAccessed;
+        if ($this->_valueXMLLocations[self::FIELD_DATE_ACCESSED] !== $valueXMLLocation) {
+            $this->_setDateAccessedValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the dateAccessed element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getDateAccessedValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_DATE_ACCESSED];
+    }
+
+    /**
+     * Set the location the "value" field of the dateAccessed element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setDateAccessedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_DATE_ACCESSED] = $valueXMLLocation;
         return $this;
     }
 
@@ -621,15 +679,44 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * The defined version of the cited artifact.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationVersion $version
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVersion(null|FHIRCitationVersion $version): self
+    public function setVersion(null|FHIRCitationVersion $version,
+                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $version) {
             unset($this->version);
             return $this;
         }
         $this->version = $version;
+        if ($this->_valueXMLLocations[self::FIELD_VERSION] !== $valueXMLLocation) {
+            $this->_setVersionValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the version element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getVersionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_VERSION];
+    }
+
+    /**
+     * Set the location the "value" field of the version element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setVersionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_VERSION] = $valueXMLLocation;
         return $this;
     }
 
@@ -653,7 +740,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getCurrentStateIterator(): iterable
     {
-        if (!isset($this->currentState) || [] === $this->currentState) {
+        if (!isset($this->currentState)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->currentState);
@@ -692,6 +779,10 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setCurrentState(FHIRCodeableConcept ...$currentState): self
     {
+        if ([] === $currentState) {
+            unset($this->currentState);
+            return $this;
+        }
         $this->currentState = $currentState;
         return $this;
     }
@@ -717,7 +808,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getStatusDateIterator(): iterable
     {
-        if (!isset($this->statusDate) || [] === $this->statusDate) {
+        if (!isset($this->statusDate)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->statusDate);
@@ -758,6 +849,10 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setStatusDate(FHIRCitationStatusDate1 ...$statusDate): self
     {
+        if ([] === $statusDate) {
+            unset($this->statusDate);
+            return $this;
+        }
         $this->statusDate = $statusDate;
         return $this;
     }
@@ -782,7 +877,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getTitleIterator(): iterable
     {
-        if (!isset($this->title) || [] === $this->title) {
+        if (!isset($this->title)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->title);
@@ -821,6 +916,10 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setTitle(FHIRCitationTitle ...$title): self
     {
+        if ([] === $title) {
+            unset($this->title);
+            return $this;
+        }
         $this->title = $title;
         return $this;
     }
@@ -846,7 +945,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getAbstractIterator(): iterable
     {
-        if (!isset($this->abstract) || [] === $this->abstract) {
+        if (!isset($this->abstract)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->abstract);
@@ -887,6 +986,10 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setAbstract(FHIRCitationAbstract ...$abstract): self
     {
+        if ([] === $abstract) {
+            unset($this->abstract);
+            return $this;
+        }
         $this->abstract = $abstract;
         return $this;
     }
@@ -915,15 +1018,44 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * The component of the article or artifact.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPart $part
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPart(null|FHIRCitationPart $part): self
+    public function setPart(null|FHIRCitationPart $part,
+                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $part) {
             unset($this->part);
             return $this;
         }
         $this->part = $part;
+        if ($this->_valueXMLLocations[self::FIELD_PART] !== $valueXMLLocation) {
+            $this->_setPartValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the part element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getPartValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_PART];
+    }
+
+    /**
+     * Set the location the "value" field of the part element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setPartValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_PART] = $valueXMLLocation;
         return $this;
     }
 
@@ -947,7 +1079,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getRelatesToIterator(): iterable
     {
-        if (!isset($this->relatesTo) || [] === $this->relatesTo) {
+        if (!isset($this->relatesTo)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->relatesTo);
@@ -986,6 +1118,10 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setRelatesTo(FHIRCitationRelatesTo ...$relatesTo): self
     {
+        if ([] === $relatesTo) {
+            unset($this->relatesTo);
+            return $this;
+        }
         $this->relatesTo = $relatesTo;
         return $this;
     }
@@ -1011,7 +1147,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getPublicationFormIterator(): iterable
     {
-        if (!isset($this->publicationForm) || [] === $this->publicationForm) {
+        if (!isset($this->publicationForm)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->publicationForm);
@@ -1052,6 +1188,10 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setPublicationForm(FHIRCitationPublicationForm ...$publicationForm): self
     {
+        if ([] === $publicationForm) {
+            unset($this->publicationForm);
+            return $this;
+        }
         $this->publicationForm = $publicationForm;
         return $this;
     }
@@ -1076,7 +1216,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getWebLocationIterator(): iterable
     {
-        if (!isset($this->webLocation) || [] === $this->webLocation) {
+        if (!isset($this->webLocation)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->webLocation);
@@ -1115,6 +1255,10 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setWebLocation(FHIRCitationWebLocation ...$webLocation): self
     {
+        if ([] === $webLocation) {
+            unset($this->webLocation);
+            return $this;
+        }
         $this->webLocation = $webLocation;
         return $this;
     }
@@ -1139,7 +1283,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getClassificationIterator(): iterable
     {
-        if (!isset($this->classification) || [] === $this->classification) {
+        if (!isset($this->classification)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->classification);
@@ -1178,6 +1322,10 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setClassification(FHIRCitationClassification1 ...$classification): self
     {
+        if ([] === $classification) {
+            unset($this->classification);
+            return $this;
+        }
         $this->classification = $classification;
         return $this;
     }
@@ -1240,7 +1388,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function getNoteIterator(): iterable
     {
-        if (!isset($this->note) || [] === $this->note) {
+        if (!isset($this->note)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->note);
@@ -1279,10 +1427,15 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
+        if ([] === $note) {
+            unset($this->note);
+            return $this;
+        }
         $this->note = $note;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1291,7 +1444,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1525,16 +1678,17 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationCitedArtifact $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationCitedArtifact
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1546,158 +1700,124 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RELATED_IDENTIFIER === $childName) {
-                $v = new FHIRIdentifier();
-                $type->addRelatedIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DATE_ACCESSED === $childName) {
-                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setDateAccessed(FHIRDateTime::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_VERSION === $childName) {
-                $v = new FHIRCitationVersion();
-                $type->setVersion(FHIRCitationVersion::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CURRENT_STATE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addCurrentState(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STATUS_DATE === $childName) {
-                $v = new FHIRCitationStatusDate1();
-                $type->addStatusDate(FHIRCitationStatusDate1::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TITLE === $childName) {
-                $v = new FHIRCitationTitle();
-                $type->addTitle(FHIRCitationTitle::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ABSTRACT === $childName) {
-                $v = new FHIRCitationAbstract();
-                $type->addAbstract(FHIRCitationAbstract::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PART === $childName) {
-                $v = new FHIRCitationPart();
-                $type->setPart(FHIRCitationPart::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_RELATES_TO === $childName) {
-                $v = new FHIRCitationRelatesTo();
-                $type->addRelatesTo(FHIRCitationRelatesTo::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PUBLICATION_FORM === $childName) {
-                $v = new FHIRCitationPublicationForm();
-                $type->addPublicationForm(FHIRCitationPublicationForm::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_WEB_LOCATION === $childName) {
-                $v = new FHIRCitationWebLocation();
-                $type->addWebLocation(FHIRCitationWebLocation::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CLASSIFICATION === $childName) {
-                $v = new FHIRCitationClassification1();
-                $type->addClassification(FHIRCitationClassification1::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_CONTRIBUTORSHIP === $childName) {
-                $v = new FHIRCitationContributorship();
-                $type->setContributorship(FHIRCitationContributorship::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NOTE === $childName) {
-                $v = new FHIRAnnotation();
-                $type->addNote(FHIRAnnotation::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_IDENTIFIER === $cen) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RELATED_IDENTIFIER === $cen) {
+                $type->addRelatedIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DATE_ACCESSED === $cen) {
+                $type->setDateAccessed(FHIRDateTime::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_VERSION === $cen) {
+                $type->setVersion(FHIRCitationVersion::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CURRENT_STATE === $cen) {
+                $type->addCurrentState(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STATUS_DATE === $cen) {
+                $type->addStatusDate(FHIRCitationStatusDate1::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TITLE === $cen) {
+                $type->addTitle(FHIRCitationTitle::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ABSTRACT === $cen) {
+                $type->addAbstract(FHIRCitationAbstract::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PART === $cen) {
+                $type->setPart(FHIRCitationPart::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_RELATES_TO === $cen) {
+                $type->addRelatesTo(FHIRCitationRelatesTo::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PUBLICATION_FORM === $cen) {
+                $type->addPublicationForm(FHIRCitationPublicationForm::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_WEB_LOCATION === $cen) {
+                $type->addWebLocation(FHIRCitationWebLocation::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CLASSIFICATION === $cen) {
+                $type->addClassification(FHIRCitationClassification1::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_CONTRIBUTORSHIP === $cen) {
+                $type->setContributorship(FHIRCitationContributorship::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NOTE === $cen) {
+                $type->addNote(FHIRAnnotation::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATE_ACCESSED])) {
-            $pt = $type->getDateAccessed();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_DATE_ACCESSED]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->dateAccessed)) {
+                $type->dateAccessed->setValue((string)$attributes[self::FIELD_DATE_ACCESSED]);
+                $type->_setDateAccessedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDateAccessed(new FHIRDateTime(
-                    value: (string)$attributes[self::FIELD_DATE_ACCESSED],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setDateAccessed((string)$attributes[self::FIELD_DATE_ACCESSED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_VERSION])) {
+            if (isset($type->version)) {
+                $type->version->setValue((string)$attributes[self::FIELD_VERSION]);
+                $type->_setVersionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setVersion((string)$attributes[self::FIELD_VERSION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_PART])) {
+            if (isset($type->part)) {
+                $type->part->setValue((string)$attributes[self::FIELD_PART]);
+                $type->_setPartValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            } else {
+                $type->setPart((string)$attributes[self::FIELD_PART], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->dateAccessed) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATE_ACCESSED]) {
+            $xw->writeAttribute(self::FIELD_DATE_ACCESSED, $this->dateAccessed->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (isset($this->version) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VERSION]) {
+            $xw->writeAttribute(self::FIELD_VERSION, $this->version->_getFormattedValue());
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('CitationCitedArtifact', $this->_getSourceXMLNS());
-        }
-        if (isset($this->dateAccessed) && $this->dateAccessed->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DATE_ACCESSED, $this->dateAccessed->getValue()?->_getFormattedValue());
+        if (isset($this->part) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PART]) {
+            $xw->writeAttribute(self::FIELD_PART, $this->part->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier)) {
-            foreach ($this->identifier as $v) {
+        if (isset($this->identifier) && [] !== $this->identifier) {
+            foreach($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
             }
         }
-        if (isset($this->relatedIdentifier)) {
-            foreach ($this->relatedIdentifier as $v) {
+        if (isset($this->relatedIdentifier) && [] !== $this->relatedIdentifier) {
+            foreach($this->relatedIdentifier as $v) {
                 $xw->startElement(self::FIELD_RELATED_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
             }
         }
-        if (isset($this->dateAccessed) && $this->dateAccessed->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->dateAccessed)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DATE_ACCESSED]
+                || $this->dateAccessed->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_DATE_ACCESSED);
-            $this->dateAccessed->xmlSerialize($xw, $config);
+            $this->dateAccessed->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DATE_ACCESSED]);
             $xw->endElement();
         }
-        if (isset($this->version)) {
+        if (isset($this->version)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VERSION]
+                || $this->version->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_VERSION);
-            $this->version->xmlSerialize($xw, $config);
+            $this->version->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VERSION]);
             $xw->endElement();
         }
         if (isset($this->currentState)) {
@@ -1728,9 +1848,11 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->part)) {
+        if (isset($this->part)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PART]
+                || $this->part->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_PART);
-            $this->part->xmlSerialize($xw, $config);
+            $this->part->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PART]);
             $xw->endElement();
         }
         if (isset($this->relatesTo)) {
@@ -1773,25 +1895,18 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationCitedArtifact $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationCitedArtifact
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1811,27 +1926,39 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        parent::jsonUnserialize($json, $config, $type);
+        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_RELATED_IDENTIFIER]) || array_key_exists(self::FIELD_RELATED_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_RELATED_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json[self::FIELD_RELATED_IDENTIFIER]) || isset($json[self::FIELD_RELATED_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_RELATED_IDENTIFIER, $json) || array_key_exists(self::FIELD_RELATED_IDENTIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_RELATED_IDENTIFIER] ?? null;
+            $ext = (array)($json[self::FIELD_RELATED_IDENTIFIER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
             }
-            foreach($vs as $v) {
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
                 $type->addRelatedIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: $v,
+                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
                     config: $config,
                 ));
             }
@@ -1844,9 +1971,11 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 config: $config,
             ));
         }
-        if (isset($json[self::FIELD_VERSION]) || array_key_exists(self::FIELD_VERSION, $json)) {
+        if (isset($json[self::FIELD_VERSION]) || isset($json[self::FIELD_VERSION_EXT]) || array_key_exists(self::FIELD_VERSION, $json) || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
+            $value = $json[self::FIELD_VERSION] ?? null;
+            $ext = (array)($json[self::FIELD_VERSION_EXT] ?? []);
             $type->setVersion(FHIRCitationVersion::jsonUnserialize(
-                json: $json[self::FIELD_VERSION],
+                json: [FHIRCitationVersion::FIELD_VALUE => $value] + $ext,
                 config: $config,
             ));
         }
@@ -1898,9 +2027,11 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 ));
             }
         }
-        if (isset($json[self::FIELD_PART]) || array_key_exists(self::FIELD_PART, $json)) {
+        if (isset($json[self::FIELD_PART]) || isset($json[self::FIELD_PART_EXT]) || array_key_exists(self::FIELD_PART, $json) || array_key_exists(self::FIELD_PART_EXT, $json)) {
+            $value = $json[self::FIELD_PART] ?? null;
+            $ext = (array)($json[self::FIELD_PART_EXT] ?? []);
             $type->setPart(FHIRCitationPart::jsonUnserialize(
-                json: $json[self::FIELD_PART],
+                json: [FHIRCitationPart::FIELD_VALUE => $value] + $ext,
                 config: $config,
             ));
         }
@@ -1980,10 +2111,46 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            $vals = [];
+            $exts = [];
+            foreach ($this->identifier as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->identifier = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_identifier = $exts;
+            }
         }
         if (isset($this->relatedIdentifier) && [] !== $this->relatedIdentifier) {
-            $out->relatedIdentifier = $this->relatedIdentifier;
+            $vals = [];
+            $exts = [];
+            foreach ($this->relatedIdentifier as $v) {
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->value);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->relatedIdentifier = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->_relatedIdentifier = $exts;
+            }
         }
         if (isset($this->dateAccessed)) {
             if (null !== ($val = $this->dateAccessed->getValue())) {
@@ -1996,7 +2163,14 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
             }
         }
         if (isset($this->version)) {
-            $out->version = $this->version;
+            if (null !== ($val = $this->version->getValue())) {
+                $out->version = $val;
+            }
+            $ext = $this->version->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_version = $ext;
+            }
         }
         if (isset($this->currentState) && [] !== $this->currentState) {
             $out->currentState = $this->currentState;
@@ -2011,7 +2185,14 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
             $out->abstract = $this->abstract;
         }
         if (isset($this->part)) {
-            $out->part = $this->part;
+            if (null !== ($val = $this->part->getValue())) {
+                $out->part = $val;
+            }
+            $ext = $this->part->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_part = $ext;
+            }
         }
         if (isset($this->relatesTo) && [] !== $this->relatesTo) {
             $out->relatesTo = $this->relatesTo;
@@ -2033,7 +2214,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

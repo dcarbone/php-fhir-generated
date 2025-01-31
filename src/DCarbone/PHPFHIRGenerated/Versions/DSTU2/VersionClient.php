@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,10 +70,11 @@ use DCarbone\PHPFHIRGenerated\Client\Response;
 use DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum;
 use DCarbone\PHPFHIRGenerated\Client\SortDirectionEnum;
 use DCarbone\PHPFHIRGenerated\Client\UnexpectedResponseCodeException;
-use DCarbone\PHPFHIRGenerated\ResponseParser;
+use DCarbone\PHPFHIRGenerated\Encoding\ResourceParser;
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRBinary;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAccount;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAppointment;
@@ -165,6 +166,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResour
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRTestScript;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRValueSet;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRVisionPrescription;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRParameters;
 
 class VersionClient
 {
@@ -264,7 +266,7 @@ class VersionClient
     {
         $rc = $this->readRaw($resourceType, $resourceID, $count, $sort, $format, $queryParams, $parseResponseHeaders);
         $this->_requireOK($rc);
-        return ResponseParser::parse($this->_version, $rc->resp);
+        return ResourceParser::parse($this->_version, $rc->resp);
     }
 
     /**
@@ -306,7 +308,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -334,7 +336,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -362,7 +364,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -390,7 +392,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -418,7 +420,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -446,7 +448,35 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
+        };
+    }
+
+    /**
+     * Read one Binary resource.
+     *
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $resourceID
+     * @param null|\DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum $format
+     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRBinary
+     * @throws \Exception
+     */
+    public function readOneBinary(string|FHIRId|FHIRIdPrimitive $resourceID,
+                                  null|ResponseFormatEnum $format = null): FHIRBinary
+    {
+        $rc = $this->readRaw(resourceType: VersionTypesEnum::BINARY,
+                             resourceID: $resourceID,
+                             format: $format);
+        $this->_requireOK($rc);
+        return match($format) {
+            ResponseFormatEnum::JSON => FHIRBinary::jsonUnserialize(
+                json: $rc->resp,
+                config: $this->_version->getConfig()->getUnserializeConfig(),
+            ),
+            ResponseFormatEnum::XML => FHIRBinary::xmlUnserialize(
+                element: $rc->resp,
+                config: $this->_version->getConfig()->getUnserializeConfig(),
+            ),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -474,7 +504,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -502,7 +532,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -530,7 +560,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -558,7 +588,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -586,7 +616,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -614,7 +644,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -642,7 +672,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -670,7 +700,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -698,7 +728,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -726,7 +756,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -754,7 +784,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -782,7 +812,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -810,7 +840,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -838,7 +868,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -866,7 +896,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -894,7 +924,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -922,7 +952,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -950,7 +980,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -978,7 +1008,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1006,7 +1036,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1034,7 +1064,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1062,7 +1092,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1090,7 +1120,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1118,7 +1148,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1146,7 +1176,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1174,7 +1204,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1202,7 +1232,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1230,7 +1260,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1258,7 +1288,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1286,7 +1316,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1314,7 +1344,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1342,7 +1372,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1370,7 +1400,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1398,7 +1428,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1426,7 +1456,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1454,7 +1484,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1482,7 +1512,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1510,7 +1540,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1538,7 +1568,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1566,7 +1596,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1594,7 +1624,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1622,7 +1652,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1650,7 +1680,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1678,7 +1708,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1706,7 +1736,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1734,7 +1764,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1762,7 +1792,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1790,7 +1820,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1818,7 +1848,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1846,7 +1876,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1874,7 +1904,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1902,7 +1932,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1930,7 +1960,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1958,7 +1988,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -1986,7 +2016,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2014,7 +2044,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2042,7 +2072,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2070,7 +2100,35 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
+        };
+    }
+
+    /**
+     * Read one Parameters resource.
+     *
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $resourceID
+     * @param null|\DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum $format
+     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRParameters
+     * @throws \Exception
+     */
+    public function readOneParameters(string|FHIRId|FHIRIdPrimitive $resourceID,
+                                      null|ResponseFormatEnum $format = null): FHIRParameters
+    {
+        $rc = $this->readRaw(resourceType: VersionTypesEnum::PARAMETERS,
+                             resourceID: $resourceID,
+                             format: $format);
+        $this->_requireOK($rc);
+        return match($format) {
+            ResponseFormatEnum::JSON => FHIRParameters::jsonUnserialize(
+                json: $rc->resp,
+                config: $this->_version->getConfig()->getUnserializeConfig(),
+            ),
+            ResponseFormatEnum::XML => FHIRParameters::xmlUnserialize(
+                element: $rc->resp,
+                config: $this->_version->getConfig()->getUnserializeConfig(),
+            ),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2098,7 +2156,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2126,7 +2184,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2154,7 +2212,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2182,7 +2240,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2210,7 +2268,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2238,7 +2296,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2266,7 +2324,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2294,7 +2352,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2322,7 +2380,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2350,7 +2408,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2378,7 +2436,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2406,7 +2464,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2434,7 +2492,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2462,7 +2520,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2490,7 +2548,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2518,7 +2576,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2546,7 +2604,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2574,7 +2632,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2602,7 +2660,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2630,7 +2688,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2658,7 +2716,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2686,7 +2744,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2714,7 +2772,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2742,7 +2800,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2770,7 +2828,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2798,7 +2856,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 
@@ -2826,7 +2884,7 @@ class VersionClient
                 element: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
-            default => ResponseParser::parse($this->_version, $rc->resp),
+            default => ResourceParser::parse($this->_version, $rc->resp),
         };
     }
 

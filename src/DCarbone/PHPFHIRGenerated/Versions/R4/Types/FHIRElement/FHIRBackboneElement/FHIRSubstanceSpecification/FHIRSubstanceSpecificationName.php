@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,7 +67,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
@@ -90,7 +90,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_NAME;
 
-
+    /* class_default.php:48 */
     public const FIELD_NAME = 'name';
     public const FIELD_NAME_EXT = '_name';
     public const FIELD_TYPE = 'type';
@@ -105,6 +105,20 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
     public const FIELD_OFFICIAL = 'official';
     public const FIELD_SOURCE = 'source';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [
+        self::FIELD_NAME => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_PREFERRED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -218,14 +232,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     protected array $source;
 
-    /** Default validation map for fields in type SubstanceSpecification.Name */
-    private const _DEFAULT_VALIDATION_RULES = [
-        self::FIELD_NAME => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRSubstanceSpecificationName Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -299,6 +306,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -307,6 +315,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -329,11 +338,11 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * The actual name.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name,
-                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $name) {
             unset($this->name);
@@ -342,12 +351,34 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (!($name instanceof FHIRString)) {
             $name = new FHIRString(value: $name);
         }
-        if (null !== $valueXMLLocation) {
-            $name->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $name->_getValueXMLLocation()) {
-            $name->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->name = $name;
+        if ($this->_valueXMLLocations[self::FIELD_NAME] !== $valueXMLLocation) {
+            $this->_setNameValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the name element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getNameValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_NAME];
+    }
+
+    /**
+     * Set the location the "value" field of the name element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_NAME] = $valueXMLLocation;
         return $this;
     }
 
@@ -443,11 +474,11 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * If this is the preferred name for this substance.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $preferred
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred,
-                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $preferred) {
             unset($this->preferred);
@@ -456,12 +487,34 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (!($preferred instanceof FHIRBoolean)) {
             $preferred = new FHIRBoolean(value: $preferred);
         }
-        if (null !== $valueXMLLocation) {
-            $preferred->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $preferred->_getValueXMLLocation()) {
-            $preferred->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->preferred = $preferred;
+        if ($this->_valueXMLLocations[self::FIELD_PREFERRED] !== $valueXMLLocation) {
+            $this->_setPreferredValueXMLLocation($valueXMLLocation);
+        }
+        return $this;
+    }
+
+    /**
+     * Return the current location the "value" field of the preferred element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getPreferredValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_PREFERRED];
+    }
+
+    /**
+     * Set the location the "value" field of the preferred element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setPreferredValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_PREFERRED] = $valueXMLLocation;
         return $this;
     }
 
@@ -485,7 +538,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function getLanguageIterator(): iterable
     {
-        if (!isset($this->language) || [] === $this->language) {
+        if (!isset($this->language)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->language);
@@ -524,6 +577,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function setLanguage(FHIRCodeableConcept ...$language): self
     {
+        if ([] === $language) {
+            unset($this->language);
+            return $this;
+        }
         $this->language = $language;
         return $this;
     }
@@ -549,7 +606,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function getDomainIterator(): iterable
     {
-        if (!isset($this->domain) || [] === $this->domain) {
+        if (!isset($this->domain)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->domain);
@@ -590,6 +647,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function setDomain(FHIRCodeableConcept ...$domain): self
     {
+        if ([] === $domain) {
+            unset($this->domain);
+            return $this;
+        }
         $this->domain = $domain;
         return $this;
     }
@@ -614,7 +675,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function getJurisdictionIterator(): iterable
     {
-        if (!isset($this->jurisdiction) || [] === $this->jurisdiction) {
+        if (!isset($this->jurisdiction)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->jurisdiction);
@@ -653,6 +714,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
+        if ([] === $jurisdiction) {
+            unset($this->jurisdiction);
+            return $this;
+        }
         $this->jurisdiction = $jurisdiction;
         return $this;
     }
@@ -675,7 +740,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function getSynonymIterator(): iterable
     {
-        if (!isset($this->synonym) || [] === $this->synonym) {
+        if (!isset($this->synonym)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->synonym);
@@ -710,6 +775,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function setSynonym(FHIRSubstanceSpecificationName ...$synonym): self
     {
+        if ([] === $synonym) {
+            unset($this->synonym);
+            return $this;
+        }
         $this->synonym = $synonym;
         return $this;
     }
@@ -732,7 +801,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function getTranslationIterator(): iterable
     {
-        if (!isset($this->translation) || [] === $this->translation) {
+        if (!isset($this->translation)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->translation);
@@ -767,6 +836,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function setTranslation(FHIRSubstanceSpecificationName ...$translation): self
     {
+        if ([] === $translation) {
+            unset($this->translation);
+            return $this;
+        }
         $this->translation = $translation;
         return $this;
     }
@@ -789,7 +862,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function getOfficialIterator(): iterable
     {
-        if (!isset($this->official) || [] === $this->official) {
+        if (!isset($this->official)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->official);
@@ -824,6 +897,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function setOfficial(FHIRSubstanceSpecificationOfficial ...$official): self
     {
+        if ([] === $official) {
+            unset($this->official);
+            return $this;
+        }
         $this->official = $official;
         return $this;
     }
@@ -847,7 +924,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function getSourceIterator(): iterable
     {
-        if (!isset($this->source) || [] === $this->source) {
+        if (!isset($this->source)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->source);
@@ -884,10 +961,15 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function setSource(FHIRReference ...$source): self
     {
+        if ([] === $source) {
+            unset($this->source);
+            return $this;
+        }
         $this->source = $source;
         return $this;
     }
 
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -896,7 +978,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -1087,16 +1169,17 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1108,142 +1191,84 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NAME === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setName(FHIRString::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->setStatus(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_PREFERRED === $childName) {
-                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setPreferred(FHIRBoolean::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addLanguage(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_DOMAIN === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addDomain(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_JURISDICTION === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addJurisdiction(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SYNONYM === $childName) {
-                $v = new FHIRSubstanceSpecificationName();
-                $type->addSynonym(FHIRSubstanceSpecificationName::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TRANSLATION === $childName) {
-                $v = new FHIRSubstanceSpecificationName();
-                $type->addTranslation(FHIRSubstanceSpecificationName::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_OFFICIAL === $childName) {
-                $v = new FHIRSubstanceSpecificationOfficial();
-                $type->addOfficial(FHIRSubstanceSpecificationOfficial::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SOURCE === $childName) {
-                $v = new FHIRReference();
-                $type->addSource(FHIRReference::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NAME === $cen) {
+                $type->setName(FHIRString::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_STATUS === $cen) {
+                $type->setStatus(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_PREFERRED === $cen) {
+                $type->setPreferred(FHIRBoolean::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_LANGUAGE === $cen) {
+                $type->addLanguage(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_DOMAIN === $cen) {
+                $type->addDomain(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_JURISDICTION === $cen) {
+                $type->addJurisdiction(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SYNONYM === $cen) {
+                $type->addSynonym(FHIRSubstanceSpecificationName::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TRANSLATION === $cen) {
+                $type->addTranslation(FHIRSubstanceSpecificationName::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_OFFICIAL === $cen) {
+                $type->addOfficial(FHIRSubstanceSpecificationOfficial::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SOURCE === $cen) {
+                $type->addSource(FHIRReference::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NAME])) {
-            $pt = $type->getName();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_NAME]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->name)) {
+                $type->name->setValue((string)$attributes[self::FIELD_NAME]);
+                $type->_setNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setName(new FHIRString(
-                    value: (string)$attributes[self::FIELD_NAME],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setName((string)$attributes[self::FIELD_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_PREFERRED])) {
-            $pt = $type->getPreferred();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_PREFERRED]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->preferred)) {
+                $type->preferred->setValue((string)$attributes[self::FIELD_PREFERRED]);
+                $type->_setPreferredValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPreferred(new FHIRBoolean(
-                    value: (string)$attributes[self::FIELD_PREFERRED],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setPreferred((string)$attributes[self::FIELD_PREFERRED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+        if (isset($this->name) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NAME]) {
+            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getFormattedValue());
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('SubstanceSpecificationName', $this->_getSourceXMLNS());
-        }
-        if (isset($this->name) && $this->name->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NAME, $this->name->getValue()?->_getFormattedValue());
-        }
-        if (isset($this->preferred) && $this->preferred->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PREFERRED, $this->preferred->getValue()?->_getFormattedValue());
+        if (isset($this->preferred) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PREFERRED]) {
+            $xw->writeAttribute(self::FIELD_PREFERRED, $this->preferred->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->name) && $this->name->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->name)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_NAME]
+                || $this->name->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_NAME);
-            $this->name->xmlSerialize($xw, $config);
+            $this->name->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_NAME]);
             $xw->endElement();
         }
         if (isset($this->type)) {
@@ -1256,9 +1281,11 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             $this->status->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->preferred) && $this->preferred->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->preferred)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PREFERRED]
+                || $this->preferred->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_PREFERRED);
-            $this->preferred->xmlSerialize($xw, $config);
+            $this->preferred->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PREFERRED]);
             $xw->endElement();
         }
         if (isset($this->language)) {
@@ -1310,25 +1337,18 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -1348,7 +1368,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
             $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
@@ -1519,7 +1539,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */

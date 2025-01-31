@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 26th, 2025 01:06+0000
+ * Class creation date: January 31st, 2025 00:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,7 +66,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming;
@@ -87,7 +87,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ORAL_DIET;
 
-
+    /* class_default.php:48 */
     public const FIELD_TYPE = 'type';
     public const FIELD_SCHEDULE = 'schedule';
     public const FIELD_NUTRIENT = 'nutrient';
@@ -96,6 +96,15 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     public const FIELD_INSTRUCTION = 'instruction';
     public const FIELD_INSTRUCTION_EXT = '_instruction';
 
+    /* class_default.php:67 */
+    private static array $_validationRules = [];
+
+    /* class_default.php:92 */
+    private array $_valueXMLLocations = [
+        self::FIELD_INSTRUCTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+    ];
+
+    /* class_default.php:108 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -167,10 +176,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     protected FHIRString $instruction;
 
-    /** Default validation map for fields in type NutritionOrder.OralDiet */
-    private const _DEFAULT_VALIDATION_RULES = [];
-
-    /* constructor.php:66 */
+    /* constructor.php:63 */
     /**
      * FHIRNutritionOrderOralDiet Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -219,6 +225,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         }
     }
 
+    /* class_default.php:137 */
     /**
      * @return string
      */
@@ -227,6 +234,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_default.php:163 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -248,7 +256,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function getTypeIterator(): iterable
     {
-        if (!isset($this->type) || [] === $this->type) {
+        if (!isset($this->type)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->type);
@@ -289,6 +297,10 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
+        if ([] === $type) {
+            unset($this->type);
+            return $this;
+        }
         $this->type = $type;
         return $this;
     }
@@ -318,7 +330,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function getScheduleIterator(): iterable
     {
-        if (!isset($this->schedule) || [] === $this->schedule) {
+        if (!isset($this->schedule)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->schedule);
@@ -367,6 +379,10 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function setSchedule(FHIRTiming ...$schedule): self
     {
+        if ([] === $schedule) {
+            unset($this->schedule);
+            return $this;
+        }
         $this->schedule = $schedule;
         return $this;
     }
@@ -390,7 +406,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function getNutrientIterator(): iterable
     {
-        if (!isset($this->nutrient) || [] === $this->nutrient) {
+        if (!isset($this->nutrient)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->nutrient);
@@ -427,6 +443,10 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function setNutrient(FHIRNutritionOrderNutrient ...$nutrient): self
     {
+        if ([] === $nutrient) {
+            unset($this->nutrient);
+            return $this;
+        }
         $this->nutrient = $nutrient;
         return $this;
     }
@@ -450,7 +470,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function getTextureIterator(): iterable
     {
-        if (!isset($this->texture) || [] === $this->texture) {
+        if (!isset($this->texture)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->texture);
@@ -487,6 +507,10 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function setTexture(FHIRNutritionOrderTexture ...$texture): self
     {
+        if ([] === $texture) {
+            unset($this->texture);
+            return $this;
+        }
         $this->texture = $texture;
         return $this;
     }
@@ -512,7 +536,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function getFluidConsistencyTypeIterator(): iterable
     {
-        if (!isset($this->fluidConsistencyType) || [] === $this->fluidConsistencyType) {
+        if (!isset($this->fluidConsistencyType)) {
             return new \EmptyIterator();
         }
         return new \ArrayIterator($this->fluidConsistencyType);
@@ -553,6 +577,10 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function setFluidConsistencyType(FHIRCodeableConcept ...$fluidConsistencyType): self
     {
+        if ([] === $fluidConsistencyType) {
+            unset($this->fluidConsistencyType);
+            return $this;
+        }
         $this->fluidConsistencyType = $fluidConsistencyType;
         return $this;
     }
@@ -579,11 +607,11 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * Free text or additional instructions or information pertaining to the oral diet.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $instruction
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
     public function setInstruction(null|string|FHIRStringPrimitive|FHIRString $instruction,
-                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
+                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $instruction) {
             unset($this->instruction);
@@ -592,15 +620,38 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         if (!($instruction instanceof FHIRString)) {
             $instruction = new FHIRString(value: $instruction);
         }
-        if (null !== $valueXMLLocation) {
-            $instruction->_setValueXMLLocation($valueXMLLocation);
-        } else if (null === $instruction->_getValueXMLLocation()) {
-            $instruction->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
-        }
         $this->instruction = $instruction;
+        if ($this->_valueXMLLocations[self::FIELD_INSTRUCTION] !== $valueXMLLocation) {
+            $this->_setInstructionValueXMLLocation($valueXMLLocation);
+        }
         return $this;
     }
 
+    /**
+     * Return the current location the "value" field of the instruction element will be placed
+     * when serializing this type to XML.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getInstructionValueXMLLocation() : ValueXMLLocationEnum
+    {
+        return $this->_valueXMLLocations[self::FIELD_INSTRUCTION];
+    }
+
+    /**
+     * Set the location the "value" field of the instruction element will be placed when
+     * serializing tihs type to XML.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @return static
+     */
+    public function _setInstructionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
+    {
+        $this->_valueXMLLocations[self::FIELD_INSTRUCTION] = $valueXMLLocation;
+        return $this;
+    }
+
+    /* class_default.php:189 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -609,7 +660,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     public function _getValidationRules(): array
     {
-        return self::_DEFAULT_VALIDATION_RULES;
+        return self::$_validationRules;
     }
 
     /**
@@ -735,16 +786,17 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         return $errs;
     }
 
+    /* class_default.php:213 */
     /**
-     * @param string|\SimpleXMLElement $element
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -756,107 +808,56 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            if (self::FIELD_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_ID === $childName) {
-                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
-                 if (null !== $valueAttr) {
-                    $value = (string)$valueAttr;
-                } else if ($n->hasChildren()) {
-                    $value = $n->saveXML();
+        foreach ($element->children() as $ce) {
+            $cen = $ce->getName();
+            if (self::FIELD_EXTENSION === $cen) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_ID === $cen) {
+                $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                if (null !== $va) {
+                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $value = (string)$n;
+                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
-            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
-                $v = new FHIRExtension();
-                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_SCHEDULE === $childName) {
-                $v = new FHIRTiming();
-                $type->addSchedule(FHIRTiming::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_NUTRIENT === $childName) {
-                $v = new FHIRNutritionOrderNutrient();
-                $type->addNutrient(FHIRNutritionOrderNutrient::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_TEXTURE === $childName) {
-                $v = new FHIRNutritionOrderTexture();
-                $type->addTexture(FHIRNutritionOrderTexture::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_FLUID_CONSISTENCY_TYPE === $childName) {
-                $v = new FHIRCodeableConcept();
-                $type->addFluidConsistencyType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
-            } else if (self::FIELD_INSTRUCTION === $childName) {
-                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
-                $type->setInstruction(FHIRString::xmlUnserialize($n, $v, $config));
-            }
-        }
+            } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TYPE === $cen) {
+                $type->addType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_SCHEDULE === $cen) {
+                $type->addSchedule(FHIRTiming::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_NUTRIENT === $cen) {
+                $type->addNutrient(FHIRNutritionOrderNutrient::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_TEXTURE === $cen) {
+                $type->addTexture(FHIRNutritionOrderTexture::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_FLUID_CONSISTENCY_TYPE === $cen) {
+                $type->addFluidConsistencyType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
+            } else if (self::FIELD_INSTRUCTION === $cen) {
+                $type->setInstruction(FHIRString::xmlUnserialize($ce, $config));
+            }        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $pt = $type->getId();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
-            } else {
-                $type->setId(new FHIRStringPrimitive(
-                    value: (string)$attributes[self::FIELD_ID],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
-            }
+            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INSTRUCTION])) {
-            $pt = $type->getInstruction();
-            if (null !== $pt) {
-                $pt->setValue(value:(string)$attributes[self::FIELD_INSTRUCTION]);
-                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
+            if (isset($type->instruction)) {
+                $type->instruction->setValue((string)$attributes[self::FIELD_INSTRUCTION]);
+                $type->_setInstructionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInstruction(new FHIRString(
-                    value: (string)$attributes[self::FIELD_INSTRUCTION],
-                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
-                ));
+                $type->setInstruction((string)$attributes[self::FIELD_INSTRUCTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('NutritionOrderOralDiet', $this->_getSourceXMLNS());
-        }
-        if (isset($this->instruction) && $this->instruction->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_INSTRUCTION, $this->instruction->getValue()?->_getFormattedValue());
+        if (isset($this->instruction) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INSTRUCTION]) {
+            $xw->writeAttribute(self::FIELD_INSTRUCTION, $this->instruction->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -894,30 +895,25 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->instruction) && $this->instruction->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
+        if (isset($this->instruction)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_INSTRUCTION]
+                || $this->instruction->_nonValueFieldDefined())) {
             $xw->startElement(self::FIELD_INSTRUCTION);
-            $this->instruction->xmlSerialize($xw, $config);
+            $this->instruction->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_INSTRUCTION]);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|array|\stdClass $json
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -937,7 +933,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $type, $config);
+        parent::jsonUnserialize($json, $config, $type);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
             $vs = $json[self::FIELD_TYPE];
             if (!is_int(key($vs))) {
@@ -1042,7 +1038,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         }
         return $out;
     }
-
+    /* class_default.php:238 */
     /**
      * @return string
      */
