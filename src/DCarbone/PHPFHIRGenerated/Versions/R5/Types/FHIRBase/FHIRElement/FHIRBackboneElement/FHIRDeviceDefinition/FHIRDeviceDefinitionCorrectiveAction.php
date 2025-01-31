@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,14 +110,14 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_DEFINITION_DOT_CORRECTIVE_ACTION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_RECALL = 'recall';
     public const FIELD_RECALL_EXT = '_recall';
     public const FIELD_SCOPE = 'scope';
     public const FIELD_SCOPE_EXT = '_scope';
     public const FIELD_PERIOD = 'period';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_RECALL => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -127,13 +127,13 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_RECALL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SCOPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -198,7 +198,7 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -207,7 +207,7 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -372,7 +372,7 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -481,7 +481,7 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -522,7 +522,8 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
                 $type->setScope(FHIRDeviceCorrectiveActionScope::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PERIOD === $cen) {
                 $type->setPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -639,9 +640,9 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
             if (null !== ($val = $this->recall->getValue())) {
                 $out->recall = $val;
             }
-            $ext = $this->recall->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->recall->_nonValueFieldDefined()) {
+                $ext = $this->recall->jsonSerialize();
+                unset($ext->value);
                 $out->_recall = $ext;
             }
         }
@@ -649,9 +650,9 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
             if (null !== ($val = $this->scope->getValue())) {
                 $out->scope = $val;
             }
-            $ext = $this->scope->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->scope->_nonValueFieldDefined()) {
+                $ext = $this->scope->jsonSerialize();
+                unset($ext->value);
                 $out->_scope = $ext;
             }
         }
@@ -660,7 +661,7 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

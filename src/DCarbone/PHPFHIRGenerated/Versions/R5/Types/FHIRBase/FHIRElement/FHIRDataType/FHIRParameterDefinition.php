@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -117,7 +117,7 @@ class FHIRParameterDefinition extends FHIRDataType
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PARAMETER_DEFINITION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_NAME = 'name';
     public const FIELD_NAME_EXT = '_name';
     public const FIELD_USE = 'use';
@@ -133,7 +133,7 @@ class FHIRParameterDefinition extends FHIRDataType
     public const FIELD_PROFILE = 'profile';
     public const FIELD_PROFILE_EXT = '_profile';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_USE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -143,7 +143,7 @@ class FHIRParameterDefinition extends FHIRDataType
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_USE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -154,7 +154,7 @@ class FHIRParameterDefinition extends FHIRDataType
         self::FIELD_PROFILE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -286,7 +286,7 @@ class FHIRParameterDefinition extends FHIRDataType
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -295,7 +295,7 @@ class FHIRParameterDefinition extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -776,7 +776,7 @@ class FHIRParameterDefinition extends FHIRDataType
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -921,7 +921,7 @@ class FHIRParameterDefinition extends FHIRDataType
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -968,7 +968,8 @@ class FHIRParameterDefinition extends FHIRDataType
                 $type->setType(FHIRCode::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PROFILE === $cen) {
                 $type->setProfile(FHIRCanonical::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1217,9 +1218,9 @@ class FHIRParameterDefinition extends FHIRDataType
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1227,9 +1228,9 @@ class FHIRParameterDefinition extends FHIRDataType
             if (null !== ($val = $this->use->getValue())) {
                 $out->use = $val;
             }
-            $ext = $this->use->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->use->_nonValueFieldDefined()) {
+                $ext = $this->use->jsonSerialize();
+                unset($ext->value);
                 $out->_use = $ext;
             }
         }
@@ -1237,9 +1238,9 @@ class FHIRParameterDefinition extends FHIRDataType
             if (null !== ($val = $this->min->getValue())) {
                 $out->min = $val;
             }
-            $ext = $this->min->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->min->_nonValueFieldDefined()) {
+                $ext = $this->min->jsonSerialize();
+                unset($ext->value);
                 $out->_min = $ext;
             }
         }
@@ -1247,9 +1248,9 @@ class FHIRParameterDefinition extends FHIRDataType
             if (null !== ($val = $this->max->getValue())) {
                 $out->max = $val;
             }
-            $ext = $this->max->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->max->_nonValueFieldDefined()) {
+                $ext = $this->max->jsonSerialize();
+                unset($ext->value);
                 $out->_max = $ext;
             }
         }
@@ -1257,9 +1258,9 @@ class FHIRParameterDefinition extends FHIRDataType
             if (null !== ($val = $this->documentation->getValue())) {
                 $out->documentation = $val;
             }
-            $ext = $this->documentation->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->documentation->_nonValueFieldDefined()) {
+                $ext = $this->documentation->jsonSerialize();
+                unset($ext->value);
                 $out->_documentation = $ext;
             }
         }
@@ -1267,9 +1268,9 @@ class FHIRParameterDefinition extends FHIRDataType
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -1277,15 +1278,15 @@ class FHIRParameterDefinition extends FHIRDataType
             if (null !== ($val = $this->profile->getValue())) {
                 $out->profile = $val;
             }
-            $ext = $this->profile->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->profile->_nonValueFieldDefined()) {
+                $ext = $this->profile->jsonSerialize();
+                unset($ext->value);
                 $out->_profile = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

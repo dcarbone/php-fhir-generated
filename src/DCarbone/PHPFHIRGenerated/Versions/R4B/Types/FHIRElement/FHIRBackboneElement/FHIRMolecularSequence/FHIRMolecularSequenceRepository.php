@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_REPOSITORY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_URL = 'url';
@@ -123,14 +123,14 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
     public const FIELD_READSET_ID = 'readsetId';
     public const FIELD_READSET_ID_EXT = '_readsetId';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -140,7 +140,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         self::FIELD_READSET_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -254,7 +254,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -263,7 +263,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -666,7 +666,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -806,7 +806,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -853,7 +853,8 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
                 $type->setVariantsetId(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_READSET_ID === $cen) {
                 $type->setReadsetId(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1074,9 +1075,9 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -1084,9 +1085,9 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
@@ -1094,9 +1095,9 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1104,9 +1105,9 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
             if (null !== ($val = $this->datasetId->getValue())) {
                 $out->datasetId = $val;
             }
-            $ext = $this->datasetId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->datasetId->_nonValueFieldDefined()) {
+                $ext = $this->datasetId->jsonSerialize();
+                unset($ext->value);
                 $out->_datasetId = $ext;
             }
         }
@@ -1114,9 +1115,9 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
             if (null !== ($val = $this->variantsetId->getValue())) {
                 $out->variantsetId = $val;
             }
-            $ext = $this->variantsetId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->variantsetId->_nonValueFieldDefined()) {
+                $ext = $this->variantsetId->jsonSerialize();
+                unset($ext->value);
                 $out->_variantsetId = $ext;
             }
         }
@@ -1124,15 +1125,15 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
             if (null !== ($val = $this->readsetId->getValue())) {
                 $out->readsetId = $val;
             }
-            $ext = $this->readsetId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->readsetId->_nonValueFieldDefined()) {
+                $ext = $this->readsetId->jsonSerialize();
+                unset($ext->value);
                 $out->_readsetId = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRRelatedArtifact extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RELATED_ARTIFACT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_DISPLAY = 'display';
@@ -100,14 +100,14 @@ class FHIRRelatedArtifact extends FHIRElement
     public const FIELD_DOCUMENT = 'document';
     public const FIELD_RESOURCE = 'resource';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DISPLAY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -115,7 +115,7 @@ class FHIRRelatedArtifact extends FHIRElement
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * The type of relationship to the related artifact
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -226,7 +226,7 @@ class FHIRRelatedArtifact extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -235,7 +235,7 @@ class FHIRRelatedArtifact extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * The type of relationship to the related artifact
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -574,7 +574,7 @@ class FHIRRelatedArtifact extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -702,7 +702,7 @@ class FHIRRelatedArtifact extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -747,7 +747,8 @@ class FHIRRelatedArtifact extends FHIRElement
                 $type->setDocument(FHIRAttachment::xmlUnserialize($ce, $config));
             } else if (self::FIELD_RESOURCE === $cen) {
                 $type->setResource(FHIRReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -928,9 +929,9 @@ class FHIRRelatedArtifact extends FHIRElement
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -938,9 +939,9 @@ class FHIRRelatedArtifact extends FHIRElement
             if (null !== ($val = $this->display->getValue())) {
                 $out->display = $val;
             }
-            $ext = $this->display->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->display->_nonValueFieldDefined()) {
+                $ext = $this->display->jsonSerialize();
+                unset($ext->value);
                 $out->_display = $ext;
             }
         }
@@ -948,9 +949,9 @@ class FHIRRelatedArtifact extends FHIRElement
             if (null !== ($val = $this->citation->getValue())) {
                 $out->citation = $val;
             }
-            $ext = $this->citation->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->citation->_nonValueFieldDefined()) {
+                $ext = $this->citation->jsonSerialize();
+                unset($ext->value);
                 $out->_citation = $ext;
             }
         }
@@ -958,9 +959,9 @@ class FHIRRelatedArtifact extends FHIRElement
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
@@ -972,7 +973,7 @@ class FHIRRelatedArtifact extends FHIRElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,18 +109,18 @@ class FHIREncounterReason extends FHIRBackboneElement implements ValueContainerT
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ENCOUNTER_DOT_REASON;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_USE = 'use';
     public const FIELD_VALUE = 'value';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -175,7 +175,7 @@ class FHIREncounterReason extends FHIRBackboneElement implements ValueContainerT
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -184,7 +184,7 @@ class FHIREncounterReason extends FHIRBackboneElement implements ValueContainerT
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -337,7 +337,7 @@ class FHIREncounterReason extends FHIRBackboneElement implements ValueContainerT
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -424,16 +424,7 @@ class FHIREncounterReason extends FHIRBackboneElement implements ValueContainerT
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->modifierExtension)
-               || isset($this->use);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -472,7 +463,8 @@ class FHIREncounterReason extends FHIRBackboneElement implements ValueContainerT
                 $type->addUse(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_VALUE === $cen) {
                 $type->addValue(FHIRCodeableReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -564,7 +556,7 @@ class FHIREncounterReason extends FHIRBackboneElement implements ValueContainerT
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

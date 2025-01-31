@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64B
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,24 +79,24 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BINARY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CONTENT_TYPE = 'contentType';
     public const FIELD_ID = 'id';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTENT_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive */
     protected FHIRStringPrimitive $contentType;
     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive */
@@ -128,7 +128,7 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -137,7 +137,7 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -146,7 +146,7 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive
      */
@@ -207,7 +207,7 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -299,7 +299,7 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
         return $errs;
     }
 
-    /* class_default.php:202 */
+    /* class_default.php:201 */
     public function _nonValueFieldDefined(): bool
     {
         return isset($this->extension)
@@ -307,7 +307,7 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
                || isset($this->contentType);
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -354,7 +354,8 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
                 } else {
                     $type->setContentType((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -384,7 +385,7 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
         if (isset($this->id) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ID]) {
             $xw->writeAttribute(self::FIELD_ID, $this->id->_getFormattedValue());
         }
-        parent::xmlSerialize($xw, $config, $valueLocation);
+        parent::xmlSerialize($xw, $config);
         if (isset($this->contentType)) {
             if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CONTENT_TYPE]) {
                 $xw->startElement(self::FIELD_CONTENT_TYPE);
@@ -454,12 +455,12 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */
     public function __toString(): string
     {
-        return $this->_getFormattedValue();
+        return self::FHIR_TYPE_NAME;
     }
 }

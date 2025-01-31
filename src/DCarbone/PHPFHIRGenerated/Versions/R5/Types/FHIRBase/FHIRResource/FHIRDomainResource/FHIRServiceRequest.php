@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,6 +108,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestIntent;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority;
@@ -141,9 +142,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SERVICE_REQUEST;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_INSTANTIATES_CANONICAL = 'instantiatesCanonical';
     public const FIELD_INSTANTIATES_CANONICAL_EXT = '_instantiatesCanonical';
     public const FIELD_INSTANTIATES_URI = 'instantiatesUri';
@@ -151,7 +151,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
     public const FIELD_BASED_ON = 'basedOn';
     public const FIELD_REPLACES = 'replaces';
     public const FIELD_REQUISITION = 'requisition';
-    public const FIELD_REQUISITION_EXT = '_requisition';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
     public const FIELD_INTENT = 'intent';
@@ -192,7 +191,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
     public const FIELD_PATIENT_INSTRUCTION = 'patientInstruction';
     public const FIELD_RELEVANT_HISTORY = 'relevantHistory';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -205,9 +204,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_REQUISITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INTENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PRIORITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -217,7 +215,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
         self::FIELD_AUTHORED_ON => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -683,7 +681,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $doNotPerform
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestOrderDetail[] $orderDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantityQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantityQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $quantityRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $quantityRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
@@ -731,7 +729,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform = null,
                                 null|FHIRCodeableReference $code = null,
                                 null|iterable $orderDetail = null,
-                                null|FHIRQuantity $quantityQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $quantityQuantity = null,
                                 null|FHIRRatio $quantityRatio = null,
                                 null|FHIRRange $quantityRange = null,
                                 null|FHIRReference $subject = null,
@@ -883,7 +881,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -892,7 +890,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -901,7 +899,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -971,14 +969,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1298,11 +1289,9 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $requisition
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRequisition(null|FHIRString|FHIRIdentifier $requisition,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRequisition(null|FHIRString|FHIRIdentifier $requisition): self
     {
         if (null === $requisition) {
             unset($this->requisition);
@@ -1312,33 +1301,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             $requisition = new FHIRIdentifier(value: $requisition);
         }
         $this->requisition = $requisition;
-        if ($this->_valueXMLLocations[self::FIELD_REQUISITION] !== $valueXMLLocation) {
-            $this->_setRequisitionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the requisition element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRequisitionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_REQUISITION];
-    }
-
-    /**
-     * Set the location the "value" field of the requisition element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRequisitionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_REQUISITION] = $valueXMLLocation;
         return $this;
     }
 
@@ -1803,14 +1765,17 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
      * or a range (2.0 to 1.8 Gy per fraction).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantityQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantityQuantity
      * @return static
      */
-    public function setQuantityQuantity(null|FHIRQuantity $quantityQuantity): self
+    public function setQuantityQuantity(null|FHIRDecimal|FHIRQuantity $quantityQuantity): self
     {
         if (null === $quantityQuantity) {
             unset($this->quantityQuantity);
             return $this;
+        }
+        if (!($quantityQuantity instanceof FHIRQuantity)) {
+            $quantityQuantity = new FHIRQuantity(value: $quantityQuantity);
         }
         $this->quantityQuantity = $quantityQuantity;
         return $this;
@@ -3171,7 +3136,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -3765,7 +3730,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -3894,7 +3859,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
                 $type->addPatientInstruction(FHIRServiceRequestPatientInstruction::xmlUnserialize($ce, $config));
             } else if (self::FIELD_RELEVANT_HISTORY === $cen) {
                 $type->addRelevantHistory(FHIRReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -3918,14 +3884,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
                 $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_REQUISITION])) {
-            if (isset($type->requisition)) {
-                $type->requisition->setValue((string)$attributes[self::FIELD_REQUISITION]);
-                $type->_setRequisitionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setRequisition((string)$attributes[self::FIELD_REQUISITION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_STATUS])) {
@@ -4012,9 +3970,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             $rootOpened = true;
             $xw->openRootNode('ServiceRequest', $this->_getSourceXMLNS());
         }
-        if (isset($this->requisition) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REQUISITION]) {
-            $xw->writeAttribute(self::FIELD_REQUISITION, $this->requisition->_getFormattedValue());
-        }
         if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
             $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
         }
@@ -4037,8 +3992,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             $xw->writeAttribute(self::FIELD_AUTHORED_ON, $this->authoredOn->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -4072,11 +4027,9 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
                 $xw->endElement();
             }
         }
-        if (isset($this->requisition)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_REQUISITION]
-                || $this->requisition->_nonValueFieldDefined())) {
+        if (isset($this->requisition)) {
             $xw->startElement(self::FIELD_REQUISITION);
-            $this->requisition->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_REQUISITION]);
+            $this->requisition->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->status)
@@ -4318,22 +4271,13 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INSTANTIATES_CANONICAL])
@@ -4390,15 +4334,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
                 $type->addReplaces(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REQUISITION])
-            || isset($json[self::FIELD_REQUISITION_EXT])
-            || array_key_exists(self::FIELD_REQUISITION, $json)
-            || array_key_exists(self::FIELD_REQUISITION_EXT, $json)) {
-            $value = $json[self::FIELD_REQUISITION] ?? null;
-            $type->setRequisition(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUISITION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_REQUISITION]) || array_key_exists(self::FIELD_REQUISITION, $json)) {
+            $type->setRequisition(FHIRIdentifier::jsonUnserialize($json[self::FIELD_REQUISITION], $config));
         }
         if (isset($json[self::FIELD_STATUS])
             || isset($json[self::FIELD_STATUS_EXT])
@@ -4633,65 +4570,63 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->instantiatesCanonical) && [] !== $this->instantiatesCanonical) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->instantiatesCanonical as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->instantiatesCanonical = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_instantiatesCanonical = $exts;
             }
         }
         if (isset($this->instantiatesUri) && [] !== $this->instantiatesUri) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->instantiatesUri as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->instantiatesUri = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_instantiatesUri = $exts;
             }
         }
@@ -4702,22 +4637,15 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             $out->replaces = $this->replaces;
         }
         if (isset($this->requisition)) {
-            if (null !== ($val = $this->requisition->getValue())) {
-                $out->requisition = $val;
-            }
-            $ext = $this->requisition->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_requisition = $ext;
-            }
+            $out->requisition = $this->requisition;
         }
         if (isset($this->status)) {
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -4725,9 +4653,9 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             if (null !== ($val = $this->intent->getValue())) {
                 $out->intent = $val;
             }
-            $ext = $this->intent->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->intent->_nonValueFieldDefined()) {
+                $ext = $this->intent->jsonSerialize();
+                unset($ext->value);
                 $out->_intent = $ext;
             }
         }
@@ -4738,9 +4666,9 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             if (null !== ($val = $this->priority->getValue())) {
                 $out->priority = $val;
             }
-            $ext = $this->priority->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->priority->_nonValueFieldDefined()) {
+                $ext = $this->priority->jsonSerialize();
+                unset($ext->value);
                 $out->_priority = $ext;
             }
         }
@@ -4748,9 +4676,9 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             if (null !== ($val = $this->doNotPerform->getValue())) {
                 $out->doNotPerform = $val;
             }
-            $ext = $this->doNotPerform->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->doNotPerform->_nonValueFieldDefined()) {
+                $ext = $this->doNotPerform->jsonSerialize();
+                unset($ext->value);
                 $out->_doNotPerform = $ext;
             }
         }
@@ -4782,9 +4710,9 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             if (null !== ($val = $this->occurrenceDateTime->getValue())) {
                 $out->occurrenceDateTime = $val;
             }
-            $ext = $this->occurrenceDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->occurrenceDateTime->_nonValueFieldDefined()) {
+                $ext = $this->occurrenceDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_occurrenceDateTime = $ext;
             }
         }
@@ -4798,9 +4726,9 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             if (null !== ($val = $this->asNeededBoolean->getValue())) {
                 $out->asNeededBoolean = $val;
             }
-            $ext = $this->asNeededBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->asNeededBoolean->_nonValueFieldDefined()) {
+                $ext = $this->asNeededBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_asNeededBoolean = $ext;
             }
         }
@@ -4811,9 +4739,9 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             if (null !== ($val = $this->authoredOn->getValue())) {
                 $out->authoredOn = $val;
             }
-            $ext = $this->authoredOn->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->authoredOn->_nonValueFieldDefined()) {
+                $ext = $this->authoredOn->jsonSerialize();
+                unset($ext->value);
                 $out->_authoredOn = $ext;
             }
         }
@@ -4859,7 +4787,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

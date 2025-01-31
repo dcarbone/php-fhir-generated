@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,7 +112,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CITATION_DOT_PUBLICATION_FORM;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_PUBLISHED_IN = 'publishedIn';
     public const FIELD_PERIODIC_RELEASE = 'periodicRelease';
     public const FIELD_ARTICLE_DATE = 'articleDate';
@@ -133,10 +133,10 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
     public const FIELD_COPYRIGHT = 'copyright';
     public const FIELD_COPYRIGHT_EXT = '_copyright';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ARTICLE_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LAST_REVISION_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -148,7 +148,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
         self::FIELD_COPYRIGHT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * The Citation Resource enables reference to any knowledge artifact for purposes
      * of identification and attribution. The Citation Resource supports existing
@@ -348,7 +348,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -357,7 +357,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * The Citation Resource enables reference to any knowledge artifact for purposes
      * of identification and attribution. The Citation Resource supports existing
@@ -1047,7 +1047,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1242,7 +1242,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1299,7 +1299,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
                 $type->setPageCount(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_COPYRIGHT === $cen) {
                 $type->setCopyright(FHIRMarkdown::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1614,9 +1615,9 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
             if (null !== ($val = $this->articleDate->getValue())) {
                 $out->articleDate = $val;
             }
-            $ext = $this->articleDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->articleDate->_nonValueFieldDefined()) {
+                $ext = $this->articleDate->jsonSerialize();
+                unset($ext->value);
                 $out->_articleDate = $ext;
             }
         }
@@ -1624,9 +1625,9 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
             if (null !== ($val = $this->lastRevisionDate->getValue())) {
                 $out->lastRevisionDate = $val;
             }
-            $ext = $this->lastRevisionDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lastRevisionDate->_nonValueFieldDefined()) {
+                $ext = $this->lastRevisionDate->jsonSerialize();
+                unset($ext->value);
                 $out->_lastRevisionDate = $ext;
             }
         }
@@ -1637,9 +1638,9 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
             if (null !== ($val = $this->accessionNumber->getValue())) {
                 $out->accessionNumber = $val;
             }
-            $ext = $this->accessionNumber->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->accessionNumber->_nonValueFieldDefined()) {
+                $ext = $this->accessionNumber->jsonSerialize();
+                unset($ext->value);
                 $out->_accessionNumber = $ext;
             }
         }
@@ -1647,9 +1648,9 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
             if (null !== ($val = $this->pageString->getValue())) {
                 $out->pageString = $val;
             }
-            $ext = $this->pageString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->pageString->_nonValueFieldDefined()) {
+                $ext = $this->pageString->jsonSerialize();
+                unset($ext->value);
                 $out->_pageString = $ext;
             }
         }
@@ -1657,9 +1658,9 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
             if (null !== ($val = $this->firstPage->getValue())) {
                 $out->firstPage = $val;
             }
-            $ext = $this->firstPage->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->firstPage->_nonValueFieldDefined()) {
+                $ext = $this->firstPage->jsonSerialize();
+                unset($ext->value);
                 $out->_firstPage = $ext;
             }
         }
@@ -1667,9 +1668,9 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
             if (null !== ($val = $this->lastPage->getValue())) {
                 $out->lastPage = $val;
             }
-            $ext = $this->lastPage->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lastPage->_nonValueFieldDefined()) {
+                $ext = $this->lastPage->jsonSerialize();
+                unset($ext->value);
                 $out->_lastPage = $ext;
             }
         }
@@ -1677,9 +1678,9 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
             if (null !== ($val = $this->pageCount->getValue())) {
                 $out->pageCount = $val;
             }
-            $ext = $this->pageCount->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->pageCount->_nonValueFieldDefined()) {
+                $ext = $this->pageCount->jsonSerialize();
+                unset($ext->value);
                 $out->_pageCount = $ext;
             }
         }
@@ -1687,15 +1688,15 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
             if (null !== ($val = $this->copyright->getValue())) {
                 $out->copyright = $val;
             }
-            $ext = $this->copyright->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->copyright->_nonValueFieldDefined()) {
+                $ext = $this->copyright->jsonSerialize();
+                unset($ext->value);
                 $out->_copyright = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

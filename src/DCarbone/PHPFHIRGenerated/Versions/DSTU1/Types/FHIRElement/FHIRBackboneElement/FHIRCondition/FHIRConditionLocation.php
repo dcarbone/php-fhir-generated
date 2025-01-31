@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,20 +84,20 @@ class FHIRConditionLocation extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONDITION_DOT_LOCATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CODE = 'code';
     public const FIELD_DETAIL = 'detail';
     public const FIELD_DETAIL_EXT = '_detail';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DETAIL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -148,7 +148,7 @@ class FHIRConditionLocation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -157,7 +157,7 @@ class FHIRConditionLocation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -258,7 +258,7 @@ class FHIRConditionLocation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -345,7 +345,7 @@ class FHIRConditionLocation extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -384,7 +384,8 @@ class FHIRConditionLocation extends FHIRBackboneElement
                 $type->setCode(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DETAIL === $cen) {
                 $type->setDetail(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -476,15 +477,15 @@ class FHIRConditionLocation extends FHIRBackboneElement
             if (null !== ($val = $this->detail->getValue())) {
                 $out->detail = $val;
             }
-            $ext = $this->detail->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->detail->_nonValueFieldDefined()) {
+                $ext = $this->detail->jsonSerialize();
+                unset($ext->value);
                 $out->_detail = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,26 +113,25 @@ class FHIRPatientContact extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PATIENT_DOT_CONTACT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_RELATIONSHIP = 'relationship';
     public const FIELD_NAME = 'name';
     public const FIELD_TELECOM = 'telecom';
-    public const FIELD_TELECOM_EXT = '_telecom';
     public const FIELD_ADDRESS = 'address';
     public const FIELD_GENDER = 'gender';
     public const FIELD_GENDER_EXT = '_gender';
     public const FIELD_ORGANIZATION = 'organization';
     public const FIELD_PERIOD = 'period';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_GENDER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -268,7 +267,7 @@ class FHIRPatientContact extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -277,7 +276,7 @@ class FHIRPatientContact extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -449,14 +448,7 @@ class FHIRPatientContact extends FHIRBackboneElement
             unset($this->telecom);
             return $this;
         }
-        $this->telecom = [];
-        foreach($telecom as $v) {
-            if ($v instanceof FHIRContactPoint) {
-                $this->telecom[] = $v;
-            } else {
-                $this->telecom[] = new FHIRContactPoint(value: $v);
-            }
-        }
+        $this->telecom = $telecom;
         return $this;
     }
 
@@ -640,7 +632,7 @@ class FHIRPatientContact extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -787,7 +779,7 @@ class FHIRPatientContact extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -836,7 +828,8 @@ class FHIRPatientContact extends FHIRBackboneElement
                 $type->setOrganization(FHIRReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PERIOD === $cen) {
                 $type->setPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -875,8 +868,8 @@ class FHIRPatientContact extends FHIRBackboneElement
             $this->name->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->telecom) && [] !== $this->telecom) {
-            foreach($this->telecom as $v) {
+        if (isset($this->telecom)) {
+            foreach ($this->telecom as $v) {
                 $xw->startElement(self::FIELD_TELECOM);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -940,22 +933,13 @@ class FHIRPatientContact extends FHIRBackboneElement
         if (isset($json[self::FIELD_NAME]) || array_key_exists(self::FIELD_NAME, $json)) {
             $type->setName(FHIRHumanName::jsonUnserialize($json[self::FIELD_NAME], $config));
         }
-        if (isset($json[self::FIELD_TELECOM])
-            || isset($json[self::FIELD_TELECOM_EXT])
-            || array_key_exists(self::FIELD_TELECOM, $json)
-            || array_key_exists(self::FIELD_TELECOM_EXT, $json)) {
-            $value = (array)($json[self::FIELD_TELECOM] ?? []);
-            $ext = (array)($json[self::FIELD_TELECOM_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_TELECOM]) || array_key_exists(self::FIELD_TELECOM, $json)) {
+            $vs = $json[self::FIELD_TELECOM];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addTelecom(FHIRContactPoint::jsonUnserialize(
-                    [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addTelecom(FHIRContactPoint::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ADDRESS]) || array_key_exists(self::FIELD_ADDRESS, $json)) {
@@ -993,25 +977,7 @@ class FHIRPatientContact extends FHIRBackboneElement
             $out->name = $this->name;
         }
         if (isset($this->telecom) && [] !== $this->telecom) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->telecom as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->telecom = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_telecom = $exts;
-            }
+            $out->telecom = $this->telecom;
         }
         if (isset($this->address)) {
             $out->address = $this->address;
@@ -1020,9 +986,9 @@ class FHIRPatientContact extends FHIRBackboneElement
             if (null !== ($val = $this->gender->getValue())) {
                 $out->gender = $val;
             }
-            $ext = $this->gender->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->gender->_nonValueFieldDefined()) {
+                $ext = $this->gender->jsonSerialize();
+                unset($ext->value);
                 $out->_gender = $ext;
             }
         }
@@ -1034,7 +1000,7 @@ class FHIRPatientContact extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

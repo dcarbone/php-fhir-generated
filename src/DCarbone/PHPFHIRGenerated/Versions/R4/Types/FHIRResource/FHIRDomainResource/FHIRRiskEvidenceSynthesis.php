@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,11 +119,10 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_URL = 'url';
     public const FIELD_URL_EXT = '_url';
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_VERSION = 'version';
     public const FIELD_VERSION_EXT = '_version';
     public const FIELD_NAME = 'name';
@@ -162,10 +161,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
     public const FIELD_OUTCOME = 'outcome';
     public const FIELD_SAMPLE_SIZE = 'sampleSize';
     public const FIELD_RISK_ESTIMATE = 'riskEstimate';
-    public const FIELD_RISK_ESTIMATE_EXT = '_riskEstimate';
     public const FIELD_CERTAINTY = 'certainty';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -178,7 +176,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -191,10 +189,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         self::FIELD_COPYRIGHT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_APPROVAL_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LAST_REVIEW_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_RISK_ESTIMATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -758,7 +755,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -767,7 +764,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -776,7 +773,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -927,14 +924,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -2626,11 +2616,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * The estimated risk of the outcome.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate $riskEstimate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRiskEstimate(null|FHIRDecimal|FHIRRiskEvidenceSynthesisRiskEstimate $riskEstimate,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRiskEstimate(null|FHIRDecimal|FHIRRiskEvidenceSynthesisRiskEstimate $riskEstimate): self
     {
         if (null === $riskEstimate) {
             unset($this->riskEstimate);
@@ -2640,33 +2628,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             $riskEstimate = new FHIRRiskEvidenceSynthesisRiskEstimate(value: $riskEstimate);
         }
         $this->riskEstimate = $riskEstimate;
-        if ($this->_valueXMLLocations[self::FIELD_RISK_ESTIMATE] !== $valueXMLLocation) {
-            $this->_setRiskEstimateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the riskEstimate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRiskEstimateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RISK_ESTIMATE];
-    }
-
-    /**
-     * Set the location the "value" field of the riskEstimate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRiskEstimateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RISK_ESTIMATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -2734,7 +2695,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -3244,7 +3205,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -3359,7 +3320,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
                 $type->setRiskEstimate(FHIRRiskEvidenceSynthesisRiskEstimate::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CERTAINTY === $cen) {
                 $type->addCertainty(FHIRRiskEvidenceSynthesisCertainty::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -3473,14 +3435,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
                 $type->setLastReviewDate((string)$attributes[self::FIELD_LAST_REVIEW_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_RISK_ESTIMATE])) {
-            if (isset($type->riskEstimate)) {
-                $type->riskEstimate->setValue((string)$attributes[self::FIELD_RISK_ESTIMATE]);
-                $type->_setRiskEstimateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setRiskEstimate((string)$attributes[self::FIELD_RISK_ESTIMATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         return $type;
     }
 
@@ -3542,9 +3496,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         if (isset($this->lastReviewDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LAST_REVIEW_DATE]) {
             $xw->writeAttribute(self::FIELD_LAST_REVIEW_DATE, $this->lastReviewDate->_getFormattedValue());
         }
-        if (isset($this->riskEstimate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RISK_ESTIMATE]) {
-            $xw->writeAttribute(self::FIELD_RISK_ESTIMATE, $this->riskEstimate->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
         if (isset($this->url)
             && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_URL]
@@ -3553,8 +3504,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             $this->url->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_URL]);
             $xw->endElement();
         }
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -3735,11 +3686,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             $this->sampleSize->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->riskEstimate)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_RISK_ESTIMATE]
-                || $this->riskEstimate->_nonValueFieldDefined())) {
+        if (isset($this->riskEstimate)) {
             $xw->startElement(self::FIELD_RISK_ESTIMATE);
-            $this->riskEstimate->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_RISK_ESTIMATE]);
+            $this->riskEstimate->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->certainty)) {
@@ -3798,22 +3747,13 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_VERSION])
@@ -4027,15 +3967,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         if (isset($json[self::FIELD_SAMPLE_SIZE]) || array_key_exists(self::FIELD_SAMPLE_SIZE, $json)) {
             $type->setSampleSize(FHIRRiskEvidenceSynthesisSampleSize::jsonUnserialize($json[self::FIELD_SAMPLE_SIZE], $config));
         }
-        if (isset($json[self::FIELD_RISK_ESTIMATE])
-            || isset($json[self::FIELD_RISK_ESTIMATE_EXT])
-            || array_key_exists(self::FIELD_RISK_ESTIMATE, $json)
-            || array_key_exists(self::FIELD_RISK_ESTIMATE_EXT, $json)) {
-            $value = $json[self::FIELD_RISK_ESTIMATE] ?? null;
-            $type->setRiskEstimate(FHIRRiskEvidenceSynthesisRiskEstimate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRRiskEvidenceSynthesisRiskEstimate::FIELD_VALUE => $value]) + ($json[self::FIELD_RISK_ESTIMATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_RISK_ESTIMATE]) || array_key_exists(self::FIELD_RISK_ESTIMATE, $json)) {
+            $type->setRiskEstimate(FHIRRiskEvidenceSynthesisRiskEstimate::jsonUnserialize($json[self::FIELD_RISK_ESTIMATE], $config));
         }
         if (isset($json[self::FIELD_CERTAINTY]) || array_key_exists(self::FIELD_CERTAINTY, $json)) {
             $vs = $json[self::FIELD_CERTAINTY];
@@ -4059,40 +3992,22 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->version)) {
             if (null !== ($val = $this->version->getValue())) {
                 $out->version = $val;
             }
-            $ext = $this->version->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->version->_nonValueFieldDefined()) {
+                $ext = $this->version->jsonSerialize();
+                unset($ext->value);
                 $out->_version = $ext;
             }
         }
@@ -4100,9 +4015,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -4110,9 +4025,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (null !== ($val = $this->title->getValue())) {
                 $out->title = $val;
             }
-            $ext = $this->title->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->title->_nonValueFieldDefined()) {
+                $ext = $this->title->jsonSerialize();
+                unset($ext->value);
                 $out->_title = $ext;
             }
         }
@@ -4120,9 +4035,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -4130,9 +4045,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (null !== ($val = $this->date->getValue())) {
                 $out->date = $val;
             }
-            $ext = $this->date->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->date->_nonValueFieldDefined()) {
+                $ext = $this->date->jsonSerialize();
+                unset($ext->value);
                 $out->_date = $ext;
             }
         }
@@ -4140,9 +4055,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (null !== ($val = $this->publisher->getValue())) {
                 $out->publisher = $val;
             }
-            $ext = $this->publisher->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->publisher->_nonValueFieldDefined()) {
+                $ext = $this->publisher->jsonSerialize();
+                unset($ext->value);
                 $out->_publisher = $ext;
             }
         }
@@ -4153,9 +4068,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -4172,9 +4087,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (null !== ($val = $this->copyright->getValue())) {
                 $out->copyright = $val;
             }
-            $ext = $this->copyright->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->copyright->_nonValueFieldDefined()) {
+                $ext = $this->copyright->jsonSerialize();
+                unset($ext->value);
                 $out->_copyright = $ext;
             }
         }
@@ -4182,9 +4097,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (null !== ($val = $this->approvalDate->getValue())) {
                 $out->approvalDate = $val;
             }
-            $ext = $this->approvalDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->approvalDate->_nonValueFieldDefined()) {
+                $ext = $this->approvalDate->jsonSerialize();
+                unset($ext->value);
                 $out->_approvalDate = $ext;
             }
         }
@@ -4192,9 +4107,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (null !== ($val = $this->lastReviewDate->getValue())) {
                 $out->lastReviewDate = $val;
             }
-            $ext = $this->lastReviewDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lastReviewDate->_nonValueFieldDefined()) {
+                $ext = $this->lastReviewDate->jsonSerialize();
+                unset($ext->value);
                 $out->_lastReviewDate = $ext;
             }
         }
@@ -4238,14 +4153,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             $out->sampleSize = $this->sampleSize;
         }
         if (isset($this->riskEstimate)) {
-            if (null !== ($val = $this->riskEstimate->getValue())) {
-                $out->riskEstimate = $val;
-            }
-            $ext = $this->riskEstimate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_riskEstimate = $ext;
-            }
+            $out->riskEstimate = $this->riskEstimate;
         }
         if (isset($this->certainty) && [] !== $this->certainty) {
             $out->certainty = $this->certainty;
@@ -4253,7 +4161,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

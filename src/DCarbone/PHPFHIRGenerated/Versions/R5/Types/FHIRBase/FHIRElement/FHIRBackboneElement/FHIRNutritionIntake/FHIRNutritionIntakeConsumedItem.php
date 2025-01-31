@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,6 +96,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -118,7 +119,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_INTAKE_DOT_CONSUMED_ITEM;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_NUTRITION_PRODUCT = 'nutritionProduct';
     public const FIELD_SCHEDULE = 'schedule';
@@ -128,7 +129,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
     public const FIELD_NOT_CONSUMED_EXT = '_notConsumed';
     public const FIELD_NOT_CONSUMED_REASON = 'notConsumedReason';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -138,12 +139,12 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NOT_CONSUMED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -242,8 +243,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $nutritionProduct
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $schedule
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $amount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rate
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rate
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $notConsumed
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $notConsumedReason
      * @param null|string[] $fhirComments
@@ -254,8 +255,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $type = null,
                                 null|FHIRCodeableReference $nutritionProduct = null,
                                 null|FHIRTiming $schedule = null,
-                                null|FHIRQuantity $amount = null,
-                                null|FHIRQuantity $rate = null,
+                                null|FHIRDecimal|FHIRQuantity $amount = null,
+                                null|FHIRDecimal|FHIRQuantity $rate = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $notConsumed = null,
                                 null|FHIRCodeableConcept $notConsumedReason = null,
                                 null|iterable $fhirComments = null)
@@ -287,7 +288,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -296,7 +297,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -444,14 +445,17 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      *
      * Quantity of the specified food.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $amount
      * @return static
      */
-    public function setAmount(null|FHIRQuantity $amount): self
+    public function setAmount(null|FHIRDecimal|FHIRQuantity $amount): self
     {
         if (null === $amount) {
             unset($this->amount);
             return $this;
+        }
+        if (!($amount instanceof FHIRQuantity)) {
+            $amount = new FHIRQuantity(value: $amount);
         }
         $this->amount = $amount;
         return $this;
@@ -482,14 +486,17 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      *
      * Rate at which enteral feeding was administered.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rate
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rate
      * @return static
      */
-    public function setRate(null|FHIRQuantity $rate): self
+    public function setRate(null|FHIRDecimal|FHIRQuantity $rate): self
     {
         if (null === $rate) {
             unset($this->rate);
             return $this;
+        }
+        if (!($rate instanceof FHIRQuantity)) {
+            $rate = new FHIRQuantity(value: $rate);
         }
         $this->rate = $rate;
         return $this;
@@ -603,7 +610,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -760,7 +767,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -809,7 +816,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
                 $type->setNotConsumed(FHIRBoolean::xmlUnserialize($ce, $config));
             } else if (self::FIELD_NOT_CONSUMED_REASON === $cen) {
                 $type->setNotConsumedReason(FHIRCodeableConcept::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -953,9 +961,9 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
             if (null !== ($val = $this->notConsumed->getValue())) {
                 $out->notConsumed = $val;
             }
-            $ext = $this->notConsumed->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->notConsumed->_nonValueFieldDefined()) {
+                $ext = $this->notConsumed->jsonSerialize();
+                unset($ext->value);
                 $out->_notConsumed = $ext;
             }
         }
@@ -964,7 +972,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

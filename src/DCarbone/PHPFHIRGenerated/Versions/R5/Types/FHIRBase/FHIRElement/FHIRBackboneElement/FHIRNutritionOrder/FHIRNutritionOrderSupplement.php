@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,6 +92,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -107,7 +108,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_ORDER_DOT_SUPPLEMENT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_PRODUCT_NAME = 'productName';
     public const FIELD_PRODUCT_NAME_EXT = '_productName';
@@ -116,16 +117,16 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
     public const FIELD_INSTRUCTION = 'instruction';
     public const FIELD_INSTRUCTION_EXT = '_instruction';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_PRODUCT_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INSTRUCTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -191,7 +192,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $productName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSchedule1 $schedule
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $instruction
      * @param null|string[] $fhirComments
      */
@@ -201,7 +202,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                                 null|FHIRCodeableReference $type = null,
                                 null|string|FHIRStringPrimitive|FHIRString $productName = null,
                                 null|FHIRNutritionOrderSchedule1 $schedule = null,
-                                null|FHIRQuantity $quantity = null,
+                                null|FHIRDecimal|FHIRQuantity $quantity = null,
                                 null|string|FHIRStringPrimitive|FHIRString $instruction = null,
                                 null|iterable $fhirComments = null)
     {
@@ -226,7 +227,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -235,7 +236,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -399,14 +400,17 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * The amount of the nutritional supplement to be given.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
+        }
+        if (!($quantity instanceof FHIRQuantity)) {
+            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -480,7 +484,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -603,7 +607,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -648,7 +652,8 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                 $type->setQuantity(FHIRQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_INSTRUCTION === $cen) {
                 $type->setInstruction(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -784,9 +789,9 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             if (null !== ($val = $this->productName->getValue())) {
                 $out->productName = $val;
             }
-            $ext = $this->productName->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->productName->_nonValueFieldDefined()) {
+                $ext = $this->productName->jsonSerialize();
+                unset($ext->value);
                 $out->_productName = $ext;
             }
         }
@@ -800,15 +805,15 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             if (null !== ($val = $this->instruction->getValue())) {
                 $out->instruction = $val;
             }
-            $ext = $this->instruction->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->instruction->_nonValueFieldDefined()) {
+                $ext = $this->instruction->jsonSerialize();
+                unset($ext->value);
                 $out->_instruction = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

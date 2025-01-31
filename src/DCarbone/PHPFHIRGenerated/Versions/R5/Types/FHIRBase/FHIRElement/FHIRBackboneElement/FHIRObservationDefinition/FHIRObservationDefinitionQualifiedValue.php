@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OBSERVATION_DEFINITION_DOT_QUALIFIED_VALUE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CONTEXT = 'context';
     public const FIELD_APPLIES_TO = 'appliesTo';
     public const FIELD_GENDER = 'gender';
@@ -134,10 +134,10 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
     public const FIELD_CRITICAL_CODED_VALUE_SET = 'criticalCodedValueSet';
     public const FIELD_CRITICAL_CODED_VALUE_SET_EXT = '_criticalCodedValueSet';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_GENDER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CONDITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -148,7 +148,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         self::FIELD_CRITICAL_CODED_VALUE_SET => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -357,7 +357,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -366,7 +366,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -1046,7 +1046,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1253,7 +1253,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1312,7 +1312,8 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
                 $type->setAbnormalCodedValueSet(FHIRCanonical::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CRITICAL_CODED_VALUE_SET === $cen) {
                 $type->setCriticalCodedValueSet(FHIRCanonical::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1615,9 +1616,9 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             if (null !== ($val = $this->gender->getValue())) {
                 $out->gender = $val;
             }
-            $ext = $this->gender->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->gender->_nonValueFieldDefined()) {
+                $ext = $this->gender->jsonSerialize();
+                unset($ext->value);
                 $out->_gender = $ext;
             }
         }
@@ -1631,9 +1632,9 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             if (null !== ($val = $this->condition->getValue())) {
                 $out->condition = $val;
             }
-            $ext = $this->condition->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->condition->_nonValueFieldDefined()) {
+                $ext = $this->condition->jsonSerialize();
+                unset($ext->value);
                 $out->_condition = $ext;
             }
         }
@@ -1641,9 +1642,9 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             if (null !== ($val = $this->rangeCategory->getValue())) {
                 $out->rangeCategory = $val;
             }
-            $ext = $this->rangeCategory->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->rangeCategory->_nonValueFieldDefined()) {
+                $ext = $this->rangeCategory->jsonSerialize();
+                unset($ext->value);
                 $out->_rangeCategory = $ext;
             }
         }
@@ -1654,9 +1655,9 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             if (null !== ($val = $this->validCodedValueSet->getValue())) {
                 $out->validCodedValueSet = $val;
             }
-            $ext = $this->validCodedValueSet->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->validCodedValueSet->_nonValueFieldDefined()) {
+                $ext = $this->validCodedValueSet->jsonSerialize();
+                unset($ext->value);
                 $out->_validCodedValueSet = $ext;
             }
         }
@@ -1664,9 +1665,9 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             if (null !== ($val = $this->normalCodedValueSet->getValue())) {
                 $out->normalCodedValueSet = $val;
             }
-            $ext = $this->normalCodedValueSet->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->normalCodedValueSet->_nonValueFieldDefined()) {
+                $ext = $this->normalCodedValueSet->jsonSerialize();
+                unset($ext->value);
                 $out->_normalCodedValueSet = $ext;
             }
         }
@@ -1674,9 +1675,9 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             if (null !== ($val = $this->abnormalCodedValueSet->getValue())) {
                 $out->abnormalCodedValueSet = $val;
             }
-            $ext = $this->abnormalCodedValueSet->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->abnormalCodedValueSet->_nonValueFieldDefined()) {
+                $ext = $this->abnormalCodedValueSet->jsonSerialize();
+                unset($ext->value);
                 $out->_abnormalCodedValueSet = $ext;
             }
         }
@@ -1684,15 +1685,15 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             if (null !== ($val = $this->criticalCodedValueSet->getValue())) {
                 $out->criticalCodedValueSet = $val;
             }
-            $ext = $this->criticalCodedValueSet->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->criticalCodedValueSet->_nonValueFieldDefined()) {
+                $ext = $this->criticalCodedValueSet->jsonSerialize();
+                unset($ext->value);
                 $out->_criticalCodedValueSet = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

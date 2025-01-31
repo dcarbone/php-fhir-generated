@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,16 +106,14 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMAGING_STUDY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_DATE_TIME = 'dateTime';
     public const FIELD_DATE_TIME_EXT = '_dateTime';
     public const FIELD_SUBJECT = 'subject';
     public const FIELD_UID = 'uid';
     public const FIELD_UID_EXT = '_uid';
     public const FIELD_ACCESSION_NO = 'accessionNo';
-    public const FIELD_ACCESSION_NO_EXT = '_accessionNo';
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_ORDER = 'order';
     public const FIELD_MODALITY = 'modality';
     public const FIELD_MODALITY_EXT = '_modality';
@@ -136,7 +134,7 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
     public const FIELD_DESCRIPTION_EXT = '_description';
     public const FIELD_SERIES = 'series';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -155,11 +153,10 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_UID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_ACCESSION_NO => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_AVAILABILITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NUMBER_OF_SERIES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -168,7 +165,7 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -452,7 +449,7 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -461,7 +458,7 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -470,7 +467,7 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -663,11 +660,9 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * Accession Number.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $accessionNo
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAccessionNo(null|FHIRString|FHIRIdentifier $accessionNo,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAccessionNo(null|FHIRString|FHIRIdentifier $accessionNo): self
     {
         if (null === $accessionNo) {
             unset($this->accessionNo);
@@ -677,33 +672,6 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             $accessionNo = new FHIRIdentifier(value: $accessionNo);
         }
         $this->accessionNo = $accessionNo;
-        if ($this->_valueXMLLocations[self::FIELD_ACCESSION_NO] !== $valueXMLLocation) {
-            $this->_setAccessionNoValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the accessionNo element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAccessionNoValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ACCESSION_NO];
-    }
-
-    /**
-     * Set the location the "value" field of the accessionNo element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAccessionNoValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ACCESSION_NO] = $valueXMLLocation;
         return $this;
     }
 
@@ -770,14 +738,7 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1507,7 +1468,7 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1830,7 +1791,7 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1918,7 +1879,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
                 $type->setDescription(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SERIES === $cen) {
                 $type->addSeries(FHIRImagingStudySeries::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1945,14 +1907,6 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
                 $type->_setUidValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setUid((string)$attributes[self::FIELD_UID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_ACCESSION_NO])) {
-            if (isset($type->accessionNo)) {
-                $type->accessionNo->setValue((string)$attributes[self::FIELD_ACCESSION_NO]);
-                $type->_setAccessionNoValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setAccessionNo((string)$attributes[self::FIELD_ACCESSION_NO], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_AVAILABILITY])) {
@@ -2037,9 +1991,6 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
         if (isset($this->uid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_UID]) {
             $xw->writeAttribute(self::FIELD_UID, $this->uid->_getFormattedValue());
         }
-        if (isset($this->accessionNo) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ACCESSION_NO]) {
-            $xw->writeAttribute(self::FIELD_ACCESSION_NO, $this->accessionNo->_getFormattedValue());
-        }
         if (isset($this->availability) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AVAILABILITY]) {
             $xw->writeAttribute(self::FIELD_AVAILABILITY, $this->availability->_getFormattedValue());
         }
@@ -2078,15 +2029,13 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             $this->uid->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_UID]);
             $xw->endElement();
         }
-        if (isset($this->accessionNo)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ACCESSION_NO]
-                || $this->accessionNo->_nonValueFieldDefined())) {
+        if (isset($this->accessionNo)) {
             $xw->startElement(self::FIELD_ACCESSION_NO);
-            $this->accessionNo->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ACCESSION_NO]);
+            $this->accessionNo->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2234,32 +2183,16 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_ACCESSION_NO])
-            || isset($json[self::FIELD_ACCESSION_NO_EXT])
-            || array_key_exists(self::FIELD_ACCESSION_NO, $json)
-            || array_key_exists(self::FIELD_ACCESSION_NO_EXT, $json)) {
-            $value = $json[self::FIELD_ACCESSION_NO] ?? null;
-            $type->setAccessionNo(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_ACCESSION_NO_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_ACCESSION_NO]) || array_key_exists(self::FIELD_ACCESSION_NO, $json)) {
+            $type->setAccessionNo(FHIRIdentifier::jsonUnserialize($json[self::FIELD_ACCESSION_NO], $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ORDER]) || array_key_exists(self::FIELD_ORDER, $json)) {
@@ -2386,9 +2319,9 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             if (null !== ($val = $this->dateTime->getValue())) {
                 $out->dateTime = $val;
             }
-            $ext = $this->dateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dateTime->_nonValueFieldDefined()) {
+                $ext = $this->dateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_dateTime = $ext;
             }
         }
@@ -2399,42 +2332,17 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             if (null !== ($val = $this->uid->getValue())) {
                 $out->uid = $val;
             }
-            $ext = $this->uid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->uid->_nonValueFieldDefined()) {
+                $ext = $this->uid->jsonSerialize();
+                unset($ext->value);
                 $out->_uid = $ext;
             }
         }
         if (isset($this->accessionNo)) {
-            if (null !== ($val = $this->accessionNo->getValue())) {
-                $out->accessionNo = $val;
-            }
-            $ext = $this->accessionNo->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_accessionNo = $ext;
-            }
+            $out->accessionNo = $this->accessionNo;
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->order) && [] !== $this->order) {
             $out->order = $this->order;
@@ -2442,21 +2350,29 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
         if (isset($this->modality) && [] !== $this->modality) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->modality as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->modality = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_modality = $exts;
             }
         }
@@ -2467,9 +2383,9 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             if (null !== ($val = $this->availability->getValue())) {
                 $out->availability = $val;
             }
-            $ext = $this->availability->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->availability->_nonValueFieldDefined()) {
+                $ext = $this->availability->jsonSerialize();
+                unset($ext->value);
                 $out->_availability = $ext;
             }
         }
@@ -2477,9 +2393,9 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
@@ -2487,9 +2403,9 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             if (null !== ($val = $this->numberOfSeries->getValue())) {
                 $out->numberOfSeries = $val;
             }
-            $ext = $this->numberOfSeries->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->numberOfSeries->_nonValueFieldDefined()) {
+                $ext = $this->numberOfSeries->jsonSerialize();
+                unset($ext->value);
                 $out->_numberOfSeries = $ext;
             }
         }
@@ -2497,9 +2413,9 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             if (null !== ($val = $this->numberOfInstances->getValue())) {
                 $out->numberOfInstances = $val;
             }
-            $ext = $this->numberOfInstances->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->numberOfInstances->_nonValueFieldDefined()) {
+                $ext = $this->numberOfInstances->jsonSerialize();
+                unset($ext->value);
                 $out->_numberOfInstances = $ext;
             }
         }
@@ -2507,9 +2423,9 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             if (null !== ($val = $this->clinicalInformation->getValue())) {
                 $out->clinicalInformation = $val;
             }
-            $ext = $this->clinicalInformation->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->clinicalInformation->_nonValueFieldDefined()) {
+                $ext = $this->clinicalInformation->jsonSerialize();
+                unset($ext->value);
                 $out->_clinicalInformation = $ext;
             }
         }
@@ -2523,9 +2439,9 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -2535,7 +2451,7 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -107,18 +108,18 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement implemen
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BODY_STRUCTURE_DOT_DISTANCE_FROM_LANDMARK;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_DEVICE = 'device';
     public const FIELD_VALUE = 'value';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -150,7 +151,7 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement implemen
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[] $device
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity[] $value
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity[] $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -172,7 +173,7 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement implemen
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -181,7 +182,7 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement implemen
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -285,11 +286,14 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement implemen
      *
      * The measured distance (e.g., in cm) from a body landmark.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $value
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $value
      * @return static
      */
-    public function addValue(FHIRQuantity $value): self
+    public function addValue(FHIRDecimal|FHIRQuantity $value): self
     {
+        if (!($value instanceof FHIRQuantity)) {
+            $value = new FHIRQuantity(value: $value);
+        }
         if (!isset($this->value)) {
             $this->value = [];
         }
@@ -306,10 +310,10 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement implemen
      *
      * The measured distance (e.g., in cm) from a body landmark.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$value
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$value
      * @return static
      */
-    public function setValue(FHIRQuantity ...$value): self
+    public function setValue(FHIRDecimal|FHIRQuantity ...$value): self
     {
         if ([] === $value) {
             unset($this->value);
@@ -331,7 +335,7 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement implemen
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -418,16 +422,7 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement implemen
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->modifierExtension)
-               || isset($this->device);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -466,7 +461,8 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement implemen
                 $type->addDevice(FHIRCodeableReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_VALUE === $cen) {
                 $type->addValue(FHIRQuantity::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -558,7 +554,7 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement implemen
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

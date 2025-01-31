@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,6 +101,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREncounterStatus;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
@@ -128,10 +129,9 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ENCOUNTER_HISTORY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_ENCOUNTER = 'encounter';
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
     public const FIELD_CLASS = 'class';
@@ -147,7 +147,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
     public const FIELD_LENGTH = 'length';
     public const FIELD_LOCATION = 'location';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -157,14 +157,14 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PLANNED_START_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PLANNED_END_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -341,7 +341,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $actualPeriod
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $plannedStartDate
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $plannedEndDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $length
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $length
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounterHistory\FHIREncounterHistoryLocation[] $location
      * @param null|string[] $fhirComments
      */
@@ -364,7 +364,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
                                 null|FHIRPeriod $actualPeriod = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $plannedStartDate = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $plannedEndDate = null,
-                                null|FHIRDuration $length = null,
+                                null|FHIRDecimal|FHIRDuration $length = null,
                                 null|iterable $location = null,
                                 null|iterable $fhirComments = null)
     {
@@ -418,7 +418,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -427,7 +427,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -436,7 +436,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -537,14 +537,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1076,14 +1069,17 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * leaves of absence. When missing it is the time in between the start and end
      * values.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $length
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $length
      * @return static
      */
-    public function setLength(null|FHIRDuration $length): self
+    public function setLength(null|FHIRDecimal|FHIRDuration $length): self
     {
         if (null === $length) {
             unset($this->length);
             return $this;
+        }
+        if (!($length instanceof FHIRDuration)) {
+            $length = new FHIRDuration(value: $length);
         }
         $this->length = $length;
         return $this;
@@ -1156,7 +1152,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1445,7 +1441,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1524,7 +1520,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
                 $type->setLength(FHIRDuration::xmlUnserialize($ce, $config));
             } else if (self::FIELD_LOCATION === $cen) {
                 $type->addLocation(FHIREncounterHistoryLocation::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -1617,8 +1614,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
             $this->encounter->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1733,22 +1730,13 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
         if (isset($json[self::FIELD_ENCOUNTER]) || array_key_exists(self::FIELD_ENCOUNTER, $json)) {
             $type->setEncounter(FHIRReference::jsonUnserialize($json[self::FIELD_ENCOUNTER], $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STATUS])
@@ -1836,33 +1824,15 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
             $out->encounter = $this->encounter;
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->status)) {
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -1888,9 +1858,9 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
             if (null !== ($val = $this->plannedStartDate->getValue())) {
                 $out->plannedStartDate = $val;
             }
-            $ext = $this->plannedStartDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->plannedStartDate->_nonValueFieldDefined()) {
+                $ext = $this->plannedStartDate->jsonSerialize();
+                unset($ext->value);
                 $out->_plannedStartDate = $ext;
             }
         }
@@ -1898,9 +1868,9 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
             if (null !== ($val = $this->plannedEndDate->getValue())) {
                 $out->plannedEndDate = $val;
             }
-            $ext = $this->plannedEndDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->plannedEndDate->_nonValueFieldDefined()) {
+                $ext = $this->plannedEndDate->jsonSerialize();
+                unset($ext->value);
                 $out->_plannedEndDate = $ext;
             }
         }
@@ -1913,7 +1883,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

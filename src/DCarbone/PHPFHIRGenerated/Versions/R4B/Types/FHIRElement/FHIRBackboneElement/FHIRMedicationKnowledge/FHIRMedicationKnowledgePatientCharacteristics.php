@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,6 +92,7 @@ use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
@@ -108,13 +109,13 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_PATIENT_CHARACTERISTICS;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CHARACTERISTIC_CODEABLE_CONCEPT = 'characteristicCodeableConcept';
     public const FIELD_CHARACTERISTIC_QUANTITY = 'characteristicQuantity';
     public const FIELD_VALUE = 'value';
     public const FIELD_VALUE_EXT = '_value';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_CHARACTERISTIC_CODEABLE_CONCEPT => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -124,11 +125,11 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -172,7 +173,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $characteristicCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $characteristicQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $characteristicQuantity
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[] $value
      * @param null|string[] $fhirComments
      */
@@ -180,7 +181,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $characteristicCodeableConcept = null,
-                                null|FHIRQuantity $characteristicQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $characteristicQuantity = null,
                                 null|iterable $value = null,
                                 null|iterable $fhirComments = null)
     {
@@ -199,7 +200,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -208,7 +209,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -274,14 +275,17 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
      * Specific characteristic that is relevant to the administration guideline (e.g.
      * height, weight, gender).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $characteristicQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $characteristicQuantity
      * @return static
      */
-    public function setCharacteristicQuantity(null|FHIRQuantity $characteristicQuantity): self
+    public function setCharacteristicQuantity(null|FHIRDecimal|FHIRQuantity $characteristicQuantity): self
     {
         if (null === $characteristicQuantity) {
             unset($this->characteristicQuantity);
             return $this;
+        }
+        if (!($characteristicQuantity instanceof FHIRQuantity)) {
+            $characteristicQuantity = new FHIRQuantity(value: $characteristicQuantity);
         }
         $this->characteristicQuantity = $characteristicQuantity;
         return $this;
@@ -373,7 +377,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -482,17 +486,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->modifierExtension)
-               || isset($this->characteristicCodeableConcept)
-               || isset($this->characteristicQuantity);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -533,7 +527,8 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
                 $type->setCharacteristicQuantity(FHIRQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_VALUE === $cen) {
                 $type->addValue(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -635,27 +630,35 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
         if (isset($this->value) && [] !== $this->value) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->value as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->value = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_value = $exts;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

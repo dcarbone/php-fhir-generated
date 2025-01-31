@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,17 +114,16 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CITATION_DOT_RELATES_TO_1;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_RELATIONSHIP_TYPE = 'relationshipType';
     public const FIELD_TARGET_CLASSIFIER = 'targetClassifier';
     public const FIELD_TARGET_URI = 'targetUri';
     public const FIELD_TARGET_URI_EXT = '_targetUri';
     public const FIELD_TARGET_IDENTIFIER = 'targetIdentifier';
-    public const FIELD_TARGET_IDENTIFIER_EXT = '_targetIdentifier';
     public const FIELD_TARGET_REFERENCE = 'targetReference';
     public const FIELD_TARGET_ATTACHMENT = 'targetAttachment';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_RELATIONSHIP_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -143,13 +142,12 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TARGET_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_TARGET_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -263,7 +261,7 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -272,7 +270,7 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -466,11 +464,9 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
      * The article or artifact that the cited artifact is related to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $targetIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTargetIdentifier(null|FHIRString|FHIRIdentifier $targetIdentifier,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTargetIdentifier(null|FHIRString|FHIRIdentifier $targetIdentifier): self
     {
         if (null === $targetIdentifier) {
             unset($this->targetIdentifier);
@@ -480,33 +476,6 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
             $targetIdentifier = new FHIRIdentifier(value: $targetIdentifier);
         }
         $this->targetIdentifier = $targetIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_TARGET_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setTargetIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the targetIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTargetIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TARGET_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the targetIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTargetIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TARGET_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -578,7 +547,7 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -738,7 +707,7 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -785,7 +754,8 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
                 $type->setTargetReference(FHIRReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_TARGET_ATTACHMENT === $cen) {
                 $type->setTargetAttachment(FHIRAttachment::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -796,14 +766,6 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
                 $type->_setTargetUriValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setTargetUri((string)$attributes[self::FIELD_TARGET_URI], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_TARGET_IDENTIFIER])) {
-            if (isset($type->targetIdentifier)) {
-                $type->targetIdentifier->setValue((string)$attributes[self::FIELD_TARGET_IDENTIFIER]);
-                $type->_setTargetIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setTargetIdentifier((string)$attributes[self::FIELD_TARGET_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
@@ -818,9 +780,6 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
     {
         if (isset($this->targetUri) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TARGET_URI]) {
             $xw->writeAttribute(self::FIELD_TARGET_URI, $this->targetUri->_getFormattedValue());
-        }
-        if (isset($this->targetIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TARGET_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_TARGET_IDENTIFIER, $this->targetIdentifier->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->relationshipType)) {
@@ -842,11 +801,9 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
             $this->targetUri->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TARGET_URI]);
             $xw->endElement();
         }
-        if (isset($this->targetIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TARGET_IDENTIFIER]
-                || $this->targetIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->targetIdentifier)) {
             $xw->startElement(self::FIELD_TARGET_IDENTIFIER);
-            $this->targetIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TARGET_IDENTIFIER]);
+            $this->targetIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->targetReference)) {
@@ -905,15 +862,8 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_TARGET_IDENTIFIER])
-            || isset($json[self::FIELD_TARGET_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_TARGET_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_TARGET_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_TARGET_IDENTIFIER] ?? null;
-            $type->setTargetIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_TARGET_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_TARGET_IDENTIFIER]) || array_key_exists(self::FIELD_TARGET_IDENTIFIER, $json)) {
+            $type->setTargetIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_TARGET_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_TARGET_REFERENCE]) || array_key_exists(self::FIELD_TARGET_REFERENCE, $json)) {
             $type->setTargetReference(FHIRReference::jsonUnserialize($json[self::FIELD_TARGET_REFERENCE], $config));
@@ -940,21 +890,14 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
             if (null !== ($val = $this->targetUri->getValue())) {
                 $out->targetUri = $val;
             }
-            $ext = $this->targetUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->targetUri->_nonValueFieldDefined()) {
+                $ext = $this->targetUri->jsonSerialize();
+                unset($ext->value);
                 $out->_targetUri = $ext;
             }
         }
         if (isset($this->targetIdentifier)) {
-            if (null !== ($val = $this->targetIdentifier->getValue())) {
-                $out->targetIdentifier = $val;
-            }
-            $ext = $this->targetIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_targetIdentifier = $ext;
-            }
+            $out->targetIdentifier = $this->targetIdentifier;
         }
         if (isset($this->targetReference)) {
             $out->targetReference = $this->targetReference;
@@ -964,7 +907,7 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

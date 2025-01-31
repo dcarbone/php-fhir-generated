@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,7 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
@@ -90,7 +91,7 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ELIGIBILITY_RESPONSE_DOT_FINANCIAL;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_ALLOWED_UNSIGNED_INT = 'allowedUnsignedInt';
     public const FIELD_ALLOWED_UNSIGNED_INT_EXT = '_allowedUnsignedInt';
@@ -101,21 +102,21 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
     public const FIELD_USED_UNSIGNED_INT_EXT = '_usedUnsignedInt';
     public const FIELD_USED_MONEY = 'usedMoney';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ALLOWED_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ALLOWED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_USED_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -187,9 +188,9 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $allowedString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -198,9 +199,9 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $type = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $allowedUnsignedInt = null,
                                 null|string|FHIRStringPrimitive|FHIRString $allowedString = null,
-                                null|FHIRMoney $allowedMoney = null,
+                                null|FHIRDecimal|FHIRMoney $allowedMoney = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $usedUnsignedInt = null,
-                                null|FHIRMoney $usedMoney = null,
+                                null|FHIRDecimal|FHIRMoney $usedMoney = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -227,7 +228,7 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -236,7 +237,7 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -426,14 +427,17 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      *
      * Benefits allowed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
      * @return static
      */
-    public function setAllowedMoney(null|FHIRMoney $allowedMoney): self
+    public function setAllowedMoney(null|FHIRDecimal|FHIRMoney $allowedMoney): self
     {
         if (null === $allowedMoney) {
             unset($this->allowedMoney);
             return $this;
+        }
+        if (!($allowedMoney instanceof FHIRMoney)) {
+            $allowedMoney = new FHIRMoney(value: $allowedMoney);
         }
         $this->allowedMoney = $allowedMoney;
         return $this;
@@ -526,20 +530,23 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      *
      * Benefits used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
      * @return static
      */
-    public function setUsedMoney(null|FHIRMoney $usedMoney): self
+    public function setUsedMoney(null|FHIRDecimal|FHIRMoney $usedMoney): self
     {
         if (null === $usedMoney) {
             unset($this->usedMoney);
             return $this;
         }
+        if (!($usedMoney instanceof FHIRMoney)) {
+            $usedMoney = new FHIRMoney(value: $usedMoney);
+        }
         $this->usedMoney = $usedMoney;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -679,7 +686,7 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -726,7 +733,8 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
                 $type->setUsedUnsignedInt(FHIRUnsignedInt::xmlUnserialize($ce, $config));
             } else if (self::FIELD_USED_MONEY === $cen) {
                 $type->setUsedMoney(FHIRMoney::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -890,9 +898,9 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
             if (null !== ($val = $this->allowedUnsignedInt->getValue())) {
                 $out->allowedUnsignedInt = $val;
             }
-            $ext = $this->allowedUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->allowedUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->allowedUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_allowedUnsignedInt = $ext;
             }
         }
@@ -900,9 +908,9 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
             if (null !== ($val = $this->allowedString->getValue())) {
                 $out->allowedString = $val;
             }
-            $ext = $this->allowedString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->allowedString->_nonValueFieldDefined()) {
+                $ext = $this->allowedString->jsonSerialize();
+                unset($ext->value);
                 $out->_allowedString = $ext;
             }
         }
@@ -913,9 +921,9 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
             if (null !== ($val = $this->usedUnsignedInt->getValue())) {
                 $out->usedUnsignedInt = $val;
             }
-            $ext = $this->usedUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->usedUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->usedUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_usedUnsignedInt = $ext;
             }
         }
@@ -924,7 +932,7 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

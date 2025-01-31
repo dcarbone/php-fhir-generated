@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TEST_SCRIPT_DOT_ASSERT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_LABEL = 'label';
     public const FIELD_LABEL_EXT = '_label';
     public const FIELD_DESCRIPTION = 'description';
@@ -176,7 +176,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
     public const FIELD_WARNING_ONLY_EXT = '_warningOnly';
     public const FIELD_REQUIREMENT = 'requirement';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STOP_TEST_ON_FAIL => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -186,7 +186,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_LABEL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -214,7 +214,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
         self::FIELD_WARNING_ONLY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -630,7 +630,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -639,7 +639,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -2340,7 +2340,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -2713,39 +2713,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->modifierExtension)
-               || isset($this->label)
-               || isset($this->description)
-               || isset($this->direction)
-               || isset($this->compareToSourceId)
-               || isset($this->compareToSourceExpression)
-               || isset($this->compareToSourcePath)
-               || isset($this->contentType)
-               || isset($this->defaultManualCompletion)
-               || isset($this->expression)
-               || isset($this->headerField)
-               || isset($this->minimumId)
-               || isset($this->navigationLinks)
-               || isset($this->operator)
-               || isset($this->path)
-               || isset($this->requestMethod)
-               || isset($this->requestURL)
-               || isset($this->resource)
-               || isset($this->response)
-               || isset($this->responseCode)
-               || isset($this->sourceId)
-               || isset($this->stopTestOnFail)
-               || isset($this->validateProfileId)
-               || isset($this->warningOnly)
-               || isset($this->requirement);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2830,7 +2798,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
                 $type->setWarningOnly(FHIRBoolean::xmlUnserialize($ce, $config));
             } else if (self::FIELD_REQUIREMENT === $cen) {
                 $type->addRequirement(FHIRTestScriptRequirement::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -3106,7 +3075,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
         if (isset($this->validateProfileId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALIDATE_PROFILE_ID]) {
             $xw->writeAttribute(self::FIELD_VALIDATE_PROFILE_ID, $this->validateProfileId->_getFormattedValue());
         }
-        if (isset($this->value) && ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueLocation) {
+        if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
         if (isset($this->warningOnly) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_WARNING_ONLY]) {
@@ -3267,16 +3236,12 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             $this->validateProfileId->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VALIDATE_PROFILE_ID]);
             $xw->endElement();
         }
-        if (isset($this->value)) {
-            if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
-                $xw->text($this->value->_getFormattedValue());
-            } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
-                $xw->startElement(self::FIELD_VALUE);
-                $xw->writeAttribute(FHIRString::FIELD_VALUE, $this->value->_getFormattedValue());
-                $xw->endElement();
-            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
-                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
-            }
+        if (isset($this->value)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VALUE]
+                || $this->value->_nonValueFieldDefined())) {
+            $xw->startElement(self::FIELD_VALUE);
+            $this->value->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VALUE]);
+            $xw->endElement();
         }
         if (isset($this->warningOnly)
             && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_WARNING_ONLY]
@@ -3578,9 +3543,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->label->getValue())) {
                 $out->label = $val;
             }
-            $ext = $this->label->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->label->_nonValueFieldDefined()) {
+                $ext = $this->label->jsonSerialize();
+                unset($ext->value);
                 $out->_label = $ext;
             }
         }
@@ -3588,9 +3553,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -3598,9 +3563,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->direction->getValue())) {
                 $out->direction = $val;
             }
-            $ext = $this->direction->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->direction->_nonValueFieldDefined()) {
+                $ext = $this->direction->jsonSerialize();
+                unset($ext->value);
                 $out->_direction = $ext;
             }
         }
@@ -3608,9 +3573,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->compareToSourceId->getValue())) {
                 $out->compareToSourceId = $val;
             }
-            $ext = $this->compareToSourceId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->compareToSourceId->_nonValueFieldDefined()) {
+                $ext = $this->compareToSourceId->jsonSerialize();
+                unset($ext->value);
                 $out->_compareToSourceId = $ext;
             }
         }
@@ -3618,9 +3583,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->compareToSourceExpression->getValue())) {
                 $out->compareToSourceExpression = $val;
             }
-            $ext = $this->compareToSourceExpression->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->compareToSourceExpression->_nonValueFieldDefined()) {
+                $ext = $this->compareToSourceExpression->jsonSerialize();
+                unset($ext->value);
                 $out->_compareToSourceExpression = $ext;
             }
         }
@@ -3628,9 +3593,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->compareToSourcePath->getValue())) {
                 $out->compareToSourcePath = $val;
             }
-            $ext = $this->compareToSourcePath->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->compareToSourcePath->_nonValueFieldDefined()) {
+                $ext = $this->compareToSourcePath->jsonSerialize();
+                unset($ext->value);
                 $out->_compareToSourcePath = $ext;
             }
         }
@@ -3638,9 +3603,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->contentType->getValue())) {
                 $out->contentType = $val;
             }
-            $ext = $this->contentType->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->contentType->_nonValueFieldDefined()) {
+                $ext = $this->contentType->jsonSerialize();
+                unset($ext->value);
                 $out->_contentType = $ext;
             }
         }
@@ -3648,9 +3613,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->defaultManualCompletion->getValue())) {
                 $out->defaultManualCompletion = $val;
             }
-            $ext = $this->defaultManualCompletion->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultManualCompletion->_nonValueFieldDefined()) {
+                $ext = $this->defaultManualCompletion->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultManualCompletion = $ext;
             }
         }
@@ -3658,9 +3623,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->expression->getValue())) {
                 $out->expression = $val;
             }
-            $ext = $this->expression->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->expression->_nonValueFieldDefined()) {
+                $ext = $this->expression->jsonSerialize();
+                unset($ext->value);
                 $out->_expression = $ext;
             }
         }
@@ -3668,9 +3633,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->headerField->getValue())) {
                 $out->headerField = $val;
             }
-            $ext = $this->headerField->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->headerField->_nonValueFieldDefined()) {
+                $ext = $this->headerField->jsonSerialize();
+                unset($ext->value);
                 $out->_headerField = $ext;
             }
         }
@@ -3678,9 +3643,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->minimumId->getValue())) {
                 $out->minimumId = $val;
             }
-            $ext = $this->minimumId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minimumId->_nonValueFieldDefined()) {
+                $ext = $this->minimumId->jsonSerialize();
+                unset($ext->value);
                 $out->_minimumId = $ext;
             }
         }
@@ -3688,9 +3653,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->navigationLinks->getValue())) {
                 $out->navigationLinks = $val;
             }
-            $ext = $this->navigationLinks->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->navigationLinks->_nonValueFieldDefined()) {
+                $ext = $this->navigationLinks->jsonSerialize();
+                unset($ext->value);
                 $out->_navigationLinks = $ext;
             }
         }
@@ -3698,9 +3663,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->operator->getValue())) {
                 $out->operator = $val;
             }
-            $ext = $this->operator->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->operator->_nonValueFieldDefined()) {
+                $ext = $this->operator->jsonSerialize();
+                unset($ext->value);
                 $out->_operator = $ext;
             }
         }
@@ -3708,9 +3673,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->path->getValue())) {
                 $out->path = $val;
             }
-            $ext = $this->path->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->path->_nonValueFieldDefined()) {
+                $ext = $this->path->jsonSerialize();
+                unset($ext->value);
                 $out->_path = $ext;
             }
         }
@@ -3718,9 +3683,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->requestMethod->getValue())) {
                 $out->requestMethod = $val;
             }
-            $ext = $this->requestMethod->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->requestMethod->_nonValueFieldDefined()) {
+                $ext = $this->requestMethod->jsonSerialize();
+                unset($ext->value);
                 $out->_requestMethod = $ext;
             }
         }
@@ -3728,9 +3693,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->requestURL->getValue())) {
                 $out->requestURL = $val;
             }
-            $ext = $this->requestURL->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->requestURL->_nonValueFieldDefined()) {
+                $ext = $this->requestURL->jsonSerialize();
+                unset($ext->value);
                 $out->_requestURL = $ext;
             }
         }
@@ -3738,9 +3703,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->resource->getValue())) {
                 $out->resource = $val;
             }
-            $ext = $this->resource->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->resource->_nonValueFieldDefined()) {
+                $ext = $this->resource->jsonSerialize();
+                unset($ext->value);
                 $out->_resource = $ext;
             }
         }
@@ -3748,9 +3713,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->response->getValue())) {
                 $out->response = $val;
             }
-            $ext = $this->response->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->response->_nonValueFieldDefined()) {
+                $ext = $this->response->jsonSerialize();
+                unset($ext->value);
                 $out->_response = $ext;
             }
         }
@@ -3758,9 +3723,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->responseCode->getValue())) {
                 $out->responseCode = $val;
             }
-            $ext = $this->responseCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->responseCode->_nonValueFieldDefined()) {
+                $ext = $this->responseCode->jsonSerialize();
+                unset($ext->value);
                 $out->_responseCode = $ext;
             }
         }
@@ -3768,9 +3733,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->sourceId->getValue())) {
                 $out->sourceId = $val;
             }
-            $ext = $this->sourceId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sourceId->_nonValueFieldDefined()) {
+                $ext = $this->sourceId->jsonSerialize();
+                unset($ext->value);
                 $out->_sourceId = $ext;
             }
         }
@@ -3778,9 +3743,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->stopTestOnFail->getValue())) {
                 $out->stopTestOnFail = $val;
             }
-            $ext = $this->stopTestOnFail->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->stopTestOnFail->_nonValueFieldDefined()) {
+                $ext = $this->stopTestOnFail->jsonSerialize();
+                unset($ext->value);
                 $out->_stopTestOnFail = $ext;
             }
         }
@@ -3788,9 +3753,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->validateProfileId->getValue())) {
                 $out->validateProfileId = $val;
             }
-            $ext = $this->validateProfileId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->validateProfileId->_nonValueFieldDefined()) {
+                $ext = $this->validateProfileId->jsonSerialize();
+                unset($ext->value);
                 $out->_validateProfileId = $ext;
             }
         }
@@ -3798,9 +3763,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->value->getValue())) {
                 $out->value = $val;
             }
-            $ext = $this->value->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->value->_nonValueFieldDefined()) {
+                $ext = $this->value->jsonSerialize();
+                unset($ext->value);
                 $out->_value = $ext;
             }
         }
@@ -3808,9 +3773,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
             if (null !== ($val = $this->warningOnly->getValue())) {
                 $out->warningOnly = $val;
             }
-            $ext = $this->warningOnly->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->warningOnly->_nonValueFieldDefined()) {
+                $ext = $this->warningOnly->jsonSerialize();
+                unset($ext->value);
                 $out->_warningOnly = $ext;
             }
         }
@@ -3819,7 +3784,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements ValueContainer
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

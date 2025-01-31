@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElemen
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration;
@@ -105,7 +106,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_REQUEST_GROUP_DOT_ACTION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_LABEL = 'label';
     public const FIELD_LABEL_EXT = '_label';
     public const FIELD_TITLE = 'title';
@@ -139,10 +140,10 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
     public const FIELD_RESOURCE = 'resource';
     public const FIELD_ACTION = 'action';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_LABEL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TITLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -156,7 +157,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         self::FIELD_CARDINALITY_BEHAVIOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -404,7 +405,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction[] $relatedAction
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $timingDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $timingRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $timingTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] $participant
@@ -431,7 +432,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
                                 null|iterable $relatedAction = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime = null,
                                 null|FHIRPeriod $timingPeriod = null,
-                                null|FHIRDuration $timingDuration = null,
+                                null|FHIRDecimal|FHIRDuration $timingDuration = null,
                                 null|FHIRRange $timingRange = null,
                                 null|FHIRTiming $timingTiming = null,
                                 null|iterable $participant = null,
@@ -517,7 +518,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -526,7 +527,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -1195,14 +1196,17 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * An optional value describing when the action should be performed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @return static
      */
-    public function setTimingDuration(null|FHIRDuration $timingDuration): self
+    public function setTimingDuration(null|FHIRDecimal|FHIRDuration $timingDuration): self
     {
         if (null === $timingDuration) {
             unset($this->timingDuration);
             return $this;
+        }
+        if (!($timingDuration instanceof FHIRDuration)) {
+            $timingDuration = new FHIRDuration(value: $timingDuration);
         }
         $this->timingDuration = $timingDuration;
         return $this;
@@ -1799,7 +1803,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -2126,7 +2130,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2205,7 +2209,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
                 $type->setResource(FHIRReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_ACTION === $cen) {
                 $type->addAction(FHIRRequestGroupAction::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -2682,9 +2687,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             if (null !== ($val = $this->label->getValue())) {
                 $out->label = $val;
             }
-            $ext = $this->label->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->label->_nonValueFieldDefined()) {
+                $ext = $this->label->jsonSerialize();
+                unset($ext->value);
                 $out->_label = $ext;
             }
         }
@@ -2692,9 +2697,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             if (null !== ($val = $this->title->getValue())) {
                 $out->title = $val;
             }
-            $ext = $this->title->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->title->_nonValueFieldDefined()) {
+                $ext = $this->title->jsonSerialize();
+                unset($ext->value);
                 $out->_title = $ext;
             }
         }
@@ -2702,9 +2707,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -2712,9 +2717,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             if (null !== ($val = $this->textEquivalent->getValue())) {
                 $out->textEquivalent = $val;
             }
-            $ext = $this->textEquivalent->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->textEquivalent->_nonValueFieldDefined()) {
+                $ext = $this->textEquivalent->jsonSerialize();
+                unset($ext->value);
                 $out->_textEquivalent = $ext;
             }
         }
@@ -2734,9 +2739,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             if (null !== ($val = $this->timingDateTime->getValue())) {
                 $out->timingDateTime = $val;
             }
-            $ext = $this->timingDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->timingDateTime->_nonValueFieldDefined()) {
+                $ext = $this->timingDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_timingDateTime = $ext;
             }
         }
@@ -2762,9 +2767,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             if (null !== ($val = $this->groupingBehavior->getValue())) {
                 $out->groupingBehavior = $val;
             }
-            $ext = $this->groupingBehavior->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->groupingBehavior->_nonValueFieldDefined()) {
+                $ext = $this->groupingBehavior->jsonSerialize();
+                unset($ext->value);
                 $out->_groupingBehavior = $ext;
             }
         }
@@ -2772,9 +2777,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             if (null !== ($val = $this->selectionBehavior->getValue())) {
                 $out->selectionBehavior = $val;
             }
-            $ext = $this->selectionBehavior->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->selectionBehavior->_nonValueFieldDefined()) {
+                $ext = $this->selectionBehavior->jsonSerialize();
+                unset($ext->value);
                 $out->_selectionBehavior = $ext;
             }
         }
@@ -2782,9 +2787,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             if (null !== ($val = $this->requiredBehavior->getValue())) {
                 $out->requiredBehavior = $val;
             }
-            $ext = $this->requiredBehavior->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->requiredBehavior->_nonValueFieldDefined()) {
+                $ext = $this->requiredBehavior->jsonSerialize();
+                unset($ext->value);
                 $out->_requiredBehavior = $ext;
             }
         }
@@ -2792,9 +2797,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             if (null !== ($val = $this->precheckBehavior->getValue())) {
                 $out->precheckBehavior = $val;
             }
-            $ext = $this->precheckBehavior->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->precheckBehavior->_nonValueFieldDefined()) {
+                $ext = $this->precheckBehavior->jsonSerialize();
+                unset($ext->value);
                 $out->_precheckBehavior = $ext;
             }
         }
@@ -2802,9 +2807,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             if (null !== ($val = $this->cardinalityBehavior->getValue())) {
                 $out->cardinalityBehavior = $val;
             }
-            $ext = $this->cardinalityBehavior->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->cardinalityBehavior->_nonValueFieldDefined()) {
+                $ext = $this->cardinalityBehavior->jsonSerialize();
+                unset($ext->value);
                 $out->_cardinalityBehavior = $ext;
             }
         }
@@ -2816,7 +2821,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

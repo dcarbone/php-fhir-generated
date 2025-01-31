@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,18 +85,18 @@ class FHIRRatio extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RATIO;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_NUMERATOR = 'numerator';
     public const FIELD_DENOMINATOR = 'denominator';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -127,14 +127,14 @@ class FHIRRatio extends FHIRElement
      * FHIRRatio Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $numerator
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $denominator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $numerator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $denominator
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
-                                null|FHIRQuantity $numerator = null,
-                                null|FHIRQuantity $denominator = null,
+                                null|FHIRDecimal|FHIRQuantity $numerator = null,
+                                null|FHIRDecimal|FHIRQuantity $denominator = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -148,7 +148,7 @@ class FHIRRatio extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -157,7 +157,7 @@ class FHIRRatio extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -183,14 +183,17 @@ class FHIRRatio extends FHIRElement
      *
      * The value of the numerator.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $numerator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $numerator
      * @return static
      */
-    public function setNumerator(null|FHIRQuantity $numerator): self
+    public function setNumerator(null|FHIRDecimal|FHIRQuantity $numerator): self
     {
         if (null === $numerator) {
             unset($this->numerator);
             return $this;
+        }
+        if (!($numerator instanceof FHIRQuantity)) {
+            $numerator = new FHIRQuantity(value: $numerator);
         }
         $this->numerator = $numerator;
         return $this;
@@ -221,20 +224,23 @@ class FHIRRatio extends FHIRElement
      *
      * The value of the denominator.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $denominator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $denominator
      * @return static
      */
-    public function setDenominator(null|FHIRQuantity $denominator): self
+    public function setDenominator(null|FHIRDecimal|FHIRQuantity $denominator): self
     {
         if (null === $denominator) {
             unset($this->denominator);
             return $this;
         }
+        if (!($denominator instanceof FHIRQuantity)) {
+            $denominator = new FHIRQuantity(value: $denominator);
+        }
         $this->denominator = $denominator;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -309,7 +315,7 @@ class FHIRRatio extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -346,7 +352,8 @@ class FHIRRatio extends FHIRElement
                 $type->setNumerator(FHIRQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DENOMINATOR === $cen) {
                 $type->setDenominator(FHIRQuantity::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -419,7 +426,7 @@ class FHIRRatio extends FHIRElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

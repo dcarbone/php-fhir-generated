@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,6 +62,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive;
@@ -80,13 +81,13 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
-class FHIRQuantity extends FHIRElement
+class FHIRQuantity extends FHIRElement implements ValueContainerTypeInterface
 {
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_QUANTITY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_VALUE = 'value';
     public const FIELD_VALUE_EXT = '_value';
     public const FIELD_COMPARATOR = 'comparator';
@@ -98,10 +99,10 @@ class FHIRQuantity extends FHIRElement
     public const FIELD_CODE = 'code';
     public const FIELD_CODE_EXT = '_code';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_COMPARATOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -110,7 +111,7 @@ class FHIRQuantity extends FHIRElement
         self::FIELD_CODE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A rational number with implicit precision
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -203,7 +204,7 @@ class FHIRQuantity extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -212,7 +213,7 @@ class FHIRQuantity extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A rational number with implicit precision
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -555,7 +556,7 @@ class FHIRQuantity extends FHIRElement
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -666,7 +667,7 @@ class FHIRQuantity extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -709,7 +710,8 @@ class FHIRQuantity extends FHIRElement
                 $type->setSystem(FHIRUri::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CODE === $cen) {
                 $type->setCode(FHIRCode::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -760,10 +762,13 @@ class FHIRQuantity extends FHIRElement
     /**
      * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
      * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
      */
     public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config): void
+                                 SerializeConfig $config,
+                                 null|ValueXMLLocationEnum $valueLocation = null): void
     {
+        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
         if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
@@ -902,9 +907,9 @@ class FHIRQuantity extends FHIRElement
             if (null !== ($val = $this->value->getValue())) {
                 $out->value = $val;
             }
-            $ext = $this->value->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->value->_nonValueFieldDefined()) {
+                $ext = $this->value->jsonSerialize();
+                unset($ext->value);
                 $out->_value = $ext;
             }
         }
@@ -912,9 +917,9 @@ class FHIRQuantity extends FHIRElement
             if (null !== ($val = $this->comparator->getValue())) {
                 $out->comparator = $val;
             }
-            $ext = $this->comparator->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comparator->_nonValueFieldDefined()) {
+                $ext = $this->comparator->jsonSerialize();
+                unset($ext->value);
                 $out->_comparator = $ext;
             }
         }
@@ -922,9 +927,9 @@ class FHIRQuantity extends FHIRElement
             if (null !== ($val = $this->units->getValue())) {
                 $out->units = $val;
             }
-            $ext = $this->units->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->units->_nonValueFieldDefined()) {
+                $ext = $this->units->jsonSerialize();
+                unset($ext->value);
                 $out->_units = $ext;
             }
         }
@@ -932,9 +937,9 @@ class FHIRQuantity extends FHIRElement
             if (null !== ($val = $this->system->getValue())) {
                 $out->system = $val;
             }
-            $ext = $this->system->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->system->_nonValueFieldDefined()) {
+                $ext = $this->system->jsonSerialize();
+                unset($ext->value);
                 $out->_system = $ext;
             }
         }
@@ -942,20 +947,20 @@ class FHIRQuantity extends FHIRElement
             if (null !== ($val = $this->code->getValue())) {
                 $out->code = $val;
             }
-            $ext = $this->code->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->code->_nonValueFieldDefined()) {
+                $ext = $this->code->jsonSerialize();
+                unset($ext->value);
                 $out->_code = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */
     public function __toString(): string
     {
-        return self::FHIR_TYPE_NAME;
+        return $this->_getFormattedValue();
     }
 }

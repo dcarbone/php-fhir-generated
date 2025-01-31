@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,45 +95,14 @@ class FHIRDistance extends FHIRQuantity
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DISTANCE;
 
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* constructor.php:63 */
-    /**
-     * FHIRDistance Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $value
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRQuantityComparatorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantityComparator $comparator
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $unit
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $system
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $code
-     * @param null|string[] $fhirComments
-     */
-    public function __construct(null|iterable $extension = null,
-                                null|string|FHIRStringPrimitive $id = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $value = null,
-                                null|string|FHIRQuantityComparatorList|FHIRQuantityComparator $comparator = null,
-                                null|string|FHIRStringPrimitive|FHIRString $unit = null,
-                                null|string|FHIRUriPrimitive|FHIRUri $system = null,
-                                null|string|FHIRCodePrimitive|FHIRCode $code = null,
-                                null|iterable $fhirComments = null)
-    {
-        parent::__construct(extension: $extension,
-                            id: $id,
-                            value: $value,
-                            comparator: $comparator,
-                            unit: $unit,
-                            system: $system,
-                            code: $code,
-                            fhirComments: $fhirComments);
-    }
-
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -142,7 +111,7 @@ class FHIRDistance extends FHIRQuantity
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -253,7 +222,7 @@ class FHIRDistance extends FHIRQuantity
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -296,7 +265,8 @@ class FHIRDistance extends FHIRQuantity
                 $type->setSystem(FHIRUri::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CODE === $cen) {
                 $type->setCode(FHIRCode::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -345,20 +315,36 @@ class FHIRDistance extends FHIRQuantity
     }
 
     /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance $type
+     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance
+     * @throws \Exception
      */
-    public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config): void
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
-        parent::xmlSerialize($xw, $config);
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRDistance)) {
+            throw new \RuntimeException(sprintf(
+                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        parent::jsonUnserialize($json, $config, $type); 
+        return $type;
     }
-    /* class_default.php:238 */
+
+    /* class_default.php:236 */
     /**
      * @return string
      */
     public function __toString(): string
     {
-        return self::FHIR_TYPE_NAME;
+        return $this->_getFormattedValue();
     }
 }

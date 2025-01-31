@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -146,11 +146,10 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TERMINOLOGY_CAPABILITIES;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_URL = 'url';
     public const FIELD_URL_EXT = '_url';
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_VERSION = 'version';
     public const FIELD_VERSION_EXT = '_version';
     public const FIELD_VERSION_ALGORITHM_STRING = 'versionAlgorithmString';
@@ -193,7 +192,7 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
     public const FIELD_TRANSLATION = 'translation';
     public const FIELD_CLOSURE = 'closure';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -206,7 +205,7 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -226,7 +225,7 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
         self::FIELD_CODE_SEARCH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -745,7 +744,7 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -754,7 +753,7 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -763,7 +762,7 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -914,14 +913,7 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -2529,7 +2521,7 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -3003,7 +2995,7 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -3112,7 +3104,8 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
                 $type->setTranslation(FHIRTerminologyCapabilitiesTranslation::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CLOSURE === $cen) {
                 $type->setClosure(FHIRTerminologyCapabilitiesClosure::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -3350,8 +3343,8 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             $this->url->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_URL]);
             $xw->endElement();
         }
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -3574,22 +3567,13 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_VERSION])
@@ -3812,40 +3796,22 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->version)) {
             if (null !== ($val = $this->version->getValue())) {
                 $out->version = $val;
             }
-            $ext = $this->version->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->version->_nonValueFieldDefined()) {
+                $ext = $this->version->jsonSerialize();
+                unset($ext->value);
                 $out->_version = $ext;
             }
         }
@@ -3853,9 +3819,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->versionAlgorithmString->getValue())) {
                 $out->versionAlgorithmString = $val;
             }
-            $ext = $this->versionAlgorithmString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->versionAlgorithmString->_nonValueFieldDefined()) {
+                $ext = $this->versionAlgorithmString->jsonSerialize();
+                unset($ext->value);
                 $out->_versionAlgorithmString = $ext;
             }
         }
@@ -3866,9 +3832,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -3876,9 +3842,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->title->getValue())) {
                 $out->title = $val;
             }
-            $ext = $this->title->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->title->_nonValueFieldDefined()) {
+                $ext = $this->title->jsonSerialize();
+                unset($ext->value);
                 $out->_title = $ext;
             }
         }
@@ -3886,9 +3852,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -3896,9 +3862,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->experimental->getValue())) {
                 $out->experimental = $val;
             }
-            $ext = $this->experimental->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->experimental->_nonValueFieldDefined()) {
+                $ext = $this->experimental->jsonSerialize();
+                unset($ext->value);
                 $out->_experimental = $ext;
             }
         }
@@ -3906,9 +3872,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->date->getValue())) {
                 $out->date = $val;
             }
-            $ext = $this->date->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->date->_nonValueFieldDefined()) {
+                $ext = $this->date->jsonSerialize();
+                unset($ext->value);
                 $out->_date = $ext;
             }
         }
@@ -3916,9 +3882,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->publisher->getValue())) {
                 $out->publisher = $val;
             }
-            $ext = $this->publisher->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->publisher->_nonValueFieldDefined()) {
+                $ext = $this->publisher->jsonSerialize();
+                unset($ext->value);
                 $out->_publisher = $ext;
             }
         }
@@ -3929,9 +3895,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -3945,9 +3911,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->purpose->getValue())) {
                 $out->purpose = $val;
             }
-            $ext = $this->purpose->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->purpose->_nonValueFieldDefined()) {
+                $ext = $this->purpose->jsonSerialize();
+                unset($ext->value);
                 $out->_purpose = $ext;
             }
         }
@@ -3955,9 +3921,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->copyright->getValue())) {
                 $out->copyright = $val;
             }
-            $ext = $this->copyright->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->copyright->_nonValueFieldDefined()) {
+                $ext = $this->copyright->jsonSerialize();
+                unset($ext->value);
                 $out->_copyright = $ext;
             }
         }
@@ -3965,9 +3931,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->copyrightLabel->getValue())) {
                 $out->copyrightLabel = $val;
             }
-            $ext = $this->copyrightLabel->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->copyrightLabel->_nonValueFieldDefined()) {
+                $ext = $this->copyrightLabel->jsonSerialize();
+                unset($ext->value);
                 $out->_copyrightLabel = $ext;
             }
         }
@@ -3975,9 +3941,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->kind->getValue())) {
                 $out->kind = $val;
             }
-            $ext = $this->kind->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->kind->_nonValueFieldDefined()) {
+                $ext = $this->kind->jsonSerialize();
+                unset($ext->value);
                 $out->_kind = $ext;
             }
         }
@@ -3991,9 +3957,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->lockedDate->getValue())) {
                 $out->lockedDate = $val;
             }
-            $ext = $this->lockedDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lockedDate->_nonValueFieldDefined()) {
+                $ext = $this->lockedDate->jsonSerialize();
+                unset($ext->value);
                 $out->_lockedDate = $ext;
             }
         }
@@ -4007,9 +3973,9 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
             if (null !== ($val = $this->codeSearch->getValue())) {
                 $out->codeSearch = $val;
             }
-            $ext = $this->codeSearch->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->codeSearch->_nonValueFieldDefined()) {
+                $ext = $this->codeSearch->jsonSerialize();
+                unset($ext->value);
                 $out->_codeSearch = $ext;
             }
         }
@@ -4025,7 +3991,7 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements Versi
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -109,13 +110,13 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_DEFINITION_DOT_CHARGE_ITEM;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CHARGE_ITEM_CODE = 'chargeItemCode';
     public const FIELD_COUNT = 'count';
     public const FIELD_EFFECTIVE_PERIOD = 'effectivePeriod';
     public const FIELD_USE_CONTEXT = 'useContext';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_CHARGE_ITEM_CODE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -125,11 +126,11 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -184,7 +185,7 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $chargeItemCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $count
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $count
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectivePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[] $useContext
      * @param null|string[] $fhirComments
@@ -193,7 +194,7 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableReference $chargeItemCode = null,
-                                null|FHIRQuantity $count = null,
+                                null|FHIRDecimal|FHIRQuantity $count = null,
                                 null|FHIRPeriod $effectivePeriod = null,
                                 null|iterable $useContext = null,
                                 null|iterable $fhirComments = null)
@@ -216,7 +217,7 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -225,7 +226,7 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -287,14 +288,17 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
      *
      * Coefficient applicable to the billing code.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $count
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $count
      * @return static
      */
-    public function setCount(null|FHIRQuantity $count): self
+    public function setCount(null|FHIRDecimal|FHIRQuantity $count): self
     {
         if (null === $count) {
             unset($this->count);
             return $this;
+        }
+        if (!($count instanceof FHIRQuantity)) {
+            $count = new FHIRQuantity(value: $count);
         }
         $this->count = $count;
         return $this;
@@ -407,7 +411,7 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -528,7 +532,7 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -571,7 +575,8 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
                 $type->setEffectivePeriod(FHIRPeriod::xmlUnserialize($ce, $config));
             } else if (self::FIELD_USE_CONTEXT === $cen) {
                 $type->addUseContext(FHIRUsageContext::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -674,7 +679,7 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

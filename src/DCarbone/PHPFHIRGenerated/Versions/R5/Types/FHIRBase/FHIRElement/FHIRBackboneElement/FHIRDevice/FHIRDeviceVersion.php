@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,30 +112,28 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_DOT_VERSION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_COMPONENT = 'component';
-    public const FIELD_COMPONENT_EXT = '_component';
     public const FIELD_INSTALL_DATE = 'installDate';
     public const FIELD_INSTALL_DATE_EXT = '_installDate';
     public const FIELD_VALUE = 'value';
     public const FIELD_VALUE_EXT = '_value';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_VALUE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_COMPONENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INSTALL_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -222,7 +220,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -231,7 +229,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -292,11 +290,9 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
      * The hardware or software module of the device to which the version applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $component
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setComponent(null|FHIRString|FHIRIdentifier $component,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setComponent(null|FHIRString|FHIRIdentifier $component): self
     {
         if (null === $component) {
             unset($this->component);
@@ -306,33 +302,6 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
             $component = new FHIRIdentifier(value: $component);
         }
         $this->component = $component;
-        if ($this->_valueXMLLocations[self::FIELD_COMPONENT] !== $valueXMLLocation) {
-            $this->_setComponentValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the component element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getComponentValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COMPONENT];
-    }
-
-    /**
-     * Set the location the "value" field of the component element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setComponentValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COMPONENT] = $valueXMLLocation;
         return $this;
     }
 
@@ -488,7 +457,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -604,18 +573,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->modifierExtension)
-               || isset($this->type)
-               || isset($this->component)
-               || isset($this->installDate);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -658,18 +616,11 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
                 $type->setInstallDate(FHIRDateTime::xmlUnserialize($ce, $config));
             } else if (self::FIELD_VALUE === $cen) {
                 $type->setValue(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_COMPONENT])) {
-            if (isset($type->component)) {
-                $type->component->setValue((string)$attributes[self::FIELD_COMPONENT]);
-                $type->_setComponentValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setComponent((string)$attributes[self::FIELD_COMPONENT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         if (isset($attributes[self::FIELD_INSTALL_DATE])) {
             if (isset($type->installDate)) {
@@ -700,13 +651,10 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
                                  null|ValueXMLLocationEnum $valueLocation = null): void
     {
         $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
-        if (isset($this->component) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COMPONENT]) {
-            $xw->writeAttribute(self::FIELD_COMPONENT, $this->component->_getFormattedValue());
-        }
         if (isset($this->installDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INSTALL_DATE]) {
             $xw->writeAttribute(self::FIELD_INSTALL_DATE, $this->installDate->_getFormattedValue());
         }
-        if (isset($this->value) && ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueLocation) {
+        if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
@@ -715,11 +663,9 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->component)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_COMPONENT]
-                || $this->component->_nonValueFieldDefined())) {
+        if (isset($this->component)) {
             $xw->startElement(self::FIELD_COMPONENT);
-            $this->component->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_COMPONENT]);
+            $this->component->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->installDate)
@@ -729,16 +675,12 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
             $this->installDate->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_INSTALL_DATE]);
             $xw->endElement();
         }
-        if (isset($this->value)) {
-            if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
-                $xw->text($this->value->_getFormattedValue());
-            } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
-                $xw->startElement(self::FIELD_VALUE);
-                $xw->writeAttribute(FHIRString::FIELD_VALUE, $this->value->_getFormattedValue());
-                $xw->endElement();
-            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
-                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
-            }
+        if (isset($this->value)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VALUE]
+                || $this->value->_nonValueFieldDefined())) {
+            $xw->startElement(self::FIELD_VALUE);
+            $this->value->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VALUE]);
+            $xw->endElement();
         }
     }
 
@@ -767,15 +709,8 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
             $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_COMPONENT])
-            || isset($json[self::FIELD_COMPONENT_EXT])
-            || array_key_exists(self::FIELD_COMPONENT, $json)
-            || array_key_exists(self::FIELD_COMPONENT_EXT, $json)) {
-            $value = $json[self::FIELD_COMPONENT] ?? null;
-            $type->setComponent(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_COMPONENT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_COMPONENT]) || array_key_exists(self::FIELD_COMPONENT, $json)) {
+            $type->setComponent(FHIRIdentifier::jsonUnserialize($json[self::FIELD_COMPONENT], $config));
         }
         if (isset($json[self::FIELD_INSTALL_DATE])
             || isset($json[self::FIELD_INSTALL_DATE_EXT])
@@ -810,22 +745,15 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
             $out->type = $this->type;
         }
         if (isset($this->component)) {
-            if (null !== ($val = $this->component->getValue())) {
-                $out->component = $val;
-            }
-            $ext = $this->component->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_component = $ext;
-            }
+            $out->component = $this->component;
         }
         if (isset($this->installDate)) {
             if (null !== ($val = $this->installDate->getValue())) {
                 $out->installDate = $val;
             }
-            $ext = $this->installDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->installDate->_nonValueFieldDefined()) {
+                $ext = $this->installDate->jsonSerialize();
+                unset($ext->value);
                 $out->_installDate = $ext;
             }
         }
@@ -833,15 +761,15 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
             if (null !== ($val = $this->value->getValue())) {
                 $out->value = $val;
             }
-            $ext = $this->value->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->value->_nonValueFieldDefined()) {
+                $ext = $this->value->jsonSerialize();
+                unset($ext->value);
                 $out->_value = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

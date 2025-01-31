@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,25 +88,24 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TEST_SCRIPT_DOT_RULE_2;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_RULE_ID = 'ruleId';
     public const FIELD_RULE_ID_EXT = '_ruleId';
     public const FIELD_PARAM = 'param';
-    public const FIELD_PARAM_EXT = '_param';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_RULE_ID => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_RULE_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -159,7 +158,7 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -168,7 +167,7 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -301,18 +300,11 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
             unset($this->param);
             return $this;
         }
-        $this->param = [];
-        foreach($param as $v) {
-            if ($v instanceof FHIRTestScriptParam2) {
-                $this->param[] = $v;
-            } else {
-                $this->param[] = new FHIRTestScriptParam2(value: $v);
-            }
-        }
+        $this->param = $param;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -404,7 +396,7 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -443,7 +435,8 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
                 $type->setRuleId(FHIRId::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PARAM === $cen) {
                 $type->addParam(FHIRTestScriptParam2::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -477,8 +470,8 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
             $this->ruleId->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_RULE_ID]);
             $xw->endElement();
         }
-        if (isset($this->param) && [] !== $this->param) {
-            foreach($this->param as $v) {
+        if (isset($this->param)) {
+            foreach ($this->param as $v) {
                 $xw->startElement(self::FIELD_PARAM);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -518,22 +511,13 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_PARAM])
-            || isset($json[self::FIELD_PARAM_EXT])
-            || array_key_exists(self::FIELD_PARAM, $json)
-            || array_key_exists(self::FIELD_PARAM_EXT, $json)) {
-            $value = (array)($json[self::FIELD_PARAM] ?? []);
-            $ext = (array)($json[self::FIELD_PARAM_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_PARAM]) || array_key_exists(self::FIELD_PARAM, $json)) {
+            $vs = $json[self::FIELD_PARAM];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addParam(FHIRTestScriptParam2::jsonUnserialize(
-                    [FHIRTestScriptParam2::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addParam(FHIRTestScriptParam2::jsonUnserialize($v, $config));
             }
         }
         return $type;
@@ -549,36 +533,18 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
             if (null !== ($val = $this->ruleId->getValue())) {
                 $out->ruleId = $val;
             }
-            $ext = $this->ruleId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->ruleId->_nonValueFieldDefined()) {
+                $ext = $this->ruleId->jsonSerialize();
+                unset($ext->value);
                 $out->_ruleId = $ext;
             }
         }
         if (isset($this->param) && [] !== $this->param) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->param as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->param = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_param = $exts;
-            }
+            $out->param = $this->param;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

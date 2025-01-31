@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SUBUNIT = 'subunit';
     public const FIELD_SUBUNIT_EXT = '_subunit';
     public const FIELD_SEQUENCE = 'sequence';
@@ -104,29 +104,25 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     public const FIELD_LENGTH_EXT = '_length';
     public const FIELD_SEQUENCE_ATTACHMENT = 'sequenceAttachment';
     public const FIELD_N_TERMINAL_MODIFICATION_ID = 'nTerminalModificationId';
-    public const FIELD_N_TERMINAL_MODIFICATION_ID_EXT = '_nTerminalModificationId';
     public const FIELD_N_TERMINAL_MODIFICATION = 'nTerminalModification';
     public const FIELD_N_TERMINAL_MODIFICATION_EXT = '_nTerminalModification';
     public const FIELD_C_TERMINAL_MODIFICATION_ID = 'cTerminalModificationId';
-    public const FIELD_C_TERMINAL_MODIFICATION_ID_EXT = '_cTerminalModificationId';
     public const FIELD_C_TERMINAL_MODIFICATION = 'cTerminalModification';
     public const FIELD_C_TERMINAL_MODIFICATION_EXT = '_cTerminalModification';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SUBUNIT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LENGTH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_N_TERMINAL_MODIFICATION_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_N_TERMINAL_MODIFICATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_C_TERMINAL_MODIFICATION_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_C_TERMINAL_MODIFICATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -287,7 +283,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -296,7 +292,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -585,11 +581,9 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * Substance ID.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $nTerminalModificationId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNTerminalModificationId(null|FHIRString|FHIRIdentifier $nTerminalModificationId,
-                                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setNTerminalModificationId(null|FHIRString|FHIRIdentifier $nTerminalModificationId): self
     {
         if (null === $nTerminalModificationId) {
             unset($this->nTerminalModificationId);
@@ -599,33 +593,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             $nTerminalModificationId = new FHIRIdentifier(value: $nTerminalModificationId);
         }
         $this->nTerminalModificationId = $nTerminalModificationId;
-        if ($this->_valueXMLLocations[self::FIELD_N_TERMINAL_MODIFICATION_ID] !== $valueXMLLocation) {
-            $this->_setNTerminalModificationIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the nTerminalModificationId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNTerminalModificationIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_N_TERMINAL_MODIFICATION_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the nTerminalModificationId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNTerminalModificationIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_N_TERMINAL_MODIFICATION_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -723,11 +690,9 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * Substance ID.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $cTerminalModificationId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCTerminalModificationId(null|FHIRString|FHIRIdentifier $cTerminalModificationId,
-                                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCTerminalModificationId(null|FHIRString|FHIRIdentifier $cTerminalModificationId): self
     {
         if (null === $cTerminalModificationId) {
             unset($this->cTerminalModificationId);
@@ -737,33 +702,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             $cTerminalModificationId = new FHIRIdentifier(value: $cTerminalModificationId);
         }
         $this->cTerminalModificationId = $cTerminalModificationId;
-        if ($this->_valueXMLLocations[self::FIELD_C_TERMINAL_MODIFICATION_ID] !== $valueXMLLocation) {
-            $this->_setCTerminalModificationIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the cTerminalModificationId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCTerminalModificationIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_C_TERMINAL_MODIFICATION_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the cTerminalModificationId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCTerminalModificationIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_C_TERMINAL_MODIFICATION_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -833,7 +771,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -992,7 +930,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1043,7 +981,8 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
                 $type->setCTerminalModificationId(FHIRIdentifier::xmlUnserialize($ce, $config));
             } else if (self::FIELD_C_TERMINAL_MODIFICATION === $cen) {
                 $type->setCTerminalModification(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1072,28 +1011,12 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
                 $type->setLength((string)$attributes[self::FIELD_LENGTH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
-            if (isset($type->nTerminalModificationId)) {
-                $type->nTerminalModificationId->setValue((string)$attributes[self::FIELD_N_TERMINAL_MODIFICATION_ID]);
-                $type->_setNTerminalModificationIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setNTerminalModificationId((string)$attributes[self::FIELD_N_TERMINAL_MODIFICATION_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_N_TERMINAL_MODIFICATION])) {
             if (isset($type->nTerminalModification)) {
                 $type->nTerminalModification->setValue((string)$attributes[self::FIELD_N_TERMINAL_MODIFICATION]);
                 $type->_setNTerminalModificationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setNTerminalModification((string)$attributes[self::FIELD_N_TERMINAL_MODIFICATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
-            if (isset($type->cTerminalModificationId)) {
-                $type->cTerminalModificationId->setValue((string)$attributes[self::FIELD_C_TERMINAL_MODIFICATION_ID]);
-                $type->_setCTerminalModificationIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setCTerminalModificationId((string)$attributes[self::FIELD_C_TERMINAL_MODIFICATION_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_C_TERMINAL_MODIFICATION])) {
@@ -1123,14 +1046,8 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
         if (isset($this->length) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LENGTH]) {
             $xw->writeAttribute(self::FIELD_LENGTH, $this->length->_getFormattedValue());
         }
-        if (isset($this->nTerminalModificationId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_N_TERMINAL_MODIFICATION_ID]) {
-            $xw->writeAttribute(self::FIELD_N_TERMINAL_MODIFICATION_ID, $this->nTerminalModificationId->_getFormattedValue());
-        }
         if (isset($this->nTerminalModification) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_N_TERMINAL_MODIFICATION]) {
             $xw->writeAttribute(self::FIELD_N_TERMINAL_MODIFICATION, $this->nTerminalModification->_getFormattedValue());
-        }
-        if (isset($this->cTerminalModificationId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_C_TERMINAL_MODIFICATION_ID]) {
-            $xw->writeAttribute(self::FIELD_C_TERMINAL_MODIFICATION_ID, $this->cTerminalModificationId->_getFormattedValue());
         }
         if (isset($this->cTerminalModification) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_C_TERMINAL_MODIFICATION]) {
             $xw->writeAttribute(self::FIELD_C_TERMINAL_MODIFICATION, $this->cTerminalModification->_getFormattedValue());
@@ -1162,11 +1079,9 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             $this->sequenceAttachment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->nTerminalModificationId)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_N_TERMINAL_MODIFICATION_ID]
-                || $this->nTerminalModificationId->_nonValueFieldDefined())) {
+        if (isset($this->nTerminalModificationId)) {
             $xw->startElement(self::FIELD_N_TERMINAL_MODIFICATION_ID);
-            $this->nTerminalModificationId->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_N_TERMINAL_MODIFICATION_ID]);
+            $this->nTerminalModificationId->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->nTerminalModification)
@@ -1176,11 +1091,9 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             $this->nTerminalModification->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_N_TERMINAL_MODIFICATION]);
             $xw->endElement();
         }
-        if (isset($this->cTerminalModificationId)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_C_TERMINAL_MODIFICATION_ID]
-                || $this->cTerminalModificationId->_nonValueFieldDefined())) {
+        if (isset($this->cTerminalModificationId)) {
             $xw->startElement(self::FIELD_C_TERMINAL_MODIFICATION_ID);
-            $this->cTerminalModificationId->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_C_TERMINAL_MODIFICATION_ID]);
+            $this->cTerminalModificationId->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->cTerminalModification)
@@ -1247,15 +1160,8 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
         if (isset($json[self::FIELD_SEQUENCE_ATTACHMENT]) || array_key_exists(self::FIELD_SEQUENCE_ATTACHMENT, $json)) {
             $type->setSequenceAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_SEQUENCE_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_N_TERMINAL_MODIFICATION_ID])
-            || isset($json[self::FIELD_N_TERMINAL_MODIFICATION_ID_EXT])
-            || array_key_exists(self::FIELD_N_TERMINAL_MODIFICATION_ID, $json)
-            || array_key_exists(self::FIELD_N_TERMINAL_MODIFICATION_ID_EXT, $json)) {
-            $value = $json[self::FIELD_N_TERMINAL_MODIFICATION_ID] ?? null;
-            $type->setNTerminalModificationId(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_N_TERMINAL_MODIFICATION_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_N_TERMINAL_MODIFICATION_ID]) || array_key_exists(self::FIELD_N_TERMINAL_MODIFICATION_ID, $json)) {
+            $type->setNTerminalModificationId(FHIRIdentifier::jsonUnserialize($json[self::FIELD_N_TERMINAL_MODIFICATION_ID], $config));
         }
         if (isset($json[self::FIELD_N_TERMINAL_MODIFICATION])
             || isset($json[self::FIELD_N_TERMINAL_MODIFICATION_EXT])
@@ -1267,15 +1173,8 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_C_TERMINAL_MODIFICATION_ID])
-            || isset($json[self::FIELD_C_TERMINAL_MODIFICATION_ID_EXT])
-            || array_key_exists(self::FIELD_C_TERMINAL_MODIFICATION_ID, $json)
-            || array_key_exists(self::FIELD_C_TERMINAL_MODIFICATION_ID_EXT, $json)) {
-            $value = $json[self::FIELD_C_TERMINAL_MODIFICATION_ID] ?? null;
-            $type->setCTerminalModificationId(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_C_TERMINAL_MODIFICATION_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_C_TERMINAL_MODIFICATION_ID]) || array_key_exists(self::FIELD_C_TERMINAL_MODIFICATION_ID, $json)) {
+            $type->setCTerminalModificationId(FHIRIdentifier::jsonUnserialize($json[self::FIELD_C_TERMINAL_MODIFICATION_ID], $config));
         }
         if (isset($json[self::FIELD_C_TERMINAL_MODIFICATION])
             || isset($json[self::FIELD_C_TERMINAL_MODIFICATION_EXT])
@@ -1300,9 +1199,9 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             if (null !== ($val = $this->subunit->getValue())) {
                 $out->subunit = $val;
             }
-            $ext = $this->subunit->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->subunit->_nonValueFieldDefined()) {
+                $ext = $this->subunit->jsonSerialize();
+                unset($ext->value);
                 $out->_subunit = $ext;
             }
         }
@@ -1310,9 +1209,9 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             if (null !== ($val = $this->sequence->getValue())) {
                 $out->sequence = $val;
             }
-            $ext = $this->sequence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sequence->_nonValueFieldDefined()) {
+                $ext = $this->sequence->jsonSerialize();
+                unset($ext->value);
                 $out->_sequence = $ext;
             }
         }
@@ -1320,9 +1219,9 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             if (null !== ($val = $this->length->getValue())) {
                 $out->length = $val;
             }
-            $ext = $this->length->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->length->_nonValueFieldDefined()) {
+                $ext = $this->length->jsonSerialize();
+                unset($ext->value);
                 $out->_length = $ext;
             }
         }
@@ -1330,48 +1229,34 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             $out->sequenceAttachment = $this->sequenceAttachment;
         }
         if (isset($this->nTerminalModificationId)) {
-            if (null !== ($val = $this->nTerminalModificationId->getValue())) {
-                $out->nTerminalModificationId = $val;
-            }
-            $ext = $this->nTerminalModificationId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_nTerminalModificationId = $ext;
-            }
+            $out->nTerminalModificationId = $this->nTerminalModificationId;
         }
         if (isset($this->nTerminalModification)) {
             if (null !== ($val = $this->nTerminalModification->getValue())) {
                 $out->nTerminalModification = $val;
             }
-            $ext = $this->nTerminalModification->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->nTerminalModification->_nonValueFieldDefined()) {
+                $ext = $this->nTerminalModification->jsonSerialize();
+                unset($ext->value);
                 $out->_nTerminalModification = $ext;
             }
         }
         if (isset($this->cTerminalModificationId)) {
-            if (null !== ($val = $this->cTerminalModificationId->getValue())) {
-                $out->cTerminalModificationId = $val;
-            }
-            $ext = $this->cTerminalModificationId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_cTerminalModificationId = $ext;
-            }
+            $out->cTerminalModificationId = $this->cTerminalModificationId;
         }
         if (isset($this->cTerminalModification)) {
             if (null !== ($val = $this->cTerminalModification->getValue())) {
                 $out->cTerminalModification = $val;
             }
-            $ext = $this->cTerminalModification->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->cTerminalModification->_nonValueFieldDefined()) {
+                $ext = $this->cTerminalModification->jsonSerialize();
+                unset($ext->value);
                 $out->_cTerminalModification = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

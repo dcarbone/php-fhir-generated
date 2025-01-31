@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ADVERSE_REACTION_DOT_EXPOSURE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_DATE = 'date';
     public const FIELD_DATE_EXT = '_date';
     public const FIELD_TYPE = 'type';
@@ -95,17 +95,17 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
     public const FIELD_CAUSALITY_EXPECTATION_EXT = '_causalityExpectation';
     public const FIELD_SUBSTANCE = 'substance';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CAUSALITY_EXPECTATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -188,7 +188,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -197,7 +197,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -434,7 +434,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -545,7 +545,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -588,7 +588,8 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
                 $type->setCausalityExpectation(FHIRCausalityExpectation::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SUBSTANCE === $cen) {
                 $type->setSubstance(FHIRResourceReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -733,9 +734,9 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
             if (null !== ($val = $this->date->getValue())) {
                 $out->date = $val;
             }
-            $ext = $this->date->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->date->_nonValueFieldDefined()) {
+                $ext = $this->date->jsonSerialize();
+                unset($ext->value);
                 $out->_date = $ext;
             }
         }
@@ -743,9 +744,9 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -753,9 +754,9 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
             if (null !== ($val = $this->causalityExpectation->getValue())) {
                 $out->causalityExpectation = $val;
             }
-            $ext = $this->causalityExpectation->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->causalityExpectation->_nonValueFieldDefined()) {
+                $ext = $this->causalityExpectation->jsonSerialize();
+                unset($ext->value);
                 $out->_causalityExpectation = $ext;
             }
         }
@@ -764,7 +765,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

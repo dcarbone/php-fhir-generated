@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MESSAGE_HEADER;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_EVENT_CODING = 'eventCoding';
     public const FIELD_EVENT_URI = 'eventUri';
     public const FIELD_EVENT_URI_EXT = '_eventUri';
@@ -122,7 +122,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
     public const FIELD_DEFINITION = 'definition';
     public const FIELD_DEFINITION_EXT = '_definition';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_EVENT_CODING => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -135,13 +135,13 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_EVENT_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DEFINITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -377,7 +377,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -386,7 +386,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -395,7 +395,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -970,7 +970,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1252,7 +1252,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1329,7 +1329,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
                 $type->addFocus(FHIRReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DEFINITION === $cen) {
                 $type->setDefinition(FHIRCanonical::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -1591,9 +1592,9 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             if (null !== ($val = $this->eventUri->getValue())) {
                 $out->eventUri = $val;
             }
-            $ext = $this->eventUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->eventUri->_nonValueFieldDefined()) {
+                $ext = $this->eventUri->jsonSerialize();
+                unset($ext->value);
                 $out->_eventUri = $ext;
             }
         }
@@ -1628,16 +1629,16 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             if (null !== ($val = $this->definition->getValue())) {
                 $out->definition = $val;
             }
-            $ext = $this->definition->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->definition->_nonValueFieldDefined()) {
+                $ext = $this->definition->jsonSerialize();
+                unset($ext->value);
                 $out->_definition = $ext;
             }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

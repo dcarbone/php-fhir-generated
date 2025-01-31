@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,7 +112,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_STRUCTURE_MAP_DOT_TARGET;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CONTEXT = 'context';
     public const FIELD_CONTEXT_EXT = '_context';
     public const FIELD_CONTEXT_TYPE = 'contextType';
@@ -129,10 +129,10 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
     public const FIELD_TRANSFORM_EXT = '_transform';
     public const FIELD_PARAMETER = 'parameter';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTEXT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CONTEXT_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -142,7 +142,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         self::FIELD_TRANSFORM => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -284,7 +284,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -293,7 +293,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -826,7 +826,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -985,7 +985,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1036,7 +1036,8 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
                 $type->setTransform(FHIRStructureMapTransform::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PARAMETER === $cen) {
                 $type->addParameter(FHIRStructureMapParameter::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1298,9 +1299,9 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             if (null !== ($val = $this->context->getValue())) {
                 $out->context = $val;
             }
-            $ext = $this->context->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->context->_nonValueFieldDefined()) {
+                $ext = $this->context->jsonSerialize();
+                unset($ext->value);
                 $out->_context = $ext;
             }
         }
@@ -1308,9 +1309,9 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             if (null !== ($val = $this->contextType->getValue())) {
                 $out->contextType = $val;
             }
-            $ext = $this->contextType->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->contextType->_nonValueFieldDefined()) {
+                $ext = $this->contextType->jsonSerialize();
+                unset($ext->value);
                 $out->_contextType = $ext;
             }
         }
@@ -1318,9 +1319,9 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             if (null !== ($val = $this->element->getValue())) {
                 $out->element = $val;
             }
-            $ext = $this->element->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->element->_nonValueFieldDefined()) {
+                $ext = $this->element->jsonSerialize();
+                unset($ext->value);
                 $out->_element = $ext;
             }
         }
@@ -1328,30 +1329,38 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             if (null !== ($val = $this->variable->getValue())) {
                 $out->variable = $val;
             }
-            $ext = $this->variable->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->variable->_nonValueFieldDefined()) {
+                $ext = $this->variable->jsonSerialize();
+                unset($ext->value);
                 $out->_variable = $ext;
             }
         }
         if (isset($this->listMode) && [] !== $this->listMode) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->listMode as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->listMode = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_listMode = $exts;
             }
         }
@@ -1359,9 +1368,9 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             if (null !== ($val = $this->listRuleId->getValue())) {
                 $out->listRuleId = $val;
             }
-            $ext = $this->listRuleId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->listRuleId->_nonValueFieldDefined()) {
+                $ext = $this->listRuleId->jsonSerialize();
+                unset($ext->value);
                 $out->_listRuleId = $ext;
             }
         }
@@ -1369,9 +1378,9 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             if (null !== ($val = $this->transform->getValue())) {
                 $out->transform = $val;
             }
-            $ext = $this->transform->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->transform->_nonValueFieldDefined()) {
+                $ext = $this->transform->jsonSerialize();
+                unset($ext->value);
                 $out->_transform = $ext;
             }
         }
@@ -1380,7 +1389,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

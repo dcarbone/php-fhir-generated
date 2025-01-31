@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,6 +100,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExpression;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRGroupMeasure;
@@ -121,7 +122,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESEARCH_ELEMENT_DEFINITION_DOT_CHARACTERISTIC;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_DEFINITION_CODEABLE_CONCEPT = 'definitionCodeableConcept';
     public const FIELD_DEFINITION_CANONICAL = 'definitionCanonical';
     public const FIELD_DEFINITION_CANONICAL_EXT = '_definitionCanonical';
@@ -152,7 +153,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
     public const FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE = 'participantEffectiveGroupMeasure';
     public const FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE_EXT = '_participantEffectiveGroupMeasure';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_DEFINITION_CODEABLE_CONCEPT => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -168,7 +169,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DEFINITION_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXCLUDE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -180,7 +181,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -439,16 +440,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $studyEffectiveDescription
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $studyEffectiveDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $studyEffectivePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $studyEffectiveTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveTimeFromStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveTimeFromStart
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRGroupMeasureEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRGroupMeasure $studyEffectiveGroupMeasure
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $participantEffectiveDescription
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $participantEffectiveDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $participantEffectivePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $participantEffectiveTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveTimeFromStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveTimeFromStart
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRGroupMeasureEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRGroupMeasure $participantEffectiveGroupMeasure
      * @param null|string[] $fhirComments
      */
@@ -465,16 +466,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $studyEffectiveDescription = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $studyEffectiveDateTime = null,
                                 null|FHIRPeriod $studyEffectivePeriod = null,
-                                null|FHIRDuration $studyEffectiveDuration = null,
+                                null|FHIRDecimal|FHIRDuration $studyEffectiveDuration = null,
                                 null|FHIRTiming $studyEffectiveTiming = null,
-                                null|FHIRDuration $studyEffectiveTimeFromStart = null,
+                                null|FHIRDecimal|FHIRDuration $studyEffectiveTimeFromStart = null,
                                 null|string|FHIRGroupMeasureEnum|FHIRGroupMeasure $studyEffectiveGroupMeasure = null,
                                 null|string|FHIRStringPrimitive|FHIRString $participantEffectiveDescription = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $participantEffectiveDateTime = null,
                                 null|FHIRPeriod $participantEffectivePeriod = null,
-                                null|FHIRDuration $participantEffectiveDuration = null,
+                                null|FHIRDecimal|FHIRDuration $participantEffectiveDuration = null,
                                 null|FHIRTiming $participantEffectiveTiming = null,
-                                null|FHIRDuration $participantEffectiveTimeFromStart = null,
+                                null|FHIRDecimal|FHIRDuration $participantEffectiveTimeFromStart = null,
                                 null|string|FHIRGroupMeasureEnum|FHIRGroupMeasure $participantEffectiveGroupMeasure = null,
                                 null|iterable $fhirComments = null)
     {
@@ -547,7 +548,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -556,7 +557,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -1128,14 +1129,17 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * Indicates what effective period the study covers.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveDuration
      * @return static
      */
-    public function setStudyEffectiveDuration(null|FHIRDuration $studyEffectiveDuration): self
+    public function setStudyEffectiveDuration(null|FHIRDecimal|FHIRDuration $studyEffectiveDuration): self
     {
         if (null === $studyEffectiveDuration) {
             unset($this->studyEffectiveDuration);
             return $this;
+        }
+        if (!($studyEffectiveDuration instanceof FHIRDuration)) {
+            $studyEffectiveDuration = new FHIRDuration(value: $studyEffectiveDuration);
         }
         $this->studyEffectiveDuration = $studyEffectiveDuration;
         return $this;
@@ -1204,14 +1208,17 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * Indicates duration from the study initiation.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveTimeFromStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveTimeFromStart
      * @return static
      */
-    public function setStudyEffectiveTimeFromStart(null|FHIRDuration $studyEffectiveTimeFromStart): self
+    public function setStudyEffectiveTimeFromStart(null|FHIRDecimal|FHIRDuration $studyEffectiveTimeFromStart): self
     {
         if (null === $studyEffectiveTimeFromStart) {
             unset($this->studyEffectiveTimeFromStart);
             return $this;
+        }
+        if (!($studyEffectiveTimeFromStart instanceof FHIRDuration)) {
+            $studyEffectiveTimeFromStart = new FHIRDuration(value: $studyEffectiveTimeFromStart);
         }
         $this->studyEffectiveTimeFromStart = $studyEffectiveTimeFromStart;
         return $this;
@@ -1472,14 +1479,17 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * Indicates what effective period the study covers.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
      * @return static
      */
-    public function setParticipantEffectiveDuration(null|FHIRDuration $participantEffectiveDuration): self
+    public function setParticipantEffectiveDuration(null|FHIRDecimal|FHIRDuration $participantEffectiveDuration): self
     {
         if (null === $participantEffectiveDuration) {
             unset($this->participantEffectiveDuration);
             return $this;
+        }
+        if (!($participantEffectiveDuration instanceof FHIRDuration)) {
+            $participantEffectiveDuration = new FHIRDuration(value: $participantEffectiveDuration);
         }
         $this->participantEffectiveDuration = $participantEffectiveDuration;
         return $this;
@@ -1548,14 +1558,17 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * Indicates duration from the participant's study entry.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveTimeFromStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveTimeFromStart
      * @return static
      */
-    public function setParticipantEffectiveTimeFromStart(null|FHIRDuration $participantEffectiveTimeFromStart): self
+    public function setParticipantEffectiveTimeFromStart(null|FHIRDecimal|FHIRDuration $participantEffectiveTimeFromStart): self
     {
         if (null === $participantEffectiveTimeFromStart) {
             unset($this->participantEffectiveTimeFromStart);
             return $this;
+        }
+        if (!($participantEffectiveTimeFromStart instanceof FHIRDuration)) {
+            $participantEffectiveTimeFromStart = new FHIRDuration(value: $participantEffectiveTimeFromStart);
         }
         $this->participantEffectiveTimeFromStart = $participantEffectiveTimeFromStart;
         return $this;
@@ -1623,7 +1636,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1958,7 +1971,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2035,7 +2048,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 $type->setParticipantEffectiveTimeFromStart(FHIRDuration::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE === $cen) {
                 $type->setParticipantEffectiveGroupMeasure(FHIRGroupMeasure::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -2427,9 +2441,9 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->definitionCanonical->getValue())) {
                 $out->definitionCanonical = $val;
             }
-            $ext = $this->definitionCanonical->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->definitionCanonical->_nonValueFieldDefined()) {
+                $ext = $this->definitionCanonical->jsonSerialize();
+                unset($ext->value);
                 $out->_definitionCanonical = $ext;
             }
         }
@@ -2446,9 +2460,9 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->exclude->getValue())) {
                 $out->exclude = $val;
             }
-            $ext = $this->exclude->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exclude->_nonValueFieldDefined()) {
+                $ext = $this->exclude->jsonSerialize();
+                unset($ext->value);
                 $out->_exclude = $ext;
             }
         }
@@ -2459,9 +2473,9 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->studyEffectiveDescription->getValue())) {
                 $out->studyEffectiveDescription = $val;
             }
-            $ext = $this->studyEffectiveDescription->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->studyEffectiveDescription->_nonValueFieldDefined()) {
+                $ext = $this->studyEffectiveDescription->jsonSerialize();
+                unset($ext->value);
                 $out->_studyEffectiveDescription = $ext;
             }
         }
@@ -2469,9 +2483,9 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->studyEffectiveDateTime->getValue())) {
                 $out->studyEffectiveDateTime = $val;
             }
-            $ext = $this->studyEffectiveDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->studyEffectiveDateTime->_nonValueFieldDefined()) {
+                $ext = $this->studyEffectiveDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_studyEffectiveDateTime = $ext;
             }
         }
@@ -2491,9 +2505,9 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->studyEffectiveGroupMeasure->getValue())) {
                 $out->studyEffectiveGroupMeasure = $val;
             }
-            $ext = $this->studyEffectiveGroupMeasure->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->studyEffectiveGroupMeasure->_nonValueFieldDefined()) {
+                $ext = $this->studyEffectiveGroupMeasure->jsonSerialize();
+                unset($ext->value);
                 $out->_studyEffectiveGroupMeasure = $ext;
             }
         }
@@ -2501,9 +2515,9 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->participantEffectiveDescription->getValue())) {
                 $out->participantEffectiveDescription = $val;
             }
-            $ext = $this->participantEffectiveDescription->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->participantEffectiveDescription->_nonValueFieldDefined()) {
+                $ext = $this->participantEffectiveDescription->jsonSerialize();
+                unset($ext->value);
                 $out->_participantEffectiveDescription = $ext;
             }
         }
@@ -2511,9 +2525,9 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->participantEffectiveDateTime->getValue())) {
                 $out->participantEffectiveDateTime = $val;
             }
-            $ext = $this->participantEffectiveDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->participantEffectiveDateTime->_nonValueFieldDefined()) {
+                $ext = $this->participantEffectiveDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_participantEffectiveDateTime = $ext;
             }
         }
@@ -2533,15 +2547,15 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->participantEffectiveGroupMeasure->getValue())) {
                 $out->participantEffectiveGroupMeasure = $val;
             }
-            $ext = $this->participantEffectiveGroupMeasure->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->participantEffectiveGroupMeasure->_nonValueFieldDefined()) {
+                $ext = $this->participantEffectiveGroupMeasure->jsonSerialize();
+                unset($ext->value);
                 $out->_participantEffectiveGroupMeasure = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

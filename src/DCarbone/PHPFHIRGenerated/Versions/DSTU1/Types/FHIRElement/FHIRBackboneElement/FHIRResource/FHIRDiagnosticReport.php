@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DIAGNOSTIC_REPORT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_NAME = 'name';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
@@ -111,7 +111,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
     public const FIELD_SUBJECT = 'subject';
     public const FIELD_PERFORMER = 'performer';
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_REQUEST_DETAIL = 'requestDetail';
     public const FIELD_SERVICE_CATEGORY = 'serviceCategory';
     public const FIELD_DIAGNOSTIC_DATE_TIME = 'diagnosticDateTime';
@@ -126,7 +125,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
     public const FIELD_CODED_DIAGNOSIS = 'codedDiagnosis';
     public const FIELD_PRESENTED_FORM = 'presentedForm';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -154,16 +153,15 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ISSUED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DIAGNOSTIC_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CONCLUSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -473,7 +471,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -482,7 +480,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -491,7 +489,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -760,11 +758,9 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * Information System of the diagnostic service provider.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentifier(null|FHIRString|FHIRIdentifier $identifier,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIdentifier(null|FHIRString|FHIRIdentifier $identifier): self
     {
         if (null === $identifier) {
             unset($this->identifier);
@@ -774,33 +770,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             $identifier = new FHIRIdentifier(value: $identifier);
         }
         $this->identifier = $identifier;
-        if ($this->_valueXMLLocations[self::FIELD_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the identifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the identifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -1501,7 +1470,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1839,7 +1808,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1927,7 +1896,8 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
                 $type->addCodedDiagnosis(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PRESENTED_FORM === $cen) {
                 $type->addPresentedForm(FHIRAttachment::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1954,14 +1924,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
                 $type->_setIssuedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setIssued((string)$attributes[self::FIELD_ISSUED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_IDENTIFIER])) {
-            if (isset($type->identifier)) {
-                $type->identifier->setValue((string)$attributes[self::FIELD_IDENTIFIER]);
-                $type->_setIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setIdentifier((string)$attributes[self::FIELD_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_DIAGNOSTIC_DATE_TIME])) {
@@ -2014,9 +1976,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
         if (isset($this->issued) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ISSUED]) {
             $xw->writeAttribute(self::FIELD_ISSUED, $this->issued->_getFormattedValue());
         }
-        if (isset($this->identifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_IDENTIFIER, $this->identifier->_getFormattedValue());
-        }
         if (isset($this->diagnosticDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DIAGNOSTIC_DATE_TIME]) {
             $xw->writeAttribute(self::FIELD_DIAGNOSTIC_DATE_TIME, $this->diagnosticDateTime->_getFormattedValue());
         }
@@ -2053,11 +2012,9 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             $this->performer->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->identifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_IDENTIFIER]
-                || $this->identifier->_nonValueFieldDefined())) {
+        if (isset($this->identifier)) {
             $xw->startElement(self::FIELD_IDENTIFIER);
-            $this->identifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_IDENTIFIER]);
+            $this->identifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->requestDetail)) {
@@ -2201,15 +2158,8 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
         if (isset($json[self::FIELD_PERFORMER]) || array_key_exists(self::FIELD_PERFORMER, $json)) {
             $type->setPerformer(FHIRResourceReference::jsonUnserialize($json[self::FIELD_PERFORMER], $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
-            $type->setIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_REQUEST_DETAIL]) || array_key_exists(self::FIELD_REQUEST_DETAIL, $json)) {
             $vs = $json[self::FIELD_REQUEST_DETAIL];
@@ -2316,9 +2266,9 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -2326,9 +2276,9 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             if (null !== ($val = $this->issued->getValue())) {
                 $out->issued = $val;
             }
-            $ext = $this->issued->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->issued->_nonValueFieldDefined()) {
+                $ext = $this->issued->jsonSerialize();
+                unset($ext->value);
                 $out->_issued = $ext;
             }
         }
@@ -2339,14 +2289,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             $out->performer = $this->performer;
         }
         if (isset($this->identifier)) {
-            if (null !== ($val = $this->identifier->getValue())) {
-                $out->identifier = $val;
-            }
-            $ext = $this->identifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $ext;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->requestDetail) && [] !== $this->requestDetail) {
             $out->requestDetail = $this->requestDetail;
@@ -2358,9 +2301,9 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             if (null !== ($val = $this->diagnosticDateTime->getValue())) {
                 $out->diagnosticDateTime = $val;
             }
-            $ext = $this->diagnosticDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->diagnosticDateTime->_nonValueFieldDefined()) {
+                $ext = $this->diagnosticDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_diagnosticDateTime = $ext;
             }
         }
@@ -2383,9 +2326,9 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             if (null !== ($val = $this->conclusion->getValue())) {
                 $out->conclusion = $val;
             }
-            $ext = $this->conclusion->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->conclusion->_nonValueFieldDefined()) {
+                $ext = $this->conclusion->jsonSerialize();
+                unset($ext->value);
                 $out->_conclusion = $ext;
             }
         }
@@ -2398,7 +2341,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

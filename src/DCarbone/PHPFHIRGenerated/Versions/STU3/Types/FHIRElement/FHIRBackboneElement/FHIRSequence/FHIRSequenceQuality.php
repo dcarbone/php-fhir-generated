@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SEQUENCE_DOT_QUALITY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_STANDARD_SEQUENCE = 'standardSequence';
@@ -119,14 +119,14 @@ class FHIRSequenceQuality extends FHIRBackboneElement
     public const FIELD_F_SCORE = 'fScore';
     public const FIELD_F_SCORE_EXT = '_fScore';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_START => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -141,7 +141,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
         self::FIELD_F_SCORE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Type for quality report
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -322,7 +322,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $standardSequence
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $start
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $end
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $score
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $score
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $method
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $truthTP
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $queryTP
@@ -341,7 +341,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $standardSequence = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $start = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $end = null,
-                                null|FHIRQuantity $score = null,
+                                null|FHIRDecimal|FHIRQuantity $score = null,
                                 null|FHIRCodeableConcept $method = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $truthTP = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $queryTP = null,
@@ -401,7 +401,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -410,7 +410,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Type for quality report
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -676,14 +676,17 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * The score of an experimentally derived feature such as a p-value
      * ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $score
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $score
      * @return static
      */
-    public function setScore(null|FHIRQuantity $score): self
+    public function setScore(null|FHIRDecimal|FHIRQuantity $score): self
     {
         if (null === $score) {
             unset($this->score);
             return $this;
+        }
+        if (!($score instanceof FHIRQuantity)) {
+            $score = new FHIRQuantity(value: $score);
         }
         $this->score = $score;
         return $this;
@@ -1297,7 +1300,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1533,7 +1536,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1596,7 +1599,8 @@ class FHIRSequenceQuality extends FHIRBackboneElement
                 $type->setRecall(FHIRDecimal::xmlUnserialize($ce, $config));
             } else if (self::FIELD_F_SCORE === $cen) {
                 $type->setFScore(FHIRDecimal::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1981,9 +1985,9 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -1994,9 +1998,9 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->start->getValue())) {
                 $out->start = $val;
             }
-            $ext = $this->start->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->start->_nonValueFieldDefined()) {
+                $ext = $this->start->jsonSerialize();
+                unset($ext->value);
                 $out->_start = $ext;
             }
         }
@@ -2004,9 +2008,9 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->end->getValue())) {
                 $out->end = $val;
             }
-            $ext = $this->end->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->end->_nonValueFieldDefined()) {
+                $ext = $this->end->jsonSerialize();
+                unset($ext->value);
                 $out->_end = $ext;
             }
         }
@@ -2020,9 +2024,9 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->truthTP->getValue())) {
                 $out->truthTP = $val;
             }
-            $ext = $this->truthTP->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->truthTP->_nonValueFieldDefined()) {
+                $ext = $this->truthTP->jsonSerialize();
+                unset($ext->value);
                 $out->_truthTP = $ext;
             }
         }
@@ -2030,9 +2034,9 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->queryTP->getValue())) {
                 $out->queryTP = $val;
             }
-            $ext = $this->queryTP->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->queryTP->_nonValueFieldDefined()) {
+                $ext = $this->queryTP->jsonSerialize();
+                unset($ext->value);
                 $out->_queryTP = $ext;
             }
         }
@@ -2040,9 +2044,9 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->truthFN->getValue())) {
                 $out->truthFN = $val;
             }
-            $ext = $this->truthFN->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->truthFN->_nonValueFieldDefined()) {
+                $ext = $this->truthFN->jsonSerialize();
+                unset($ext->value);
                 $out->_truthFN = $ext;
             }
         }
@@ -2050,9 +2054,9 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->queryFP->getValue())) {
                 $out->queryFP = $val;
             }
-            $ext = $this->queryFP->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->queryFP->_nonValueFieldDefined()) {
+                $ext = $this->queryFP->jsonSerialize();
+                unset($ext->value);
                 $out->_queryFP = $ext;
             }
         }
@@ -2060,9 +2064,9 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->gtFP->getValue())) {
                 $out->gtFP = $val;
             }
-            $ext = $this->gtFP->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->gtFP->_nonValueFieldDefined()) {
+                $ext = $this->gtFP->jsonSerialize();
+                unset($ext->value);
                 $out->_gtFP = $ext;
             }
         }
@@ -2070,9 +2074,9 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->precision->getValue())) {
                 $out->precision = $val;
             }
-            $ext = $this->precision->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->precision->_nonValueFieldDefined()) {
+                $ext = $this->precision->jsonSerialize();
+                unset($ext->value);
                 $out->_precision = $ext;
             }
         }
@@ -2080,9 +2084,9 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->recall->getValue())) {
                 $out->recall = $val;
             }
-            $ext = $this->recall->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->recall->_nonValueFieldDefined()) {
+                $ext = $this->recall->jsonSerialize();
+                unset($ext->value);
                 $out->_recall = $ext;
             }
         }
@@ -2090,15 +2094,15 @@ class FHIRSequenceQuality extends FHIRBackboneElement
             if (null !== ($val = $this->fScore->getValue())) {
                 $out->fScore = $val;
             }
-            $ext = $this->fScore->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fScore->_nonValueFieldDefined()) {
+                $ext = $this->fScore->jsonSerialize();
+                unset($ext->value);
                 $out->_fScore = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

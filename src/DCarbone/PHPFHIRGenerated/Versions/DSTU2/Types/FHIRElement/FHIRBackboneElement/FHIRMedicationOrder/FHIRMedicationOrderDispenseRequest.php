@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,28 +94,24 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_ORDER_DOT_DISPENSE_REQUEST;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_MEDICATION_CODEABLE_CONCEPT = 'medicationCodeableConcept';
     public const FIELD_MEDICATION_REFERENCE = 'medicationReference';
     public const FIELD_VALIDITY_PERIOD = 'validityPeriod';
     public const FIELD_NUMBER_OF_REPEATS_ALLOWED = 'numberOfRepeatsAllowed';
     public const FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT = '_numberOfRepeatsAllowed';
     public const FIELD_QUANTITY = 'quantity';
-    public const FIELD_QUANTITY_EXT = '_quantity';
     public const FIELD_EXPECTED_SUPPLY_DURATION = 'expectedSupplyDuration';
-    public const FIELD_EXPECTED_SUPPLY_DURATION_EXT = '_expectedSupplyDuration';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NUMBER_OF_REPEATS_ALLOWED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_QUANTITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_EXPECTED_SUPPLY_DURATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -231,7 +227,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -240,7 +236,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -447,11 +443,9 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * The amount that is to be dispensed for one fill.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRSimpleQuantity $quantity,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setQuantity(null|FHIRDecimal|FHIRSimpleQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
@@ -461,33 +455,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
             $quantity = new FHIRSimpleQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
-        if ($this->_valueXMLLocations[self::FIELD_QUANTITY] !== $valueXMLLocation) {
-            $this->_setQuantityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the quantity element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getQuantityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_QUANTITY];
-    }
-
-    /**
-     * Set the location the "value" field of the quantity element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setQuantityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_QUANTITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -507,11 +474,9 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * used, or the length of time the dispense is expected to last.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExpectedSupplyDuration(null|FHIRDecimal|FHIRDuration $expectedSupplyDuration,
-                                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExpectedSupplyDuration(null|FHIRDecimal|FHIRDuration $expectedSupplyDuration): self
     {
         if (null === $expectedSupplyDuration) {
             unset($this->expectedSupplyDuration);
@@ -521,37 +486,10 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
             $expectedSupplyDuration = new FHIRDuration(value: $expectedSupplyDuration);
         }
         $this->expectedSupplyDuration = $expectedSupplyDuration;
-        if ($this->_valueXMLLocations[self::FIELD_EXPECTED_SUPPLY_DURATION] !== $valueXMLLocation) {
-            $this->_setExpectedSupplyDurationValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the expectedSupplyDuration element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExpectedSupplyDurationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXPECTED_SUPPLY_DURATION];
-    }
-
-    /**
-     * Set the location the "value" field of the expectedSupplyDuration element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExpectedSupplyDurationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXPECTED_SUPPLY_DURATION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -686,7 +624,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -733,7 +671,8 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
                 $type->setQuantity(FHIRSimpleQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_EXPECTED_SUPPLY_DURATION === $cen) {
                 $type->setExpectedSupplyDuration(FHIRDuration::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -744,22 +683,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
                 $type->_setNumberOfRepeatsAllowedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setNumberOfRepeatsAllowed((string)$attributes[self::FIELD_NUMBER_OF_REPEATS_ALLOWED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_QUANTITY])) {
-            if (isset($type->quantity)) {
-                $type->quantity->setValue((string)$attributes[self::FIELD_QUANTITY]);
-                $type->_setQuantityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setQuantity((string)$attributes[self::FIELD_QUANTITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_EXPECTED_SUPPLY_DURATION])) {
-            if (isset($type->expectedSupplyDuration)) {
-                $type->expectedSupplyDuration->setValue((string)$attributes[self::FIELD_EXPECTED_SUPPLY_DURATION]);
-                $type->_setExpectedSupplyDurationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setExpectedSupplyDuration((string)$attributes[self::FIELD_EXPECTED_SUPPLY_DURATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
@@ -774,12 +697,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
     {
         if (isset($this->numberOfRepeatsAllowed) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]) {
             $xw->writeAttribute(self::FIELD_NUMBER_OF_REPEATS_ALLOWED, $this->numberOfRepeatsAllowed->_getFormattedValue());
-        }
-        if (isset($this->quantity) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_QUANTITY]) {
-            $xw->writeAttribute(self::FIELD_QUANTITY, $this->quantity->_getFormattedValue());
-        }
-        if (isset($this->expectedSupplyDuration) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXPECTED_SUPPLY_DURATION]) {
-            $xw->writeAttribute(self::FIELD_EXPECTED_SUPPLY_DURATION, $this->expectedSupplyDuration->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->medicationCodeableConcept)) {
@@ -804,18 +721,14 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
             $this->numberOfRepeatsAllowed->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]);
             $xw->endElement();
         }
-        if (isset($this->quantity)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_QUANTITY]
-                || $this->quantity->_nonValueFieldDefined())) {
+        if (isset($this->quantity)) {
             $xw->startElement(self::FIELD_QUANTITY);
-            $this->quantity->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_QUANTITY]);
+            $this->quantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->expectedSupplyDuration)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_EXPECTED_SUPPLY_DURATION]
-                || $this->expectedSupplyDuration->_nonValueFieldDefined())) {
+        if (isset($this->expectedSupplyDuration)) {
             $xw->startElement(self::FIELD_EXPECTED_SUPPLY_DURATION);
-            $this->expectedSupplyDuration->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_EXPECTED_SUPPLY_DURATION]);
+            $this->expectedSupplyDuration->xmlSerialize($xw, $config);
             $xw->endElement();
         }
     }
@@ -861,25 +774,11 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_QUANTITY])
-            || isset($json[self::FIELD_QUANTITY_EXT])
-            || array_key_exists(self::FIELD_QUANTITY, $json)
-            || array_key_exists(self::FIELD_QUANTITY_EXT, $json)) {
-            $value = $json[self::FIELD_QUANTITY] ?? null;
-            $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_QUANTITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
+            $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_EXPECTED_SUPPLY_DURATION])
-            || isset($json[self::FIELD_EXPECTED_SUPPLY_DURATION_EXT])
-            || array_key_exists(self::FIELD_EXPECTED_SUPPLY_DURATION, $json)
-            || array_key_exists(self::FIELD_EXPECTED_SUPPLY_DURATION_EXT, $json)) {
-            $value = $json[self::FIELD_EXPECTED_SUPPLY_DURATION] ?? null;
-            $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDuration::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPECTED_SUPPLY_DURATION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_EXPECTED_SUPPLY_DURATION]) || array_key_exists(self::FIELD_EXPECTED_SUPPLY_DURATION, $json)) {
+            $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_EXPECTED_SUPPLY_DURATION], $config));
         }
         return $type;
     }
@@ -903,35 +802,21 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
             if (null !== ($val = $this->numberOfRepeatsAllowed->getValue())) {
                 $out->numberOfRepeatsAllowed = $val;
             }
-            $ext = $this->numberOfRepeatsAllowed->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->numberOfRepeatsAllowed->_nonValueFieldDefined()) {
+                $ext = $this->numberOfRepeatsAllowed->jsonSerialize();
+                unset($ext->value);
                 $out->_numberOfRepeatsAllowed = $ext;
             }
         }
         if (isset($this->quantity)) {
-            if (null !== ($val = $this->quantity->getValue())) {
-                $out->quantity = $val;
-            }
-            $ext = $this->quantity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_quantity = $ext;
-            }
+            $out->quantity = $this->quantity;
         }
         if (isset($this->expectedSupplyDuration)) {
-            if (null !== ($val = $this->expectedSupplyDuration->getValue())) {
-                $out->expectedSupplyDuration = $val;
-            }
-            $ext = $this->expectedSupplyDuration->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_expectedSupplyDuration = $ext;
-            }
+            $out->expectedSupplyDuration = $this->expectedSupplyDuration;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

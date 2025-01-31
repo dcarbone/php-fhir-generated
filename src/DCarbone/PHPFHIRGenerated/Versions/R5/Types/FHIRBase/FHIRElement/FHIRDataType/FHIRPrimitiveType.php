@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,30 +108,14 @@ class FHIRPrimitiveType extends FHIRDataType
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PRIMITIVE_TYPE;
 
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* constructor.php:63 */
-    /**
-     * FHIRPrimitiveType Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string[] $fhirComments
-     */
-    public function __construct(null|iterable $extension = null,
-                                null|string|FHIRStringPrimitive $id = null,
-                                null|iterable $fhirComments = null)
-    {
-        parent::__construct(extension: $extension,
-                            id: $id,
-                            fhirComments: $fhirComments);
-    }
-
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -140,7 +124,7 @@ class FHIRPrimitiveType extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -191,7 +175,7 @@ class FHIRPrimitiveType extends FHIRDataType
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -224,7 +208,8 @@ class FHIRPrimitiveType extends FHIRDataType
                 } else {
                     $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -233,15 +218,31 @@ class FHIRPrimitiveType extends FHIRDataType
     }
 
     /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPrimitiveType $type
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPrimitiveType
+     * @throws \Exception
      */
-    public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config): void
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
-        parent::xmlSerialize($xw, $config);
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRPrimitiveType)) {
+            throw new \RuntimeException(sprintf(
+                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        parent::jsonUnserialize($json, $config, $type); 
+        return $type;
     }
-    /* class_default.php:238 */
+
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,7 +135,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OPERATION_DEFINITION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_URL = 'url';
     public const FIELD_URL_EXT = '_url';
     public const FIELD_VERSION = 'version';
@@ -184,7 +184,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
     public const FIELD_PARAMETER = 'parameter';
     public const FIELD_OVERLOAD = 'overload';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_NAME => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -209,7 +209,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -233,7 +233,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
         self::FIELD_OUTPUT_PROFILE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -708,7 +708,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -717,7 +717,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -726,7 +726,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -2547,7 +2547,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -3017,7 +3017,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -3122,7 +3122,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
                 $type->addParameter(FHIROperationDefinitionParameter::xmlUnserialize($ce, $config));
             } else if (self::FIELD_OVERLOAD === $cen) {
                 $type->addOverload(FHIROperationDefinitionOverload::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -3894,9 +3895,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
@@ -3904,9 +3905,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->version->getValue())) {
                 $out->version = $val;
             }
-            $ext = $this->version->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->version->_nonValueFieldDefined()) {
+                $ext = $this->version->jsonSerialize();
+                unset($ext->value);
                 $out->_version = $ext;
             }
         }
@@ -3914,9 +3915,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -3924,9 +3925,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->title->getValue())) {
                 $out->title = $val;
             }
-            $ext = $this->title->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->title->_nonValueFieldDefined()) {
+                $ext = $this->title->jsonSerialize();
+                unset($ext->value);
                 $out->_title = $ext;
             }
         }
@@ -3934,9 +3935,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -3944,9 +3945,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->kind->getValue())) {
                 $out->kind = $val;
             }
-            $ext = $this->kind->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->kind->_nonValueFieldDefined()) {
+                $ext = $this->kind->jsonSerialize();
+                unset($ext->value);
                 $out->_kind = $ext;
             }
         }
@@ -3954,9 +3955,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->experimental->getValue())) {
                 $out->experimental = $val;
             }
-            $ext = $this->experimental->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->experimental->_nonValueFieldDefined()) {
+                $ext = $this->experimental->jsonSerialize();
+                unset($ext->value);
                 $out->_experimental = $ext;
             }
         }
@@ -3964,9 +3965,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->date->getValue())) {
                 $out->date = $val;
             }
-            $ext = $this->date->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->date->_nonValueFieldDefined()) {
+                $ext = $this->date->jsonSerialize();
+                unset($ext->value);
                 $out->_date = $ext;
             }
         }
@@ -3974,9 +3975,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->publisher->getValue())) {
                 $out->publisher = $val;
             }
-            $ext = $this->publisher->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->publisher->_nonValueFieldDefined()) {
+                $ext = $this->publisher->jsonSerialize();
+                unset($ext->value);
                 $out->_publisher = $ext;
             }
         }
@@ -3987,9 +3988,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -4003,9 +4004,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->purpose->getValue())) {
                 $out->purpose = $val;
             }
-            $ext = $this->purpose->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->purpose->_nonValueFieldDefined()) {
+                $ext = $this->purpose->jsonSerialize();
+                unset($ext->value);
                 $out->_purpose = $ext;
             }
         }
@@ -4013,9 +4014,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->affectsState->getValue())) {
                 $out->affectsState = $val;
             }
-            $ext = $this->affectsState->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->affectsState->_nonValueFieldDefined()) {
+                $ext = $this->affectsState->jsonSerialize();
+                unset($ext->value);
                 $out->_affectsState = $ext;
             }
         }
@@ -4023,9 +4024,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->code->getValue())) {
                 $out->code = $val;
             }
-            $ext = $this->code->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->code->_nonValueFieldDefined()) {
+                $ext = $this->code->jsonSerialize();
+                unset($ext->value);
                 $out->_code = $ext;
             }
         }
@@ -4033,9 +4034,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->comment->getValue())) {
                 $out->comment = $val;
             }
-            $ext = $this->comment->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comment->_nonValueFieldDefined()) {
+                $ext = $this->comment->jsonSerialize();
+                unset($ext->value);
                 $out->_comment = $ext;
             }
         }
@@ -4043,30 +4044,38 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->base->getValue())) {
                 $out->base = $val;
             }
-            $ext = $this->base->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->base->_nonValueFieldDefined()) {
+                $ext = $this->base->jsonSerialize();
+                unset($ext->value);
                 $out->_base = $ext;
             }
         }
         if (isset($this->resource) && [] !== $this->resource) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->resource as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->resource = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_resource = $exts;
             }
         }
@@ -4074,9 +4083,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->system->getValue())) {
                 $out->system = $val;
             }
-            $ext = $this->system->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->system->_nonValueFieldDefined()) {
+                $ext = $this->system->jsonSerialize();
+                unset($ext->value);
                 $out->_system = $ext;
             }
         }
@@ -4084,9 +4093,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -4094,9 +4103,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->instance->getValue())) {
                 $out->instance = $val;
             }
-            $ext = $this->instance->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->instance->_nonValueFieldDefined()) {
+                $ext = $this->instance->jsonSerialize();
+                unset($ext->value);
                 $out->_instance = $ext;
             }
         }
@@ -4104,9 +4113,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->inputProfile->getValue())) {
                 $out->inputProfile = $val;
             }
-            $ext = $this->inputProfile->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->inputProfile->_nonValueFieldDefined()) {
+                $ext = $this->inputProfile->jsonSerialize();
+                unset($ext->value);
                 $out->_inputProfile = $ext;
             }
         }
@@ -4114,9 +4123,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->outputProfile->getValue())) {
                 $out->outputProfile = $val;
             }
-            $ext = $this->outputProfile->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->outputProfile->_nonValueFieldDefined()) {
+                $ext = $this->outputProfile->jsonSerialize();
+                unset($ext->value);
                 $out->_outputProfile = $ext;
             }
         }
@@ -4129,7 +4138,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

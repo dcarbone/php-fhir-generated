@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,6 +73,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
@@ -94,7 +95,7 @@ class FHIRDosage extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DOSAGE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SEQUENCE = 'sequence';
     public const FIELD_SEQUENCE_EXT = '_sequence';
     public const FIELD_TEXT = 'text';
@@ -114,10 +115,10 @@ class FHIRDosage extends FHIRBackboneElement
     public const FIELD_MAX_DOSE_PER_ADMINISTRATION = 'maxDosePerAdministration';
     public const FIELD_MAX_DOSE_PER_LIFETIME = 'maxDosePerLifetime';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TEXT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -125,7 +126,7 @@ class FHIRDosage extends FHIRBackboneElement
         self::FIELD_AS_NEEDED_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -306,8 +307,8 @@ class FHIRDosage extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $method
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate[] $doseAndRate
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $maxDosePerPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxDosePerAdministration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxDosePerLifetime
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxDosePerAdministration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxDosePerLifetime
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -325,8 +326,8 @@ class FHIRDosage extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $method = null,
                                 null|iterable $doseAndRate = null,
                                 null|FHIRRatio $maxDosePerPeriod = null,
-                                null|FHIRQuantity $maxDosePerAdministration = null,
-                                null|FHIRQuantity $maxDosePerLifetime = null,
+                                null|FHIRDecimal|FHIRQuantity $maxDosePerAdministration = null,
+                                null|FHIRDecimal|FHIRQuantity $maxDosePerLifetime = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -377,7 +378,7 @@ class FHIRDosage extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -386,7 +387,7 @@ class FHIRDosage extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -1046,14 +1047,17 @@ class FHIRDosage extends FHIRBackboneElement
      *
      * Upper limit on medication per administration.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxDosePerAdministration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxDosePerAdministration
      * @return static
      */
-    public function setMaxDosePerAdministration(null|FHIRQuantity $maxDosePerAdministration): self
+    public function setMaxDosePerAdministration(null|FHIRDecimal|FHIRQuantity $maxDosePerAdministration): self
     {
         if (null === $maxDosePerAdministration) {
             unset($this->maxDosePerAdministration);
             return $this;
+        }
+        if (!($maxDosePerAdministration instanceof FHIRQuantity)) {
+            $maxDosePerAdministration = new FHIRQuantity(value: $maxDosePerAdministration);
         }
         $this->maxDosePerAdministration = $maxDosePerAdministration;
         return $this;
@@ -1084,20 +1088,23 @@ class FHIRDosage extends FHIRBackboneElement
      *
      * Upper limit on medication per lifetime of the patient.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxDosePerLifetime
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxDosePerLifetime
      * @return static
      */
-    public function setMaxDosePerLifetime(null|FHIRQuantity $maxDosePerLifetime): self
+    public function setMaxDosePerLifetime(null|FHIRDecimal|FHIRQuantity $maxDosePerLifetime): self
     {
         if (null === $maxDosePerLifetime) {
             unset($this->maxDosePerLifetime);
             return $this;
         }
+        if (!($maxDosePerLifetime instanceof FHIRQuantity)) {
+            $maxDosePerLifetime = new FHIRQuantity(value: $maxDosePerLifetime);
+        }
         $this->maxDosePerLifetime = $maxDosePerLifetime;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1328,7 +1335,7 @@ class FHIRDosage extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1391,7 +1398,8 @@ class FHIRDosage extends FHIRBackboneElement
                 $type->setMaxDosePerAdministration(FHIRQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_MAX_DOSE_PER_LIFETIME === $cen) {
                 $type->setMaxDosePerLifetime(FHIRQuantity::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1652,9 +1660,9 @@ class FHIRDosage extends FHIRBackboneElement
             if (null !== ($val = $this->sequence->getValue())) {
                 $out->sequence = $val;
             }
-            $ext = $this->sequence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sequence->_nonValueFieldDefined()) {
+                $ext = $this->sequence->jsonSerialize();
+                unset($ext->value);
                 $out->_sequence = $ext;
             }
         }
@@ -1662,9 +1670,9 @@ class FHIRDosage extends FHIRBackboneElement
             if (null !== ($val = $this->text->getValue())) {
                 $out->text = $val;
             }
-            $ext = $this->text->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->text->_nonValueFieldDefined()) {
+                $ext = $this->text->jsonSerialize();
+                unset($ext->value);
                 $out->_text = $ext;
             }
         }
@@ -1675,9 +1683,9 @@ class FHIRDosage extends FHIRBackboneElement
             if (null !== ($val = $this->patientInstruction->getValue())) {
                 $out->patientInstruction = $val;
             }
-            $ext = $this->patientInstruction->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patientInstruction->_nonValueFieldDefined()) {
+                $ext = $this->patientInstruction->jsonSerialize();
+                unset($ext->value);
                 $out->_patientInstruction = $ext;
             }
         }
@@ -1688,9 +1696,9 @@ class FHIRDosage extends FHIRBackboneElement
             if (null !== ($val = $this->asNeededBoolean->getValue())) {
                 $out->asNeededBoolean = $val;
             }
-            $ext = $this->asNeededBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->asNeededBoolean->_nonValueFieldDefined()) {
+                $ext = $this->asNeededBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_asNeededBoolean = $ext;
             }
         }
@@ -1720,7 +1728,7 @@ class FHIRDosage extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

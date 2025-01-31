@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_QUESTIONNAIRE_DOT_QUESTION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_NAME = 'name';
     public const FIELD_TEXT = 'text';
     public const FIELD_TEXT_EXT = '_text';
@@ -168,7 +168,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
     public const FIELD_DATA_ID_EXT = '_dataId';
     public const FIELD_DATA_ATTACHMENT = 'dataAttachment';
     public const FIELD_DATA_IDENTIFIER = 'dataIdentifier';
-    public const FIELD_DATA_IDENTIFIER_EXT = '_dataIdentifier';
     public const FIELD_DATA_CODEABLE_CONCEPT = 'dataCodeableConcept';
     public const FIELD_DATA_CODING = 'dataCoding';
     public const FIELD_DATA_QUANTITY = 'dataQuantity';
@@ -180,16 +179,15 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
     public const FIELD_DATA_HUMAN_NAME = 'dataHumanName';
     public const FIELD_DATA_ADDRESS = 'dataAddress';
     public const FIELD_DATA_CONTACT = 'dataContact';
-    public const FIELD_DATA_CONTACT_EXT = '_dataContact';
     public const FIELD_DATA_SCHEDULE = 'dataSchedule';
     public const FIELD_REMARKS = 'remarks';
     public const FIELD_REMARKS_EXT = '_remarks';
     public const FIELD_GROUP = 'group';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TEXT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ANSWER_DECIMAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -212,12 +210,10 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         self::FIELD_DATA_OID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DATA_UUID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DATA_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DATA_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DATA_CONTACT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_REMARKS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -662,7 +658,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $dataIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $dataCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $dataCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dataQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dataQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $dataRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $dataPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $dataRatio
@@ -707,7 +703,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
                                 null|FHIRString|FHIRIdentifier $dataIdentifier = null,
                                 null|FHIRCodeableConcept $dataCodeableConcept = null,
                                 null|FHIRCoding $dataCoding = null,
-                                null|FHIRQuantity $dataQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $dataQuantity = null,
                                 null|FHIRRange $dataRange = null,
                                 null|FHIRPeriod $dataPeriod = null,
                                 null|FHIRRatio $dataRatio = null,
@@ -847,7 +843,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -856,7 +852,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -2427,11 +2423,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $dataIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataIdentifier(null|FHIRString|FHIRIdentifier $dataIdentifier,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataIdentifier(null|FHIRString|FHIRIdentifier $dataIdentifier): self
     {
         if (null === $dataIdentifier) {
             unset($this->dataIdentifier);
@@ -2441,33 +2435,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataIdentifier = new FHIRIdentifier(value: $dataIdentifier);
         }
         $this->dataIdentifier = $dataIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setDataIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the dataIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -2566,14 +2533,17 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dataQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dataQuantity
      * @return static
      */
-    public function setDataQuantity(null|FHIRQuantity $dataQuantity): self
+    public function setDataQuantity(null|FHIRDecimal|FHIRQuantity $dataQuantity): self
     {
         if (null === $dataQuantity) {
             unset($this->dataQuantity);
             return $this;
+        }
+        if (!($dataQuantity instanceof FHIRQuantity)) {
+            $dataQuantity = new FHIRQuantity(value: $dataQuantity);
         }
         $this->dataQuantity = $dataQuantity;
         return $this;
@@ -2847,11 +2817,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $dataContact
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataContact(null|FHIRString|FHIRContact $dataContact,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataContact(null|FHIRString|FHIRContact $dataContact): self
     {
         if (null === $dataContact) {
             unset($this->dataContact);
@@ -2861,33 +2829,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataContact = new FHIRContact(value: $dataContact);
         }
         $this->dataContact = $dataContact;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_CONTACT] !== $valueXMLLocation) {
-            $this->_setDataContactValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataContact element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataContactValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_CONTACT];
-    }
-
-    /**
-     * Set the location the "value" field of the dataContact element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataContactValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_CONTACT] = $valueXMLLocation;
         return $this;
     }
 
@@ -3065,7 +3006,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -3608,7 +3549,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -3723,7 +3664,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
                 $type->setRemarks(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_GROUP === $cen) {
                 $type->addGroup(FHIRQuestionnaireGroup::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -3896,22 +3838,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
                 $type->setDataId((string)$attributes[self::FIELD_DATA_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_DATA_IDENTIFIER])) {
-            if (isset($type->dataIdentifier)) {
-                $type->dataIdentifier->setValue((string)$attributes[self::FIELD_DATA_IDENTIFIER]);
-                $type->_setDataIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDataIdentifier((string)$attributes[self::FIELD_DATA_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_DATA_CONTACT])) {
-            if (isset($type->dataContact)) {
-                $type->dataContact->setValue((string)$attributes[self::FIELD_DATA_CONTACT]);
-                $type->_setDataContactValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDataContact((string)$attributes[self::FIELD_DATA_CONTACT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_REMARKS])) {
             if (isset($type->remarks)) {
                 $type->remarks->setValue((string)$attributes[self::FIELD_REMARKS]);
@@ -3992,12 +3918,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         }
         if (isset($this->dataId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_ID]) {
             $xw->writeAttribute(self::FIELD_DATA_ID, $this->dataId->_getFormattedValue());
-        }
-        if (isset($this->dataIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_DATA_IDENTIFIER, $this->dataIdentifier->_getFormattedValue());
-        }
-        if (isset($this->dataContact) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_CONTACT]) {
-            $xw->writeAttribute(self::FIELD_DATA_CONTACT, $this->dataContact->_getFormattedValue());
         }
         if (isset($this->remarks) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REMARKS]) {
             $xw->writeAttribute(self::FIELD_REMARKS, $this->remarks->_getFormattedValue());
@@ -4172,11 +4092,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $this->dataAttachment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->dataIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DATA_IDENTIFIER]
-                || $this->dataIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->dataIdentifier)) {
             $xw->startElement(self::FIELD_DATA_IDENTIFIER);
-            $this->dataIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DATA_IDENTIFIER]);
+            $this->dataIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->dataCodeableConcept)) {
@@ -4229,11 +4147,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $this->dataAddress->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->dataContact)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DATA_CONTACT]
-                || $this->dataContact->_nonValueFieldDefined())) {
+        if (isset($this->dataContact)) {
             $xw->startElement(self::FIELD_DATA_CONTACT);
-            $this->dataContact->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DATA_CONTACT]);
+            $this->dataContact->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->dataSchedule)) {
@@ -4507,15 +4423,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         if (isset($json[self::FIELD_DATA_ATTACHMENT]) || array_key_exists(self::FIELD_DATA_ATTACHMENT, $json)) {
             $type->setDataAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_DATA_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_DATA_IDENTIFIER])
-            || isset($json[self::FIELD_DATA_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_DATA_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_DATA_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_IDENTIFIER] ?? null;
-            $type->setDataIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DATA_IDENTIFIER]) || array_key_exists(self::FIELD_DATA_IDENTIFIER, $json)) {
+            $type->setDataIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_DATA_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_DATA_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_DATA_CODEABLE_CONCEPT, $json)) {
             $type->setDataCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DATA_CODEABLE_CONCEPT], $config));
@@ -4547,15 +4456,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         if (isset($json[self::FIELD_DATA_ADDRESS]) || array_key_exists(self::FIELD_DATA_ADDRESS, $json)) {
             $type->setDataAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_DATA_ADDRESS], $config));
         }
-        if (isset($json[self::FIELD_DATA_CONTACT])
-            || isset($json[self::FIELD_DATA_CONTACT_EXT])
-            || array_key_exists(self::FIELD_DATA_CONTACT, $json)
-            || array_key_exists(self::FIELD_DATA_CONTACT_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_CONTACT] ?? null;
-            $type->setDataContact(FHIRContact::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContact::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_CONTACT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DATA_CONTACT]) || array_key_exists(self::FIELD_DATA_CONTACT, $json)) {
+            $type->setDataContact(FHIRContact::jsonUnserialize($json[self::FIELD_DATA_CONTACT], $config));
         }
         if (isset($json[self::FIELD_DATA_SCHEDULE]) || array_key_exists(self::FIELD_DATA_SCHEDULE, $json)) {
             $type->setDataSchedule(FHIRSchedule::jsonUnserialize($json[self::FIELD_DATA_SCHEDULE], $config));
@@ -4595,9 +4497,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->text->getValue())) {
                 $out->text = $val;
             }
-            $ext = $this->text->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->text->_nonValueFieldDefined()) {
+                $ext = $this->text->jsonSerialize();
+                unset($ext->value);
                 $out->_text = $ext;
             }
         }
@@ -4605,9 +4507,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->answerDecimal->getValue())) {
                 $out->answerDecimal = $val;
             }
-            $ext = $this->answerDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerDecimal->_nonValueFieldDefined()) {
+                $ext = $this->answerDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_answerDecimal = $ext;
             }
         }
@@ -4615,9 +4517,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->answerInteger->getValue())) {
                 $out->answerInteger = $val;
             }
-            $ext = $this->answerInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerInteger->_nonValueFieldDefined()) {
+                $ext = $this->answerInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_answerInteger = $ext;
             }
         }
@@ -4625,9 +4527,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->answerBoolean->getValue())) {
                 $out->answerBoolean = $val;
             }
-            $ext = $this->answerBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerBoolean->_nonValueFieldDefined()) {
+                $ext = $this->answerBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_answerBoolean = $ext;
             }
         }
@@ -4635,9 +4537,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->answerDate->getValue())) {
                 $out->answerDate = $val;
             }
-            $ext = $this->answerDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerDate->_nonValueFieldDefined()) {
+                $ext = $this->answerDate->jsonSerialize();
+                unset($ext->value);
                 $out->_answerDate = $ext;
             }
         }
@@ -4645,9 +4547,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->answerString->getValue())) {
                 $out->answerString = $val;
             }
-            $ext = $this->answerString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerString->_nonValueFieldDefined()) {
+                $ext = $this->answerString->jsonSerialize();
+                unset($ext->value);
                 $out->_answerString = $ext;
             }
         }
@@ -4655,9 +4557,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->answerDateTime->getValue())) {
                 $out->answerDateTime = $val;
             }
-            $ext = $this->answerDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerDateTime->_nonValueFieldDefined()) {
+                $ext = $this->answerDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_answerDateTime = $ext;
             }
         }
@@ -4665,9 +4567,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->answerInstant->getValue())) {
                 $out->answerInstant = $val;
             }
-            $ext = $this->answerInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerInstant->_nonValueFieldDefined()) {
+                $ext = $this->answerInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_answerInstant = $ext;
             }
         }
@@ -4681,9 +4583,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataBoolean->getValue())) {
                 $out->dataBoolean = $val;
             }
-            $ext = $this->dataBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataBoolean->_nonValueFieldDefined()) {
+                $ext = $this->dataBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_dataBoolean = $ext;
             }
         }
@@ -4691,9 +4593,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataInteger->getValue())) {
                 $out->dataInteger = $val;
             }
-            $ext = $this->dataInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataInteger->_nonValueFieldDefined()) {
+                $ext = $this->dataInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_dataInteger = $ext;
             }
         }
@@ -4701,9 +4603,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataDecimal->getValue())) {
                 $out->dataDecimal = $val;
             }
-            $ext = $this->dataDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataDecimal->_nonValueFieldDefined()) {
+                $ext = $this->dataDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_dataDecimal = $ext;
             }
         }
@@ -4711,9 +4613,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataBase64Binary->getValue())) {
                 $out->dataBase64Binary = $val;
             }
-            $ext = $this->dataBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->dataBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_dataBase64Binary = $ext;
             }
         }
@@ -4721,9 +4623,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataInstant->getValue())) {
                 $out->dataInstant = $val;
             }
-            $ext = $this->dataInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataInstant->_nonValueFieldDefined()) {
+                $ext = $this->dataInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_dataInstant = $ext;
             }
         }
@@ -4731,9 +4633,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataString->getValue())) {
                 $out->dataString = $val;
             }
-            $ext = $this->dataString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataString->_nonValueFieldDefined()) {
+                $ext = $this->dataString->jsonSerialize();
+                unset($ext->value);
                 $out->_dataString = $ext;
             }
         }
@@ -4741,9 +4643,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataUri->getValue())) {
                 $out->dataUri = $val;
             }
-            $ext = $this->dataUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataUri->_nonValueFieldDefined()) {
+                $ext = $this->dataUri->jsonSerialize();
+                unset($ext->value);
                 $out->_dataUri = $ext;
             }
         }
@@ -4751,9 +4653,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataDate->getValue())) {
                 $out->dataDate = $val;
             }
-            $ext = $this->dataDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataDate->_nonValueFieldDefined()) {
+                $ext = $this->dataDate->jsonSerialize();
+                unset($ext->value);
                 $out->_dataDate = $ext;
             }
         }
@@ -4761,9 +4663,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataDateTime->getValue())) {
                 $out->dataDateTime = $val;
             }
-            $ext = $this->dataDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataDateTime->_nonValueFieldDefined()) {
+                $ext = $this->dataDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_dataDateTime = $ext;
             }
         }
@@ -4771,9 +4673,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataCode->getValue())) {
                 $out->dataCode = $val;
             }
-            $ext = $this->dataCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataCode->_nonValueFieldDefined()) {
+                $ext = $this->dataCode->jsonSerialize();
+                unset($ext->value);
                 $out->_dataCode = $ext;
             }
         }
@@ -4781,9 +4683,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataOid->getValue())) {
                 $out->dataOid = $val;
             }
-            $ext = $this->dataOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataOid->_nonValueFieldDefined()) {
+                $ext = $this->dataOid->jsonSerialize();
+                unset($ext->value);
                 $out->_dataOid = $ext;
             }
         }
@@ -4791,9 +4693,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataUuid->getValue())) {
                 $out->dataUuid = $val;
             }
-            $ext = $this->dataUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataUuid->_nonValueFieldDefined()) {
+                $ext = $this->dataUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_dataUuid = $ext;
             }
         }
@@ -4801,9 +4703,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->dataId->getValue())) {
                 $out->dataId = $val;
             }
-            $ext = $this->dataId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dataId->_nonValueFieldDefined()) {
+                $ext = $this->dataId->jsonSerialize();
+                unset($ext->value);
                 $out->_dataId = $ext;
             }
         }
@@ -4811,14 +4713,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $out->dataAttachment = $this->dataAttachment;
         }
         if (isset($this->dataIdentifier)) {
-            if (null !== ($val = $this->dataIdentifier->getValue())) {
-                $out->dataIdentifier = $val;
-            }
-            $ext = $this->dataIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_dataIdentifier = $ext;
-            }
+            $out->dataIdentifier = $this->dataIdentifier;
         }
         if (isset($this->dataCodeableConcept)) {
             $out->dataCodeableConcept = $this->dataCodeableConcept;
@@ -4851,14 +4746,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $out->dataAddress = $this->dataAddress;
         }
         if (isset($this->dataContact)) {
-            if (null !== ($val = $this->dataContact->getValue())) {
-                $out->dataContact = $val;
-            }
-            $ext = $this->dataContact->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_dataContact = $ext;
-            }
+            $out->dataContact = $this->dataContact;
         }
         if (isset($this->dataSchedule)) {
             $out->dataSchedule = $this->dataSchedule;
@@ -4867,9 +4755,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (null !== ($val = $this->remarks->getValue())) {
                 $out->remarks = $val;
             }
-            $ext = $this->remarks->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->remarks->_nonValueFieldDefined()) {
+                $ext = $this->remarks->jsonSerialize();
+                unset($ext->value);
                 $out->_remarks = $ext;
             }
         }
@@ -4878,7 +4766,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

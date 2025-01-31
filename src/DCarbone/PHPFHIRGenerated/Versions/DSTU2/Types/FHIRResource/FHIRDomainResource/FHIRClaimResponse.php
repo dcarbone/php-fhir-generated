@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,9 +112,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_RESPONSE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_REQUEST = 'request';
     public const FIELD_RULESET = 'ruleset';
     public const FIELD_ORIGINAL_RULESET = 'originalRuleset';
@@ -132,43 +131,31 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
     public const FIELD_ADD_ITEM = 'addItem';
     public const FIELD_ERROR = 'error';
     public const FIELD_TOTAL_COST = 'totalCost';
-    public const FIELD_TOTAL_COST_EXT = '_totalCost';
     public const FIELD_UNALLOC_DEDUCTABLE = 'unallocDeductable';
-    public const FIELD_UNALLOC_DEDUCTABLE_EXT = '_unallocDeductable';
     public const FIELD_TOTAL_BENEFIT = 'totalBenefit';
-    public const FIELD_TOTAL_BENEFIT_EXT = '_totalBenefit';
     public const FIELD_PAYMENT_ADJUSTMENT = 'paymentAdjustment';
-    public const FIELD_PAYMENT_ADJUSTMENT_EXT = '_paymentAdjustment';
     public const FIELD_PAYMENT_ADJUSTMENT_REASON = 'paymentAdjustmentReason';
     public const FIELD_PAYMENT_DATE = 'paymentDate';
     public const FIELD_PAYMENT_DATE_EXT = '_paymentDate';
     public const FIELD_PAYMENT_AMOUNT = 'paymentAmount';
-    public const FIELD_PAYMENT_AMOUNT_EXT = '_paymentAmount';
     public const FIELD_PAYMENT_REF = 'paymentRef';
-    public const FIELD_PAYMENT_REF_EXT = '_paymentRef';
     public const FIELD_RESERVED = 'reserved';
     public const FIELD_FORM = 'form';
     public const FIELD_NOTE = 'note';
     public const FIELD_COVERAGE = 'coverage';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_CREATED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_OUTCOME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DISPOSITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_TOTAL_COST => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_UNALLOC_DEDUCTABLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_TOTAL_BENEFIT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_PAYMENT_ADJUSTMENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PAYMENT_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_PAYMENT_AMOUNT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_PAYMENT_REF => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -579,7 +566,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -588,7 +575,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -597,7 +584,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -661,14 +648,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1317,11 +1297,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * The total cost of the services reported.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $totalCost
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTotalCost(null|FHIRDecimal|FHIRMoney $totalCost,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTotalCost(null|FHIRDecimal|FHIRMoney $totalCost): self
     {
         if (null === $totalCost) {
             unset($this->totalCost);
@@ -1331,33 +1309,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             $totalCost = new FHIRMoney(value: $totalCost);
         }
         $this->totalCost = $totalCost;
-        if ($this->_valueXMLLocations[self::FIELD_TOTAL_COST] !== $valueXMLLocation) {
-            $this->_setTotalCostValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the totalCost element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTotalCostValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TOTAL_COST];
-    }
-
-    /**
-     * Set the location the "value" field of the totalCost element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTotalCostValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TOTAL_COST] = $valueXMLLocation;
         return $this;
     }
 
@@ -1377,11 +1328,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * service line.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $unallocDeductable
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUnallocDeductable(null|FHIRDecimal|FHIRMoney $unallocDeductable,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUnallocDeductable(null|FHIRDecimal|FHIRMoney $unallocDeductable): self
     {
         if (null === $unallocDeductable) {
             unset($this->unallocDeductable);
@@ -1391,33 +1340,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             $unallocDeductable = new FHIRMoney(value: $unallocDeductable);
         }
         $this->unallocDeductable = $unallocDeductable;
-        if ($this->_valueXMLLocations[self::FIELD_UNALLOC_DEDUCTABLE] !== $valueXMLLocation) {
-            $this->_setUnallocDeductableValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the unallocDeductable element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUnallocDeductableValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_UNALLOC_DEDUCTABLE];
-    }
-
-    /**
-     * Set the location the "value" field of the unallocDeductable element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUnallocDeductableValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_UNALLOC_DEDUCTABLE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1437,11 +1359,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * detail lines and additions less the Unallocated Deductible).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $totalBenefit
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTotalBenefit(null|FHIRDecimal|FHIRMoney $totalBenefit,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTotalBenefit(null|FHIRDecimal|FHIRMoney $totalBenefit): self
     {
         if (null === $totalBenefit) {
             unset($this->totalBenefit);
@@ -1451,33 +1371,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             $totalBenefit = new FHIRMoney(value: $totalBenefit);
         }
         $this->totalBenefit = $totalBenefit;
-        if ($this->_valueXMLLocations[self::FIELD_TOTAL_BENEFIT] !== $valueXMLLocation) {
-            $this->_setTotalBenefitValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the totalBenefit element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTotalBenefitValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TOTAL_BENEFIT];
-    }
-
-    /**
-     * Set the location the "value" field of the totalBenefit element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTotalBenefitValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TOTAL_BENEFIT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1497,11 +1390,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * adjudication of this transaction.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $paymentAdjustment
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPaymentAdjustment(null|FHIRDecimal|FHIRMoney $paymentAdjustment,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPaymentAdjustment(null|FHIRDecimal|FHIRMoney $paymentAdjustment): self
     {
         if (null === $paymentAdjustment) {
             unset($this->paymentAdjustment);
@@ -1511,33 +1402,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             $paymentAdjustment = new FHIRMoney(value: $paymentAdjustment);
         }
         $this->paymentAdjustment = $paymentAdjustment;
-        if ($this->_valueXMLLocations[self::FIELD_PAYMENT_ADJUSTMENT] !== $valueXMLLocation) {
-            $this->_setPaymentAdjustmentValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the paymentAdjustment element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPaymentAdjustmentValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PAYMENT_ADJUSTMENT];
-    }
-
-    /**
-     * Set the location the "value" field of the paymentAdjustment element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPaymentAdjustmentValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PAYMENT_ADJUSTMENT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1657,11 +1521,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * Payable less any payment adjustment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $paymentAmount
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPaymentAmount(null|FHIRDecimal|FHIRMoney $paymentAmount,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPaymentAmount(null|FHIRDecimal|FHIRMoney $paymentAmount): self
     {
         if (null === $paymentAmount) {
             unset($this->paymentAmount);
@@ -1671,33 +1533,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             $paymentAmount = new FHIRMoney(value: $paymentAmount);
         }
         $this->paymentAmount = $paymentAmount;
-        if ($this->_valueXMLLocations[self::FIELD_PAYMENT_AMOUNT] !== $valueXMLLocation) {
-            $this->_setPaymentAmountValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the paymentAmount element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPaymentAmountValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PAYMENT_AMOUNT];
-    }
-
-    /**
-     * Set the location the "value" field of the paymentAmount element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPaymentAmountValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PAYMENT_AMOUNT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1723,11 +1558,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * Payment identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $paymentRef
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPaymentRef(null|FHIRString|FHIRIdentifier $paymentRef,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPaymentRef(null|FHIRString|FHIRIdentifier $paymentRef): self
     {
         if (null === $paymentRef) {
             unset($this->paymentRef);
@@ -1737,33 +1570,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             $paymentRef = new FHIRIdentifier(value: $paymentRef);
         }
         $this->paymentRef = $paymentRef;
-        if ($this->_valueXMLLocations[self::FIELD_PAYMENT_REF] !== $valueXMLLocation) {
-            $this->_setPaymentRefValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the paymentRef element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPaymentRefValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PAYMENT_REF];
-    }
-
-    /**
-     * Set the location the "value" field of the paymentRef element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPaymentRefValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PAYMENT_REF] = $valueXMLLocation;
         return $this;
     }
 
@@ -1957,7 +1763,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -2392,7 +2198,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2497,7 +2303,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
                 $type->addNote(FHIRClaimResponseNote::xmlUnserialize($ce, $config));
             } else if (self::FIELD_COVERAGE === $cen) {
                 $type->addCoverage(FHIRClaimResponseCoverage::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -2547,60 +2354,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
                 $type->setDisposition((string)$attributes[self::FIELD_DISPOSITION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_TOTAL_COST])) {
-            if (isset($type->totalCost)) {
-                $type->totalCost->setValue((string)$attributes[self::FIELD_TOTAL_COST]);
-                $type->_setTotalCostValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setTotalCost((string)$attributes[self::FIELD_TOTAL_COST], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_UNALLOC_DEDUCTABLE])) {
-            if (isset($type->unallocDeductable)) {
-                $type->unallocDeductable->setValue((string)$attributes[self::FIELD_UNALLOC_DEDUCTABLE]);
-                $type->_setUnallocDeductableValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setUnallocDeductable((string)$attributes[self::FIELD_UNALLOC_DEDUCTABLE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_TOTAL_BENEFIT])) {
-            if (isset($type->totalBenefit)) {
-                $type->totalBenefit->setValue((string)$attributes[self::FIELD_TOTAL_BENEFIT]);
-                $type->_setTotalBenefitValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setTotalBenefit((string)$attributes[self::FIELD_TOTAL_BENEFIT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_PAYMENT_ADJUSTMENT])) {
-            if (isset($type->paymentAdjustment)) {
-                $type->paymentAdjustment->setValue((string)$attributes[self::FIELD_PAYMENT_ADJUSTMENT]);
-                $type->_setPaymentAdjustmentValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPaymentAdjustment((string)$attributes[self::FIELD_PAYMENT_ADJUSTMENT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_PAYMENT_DATE])) {
             if (isset($type->paymentDate)) {
                 $type->paymentDate->setValue((string)$attributes[self::FIELD_PAYMENT_DATE]);
                 $type->_setPaymentDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setPaymentDate((string)$attributes[self::FIELD_PAYMENT_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_PAYMENT_AMOUNT])) {
-            if (isset($type->paymentAmount)) {
-                $type->paymentAmount->setValue((string)$attributes[self::FIELD_PAYMENT_AMOUNT]);
-                $type->_setPaymentAmountValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPaymentAmount((string)$attributes[self::FIELD_PAYMENT_AMOUNT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_PAYMENT_REF])) {
-            if (isset($type->paymentRef)) {
-                $type->paymentRef->setValue((string)$attributes[self::FIELD_PAYMENT_REF]);
-                $type->_setPaymentRefValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPaymentRef((string)$attributes[self::FIELD_PAYMENT_REF], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
@@ -2640,30 +2399,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
         if (isset($this->disposition) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DISPOSITION]) {
             $xw->writeAttribute(self::FIELD_DISPOSITION, $this->disposition->_getFormattedValue());
         }
-        if (isset($this->totalCost) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TOTAL_COST]) {
-            $xw->writeAttribute(self::FIELD_TOTAL_COST, $this->totalCost->_getFormattedValue());
-        }
-        if (isset($this->unallocDeductable) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_UNALLOC_DEDUCTABLE]) {
-            $xw->writeAttribute(self::FIELD_UNALLOC_DEDUCTABLE, $this->unallocDeductable->_getFormattedValue());
-        }
-        if (isset($this->totalBenefit) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TOTAL_BENEFIT]) {
-            $xw->writeAttribute(self::FIELD_TOTAL_BENEFIT, $this->totalBenefit->_getFormattedValue());
-        }
-        if (isset($this->paymentAdjustment) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PAYMENT_ADJUSTMENT]) {
-            $xw->writeAttribute(self::FIELD_PAYMENT_ADJUSTMENT, $this->paymentAdjustment->_getFormattedValue());
-        }
         if (isset($this->paymentDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PAYMENT_DATE]) {
             $xw->writeAttribute(self::FIELD_PAYMENT_DATE, $this->paymentDate->_getFormattedValue());
         }
-        if (isset($this->paymentAmount) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PAYMENT_AMOUNT]) {
-            $xw->writeAttribute(self::FIELD_PAYMENT_AMOUNT, $this->paymentAmount->_getFormattedValue());
-        }
-        if (isset($this->paymentRef) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PAYMENT_REF]) {
-            $xw->writeAttribute(self::FIELD_PAYMENT_REF, $this->paymentRef->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2746,32 +2487,24 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
                 $xw->endElement();
             }
         }
-        if (isset($this->totalCost)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TOTAL_COST]
-                || $this->totalCost->_nonValueFieldDefined())) {
+        if (isset($this->totalCost)) {
             $xw->startElement(self::FIELD_TOTAL_COST);
-            $this->totalCost->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TOTAL_COST]);
+            $this->totalCost->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->unallocDeductable)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_UNALLOC_DEDUCTABLE]
-                || $this->unallocDeductable->_nonValueFieldDefined())) {
+        if (isset($this->unallocDeductable)) {
             $xw->startElement(self::FIELD_UNALLOC_DEDUCTABLE);
-            $this->unallocDeductable->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_UNALLOC_DEDUCTABLE]);
+            $this->unallocDeductable->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->totalBenefit)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TOTAL_BENEFIT]
-                || $this->totalBenefit->_nonValueFieldDefined())) {
+        if (isset($this->totalBenefit)) {
             $xw->startElement(self::FIELD_TOTAL_BENEFIT);
-            $this->totalBenefit->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TOTAL_BENEFIT]);
+            $this->totalBenefit->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->paymentAdjustment)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PAYMENT_ADJUSTMENT]
-                || $this->paymentAdjustment->_nonValueFieldDefined())) {
+        if (isset($this->paymentAdjustment)) {
             $xw->startElement(self::FIELD_PAYMENT_ADJUSTMENT);
-            $this->paymentAdjustment->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PAYMENT_ADJUSTMENT]);
+            $this->paymentAdjustment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->paymentAdjustmentReason)) {
@@ -2786,18 +2519,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             $this->paymentDate->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PAYMENT_DATE]);
             $xw->endElement();
         }
-        if (isset($this->paymentAmount)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PAYMENT_AMOUNT]
-                || $this->paymentAmount->_nonValueFieldDefined())) {
+        if (isset($this->paymentAmount)) {
             $xw->startElement(self::FIELD_PAYMENT_AMOUNT);
-            $this->paymentAmount->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PAYMENT_AMOUNT]);
+            $this->paymentAmount->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->paymentRef)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PAYMENT_REF]
-                || $this->paymentRef->_nonValueFieldDefined())) {
+        if (isset($this->paymentRef)) {
             $xw->startElement(self::FIELD_PAYMENT_REF);
-            $this->paymentRef->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PAYMENT_REF]);
+            $this->paymentRef->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->reserved)) {
@@ -2863,22 +2592,13 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REQUEST]) || array_key_exists(self::FIELD_REQUEST, $json)) {
@@ -2959,45 +2679,17 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
                 $type->addError(FHIRClaimResponseError::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TOTAL_COST])
-            || isset($json[self::FIELD_TOTAL_COST_EXT])
-            || array_key_exists(self::FIELD_TOTAL_COST, $json)
-            || array_key_exists(self::FIELD_TOTAL_COST_EXT, $json)) {
-            $value = $json[self::FIELD_TOTAL_COST] ?? null;
-            $type->setTotalCost(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_TOTAL_COST_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_TOTAL_COST]) || array_key_exists(self::FIELD_TOTAL_COST, $json)) {
+            $type->setTotalCost(FHIRMoney::jsonUnserialize($json[self::FIELD_TOTAL_COST], $config));
         }
-        if (isset($json[self::FIELD_UNALLOC_DEDUCTABLE])
-            || isset($json[self::FIELD_UNALLOC_DEDUCTABLE_EXT])
-            || array_key_exists(self::FIELD_UNALLOC_DEDUCTABLE, $json)
-            || array_key_exists(self::FIELD_UNALLOC_DEDUCTABLE_EXT, $json)) {
-            $value = $json[self::FIELD_UNALLOC_DEDUCTABLE] ?? null;
-            $type->setUnallocDeductable(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_UNALLOC_DEDUCTABLE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_UNALLOC_DEDUCTABLE]) || array_key_exists(self::FIELD_UNALLOC_DEDUCTABLE, $json)) {
+            $type->setUnallocDeductable(FHIRMoney::jsonUnserialize($json[self::FIELD_UNALLOC_DEDUCTABLE], $config));
         }
-        if (isset($json[self::FIELD_TOTAL_BENEFIT])
-            || isset($json[self::FIELD_TOTAL_BENEFIT_EXT])
-            || array_key_exists(self::FIELD_TOTAL_BENEFIT, $json)
-            || array_key_exists(self::FIELD_TOTAL_BENEFIT_EXT, $json)) {
-            $value = $json[self::FIELD_TOTAL_BENEFIT] ?? null;
-            $type->setTotalBenefit(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_TOTAL_BENEFIT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_TOTAL_BENEFIT]) || array_key_exists(self::FIELD_TOTAL_BENEFIT, $json)) {
+            $type->setTotalBenefit(FHIRMoney::jsonUnserialize($json[self::FIELD_TOTAL_BENEFIT], $config));
         }
-        if (isset($json[self::FIELD_PAYMENT_ADJUSTMENT])
-            || isset($json[self::FIELD_PAYMENT_ADJUSTMENT_EXT])
-            || array_key_exists(self::FIELD_PAYMENT_ADJUSTMENT, $json)
-            || array_key_exists(self::FIELD_PAYMENT_ADJUSTMENT_EXT, $json)) {
-            $value = $json[self::FIELD_PAYMENT_ADJUSTMENT] ?? null;
-            $type->setPaymentAdjustment(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_PAYMENT_ADJUSTMENT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PAYMENT_ADJUSTMENT]) || array_key_exists(self::FIELD_PAYMENT_ADJUSTMENT, $json)) {
+            $type->setPaymentAdjustment(FHIRMoney::jsonUnserialize($json[self::FIELD_PAYMENT_ADJUSTMENT], $config));
         }
         if (isset($json[self::FIELD_PAYMENT_ADJUSTMENT_REASON]) || array_key_exists(self::FIELD_PAYMENT_ADJUSTMENT_REASON, $json)) {
             $type->setPaymentAdjustmentReason(FHIRCoding::jsonUnserialize($json[self::FIELD_PAYMENT_ADJUSTMENT_REASON], $config));
@@ -3012,25 +2704,11 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_PAYMENT_AMOUNT])
-            || isset($json[self::FIELD_PAYMENT_AMOUNT_EXT])
-            || array_key_exists(self::FIELD_PAYMENT_AMOUNT, $json)
-            || array_key_exists(self::FIELD_PAYMENT_AMOUNT_EXT, $json)) {
-            $value = $json[self::FIELD_PAYMENT_AMOUNT] ?? null;
-            $type->setPaymentAmount(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_PAYMENT_AMOUNT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PAYMENT_AMOUNT]) || array_key_exists(self::FIELD_PAYMENT_AMOUNT, $json)) {
+            $type->setPaymentAmount(FHIRMoney::jsonUnserialize($json[self::FIELD_PAYMENT_AMOUNT], $config));
         }
-        if (isset($json[self::FIELD_PAYMENT_REF])
-            || isset($json[self::FIELD_PAYMENT_REF_EXT])
-            || array_key_exists(self::FIELD_PAYMENT_REF, $json)
-            || array_key_exists(self::FIELD_PAYMENT_REF_EXT, $json)) {
-            $value = $json[self::FIELD_PAYMENT_REF] ?? null;
-            $type->setPaymentRef(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_PAYMENT_REF_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PAYMENT_REF]) || array_key_exists(self::FIELD_PAYMENT_REF, $json)) {
+            $type->setPaymentRef(FHIRIdentifier::jsonUnserialize($json[self::FIELD_PAYMENT_REF], $config));
         }
         if (isset($json[self::FIELD_RESERVED]) || array_key_exists(self::FIELD_RESERVED, $json)) {
             $type->setReserved(FHIRCoding::jsonUnserialize($json[self::FIELD_RESERVED], $config));
@@ -3066,25 +2744,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->request)) {
             $out->request = $this->request;
@@ -3099,9 +2759,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             if (null !== ($val = $this->created->getValue())) {
                 $out->created = $val;
             }
-            $ext = $this->created->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->created->_nonValueFieldDefined()) {
+                $ext = $this->created->jsonSerialize();
+                unset($ext->value);
                 $out->_created = $ext;
             }
         }
@@ -3118,9 +2778,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             if (null !== ($val = $this->outcome->getValue())) {
                 $out->outcome = $val;
             }
-            $ext = $this->outcome->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->outcome->_nonValueFieldDefined()) {
+                $ext = $this->outcome->jsonSerialize();
+                unset($ext->value);
                 $out->_outcome = $ext;
             }
         }
@@ -3128,9 +2788,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             if (null !== ($val = $this->disposition->getValue())) {
                 $out->disposition = $val;
             }
-            $ext = $this->disposition->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->disposition->_nonValueFieldDefined()) {
+                $ext = $this->disposition->jsonSerialize();
+                unset($ext->value);
                 $out->_disposition = $ext;
             }
         }
@@ -3147,44 +2807,16 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             $out->error = $this->error;
         }
         if (isset($this->totalCost)) {
-            if (null !== ($val = $this->totalCost->getValue())) {
-                $out->totalCost = $val;
-            }
-            $ext = $this->totalCost->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_totalCost = $ext;
-            }
+            $out->totalCost = $this->totalCost;
         }
         if (isset($this->unallocDeductable)) {
-            if (null !== ($val = $this->unallocDeductable->getValue())) {
-                $out->unallocDeductable = $val;
-            }
-            $ext = $this->unallocDeductable->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_unallocDeductable = $ext;
-            }
+            $out->unallocDeductable = $this->unallocDeductable;
         }
         if (isset($this->totalBenefit)) {
-            if (null !== ($val = $this->totalBenefit->getValue())) {
-                $out->totalBenefit = $val;
-            }
-            $ext = $this->totalBenefit->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_totalBenefit = $ext;
-            }
+            $out->totalBenefit = $this->totalBenefit;
         }
         if (isset($this->paymentAdjustment)) {
-            if (null !== ($val = $this->paymentAdjustment->getValue())) {
-                $out->paymentAdjustment = $val;
-            }
-            $ext = $this->paymentAdjustment->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_paymentAdjustment = $ext;
-            }
+            $out->paymentAdjustment = $this->paymentAdjustment;
         }
         if (isset($this->paymentAdjustmentReason)) {
             $out->paymentAdjustmentReason = $this->paymentAdjustmentReason;
@@ -3193,31 +2825,17 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
             if (null !== ($val = $this->paymentDate->getValue())) {
                 $out->paymentDate = $val;
             }
-            $ext = $this->paymentDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->paymentDate->_nonValueFieldDefined()) {
+                $ext = $this->paymentDate->jsonSerialize();
+                unset($ext->value);
                 $out->_paymentDate = $ext;
             }
         }
         if (isset($this->paymentAmount)) {
-            if (null !== ($val = $this->paymentAmount->getValue())) {
-                $out->paymentAmount = $val;
-            }
-            $ext = $this->paymentAmount->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_paymentAmount = $ext;
-            }
+            $out->paymentAmount = $this->paymentAmount;
         }
         if (isset($this->paymentRef)) {
-            if (null !== ($val = $this->paymentRef->getValue())) {
-                $out->paymentRef = $val;
-            }
-            $ext = $this->paymentRef->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_paymentRef = $ext;
-            }
+            $out->paymentRef = $this->paymentRef;
         }
         if (isset($this->reserved)) {
             $out->reserved = $this->reserved;
@@ -3234,7 +2852,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

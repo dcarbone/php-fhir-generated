@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,14 +109,14 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INVOICE_DOT_LINE_ITEM;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SEQUENCE = 'sequence';
     public const FIELD_SEQUENCE_EXT = '_sequence';
     public const FIELD_CHARGE_ITEM_REFERENCE = 'chargeItemReference';
     public const FIELD_CHARGE_ITEM_CODEABLE_CONCEPT = 'chargeItemCodeableConcept';
     public const FIELD_PRICE_COMPONENT = 'priceComponent';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_CHARGE_ITEM_REFERENCE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -126,12 +126,12 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -221,7 +221,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -230,7 +230,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -451,7 +451,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -572,7 +572,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -615,7 +615,8 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
                 $type->setChargeItemCodeableConcept(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PRICE_COMPONENT === $cen) {
                 $type->addPriceComponent(FHIRInvoicePriceComponent::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -728,9 +729,9 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
             if (null !== ($val = $this->sequence->getValue())) {
                 $out->sequence = $val;
             }
-            $ext = $this->sequence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sequence->_nonValueFieldDefined()) {
+                $ext = $this->sequence->jsonSerialize();
+                unset($ext->value);
                 $out->_sequence = $ext;
             }
         }
@@ -745,7 +746,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

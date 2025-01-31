@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,26 +108,25 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_DEFINITION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_GROUPING = 'grouping';
     public const FIELD_RESOURCE = 'resource';
     public const FIELD_PAGE = 'page';
     public const FIELD_PARAMETER = 'parameter';
-    public const FIELD_PARAMETER_EXT = '_parameter';
     public const FIELD_TEMPLATE = 'template';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_RESOURCE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A set of rules of how a particular interoperability or standards problem is
      * solved - typically through the use of FHIR resources. This resource is used to
@@ -232,7 +231,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -241,7 +240,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A set of rules of how a particular interoperability or standards problem is
      * solved - typically through the use of FHIR resources. This resource is used to
@@ -489,14 +488,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
             unset($this->parameter);
             return $this;
         }
-        $this->parameter = [];
-        foreach($parameter as $v) {
-            if ($v instanceof FHIRImplementationGuideParameter) {
-                $this->parameter[] = $v;
-            } else {
-                $this->parameter[] = new FHIRImplementationGuideParameter(value: $v);
-            }
-        }
+        $this->parameter = $parameter;
         return $this;
     }
 
@@ -567,7 +559,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -697,7 +689,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -742,7 +734,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
                 $type->addParameter(FHIRImplementationGuideParameter::xmlUnserialize($ce, $config));
             } else if (self::FIELD_TEMPLATE === $cen) {
                 $type->addTemplate(FHIRImplementationGuideTemplate::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -777,8 +770,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
             $this->page->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->parameter) && [] !== $this->parameter) {
-            foreach($this->parameter as $v) {
+        if (isset($this->parameter)) {
+            foreach ($this->parameter as $v) {
                 $xw->startElement(self::FIELD_PARAMETER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -836,22 +829,13 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_PAGE]) || array_key_exists(self::FIELD_PAGE, $json)) {
             $type->setPage(FHIRImplementationGuidePage::jsonUnserialize($json[self::FIELD_PAGE], $config));
         }
-        if (isset($json[self::FIELD_PARAMETER])
-            || isset($json[self::FIELD_PARAMETER_EXT])
-            || array_key_exists(self::FIELD_PARAMETER, $json)
-            || array_key_exists(self::FIELD_PARAMETER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_PARAMETER] ?? []);
-            $ext = (array)($json[self::FIELD_PARAMETER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_PARAMETER]) || array_key_exists(self::FIELD_PARAMETER, $json)) {
+            $vs = $json[self::FIELD_PARAMETER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addParameter(FHIRImplementationGuideParameter::jsonUnserialize(
-                    [FHIRImplementationGuideParameter::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addParameter(FHIRImplementationGuideParameter::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TEMPLATE]) || array_key_exists(self::FIELD_TEMPLATE, $json)) {
@@ -882,32 +866,14 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
             $out->page = $this->page;
         }
         if (isset($this->parameter) && [] !== $this->parameter) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->parameter as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->parameter = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_parameter = $exts;
-            }
+            $out->parameter = $this->parameter;
         }
         if (isset($this->template) && [] !== $this->template) {
             $out->template = $this->template;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

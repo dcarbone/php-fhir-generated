@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,22 +108,22 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TEST_SCRIPT_DOT_REQUIREMENT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_LINK_URI = 'linkUri';
     public const FIELD_LINK_URI_EXT = '_linkUri';
     public const FIELD_LINK_CANONICAL = 'linkCanonical';
     public const FIELD_LINK_CANONICAL_EXT = '_linkCanonical';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_LINK_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LINK_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -177,7 +177,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -186,7 +186,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -325,7 +325,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -412,7 +412,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -451,7 +451,8 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
                 $type->setLinkUri(FHIRUri::xmlUnserialize($ce, $config));
             } else if (self::FIELD_LINK_CANONICAL === $cen) {
                 $type->setLinkCanonical(FHIRCanonical::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -560,9 +561,9 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
             if (null !== ($val = $this->linkUri->getValue())) {
                 $out->linkUri = $val;
             }
-            $ext = $this->linkUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->linkUri->_nonValueFieldDefined()) {
+                $ext = $this->linkUri->jsonSerialize();
+                unset($ext->value);
                 $out->_linkUri = $ext;
             }
         }
@@ -570,15 +571,15 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
             if (null !== ($val = $this->linkCanonical->getValue())) {
                 $out->linkCanonical = $val;
             }
-            $ext = $this->linkCanonical->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->linkCanonical->_nonValueFieldDefined()) {
+                $ext = $this->linkCanonical->jsonSerialize();
+                unset($ext->value);
                 $out->_linkCanonical = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

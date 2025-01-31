@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
@@ -110,7 +111,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_BASE_FORMULA_TYPE = 'baseFormulaType';
     public const FIELD_BASE_FORMULA_PRODUCT_NAME = 'baseFormulaProductName';
     public const FIELD_BASE_FORMULA_PRODUCT_NAME_EXT = '_baseFormulaProductName';
@@ -123,16 +124,16 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     public const FIELD_ADMINISTRATION_INSTRUCTION = 'administrationInstruction';
     public const FIELD_ADMINISTRATION_INSTRUCTION_EXT = '_administrationInstruction';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_BASE_FORMULA_PRODUCT_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ADMINISTRATION_INSTRUCTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -257,10 +258,10 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $baseFormulaProductName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[] $deliveryDevice
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdditive[] $additive
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $caloricDensity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $caloricDensity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $routeOfAdministration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[] $administration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxVolumeToDeliver
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxVolumeToDeliver
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $administrationInstruction
      * @param null|string[] $fhirComments
      */
@@ -271,10 +272,10 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $baseFormulaProductName = null,
                                 null|iterable $deliveryDevice = null,
                                 null|iterable $additive = null,
-                                null|FHIRQuantity $caloricDensity = null,
+                                null|FHIRDecimal|FHIRQuantity $caloricDensity = null,
                                 null|FHIRCodeableConcept $routeOfAdministration = null,
                                 null|iterable $administration = null,
-                                null|FHIRQuantity $maxVolumeToDeliver = null,
+                                null|FHIRDecimal|FHIRQuantity $maxVolumeToDeliver = null,
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $administrationInstruction = null,
                                 null|iterable $fhirComments = null)
     {
@@ -311,7 +312,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -320,7 +321,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -592,14 +593,17 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * formula that provides 24 calories per fluid ounce or an adult may require an
      * enteral formula that provides 1.5 calorie/mL.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $caloricDensity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $caloricDensity
      * @return static
      */
-    public function setCaloricDensity(null|FHIRQuantity $caloricDensity): self
+    public function setCaloricDensity(null|FHIRDecimal|FHIRQuantity $caloricDensity): self
     {
         if (null === $caloricDensity) {
             unset($this->caloricDensity);
             return $this;
+        }
+        if (!($caloricDensity instanceof FHIRQuantity)) {
+            $caloricDensity = new FHIRQuantity(value: $caloricDensity);
         }
         $this->caloricDensity = $caloricDensity;
         return $this;
@@ -742,14 +746,17 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * The maximum total quantity of formula that may be administered to a subject over
      * the period of time, e.g. 1440 mL over 24 hours.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxVolumeToDeliver
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxVolumeToDeliver
      * @return static
      */
-    public function setMaxVolumeToDeliver(null|FHIRQuantity $maxVolumeToDeliver): self
+    public function setMaxVolumeToDeliver(null|FHIRDecimal|FHIRQuantity $maxVolumeToDeliver): self
     {
         if (null === $maxVolumeToDeliver) {
             unset($this->maxVolumeToDeliver);
             return $this;
+        }
+        if (!($maxVolumeToDeliver instanceof FHIRQuantity)) {
+            $maxVolumeToDeliver = new FHIRQuantity(value: $maxVolumeToDeliver);
         }
         $this->maxVolumeToDeliver = $maxVolumeToDeliver;
         return $this;
@@ -831,7 +838,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1002,7 +1009,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1055,7 +1062,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 $type->setMaxVolumeToDeliver(FHIRQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_ADMINISTRATION_INSTRUCTION === $cen) {
                 $type->setAdministrationInstruction(FHIRMarkdown::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1247,9 +1255,9 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             if (null !== ($val = $this->baseFormulaProductName->getValue())) {
                 $out->baseFormulaProductName = $val;
             }
-            $ext = $this->baseFormulaProductName->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->baseFormulaProductName->_nonValueFieldDefined()) {
+                $ext = $this->baseFormulaProductName->jsonSerialize();
+                unset($ext->value);
                 $out->_baseFormulaProductName = $ext;
             }
         }
@@ -1275,15 +1283,15 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             if (null !== ($val = $this->administrationInstruction->getValue())) {
                 $out->administrationInstruction = $val;
             }
-            $ext = $this->administrationInstruction->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->administrationInstruction->_nonValueFieldDefined()) {
+                $ext = $this->administrationInstruction->jsonSerialize();
+                unset($ext->value);
                 $out->_administrationInstruction = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

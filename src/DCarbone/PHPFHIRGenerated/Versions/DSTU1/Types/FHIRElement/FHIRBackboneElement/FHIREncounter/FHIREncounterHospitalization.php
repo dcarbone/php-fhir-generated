@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,9 +86,8 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_PRE_ADMISSION_IDENTIFIER = 'preAdmissionIdentifier';
-    public const FIELD_PRE_ADMISSION_IDENTIFIER_EXT = '_preAdmissionIdentifier';
     public const FIELD_ORIGIN = 'origin';
     public const FIELD_ADMIT_SOURCE = 'admitSource';
     public const FIELD_PERIOD = 'period';
@@ -102,16 +101,15 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     public const FIELD_RE_ADMISSION = 'reAdmission';
     public const FIELD_RE_ADMISSION_EXT = '_reAdmission';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_PRE_ADMISSION_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RE_ADMISSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -316,7 +314,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -325,7 +323,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -348,11 +346,9 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * Pre-admission identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPreAdmissionIdentifier(null|FHIRString|FHIRIdentifier $preAdmissionIdentifier,
-                                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPreAdmissionIdentifier(null|FHIRString|FHIRIdentifier $preAdmissionIdentifier): self
     {
         if (null === $preAdmissionIdentifier) {
             unset($this->preAdmissionIdentifier);
@@ -362,33 +358,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             $preAdmissionIdentifier = new FHIRIdentifier(value: $preAdmissionIdentifier);
         }
         $this->preAdmissionIdentifier = $preAdmissionIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_PRE_ADMISSION_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setPreAdmissionIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the preAdmissionIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPreAdmissionIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PRE_ADMISSION_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the preAdmissionIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPreAdmissionIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -897,7 +866,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1104,7 +1073,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1163,18 +1132,11 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $type->setDischargeDiagnosis(FHIRResourceReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_RE_ADMISSION === $cen) {
                 $type->setReAdmission(FHIRBoolean::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
-            if (isset($type->preAdmissionIdentifier)) {
-                $type->preAdmissionIdentifier->setValue((string)$attributes[self::FIELD_PRE_ADMISSION_IDENTIFIER]);
-                $type->_setPreAdmissionIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPreAdmissionIdentifier((string)$attributes[self::FIELD_PRE_ADMISSION_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         if (isset($attributes[self::FIELD_RE_ADMISSION])) {
             if (isset($type->reAdmission)) {
@@ -1194,18 +1156,13 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->preAdmissionIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PRE_ADMISSION_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_PRE_ADMISSION_IDENTIFIER, $this->preAdmissionIdentifier->_getFormattedValue());
-        }
         if (isset($this->reAdmission) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RE_ADMISSION]) {
             $xw->writeAttribute(self::FIELD_RE_ADMISSION, $this->reAdmission->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->preAdmissionIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PRE_ADMISSION_IDENTIFIER]
-                || $this->preAdmissionIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->preAdmissionIdentifier)) {
             $xw->startElement(self::FIELD_PRE_ADMISSION_IDENTIFIER);
-            $this->preAdmissionIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PRE_ADMISSION_IDENTIFIER]);
+            $this->preAdmissionIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->origin)) {
@@ -1295,15 +1252,8 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PRE_ADMISSION_IDENTIFIER])
-            || isset($json[self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_PRE_ADMISSION_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_PRE_ADMISSION_IDENTIFIER] ?? null;
-            $type->setPreAdmissionIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PRE_ADMISSION_IDENTIFIER]) || array_key_exists(self::FIELD_PRE_ADMISSION_IDENTIFIER, $json)) {
+            $type->setPreAdmissionIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_PRE_ADMISSION_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_ORIGIN]) || array_key_exists(self::FIELD_ORIGIN, $json)) {
             $type->setOrigin(FHIRResourceReference::jsonUnserialize($json[self::FIELD_ORIGIN], $config));
@@ -1373,14 +1323,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->preAdmissionIdentifier)) {
-            if (null !== ($val = $this->preAdmissionIdentifier->getValue())) {
-                $out->preAdmissionIdentifier = $val;
-            }
-            $ext = $this->preAdmissionIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_preAdmissionIdentifier = $ext;
-            }
+            $out->preAdmissionIdentifier = $this->preAdmissionIdentifier;
         }
         if (isset($this->origin)) {
             $out->origin = $this->origin;
@@ -1416,15 +1359,15 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             if (null !== ($val = $this->reAdmission->getValue())) {
                 $out->reAdmission = $val;
             }
-            $ext = $this->reAdmission->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->reAdmission->_nonValueFieldDefined()) {
+                $ext = $this->reAdmission->jsonSerialize();
+                unset($ext->value);
                 $out->_reAdmission = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

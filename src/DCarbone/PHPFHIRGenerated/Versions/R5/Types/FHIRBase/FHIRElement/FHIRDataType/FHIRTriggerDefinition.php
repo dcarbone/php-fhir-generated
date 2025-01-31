@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,7 @@ class FHIRTriggerDefinition extends FHIRDataType
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TRIGGER_DEFINITION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_NAME = 'name';
@@ -136,14 +136,14 @@ class FHIRTriggerDefinition extends FHIRDataType
     public const FIELD_DATA = 'data';
     public const FIELD_CONDITION = 'condition';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -152,7 +152,7 @@ class FHIRTriggerDefinition extends FHIRDataType
         self::FIELD_TIMING_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * The type of trigger.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -339,7 +339,7 @@ class FHIRTriggerDefinition extends FHIRDataType
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -348,7 +348,7 @@ class FHIRTriggerDefinition extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * The type of trigger.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -919,7 +919,7 @@ class FHIRTriggerDefinition extends FHIRDataType
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1095,7 +1095,7 @@ class FHIRTriggerDefinition extends FHIRDataType
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1148,7 +1148,8 @@ class FHIRTriggerDefinition extends FHIRDataType
                 $type->addData(FHIRDataRequirement::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CONDITION === $cen) {
                 $type->setCondition(FHIRExpression::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1389,9 +1390,9 @@ class FHIRTriggerDefinition extends FHIRDataType
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -1399,9 +1400,9 @@ class FHIRTriggerDefinition extends FHIRDataType
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1412,9 +1413,9 @@ class FHIRTriggerDefinition extends FHIRDataType
             if (null !== ($val = $this->subscriptionTopic->getValue())) {
                 $out->subscriptionTopic = $val;
             }
-            $ext = $this->subscriptionTopic->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->subscriptionTopic->_nonValueFieldDefined()) {
+                $ext = $this->subscriptionTopic->jsonSerialize();
+                unset($ext->value);
                 $out->_subscriptionTopic = $ext;
             }
         }
@@ -1428,9 +1429,9 @@ class FHIRTriggerDefinition extends FHIRDataType
             if (null !== ($val = $this->timingDate->getValue())) {
                 $out->timingDate = $val;
             }
-            $ext = $this->timingDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->timingDate->_nonValueFieldDefined()) {
+                $ext = $this->timingDate->jsonSerialize();
+                unset($ext->value);
                 $out->_timingDate = $ext;
             }
         }
@@ -1438,9 +1439,9 @@ class FHIRTriggerDefinition extends FHIRDataType
             if (null !== ($val = $this->timingDateTime->getValue())) {
                 $out->timingDateTime = $val;
             }
-            $ext = $this->timingDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->timingDateTime->_nonValueFieldDefined()) {
+                $ext = $this->timingDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_timingDateTime = $ext;
             }
         }
@@ -1452,7 +1453,7 @@ class FHIRTriggerDefinition extends FHIRDataType
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,6 +92,7 @@ use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
@@ -110,13 +111,13 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ADMINISTRABLE_PRODUCT_DEFINITION_DOT_WITHDRAWAL_PERIOD;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TISSUE = 'tissue';
     public const FIELD_VALUE = 'value';
     public const FIELD_SUPPORTING_INFORMATION = 'supportingInformation';
     public const FIELD_SUPPORTING_INFORMATION_EXT = '_supportingInformation';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TISSUE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -126,12 +127,12 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SUPPORTING_INFORMATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -174,7 +175,7 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $tissue
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $value
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $value
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $supportingInformation
      * @param null|string[] $fhirComments
      */
@@ -182,7 +183,7 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $tissue = null,
-                                null|FHIRQuantity $value = null,
+                                null|FHIRDecimal|FHIRQuantity $value = null,
                                 null|string|FHIRStringPrimitive|FHIRString $supportingInformation = null,
                                 null|iterable $fhirComments = null)
     {
@@ -201,7 +202,7 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -210,7 +211,7 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -274,14 +275,17 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      *
      * A value for the time.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $value
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $value
      * @return static
      */
-    public function setValue(null|FHIRQuantity $value): self
+    public function setValue(null|FHIRDecimal|FHIRQuantity $value): self
     {
         if (null === $value) {
             unset($this->value);
             return $this;
+        }
+        if (!($value instanceof FHIRQuantity)) {
+            $value = new FHIRQuantity(value: $value);
         }
         $this->value = $value;
         return $this;
@@ -365,7 +369,7 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -474,17 +478,7 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->modifierExtension)
-               || isset($this->tissue)
-               || isset($this->supportingInformation);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -525,7 +519,8 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
                 $type->setValue(FHIRQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SUPPORTING_INFORMATION === $cen) {
                 $type->setSupportingInformation(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -561,15 +556,9 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
             $xw->endElement();
         }
         if (isset($this->value)) {
-            if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
-                $xw->text($this->value->_getFormattedValue());
-            } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
-                $xw->startElement(self::FIELD_VALUE);
-                $xw->writeAttribute(FHIRQuantity::FIELD_VALUE, $this->value->_getFormattedValue());
-                $xw->endElement();
-            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
-                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
-            }
+            $xw->startElement(self::FIELD_VALUE);
+            $this->value->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (isset($this->supportingInformation)
             && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_SUPPORTING_INFORMATION]
@@ -637,15 +626,15 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
             if (null !== ($val = $this->supportingInformation->getValue())) {
                 $out->supportingInformation = $val;
             }
-            $ext = $this->supportingInformation->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->supportingInformation->_nonValueFieldDefined()) {
+                $ext = $this->supportingInformation->jsonSerialize();
+                unset($ext->value);
                 $out->_supportingInformation = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

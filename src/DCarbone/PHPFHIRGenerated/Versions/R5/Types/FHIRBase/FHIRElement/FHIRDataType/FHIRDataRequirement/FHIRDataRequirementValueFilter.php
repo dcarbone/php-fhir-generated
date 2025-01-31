@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
@@ -116,7 +117,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_VALUE_FILTER;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_PATH = 'path';
     public const FIELD_PATH_EXT = '_path';
     public const FIELD_SEARCH_PARAM = 'searchParam';
@@ -128,10 +129,10 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
     public const FIELD_VALUE_PERIOD = 'valuePeriod';
     public const FIELD_VALUE_DURATION = 'valueDuration';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_PATH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SEARCH_PARAM => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -139,7 +140,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         self::FIELD_VALUE_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -225,7 +226,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $comparator
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -235,7 +236,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
                                 null|string|FHIRCodePrimitive|FHIRCode $comparator = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime = null,
                                 null|FHIRPeriod $valuePeriod = null,
-                                null|FHIRDuration $valueDuration = null,
+                                null|FHIRDecimal|FHIRDuration $valueDuration = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -261,7 +262,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -270,7 +271,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -618,20 +619,23 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      *
      * The value of the filter.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
      * @return static
      */
-    public function setValueDuration(null|FHIRDuration $valueDuration): self
+    public function setValueDuration(null|FHIRDecimal|FHIRDuration $valueDuration): self
     {
         if (null === $valueDuration) {
             unset($this->valueDuration);
             return $this;
         }
+        if (!($valueDuration instanceof FHIRDuration)) {
+            $valueDuration = new FHIRDuration(value: $valueDuration);
+        }
         $this->valueDuration = $valueDuration;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -754,7 +758,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -799,7 +803,8 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
                 $type->setValuePeriod(FHIRPeriod::xmlUnserialize($ce, $config));
             } else if (self::FIELD_VALUE_DURATION === $cen) {
                 $type->setValueDuration(FHIRDuration::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -980,9 +985,9 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
             if (null !== ($val = $this->path->getValue())) {
                 $out->path = $val;
             }
-            $ext = $this->path->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->path->_nonValueFieldDefined()) {
+                $ext = $this->path->jsonSerialize();
+                unset($ext->value);
                 $out->_path = $ext;
             }
         }
@@ -990,9 +995,9 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
             if (null !== ($val = $this->searchParam->getValue())) {
                 $out->searchParam = $val;
             }
-            $ext = $this->searchParam->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->searchParam->_nonValueFieldDefined()) {
+                $ext = $this->searchParam->jsonSerialize();
+                unset($ext->value);
                 $out->_searchParam = $ext;
             }
         }
@@ -1000,9 +1005,9 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
             if (null !== ($val = $this->comparator->getValue())) {
                 $out->comparator = $val;
             }
-            $ext = $this->comparator->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comparator->_nonValueFieldDefined()) {
+                $ext = $this->comparator->jsonSerialize();
+                unset($ext->value);
                 $out->_comparator = $ext;
             }
         }
@@ -1010,9 +1015,9 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
             if (null !== ($val = $this->valueDateTime->getValue())) {
                 $out->valueDateTime = $val;
             }
-            $ext = $this->valueDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueDateTime->_nonValueFieldDefined()) {
+                $ext = $this->valueDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_valueDateTime = $ext;
             }
         }
@@ -1024,7 +1029,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

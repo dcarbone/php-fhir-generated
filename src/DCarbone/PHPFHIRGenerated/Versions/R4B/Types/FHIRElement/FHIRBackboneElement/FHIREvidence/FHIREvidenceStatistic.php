@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,7 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
@@ -112,7 +113,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EVIDENCE_DOT_STATISTIC;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_DESCRIPTION = 'description';
     public const FIELD_DESCRIPTION_EXT = '_description';
     public const FIELD_NOTE = 'note';
@@ -126,19 +127,18 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
     public const FIELD_SAMPLE_SIZE = 'sampleSize';
     public const FIELD_ATTRIBUTE_ESTIMATE = 'attributeEstimate';
     public const FIELD_MODEL_CHARACTERISTIC = 'modelCharacteristic';
-    public const FIELD_MODEL_CHARACTERISTIC_EXT = '_modelCharacteristic';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NUMBER_OF_EVENTS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NUMBER_AFFECTED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -262,7 +262,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation[] $note
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $statisticType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $numberOfEvents
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $numberAffected
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize $sampleSize
@@ -277,7 +277,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
                                 null|iterable $note = null,
                                 null|FHIRCodeableConcept $statisticType = null,
                                 null|FHIRCodeableConcept $category = null,
-                                null|FHIRQuantity $quantity = null,
+                                null|FHIRDecimal|FHIRQuantity $quantity = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfEvents = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberAffected = null,
                                 null|FHIREvidenceSampleSize $sampleSize = null,
@@ -321,7 +321,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -330,7 +330,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -563,14 +563,17 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * Statistic value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
+        }
+        if (!($quantity instanceof FHIRQuantity)) {
+            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -883,18 +886,11 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
             unset($this->modelCharacteristic);
             return $this;
         }
-        $this->modelCharacteristic = [];
-        foreach($modelCharacteristic as $v) {
-            if ($v instanceof FHIREvidenceModelCharacteristic) {
-                $this->modelCharacteristic[] = $v;
-            } else {
-                $this->modelCharacteristic[] = new FHIREvidenceModelCharacteristic(value: $v);
-            }
-        }
+        $this->modelCharacteristic = $modelCharacteristic;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1077,7 +1073,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1132,7 +1128,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
                 $type->addAttributeEstimate(FHIREvidenceAttributeEstimate::xmlUnserialize($ce, $config));
             } else if (self::FIELD_MODEL_CHARACTERISTIC === $cen) {
                 $type->addModelCharacteristic(FHIREvidenceModelCharacteristic::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1236,8 +1233,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->modelCharacteristic) && [] !== $this->modelCharacteristic) {
-            foreach($this->modelCharacteristic as $v) {
+        if (isset($this->modelCharacteristic)) {
+            foreach ($this->modelCharacteristic as $v) {
                 $xw->startElement(self::FIELD_MODEL_CHARACTERISTIC);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1327,22 +1324,13 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
                 $type->addAttributeEstimate(FHIREvidenceAttributeEstimate::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MODEL_CHARACTERISTIC])
-            || isset($json[self::FIELD_MODEL_CHARACTERISTIC_EXT])
-            || array_key_exists(self::FIELD_MODEL_CHARACTERISTIC, $json)
-            || array_key_exists(self::FIELD_MODEL_CHARACTERISTIC_EXT, $json)) {
-            $value = (array)($json[self::FIELD_MODEL_CHARACTERISTIC] ?? []);
-            $ext = (array)($json[self::FIELD_MODEL_CHARACTERISTIC_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_MODEL_CHARACTERISTIC]) || array_key_exists(self::FIELD_MODEL_CHARACTERISTIC, $json)) {
+            $vs = $json[self::FIELD_MODEL_CHARACTERISTIC];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addModelCharacteristic(FHIREvidenceModelCharacteristic::jsonUnserialize(
-                    [FHIREvidenceModelCharacteristic::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addModelCharacteristic(FHIREvidenceModelCharacteristic::jsonUnserialize($v, $config));
             }
         }
         return $type;
@@ -1358,9 +1346,9 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -1380,9 +1368,9 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
             if (null !== ($val = $this->numberOfEvents->getValue())) {
                 $out->numberOfEvents = $val;
             }
-            $ext = $this->numberOfEvents->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->numberOfEvents->_nonValueFieldDefined()) {
+                $ext = $this->numberOfEvents->jsonSerialize();
+                unset($ext->value);
                 $out->_numberOfEvents = $ext;
             }
         }
@@ -1390,9 +1378,9 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
             if (null !== ($val = $this->numberAffected->getValue())) {
                 $out->numberAffected = $val;
             }
-            $ext = $this->numberAffected->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->numberAffected->_nonValueFieldDefined()) {
+                $ext = $this->numberAffected->jsonSerialize();
+                unset($ext->value);
                 $out->_numberAffected = $ext;
             }
         }
@@ -1403,29 +1391,11 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
             $out->attributeEstimate = $this->attributeEstimate;
         }
         if (isset($this->modelCharacteristic) && [] !== $this->modelCharacteristic) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->modelCharacteristic as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->modelCharacteristic = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_modelCharacteristic = $exts;
-            }
+            $out->modelCharacteristic = $this->modelCharacteristic;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

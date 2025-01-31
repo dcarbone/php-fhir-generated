@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,6 +109,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown;
@@ -149,11 +150,10 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ACTIVITY_DEFINITION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_URL = 'url';
     public const FIELD_URL_EXT = '_url';
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_VERSION = 'version';
     public const FIELD_VERSION_EXT = '_version';
     public const FIELD_NAME = 'name';
@@ -230,14 +230,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
     public const FIELD_TRANSFORM_EXT = '_transform';
     public const FIELD_DYNAMIC_VALUE = 'dynamicValue';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -264,7 +264,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
         self::FIELD_TRANSFORM => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -970,15 +970,15 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $doNotPerform
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $timingTiming
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $timingDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $timingAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $timingAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $timingPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $timingRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $location
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[] $participant
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $productReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $productCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage[] $dosage
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $bodySite
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $specimenRequirement
@@ -1034,15 +1034,15 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform = null,
                                 null|FHIRTiming $timingTiming = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime = null,
-                                null|FHIRAge $timingAge = null,
+                                null|FHIRDecimal|FHIRAge $timingAge = null,
                                 null|FHIRPeriod $timingPeriod = null,
                                 null|FHIRRange $timingRange = null,
-                                null|FHIRDuration $timingDuration = null,
+                                null|FHIRDecimal|FHIRDuration $timingDuration = null,
                                 null|FHIRReference $location = null,
                                 null|iterable $participant = null,
                                 null|FHIRReference $productReference = null,
                                 null|FHIRCodeableConcept $productCodeableConcept = null,
-                                null|FHIRQuantity $quantity = null,
+                                null|FHIRDecimal|FHIRQuantity $quantity = null,
                                 null|iterable $dosage = null,
                                 null|iterable $bodySite = null,
                                 null|iterable $specimenRequirement = null,
@@ -1225,7 +1225,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -1234,7 +1234,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -1243,7 +1243,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -1394,14 +1394,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -3831,14 +3824,17 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * The period, timing or frequency upon which the described activity is to occur.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $timingAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $timingAge
      * @return static
      */
-    public function setTimingAge(null|FHIRAge $timingAge): self
+    public function setTimingAge(null|FHIRDecimal|FHIRAge $timingAge): self
     {
         if (null === $timingAge) {
             unset($this->timingAge);
             return $this;
+        }
+        if (!($timingAge instanceof FHIRAge)) {
+            $timingAge = new FHIRAge(value: $timingAge);
         }
         $this->timingAge = $timingAge;
         return $this;
@@ -3933,14 +3929,17 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * The period, timing or frequency upon which the described activity is to occur.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @return static
      */
-    public function setTimingDuration(null|FHIRDuration $timingDuration): self
+    public function setTimingDuration(null|FHIRDecimal|FHIRDuration $timingDuration): self
     {
         if (null === $timingDuration) {
             unset($this->timingDuration);
             return $this;
+        }
+        if (!($timingDuration instanceof FHIRDuration)) {
+            $timingDuration = new FHIRDuration(value: $timingDuration);
         }
         $this->timingDuration = $timingDuration;
         return $this;
@@ -4144,14 +4143,17 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * Identifies the quantity expected to be consumed at once (per dose, per meal,
      * etc.).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
+        }
+        if (!($quantity instanceof FHIRQuantity)) {
+            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -4637,7 +4639,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -5413,7 +5415,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -5574,7 +5576,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
                 $type->setTransform(FHIRCanonical::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DYNAMIC_VALUE === $cen) {
                 $type->addDynamicValue(FHIRActivityDefinitionDynamicValue::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -5889,8 +5892,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             $this->url->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_URL]);
             $xw->endElement();
         }
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -6283,22 +6286,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_VERSION])
@@ -6735,40 +6729,22 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->version)) {
             if (null !== ($val = $this->version->getValue())) {
                 $out->version = $val;
             }
-            $ext = $this->version->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->version->_nonValueFieldDefined()) {
+                $ext = $this->version->jsonSerialize();
+                unset($ext->value);
                 $out->_version = $ext;
             }
         }
@@ -6776,9 +6752,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -6786,9 +6762,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->title->getValue())) {
                 $out->title = $val;
             }
-            $ext = $this->title->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->title->_nonValueFieldDefined()) {
+                $ext = $this->title->jsonSerialize();
+                unset($ext->value);
                 $out->_title = $ext;
             }
         }
@@ -6796,9 +6772,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->subtitle->getValue())) {
                 $out->subtitle = $val;
             }
-            $ext = $this->subtitle->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->subtitle->_nonValueFieldDefined()) {
+                $ext = $this->subtitle->jsonSerialize();
+                unset($ext->value);
                 $out->_subtitle = $ext;
             }
         }
@@ -6806,9 +6782,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -6816,9 +6792,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->experimental->getValue())) {
                 $out->experimental = $val;
             }
-            $ext = $this->experimental->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->experimental->_nonValueFieldDefined()) {
+                $ext = $this->experimental->jsonSerialize();
+                unset($ext->value);
                 $out->_experimental = $ext;
             }
         }
@@ -6832,9 +6808,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->subjectCanonical->getValue())) {
                 $out->subjectCanonical = $val;
             }
-            $ext = $this->subjectCanonical->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->subjectCanonical->_nonValueFieldDefined()) {
+                $ext = $this->subjectCanonical->jsonSerialize();
+                unset($ext->value);
                 $out->_subjectCanonical = $ext;
             }
         }
@@ -6842,9 +6818,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->date->getValue())) {
                 $out->date = $val;
             }
-            $ext = $this->date->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->date->_nonValueFieldDefined()) {
+                $ext = $this->date->jsonSerialize();
+                unset($ext->value);
                 $out->_date = $ext;
             }
         }
@@ -6852,9 +6828,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->publisher->getValue())) {
                 $out->publisher = $val;
             }
-            $ext = $this->publisher->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->publisher->_nonValueFieldDefined()) {
+                $ext = $this->publisher->jsonSerialize();
+                unset($ext->value);
                 $out->_publisher = $ext;
             }
         }
@@ -6865,9 +6841,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -6881,9 +6857,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->purpose->getValue())) {
                 $out->purpose = $val;
             }
-            $ext = $this->purpose->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->purpose->_nonValueFieldDefined()) {
+                $ext = $this->purpose->jsonSerialize();
+                unset($ext->value);
                 $out->_purpose = $ext;
             }
         }
@@ -6891,9 +6867,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->usage->getValue())) {
                 $out->usage = $val;
             }
-            $ext = $this->usage->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->usage->_nonValueFieldDefined()) {
+                $ext = $this->usage->jsonSerialize();
+                unset($ext->value);
                 $out->_usage = $ext;
             }
         }
@@ -6901,9 +6877,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->copyright->getValue())) {
                 $out->copyright = $val;
             }
-            $ext = $this->copyright->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->copyright->_nonValueFieldDefined()) {
+                $ext = $this->copyright->jsonSerialize();
+                unset($ext->value);
                 $out->_copyright = $ext;
             }
         }
@@ -6911,9 +6887,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->approvalDate->getValue())) {
                 $out->approvalDate = $val;
             }
-            $ext = $this->approvalDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->approvalDate->_nonValueFieldDefined()) {
+                $ext = $this->approvalDate->jsonSerialize();
+                unset($ext->value);
                 $out->_approvalDate = $ext;
             }
         }
@@ -6921,9 +6897,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->lastReviewDate->getValue())) {
                 $out->lastReviewDate = $val;
             }
-            $ext = $this->lastReviewDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lastReviewDate->_nonValueFieldDefined()) {
+                $ext = $this->lastReviewDate->jsonSerialize();
+                unset($ext->value);
                 $out->_lastReviewDate = $ext;
             }
         }
@@ -6951,21 +6927,29 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
         if (isset($this->library) && [] !== $this->library) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->library as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->library = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_library = $exts;
             }
         }
@@ -6973,9 +6957,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->kind->getValue())) {
                 $out->kind = $val;
             }
-            $ext = $this->kind->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->kind->_nonValueFieldDefined()) {
+                $ext = $this->kind->jsonSerialize();
+                unset($ext->value);
                 $out->_kind = $ext;
             }
         }
@@ -6983,9 +6967,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->profile->getValue())) {
                 $out->profile = $val;
             }
-            $ext = $this->profile->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->profile->_nonValueFieldDefined()) {
+                $ext = $this->profile->jsonSerialize();
+                unset($ext->value);
                 $out->_profile = $ext;
             }
         }
@@ -6996,9 +6980,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->intent->getValue())) {
                 $out->intent = $val;
             }
-            $ext = $this->intent->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->intent->_nonValueFieldDefined()) {
+                $ext = $this->intent->jsonSerialize();
+                unset($ext->value);
                 $out->_intent = $ext;
             }
         }
@@ -7006,9 +6990,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->priority->getValue())) {
                 $out->priority = $val;
             }
-            $ext = $this->priority->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->priority->_nonValueFieldDefined()) {
+                $ext = $this->priority->jsonSerialize();
+                unset($ext->value);
                 $out->_priority = $ext;
             }
         }
@@ -7016,9 +7000,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->doNotPerform->getValue())) {
                 $out->doNotPerform = $val;
             }
-            $ext = $this->doNotPerform->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->doNotPerform->_nonValueFieldDefined()) {
+                $ext = $this->doNotPerform->jsonSerialize();
+                unset($ext->value);
                 $out->_doNotPerform = $ext;
             }
         }
@@ -7029,9 +7013,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->timingDateTime->getValue())) {
                 $out->timingDateTime = $val;
             }
-            $ext = $this->timingDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->timingDateTime->_nonValueFieldDefined()) {
+                $ext = $this->timingDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_timingDateTime = $ext;
             }
         }
@@ -7081,9 +7065,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->transform->getValue())) {
                 $out->transform = $val;
             }
-            $ext = $this->transform->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->transform->_nonValueFieldDefined()) {
+                $ext = $this->transform->jsonSerialize();
+                unset($ext->value);
                 $out->_transform = $ext;
             }
         }
@@ -7093,7 +7077,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

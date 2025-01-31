@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,22 +85,18 @@ class FHIRRange extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RANGE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_LOW = 'low';
-    public const FIELD_LOW_EXT = '_low';
     public const FIELD_HIGH = 'high';
-    public const FIELD_HIGH_EXT = '_high';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_LOW => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_HIGH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * The low limit. The boundary is inclusive.
      *
@@ -140,7 +136,7 @@ class FHIRRange extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -149,7 +145,7 @@ class FHIRRange extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * The low limit. The boundary is inclusive.
      *
@@ -164,11 +160,9 @@ class FHIRRange extends FHIRElement
      * The low limit. The boundary is inclusive.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $low
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLow(null|FHIRDecimal|FHIRSimpleQuantity $low,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLow(null|FHIRDecimal|FHIRSimpleQuantity $low): self
     {
         if (null === $low) {
             unset($this->low);
@@ -178,33 +172,6 @@ class FHIRRange extends FHIRElement
             $low = new FHIRSimpleQuantity(value: $low);
         }
         $this->low = $low;
-        if ($this->_valueXMLLocations[self::FIELD_LOW] !== $valueXMLLocation) {
-            $this->_setLowValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the low element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLowValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LOW];
-    }
-
-    /**
-     * Set the location the "value" field of the low element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLowValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LOW] = $valueXMLLocation;
         return $this;
     }
 
@@ -222,11 +189,9 @@ class FHIRRange extends FHIRElement
      * The high limit. The boundary is inclusive.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $high
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setHigh(null|FHIRDecimal|FHIRSimpleQuantity $high,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setHigh(null|FHIRDecimal|FHIRSimpleQuantity $high): self
     {
         if (null === $high) {
             unset($this->high);
@@ -236,37 +201,10 @@ class FHIRRange extends FHIRElement
             $high = new FHIRSimpleQuantity(value: $high);
         }
         $this->high = $high;
-        if ($this->_valueXMLLocations[self::FIELD_HIGH] !== $valueXMLLocation) {
-            $this->_setHighValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the high element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getHighValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_HIGH];
-    }
-
-    /**
-     * Set the location the "value" field of the high element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setHighValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_HIGH] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -341,7 +279,7 @@ class FHIRRange extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -378,26 +316,11 @@ class FHIRRange extends FHIRElement
                 $type->setLow(FHIRSimpleQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_HIGH === $cen) {
                 $type->setHigh(FHIRSimpleQuantity::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_LOW])) {
-            if (isset($type->low)) {
-                $type->low->setValue((string)$attributes[self::FIELD_LOW]);
-                $type->_setLowValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setLow((string)$attributes[self::FIELD_LOW], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_HIGH])) {
-            if (isset($type->high)) {
-                $type->high->setValue((string)$attributes[self::FIELD_HIGH]);
-                $type->_setHighValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setHigh((string)$attributes[self::FIELD_HIGH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         return $type;
     }
@@ -409,25 +332,15 @@ class FHIRRange extends FHIRElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->low) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LOW]) {
-            $xw->writeAttribute(self::FIELD_LOW, $this->low->_getFormattedValue());
-        }
-        if (isset($this->high) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_HIGH]) {
-            $xw->writeAttribute(self::FIELD_HIGH, $this->high->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->low)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_LOW]
-                || $this->low->_nonValueFieldDefined())) {
+        if (isset($this->low)) {
             $xw->startElement(self::FIELD_LOW);
-            $this->low->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_LOW]);
+            $this->low->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->high)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_HIGH]
-                || $this->high->_nonValueFieldDefined())) {
+        if (isset($this->high)) {
             $xw->startElement(self::FIELD_HIGH);
-            $this->high->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_HIGH]);
+            $this->high->xmlSerialize($xw, $config);
             $xw->endElement();
         }
     }
@@ -454,25 +367,11 @@ class FHIRRange extends FHIRElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LOW])
-            || isset($json[self::FIELD_LOW_EXT])
-            || array_key_exists(self::FIELD_LOW, $json)
-            || array_key_exists(self::FIELD_LOW_EXT, $json)) {
-            $value = $json[self::FIELD_LOW] ?? null;
-            $type->setLow(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_LOW_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_LOW]) || array_key_exists(self::FIELD_LOW, $json)) {
+            $type->setLow(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_LOW], $config));
         }
-        if (isset($json[self::FIELD_HIGH])
-            || isset($json[self::FIELD_HIGH_EXT])
-            || array_key_exists(self::FIELD_HIGH, $json)
-            || array_key_exists(self::FIELD_HIGH_EXT, $json)) {
-            $value = $json[self::FIELD_HIGH] ?? null;
-            $type->setHigh(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_HIGH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_HIGH]) || array_key_exists(self::FIELD_HIGH, $json)) {
+            $type->setHigh(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_HIGH], $config));
         }
         return $type;
     }
@@ -484,28 +383,14 @@ class FHIRRange extends FHIRElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->low)) {
-            if (null !== ($val = $this->low->getValue())) {
-                $out->low = $val;
-            }
-            $ext = $this->low->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_low = $ext;
-            }
+            $out->low = $this->low;
         }
         if (isset($this->high)) {
-            if (null !== ($val = $this->high->getValue())) {
-                $out->high = $val;
-            }
-            $ext = $this->high->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_high = $ext;
-            }
+            $out->high = $this->high;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

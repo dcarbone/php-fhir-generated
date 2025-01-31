@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,11 +107,11 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements ValueCon
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEASURE_REPORT_DOT_COMPONENT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CODE = 'code';
     public const FIELD_VALUE = 'value';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_CODE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -121,11 +121,11 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements ValueCon
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -178,7 +178,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements ValueCon
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -187,7 +187,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements ValueCon
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -272,7 +272,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements ValueCon
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -369,16 +369,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements ValueCon
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->modifierExtension)
-               || isset($this->code);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -417,7 +408,8 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements ValueCon
                 $type->setCode(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_VALUE === $cen) {
                 $type->setValue(FHIRCodeableConcept::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -442,15 +434,9 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements ValueCon
             $xw->endElement();
         }
         if (isset($this->value)) {
-            if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
-                $xw->text($this->value->_getFormattedValue());
-            } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
-                $xw->startElement(self::FIELD_VALUE);
-                $xw->writeAttribute(FHIRCodeableConcept::FIELD_VALUE, $this->value->_getFormattedValue());
-                $xw->endElement();
-            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
-                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
-            }
+            $xw->startElement(self::FIELD_VALUE);
+            $this->value->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
     }
 
@@ -499,7 +485,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements ValueCon
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROVENANCE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TARGET = 'target';
     public const FIELD_OCCURRED_PERIOD = 'occurredPeriod';
     public const FIELD_OCCURRED_DATE_TIME = 'occurredDateTime';
@@ -153,7 +153,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
     public const FIELD_ENTITY = 'entity';
     public const FIELD_SIGNATURE = 'signature';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TARGET => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -163,13 +163,13 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_OCCURRED_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RECORDED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -453,7 +453,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -462,7 +462,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -471,7 +471,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -1333,7 +1333,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1638,7 +1638,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1719,7 +1719,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
                 $type->addEntity(FHIRProvenanceEntity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SIGNATURE === $cen) {
                 $type->addSignature(FHIRSignature::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -2049,9 +2050,9 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->occurredDateTime->getValue())) {
                 $out->occurredDateTime = $val;
             }
-            $ext = $this->occurredDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->occurredDateTime->_nonValueFieldDefined()) {
+                $ext = $this->occurredDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_occurredDateTime = $ext;
             }
         }
@@ -2059,30 +2060,38 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->recorded->getValue())) {
                 $out->recorded = $val;
             }
-            $ext = $this->recorded->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->recorded->_nonValueFieldDefined()) {
+                $ext = $this->recorded->jsonSerialize();
+                unset($ext->value);
                 $out->_recorded = $ext;
             }
         }
         if (isset($this->policy) && [] !== $this->policy) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->policy as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->policy = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_policy = $exts;
             }
         }
@@ -2116,7 +2125,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

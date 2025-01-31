@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,13 +111,13 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMAGING_SELECTION_DOT_IMAGE_REGION_3D;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_REGION_TYPE = 'regionType';
     public const FIELD_REGION_TYPE_EXT = '_regionType';
     public const FIELD_COORDINATE = 'coordinate';
     public const FIELD_COORDINATE_EXT = '_coordinate';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_REGION_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -127,12 +127,12 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_REGION_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -185,7 +185,7 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -194,7 +194,7 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -343,7 +343,7 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -442,7 +442,7 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -481,7 +481,8 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
                 $type->setRegionType(FHIRImagingSelectionDGraphicType::xmlUnserialize($ce, $config));
             } else if (self::FIELD_COORDINATE === $cen) {
                 $type->addCoordinate(FHIRDecimal::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -587,36 +588,44 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
             if (null !== ($val = $this->regionType->getValue())) {
                 $out->regionType = $val;
             }
-            $ext = $this->regionType->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->regionType->_nonValueFieldDefined()) {
+                $ext = $this->regionType->jsonSerialize();
+                unset($ext->value);
                 $out->_regionType = $ext;
             }
         }
         if (isset($this->coordinate) && [] !== $this->coordinate) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->coordinate as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->coordinate = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_coordinate = $exts;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

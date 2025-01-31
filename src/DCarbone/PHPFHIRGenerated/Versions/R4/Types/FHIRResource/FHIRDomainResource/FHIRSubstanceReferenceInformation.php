@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_COMMENT = 'comment';
     public const FIELD_COMMENT_EXT = '_comment';
     public const FIELD_GENE = 'gene';
@@ -109,15 +109,15 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
     public const FIELD_CLASSIFICATION = 'classification';
     public const FIELD_TARGET = 'target';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_COMMENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -220,7 +220,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -229,7 +229,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -238,7 +238,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -537,7 +537,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -720,7 +720,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -783,7 +783,8 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
                 $type->addClassification(FHIRSubstanceReferenceInformationClassification::xmlUnserialize($ce, $config));
             } else if (self::FIELD_TARGET === $cen) {
                 $type->addTarget(FHIRSubstanceReferenceInformationTarget::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -982,9 +983,9 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
             if (null !== ($val = $this->comment->getValue())) {
                 $out->comment = $val;
             }
-            $ext = $this->comment->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comment->_nonValueFieldDefined()) {
+                $ext = $this->comment->jsonSerialize();
+                unset($ext->value);
                 $out->_comment = $ext;
             }
         }
@@ -1003,7 +1004,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

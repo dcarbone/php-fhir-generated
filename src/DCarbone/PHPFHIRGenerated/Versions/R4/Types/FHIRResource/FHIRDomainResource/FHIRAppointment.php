@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,9 +114,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_APPOINTMENT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
     public const FIELD_CANCELATION_REASON = 'cancelationReason';
@@ -148,7 +147,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
     public const FIELD_PARTICIPANT = 'participant';
     public const FIELD_REQUESTED_PERIOD = 'requestedPeriod';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -158,7 +157,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PRIORITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -171,7 +170,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
         self::FIELD_PATIENT_INSTRUCTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -589,7 +588,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -598,7 +597,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -607,7 +606,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -683,14 +682,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -2110,7 +2102,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -2509,7 +2501,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2606,7 +2598,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $type->addParticipant(FHIRAppointmentParticipant::xmlUnserialize($ce, $config));
             } else if (self::FIELD_REQUESTED_PERIOD === $cen) {
                 $type->addRequestedPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -2760,8 +2753,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             $xw->writeAttribute(self::FIELD_PATIENT_INSTRUCTION, $this->patientInstruction->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2949,22 +2942,13 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STATUS])
@@ -3163,33 +3147,15 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->status)) {
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -3218,9 +3184,9 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             if (null !== ($val = $this->priority->getValue())) {
                 $out->priority = $val;
             }
-            $ext = $this->priority->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->priority->_nonValueFieldDefined()) {
+                $ext = $this->priority->jsonSerialize();
+                unset($ext->value);
                 $out->_priority = $ext;
             }
         }
@@ -3228,9 +3194,9 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -3241,9 +3207,9 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             if (null !== ($val = $this->start->getValue())) {
                 $out->start = $val;
             }
-            $ext = $this->start->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->start->_nonValueFieldDefined()) {
+                $ext = $this->start->jsonSerialize();
+                unset($ext->value);
                 $out->_start = $ext;
             }
         }
@@ -3251,9 +3217,9 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             if (null !== ($val = $this->end->getValue())) {
                 $out->end = $val;
             }
-            $ext = $this->end->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->end->_nonValueFieldDefined()) {
+                $ext = $this->end->jsonSerialize();
+                unset($ext->value);
                 $out->_end = $ext;
             }
         }
@@ -3261,9 +3227,9 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             if (null !== ($val = $this->minutesDuration->getValue())) {
                 $out->minutesDuration = $val;
             }
-            $ext = $this->minutesDuration->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minutesDuration->_nonValueFieldDefined()) {
+                $ext = $this->minutesDuration->jsonSerialize();
+                unset($ext->value);
                 $out->_minutesDuration = $ext;
             }
         }
@@ -3274,9 +3240,9 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             if (null !== ($val = $this->created->getValue())) {
                 $out->created = $val;
             }
-            $ext = $this->created->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->created->_nonValueFieldDefined()) {
+                $ext = $this->created->jsonSerialize();
+                unset($ext->value);
                 $out->_created = $ext;
             }
         }
@@ -3284,9 +3250,9 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             if (null !== ($val = $this->comment->getValue())) {
                 $out->comment = $val;
             }
-            $ext = $this->comment->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comment->_nonValueFieldDefined()) {
+                $ext = $this->comment->jsonSerialize();
+                unset($ext->value);
                 $out->_comment = $ext;
             }
         }
@@ -3294,9 +3260,9 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             if (null !== ($val = $this->patientInstruction->getValue())) {
                 $out->patientInstruction = $val;
             }
-            $ext = $this->patientInstruction->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patientInstruction->_nonValueFieldDefined()) {
+                $ext = $this->patientInstruction->jsonSerialize();
+                unset($ext->value);
                 $out->_patientInstruction = $ext;
             }
         }
@@ -3312,7 +3278,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

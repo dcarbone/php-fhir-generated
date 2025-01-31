@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,7 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CITATION_DOT_WHO_CLASSIFIED;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_PERSON = 'person';
     public const FIELD_ORGANIZATION = 'organization';
     public const FIELD_PUBLISHER = 'publisher';
@@ -119,16 +119,16 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
     public const FIELD_FREE_TO_SHARE = 'freeToShare';
     public const FIELD_FREE_TO_SHARE_EXT = '_freeToShare';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_CLASSIFIER_COPYRIGHT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FREE_TO_SHARE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -224,7 +224,7 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -233,7 +233,7 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -468,7 +468,7 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -591,7 +591,7 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -636,7 +636,8 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
                 $type->setClassifierCopyright(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_FREE_TO_SHARE === $cen) {
                 $type->setFreeToShare(FHIRBoolean::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -778,9 +779,9 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
             if (null !== ($val = $this->classifierCopyright->getValue())) {
                 $out->classifierCopyright = $val;
             }
-            $ext = $this->classifierCopyright->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->classifierCopyright->_nonValueFieldDefined()) {
+                $ext = $this->classifierCopyright->jsonSerialize();
+                unset($ext->value);
                 $out->_classifierCopyright = $ext;
             }
         }
@@ -788,15 +789,15 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
             if (null !== ($val = $this->freeToShare->getValue())) {
                 $out->freeToShare = $val;
             }
-            $ext = $this->freeToShare->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->freeToShare->_nonValueFieldDefined()) {
+                $ext = $this->freeToShare->jsonSerialize();
+                unset($ext->value);
                 $out->_freeToShare = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

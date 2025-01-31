@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROFILE_DOT_DEFINITION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SHORT = 'short';
     public const FIELD_SHORT_EXT = '_short';
     public const FIELD_FORMAL = 'formal';
@@ -166,7 +166,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     public const FIELD_VALUE_ID_EXT = '_valueId';
     public const FIELD_VALUE_ATTACHMENT = 'valueAttachment';
     public const FIELD_VALUE_IDENTIFIER = 'valueIdentifier';
-    public const FIELD_VALUE_IDENTIFIER_EXT = '_valueIdentifier';
     public const FIELD_VALUE_CODEABLE_CONCEPT = 'valueCodeableConcept';
     public const FIELD_VALUE_CODING = 'valueCoding';
     public const FIELD_VALUE_QUANTITY = 'valueQuantity';
@@ -178,7 +177,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     public const FIELD_VALUE_HUMAN_NAME = 'valueHumanName';
     public const FIELD_VALUE_ADDRESS = 'valueAddress';
     public const FIELD_VALUE_CONTACT = 'valueContact';
-    public const FIELD_VALUE_CONTACT_EXT = '_valueContact';
     public const FIELD_VALUE_SCHEDULE = 'valueSchedule';
     public const FIELD_EXAMPLE_BOOLEAN = 'exampleBoolean';
     public const FIELD_EXAMPLE_BOOLEAN_EXT = '_exampleBoolean';
@@ -208,7 +206,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     public const FIELD_EXAMPLE_ID_EXT = '_exampleId';
     public const FIELD_EXAMPLE_ATTACHMENT = 'exampleAttachment';
     public const FIELD_EXAMPLE_IDENTIFIER = 'exampleIdentifier';
-    public const FIELD_EXAMPLE_IDENTIFIER_EXT = '_exampleIdentifier';
     public const FIELD_EXAMPLE_CODEABLE_CONCEPT = 'exampleCodeableConcept';
     public const FIELD_EXAMPLE_CODING = 'exampleCoding';
     public const FIELD_EXAMPLE_QUANTITY = 'exampleQuantity';
@@ -220,7 +217,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     public const FIELD_EXAMPLE_HUMAN_NAME = 'exampleHumanName';
     public const FIELD_EXAMPLE_ADDRESS = 'exampleAddress';
     public const FIELD_EXAMPLE_CONTACT = 'exampleContact';
-    public const FIELD_EXAMPLE_CONTACT_EXT = '_exampleContact';
     public const FIELD_EXAMPLE_SCHEDULE = 'exampleSchedule';
     public const FIELD_MAX_LENGTH = 'maxLength';
     public const FIELD_MAX_LENGTH_EXT = '_maxLength';
@@ -234,7 +230,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     public const FIELD_BINDING = 'binding';
     public const FIELD_MAPPING = 'mapping';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -256,7 +252,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SHORT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FORMAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -278,8 +274,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         self::FIELD_VALUE_OID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_UUID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_VALUE_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_VALUE_CONTACT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXAMPLE_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXAMPLE_INTEGER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXAMPLE_DECIMAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -293,14 +287,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         self::FIELD_EXAMPLE_OID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXAMPLE_UUID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXAMPLE_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_EXAMPLE_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_EXAMPLE_CONTACT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MAX_LENGTH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MUST_SUPPORT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_IS_MODIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1055,7 +1047,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $valueIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $valueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $valuePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $valueRatio
@@ -1082,7 +1074,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $exampleCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $exampleCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $exampleQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $exampleQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $exampleRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $examplePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $exampleRatio
@@ -1130,7 +1122,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
                                 null|FHIRString|FHIRIdentifier $valueIdentifier = null,
                                 null|FHIRCodeableConcept $valueCodeableConcept = null,
                                 null|FHIRCoding $valueCoding = null,
-                                null|FHIRQuantity $valueQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $valueQuantity = null,
                                 null|FHIRRange $valueRange = null,
                                 null|FHIRPeriod $valuePeriod = null,
                                 null|FHIRRatio $valueRatio = null,
@@ -1157,7 +1149,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
                                 null|FHIRString|FHIRIdentifier $exampleIdentifier = null,
                                 null|FHIRCodeableConcept $exampleCodeableConcept = null,
                                 null|FHIRCoding $exampleCoding = null,
-                                null|FHIRQuantity $exampleQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $exampleQuantity = null,
                                 null|FHIRRange $exampleRange = null,
                                 null|FHIRPeriod $examplePeriod = null,
                                 null|FHIRRatio $exampleRatio = null,
@@ -1392,7 +1384,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -1401,7 +1393,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -2905,11 +2897,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $valueIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueIdentifier(null|FHIRString|FHIRIdentifier $valueIdentifier,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValueIdentifier(null|FHIRString|FHIRIdentifier $valueIdentifier): self
     {
         if (null === $valueIdentifier) {
             unset($this->valueIdentifier);
@@ -2919,33 +2909,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $valueIdentifier = new FHIRIdentifier(value: $valueIdentifier);
         }
         $this->valueIdentifier = $valueIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setValueIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the valueIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the valueIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -3044,14 +3007,17 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
+    public function setValueQuantity(null|FHIRDecimal|FHIRQuantity $valueQuantity): self
     {
         if (null === $valueQuantity) {
             unset($this->valueQuantity);
             return $this;
+        }
+        if (!($valueQuantity instanceof FHIRQuantity)) {
+            $valueQuantity = new FHIRQuantity(value: $valueQuantity);
         }
         $this->valueQuantity = $valueQuantity;
         return $this;
@@ -3325,11 +3291,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $valueContact
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueContact(null|FHIRString|FHIRContact $valueContact,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValueContact(null|FHIRString|FHIRContact $valueContact): self
     {
         if (null === $valueContact) {
             unset($this->valueContact);
@@ -3339,33 +3303,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $valueContact = new FHIRContact(value: $valueContact);
         }
         $this->valueContact = $valueContact;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE_CONTACT] !== $valueXMLLocation) {
-            $this->_setValueContactValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the valueContact element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueContactValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE_CONTACT];
-    }
-
-    /**
-     * Set the location the "value" field of the valueContact element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueContactValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE_CONTACT] = $valueXMLLocation;
         return $this;
     }
 
@@ -4317,11 +4254,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExampleIdentifier(null|FHIRString|FHIRIdentifier $exampleIdentifier,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExampleIdentifier(null|FHIRString|FHIRIdentifier $exampleIdentifier): self
     {
         if (null === $exampleIdentifier) {
             unset($this->exampleIdentifier);
@@ -4331,33 +4266,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $exampleIdentifier = new FHIRIdentifier(value: $exampleIdentifier);
         }
         $this->exampleIdentifier = $exampleIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setExampleIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the exampleIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExampleIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the exampleIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExampleIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -4456,14 +4364,17 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * An example value for this element.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $exampleQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $exampleQuantity
      * @return static
      */
-    public function setExampleQuantity(null|FHIRQuantity $exampleQuantity): self
+    public function setExampleQuantity(null|FHIRDecimal|FHIRQuantity $exampleQuantity): self
     {
         if (null === $exampleQuantity) {
             unset($this->exampleQuantity);
             return $this;
+        }
+        if (!($exampleQuantity instanceof FHIRQuantity)) {
+            $exampleQuantity = new FHIRQuantity(value: $exampleQuantity);
         }
         $this->exampleQuantity = $exampleQuantity;
         return $this;
@@ -4737,11 +4648,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $exampleContact
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExampleContact(null|FHIRString|FHIRContact $exampleContact,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExampleContact(null|FHIRString|FHIRContact $exampleContact): self
     {
         if (null === $exampleContact) {
             unset($this->exampleContact);
@@ -4751,33 +4660,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $exampleContact = new FHIRContact(value: $exampleContact);
         }
         $this->exampleContact = $exampleContact;
-        if ($this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT] !== $valueXMLLocation) {
-            $this->_setExampleContactValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the exampleContact element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExampleContactValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT];
-    }
-
-    /**
-     * Set the location the "value" field of the exampleContact element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExampleContactValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT] = $valueXMLLocation;
         return $this;
     }
 
@@ -5278,7 +5160,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -6206,7 +6088,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -6381,7 +6263,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
                 $type->setBinding(FHIRProfileBinding::xmlUnserialize($ce, $config));
             } else if (self::FIELD_MAPPING === $cen) {
                 $type->addMapping(FHIRProfileMapping1::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -6546,22 +6429,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
                 $type->setValueId((string)$attributes[self::FIELD_VALUE_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_VALUE_IDENTIFIER])) {
-            if (isset($type->valueIdentifier)) {
-                $type->valueIdentifier->setValue((string)$attributes[self::FIELD_VALUE_IDENTIFIER]);
-                $type->_setValueIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setValueIdentifier((string)$attributes[self::FIELD_VALUE_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_VALUE_CONTACT])) {
-            if (isset($type->valueContact)) {
-                $type->valueContact->setValue((string)$attributes[self::FIELD_VALUE_CONTACT]);
-                $type->_setValueContactValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setValueContact((string)$attributes[self::FIELD_VALUE_CONTACT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_EXAMPLE_BOOLEAN])) {
             if (isset($type->exampleBoolean)) {
                 $type->exampleBoolean->setValue((string)$attributes[self::FIELD_EXAMPLE_BOOLEAN]);
@@ -6666,22 +6533,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
                 $type->setExampleId((string)$attributes[self::FIELD_EXAMPLE_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_EXAMPLE_IDENTIFIER])) {
-            if (isset($type->exampleIdentifier)) {
-                $type->exampleIdentifier->setValue((string)$attributes[self::FIELD_EXAMPLE_IDENTIFIER]);
-                $type->_setExampleIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setExampleIdentifier((string)$attributes[self::FIELD_EXAMPLE_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_EXAMPLE_CONTACT])) {
-            if (isset($type->exampleContact)) {
-                $type->exampleContact->setValue((string)$attributes[self::FIELD_EXAMPLE_CONTACT]);
-                $type->_setExampleContactValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setExampleContact((string)$attributes[self::FIELD_EXAMPLE_CONTACT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_MAX_LENGTH])) {
             if (isset($type->maxLength)) {
                 $type->maxLength->setValue((string)$attributes[self::FIELD_MAX_LENGTH]);
@@ -6776,12 +6627,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($this->valueId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_ID]) {
             $xw->writeAttribute(self::FIELD_VALUE_ID, $this->valueId->_getFormattedValue());
         }
-        if (isset($this->valueIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_VALUE_IDENTIFIER, $this->valueIdentifier->_getFormattedValue());
-        }
-        if (isset($this->valueContact) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_CONTACT]) {
-            $xw->writeAttribute(self::FIELD_VALUE_CONTACT, $this->valueContact->_getFormattedValue());
-        }
         if (isset($this->exampleBoolean) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXAMPLE_BOOLEAN]) {
             $xw->writeAttribute(self::FIELD_EXAMPLE_BOOLEAN, $this->exampleBoolean->_getFormattedValue());
         }
@@ -6820,12 +6665,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         }
         if (isset($this->exampleId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXAMPLE_ID]) {
             $xw->writeAttribute(self::FIELD_EXAMPLE_ID, $this->exampleId->_getFormattedValue());
-        }
-        if (isset($this->exampleIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_EXAMPLE_IDENTIFIER, $this->exampleIdentifier->_getFormattedValue());
-        }
-        if (isset($this->exampleContact) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT]) {
-            $xw->writeAttribute(self::FIELD_EXAMPLE_CONTACT, $this->exampleContact->_getFormattedValue());
         }
         if (isset($this->maxLength) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MAX_LENGTH]) {
             $xw->writeAttribute(self::FIELD_MAX_LENGTH, $this->maxLength->_getFormattedValue());
@@ -6996,11 +6835,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $this->valueAttachment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->valueIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VALUE_IDENTIFIER]
-                || $this->valueIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->valueIdentifier)) {
             $xw->startElement(self::FIELD_VALUE_IDENTIFIER);
-            $this->valueIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VALUE_IDENTIFIER]);
+            $this->valueIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->valueCodeableConcept)) {
@@ -7053,11 +6890,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $this->valueAddress->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->valueContact)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VALUE_CONTACT]
-                || $this->valueContact->_nonValueFieldDefined())) {
+        if (isset($this->valueContact)) {
             $xw->startElement(self::FIELD_VALUE_CONTACT);
-            $this->valueContact->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VALUE_CONTACT]);
+            $this->valueContact->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->valueSchedule)) {
@@ -7161,11 +6996,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $this->exampleAttachment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->exampleIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER]
-                || $this->exampleIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->exampleIdentifier)) {
             $xw->startElement(self::FIELD_EXAMPLE_IDENTIFIER);
-            $this->exampleIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER]);
+            $this->exampleIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->exampleCodeableConcept)) {
@@ -7218,11 +7051,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $this->exampleAddress->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->exampleContact)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT]
-                || $this->exampleContact->_nonValueFieldDefined())) {
+        if (isset($this->exampleContact)) {
             $xw->startElement(self::FIELD_EXAMPLE_CONTACT);
-            $this->exampleContact->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT]);
+            $this->exampleContact->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->exampleSchedule)) {
@@ -7531,15 +7362,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_VALUE_ATTACHMENT]) || array_key_exists(self::FIELD_VALUE_ATTACHMENT, $json)) {
             $type->setValueAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_VALUE_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_VALUE_IDENTIFIER])
-            || isset($json[self::FIELD_VALUE_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_VALUE_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_VALUE_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE_IDENTIFIER] ?? null;
-            $type->setValueIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_VALUE_IDENTIFIER]) || array_key_exists(self::FIELD_VALUE_IDENTIFIER, $json)) {
+            $type->setValueIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_VALUE_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_VALUE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_VALUE_CODEABLE_CONCEPT, $json)) {
             $type->setValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VALUE_CODEABLE_CONCEPT], $config));
@@ -7571,15 +7395,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_VALUE_ADDRESS]) || array_key_exists(self::FIELD_VALUE_ADDRESS, $json)) {
             $type->setValueAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_VALUE_ADDRESS], $config));
         }
-        if (isset($json[self::FIELD_VALUE_CONTACT])
-            || isset($json[self::FIELD_VALUE_CONTACT_EXT])
-            || array_key_exists(self::FIELD_VALUE_CONTACT, $json)
-            || array_key_exists(self::FIELD_VALUE_CONTACT_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE_CONTACT] ?? null;
-            $type->setValueContact(FHIRContact::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContact::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_CONTACT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_VALUE_CONTACT]) || array_key_exists(self::FIELD_VALUE_CONTACT, $json)) {
+            $type->setValueContact(FHIRContact::jsonUnserialize($json[self::FIELD_VALUE_CONTACT], $config));
         }
         if (isset($json[self::FIELD_VALUE_SCHEDULE]) || array_key_exists(self::FIELD_VALUE_SCHEDULE, $json)) {
             $type->setValueSchedule(FHIRSchedule::jsonUnserialize($json[self::FIELD_VALUE_SCHEDULE], $config));
@@ -7717,15 +7534,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_EXAMPLE_ATTACHMENT]) || array_key_exists(self::FIELD_EXAMPLE_ATTACHMENT, $json)) {
             $type->setExampleAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_EXAMPLE_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_EXAMPLE_IDENTIFIER])
-            || isset($json[self::FIELD_EXAMPLE_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_EXAMPLE_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_EXAMPLE_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_EXAMPLE_IDENTIFIER] ?? null;
-            $type->setExampleIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_EXAMPLE_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_EXAMPLE_IDENTIFIER]) || array_key_exists(self::FIELD_EXAMPLE_IDENTIFIER, $json)) {
+            $type->setExampleIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_EXAMPLE_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_EXAMPLE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_EXAMPLE_CODEABLE_CONCEPT, $json)) {
             $type->setExampleCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_EXAMPLE_CODEABLE_CONCEPT], $config));
@@ -7757,15 +7567,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_EXAMPLE_ADDRESS]) || array_key_exists(self::FIELD_EXAMPLE_ADDRESS, $json)) {
             $type->setExampleAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_EXAMPLE_ADDRESS], $config));
         }
-        if (isset($json[self::FIELD_EXAMPLE_CONTACT])
-            || isset($json[self::FIELD_EXAMPLE_CONTACT_EXT])
-            || array_key_exists(self::FIELD_EXAMPLE_CONTACT, $json)
-            || array_key_exists(self::FIELD_EXAMPLE_CONTACT_EXT, $json)) {
-            $value = $json[self::FIELD_EXAMPLE_CONTACT] ?? null;
-            $type->setExampleContact(FHIRContact::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContact::FIELD_VALUE => $value]) + ($json[self::FIELD_EXAMPLE_CONTACT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_EXAMPLE_CONTACT]) || array_key_exists(self::FIELD_EXAMPLE_CONTACT, $json)) {
+            $type->setExampleContact(FHIRContact::jsonUnserialize($json[self::FIELD_EXAMPLE_CONTACT], $config));
         }
         if (isset($json[self::FIELD_EXAMPLE_SCHEDULE]) || array_key_exists(self::FIELD_EXAMPLE_SCHEDULE, $json)) {
             $type->setExampleSchedule(FHIRSchedule::jsonUnserialize($json[self::FIELD_EXAMPLE_SCHEDULE], $config));
@@ -7852,9 +7655,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->short->getValue())) {
                 $out->short = $val;
             }
-            $ext = $this->short->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->short->_nonValueFieldDefined()) {
+                $ext = $this->short->jsonSerialize();
+                unset($ext->value);
                 $out->_short = $ext;
             }
         }
@@ -7862,9 +7665,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->formal->getValue())) {
                 $out->formal = $val;
             }
-            $ext = $this->formal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->formal->_nonValueFieldDefined()) {
+                $ext = $this->formal->jsonSerialize();
+                unset($ext->value);
                 $out->_formal = $ext;
             }
         }
@@ -7872,9 +7675,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->comments->getValue())) {
                 $out->comments = $val;
             }
-            $ext = $this->comments->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comments->_nonValueFieldDefined()) {
+                $ext = $this->comments->jsonSerialize();
+                unset($ext->value);
                 $out->_comments = $ext;
             }
         }
@@ -7882,30 +7685,38 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->requirements->getValue())) {
                 $out->requirements = $val;
             }
-            $ext = $this->requirements->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->requirements->_nonValueFieldDefined()) {
+                $ext = $this->requirements->jsonSerialize();
+                unset($ext->value);
                 $out->_requirements = $ext;
             }
         }
         if (isset($this->synonym) && [] !== $this->synonym) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->synonym as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->synonym = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_synonym = $exts;
             }
         }
@@ -7913,9 +7724,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->min->getValue())) {
                 $out->min = $val;
             }
-            $ext = $this->min->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->min->_nonValueFieldDefined()) {
+                $ext = $this->min->jsonSerialize();
+                unset($ext->value);
                 $out->_min = $ext;
             }
         }
@@ -7923,9 +7734,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->max->getValue())) {
                 $out->max = $val;
             }
-            $ext = $this->max->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->max->_nonValueFieldDefined()) {
+                $ext = $this->max->jsonSerialize();
+                unset($ext->value);
                 $out->_max = $ext;
             }
         }
@@ -7936,9 +7747,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->nameReference->getValue())) {
                 $out->nameReference = $val;
             }
-            $ext = $this->nameReference->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->nameReference->_nonValueFieldDefined()) {
+                $ext = $this->nameReference->jsonSerialize();
+                unset($ext->value);
                 $out->_nameReference = $ext;
             }
         }
@@ -7946,9 +7757,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueBoolean->getValue())) {
                 $out->valueBoolean = $val;
             }
-            $ext = $this->valueBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueBoolean->_nonValueFieldDefined()) {
+                $ext = $this->valueBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_valueBoolean = $ext;
             }
         }
@@ -7956,9 +7767,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueInteger->getValue())) {
                 $out->valueInteger = $val;
             }
-            $ext = $this->valueInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueInteger->_nonValueFieldDefined()) {
+                $ext = $this->valueInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_valueInteger = $ext;
             }
         }
@@ -7966,9 +7777,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueDecimal->getValue())) {
                 $out->valueDecimal = $val;
             }
-            $ext = $this->valueDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueDecimal->_nonValueFieldDefined()) {
+                $ext = $this->valueDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_valueDecimal = $ext;
             }
         }
@@ -7976,9 +7787,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueBase64Binary->getValue())) {
                 $out->valueBase64Binary = $val;
             }
-            $ext = $this->valueBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->valueBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_valueBase64Binary = $ext;
             }
         }
@@ -7986,9 +7797,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueInstant->getValue())) {
                 $out->valueInstant = $val;
             }
-            $ext = $this->valueInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueInstant->_nonValueFieldDefined()) {
+                $ext = $this->valueInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_valueInstant = $ext;
             }
         }
@@ -7996,9 +7807,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueString->getValue())) {
                 $out->valueString = $val;
             }
-            $ext = $this->valueString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueString->_nonValueFieldDefined()) {
+                $ext = $this->valueString->jsonSerialize();
+                unset($ext->value);
                 $out->_valueString = $ext;
             }
         }
@@ -8006,9 +7817,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueUri->getValue())) {
                 $out->valueUri = $val;
             }
-            $ext = $this->valueUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueUri->_nonValueFieldDefined()) {
+                $ext = $this->valueUri->jsonSerialize();
+                unset($ext->value);
                 $out->_valueUri = $ext;
             }
         }
@@ -8016,9 +7827,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueDate->getValue())) {
                 $out->valueDate = $val;
             }
-            $ext = $this->valueDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueDate->_nonValueFieldDefined()) {
+                $ext = $this->valueDate->jsonSerialize();
+                unset($ext->value);
                 $out->_valueDate = $ext;
             }
         }
@@ -8026,9 +7837,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueDateTime->getValue())) {
                 $out->valueDateTime = $val;
             }
-            $ext = $this->valueDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueDateTime->_nonValueFieldDefined()) {
+                $ext = $this->valueDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_valueDateTime = $ext;
             }
         }
@@ -8036,9 +7847,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueCode->getValue())) {
                 $out->valueCode = $val;
             }
-            $ext = $this->valueCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueCode->_nonValueFieldDefined()) {
+                $ext = $this->valueCode->jsonSerialize();
+                unset($ext->value);
                 $out->_valueCode = $ext;
             }
         }
@@ -8046,9 +7857,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueOid->getValue())) {
                 $out->valueOid = $val;
             }
-            $ext = $this->valueOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueOid->_nonValueFieldDefined()) {
+                $ext = $this->valueOid->jsonSerialize();
+                unset($ext->value);
                 $out->_valueOid = $ext;
             }
         }
@@ -8056,9 +7867,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueUuid->getValue())) {
                 $out->valueUuid = $val;
             }
-            $ext = $this->valueUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueUuid->_nonValueFieldDefined()) {
+                $ext = $this->valueUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_valueUuid = $ext;
             }
         }
@@ -8066,9 +7877,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->valueId->getValue())) {
                 $out->valueId = $val;
             }
-            $ext = $this->valueId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueId->_nonValueFieldDefined()) {
+                $ext = $this->valueId->jsonSerialize();
+                unset($ext->value);
                 $out->_valueId = $ext;
             }
         }
@@ -8076,14 +7887,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $out->valueAttachment = $this->valueAttachment;
         }
         if (isset($this->valueIdentifier)) {
-            if (null !== ($val = $this->valueIdentifier->getValue())) {
-                $out->valueIdentifier = $val;
-            }
-            $ext = $this->valueIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_valueIdentifier = $ext;
-            }
+            $out->valueIdentifier = $this->valueIdentifier;
         }
         if (isset($this->valueCodeableConcept)) {
             $out->valueCodeableConcept = $this->valueCodeableConcept;
@@ -8116,14 +7920,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $out->valueAddress = $this->valueAddress;
         }
         if (isset($this->valueContact)) {
-            if (null !== ($val = $this->valueContact->getValue())) {
-                $out->valueContact = $val;
-            }
-            $ext = $this->valueContact->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_valueContact = $ext;
-            }
+            $out->valueContact = $this->valueContact;
         }
         if (isset($this->valueSchedule)) {
             $out->valueSchedule = $this->valueSchedule;
@@ -8132,9 +7929,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleBoolean->getValue())) {
                 $out->exampleBoolean = $val;
             }
-            $ext = $this->exampleBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleBoolean->_nonValueFieldDefined()) {
+                $ext = $this->exampleBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleBoolean = $ext;
             }
         }
@@ -8142,9 +7939,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleInteger->getValue())) {
                 $out->exampleInteger = $val;
             }
-            $ext = $this->exampleInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleInteger->_nonValueFieldDefined()) {
+                $ext = $this->exampleInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleInteger = $ext;
             }
         }
@@ -8152,9 +7949,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleDecimal->getValue())) {
                 $out->exampleDecimal = $val;
             }
-            $ext = $this->exampleDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleDecimal->_nonValueFieldDefined()) {
+                $ext = $this->exampleDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleDecimal = $ext;
             }
         }
@@ -8162,9 +7959,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleBase64Binary->getValue())) {
                 $out->exampleBase64Binary = $val;
             }
-            $ext = $this->exampleBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->exampleBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleBase64Binary = $ext;
             }
         }
@@ -8172,9 +7969,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleInstant->getValue())) {
                 $out->exampleInstant = $val;
             }
-            $ext = $this->exampleInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleInstant->_nonValueFieldDefined()) {
+                $ext = $this->exampleInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleInstant = $ext;
             }
         }
@@ -8182,9 +7979,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleString->getValue())) {
                 $out->exampleString = $val;
             }
-            $ext = $this->exampleString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleString->_nonValueFieldDefined()) {
+                $ext = $this->exampleString->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleString = $ext;
             }
         }
@@ -8192,9 +7989,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleUri->getValue())) {
                 $out->exampleUri = $val;
             }
-            $ext = $this->exampleUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleUri->_nonValueFieldDefined()) {
+                $ext = $this->exampleUri->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleUri = $ext;
             }
         }
@@ -8202,9 +7999,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleDate->getValue())) {
                 $out->exampleDate = $val;
             }
-            $ext = $this->exampleDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleDate->_nonValueFieldDefined()) {
+                $ext = $this->exampleDate->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleDate = $ext;
             }
         }
@@ -8212,9 +8009,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleDateTime->getValue())) {
                 $out->exampleDateTime = $val;
             }
-            $ext = $this->exampleDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleDateTime->_nonValueFieldDefined()) {
+                $ext = $this->exampleDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleDateTime = $ext;
             }
         }
@@ -8222,9 +8019,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleCode->getValue())) {
                 $out->exampleCode = $val;
             }
-            $ext = $this->exampleCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleCode->_nonValueFieldDefined()) {
+                $ext = $this->exampleCode->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleCode = $ext;
             }
         }
@@ -8232,9 +8029,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleOid->getValue())) {
                 $out->exampleOid = $val;
             }
-            $ext = $this->exampleOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleOid->_nonValueFieldDefined()) {
+                $ext = $this->exampleOid->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleOid = $ext;
             }
         }
@@ -8242,9 +8039,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleUuid->getValue())) {
                 $out->exampleUuid = $val;
             }
-            $ext = $this->exampleUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleUuid->_nonValueFieldDefined()) {
+                $ext = $this->exampleUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleUuid = $ext;
             }
         }
@@ -8252,9 +8049,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->exampleId->getValue())) {
                 $out->exampleId = $val;
             }
-            $ext = $this->exampleId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleId->_nonValueFieldDefined()) {
+                $ext = $this->exampleId->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleId = $ext;
             }
         }
@@ -8262,14 +8059,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $out->exampleAttachment = $this->exampleAttachment;
         }
         if (isset($this->exampleIdentifier)) {
-            if (null !== ($val = $this->exampleIdentifier->getValue())) {
-                $out->exampleIdentifier = $val;
-            }
-            $ext = $this->exampleIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_exampleIdentifier = $ext;
-            }
+            $out->exampleIdentifier = $this->exampleIdentifier;
         }
         if (isset($this->exampleCodeableConcept)) {
             $out->exampleCodeableConcept = $this->exampleCodeableConcept;
@@ -8302,14 +8092,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $out->exampleAddress = $this->exampleAddress;
         }
         if (isset($this->exampleContact)) {
-            if (null !== ($val = $this->exampleContact->getValue())) {
-                $out->exampleContact = $val;
-            }
-            $ext = $this->exampleContact->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_exampleContact = $ext;
-            }
+            $out->exampleContact = $this->exampleContact;
         }
         if (isset($this->exampleSchedule)) {
             $out->exampleSchedule = $this->exampleSchedule;
@@ -8318,30 +8101,38 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->maxLength->getValue())) {
                 $out->maxLength = $val;
             }
-            $ext = $this->maxLength->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxLength->_nonValueFieldDefined()) {
+                $ext = $this->maxLength->jsonSerialize();
+                unset($ext->value);
                 $out->_maxLength = $ext;
             }
         }
         if (isset($this->condition) && [] !== $this->condition) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->condition as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->condition = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_condition = $exts;
             }
         }
@@ -8352,9 +8143,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->mustSupport->getValue())) {
                 $out->mustSupport = $val;
             }
-            $ext = $this->mustSupport->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->mustSupport->_nonValueFieldDefined()) {
+                $ext = $this->mustSupport->jsonSerialize();
+                unset($ext->value);
                 $out->_mustSupport = $ext;
             }
         }
@@ -8362,9 +8153,9 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->isModifier->getValue())) {
                 $out->isModifier = $val;
             }
-            $ext = $this->isModifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->isModifier->_nonValueFieldDefined()) {
+                $ext = $this->isModifier->jsonSerialize();
+                unset($ext->value);
                 $out->_isModifier = $ext;
             }
         }
@@ -8376,7 +8167,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

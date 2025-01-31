@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,15 +114,13 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TASK;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_DEFINITION_URI = 'definitionUri';
     public const FIELD_DEFINITION_URI_EXT = '_definitionUri';
     public const FIELD_DEFINITION_REFERENCE = 'definitionReference';
     public const FIELD_BASED_ON = 'basedOn';
     public const FIELD_GROUP_IDENTIFIER = 'groupIdentifier';
-    public const FIELD_GROUP_IDENTIFIER_EXT = '_groupIdentifier';
     public const FIELD_PART_OF = 'partOf';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
@@ -153,7 +151,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
     public const FIELD_INPUT = 'input';
     public const FIELD_OUTPUT = 'output';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -163,10 +161,9 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DEFINITION_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_GROUP_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INTENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PRIORITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -175,7 +172,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         self::FIELD_LAST_MODIFIED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -651,7 +648,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -660,7 +657,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -669,7 +666,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -733,14 +730,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -954,11 +944,9 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * created in the same context.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $groupIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGroupIdentifier(null|FHIRString|FHIRIdentifier $groupIdentifier,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setGroupIdentifier(null|FHIRString|FHIRIdentifier $groupIdentifier): self
     {
         if (null === $groupIdentifier) {
             unset($this->groupIdentifier);
@@ -968,33 +956,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             $groupIdentifier = new FHIRIdentifier(value: $groupIdentifier);
         }
         $this->groupIdentifier = $groupIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setGroupIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the groupIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getGroupIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the groupIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setGroupIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -2174,7 +2135,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -2643,7 +2604,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2752,7 +2713,8 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $type->addInput(FHIRTaskInput::xmlUnserialize($ce, $config));
             } else if (self::FIELD_OUTPUT === $cen) {
                 $type->addOutput(FHIRTaskOutput::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -2784,14 +2746,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $type->_setDefinitionUriValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setDefinitionUri((string)$attributes[self::FIELD_DEFINITION_URI], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_GROUP_IDENTIFIER])) {
-            if (isset($type->groupIdentifier)) {
-                $type->groupIdentifier->setValue((string)$attributes[self::FIELD_GROUP_IDENTIFIER]);
-                $type->_setGroupIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setGroupIdentifier((string)$attributes[self::FIELD_GROUP_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_STATUS])) {
@@ -2873,9 +2827,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         if (isset($this->definitionUri) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFINITION_URI]) {
             $xw->writeAttribute(self::FIELD_DEFINITION_URI, $this->definitionUri->_getFormattedValue());
         }
-        if (isset($this->groupIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_GROUP_IDENTIFIER, $this->groupIdentifier->_getFormattedValue());
-        }
         if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
             $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
         }
@@ -2895,8 +2846,8 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             $xw->writeAttribute(self::FIELD_LAST_MODIFIED, $this->lastModified->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2921,11 +2872,9 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $xw->endElement();
             }
         }
-        if (isset($this->groupIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER]
-                || $this->groupIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->groupIdentifier)) {
             $xw->startElement(self::FIELD_GROUP_IDENTIFIER);
-            $this->groupIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_GROUP_IDENTIFIER]);
+            $this->groupIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->partOf)) {
@@ -3106,22 +3055,13 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_DEFINITION_URI])
@@ -3146,15 +3086,8 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $type->addBasedOn(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_GROUP_IDENTIFIER])
-            || isset($json[self::FIELD_GROUP_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_GROUP_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_GROUP_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_GROUP_IDENTIFIER] ?? null;
-            $type->setGroupIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_GROUP_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_GROUP_IDENTIFIER]) || array_key_exists(self::FIELD_GROUP_IDENTIFIER, $json)) {
+            $type->setGroupIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_GROUP_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_PART_OF]) || array_key_exists(self::FIELD_PART_OF, $json)) {
             $vs = $json[self::FIELD_PART_OF];
@@ -3313,33 +3246,15 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->definitionUri)) {
             if (null !== ($val = $this->definitionUri->getValue())) {
                 $out->definitionUri = $val;
             }
-            $ext = $this->definitionUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->definitionUri->_nonValueFieldDefined()) {
+                $ext = $this->definitionUri->jsonSerialize();
+                unset($ext->value);
                 $out->_definitionUri = $ext;
             }
         }
@@ -3350,14 +3265,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             $out->basedOn = $this->basedOn;
         }
         if (isset($this->groupIdentifier)) {
-            if (null !== ($val = $this->groupIdentifier->getValue())) {
-                $out->groupIdentifier = $val;
-            }
-            $ext = $this->groupIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_groupIdentifier = $ext;
-            }
+            $out->groupIdentifier = $this->groupIdentifier;
         }
         if (isset($this->partOf) && [] !== $this->partOf) {
             $out->partOf = $this->partOf;
@@ -3366,9 +3274,9 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -3382,9 +3290,9 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             if (null !== ($val = $this->intent->getValue())) {
                 $out->intent = $val;
             }
-            $ext = $this->intent->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->intent->_nonValueFieldDefined()) {
+                $ext = $this->intent->jsonSerialize();
+                unset($ext->value);
                 $out->_intent = $ext;
             }
         }
@@ -3392,9 +3300,9 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             if (null !== ($val = $this->priority->getValue())) {
                 $out->priority = $val;
             }
-            $ext = $this->priority->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->priority->_nonValueFieldDefined()) {
+                $ext = $this->priority->jsonSerialize();
+                unset($ext->value);
                 $out->_priority = $ext;
             }
         }
@@ -3405,9 +3313,9 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -3427,9 +3335,9 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             if (null !== ($val = $this->authoredOn->getValue())) {
                 $out->authoredOn = $val;
             }
-            $ext = $this->authoredOn->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->authoredOn->_nonValueFieldDefined()) {
+                $ext = $this->authoredOn->jsonSerialize();
+                unset($ext->value);
                 $out->_authoredOn = $ext;
             }
         }
@@ -3437,9 +3345,9 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
             if (null !== ($val = $this->lastModified->getValue())) {
                 $out->lastModified = $val;
             }
-            $ext = $this->lastModified->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lastModified->_nonValueFieldDefined()) {
+                $ext = $this->lastModified->jsonSerialize();
+                unset($ext->value);
                 $out->_lastModified = $ext;
             }
         }
@@ -3473,7 +3381,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_MAPPING;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTITY = 'identity';
     public const FIELD_IDENTITY_EXT = '_identity';
     public const FIELD_LANGUAGE = 'language';
@@ -123,7 +123,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
     public const FIELD_COMMENT = 'comment';
     public const FIELD_COMMENT_EXT = '_comment';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_IDENTITY => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -133,7 +133,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_IDENTITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LANGUAGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -141,7 +141,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
         self::FIELD_COMMENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -230,7 +230,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -239,7 +239,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -520,7 +520,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -641,7 +641,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -684,7 +684,8 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
                 $type->setMap(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_COMMENT === $cen) {
                 $type->setComment(FHIRMarkdown::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -849,9 +850,9 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
             if (null !== ($val = $this->identity->getValue())) {
                 $out->identity = $val;
             }
-            $ext = $this->identity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->identity->_nonValueFieldDefined()) {
+                $ext = $this->identity->jsonSerialize();
+                unset($ext->value);
                 $out->_identity = $ext;
             }
         }
@@ -859,9 +860,9 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
             if (null !== ($val = $this->language->getValue())) {
                 $out->language = $val;
             }
-            $ext = $this->language->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->language->_nonValueFieldDefined()) {
+                $ext = $this->language->jsonSerialize();
+                unset($ext->value);
                 $out->_language = $ext;
             }
         }
@@ -869,9 +870,9 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
             if (null !== ($val = $this->map->getValue())) {
                 $out->map = $val;
             }
-            $ext = $this->map->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->map->_nonValueFieldDefined()) {
+                $ext = $this->map->jsonSerialize();
+                unset($ext->value);
                 $out->_map = $ext;
             }
         }
@@ -879,15 +880,15 @@ class FHIRElementDefinitionMapping extends FHIRBackboneType
             if (null !== ($val = $this->comment->getValue())) {
                 $out->comment = $val;
             }
-            $ext = $this->comment->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comment->_nonValueFieldDefined()) {
+                $ext = $this->comment->jsonSerialize();
+                unset($ext->value);
                 $out->_comment = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

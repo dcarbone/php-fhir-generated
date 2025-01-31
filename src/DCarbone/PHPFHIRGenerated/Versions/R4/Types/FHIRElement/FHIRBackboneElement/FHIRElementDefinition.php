@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -161,7 +161,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ELEMENT_DEFINITION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_PATH = 'path';
     public const FIELD_PATH_EXT = '_path';
     public const FIELD_REPRESENTATION = 'representation';
@@ -237,15 +237,12 @@ class FHIRElementDefinition extends FHIRBackboneElement
     public const FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT = 'defaultValueCodeableConcept';
     public const FIELD_DEFAULT_VALUE_CODING = 'defaultValueCoding';
     public const FIELD_DEFAULT_VALUE_CONTACT_POINT = 'defaultValueContactPoint';
-    public const FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT = '_defaultValueContactPoint';
     public const FIELD_DEFAULT_VALUE_COUNT = 'defaultValueCount';
     public const FIELD_DEFAULT_VALUE_DISTANCE = 'defaultValueDistance';
     public const FIELD_DEFAULT_VALUE_DURATION = 'defaultValueDuration';
     public const FIELD_DEFAULT_VALUE_HUMAN_NAME = 'defaultValueHumanName';
     public const FIELD_DEFAULT_VALUE_IDENTIFIER = 'defaultValueIdentifier';
-    public const FIELD_DEFAULT_VALUE_IDENTIFIER_EXT = '_defaultValueIdentifier';
     public const FIELD_DEFAULT_VALUE_MONEY = 'defaultValueMoney';
-    public const FIELD_DEFAULT_VALUE_MONEY_EXT = '_defaultValueMoney';
     public const FIELD_DEFAULT_VALUE_PERIOD = 'defaultValuePeriod';
     public const FIELD_DEFAULT_VALUE_QUANTITY = 'defaultValueQuantity';
     public const FIELD_DEFAULT_VALUE_RANGE = 'defaultValueRange';
@@ -313,15 +310,12 @@ class FHIRElementDefinition extends FHIRBackboneElement
     public const FIELD_FIXED_CODEABLE_CONCEPT = 'fixedCodeableConcept';
     public const FIELD_FIXED_CODING = 'fixedCoding';
     public const FIELD_FIXED_CONTACT_POINT = 'fixedContactPoint';
-    public const FIELD_FIXED_CONTACT_POINT_EXT = '_fixedContactPoint';
     public const FIELD_FIXED_COUNT = 'fixedCount';
     public const FIELD_FIXED_DISTANCE = 'fixedDistance';
     public const FIELD_FIXED_DURATION = 'fixedDuration';
     public const FIELD_FIXED_HUMAN_NAME = 'fixedHumanName';
     public const FIELD_FIXED_IDENTIFIER = 'fixedIdentifier';
-    public const FIELD_FIXED_IDENTIFIER_EXT = '_fixedIdentifier';
     public const FIELD_FIXED_MONEY = 'fixedMoney';
-    public const FIELD_FIXED_MONEY_EXT = '_fixedMoney';
     public const FIELD_FIXED_PERIOD = 'fixedPeriod';
     public const FIELD_FIXED_QUANTITY = 'fixedQuantity';
     public const FIELD_FIXED_RANGE = 'fixedRange';
@@ -385,15 +379,12 @@ class FHIRElementDefinition extends FHIRBackboneElement
     public const FIELD_PATTERN_CODEABLE_CONCEPT = 'patternCodeableConcept';
     public const FIELD_PATTERN_CODING = 'patternCoding';
     public const FIELD_PATTERN_CONTACT_POINT = 'patternContactPoint';
-    public const FIELD_PATTERN_CONTACT_POINT_EXT = '_patternContactPoint';
     public const FIELD_PATTERN_COUNT = 'patternCount';
     public const FIELD_PATTERN_DISTANCE = 'patternDistance';
     public const FIELD_PATTERN_DURATION = 'patternDuration';
     public const FIELD_PATTERN_HUMAN_NAME = 'patternHumanName';
     public const FIELD_PATTERN_IDENTIFIER = 'patternIdentifier';
-    public const FIELD_PATTERN_IDENTIFIER_EXT = '_patternIdentifier';
     public const FIELD_PATTERN_MONEY = 'patternMoney';
-    public const FIELD_PATTERN_MONEY_EXT = '_patternMoney';
     public const FIELD_PATTERN_PERIOD = 'patternPeriod';
     public const FIELD_PATTERN_QUANTITY = 'patternQuantity';
     public const FIELD_PATTERN_RANGE = 'patternRange';
@@ -463,14 +454,14 @@ class FHIRElementDefinition extends FHIRBackboneElement
     public const FIELD_BINDING = 'binding';
     public const FIELD_MAPPING = 'mapping';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_PATH => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_PATH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SLICE_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -502,9 +493,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
         self::FIELD_DEFAULT_VALUE_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DEFAULT_VALUE_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DEFAULT_VALUE_UUID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DEFAULT_VALUE_CONTACT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DEFAULT_VALUE_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DEFAULT_VALUE_MONEY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MEANING_WHEN_MISSING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ORDER_MEANING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FIXED_BASE_64BINARY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -526,9 +514,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
         self::FIELD_FIXED_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FIXED_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FIXED_UUID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_FIXED_CONTACT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_FIXED_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_FIXED_MONEY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PATTERN_BASE_64BINARY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PATTERN_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PATTERN_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -548,9 +533,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
         self::FIELD_PATTERN_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PATTERN_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PATTERN_UUID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_PATTERN_CONTACT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_PATTERN_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_PATTERN_MONEY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN_VALUE_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN_VALUE_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN_VALUE_INSTANT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -574,7 +556,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         self::FIELD_IS_SUMMARY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -3619,20 +3601,20 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl $defaultValueUrl
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUuid $defaultValueUuid
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress $defaultValueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation $defaultValueAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $defaultValueAttachment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $defaultValueCoding
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRHumanName $defaultValueHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $defaultValueMoney
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $defaultValuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $defaultValueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $defaultValueRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $defaultValueReference
@@ -3671,20 +3653,20 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl $fixedUrl
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUuid $fixedUuid
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress $fixedAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $fixedAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $fixedAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation $fixedAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $fixedAttachment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $fixedCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $fixedCoding
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $fixedContactPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $fixedCount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $fixedDistance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $fixedDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $fixedCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $fixedDistance
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $fixedDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRHumanName $fixedHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $fixedIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $fixedMoney
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $fixedPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $fixedQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $fixedQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $fixedRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $fixedRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $fixedReference
@@ -3721,20 +3703,20 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl $patternUrl
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUuid $patternUuid
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress $patternAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $patternAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $patternAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation $patternAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $patternAttachment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $patternCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $patternCoding
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $patternContactPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $patternCount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $patternDistance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $patternDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $patternCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $patternDistance
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $patternDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRHumanName $patternHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $patternIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $patternMoney
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $patternPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $patternQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $patternQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $patternRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $patternRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $patternReference
@@ -3760,7 +3742,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $minValueInteger
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $minValuePositiveInt
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt $minValueUnsignedInt
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $minValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $minValueQuantity
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $maxValueDate
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $maxValueDateTime
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInstant $maxValueInstant
@@ -3769,7 +3751,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $maxValueInteger
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $maxValuePositiveInt
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt $maxValueUnsignedInt
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxValueQuantity
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $maxLength
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId[] $condition
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionConstraint[] $constraint
@@ -3821,20 +3803,20 @@ class FHIRElementDefinition extends FHIRBackboneElement
                                 null|string|FHIRUrlPrimitive|FHIRUrl $defaultValueUrl = null,
                                 null|string|FHIRUuidPrimitive|FHIRUuid $defaultValueUuid = null,
                                 null|FHIRAddress $defaultValueAddress = null,
-                                null|FHIRAge $defaultValueAge = null,
+                                null|FHIRDecimal|FHIRAge $defaultValueAge = null,
                                 null|FHIRAnnotation $defaultValueAnnotation = null,
                                 null|FHIRAttachment $defaultValueAttachment = null,
                                 null|FHIRCodeableConcept $defaultValueCodeableConcept = null,
                                 null|FHIRCoding $defaultValueCoding = null,
                                 null|FHIRString|FHIRContactPoint $defaultValueContactPoint = null,
-                                null|FHIRCount $defaultValueCount = null,
-                                null|FHIRDistance $defaultValueDistance = null,
-                                null|FHIRDuration $defaultValueDuration = null,
+                                null|FHIRDecimal|FHIRCount $defaultValueCount = null,
+                                null|FHIRDecimal|FHIRDistance $defaultValueDistance = null,
+                                null|FHIRDecimal|FHIRDuration $defaultValueDuration = null,
                                 null|FHIRHumanName $defaultValueHumanName = null,
                                 null|FHIRString|FHIRIdentifier $defaultValueIdentifier = null,
                                 null|FHIRDecimal|FHIRMoney $defaultValueMoney = null,
                                 null|FHIRPeriod $defaultValuePeriod = null,
-                                null|FHIRQuantity $defaultValueQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $defaultValueQuantity = null,
                                 null|FHIRRange $defaultValueRange = null,
                                 null|FHIRRatio $defaultValueRatio = null,
                                 null|FHIRReference $defaultValueReference = null,
@@ -3873,20 +3855,20 @@ class FHIRElementDefinition extends FHIRBackboneElement
                                 null|string|FHIRUrlPrimitive|FHIRUrl $fixedUrl = null,
                                 null|string|FHIRUuidPrimitive|FHIRUuid $fixedUuid = null,
                                 null|FHIRAddress $fixedAddress = null,
-                                null|FHIRAge $fixedAge = null,
+                                null|FHIRDecimal|FHIRAge $fixedAge = null,
                                 null|FHIRAnnotation $fixedAnnotation = null,
                                 null|FHIRAttachment $fixedAttachment = null,
                                 null|FHIRCodeableConcept $fixedCodeableConcept = null,
                                 null|FHIRCoding $fixedCoding = null,
                                 null|FHIRString|FHIRContactPoint $fixedContactPoint = null,
-                                null|FHIRCount $fixedCount = null,
-                                null|FHIRDistance $fixedDistance = null,
-                                null|FHIRDuration $fixedDuration = null,
+                                null|FHIRDecimal|FHIRCount $fixedCount = null,
+                                null|FHIRDecimal|FHIRDistance $fixedDistance = null,
+                                null|FHIRDecimal|FHIRDuration $fixedDuration = null,
                                 null|FHIRHumanName $fixedHumanName = null,
                                 null|FHIRString|FHIRIdentifier $fixedIdentifier = null,
                                 null|FHIRDecimal|FHIRMoney $fixedMoney = null,
                                 null|FHIRPeriod $fixedPeriod = null,
-                                null|FHIRQuantity $fixedQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $fixedQuantity = null,
                                 null|FHIRRange $fixedRange = null,
                                 null|FHIRRatio $fixedRatio = null,
                                 null|FHIRReference $fixedReference = null,
@@ -3923,20 +3905,20 @@ class FHIRElementDefinition extends FHIRBackboneElement
                                 null|string|FHIRUrlPrimitive|FHIRUrl $patternUrl = null,
                                 null|string|FHIRUuidPrimitive|FHIRUuid $patternUuid = null,
                                 null|FHIRAddress $patternAddress = null,
-                                null|FHIRAge $patternAge = null,
+                                null|FHIRDecimal|FHIRAge $patternAge = null,
                                 null|FHIRAnnotation $patternAnnotation = null,
                                 null|FHIRAttachment $patternAttachment = null,
                                 null|FHIRCodeableConcept $patternCodeableConcept = null,
                                 null|FHIRCoding $patternCoding = null,
                                 null|FHIRString|FHIRContactPoint $patternContactPoint = null,
-                                null|FHIRCount $patternCount = null,
-                                null|FHIRDistance $patternDistance = null,
-                                null|FHIRDuration $patternDuration = null,
+                                null|FHIRDecimal|FHIRCount $patternCount = null,
+                                null|FHIRDecimal|FHIRDistance $patternDistance = null,
+                                null|FHIRDecimal|FHIRDuration $patternDuration = null,
                                 null|FHIRHumanName $patternHumanName = null,
                                 null|FHIRString|FHIRIdentifier $patternIdentifier = null,
                                 null|FHIRDecimal|FHIRMoney $patternMoney = null,
                                 null|FHIRPeriod $patternPeriod = null,
-                                null|FHIRQuantity $patternQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $patternQuantity = null,
                                 null|FHIRRange $patternRange = null,
                                 null|FHIRRatio $patternRatio = null,
                                 null|FHIRReference $patternReference = null,
@@ -3962,7 +3944,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $minValueInteger = null,
                                 null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $minValuePositiveInt = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $minValueUnsignedInt = null,
-                                null|FHIRQuantity $minValueQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $minValueQuantity = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $maxValueDate = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $maxValueDateTime = null,
                                 null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $maxValueInstant = null,
@@ -3971,7 +3953,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $maxValueInteger = null,
                                 null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $maxValuePositiveInt = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $maxValueUnsignedInt = null,
-                                null|FHIRQuantity $maxValueQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $maxValueQuantity = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $maxLength = null,
                                 null|iterable $condition = null,
                                 null|iterable $constraint = null,
@@ -4580,7 +4562,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -4589,7 +4571,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -7145,14 +7127,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
      * @return static
      */
-    public function setDefaultValueAge(null|FHIRAge $defaultValueAge): self
+    public function setDefaultValueAge(null|FHIRDecimal|FHIRAge $defaultValueAge): self
     {
         if (null === $defaultValueAge) {
             unset($this->defaultValueAge);
             return $this;
+        }
+        if (!($defaultValueAge instanceof FHIRAge)) {
+            $defaultValueAge = new FHIRAge(value: $defaultValueAge);
         }
         $this->defaultValueAge = $defaultValueAge;
         return $this;
@@ -7332,11 +7317,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefaultValueContactPoint(null|FHIRString|FHIRContactPoint $defaultValueContactPoint,
-                                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDefaultValueContactPoint(null|FHIRString|FHIRContactPoint $defaultValueContactPoint): self
     {
         if (null === $defaultValueContactPoint) {
             unset($this->defaultValueContactPoint);
@@ -7346,33 +7329,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $defaultValueContactPoint = new FHIRContactPoint(value: $defaultValueContactPoint);
         }
         $this->defaultValueContactPoint = $defaultValueContactPoint;
-        if ($this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] !== $valueXMLLocation) {
-            $this->_setDefaultValueContactPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the defaultValueContactPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDefaultValueContactPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the defaultValueContactPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDefaultValueContactPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -7403,14 +7359,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
      * @return static
      */
-    public function setDefaultValueCount(null|FHIRCount $defaultValueCount): self
+    public function setDefaultValueCount(null|FHIRDecimal|FHIRCount $defaultValueCount): self
     {
         if (null === $defaultValueCount) {
             unset($this->defaultValueCount);
             return $this;
+        }
+        if (!($defaultValueCount instanceof FHIRCount)) {
+            $defaultValueCount = new FHIRCount(value: $defaultValueCount);
         }
         $this->defaultValueCount = $defaultValueCount;
         return $this;
@@ -7439,14 +7398,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
      * @return static
      */
-    public function setDefaultValueDistance(null|FHIRDistance $defaultValueDistance): self
+    public function setDefaultValueDistance(null|FHIRDecimal|FHIRDistance $defaultValueDistance): self
     {
         if (null === $defaultValueDistance) {
             unset($this->defaultValueDistance);
             return $this;
+        }
+        if (!($defaultValueDistance instanceof FHIRDistance)) {
+            $defaultValueDistance = new FHIRDistance(value: $defaultValueDistance);
         }
         $this->defaultValueDistance = $defaultValueDistance;
         return $this;
@@ -7475,14 +7437,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
      * @return static
      */
-    public function setDefaultValueDuration(null|FHIRDuration $defaultValueDuration): self
+    public function setDefaultValueDuration(null|FHIRDecimal|FHIRDuration $defaultValueDuration): self
     {
         if (null === $defaultValueDuration) {
             unset($this->defaultValueDuration);
             return $this;
+        }
+        if (!($defaultValueDuration instanceof FHIRDuration)) {
+            $defaultValueDuration = new FHIRDuration(value: $defaultValueDuration);
         }
         $this->defaultValueDuration = $defaultValueDuration;
         return $this;
@@ -7550,11 +7515,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefaultValueIdentifier(null|FHIRString|FHIRIdentifier $defaultValueIdentifier,
-                                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDefaultValueIdentifier(null|FHIRString|FHIRIdentifier $defaultValueIdentifier): self
     {
         if (null === $defaultValueIdentifier) {
             unset($this->defaultValueIdentifier);
@@ -7564,33 +7527,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $defaultValueIdentifier = new FHIRIdentifier(value: $defaultValueIdentifier);
         }
         $this->defaultValueIdentifier = $defaultValueIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setDefaultValueIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the defaultValueIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDefaultValueIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the defaultValueIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDefaultValueIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -7618,11 +7554,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $defaultValueMoney
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefaultValueMoney(null|FHIRDecimal|FHIRMoney $defaultValueMoney,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDefaultValueMoney(null|FHIRDecimal|FHIRMoney $defaultValueMoney): self
     {
         if (null === $defaultValueMoney) {
             unset($this->defaultValueMoney);
@@ -7632,33 +7566,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $defaultValueMoney = new FHIRMoney(value: $defaultValueMoney);
         }
         $this->defaultValueMoney = $defaultValueMoney;
-        if ($this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_MONEY] !== $valueXMLLocation) {
-            $this->_setDefaultValueMoneyValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the defaultValueMoney element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDefaultValueMoneyValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_MONEY];
-    }
-
-    /**
-     * Set the location the "value" field of the defaultValueMoney element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDefaultValueMoneyValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_MONEY] = $valueXMLLocation;
         return $this;
     }
 
@@ -7725,14 +7632,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @return static
      */
-    public function setDefaultValueQuantity(null|FHIRQuantity $defaultValueQuantity): self
+    public function setDefaultValueQuantity(null|FHIRDecimal|FHIRQuantity $defaultValueQuantity): self
     {
         if (null === $defaultValueQuantity) {
             unset($this->defaultValueQuantity);
             return $this;
+        }
+        if (!($defaultValueQuantity instanceof FHIRQuantity)) {
+            $defaultValueQuantity = new FHIRQuantity(value: $defaultValueQuantity);
         }
         $this->defaultValueQuantity = $defaultValueQuantity;
         return $this;
@@ -9983,14 +9893,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * all values must be an exact match (case and accent sensitive). Missing
      * elements/attributes must also be missing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $fixedAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $fixedAge
      * @return static
      */
-    public function setFixedAge(null|FHIRAge $fixedAge): self
+    public function setFixedAge(null|FHIRDecimal|FHIRAge $fixedAge): self
     {
         if (null === $fixedAge) {
             unset($this->fixedAge);
             return $this;
+        }
+        if (!($fixedAge instanceof FHIRAge)) {
+            $fixedAge = new FHIRAge(value: $fixedAge);
         }
         $this->fixedAge = $fixedAge;
         return $this;
@@ -10190,11 +10103,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $fixedContactPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFixedContactPoint(null|FHIRString|FHIRContactPoint $fixedContactPoint,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFixedContactPoint(null|FHIRString|FHIRContactPoint $fixedContactPoint): self
     {
         if (null === $fixedContactPoint) {
             unset($this->fixedContactPoint);
@@ -10204,33 +10115,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $fixedContactPoint = new FHIRContactPoint(value: $fixedContactPoint);
         }
         $this->fixedContactPoint = $fixedContactPoint;
-        if ($this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT] !== $valueXMLLocation) {
-            $this->_setFixedContactPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the fixedContactPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFixedContactPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the fixedContactPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFixedContactPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -10265,14 +10149,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * all values must be an exact match (case and accent sensitive). Missing
      * elements/attributes must also be missing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $fixedCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $fixedCount
      * @return static
      */
-    public function setFixedCount(null|FHIRCount $fixedCount): self
+    public function setFixedCount(null|FHIRDecimal|FHIRCount $fixedCount): self
     {
         if (null === $fixedCount) {
             unset($this->fixedCount);
             return $this;
+        }
+        if (!($fixedCount instanceof FHIRCount)) {
+            $fixedCount = new FHIRCount(value: $fixedCount);
         }
         $this->fixedCount = $fixedCount;
         return $this;
@@ -10305,14 +10192,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * all values must be an exact match (case and accent sensitive). Missing
      * elements/attributes must also be missing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $fixedDistance
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $fixedDistance
      * @return static
      */
-    public function setFixedDistance(null|FHIRDistance $fixedDistance): self
+    public function setFixedDistance(null|FHIRDecimal|FHIRDistance $fixedDistance): self
     {
         if (null === $fixedDistance) {
             unset($this->fixedDistance);
             return $this;
+        }
+        if (!($fixedDistance instanceof FHIRDistance)) {
+            $fixedDistance = new FHIRDistance(value: $fixedDistance);
         }
         $this->fixedDistance = $fixedDistance;
         return $this;
@@ -10345,14 +10235,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * all values must be an exact match (case and accent sensitive). Missing
      * elements/attributes must also be missing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $fixedDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $fixedDuration
      * @return static
      */
-    public function setFixedDuration(null|FHIRDuration $fixedDuration): self
+    public function setFixedDuration(null|FHIRDecimal|FHIRDuration $fixedDuration): self
     {
         if (null === $fixedDuration) {
             unset($this->fixedDuration);
             return $this;
+        }
+        if (!($fixedDuration instanceof FHIRDuration)) {
+            $fixedDuration = new FHIRDuration(value: $fixedDuration);
         }
         $this->fixedDuration = $fixedDuration;
         return $this;
@@ -10428,11 +10321,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $fixedIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFixedIdentifier(null|FHIRString|FHIRIdentifier $fixedIdentifier,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFixedIdentifier(null|FHIRString|FHIRIdentifier $fixedIdentifier): self
     {
         if (null === $fixedIdentifier) {
             unset($this->fixedIdentifier);
@@ -10442,33 +10333,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $fixedIdentifier = new FHIRIdentifier(value: $fixedIdentifier);
         }
         $this->fixedIdentifier = $fixedIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setFixedIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the fixedIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFixedIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the fixedIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFixedIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -10500,11 +10364,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $fixedMoney
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFixedMoney(null|FHIRDecimal|FHIRMoney $fixedMoney,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFixedMoney(null|FHIRDecimal|FHIRMoney $fixedMoney): self
     {
         if (null === $fixedMoney) {
             unset($this->fixedMoney);
@@ -10514,33 +10376,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $fixedMoney = new FHIRMoney(value: $fixedMoney);
         }
         $this->fixedMoney = $fixedMoney;
-        if ($this->_valueXMLLocations[self::FIELD_FIXED_MONEY] !== $valueXMLLocation) {
-            $this->_setFixedMoneyValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the fixedMoney element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFixedMoneyValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FIXED_MONEY];
-    }
-
-    /**
-     * Set the location the "value" field of the fixedMoney element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFixedMoneyValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FIXED_MONEY] = $valueXMLLocation;
         return $this;
     }
 
@@ -10615,14 +10450,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * all values must be an exact match (case and accent sensitive). Missing
      * elements/attributes must also be missing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $fixedQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $fixedQuantity
      * @return static
      */
-    public function setFixedQuantity(null|FHIRQuantity $fixedQuantity): self
+    public function setFixedQuantity(null|FHIRDecimal|FHIRQuantity $fixedQuantity): self
     {
         if (null === $fixedQuantity) {
             unset($this->fixedQuantity);
             return $this;
+        }
+        if (!($fixedQuantity instanceof FHIRQuantity)) {
+            $fixedQuantity = new FHIRQuantity(value: $fixedQuantity);
         }
         $this->fixedQuantity = $fixedQuantity;
         return $this;
@@ -13127,14 +12965,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
      * If an array: it must match (recursively) the pattern value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $patternAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $patternAge
      * @return static
      */
-    public function setPatternAge(null|FHIRAge $patternAge): self
+    public function setPatternAge(null|FHIRDecimal|FHIRAge $patternAge): self
     {
         if (null === $patternAge) {
             unset($this->patternAge);
             return $this;
+        }
+        if (!($patternAge instanceof FHIRAge)) {
+            $patternAge = new FHIRAge(value: $patternAge);
         }
         $this->patternAge = $patternAge;
         return $this;
@@ -13414,11 +13255,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If an array: it must match (recursively) the pattern value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $patternContactPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPatternContactPoint(null|FHIRString|FHIRContactPoint $patternContactPoint,
-                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPatternContactPoint(null|FHIRString|FHIRContactPoint $patternContactPoint): self
     {
         if (null === $patternContactPoint) {
             unset($this->patternContactPoint);
@@ -13428,33 +13267,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $patternContactPoint = new FHIRContactPoint(value: $patternContactPoint);
         }
         $this->patternContactPoint = $patternContactPoint;
-        if ($this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT] !== $valueXMLLocation) {
-            $this->_setPatternContactPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the patternContactPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPatternContactPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the patternContactPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPatternContactPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -13505,14 +13317,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
      * If an array: it must match (recursively) the pattern value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $patternCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $patternCount
      * @return static
      */
-    public function setPatternCount(null|FHIRCount $patternCount): self
+    public function setPatternCount(null|FHIRDecimal|FHIRCount $patternCount): self
     {
         if (null === $patternCount) {
             unset($this->patternCount);
             return $this;
+        }
+        if (!($patternCount instanceof FHIRCount)) {
+            $patternCount = new FHIRCount(value: $patternCount);
         }
         $this->patternCount = $patternCount;
         return $this;
@@ -13561,14 +13376,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
      * If an array: it must match (recursively) the pattern value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $patternDistance
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $patternDistance
      * @return static
      */
-    public function setPatternDistance(null|FHIRDistance $patternDistance): self
+    public function setPatternDistance(null|FHIRDecimal|FHIRDistance $patternDistance): self
     {
         if (null === $patternDistance) {
             unset($this->patternDistance);
             return $this;
+        }
+        if (!($patternDistance instanceof FHIRDistance)) {
+            $patternDistance = new FHIRDistance(value: $patternDistance);
         }
         $this->patternDistance = $patternDistance;
         return $this;
@@ -13617,14 +13435,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
      * If an array: it must match (recursively) the pattern value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $patternDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $patternDuration
      * @return static
      */
-    public function setPatternDuration(null|FHIRDuration $patternDuration): self
+    public function setPatternDuration(null|FHIRDecimal|FHIRDuration $patternDuration): self
     {
         if (null === $patternDuration) {
             unset($this->patternDuration);
             return $this;
+        }
+        if (!($patternDuration instanceof FHIRDuration)) {
+            $patternDuration = new FHIRDuration(value: $patternDuration);
         }
         $this->patternDuration = $patternDuration;
         return $this;
@@ -13732,11 +13553,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If an array: it must match (recursively) the pattern value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $patternIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPatternIdentifier(null|FHIRString|FHIRIdentifier $patternIdentifier,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPatternIdentifier(null|FHIRString|FHIRIdentifier $patternIdentifier): self
     {
         if (null === $patternIdentifier) {
             unset($this->patternIdentifier);
@@ -13746,33 +13565,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $patternIdentifier = new FHIRIdentifier(value: $patternIdentifier);
         }
         $this->patternIdentifier = $patternIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setPatternIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the patternIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPatternIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the patternIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPatternIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -13820,11 +13612,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If an array: it must match (recursively) the pattern value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $patternMoney
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPatternMoney(null|FHIRDecimal|FHIRMoney $patternMoney,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPatternMoney(null|FHIRDecimal|FHIRMoney $patternMoney): self
     {
         if (null === $patternMoney) {
             unset($this->patternMoney);
@@ -13834,33 +13624,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $patternMoney = new FHIRMoney(value: $patternMoney);
         }
         $this->patternMoney = $patternMoney;
-        if ($this->_valueXMLLocations[self::FIELD_PATTERN_MONEY] !== $valueXMLLocation) {
-            $this->_setPatternMoneyValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the patternMoney element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPatternMoneyValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PATTERN_MONEY];
-    }
-
-    /**
-     * Set the location the "value" field of the patternMoney element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPatternMoneyValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PATTERN_MONEY] = $valueXMLLocation;
         return $this;
     }
 
@@ -13967,14 +13730,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
      * If an array: it must match (recursively) the pattern value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $patternQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $patternQuantity
      * @return static
      */
-    public function setPatternQuantity(null|FHIRQuantity $patternQuantity): self
+    public function setPatternQuantity(null|FHIRDecimal|FHIRQuantity $patternQuantity): self
     {
         if (null === $patternQuantity) {
             unset($this->patternQuantity);
             return $this;
+        }
+        if (!($patternQuantity instanceof FHIRQuantity)) {
+            $patternQuantity = new FHIRQuantity(value: $patternQuantity);
         }
         $this->patternQuantity = $patternQuantity;
         return $this;
@@ -15592,14 +15358,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $minValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $minValueQuantity
      * @return static
      */
-    public function setMinValueQuantity(null|FHIRQuantity $minValueQuantity): self
+    public function setMinValueQuantity(null|FHIRDecimal|FHIRQuantity $minValueQuantity): self
     {
         if (null === $minValueQuantity) {
             unset($this->minValueQuantity);
             return $this;
+        }
+        if (!($minValueQuantity instanceof FHIRQuantity)) {
+            $minValueQuantity = new FHIRQuantity(value: $minValueQuantity);
         }
         $this->minValueQuantity = $minValueQuantity;
         return $this;
@@ -16208,14 +15977,17 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $maxValueQuantity
      * @return static
      */
-    public function setMaxValueQuantity(null|FHIRQuantity $maxValueQuantity): self
+    public function setMaxValueQuantity(null|FHIRDecimal|FHIRQuantity $maxValueQuantity): self
     {
         if (null === $maxValueQuantity) {
             unset($this->maxValueQuantity);
             return $this;
+        }
+        if (!($maxValueQuantity instanceof FHIRQuantity)) {
+            $maxValueQuantity = new FHIRQuantity(value: $maxValueQuantity);
         }
         $this->maxValueQuantity = $maxValueQuantity;
         return $this;
@@ -16825,7 +16597,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -19257,7 +19029,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -19686,7 +19458,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
                 $type->setBinding(FHIRElementDefinitionBinding::xmlUnserialize($ce, $config));
             } else if (self::FIELD_MAPPING === $cen) {
                 $type->addMapping(FHIRElementDefinitionMapping::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -19931,30 +19704,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
                 $type->setDefaultValueUuid((string)$attributes[self::FIELD_DEFAULT_VALUE_UUID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_DEFAULT_VALUE_CONTACT_POINT])) {
-            if (isset($type->defaultValueContactPoint)) {
-                $type->defaultValueContactPoint->setValue((string)$attributes[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]);
-                $type->_setDefaultValueContactPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDefaultValueContactPoint((string)$attributes[self::FIELD_DEFAULT_VALUE_CONTACT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_DEFAULT_VALUE_IDENTIFIER])) {
-            if (isset($type->defaultValueIdentifier)) {
-                $type->defaultValueIdentifier->setValue((string)$attributes[self::FIELD_DEFAULT_VALUE_IDENTIFIER]);
-                $type->_setDefaultValueIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDefaultValueIdentifier((string)$attributes[self::FIELD_DEFAULT_VALUE_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_DEFAULT_VALUE_MONEY])) {
-            if (isset($type->defaultValueMoney)) {
-                $type->defaultValueMoney->setValue((string)$attributes[self::FIELD_DEFAULT_VALUE_MONEY]);
-                $type->_setDefaultValueMoneyValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDefaultValueMoney((string)$attributes[self::FIELD_DEFAULT_VALUE_MONEY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_MEANING_WHEN_MISSING])) {
             if (isset($type->meaningWhenMissing)) {
                 $type->meaningWhenMissing->setValue((string)$attributes[self::FIELD_MEANING_WHEN_MISSING]);
@@ -20123,30 +19872,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
                 $type->setFixedUuid((string)$attributes[self::FIELD_FIXED_UUID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_FIXED_CONTACT_POINT])) {
-            if (isset($type->fixedContactPoint)) {
-                $type->fixedContactPoint->setValue((string)$attributes[self::FIELD_FIXED_CONTACT_POINT]);
-                $type->_setFixedContactPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setFixedContactPoint((string)$attributes[self::FIELD_FIXED_CONTACT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_FIXED_IDENTIFIER])) {
-            if (isset($type->fixedIdentifier)) {
-                $type->fixedIdentifier->setValue((string)$attributes[self::FIELD_FIXED_IDENTIFIER]);
-                $type->_setFixedIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setFixedIdentifier((string)$attributes[self::FIELD_FIXED_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_FIXED_MONEY])) {
-            if (isset($type->fixedMoney)) {
-                $type->fixedMoney->setValue((string)$attributes[self::FIELD_FIXED_MONEY]);
-                $type->_setFixedMoneyValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setFixedMoney((string)$attributes[self::FIELD_FIXED_MONEY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_PATTERN_BASE_64BINARY])) {
             if (isset($type->patternBase64Binary)) {
                 $type->patternBase64Binary->setValue((string)$attributes[self::FIELD_PATTERN_BASE_64BINARY]);
@@ -20297,30 +20022,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
                 $type->_setPatternUuidValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setPatternUuid((string)$attributes[self::FIELD_PATTERN_UUID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_PATTERN_CONTACT_POINT])) {
-            if (isset($type->patternContactPoint)) {
-                $type->patternContactPoint->setValue((string)$attributes[self::FIELD_PATTERN_CONTACT_POINT]);
-                $type->_setPatternContactPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPatternContactPoint((string)$attributes[self::FIELD_PATTERN_CONTACT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_PATTERN_IDENTIFIER])) {
-            if (isset($type->patternIdentifier)) {
-                $type->patternIdentifier->setValue((string)$attributes[self::FIELD_PATTERN_IDENTIFIER]);
-                $type->_setPatternIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPatternIdentifier((string)$attributes[self::FIELD_PATTERN_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_PATTERN_MONEY])) {
-            if (isset($type->patternMoney)) {
-                $type->patternMoney->setValue((string)$attributes[self::FIELD_PATTERN_MONEY]);
-                $type->_setPatternMoneyValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPatternMoney((string)$attributes[self::FIELD_PATTERN_MONEY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_MIN_VALUE_DATE])) {
@@ -20591,15 +20292,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (isset($this->defaultValueUuid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_UUID]) {
             $xw->writeAttribute(self::FIELD_DEFAULT_VALUE_UUID, $this->defaultValueUuid->_getFormattedValue());
         }
-        if (isset($this->defaultValueContactPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]) {
-            $xw->writeAttribute(self::FIELD_DEFAULT_VALUE_CONTACT_POINT, $this->defaultValueContactPoint->_getFormattedValue());
-        }
-        if (isset($this->defaultValueIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_DEFAULT_VALUE_IDENTIFIER, $this->defaultValueIdentifier->_getFormattedValue());
-        }
-        if (isset($this->defaultValueMoney) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_MONEY]) {
-            $xw->writeAttribute(self::FIELD_DEFAULT_VALUE_MONEY, $this->defaultValueMoney->_getFormattedValue());
-        }
         if (isset($this->meaningWhenMissing) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MEANING_WHEN_MISSING]) {
             $xw->writeAttribute(self::FIELD_MEANING_WHEN_MISSING, $this->meaningWhenMissing->_getFormattedValue());
         }
@@ -20663,15 +20355,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (isset($this->fixedUuid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FIXED_UUID]) {
             $xw->writeAttribute(self::FIELD_FIXED_UUID, $this->fixedUuid->_getFormattedValue());
         }
-        if (isset($this->fixedContactPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT]) {
-            $xw->writeAttribute(self::FIELD_FIXED_CONTACT_POINT, $this->fixedContactPoint->_getFormattedValue());
-        }
-        if (isset($this->fixedIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_FIXED_IDENTIFIER, $this->fixedIdentifier->_getFormattedValue());
-        }
-        if (isset($this->fixedMoney) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FIXED_MONEY]) {
-            $xw->writeAttribute(self::FIELD_FIXED_MONEY, $this->fixedMoney->_getFormattedValue());
-        }
         if (isset($this->patternBase64Binary) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATTERN_BASE_64BINARY]) {
             $xw->writeAttribute(self::FIELD_PATTERN_BASE_64BINARY, $this->patternBase64Binary->_getFormattedValue());
         }
@@ -20728,15 +20411,6 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (isset($this->patternUuid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATTERN_UUID]) {
             $xw->writeAttribute(self::FIELD_PATTERN_UUID, $this->patternUuid->_getFormattedValue());
-        }
-        if (isset($this->patternContactPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT]) {
-            $xw->writeAttribute(self::FIELD_PATTERN_CONTACT_POINT, $this->patternContactPoint->_getFormattedValue());
-        }
-        if (isset($this->patternIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_PATTERN_IDENTIFIER, $this->patternIdentifier->_getFormattedValue());
-        }
-        if (isset($this->patternMoney) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATTERN_MONEY]) {
-            $xw->writeAttribute(self::FIELD_PATTERN_MONEY, $this->patternMoney->_getFormattedValue());
         }
         if (isset($this->minValueDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MIN_VALUE_DATE]) {
             $xw->writeAttribute(self::FIELD_MIN_VALUE_DATE, $this->minValueDate->_getFormattedValue());
@@ -21080,11 +20754,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $this->defaultValueCoding->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->defaultValueContactPoint)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]
-                || $this->defaultValueContactPoint->_nonValueFieldDefined())) {
+        if (isset($this->defaultValueContactPoint)) {
             $xw->startElement(self::FIELD_DEFAULT_VALUE_CONTACT_POINT);
-            $this->defaultValueContactPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]);
+            $this->defaultValueContactPoint->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->defaultValueCount)) {
@@ -21107,18 +20779,14 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $this->defaultValueHumanName->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->defaultValueIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER]
-                || $this->defaultValueIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->defaultValueIdentifier)) {
             $xw->startElement(self::FIELD_DEFAULT_VALUE_IDENTIFIER);
-            $this->defaultValueIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER]);
+            $this->defaultValueIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->defaultValueMoney)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_MONEY]
-                || $this->defaultValueMoney->_nonValueFieldDefined())) {
+        if (isset($this->defaultValueMoney)) {
             $xw->startElement(self::FIELD_DEFAULT_VALUE_MONEY);
-            $this->defaultValueMoney->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_MONEY]);
+            $this->defaultValueMoney->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->defaultValuePeriod)) {
@@ -21388,11 +21056,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $this->fixedCoding->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->fixedContactPoint)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT]
-                || $this->fixedContactPoint->_nonValueFieldDefined())) {
+        if (isset($this->fixedContactPoint)) {
             $xw->startElement(self::FIELD_FIXED_CONTACT_POINT);
-            $this->fixedContactPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT]);
+            $this->fixedContactPoint->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->fixedCount)) {
@@ -21415,18 +21081,14 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $this->fixedHumanName->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->fixedIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER]
-                || $this->fixedIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->fixedIdentifier)) {
             $xw->startElement(self::FIELD_FIXED_IDENTIFIER);
-            $this->fixedIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER]);
+            $this->fixedIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->fixedMoney)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_FIXED_MONEY]
-                || $this->fixedMoney->_nonValueFieldDefined())) {
+        if (isset($this->fixedMoney)) {
             $xw->startElement(self::FIELD_FIXED_MONEY);
-            $this->fixedMoney->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_FIXED_MONEY]);
+            $this->fixedMoney->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->fixedPeriod)) {
@@ -21682,11 +21344,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $this->patternCoding->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->patternContactPoint)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT]
-                || $this->patternContactPoint->_nonValueFieldDefined())) {
+        if (isset($this->patternContactPoint)) {
             $xw->startElement(self::FIELD_PATTERN_CONTACT_POINT);
-            $this->patternContactPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT]);
+            $this->patternContactPoint->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->patternCount)) {
@@ -21709,18 +21369,14 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $this->patternHumanName->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->patternIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER]
-                || $this->patternIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->patternIdentifier)) {
             $xw->startElement(self::FIELD_PATTERN_IDENTIFIER);
-            $this->patternIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER]);
+            $this->patternIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->patternMoney)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PATTERN_MONEY]
-                || $this->patternMoney->_nonValueFieldDefined())) {
+        if (isset($this->patternMoney)) {
             $xw->startElement(self::FIELD_PATTERN_MONEY);
-            $this->patternMoney->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PATTERN_MONEY]);
+            $this->patternMoney->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->patternPeriod)) {
@@ -22405,15 +22061,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_DEFAULT_VALUE_CODING]) || array_key_exists(self::FIELD_DEFAULT_VALUE_CODING, $json)) {
             $type->setDefaultValueCoding(FHIRCoding::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_CODING], $config));
         }
-        if (isset($json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT])
-            || isset($json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT])
-            || array_key_exists(self::FIELD_DEFAULT_VALUE_CONTACT_POINT, $json)
-            || array_key_exists(self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] ?? null;
-            $type->setDefaultValueContactPoint(FHIRContactPoint::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]) || array_key_exists(self::FIELD_DEFAULT_VALUE_CONTACT_POINT, $json)) {
+            $type->setDefaultValueContactPoint(FHIRContactPoint::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT], $config));
         }
         if (isset($json[self::FIELD_DEFAULT_VALUE_COUNT]) || array_key_exists(self::FIELD_DEFAULT_VALUE_COUNT, $json)) {
             $type->setDefaultValueCount(FHIRCount::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_COUNT], $config));
@@ -22427,25 +22076,11 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_DEFAULT_VALUE_HUMAN_NAME]) || array_key_exists(self::FIELD_DEFAULT_VALUE_HUMAN_NAME, $json)) {
             $type->setDefaultValueHumanName(FHIRHumanName::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_HUMAN_NAME], $config));
         }
-        if (isset($json[self::FIELD_DEFAULT_VALUE_IDENTIFIER])
-            || isset($json[self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_DEFAULT_VALUE_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_DEFAULT_VALUE_IDENTIFIER] ?? null;
-            $type->setDefaultValueIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DEFAULT_VALUE_IDENTIFIER]) || array_key_exists(self::FIELD_DEFAULT_VALUE_IDENTIFIER, $json)) {
+            $type->setDefaultValueIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_IDENTIFIER], $config));
         }
-        if (isset($json[self::FIELD_DEFAULT_VALUE_MONEY])
-            || isset($json[self::FIELD_DEFAULT_VALUE_MONEY_EXT])
-            || array_key_exists(self::FIELD_DEFAULT_VALUE_MONEY, $json)
-            || array_key_exists(self::FIELD_DEFAULT_VALUE_MONEY_EXT, $json)) {
-            $value = $json[self::FIELD_DEFAULT_VALUE_MONEY] ?? null;
-            $type->setDefaultValueMoney(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFAULT_VALUE_MONEY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DEFAULT_VALUE_MONEY]) || array_key_exists(self::FIELD_DEFAULT_VALUE_MONEY, $json)) {
+            $type->setDefaultValueMoney(FHIRMoney::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_MONEY], $config));
         }
         if (isset($json[self::FIELD_DEFAULT_VALUE_PERIOD]) || array_key_exists(self::FIELD_DEFAULT_VALUE_PERIOD, $json)) {
             $type->setDefaultValuePeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_PERIOD], $config));
@@ -22729,15 +22364,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_FIXED_CODING]) || array_key_exists(self::FIELD_FIXED_CODING, $json)) {
             $type->setFixedCoding(FHIRCoding::jsonUnserialize($json[self::FIELD_FIXED_CODING], $config));
         }
-        if (isset($json[self::FIELD_FIXED_CONTACT_POINT])
-            || isset($json[self::FIELD_FIXED_CONTACT_POINT_EXT])
-            || array_key_exists(self::FIELD_FIXED_CONTACT_POINT, $json)
-            || array_key_exists(self::FIELD_FIXED_CONTACT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_FIXED_CONTACT_POINT] ?? null;
-            $type->setFixedContactPoint(FHIRContactPoint::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_FIXED_CONTACT_POINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_FIXED_CONTACT_POINT]) || array_key_exists(self::FIELD_FIXED_CONTACT_POINT, $json)) {
+            $type->setFixedContactPoint(FHIRContactPoint::jsonUnserialize($json[self::FIELD_FIXED_CONTACT_POINT], $config));
         }
         if (isset($json[self::FIELD_FIXED_COUNT]) || array_key_exists(self::FIELD_FIXED_COUNT, $json)) {
             $type->setFixedCount(FHIRCount::jsonUnserialize($json[self::FIELD_FIXED_COUNT], $config));
@@ -22751,25 +22379,11 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_FIXED_HUMAN_NAME]) || array_key_exists(self::FIELD_FIXED_HUMAN_NAME, $json)) {
             $type->setFixedHumanName(FHIRHumanName::jsonUnserialize($json[self::FIELD_FIXED_HUMAN_NAME], $config));
         }
-        if (isset($json[self::FIELD_FIXED_IDENTIFIER])
-            || isset($json[self::FIELD_FIXED_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_FIXED_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_FIXED_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_FIXED_IDENTIFIER] ?? null;
-            $type->setFixedIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_FIXED_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_FIXED_IDENTIFIER]) || array_key_exists(self::FIELD_FIXED_IDENTIFIER, $json)) {
+            $type->setFixedIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_FIXED_IDENTIFIER], $config));
         }
-        if (isset($json[self::FIELD_FIXED_MONEY])
-            || isset($json[self::FIELD_FIXED_MONEY_EXT])
-            || array_key_exists(self::FIELD_FIXED_MONEY, $json)
-            || array_key_exists(self::FIELD_FIXED_MONEY_EXT, $json)) {
-            $value = $json[self::FIELD_FIXED_MONEY] ?? null;
-            $type->setFixedMoney(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_FIXED_MONEY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_FIXED_MONEY]) || array_key_exists(self::FIELD_FIXED_MONEY, $json)) {
+            $type->setFixedMoney(FHIRMoney::jsonUnserialize($json[self::FIELD_FIXED_MONEY], $config));
         }
         if (isset($json[self::FIELD_FIXED_PERIOD]) || array_key_exists(self::FIELD_FIXED_PERIOD, $json)) {
             $type->setFixedPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_FIXED_PERIOD], $config));
@@ -23033,15 +22647,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_PATTERN_CODING]) || array_key_exists(self::FIELD_PATTERN_CODING, $json)) {
             $type->setPatternCoding(FHIRCoding::jsonUnserialize($json[self::FIELD_PATTERN_CODING], $config));
         }
-        if (isset($json[self::FIELD_PATTERN_CONTACT_POINT])
-            || isset($json[self::FIELD_PATTERN_CONTACT_POINT_EXT])
-            || array_key_exists(self::FIELD_PATTERN_CONTACT_POINT, $json)
-            || array_key_exists(self::FIELD_PATTERN_CONTACT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_PATTERN_CONTACT_POINT] ?? null;
-            $type->setPatternContactPoint(FHIRContactPoint::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_PATTERN_CONTACT_POINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PATTERN_CONTACT_POINT]) || array_key_exists(self::FIELD_PATTERN_CONTACT_POINT, $json)) {
+            $type->setPatternContactPoint(FHIRContactPoint::jsonUnserialize($json[self::FIELD_PATTERN_CONTACT_POINT], $config));
         }
         if (isset($json[self::FIELD_PATTERN_COUNT]) || array_key_exists(self::FIELD_PATTERN_COUNT, $json)) {
             $type->setPatternCount(FHIRCount::jsonUnserialize($json[self::FIELD_PATTERN_COUNT], $config));
@@ -23055,25 +22662,11 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (isset($json[self::FIELD_PATTERN_HUMAN_NAME]) || array_key_exists(self::FIELD_PATTERN_HUMAN_NAME, $json)) {
             $type->setPatternHumanName(FHIRHumanName::jsonUnserialize($json[self::FIELD_PATTERN_HUMAN_NAME], $config));
         }
-        if (isset($json[self::FIELD_PATTERN_IDENTIFIER])
-            || isset($json[self::FIELD_PATTERN_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_PATTERN_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_PATTERN_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_PATTERN_IDENTIFIER] ?? null;
-            $type->setPatternIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_PATTERN_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PATTERN_IDENTIFIER]) || array_key_exists(self::FIELD_PATTERN_IDENTIFIER, $json)) {
+            $type->setPatternIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_PATTERN_IDENTIFIER], $config));
         }
-        if (isset($json[self::FIELD_PATTERN_MONEY])
-            || isset($json[self::FIELD_PATTERN_MONEY_EXT])
-            || array_key_exists(self::FIELD_PATTERN_MONEY, $json)
-            || array_key_exists(self::FIELD_PATTERN_MONEY_EXT, $json)) {
-            $value = $json[self::FIELD_PATTERN_MONEY] ?? null;
-            $type->setPatternMoney(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_PATTERN_MONEY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PATTERN_MONEY]) || array_key_exists(self::FIELD_PATTERN_MONEY, $json)) {
+            $type->setPatternMoney(FHIRMoney::jsonUnserialize($json[self::FIELD_PATTERN_MONEY], $config));
         }
         if (isset($json[self::FIELD_PATTERN_PERIOD]) || array_key_exists(self::FIELD_PATTERN_PERIOD, $json)) {
             $type->setPatternPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PATTERN_PERIOD], $config));
@@ -23406,30 +22999,38 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->path->getValue())) {
                 $out->path = $val;
             }
-            $ext = $this->path->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->path->_nonValueFieldDefined()) {
+                $ext = $this->path->jsonSerialize();
+                unset($ext->value);
                 $out->_path = $ext;
             }
         }
         if (isset($this->representation) && [] !== $this->representation) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->representation as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->representation = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_representation = $exts;
             }
         }
@@ -23437,9 +23038,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->sliceName->getValue())) {
                 $out->sliceName = $val;
             }
-            $ext = $this->sliceName->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sliceName->_nonValueFieldDefined()) {
+                $ext = $this->sliceName->jsonSerialize();
+                unset($ext->value);
                 $out->_sliceName = $ext;
             }
         }
@@ -23447,9 +23048,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->sliceIsConstraining->getValue())) {
                 $out->sliceIsConstraining = $val;
             }
-            $ext = $this->sliceIsConstraining->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sliceIsConstraining->_nonValueFieldDefined()) {
+                $ext = $this->sliceIsConstraining->jsonSerialize();
+                unset($ext->value);
                 $out->_sliceIsConstraining = $ext;
             }
         }
@@ -23457,9 +23058,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->label->getValue())) {
                 $out->label = $val;
             }
-            $ext = $this->label->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->label->_nonValueFieldDefined()) {
+                $ext = $this->label->jsonSerialize();
+                unset($ext->value);
                 $out->_label = $ext;
             }
         }
@@ -23473,9 +23074,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->short->getValue())) {
                 $out->short = $val;
             }
-            $ext = $this->short->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->short->_nonValueFieldDefined()) {
+                $ext = $this->short->jsonSerialize();
+                unset($ext->value);
                 $out->_short = $ext;
             }
         }
@@ -23483,9 +23084,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->definition->getValue())) {
                 $out->definition = $val;
             }
-            $ext = $this->definition->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->definition->_nonValueFieldDefined()) {
+                $ext = $this->definition->jsonSerialize();
+                unset($ext->value);
                 $out->_definition = $ext;
             }
         }
@@ -23493,9 +23094,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->comment->getValue())) {
                 $out->comment = $val;
             }
-            $ext = $this->comment->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comment->_nonValueFieldDefined()) {
+                $ext = $this->comment->jsonSerialize();
+                unset($ext->value);
                 $out->_comment = $ext;
             }
         }
@@ -23503,30 +23104,38 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->requirements->getValue())) {
                 $out->requirements = $val;
             }
-            $ext = $this->requirements->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->requirements->_nonValueFieldDefined()) {
+                $ext = $this->requirements->jsonSerialize();
+                unset($ext->value);
                 $out->_requirements = $ext;
             }
         }
         if (isset($this->alias) && [] !== $this->alias) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->alias as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->alias = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_alias = $exts;
             }
         }
@@ -23534,9 +23143,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->min->getValue())) {
                 $out->min = $val;
             }
-            $ext = $this->min->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->min->_nonValueFieldDefined()) {
+                $ext = $this->min->jsonSerialize();
+                unset($ext->value);
                 $out->_min = $ext;
             }
         }
@@ -23544,9 +23153,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->max->getValue())) {
                 $out->max = $val;
             }
-            $ext = $this->max->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->max->_nonValueFieldDefined()) {
+                $ext = $this->max->jsonSerialize();
+                unset($ext->value);
                 $out->_max = $ext;
             }
         }
@@ -23557,9 +23166,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->contentReference->getValue())) {
                 $out->contentReference = $val;
             }
-            $ext = $this->contentReference->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->contentReference->_nonValueFieldDefined()) {
+                $ext = $this->contentReference->jsonSerialize();
+                unset($ext->value);
                 $out->_contentReference = $ext;
             }
         }
@@ -23570,9 +23179,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueBase64Binary->getValue())) {
                 $out->defaultValueBase64Binary = $val;
             }
-            $ext = $this->defaultValueBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueBase64Binary = $ext;
             }
         }
@@ -23580,9 +23189,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueBoolean->getValue())) {
                 $out->defaultValueBoolean = $val;
             }
-            $ext = $this->defaultValueBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueBoolean->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueBoolean = $ext;
             }
         }
@@ -23590,9 +23199,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueCanonical->getValue())) {
                 $out->defaultValueCanonical = $val;
             }
-            $ext = $this->defaultValueCanonical->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueCanonical->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueCanonical->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueCanonical = $ext;
             }
         }
@@ -23600,9 +23209,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueCode->getValue())) {
                 $out->defaultValueCode = $val;
             }
-            $ext = $this->defaultValueCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueCode->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueCode->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueCode = $ext;
             }
         }
@@ -23610,9 +23219,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueDate->getValue())) {
                 $out->defaultValueDate = $val;
             }
-            $ext = $this->defaultValueDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueDate->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueDate->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueDate = $ext;
             }
         }
@@ -23620,9 +23229,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueDateTime->getValue())) {
                 $out->defaultValueDateTime = $val;
             }
-            $ext = $this->defaultValueDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueDateTime->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueDateTime = $ext;
             }
         }
@@ -23630,9 +23239,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueDecimal->getValue())) {
                 $out->defaultValueDecimal = $val;
             }
-            $ext = $this->defaultValueDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueDecimal->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueDecimal = $ext;
             }
         }
@@ -23640,9 +23249,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueId->getValue())) {
                 $out->defaultValueId = $val;
             }
-            $ext = $this->defaultValueId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueId->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueId->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueId = $ext;
             }
         }
@@ -23650,9 +23259,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueInstant->getValue())) {
                 $out->defaultValueInstant = $val;
             }
-            $ext = $this->defaultValueInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueInstant->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueInstant = $ext;
             }
         }
@@ -23660,9 +23269,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueInteger->getValue())) {
                 $out->defaultValueInteger = $val;
             }
-            $ext = $this->defaultValueInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueInteger->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueInteger = $ext;
             }
         }
@@ -23670,9 +23279,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueMarkdown->getValue())) {
                 $out->defaultValueMarkdown = $val;
             }
-            $ext = $this->defaultValueMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueMarkdown = $ext;
             }
         }
@@ -23680,9 +23289,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueOid->getValue())) {
                 $out->defaultValueOid = $val;
             }
-            $ext = $this->defaultValueOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueOid->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueOid->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueOid = $ext;
             }
         }
@@ -23690,9 +23299,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValuePositiveInt->getValue())) {
                 $out->defaultValuePositiveInt = $val;
             }
-            $ext = $this->defaultValuePositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValuePositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->defaultValuePositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValuePositiveInt = $ext;
             }
         }
@@ -23700,9 +23309,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueString->getValue())) {
                 $out->defaultValueString = $val;
             }
-            $ext = $this->defaultValueString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueString->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueString->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueString = $ext;
             }
         }
@@ -23710,9 +23319,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueTime->getValue())) {
                 $out->defaultValueTime = $val;
             }
-            $ext = $this->defaultValueTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueTime->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueTime->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueTime = $ext;
             }
         }
@@ -23720,9 +23329,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueUnsignedInt->getValue())) {
                 $out->defaultValueUnsignedInt = $val;
             }
-            $ext = $this->defaultValueUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueUnsignedInt = $ext;
             }
         }
@@ -23730,9 +23339,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueUri->getValue())) {
                 $out->defaultValueUri = $val;
             }
-            $ext = $this->defaultValueUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueUri->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueUri->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueUri = $ext;
             }
         }
@@ -23740,9 +23349,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueUrl->getValue())) {
                 $out->defaultValueUrl = $val;
             }
-            $ext = $this->defaultValueUrl->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueUrl->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueUrl->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueUrl = $ext;
             }
         }
@@ -23750,9 +23359,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValueUuid->getValue())) {
                 $out->defaultValueUuid = $val;
             }
-            $ext = $this->defaultValueUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueUuid->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueUuid = $ext;
             }
         }
@@ -23775,14 +23384,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $out->defaultValueCoding = $this->defaultValueCoding;
         }
         if (isset($this->defaultValueContactPoint)) {
-            if (null !== ($val = $this->defaultValueContactPoint->getValue())) {
-                $out->defaultValueContactPoint = $val;
-            }
-            $ext = $this->defaultValueContactPoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_defaultValueContactPoint = $ext;
-            }
+            $out->defaultValueContactPoint = $this->defaultValueContactPoint;
         }
         if (isset($this->defaultValueCount)) {
             $out->defaultValueCount = $this->defaultValueCount;
@@ -23797,24 +23399,10 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $out->defaultValueHumanName = $this->defaultValueHumanName;
         }
         if (isset($this->defaultValueIdentifier)) {
-            if (null !== ($val = $this->defaultValueIdentifier->getValue())) {
-                $out->defaultValueIdentifier = $val;
-            }
-            $ext = $this->defaultValueIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_defaultValueIdentifier = $ext;
-            }
+            $out->defaultValueIdentifier = $this->defaultValueIdentifier;
         }
         if (isset($this->defaultValueMoney)) {
-            if (null !== ($val = $this->defaultValueMoney->getValue())) {
-                $out->defaultValueMoney = $val;
-            }
-            $ext = $this->defaultValueMoney->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_defaultValueMoney = $ext;
-            }
+            $out->defaultValueMoney = $this->defaultValueMoney;
         }
         if (isset($this->defaultValuePeriod)) {
             $out->defaultValuePeriod = $this->defaultValuePeriod;
@@ -23874,9 +23462,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->meaningWhenMissing->getValue())) {
                 $out->meaningWhenMissing = $val;
             }
-            $ext = $this->meaningWhenMissing->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->meaningWhenMissing->_nonValueFieldDefined()) {
+                $ext = $this->meaningWhenMissing->jsonSerialize();
+                unset($ext->value);
                 $out->_meaningWhenMissing = $ext;
             }
         }
@@ -23884,9 +23472,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->orderMeaning->getValue())) {
                 $out->orderMeaning = $val;
             }
-            $ext = $this->orderMeaning->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->orderMeaning->_nonValueFieldDefined()) {
+                $ext = $this->orderMeaning->jsonSerialize();
+                unset($ext->value);
                 $out->_orderMeaning = $ext;
             }
         }
@@ -23894,9 +23482,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedBase64Binary->getValue())) {
                 $out->fixedBase64Binary = $val;
             }
-            $ext = $this->fixedBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->fixedBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedBase64Binary = $ext;
             }
         }
@@ -23904,9 +23492,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedBoolean->getValue())) {
                 $out->fixedBoolean = $val;
             }
-            $ext = $this->fixedBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedBoolean->_nonValueFieldDefined()) {
+                $ext = $this->fixedBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedBoolean = $ext;
             }
         }
@@ -23914,9 +23502,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedCanonical->getValue())) {
                 $out->fixedCanonical = $val;
             }
-            $ext = $this->fixedCanonical->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedCanonical->_nonValueFieldDefined()) {
+                $ext = $this->fixedCanonical->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedCanonical = $ext;
             }
         }
@@ -23924,9 +23512,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedCode->getValue())) {
                 $out->fixedCode = $val;
             }
-            $ext = $this->fixedCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedCode->_nonValueFieldDefined()) {
+                $ext = $this->fixedCode->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedCode = $ext;
             }
         }
@@ -23934,9 +23522,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedDate->getValue())) {
                 $out->fixedDate = $val;
             }
-            $ext = $this->fixedDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedDate->_nonValueFieldDefined()) {
+                $ext = $this->fixedDate->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedDate = $ext;
             }
         }
@@ -23944,9 +23532,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedDateTime->getValue())) {
                 $out->fixedDateTime = $val;
             }
-            $ext = $this->fixedDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedDateTime->_nonValueFieldDefined()) {
+                $ext = $this->fixedDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedDateTime = $ext;
             }
         }
@@ -23954,9 +23542,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedDecimal->getValue())) {
                 $out->fixedDecimal = $val;
             }
-            $ext = $this->fixedDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedDecimal->_nonValueFieldDefined()) {
+                $ext = $this->fixedDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedDecimal = $ext;
             }
         }
@@ -23964,9 +23552,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedId->getValue())) {
                 $out->fixedId = $val;
             }
-            $ext = $this->fixedId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedId->_nonValueFieldDefined()) {
+                $ext = $this->fixedId->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedId = $ext;
             }
         }
@@ -23974,9 +23562,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedInstant->getValue())) {
                 $out->fixedInstant = $val;
             }
-            $ext = $this->fixedInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedInstant->_nonValueFieldDefined()) {
+                $ext = $this->fixedInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedInstant = $ext;
             }
         }
@@ -23984,9 +23572,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedInteger->getValue())) {
                 $out->fixedInteger = $val;
             }
-            $ext = $this->fixedInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedInteger->_nonValueFieldDefined()) {
+                $ext = $this->fixedInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedInteger = $ext;
             }
         }
@@ -23994,9 +23582,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedMarkdown->getValue())) {
                 $out->fixedMarkdown = $val;
             }
-            $ext = $this->fixedMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->fixedMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedMarkdown = $ext;
             }
         }
@@ -24004,9 +23592,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedOid->getValue())) {
                 $out->fixedOid = $val;
             }
-            $ext = $this->fixedOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedOid->_nonValueFieldDefined()) {
+                $ext = $this->fixedOid->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedOid = $ext;
             }
         }
@@ -24014,9 +23602,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedPositiveInt->getValue())) {
                 $out->fixedPositiveInt = $val;
             }
-            $ext = $this->fixedPositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedPositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->fixedPositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedPositiveInt = $ext;
             }
         }
@@ -24024,9 +23612,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedString->getValue())) {
                 $out->fixedString = $val;
             }
-            $ext = $this->fixedString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedString->_nonValueFieldDefined()) {
+                $ext = $this->fixedString->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedString = $ext;
             }
         }
@@ -24034,9 +23622,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedTime->getValue())) {
                 $out->fixedTime = $val;
             }
-            $ext = $this->fixedTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedTime->_nonValueFieldDefined()) {
+                $ext = $this->fixedTime->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedTime = $ext;
             }
         }
@@ -24044,9 +23632,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedUnsignedInt->getValue())) {
                 $out->fixedUnsignedInt = $val;
             }
-            $ext = $this->fixedUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->fixedUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedUnsignedInt = $ext;
             }
         }
@@ -24054,9 +23642,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedUri->getValue())) {
                 $out->fixedUri = $val;
             }
-            $ext = $this->fixedUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedUri->_nonValueFieldDefined()) {
+                $ext = $this->fixedUri->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedUri = $ext;
             }
         }
@@ -24064,9 +23652,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedUrl->getValue())) {
                 $out->fixedUrl = $val;
             }
-            $ext = $this->fixedUrl->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedUrl->_nonValueFieldDefined()) {
+                $ext = $this->fixedUrl->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedUrl = $ext;
             }
         }
@@ -24074,9 +23662,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->fixedUuid->getValue())) {
                 $out->fixedUuid = $val;
             }
-            $ext = $this->fixedUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedUuid->_nonValueFieldDefined()) {
+                $ext = $this->fixedUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedUuid = $ext;
             }
         }
@@ -24099,14 +23687,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $out->fixedCoding = $this->fixedCoding;
         }
         if (isset($this->fixedContactPoint)) {
-            if (null !== ($val = $this->fixedContactPoint->getValue())) {
-                $out->fixedContactPoint = $val;
-            }
-            $ext = $this->fixedContactPoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_fixedContactPoint = $ext;
-            }
+            $out->fixedContactPoint = $this->fixedContactPoint;
         }
         if (isset($this->fixedCount)) {
             $out->fixedCount = $this->fixedCount;
@@ -24121,24 +23702,10 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $out->fixedHumanName = $this->fixedHumanName;
         }
         if (isset($this->fixedIdentifier)) {
-            if (null !== ($val = $this->fixedIdentifier->getValue())) {
-                $out->fixedIdentifier = $val;
-            }
-            $ext = $this->fixedIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_fixedIdentifier = $ext;
-            }
+            $out->fixedIdentifier = $this->fixedIdentifier;
         }
         if (isset($this->fixedMoney)) {
-            if (null !== ($val = $this->fixedMoney->getValue())) {
-                $out->fixedMoney = $val;
-            }
-            $ext = $this->fixedMoney->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_fixedMoney = $ext;
-            }
+            $out->fixedMoney = $this->fixedMoney;
         }
         if (isset($this->fixedPeriod)) {
             $out->fixedPeriod = $this->fixedPeriod;
@@ -24198,9 +23765,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternBase64Binary->getValue())) {
                 $out->patternBase64Binary = $val;
             }
-            $ext = $this->patternBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->patternBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_patternBase64Binary = $ext;
             }
         }
@@ -24208,9 +23775,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternBoolean->getValue())) {
                 $out->patternBoolean = $val;
             }
-            $ext = $this->patternBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternBoolean->_nonValueFieldDefined()) {
+                $ext = $this->patternBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_patternBoolean = $ext;
             }
         }
@@ -24218,9 +23785,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternCanonical->getValue())) {
                 $out->patternCanonical = $val;
             }
-            $ext = $this->patternCanonical->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternCanonical->_nonValueFieldDefined()) {
+                $ext = $this->patternCanonical->jsonSerialize();
+                unset($ext->value);
                 $out->_patternCanonical = $ext;
             }
         }
@@ -24228,9 +23795,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternCode->getValue())) {
                 $out->patternCode = $val;
             }
-            $ext = $this->patternCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternCode->_nonValueFieldDefined()) {
+                $ext = $this->patternCode->jsonSerialize();
+                unset($ext->value);
                 $out->_patternCode = $ext;
             }
         }
@@ -24238,9 +23805,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternDate->getValue())) {
                 $out->patternDate = $val;
             }
-            $ext = $this->patternDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternDate->_nonValueFieldDefined()) {
+                $ext = $this->patternDate->jsonSerialize();
+                unset($ext->value);
                 $out->_patternDate = $ext;
             }
         }
@@ -24248,9 +23815,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternDateTime->getValue())) {
                 $out->patternDateTime = $val;
             }
-            $ext = $this->patternDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternDateTime->_nonValueFieldDefined()) {
+                $ext = $this->patternDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_patternDateTime = $ext;
             }
         }
@@ -24258,9 +23825,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternDecimal->getValue())) {
                 $out->patternDecimal = $val;
             }
-            $ext = $this->patternDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternDecimal->_nonValueFieldDefined()) {
+                $ext = $this->patternDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_patternDecimal = $ext;
             }
         }
@@ -24268,9 +23835,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternId->getValue())) {
                 $out->patternId = $val;
             }
-            $ext = $this->patternId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternId->_nonValueFieldDefined()) {
+                $ext = $this->patternId->jsonSerialize();
+                unset($ext->value);
                 $out->_patternId = $ext;
             }
         }
@@ -24278,9 +23845,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternInstant->getValue())) {
                 $out->patternInstant = $val;
             }
-            $ext = $this->patternInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternInstant->_nonValueFieldDefined()) {
+                $ext = $this->patternInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_patternInstant = $ext;
             }
         }
@@ -24288,9 +23855,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternInteger->getValue())) {
                 $out->patternInteger = $val;
             }
-            $ext = $this->patternInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternInteger->_nonValueFieldDefined()) {
+                $ext = $this->patternInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_patternInteger = $ext;
             }
         }
@@ -24298,9 +23865,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternMarkdown->getValue())) {
                 $out->patternMarkdown = $val;
             }
-            $ext = $this->patternMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->patternMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_patternMarkdown = $ext;
             }
         }
@@ -24308,9 +23875,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternOid->getValue())) {
                 $out->patternOid = $val;
             }
-            $ext = $this->patternOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternOid->_nonValueFieldDefined()) {
+                $ext = $this->patternOid->jsonSerialize();
+                unset($ext->value);
                 $out->_patternOid = $ext;
             }
         }
@@ -24318,9 +23885,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternPositiveInt->getValue())) {
                 $out->patternPositiveInt = $val;
             }
-            $ext = $this->patternPositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternPositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->patternPositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_patternPositiveInt = $ext;
             }
         }
@@ -24328,9 +23895,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternString->getValue())) {
                 $out->patternString = $val;
             }
-            $ext = $this->patternString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternString->_nonValueFieldDefined()) {
+                $ext = $this->patternString->jsonSerialize();
+                unset($ext->value);
                 $out->_patternString = $ext;
             }
         }
@@ -24338,9 +23905,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternTime->getValue())) {
                 $out->patternTime = $val;
             }
-            $ext = $this->patternTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternTime->_nonValueFieldDefined()) {
+                $ext = $this->patternTime->jsonSerialize();
+                unset($ext->value);
                 $out->_patternTime = $ext;
             }
         }
@@ -24348,9 +23915,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternUnsignedInt->getValue())) {
                 $out->patternUnsignedInt = $val;
             }
-            $ext = $this->patternUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->patternUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_patternUnsignedInt = $ext;
             }
         }
@@ -24358,9 +23925,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternUri->getValue())) {
                 $out->patternUri = $val;
             }
-            $ext = $this->patternUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternUri->_nonValueFieldDefined()) {
+                $ext = $this->patternUri->jsonSerialize();
+                unset($ext->value);
                 $out->_patternUri = $ext;
             }
         }
@@ -24368,9 +23935,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternUrl->getValue())) {
                 $out->patternUrl = $val;
             }
-            $ext = $this->patternUrl->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternUrl->_nonValueFieldDefined()) {
+                $ext = $this->patternUrl->jsonSerialize();
+                unset($ext->value);
                 $out->_patternUrl = $ext;
             }
         }
@@ -24378,9 +23945,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->patternUuid->getValue())) {
                 $out->patternUuid = $val;
             }
-            $ext = $this->patternUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternUuid->_nonValueFieldDefined()) {
+                $ext = $this->patternUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_patternUuid = $ext;
             }
         }
@@ -24403,14 +23970,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $out->patternCoding = $this->patternCoding;
         }
         if (isset($this->patternContactPoint)) {
-            if (null !== ($val = $this->patternContactPoint->getValue())) {
-                $out->patternContactPoint = $val;
-            }
-            $ext = $this->patternContactPoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_patternContactPoint = $ext;
-            }
+            $out->patternContactPoint = $this->patternContactPoint;
         }
         if (isset($this->patternCount)) {
             $out->patternCount = $this->patternCount;
@@ -24425,24 +23985,10 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $out->patternHumanName = $this->patternHumanName;
         }
         if (isset($this->patternIdentifier)) {
-            if (null !== ($val = $this->patternIdentifier->getValue())) {
-                $out->patternIdentifier = $val;
-            }
-            $ext = $this->patternIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_patternIdentifier = $ext;
-            }
+            $out->patternIdentifier = $this->patternIdentifier;
         }
         if (isset($this->patternMoney)) {
-            if (null !== ($val = $this->patternMoney->getValue())) {
-                $out->patternMoney = $val;
-            }
-            $ext = $this->patternMoney->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_patternMoney = $ext;
-            }
+            $out->patternMoney = $this->patternMoney;
         }
         if (isset($this->patternPeriod)) {
             $out->patternPeriod = $this->patternPeriod;
@@ -24505,9 +24051,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->minValueDate->getValue())) {
                 $out->minValueDate = $val;
             }
-            $ext = $this->minValueDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueDate->_nonValueFieldDefined()) {
+                $ext = $this->minValueDate->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueDate = $ext;
             }
         }
@@ -24515,9 +24061,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->minValueDateTime->getValue())) {
                 $out->minValueDateTime = $val;
             }
-            $ext = $this->minValueDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueDateTime->_nonValueFieldDefined()) {
+                $ext = $this->minValueDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueDateTime = $ext;
             }
         }
@@ -24525,9 +24071,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->minValueInstant->getValue())) {
                 $out->minValueInstant = $val;
             }
-            $ext = $this->minValueInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueInstant->_nonValueFieldDefined()) {
+                $ext = $this->minValueInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueInstant = $ext;
             }
         }
@@ -24535,9 +24081,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->minValueTime->getValue())) {
                 $out->minValueTime = $val;
             }
-            $ext = $this->minValueTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueTime->_nonValueFieldDefined()) {
+                $ext = $this->minValueTime->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueTime = $ext;
             }
         }
@@ -24545,9 +24091,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->minValueDecimal->getValue())) {
                 $out->minValueDecimal = $val;
             }
-            $ext = $this->minValueDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueDecimal->_nonValueFieldDefined()) {
+                $ext = $this->minValueDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueDecimal = $ext;
             }
         }
@@ -24555,9 +24101,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->minValueInteger->getValue())) {
                 $out->minValueInteger = $val;
             }
-            $ext = $this->minValueInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueInteger->_nonValueFieldDefined()) {
+                $ext = $this->minValueInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueInteger = $ext;
             }
         }
@@ -24565,9 +24111,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->minValuePositiveInt->getValue())) {
                 $out->minValuePositiveInt = $val;
             }
-            $ext = $this->minValuePositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValuePositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->minValuePositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_minValuePositiveInt = $ext;
             }
         }
@@ -24575,9 +24121,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->minValueUnsignedInt->getValue())) {
                 $out->minValueUnsignedInt = $val;
             }
-            $ext = $this->minValueUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->minValueUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueUnsignedInt = $ext;
             }
         }
@@ -24588,9 +24134,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->maxValueDate->getValue())) {
                 $out->maxValueDate = $val;
             }
-            $ext = $this->maxValueDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueDate->_nonValueFieldDefined()) {
+                $ext = $this->maxValueDate->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueDate = $ext;
             }
         }
@@ -24598,9 +24144,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->maxValueDateTime->getValue())) {
                 $out->maxValueDateTime = $val;
             }
-            $ext = $this->maxValueDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueDateTime->_nonValueFieldDefined()) {
+                $ext = $this->maxValueDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueDateTime = $ext;
             }
         }
@@ -24608,9 +24154,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->maxValueInstant->getValue())) {
                 $out->maxValueInstant = $val;
             }
-            $ext = $this->maxValueInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueInstant->_nonValueFieldDefined()) {
+                $ext = $this->maxValueInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueInstant = $ext;
             }
         }
@@ -24618,9 +24164,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->maxValueTime->getValue())) {
                 $out->maxValueTime = $val;
             }
-            $ext = $this->maxValueTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueTime->_nonValueFieldDefined()) {
+                $ext = $this->maxValueTime->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueTime = $ext;
             }
         }
@@ -24628,9 +24174,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->maxValueDecimal->getValue())) {
                 $out->maxValueDecimal = $val;
             }
-            $ext = $this->maxValueDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueDecimal->_nonValueFieldDefined()) {
+                $ext = $this->maxValueDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueDecimal = $ext;
             }
         }
@@ -24638,9 +24184,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->maxValueInteger->getValue())) {
                 $out->maxValueInteger = $val;
             }
-            $ext = $this->maxValueInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueInteger->_nonValueFieldDefined()) {
+                $ext = $this->maxValueInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueInteger = $ext;
             }
         }
@@ -24648,9 +24194,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->maxValuePositiveInt->getValue())) {
                 $out->maxValuePositiveInt = $val;
             }
-            $ext = $this->maxValuePositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValuePositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->maxValuePositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValuePositiveInt = $ext;
             }
         }
@@ -24658,9 +24204,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->maxValueUnsignedInt->getValue())) {
                 $out->maxValueUnsignedInt = $val;
             }
-            $ext = $this->maxValueUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->maxValueUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueUnsignedInt = $ext;
             }
         }
@@ -24671,30 +24217,38 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->maxLength->getValue())) {
                 $out->maxLength = $val;
             }
-            $ext = $this->maxLength->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxLength->_nonValueFieldDefined()) {
+                $ext = $this->maxLength->jsonSerialize();
+                unset($ext->value);
                 $out->_maxLength = $ext;
             }
         }
         if (isset($this->condition) && [] !== $this->condition) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->condition as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->condition = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_condition = $exts;
             }
         }
@@ -24705,9 +24259,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->mustSupport->getValue())) {
                 $out->mustSupport = $val;
             }
-            $ext = $this->mustSupport->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->mustSupport->_nonValueFieldDefined()) {
+                $ext = $this->mustSupport->jsonSerialize();
+                unset($ext->value);
                 $out->_mustSupport = $ext;
             }
         }
@@ -24715,9 +24269,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->isModifier->getValue())) {
                 $out->isModifier = $val;
             }
-            $ext = $this->isModifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->isModifier->_nonValueFieldDefined()) {
+                $ext = $this->isModifier->jsonSerialize();
+                unset($ext->value);
                 $out->_isModifier = $ext;
             }
         }
@@ -24725,9 +24279,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->isModifierReason->getValue())) {
                 $out->isModifierReason = $val;
             }
-            $ext = $this->isModifierReason->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->isModifierReason->_nonValueFieldDefined()) {
+                $ext = $this->isModifierReason->jsonSerialize();
+                unset($ext->value);
                 $out->_isModifierReason = $ext;
             }
         }
@@ -24735,9 +24289,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             if (null !== ($val = $this->isSummary->getValue())) {
                 $out->isSummary = $val;
             }
-            $ext = $this->isSummary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->isSummary->_nonValueFieldDefined()) {
+                $ext = $this->isSummary->jsonSerialize();
+                unset($ext->value);
                 $out->_isSummary = $ext;
             }
         }
@@ -24749,7 +24303,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

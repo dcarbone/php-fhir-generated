@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,6 +106,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImmunizationStatusCodes;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
@@ -136,9 +137,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMMUNIZATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_BASED_ON = 'basedOn';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
@@ -175,7 +175,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
     public const FIELD_REACTION = 'reaction';
     public const FIELD_PROTOCOL_APPLIED = 'protocolApplied';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -194,7 +194,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LOT_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -205,7 +205,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
         self::FIELD_IS_SUBPOTENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -563,7 +563,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $site
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $route
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $doseQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $doseQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPerformer[] $performer
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[] $note
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[] $reason
@@ -602,7 +602,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
                                 null|FHIRReference $location = null,
                                 null|FHIRCodeableConcept $site = null,
                                 null|FHIRCodeableConcept $route = null,
-                                null|FHIRQuantity $doseQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $doseQuantity = null,
                                 null|iterable $performer = null,
                                 null|iterable $note = null,
                                 null|iterable $reason = null,
@@ -712,7 +712,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -721,7 +721,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -730,7 +730,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -797,14 +797,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1753,14 +1746,17 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * The quantity of vaccine product that was administered.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $doseQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $doseQuantity
      * @return static
      */
-    public function setDoseQuantity(null|FHIRQuantity $doseQuantity): self
+    public function setDoseQuantity(null|FHIRDecimal|FHIRQuantity $doseQuantity): self
     {
         if (null === $doseQuantity) {
             unset($this->doseQuantity);
             return $this;
+        }
+        if (!($doseQuantity instanceof FHIRQuantity)) {
+            $doseQuantity = new FHIRQuantity(value: $doseQuantity);
         }
         $this->doseQuantity = $doseQuantity;
         return $this;
@@ -2334,7 +2330,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -2830,7 +2826,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2941,7 +2937,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
                 $type->addReaction(FHIRImmunizationReaction::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PROTOCOL_APPLIED === $cen) {
                 $type->addProtocolApplied(FHIRImmunizationProtocolApplied::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -3073,8 +3070,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             $xw->writeAttribute(self::FIELD_IS_SUBPOTENT, $this->isSubpotent->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -3291,22 +3288,13 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_BASED_ON]) || array_key_exists(self::FIELD_BASED_ON, $json)) {
@@ -3506,25 +3494,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->basedOn) && [] !== $this->basedOn) {
             $out->basedOn = $this->basedOn;
@@ -3533,9 +3503,9 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -3555,9 +3525,9 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             if (null !== ($val = $this->lotNumber->getValue())) {
                 $out->lotNumber = $val;
             }
-            $ext = $this->lotNumber->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lotNumber->_nonValueFieldDefined()) {
+                $ext = $this->lotNumber->jsonSerialize();
+                unset($ext->value);
                 $out->_lotNumber = $ext;
             }
         }
@@ -3565,9 +3535,9 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             if (null !== ($val = $this->expirationDate->getValue())) {
                 $out->expirationDate = $val;
             }
-            $ext = $this->expirationDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->expirationDate->_nonValueFieldDefined()) {
+                $ext = $this->expirationDate->jsonSerialize();
+                unset($ext->value);
                 $out->_expirationDate = $ext;
             }
         }
@@ -3584,9 +3554,9 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             if (null !== ($val = $this->occurrenceDateTime->getValue())) {
                 $out->occurrenceDateTime = $val;
             }
-            $ext = $this->occurrenceDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->occurrenceDateTime->_nonValueFieldDefined()) {
+                $ext = $this->occurrenceDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_occurrenceDateTime = $ext;
             }
         }
@@ -3594,9 +3564,9 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             if (null !== ($val = $this->occurrenceString->getValue())) {
                 $out->occurrenceString = $val;
             }
-            $ext = $this->occurrenceString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->occurrenceString->_nonValueFieldDefined()) {
+                $ext = $this->occurrenceString->jsonSerialize();
+                unset($ext->value);
                 $out->_occurrenceString = $ext;
             }
         }
@@ -3604,9 +3574,9 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             if (null !== ($val = $this->primarySource->getValue())) {
                 $out->primarySource = $val;
             }
-            $ext = $this->primarySource->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->primarySource->_nonValueFieldDefined()) {
+                $ext = $this->primarySource->jsonSerialize();
+                unset($ext->value);
                 $out->_primarySource = $ext;
             }
         }
@@ -3638,9 +3608,9 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             if (null !== ($val = $this->isSubpotent->getValue())) {
                 $out->isSubpotent = $val;
             }
-            $ext = $this->isSubpotent->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->isSubpotent->_nonValueFieldDefined()) {
+                $ext = $this->isSubpotent->jsonSerialize();
+                unset($ext->value);
                 $out->_isSubpotent = $ext;
             }
         }
@@ -3662,7 +3632,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

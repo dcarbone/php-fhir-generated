@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,22 +109,21 @@ class FHIRCitationContributorship extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CITATION_DOT_CONTRIBUTORSHIP;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_COMPLETE = 'complete';
     public const FIELD_COMPLETE_EXT = '_complete';
     public const FIELD_ENTRY = 'entry';
     public const FIELD_SUMMARY = 'summary';
-    public const FIELD_SUMMARY_EXT = '_summary';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_COMPLETE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -192,7 +191,7 @@ class FHIRCitationContributorship extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -201,7 +200,7 @@ class FHIRCitationContributorship extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -402,18 +401,11 @@ class FHIRCitationContributorship extends FHIRBackboneElement
             unset($this->summary);
             return $this;
         }
-        $this->summary = [];
-        foreach($summary as $v) {
-            if ($v instanceof FHIRCitationSummary1) {
-                $this->summary[] = $v;
-            } else {
-                $this->summary[] = new FHIRCitationSummary1(value: $v);
-            }
-        }
+        $this->summary = $summary;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -512,7 +504,7 @@ class FHIRCitationContributorship extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -553,7 +545,8 @@ class FHIRCitationContributorship extends FHIRBackboneElement
                 $type->addEntry(FHIRCitationEntry::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SUMMARY === $cen) {
                 $type->addSummary(FHIRCitationSummary1::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -594,8 +587,8 @@ class FHIRCitationContributorship extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->summary) && [] !== $this->summary) {
-            foreach($this->summary as $v) {
+        if (isset($this->summary)) {
+            foreach ($this->summary as $v) {
                 $xw->startElement(self::FIELD_SUMMARY);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -644,22 +637,13 @@ class FHIRCitationContributorship extends FHIRBackboneElement
                 $type->addEntry(FHIRCitationEntry::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SUMMARY])
-            || isset($json[self::FIELD_SUMMARY_EXT])
-            || array_key_exists(self::FIELD_SUMMARY, $json)
-            || array_key_exists(self::FIELD_SUMMARY_EXT, $json)) {
-            $value = (array)($json[self::FIELD_SUMMARY] ?? []);
-            $ext = (array)($json[self::FIELD_SUMMARY_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_SUMMARY]) || array_key_exists(self::FIELD_SUMMARY, $json)) {
+            $vs = $json[self::FIELD_SUMMARY];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addSummary(FHIRCitationSummary1::jsonUnserialize(
-                    [FHIRCitationSummary1::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addSummary(FHIRCitationSummary1::jsonUnserialize($v, $config));
             }
         }
         return $type;
@@ -675,9 +659,9 @@ class FHIRCitationContributorship extends FHIRBackboneElement
             if (null !== ($val = $this->complete->getValue())) {
                 $out->complete = $val;
             }
-            $ext = $this->complete->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->complete->_nonValueFieldDefined()) {
+                $ext = $this->complete->jsonSerialize();
+                unset($ext->value);
                 $out->_complete = $ext;
             }
         }
@@ -685,29 +669,11 @@ class FHIRCitationContributorship extends FHIRBackboneElement
             $out->entry = $this->entry;
         }
         if (isset($this->summary) && [] !== $this->summary) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->summary as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->summary = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_summary = $exts;
-            }
+            $out->summary = $this->summary;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

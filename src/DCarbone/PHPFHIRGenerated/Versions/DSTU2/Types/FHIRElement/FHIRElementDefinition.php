@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,7 @@ class FHIRElementDefinition extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ELEMENT_DEFINITION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_PATH = 'path';
     public const FIELD_PATH_EXT = '_path';
     public const FIELD_REPRESENTATION = 'representation';
@@ -174,7 +174,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_DEFAULT_VALUE_ANNOTATION = 'defaultValueAnnotation';
     public const FIELD_DEFAULT_VALUE_ATTACHMENT = 'defaultValueAttachment';
     public const FIELD_DEFAULT_VALUE_IDENTIFIER = 'defaultValueIdentifier';
-    public const FIELD_DEFAULT_VALUE_IDENTIFIER_EXT = '_defaultValueIdentifier';
     public const FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT = 'defaultValueCodeableConcept';
     public const FIELD_DEFAULT_VALUE_CODING = 'defaultValueCoding';
     public const FIELD_DEFAULT_VALUE_QUANTITY = 'defaultValueQuantity';
@@ -187,7 +186,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_DEFAULT_VALUE_HUMAN_NAME = 'defaultValueHumanName';
     public const FIELD_DEFAULT_VALUE_ADDRESS = 'defaultValueAddress';
     public const FIELD_DEFAULT_VALUE_CONTACT_POINT = 'defaultValueContactPoint';
-    public const FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT = '_defaultValueContactPoint';
     public const FIELD_DEFAULT_VALUE_TIMING = 'defaultValueTiming';
     public const FIELD_DEFAULT_VALUE_META = 'defaultValueMeta';
     public const FIELD_MEANING_WHEN_MISSING = 'meaningWhenMissing';
@@ -229,7 +227,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_FIXED_ANNOTATION = 'fixedAnnotation';
     public const FIELD_FIXED_ATTACHMENT = 'fixedAttachment';
     public const FIELD_FIXED_IDENTIFIER = 'fixedIdentifier';
-    public const FIELD_FIXED_IDENTIFIER_EXT = '_fixedIdentifier';
     public const FIELD_FIXED_CODEABLE_CONCEPT = 'fixedCodeableConcept';
     public const FIELD_FIXED_CODING = 'fixedCoding';
     public const FIELD_FIXED_QUANTITY = 'fixedQuantity';
@@ -242,7 +239,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_FIXED_HUMAN_NAME = 'fixedHumanName';
     public const FIELD_FIXED_ADDRESS = 'fixedAddress';
     public const FIELD_FIXED_CONTACT_POINT = 'fixedContactPoint';
-    public const FIELD_FIXED_CONTACT_POINT_EXT = '_fixedContactPoint';
     public const FIELD_FIXED_TIMING = 'fixedTiming';
     public const FIELD_FIXED_META = 'fixedMeta';
     public const FIELD_PATTERN_BOOLEAN = 'patternBoolean';
@@ -282,7 +278,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_PATTERN_ANNOTATION = 'patternAnnotation';
     public const FIELD_PATTERN_ATTACHMENT = 'patternAttachment';
     public const FIELD_PATTERN_IDENTIFIER = 'patternIdentifier';
-    public const FIELD_PATTERN_IDENTIFIER_EXT = '_patternIdentifier';
     public const FIELD_PATTERN_CODEABLE_CONCEPT = 'patternCodeableConcept';
     public const FIELD_PATTERN_CODING = 'patternCoding';
     public const FIELD_PATTERN_QUANTITY = 'patternQuantity';
@@ -295,7 +290,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_PATTERN_HUMAN_NAME = 'patternHumanName';
     public const FIELD_PATTERN_ADDRESS = 'patternAddress';
     public const FIELD_PATTERN_CONTACT_POINT = 'patternContactPoint';
-    public const FIELD_PATTERN_CONTACT_POINT_EXT = '_patternContactPoint';
     public const FIELD_PATTERN_TIMING = 'patternTiming';
     public const FIELD_PATTERN_META = 'patternMeta';
     public const FIELD_EXAMPLE_BOOLEAN = 'exampleBoolean';
@@ -335,7 +329,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_EXAMPLE_ANNOTATION = 'exampleAnnotation';
     public const FIELD_EXAMPLE_ATTACHMENT = 'exampleAttachment';
     public const FIELD_EXAMPLE_IDENTIFIER = 'exampleIdentifier';
-    public const FIELD_EXAMPLE_IDENTIFIER_EXT = '_exampleIdentifier';
     public const FIELD_EXAMPLE_CODEABLE_CONCEPT = 'exampleCodeableConcept';
     public const FIELD_EXAMPLE_CODING = 'exampleCoding';
     public const FIELD_EXAMPLE_QUANTITY = 'exampleQuantity';
@@ -348,7 +341,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_EXAMPLE_HUMAN_NAME = 'exampleHumanName';
     public const FIELD_EXAMPLE_ADDRESS = 'exampleAddress';
     public const FIELD_EXAMPLE_CONTACT_POINT = 'exampleContactPoint';
-    public const FIELD_EXAMPLE_CONTACT_POINT_EXT = '_exampleContactPoint';
     public const FIELD_EXAMPLE_TIMING = 'exampleTiming';
     public const FIELD_EXAMPLE_META = 'exampleMeta';
     public const FIELD_MIN_VALUE_BOOLEAN = 'minValueBoolean';
@@ -388,7 +380,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_MIN_VALUE_ANNOTATION = 'minValueAnnotation';
     public const FIELD_MIN_VALUE_ATTACHMENT = 'minValueAttachment';
     public const FIELD_MIN_VALUE_IDENTIFIER = 'minValueIdentifier';
-    public const FIELD_MIN_VALUE_IDENTIFIER_EXT = '_minValueIdentifier';
     public const FIELD_MIN_VALUE_CODEABLE_CONCEPT = 'minValueCodeableConcept';
     public const FIELD_MIN_VALUE_CODING = 'minValueCoding';
     public const FIELD_MIN_VALUE_QUANTITY = 'minValueQuantity';
@@ -401,7 +392,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_MIN_VALUE_HUMAN_NAME = 'minValueHumanName';
     public const FIELD_MIN_VALUE_ADDRESS = 'minValueAddress';
     public const FIELD_MIN_VALUE_CONTACT_POINT = 'minValueContactPoint';
-    public const FIELD_MIN_VALUE_CONTACT_POINT_EXT = '_minValueContactPoint';
     public const FIELD_MIN_VALUE_TIMING = 'minValueTiming';
     public const FIELD_MIN_VALUE_META = 'minValueMeta';
     public const FIELD_MAX_VALUE_BOOLEAN = 'maxValueBoolean';
@@ -441,7 +431,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_MAX_VALUE_ANNOTATION = 'maxValueAnnotation';
     public const FIELD_MAX_VALUE_ATTACHMENT = 'maxValueAttachment';
     public const FIELD_MAX_VALUE_IDENTIFIER = 'maxValueIdentifier';
-    public const FIELD_MAX_VALUE_IDENTIFIER_EXT = '_maxValueIdentifier';
     public const FIELD_MAX_VALUE_CODEABLE_CONCEPT = 'maxValueCodeableConcept';
     public const FIELD_MAX_VALUE_CODING = 'maxValueCoding';
     public const FIELD_MAX_VALUE_QUANTITY = 'maxValueQuantity';
@@ -454,7 +443,6 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_MAX_VALUE_HUMAN_NAME = 'maxValueHumanName';
     public const FIELD_MAX_VALUE_ADDRESS = 'maxValueAddress';
     public const FIELD_MAX_VALUE_CONTACT_POINT = 'maxValueContactPoint';
-    public const FIELD_MAX_VALUE_CONTACT_POINT_EXT = '_maxValueContactPoint';
     public const FIELD_MAX_VALUE_TIMING = 'maxValueTiming';
     public const FIELD_MAX_VALUE_META = 'maxValueMeta';
     public const FIELD_MAX_LENGTH = 'maxLength';
@@ -471,7 +459,7 @@ class FHIRElementDefinition extends FHIRElement
     public const FIELD_BINDING = 'binding';
     public const FIELD_MAPPING = 'mapping';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
@@ -481,7 +469,7 @@ class FHIRElementDefinition extends FHIRElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_PATH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -510,8 +498,6 @@ class FHIRElementDefinition extends FHIRElement
         self::FIELD_DEFAULT_VALUE_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DEFAULT_VALUE_POSITIVE_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DEFAULT_VALUE_MARKDOWN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DEFAULT_VALUE_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DEFAULT_VALUE_CONTACT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MEANING_WHEN_MISSING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FIXED_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FIXED_INTEGER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -530,8 +516,6 @@ class FHIRElementDefinition extends FHIRElement
         self::FIELD_FIXED_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FIXED_POSITIVE_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FIXED_MARKDOWN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_FIXED_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_FIXED_CONTACT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PATTERN_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PATTERN_INTEGER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PATTERN_DECIMAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -549,8 +533,6 @@ class FHIRElementDefinition extends FHIRElement
         self::FIELD_PATTERN_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PATTERN_POSITIVE_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PATTERN_MARKDOWN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_PATTERN_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_PATTERN_CONTACT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXAMPLE_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXAMPLE_INTEGER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXAMPLE_DECIMAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -568,8 +550,6 @@ class FHIRElementDefinition extends FHIRElement
         self::FIELD_EXAMPLE_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXAMPLE_POSITIVE_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXAMPLE_MARKDOWN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_EXAMPLE_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_EXAMPLE_CONTACT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN_VALUE_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN_VALUE_INTEGER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN_VALUE_DECIMAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -587,8 +567,6 @@ class FHIRElementDefinition extends FHIRElement
         self::FIELD_MIN_VALUE_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN_VALUE_POSITIVE_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN_VALUE_MARKDOWN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_MIN_VALUE_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_MIN_VALUE_CONTACT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MAX_VALUE_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MAX_VALUE_INTEGER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MAX_VALUE_DECIMAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -606,15 +584,13 @@ class FHIRElementDefinition extends FHIRElement
         self::FIELD_MAX_VALUE_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MAX_VALUE_POSITIVE_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MAX_VALUE_MARKDOWN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_MAX_VALUE_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_MAX_VALUE_CONTACT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MAX_LENGTH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MUST_SUPPORT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_IS_MODIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_IS_SUMMARY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -3652,7 +3628,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $defaultValueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $defaultValueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $defaultValuePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $defaultValueRatio
@@ -3687,7 +3663,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $fixedIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $fixedCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $fixedCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $fixedQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $fixedQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $fixedRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $fixedPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $fixedRatio
@@ -3721,7 +3697,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $patternIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $patternCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $patternCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $patternQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $patternQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $patternRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $patternPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $patternRatio
@@ -3755,7 +3731,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $exampleCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $exampleCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $exampleQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $exampleQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $exampleRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $examplePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $exampleRatio
@@ -3789,7 +3765,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $minValueIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $minValueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $minValueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $minValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $minValueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $minValueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $minValuePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $minValueRatio
@@ -3823,7 +3799,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $maxValueIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $maxValueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $maxValueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $maxValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $maxValueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $maxValueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $maxValuePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $maxValueRatio
@@ -3885,7 +3861,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRString|FHIRIdentifier $defaultValueIdentifier = null,
                                 null|FHIRCodeableConcept $defaultValueCodeableConcept = null,
                                 null|FHIRCoding $defaultValueCoding = null,
-                                null|FHIRQuantity $defaultValueQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $defaultValueQuantity = null,
                                 null|FHIRRange $defaultValueRange = null,
                                 null|FHIRPeriod $defaultValuePeriod = null,
                                 null|FHIRRatio $defaultValueRatio = null,
@@ -3920,7 +3896,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRString|FHIRIdentifier $fixedIdentifier = null,
                                 null|FHIRCodeableConcept $fixedCodeableConcept = null,
                                 null|FHIRCoding $fixedCoding = null,
-                                null|FHIRQuantity $fixedQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $fixedQuantity = null,
                                 null|FHIRRange $fixedRange = null,
                                 null|FHIRPeriod $fixedPeriod = null,
                                 null|FHIRRatio $fixedRatio = null,
@@ -3954,7 +3930,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRString|FHIRIdentifier $patternIdentifier = null,
                                 null|FHIRCodeableConcept $patternCodeableConcept = null,
                                 null|FHIRCoding $patternCoding = null,
-                                null|FHIRQuantity $patternQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $patternQuantity = null,
                                 null|FHIRRange $patternRange = null,
                                 null|FHIRPeriod $patternPeriod = null,
                                 null|FHIRRatio $patternRatio = null,
@@ -3988,7 +3964,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRString|FHIRIdentifier $exampleIdentifier = null,
                                 null|FHIRCodeableConcept $exampleCodeableConcept = null,
                                 null|FHIRCoding $exampleCoding = null,
-                                null|FHIRQuantity $exampleQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $exampleQuantity = null,
                                 null|FHIRRange $exampleRange = null,
                                 null|FHIRPeriod $examplePeriod = null,
                                 null|FHIRRatio $exampleRatio = null,
@@ -4022,7 +3998,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRString|FHIRIdentifier $minValueIdentifier = null,
                                 null|FHIRCodeableConcept $minValueCodeableConcept = null,
                                 null|FHIRCoding $minValueCoding = null,
-                                null|FHIRQuantity $minValueQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $minValueQuantity = null,
                                 null|FHIRRange $minValueRange = null,
                                 null|FHIRPeriod $minValuePeriod = null,
                                 null|FHIRRatio $minValueRatio = null,
@@ -4056,7 +4032,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRString|FHIRIdentifier $maxValueIdentifier = null,
                                 null|FHIRCodeableConcept $maxValueCodeableConcept = null,
                                 null|FHIRCoding $maxValueCoding = null,
-                                null|FHIRQuantity $maxValueQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $maxValueQuantity = null,
                                 null|FHIRRange $maxValueRange = null,
                                 null|FHIRPeriod $maxValuePeriod = null,
                                 null|FHIRRatio $maxValueRatio = null,
@@ -4770,7 +4746,7 @@ class FHIRElementDefinition extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -4779,7 +4755,7 @@ class FHIRElementDefinition extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -7159,11 +7135,9 @@ class FHIRElementDefinition extends FHIRElement
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefaultValueIdentifier(null|FHIRString|FHIRIdentifier $defaultValueIdentifier,
-                                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDefaultValueIdentifier(null|FHIRString|FHIRIdentifier $defaultValueIdentifier): self
     {
         if (null === $defaultValueIdentifier) {
             unset($this->defaultValueIdentifier);
@@ -7173,33 +7147,6 @@ class FHIRElementDefinition extends FHIRElement
             $defaultValueIdentifier = new FHIRIdentifier(value: $defaultValueIdentifier);
         }
         $this->defaultValueIdentifier = $defaultValueIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setDefaultValueIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the defaultValueIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDefaultValueIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the defaultValueIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDefaultValueIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -7304,14 +7251,17 @@ class FHIRElementDefinition extends FHIRElement
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @return static
      */
-    public function setDefaultValueQuantity(null|FHIRQuantity $defaultValueQuantity): self
+    public function setDefaultValueQuantity(null|FHIRDecimal|FHIRQuantity $defaultValueQuantity): self
     {
         if (null === $defaultValueQuantity) {
             unset($this->defaultValueQuantity);
             return $this;
+        }
+        if (!($defaultValueQuantity instanceof FHIRQuantity)) {
+            $defaultValueQuantity = new FHIRQuantity(value: $defaultValueQuantity);
         }
         $this->defaultValueQuantity = $defaultValueQuantity;
         return $this;
@@ -7643,11 +7593,9 @@ class FHIRElementDefinition extends FHIRElement
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefaultValueContactPoint(null|FHIRString|FHIRContactPoint $defaultValueContactPoint,
-                                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDefaultValueContactPoint(null|FHIRString|FHIRContactPoint $defaultValueContactPoint): self
     {
         if (null === $defaultValueContactPoint) {
             unset($this->defaultValueContactPoint);
@@ -7657,33 +7605,6 @@ class FHIRElementDefinition extends FHIRElement
             $defaultValueContactPoint = new FHIRContactPoint(value: $defaultValueContactPoint);
         }
         $this->defaultValueContactPoint = $defaultValueContactPoint;
-        if ($this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] !== $valueXMLLocation) {
-            $this->_setDefaultValueContactPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the defaultValueContactPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDefaultValueContactPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the defaultValueContactPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDefaultValueContactPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -9217,11 +9138,9 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $fixedIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFixedIdentifier(null|FHIRString|FHIRIdentifier $fixedIdentifier,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFixedIdentifier(null|FHIRString|FHIRIdentifier $fixedIdentifier): self
     {
         if (null === $fixedIdentifier) {
             unset($this->fixedIdentifier);
@@ -9231,33 +9150,6 @@ class FHIRElementDefinition extends FHIRElement
             $fixedIdentifier = new FHIRIdentifier(value: $fixedIdentifier);
         }
         $this->fixedIdentifier = $fixedIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setFixedIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the fixedIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFixedIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the fixedIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFixedIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -9374,14 +9266,17 @@ class FHIRElementDefinition extends FHIRElement
      * all values must be an exact match (case and accent sensitive). Missing
      * elements/attributes must also be missing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $fixedQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $fixedQuantity
      * @return static
      */
-    public function setFixedQuantity(null|FHIRQuantity $fixedQuantity): self
+    public function setFixedQuantity(null|FHIRDecimal|FHIRQuantity $fixedQuantity): self
     {
         if (null === $fixedQuantity) {
             unset($this->fixedQuantity);
             return $this;
+        }
+        if (!($fixedQuantity instanceof FHIRQuantity)) {
+            $fixedQuantity = new FHIRQuantity(value: $fixedQuantity);
         }
         $this->fixedQuantity = $fixedQuantity;
         return $this;
@@ -9749,11 +9644,9 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $fixedContactPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFixedContactPoint(null|FHIRString|FHIRContactPoint $fixedContactPoint,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFixedContactPoint(null|FHIRString|FHIRContactPoint $fixedContactPoint): self
     {
         if (null === $fixedContactPoint) {
             unset($this->fixedContactPoint);
@@ -9763,33 +9656,6 @@ class FHIRElementDefinition extends FHIRElement
             $fixedContactPoint = new FHIRContactPoint(value: $fixedContactPoint);
         }
         $this->fixedContactPoint = $fixedContactPoint;
-        if ($this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT] !== $valueXMLLocation) {
-            $this->_setFixedContactPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the fixedContactPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFixedContactPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the fixedContactPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFixedContactPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -11291,11 +11157,9 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $patternIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPatternIdentifier(null|FHIRString|FHIRIdentifier $patternIdentifier,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPatternIdentifier(null|FHIRString|FHIRIdentifier $patternIdentifier): self
     {
         if (null === $patternIdentifier) {
             unset($this->patternIdentifier);
@@ -11305,33 +11169,6 @@ class FHIRElementDefinition extends FHIRElement
             $patternIdentifier = new FHIRIdentifier(value: $patternIdentifier);
         }
         $this->patternIdentifier = $patternIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setPatternIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the patternIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPatternIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the patternIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPatternIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -11454,14 +11291,17 @@ class FHIRElementDefinition extends FHIRElement
      * present in the pattern must match exactly (case-sensitive, accent-sensitive,
      * etc.).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $patternQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $patternQuantity
      * @return static
      */
-    public function setPatternQuantity(null|FHIRQuantity $patternQuantity): self
+    public function setPatternQuantity(null|FHIRDecimal|FHIRQuantity $patternQuantity): self
     {
         if (null === $patternQuantity) {
             unset($this->patternQuantity);
             return $this;
+        }
+        if (!($patternQuantity instanceof FHIRQuantity)) {
+            $patternQuantity = new FHIRQuantity(value: $patternQuantity);
         }
         $this->patternQuantity = $patternQuantity;
         return $this;
@@ -11847,11 +11687,9 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $patternContactPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPatternContactPoint(null|FHIRString|FHIRContactPoint $patternContactPoint,
-                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPatternContactPoint(null|FHIRString|FHIRContactPoint $patternContactPoint): self
     {
         if (null === $patternContactPoint) {
             unset($this->patternContactPoint);
@@ -11861,33 +11699,6 @@ class FHIRElementDefinition extends FHIRElement
             $patternContactPoint = new FHIRContactPoint(value: $patternContactPoint);
         }
         $this->patternContactPoint = $patternContactPoint;
-        if ($this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT] !== $valueXMLLocation) {
-            $this->_setPatternContactPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the patternContactPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPatternContactPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the patternContactPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPatternContactPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -13273,11 +13084,9 @@ class FHIRElementDefinition extends FHIRElement
      * typically be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExampleIdentifier(null|FHIRString|FHIRIdentifier $exampleIdentifier,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExampleIdentifier(null|FHIRString|FHIRIdentifier $exampleIdentifier): self
     {
         if (null === $exampleIdentifier) {
             unset($this->exampleIdentifier);
@@ -13287,33 +13096,6 @@ class FHIRElementDefinition extends FHIRElement
             $exampleIdentifier = new FHIRIdentifier(value: $exampleIdentifier);
         }
         $this->exampleIdentifier = $exampleIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setExampleIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the exampleIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExampleIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the exampleIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExampleIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -13418,14 +13200,17 @@ class FHIRElementDefinition extends FHIRElement
      * A sample value for this element demonstrating the type of information that would
      * typically be captured.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $exampleQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $exampleQuantity
      * @return static
      */
-    public function setExampleQuantity(null|FHIRQuantity $exampleQuantity): self
+    public function setExampleQuantity(null|FHIRDecimal|FHIRQuantity $exampleQuantity): self
     {
         if (null === $exampleQuantity) {
             unset($this->exampleQuantity);
             return $this;
+        }
+        if (!($exampleQuantity instanceof FHIRQuantity)) {
+            $exampleQuantity = new FHIRQuantity(value: $exampleQuantity);
         }
         $this->exampleQuantity = $exampleQuantity;
         return $this;
@@ -13757,11 +13542,9 @@ class FHIRElementDefinition extends FHIRElement
      * typically be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $exampleContactPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExampleContactPoint(null|FHIRString|FHIRContactPoint $exampleContactPoint,
-                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExampleContactPoint(null|FHIRString|FHIRContactPoint $exampleContactPoint): self
     {
         if (null === $exampleContactPoint) {
             unset($this->exampleContactPoint);
@@ -13771,33 +13554,6 @@ class FHIRElementDefinition extends FHIRElement
             $exampleContactPoint = new FHIRContactPoint(value: $exampleContactPoint);
         }
         $this->exampleContactPoint = $exampleContactPoint;
-        if ($this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT_POINT] !== $valueXMLLocation) {
-            $this->_setExampleContactPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the exampleContactPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExampleContactPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the exampleContactPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExampleContactPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -15211,11 +14967,9 @@ class FHIRElementDefinition extends FHIRElement
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $minValueIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMinValueIdentifier(null|FHIRString|FHIRIdentifier $minValueIdentifier,
-                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMinValueIdentifier(null|FHIRString|FHIRIdentifier $minValueIdentifier): self
     {
         if (null === $minValueIdentifier) {
             unset($this->minValueIdentifier);
@@ -15225,33 +14979,6 @@ class FHIRElementDefinition extends FHIRElement
             $minValueIdentifier = new FHIRIdentifier(value: $minValueIdentifier);
         }
         $this->minValueIdentifier = $minValueIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_MIN_VALUE_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setMinValueIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the minValueIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMinValueIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MIN_VALUE_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the minValueIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMinValueIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MIN_VALUE_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -15362,14 +15089,17 @@ class FHIRElementDefinition extends FHIRElement
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $minValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $minValueQuantity
      * @return static
      */
-    public function setMinValueQuantity(null|FHIRQuantity $minValueQuantity): self
+    public function setMinValueQuantity(null|FHIRDecimal|FHIRQuantity $minValueQuantity): self
     {
         if (null === $minValueQuantity) {
             unset($this->minValueQuantity);
             return $this;
+        }
+        if (!($minValueQuantity instanceof FHIRQuantity)) {
+            $minValueQuantity = new FHIRQuantity(value: $minValueQuantity);
         }
         $this->minValueQuantity = $minValueQuantity;
         return $this;
@@ -15719,11 +15449,9 @@ class FHIRElementDefinition extends FHIRElement
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $minValueContactPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMinValueContactPoint(null|FHIRString|FHIRContactPoint $minValueContactPoint,
-                                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMinValueContactPoint(null|FHIRString|FHIRContactPoint $minValueContactPoint): self
     {
         if (null === $minValueContactPoint) {
             unset($this->minValueContactPoint);
@@ -15733,33 +15461,6 @@ class FHIRElementDefinition extends FHIRElement
             $minValueContactPoint = new FHIRContactPoint(value: $minValueContactPoint);
         }
         $this->minValueContactPoint = $minValueContactPoint;
-        if ($this->_valueXMLLocations[self::FIELD_MIN_VALUE_CONTACT_POINT] !== $valueXMLLocation) {
-            $this->_setMinValueContactPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the minValueContactPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMinValueContactPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MIN_VALUE_CONTACT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the minValueContactPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMinValueContactPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MIN_VALUE_CONTACT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -17177,11 +16878,9 @@ class FHIRElementDefinition extends FHIRElement
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $maxValueIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMaxValueIdentifier(null|FHIRString|FHIRIdentifier $maxValueIdentifier,
-                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMaxValueIdentifier(null|FHIRString|FHIRIdentifier $maxValueIdentifier): self
     {
         if (null === $maxValueIdentifier) {
             unset($this->maxValueIdentifier);
@@ -17191,33 +16890,6 @@ class FHIRElementDefinition extends FHIRElement
             $maxValueIdentifier = new FHIRIdentifier(value: $maxValueIdentifier);
         }
         $this->maxValueIdentifier = $maxValueIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_MAX_VALUE_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setMaxValueIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the maxValueIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMaxValueIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MAX_VALUE_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the maxValueIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMaxValueIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MAX_VALUE_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -17328,14 +17000,17 @@ class FHIRElementDefinition extends FHIRElement
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $maxValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $maxValueQuantity
      * @return static
      */
-    public function setMaxValueQuantity(null|FHIRQuantity $maxValueQuantity): self
+    public function setMaxValueQuantity(null|FHIRDecimal|FHIRQuantity $maxValueQuantity): self
     {
         if (null === $maxValueQuantity) {
             unset($this->maxValueQuantity);
             return $this;
+        }
+        if (!($maxValueQuantity instanceof FHIRQuantity)) {
+            $maxValueQuantity = new FHIRQuantity(value: $maxValueQuantity);
         }
         $this->maxValueQuantity = $maxValueQuantity;
         return $this;
@@ -17685,11 +17360,9 @@ class FHIRElementDefinition extends FHIRElement
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $maxValueContactPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMaxValueContactPoint(null|FHIRString|FHIRContactPoint $maxValueContactPoint,
-                                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMaxValueContactPoint(null|FHIRString|FHIRContactPoint $maxValueContactPoint): self
     {
         if (null === $maxValueContactPoint) {
             unset($this->maxValueContactPoint);
@@ -17699,33 +17372,6 @@ class FHIRElementDefinition extends FHIRElement
             $maxValueContactPoint = new FHIRContactPoint(value: $maxValueContactPoint);
         }
         $this->maxValueContactPoint = $maxValueContactPoint;
-        if ($this->_valueXMLLocations[self::FIELD_MAX_VALUE_CONTACT_POINT] !== $valueXMLLocation) {
-            $this->_setMaxValueContactPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the maxValueContactPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMaxValueContactPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MAX_VALUE_CONTACT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the maxValueContactPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMaxValueContactPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MAX_VALUE_CONTACT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -18347,7 +17993,7 @@ class FHIRElementDefinition extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -21151,7 +20797,7 @@ class FHIRElementDefinition extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -21642,7 +21288,8 @@ class FHIRElementDefinition extends FHIRElement
                 $type->setBinding(FHIRElementDefinitionBinding::xmlUnserialize($ce, $config));
             } else if (self::FIELD_MAPPING === $cen) {
                 $type->addMapping(FHIRElementDefinitionMapping::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -21863,22 +21510,6 @@ class FHIRElementDefinition extends FHIRElement
                 $type->setDefaultValueMarkdown((string)$attributes[self::FIELD_DEFAULT_VALUE_MARKDOWN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_DEFAULT_VALUE_IDENTIFIER])) {
-            if (isset($type->defaultValueIdentifier)) {
-                $type->defaultValueIdentifier->setValue((string)$attributes[self::FIELD_DEFAULT_VALUE_IDENTIFIER]);
-                $type->_setDefaultValueIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDefaultValueIdentifier((string)$attributes[self::FIELD_DEFAULT_VALUE_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_DEFAULT_VALUE_CONTACT_POINT])) {
-            if (isset($type->defaultValueContactPoint)) {
-                $type->defaultValueContactPoint->setValue((string)$attributes[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]);
-                $type->_setDefaultValueContactPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDefaultValueContactPoint((string)$attributes[self::FIELD_DEFAULT_VALUE_CONTACT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_MEANING_WHEN_MISSING])) {
             if (isset($type->meaningWhenMissing)) {
                 $type->meaningWhenMissing->setValue((string)$attributes[self::FIELD_MEANING_WHEN_MISSING]);
@@ -22023,22 +21654,6 @@ class FHIRElementDefinition extends FHIRElement
                 $type->setFixedMarkdown((string)$attributes[self::FIELD_FIXED_MARKDOWN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_FIXED_IDENTIFIER])) {
-            if (isset($type->fixedIdentifier)) {
-                $type->fixedIdentifier->setValue((string)$attributes[self::FIELD_FIXED_IDENTIFIER]);
-                $type->_setFixedIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setFixedIdentifier((string)$attributes[self::FIELD_FIXED_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_FIXED_CONTACT_POINT])) {
-            if (isset($type->fixedContactPoint)) {
-                $type->fixedContactPoint->setValue((string)$attributes[self::FIELD_FIXED_CONTACT_POINT]);
-                $type->_setFixedContactPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setFixedContactPoint((string)$attributes[self::FIELD_FIXED_CONTACT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_PATTERN_BOOLEAN])) {
             if (isset($type->patternBoolean)) {
                 $type->patternBoolean->setValue((string)$attributes[self::FIELD_PATTERN_BOOLEAN]);
@@ -22173,22 +21788,6 @@ class FHIRElementDefinition extends FHIRElement
                 $type->_setPatternMarkdownValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setPatternMarkdown((string)$attributes[self::FIELD_PATTERN_MARKDOWN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_PATTERN_IDENTIFIER])) {
-            if (isset($type->patternIdentifier)) {
-                $type->patternIdentifier->setValue((string)$attributes[self::FIELD_PATTERN_IDENTIFIER]);
-                $type->_setPatternIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPatternIdentifier((string)$attributes[self::FIELD_PATTERN_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_PATTERN_CONTACT_POINT])) {
-            if (isset($type->patternContactPoint)) {
-                $type->patternContactPoint->setValue((string)$attributes[self::FIELD_PATTERN_CONTACT_POINT]);
-                $type->_setPatternContactPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPatternContactPoint((string)$attributes[self::FIELD_PATTERN_CONTACT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_EXAMPLE_BOOLEAN])) {
@@ -22327,22 +21926,6 @@ class FHIRElementDefinition extends FHIRElement
                 $type->setExampleMarkdown((string)$attributes[self::FIELD_EXAMPLE_MARKDOWN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_EXAMPLE_IDENTIFIER])) {
-            if (isset($type->exampleIdentifier)) {
-                $type->exampleIdentifier->setValue((string)$attributes[self::FIELD_EXAMPLE_IDENTIFIER]);
-                $type->_setExampleIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setExampleIdentifier((string)$attributes[self::FIELD_EXAMPLE_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_EXAMPLE_CONTACT_POINT])) {
-            if (isset($type->exampleContactPoint)) {
-                $type->exampleContactPoint->setValue((string)$attributes[self::FIELD_EXAMPLE_CONTACT_POINT]);
-                $type->_setExampleContactPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setExampleContactPoint((string)$attributes[self::FIELD_EXAMPLE_CONTACT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_MIN_VALUE_BOOLEAN])) {
             if (isset($type->minValueBoolean)) {
                 $type->minValueBoolean->setValue((string)$attributes[self::FIELD_MIN_VALUE_BOOLEAN]);
@@ -22477,22 +22060,6 @@ class FHIRElementDefinition extends FHIRElement
                 $type->_setMinValueMarkdownValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setMinValueMarkdown((string)$attributes[self::FIELD_MIN_VALUE_MARKDOWN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_MIN_VALUE_IDENTIFIER])) {
-            if (isset($type->minValueIdentifier)) {
-                $type->minValueIdentifier->setValue((string)$attributes[self::FIELD_MIN_VALUE_IDENTIFIER]);
-                $type->_setMinValueIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setMinValueIdentifier((string)$attributes[self::FIELD_MIN_VALUE_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_MIN_VALUE_CONTACT_POINT])) {
-            if (isset($type->minValueContactPoint)) {
-                $type->minValueContactPoint->setValue((string)$attributes[self::FIELD_MIN_VALUE_CONTACT_POINT]);
-                $type->_setMinValueContactPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setMinValueContactPoint((string)$attributes[self::FIELD_MIN_VALUE_CONTACT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_MAX_VALUE_BOOLEAN])) {
@@ -22631,22 +22198,6 @@ class FHIRElementDefinition extends FHIRElement
                 $type->setMaxValueMarkdown((string)$attributes[self::FIELD_MAX_VALUE_MARKDOWN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_MAX_VALUE_IDENTIFIER])) {
-            if (isset($type->maxValueIdentifier)) {
-                $type->maxValueIdentifier->setValue((string)$attributes[self::FIELD_MAX_VALUE_IDENTIFIER]);
-                $type->_setMaxValueIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setMaxValueIdentifier((string)$attributes[self::FIELD_MAX_VALUE_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_MAX_VALUE_CONTACT_POINT])) {
-            if (isset($type->maxValueContactPoint)) {
-                $type->maxValueContactPoint->setValue((string)$attributes[self::FIELD_MAX_VALUE_CONTACT_POINT]);
-                $type->_setMaxValueContactPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setMaxValueContactPoint((string)$attributes[self::FIELD_MAX_VALUE_CONTACT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_MAX_LENGTH])) {
             if (isset($type->maxLength)) {
                 $type->maxLength->setValue((string)$attributes[self::FIELD_MAX_LENGTH]);
@@ -22770,12 +22321,6 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($this->defaultValueMarkdown) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_MARKDOWN]) {
             $xw->writeAttribute(self::FIELD_DEFAULT_VALUE_MARKDOWN, $this->defaultValueMarkdown->_getFormattedValue());
         }
-        if (isset($this->defaultValueIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_DEFAULT_VALUE_IDENTIFIER, $this->defaultValueIdentifier->_getFormattedValue());
-        }
-        if (isset($this->defaultValueContactPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]) {
-            $xw->writeAttribute(self::FIELD_DEFAULT_VALUE_CONTACT_POINT, $this->defaultValueContactPoint->_getFormattedValue());
-        }
         if (isset($this->meaningWhenMissing) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MEANING_WHEN_MISSING]) {
             $xw->writeAttribute(self::FIELD_MEANING_WHEN_MISSING, $this->meaningWhenMissing->_getFormattedValue());
         }
@@ -22830,12 +22375,6 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($this->fixedMarkdown) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FIXED_MARKDOWN]) {
             $xw->writeAttribute(self::FIELD_FIXED_MARKDOWN, $this->fixedMarkdown->_getFormattedValue());
         }
-        if (isset($this->fixedIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_FIXED_IDENTIFIER, $this->fixedIdentifier->_getFormattedValue());
-        }
-        if (isset($this->fixedContactPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT]) {
-            $xw->writeAttribute(self::FIELD_FIXED_CONTACT_POINT, $this->fixedContactPoint->_getFormattedValue());
-        }
         if (isset($this->patternBoolean) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATTERN_BOOLEAN]) {
             $xw->writeAttribute(self::FIELD_PATTERN_BOOLEAN, $this->patternBoolean->_getFormattedValue());
         }
@@ -22886,12 +22425,6 @@ class FHIRElementDefinition extends FHIRElement
         }
         if (isset($this->patternMarkdown) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATTERN_MARKDOWN]) {
             $xw->writeAttribute(self::FIELD_PATTERN_MARKDOWN, $this->patternMarkdown->_getFormattedValue());
-        }
-        if (isset($this->patternIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_PATTERN_IDENTIFIER, $this->patternIdentifier->_getFormattedValue());
-        }
-        if (isset($this->patternContactPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT]) {
-            $xw->writeAttribute(self::FIELD_PATTERN_CONTACT_POINT, $this->patternContactPoint->_getFormattedValue());
         }
         if (isset($this->exampleBoolean) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXAMPLE_BOOLEAN]) {
             $xw->writeAttribute(self::FIELD_EXAMPLE_BOOLEAN, $this->exampleBoolean->_getFormattedValue());
@@ -22944,12 +22477,6 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($this->exampleMarkdown) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXAMPLE_MARKDOWN]) {
             $xw->writeAttribute(self::FIELD_EXAMPLE_MARKDOWN, $this->exampleMarkdown->_getFormattedValue());
         }
-        if (isset($this->exampleIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_EXAMPLE_IDENTIFIER, $this->exampleIdentifier->_getFormattedValue());
-        }
-        if (isset($this->exampleContactPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT_POINT]) {
-            $xw->writeAttribute(self::FIELD_EXAMPLE_CONTACT_POINT, $this->exampleContactPoint->_getFormattedValue());
-        }
         if (isset($this->minValueBoolean) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MIN_VALUE_BOOLEAN]) {
             $xw->writeAttribute(self::FIELD_MIN_VALUE_BOOLEAN, $this->minValueBoolean->_getFormattedValue());
         }
@@ -23001,12 +22528,6 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($this->minValueMarkdown) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MIN_VALUE_MARKDOWN]) {
             $xw->writeAttribute(self::FIELD_MIN_VALUE_MARKDOWN, $this->minValueMarkdown->_getFormattedValue());
         }
-        if (isset($this->minValueIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MIN_VALUE_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_MIN_VALUE_IDENTIFIER, $this->minValueIdentifier->_getFormattedValue());
-        }
-        if (isset($this->minValueContactPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MIN_VALUE_CONTACT_POINT]) {
-            $xw->writeAttribute(self::FIELD_MIN_VALUE_CONTACT_POINT, $this->minValueContactPoint->_getFormattedValue());
-        }
         if (isset($this->maxValueBoolean) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MAX_VALUE_BOOLEAN]) {
             $xw->writeAttribute(self::FIELD_MAX_VALUE_BOOLEAN, $this->maxValueBoolean->_getFormattedValue());
         }
@@ -23057,12 +22578,6 @@ class FHIRElementDefinition extends FHIRElement
         }
         if (isset($this->maxValueMarkdown) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MAX_VALUE_MARKDOWN]) {
             $xw->writeAttribute(self::FIELD_MAX_VALUE_MARKDOWN, $this->maxValueMarkdown->_getFormattedValue());
-        }
-        if (isset($this->maxValueIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MAX_VALUE_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_MAX_VALUE_IDENTIFIER, $this->maxValueIdentifier->_getFormattedValue());
-        }
-        if (isset($this->maxValueContactPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MAX_VALUE_CONTACT_POINT]) {
-            $xw->writeAttribute(self::FIELD_MAX_VALUE_CONTACT_POINT, $this->maxValueContactPoint->_getFormattedValue());
         }
         if (isset($this->maxLength) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MAX_LENGTH]) {
             $xw->writeAttribute(self::FIELD_MAX_LENGTH, $this->maxLength->_getFormattedValue());
@@ -23314,11 +22829,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->defaultValueAttachment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->defaultValueIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER]
-                || $this->defaultValueIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->defaultValueIdentifier)) {
             $xw->startElement(self::FIELD_DEFAULT_VALUE_IDENTIFIER);
-            $this->defaultValueIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_IDENTIFIER]);
+            $this->defaultValueIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->defaultValueCodeableConcept)) {
@@ -23376,11 +22889,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->defaultValueAddress->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->defaultValueContactPoint)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]
-                || $this->defaultValueContactPoint->_nonValueFieldDefined())) {
+        if (isset($this->defaultValueContactPoint)) {
             $xw->startElement(self::FIELD_DEFAULT_VALUE_CONTACT_POINT);
-            $this->defaultValueContactPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]);
+            $this->defaultValueContactPoint->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->defaultValueTiming)) {
@@ -23529,11 +23040,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->fixedAttachment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->fixedIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER]
-                || $this->fixedIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->fixedIdentifier)) {
             $xw->startElement(self::FIELD_FIXED_IDENTIFIER);
-            $this->fixedIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_FIXED_IDENTIFIER]);
+            $this->fixedIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->fixedCodeableConcept)) {
@@ -23591,11 +23100,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->fixedAddress->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->fixedContactPoint)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT]
-                || $this->fixedContactPoint->_nonValueFieldDefined())) {
+        if (isset($this->fixedContactPoint)) {
             $xw->startElement(self::FIELD_FIXED_CONTACT_POINT);
-            $this->fixedContactPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_FIXED_CONTACT_POINT]);
+            $this->fixedContactPoint->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->fixedTiming)) {
@@ -23737,11 +23244,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->patternAttachment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->patternIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER]
-                || $this->patternIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->patternIdentifier)) {
             $xw->startElement(self::FIELD_PATTERN_IDENTIFIER);
-            $this->patternIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PATTERN_IDENTIFIER]);
+            $this->patternIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->patternCodeableConcept)) {
@@ -23799,11 +23304,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->patternAddress->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->patternContactPoint)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT]
-                || $this->patternContactPoint->_nonValueFieldDefined())) {
+        if (isset($this->patternContactPoint)) {
             $xw->startElement(self::FIELD_PATTERN_CONTACT_POINT);
-            $this->patternContactPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PATTERN_CONTACT_POINT]);
+            $this->patternContactPoint->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->patternTiming)) {
@@ -23945,11 +23448,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->exampleAttachment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->exampleIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER]
-                || $this->exampleIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->exampleIdentifier)) {
             $xw->startElement(self::FIELD_EXAMPLE_IDENTIFIER);
-            $this->exampleIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_EXAMPLE_IDENTIFIER]);
+            $this->exampleIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->exampleCodeableConcept)) {
@@ -24007,11 +23508,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->exampleAddress->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->exampleContactPoint)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT_POINT]
-                || $this->exampleContactPoint->_nonValueFieldDefined())) {
+        if (isset($this->exampleContactPoint)) {
             $xw->startElement(self::FIELD_EXAMPLE_CONTACT_POINT);
-            $this->exampleContactPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_EXAMPLE_CONTACT_POINT]);
+            $this->exampleContactPoint->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->exampleTiming)) {
@@ -24153,11 +23652,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->minValueAttachment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->minValueIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_MIN_VALUE_IDENTIFIER]
-                || $this->minValueIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->minValueIdentifier)) {
             $xw->startElement(self::FIELD_MIN_VALUE_IDENTIFIER);
-            $this->minValueIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_MIN_VALUE_IDENTIFIER]);
+            $this->minValueIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->minValueCodeableConcept)) {
@@ -24215,11 +23712,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->minValueAddress->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->minValueContactPoint)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_MIN_VALUE_CONTACT_POINT]
-                || $this->minValueContactPoint->_nonValueFieldDefined())) {
+        if (isset($this->minValueContactPoint)) {
             $xw->startElement(self::FIELD_MIN_VALUE_CONTACT_POINT);
-            $this->minValueContactPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_MIN_VALUE_CONTACT_POINT]);
+            $this->minValueContactPoint->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->minValueTiming)) {
@@ -24361,11 +23856,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->maxValueAttachment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->maxValueIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_MAX_VALUE_IDENTIFIER]
-                || $this->maxValueIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->maxValueIdentifier)) {
             $xw->startElement(self::FIELD_MAX_VALUE_IDENTIFIER);
-            $this->maxValueIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_MAX_VALUE_IDENTIFIER]);
+            $this->maxValueIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->maxValueCodeableConcept)) {
@@ -24423,11 +23916,9 @@ class FHIRElementDefinition extends FHIRElement
             $this->maxValueAddress->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->maxValueContactPoint)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_MAX_VALUE_CONTACT_POINT]
-                || $this->maxValueContactPoint->_nonValueFieldDefined())) {
+        if (isset($this->maxValueContactPoint)) {
             $xw->startElement(self::FIELD_MAX_VALUE_CONTACT_POINT);
-            $this->maxValueContactPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_MAX_VALUE_CONTACT_POINT]);
+            $this->maxValueContactPoint->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->maxValueTiming)) {
@@ -24854,15 +24345,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_DEFAULT_VALUE_ATTACHMENT]) || array_key_exists(self::FIELD_DEFAULT_VALUE_ATTACHMENT, $json)) {
             $type->setDefaultValueAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_DEFAULT_VALUE_IDENTIFIER])
-            || isset($json[self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_DEFAULT_VALUE_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_DEFAULT_VALUE_IDENTIFIER] ?? null;
-            $type->setDefaultValueIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DEFAULT_VALUE_IDENTIFIER]) || array_key_exists(self::FIELD_DEFAULT_VALUE_IDENTIFIER, $json)) {
+            $type->setDefaultValueIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT, $json)) {
             $type->setDefaultValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT], $config));
@@ -24897,15 +24381,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_DEFAULT_VALUE_ADDRESS]) || array_key_exists(self::FIELD_DEFAULT_VALUE_ADDRESS, $json)) {
             $type->setDefaultValueAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_ADDRESS], $config));
         }
-        if (isset($json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT])
-            || isset($json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT])
-            || array_key_exists(self::FIELD_DEFAULT_VALUE_CONTACT_POINT, $json)
-            || array_key_exists(self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] ?? null;
-            $type->setDefaultValueContactPoint(FHIRContactPoint::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]) || array_key_exists(self::FIELD_DEFAULT_VALUE_CONTACT_POINT, $json)) {
+            $type->setDefaultValueContactPoint(FHIRContactPoint::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_CONTACT_POINT], $config));
         }
         if (isset($json[self::FIELD_DEFAULT_VALUE_TIMING]) || array_key_exists(self::FIELD_DEFAULT_VALUE_TIMING, $json)) {
             $type->setDefaultValueTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_DEFAULT_VALUE_TIMING], $config));
@@ -25099,15 +24576,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_FIXED_ATTACHMENT]) || array_key_exists(self::FIELD_FIXED_ATTACHMENT, $json)) {
             $type->setFixedAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_FIXED_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_FIXED_IDENTIFIER])
-            || isset($json[self::FIELD_FIXED_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_FIXED_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_FIXED_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_FIXED_IDENTIFIER] ?? null;
-            $type->setFixedIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_FIXED_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_FIXED_IDENTIFIER]) || array_key_exists(self::FIELD_FIXED_IDENTIFIER, $json)) {
+            $type->setFixedIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_FIXED_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_FIXED_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_FIXED_CODEABLE_CONCEPT, $json)) {
             $type->setFixedCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FIXED_CODEABLE_CONCEPT], $config));
@@ -25142,15 +24612,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_FIXED_ADDRESS]) || array_key_exists(self::FIELD_FIXED_ADDRESS, $json)) {
             $type->setFixedAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_FIXED_ADDRESS], $config));
         }
-        if (isset($json[self::FIELD_FIXED_CONTACT_POINT])
-            || isset($json[self::FIELD_FIXED_CONTACT_POINT_EXT])
-            || array_key_exists(self::FIELD_FIXED_CONTACT_POINT, $json)
-            || array_key_exists(self::FIELD_FIXED_CONTACT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_FIXED_CONTACT_POINT] ?? null;
-            $type->setFixedContactPoint(FHIRContactPoint::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_FIXED_CONTACT_POINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_FIXED_CONTACT_POINT]) || array_key_exists(self::FIELD_FIXED_CONTACT_POINT, $json)) {
+            $type->setFixedContactPoint(FHIRContactPoint::jsonUnserialize($json[self::FIELD_FIXED_CONTACT_POINT], $config));
         }
         if (isset($json[self::FIELD_FIXED_TIMING]) || array_key_exists(self::FIELD_FIXED_TIMING, $json)) {
             $type->setFixedTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_FIXED_TIMING], $config));
@@ -25334,15 +24797,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_PATTERN_ATTACHMENT]) || array_key_exists(self::FIELD_PATTERN_ATTACHMENT, $json)) {
             $type->setPatternAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_PATTERN_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_PATTERN_IDENTIFIER])
-            || isset($json[self::FIELD_PATTERN_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_PATTERN_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_PATTERN_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_PATTERN_IDENTIFIER] ?? null;
-            $type->setPatternIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_PATTERN_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PATTERN_IDENTIFIER]) || array_key_exists(self::FIELD_PATTERN_IDENTIFIER, $json)) {
+            $type->setPatternIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_PATTERN_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_PATTERN_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_PATTERN_CODEABLE_CONCEPT, $json)) {
             $type->setPatternCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PATTERN_CODEABLE_CONCEPT], $config));
@@ -25377,15 +24833,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_PATTERN_ADDRESS]) || array_key_exists(self::FIELD_PATTERN_ADDRESS, $json)) {
             $type->setPatternAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_PATTERN_ADDRESS], $config));
         }
-        if (isset($json[self::FIELD_PATTERN_CONTACT_POINT])
-            || isset($json[self::FIELD_PATTERN_CONTACT_POINT_EXT])
-            || array_key_exists(self::FIELD_PATTERN_CONTACT_POINT, $json)
-            || array_key_exists(self::FIELD_PATTERN_CONTACT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_PATTERN_CONTACT_POINT] ?? null;
-            $type->setPatternContactPoint(FHIRContactPoint::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_PATTERN_CONTACT_POINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PATTERN_CONTACT_POINT]) || array_key_exists(self::FIELD_PATTERN_CONTACT_POINT, $json)) {
+            $type->setPatternContactPoint(FHIRContactPoint::jsonUnserialize($json[self::FIELD_PATTERN_CONTACT_POINT], $config));
         }
         if (isset($json[self::FIELD_PATTERN_TIMING]) || array_key_exists(self::FIELD_PATTERN_TIMING, $json)) {
             $type->setPatternTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_PATTERN_TIMING], $config));
@@ -25569,15 +25018,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_EXAMPLE_ATTACHMENT]) || array_key_exists(self::FIELD_EXAMPLE_ATTACHMENT, $json)) {
             $type->setExampleAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_EXAMPLE_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_EXAMPLE_IDENTIFIER])
-            || isset($json[self::FIELD_EXAMPLE_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_EXAMPLE_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_EXAMPLE_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_EXAMPLE_IDENTIFIER] ?? null;
-            $type->setExampleIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_EXAMPLE_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_EXAMPLE_IDENTIFIER]) || array_key_exists(self::FIELD_EXAMPLE_IDENTIFIER, $json)) {
+            $type->setExampleIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_EXAMPLE_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_EXAMPLE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_EXAMPLE_CODEABLE_CONCEPT, $json)) {
             $type->setExampleCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_EXAMPLE_CODEABLE_CONCEPT], $config));
@@ -25612,15 +25054,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_EXAMPLE_ADDRESS]) || array_key_exists(self::FIELD_EXAMPLE_ADDRESS, $json)) {
             $type->setExampleAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_EXAMPLE_ADDRESS], $config));
         }
-        if (isset($json[self::FIELD_EXAMPLE_CONTACT_POINT])
-            || isset($json[self::FIELD_EXAMPLE_CONTACT_POINT_EXT])
-            || array_key_exists(self::FIELD_EXAMPLE_CONTACT_POINT, $json)
-            || array_key_exists(self::FIELD_EXAMPLE_CONTACT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_EXAMPLE_CONTACT_POINT] ?? null;
-            $type->setExampleContactPoint(FHIRContactPoint::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_EXAMPLE_CONTACT_POINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_EXAMPLE_CONTACT_POINT]) || array_key_exists(self::FIELD_EXAMPLE_CONTACT_POINT, $json)) {
+            $type->setExampleContactPoint(FHIRContactPoint::jsonUnserialize($json[self::FIELD_EXAMPLE_CONTACT_POINT], $config));
         }
         if (isset($json[self::FIELD_EXAMPLE_TIMING]) || array_key_exists(self::FIELD_EXAMPLE_TIMING, $json)) {
             $type->setExampleTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_EXAMPLE_TIMING], $config));
@@ -25804,15 +25239,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_MIN_VALUE_ATTACHMENT]) || array_key_exists(self::FIELD_MIN_VALUE_ATTACHMENT, $json)) {
             $type->setMinValueAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_MIN_VALUE_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_MIN_VALUE_IDENTIFIER])
-            || isset($json[self::FIELD_MIN_VALUE_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_MIN_VALUE_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_MIN_VALUE_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_MIN_VALUE_IDENTIFIER] ?? null;
-            $type->setMinValueIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_MIN_VALUE_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_MIN_VALUE_IDENTIFIER]) || array_key_exists(self::FIELD_MIN_VALUE_IDENTIFIER, $json)) {
+            $type->setMinValueIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_MIN_VALUE_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_MIN_VALUE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_MIN_VALUE_CODEABLE_CONCEPT, $json)) {
             $type->setMinValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MIN_VALUE_CODEABLE_CONCEPT], $config));
@@ -25847,15 +25275,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_MIN_VALUE_ADDRESS]) || array_key_exists(self::FIELD_MIN_VALUE_ADDRESS, $json)) {
             $type->setMinValueAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_MIN_VALUE_ADDRESS], $config));
         }
-        if (isset($json[self::FIELD_MIN_VALUE_CONTACT_POINT])
-            || isset($json[self::FIELD_MIN_VALUE_CONTACT_POINT_EXT])
-            || array_key_exists(self::FIELD_MIN_VALUE_CONTACT_POINT, $json)
-            || array_key_exists(self::FIELD_MIN_VALUE_CONTACT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_MIN_VALUE_CONTACT_POINT] ?? null;
-            $type->setMinValueContactPoint(FHIRContactPoint::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_MIN_VALUE_CONTACT_POINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_MIN_VALUE_CONTACT_POINT]) || array_key_exists(self::FIELD_MIN_VALUE_CONTACT_POINT, $json)) {
+            $type->setMinValueContactPoint(FHIRContactPoint::jsonUnserialize($json[self::FIELD_MIN_VALUE_CONTACT_POINT], $config));
         }
         if (isset($json[self::FIELD_MIN_VALUE_TIMING]) || array_key_exists(self::FIELD_MIN_VALUE_TIMING, $json)) {
             $type->setMinValueTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_MIN_VALUE_TIMING], $config));
@@ -26039,15 +25460,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_MAX_VALUE_ATTACHMENT]) || array_key_exists(self::FIELD_MAX_VALUE_ATTACHMENT, $json)) {
             $type->setMaxValueAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_MAX_VALUE_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_MAX_VALUE_IDENTIFIER])
-            || isset($json[self::FIELD_MAX_VALUE_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_MAX_VALUE_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_MAX_VALUE_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_MAX_VALUE_IDENTIFIER] ?? null;
-            $type->setMaxValueIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_MAX_VALUE_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_MAX_VALUE_IDENTIFIER]) || array_key_exists(self::FIELD_MAX_VALUE_IDENTIFIER, $json)) {
+            $type->setMaxValueIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_MAX_VALUE_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_MAX_VALUE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_MAX_VALUE_CODEABLE_CONCEPT, $json)) {
             $type->setMaxValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MAX_VALUE_CODEABLE_CONCEPT], $config));
@@ -26082,15 +25496,8 @@ class FHIRElementDefinition extends FHIRElement
         if (isset($json[self::FIELD_MAX_VALUE_ADDRESS]) || array_key_exists(self::FIELD_MAX_VALUE_ADDRESS, $json)) {
             $type->setMaxValueAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_MAX_VALUE_ADDRESS], $config));
         }
-        if (isset($json[self::FIELD_MAX_VALUE_CONTACT_POINT])
-            || isset($json[self::FIELD_MAX_VALUE_CONTACT_POINT_EXT])
-            || array_key_exists(self::FIELD_MAX_VALUE_CONTACT_POINT, $json)
-            || array_key_exists(self::FIELD_MAX_VALUE_CONTACT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_MAX_VALUE_CONTACT_POINT] ?? null;
-            $type->setMaxValueContactPoint(FHIRContactPoint::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_MAX_VALUE_CONTACT_POINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_MAX_VALUE_CONTACT_POINT]) || array_key_exists(self::FIELD_MAX_VALUE_CONTACT_POINT, $json)) {
+            $type->setMaxValueContactPoint(FHIRContactPoint::jsonUnserialize($json[self::FIELD_MAX_VALUE_CONTACT_POINT], $config));
         }
         if (isset($json[self::FIELD_MAX_VALUE_TIMING]) || array_key_exists(self::FIELD_MAX_VALUE_TIMING, $json)) {
             $type->setMaxValueTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_MAX_VALUE_TIMING], $config));
@@ -26190,30 +25597,38 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->path->getValue())) {
                 $out->path = $val;
             }
-            $ext = $this->path->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->path->_nonValueFieldDefined()) {
+                $ext = $this->path->jsonSerialize();
+                unset($ext->value);
                 $out->_path = $ext;
             }
         }
         if (isset($this->representation) && [] !== $this->representation) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->representation as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->representation = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_representation = $exts;
             }
         }
@@ -26221,9 +25636,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -26231,9 +25646,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->label->getValue())) {
                 $out->label = $val;
             }
-            $ext = $this->label->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->label->_nonValueFieldDefined()) {
+                $ext = $this->label->jsonSerialize();
+                unset($ext->value);
                 $out->_label = $ext;
             }
         }
@@ -26247,9 +25662,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->short->getValue())) {
                 $out->short = $val;
             }
-            $ext = $this->short->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->short->_nonValueFieldDefined()) {
+                $ext = $this->short->jsonSerialize();
+                unset($ext->value);
                 $out->_short = $ext;
             }
         }
@@ -26257,9 +25672,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->definition->getValue())) {
                 $out->definition = $val;
             }
-            $ext = $this->definition->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->definition->_nonValueFieldDefined()) {
+                $ext = $this->definition->jsonSerialize();
+                unset($ext->value);
                 $out->_definition = $ext;
             }
         }
@@ -26267,9 +25682,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->comments->getValue())) {
                 $out->comments = $val;
             }
-            $ext = $this->comments->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comments->_nonValueFieldDefined()) {
+                $ext = $this->comments->jsonSerialize();
+                unset($ext->value);
                 $out->_comments = $ext;
             }
         }
@@ -26277,30 +25692,38 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->requirements->getValue())) {
                 $out->requirements = $val;
             }
-            $ext = $this->requirements->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->requirements->_nonValueFieldDefined()) {
+                $ext = $this->requirements->jsonSerialize();
+                unset($ext->value);
                 $out->_requirements = $ext;
             }
         }
         if (isset($this->alias) && [] !== $this->alias) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->alias as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->alias = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_alias = $exts;
             }
         }
@@ -26308,9 +25731,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->min->getValue())) {
                 $out->min = $val;
             }
-            $ext = $this->min->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->min->_nonValueFieldDefined()) {
+                $ext = $this->min->jsonSerialize();
+                unset($ext->value);
                 $out->_min = $ext;
             }
         }
@@ -26318,9 +25741,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->max->getValue())) {
                 $out->max = $val;
             }
-            $ext = $this->max->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->max->_nonValueFieldDefined()) {
+                $ext = $this->max->jsonSerialize();
+                unset($ext->value);
                 $out->_max = $ext;
             }
         }
@@ -26334,9 +25757,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->nameReference->getValue())) {
                 $out->nameReference = $val;
             }
-            $ext = $this->nameReference->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->nameReference->_nonValueFieldDefined()) {
+                $ext = $this->nameReference->jsonSerialize();
+                unset($ext->value);
                 $out->_nameReference = $ext;
             }
         }
@@ -26344,9 +25767,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueBoolean->getValue())) {
                 $out->defaultValueBoolean = $val;
             }
-            $ext = $this->defaultValueBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueBoolean->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueBoolean = $ext;
             }
         }
@@ -26354,9 +25777,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueInteger->getValue())) {
                 $out->defaultValueInteger = $val;
             }
-            $ext = $this->defaultValueInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueInteger->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueInteger = $ext;
             }
         }
@@ -26364,9 +25787,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueDecimal->getValue())) {
                 $out->defaultValueDecimal = $val;
             }
-            $ext = $this->defaultValueDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueDecimal->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueDecimal = $ext;
             }
         }
@@ -26374,9 +25797,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueBase64Binary->getValue())) {
                 $out->defaultValueBase64Binary = $val;
             }
-            $ext = $this->defaultValueBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueBase64Binary = $ext;
             }
         }
@@ -26384,9 +25807,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueInstant->getValue())) {
                 $out->defaultValueInstant = $val;
             }
-            $ext = $this->defaultValueInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueInstant->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueInstant = $ext;
             }
         }
@@ -26394,9 +25817,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueString->getValue())) {
                 $out->defaultValueString = $val;
             }
-            $ext = $this->defaultValueString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueString->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueString->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueString = $ext;
             }
         }
@@ -26404,9 +25827,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueUri->getValue())) {
                 $out->defaultValueUri = $val;
             }
-            $ext = $this->defaultValueUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueUri->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueUri->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueUri = $ext;
             }
         }
@@ -26414,9 +25837,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueDate->getValue())) {
                 $out->defaultValueDate = $val;
             }
-            $ext = $this->defaultValueDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueDate->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueDate->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueDate = $ext;
             }
         }
@@ -26424,9 +25847,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueDateTime->getValue())) {
                 $out->defaultValueDateTime = $val;
             }
-            $ext = $this->defaultValueDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueDateTime->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueDateTime = $ext;
             }
         }
@@ -26434,9 +25857,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueTime->getValue())) {
                 $out->defaultValueTime = $val;
             }
-            $ext = $this->defaultValueTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueTime->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueTime->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueTime = $ext;
             }
         }
@@ -26444,9 +25867,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueCode->getValue())) {
                 $out->defaultValueCode = $val;
             }
-            $ext = $this->defaultValueCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueCode->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueCode->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueCode = $ext;
             }
         }
@@ -26454,9 +25877,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueOid->getValue())) {
                 $out->defaultValueOid = $val;
             }
-            $ext = $this->defaultValueOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueOid->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueOid->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueOid = $ext;
             }
         }
@@ -26464,9 +25887,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueUuid->getValue())) {
                 $out->defaultValueUuid = $val;
             }
-            $ext = $this->defaultValueUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueUuid->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueUuid = $ext;
             }
         }
@@ -26474,9 +25897,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueId->getValue())) {
                 $out->defaultValueId = $val;
             }
-            $ext = $this->defaultValueId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueId->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueId->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueId = $ext;
             }
         }
@@ -26484,9 +25907,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueUnsignedInt->getValue())) {
                 $out->defaultValueUnsignedInt = $val;
             }
-            $ext = $this->defaultValueUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueUnsignedInt = $ext;
             }
         }
@@ -26494,9 +25917,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValuePositiveInt->getValue())) {
                 $out->defaultValuePositiveInt = $val;
             }
-            $ext = $this->defaultValuePositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValuePositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->defaultValuePositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValuePositiveInt = $ext;
             }
         }
@@ -26504,9 +25927,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->defaultValueMarkdown->getValue())) {
                 $out->defaultValueMarkdown = $val;
             }
-            $ext = $this->defaultValueMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValueMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->defaultValueMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValueMarkdown = $ext;
             }
         }
@@ -26517,14 +25940,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->defaultValueAttachment = $this->defaultValueAttachment;
         }
         if (isset($this->defaultValueIdentifier)) {
-            if (null !== ($val = $this->defaultValueIdentifier->getValue())) {
-                $out->defaultValueIdentifier = $val;
-            }
-            $ext = $this->defaultValueIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_defaultValueIdentifier = $ext;
-            }
+            $out->defaultValueIdentifier = $this->defaultValueIdentifier;
         }
         if (isset($this->defaultValueCodeableConcept)) {
             $out->defaultValueCodeableConcept = $this->defaultValueCodeableConcept;
@@ -26560,14 +25976,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->defaultValueAddress = $this->defaultValueAddress;
         }
         if (isset($this->defaultValueContactPoint)) {
-            if (null !== ($val = $this->defaultValueContactPoint->getValue())) {
-                $out->defaultValueContactPoint = $val;
-            }
-            $ext = $this->defaultValueContactPoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_defaultValueContactPoint = $ext;
-            }
+            $out->defaultValueContactPoint = $this->defaultValueContactPoint;
         }
         if (isset($this->defaultValueTiming)) {
             $out->defaultValueTiming = $this->defaultValueTiming;
@@ -26579,9 +25988,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->meaningWhenMissing->getValue())) {
                 $out->meaningWhenMissing = $val;
             }
-            $ext = $this->meaningWhenMissing->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->meaningWhenMissing->_nonValueFieldDefined()) {
+                $ext = $this->meaningWhenMissing->jsonSerialize();
+                unset($ext->value);
                 $out->_meaningWhenMissing = $ext;
             }
         }
@@ -26589,9 +25998,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedBoolean->getValue())) {
                 $out->fixedBoolean = $val;
             }
-            $ext = $this->fixedBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedBoolean->_nonValueFieldDefined()) {
+                $ext = $this->fixedBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedBoolean = $ext;
             }
         }
@@ -26599,9 +26008,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedInteger->getValue())) {
                 $out->fixedInteger = $val;
             }
-            $ext = $this->fixedInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedInteger->_nonValueFieldDefined()) {
+                $ext = $this->fixedInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedInteger = $ext;
             }
         }
@@ -26609,9 +26018,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedDecimal->getValue())) {
                 $out->fixedDecimal = $val;
             }
-            $ext = $this->fixedDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedDecimal->_nonValueFieldDefined()) {
+                $ext = $this->fixedDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedDecimal = $ext;
             }
         }
@@ -26619,9 +26028,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedBase64Binary->getValue())) {
                 $out->fixedBase64Binary = $val;
             }
-            $ext = $this->fixedBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->fixedBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedBase64Binary = $ext;
             }
         }
@@ -26629,9 +26038,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedInstant->getValue())) {
                 $out->fixedInstant = $val;
             }
-            $ext = $this->fixedInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedInstant->_nonValueFieldDefined()) {
+                $ext = $this->fixedInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedInstant = $ext;
             }
         }
@@ -26639,9 +26048,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedString->getValue())) {
                 $out->fixedString = $val;
             }
-            $ext = $this->fixedString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedString->_nonValueFieldDefined()) {
+                $ext = $this->fixedString->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedString = $ext;
             }
         }
@@ -26649,9 +26058,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedUri->getValue())) {
                 $out->fixedUri = $val;
             }
-            $ext = $this->fixedUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedUri->_nonValueFieldDefined()) {
+                $ext = $this->fixedUri->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedUri = $ext;
             }
         }
@@ -26659,9 +26068,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedDate->getValue())) {
                 $out->fixedDate = $val;
             }
-            $ext = $this->fixedDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedDate->_nonValueFieldDefined()) {
+                $ext = $this->fixedDate->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedDate = $ext;
             }
         }
@@ -26669,9 +26078,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedDateTime->getValue())) {
                 $out->fixedDateTime = $val;
             }
-            $ext = $this->fixedDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedDateTime->_nonValueFieldDefined()) {
+                $ext = $this->fixedDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedDateTime = $ext;
             }
         }
@@ -26679,9 +26088,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedTime->getValue())) {
                 $out->fixedTime = $val;
             }
-            $ext = $this->fixedTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedTime->_nonValueFieldDefined()) {
+                $ext = $this->fixedTime->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedTime = $ext;
             }
         }
@@ -26689,9 +26098,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedCode->getValue())) {
                 $out->fixedCode = $val;
             }
-            $ext = $this->fixedCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedCode->_nonValueFieldDefined()) {
+                $ext = $this->fixedCode->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedCode = $ext;
             }
         }
@@ -26699,9 +26108,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedOid->getValue())) {
                 $out->fixedOid = $val;
             }
-            $ext = $this->fixedOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedOid->_nonValueFieldDefined()) {
+                $ext = $this->fixedOid->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedOid = $ext;
             }
         }
@@ -26709,9 +26118,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedUuid->getValue())) {
                 $out->fixedUuid = $val;
             }
-            $ext = $this->fixedUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedUuid->_nonValueFieldDefined()) {
+                $ext = $this->fixedUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedUuid = $ext;
             }
         }
@@ -26719,9 +26128,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedId->getValue())) {
                 $out->fixedId = $val;
             }
-            $ext = $this->fixedId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedId->_nonValueFieldDefined()) {
+                $ext = $this->fixedId->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedId = $ext;
             }
         }
@@ -26729,9 +26138,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedUnsignedInt->getValue())) {
                 $out->fixedUnsignedInt = $val;
             }
-            $ext = $this->fixedUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->fixedUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedUnsignedInt = $ext;
             }
         }
@@ -26739,9 +26148,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedPositiveInt->getValue())) {
                 $out->fixedPositiveInt = $val;
             }
-            $ext = $this->fixedPositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedPositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->fixedPositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedPositiveInt = $ext;
             }
         }
@@ -26749,9 +26158,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->fixedMarkdown->getValue())) {
                 $out->fixedMarkdown = $val;
             }
-            $ext = $this->fixedMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->fixedMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->fixedMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_fixedMarkdown = $ext;
             }
         }
@@ -26762,14 +26171,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->fixedAttachment = $this->fixedAttachment;
         }
         if (isset($this->fixedIdentifier)) {
-            if (null !== ($val = $this->fixedIdentifier->getValue())) {
-                $out->fixedIdentifier = $val;
-            }
-            $ext = $this->fixedIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_fixedIdentifier = $ext;
-            }
+            $out->fixedIdentifier = $this->fixedIdentifier;
         }
         if (isset($this->fixedCodeableConcept)) {
             $out->fixedCodeableConcept = $this->fixedCodeableConcept;
@@ -26805,14 +26207,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->fixedAddress = $this->fixedAddress;
         }
         if (isset($this->fixedContactPoint)) {
-            if (null !== ($val = $this->fixedContactPoint->getValue())) {
-                $out->fixedContactPoint = $val;
-            }
-            $ext = $this->fixedContactPoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_fixedContactPoint = $ext;
-            }
+            $out->fixedContactPoint = $this->fixedContactPoint;
         }
         if (isset($this->fixedTiming)) {
             $out->fixedTiming = $this->fixedTiming;
@@ -26824,9 +26219,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternBoolean->getValue())) {
                 $out->patternBoolean = $val;
             }
-            $ext = $this->patternBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternBoolean->_nonValueFieldDefined()) {
+                $ext = $this->patternBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_patternBoolean = $ext;
             }
         }
@@ -26834,9 +26229,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternInteger->getValue())) {
                 $out->patternInteger = $val;
             }
-            $ext = $this->patternInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternInteger->_nonValueFieldDefined()) {
+                $ext = $this->patternInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_patternInteger = $ext;
             }
         }
@@ -26844,9 +26239,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternDecimal->getValue())) {
                 $out->patternDecimal = $val;
             }
-            $ext = $this->patternDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternDecimal->_nonValueFieldDefined()) {
+                $ext = $this->patternDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_patternDecimal = $ext;
             }
         }
@@ -26854,9 +26249,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternBase64Binary->getValue())) {
                 $out->patternBase64Binary = $val;
             }
-            $ext = $this->patternBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->patternBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_patternBase64Binary = $ext;
             }
         }
@@ -26864,9 +26259,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternInstant->getValue())) {
                 $out->patternInstant = $val;
             }
-            $ext = $this->patternInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternInstant->_nonValueFieldDefined()) {
+                $ext = $this->patternInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_patternInstant = $ext;
             }
         }
@@ -26874,9 +26269,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternString->getValue())) {
                 $out->patternString = $val;
             }
-            $ext = $this->patternString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternString->_nonValueFieldDefined()) {
+                $ext = $this->patternString->jsonSerialize();
+                unset($ext->value);
                 $out->_patternString = $ext;
             }
         }
@@ -26884,9 +26279,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternUri->getValue())) {
                 $out->patternUri = $val;
             }
-            $ext = $this->patternUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternUri->_nonValueFieldDefined()) {
+                $ext = $this->patternUri->jsonSerialize();
+                unset($ext->value);
                 $out->_patternUri = $ext;
             }
         }
@@ -26894,9 +26289,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternDate->getValue())) {
                 $out->patternDate = $val;
             }
-            $ext = $this->patternDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternDate->_nonValueFieldDefined()) {
+                $ext = $this->patternDate->jsonSerialize();
+                unset($ext->value);
                 $out->_patternDate = $ext;
             }
         }
@@ -26904,9 +26299,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternDateTime->getValue())) {
                 $out->patternDateTime = $val;
             }
-            $ext = $this->patternDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternDateTime->_nonValueFieldDefined()) {
+                $ext = $this->patternDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_patternDateTime = $ext;
             }
         }
@@ -26914,9 +26309,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternTime->getValue())) {
                 $out->patternTime = $val;
             }
-            $ext = $this->patternTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternTime->_nonValueFieldDefined()) {
+                $ext = $this->patternTime->jsonSerialize();
+                unset($ext->value);
                 $out->_patternTime = $ext;
             }
         }
@@ -26924,9 +26319,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternCode->getValue())) {
                 $out->patternCode = $val;
             }
-            $ext = $this->patternCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternCode->_nonValueFieldDefined()) {
+                $ext = $this->patternCode->jsonSerialize();
+                unset($ext->value);
                 $out->_patternCode = $ext;
             }
         }
@@ -26934,9 +26329,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternOid->getValue())) {
                 $out->patternOid = $val;
             }
-            $ext = $this->patternOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternOid->_nonValueFieldDefined()) {
+                $ext = $this->patternOid->jsonSerialize();
+                unset($ext->value);
                 $out->_patternOid = $ext;
             }
         }
@@ -26944,9 +26339,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternUuid->getValue())) {
                 $out->patternUuid = $val;
             }
-            $ext = $this->patternUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternUuid->_nonValueFieldDefined()) {
+                $ext = $this->patternUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_patternUuid = $ext;
             }
         }
@@ -26954,9 +26349,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternId->getValue())) {
                 $out->patternId = $val;
             }
-            $ext = $this->patternId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternId->_nonValueFieldDefined()) {
+                $ext = $this->patternId->jsonSerialize();
+                unset($ext->value);
                 $out->_patternId = $ext;
             }
         }
@@ -26964,9 +26359,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternUnsignedInt->getValue())) {
                 $out->patternUnsignedInt = $val;
             }
-            $ext = $this->patternUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->patternUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_patternUnsignedInt = $ext;
             }
         }
@@ -26974,9 +26369,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternPositiveInt->getValue())) {
                 $out->patternPositiveInt = $val;
             }
-            $ext = $this->patternPositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternPositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->patternPositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_patternPositiveInt = $ext;
             }
         }
@@ -26984,9 +26379,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->patternMarkdown->getValue())) {
                 $out->patternMarkdown = $val;
             }
-            $ext = $this->patternMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->patternMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->patternMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_patternMarkdown = $ext;
             }
         }
@@ -26997,14 +26392,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->patternAttachment = $this->patternAttachment;
         }
         if (isset($this->patternIdentifier)) {
-            if (null !== ($val = $this->patternIdentifier->getValue())) {
-                $out->patternIdentifier = $val;
-            }
-            $ext = $this->patternIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_patternIdentifier = $ext;
-            }
+            $out->patternIdentifier = $this->patternIdentifier;
         }
         if (isset($this->patternCodeableConcept)) {
             $out->patternCodeableConcept = $this->patternCodeableConcept;
@@ -27040,14 +26428,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->patternAddress = $this->patternAddress;
         }
         if (isset($this->patternContactPoint)) {
-            if (null !== ($val = $this->patternContactPoint->getValue())) {
-                $out->patternContactPoint = $val;
-            }
-            $ext = $this->patternContactPoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_patternContactPoint = $ext;
-            }
+            $out->patternContactPoint = $this->patternContactPoint;
         }
         if (isset($this->patternTiming)) {
             $out->patternTiming = $this->patternTiming;
@@ -27059,9 +26440,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleBoolean->getValue())) {
                 $out->exampleBoolean = $val;
             }
-            $ext = $this->exampleBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleBoolean->_nonValueFieldDefined()) {
+                $ext = $this->exampleBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleBoolean = $ext;
             }
         }
@@ -27069,9 +26450,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleInteger->getValue())) {
                 $out->exampleInteger = $val;
             }
-            $ext = $this->exampleInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleInteger->_nonValueFieldDefined()) {
+                $ext = $this->exampleInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleInteger = $ext;
             }
         }
@@ -27079,9 +26460,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleDecimal->getValue())) {
                 $out->exampleDecimal = $val;
             }
-            $ext = $this->exampleDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleDecimal->_nonValueFieldDefined()) {
+                $ext = $this->exampleDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleDecimal = $ext;
             }
         }
@@ -27089,9 +26470,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleBase64Binary->getValue())) {
                 $out->exampleBase64Binary = $val;
             }
-            $ext = $this->exampleBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->exampleBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleBase64Binary = $ext;
             }
         }
@@ -27099,9 +26480,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleInstant->getValue())) {
                 $out->exampleInstant = $val;
             }
-            $ext = $this->exampleInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleInstant->_nonValueFieldDefined()) {
+                $ext = $this->exampleInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleInstant = $ext;
             }
         }
@@ -27109,9 +26490,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleString->getValue())) {
                 $out->exampleString = $val;
             }
-            $ext = $this->exampleString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleString->_nonValueFieldDefined()) {
+                $ext = $this->exampleString->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleString = $ext;
             }
         }
@@ -27119,9 +26500,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleUri->getValue())) {
                 $out->exampleUri = $val;
             }
-            $ext = $this->exampleUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleUri->_nonValueFieldDefined()) {
+                $ext = $this->exampleUri->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleUri = $ext;
             }
         }
@@ -27129,9 +26510,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleDate->getValue())) {
                 $out->exampleDate = $val;
             }
-            $ext = $this->exampleDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleDate->_nonValueFieldDefined()) {
+                $ext = $this->exampleDate->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleDate = $ext;
             }
         }
@@ -27139,9 +26520,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleDateTime->getValue())) {
                 $out->exampleDateTime = $val;
             }
-            $ext = $this->exampleDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleDateTime->_nonValueFieldDefined()) {
+                $ext = $this->exampleDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleDateTime = $ext;
             }
         }
@@ -27149,9 +26530,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleTime->getValue())) {
                 $out->exampleTime = $val;
             }
-            $ext = $this->exampleTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleTime->_nonValueFieldDefined()) {
+                $ext = $this->exampleTime->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleTime = $ext;
             }
         }
@@ -27159,9 +26540,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleCode->getValue())) {
                 $out->exampleCode = $val;
             }
-            $ext = $this->exampleCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleCode->_nonValueFieldDefined()) {
+                $ext = $this->exampleCode->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleCode = $ext;
             }
         }
@@ -27169,9 +26550,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleOid->getValue())) {
                 $out->exampleOid = $val;
             }
-            $ext = $this->exampleOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleOid->_nonValueFieldDefined()) {
+                $ext = $this->exampleOid->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleOid = $ext;
             }
         }
@@ -27179,9 +26560,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleUuid->getValue())) {
                 $out->exampleUuid = $val;
             }
-            $ext = $this->exampleUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleUuid->_nonValueFieldDefined()) {
+                $ext = $this->exampleUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleUuid = $ext;
             }
         }
@@ -27189,9 +26570,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleId->getValue())) {
                 $out->exampleId = $val;
             }
-            $ext = $this->exampleId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleId->_nonValueFieldDefined()) {
+                $ext = $this->exampleId->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleId = $ext;
             }
         }
@@ -27199,9 +26580,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleUnsignedInt->getValue())) {
                 $out->exampleUnsignedInt = $val;
             }
-            $ext = $this->exampleUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->exampleUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleUnsignedInt = $ext;
             }
         }
@@ -27209,9 +26590,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->examplePositiveInt->getValue())) {
                 $out->examplePositiveInt = $val;
             }
-            $ext = $this->examplePositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->examplePositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->examplePositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_examplePositiveInt = $ext;
             }
         }
@@ -27219,9 +26600,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->exampleMarkdown->getValue())) {
                 $out->exampleMarkdown = $val;
             }
-            $ext = $this->exampleMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exampleMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->exampleMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_exampleMarkdown = $ext;
             }
         }
@@ -27232,14 +26613,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->exampleAttachment = $this->exampleAttachment;
         }
         if (isset($this->exampleIdentifier)) {
-            if (null !== ($val = $this->exampleIdentifier->getValue())) {
-                $out->exampleIdentifier = $val;
-            }
-            $ext = $this->exampleIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_exampleIdentifier = $ext;
-            }
+            $out->exampleIdentifier = $this->exampleIdentifier;
         }
         if (isset($this->exampleCodeableConcept)) {
             $out->exampleCodeableConcept = $this->exampleCodeableConcept;
@@ -27275,14 +26649,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->exampleAddress = $this->exampleAddress;
         }
         if (isset($this->exampleContactPoint)) {
-            if (null !== ($val = $this->exampleContactPoint->getValue())) {
-                $out->exampleContactPoint = $val;
-            }
-            $ext = $this->exampleContactPoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_exampleContactPoint = $ext;
-            }
+            $out->exampleContactPoint = $this->exampleContactPoint;
         }
         if (isset($this->exampleTiming)) {
             $out->exampleTiming = $this->exampleTiming;
@@ -27294,9 +26661,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueBoolean->getValue())) {
                 $out->minValueBoolean = $val;
             }
-            $ext = $this->minValueBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueBoolean->_nonValueFieldDefined()) {
+                $ext = $this->minValueBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueBoolean = $ext;
             }
         }
@@ -27304,9 +26671,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueInteger->getValue())) {
                 $out->minValueInteger = $val;
             }
-            $ext = $this->minValueInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueInteger->_nonValueFieldDefined()) {
+                $ext = $this->minValueInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueInteger = $ext;
             }
         }
@@ -27314,9 +26681,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueDecimal->getValue())) {
                 $out->minValueDecimal = $val;
             }
-            $ext = $this->minValueDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueDecimal->_nonValueFieldDefined()) {
+                $ext = $this->minValueDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueDecimal = $ext;
             }
         }
@@ -27324,9 +26691,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueBase64Binary->getValue())) {
                 $out->minValueBase64Binary = $val;
             }
-            $ext = $this->minValueBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->minValueBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueBase64Binary = $ext;
             }
         }
@@ -27334,9 +26701,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueInstant->getValue())) {
                 $out->minValueInstant = $val;
             }
-            $ext = $this->minValueInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueInstant->_nonValueFieldDefined()) {
+                $ext = $this->minValueInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueInstant = $ext;
             }
         }
@@ -27344,9 +26711,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueString->getValue())) {
                 $out->minValueString = $val;
             }
-            $ext = $this->minValueString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueString->_nonValueFieldDefined()) {
+                $ext = $this->minValueString->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueString = $ext;
             }
         }
@@ -27354,9 +26721,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueUri->getValue())) {
                 $out->minValueUri = $val;
             }
-            $ext = $this->minValueUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueUri->_nonValueFieldDefined()) {
+                $ext = $this->minValueUri->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueUri = $ext;
             }
         }
@@ -27364,9 +26731,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueDate->getValue())) {
                 $out->minValueDate = $val;
             }
-            $ext = $this->minValueDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueDate->_nonValueFieldDefined()) {
+                $ext = $this->minValueDate->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueDate = $ext;
             }
         }
@@ -27374,9 +26741,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueDateTime->getValue())) {
                 $out->minValueDateTime = $val;
             }
-            $ext = $this->minValueDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueDateTime->_nonValueFieldDefined()) {
+                $ext = $this->minValueDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueDateTime = $ext;
             }
         }
@@ -27384,9 +26751,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueTime->getValue())) {
                 $out->minValueTime = $val;
             }
-            $ext = $this->minValueTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueTime->_nonValueFieldDefined()) {
+                $ext = $this->minValueTime->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueTime = $ext;
             }
         }
@@ -27394,9 +26761,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueCode->getValue())) {
                 $out->minValueCode = $val;
             }
-            $ext = $this->minValueCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueCode->_nonValueFieldDefined()) {
+                $ext = $this->minValueCode->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueCode = $ext;
             }
         }
@@ -27404,9 +26771,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueOid->getValue())) {
                 $out->minValueOid = $val;
             }
-            $ext = $this->minValueOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueOid->_nonValueFieldDefined()) {
+                $ext = $this->minValueOid->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueOid = $ext;
             }
         }
@@ -27414,9 +26781,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueUuid->getValue())) {
                 $out->minValueUuid = $val;
             }
-            $ext = $this->minValueUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueUuid->_nonValueFieldDefined()) {
+                $ext = $this->minValueUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueUuid = $ext;
             }
         }
@@ -27424,9 +26791,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueId->getValue())) {
                 $out->minValueId = $val;
             }
-            $ext = $this->minValueId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueId->_nonValueFieldDefined()) {
+                $ext = $this->minValueId->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueId = $ext;
             }
         }
@@ -27434,9 +26801,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueUnsignedInt->getValue())) {
                 $out->minValueUnsignedInt = $val;
             }
-            $ext = $this->minValueUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->minValueUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueUnsignedInt = $ext;
             }
         }
@@ -27444,9 +26811,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValuePositiveInt->getValue())) {
                 $out->minValuePositiveInt = $val;
             }
-            $ext = $this->minValuePositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValuePositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->minValuePositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_minValuePositiveInt = $ext;
             }
         }
@@ -27454,9 +26821,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->minValueMarkdown->getValue())) {
                 $out->minValueMarkdown = $val;
             }
-            $ext = $this->minValueMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->minValueMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->minValueMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_minValueMarkdown = $ext;
             }
         }
@@ -27467,14 +26834,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->minValueAttachment = $this->minValueAttachment;
         }
         if (isset($this->minValueIdentifier)) {
-            if (null !== ($val = $this->minValueIdentifier->getValue())) {
-                $out->minValueIdentifier = $val;
-            }
-            $ext = $this->minValueIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_minValueIdentifier = $ext;
-            }
+            $out->minValueIdentifier = $this->minValueIdentifier;
         }
         if (isset($this->minValueCodeableConcept)) {
             $out->minValueCodeableConcept = $this->minValueCodeableConcept;
@@ -27510,14 +26870,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->minValueAddress = $this->minValueAddress;
         }
         if (isset($this->minValueContactPoint)) {
-            if (null !== ($val = $this->minValueContactPoint->getValue())) {
-                $out->minValueContactPoint = $val;
-            }
-            $ext = $this->minValueContactPoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_minValueContactPoint = $ext;
-            }
+            $out->minValueContactPoint = $this->minValueContactPoint;
         }
         if (isset($this->minValueTiming)) {
             $out->minValueTiming = $this->minValueTiming;
@@ -27529,9 +26882,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueBoolean->getValue())) {
                 $out->maxValueBoolean = $val;
             }
-            $ext = $this->maxValueBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueBoolean->_nonValueFieldDefined()) {
+                $ext = $this->maxValueBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueBoolean = $ext;
             }
         }
@@ -27539,9 +26892,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueInteger->getValue())) {
                 $out->maxValueInteger = $val;
             }
-            $ext = $this->maxValueInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueInteger->_nonValueFieldDefined()) {
+                $ext = $this->maxValueInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueInteger = $ext;
             }
         }
@@ -27549,9 +26902,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueDecimal->getValue())) {
                 $out->maxValueDecimal = $val;
             }
-            $ext = $this->maxValueDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueDecimal->_nonValueFieldDefined()) {
+                $ext = $this->maxValueDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueDecimal = $ext;
             }
         }
@@ -27559,9 +26912,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueBase64Binary->getValue())) {
                 $out->maxValueBase64Binary = $val;
             }
-            $ext = $this->maxValueBase64Binary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueBase64Binary->_nonValueFieldDefined()) {
+                $ext = $this->maxValueBase64Binary->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueBase64Binary = $ext;
             }
         }
@@ -27569,9 +26922,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueInstant->getValue())) {
                 $out->maxValueInstant = $val;
             }
-            $ext = $this->maxValueInstant->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueInstant->_nonValueFieldDefined()) {
+                $ext = $this->maxValueInstant->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueInstant = $ext;
             }
         }
@@ -27579,9 +26932,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueString->getValue())) {
                 $out->maxValueString = $val;
             }
-            $ext = $this->maxValueString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueString->_nonValueFieldDefined()) {
+                $ext = $this->maxValueString->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueString = $ext;
             }
         }
@@ -27589,9 +26942,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueUri->getValue())) {
                 $out->maxValueUri = $val;
             }
-            $ext = $this->maxValueUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueUri->_nonValueFieldDefined()) {
+                $ext = $this->maxValueUri->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueUri = $ext;
             }
         }
@@ -27599,9 +26952,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueDate->getValue())) {
                 $out->maxValueDate = $val;
             }
-            $ext = $this->maxValueDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueDate->_nonValueFieldDefined()) {
+                $ext = $this->maxValueDate->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueDate = $ext;
             }
         }
@@ -27609,9 +26962,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueDateTime->getValue())) {
                 $out->maxValueDateTime = $val;
             }
-            $ext = $this->maxValueDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueDateTime->_nonValueFieldDefined()) {
+                $ext = $this->maxValueDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueDateTime = $ext;
             }
         }
@@ -27619,9 +26972,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueTime->getValue())) {
                 $out->maxValueTime = $val;
             }
-            $ext = $this->maxValueTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueTime->_nonValueFieldDefined()) {
+                $ext = $this->maxValueTime->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueTime = $ext;
             }
         }
@@ -27629,9 +26982,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueCode->getValue())) {
                 $out->maxValueCode = $val;
             }
-            $ext = $this->maxValueCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueCode->_nonValueFieldDefined()) {
+                $ext = $this->maxValueCode->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueCode = $ext;
             }
         }
@@ -27639,9 +26992,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueOid->getValue())) {
                 $out->maxValueOid = $val;
             }
-            $ext = $this->maxValueOid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueOid->_nonValueFieldDefined()) {
+                $ext = $this->maxValueOid->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueOid = $ext;
             }
         }
@@ -27649,9 +27002,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueUuid->getValue())) {
                 $out->maxValueUuid = $val;
             }
-            $ext = $this->maxValueUuid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueUuid->_nonValueFieldDefined()) {
+                $ext = $this->maxValueUuid->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueUuid = $ext;
             }
         }
@@ -27659,9 +27012,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueId->getValue())) {
                 $out->maxValueId = $val;
             }
-            $ext = $this->maxValueId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueId->_nonValueFieldDefined()) {
+                $ext = $this->maxValueId->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueId = $ext;
             }
         }
@@ -27669,9 +27022,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueUnsignedInt->getValue())) {
                 $out->maxValueUnsignedInt = $val;
             }
-            $ext = $this->maxValueUnsignedInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueUnsignedInt->_nonValueFieldDefined()) {
+                $ext = $this->maxValueUnsignedInt->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueUnsignedInt = $ext;
             }
         }
@@ -27679,9 +27032,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValuePositiveInt->getValue())) {
                 $out->maxValuePositiveInt = $val;
             }
-            $ext = $this->maxValuePositiveInt->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValuePositiveInt->_nonValueFieldDefined()) {
+                $ext = $this->maxValuePositiveInt->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValuePositiveInt = $ext;
             }
         }
@@ -27689,9 +27042,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxValueMarkdown->getValue())) {
                 $out->maxValueMarkdown = $val;
             }
-            $ext = $this->maxValueMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxValueMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->maxValueMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_maxValueMarkdown = $ext;
             }
         }
@@ -27702,14 +27055,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->maxValueAttachment = $this->maxValueAttachment;
         }
         if (isset($this->maxValueIdentifier)) {
-            if (null !== ($val = $this->maxValueIdentifier->getValue())) {
-                $out->maxValueIdentifier = $val;
-            }
-            $ext = $this->maxValueIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_maxValueIdentifier = $ext;
-            }
+            $out->maxValueIdentifier = $this->maxValueIdentifier;
         }
         if (isset($this->maxValueCodeableConcept)) {
             $out->maxValueCodeableConcept = $this->maxValueCodeableConcept;
@@ -27745,14 +27091,7 @@ class FHIRElementDefinition extends FHIRElement
             $out->maxValueAddress = $this->maxValueAddress;
         }
         if (isset($this->maxValueContactPoint)) {
-            if (null !== ($val = $this->maxValueContactPoint->getValue())) {
-                $out->maxValueContactPoint = $val;
-            }
-            $ext = $this->maxValueContactPoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_maxValueContactPoint = $ext;
-            }
+            $out->maxValueContactPoint = $this->maxValueContactPoint;
         }
         if (isset($this->maxValueTiming)) {
             $out->maxValueTiming = $this->maxValueTiming;
@@ -27764,30 +27103,38 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->maxLength->getValue())) {
                 $out->maxLength = $val;
             }
-            $ext = $this->maxLength->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxLength->_nonValueFieldDefined()) {
+                $ext = $this->maxLength->jsonSerialize();
+                unset($ext->value);
                 $out->_maxLength = $ext;
             }
         }
         if (isset($this->condition) && [] !== $this->condition) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->condition as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->condition = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_condition = $exts;
             }
         }
@@ -27798,9 +27145,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->mustSupport->getValue())) {
                 $out->mustSupport = $val;
             }
-            $ext = $this->mustSupport->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->mustSupport->_nonValueFieldDefined()) {
+                $ext = $this->mustSupport->jsonSerialize();
+                unset($ext->value);
                 $out->_mustSupport = $ext;
             }
         }
@@ -27808,9 +27155,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->isModifier->getValue())) {
                 $out->isModifier = $val;
             }
-            $ext = $this->isModifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->isModifier->_nonValueFieldDefined()) {
+                $ext = $this->isModifier->jsonSerialize();
+                unset($ext->value);
                 $out->_isModifier = $ext;
             }
         }
@@ -27818,9 +27165,9 @@ class FHIRElementDefinition extends FHIRElement
             if (null !== ($val = $this->isSummary->getValue())) {
                 $out->isSummary = $val;
             }
-            $ext = $this->isSummary->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->isSummary->_nonValueFieldDefined()) {
+                $ext = $this->isSummary->jsonSerialize();
+                unset($ext->value);
                 $out->_isSummary = $ext;
             }
         }
@@ -27832,7 +27179,7 @@ class FHIRElementDefinition extends FHIRElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

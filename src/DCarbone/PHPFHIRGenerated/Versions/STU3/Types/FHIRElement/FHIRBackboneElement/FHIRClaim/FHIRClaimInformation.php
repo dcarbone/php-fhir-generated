@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,6 +74,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt;
@@ -95,7 +96,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_DOT_INFORMATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SEQUENCE = 'sequence';
     public const FIELD_SEQUENCE_EXT = '_sequence';
     public const FIELD_CATEGORY = 'category';
@@ -110,7 +111,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
     public const FIELD_VALUE_REFERENCE = 'valueReference';
     public const FIELD_REASON = 'reason';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_SEQUENCE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -120,14 +121,14 @@ class FHIRClaimInformation extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TIMING_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -255,7 +256,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $timingDate
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $timingPeriod
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $valueString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $valueAttachment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $valueReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $reason
@@ -270,7 +271,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate = null,
                                 null|FHIRPeriod $timingPeriod = null,
                                 null|string|FHIRStringPrimitive|FHIRString $valueString = null,
-                                null|FHIRQuantity $valueQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $valueQuantity = null,
                                 null|FHIRAttachment $valueAttachment = null,
                                 null|FHIRReference $valueReference = null,
                                 null|FHIRCodeableConcept $reason = null,
@@ -312,7 +313,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -321,7 +322,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -663,14 +664,17 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
+    public function setValueQuantity(null|FHIRDecimal|FHIRQuantity $valueQuantity): self
     {
         if (null === $valueQuantity) {
             unset($this->valueQuantity);
             return $this;
+        }
+        if (!($valueQuantity instanceof FHIRQuantity)) {
+            $valueQuantity = new FHIRQuantity(value: $valueQuantity);
         }
         $this->valueQuantity = $valueQuantity;
         return $this;
@@ -786,7 +790,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -979,7 +983,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1034,7 +1038,8 @@ class FHIRClaimInformation extends FHIRBackboneElement
                 $type->setValueReference(FHIRReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_REASON === $cen) {
                 $type->setReason(FHIRCodeableConcept::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1227,9 +1232,9 @@ class FHIRClaimInformation extends FHIRBackboneElement
             if (null !== ($val = $this->sequence->getValue())) {
                 $out->sequence = $val;
             }
-            $ext = $this->sequence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sequence->_nonValueFieldDefined()) {
+                $ext = $this->sequence->jsonSerialize();
+                unset($ext->value);
                 $out->_sequence = $ext;
             }
         }
@@ -1243,9 +1248,9 @@ class FHIRClaimInformation extends FHIRBackboneElement
             if (null !== ($val = $this->timingDate->getValue())) {
                 $out->timingDate = $val;
             }
-            $ext = $this->timingDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->timingDate->_nonValueFieldDefined()) {
+                $ext = $this->timingDate->jsonSerialize();
+                unset($ext->value);
                 $out->_timingDate = $ext;
             }
         }
@@ -1256,9 +1261,9 @@ class FHIRClaimInformation extends FHIRBackboneElement
             if (null !== ($val = $this->valueString->getValue())) {
                 $out->valueString = $val;
             }
-            $ext = $this->valueString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueString->_nonValueFieldDefined()) {
+                $ext = $this->valueString->jsonSerialize();
+                unset($ext->value);
                 $out->_valueString = $ext;
             }
         }
@@ -1276,7 +1281,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

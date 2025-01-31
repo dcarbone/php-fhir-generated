@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_APPOINTMENT_DOT_WEEKLY_TEMPLATE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_MONDAY = 'monday';
     public const FIELD_MONDAY_EXT = '_monday';
     public const FIELD_TUESDAY = 'tuesday';
@@ -127,10 +127,10 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
     public const FIELD_WEEK_INTERVAL = 'weekInterval';
     public const FIELD_WEEK_INTERVAL_EXT = '_weekInterval';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_MONDAY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TUESDAY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -142,7 +142,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         self::FIELD_WEEK_INTERVAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -279,7 +279,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -288,7 +288,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -809,7 +809,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -968,7 +968,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1019,7 +1019,8 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
                 $type->setSunday(FHIRBoolean::xmlUnserialize($ce, $config));
             } else if (self::FIELD_WEEK_INTERVAL === $cen) {
                 $type->setWeekInterval(FHIRPositiveInt::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1296,9 +1297,9 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             if (null !== ($val = $this->monday->getValue())) {
                 $out->monday = $val;
             }
-            $ext = $this->monday->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->monday->_nonValueFieldDefined()) {
+                $ext = $this->monday->jsonSerialize();
+                unset($ext->value);
                 $out->_monday = $ext;
             }
         }
@@ -1306,9 +1307,9 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             if (null !== ($val = $this->tuesday->getValue())) {
                 $out->tuesday = $val;
             }
-            $ext = $this->tuesday->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->tuesday->_nonValueFieldDefined()) {
+                $ext = $this->tuesday->jsonSerialize();
+                unset($ext->value);
                 $out->_tuesday = $ext;
             }
         }
@@ -1316,9 +1317,9 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             if (null !== ($val = $this->wednesday->getValue())) {
                 $out->wednesday = $val;
             }
-            $ext = $this->wednesday->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->wednesday->_nonValueFieldDefined()) {
+                $ext = $this->wednesday->jsonSerialize();
+                unset($ext->value);
                 $out->_wednesday = $ext;
             }
         }
@@ -1326,9 +1327,9 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             if (null !== ($val = $this->thursday->getValue())) {
                 $out->thursday = $val;
             }
-            $ext = $this->thursday->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->thursday->_nonValueFieldDefined()) {
+                $ext = $this->thursday->jsonSerialize();
+                unset($ext->value);
                 $out->_thursday = $ext;
             }
         }
@@ -1336,9 +1337,9 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             if (null !== ($val = $this->friday->getValue())) {
                 $out->friday = $val;
             }
-            $ext = $this->friday->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->friday->_nonValueFieldDefined()) {
+                $ext = $this->friday->jsonSerialize();
+                unset($ext->value);
                 $out->_friday = $ext;
             }
         }
@@ -1346,9 +1347,9 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             if (null !== ($val = $this->saturday->getValue())) {
                 $out->saturday = $val;
             }
-            $ext = $this->saturday->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->saturday->_nonValueFieldDefined()) {
+                $ext = $this->saturday->jsonSerialize();
+                unset($ext->value);
                 $out->_saturday = $ext;
             }
         }
@@ -1356,9 +1357,9 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             if (null !== ($val = $this->sunday->getValue())) {
                 $out->sunday = $val;
             }
-            $ext = $this->sunday->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sunday->_nonValueFieldDefined()) {
+                $ext = $this->sunday->jsonSerialize();
+                unset($ext->value);
                 $out->_sunday = $ext;
             }
         }
@@ -1366,15 +1367,15 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             if (null !== ($val = $this->weekInterval->getValue())) {
                 $out->weekInterval = $val;
             }
-            $ext = $this->weekInterval->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->weekInterval->_nonValueFieldDefined()) {
+                $ext = $this->weekInterval->jsonSerialize();
+                unset($ext->value);
                 $out->_weekInterval = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

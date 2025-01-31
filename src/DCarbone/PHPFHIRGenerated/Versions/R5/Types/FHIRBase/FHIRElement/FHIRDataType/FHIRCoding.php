@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,7 @@ class FHIRCoding extends FHIRDataType
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CODING;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SYSTEM = 'system';
     public const FIELD_SYSTEM_EXT = '_system';
     public const FIELD_VERSION = 'version';
@@ -126,10 +126,10 @@ class FHIRCoding extends FHIRDataType
     public const FIELD_USER_SELECTED = 'userSelected';
     public const FIELD_USER_SELECTED_EXT = '_userSelected';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SYSTEM => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -138,7 +138,7 @@ class FHIRCoding extends FHIRDataType
         self::FIELD_USER_SELECTED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -239,7 +239,7 @@ class FHIRCoding extends FHIRDataType
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -248,7 +248,7 @@ class FHIRCoding extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -595,7 +595,7 @@ class FHIRCoding extends FHIRDataType
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -706,7 +706,7 @@ class FHIRCoding extends FHIRDataType
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -749,7 +749,8 @@ class FHIRCoding extends FHIRDataType
                 $type->setDisplay(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_USER_SELECTED === $cen) {
                 $type->setUserSelected(FHIRBoolean::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -942,9 +943,9 @@ class FHIRCoding extends FHIRDataType
             if (null !== ($val = $this->system->getValue())) {
                 $out->system = $val;
             }
-            $ext = $this->system->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->system->_nonValueFieldDefined()) {
+                $ext = $this->system->jsonSerialize();
+                unset($ext->value);
                 $out->_system = $ext;
             }
         }
@@ -952,9 +953,9 @@ class FHIRCoding extends FHIRDataType
             if (null !== ($val = $this->version->getValue())) {
                 $out->version = $val;
             }
-            $ext = $this->version->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->version->_nonValueFieldDefined()) {
+                $ext = $this->version->jsonSerialize();
+                unset($ext->value);
                 $out->_version = $ext;
             }
         }
@@ -962,9 +963,9 @@ class FHIRCoding extends FHIRDataType
             if (null !== ($val = $this->code->getValue())) {
                 $out->code = $val;
             }
-            $ext = $this->code->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->code->_nonValueFieldDefined()) {
+                $ext = $this->code->jsonSerialize();
+                unset($ext->value);
                 $out->_code = $ext;
             }
         }
@@ -972,9 +973,9 @@ class FHIRCoding extends FHIRDataType
             if (null !== ($val = $this->display->getValue())) {
                 $out->display = $val;
             }
-            $ext = $this->display->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->display->_nonValueFieldDefined()) {
+                $ext = $this->display->jsonSerialize();
+                unset($ext->value);
                 $out->_display = $ext;
             }
         }
@@ -982,15 +983,15 @@ class FHIRCoding extends FHIRDataType
             if (null !== ($val = $this->userSelected->getValue())) {
                 $out->userSelected = $val;
             }
-            $ext = $this->userSelected->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->userSelected->_nonValueFieldDefined()) {
+                $ext = $this->userSelected->jsonSerialize();
+                unset($ext->value);
                 $out->_userSelected = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

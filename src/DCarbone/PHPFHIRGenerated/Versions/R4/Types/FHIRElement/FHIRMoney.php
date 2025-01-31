@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,22 +87,22 @@ class FHIRMoney extends FHIRElement implements ValueContainerTypeInterface
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MONEY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_VALUE = 'value';
     public const FIELD_VALUE_EXT = '_value';
     public const FIELD_CURRENCY = 'currency';
     public const FIELD_CURRENCY_EXT = '_currency';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CURRENCY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -152,7 +152,7 @@ class FHIRMoney extends FHIRElement implements ValueContainerTypeInterface
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -161,7 +161,7 @@ class FHIRMoney extends FHIRElement implements ValueContainerTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -310,7 +310,7 @@ class FHIRMoney extends FHIRElement implements ValueContainerTypeInterface
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -385,15 +385,7 @@ class FHIRMoney extends FHIRElement implements ValueContainerTypeInterface
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->currency);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -430,7 +422,8 @@ class FHIRMoney extends FHIRElement implements ValueContainerTypeInterface
                 $type->setValue(FHIRDecimal::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CURRENCY === $cen) {
                 $type->setCurrency(FHIRCode::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -464,23 +457,19 @@ class FHIRMoney extends FHIRElement implements ValueContainerTypeInterface
                                  null|ValueXMLLocationEnum $valueLocation = null): void
     {
         $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
-        if (isset($this->value) && ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueLocation) {
+        if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
         if (isset($this->currency) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CURRENCY]) {
             $xw->writeAttribute(self::FIELD_CURRENCY, $this->currency->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->value)) {
-            if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
-                $xw->text($this->value->_getFormattedValue());
-            } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
-                $xw->startElement(self::FIELD_VALUE);
-                $xw->writeAttribute(FHIRDecimal::FIELD_VALUE, $this->value->_getFormattedValue());
-                $xw->endElement();
-            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
-                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
-            }
+        if (isset($this->value)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VALUE]
+                || $this->value->_nonValueFieldDefined())) {
+            $xw->startElement(self::FIELD_VALUE);
+            $this->value->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VALUE]);
+            $xw->endElement();
         }
         if (isset($this->currency)
             && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_CURRENCY]
@@ -546,9 +535,9 @@ class FHIRMoney extends FHIRElement implements ValueContainerTypeInterface
             if (null !== ($val = $this->value->getValue())) {
                 $out->value = $val;
             }
-            $ext = $this->value->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->value->_nonValueFieldDefined()) {
+                $ext = $this->value->jsonSerialize();
+                unset($ext->value);
                 $out->_value = $ext;
             }
         }
@@ -556,15 +545,15 @@ class FHIRMoney extends FHIRElement implements ValueContainerTypeInterface
             if (null !== ($val = $this->currency->getValue())) {
                 $out->currency = $val;
             }
-            $ext = $this->currency->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->currency->_nonValueFieldDefined()) {
+                $ext = $this->currency->jsonSerialize();
+                unset($ext->value);
                 $out->_currency = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

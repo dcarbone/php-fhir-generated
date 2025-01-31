@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,6 +98,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
@@ -118,7 +119,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_LINK_ID = 'linkId';
     public const FIELD_LINK_ID_EXT = '_linkId';
     public const FIELD_DESCRIPTION = 'description';
@@ -141,10 +142,10 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     public const FIELD_DURATION_RANGE = 'durationRange';
     public const FIELD_TIME_FROM_EVENT = 'timeFromEvent';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_LINK_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -153,7 +154,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         self::FIELD_DEFINITION_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -349,9 +350,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $definitionId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue $definitionByTypeAndValue
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination $definitionByCombination
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $instancesRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $durationRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent[] $timeFromEvent
      * @param null|string[] $fhirComments
@@ -370,9 +371,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                                 null|string|FHIRIdPrimitive|FHIRId $definitionId = null,
                                 null|FHIREvidenceVariableDefinitionByTypeAndValue $definitionByTypeAndValue = null,
                                 null|FHIREvidenceVariableDefinitionByCombination $definitionByCombination = null,
-                                null|FHIRQuantity $instancesQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $instancesQuantity = null,
                                 null|FHIRRange $instancesRange = null,
-                                null|FHIRQuantity $durationQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $durationQuantity = null,
                                 null|FHIRRange $durationRange = null,
                                 null|iterable $timeFromEvent = null,
                                 null|iterable $fhirComments = null)
@@ -431,7 +432,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -440,7 +441,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -1059,14 +1060,17 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * Number of occurrences meeting the characteristic.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
      * @return static
      */
-    public function setInstancesQuantity(null|FHIRQuantity $instancesQuantity): self
+    public function setInstancesQuantity(null|FHIRDecimal|FHIRQuantity $instancesQuantity): self
     {
         if (null === $instancesQuantity) {
             unset($this->instancesQuantity);
             return $this;
+        }
+        if (!($instancesQuantity instanceof FHIRQuantity)) {
+            $instancesQuantity = new FHIRQuantity(value: $instancesQuantity);
         }
         $this->instancesQuantity = $instancesQuantity;
         return $this;
@@ -1131,14 +1135,17 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * Length of time in which the characteristic is met.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
      * @return static
      */
-    public function setDurationQuantity(null|FHIRQuantity $durationQuantity): self
+    public function setDurationQuantity(null|FHIRDecimal|FHIRQuantity $durationQuantity): self
     {
         if (null === $durationQuantity) {
             unset($this->durationQuantity);
             return $this;
+        }
+        if (!($durationQuantity instanceof FHIRQuantity)) {
+            $durationQuantity = new FHIRQuantity(value: $durationQuantity);
         }
         $this->durationQuantity = $durationQuantity;
         return $this;
@@ -1239,7 +1246,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1494,7 +1501,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1561,7 +1568,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $type->setDurationRange(FHIRRange::xmlUnserialize($ce, $config));
             } else if (self::FIELD_TIME_FROM_EVENT === $cen) {
                 $type->addTimeFromEvent(FHIREvidenceVariableTimeFromEvent::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1858,9 +1866,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->linkId->getValue())) {
                 $out->linkId = $val;
             }
-            $ext = $this->linkId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->linkId->_nonValueFieldDefined()) {
+                $ext = $this->linkId->jsonSerialize();
+                unset($ext->value);
                 $out->_linkId = $ext;
             }
         }
@@ -1868,9 +1876,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -1881,9 +1889,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->exclude->getValue())) {
                 $out->exclude = $val;
             }
-            $ext = $this->exclude->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->exclude->_nonValueFieldDefined()) {
+                $ext = $this->exclude->jsonSerialize();
+                unset($ext->value);
                 $out->_exclude = $ext;
             }
         }
@@ -1894,9 +1902,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->definitionCanonical->getValue())) {
                 $out->definitionCanonical = $val;
             }
-            $ext = $this->definitionCanonical->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->definitionCanonical->_nonValueFieldDefined()) {
+                $ext = $this->definitionCanonical->jsonSerialize();
+                unset($ext->value);
                 $out->_definitionCanonical = $ext;
             }
         }
@@ -1910,9 +1918,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->definitionId->getValue())) {
                 $out->definitionId = $val;
             }
-            $ext = $this->definitionId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->definitionId->_nonValueFieldDefined()) {
+                $ext = $this->definitionId->jsonSerialize();
+                unset($ext->value);
                 $out->_definitionId = $ext;
             }
         }
@@ -1939,7 +1947,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

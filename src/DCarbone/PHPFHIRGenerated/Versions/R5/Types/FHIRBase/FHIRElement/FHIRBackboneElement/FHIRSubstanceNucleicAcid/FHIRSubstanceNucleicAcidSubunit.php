@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SUBUNIT = 'subunit';
     public const FIELD_SUBUNIT_EXT = '_subunit';
     public const FIELD_SEQUENCE = 'sequence';
@@ -124,17 +124,17 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     public const FIELD_LINKAGE = 'linkage';
     public const FIELD_SUGAR = 'sugar';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SUBUNIT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LENGTH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -289,7 +289,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -298,7 +298,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -757,7 +757,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -916,7 +916,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -967,7 +967,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 $type->addLinkage(FHIRSubstanceNucleicAcidLinkage::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SUGAR === $cen) {
                 $type->addSugar(FHIRSubstanceNucleicAcidSugar::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1160,9 +1161,9 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             if (null !== ($val = $this->subunit->getValue())) {
                 $out->subunit = $val;
             }
-            $ext = $this->subunit->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->subunit->_nonValueFieldDefined()) {
+                $ext = $this->subunit->jsonSerialize();
+                unset($ext->value);
                 $out->_subunit = $ext;
             }
         }
@@ -1170,9 +1171,9 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             if (null !== ($val = $this->sequence->getValue())) {
                 $out->sequence = $val;
             }
-            $ext = $this->sequence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sequence->_nonValueFieldDefined()) {
+                $ext = $this->sequence->jsonSerialize();
+                unset($ext->value);
                 $out->_sequence = $ext;
             }
         }
@@ -1180,9 +1181,9 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             if (null !== ($val = $this->length->getValue())) {
                 $out->length = $val;
             }
-            $ext = $this->length->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->length->_nonValueFieldDefined()) {
+                $ext = $this->length->jsonSerialize();
+                unset($ext->value);
                 $out->_length = $ext;
             }
         }
@@ -1203,7 +1204,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

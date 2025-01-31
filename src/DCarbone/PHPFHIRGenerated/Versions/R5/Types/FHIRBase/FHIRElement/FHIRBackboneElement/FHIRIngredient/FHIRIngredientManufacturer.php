@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,24 +107,24 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INGREDIENT_DOT_MANUFACTURER;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_ROLE = 'role';
     public const FIELD_ROLE_EXT = '_role';
     public const FIELD_MANUFACTURER = 'manufacturer';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_MANUFACTURER => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ROLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -176,7 +176,7 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -185,7 +185,7 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -288,7 +288,7 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -380,7 +380,7 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -419,7 +419,8 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
                 $type->setRole(FHIRIngredientManufacturerRole::xmlUnserialize($ce, $config));
             } else if (self::FIELD_MANUFACTURER === $cen) {
                 $type->setManufacturer(FHIRReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -508,9 +509,9 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
             if (null !== ($val = $this->role->getValue())) {
                 $out->role = $val;
             }
-            $ext = $this->role->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->role->_nonValueFieldDefined()) {
+                $ext = $this->role->jsonSerialize();
+                unset($ext->value);
                 $out->_role = $ext;
             }
         }
@@ -519,7 +520,7 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

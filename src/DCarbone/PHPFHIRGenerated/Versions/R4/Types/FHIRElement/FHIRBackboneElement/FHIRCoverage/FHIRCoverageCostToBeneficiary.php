@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,14 +89,13 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COVERAGE_DOT_COST_TO_BENEFICIARY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_VALUE_QUANTITY = 'valueQuantity';
     public const FIELD_VALUE_MONEY = 'valueMoney';
-    public const FIELD_VALUE_MONEY_EXT = '_valueMoney';
     public const FIELD_EXCEPTION = 'exception';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_VALUE_QUANTITY => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -106,12 +105,11 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_VALUE_MONEY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -163,7 +161,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $valueMoney
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException[] $exception
      * @param null|string[] $fhirComments
@@ -172,7 +170,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|FHIRQuantity $valueQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $valueQuantity = null,
                                 null|FHIRDecimal|FHIRMoney $valueMoney = null,
                                 null|iterable $exception = null,
                                 null|iterable $fhirComments = null)
@@ -195,7 +193,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -204,7 +202,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -266,14 +264,17 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * The amount due from the patient for the cost category.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
+    public function setValueQuantity(null|FHIRDecimal|FHIRQuantity $valueQuantity): self
     {
         if (null === $valueQuantity) {
             unset($this->valueQuantity);
             return $this;
+        }
+        if (!($valueQuantity instanceof FHIRQuantity)) {
+            $valueQuantity = new FHIRQuantity(value: $valueQuantity);
         }
         $this->valueQuantity = $valueQuantity;
         return $this;
@@ -301,11 +302,9 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * The amount due from the patient for the cost category.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $valueMoney
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueMoney(null|FHIRDecimal|FHIRMoney $valueMoney,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValueMoney(null|FHIRDecimal|FHIRMoney $valueMoney): self
     {
         if (null === $valueMoney) {
             unset($this->valueMoney);
@@ -315,33 +314,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
             $valueMoney = new FHIRMoney(value: $valueMoney);
         }
         $this->valueMoney = $valueMoney;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE_MONEY] !== $valueXMLLocation) {
-            $this->_setValueMoneyValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the valueMoney element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueMoneyValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE_MONEY];
-    }
-
-    /**
-     * Set the location the "value" field of the valueMoney element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueMoneyValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE_MONEY] = $valueXMLLocation;
         return $this;
     }
 
@@ -409,7 +381,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -530,7 +502,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -573,18 +545,11 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
                 $type->setValueMoney(FHIRMoney::xmlUnserialize($ce, $config));
             } else if (self::FIELD_EXCEPTION === $cen) {
                 $type->addException(FHIRCoverageException::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_VALUE_MONEY])) {
-            if (isset($type->valueMoney)) {
-                $type->valueMoney->setValue((string)$attributes[self::FIELD_VALUE_MONEY]);
-                $type->_setValueMoneyValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setValueMoney((string)$attributes[self::FIELD_VALUE_MONEY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         return $type;
     }
@@ -596,9 +561,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->valueMoney) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_MONEY]) {
-            $xw->writeAttribute(self::FIELD_VALUE_MONEY, $this->valueMoney->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
             $xw->startElement(self::FIELD_TYPE);
@@ -610,11 +572,9 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
             $this->valueQuantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->valueMoney)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VALUE_MONEY]
-                || $this->valueMoney->_nonValueFieldDefined())) {
+        if (isset($this->valueMoney)) {
             $xw->startElement(self::FIELD_VALUE_MONEY);
-            $this->valueMoney->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VALUE_MONEY]);
+            $this->valueMoney->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->exception)) {
@@ -654,15 +614,8 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
         if (isset($json[self::FIELD_VALUE_QUANTITY]) || array_key_exists(self::FIELD_VALUE_QUANTITY, $json)) {
             $type->setValueQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_VALUE_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_VALUE_MONEY])
-            || isset($json[self::FIELD_VALUE_MONEY_EXT])
-            || array_key_exists(self::FIELD_VALUE_MONEY, $json)
-            || array_key_exists(self::FIELD_VALUE_MONEY_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE_MONEY] ?? null;
-            $type->setValueMoney(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_MONEY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_VALUE_MONEY]) || array_key_exists(self::FIELD_VALUE_MONEY, $json)) {
+            $type->setValueMoney(FHIRMoney::jsonUnserialize($json[self::FIELD_VALUE_MONEY], $config));
         }
         if (isset($json[self::FIELD_EXCEPTION]) || array_key_exists(self::FIELD_EXCEPTION, $json)) {
             $vs = $json[self::FIELD_EXCEPTION];
@@ -689,21 +642,14 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
             $out->valueQuantity = $this->valueQuantity;
         }
         if (isset($this->valueMoney)) {
-            if (null !== ($val = $this->valueMoney->getValue())) {
-                $out->valueMoney = $val;
-            }
-            $ext = $this->valueMoney->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_valueMoney = $ext;
-            }
+            $out->valueMoney = $this->valueMoney;
         }
         if (isset($this->exception) && [] !== $this->exception) {
             $out->exception = $this->exception;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

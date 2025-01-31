@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
@@ -108,10 +109,9 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_PRODUCT_DOT_INSTANCE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_QUANTITY = 'quantity';
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_NAME = 'name';
     public const FIELD_NAME_EXT = '_name';
     public const FIELD_LOT_NUMBER = 'lotNumber';
@@ -121,21 +121,19 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
     public const FIELD_USE_BY = 'useBy';
     public const FIELD_USE_BY_EXT = '_useBy';
     public const FIELD_BIOLOGICAL_SOURCE_EVENT = 'biologicalSourceEvent';
-    public const FIELD_BIOLOGICAL_SOURCE_EVENT_EXT = '_biologicalSourceEvent';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LOT_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXPIRY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_USE_BY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_BIOLOGICAL_SOURCE_EVENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -230,7 +228,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $lotNumber
@@ -242,7 +240,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRQuantity $quantity = null,
+                                null|FHIRDecimal|FHIRQuantity $quantity = null,
                                 null|iterable $identifier = null,
                                 null|string|FHIRStringPrimitive|FHIRString $name = null,
                                 null|string|FHIRStringPrimitive|FHIRString $lotNumber = null,
@@ -278,7 +276,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -287,7 +285,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -315,14 +313,17 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * The amount of items or instances that the resource considers, for instance when
      * referring to 2 identical units together.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
+        }
+        if (!($quantity instanceof FHIRQuantity)) {
+            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -397,14 +398,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -718,11 +712,9 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * this product from one or more biological entities was obtained or pooled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $biologicalSourceEvent
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setBiologicalSourceEvent(null|FHIRString|FHIRIdentifier $biologicalSourceEvent,
-                                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setBiologicalSourceEvent(null|FHIRString|FHIRIdentifier $biologicalSourceEvent): self
     {
         if (null === $biologicalSourceEvent) {
             unset($this->biologicalSourceEvent);
@@ -732,37 +724,10 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             $biologicalSourceEvent = new FHIRIdentifier(value: $biologicalSourceEvent);
         }
         $this->biologicalSourceEvent = $biologicalSourceEvent;
-        if ($this->_valueXMLLocations[self::FIELD_BIOLOGICAL_SOURCE_EVENT] !== $valueXMLLocation) {
-            $this->_setBiologicalSourceEventValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the biologicalSourceEvent element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getBiologicalSourceEventValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_BIOLOGICAL_SOURCE_EVENT];
-    }
-
-    /**
-     * Set the location the "value" field of the biologicalSourceEvent element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setBiologicalSourceEventValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_BIOLOGICAL_SOURCE_EVENT] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -909,7 +874,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -958,7 +923,8 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
                 $type->setUseBy(FHIRDateTime::xmlUnserialize($ce, $config));
             } else if (self::FIELD_BIOLOGICAL_SOURCE_EVENT === $cen) {
                 $type->setBiologicalSourceEvent(FHIRIdentifier::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -995,14 +961,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
                 $type->setUseBy((string)$attributes[self::FIELD_USE_BY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_BIOLOGICAL_SOURCE_EVENT])) {
-            if (isset($type->biologicalSourceEvent)) {
-                $type->biologicalSourceEvent->setValue((string)$attributes[self::FIELD_BIOLOGICAL_SOURCE_EVENT]);
-                $type->_setBiologicalSourceEventValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setBiologicalSourceEvent((string)$attributes[self::FIELD_BIOLOGICAL_SOURCE_EVENT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         return $type;
     }
 
@@ -1025,17 +983,14 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
         if (isset($this->useBy) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_USE_BY]) {
             $xw->writeAttribute(self::FIELD_USE_BY, $this->useBy->_getFormattedValue());
         }
-        if (isset($this->biologicalSourceEvent) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_BIOLOGICAL_SOURCE_EVENT]) {
-            $xw->writeAttribute(self::FIELD_BIOLOGICAL_SOURCE_EVENT, $this->biologicalSourceEvent->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
         if (isset($this->quantity)) {
             $xw->startElement(self::FIELD_QUANTITY);
             $this->quantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1069,11 +1024,9 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             $this->useBy->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_USE_BY]);
             $xw->endElement();
         }
-        if (isset($this->biologicalSourceEvent)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_BIOLOGICAL_SOURCE_EVENT]
-                || $this->biologicalSourceEvent->_nonValueFieldDefined())) {
+        if (isset($this->biologicalSourceEvent)) {
             $xw->startElement(self::FIELD_BIOLOGICAL_SOURCE_EVENT);
-            $this->biologicalSourceEvent->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_BIOLOGICAL_SOURCE_EVENT]);
+            $this->biologicalSourceEvent->xmlSerialize($xw, $config);
             $xw->endElement();
         }
     }
@@ -1103,22 +1056,13 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
             $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_NAME])
@@ -1161,15 +1105,8 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_BIOLOGICAL_SOURCE_EVENT])
-            || isset($json[self::FIELD_BIOLOGICAL_SOURCE_EVENT_EXT])
-            || array_key_exists(self::FIELD_BIOLOGICAL_SOURCE_EVENT, $json)
-            || array_key_exists(self::FIELD_BIOLOGICAL_SOURCE_EVENT_EXT, $json)) {
-            $value = $json[self::FIELD_BIOLOGICAL_SOURCE_EVENT] ?? null;
-            $type->setBiologicalSourceEvent(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_BIOLOGICAL_SOURCE_EVENT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_BIOLOGICAL_SOURCE_EVENT]) || array_key_exists(self::FIELD_BIOLOGICAL_SOURCE_EVENT, $json)) {
+            $type->setBiologicalSourceEvent(FHIRIdentifier::jsonUnserialize($json[self::FIELD_BIOLOGICAL_SOURCE_EVENT], $config));
         }
         return $type;
     }
@@ -1184,33 +1121,15 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             $out->quantity = $this->quantity;
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->name)) {
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1218,9 +1137,9 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             if (null !== ($val = $this->lotNumber->getValue())) {
                 $out->lotNumber = $val;
             }
-            $ext = $this->lotNumber->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lotNumber->_nonValueFieldDefined()) {
+                $ext = $this->lotNumber->jsonSerialize();
+                unset($ext->value);
                 $out->_lotNumber = $ext;
             }
         }
@@ -1228,9 +1147,9 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             if (null !== ($val = $this->expiry->getValue())) {
                 $out->expiry = $val;
             }
-            $ext = $this->expiry->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->expiry->_nonValueFieldDefined()) {
+                $ext = $this->expiry->jsonSerialize();
+                unset($ext->value);
                 $out->_expiry = $ext;
             }
         }
@@ -1238,25 +1157,18 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             if (null !== ($val = $this->useBy->getValue())) {
                 $out->useBy = $val;
             }
-            $ext = $this->useBy->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->useBy->_nonValueFieldDefined()) {
+                $ext = $this->useBy->jsonSerialize();
+                unset($ext->value);
                 $out->_useBy = $ext;
             }
         }
         if (isset($this->biologicalSourceEvent)) {
-            if (null !== ($val = $this->biologicalSourceEvent->getValue())) {
-                $out->biologicalSourceEvent = $val;
-            }
-            $ext = $this->biologicalSourceEvent->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_biologicalSourceEvent = $ext;
-            }
+            $out->biologicalSourceEvent = $this->biologicalSourceEvent;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

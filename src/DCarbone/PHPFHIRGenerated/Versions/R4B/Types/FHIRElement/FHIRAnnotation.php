@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,7 @@ class FHIRAnnotation extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ANNOTATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_AUTHOR_REFERENCE = 'authorReference';
     public const FIELD_AUTHOR_STRING = 'authorString';
     public const FIELD_AUTHOR_STRING_EXT = '_authorString';
@@ -117,21 +117,21 @@ class FHIRAnnotation extends FHIRElement
     public const FIELD_TEXT = 'text';
     public const FIELD_TEXT_EXT = '_text';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TEXT => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_AUTHOR_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TEXT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -216,7 +216,7 @@ class FHIRAnnotation extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -225,7 +225,7 @@ class FHIRAnnotation extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -472,7 +472,7 @@ class FHIRAnnotation extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -576,7 +576,7 @@ class FHIRAnnotation extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -617,7 +617,8 @@ class FHIRAnnotation extends FHIRElement
                 $type->setTime(FHIRDateTime::xmlUnserialize($ce, $config));
             } else if (self::FIELD_TEXT === $cen) {
                 $type->setText(FHIRMarkdown::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -765,9 +766,9 @@ class FHIRAnnotation extends FHIRElement
             if (null !== ($val = $this->authorString->getValue())) {
                 $out->authorString = $val;
             }
-            $ext = $this->authorString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->authorString->_nonValueFieldDefined()) {
+                $ext = $this->authorString->jsonSerialize();
+                unset($ext->value);
                 $out->_authorString = $ext;
             }
         }
@@ -775,9 +776,9 @@ class FHIRAnnotation extends FHIRElement
             if (null !== ($val = $this->time->getValue())) {
                 $out->time = $val;
             }
-            $ext = $this->time->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->time->_nonValueFieldDefined()) {
+                $ext = $this->time->jsonSerialize();
+                unset($ext->value);
                 $out->_time = $ext;
             }
         }
@@ -785,15 +786,15 @@ class FHIRAnnotation extends FHIRElement
             if (null !== ($val = $this->text->getValue())) {
                 $out->text = $val;
             }
-            $ext = $this->text->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->text->_nonValueFieldDefined()) {
+                $ext = $this->text->jsonSerialize();
+                unset($ext->value);
                 $out->_text = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

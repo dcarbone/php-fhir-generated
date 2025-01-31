@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BUNDLE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_TOTAL = 'total';
@@ -107,20 +107,20 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     public const FIELD_ENTRY = 'entry';
     public const FIELD_SIGNATURE = 'signature';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TOTAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Indicates the purpose of a bundle - how it was intended to be used.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -219,7 +219,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -228,7 +228,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -237,7 +237,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Indicates the purpose of a bundle - how it was intended to be used.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -529,7 +529,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -669,7 +669,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -720,7 +720,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
                 $type->addEntry(FHIRBundleEntry::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SIGNATURE === $cen) {
                 $type->setSignature(FHIRSignature::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -923,9 +924,9 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -933,9 +934,9 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
             if (null !== ($val = $this->total->getValue())) {
                 $out->total = $val;
             }
-            $ext = $this->total->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->total->_nonValueFieldDefined()) {
+                $ext = $this->total->jsonSerialize();
+                unset($ext->value);
                 $out->_total = $ext;
             }
         }
@@ -951,7 +952,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

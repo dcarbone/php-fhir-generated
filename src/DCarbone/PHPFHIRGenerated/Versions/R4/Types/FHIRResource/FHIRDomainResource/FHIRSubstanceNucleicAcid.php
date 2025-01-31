@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SEQUENCE_TYPE = 'sequenceType';
     public const FIELD_NUMBER_OF_SUBUNITS = 'numberOfSubunits';
     public const FIELD_NUMBER_OF_SUBUNITS_EXT = '_numberOfSubunits';
@@ -113,16 +113,16 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
     public const FIELD_OLIGO_NUCLEOTIDE_TYPE = 'oligoNucleotideType';
     public const FIELD_SUBUNIT = 'subunit';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NUMBER_OF_SUBUNITS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_AREA_OF_HYBRIDISATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -244,7 +244,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -253,7 +253,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -262,7 +262,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -552,7 +552,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -735,7 +735,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -798,7 +798,8 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
                 $type->setOligoNucleotideType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SUBUNIT === $cen) {
                 $type->addSubunit(FHIRSubstanceNucleicAcidSubunit::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -996,9 +997,9 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
             if (null !== ($val = $this->numberOfSubunits->getValue())) {
                 $out->numberOfSubunits = $val;
             }
-            $ext = $this->numberOfSubunits->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->numberOfSubunits->_nonValueFieldDefined()) {
+                $ext = $this->numberOfSubunits->jsonSerialize();
+                unset($ext->value);
                 $out->_numberOfSubunits = $ext;
             }
         }
@@ -1006,9 +1007,9 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
             if (null !== ($val = $this->areaOfHybridisation->getValue())) {
                 $out->areaOfHybridisation = $val;
             }
-            $ext = $this->areaOfHybridisation->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->areaOfHybridisation->_nonValueFieldDefined()) {
+                $ext = $this->areaOfHybridisation->jsonSerialize();
+                unset($ext->value);
                 $out->_areaOfHybridisation = $ext;
             }
         }
@@ -1021,7 +1022,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

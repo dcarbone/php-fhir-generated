@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONCEPT_MAP_DOT_GROUP;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SOURCE = 'source';
     public const FIELD_SOURCE_EXT = '_source';
     public const FIELD_SOURCE_VERSION = 'sourceVersion';
@@ -100,14 +100,14 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
     public const FIELD_ELEMENT = 'element';
     public const FIELD_UNMAPPED = 'unmapped';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ELEMENT => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SOURCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SOURCE_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -115,7 +115,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
         self::FIELD_TARGET_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -229,7 +229,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -238,7 +238,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -607,7 +607,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -749,7 +749,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -796,7 +796,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
                 $type->addElement(FHIRConceptMapElement::xmlUnserialize($ce, $config));
             } else if (self::FIELD_UNMAPPED === $cen) {
                 $type->setUnmapped(FHIRConceptMapUnmapped::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -985,9 +986,9 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             if (null !== ($val = $this->source->getValue())) {
                 $out->source = $val;
             }
-            $ext = $this->source->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->source->_nonValueFieldDefined()) {
+                $ext = $this->source->jsonSerialize();
+                unset($ext->value);
                 $out->_source = $ext;
             }
         }
@@ -995,9 +996,9 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             if (null !== ($val = $this->sourceVersion->getValue())) {
                 $out->sourceVersion = $val;
             }
-            $ext = $this->sourceVersion->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sourceVersion->_nonValueFieldDefined()) {
+                $ext = $this->sourceVersion->jsonSerialize();
+                unset($ext->value);
                 $out->_sourceVersion = $ext;
             }
         }
@@ -1005,9 +1006,9 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             if (null !== ($val = $this->target->getValue())) {
                 $out->target = $val;
             }
-            $ext = $this->target->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->target->_nonValueFieldDefined()) {
+                $ext = $this->target->jsonSerialize();
+                unset($ext->value);
                 $out->_target = $ext;
             }
         }
@@ -1015,9 +1016,9 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             if (null !== ($val = $this->targetVersion->getValue())) {
                 $out->targetVersion = $val;
             }
-            $ext = $this->targetVersion->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->targetVersion->_nonValueFieldDefined()) {
+                $ext = $this->targetVersion->jsonSerialize();
+                unset($ext->value);
                 $out->_targetVersion = $ext;
             }
         }
@@ -1029,7 +1030,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

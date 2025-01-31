@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_CONSTRAINT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_KEY = 'key';
     public const FIELD_KEY_EXT = '_key';
     public const FIELD_REQUIREMENTS = 'requirements';
@@ -103,7 +103,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
     public const FIELD_XPATH = 'xpath';
     public const FIELD_XPATH_EXT = '_xpath';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
@@ -122,7 +122,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_KEY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_REQUIREMENTS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -131,7 +131,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
         self::FIELD_XPATH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -231,7 +231,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -240,7 +240,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -585,7 +585,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -716,7 +716,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -759,7 +759,8 @@ class FHIRElementDefinitionConstraint extends FHIRElement
                 $type->setHuman(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_XPATH === $cen) {
                 $type->setXpath(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -952,9 +953,9 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             if (null !== ($val = $this->key->getValue())) {
                 $out->key = $val;
             }
-            $ext = $this->key->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->key->_nonValueFieldDefined()) {
+                $ext = $this->key->jsonSerialize();
+                unset($ext->value);
                 $out->_key = $ext;
             }
         }
@@ -962,9 +963,9 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             if (null !== ($val = $this->requirements->getValue())) {
                 $out->requirements = $val;
             }
-            $ext = $this->requirements->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->requirements->_nonValueFieldDefined()) {
+                $ext = $this->requirements->jsonSerialize();
+                unset($ext->value);
                 $out->_requirements = $ext;
             }
         }
@@ -972,9 +973,9 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             if (null !== ($val = $this->severity->getValue())) {
                 $out->severity = $val;
             }
-            $ext = $this->severity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->severity->_nonValueFieldDefined()) {
+                $ext = $this->severity->jsonSerialize();
+                unset($ext->value);
                 $out->_severity = $ext;
             }
         }
@@ -982,9 +983,9 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             if (null !== ($val = $this->human->getValue())) {
                 $out->human = $val;
             }
-            $ext = $this->human->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->human->_nonValueFieldDefined()) {
+                $ext = $this->human->jsonSerialize();
+                unset($ext->value);
                 $out->_human = $ext;
             }
         }
@@ -992,15 +993,15 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             if (null !== ($val = $this->xpath->getValue())) {
                 $out->xpath = $val;
             }
-            $ext = $this->xpath->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->xpath->_nonValueFieldDefined()) {
+                $ext = $this->xpath->jsonSerialize();
+                unset($ext->value);
                 $out->_xpath = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

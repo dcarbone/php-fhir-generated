@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_PRODUCT = 'product';
     public const FIELD_EYE = 'eye';
     public const FIELD_EYE_EXT = '_eye';
@@ -119,7 +119,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     public const FIELD_DIAMETER = 'diameter';
     public const FIELD_DIAMETER_EXT = '_diameter';
     public const FIELD_DURATION = 'duration';
-    public const FIELD_DURATION_EXT = '_duration';
     public const FIELD_COLOR = 'color';
     public const FIELD_COLOR_EXT = '_color';
     public const FIELD_BRAND = 'brand';
@@ -127,7 +126,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     public const FIELD_NOTES = 'notes';
     public const FIELD_NOTES_EXT = '_notes';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
@@ -137,7 +136,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_EYE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SPHERE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -149,13 +148,12 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         self::FIELD_POWER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_BACK_CURVE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DIAMETER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DURATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_COLOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_BRAND => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NOTES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -403,7 +401,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -412,7 +410,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -1133,11 +1131,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * The recommended maximum wear period for the lens.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $duration
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDuration(null|FHIRDecimal|FHIRSimpleQuantity $duration,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDuration(null|FHIRDecimal|FHIRSimpleQuantity $duration): self
     {
         if (null === $duration) {
             unset($this->duration);
@@ -1147,33 +1143,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             $duration = new FHIRSimpleQuantity(value: $duration);
         }
         $this->duration = $duration;
-        if ($this->_valueXMLLocations[self::FIELD_DURATION] !== $valueXMLLocation) {
-            $this->_setDurationValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the duration element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDurationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DURATION];
-    }
-
-    /**
-     * Set the location the "value" field of the duration element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDurationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DURATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -1375,7 +1344,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1623,7 +1592,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1688,7 +1657,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 $type->setBrand(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_NOTES === $cen) {
                 $type->setNotes(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1773,14 +1743,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 $type->setDiameter((string)$attributes[self::FIELD_DIAMETER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_DURATION])) {
-            if (isset($type->duration)) {
-                $type->duration->setValue((string)$attributes[self::FIELD_DURATION]);
-                $type->_setDurationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDuration((string)$attributes[self::FIELD_DURATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_COLOR])) {
             if (isset($type->color)) {
                 $type->color->setValue((string)$attributes[self::FIELD_COLOR]);
@@ -1844,9 +1806,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         }
         if (isset($this->diameter) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DIAMETER]) {
             $xw->writeAttribute(self::FIELD_DIAMETER, $this->diameter->_getFormattedValue());
-        }
-        if (isset($this->duration) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DURATION]) {
-            $xw->writeAttribute(self::FIELD_DURATION, $this->duration->_getFormattedValue());
         }
         if (isset($this->color) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COLOR]) {
             $xw->writeAttribute(self::FIELD_COLOR, $this->color->_getFormattedValue());
@@ -1933,11 +1892,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             $this->diameter->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DIAMETER]);
             $xw->endElement();
         }
-        if (isset($this->duration)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DURATION]
-                || $this->duration->_nonValueFieldDefined())) {
+        if (isset($this->duration)) {
             $xw->startElement(self::FIELD_DURATION);
-            $this->duration->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DURATION]);
+            $this->duration->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->color)
@@ -2088,15 +2045,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_DURATION])
-            || isset($json[self::FIELD_DURATION_EXT])
-            || array_key_exists(self::FIELD_DURATION, $json)
-            || array_key_exists(self::FIELD_DURATION_EXT, $json)) {
-            $value = $json[self::FIELD_DURATION] ?? null;
-            $type->setDuration(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_DURATION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DURATION]) || array_key_exists(self::FIELD_DURATION, $json)) {
+            $type->setDuration(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_DURATION], $config));
         }
         if (isset($json[self::FIELD_COLOR])
             || isset($json[self::FIELD_COLOR_EXT])
@@ -2144,9 +2094,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->eye->getValue())) {
                 $out->eye = $val;
             }
-            $ext = $this->eye->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->eye->_nonValueFieldDefined()) {
+                $ext = $this->eye->jsonSerialize();
+                unset($ext->value);
                 $out->_eye = $ext;
             }
         }
@@ -2154,9 +2104,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->sphere->getValue())) {
                 $out->sphere = $val;
             }
-            $ext = $this->sphere->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sphere->_nonValueFieldDefined()) {
+                $ext = $this->sphere->jsonSerialize();
+                unset($ext->value);
                 $out->_sphere = $ext;
             }
         }
@@ -2164,9 +2114,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->cylinder->getValue())) {
                 $out->cylinder = $val;
             }
-            $ext = $this->cylinder->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->cylinder->_nonValueFieldDefined()) {
+                $ext = $this->cylinder->jsonSerialize();
+                unset($ext->value);
                 $out->_cylinder = $ext;
             }
         }
@@ -2174,9 +2124,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->axis->getValue())) {
                 $out->axis = $val;
             }
-            $ext = $this->axis->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->axis->_nonValueFieldDefined()) {
+                $ext = $this->axis->jsonSerialize();
+                unset($ext->value);
                 $out->_axis = $ext;
             }
         }
@@ -2184,9 +2134,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->prism->getValue())) {
                 $out->prism = $val;
             }
-            $ext = $this->prism->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->prism->_nonValueFieldDefined()) {
+                $ext = $this->prism->jsonSerialize();
+                unset($ext->value);
                 $out->_prism = $ext;
             }
         }
@@ -2194,9 +2144,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->base->getValue())) {
                 $out->base = $val;
             }
-            $ext = $this->base->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->base->_nonValueFieldDefined()) {
+                $ext = $this->base->jsonSerialize();
+                unset($ext->value);
                 $out->_base = $ext;
             }
         }
@@ -2204,9 +2154,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->add->getValue())) {
                 $out->add = $val;
             }
-            $ext = $this->add->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->add->_nonValueFieldDefined()) {
+                $ext = $this->add->jsonSerialize();
+                unset($ext->value);
                 $out->_add = $ext;
             }
         }
@@ -2214,9 +2164,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->power->getValue())) {
                 $out->power = $val;
             }
-            $ext = $this->power->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->power->_nonValueFieldDefined()) {
+                $ext = $this->power->jsonSerialize();
+                unset($ext->value);
                 $out->_power = $ext;
             }
         }
@@ -2224,9 +2174,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->backCurve->getValue())) {
                 $out->backCurve = $val;
             }
-            $ext = $this->backCurve->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->backCurve->_nonValueFieldDefined()) {
+                $ext = $this->backCurve->jsonSerialize();
+                unset($ext->value);
                 $out->_backCurve = $ext;
             }
         }
@@ -2234,29 +2184,22 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->diameter->getValue())) {
                 $out->diameter = $val;
             }
-            $ext = $this->diameter->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->diameter->_nonValueFieldDefined()) {
+                $ext = $this->diameter->jsonSerialize();
+                unset($ext->value);
                 $out->_diameter = $ext;
             }
         }
         if (isset($this->duration)) {
-            if (null !== ($val = $this->duration->getValue())) {
-                $out->duration = $val;
-            }
-            $ext = $this->duration->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_duration = $ext;
-            }
+            $out->duration = $this->duration;
         }
         if (isset($this->color)) {
             if (null !== ($val = $this->color->getValue())) {
                 $out->color = $val;
             }
-            $ext = $this->color->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->color->_nonValueFieldDefined()) {
+                $ext = $this->color->jsonSerialize();
+                unset($ext->value);
                 $out->_color = $ext;
             }
         }
@@ -2264,9 +2207,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->brand->getValue())) {
                 $out->brand = $val;
             }
-            $ext = $this->brand->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->brand->_nonValueFieldDefined()) {
+                $ext = $this->brand->jsonSerialize();
+                unset($ext->value);
                 $out->_brand = $ext;
             }
         }
@@ -2274,15 +2217,15 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             if (null !== ($val = $this->notes->getValue())) {
                 $out->notes = $val;
             }
-            $ext = $this->notes->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->notes->_nonValueFieldDefined()) {
+                $ext = $this->notes->jsonSerialize();
+                unset($ext->value);
                 $out->_notes = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

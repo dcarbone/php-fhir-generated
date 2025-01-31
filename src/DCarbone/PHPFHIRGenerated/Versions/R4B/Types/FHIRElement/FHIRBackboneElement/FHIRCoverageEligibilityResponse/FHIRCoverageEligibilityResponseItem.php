@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CATEGORY = 'category';
     public const FIELD_PRODUCT_OR_SERVICE = 'productOrService';
     public const FIELD_MODIFIER = 'modifier';
@@ -132,10 +132,10 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     public const FIELD_AUTHORIZATION_URL = 'authorizationUrl';
     public const FIELD_AUTHORIZATION_URL_EXT = '_authorizationUrl';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_EXCLUDED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -144,7 +144,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         self::FIELD_AUTHORIZATION_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -387,7 +387,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -396,7 +396,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -1150,7 +1150,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1381,7 +1381,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1444,7 +1444,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
                 $type->addAuthorizationSupporting(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_AUTHORIZATION_URL === $cen) {
                 $type->setAuthorizationUrl(FHIRUri::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1745,9 +1746,9 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             if (null !== ($val = $this->excluded->getValue())) {
                 $out->excluded = $val;
             }
-            $ext = $this->excluded->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->excluded->_nonValueFieldDefined()) {
+                $ext = $this->excluded->jsonSerialize();
+                unset($ext->value);
                 $out->_excluded = $ext;
             }
         }
@@ -1755,9 +1756,9 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1765,9 +1766,9 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -1787,9 +1788,9 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             if (null !== ($val = $this->authorizationRequired->getValue())) {
                 $out->authorizationRequired = $val;
             }
-            $ext = $this->authorizationRequired->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->authorizationRequired->_nonValueFieldDefined()) {
+                $ext = $this->authorizationRequired->jsonSerialize();
+                unset($ext->value);
                 $out->_authorizationRequired = $ext;
             }
         }
@@ -1800,15 +1801,15 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             if (null !== ($val = $this->authorizationUrl->getValue())) {
                 $out->authorizationUrl = $val;
             }
-            $ext = $this->authorizationUrl->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->authorizationUrl->_nonValueFieldDefined()) {
+                $ext = $this->authorizationUrl->jsonSerialize();
+                unset($ext->value);
                 $out->_authorizationUrl = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

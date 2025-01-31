@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -110,7 +111,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ADMINISTRABLE_PRODUCT_DEFINITION_DOT_ROUTE_OF_ADMINISTRATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CODE = 'code';
     public const FIELD_FIRST_DOSE = 'firstDose';
     public const FIELD_MAX_SINGLE_DOSE = 'maxSingleDose';
@@ -119,18 +120,18 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
     public const FIELD_MAX_TREATMENT_PERIOD = 'maxTreatmentPeriod';
     public const FIELD_TARGET_SPECIES = 'targetSpecies';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_CODE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -220,11 +221,11 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $firstDose
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxSingleDose
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxDosePerDay
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $firstDose
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxSingleDose
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxDosePerDay
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $maxDosePerTreatmentPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $maxTreatmentPeriod
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $maxTreatmentPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies[] $targetSpecies
      * @param null|string[] $fhirComments
      */
@@ -232,11 +233,11 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $code = null,
-                                null|FHIRQuantity $firstDose = null,
-                                null|FHIRQuantity $maxSingleDose = null,
-                                null|FHIRQuantity $maxDosePerDay = null,
+                                null|FHIRDecimal|FHIRQuantity $firstDose = null,
+                                null|FHIRDecimal|FHIRQuantity $maxSingleDose = null,
+                                null|FHIRDecimal|FHIRQuantity $maxDosePerDay = null,
                                 null|FHIRRatio $maxDosePerTreatmentPeriod = null,
-                                null|FHIRDuration $maxTreatmentPeriod = null,
+                                null|FHIRDecimal|FHIRDuration $maxTreatmentPeriod = null,
                                 null|iterable $targetSpecies = null,
                                 null|iterable $fhirComments = null)
     {
@@ -267,7 +268,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -276,7 +277,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -340,14 +341,17 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * The first dose (dose quantity) administered can be specified for the product,
      * using a numerical value and its unit of measurement.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $firstDose
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $firstDose
      * @return static
      */
-    public function setFirstDose(null|FHIRQuantity $firstDose): self
+    public function setFirstDose(null|FHIRDecimal|FHIRQuantity $firstDose): self
     {
         if (null === $firstDose) {
             unset($this->firstDose);
             return $this;
+        }
+        if (!($firstDose instanceof FHIRQuantity)) {
+            $firstDose = new FHIRQuantity(value: $firstDose);
         }
         $this->firstDose = $firstDose;
         return $this;
@@ -380,14 +384,17 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * The maximum single dose that can be administered, specified using a numerical
      * value and its unit of measurement.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxSingleDose
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxSingleDose
      * @return static
      */
-    public function setMaxSingleDose(null|FHIRQuantity $maxSingleDose): self
+    public function setMaxSingleDose(null|FHIRDecimal|FHIRQuantity $maxSingleDose): self
     {
         if (null === $maxSingleDose) {
             unset($this->maxSingleDose);
             return $this;
+        }
+        if (!($maxSingleDose instanceof FHIRQuantity)) {
+            $maxSingleDose = new FHIRQuantity(value: $maxSingleDose);
         }
         $this->maxSingleDose = $maxSingleDose;
         return $this;
@@ -420,14 +427,17 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * The maximum dose per day (maximum dose quantity to be administered in any one
      * 24-h period) that can be administered.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxDosePerDay
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxDosePerDay
      * @return static
      */
-    public function setMaxDosePerDay(null|FHIRQuantity $maxDosePerDay): self
+    public function setMaxDosePerDay(null|FHIRDecimal|FHIRQuantity $maxDosePerDay): self
     {
         if (null === $maxDosePerDay) {
             unset($this->maxDosePerDay);
             return $this;
+        }
+        if (!($maxDosePerDay instanceof FHIRQuantity)) {
+            $maxDosePerDay = new FHIRQuantity(value: $maxDosePerDay);
         }
         $this->maxDosePerDay = $maxDosePerDay;
         return $this;
@@ -490,14 +500,17 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * The maximum treatment period during which the product can be administered.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $maxTreatmentPeriod
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $maxTreatmentPeriod
      * @return static
      */
-    public function setMaxTreatmentPeriod(null|FHIRDuration $maxTreatmentPeriod): self
+    public function setMaxTreatmentPeriod(null|FHIRDecimal|FHIRDuration $maxTreatmentPeriod): self
     {
         if (null === $maxTreatmentPeriod) {
             unset($this->maxTreatmentPeriod);
             return $this;
+        }
+        if (!($maxTreatmentPeriod instanceof FHIRDuration)) {
+            $maxTreatmentPeriod = new FHIRDuration(value: $maxTreatmentPeriod);
         }
         $this->maxTreatmentPeriod = $maxTreatmentPeriod;
         return $this;
@@ -567,7 +580,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -719,7 +732,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -768,7 +781,8 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
                 $type->setMaxTreatmentPeriod(FHIRDuration::xmlUnserialize($ce, $config));
             } else if (self::FIELD_TARGET_SPECIES === $cen) {
                 $type->addTargetSpecies(FHIRAdministrableProductDefinitionTargetSpecies::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -904,7 +918,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

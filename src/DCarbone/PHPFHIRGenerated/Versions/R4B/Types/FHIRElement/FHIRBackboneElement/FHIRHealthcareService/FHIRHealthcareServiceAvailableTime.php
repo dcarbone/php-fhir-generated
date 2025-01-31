@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_HEALTHCARE_SERVICE_DOT_AVAILABLE_TIME;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_DAYS_OF_WEEK = 'daysOfWeek';
     public const FIELD_DAYS_OF_WEEK_EXT = '_daysOfWeek';
     public const FIELD_ALL_DAY = 'allDay';
@@ -119,17 +119,17 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
     public const FIELD_AVAILABLE_END_TIME = 'availableEndTime';
     public const FIELD_AVAILABLE_END_TIME_EXT = '_availableEndTime';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ALL_DAY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_AVAILABLE_START_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_AVAILABLE_END_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -207,7 +207,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -216,7 +216,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -481,7 +481,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -592,7 +592,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -635,7 +635,8 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
                 $type->setAvailableStartTime(FHIRTime::xmlUnserialize($ce, $config));
             } else if (self::FIELD_AVAILABLE_END_TIME === $cen) {
                 $type->setAvailableEndTime(FHIRTime::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -796,21 +797,29 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
         if (isset($this->daysOfWeek) && [] !== $this->daysOfWeek) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->daysOfWeek as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->daysOfWeek = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_daysOfWeek = $exts;
             }
         }
@@ -818,9 +827,9 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
             if (null !== ($val = $this->allDay->getValue())) {
                 $out->allDay = $val;
             }
-            $ext = $this->allDay->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->allDay->_nonValueFieldDefined()) {
+                $ext = $this->allDay->jsonSerialize();
+                unset($ext->value);
                 $out->_allDay = $ext;
             }
         }
@@ -828,9 +837,9 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
             if (null !== ($val = $this->availableStartTime->getValue())) {
                 $out->availableStartTime = $val;
             }
-            $ext = $this->availableStartTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->availableStartTime->_nonValueFieldDefined()) {
+                $ext = $this->availableStartTime->jsonSerialize();
+                unset($ext->value);
                 $out->_availableStartTime = $ext;
             }
         }
@@ -838,15 +847,15 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
             if (null !== ($val = $this->availableEndTime->getValue())) {
                 $out->availableEndTime = $val;
             }
-            $ext = $this->availableEndTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->availableEndTime->_nonValueFieldDefined()) {
+                $ext = $this->availableEndTime->jsonSerialize();
+                unset($ext->value);
                 $out->_availableEndTime = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

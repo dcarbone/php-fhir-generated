@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,6 +65,7 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange;
@@ -82,20 +83,20 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_LOW = 'low';
     public const FIELD_HIGH = 'high';
     public const FIELD_MEANING = 'meaning';
     public const FIELD_AGE = 'age';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -151,8 +152,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $low
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $high
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $low
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $high
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $meaning
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $age
      * @param null|string[] $fhirComments
@@ -160,8 +161,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRQuantity $low = null,
-                                null|FHIRQuantity $high = null,
+                                null|FHIRDecimal|FHIRQuantity $low = null,
+                                null|FHIRDecimal|FHIRQuantity $high = null,
                                 null|FHIRCodeableConcept $meaning = null,
                                 null|FHIRRange $age = null,
                                 null|iterable $fhirComments = null)
@@ -184,7 +185,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -193,7 +194,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -221,14 +222,17 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * The value of the low bound of the reference range. If this is omitted, the low
      * bound of the reference range is assumed to be meaningless. E.g. <2.3.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $low
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $low
      * @return static
      */
-    public function setLow(null|FHIRQuantity $low): self
+    public function setLow(null|FHIRDecimal|FHIRQuantity $low): self
     {
         if (null === $low) {
             unset($this->low);
             return $this;
+        }
+        if (!($low instanceof FHIRQuantity)) {
+            $low = new FHIRQuantity(value: $low);
         }
         $this->low = $low;
         return $this;
@@ -261,14 +265,17 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * The value of the high bound of the reference range. If this is omitted, the high
      * bound of the reference range is assumed to be meaningless. E.g. >5.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $high
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $high
      * @return static
      */
-    public function setHigh(null|FHIRQuantity $high): self
+    public function setHigh(null|FHIRDecimal|FHIRQuantity $high): self
     {
         if (null === $high) {
             unset($this->high);
             return $this;
+        }
+        if (!($high instanceof FHIRQuantity)) {
+            $high = new FHIRQuantity(value: $high);
         }
         $this->high = $high;
         return $this;
@@ -346,7 +353,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -457,7 +464,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -500,7 +507,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 $type->setMeaning(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_AGE === $cen) {
                 $type->setAge(FHIRRange::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -595,7 +603,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

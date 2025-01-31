@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier;
@@ -112,9 +113,8 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_DEFINITION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_UDI_DEVICE_IDENTIFIER = 'udiDeviceIdentifier';
     public const FIELD_MANUFACTURER_STRING = 'manufacturerString';
     public const FIELD_MANUFACTURER_STRING_EXT = '_manufacturerString';
@@ -134,7 +134,6 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
     public const FIELD_PROPERTY = 'property';
     public const FIELD_OWNER = 'owner';
     public const FIELD_CONTACT = 'contact';
-    public const FIELD_CONTACT_EXT = '_contact';
     public const FIELD_URL = 'url';
     public const FIELD_URL_EXT = '_url';
     public const FIELD_ONLINE_INFORMATION = 'onlineInformation';
@@ -144,10 +143,10 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
     public const FIELD_PARENT_DEVICE = 'parentDevice';
     public const FIELD_MATERIAL = 'material';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_MANUFACTURER_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MODEL_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -155,7 +154,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
         self::FIELD_ONLINE_INFORMATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -434,7 +433,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $url
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $onlineInformation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation[] $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $quantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $parentDevice
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionMaterial[] $material
      * @param null|string[] $fhirComments
@@ -467,7 +466,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                                 null|string|FHIRUriPrimitive|FHIRUri $url = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $onlineInformation = null,
                                 null|iterable $note = null,
-                                null|FHIRQuantity $quantity = null,
+                                null|FHIRDecimal|FHIRQuantity $quantity = null,
                                 null|FHIRReference $parentDevice = null,
                                 null|iterable $material = null,
                                 null|iterable $fhirComments = null)
@@ -552,7 +551,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -561,7 +560,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -570,7 +569,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -640,14 +639,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1592,14 +1584,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             unset($this->contact);
             return $this;
         }
-        $this->contact = [];
-        foreach($contact as $v) {
-            if ($v instanceof FHIRContactPoint) {
-                $this->contact[] = $v;
-            } else {
-                $this->contact[] = new FHIRContactPoint(value: $v);
-            }
-        }
+        $this->contact = $contact;
         return $this;
     }
 
@@ -1834,14 +1819,17 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
      * present in a pack, or the number of devices in the same package of the medicinal
      * product).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
+        }
+        if (!($quantity instanceof FHIRQuantity)) {
+            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -1942,7 +1930,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -2341,7 +2329,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2440,7 +2428,8 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $type->setParentDevice(FHIRReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_MATERIAL === $cen) {
                 $type->addMaterial(FHIRDeviceDefinitionMaterial::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -2539,8 +2528,8 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             $xw->writeAttribute(self::FIELD_ONLINE_INFORMATION, $this->onlineInformation->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2643,8 +2632,8 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             $this->owner->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->contact) && [] !== $this->contact) {
-            foreach($this->contact as $v) {
+        if (isset($this->contact)) {
+            foreach ($this->contact as $v) {
                 $xw->startElement(self::FIELD_CONTACT);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2727,22 +2716,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_UDI_DEVICE_IDENTIFIER]) || array_key_exists(self::FIELD_UDI_DEVICE_IDENTIFIER, $json)) {
@@ -2867,22 +2847,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
         if (isset($json[self::FIELD_OWNER]) || array_key_exists(self::FIELD_OWNER, $json)) {
             $type->setOwner(FHIRReference::jsonUnserialize($json[self::FIELD_OWNER], $config));
         }
-        if (isset($json[self::FIELD_CONTACT])
-            || isset($json[self::FIELD_CONTACT_EXT])
-            || array_key_exists(self::FIELD_CONTACT, $json)
-            || array_key_exists(self::FIELD_CONTACT_EXT, $json)) {
-            $value = (array)($json[self::FIELD_CONTACT] ?? []);
-            $ext = (array)($json[self::FIELD_CONTACT_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_CONTACT]) || array_key_exists(self::FIELD_CONTACT, $json)) {
+            $vs = $json[self::FIELD_CONTACT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addContact(FHIRContactPoint::jsonUnserialize(
-                    [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addContact(FHIRContactPoint::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_URL])
@@ -2939,25 +2910,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->udiDeviceIdentifier) && [] !== $this->udiDeviceIdentifier) {
             $out->udiDeviceIdentifier = $this->udiDeviceIdentifier;
@@ -2966,9 +2919,9 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             if (null !== ($val = $this->manufacturerString->getValue())) {
                 $out->manufacturerString = $val;
             }
-            $ext = $this->manufacturerString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->manufacturerString->_nonValueFieldDefined()) {
+                $ext = $this->manufacturerString->jsonSerialize();
+                unset($ext->value);
                 $out->_manufacturerString = $ext;
             }
         }
@@ -2982,9 +2935,9 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             if (null !== ($val = $this->modelNumber->getValue())) {
                 $out->modelNumber = $val;
             }
-            $ext = $this->modelNumber->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->modelNumber->_nonValueFieldDefined()) {
+                $ext = $this->modelNumber->jsonSerialize();
+                unset($ext->value);
                 $out->_modelNumber = $ext;
             }
         }
@@ -2997,21 +2950,29 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
         if (isset($this->version) && [] !== $this->version) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->version as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->version = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_version = $exts;
             }
         }
@@ -3037,33 +2998,15 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             $out->owner = $this->owner;
         }
         if (isset($this->contact) && [] !== $this->contact) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->contact as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->contact = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_contact = $exts;
-            }
+            $out->contact = $this->contact;
         }
         if (isset($this->url)) {
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
@@ -3071,9 +3014,9 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             if (null !== ($val = $this->onlineInformation->getValue())) {
                 $out->onlineInformation = $val;
             }
-            $ext = $this->onlineInformation->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->onlineInformation->_nonValueFieldDefined()) {
+                $ext = $this->onlineInformation->jsonSerialize();
+                unset($ext->value);
                 $out->_onlineInformation = $ext;
             }
         }
@@ -3092,7 +3035,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

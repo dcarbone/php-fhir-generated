@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMAGING_OBJECT_SELECTION_DOT_STUDY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_UID = 'uid';
     public const FIELD_UID_EXT = '_uid';
     public const FIELD_URL = 'url';
@@ -106,7 +106,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
     public const FIELD_IMAGING_STUDY = 'imagingStudy';
     public const FIELD_SERIES = 'series';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
@@ -119,13 +119,13 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_UID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
@@ -216,7 +216,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -225,7 +225,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
@@ -484,7 +484,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -607,7 +607,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -650,7 +650,8 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
                 $type->setImagingStudy(FHIRReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SERIES === $cen) {
                 $type->addSeries(FHIRImagingObjectSelectionSeries::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -783,9 +784,9 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
             if (null !== ($val = $this->uid->getValue())) {
                 $out->uid = $val;
             }
-            $ext = $this->uid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->uid->_nonValueFieldDefined()) {
+                $ext = $this->uid->jsonSerialize();
+                unset($ext->value);
                 $out->_uid = $ext;
             }
         }
@@ -793,9 +794,9 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
@@ -807,7 +808,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

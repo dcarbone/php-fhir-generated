@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONCEPT_MAP_DOT_TARGET;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CODE = 'code';
     public const FIELD_CODE_EXT = '_code';
     public const FIELD_DISPLAY = 'display';
@@ -101,18 +101,16 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     public const FIELD_COMMENT = 'comment';
     public const FIELD_COMMENT_EXT = '_comment';
     public const FIELD_DEPENDS_ON = 'dependsOn';
-    public const FIELD_DEPENDS_ON_EXT = '_dependsOn';
     public const FIELD_PRODUCT = 'product';
-    public const FIELD_PRODUCT_EXT = '_product';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_EQUIVALENCE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_CODE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DISPLAY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -120,7 +118,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
         self::FIELD_COMMENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -239,7 +237,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -248,7 +246,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -588,14 +586,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             unset($this->dependsOn);
             return $this;
         }
-        $this->dependsOn = [];
-        foreach($dependsOn as $v) {
-            if ($v instanceof FHIRConceptMapDependsOn) {
-                $this->dependsOn[] = $v;
-            } else {
-                $this->dependsOn[] = new FHIRConceptMapDependsOn(value: $v);
-            }
-        }
+        $this->dependsOn = $dependsOn;
         return $this;
     }
 
@@ -671,18 +662,11 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             unset($this->product);
             return $this;
         }
-        $this->product = [];
-        foreach($product as $v) {
-            if ($v instanceof FHIRConceptMapDependsOn) {
-                $this->product[] = $v;
-            } else {
-                $this->product[] = new FHIRConceptMapDependsOn(value: $v);
-            }
-        }
+        $this->product = $product;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -822,7 +806,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -869,7 +853,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
                 $type->addDependsOn(FHIRConceptMapDependsOn::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PRODUCT === $cen) {
                 $type->addProduct(FHIRConceptMapDependsOn::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -957,15 +942,15 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             $this->comment->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_COMMENT]);
             $xw->endElement();
         }
-        if (isset($this->dependsOn) && [] !== $this->dependsOn) {
-            foreach($this->dependsOn as $v) {
+        if (isset($this->dependsOn)) {
+            foreach ($this->dependsOn as $v) {
                 $xw->startElement(self::FIELD_DEPENDS_ON);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
             }
         }
-        if (isset($this->product) && [] !== $this->product) {
-            foreach($this->product as $v) {
+        if (isset($this->product)) {
+            foreach ($this->product as $v) {
                 $xw->startElement(self::FIELD_PRODUCT);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1035,40 +1020,22 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_DEPENDS_ON])
-            || isset($json[self::FIELD_DEPENDS_ON_EXT])
-            || array_key_exists(self::FIELD_DEPENDS_ON, $json)
-            || array_key_exists(self::FIELD_DEPENDS_ON_EXT, $json)) {
-            $value = (array)($json[self::FIELD_DEPENDS_ON] ?? []);
-            $ext = (array)($json[self::FIELD_DEPENDS_ON_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_DEPENDS_ON]) || array_key_exists(self::FIELD_DEPENDS_ON, $json)) {
+            $vs = $json[self::FIELD_DEPENDS_ON];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addDependsOn(FHIRConceptMapDependsOn::jsonUnserialize(
-                    [FHIRConceptMapDependsOn::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addDependsOn(FHIRConceptMapDependsOn::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PRODUCT])
-            || isset($json[self::FIELD_PRODUCT_EXT])
-            || array_key_exists(self::FIELD_PRODUCT, $json)
-            || array_key_exists(self::FIELD_PRODUCT_EXT, $json)) {
-            $value = (array)($json[self::FIELD_PRODUCT] ?? []);
-            $ext = (array)($json[self::FIELD_PRODUCT_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_PRODUCT]) || array_key_exists(self::FIELD_PRODUCT, $json)) {
+            $vs = $json[self::FIELD_PRODUCT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addProduct(FHIRConceptMapDependsOn::jsonUnserialize(
-                    [FHIRConceptMapDependsOn::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addProduct(FHIRConceptMapDependsOn::jsonUnserialize($v, $config));
             }
         }
         return $type;
@@ -1084,9 +1051,9 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             if (null !== ($val = $this->code->getValue())) {
                 $out->code = $val;
             }
-            $ext = $this->code->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->code->_nonValueFieldDefined()) {
+                $ext = $this->code->jsonSerialize();
+                unset($ext->value);
                 $out->_code = $ext;
             }
         }
@@ -1094,9 +1061,9 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             if (null !== ($val = $this->display->getValue())) {
                 $out->display = $val;
             }
-            $ext = $this->display->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->display->_nonValueFieldDefined()) {
+                $ext = $this->display->jsonSerialize();
+                unset($ext->value);
                 $out->_display = $ext;
             }
         }
@@ -1104,9 +1071,9 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             if (null !== ($val = $this->equivalence->getValue())) {
                 $out->equivalence = $val;
             }
-            $ext = $this->equivalence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->equivalence->_nonValueFieldDefined()) {
+                $ext = $this->equivalence->jsonSerialize();
+                unset($ext->value);
                 $out->_equivalence = $ext;
             }
         }
@@ -1114,57 +1081,21 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             if (null !== ($val = $this->comment->getValue())) {
                 $out->comment = $val;
             }
-            $ext = $this->comment->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comment->_nonValueFieldDefined()) {
+                $ext = $this->comment->jsonSerialize();
+                unset($ext->value);
                 $out->_comment = $ext;
             }
         }
         if (isset($this->dependsOn) && [] !== $this->dependsOn) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->dependsOn as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->dependsOn = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_dependsOn = $exts;
-            }
+            $out->dependsOn = $this->dependsOn;
         }
         if (isset($this->product) && [] !== $this->product) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->product as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->product = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_product = $exts;
-            }
+            $out->product = $this->product;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

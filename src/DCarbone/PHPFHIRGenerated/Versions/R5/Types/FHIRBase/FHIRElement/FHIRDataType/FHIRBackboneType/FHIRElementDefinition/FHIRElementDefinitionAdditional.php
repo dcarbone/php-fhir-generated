@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,7 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_ADDITIONAL;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_PURPOSE = 'purpose';
     public const FIELD_PURPOSE_EXT = '_purpose';
     public const FIELD_VALUE_SET = 'valueSet';
@@ -129,7 +129,7 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
     public const FIELD_ANY = 'any';
     public const FIELD_ANY_EXT = '_any';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_PURPOSE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -139,7 +139,7 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_PURPOSE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_SET => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -148,7 +148,7 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
         self::FIELD_ANY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -273,7 +273,7 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -282,7 +282,7 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -712,7 +712,7 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -857,7 +857,7 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -904,7 +904,8 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
                 $type->addUsage(FHIRUsageContext::xmlUnserialize($ce, $config));
             } else if (self::FIELD_ANY === $cen) {
                 $type->setAny(FHIRBoolean::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1113,9 +1114,9 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
             if (null !== ($val = $this->purpose->getValue())) {
                 $out->purpose = $val;
             }
-            $ext = $this->purpose->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->purpose->_nonValueFieldDefined()) {
+                $ext = $this->purpose->jsonSerialize();
+                unset($ext->value);
                 $out->_purpose = $ext;
             }
         }
@@ -1123,9 +1124,9 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
             if (null !== ($val = $this->valueSet->getValue())) {
                 $out->valueSet = $val;
             }
-            $ext = $this->valueSet->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueSet->_nonValueFieldDefined()) {
+                $ext = $this->valueSet->jsonSerialize();
+                unset($ext->value);
                 $out->_valueSet = $ext;
             }
         }
@@ -1133,9 +1134,9 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
             if (null !== ($val = $this->documentation->getValue())) {
                 $out->documentation = $val;
             }
-            $ext = $this->documentation->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->documentation->_nonValueFieldDefined()) {
+                $ext = $this->documentation->jsonSerialize();
+                unset($ext->value);
                 $out->_documentation = $ext;
             }
         }
@@ -1143,9 +1144,9 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
             if (null !== ($val = $this->shortDoco->getValue())) {
                 $out->shortDoco = $val;
             }
-            $ext = $this->shortDoco->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->shortDoco->_nonValueFieldDefined()) {
+                $ext = $this->shortDoco->jsonSerialize();
+                unset($ext->value);
                 $out->_shortDoco = $ext;
             }
         }
@@ -1156,15 +1157,15 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
             if (null !== ($val = $this->any->getValue())) {
                 $out->any = $val;
             }
-            $ext = $this->any->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->any->_nonValueFieldDefined()) {
+                $ext = $this->any->jsonSerialize();
+                unset($ext->value);
                 $out->_any = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

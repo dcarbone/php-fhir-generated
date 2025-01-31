@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,9 +113,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INVOICE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
     public const FIELD_CANCELLED_REASON = 'cancelledReason';
@@ -131,31 +130,27 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
     public const FIELD_LINE_ITEM = 'lineItem';
     public const FIELD_TOTAL_PRICE_COMPONENT = 'totalPriceComponent';
     public const FIELD_TOTAL_NET = 'totalNet';
-    public const FIELD_TOTAL_NET_EXT = '_totalNet';
     public const FIELD_TOTAL_GROSS = 'totalGross';
-    public const FIELD_TOTAL_GROSS_EXT = '_totalGross';
     public const FIELD_PAYMENT_TERMS = 'paymentTerms';
     public const FIELD_PAYMENT_TERMS_EXT = '_paymentTerms';
     public const FIELD_NOTE = 'note';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CANCELLED_REASON => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_TOTAL_NET => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_TOTAL_GROSS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PAYMENT_TERMS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -446,7 +441,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -455,7 +450,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -464,7 +459,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -534,14 +529,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1142,11 +1130,9 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * Invoice total , taxes excluded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $totalNet
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTotalNet(null|FHIRDecimal|FHIRMoney $totalNet,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTotalNet(null|FHIRDecimal|FHIRMoney $totalNet): self
     {
         if (null === $totalNet) {
             unset($this->totalNet);
@@ -1156,33 +1142,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             $totalNet = new FHIRMoney(value: $totalNet);
         }
         $this->totalNet = $totalNet;
-        if ($this->_valueXMLLocations[self::FIELD_TOTAL_NET] !== $valueXMLLocation) {
-            $this->_setTotalNetValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the totalNet element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTotalNetValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TOTAL_NET];
-    }
-
-    /**
-     * Set the location the "value" field of the totalNet element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTotalNetValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TOTAL_NET] = $valueXMLLocation;
         return $this;
     }
 
@@ -1208,11 +1167,9 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * Invoice total, tax included.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $totalGross
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTotalGross(null|FHIRDecimal|FHIRMoney $totalGross,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTotalGross(null|FHIRDecimal|FHIRMoney $totalGross): self
     {
         if (null === $totalGross) {
             unset($this->totalGross);
@@ -1222,33 +1179,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             $totalGross = new FHIRMoney(value: $totalGross);
         }
         $this->totalGross = $totalGross;
-        if ($this->_valueXMLLocations[self::FIELD_TOTAL_GROSS] !== $valueXMLLocation) {
-            $this->_setTotalGrossValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the totalGross element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTotalGrossValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TOTAL_GROSS];
-    }
-
-    /**
-     * Set the location the "value" field of the totalGross element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTotalGrossValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TOTAL_GROSS] = $valueXMLLocation;
         return $this;
     }
 
@@ -1395,7 +1325,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1715,7 +1645,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1800,7 +1730,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
                 $type->setPaymentTerms(FHIRMarkdown::xmlUnserialize($ce, $config));
             } else if (self::FIELD_NOTE === $cen) {
                 $type->addNote(FHIRAnnotation::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -1850,22 +1781,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
                 $type->setDate((string)$attributes[self::FIELD_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_TOTAL_NET])) {
-            if (isset($type->totalNet)) {
-                $type->totalNet->setValue((string)$attributes[self::FIELD_TOTAL_NET]);
-                $type->_setTotalNetValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setTotalNet((string)$attributes[self::FIELD_TOTAL_NET], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_TOTAL_GROSS])) {
-            if (isset($type->totalGross)) {
-                $type->totalGross->setValue((string)$attributes[self::FIELD_TOTAL_GROSS]);
-                $type->_setTotalGrossValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setTotalGross((string)$attributes[self::FIELD_TOTAL_GROSS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_PAYMENT_TERMS])) {
             if (isset($type->paymentTerms)) {
                 $type->paymentTerms->setValue((string)$attributes[self::FIELD_PAYMENT_TERMS]);
@@ -1911,18 +1826,12 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
         if (isset($this->date) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATE]) {
             $xw->writeAttribute(self::FIELD_DATE, $this->date->_getFormattedValue());
         }
-        if (isset($this->totalNet) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TOTAL_NET]) {
-            $xw->writeAttribute(self::FIELD_TOTAL_NET, $this->totalNet->_getFormattedValue());
-        }
-        if (isset($this->totalGross) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TOTAL_GROSS]) {
-            $xw->writeAttribute(self::FIELD_TOTAL_GROSS, $this->totalGross->_getFormattedValue());
-        }
         if (isset($this->paymentTerms) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PAYMENT_TERMS]) {
             $xw->writeAttribute(self::FIELD_PAYMENT_TERMS, $this->paymentTerms->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1995,18 +1904,14 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
                 $xw->endElement();
             }
         }
-        if (isset($this->totalNet)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TOTAL_NET]
-                || $this->totalNet->_nonValueFieldDefined())) {
+        if (isset($this->totalNet)) {
             $xw->startElement(self::FIELD_TOTAL_NET);
-            $this->totalNet->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TOTAL_NET]);
+            $this->totalNet->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->totalGross)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TOTAL_GROSS]
-                || $this->totalGross->_nonValueFieldDefined())) {
+        if (isset($this->totalGross)) {
             $xw->startElement(self::FIELD_TOTAL_GROSS);
-            $this->totalGross->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TOTAL_GROSS]);
+            $this->totalGross->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->paymentTerms)
@@ -2062,22 +1967,13 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STATUS])
@@ -2152,25 +2048,11 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
                 $type->addTotalPriceComponent(FHIRInvoicePriceComponent::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TOTAL_NET])
-            || isset($json[self::FIELD_TOTAL_NET_EXT])
-            || array_key_exists(self::FIELD_TOTAL_NET, $json)
-            || array_key_exists(self::FIELD_TOTAL_NET_EXT, $json)) {
-            $value = $json[self::FIELD_TOTAL_NET] ?? null;
-            $type->setTotalNet(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_TOTAL_NET_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_TOTAL_NET]) || array_key_exists(self::FIELD_TOTAL_NET, $json)) {
+            $type->setTotalNet(FHIRMoney::jsonUnserialize($json[self::FIELD_TOTAL_NET], $config));
         }
-        if (isset($json[self::FIELD_TOTAL_GROSS])
-            || isset($json[self::FIELD_TOTAL_GROSS_EXT])
-            || array_key_exists(self::FIELD_TOTAL_GROSS, $json)
-            || array_key_exists(self::FIELD_TOTAL_GROSS_EXT, $json)) {
-            $value = $json[self::FIELD_TOTAL_GROSS] ?? null;
-            $type->setTotalGross(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_TOTAL_GROSS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_TOTAL_GROSS]) || array_key_exists(self::FIELD_TOTAL_GROSS, $json)) {
+            $type->setTotalGross(FHIRMoney::jsonUnserialize($json[self::FIELD_TOTAL_GROSS], $config));
         }
         if (isset($json[self::FIELD_PAYMENT_TERMS])
             || isset($json[self::FIELD_PAYMENT_TERMS_EXT])
@@ -2201,33 +2083,15 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->status)) {
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -2235,9 +2099,9 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             if (null !== ($val = $this->cancelledReason->getValue())) {
                 $out->cancelledReason = $val;
             }
-            $ext = $this->cancelledReason->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->cancelledReason->_nonValueFieldDefined()) {
+                $ext = $this->cancelledReason->jsonSerialize();
+                unset($ext->value);
                 $out->_cancelledReason = $ext;
             }
         }
@@ -2254,9 +2118,9 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             if (null !== ($val = $this->date->getValue())) {
                 $out->date = $val;
             }
-            $ext = $this->date->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->date->_nonValueFieldDefined()) {
+                $ext = $this->date->jsonSerialize();
+                unset($ext->value);
                 $out->_date = $ext;
             }
         }
@@ -2276,32 +2140,18 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             $out->totalPriceComponent = $this->totalPriceComponent;
         }
         if (isset($this->totalNet)) {
-            if (null !== ($val = $this->totalNet->getValue())) {
-                $out->totalNet = $val;
-            }
-            $ext = $this->totalNet->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_totalNet = $ext;
-            }
+            $out->totalNet = $this->totalNet;
         }
         if (isset($this->totalGross)) {
-            if (null !== ($val = $this->totalGross->getValue())) {
-                $out->totalGross = $val;
-            }
-            $ext = $this->totalGross->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_totalGross = $ext;
-            }
+            $out->totalGross = $this->totalGross;
         }
         if (isset($this->paymentTerms)) {
             if (null !== ($val = $this->paymentTerms->getValue())) {
                 $out->paymentTerms = $val;
             }
-            $ext = $this->paymentTerms->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->paymentTerms->_nonValueFieldDefined()) {
+                $ext = $this->paymentTerms->jsonSerialize();
+                unset($ext->value);
                 $out->_paymentTerms = $ext;
             }
         }
@@ -2311,7 +2161,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

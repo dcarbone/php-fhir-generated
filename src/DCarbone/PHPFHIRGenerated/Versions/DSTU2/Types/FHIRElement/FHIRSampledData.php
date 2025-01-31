@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,9 +90,8 @@ class FHIRSampledData extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SAMPLED_DATA;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_ORIGIN = 'origin';
-    public const FIELD_ORIGIN_EXT = '_origin';
     public const FIELD_PERIOD = 'period';
     public const FIELD_PERIOD_EXT = '_period';
     public const FIELD_FACTOR = 'factor';
@@ -106,7 +105,7 @@ class FHIRSampledData extends FHIRElement
     public const FIELD_DATA = 'data';
     public const FIELD_DATA_EXT = '_data';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
@@ -125,9 +124,8 @@ class FHIRSampledData extends FHIRElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_ORIGIN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PERIOD => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FACTOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LOWER_LIMIT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -136,7 +134,7 @@ class FHIRSampledData extends FHIRElement
         self::FIELD_DATA => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
@@ -263,7 +261,7 @@ class FHIRSampledData extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -272,7 +270,7 @@ class FHIRSampledData extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
@@ -289,11 +287,9 @@ class FHIRSampledData extends FHIRElement
      * provides the units of the entire measurement series.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $origin
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOrigin(null|FHIRDecimal|FHIRSimpleQuantity $origin,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOrigin(null|FHIRDecimal|FHIRSimpleQuantity $origin): self
     {
         if (null === $origin) {
             unset($this->origin);
@@ -303,33 +299,6 @@ class FHIRSampledData extends FHIRElement
             $origin = new FHIRSimpleQuantity(value: $origin);
         }
         $this->origin = $origin;
-        if ($this->_valueXMLLocations[self::FIELD_ORIGIN] !== $valueXMLLocation) {
-            $this->_setOriginValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the origin element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOriginValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ORIGIN];
-    }
-
-    /**
-     * Set the location the "value" field of the origin element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOriginValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ORIGIN] = $valueXMLLocation;
         return $this;
     }
 
@@ -743,7 +712,7 @@ class FHIRSampledData extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -898,7 +867,7 @@ class FHIRSampledData extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -945,18 +914,11 @@ class FHIRSampledData extends FHIRElement
                 $type->setDimensions(FHIRPositiveInt::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DATA === $cen) {
                 $type->setData(FHIRSampledDataDataType::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_ORIGIN])) {
-            if (isset($type->origin)) {
-                $type->origin->setValue((string)$attributes[self::FIELD_ORIGIN]);
-                $type->_setOriginValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setOrigin((string)$attributes[self::FIELD_ORIGIN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         if (isset($attributes[self::FIELD_PERIOD])) {
             if (isset($type->period)) {
@@ -1016,9 +978,6 @@ class FHIRSampledData extends FHIRElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->origin) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ORIGIN]) {
-            $xw->writeAttribute(self::FIELD_ORIGIN, $this->origin->_getFormattedValue());
-        }
         if (isset($this->period) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PERIOD]) {
             $xw->writeAttribute(self::FIELD_PERIOD, $this->period->_getFormattedValue());
         }
@@ -1038,11 +997,9 @@ class FHIRSampledData extends FHIRElement
             $xw->writeAttribute(self::FIELD_DATA, $this->data->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->origin)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ORIGIN]
-                || $this->origin->_nonValueFieldDefined())) {
+        if (isset($this->origin)) {
             $xw->startElement(self::FIELD_ORIGIN);
-            $this->origin->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ORIGIN]);
+            $this->origin->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->period)
@@ -1111,15 +1068,8 @@ class FHIRSampledData extends FHIRElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ORIGIN])
-            || isset($json[self::FIELD_ORIGIN_EXT])
-            || array_key_exists(self::FIELD_ORIGIN, $json)
-            || array_key_exists(self::FIELD_ORIGIN_EXT, $json)) {
-            $value = $json[self::FIELD_ORIGIN] ?? null;
-            $type->setOrigin(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_ORIGIN_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_ORIGIN]) || array_key_exists(self::FIELD_ORIGIN, $json)) {
+            $type->setOrigin(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_ORIGIN], $config));
         }
         if (isset($json[self::FIELD_PERIOD])
             || isset($json[self::FIELD_PERIOD_EXT])
@@ -1191,22 +1141,15 @@ class FHIRSampledData extends FHIRElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->origin)) {
-            if (null !== ($val = $this->origin->getValue())) {
-                $out->origin = $val;
-            }
-            $ext = $this->origin->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_origin = $ext;
-            }
+            $out->origin = $this->origin;
         }
         if (isset($this->period)) {
             if (null !== ($val = $this->period->getValue())) {
                 $out->period = $val;
             }
-            $ext = $this->period->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->period->_nonValueFieldDefined()) {
+                $ext = $this->period->jsonSerialize();
+                unset($ext->value);
                 $out->_period = $ext;
             }
         }
@@ -1214,9 +1157,9 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->factor->getValue())) {
                 $out->factor = $val;
             }
-            $ext = $this->factor->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->factor->_nonValueFieldDefined()) {
+                $ext = $this->factor->jsonSerialize();
+                unset($ext->value);
                 $out->_factor = $ext;
             }
         }
@@ -1224,9 +1167,9 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->lowerLimit->getValue())) {
                 $out->lowerLimit = $val;
             }
-            $ext = $this->lowerLimit->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lowerLimit->_nonValueFieldDefined()) {
+                $ext = $this->lowerLimit->jsonSerialize();
+                unset($ext->value);
                 $out->_lowerLimit = $ext;
             }
         }
@@ -1234,9 +1177,9 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->upperLimit->getValue())) {
                 $out->upperLimit = $val;
             }
-            $ext = $this->upperLimit->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->upperLimit->_nonValueFieldDefined()) {
+                $ext = $this->upperLimit->jsonSerialize();
+                unset($ext->value);
                 $out->_upperLimit = $ext;
             }
         }
@@ -1244,9 +1187,9 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->dimensions->getValue())) {
                 $out->dimensions = $val;
             }
-            $ext = $this->dimensions->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dimensions->_nonValueFieldDefined()) {
+                $ext = $this->dimensions->jsonSerialize();
+                unset($ext->value);
                 $out->_dimensions = $ext;
             }
         }
@@ -1254,15 +1197,15 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->data->getValue())) {
                 $out->data = $val;
             }
-            $ext = $this->data->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->data->_nonValueFieldDefined()) {
+                $ext = $this->data->jsonSerialize();
+                unset($ext->value);
                 $out->_data = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

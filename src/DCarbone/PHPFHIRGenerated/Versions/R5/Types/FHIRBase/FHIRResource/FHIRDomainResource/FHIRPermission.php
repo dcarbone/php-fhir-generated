@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,7 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PERMISSION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
     public const FIELD_ASSERTER = 'asserter';
@@ -137,7 +137,7 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
     public const FIELD_COMBINING_EXT = '_combining';
     public const FIELD_RULE = 'rule';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -147,13 +147,13 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_COMBINING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -290,7 +290,7 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -299,7 +299,7 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -308,7 +308,7 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -675,7 +675,7 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -892,7 +892,7 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -959,7 +959,8 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
                 $type->setCombining(FHIRPermissionRuleCombining::xmlUnserialize($ce, $config));
             } else if (self::FIELD_RULE === $cen) {
                 $type->addRule(FHIRPermissionRule::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -1187,9 +1188,9 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -1199,21 +1200,29 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
         if (isset($this->date) && [] !== $this->date) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->date as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->date = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_date = $exts;
             }
         }
@@ -1227,9 +1236,9 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->combining->getValue())) {
                 $out->combining = $val;
             }
-            $ext = $this->combining->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->combining->_nonValueFieldDefined()) {
+                $ext = $this->combining->jsonSerialize();
+                unset($ext->value);
                 $out->_combining = $ext;
             }
         }
@@ -1239,7 +1248,7 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

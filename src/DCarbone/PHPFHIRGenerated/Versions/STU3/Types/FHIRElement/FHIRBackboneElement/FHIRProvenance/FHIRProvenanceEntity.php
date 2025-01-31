@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,17 +99,16 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROVENANCE_DOT_ENTITY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_ROLE = 'role';
     public const FIELD_ROLE_EXT = '_role';
     public const FIELD_WHAT_URI = 'whatUri';
     public const FIELD_WHAT_URI_EXT = '_whatUri';
     public const FIELD_WHAT_REFERENCE = 'whatReference';
     public const FIELD_WHAT_IDENTIFIER = 'whatIdentifier';
-    public const FIELD_WHAT_IDENTIFIER_EXT = '_whatIdentifier';
     public const FIELD_AGENT = 'agent';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ROLE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -125,14 +124,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ROLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_WHAT_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_WHAT_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * How an entity was used in an activity.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -239,7 +237,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -248,7 +246,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * How an entity was used in an activity.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -441,11 +439,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * or relative.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $whatIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWhatIdentifier(null|FHIRString|FHIRIdentifier $whatIdentifier,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setWhatIdentifier(null|FHIRString|FHIRIdentifier $whatIdentifier): self
     {
         if (null === $whatIdentifier) {
             unset($this->whatIdentifier);
@@ -455,33 +451,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             $whatIdentifier = new FHIRIdentifier(value: $whatIdentifier);
         }
         $this->whatIdentifier = $whatIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_WHAT_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setWhatIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the whatIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getWhatIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_WHAT_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the whatIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setWhatIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_WHAT_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -576,7 +545,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -719,7 +688,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -764,7 +733,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 $type->setWhatIdentifier(FHIRIdentifier::xmlUnserialize($ce, $config));
             } else if (self::FIELD_AGENT === $cen) {
                 $type->addAgent(FHIRProvenanceAgent::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -785,14 +755,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 $type->setWhatUri((string)$attributes[self::FIELD_WHAT_URI], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_WHAT_IDENTIFIER])) {
-            if (isset($type->whatIdentifier)) {
-                $type->whatIdentifier->setValue((string)$attributes[self::FIELD_WHAT_IDENTIFIER]);
-                $type->_setWhatIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setWhatIdentifier((string)$attributes[self::FIELD_WHAT_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         return $type;
     }
 
@@ -808,9 +770,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         }
         if (isset($this->whatUri) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_WHAT_URI]) {
             $xw->writeAttribute(self::FIELD_WHAT_URI, $this->whatUri->_getFormattedValue());
-        }
-        if (isset($this->whatIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_WHAT_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_WHAT_IDENTIFIER, $this->whatIdentifier->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->role)
@@ -832,11 +791,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             $this->whatReference->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->whatIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_WHAT_IDENTIFIER]
-                || $this->whatIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->whatIdentifier)) {
             $xw->startElement(self::FIELD_WHAT_IDENTIFIER);
-            $this->whatIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_WHAT_IDENTIFIER]);
+            $this->whatIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->agent)) {
@@ -893,15 +850,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         if (isset($json[self::FIELD_WHAT_REFERENCE]) || array_key_exists(self::FIELD_WHAT_REFERENCE, $json)) {
             $type->setWhatReference(FHIRReference::jsonUnserialize($json[self::FIELD_WHAT_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_WHAT_IDENTIFIER])
-            || isset($json[self::FIELD_WHAT_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_WHAT_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_WHAT_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_WHAT_IDENTIFIER] ?? null;
-            $type->setWhatIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_WHAT_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_WHAT_IDENTIFIER]) || array_key_exists(self::FIELD_WHAT_IDENTIFIER, $json)) {
+            $type->setWhatIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_WHAT_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_AGENT]) || array_key_exists(self::FIELD_AGENT, $json)) {
             $vs = $json[self::FIELD_AGENT];
@@ -925,9 +875,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             if (null !== ($val = $this->role->getValue())) {
                 $out->role = $val;
             }
-            $ext = $this->role->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->role->_nonValueFieldDefined()) {
+                $ext = $this->role->jsonSerialize();
+                unset($ext->value);
                 $out->_role = $ext;
             }
         }
@@ -935,9 +885,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             if (null !== ($val = $this->whatUri->getValue())) {
                 $out->whatUri = $val;
             }
-            $ext = $this->whatUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->whatUri->_nonValueFieldDefined()) {
+                $ext = $this->whatUri->jsonSerialize();
+                unset($ext->value);
                 $out->_whatUri = $ext;
             }
         }
@@ -945,21 +895,14 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             $out->whatReference = $this->whatReference;
         }
         if (isset($this->whatIdentifier)) {
-            if (null !== ($val = $this->whatIdentifier->getValue())) {
-                $out->whatIdentifier = $val;
-            }
-            $ext = $this->whatIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_whatIdentifier = $ext;
-            }
+            $out->whatIdentifier = $this->whatIdentifier;
         }
         if (isset($this->agent) && [] !== $this->agent) {
             $out->agent = $this->agent;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

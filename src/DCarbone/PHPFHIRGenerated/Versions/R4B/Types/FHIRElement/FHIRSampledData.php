@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,7 @@ class FHIRSampledData extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SAMPLED_DATA;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_ORIGIN = 'origin';
     public const FIELD_PERIOD = 'period';
     public const FIELD_PERIOD_EXT = '_period';
@@ -124,7 +124,7 @@ class FHIRSampledData extends FHIRElement
     public const FIELD_DATA = 'data';
     public const FIELD_DATA_EXT = '_data';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ORIGIN => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -137,7 +137,7 @@ class FHIRSampledData extends FHIRElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_PERIOD => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FACTOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -147,7 +147,7 @@ class FHIRSampledData extends FHIRElement
         self::FIELD_DATA => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -234,7 +234,7 @@ class FHIRSampledData extends FHIRElement
      * FHIRSampledData Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $origin
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $origin
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $period
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $factor
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $lowerLimit
@@ -245,7 +245,7 @@ class FHIRSampledData extends FHIRElement
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
-                                null|FHIRQuantity $origin = null,
+                                null|FHIRDecimal|FHIRQuantity $origin = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $period = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $lowerLimit = null,
@@ -280,7 +280,7 @@ class FHIRSampledData extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -289,7 +289,7 @@ class FHIRSampledData extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -317,14 +317,17 @@ class FHIRSampledData extends FHIRElement
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $origin
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $origin
      * @return static
      */
-    public function setOrigin(null|FHIRQuantity $origin): self
+    public function setOrigin(null|FHIRDecimal|FHIRQuantity $origin): self
     {
         if (null === $origin) {
             unset($this->origin);
             return $this;
+        }
+        if (!($origin instanceof FHIRQuantity)) {
+            $origin = new FHIRQuantity(value: $origin);
         }
         $this->origin = $origin;
         return $this;
@@ -740,7 +743,7 @@ class FHIRSampledData extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -890,7 +893,7 @@ class FHIRSampledData extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -937,7 +940,8 @@ class FHIRSampledData extends FHIRElement
                 $type->setDimensions(FHIRPositiveInt::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DATA === $cen) {
                 $type->setData(FHIRSampledDataDataType::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1169,9 +1173,9 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->period->getValue())) {
                 $out->period = $val;
             }
-            $ext = $this->period->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->period->_nonValueFieldDefined()) {
+                $ext = $this->period->jsonSerialize();
+                unset($ext->value);
                 $out->_period = $ext;
             }
         }
@@ -1179,9 +1183,9 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->factor->getValue())) {
                 $out->factor = $val;
             }
-            $ext = $this->factor->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->factor->_nonValueFieldDefined()) {
+                $ext = $this->factor->jsonSerialize();
+                unset($ext->value);
                 $out->_factor = $ext;
             }
         }
@@ -1189,9 +1193,9 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->lowerLimit->getValue())) {
                 $out->lowerLimit = $val;
             }
-            $ext = $this->lowerLimit->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lowerLimit->_nonValueFieldDefined()) {
+                $ext = $this->lowerLimit->jsonSerialize();
+                unset($ext->value);
                 $out->_lowerLimit = $ext;
             }
         }
@@ -1199,9 +1203,9 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->upperLimit->getValue())) {
                 $out->upperLimit = $val;
             }
-            $ext = $this->upperLimit->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->upperLimit->_nonValueFieldDefined()) {
+                $ext = $this->upperLimit->jsonSerialize();
+                unset($ext->value);
                 $out->_upperLimit = $ext;
             }
         }
@@ -1209,9 +1213,9 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->dimensions->getValue())) {
                 $out->dimensions = $val;
             }
-            $ext = $this->dimensions->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dimensions->_nonValueFieldDefined()) {
+                $ext = $this->dimensions->jsonSerialize();
+                unset($ext->value);
                 $out->_dimensions = $ext;
             }
         }
@@ -1219,15 +1223,15 @@ class FHIRSampledData extends FHIRElement
             if (null !== ($val = $this->data->getValue())) {
                 $out->data = $val;
             }
-            $ext = $this->data->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->data->_nonValueFieldDefined()) {
+                $ext = $this->data->jsonSerialize();
+                unset($ext->value);
                 $out->_data = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

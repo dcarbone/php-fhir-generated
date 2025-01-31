@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CODE_SYSTEM_DOT_CONCEPT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CODE = 'code';
     public const FIELD_CODE_EXT = '_code';
     public const FIELD_DISPLAY = 'display';
@@ -97,25 +97,24 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     public const FIELD_DEFINITION = 'definition';
     public const FIELD_DEFINITION_EXT = '_definition';
     public const FIELD_DESIGNATION = 'designation';
-    public const FIELD_DESIGNATION_EXT = '_designation';
     public const FIELD_PROPERTY = 'property';
     public const FIELD_CONCEPT = 'concept';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_CODE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_CODE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DISPLAY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DEFINITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -235,7 +234,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -244,7 +243,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -521,14 +520,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
             unset($this->designation);
             return $this;
         }
-        $this->designation = [];
-        foreach($designation as $v) {
-            if ($v instanceof FHIRCodeSystemDesignation) {
-                $this->designation[] = $v;
-            } else {
-                $this->designation[] = new FHIRCodeSystemDesignation(value: $v);
-            }
-        }
+        $this->designation = $designation;
         return $this;
     }
 
@@ -666,7 +658,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -806,7 +798,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -853,7 +845,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
                 $type->addProperty(FHIRCodeSystemProperty1::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CONCEPT === $cen) {
                 $type->addConcept(FHIRCodeSystemConcept::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -923,8 +916,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
             $this->definition->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DEFINITION]);
             $xw->endElement();
         }
-        if (isset($this->designation) && [] !== $this->designation) {
-            foreach($this->designation as $v) {
+        if (isset($this->designation)) {
+            foreach ($this->designation as $v) {
                 $xw->startElement(self::FIELD_DESIGNATION);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -998,22 +991,13 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_DESIGNATION])
-            || isset($json[self::FIELD_DESIGNATION_EXT])
-            || array_key_exists(self::FIELD_DESIGNATION, $json)
-            || array_key_exists(self::FIELD_DESIGNATION_EXT, $json)) {
-            $value = (array)($json[self::FIELD_DESIGNATION] ?? []);
-            $ext = (array)($json[self::FIELD_DESIGNATION_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_DESIGNATION]) || array_key_exists(self::FIELD_DESIGNATION, $json)) {
+            $vs = $json[self::FIELD_DESIGNATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addDesignation(FHIRCodeSystemDesignation::jsonUnserialize(
-                    [FHIRCodeSystemDesignation::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addDesignation(FHIRCodeSystemDesignation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PROPERTY]) || array_key_exists(self::FIELD_PROPERTY, $json)) {
@@ -1047,9 +1031,9 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
             if (null !== ($val = $this->code->getValue())) {
                 $out->code = $val;
             }
-            $ext = $this->code->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->code->_nonValueFieldDefined()) {
+                $ext = $this->code->jsonSerialize();
+                unset($ext->value);
                 $out->_code = $ext;
             }
         }
@@ -1057,9 +1041,9 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
             if (null !== ($val = $this->display->getValue())) {
                 $out->display = $val;
             }
-            $ext = $this->display->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->display->_nonValueFieldDefined()) {
+                $ext = $this->display->jsonSerialize();
+                unset($ext->value);
                 $out->_display = $ext;
             }
         }
@@ -1067,32 +1051,14 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
             if (null !== ($val = $this->definition->getValue())) {
                 $out->definition = $val;
             }
-            $ext = $this->definition->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->definition->_nonValueFieldDefined()) {
+                $ext = $this->definition->jsonSerialize();
+                unset($ext->value);
                 $out->_definition = $ext;
             }
         }
         if (isset($this->designation) && [] !== $this->designation) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->designation as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->designation = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_designation = $exts;
-            }
+            $out->designation = $this->designation;
         }
         if (isset($this->property) && [] !== $this->property) {
             $out->property = $this->property;
@@ -1102,7 +1068,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

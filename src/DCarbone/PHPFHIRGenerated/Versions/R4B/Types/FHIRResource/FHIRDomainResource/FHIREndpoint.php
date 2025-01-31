@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,9 +127,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ENDPOINT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
     public const FIELD_CONNECTION_TYPE = 'connectionType';
@@ -137,7 +136,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
     public const FIELD_NAME_EXT = '_name';
     public const FIELD_MANAGING_ORGANIZATION = 'managingOrganization';
     public const FIELD_CONTACT = 'contact';
-    public const FIELD_CONTACT_EXT = '_contact';
     public const FIELD_PERIOD = 'period';
     public const FIELD_PAYLOAD_TYPE = 'payloadType';
     public const FIELD_PAYLOAD_MIME_TYPE = 'payloadMimeType';
@@ -147,7 +145,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
     public const FIELD_HEADER = 'header';
     public const FIELD_HEADER_EXT = '_header';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -163,14 +161,14 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ADDRESS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -382,7 +380,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -391,7 +389,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -400,7 +398,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -470,14 +468,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -754,14 +745,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
             unset($this->contact);
             return $this;
         }
-        $this->contact = [];
-        foreach($contact as $v) {
-            if ($v instanceof FHIRContactPoint) {
-                $this->contact[] = $v;
-            } else {
-                $this->contact[] = new FHIRContactPoint(value: $v);
-            }
-        }
+        $this->contact = $contact;
         return $this;
     }
 
@@ -1092,7 +1076,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1369,7 +1353,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1444,7 +1428,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
                 $type->setAddress(FHIRUrl::xmlUnserialize($ce, $config));
             } else if (self::FIELD_HEADER === $cen) {
                 $type->addHeader(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -1532,8 +1517,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
             $xw->writeAttribute(self::FIELD_ADDRESS, $this->address->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1563,8 +1548,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
             $this->managingOrganization->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->contact) && [] !== $this->contact) {
-            foreach($this->contact as $v) {
+        if (isset($this->contact)) {
+            foreach ($this->contact as $v) {
                 $xw->startElement(self::FIELD_CONTACT);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1642,22 +1627,13 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STATUS])
@@ -1686,22 +1662,13 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
         if (isset($json[self::FIELD_MANAGING_ORGANIZATION]) || array_key_exists(self::FIELD_MANAGING_ORGANIZATION, $json)) {
             $type->setManagingOrganization(FHIRReference::jsonUnserialize($json[self::FIELD_MANAGING_ORGANIZATION], $config));
         }
-        if (isset($json[self::FIELD_CONTACT])
-            || isset($json[self::FIELD_CONTACT_EXT])
-            || array_key_exists(self::FIELD_CONTACT, $json)
-            || array_key_exists(self::FIELD_CONTACT_EXT, $json)) {
-            $value = (array)($json[self::FIELD_CONTACT] ?? []);
-            $ext = (array)($json[self::FIELD_CONTACT_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_CONTACT]) || array_key_exists(self::FIELD_CONTACT, $json)) {
+            $vs = $json[self::FIELD_CONTACT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addContact(FHIRContactPoint::jsonUnserialize(
-                    [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addContact(FHIRContactPoint::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
@@ -1772,33 +1739,15 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->status)) {
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -1809,9 +1758,9 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1819,25 +1768,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
             $out->managingOrganization = $this->managingOrganization;
         }
         if (isset($this->contact) && [] !== $this->contact) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->contact as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->contact = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_contact = $exts;
-            }
+            $out->contact = $this->contact;
         }
         if (isset($this->period)) {
             $out->period = $this->period;
@@ -1848,21 +1779,29 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
         if (isset($this->payloadMimeType) && [] !== $this->payloadMimeType) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->payloadMimeType as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->payloadMimeType = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_payloadMimeType = $exts;
             }
         }
@@ -1870,37 +1809,45 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
             if (null !== ($val = $this->address->getValue())) {
                 $out->address = $val;
             }
-            $ext = $this->address->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->address->_nonValueFieldDefined()) {
+                $ext = $this->address->jsonSerialize();
+                unset($ext->value);
                 $out->_address = $ext;
             }
         }
         if (isset($this->header) && [] !== $this->header) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->header as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->header = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_header = $exts;
             }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

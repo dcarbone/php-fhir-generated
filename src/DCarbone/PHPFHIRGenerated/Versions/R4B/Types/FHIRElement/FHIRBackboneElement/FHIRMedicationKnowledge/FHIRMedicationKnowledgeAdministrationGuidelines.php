@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,21 +106,20 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_ADMINISTRATION_GUIDELINES;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_DOSAGE = 'dosage';
     public const FIELD_INDICATION_CODEABLE_CONCEPT = 'indicationCodeableConcept';
     public const FIELD_INDICATION_REFERENCE = 'indicationReference';
     public const FIELD_PATIENT_CHARACTERISTICS = 'patientCharacteristics';
-    public const FIELD_PATIENT_CHARACTERISTICS_EXT = '_patientCharacteristics';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -199,7 +198,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -208,7 +207,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -397,18 +396,11 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
             unset($this->patientCharacteristics);
             return $this;
         }
-        $this->patientCharacteristics = [];
-        foreach($patientCharacteristics as $v) {
-            if ($v instanceof FHIRMedicationKnowledgePatientCharacteristics) {
-                $this->patientCharacteristics[] = $v;
-            } else {
-                $this->patientCharacteristics[] = new FHIRMedicationKnowledgePatientCharacteristics(value: $v);
-            }
-        }
+        $this->patientCharacteristics = $patientCharacteristics;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -519,7 +511,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -562,7 +554,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
                 $type->setIndicationReference(FHIRReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PATIENT_CHARACTERISTICS === $cen) {
                 $type->addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -595,8 +588,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
             $this->indicationReference->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->patientCharacteristics) && [] !== $this->patientCharacteristics) {
-            foreach($this->patientCharacteristics as $v) {
+        if (isset($this->patientCharacteristics)) {
+            foreach ($this->patientCharacteristics as $v) {
                 $xw->startElement(self::FIELD_PATIENT_CHARACTERISTICS);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -641,22 +634,13 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
         if (isset($json[self::FIELD_INDICATION_REFERENCE]) || array_key_exists(self::FIELD_INDICATION_REFERENCE, $json)) {
             $type->setIndicationReference(FHIRReference::jsonUnserialize($json[self::FIELD_INDICATION_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_PATIENT_CHARACTERISTICS])
-            || isset($json[self::FIELD_PATIENT_CHARACTERISTICS_EXT])
-            || array_key_exists(self::FIELD_PATIENT_CHARACTERISTICS, $json)
-            || array_key_exists(self::FIELD_PATIENT_CHARACTERISTICS_EXT, $json)) {
-            $value = (array)($json[self::FIELD_PATIENT_CHARACTERISTICS] ?? []);
-            $ext = (array)($json[self::FIELD_PATIENT_CHARACTERISTICS_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_PATIENT_CHARACTERISTICS]) || array_key_exists(self::FIELD_PATIENT_CHARACTERISTICS, $json)) {
+            $vs = $json[self::FIELD_PATIENT_CHARACTERISTICS];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics::jsonUnserialize(
-                    [FHIRMedicationKnowledgePatientCharacteristics::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics::jsonUnserialize($v, $config));
             }
         }
         return $type;
@@ -678,29 +662,11 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
             $out->indicationReference = $this->indicationReference;
         }
         if (isset($this->patientCharacteristics) && [] !== $this->patientCharacteristics) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->patientCharacteristics as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->patientCharacteristics = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_patientCharacteristics = $exts;
-            }
+            $out->patientCharacteristics = $this->patientCharacteristics;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

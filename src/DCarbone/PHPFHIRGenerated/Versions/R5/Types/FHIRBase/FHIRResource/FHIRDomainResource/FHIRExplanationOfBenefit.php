@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -152,11 +152,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_TRACE_NUMBER = 'traceNumber';
-    public const FIELD_TRACE_NUMBER_EXT = '_traceNumber';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
     public const FIELD_TYPE = 'type';
@@ -201,7 +199,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
     public const FIELD_INSURANCE = 'insurance';
     public const FIELD_ACCIDENT = 'accident';
     public const FIELD_PATIENT_PAID = 'patientPaid';
-    public const FIELD_PATIENT_PAID_EXT = '_patientPaid';
     public const FIELD_ITEM = 'item';
     public const FIELD_ADD_ITEM = 'addItem';
     public const FIELD_ADJUDICATION = 'adjudication';
@@ -213,7 +210,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
     public const FIELD_BENEFIT_PERIOD = 'benefitPeriod';
     public const FIELD_BENEFIT_BALANCE = 'benefitBalance';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -235,7 +232,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_USE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -243,10 +240,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         self::FIELD_OUTCOME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DISPOSITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PRECEDENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_PATIENT_PAID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -1067,7 +1063,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -1076,7 +1072,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -1085,7 +1081,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -1152,14 +1148,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1232,14 +1221,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             unset($this->traceNumber);
             return $this;
         }
-        $this->traceNumber = [];
-        foreach($traceNumber as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->traceNumber[] = $v;
-            } else {
-                $this->traceNumber[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->traceNumber = $traceNumber;
         return $this;
     }
 
@@ -3085,11 +3067,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * services.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $patientPaid
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPatientPaid(null|FHIRDecimal|FHIRMoney $patientPaid,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPatientPaid(null|FHIRDecimal|FHIRMoney $patientPaid): self
     {
         if (null === $patientPaid) {
             unset($this->patientPaid);
@@ -3099,33 +3079,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             $patientPaid = new FHIRMoney(value: $patientPaid);
         }
         $this->patientPaid = $patientPaid;
-        if ($this->_valueXMLLocations[self::FIELD_PATIENT_PAID] !== $valueXMLLocation) {
-            $this->_setPatientPaidValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the patientPaid element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPatientPaidValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PATIENT_PAID];
-    }
-
-    /**
-     * Set the location the "value" field of the patientPaid element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPatientPaidValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PATIENT_PAID] = $valueXMLLocation;
         return $this;
     }
 
@@ -3657,7 +3610,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -4398,7 +4351,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -4549,7 +4502,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $type->setBenefitPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
             } else if (self::FIELD_BENEFIT_BALANCE === $cen) {
                 $type->addBenefitBalance(FHIRExplanationOfBenefitBenefitBalance::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -4623,14 +4577,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $type->setPrecedence((string)$attributes[self::FIELD_PRECEDENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_PATIENT_PAID])) {
-            if (isset($type->patientPaid)) {
-                $type->patientPaid->setValue((string)$attributes[self::FIELD_PATIENT_PAID]);
-                $type->_setPatientPaidValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPatientPaid((string)$attributes[self::FIELD_PATIENT_PAID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         return $type;
     }
 
@@ -4677,19 +4623,16 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         if (isset($this->precedence) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PRECEDENCE]) {
             $xw->writeAttribute(self::FIELD_PRECEDENCE, $this->precedence->_getFormattedValue());
         }
-        if (isset($this->patientPaid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATIENT_PAID]) {
-            $xw->writeAttribute(self::FIELD_PATIENT_PAID, $this->patientPaid->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
             }
         }
-        if (isset($this->traceNumber) && [] !== $this->traceNumber) {
-            foreach($this->traceNumber as $v) {
+        if (isset($this->traceNumber)) {
+            foreach ($this->traceNumber as $v) {
                 $xw->startElement(self::FIELD_TRACE_NUMBER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -4907,11 +4850,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             $this->accident->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->patientPaid)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PATIENT_PAID]
-                || $this->patientPaid->_nonValueFieldDefined())) {
+        if (isset($this->patientPaid)) {
             $xw->startElement(self::FIELD_PATIENT_PAID);
-            $this->patientPaid->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PATIENT_PAID]);
+            $this->patientPaid->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->item)) {
@@ -5015,40 +4956,22 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TRACE_NUMBER])
-            || isset($json[self::FIELD_TRACE_NUMBER_EXT])
-            || array_key_exists(self::FIELD_TRACE_NUMBER, $json)
-            || array_key_exists(self::FIELD_TRACE_NUMBER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_TRACE_NUMBER] ?? []);
-            $ext = (array)($json[self::FIELD_TRACE_NUMBER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_TRACE_NUMBER]) || array_key_exists(self::FIELD_TRACE_NUMBER, $json)) {
+            $vs = $json[self::FIELD_TRACE_NUMBER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addTraceNumber(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addTraceNumber(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STATUS])
@@ -5270,15 +5193,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         if (isset($json[self::FIELD_ACCIDENT]) || array_key_exists(self::FIELD_ACCIDENT, $json)) {
             $type->setAccident(FHIRExplanationOfBenefitAccident::jsonUnserialize($json[self::FIELD_ACCIDENT], $config));
         }
-        if (isset($json[self::FIELD_PATIENT_PAID])
-            || isset($json[self::FIELD_PATIENT_PAID_EXT])
-            || array_key_exists(self::FIELD_PATIENT_PAID, $json)
-            || array_key_exists(self::FIELD_PATIENT_PAID_EXT, $json)) {
-            $value = $json[self::FIELD_PATIENT_PAID] ?? null;
-            $type->setPatientPaid(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_PATIENT_PAID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PATIENT_PAID]) || array_key_exists(self::FIELD_PATIENT_PAID, $json)) {
+            $type->setPatientPaid(FHIRMoney::jsonUnserialize($json[self::FIELD_PATIENT_PAID], $config));
         }
         if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
             $vs = $json[self::FIELD_ITEM];
@@ -5356,54 +5272,18 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->traceNumber) && [] !== $this->traceNumber) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->traceNumber as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->traceNumber = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_traceNumber = $exts;
-            }
+            $out->traceNumber = $this->traceNumber;
         }
         if (isset($this->status)) {
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -5417,9 +5297,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             if (null !== ($val = $this->use->getValue())) {
                 $out->use = $val;
             }
-            $ext = $this->use->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->use->_nonValueFieldDefined()) {
+                $ext = $this->use->jsonSerialize();
+                unset($ext->value);
                 $out->_use = $ext;
             }
         }
@@ -5433,9 +5313,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             if (null !== ($val = $this->created->getValue())) {
                 $out->created = $val;
             }
-            $ext = $this->created->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->created->_nonValueFieldDefined()) {
+                $ext = $this->created->jsonSerialize();
+                unset($ext->value);
                 $out->_created = $ext;
             }
         }
@@ -5491,9 +5371,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             if (null !== ($val = $this->outcome->getValue())) {
                 $out->outcome = $val;
             }
-            $ext = $this->outcome->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->outcome->_nonValueFieldDefined()) {
+                $ext = $this->outcome->jsonSerialize();
+                unset($ext->value);
                 $out->_outcome = $ext;
             }
         }
@@ -5504,30 +5384,38 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             if (null !== ($val = $this->disposition->getValue())) {
                 $out->disposition = $val;
             }
-            $ext = $this->disposition->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->disposition->_nonValueFieldDefined()) {
+                $ext = $this->disposition->jsonSerialize();
+                unset($ext->value);
                 $out->_disposition = $ext;
             }
         }
         if (isset($this->preAuthRef) && [] !== $this->preAuthRef) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->preAuthRef as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->preAuthRef = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_preAuthRef = $exts;
             }
         }
@@ -5553,9 +5441,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             if (null !== ($val = $this->precedence->getValue())) {
                 $out->precedence = $val;
             }
-            $ext = $this->precedence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->precedence->_nonValueFieldDefined()) {
+                $ext = $this->precedence->jsonSerialize();
+                unset($ext->value);
                 $out->_precedence = $ext;
             }
         }
@@ -5566,14 +5454,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             $out->accident = $this->accident;
         }
         if (isset($this->patientPaid)) {
-            if (null !== ($val = $this->patientPaid->getValue())) {
-                $out->patientPaid = $val;
-            }
-            $ext = $this->patientPaid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_patientPaid = $ext;
-            }
+            $out->patientPaid = $this->patientPaid;
         }
         if (isset($this->item) && [] !== $this->item) {
             $out->item = $this->item;
@@ -5608,7 +5489,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

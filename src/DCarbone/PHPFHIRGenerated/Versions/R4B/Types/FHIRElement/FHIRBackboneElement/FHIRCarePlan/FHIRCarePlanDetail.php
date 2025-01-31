@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,6 +100,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCarePlanActivityKind;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCarePlanActivityStatus;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity;
@@ -122,7 +123,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CARE_PLAN_DOT_DETAIL;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_KIND = 'kind';
     public const FIELD_KIND_EXT = '_kind';
     public const FIELD_INSTANTIATES_CANONICAL = 'instantiatesCanonical';
@@ -151,14 +152,14 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
     public const FIELD_DESCRIPTION = 'description';
     public const FIELD_DESCRIPTION_EXT = '_description';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_KIND => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -167,7 +168,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -421,8 +422,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $performer
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $productCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $productReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $dailyAmount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $dailyAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
      * @param null|string[] $fhirComments
      */
@@ -446,8 +447,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                                 null|iterable $performer = null,
                                 null|FHIRCodeableConcept $productCodeableConcept = null,
                                 null|FHIRReference $productReference = null,
-                                null|FHIRQuantity $dailyAmount = null,
-                                null|FHIRQuantity $quantity = null,
+                                null|FHIRDecimal|FHIRQuantity $dailyAmount = null,
+                                null|FHIRDecimal|FHIRQuantity $quantity = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
                                 null|iterable $fhirComments = null)
     {
@@ -517,7 +518,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -526,7 +527,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -1509,14 +1510,17 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Identifies the quantity expected to be consumed in a given day.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $dailyAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $dailyAmount
      * @return static
      */
-    public function setDailyAmount(null|FHIRQuantity $dailyAmount): self
+    public function setDailyAmount(null|FHIRDecimal|FHIRQuantity $dailyAmount): self
     {
         if (null === $dailyAmount) {
             unset($this->dailyAmount);
             return $this;
+        }
+        if (!($dailyAmount instanceof FHIRQuantity)) {
+            $dailyAmount = new FHIRQuantity(value: $dailyAmount);
         }
         $this->dailyAmount = $dailyAmount;
         return $this;
@@ -1549,14 +1553,17 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * Identifies the quantity expected to be supplied, administered or consumed by the
      * subject.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
+        }
+        if (!($quantity instanceof FHIRQuantity)) {
+            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -1634,7 +1641,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1942,7 +1949,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2017,7 +2024,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                 $type->setQuantity(FHIRQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DESCRIPTION === $cen) {
                 $type->setDescription(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -2396,51 +2404,67 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             if (null !== ($val = $this->kind->getValue())) {
                 $out->kind = $val;
             }
-            $ext = $this->kind->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->kind->_nonValueFieldDefined()) {
+                $ext = $this->kind->jsonSerialize();
+                unset($ext->value);
                 $out->_kind = $ext;
             }
         }
         if (isset($this->instantiatesCanonical) && [] !== $this->instantiatesCanonical) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->instantiatesCanonical as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->instantiatesCanonical = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_instantiatesCanonical = $exts;
             }
         }
         if (isset($this->instantiatesUri) && [] !== $this->instantiatesUri) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->instantiatesUri as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->instantiatesUri = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_instantiatesUri = $exts;
             }
         }
@@ -2460,9 +2484,9 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -2473,9 +2497,9 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             if (null !== ($val = $this->doNotPerform->getValue())) {
                 $out->doNotPerform = $val;
             }
-            $ext = $this->doNotPerform->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->doNotPerform->_nonValueFieldDefined()) {
+                $ext = $this->doNotPerform->jsonSerialize();
+                unset($ext->value);
                 $out->_doNotPerform = $ext;
             }
         }
@@ -2489,9 +2513,9 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             if (null !== ($val = $this->scheduledString->getValue())) {
                 $out->scheduledString = $val;
             }
-            $ext = $this->scheduledString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->scheduledString->_nonValueFieldDefined()) {
+                $ext = $this->scheduledString->jsonSerialize();
+                unset($ext->value);
                 $out->_scheduledString = $ext;
             }
         }
@@ -2517,15 +2541,15 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

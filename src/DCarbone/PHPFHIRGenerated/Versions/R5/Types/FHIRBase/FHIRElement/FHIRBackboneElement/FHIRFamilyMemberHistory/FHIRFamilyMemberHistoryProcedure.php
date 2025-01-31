@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,6 +98,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
@@ -115,7 +116,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_FAMILY_MEMBER_HISTORY_DOT_PROCEDURE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CODE = 'code';
     public const FIELD_OUTCOME = 'outcome';
     public const FIELD_CONTRIBUTED_TO_DEATH = 'contributedToDeath';
@@ -129,21 +130,21 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
     public const FIELD_PERFORMED_DATE_TIME_EXT = '_performedDateTime';
     public const FIELD_NOTE = 'note';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_CODE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTRIBUTED_TO_DEATH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PERFORMED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PERFORMED_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -264,7 +265,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $outcome
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $contributedToDeath
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $performedAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $performedAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $performedRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $performedPeriod
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $performedString
@@ -278,7 +279,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $code = null,
                                 null|FHIRCodeableConcept $outcome = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $contributedToDeath = null,
-                                null|FHIRAge $performedAge = null,
+                                null|FHIRDecimal|FHIRAge $performedAge = null,
                                 null|FHIRRange $performedRange = null,
                                 null|FHIRPeriod $performedPeriod = null,
                                 null|string|FHIRStringPrimitive|FHIRString $performedString = null,
@@ -319,7 +320,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -328,7 +329,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -498,14 +499,17 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * performed. Allows a period to support complex procedures that span more than one
      * date, and also allows for the length of the procedure to be captured.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $performedAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $performedAge
      * @return static
      */
-    public function setPerformedAge(null|FHIRAge $performedAge): self
+    public function setPerformedAge(null|FHIRDecimal|FHIRAge $performedAge): self
     {
         if (null === $performedAge) {
             unset($this->performedAge);
             return $this;
+        }
+        if (!($performedAge instanceof FHIRAge)) {
+            $performedAge = new FHIRAge(value: $performedAge);
         }
         $this->performedAge = $performedAge;
         return $this;
@@ -802,7 +806,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -978,7 +982,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1031,7 +1035,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
                 $type->setPerformedDateTime(FHIRDateTime::xmlUnserialize($ce, $config));
             } else if (self::FIELD_NOTE === $cen) {
                 $type->addNote(FHIRAnnotation::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1230,9 +1235,9 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             if (null !== ($val = $this->contributedToDeath->getValue())) {
                 $out->contributedToDeath = $val;
             }
-            $ext = $this->contributedToDeath->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->contributedToDeath->_nonValueFieldDefined()) {
+                $ext = $this->contributedToDeath->jsonSerialize();
+                unset($ext->value);
                 $out->_contributedToDeath = $ext;
             }
         }
@@ -1249,9 +1254,9 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             if (null !== ($val = $this->performedString->getValue())) {
                 $out->performedString = $val;
             }
-            $ext = $this->performedString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->performedString->_nonValueFieldDefined()) {
+                $ext = $this->performedString->jsonSerialize();
+                unset($ext->value);
                 $out->_performedString = $ext;
             }
         }
@@ -1259,9 +1264,9 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             if (null !== ($val = $this->performedDateTime->getValue())) {
                 $out->performedDateTime = $val;
             }
-            $ext = $this->performedDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->performedDateTime->_nonValueFieldDefined()) {
+                $ext = $this->performedDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_performedDateTime = $ext;
             }
         }
@@ -1270,7 +1275,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

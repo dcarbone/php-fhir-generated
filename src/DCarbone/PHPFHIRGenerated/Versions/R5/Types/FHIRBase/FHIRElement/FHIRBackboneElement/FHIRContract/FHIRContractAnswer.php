@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONTRACT_DOT_ANSWER;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_VALUE_BOOLEAN = 'valueBoolean';
     public const FIELD_VALUE_BOOLEAN_EXT = '_valueBoolean';
     public const FIELD_VALUE_DECIMAL = 'valueDecimal';
@@ -146,7 +146,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
     public const FIELD_VALUE_QUANTITY = 'valueQuantity';
     public const FIELD_VALUE_REFERENCE = 'valueReference';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_VALUE_BOOLEAN => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -186,7 +186,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_VALUE_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_DECIMAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -198,7 +198,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
         self::FIELD_VALUE_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -378,7 +378,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
      * @param null|string[] $fhirComments
      */
@@ -395,7 +395,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
                                 null|string|FHIRUriPrimitive|FHIRUri $valueUri = null,
                                 null|FHIRAttachment $valueAttachment = null,
                                 null|FHIRCoding $valueCoding = null,
-                                null|FHIRQuantity $valueQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $valueQuantity = null,
                                 null|FHIRReference $valueReference = null,
                                 null|iterable $fhirComments = null)
     {
@@ -441,7 +441,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -450,7 +450,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1146,14 +1146,17 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * rental, warranty duration, or whether biospecimen may be used for further
      * research.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
+    public function setValueQuantity(null|FHIRDecimal|FHIRQuantity $valueQuantity): self
     {
         if (null === $valueQuantity) {
             unset($this->valueQuantity);
             return $this;
+        }
+        if (!($valueQuantity instanceof FHIRQuantity)) {
+            $valueQuantity = new FHIRQuantity(value: $valueQuantity);
         }
         $this->valueQuantity = $valueQuantity;
         return $this;
@@ -1199,7 +1202,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1466,7 +1469,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1525,7 +1528,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
                 $type->setValueQuantity(FHIRQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_VALUE_REFERENCE === $cen) {
                 $type->setValueReference(FHIRReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1834,9 +1838,9 @@ class FHIRContractAnswer extends FHIRBackboneElement
             if (null !== ($val = $this->valueBoolean->getValue())) {
                 $out->valueBoolean = $val;
             }
-            $ext = $this->valueBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueBoolean->_nonValueFieldDefined()) {
+                $ext = $this->valueBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_valueBoolean = $ext;
             }
         }
@@ -1844,9 +1848,9 @@ class FHIRContractAnswer extends FHIRBackboneElement
             if (null !== ($val = $this->valueDecimal->getValue())) {
                 $out->valueDecimal = $val;
             }
-            $ext = $this->valueDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueDecimal->_nonValueFieldDefined()) {
+                $ext = $this->valueDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_valueDecimal = $ext;
             }
         }
@@ -1854,9 +1858,9 @@ class FHIRContractAnswer extends FHIRBackboneElement
             if (null !== ($val = $this->valueInteger->getValue())) {
                 $out->valueInteger = $val;
             }
-            $ext = $this->valueInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueInteger->_nonValueFieldDefined()) {
+                $ext = $this->valueInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_valueInteger = $ext;
             }
         }
@@ -1864,9 +1868,9 @@ class FHIRContractAnswer extends FHIRBackboneElement
             if (null !== ($val = $this->valueDate->getValue())) {
                 $out->valueDate = $val;
             }
-            $ext = $this->valueDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueDate->_nonValueFieldDefined()) {
+                $ext = $this->valueDate->jsonSerialize();
+                unset($ext->value);
                 $out->_valueDate = $ext;
             }
         }
@@ -1874,9 +1878,9 @@ class FHIRContractAnswer extends FHIRBackboneElement
             if (null !== ($val = $this->valueDateTime->getValue())) {
                 $out->valueDateTime = $val;
             }
-            $ext = $this->valueDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueDateTime->_nonValueFieldDefined()) {
+                $ext = $this->valueDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_valueDateTime = $ext;
             }
         }
@@ -1884,9 +1888,9 @@ class FHIRContractAnswer extends FHIRBackboneElement
             if (null !== ($val = $this->valueTime->getValue())) {
                 $out->valueTime = $val;
             }
-            $ext = $this->valueTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueTime->_nonValueFieldDefined()) {
+                $ext = $this->valueTime->jsonSerialize();
+                unset($ext->value);
                 $out->_valueTime = $ext;
             }
         }
@@ -1894,9 +1898,9 @@ class FHIRContractAnswer extends FHIRBackboneElement
             if (null !== ($val = $this->valueString->getValue())) {
                 $out->valueString = $val;
             }
-            $ext = $this->valueString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueString->_nonValueFieldDefined()) {
+                $ext = $this->valueString->jsonSerialize();
+                unset($ext->value);
                 $out->_valueString = $ext;
             }
         }
@@ -1904,9 +1908,9 @@ class FHIRContractAnswer extends FHIRBackboneElement
             if (null !== ($val = $this->valueUri->getValue())) {
                 $out->valueUri = $val;
             }
-            $ext = $this->valueUri->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueUri->_nonValueFieldDefined()) {
+                $ext = $this->valueUri->jsonSerialize();
+                unset($ext->value);
                 $out->_valueUri = $ext;
             }
         }
@@ -1924,7 +1928,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

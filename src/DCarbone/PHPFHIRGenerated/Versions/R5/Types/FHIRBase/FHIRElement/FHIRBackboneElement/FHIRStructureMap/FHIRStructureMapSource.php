@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CONTEXT = 'context';
     public const FIELD_CONTEXT_EXT = '_context';
     public const FIELD_MIN = 'min';
@@ -135,14 +135,14 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     public const FIELD_LOG_MESSAGE = 'logMessage';
     public const FIELD_LOG_MESSAGE_EXT = '_logMessage';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_CONTEXT => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTEXT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -157,7 +157,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         self::FIELD_LOG_MESSAGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -353,7 +353,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -362,7 +362,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -1109,7 +1109,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1309,7 +1309,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1366,7 +1366,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement
                 $type->setCheck(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_LOG_MESSAGE === $cen) {
                 $type->setLogMessage(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1727,9 +1728,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->context->getValue())) {
                 $out->context = $val;
             }
-            $ext = $this->context->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->context->_nonValueFieldDefined()) {
+                $ext = $this->context->jsonSerialize();
+                unset($ext->value);
                 $out->_context = $ext;
             }
         }
@@ -1737,9 +1738,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->min->getValue())) {
                 $out->min = $val;
             }
-            $ext = $this->min->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->min->_nonValueFieldDefined()) {
+                $ext = $this->min->jsonSerialize();
+                unset($ext->value);
                 $out->_min = $ext;
             }
         }
@@ -1747,9 +1748,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->max->getValue())) {
                 $out->max = $val;
             }
-            $ext = $this->max->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->max->_nonValueFieldDefined()) {
+                $ext = $this->max->jsonSerialize();
+                unset($ext->value);
                 $out->_max = $ext;
             }
         }
@@ -1757,9 +1758,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -1767,9 +1768,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValue->getValue())) {
                 $out->defaultValue = $val;
             }
-            $ext = $this->defaultValue->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValue->_nonValueFieldDefined()) {
+                $ext = $this->defaultValue->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValue = $ext;
             }
         }
@@ -1777,9 +1778,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->element->getValue())) {
                 $out->element = $val;
             }
-            $ext = $this->element->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->element->_nonValueFieldDefined()) {
+                $ext = $this->element->jsonSerialize();
+                unset($ext->value);
                 $out->_element = $ext;
             }
         }
@@ -1787,9 +1788,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->listMode->getValue())) {
                 $out->listMode = $val;
             }
-            $ext = $this->listMode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->listMode->_nonValueFieldDefined()) {
+                $ext = $this->listMode->jsonSerialize();
+                unset($ext->value);
                 $out->_listMode = $ext;
             }
         }
@@ -1797,9 +1798,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->variable->getValue())) {
                 $out->variable = $val;
             }
-            $ext = $this->variable->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->variable->_nonValueFieldDefined()) {
+                $ext = $this->variable->jsonSerialize();
+                unset($ext->value);
                 $out->_variable = $ext;
             }
         }
@@ -1807,9 +1808,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->condition->getValue())) {
                 $out->condition = $val;
             }
-            $ext = $this->condition->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->condition->_nonValueFieldDefined()) {
+                $ext = $this->condition->jsonSerialize();
+                unset($ext->value);
                 $out->_condition = $ext;
             }
         }
@@ -1817,9 +1818,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->check->getValue())) {
                 $out->check = $val;
             }
-            $ext = $this->check->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->check->_nonValueFieldDefined()) {
+                $ext = $this->check->jsonSerialize();
+                unset($ext->value);
                 $out->_check = $ext;
             }
         }
@@ -1827,15 +1828,15 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             if (null !== ($val = $this->logMessage->getValue())) {
                 $out->logMessage = $val;
             }
-            $ext = $this->logMessage->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->logMessage->_nonValueFieldDefined()) {
+                $ext = $this->logMessage->jsonSerialize();
+                unset($ext->value);
                 $out->_logMessage = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

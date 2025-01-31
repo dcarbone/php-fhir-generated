@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,30 +109,29 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ITEM;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_ITEM_SEQUENCE = 'itemSequence';
     public const FIELD_ITEM_SEQUENCE_EXT = '_itemSequence';
     public const FIELD_TRACE_NUMBER = 'traceNumber';
-    public const FIELD_TRACE_NUMBER_EXT = '_traceNumber';
     public const FIELD_NOTE_NUMBER = 'noteNumber';
     public const FIELD_NOTE_NUMBER_EXT = '_noteNumber';
     public const FIELD_REVIEW_OUTCOME = 'reviewOutcome';
     public const FIELD_ADJUDICATION = 'adjudication';
     public const FIELD_DETAIL = 'detail';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ITEM_SEQUENCE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ITEM_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -246,7 +245,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -255,7 +254,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -391,14 +390,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
             unset($this->traceNumber);
             return $this;
         }
-        $this->traceNumber = [];
-        foreach($traceNumber as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->traceNumber[] = $v;
-            } else {
-                $this->traceNumber[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->traceNumber = $traceNumber;
         return $this;
     }
 
@@ -642,7 +634,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -782,7 +774,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -829,7 +821,8 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
                 $type->addAdjudication(FHIRClaimResponseAdjudication::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DETAIL === $cen) {
                 $type->addDetail(FHIRClaimResponseDetail::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -863,8 +856,8 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
             $this->itemSequence->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ITEM_SEQUENCE]);
             $xw->endElement();
         }
-        if (isset($this->traceNumber) && [] !== $this->traceNumber) {
-            foreach($this->traceNumber as $v) {
+        if (isset($this->traceNumber)) {
+            foreach ($this->traceNumber as $v) {
                 $xw->startElement(self::FIELD_TRACE_NUMBER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -930,22 +923,13 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_TRACE_NUMBER])
-            || isset($json[self::FIELD_TRACE_NUMBER_EXT])
-            || array_key_exists(self::FIELD_TRACE_NUMBER, $json)
-            || array_key_exists(self::FIELD_TRACE_NUMBER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_TRACE_NUMBER] ?? []);
-            $ext = (array)($json[self::FIELD_TRACE_NUMBER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_TRACE_NUMBER]) || array_key_exists(self::FIELD_TRACE_NUMBER, $json)) {
+            $vs = $json[self::FIELD_TRACE_NUMBER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addTraceNumber(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addTraceNumber(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_NOTE_NUMBER])
@@ -1000,51 +984,41 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
             if (null !== ($val = $this->itemSequence->getValue())) {
                 $out->itemSequence = $val;
             }
-            $ext = $this->itemSequence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->itemSequence->_nonValueFieldDefined()) {
+                $ext = $this->itemSequence->jsonSerialize();
+                unset($ext->value);
                 $out->_itemSequence = $ext;
             }
         }
         if (isset($this->traceNumber) && [] !== $this->traceNumber) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->traceNumber as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->traceNumber = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_traceNumber = $exts;
-            }
+            $out->traceNumber = $this->traceNumber;
         }
         if (isset($this->noteNumber) && [] !== $this->noteNumber) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->noteNumber as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->noteNumber = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_noteNumber = $exts;
             }
         }
@@ -1059,7 +1033,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

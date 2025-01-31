@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OPERATION_OUTCOME_DOT_ISSUE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SEVERITY = 'severity';
     public const FIELD_SEVERITY_EXT = '_severity';
     public const FIELD_TYPE = 'type';
@@ -94,7 +94,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     public const FIELD_LOCATION = 'location';
     public const FIELD_LOCATION_EXT = '_location';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -104,13 +104,13 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SEVERITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DETAILS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * How the issue affects the success of the action
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -190,7 +190,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -199,7 +199,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * How the issue affects the success of the action
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -439,7 +439,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -555,7 +555,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -598,7 +598,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
                 $type->setDetails(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_LOCATION === $cen) {
                 $type->addLocation(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -740,9 +741,9 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
             if (null !== ($val = $this->severity->getValue())) {
                 $out->severity = $val;
             }
-            $ext = $this->severity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->severity->_nonValueFieldDefined()) {
+                $ext = $this->severity->jsonSerialize();
+                unset($ext->value);
                 $out->_severity = $ext;
             }
         }
@@ -753,36 +754,44 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
             if (null !== ($val = $this->details->getValue())) {
                 $out->details = $val;
             }
-            $ext = $this->details->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->details->_nonValueFieldDefined()) {
+                $ext = $this->details->jsonSerialize();
+                unset($ext->value);
                 $out->_details = $ext;
             }
         }
         if (isset($this->location) && [] !== $this->location) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->location as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->location = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_location = $exts;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

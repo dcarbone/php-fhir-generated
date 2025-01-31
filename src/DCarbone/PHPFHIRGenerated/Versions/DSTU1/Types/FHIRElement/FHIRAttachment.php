@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRAttachment extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ATTACHMENT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CONTENT_TYPE = 'contentType';
     public const FIELD_CONTENT_TYPE_EXT = '_contentType';
     public const FIELD_LANGUAGE = 'language';
@@ -101,7 +101,7 @@ class FHIRAttachment extends FHIRElement
     public const FIELD_TITLE = 'title';
     public const FIELD_TITLE_EXT = '_title';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -111,7 +111,7 @@ class FHIRAttachment extends FHIRElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTENT_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LANGUAGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -122,7 +122,7 @@ class FHIRAttachment extends FHIRElement
         self::FIELD_TITLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -246,7 +246,7 @@ class FHIRAttachment extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -255,7 +255,7 @@ class FHIRAttachment extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -720,7 +720,7 @@ class FHIRAttachment extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -860,7 +860,7 @@ class FHIRAttachment extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -907,7 +907,8 @@ class FHIRAttachment extends FHIRElement
                 $type->setHash(FHIRBase64Binary::xmlUnserialize($ce, $config));
             } else if (self::FIELD_TITLE === $cen) {
                 $type->setTitle(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1156,9 +1157,9 @@ class FHIRAttachment extends FHIRElement
             if (null !== ($val = $this->contentType->getValue())) {
                 $out->contentType = $val;
             }
-            $ext = $this->contentType->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->contentType->_nonValueFieldDefined()) {
+                $ext = $this->contentType->jsonSerialize();
+                unset($ext->value);
                 $out->_contentType = $ext;
             }
         }
@@ -1166,9 +1167,9 @@ class FHIRAttachment extends FHIRElement
             if (null !== ($val = $this->language->getValue())) {
                 $out->language = $val;
             }
-            $ext = $this->language->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->language->_nonValueFieldDefined()) {
+                $ext = $this->language->jsonSerialize();
+                unset($ext->value);
                 $out->_language = $ext;
             }
         }
@@ -1176,9 +1177,9 @@ class FHIRAttachment extends FHIRElement
             if (null !== ($val = $this->data->getValue())) {
                 $out->data = $val;
             }
-            $ext = $this->data->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->data->_nonValueFieldDefined()) {
+                $ext = $this->data->jsonSerialize();
+                unset($ext->value);
                 $out->_data = $ext;
             }
         }
@@ -1186,9 +1187,9 @@ class FHIRAttachment extends FHIRElement
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
@@ -1196,9 +1197,9 @@ class FHIRAttachment extends FHIRElement
             if (null !== ($val = $this->size->getValue())) {
                 $out->size = $val;
             }
-            $ext = $this->size->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->size->_nonValueFieldDefined()) {
+                $ext = $this->size->jsonSerialize();
+                unset($ext->value);
                 $out->_size = $ext;
             }
         }
@@ -1206,9 +1207,9 @@ class FHIRAttachment extends FHIRElement
             if (null !== ($val = $this->hash->getValue())) {
                 $out->hash = $val;
             }
-            $ext = $this->hash->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->hash->_nonValueFieldDefined()) {
+                $ext = $this->hash->jsonSerialize();
+                unset($ext->value);
                 $out->_hash = $ext;
             }
         }
@@ -1216,15 +1217,15 @@ class FHIRAttachment extends FHIRElement
             if (null !== ($val = $this->title->getValue())) {
                 $out->title = $val;
             }
-            $ext = $this->title->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->title->_nonValueFieldDefined()) {
+                $ext = $this->title->jsonSerialize();
+                unset($ext->value);
                 $out->_title = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

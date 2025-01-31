@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMMUNIZATION_DOT_EDUCATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_DOCUMENT_TYPE = 'documentType';
     public const FIELD_DOCUMENT_TYPE_EXT = '_documentType';
     public const FIELD_REFERENCE = 'reference';
@@ -99,10 +99,10 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
     public const FIELD_PRESENTATION_DATE = 'presentationDate';
     public const FIELD_PRESENTATION_DATE_EXT = '_presentationDate';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DOCUMENT_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_REFERENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -110,7 +110,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         self::FIELD_PRESENTATION_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -198,7 +198,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -207,7 +207,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -486,7 +486,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -597,7 +597,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -640,7 +640,8 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 $type->setPublicationDate(FHIRDateTime::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PRESENTATION_DATE === $cen) {
                 $type->setPresentationDate(FHIRDateTime::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -805,9 +806,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             if (null !== ($val = $this->documentType->getValue())) {
                 $out->documentType = $val;
             }
-            $ext = $this->documentType->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->documentType->_nonValueFieldDefined()) {
+                $ext = $this->documentType->jsonSerialize();
+                unset($ext->value);
                 $out->_documentType = $ext;
             }
         }
@@ -815,9 +816,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             if (null !== ($val = $this->reference->getValue())) {
                 $out->reference = $val;
             }
-            $ext = $this->reference->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->reference->_nonValueFieldDefined()) {
+                $ext = $this->reference->jsonSerialize();
+                unset($ext->value);
                 $out->_reference = $ext;
             }
         }
@@ -825,9 +826,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             if (null !== ($val = $this->publicationDate->getValue())) {
                 $out->publicationDate = $val;
             }
-            $ext = $this->publicationDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->publicationDate->_nonValueFieldDefined()) {
+                $ext = $this->publicationDate->jsonSerialize();
+                unset($ext->value);
                 $out->_publicationDate = $ext;
             }
         }
@@ -835,15 +836,15 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             if (null !== ($val = $this->presentationDate->getValue())) {
                 $out->presentationDate = $val;
             }
-            $ext = $this->presentationDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->presentationDate->_nonValueFieldDefined()) {
+                $ext = $this->presentationDate->jsonSerialize();
+                unset($ext->value);
                 $out->_presentationDate = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

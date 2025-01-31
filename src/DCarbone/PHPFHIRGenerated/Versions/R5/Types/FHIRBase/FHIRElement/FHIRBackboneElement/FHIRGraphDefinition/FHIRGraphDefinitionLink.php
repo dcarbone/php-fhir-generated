@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_GRAPH_DEFINITION_DOT_LINK;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_DESCRIPTION = 'description';
     public const FIELD_DESCRIPTION_EXT = '_description';
     public const FIELD_MIN = 'min';
@@ -130,7 +130,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
     public const FIELD_PARAMS_EXT = '_params';
     public const FIELD_COMPARTMENT = 'compartment';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_SOURCE_ID => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -140,7 +140,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -152,7 +152,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
         self::FIELD_PARAMS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -314,7 +314,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -323,7 +323,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -928,7 +928,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1109,7 +1109,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1162,7 +1162,8 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
                 $type->setParams(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_COMPARTMENT === $cen) {
                 $type->addCompartment(FHIRGraphDefinitionCompartment::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1455,9 +1456,9 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -1465,9 +1466,9 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
             if (null !== ($val = $this->min->getValue())) {
                 $out->min = $val;
             }
-            $ext = $this->min->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->min->_nonValueFieldDefined()) {
+                $ext = $this->min->jsonSerialize();
+                unset($ext->value);
                 $out->_min = $ext;
             }
         }
@@ -1475,9 +1476,9 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
             if (null !== ($val = $this->max->getValue())) {
                 $out->max = $val;
             }
-            $ext = $this->max->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->max->_nonValueFieldDefined()) {
+                $ext = $this->max->jsonSerialize();
+                unset($ext->value);
                 $out->_max = $ext;
             }
         }
@@ -1485,9 +1486,9 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
             if (null !== ($val = $this->sourceId->getValue())) {
                 $out->sourceId = $val;
             }
-            $ext = $this->sourceId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sourceId->_nonValueFieldDefined()) {
+                $ext = $this->sourceId->jsonSerialize();
+                unset($ext->value);
                 $out->_sourceId = $ext;
             }
         }
@@ -1495,9 +1496,9 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
             if (null !== ($val = $this->path->getValue())) {
                 $out->path = $val;
             }
-            $ext = $this->path->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->path->_nonValueFieldDefined()) {
+                $ext = $this->path->jsonSerialize();
+                unset($ext->value);
                 $out->_path = $ext;
             }
         }
@@ -1505,9 +1506,9 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
             if (null !== ($val = $this->sliceName->getValue())) {
                 $out->sliceName = $val;
             }
-            $ext = $this->sliceName->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sliceName->_nonValueFieldDefined()) {
+                $ext = $this->sliceName->jsonSerialize();
+                unset($ext->value);
                 $out->_sliceName = $ext;
             }
         }
@@ -1515,9 +1516,9 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
             if (null !== ($val = $this->targetId->getValue())) {
                 $out->targetId = $val;
             }
-            $ext = $this->targetId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->targetId->_nonValueFieldDefined()) {
+                $ext = $this->targetId->jsonSerialize();
+                unset($ext->value);
                 $out->_targetId = $ext;
             }
         }
@@ -1525,9 +1526,9 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
             if (null !== ($val = $this->params->getValue())) {
                 $out->params = $val;
             }
-            $ext = $this->params->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->params->_nonValueFieldDefined()) {
+                $ext = $this->params->jsonSerialize();
+                unset($ext->value);
                 $out->_params = $ext;
             }
         }
@@ -1536,7 +1537,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

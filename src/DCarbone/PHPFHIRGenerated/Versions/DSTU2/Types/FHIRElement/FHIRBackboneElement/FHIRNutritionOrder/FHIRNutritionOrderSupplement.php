@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,27 +90,25 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_ORDER_DOT_SUPPLEMENT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_PRODUCT_NAME = 'productName';
     public const FIELD_PRODUCT_NAME_EXT = '_productName';
     public const FIELD_SCHEDULE = 'schedule';
     public const FIELD_QUANTITY = 'quantity';
-    public const FIELD_QUANTITY_EXT = '_quantity';
     public const FIELD_INSTRUCTION = 'instruction';
     public const FIELD_INSTRUCTION_EXT = '_instruction';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_PRODUCT_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_QUANTITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INSTRUCTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -209,7 +207,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -218,7 +216,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -412,11 +410,9 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * The amount of the nutritional supplement to be given.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRSimpleQuantity $quantity,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setQuantity(null|FHIRDecimal|FHIRSimpleQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
@@ -426,33 +422,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             $quantity = new FHIRSimpleQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
-        if ($this->_valueXMLLocations[self::FIELD_QUANTITY] !== $valueXMLLocation) {
-            $this->_setQuantityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the quantity element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getQuantityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_QUANTITY];
-    }
-
-    /**
-     * Set the location the "value" field of the quantity element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setQuantityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_QUANTITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -524,7 +493,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -647,7 +616,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -692,7 +661,8 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                 $type->setQuantity(FHIRSimpleQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_INSTRUCTION === $cen) {
                 $type->setInstruction(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -703,14 +673,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                 $type->_setProductNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setProductName((string)$attributes[self::FIELD_PRODUCT_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_QUANTITY])) {
-            if (isset($type->quantity)) {
-                $type->quantity->setValue((string)$attributes[self::FIELD_QUANTITY]);
-                $type->_setQuantityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setQuantity((string)$attributes[self::FIELD_QUANTITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_INSTRUCTION])) {
@@ -733,9 +695,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
     {
         if (isset($this->productName) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PRODUCT_NAME]) {
             $xw->writeAttribute(self::FIELD_PRODUCT_NAME, $this->productName->_getFormattedValue());
-        }
-        if (isset($this->quantity) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_QUANTITY]) {
-            $xw->writeAttribute(self::FIELD_QUANTITY, $this->quantity->_getFormattedValue());
         }
         if (isset($this->instruction) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INSTRUCTION]) {
             $xw->writeAttribute(self::FIELD_INSTRUCTION, $this->instruction->_getFormattedValue());
@@ -760,11 +719,9 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->quantity)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_QUANTITY]
-                || $this->quantity->_nonValueFieldDefined())) {
+        if (isset($this->quantity)) {
             $xw->startElement(self::FIELD_QUANTITY);
-            $this->quantity->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_QUANTITY]);
+            $this->quantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->instruction)
@@ -820,15 +777,8 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                 $type->addSchedule(FHIRTiming::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_QUANTITY])
-            || isset($json[self::FIELD_QUANTITY_EXT])
-            || array_key_exists(self::FIELD_QUANTITY, $json)
-            || array_key_exists(self::FIELD_QUANTITY_EXT, $json)) {
-            $value = $json[self::FIELD_QUANTITY] ?? null;
-            $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_QUANTITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
+            $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_INSTRUCTION])
             || isset($json[self::FIELD_INSTRUCTION_EXT])
@@ -856,9 +806,9 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             if (null !== ($val = $this->productName->getValue())) {
                 $out->productName = $val;
             }
-            $ext = $this->productName->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->productName->_nonValueFieldDefined()) {
+                $ext = $this->productName->jsonSerialize();
+                unset($ext->value);
                 $out->_productName = $ext;
             }
         }
@@ -866,28 +816,21 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             $out->schedule = $this->schedule;
         }
         if (isset($this->quantity)) {
-            if (null !== ($val = $this->quantity->getValue())) {
-                $out->quantity = $val;
-            }
-            $ext = $this->quantity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_quantity = $ext;
-            }
+            $out->quantity = $this->quantity;
         }
         if (isset($this->instruction)) {
             if (null !== ($val = $this->instruction->getValue())) {
                 $out->instruction = $val;
             }
-            $ext = $this->instruction->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->instruction->_nonValueFieldDefined()) {
+                $ext = $this->instruction->jsonSerialize();
+                unset($ext->value);
                 $out->_instruction = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,21 +86,20 @@ class FHIRValueSetContact extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_VALUE_SET_DOT_CONTACT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_NAME = 'name';
     public const FIELD_NAME_EXT = '_name';
     public const FIELD_TELECOM = 'telecom';
-    public const FIELD_TELECOM_EXT = '_telecom';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -152,7 +151,7 @@ class FHIRValueSetContact extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -161,7 +160,7 @@ class FHIRValueSetContact extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -294,18 +293,11 @@ class FHIRValueSetContact extends FHIRBackboneElement
             unset($this->telecom);
             return $this;
         }
-        $this->telecom = [];
-        foreach($telecom as $v) {
-            if ($v instanceof FHIRContactPoint) {
-                $this->telecom[] = $v;
-            } else {
-                $this->telecom[] = new FHIRContactPoint(value: $v);
-            }
-        }
+        $this->telecom = $telecom;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -392,7 +384,7 @@ class FHIRValueSetContact extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -431,7 +423,8 @@ class FHIRValueSetContact extends FHIRBackboneElement
                 $type->setName(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_TELECOM === $cen) {
                 $type->addTelecom(FHIRContactPoint::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -465,8 +458,8 @@ class FHIRValueSetContact extends FHIRBackboneElement
             $this->name->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_NAME]);
             $xw->endElement();
         }
-        if (isset($this->telecom) && [] !== $this->telecom) {
-            foreach($this->telecom as $v) {
+        if (isset($this->telecom)) {
+            foreach ($this->telecom as $v) {
                 $xw->startElement(self::FIELD_TELECOM);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -506,22 +499,13 @@ class FHIRValueSetContact extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_TELECOM])
-            || isset($json[self::FIELD_TELECOM_EXT])
-            || array_key_exists(self::FIELD_TELECOM, $json)
-            || array_key_exists(self::FIELD_TELECOM_EXT, $json)) {
-            $value = (array)($json[self::FIELD_TELECOM] ?? []);
-            $ext = (array)($json[self::FIELD_TELECOM_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_TELECOM]) || array_key_exists(self::FIELD_TELECOM, $json)) {
+            $vs = $json[self::FIELD_TELECOM];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addTelecom(FHIRContactPoint::jsonUnserialize(
-                    [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addTelecom(FHIRContactPoint::jsonUnserialize($v, $config));
             }
         }
         return $type;
@@ -537,36 +521,18 @@ class FHIRValueSetContact extends FHIRBackboneElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
         if (isset($this->telecom) && [] !== $this->telecom) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->telecom as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->telecom = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_telecom = $exts;
-            }
+            $out->telecom = $this->telecom;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

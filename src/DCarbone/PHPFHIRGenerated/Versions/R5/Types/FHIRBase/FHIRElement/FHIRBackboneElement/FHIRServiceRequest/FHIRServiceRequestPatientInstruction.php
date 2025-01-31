@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,20 +107,20 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SERVICE_REQUEST_DOT_PATIENT_INSTRUCTION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_INSTRUCTION_MARKDOWN = 'instructionMarkdown';
     public const FIELD_INSTRUCTION_MARKDOWN_EXT = '_instructionMarkdown';
     public const FIELD_INSTRUCTION_REFERENCE = 'instructionReference';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_INSTRUCTION_MARKDOWN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -175,7 +175,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -184,7 +184,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -293,7 +293,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -380,7 +380,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -419,7 +419,8 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
                 $type->setInstructionMarkdown(FHIRMarkdown::xmlUnserialize($ce, $config));
             } else if (self::FIELD_INSTRUCTION_REFERENCE === $cen) {
                 $type->setInstructionReference(FHIRReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -508,9 +509,9 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
             if (null !== ($val = $this->instructionMarkdown->getValue())) {
                 $out->instructionMarkdown = $val;
             }
-            $ext = $this->instructionMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->instructionMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->instructionMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_instructionMarkdown = $ext;
             }
         }
@@ -519,7 +520,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

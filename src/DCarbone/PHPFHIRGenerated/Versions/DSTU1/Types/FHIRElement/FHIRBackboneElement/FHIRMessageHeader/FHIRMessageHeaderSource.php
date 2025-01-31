@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MESSAGE_HEADER_DOT_SOURCE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_NAME = 'name';
     public const FIELD_NAME_EXT = '_name';
     public const FIELD_SOFTWARE = 'software';
@@ -95,11 +95,10 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
     public const FIELD_VERSION = 'version';
     public const FIELD_VERSION_EXT = '_version';
     public const FIELD_CONTACT = 'contact';
-    public const FIELD_CONTACT_EXT = '_contact';
     public const FIELD_ENDPOINT = 'endpoint';
     public const FIELD_ENDPOINT_EXT = '_endpoint';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -112,16 +111,15 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SOFTWARE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_CONTACT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ENDPOINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -216,7 +214,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -225,7 +223,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -446,11 +444,9 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * message communications.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $contact
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setContact(null|FHIRString|FHIRContact $contact,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setContact(null|FHIRString|FHIRContact $contact): self
     {
         if (null === $contact) {
             unset($this->contact);
@@ -460,33 +456,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
             $contact = new FHIRContact(value: $contact);
         }
         $this->contact = $contact;
-        if ($this->_valueXMLLocations[self::FIELD_CONTACT] !== $valueXMLLocation) {
-            $this->_setContactValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the contact element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getContactValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CONTACT];
-    }
-
-    /**
-     * Set the location the "value" field of the contact element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setContactValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CONTACT] = $valueXMLLocation;
         return $this;
     }
 
@@ -554,7 +523,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -687,7 +656,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -732,7 +701,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
                 $type->setContact(FHIRContact::xmlUnserialize($ce, $config));
             } else if (self::FIELD_ENDPOINT === $cen) {
                 $type->setEndpoint(FHIRUri::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -759,14 +729,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
                 $type->_setVersionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setVersion((string)$attributes[self::FIELD_VERSION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_CONTACT])) {
-            if (isset($type->contact)) {
-                $type->contact->setValue((string)$attributes[self::FIELD_CONTACT]);
-                $type->_setContactValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setContact((string)$attributes[self::FIELD_CONTACT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_ENDPOINT])) {
@@ -796,9 +758,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
         if (isset($this->version) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VERSION]) {
             $xw->writeAttribute(self::FIELD_VERSION, $this->version->_getFormattedValue());
         }
-        if (isset($this->contact) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CONTACT]) {
-            $xw->writeAttribute(self::FIELD_CONTACT, $this->contact->_getFormattedValue());
-        }
         if (isset($this->endpoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ENDPOINT]) {
             $xw->writeAttribute(self::FIELD_ENDPOINT, $this->endpoint->_getFormattedValue());
         }
@@ -824,11 +783,9 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
             $this->version->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VERSION]);
             $xw->endElement();
         }
-        if (isset($this->contact)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_CONTACT]
-                || $this->contact->_nonValueFieldDefined())) {
+        if (isset($this->contact)) {
             $xw->startElement(self::FIELD_CONTACT);
-            $this->contact->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_CONTACT]);
+            $this->contact->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->endpoint)
@@ -892,15 +849,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_CONTACT])
-            || isset($json[self::FIELD_CONTACT_EXT])
-            || array_key_exists(self::FIELD_CONTACT, $json)
-            || array_key_exists(self::FIELD_CONTACT_EXT, $json)) {
-            $value = $json[self::FIELD_CONTACT] ?? null;
-            $type->setContact(FHIRContact::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContact::FIELD_VALUE => $value]) + ($json[self::FIELD_CONTACT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_CONTACT]) || array_key_exists(self::FIELD_CONTACT, $json)) {
+            $type->setContact(FHIRContact::jsonUnserialize($json[self::FIELD_CONTACT], $config));
         }
         if (isset($json[self::FIELD_ENDPOINT])
             || isset($json[self::FIELD_ENDPOINT_EXT])
@@ -925,9 +875,9 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -935,9 +885,9 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
             if (null !== ($val = $this->software->getValue())) {
                 $out->software = $val;
             }
-            $ext = $this->software->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->software->_nonValueFieldDefined()) {
+                $ext = $this->software->jsonSerialize();
+                unset($ext->value);
                 $out->_software = $ext;
             }
         }
@@ -945,35 +895,28 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
             if (null !== ($val = $this->version->getValue())) {
                 $out->version = $val;
             }
-            $ext = $this->version->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->version->_nonValueFieldDefined()) {
+                $ext = $this->version->jsonSerialize();
+                unset($ext->value);
                 $out->_version = $ext;
             }
         }
         if (isset($this->contact)) {
-            if (null !== ($val = $this->contact->getValue())) {
-                $out->contact = $val;
-            }
-            $ext = $this->contact->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_contact = $ext;
-            }
+            $out->contact = $this->contact;
         }
         if (isset($this->endpoint)) {
             if (null !== ($val = $this->endpoint->getValue())) {
                 $out->endpoint = $val;
             }
-            $ext = $this->endpoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->endpoint->_nonValueFieldDefined()) {
+                $ext = $this->endpoint->jsonSerialize();
+                unset($ext->value);
                 $out->_endpoint = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

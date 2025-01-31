@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,33 +81,14 @@ class FHIRTotalResults extends FHIRInteger
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TOTAL_RESULTS;
 
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* constructor.php:63 */
-    /**
-     * FHIRTotalResults Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive $value
-     * @param null|string[] $fhirComments
-     */
-    public function __construct(null|iterable $extension = null,
-                                null|string|FHIRIdPrimitive $id = null,
-                                null|string|int|float|FHIRIntegerPrimitive $value = null,
-                                null|iterable $fhirComments = null)
-    {
-        parent::__construct(extension: $extension,
-                            id: $id,
-                            value: $value,
-                            fhirComments: $fhirComments);
-    }
-
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -116,7 +97,7 @@ class FHIRTotalResults extends FHIRInteger
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -179,14 +160,14 @@ class FHIRTotalResults extends FHIRInteger
         return $errs;
     }
 
-    /* class_default.php:202 */
+    /* class_default.php:201 */
     public function _nonValueFieldDefined(): bool
     {
         return isset($this->extension)
                || isset($this->id);
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -226,7 +207,8 @@ class FHIRTotalResults extends FHIRInteger
                 } else {
                     $type->setValue((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -238,23 +220,36 @@ class FHIRTotalResults extends FHIRInteger
     }
 
     /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger\FHIRTotalResults $type
+     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger\FHIRTotalResults
+     * @throws \Exception
      */
-    public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config,
-                                 null|ValueXMLLocationEnum $valueLocation = null): void
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
-        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
-        parent::xmlSerialize($xw, $config, $valueLocation);
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRTotalResults)) {
+            throw new \RuntimeException(sprintf(
+                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        parent::jsonUnserialize($json, $config, $type); 
+        return $type;
     }
-    /* class_default.php:238 */
+
+    /* class_default.php:236 */
     /**
      * @return string
      */
     public function __toString(): string
     {
-        return $this->_getFormattedValue();
+        return self::FHIR_TYPE_NAME;
     }
 }

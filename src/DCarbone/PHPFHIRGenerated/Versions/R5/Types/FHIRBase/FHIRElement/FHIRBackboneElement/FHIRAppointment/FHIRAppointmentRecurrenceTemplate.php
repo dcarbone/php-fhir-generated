@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_APPOINTMENT_DOT_RECURRENCE_TEMPLATE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TIMEZONE = 'timezone';
     public const FIELD_RECURRENCE_TYPE = 'recurrenceType';
     public const FIELD_LAST_OCCURRENCE_DATE = 'lastOccurrenceDate';
@@ -128,20 +128,20 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
     public const FIELD_EXCLUDING_RECURRENCE_ID = 'excludingRecurrenceId';
     public const FIELD_EXCLUDING_RECURRENCE_ID_EXT = '_excludingRecurrenceId';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_RECURRENCE_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_LAST_OCCURRENCE_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_OCCURRENCE_COUNT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -317,7 +317,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -326,7 +326,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -863,7 +863,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1051,7 +1051,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1106,7 +1106,8 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
                 $type->addExcludingDate(FHIRDate::xmlUnserialize($ce, $config));
             } else if (self::FIELD_EXCLUDING_RECURRENCE_ID === $cen) {
                 $type->addExcludingRecurrenceId(FHIRPositiveInt::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1336,9 +1337,9 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
             if (null !== ($val = $this->lastOccurrenceDate->getValue())) {
                 $out->lastOccurrenceDate = $val;
             }
-            $ext = $this->lastOccurrenceDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->lastOccurrenceDate->_nonValueFieldDefined()) {
+                $ext = $this->lastOccurrenceDate->jsonSerialize();
+                unset($ext->value);
                 $out->_lastOccurrenceDate = $ext;
             }
         }
@@ -1346,30 +1347,38 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
             if (null !== ($val = $this->occurrenceCount->getValue())) {
                 $out->occurrenceCount = $val;
             }
-            $ext = $this->occurrenceCount->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->occurrenceCount->_nonValueFieldDefined()) {
+                $ext = $this->occurrenceCount->jsonSerialize();
+                unset($ext->value);
                 $out->_occurrenceCount = $ext;
             }
         }
         if (isset($this->occurrenceDate) && [] !== $this->occurrenceDate) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->occurrenceDate as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->occurrenceDate = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_occurrenceDate = $exts;
             }
         }
@@ -1385,48 +1394,64 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
         if (isset($this->excludingDate) && [] !== $this->excludingDate) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->excludingDate as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->excludingDate = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_excludingDate = $exts;
             }
         }
         if (isset($this->excludingRecurrenceId) && [] !== $this->excludingRecurrenceId) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->excludingRecurrenceId as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->excludingRecurrenceId = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_excludingRecurrenceId = $exts;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

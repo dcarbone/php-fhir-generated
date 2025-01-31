@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,21 +96,19 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SPECIMEN;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_TYPE = 'type';
     public const FIELD_SOURCE = 'source';
     public const FIELD_SUBJECT = 'subject';
     public const FIELD_ACCESSION_IDENTIFIER = 'accessionIdentifier';
-    public const FIELD_ACCESSION_IDENTIFIER_EXT = '_accessionIdentifier';
     public const FIELD_RECEIVED_TIME = 'receivedTime';
     public const FIELD_RECEIVED_TIME_EXT = '_receivedTime';
     public const FIELD_COLLECTION = 'collection';
     public const FIELD_TREATMENT = 'treatment';
     public const FIELD_CONTAINER = 'container';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -123,13 +121,12 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_ACCESSION_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RECEIVED_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -293,7 +290,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -302,7 +299,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -311,7 +308,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -375,14 +372,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -542,11 +532,9 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
      * procedures.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $accessionIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAccessionIdentifier(null|FHIRString|FHIRIdentifier $accessionIdentifier,
-                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAccessionIdentifier(null|FHIRString|FHIRIdentifier $accessionIdentifier): self
     {
         if (null === $accessionIdentifier) {
             unset($this->accessionIdentifier);
@@ -556,33 +544,6 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
             $accessionIdentifier = new FHIRIdentifier(value: $accessionIdentifier);
         }
         $this->accessionIdentifier = $accessionIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_ACCESSION_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setAccessionIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the accessionIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAccessionIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ACCESSION_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the accessionIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAccessionIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ACCESSION_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -805,7 +766,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1022,7 +983,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1094,7 +1055,8 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
                 $type->addTreatment(FHIRSpecimenTreatment::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CONTAINER === $cen) {
                 $type->addContainer(FHIRSpecimenContainer::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1105,14 +1067,6 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
                 $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_ACCESSION_IDENTIFIER])) {
-            if (isset($type->accessionIdentifier)) {
-                $type->accessionIdentifier->setValue((string)$attributes[self::FIELD_ACCESSION_IDENTIFIER]);
-                $type->_setAccessionIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setAccessionIdentifier((string)$attributes[self::FIELD_ACCESSION_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_RECEIVED_TIME])) {
@@ -1151,15 +1105,12 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
             $rootOpened = true;
             $xw->openRootNode('Specimen', $this->_getSourceXMLNS());
         }
-        if (isset($this->accessionIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ACCESSION_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_ACCESSION_IDENTIFIER, $this->accessionIdentifier->_getFormattedValue());
-        }
         if (isset($this->receivedTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RECEIVED_TIME]) {
             $xw->writeAttribute(self::FIELD_RECEIVED_TIME, $this->receivedTime->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1182,11 +1133,9 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
             $this->subject->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->accessionIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ACCESSION_IDENTIFIER]
-                || $this->accessionIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->accessionIdentifier)) {
             $xw->startElement(self::FIELD_ACCESSION_IDENTIFIER);
-            $this->accessionIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ACCESSION_IDENTIFIER]);
+            $this->accessionIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->receivedTime)
@@ -1254,22 +1203,13 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
@@ -1287,15 +1227,8 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
             $type->setSubject(FHIRResourceReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
         }
-        if (isset($json[self::FIELD_ACCESSION_IDENTIFIER])
-            || isset($json[self::FIELD_ACCESSION_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_ACCESSION_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_ACCESSION_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_ACCESSION_IDENTIFIER] ?? null;
-            $type->setAccessionIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_ACCESSION_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_ACCESSION_IDENTIFIER]) || array_key_exists(self::FIELD_ACCESSION_IDENTIFIER, $json)) {
+            $type->setAccessionIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_ACCESSION_IDENTIFIER], $config));
         }
         if (isset($json[self::FIELD_RECEIVED_TIME])
             || isset($json[self::FIELD_RECEIVED_TIME_EXT])
@@ -1338,25 +1271,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->type)) {
             $out->type = $this->type;
@@ -1368,22 +1283,15 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
             $out->subject = $this->subject;
         }
         if (isset($this->accessionIdentifier)) {
-            if (null !== ($val = $this->accessionIdentifier->getValue())) {
-                $out->accessionIdentifier = $val;
-            }
-            $ext = $this->accessionIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_accessionIdentifier = $ext;
-            }
+            $out->accessionIdentifier = $this->accessionIdentifier;
         }
         if (isset($this->receivedTime)) {
             if (null !== ($val = $this->receivedTime->getValue())) {
                 $out->receivedTime = $val;
             }
-            $ext = $this->receivedTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->receivedTime->_nonValueFieldDefined()) {
+                $ext = $this->receivedTime->jsonSerialize();
+                unset($ext->value);
                 $out->_receivedTime = $ext;
             }
         }
@@ -1399,7 +1307,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

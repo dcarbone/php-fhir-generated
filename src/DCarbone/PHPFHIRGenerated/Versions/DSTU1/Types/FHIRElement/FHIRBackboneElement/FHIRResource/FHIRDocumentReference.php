@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,11 +104,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DOCUMENT_REFERENCE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_MASTER_IDENTIFIER = 'masterIdentifier';
-    public const FIELD_MASTER_IDENTIFIER_EXT = '_masterIdentifier';
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_SUBJECT = 'subject';
     public const FIELD_TYPE = 'type';
     public const FIELD_CLASS = 'class';
@@ -143,7 +141,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
     public const FIELD_SERVICE = 'service';
     public const FIELD_CONTEXT = 'context';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -171,9 +169,8 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_MASTER_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_POLICY_MANAGER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CREATED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INDEXED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -186,7 +183,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
         self::FIELD_LOCATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -582,7 +579,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -591,7 +588,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -600,7 +597,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -627,11 +624,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elsewhere to identify this version of the document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $masterIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMasterIdentifier(null|FHIRString|FHIRIdentifier $masterIdentifier,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMasterIdentifier(null|FHIRString|FHIRIdentifier $masterIdentifier): self
     {
         if (null === $masterIdentifier) {
             unset($this->masterIdentifier);
@@ -641,33 +636,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             $masterIdentifier = new FHIRIdentifier(value: $masterIdentifier);
         }
         $this->masterIdentifier = $masterIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_MASTER_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setMasterIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the masterIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMasterIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MASTER_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the masterIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMasterIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MASTER_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -737,14 +705,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1952,7 +1913,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -2376,7 +2337,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2478,7 +2439,8 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
                 $type->setService(FHIRDocumentReferenceService::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CONTEXT === $cen) {
                 $type->setContext(FHIRDocumentReferenceContext::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -2489,14 +2451,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
                 $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_MASTER_IDENTIFIER])) {
-            if (isset($type->masterIdentifier)) {
-                $type->masterIdentifier->setValue((string)$attributes[self::FIELD_MASTER_IDENTIFIER]);
-                $type->_setMasterIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setMasterIdentifier((string)$attributes[self::FIELD_MASTER_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_POLICY_MANAGER])) {
@@ -2607,9 +2561,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             $rootOpened = true;
             $xw->openRootNode('DocumentReference', $this->_getSourceXMLNS());
         }
-        if (isset($this->masterIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MASTER_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_MASTER_IDENTIFIER, $this->masterIdentifier->_getFormattedValue());
-        }
         if (isset($this->policyManager) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_POLICY_MANAGER]) {
             $xw->writeAttribute(self::FIELD_POLICY_MANAGER, $this->policyManager->_getFormattedValue());
         }
@@ -2641,15 +2592,13 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             $xw->writeAttribute(self::FIELD_LOCATION, $this->location->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->masterIdentifier)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_MASTER_IDENTIFIER]
-                || $this->masterIdentifier->_nonValueFieldDefined())) {
+        if (isset($this->masterIdentifier)) {
             $xw->startElement(self::FIELD_MASTER_IDENTIFIER);
-            $this->masterIdentifier->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_MASTER_IDENTIFIER]);
+            $this->masterIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2832,32 +2781,16 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_MASTER_IDENTIFIER])
-            || isset($json[self::FIELD_MASTER_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_MASTER_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_MASTER_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_MASTER_IDENTIFIER] ?? null;
-            $type->setMasterIdentifier(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_MASTER_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_MASTER_IDENTIFIER]) || array_key_exists(self::FIELD_MASTER_IDENTIFIER, $json)) {
+            $type->setMasterIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_MASTER_IDENTIFIER], $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
@@ -3039,35 +2972,10 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
     {
         $out = parent::jsonSerialize();
         if (isset($this->masterIdentifier)) {
-            if (null !== ($val = $this->masterIdentifier->getValue())) {
-                $out->masterIdentifier = $val;
-            }
-            $ext = $this->masterIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_masterIdentifier = $ext;
-            }
+            $out->masterIdentifier = $this->masterIdentifier;
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->subject)) {
             $out->subject = $this->subject;
@@ -3088,9 +2996,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             if (null !== ($val = $this->policyManager->getValue())) {
                 $out->policyManager = $val;
             }
-            $ext = $this->policyManager->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->policyManager->_nonValueFieldDefined()) {
+                $ext = $this->policyManager->jsonSerialize();
+                unset($ext->value);
                 $out->_policyManager = $ext;
             }
         }
@@ -3101,9 +3009,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             if (null !== ($val = $this->created->getValue())) {
                 $out->created = $val;
             }
-            $ext = $this->created->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->created->_nonValueFieldDefined()) {
+                $ext = $this->created->jsonSerialize();
+                unset($ext->value);
                 $out->_created = $ext;
             }
         }
@@ -3111,9 +3019,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             if (null !== ($val = $this->indexed->getValue())) {
                 $out->indexed = $val;
             }
-            $ext = $this->indexed->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->indexed->_nonValueFieldDefined()) {
+                $ext = $this->indexed->jsonSerialize();
+                unset($ext->value);
                 $out->_indexed = $ext;
             }
         }
@@ -3121,9 +3029,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -3137,9 +3045,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -3150,9 +3058,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             if (null !== ($val = $this->primaryLanguage->getValue())) {
                 $out->primaryLanguage = $val;
             }
-            $ext = $this->primaryLanguage->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->primaryLanguage->_nonValueFieldDefined()) {
+                $ext = $this->primaryLanguage->jsonSerialize();
+                unset($ext->value);
                 $out->_primaryLanguage = $ext;
             }
         }
@@ -3160,30 +3068,38 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             if (null !== ($val = $this->mimeType->getValue())) {
                 $out->mimeType = $val;
             }
-            $ext = $this->mimeType->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->mimeType->_nonValueFieldDefined()) {
+                $ext = $this->mimeType->jsonSerialize();
+                unset($ext->value);
                 $out->_mimeType = $ext;
             }
         }
         if (isset($this->format) && [] !== $this->format) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->format as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->format = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_format = $exts;
             }
         }
@@ -3191,9 +3107,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             if (null !== ($val = $this->size->getValue())) {
                 $out->size = $val;
             }
-            $ext = $this->size->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->size->_nonValueFieldDefined()) {
+                $ext = $this->size->jsonSerialize();
+                unset($ext->value);
                 $out->_size = $ext;
             }
         }
@@ -3201,9 +3117,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             if (null !== ($val = $this->hash->getValue())) {
                 $out->hash = $val;
             }
-            $ext = $this->hash->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->hash->_nonValueFieldDefined()) {
+                $ext = $this->hash->jsonSerialize();
+                unset($ext->value);
                 $out->_hash = $ext;
             }
         }
@@ -3211,9 +3127,9 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             if (null !== ($val = $this->location->getValue())) {
                 $out->location = $val;
             }
-            $ext = $this->location->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->location->_nonValueFieldDefined()) {
+                $ext = $this->location->jsonSerialize();
+                unset($ext->value);
                 $out->_location = $ext;
             }
         }
@@ -3226,7 +3142,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

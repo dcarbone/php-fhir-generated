@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,42 +114,33 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_SUB_DETAIL_1;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TRACE_NUMBER = 'traceNumber';
-    public const FIELD_TRACE_NUMBER_EXT = '_traceNumber';
     public const FIELD_REVENUE = 'revenue';
     public const FIELD_PRODUCT_OR_SERVICE = 'productOrService';
     public const FIELD_PRODUCT_OR_SERVICE_END = 'productOrServiceEnd';
     public const FIELD_MODIFIER = 'modifier';
     public const FIELD_PATIENT_PAID = 'patientPaid';
-    public const FIELD_PATIENT_PAID_EXT = '_patientPaid';
     public const FIELD_QUANTITY = 'quantity';
     public const FIELD_UNIT_PRICE = 'unitPrice';
-    public const FIELD_UNIT_PRICE_EXT = '_unitPrice';
     public const FIELD_FACTOR = 'factor';
     public const FIELD_FACTOR_EXT = '_factor';
     public const FIELD_TAX = 'tax';
-    public const FIELD_TAX_EXT = '_tax';
     public const FIELD_NET = 'net';
-    public const FIELD_NET_EXT = '_net';
     public const FIELD_NOTE_NUMBER = 'noteNumber';
     public const FIELD_NOTE_NUMBER_EXT = '_noteNumber';
     public const FIELD_REVIEW_OUTCOME = 'reviewOutcome';
     public const FIELD_ADJUDICATION = 'adjudication';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_PATIENT_PAID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_UNIT_PRICE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FACTOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_TAX => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_NET => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -328,7 +319,7 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $productOrServiceEnd
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $modifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $patientPaid
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $unitPrice
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tax
@@ -347,7 +338,7 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $productOrServiceEnd = null,
                                 null|iterable $modifier = null,
                                 null|FHIRDecimal|FHIRMoney $patientPaid = null,
-                                null|FHIRQuantity $quantity = null,
+                                null|FHIRDecimal|FHIRQuantity $quantity = null,
                                 null|FHIRDecimal|FHIRMoney $unitPrice = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
                                 null|FHIRDecimal|FHIRMoney $tax = null,
@@ -405,7 +396,7 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -414,7 +405,7 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -484,14 +475,7 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
             unset($this->traceNumber);
             return $this;
         }
-        $this->traceNumber = [];
-        foreach($traceNumber as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->traceNumber[] = $v;
-            } else {
-                $this->traceNumber[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->traceNumber = $traceNumber;
         return $this;
     }
 
@@ -715,11 +699,9 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      * services.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $patientPaid
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPatientPaid(null|FHIRDecimal|FHIRMoney $patientPaid,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPatientPaid(null|FHIRDecimal|FHIRMoney $patientPaid): self
     {
         if (null === $patientPaid) {
             unset($this->patientPaid);
@@ -729,33 +711,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
             $patientPaid = new FHIRMoney(value: $patientPaid);
         }
         $this->patientPaid = $patientPaid;
-        if ($this->_valueXMLLocations[self::FIELD_PATIENT_PAID] !== $valueXMLLocation) {
-            $this->_setPatientPaidValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the patientPaid element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPatientPaidValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PATIENT_PAID];
-    }
-
-    /**
-     * Set the location the "value" field of the patientPaid element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPatientPaidValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PATIENT_PAID] = $valueXMLLocation;
         return $this;
     }
 
@@ -784,14 +739,17 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      *
      * The number of repetitions of a service or product.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
+        }
+        if (!($quantity instanceof FHIRQuantity)) {
+            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -821,11 +779,9 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      * otherwise this is the total of the fees for the details of the group.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $unitPrice
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUnitPrice(null|FHIRDecimal|FHIRMoney $unitPrice,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUnitPrice(null|FHIRDecimal|FHIRMoney $unitPrice): self
     {
         if (null === $unitPrice) {
             unset($this->unitPrice);
@@ -835,33 +791,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
             $unitPrice = new FHIRMoney(value: $unitPrice);
         }
         $this->unitPrice = $unitPrice;
-        if ($this->_valueXMLLocations[self::FIELD_UNIT_PRICE] !== $valueXMLLocation) {
-            $this->_setUnitPriceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the unitPrice element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUnitPriceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_UNIT_PRICE];
-    }
-
-    /**
-     * Set the location the "value" field of the unitPrice element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUnitPriceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_UNIT_PRICE] = $valueXMLLocation;
         return $this;
     }
 
@@ -959,11 +888,9 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      * The total of taxes applicable for this product or service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tax
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTax(null|FHIRDecimal|FHIRMoney $tax,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTax(null|FHIRDecimal|FHIRMoney $tax): self
     {
         if (null === $tax) {
             unset($this->tax);
@@ -973,33 +900,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
             $tax = new FHIRMoney(value: $tax);
         }
         $this->tax = $tax;
-        if ($this->_valueXMLLocations[self::FIELD_TAX] !== $valueXMLLocation) {
-            $this->_setTaxValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the tax element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTaxValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TAX];
-    }
-
-    /**
-     * Set the location the "value" field of the tax element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTaxValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TAX] = $valueXMLLocation;
         return $this;
     }
 
@@ -1027,11 +927,9 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      * quantity * factor.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $net
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNet(null|FHIRDecimal|FHIRMoney $net,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setNet(null|FHIRDecimal|FHIRMoney $net): self
     {
         if (null === $net) {
             unset($this->net);
@@ -1041,33 +939,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
             $net = new FHIRMoney(value: $net);
         }
         $this->net = $net;
-        if ($this->_valueXMLLocations[self::FIELD_NET] !== $valueXMLLocation) {
-            $this->_setNetValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the net element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNetValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NET];
-    }
-
-    /**
-     * Set the location the "value" field of the net element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNetValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NET] = $valueXMLLocation;
         return $this;
     }
 
@@ -1246,7 +1117,7 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1477,7 +1348,7 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1540,26 +1411,11 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
                 $type->setReviewOutcome(FHIRExplanationOfBenefitReviewOutcome::xmlUnserialize($ce, $config));
             } else if (self::FIELD_ADJUDICATION === $cen) {
                 $type->addAdjudication(FHIRExplanationOfBenefitAdjudication::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_PATIENT_PAID])) {
-            if (isset($type->patientPaid)) {
-                $type->patientPaid->setValue((string)$attributes[self::FIELD_PATIENT_PAID]);
-                $type->_setPatientPaidValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setPatientPaid((string)$attributes[self::FIELD_PATIENT_PAID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_UNIT_PRICE])) {
-            if (isset($type->unitPrice)) {
-                $type->unitPrice->setValue((string)$attributes[self::FIELD_UNIT_PRICE]);
-                $type->_setUnitPriceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setUnitPrice((string)$attributes[self::FIELD_UNIT_PRICE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         if (isset($attributes[self::FIELD_FACTOR])) {
             if (isset($type->factor)) {
@@ -1567,22 +1423,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
                 $type->_setFactorValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setFactor((string)$attributes[self::FIELD_FACTOR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_TAX])) {
-            if (isset($type->tax)) {
-                $type->tax->setValue((string)$attributes[self::FIELD_TAX]);
-                $type->_setTaxValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setTax((string)$attributes[self::FIELD_TAX], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_NET])) {
-            if (isset($type->net)) {
-                $type->net->setValue((string)$attributes[self::FIELD_NET]);
-                $type->_setNetValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setNet((string)$attributes[self::FIELD_NET], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
@@ -1595,24 +1435,12 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->patientPaid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATIENT_PAID]) {
-            $xw->writeAttribute(self::FIELD_PATIENT_PAID, $this->patientPaid->_getFormattedValue());
-        }
-        if (isset($this->unitPrice) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_UNIT_PRICE]) {
-            $xw->writeAttribute(self::FIELD_UNIT_PRICE, $this->unitPrice->_getFormattedValue());
-        }
         if (isset($this->factor) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FACTOR]) {
             $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->_getFormattedValue());
         }
-        if (isset($this->tax) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TAX]) {
-            $xw->writeAttribute(self::FIELD_TAX, $this->tax->_getFormattedValue());
-        }
-        if (isset($this->net) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NET]) {
-            $xw->writeAttribute(self::FIELD_NET, $this->net->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->traceNumber) && [] !== $this->traceNumber) {
-            foreach($this->traceNumber as $v) {
+        if (isset($this->traceNumber)) {
+            foreach ($this->traceNumber as $v) {
                 $xw->startElement(self::FIELD_TRACE_NUMBER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1640,11 +1468,9 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->patientPaid)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PATIENT_PAID]
-                || $this->patientPaid->_nonValueFieldDefined())) {
+        if (isset($this->patientPaid)) {
             $xw->startElement(self::FIELD_PATIENT_PAID);
-            $this->patientPaid->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_PATIENT_PAID]);
+            $this->patientPaid->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->quantity)) {
@@ -1652,11 +1478,9 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
             $this->quantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->unitPrice)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_UNIT_PRICE]
-                || $this->unitPrice->_nonValueFieldDefined())) {
+        if (isset($this->unitPrice)) {
             $xw->startElement(self::FIELD_UNIT_PRICE);
-            $this->unitPrice->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_UNIT_PRICE]);
+            $this->unitPrice->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->factor)
@@ -1666,18 +1490,14 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
             $this->factor->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_FACTOR]);
             $xw->endElement();
         }
-        if (isset($this->tax)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_TAX]
-                || $this->tax->_nonValueFieldDefined())) {
+        if (isset($this->tax)) {
             $xw->startElement(self::FIELD_TAX);
-            $this->tax->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TAX]);
+            $this->tax->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->net)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_NET]
-                || $this->net->_nonValueFieldDefined())) {
+        if (isset($this->net)) {
             $xw->startElement(self::FIELD_NET);
-            $this->net->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_NET]);
+            $this->net->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->noteNumber) && [] !== $this->noteNumber) {
@@ -1723,22 +1543,13 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TRACE_NUMBER])
-            || isset($json[self::FIELD_TRACE_NUMBER_EXT])
-            || array_key_exists(self::FIELD_TRACE_NUMBER, $json)
-            || array_key_exists(self::FIELD_TRACE_NUMBER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_TRACE_NUMBER] ?? []);
-            $ext = (array)($json[self::FIELD_TRACE_NUMBER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_TRACE_NUMBER]) || array_key_exists(self::FIELD_TRACE_NUMBER, $json)) {
+            $vs = $json[self::FIELD_TRACE_NUMBER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addTraceNumber(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addTraceNumber(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REVENUE]) || array_key_exists(self::FIELD_REVENUE, $json)) {
@@ -1759,28 +1570,14 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
                 $type->addModifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PATIENT_PAID])
-            || isset($json[self::FIELD_PATIENT_PAID_EXT])
-            || array_key_exists(self::FIELD_PATIENT_PAID, $json)
-            || array_key_exists(self::FIELD_PATIENT_PAID_EXT, $json)) {
-            $value = $json[self::FIELD_PATIENT_PAID] ?? null;
-            $type->setPatientPaid(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_PATIENT_PAID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_PATIENT_PAID]) || array_key_exists(self::FIELD_PATIENT_PAID, $json)) {
+            $type->setPatientPaid(FHIRMoney::jsonUnserialize($json[self::FIELD_PATIENT_PAID], $config));
         }
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
             $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_UNIT_PRICE])
-            || isset($json[self::FIELD_UNIT_PRICE_EXT])
-            || array_key_exists(self::FIELD_UNIT_PRICE, $json)
-            || array_key_exists(self::FIELD_UNIT_PRICE_EXT, $json)) {
-            $value = $json[self::FIELD_UNIT_PRICE] ?? null;
-            $type->setUnitPrice(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_UNIT_PRICE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_UNIT_PRICE]) || array_key_exists(self::FIELD_UNIT_PRICE, $json)) {
+            $type->setUnitPrice(FHIRMoney::jsonUnserialize($json[self::FIELD_UNIT_PRICE], $config));
         }
         if (isset($json[self::FIELD_FACTOR])
             || isset($json[self::FIELD_FACTOR_EXT])
@@ -1792,25 +1589,11 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_TAX])
-            || isset($json[self::FIELD_TAX_EXT])
-            || array_key_exists(self::FIELD_TAX, $json)
-            || array_key_exists(self::FIELD_TAX_EXT, $json)) {
-            $value = $json[self::FIELD_TAX] ?? null;
-            $type->setTax(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_TAX_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_TAX]) || array_key_exists(self::FIELD_TAX, $json)) {
+            $type->setTax(FHIRMoney::jsonUnserialize($json[self::FIELD_TAX], $config));
         }
-        if (isset($json[self::FIELD_NET])
-            || isset($json[self::FIELD_NET_EXT])
-            || array_key_exists(self::FIELD_NET, $json)
-            || array_key_exists(self::FIELD_NET_EXT, $json)) {
-            $value = $json[self::FIELD_NET] ?? null;
-            $type->setNet(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_NET_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_NET]) || array_key_exists(self::FIELD_NET, $json)) {
+            $type->setNet(FHIRMoney::jsonUnserialize($json[self::FIELD_NET], $config));
         }
         if (isset($json[self::FIELD_NOTE_NUMBER])
             || isset($json[self::FIELD_NOTE_NUMBER_EXT])
@@ -1852,25 +1635,7 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->traceNumber) && [] !== $this->traceNumber) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->traceNumber as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->traceNumber = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_traceNumber = $exts;
-            }
+            $out->traceNumber = $this->traceNumber;
         }
         if (isset($this->revenue)) {
             $out->revenue = $this->revenue;
@@ -1885,76 +1650,56 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
             $out->modifier = $this->modifier;
         }
         if (isset($this->patientPaid)) {
-            if (null !== ($val = $this->patientPaid->getValue())) {
-                $out->patientPaid = $val;
-            }
-            $ext = $this->patientPaid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_patientPaid = $ext;
-            }
+            $out->patientPaid = $this->patientPaid;
         }
         if (isset($this->quantity)) {
             $out->quantity = $this->quantity;
         }
         if (isset($this->unitPrice)) {
-            if (null !== ($val = $this->unitPrice->getValue())) {
-                $out->unitPrice = $val;
-            }
-            $ext = $this->unitPrice->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_unitPrice = $ext;
-            }
+            $out->unitPrice = $this->unitPrice;
         }
         if (isset($this->factor)) {
             if (null !== ($val = $this->factor->getValue())) {
                 $out->factor = $val;
             }
-            $ext = $this->factor->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->factor->_nonValueFieldDefined()) {
+                $ext = $this->factor->jsonSerialize();
+                unset($ext->value);
                 $out->_factor = $ext;
             }
         }
         if (isset($this->tax)) {
-            if (null !== ($val = $this->tax->getValue())) {
-                $out->tax = $val;
-            }
-            $ext = $this->tax->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_tax = $ext;
-            }
+            $out->tax = $this->tax;
         }
         if (isset($this->net)) {
-            if (null !== ($val = $this->net->getValue())) {
-                $out->net = $val;
-            }
-            $ext = $this->net->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_net = $ext;
-            }
+            $out->net = $this->net;
         }
         if (isset($this->noteNumber) && [] !== $this->noteNumber) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->noteNumber as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->noteNumber = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_noteNumber = $exts;
             }
         }
@@ -1966,7 +1711,7 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

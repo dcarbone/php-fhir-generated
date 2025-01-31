@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_NAME = 'name';
     public const FIELD_NAME_EXT = '_name';
     public const FIELD_RELATIONSHIP = 'relationship';
@@ -103,7 +103,6 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     public const FIELD_DECEASED_BOOLEAN = 'deceasedBoolean';
     public const FIELD_DECEASED_BOOLEAN_EXT = '_deceasedBoolean';
     public const FIELD_DECEASED_AGE = 'deceasedAge';
-    public const FIELD_DECEASED_AGE_EXT = '_deceasedAge';
     public const FIELD_DECEASED_RANGE = 'deceasedRange';
     public const FIELD_DECEASED_DATE = 'deceasedDate';
     public const FIELD_DECEASED_DATE_EXT = '_deceasedDate';
@@ -113,7 +112,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     public const FIELD_NOTE_EXT = '_note';
     public const FIELD_CONDITION = 'condition';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -123,19 +122,18 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_BORN_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_BORN_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DECEASED_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DECEASED_AGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DECEASED_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DECEASED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NOTE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -356,7 +354,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -365,7 +363,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -730,11 +728,9 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * in this case the deceased property should still be set.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDeceasedAge(null|FHIRDecimal|FHIRAge $deceasedAge,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDeceasedAge(null|FHIRDecimal|FHIRAge $deceasedAge): self
     {
         if (null === $deceasedAge) {
             unset($this->deceasedAge);
@@ -744,33 +740,6 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             $deceasedAge = new FHIRAge(value: $deceasedAge);
         }
         $this->deceasedAge = $deceasedAge;
-        if ($this->_valueXMLLocations[self::FIELD_DECEASED_AGE] !== $valueXMLLocation) {
-            $this->_setDeceasedAgeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the deceasedAge element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDeceasedAgeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DECEASED_AGE];
-    }
-
-    /**
-     * Set the location the "value" field of the deceasedAge element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDeceasedAgeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DECEASED_AGE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1102,7 +1071,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1314,7 +1283,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1373,7 +1342,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                 $type->setNote(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CONDITION === $cen) {
                 $type->addCondition(FHIRFamilyHistoryCondition::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1408,14 +1378,6 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                 $type->_setDeceasedBooleanValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setDeceasedBoolean((string)$attributes[self::FIELD_DECEASED_BOOLEAN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_DECEASED_AGE])) {
-            if (isset($type->deceasedAge)) {
-                $type->deceasedAge->setValue((string)$attributes[self::FIELD_DECEASED_AGE]);
-                $type->_setDeceasedAgeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDeceasedAge((string)$attributes[self::FIELD_DECEASED_AGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_DECEASED_DATE])) {
@@ -1463,9 +1425,6 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         }
         if (isset($this->deceasedBoolean) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DECEASED_BOOLEAN]) {
             $xw->writeAttribute(self::FIELD_DECEASED_BOOLEAN, $this->deceasedBoolean->_getFormattedValue());
-        }
-        if (isset($this->deceasedAge) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DECEASED_AGE]) {
-            $xw->writeAttribute(self::FIELD_DECEASED_AGE, $this->deceasedAge->_getFormattedValue());
         }
         if (isset($this->deceasedDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DECEASED_DATE]) {
             $xw->writeAttribute(self::FIELD_DECEASED_DATE, $this->deceasedDate->_getFormattedValue());
@@ -1515,11 +1474,9 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             $this->deceasedBoolean->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DECEASED_BOOLEAN]);
             $xw->endElement();
         }
-        if (isset($this->deceasedAge)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DECEASED_AGE]
-                || $this->deceasedAge->_nonValueFieldDefined())) {
+        if (isset($this->deceasedAge)) {
             $xw->startElement(self::FIELD_DECEASED_AGE);
-            $this->deceasedAge->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DECEASED_AGE]);
+            $this->deceasedAge->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->deceasedRange)) {
@@ -1625,15 +1582,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_DECEASED_AGE])
-            || isset($json[self::FIELD_DECEASED_AGE_EXT])
-            || array_key_exists(self::FIELD_DECEASED_AGE, $json)
-            || array_key_exists(self::FIELD_DECEASED_AGE_EXT, $json)) {
-            $value = $json[self::FIELD_DECEASED_AGE] ?? null;
-            $type->setDeceasedAge(FHIRAge::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRAge::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_AGE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DECEASED_AGE]) || array_key_exists(self::FIELD_DECEASED_AGE, $json)) {
+            $type->setDeceasedAge(FHIRAge::jsonUnserialize($json[self::FIELD_DECEASED_AGE], $config));
         }
         if (isset($json[self::FIELD_DECEASED_RANGE]) || array_key_exists(self::FIELD_DECEASED_RANGE, $json)) {
             $type->setDeceasedRange(FHIRRange::jsonUnserialize($json[self::FIELD_DECEASED_RANGE], $config));
@@ -1690,9 +1640,9 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1706,9 +1656,9 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             if (null !== ($val = $this->bornDate->getValue())) {
                 $out->bornDate = $val;
             }
-            $ext = $this->bornDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->bornDate->_nonValueFieldDefined()) {
+                $ext = $this->bornDate->jsonSerialize();
+                unset($ext->value);
                 $out->_bornDate = $ext;
             }
         }
@@ -1716,9 +1666,9 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             if (null !== ($val = $this->bornString->getValue())) {
                 $out->bornString = $val;
             }
-            $ext = $this->bornString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->bornString->_nonValueFieldDefined()) {
+                $ext = $this->bornString->jsonSerialize();
+                unset($ext->value);
                 $out->_bornString = $ext;
             }
         }
@@ -1726,21 +1676,14 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             if (null !== ($val = $this->deceasedBoolean->getValue())) {
                 $out->deceasedBoolean = $val;
             }
-            $ext = $this->deceasedBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->deceasedBoolean->_nonValueFieldDefined()) {
+                $ext = $this->deceasedBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_deceasedBoolean = $ext;
             }
         }
         if (isset($this->deceasedAge)) {
-            if (null !== ($val = $this->deceasedAge->getValue())) {
-                $out->deceasedAge = $val;
-            }
-            $ext = $this->deceasedAge->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_deceasedAge = $ext;
-            }
+            $out->deceasedAge = $this->deceasedAge;
         }
         if (isset($this->deceasedRange)) {
             $out->deceasedRange = $this->deceasedRange;
@@ -1749,9 +1692,9 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             if (null !== ($val = $this->deceasedDate->getValue())) {
                 $out->deceasedDate = $val;
             }
-            $ext = $this->deceasedDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->deceasedDate->_nonValueFieldDefined()) {
+                $ext = $this->deceasedDate->jsonSerialize();
+                unset($ext->value);
                 $out->_deceasedDate = $ext;
             }
         }
@@ -1759,9 +1702,9 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             if (null !== ($val = $this->deceasedString->getValue())) {
                 $out->deceasedString = $val;
             }
-            $ext = $this->deceasedString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->deceasedString->_nonValueFieldDefined()) {
+                $ext = $this->deceasedString->jsonSerialize();
+                unset($ext->value);
                 $out->_deceasedString = $ext;
             }
         }
@@ -1769,9 +1712,9 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             if (null !== ($val = $this->note->getValue())) {
                 $out->note = $val;
             }
-            $ext = $this->note->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->note->_nonValueFieldDefined()) {
+                $ext = $this->note->jsonSerialize();
+                unset($ext->value);
                 $out->_note = $ext;
             }
         }
@@ -1780,7 +1723,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

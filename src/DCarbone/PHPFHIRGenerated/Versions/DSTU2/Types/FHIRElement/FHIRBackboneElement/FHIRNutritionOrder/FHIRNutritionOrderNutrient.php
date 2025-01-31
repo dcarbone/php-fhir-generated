@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,20 +87,18 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_ORDER_DOT_NUTRIENT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_MODIFIER = 'modifier';
     public const FIELD_AMOUNT = 'amount';
-    public const FIELD_AMOUNT_EXT = '_amount';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_AMOUNT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -148,7 +146,7 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -157,7 +155,7 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -208,11 +206,9 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement
      * The quantity of the specified nutrient to include in diet.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $amount
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAmount(null|FHIRDecimal|FHIRSimpleQuantity $amount,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAmount(null|FHIRDecimal|FHIRSimpleQuantity $amount): self
     {
         if (null === $amount) {
             unset($this->amount);
@@ -222,37 +218,10 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement
             $amount = new FHIRSimpleQuantity(value: $amount);
         }
         $this->amount = $amount;
-        if ($this->_valueXMLLocations[self::FIELD_AMOUNT] !== $valueXMLLocation) {
-            $this->_setAmountValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the amount element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAmountValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AMOUNT];
-    }
-
-    /**
-     * Set the location the "value" field of the amount element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAmountValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AMOUNT] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -339,7 +308,7 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -378,18 +347,11 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement
                 $type->setModifier(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_AMOUNT === $cen) {
                 $type->setAmount(FHIRSimpleQuantity::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_AMOUNT])) {
-            if (isset($type->amount)) {
-                $type->amount->setValue((string)$attributes[self::FIELD_AMOUNT]);
-                $type->_setAmountValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setAmount((string)$attributes[self::FIELD_AMOUNT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         return $type;
     }
@@ -401,20 +363,15 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->amount) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AMOUNT]) {
-            $xw->writeAttribute(self::FIELD_AMOUNT, $this->amount->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
         if (isset($this->modifier)) {
             $xw->startElement(self::FIELD_MODIFIER);
             $this->modifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->amount)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_AMOUNT]
-                || $this->amount->_nonValueFieldDefined())) {
+        if (isset($this->amount)) {
             $xw->startElement(self::FIELD_AMOUNT);
-            $this->amount->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_AMOUNT]);
+            $this->amount->xmlSerialize($xw, $config);
             $xw->endElement();
         }
     }
@@ -444,15 +401,8 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement
         if (isset($json[self::FIELD_MODIFIER]) || array_key_exists(self::FIELD_MODIFIER, $json)) {
             $type->setModifier(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MODIFIER], $config));
         }
-        if (isset($json[self::FIELD_AMOUNT])
-            || isset($json[self::FIELD_AMOUNT_EXT])
-            || array_key_exists(self::FIELD_AMOUNT, $json)
-            || array_key_exists(self::FIELD_AMOUNT_EXT, $json)) {
-            $value = $json[self::FIELD_AMOUNT] ?? null;
-            $type->setAmount(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_AMOUNT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
+            $type->setAmount(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_AMOUNT], $config));
         }
         return $type;
     }
@@ -467,18 +417,11 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement
             $out->modifier = $this->modifier;
         }
         if (isset($this->amount)) {
-            if (null !== ($val = $this->amount->getValue())) {
-                $out->amount = $val;
-            }
-            $ext = $this->amount->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_amount = $ext;
-            }
+            $out->amount = $this->amount;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

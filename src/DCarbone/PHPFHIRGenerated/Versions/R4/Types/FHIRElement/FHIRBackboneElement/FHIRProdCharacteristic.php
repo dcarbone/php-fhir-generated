@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,7 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
@@ -90,7 +91,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROD_CHARACTERISTIC;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_HEIGHT = 'height';
     public const FIELD_WIDTH = 'width';
     public const FIELD_DEPTH = 'depth';
@@ -106,15 +107,15 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     public const FIELD_IMAGE = 'image';
     public const FIELD_SCORING = 'scoring';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SHAPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -267,12 +268,12 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $height
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $width
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $depth
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $weight
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $nominalVolume
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $externalDiameter
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $height
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $width
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $depth
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $weight
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $nominalVolume
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $externalDiameter
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $shape
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] $color
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] $imprint
@@ -283,12 +284,12 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRQuantity $height = null,
-                                null|FHIRQuantity $width = null,
-                                null|FHIRQuantity $depth = null,
-                                null|FHIRQuantity $weight = null,
-                                null|FHIRQuantity $nominalVolume = null,
-                                null|FHIRQuantity $externalDiameter = null,
+                                null|FHIRDecimal|FHIRQuantity $height = null,
+                                null|FHIRDecimal|FHIRQuantity $width = null,
+                                null|FHIRDecimal|FHIRQuantity $depth = null,
+                                null|FHIRDecimal|FHIRQuantity $weight = null,
+                                null|FHIRDecimal|FHIRQuantity $nominalVolume = null,
+                                null|FHIRDecimal|FHIRQuantity $externalDiameter = null,
                                 null|string|FHIRStringPrimitive|FHIRString $shape = null,
                                 null|iterable $color = null,
                                 null|iterable $imprint = null,
@@ -335,7 +336,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -344,7 +345,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -376,14 +377,17 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $height
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $height
      * @return static
      */
-    public function setHeight(null|FHIRQuantity $height): self
+    public function setHeight(null|FHIRDecimal|FHIRQuantity $height): self
     {
         if (null === $height) {
             unset($this->height);
             return $this;
+        }
+        if (!($height instanceof FHIRQuantity)) {
+            $height = new FHIRQuantity(value: $height);
         }
         $this->height = $height;
         return $this;
@@ -420,14 +424,17 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $width
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $width
      * @return static
      */
-    public function setWidth(null|FHIRQuantity $width): self
+    public function setWidth(null|FHIRDecimal|FHIRQuantity $width): self
     {
         if (null === $width) {
             unset($this->width);
             return $this;
+        }
+        if (!($width instanceof FHIRQuantity)) {
+            $width = new FHIRQuantity(value: $width);
         }
         $this->width = $width;
         return $this;
@@ -464,14 +471,17 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $depth
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $depth
      * @return static
      */
-    public function setDepth(null|FHIRQuantity $depth): self
+    public function setDepth(null|FHIRDecimal|FHIRQuantity $depth): self
     {
         if (null === $depth) {
             unset($this->depth);
             return $this;
+        }
+        if (!($depth instanceof FHIRQuantity)) {
+            $depth = new FHIRQuantity(value: $depth);
         }
         $this->depth = $depth;
         return $this;
@@ -508,14 +518,17 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $weight
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $weight
      * @return static
      */
-    public function setWeight(null|FHIRQuantity $weight): self
+    public function setWeight(null|FHIRDecimal|FHIRQuantity $weight): self
     {
         if (null === $weight) {
             unset($this->weight);
             return $this;
+        }
+        if (!($weight instanceof FHIRQuantity)) {
+            $weight = new FHIRQuantity(value: $weight);
         }
         $this->weight = $weight;
         return $this;
@@ -552,14 +565,17 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * accordance with ISO 11240 and the resulting terminology The symbol and the
      * symbol identifier shall be used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $nominalVolume
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $nominalVolume
      * @return static
      */
-    public function setNominalVolume(null|FHIRQuantity $nominalVolume): self
+    public function setNominalVolume(null|FHIRDecimal|FHIRQuantity $nominalVolume): self
     {
         if (null === $nominalVolume) {
             unset($this->nominalVolume);
             return $this;
+        }
+        if (!($nominalVolume instanceof FHIRQuantity)) {
+            $nominalVolume = new FHIRQuantity(value: $nominalVolume);
         }
         $this->nominalVolume = $nominalVolume;
         return $this;
@@ -596,14 +612,17 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * accordance with ISO 11240 and the resulting terminology The symbol and the
      * symbol identifier shall be used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $externalDiameter
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $externalDiameter
      * @return static
      */
-    public function setExternalDiameter(null|FHIRQuantity $externalDiameter): self
+    public function setExternalDiameter(null|FHIRDecimal|FHIRQuantity $externalDiameter): self
     {
         if (null === $externalDiameter) {
             unset($this->externalDiameter);
             return $this;
+        }
+        if (!($externalDiameter instanceof FHIRQuantity)) {
+            $externalDiameter = new FHIRQuantity(value: $externalDiameter);
         }
         $this->externalDiameter = $externalDiameter;
         return $this;
@@ -933,7 +952,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1128,7 +1147,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1185,7 +1204,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $type->addImage(FHIRAttachment::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SCORING === $cen) {
                 $type->setScoring(FHIRCodeableConcept::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1406,51 +1426,67 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             if (null !== ($val = $this->shape->getValue())) {
                 $out->shape = $val;
             }
-            $ext = $this->shape->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->shape->_nonValueFieldDefined()) {
+                $ext = $this->shape->jsonSerialize();
+                unset($ext->value);
                 $out->_shape = $ext;
             }
         }
         if (isset($this->color) && [] !== $this->color) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->color as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->color = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_color = $exts;
             }
         }
         if (isset($this->imprint) && [] !== $this->imprint) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->imprint as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->imprint = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_imprint = $exts;
             }
         }
@@ -1462,7 +1498,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

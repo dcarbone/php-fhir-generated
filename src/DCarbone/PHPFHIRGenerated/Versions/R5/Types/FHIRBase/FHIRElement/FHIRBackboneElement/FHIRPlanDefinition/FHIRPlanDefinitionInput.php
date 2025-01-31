@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,23 +111,23 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PLAN_DEFINITION_DOT_INPUT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TITLE = 'title';
     public const FIELD_TITLE_EXT = '_title';
     public const FIELD_REQUIREMENT = 'requirement';
     public const FIELD_RELATED_DATA = 'relatedData';
     public const FIELD_RELATED_DATA_EXT = '_relatedData';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TITLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RELATED_DATA => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -199,7 +199,7 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -208,7 +208,7 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -387,7 +387,7 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -486,7 +486,7 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -527,7 +527,8 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
                 $type->setRequirement(FHIRDataRequirement::xmlUnserialize($ce, $config));
             } else if (self::FIELD_RELATED_DATA === $cen) {
                 $type->setRelatedData(FHIRId::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -644,9 +645,9 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
             if (null !== ($val = $this->title->getValue())) {
                 $out->title = $val;
             }
-            $ext = $this->title->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->title->_nonValueFieldDefined()) {
+                $ext = $this->title->jsonSerialize();
+                unset($ext->value);
                 $out->_title = $ext;
             }
         }
@@ -657,15 +658,15 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
             if (null !== ($val = $this->relatedData->getValue())) {
                 $out->relatedData = $val;
             }
-            $ext = $this->relatedData->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->relatedData->_nonValueFieldDefined()) {
+                $ext = $this->relatedData->jsonSerialize();
+                unset($ext->value);
                 $out->_relatedData = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,26 +107,25 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INSURANCE_PLAN_DOT_BENEFIT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_REQUIREMENT = 'requirement';
     public const FIELD_REQUIREMENT_EXT = '_requirement';
     public const FIELD_LIMIT = 'limit';
-    public const FIELD_LIMIT_EXT = '_limit';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_REQUIREMENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -191,7 +190,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -200,7 +199,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -360,18 +359,11 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             unset($this->limit);
             return $this;
         }
-        $this->limit = [];
-        foreach($limit as $v) {
-            if ($v instanceof FHIRInsurancePlanLimit) {
-                $this->limit[] = $v;
-            } else {
-                $this->limit[] = new FHIRInsurancePlanLimit(value: $v);
-            }
-        }
+        $this->limit = $limit;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -475,7 +467,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -516,7 +508,8 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                 $type->setRequirement(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_LIMIT === $cen) {
                 $type->addLimit(FHIRInsurancePlanLimit::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -555,8 +548,8 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             $this->requirement->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_REQUIREMENT]);
             $xw->endElement();
         }
-        if (isset($this->limit) && [] !== $this->limit) {
-            foreach($this->limit as $v) {
+        if (isset($this->limit)) {
+            foreach ($this->limit as $v) {
                 $xw->startElement(self::FIELD_LIMIT);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -599,22 +592,13 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_LIMIT])
-            || isset($json[self::FIELD_LIMIT_EXT])
-            || array_key_exists(self::FIELD_LIMIT, $json)
-            || array_key_exists(self::FIELD_LIMIT_EXT, $json)) {
-            $value = (array)($json[self::FIELD_LIMIT] ?? []);
-            $ext = (array)($json[self::FIELD_LIMIT_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_LIMIT]) || array_key_exists(self::FIELD_LIMIT, $json)) {
+            $vs = $json[self::FIELD_LIMIT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addLimit(FHIRInsurancePlanLimit::jsonUnserialize(
-                    [FHIRInsurancePlanLimit::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addLimit(FHIRInsurancePlanLimit::jsonUnserialize($v, $config));
             }
         }
         return $type;
@@ -633,36 +617,18 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             if (null !== ($val = $this->requirement->getValue())) {
                 $out->requirement = $val;
             }
-            $ext = $this->requirement->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->requirement->_nonValueFieldDefined()) {
+                $ext = $this->requirement->jsonSerialize();
+                unset($ext->value);
                 $out->_requirement = $ext;
             }
         }
         if (isset($this->limit) && [] !== $this->limit) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->limit as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->limit = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_limit = $exts;
-            }
+            $out->limit = $this->limit;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

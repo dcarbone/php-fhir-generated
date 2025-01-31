@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,14 +108,13 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_COST;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_SOURCE = 'source';
     public const FIELD_SOURCE_EXT = '_source';
     public const FIELD_COST = 'cost';
-    public const FIELD_COST_EXT = '_cost';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -125,13 +124,12 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SOURCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_COST => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -199,7 +197,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -208,7 +206,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -335,11 +333,9 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * The price of the medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $cost
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCost(null|FHIRDecimal|FHIRMoney $cost,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCost(null|FHIRDecimal|FHIRMoney $cost): self
     {
         if (null === $cost) {
             unset($this->cost);
@@ -349,37 +345,10 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
             $cost = new FHIRMoney(value: $cost);
         }
         $this->cost = $cost;
-        if ($this->_valueXMLLocations[self::FIELD_COST] !== $valueXMLLocation) {
-            $this->_setCostValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the cost element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCostValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COST];
-    }
-
-    /**
-     * Set the location the "value" field of the cost element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCostValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COST] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -488,7 +457,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -529,7 +498,8 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
                 $type->setSource(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_COST === $cen) {
                 $type->setCost(FHIRMoney::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -540,14 +510,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
                 $type->_setSourceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setSource((string)$attributes[self::FIELD_SOURCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_COST])) {
-            if (isset($type->cost)) {
-                $type->cost->setValue((string)$attributes[self::FIELD_COST]);
-                $type->_setCostValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setCost((string)$attributes[self::FIELD_COST], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         return $type;
@@ -563,9 +525,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
         if (isset($this->source) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SOURCE]) {
             $xw->writeAttribute(self::FIELD_SOURCE, $this->source->_getFormattedValue());
         }
-        if (isset($this->cost) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COST]) {
-            $xw->writeAttribute(self::FIELD_COST, $this->cost->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
             $xw->startElement(self::FIELD_TYPE);
@@ -579,11 +538,9 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
             $this->source->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_SOURCE]);
             $xw->endElement();
         }
-        if (isset($this->cost)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_COST]
-                || $this->cost->_nonValueFieldDefined())) {
+        if (isset($this->cost)) {
             $xw->startElement(self::FIELD_COST);
-            $this->cost->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_COST]);
+            $this->cost->xmlSerialize($xw, $config);
             $xw->endElement();
         }
     }
@@ -623,15 +580,8 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_COST])
-            || isset($json[self::FIELD_COST_EXT])
-            || array_key_exists(self::FIELD_COST, $json)
-            || array_key_exists(self::FIELD_COST_EXT, $json)) {
-            $value = $json[self::FIELD_COST] ?? null;
-            $type->setCost(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_COST_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_COST]) || array_key_exists(self::FIELD_COST, $json)) {
+            $type->setCost(FHIRMoney::jsonUnserialize($json[self::FIELD_COST], $config));
         }
         return $type;
     }
@@ -649,25 +599,18 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
             if (null !== ($val = $this->source->getValue())) {
                 $out->source = $val;
             }
-            $ext = $this->source->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->source->_nonValueFieldDefined()) {
+                $ext = $this->source->jsonSerialize();
+                unset($ext->value);
                 $out->_source = $ext;
             }
         }
         if (isset($this->cost)) {
-            if (null !== ($val = $this->cost->getValue())) {
-                $out->cost = $val;
-            }
-            $ext = $this->cost->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_cost = $ext;
-            }
+            $out->cost = $this->cost;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

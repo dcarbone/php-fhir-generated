@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CARE_PLAN_DOT_DETAIL;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CATEGORY = 'category';
     public const FIELD_CODE = 'code';
     public const FIELD_REASON_CODE = 'reasonCode';
@@ -118,13 +118,11 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
     public const FIELD_PRODUCT_CODEABLE_CONCEPT = 'productCodeableConcept';
     public const FIELD_PRODUCT_REFERENCE = 'productReference';
     public const FIELD_DAILY_AMOUNT = 'dailyAmount';
-    public const FIELD_DAILY_AMOUNT_EXT = '_dailyAmount';
     public const FIELD_QUANTITY = 'quantity';
-    public const FIELD_QUANTITY_EXT = '_quantity';
     public const FIELD_DESCRIPTION = 'description';
     public const FIELD_DESCRIPTION_EXT = '_description';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
@@ -134,17 +132,15 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PROHIBITED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SCHEDULED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DAILY_AMOUNT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_QUANTITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -446,7 +442,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -455,7 +451,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -1230,11 +1226,9 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * Identifies the quantity expected to be consumed in a given day.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $dailyAmount
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDailyAmount(null|FHIRDecimal|FHIRSimpleQuantity $dailyAmount,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDailyAmount(null|FHIRDecimal|FHIRSimpleQuantity $dailyAmount): self
     {
         if (null === $dailyAmount) {
             unset($this->dailyAmount);
@@ -1244,33 +1238,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $dailyAmount = new FHIRSimpleQuantity(value: $dailyAmount);
         }
         $this->dailyAmount = $dailyAmount;
-        if ($this->_valueXMLLocations[self::FIELD_DAILY_AMOUNT] !== $valueXMLLocation) {
-            $this->_setDailyAmountValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dailyAmount element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDailyAmountValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DAILY_AMOUNT];
-    }
-
-    /**
-     * Set the location the "value" field of the dailyAmount element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDailyAmountValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DAILY_AMOUNT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1290,11 +1257,9 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * subject.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRSimpleQuantity $quantity,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setQuantity(null|FHIRDecimal|FHIRSimpleQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
@@ -1304,33 +1269,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $quantity = new FHIRSimpleQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
-        if ($this->_valueXMLLocations[self::FIELD_QUANTITY] !== $valueXMLLocation) {
-            $this->_setQuantityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the quantity element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getQuantityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_QUANTITY];
-    }
-
-    /**
-     * Set the location the "value" field of the quantity element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setQuantityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_QUANTITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -1406,7 +1344,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1690,7 +1628,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1761,7 +1699,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                 $type->setQuantity(FHIRSimpleQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DESCRIPTION === $cen) {
                 $type->setDescription(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1790,22 +1729,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                 $type->setScheduledString((string)$attributes[self::FIELD_SCHEDULED_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_DAILY_AMOUNT])) {
-            if (isset($type->dailyAmount)) {
-                $type->dailyAmount->setValue((string)$attributes[self::FIELD_DAILY_AMOUNT]);
-                $type->_setDailyAmountValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDailyAmount((string)$attributes[self::FIELD_DAILY_AMOUNT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_QUANTITY])) {
-            if (isset($type->quantity)) {
-                $type->quantity->setValue((string)$attributes[self::FIELD_QUANTITY]);
-                $type->_setQuantityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setQuantity((string)$attributes[self::FIELD_QUANTITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             if (isset($type->description)) {
                 $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
@@ -1832,12 +1755,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         }
         if (isset($this->scheduledString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SCHEDULED_STRING]) {
             $xw->writeAttribute(self::FIELD_SCHEDULED_STRING, $this->scheduledString->_getFormattedValue());
-        }
-        if (isset($this->dailyAmount) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DAILY_AMOUNT]) {
-            $xw->writeAttribute(self::FIELD_DAILY_AMOUNT, $this->dailyAmount->_getFormattedValue());
-        }
-        if (isset($this->quantity) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_QUANTITY]) {
-            $xw->writeAttribute(self::FIELD_QUANTITY, $this->quantity->_getFormattedValue());
         }
         if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
             $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
@@ -1932,18 +1849,14 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $this->productReference->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->dailyAmount)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DAILY_AMOUNT]
-                || $this->dailyAmount->_nonValueFieldDefined())) {
+        if (isset($this->dailyAmount)) {
             $xw->startElement(self::FIELD_DAILY_AMOUNT);
-            $this->dailyAmount->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DAILY_AMOUNT]);
+            $this->dailyAmount->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->quantity)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_QUANTITY]
-                || $this->quantity->_nonValueFieldDefined())) {
+        if (isset($this->quantity)) {
             $xw->startElement(self::FIELD_QUANTITY);
-            $this->quantity->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_QUANTITY]);
+            $this->quantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->description)
@@ -2067,25 +1980,11 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         if (isset($json[self::FIELD_PRODUCT_REFERENCE]) || array_key_exists(self::FIELD_PRODUCT_REFERENCE, $json)) {
             $type->setProductReference(FHIRReference::jsonUnserialize($json[self::FIELD_PRODUCT_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_DAILY_AMOUNT])
-            || isset($json[self::FIELD_DAILY_AMOUNT_EXT])
-            || array_key_exists(self::FIELD_DAILY_AMOUNT, $json)
-            || array_key_exists(self::FIELD_DAILY_AMOUNT_EXT, $json)) {
-            $value = $json[self::FIELD_DAILY_AMOUNT] ?? null;
-            $type->setDailyAmount(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_DAILY_AMOUNT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DAILY_AMOUNT]) || array_key_exists(self::FIELD_DAILY_AMOUNT, $json)) {
+            $type->setDailyAmount(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_DAILY_AMOUNT], $config));
         }
-        if (isset($json[self::FIELD_QUANTITY])
-            || isset($json[self::FIELD_QUANTITY_EXT])
-            || array_key_exists(self::FIELD_QUANTITY, $json)
-            || array_key_exists(self::FIELD_QUANTITY_EXT, $json)) {
-            $value = $json[self::FIELD_QUANTITY] ?? null;
-            $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_QUANTITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
+            $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_DESCRIPTION])
             || isset($json[self::FIELD_DESCRIPTION_EXT])
@@ -2125,9 +2024,9 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -2138,9 +2037,9 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             if (null !== ($val = $this->prohibited->getValue())) {
                 $out->prohibited = $val;
             }
-            $ext = $this->prohibited->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->prohibited->_nonValueFieldDefined()) {
+                $ext = $this->prohibited->jsonSerialize();
+                unset($ext->value);
                 $out->_prohibited = $ext;
             }
         }
@@ -2154,9 +2053,9 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             if (null !== ($val = $this->scheduledString->getValue())) {
                 $out->scheduledString = $val;
             }
-            $ext = $this->scheduledString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->scheduledString->_nonValueFieldDefined()) {
+                $ext = $this->scheduledString->jsonSerialize();
+                unset($ext->value);
                 $out->_scheduledString = $ext;
             }
         }
@@ -2173,38 +2072,24 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $out->productReference = $this->productReference;
         }
         if (isset($this->dailyAmount)) {
-            if (null !== ($val = $this->dailyAmount->getValue())) {
-                $out->dailyAmount = $val;
-            }
-            $ext = $this->dailyAmount->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_dailyAmount = $ext;
-            }
+            $out->dailyAmount = $this->dailyAmount;
         }
         if (isset($this->quantity)) {
-            if (null !== ($val = $this->quantity->getValue())) {
-                $out->quantity = $val;
-            }
-            $ext = $this->quantity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_quantity = $ext;
-            }
+            $out->quantity = $this->quantity;
         }
         if (isset($this->description)) {
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

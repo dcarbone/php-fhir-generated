@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,6 +99,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricCategory;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricOperationalStatus;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
@@ -127,9 +128,8 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_METRIC;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_TYPE = 'type';
     public const FIELD_UNIT = 'unit';
     public const FIELD_DEVICE = 'device';
@@ -142,7 +142,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
     public const FIELD_MEASUREMENT_FREQUENCY = 'measurementFrequency';
     public const FIELD_CALIBRATION = 'calibration';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -155,14 +155,14 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_OPERATIONAL_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_COLOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CATEGORY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -284,7 +284,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceMetricOperationalStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive\FHIRColorCodesOrRGBEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRColorCodesOrRGB $color
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceMetricCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricCategory $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measurementFrequency
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measurementFrequency
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration[] $calibration
      * @param null|string[] $fhirComments
      */
@@ -303,7 +303,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
                                 null|string|FHIRDeviceMetricOperationalStatusEnum|FHIRDeviceMetricOperationalStatus $operationalStatus = null,
                                 null|string|FHIRColorCodesOrRGBEnum|FHIRColorCodesOrRGB $color = null,
                                 null|string|FHIRDeviceMetricCategoryEnum|FHIRDeviceMetricCategory $category = null,
-                                null|FHIRQuantity $measurementFrequency = null,
+                                null|FHIRDecimal|FHIRQuantity $measurementFrequency = null,
                                 null|iterable $calibration = null,
                                 null|iterable $fhirComments = null)
     {
@@ -345,7 +345,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -354,7 +354,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -363,7 +363,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -433,14 +433,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -787,14 +780,17 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * the measurement frequency, if the device does not update the published observed
      * value with the same frequency as it was measured.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measurementFrequency
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measurementFrequency
      * @return static
      */
-    public function setMeasurementFrequency(null|FHIRQuantity $measurementFrequency): self
+    public function setMeasurementFrequency(null|FHIRDecimal|FHIRQuantity $measurementFrequency): self
     {
         if (null === $measurementFrequency) {
             unset($this->measurementFrequency);
             return $this;
+        }
+        if (!($measurementFrequency instanceof FHIRQuantity)) {
+            $measurementFrequency = new FHIRQuantity(value: $measurementFrequency);
         }
         $this->measurementFrequency = $measurementFrequency;
         return $this;
@@ -861,7 +857,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1107,7 +1103,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1178,7 +1174,8 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
                 $type->setMeasurementFrequency(FHIRQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CALIBRATION === $cen) {
                 $type->addCalibration(FHIRDeviceMetricCalibration::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -1266,8 +1263,8 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             $xw->writeAttribute(self::FIELD_CATEGORY, $this->category->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1360,22 +1357,13 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
@@ -1439,25 +1427,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->type)) {
             $out->type = $this->type;
@@ -1472,9 +1442,9 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             if (null !== ($val = $this->operationalStatus->getValue())) {
                 $out->operationalStatus = $val;
             }
-            $ext = $this->operationalStatus->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->operationalStatus->_nonValueFieldDefined()) {
+                $ext = $this->operationalStatus->jsonSerialize();
+                unset($ext->value);
                 $out->_operationalStatus = $ext;
             }
         }
@@ -1482,9 +1452,9 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             if (null !== ($val = $this->color->getValue())) {
                 $out->color = $val;
             }
-            $ext = $this->color->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->color->_nonValueFieldDefined()) {
+                $ext = $this->color->jsonSerialize();
+                unset($ext->value);
                 $out->_color = $ext;
             }
         }
@@ -1492,9 +1462,9 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             if (null !== ($val = $this->category->getValue())) {
                 $out->category = $val;
             }
-            $ext = $this->category->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->category->_nonValueFieldDefined()) {
+                $ext = $this->category->jsonSerialize();
+                unset($ext->value);
                 $out->_category = $ext;
             }
         }
@@ -1507,7 +1477,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

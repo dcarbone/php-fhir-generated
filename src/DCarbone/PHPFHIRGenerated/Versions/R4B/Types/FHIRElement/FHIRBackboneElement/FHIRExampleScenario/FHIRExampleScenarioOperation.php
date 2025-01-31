@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_OPERATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_NUMBER = 'number';
     public const FIELD_NUMBER_EXT = '_number';
     public const FIELD_TYPE = 'type';
@@ -129,14 +129,14 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
     public const FIELD_REQUEST = 'request';
     public const FIELD_RESPONSE = 'response';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_NUMBER => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -148,7 +148,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
         self::FIELD_RECEIVER_ACTIVE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -317,7 +317,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -326,7 +326,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -919,7 +919,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1107,7 +1107,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1162,7 +1162,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
                 $type->setRequest(FHIRExampleScenarioContainedInstance::xmlUnserialize($ce, $config));
             } else if (self::FIELD_RESPONSE === $cen) {
                 $type->setResponse(FHIRExampleScenarioContainedInstance::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1455,9 +1456,9 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             if (null !== ($val = $this->number->getValue())) {
                 $out->number = $val;
             }
-            $ext = $this->number->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->number->_nonValueFieldDefined()) {
+                $ext = $this->number->jsonSerialize();
+                unset($ext->value);
                 $out->_number = $ext;
             }
         }
@@ -1465,9 +1466,9 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -1475,9 +1476,9 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1485,9 +1486,9 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             if (null !== ($val = $this->initiator->getValue())) {
                 $out->initiator = $val;
             }
-            $ext = $this->initiator->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->initiator->_nonValueFieldDefined()) {
+                $ext = $this->initiator->jsonSerialize();
+                unset($ext->value);
                 $out->_initiator = $ext;
             }
         }
@@ -1495,9 +1496,9 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             if (null !== ($val = $this->receiver->getValue())) {
                 $out->receiver = $val;
             }
-            $ext = $this->receiver->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->receiver->_nonValueFieldDefined()) {
+                $ext = $this->receiver->jsonSerialize();
+                unset($ext->value);
                 $out->_receiver = $ext;
             }
         }
@@ -1505,9 +1506,9 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -1515,9 +1516,9 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             if (null !== ($val = $this->initiatorActive->getValue())) {
                 $out->initiatorActive = $val;
             }
-            $ext = $this->initiatorActive->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->initiatorActive->_nonValueFieldDefined()) {
+                $ext = $this->initiatorActive->jsonSerialize();
+                unset($ext->value);
                 $out->_initiatorActive = $ext;
             }
         }
@@ -1525,9 +1526,9 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             if (null !== ($val = $this->receiverActive->getValue())) {
                 $out->receiverActive = $val;
             }
-            $ext = $this->receiverActive->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->receiverActive->_nonValueFieldDefined()) {
+                $ext = $this->receiverActive->jsonSerialize();
+                unset($ext->value);
                 $out->_receiverActive = $ext;
             }
         }
@@ -1539,7 +1540,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

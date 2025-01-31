@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,27 +88,26 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_SUB_DETAIL;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SUB_DETAIL_SEQUENCE = 'subDetailSequence';
     public const FIELD_SUB_DETAIL_SEQUENCE_EXT = '_subDetailSequence';
     public const FIELD_NOTE_NUMBER = 'noteNumber';
     public const FIELD_NOTE_NUMBER_EXT = '_noteNumber';
     public const FIELD_ADJUDICATION = 'adjudication';
-    public const FIELD_ADJUDICATION_EXT = '_adjudication';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_SUB_DETAIL_SEQUENCE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SUB_DETAIL_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -174,7 +173,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -183,7 +182,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -387,18 +386,11 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
             unset($this->adjudication);
             return $this;
         }
-        $this->adjudication = [];
-        foreach($adjudication as $v) {
-            if ($v instanceof FHIRClaimResponseAdjudication) {
-                $this->adjudication[] = $v;
-            } else {
-                $this->adjudication[] = new FHIRClaimResponseAdjudication(value: $v);
-            }
-        }
+        $this->adjudication = $adjudication;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -502,7 +494,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -543,7 +535,8 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
                 $type->addNoteNumber(FHIRPositiveInt::xmlUnserialize($ce, $config));
             } else if (self::FIELD_ADJUDICATION === $cen) {
                 $type->addAdjudication(FHIRClaimResponseAdjudication::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -584,8 +577,8 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->adjudication) && [] !== $this->adjudication) {
-            foreach($this->adjudication as $v) {
+        if (isset($this->adjudication)) {
+            foreach ($this->adjudication as $v) {
                 $xw->startElement(self::FIELD_ADJUDICATION);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -643,22 +636,13 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
                 ));
             }
         }
-        if (isset($json[self::FIELD_ADJUDICATION])
-            || isset($json[self::FIELD_ADJUDICATION_EXT])
-            || array_key_exists(self::FIELD_ADJUDICATION, $json)
-            || array_key_exists(self::FIELD_ADJUDICATION_EXT, $json)) {
-            $value = (array)($json[self::FIELD_ADJUDICATION] ?? []);
-            $ext = (array)($json[self::FIELD_ADJUDICATION_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_ADJUDICATION]) || array_key_exists(self::FIELD_ADJUDICATION, $json)) {
+            $vs = $json[self::FIELD_ADJUDICATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addAdjudication(FHIRClaimResponseAdjudication::jsonUnserialize(
-                    [FHIRClaimResponseAdjudication::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addAdjudication(FHIRClaimResponseAdjudication::jsonUnserialize($v, $config));
             }
         }
         return $type;
@@ -674,57 +658,47 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
             if (null !== ($val = $this->subDetailSequence->getValue())) {
                 $out->subDetailSequence = $val;
             }
-            $ext = $this->subDetailSequence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->subDetailSequence->_nonValueFieldDefined()) {
+                $ext = $this->subDetailSequence->jsonSerialize();
+                unset($ext->value);
                 $out->_subDetailSequence = $ext;
             }
         }
         if (isset($this->noteNumber) && [] !== $this->noteNumber) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->noteNumber as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->noteNumber = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_noteNumber = $exts;
             }
         }
         if (isset($this->adjudication) && [] !== $this->adjudication) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->adjudication as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->adjudication = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_adjudication = $exts;
-            }
+            $out->adjudication = $this->adjudication;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MESSAGE_HEADER;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TIMESTAMP = 'timestamp';
     public const FIELD_TIMESTAMP_EXT = '_timestamp';
     public const FIELD_EVENT = 'event';
@@ -120,7 +120,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
     public const FIELD_REASON = 'reason';
     public const FIELD_DATA = 'data';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TIMESTAMP => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -133,12 +133,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TIMESTAMP => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
@@ -357,7 +357,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -366,7 +366,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -375,7 +375,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
@@ -880,7 +880,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1150,7 +1150,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1225,7 +1225,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
                 $type->setReason(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DATA === $cen) {
                 $type->addData(FHIRReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -1456,9 +1457,9 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             if (null !== ($val = $this->timestamp->getValue())) {
                 $out->timestamp = $val;
             }
-            $ext = $this->timestamp->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->timestamp->_nonValueFieldDefined()) {
+                $ext = $this->timestamp->jsonSerialize();
+                unset($ext->value);
                 $out->_timestamp = $ext;
             }
         }
@@ -1495,7 +1496,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

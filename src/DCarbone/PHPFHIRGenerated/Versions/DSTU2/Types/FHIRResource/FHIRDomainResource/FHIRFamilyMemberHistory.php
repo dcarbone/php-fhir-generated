@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,9 +115,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_FAMILY_MEMBER_HISTORY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_PATIENT = 'patient';
     public const FIELD_DATE = 'date';
     public const FIELD_DATE_EXT = '_date';
@@ -134,14 +133,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     public const FIELD_BORN_STRING = 'bornString';
     public const FIELD_BORN_STRING_EXT = '_bornString';
     public const FIELD_AGE_QUANTITY = 'ageQuantity';
-    public const FIELD_AGE_QUANTITY_EXT = '_ageQuantity';
     public const FIELD_AGE_RANGE = 'ageRange';
     public const FIELD_AGE_STRING = 'ageString';
     public const FIELD_AGE_STRING_EXT = '_ageString';
     public const FIELD_DECEASED_BOOLEAN = 'deceasedBoolean';
     public const FIELD_DECEASED_BOOLEAN_EXT = '_deceasedBoolean';
     public const FIELD_DECEASED_QUANTITY = 'deceasedQuantity';
-    public const FIELD_DECEASED_QUANTITY_EXT = '_deceasedQuantity';
     public const FIELD_DECEASED_RANGE = 'deceasedRange';
     public const FIELD_DECEASED_DATE = 'deceasedDate';
     public const FIELD_DECEASED_DATE_EXT = '_deceasedDate';
@@ -150,7 +147,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     public const FIELD_NOTE = 'note';
     public const FIELD_CONDITION = 'condition';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_PATIENT => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -163,7 +160,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -171,15 +168,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         self::FIELD_GENDER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_BORN_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_BORN_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_AGE_QUANTITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_AGE_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DECEASED_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_DECEASED_QUANTITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DECEASED_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DECEASED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -531,7 +526,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -540,7 +535,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -549,7 +544,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -622,14 +617,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1163,11 +1151,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * history is recorded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRAge $ageQuantity
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAgeQuantity(null|FHIRDecimal|FHIRAge $ageQuantity,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAgeQuantity(null|FHIRDecimal|FHIRAge $ageQuantity): self
     {
         if (null === $ageQuantity) {
             unset($this->ageQuantity);
@@ -1177,33 +1163,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             $ageQuantity = new FHIRAge(value: $ageQuantity);
         }
         $this->ageQuantity = $ageQuantity;
-        if ($this->_valueXMLLocations[self::FIELD_AGE_QUANTITY] !== $valueXMLLocation) {
-            $this->_setAgeQuantityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the ageQuantity element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAgeQuantityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AGE_QUANTITY];
-    }
-
-    /**
-     * Set the location the "value" field of the ageQuantity element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAgeQuantityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AGE_QUANTITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -1393,11 +1352,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * death for the family member history record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedQuantity
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDeceasedQuantity(null|FHIRDecimal|FHIRAge $deceasedQuantity,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDeceasedQuantity(null|FHIRDecimal|FHIRAge $deceasedQuantity): self
     {
         if (null === $deceasedQuantity) {
             unset($this->deceasedQuantity);
@@ -1407,33 +1364,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             $deceasedQuantity = new FHIRAge(value: $deceasedQuantity);
         }
         $this->deceasedQuantity = $deceasedQuantity;
-        if ($this->_valueXMLLocations[self::FIELD_DECEASED_QUANTITY] !== $valueXMLLocation) {
-            $this->_setDeceasedQuantityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the deceasedQuantity element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDeceasedQuantityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DECEASED_QUANTITY];
-    }
-
-    /**
-     * Set the location the "value" field of the deceasedQuantity element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDeceasedQuantityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DECEASED_QUANTITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -1721,7 +1651,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -2099,7 +2029,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2192,7 +2122,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $type->setNote(FHIRAnnotation::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CONDITION === $cen) {
                 $type->addCondition(FHIRFamilyMemberHistoryCondition::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -2266,14 +2197,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $type->setBornString((string)$attributes[self::FIELD_BORN_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
-        if (isset($attributes[self::FIELD_AGE_QUANTITY])) {
-            if (isset($type->ageQuantity)) {
-                $type->ageQuantity->setValue((string)$attributes[self::FIELD_AGE_QUANTITY]);
-                $type->_setAgeQuantityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setAgeQuantity((string)$attributes[self::FIELD_AGE_QUANTITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
         if (isset($attributes[self::FIELD_AGE_STRING])) {
             if (isset($type->ageString)) {
                 $type->ageString->setValue((string)$attributes[self::FIELD_AGE_STRING]);
@@ -2288,14 +2211,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $type->_setDeceasedBooleanValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setDeceasedBoolean((string)$attributes[self::FIELD_DECEASED_BOOLEAN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_DECEASED_QUANTITY])) {
-            if (isset($type->deceasedQuantity)) {
-                $type->deceasedQuantity->setValue((string)$attributes[self::FIELD_DECEASED_QUANTITY]);
-                $type->_setDeceasedQuantityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setDeceasedQuantity((string)$attributes[self::FIELD_DECEASED_QUANTITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_DECEASED_DATE])) {
@@ -2360,17 +2275,11 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         if (isset($this->bornString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_BORN_STRING]) {
             $xw->writeAttribute(self::FIELD_BORN_STRING, $this->bornString->_getFormattedValue());
         }
-        if (isset($this->ageQuantity) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AGE_QUANTITY]) {
-            $xw->writeAttribute(self::FIELD_AGE_QUANTITY, $this->ageQuantity->_getFormattedValue());
-        }
         if (isset($this->ageString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AGE_STRING]) {
             $xw->writeAttribute(self::FIELD_AGE_STRING, $this->ageString->_getFormattedValue());
         }
         if (isset($this->deceasedBoolean) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DECEASED_BOOLEAN]) {
             $xw->writeAttribute(self::FIELD_DECEASED_BOOLEAN, $this->deceasedBoolean->_getFormattedValue());
-        }
-        if (isset($this->deceasedQuantity) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DECEASED_QUANTITY]) {
-            $xw->writeAttribute(self::FIELD_DECEASED_QUANTITY, $this->deceasedQuantity->_getFormattedValue());
         }
         if (isset($this->deceasedDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DECEASED_DATE]) {
             $xw->writeAttribute(self::FIELD_DECEASED_DATE, $this->deceasedDate->_getFormattedValue());
@@ -2379,8 +2288,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             $xw->writeAttribute(self::FIELD_DECEASED_STRING, $this->deceasedString->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -2443,11 +2352,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             $this->bornString->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_BORN_STRING]);
             $xw->endElement();
         }
-        if (isset($this->ageQuantity)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_AGE_QUANTITY]
-                || $this->ageQuantity->_nonValueFieldDefined())) {
+        if (isset($this->ageQuantity)) {
             $xw->startElement(self::FIELD_AGE_QUANTITY);
-            $this->ageQuantity->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_AGE_QUANTITY]);
+            $this->ageQuantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->ageRange)) {
@@ -2469,11 +2376,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             $this->deceasedBoolean->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DECEASED_BOOLEAN]);
             $xw->endElement();
         }
-        if (isset($this->deceasedQuantity)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_DECEASED_QUANTITY]
-                || $this->deceasedQuantity->_nonValueFieldDefined())) {
+        if (isset($this->deceasedQuantity)) {
             $xw->startElement(self::FIELD_DECEASED_QUANTITY);
-            $this->deceasedQuantity->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_DECEASED_QUANTITY]);
+            $this->deceasedQuantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->deceasedRange)) {
@@ -2546,22 +2451,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PATIENT]) || array_key_exists(self::FIELD_PATIENT, $json)) {
@@ -2633,15 +2529,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_AGE_QUANTITY])
-            || isset($json[self::FIELD_AGE_QUANTITY_EXT])
-            || array_key_exists(self::FIELD_AGE_QUANTITY, $json)
-            || array_key_exists(self::FIELD_AGE_QUANTITY_EXT, $json)) {
-            $value = $json[self::FIELD_AGE_QUANTITY] ?? null;
-            $type->setAgeQuantity(FHIRAge::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRAge::FIELD_VALUE => $value]) + ($json[self::FIELD_AGE_QUANTITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_AGE_QUANTITY]) || array_key_exists(self::FIELD_AGE_QUANTITY, $json)) {
+            $type->setAgeQuantity(FHIRAge::jsonUnserialize($json[self::FIELD_AGE_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_AGE_RANGE]) || array_key_exists(self::FIELD_AGE_RANGE, $json)) {
             $type->setAgeRange(FHIRRange::jsonUnserialize($json[self::FIELD_AGE_RANGE], $config));
@@ -2666,15 +2555,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_DECEASED_QUANTITY])
-            || isset($json[self::FIELD_DECEASED_QUANTITY_EXT])
-            || array_key_exists(self::FIELD_DECEASED_QUANTITY, $json)
-            || array_key_exists(self::FIELD_DECEASED_QUANTITY_EXT, $json)) {
-            $value = $json[self::FIELD_DECEASED_QUANTITY] ?? null;
-            $type->setDeceasedQuantity(FHIRAge::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRAge::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_QUANTITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_DECEASED_QUANTITY]) || array_key_exists(self::FIELD_DECEASED_QUANTITY, $json)) {
+            $type->setDeceasedQuantity(FHIRAge::jsonUnserialize($json[self::FIELD_DECEASED_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_DECEASED_RANGE]) || array_key_exists(self::FIELD_DECEASED_RANGE, $json)) {
             $type->setDeceasedRange(FHIRRange::jsonUnserialize($json[self::FIELD_DECEASED_RANGE], $config));
@@ -2721,25 +2603,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->patient)) {
             $out->patient = $this->patient;
@@ -2748,9 +2612,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->date->getValue())) {
                 $out->date = $val;
             }
-            $ext = $this->date->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->date->_nonValueFieldDefined()) {
+                $ext = $this->date->jsonSerialize();
+                unset($ext->value);
                 $out->_date = $ext;
             }
         }
@@ -2758,9 +2622,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -2768,9 +2632,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -2781,9 +2645,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->gender->getValue())) {
                 $out->gender = $val;
             }
-            $ext = $this->gender->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->gender->_nonValueFieldDefined()) {
+                $ext = $this->gender->jsonSerialize();
+                unset($ext->value);
                 $out->_gender = $ext;
             }
         }
@@ -2794,9 +2658,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->bornDate->getValue())) {
                 $out->bornDate = $val;
             }
-            $ext = $this->bornDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->bornDate->_nonValueFieldDefined()) {
+                $ext = $this->bornDate->jsonSerialize();
+                unset($ext->value);
                 $out->_bornDate = $ext;
             }
         }
@@ -2804,21 +2668,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->bornString->getValue())) {
                 $out->bornString = $val;
             }
-            $ext = $this->bornString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->bornString->_nonValueFieldDefined()) {
+                $ext = $this->bornString->jsonSerialize();
+                unset($ext->value);
                 $out->_bornString = $ext;
             }
         }
         if (isset($this->ageQuantity)) {
-            if (null !== ($val = $this->ageQuantity->getValue())) {
-                $out->ageQuantity = $val;
-            }
-            $ext = $this->ageQuantity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_ageQuantity = $ext;
-            }
+            $out->ageQuantity = $this->ageQuantity;
         }
         if (isset($this->ageRange)) {
             $out->ageRange = $this->ageRange;
@@ -2827,9 +2684,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->ageString->getValue())) {
                 $out->ageString = $val;
             }
-            $ext = $this->ageString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->ageString->_nonValueFieldDefined()) {
+                $ext = $this->ageString->jsonSerialize();
+                unset($ext->value);
                 $out->_ageString = $ext;
             }
         }
@@ -2837,21 +2694,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->deceasedBoolean->getValue())) {
                 $out->deceasedBoolean = $val;
             }
-            $ext = $this->deceasedBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->deceasedBoolean->_nonValueFieldDefined()) {
+                $ext = $this->deceasedBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_deceasedBoolean = $ext;
             }
         }
         if (isset($this->deceasedQuantity)) {
-            if (null !== ($val = $this->deceasedQuantity->getValue())) {
-                $out->deceasedQuantity = $val;
-            }
-            $ext = $this->deceasedQuantity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_deceasedQuantity = $ext;
-            }
+            $out->deceasedQuantity = $this->deceasedQuantity;
         }
         if (isset($this->deceasedRange)) {
             $out->deceasedRange = $this->deceasedRange;
@@ -2860,9 +2710,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->deceasedDate->getValue())) {
                 $out->deceasedDate = $val;
             }
-            $ext = $this->deceasedDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->deceasedDate->_nonValueFieldDefined()) {
+                $ext = $this->deceasedDate->jsonSerialize();
+                unset($ext->value);
                 $out->_deceasedDate = $ext;
             }
         }
@@ -2870,9 +2720,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             if (null !== ($val = $this->deceasedString->getValue())) {
                 $out->deceasedString = $val;
             }
-            $ext = $this->deceasedString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->deceasedString->_nonValueFieldDefined()) {
+                $ext = $this->deceasedString->jsonSerialize();
+                unset($ext->value);
                 $out->_deceasedString = $ext;
             }
         }
@@ -2885,7 +2735,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

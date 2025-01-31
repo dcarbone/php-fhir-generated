@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NAMING_SYSTEM_DOT_UNIQUE_ID;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_VALUE = 'value';
@@ -126,7 +126,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
     public const FIELD_AUTHORITATIVE = 'authoritative';
     public const FIELD_AUTHORITATIVE_EXT = '_authoritative';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -136,7 +136,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -145,7 +145,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
         self::FIELD_AUTHORITATIVE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -256,7 +256,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -265,7 +265,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -642,7 +642,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -787,20 +787,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->modifierExtension)
-               || isset($this->type)
-               || isset($this->preferred)
-               || isset($this->comment)
-               || isset($this->period)
-               || isset($this->authoritative);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -847,7 +834,8 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
                 $type->setPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
             } else if (self::FIELD_AUTHORITATIVE === $cen) {
                 $type->setAuthoritative(FHIRBoolean::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -908,7 +896,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
             $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
         }
-        if (isset($this->value) && ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueLocation) {
+        if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
         if (isset($this->preferred) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PREFERRED]) {
@@ -928,16 +916,12 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
             $this->type->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_TYPE]);
             $xw->endElement();
         }
-        if (isset($this->value)) {
-            if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
-                $xw->text($this->value->_getFormattedValue());
-            } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
-                $xw->startElement(self::FIELD_VALUE);
-                $xw->writeAttribute(FHIRString::FIELD_VALUE, $this->value->_getFormattedValue());
-                $xw->endElement();
-            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
-                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
-            }
+        if (isset($this->value)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VALUE]
+                || $this->value->_nonValueFieldDefined())) {
+            $xw->startElement(self::FIELD_VALUE);
+            $this->value->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VALUE]);
+            $xw->endElement();
         }
         if (isset($this->preferred)
             && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_PREFERRED]
@@ -1055,9 +1039,9 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -1065,9 +1049,9 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
             if (null !== ($val = $this->value->getValue())) {
                 $out->value = $val;
             }
-            $ext = $this->value->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->value->_nonValueFieldDefined()) {
+                $ext = $this->value->jsonSerialize();
+                unset($ext->value);
                 $out->_value = $ext;
             }
         }
@@ -1075,9 +1059,9 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
             if (null !== ($val = $this->preferred->getValue())) {
                 $out->preferred = $val;
             }
-            $ext = $this->preferred->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->preferred->_nonValueFieldDefined()) {
+                $ext = $this->preferred->jsonSerialize();
+                unset($ext->value);
                 $out->_preferred = $ext;
             }
         }
@@ -1085,9 +1069,9 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
             if (null !== ($val = $this->comment->getValue())) {
                 $out->comment = $val;
             }
-            $ext = $this->comment->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comment->_nonValueFieldDefined()) {
+                $ext = $this->comment->jsonSerialize();
+                unset($ext->value);
                 $out->_comment = $ext;
             }
         }
@@ -1098,15 +1082,15 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements ValueConta
             if (null !== ($val = $this->authoritative->getValue())) {
                 $out->authoritative = $val;
             }
-            $ext = $this->authoritative->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->authoritative->_nonValueFieldDefined()) {
+                $ext = $this->authoritative->jsonSerialize();
+                unset($ext->value);
                 $out->_authoritative = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,27 +111,26 @@ class FHIRValueSetInclude extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_VALUE_SET_DOT_INCLUDE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SYSTEM = 'system';
     public const FIELD_SYSTEM_EXT = '_system';
     public const FIELD_VERSION = 'version';
     public const FIELD_VERSION_EXT = '_version';
     public const FIELD_CONCEPT = 'concept';
     public const FIELD_FILTER = 'filter';
-    public const FIELD_FILTER_EXT = '_filter';
     public const FIELD_VALUE_SET = 'valueSet';
     public const FIELD_VALUE_SET_EXT = '_valueSet';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SYSTEM => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -237,7 +236,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -246,7 +245,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -522,14 +521,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement
             unset($this->filter);
             return $this;
         }
-        $this->filter = [];
-        foreach($filter as $v) {
-            if ($v instanceof FHIRValueSetFilter) {
-                $this->filter[] = $v;
-            } else {
-                $this->filter[] = new FHIRValueSetFilter(value: $v);
-            }
-        }
+        $this->filter = $filter;
         return $this;
     }
 
@@ -619,7 +611,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -742,7 +734,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -787,7 +779,8 @@ class FHIRValueSetInclude extends FHIRBackboneElement
                 $type->addFilter(FHIRValueSetFilter::xmlUnserialize($ce, $config));
             } else if (self::FIELD_VALUE_SET === $cen) {
                 $type->addValueSet(FHIRCanonical::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -846,8 +839,8 @@ class FHIRValueSetInclude extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->filter) && [] !== $this->filter) {
-            foreach($this->filter as $v) {
+        if (isset($this->filter)) {
+            foreach ($this->filter as $v) {
                 $xw->startElement(self::FIELD_FILTER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -913,22 +906,13 @@ class FHIRValueSetInclude extends FHIRBackboneElement
                 $type->addConcept(FHIRValueSetConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_FILTER])
-            || isset($json[self::FIELD_FILTER_EXT])
-            || array_key_exists(self::FIELD_FILTER, $json)
-            || array_key_exists(self::FIELD_FILTER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_FILTER] ?? []);
-            $ext = (array)($json[self::FIELD_FILTER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_FILTER]) || array_key_exists(self::FIELD_FILTER, $json)) {
+            $vs = $json[self::FIELD_FILTER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addFilter(FHIRValueSetFilter::jsonUnserialize(
-                    [FHIRValueSetFilter::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addFilter(FHIRValueSetFilter::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_VALUE_SET])
@@ -962,9 +946,9 @@ class FHIRValueSetInclude extends FHIRBackboneElement
             if (null !== ($val = $this->system->getValue())) {
                 $out->system = $val;
             }
-            $ext = $this->system->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->system->_nonValueFieldDefined()) {
+                $ext = $this->system->jsonSerialize();
+                unset($ext->value);
                 $out->_system = $ext;
             }
         }
@@ -972,9 +956,9 @@ class FHIRValueSetInclude extends FHIRBackboneElement
             if (null !== ($val = $this->version->getValue())) {
                 $out->version = $val;
             }
-            $ext = $this->version->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->version->_nonValueFieldDefined()) {
+                $ext = $this->version->jsonSerialize();
+                unset($ext->value);
                 $out->_version = $ext;
             }
         }
@@ -982,50 +966,40 @@ class FHIRValueSetInclude extends FHIRBackboneElement
             $out->concept = $this->concept;
         }
         if (isset($this->filter) && [] !== $this->filter) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->filter as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->filter = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_filter = $exts;
-            }
+            $out->filter = $this->filter;
         }
         if (isset($this->valueSet) && [] !== $this->valueSet) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->valueSet as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->valueSet = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_valueSet = $exts;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

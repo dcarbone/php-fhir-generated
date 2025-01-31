@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,23 +89,23 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_DOT_PROSTHESIS;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_INITIAL = 'initial';
     public const FIELD_INITIAL_EXT = '_initial';
     public const FIELD_PRIOR_DATE = 'priorDate';
     public const FIELD_PRIOR_DATE_EXT = '_priorDate';
     public const FIELD_PRIOR_MATERIAL = 'priorMaterial';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_INITIAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PRIOR_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -171,7 +171,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -180,7 +180,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -347,7 +347,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -446,7 +446,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -487,7 +487,8 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
                 $type->setPriorDate(FHIRDate::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PRIOR_MATERIAL === $cen) {
                 $type->setPriorMaterial(FHIRCoding::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -604,9 +605,9 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
             if (null !== ($val = $this->initial->getValue())) {
                 $out->initial = $val;
             }
-            $ext = $this->initial->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->initial->_nonValueFieldDefined()) {
+                $ext = $this->initial->jsonSerialize();
+                unset($ext->value);
                 $out->_initial = $ext;
             }
         }
@@ -614,9 +615,9 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
             if (null !== ($val = $this->priorDate->getValue())) {
                 $out->priorDate = $val;
             }
-            $ext = $this->priorDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->priorDate->_nonValueFieldDefined()) {
+                $ext = $this->priorDate->jsonSerialize();
+                unset($ext->value);
                 $out->_priorDate = $ext;
             }
         }
@@ -625,7 +626,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

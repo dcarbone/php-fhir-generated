@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,7 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRListModeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRListMode;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative;
@@ -112,7 +113,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EVIDENCE_REPORT_DOT_SECTION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TITLE = 'title';
     public const FIELD_TITLE_EXT = '_title';
     public const FIELD_FOCUS = 'focus';
@@ -128,16 +129,16 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
     public const FIELD_EMPTY_REASON = 'emptyReason';
     public const FIELD_SECTION = 'section';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TITLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MODE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -291,7 +292,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $orderedBy
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $entryClassifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $entryReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity[] $entryQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity[] $entryQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $emptyReason
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection[] $section
      * @param null|string[] $fhirComments
@@ -355,7 +356,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -364,7 +365,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -890,11 +891,14 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      *
      * Quantity as content.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $entryQuantity
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $entryQuantity
      * @return static
      */
-    public function addEntryQuantity(FHIRQuantity $entryQuantity): self
+    public function addEntryQuantity(FHIRDecimal|FHIRQuantity $entryQuantity): self
     {
+        if (!($entryQuantity instanceof FHIRQuantity)) {
+            $entryQuantity = new FHIRQuantity(value: $entryQuantity);
+        }
         if (!isset($this->entryQuantity)) {
             $this->entryQuantity = [];
         }
@@ -911,10 +915,10 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      *
      * Quantity as content.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity ...$entryQuantity
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity ...$entryQuantity
      * @return static
      */
-    public function setEntryQuantity(FHIRQuantity ...$entryQuantity): self
+    public function setEntryQuantity(FHIRDecimal|FHIRQuantity ...$entryQuantity): self
     {
         if ([] === $entryQuantity) {
             unset($this->entryQuantity);
@@ -1026,7 +1030,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1233,7 +1237,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1292,7 +1296,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
                 $type->setEmptyReason(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SECTION === $cen) {
                 $type->addSection(FHIREvidenceReportSection::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1521,9 +1526,9 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
             if (null !== ($val = $this->title->getValue())) {
                 $out->title = $val;
             }
-            $ext = $this->title->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->title->_nonValueFieldDefined()) {
+                $ext = $this->title->jsonSerialize();
+                unset($ext->value);
                 $out->_title = $ext;
             }
         }
@@ -1543,9 +1548,9 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
             if (null !== ($val = $this->mode->getValue())) {
                 $out->mode = $val;
             }
-            $ext = $this->mode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->mode->_nonValueFieldDefined()) {
+                $ext = $this->mode->jsonSerialize();
+                unset($ext->value);
                 $out->_mode = $ext;
             }
         }
@@ -1569,7 +1574,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

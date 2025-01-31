@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,23 +106,22 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INSURANCE_PLAN_DOT_BENEFIT_1;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_COST = 'cost';
-    public const FIELD_COST_EXT = '_cost';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -173,7 +172,7 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -182,7 +181,7 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -278,18 +277,11 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
             unset($this->cost);
             return $this;
         }
-        $this->cost = [];
-        foreach($cost as $v) {
-            if ($v instanceof FHIRInsurancePlanCost) {
-                $this->cost[] = $v;
-            } else {
-                $this->cost[] = new FHIRInsurancePlanCost(value: $v);
-            }
-        }
+        $this->cost = $cost;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -381,7 +373,7 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -420,7 +412,8 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
                 $type->setType(FHIRCodeableConcept::xmlUnserialize($ce, $config));
             } else if (self::FIELD_COST === $cen) {
                 $type->addCost(FHIRInsurancePlanCost::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -441,8 +434,8 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->cost) && [] !== $this->cost) {
-            foreach($this->cost as $v) {
+        if (isset($this->cost)) {
+            foreach ($this->cost as $v) {
                 $xw->startElement(self::FIELD_COST);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -475,22 +468,13 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
             $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_COST])
-            || isset($json[self::FIELD_COST_EXT])
-            || array_key_exists(self::FIELD_COST, $json)
-            || array_key_exists(self::FIELD_COST_EXT, $json)) {
-            $value = (array)($json[self::FIELD_COST] ?? []);
-            $ext = (array)($json[self::FIELD_COST_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_COST]) || array_key_exists(self::FIELD_COST, $json)) {
+            $vs = $json[self::FIELD_COST];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addCost(FHIRInsurancePlanCost::jsonUnserialize(
-                    [FHIRInsurancePlanCost::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addCost(FHIRInsurancePlanCost::jsonUnserialize($v, $config));
             }
         }
         return $type;
@@ -506,29 +490,11 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
             $out->type = $this->type;
         }
         if (isset($this->cost) && [] !== $this->cost) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->cost as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->cost = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_cost = $exts;
-            }
+            $out->cost = $this->cost;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

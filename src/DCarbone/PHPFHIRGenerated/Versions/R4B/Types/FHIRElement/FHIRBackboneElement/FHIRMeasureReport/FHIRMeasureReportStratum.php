@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,7 @@ use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
@@ -107,21 +108,20 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEASURE_REPORT_DOT_STRATUM;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_VALUE = 'value';
     public const FIELD_COMPONENT = 'component';
-    public const FIELD_COMPONENT_EXT = '_component';
     public const FIELD_POPULATION = 'population';
     public const FIELD_MEASURE_SCORE = 'measureScore';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -177,7 +177,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $value
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent[] $component
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1[] $population
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $measureScore
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $measureScore
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -186,7 +186,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
                                 null|FHIRCodeableConcept $value = null,
                                 null|iterable $component = null,
                                 null|iterable $population = null,
-                                null|FHIRQuantity $measureScore = null,
+                                null|FHIRDecimal|FHIRQuantity $measureScore = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -207,7 +207,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -216,7 +216,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -317,14 +317,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
             unset($this->component);
             return $this;
         }
-        $this->component = [];
-        foreach($component as $v) {
-            if ($v instanceof FHIRMeasureReportComponent) {
-                $this->component[] = $v;
-            } else {
-                $this->component[] = new FHIRMeasureReportComponent(value: $v);
-            }
-        }
+        $this->component = $component;
         return $this;
     }
 
@@ -419,14 +412,17 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
      * The measure score for this stratum, calculated as appropriate for the measure
      * type and scoring method, and based on only the members of this stratum.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $measureScore
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $measureScore
      * @return static
      */
-    public function setMeasureScore(null|FHIRQuantity $measureScore): self
+    public function setMeasureScore(null|FHIRDecimal|FHIRQuantity $measureScore): self
     {
         if (null === $measureScore) {
             unset($this->measureScore);
             return $this;
+        }
+        if (!($measureScore instanceof FHIRQuantity)) {
+            $measureScore = new FHIRQuantity(value: $measureScore);
         }
         $this->measureScore = $measureScore;
         return $this;
@@ -444,7 +440,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -555,18 +551,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->modifierExtension)
-               || isset($this->component)
-               || isset($this->population)
-               || isset($this->measureScore);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -609,7 +594,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
                 $type->addPopulation(FHIRMeasureReportPopulation1::xmlUnserialize($ce, $config));
             } else if (self::FIELD_MEASURE_SCORE === $cen) {
                 $type->setMeasureScore(FHIRQuantity::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -629,18 +615,12 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
         $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
         parent::xmlSerialize($xw, $config);
         if (isset($this->value)) {
-            if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
-                $xw->text($this->value->_getFormattedValue());
-            } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
-                $xw->startElement(self::FIELD_VALUE);
-                $xw->writeAttribute(FHIRCodeableConcept::FIELD_VALUE, $this->value->_getFormattedValue());
-                $xw->endElement();
-            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
-                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
-            }
+            $xw->startElement(self::FIELD_VALUE);
+            $this->value->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (isset($this->component) && [] !== $this->component) {
-            foreach($this->component as $v) {
+        if (isset($this->component)) {
+            foreach ($this->component as $v) {
                 $xw->startElement(self::FIELD_COMPONENT);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -685,22 +665,13 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
         if (isset($json[self::FIELD_VALUE]) || array_key_exists(self::FIELD_VALUE, $json)) {
             $type->setValue(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VALUE], $config));
         }
-        if (isset($json[self::FIELD_COMPONENT])
-            || isset($json[self::FIELD_COMPONENT_EXT])
-            || array_key_exists(self::FIELD_COMPONENT, $json)
-            || array_key_exists(self::FIELD_COMPONENT_EXT, $json)) {
-            $value = (array)($json[self::FIELD_COMPONENT] ?? []);
-            $ext = (array)($json[self::FIELD_COMPONENT_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_COMPONENT]) || array_key_exists(self::FIELD_COMPONENT, $json)) {
+            $vs = $json[self::FIELD_COMPONENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addComponent(FHIRMeasureReportComponent::jsonUnserialize(
-                    [FHIRMeasureReportComponent::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addComponent(FHIRMeasureReportComponent::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
@@ -728,25 +699,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
             $out->value = $this->value;
         }
         if (isset($this->component) && [] !== $this->component) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->component as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->component = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_component = $exts;
-            }
+            $out->component = $this->component;
         }
         if (isset($this->population) && [] !== $this->population) {
             $out->population = $this->population;
@@ -756,7 +709,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TEST_SCRIPT_DOT_CAPABILITY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_REQUIRED = 'required';
     public const FIELD_REQUIRED_EXT = '_required';
     public const FIELD_VALIDATED = 'validated';
@@ -130,7 +130,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     public const FIELD_CAPABILITIES = 'capabilities';
     public const FIELD_CAPABILITIES_EXT = '_capabilities';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_REQUIRED => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -143,7 +143,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_REQUIRED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALIDATED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -152,7 +152,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
         self::FIELD_CAPABILITIES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -283,7 +283,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -292,7 +292,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -782,7 +782,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -944,7 +944,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -993,7 +993,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 $type->addLink(FHIRUri::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CAPABILITIES === $cen) {
                 $type->setCapabilities(FHIRCanonical::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1236,9 +1237,9 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             if (null !== ($val = $this->required->getValue())) {
                 $out->required = $val;
             }
-            $ext = $this->required->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->required->_nonValueFieldDefined()) {
+                $ext = $this->required->jsonSerialize();
+                unset($ext->value);
                 $out->_required = $ext;
             }
         }
@@ -1246,9 +1247,9 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             if (null !== ($val = $this->validated->getValue())) {
                 $out->validated = $val;
             }
-            $ext = $this->validated->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->validated->_nonValueFieldDefined()) {
+                $ext = $this->validated->jsonSerialize();
+                unset($ext->value);
                 $out->_validated = $ext;
             }
         }
@@ -1256,30 +1257,38 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
         if (isset($this->origin) && [] !== $this->origin) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->origin as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->origin = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_origin = $exts;
             }
         }
@@ -1287,30 +1296,38 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             if (null !== ($val = $this->destination->getValue())) {
                 $out->destination = $val;
             }
-            $ext = $this->destination->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->destination->_nonValueFieldDefined()) {
+                $ext = $this->destination->jsonSerialize();
+                unset($ext->value);
                 $out->_destination = $ext;
             }
         }
         if (isset($this->link) && [] !== $this->link) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->link as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->link = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_link = $exts;
             }
         }
@@ -1318,15 +1335,15 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             if (null !== ($val = $this->capabilities->getValue())) {
                 $out->capabilities = $val;
             }
-            $ext = $this->capabilities->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->capabilities->_nonValueFieldDefined()) {
+                $ext = $this->capabilities->jsonSerialize();
+                unset($ext->value);
                 $out->_capabilities = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

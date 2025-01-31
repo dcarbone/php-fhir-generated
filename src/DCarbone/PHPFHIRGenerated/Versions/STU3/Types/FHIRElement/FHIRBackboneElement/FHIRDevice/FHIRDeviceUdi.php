@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_DOT_UDI;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_DEVICE_IDENTIFIER = 'deviceIdentifier';
     public const FIELD_DEVICE_IDENTIFIER_EXT = '_deviceIdentifier';
     public const FIELD_NAME = 'name';
@@ -112,10 +112,10 @@ class FHIRDeviceUdi extends FHIRBackboneElement
     public const FIELD_ENTRY_TYPE = 'entryType';
     public const FIELD_ENTRY_TYPE_EXT = '_entryType';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DEVICE_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -126,7 +126,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
         self::FIELD_ENTRY_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -264,7 +264,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -273,7 +273,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -760,7 +760,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -907,7 +907,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -956,7 +956,8 @@ class FHIRDeviceUdi extends FHIRBackboneElement
                 $type->setIssuer(FHIRUri::xmlUnserialize($ce, $config));
             } else if (self::FIELD_ENTRY_TYPE === $cen) {
                 $type->setEntryType(FHIRUDIEntryType::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1205,9 +1206,9 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             if (null !== ($val = $this->deviceIdentifier->getValue())) {
                 $out->deviceIdentifier = $val;
             }
-            $ext = $this->deviceIdentifier->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->deviceIdentifier->_nonValueFieldDefined()) {
+                $ext = $this->deviceIdentifier->jsonSerialize();
+                unset($ext->value);
                 $out->_deviceIdentifier = $ext;
             }
         }
@@ -1215,9 +1216,9 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1225,9 +1226,9 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             if (null !== ($val = $this->jurisdiction->getValue())) {
                 $out->jurisdiction = $val;
             }
-            $ext = $this->jurisdiction->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->jurisdiction->_nonValueFieldDefined()) {
+                $ext = $this->jurisdiction->jsonSerialize();
+                unset($ext->value);
                 $out->_jurisdiction = $ext;
             }
         }
@@ -1235,9 +1236,9 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             if (null !== ($val = $this->carrierHRF->getValue())) {
                 $out->carrierHRF = $val;
             }
-            $ext = $this->carrierHRF->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->carrierHRF->_nonValueFieldDefined()) {
+                $ext = $this->carrierHRF->jsonSerialize();
+                unset($ext->value);
                 $out->_carrierHRF = $ext;
             }
         }
@@ -1245,9 +1246,9 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             if (null !== ($val = $this->carrierAIDC->getValue())) {
                 $out->carrierAIDC = $val;
             }
-            $ext = $this->carrierAIDC->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->carrierAIDC->_nonValueFieldDefined()) {
+                $ext = $this->carrierAIDC->jsonSerialize();
+                unset($ext->value);
                 $out->_carrierAIDC = $ext;
             }
         }
@@ -1255,9 +1256,9 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             if (null !== ($val = $this->issuer->getValue())) {
                 $out->issuer = $val;
             }
-            $ext = $this->issuer->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->issuer->_nonValueFieldDefined()) {
+                $ext = $this->issuer->jsonSerialize();
+                unset($ext->value);
                 $out->_issuer = $ext;
             }
         }
@@ -1265,15 +1266,15 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             if (null !== ($val = $this->entryType->getValue())) {
                 $out->entryType = $val;
             }
-            $ext = $this->entryType->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->entryType->_nonValueFieldDefined()) {
+                $ext = $this->entryType->jsonSerialize();
+                unset($ext->value);
                 $out->_entryType = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

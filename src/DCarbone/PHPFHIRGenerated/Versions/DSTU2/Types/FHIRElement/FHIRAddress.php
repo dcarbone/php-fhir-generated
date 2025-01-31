@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRAddress extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ADDRESS;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_USE = 'use';
     public const FIELD_USE_EXT = '_use';
     public const FIELD_TYPE = 'type';
@@ -109,10 +109,10 @@ class FHIRAddress extends FHIRElement
     public const FIELD_COUNTRY_EXT = '_country';
     public const FIELD_PERIOD = 'period';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_USE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -124,7 +124,7 @@ class FHIRAddress extends FHIRElement
         self::FIELD_COUNTRY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * The use of an address
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -293,7 +293,7 @@ class FHIRAddress extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -302,7 +302,7 @@ class FHIRAddress extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * The use of an address
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -942,7 +942,7 @@ class FHIRAddress extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1113,7 +1113,7 @@ class FHIRAddress extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1166,7 +1166,8 @@ class FHIRAddress extends FHIRElement
                 $type->setCountry(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PERIOD === $cen) {
                 $type->setPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1476,9 +1477,9 @@ class FHIRAddress extends FHIRElement
             if (null !== ($val = $this->use->getValue())) {
                 $out->use = $val;
             }
-            $ext = $this->use->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->use->_nonValueFieldDefined()) {
+                $ext = $this->use->jsonSerialize();
+                unset($ext->value);
                 $out->_use = $ext;
             }
         }
@@ -1486,9 +1487,9 @@ class FHIRAddress extends FHIRElement
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -1496,30 +1497,38 @@ class FHIRAddress extends FHIRElement
             if (null !== ($val = $this->text->getValue())) {
                 $out->text = $val;
             }
-            $ext = $this->text->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->text->_nonValueFieldDefined()) {
+                $ext = $this->text->jsonSerialize();
+                unset($ext->value);
                 $out->_text = $ext;
             }
         }
         if (isset($this->line) && [] !== $this->line) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->line as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->line = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_line = $exts;
             }
         }
@@ -1527,9 +1536,9 @@ class FHIRAddress extends FHIRElement
             if (null !== ($val = $this->city->getValue())) {
                 $out->city = $val;
             }
-            $ext = $this->city->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->city->_nonValueFieldDefined()) {
+                $ext = $this->city->jsonSerialize();
+                unset($ext->value);
                 $out->_city = $ext;
             }
         }
@@ -1537,9 +1546,9 @@ class FHIRAddress extends FHIRElement
             if (null !== ($val = $this->district->getValue())) {
                 $out->district = $val;
             }
-            $ext = $this->district->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->district->_nonValueFieldDefined()) {
+                $ext = $this->district->jsonSerialize();
+                unset($ext->value);
                 $out->_district = $ext;
             }
         }
@@ -1547,9 +1556,9 @@ class FHIRAddress extends FHIRElement
             if (null !== ($val = $this->state->getValue())) {
                 $out->state = $val;
             }
-            $ext = $this->state->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->state->_nonValueFieldDefined()) {
+                $ext = $this->state->jsonSerialize();
+                unset($ext->value);
                 $out->_state = $ext;
             }
         }
@@ -1557,9 +1566,9 @@ class FHIRAddress extends FHIRElement
             if (null !== ($val = $this->postalCode->getValue())) {
                 $out->postalCode = $val;
             }
-            $ext = $this->postalCode->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->postalCode->_nonValueFieldDefined()) {
+                $ext = $this->postalCode->jsonSerialize();
+                unset($ext->value);
                 $out->_postalCode = $ext;
             }
         }
@@ -1567,9 +1576,9 @@ class FHIRAddress extends FHIRElement
             if (null !== ($val = $this->country->getValue())) {
                 $out->country = $val;
             }
-            $ext = $this->country->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->country->_nonValueFieldDefined()) {
+                $ext = $this->country->jsonSerialize();
+                unset($ext->value);
                 $out->_country = $ext;
             }
         }
@@ -1578,7 +1587,7 @@ class FHIRAddress extends FHIRElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

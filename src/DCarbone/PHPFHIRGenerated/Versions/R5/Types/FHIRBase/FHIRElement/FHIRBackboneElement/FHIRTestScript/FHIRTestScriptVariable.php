@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TEST_SCRIPT_DOT_VARIABLE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_NAME = 'name';
     public const FIELD_NAME_EXT = '_name';
     public const FIELD_DEFAULT_VALUE = 'defaultValue';
@@ -126,14 +126,14 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
     public const FIELD_SOURCE_ID = 'sourceId';
     public const FIELD_SOURCE_ID_EXT = '_sourceId';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_NAME => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DEFAULT_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -145,7 +145,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
         self::FIELD_SOURCE_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -295,7 +295,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -304,7 +304,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -851,7 +851,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1015,7 +1015,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1066,7 +1066,8 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
                 $type->setPath(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SOURCE_ID === $cen) {
                 $type->setSourceId(FHIRId::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1343,9 +1344,9 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1353,9 +1354,9 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             if (null !== ($val = $this->defaultValue->getValue())) {
                 $out->defaultValue = $val;
             }
-            $ext = $this->defaultValue->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->defaultValue->_nonValueFieldDefined()) {
+                $ext = $this->defaultValue->jsonSerialize();
+                unset($ext->value);
                 $out->_defaultValue = $ext;
             }
         }
@@ -1363,9 +1364,9 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -1373,9 +1374,9 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             if (null !== ($val = $this->expression->getValue())) {
                 $out->expression = $val;
             }
-            $ext = $this->expression->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->expression->_nonValueFieldDefined()) {
+                $ext = $this->expression->jsonSerialize();
+                unset($ext->value);
                 $out->_expression = $ext;
             }
         }
@@ -1383,9 +1384,9 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             if (null !== ($val = $this->headerField->getValue())) {
                 $out->headerField = $val;
             }
-            $ext = $this->headerField->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->headerField->_nonValueFieldDefined()) {
+                $ext = $this->headerField->jsonSerialize();
+                unset($ext->value);
                 $out->_headerField = $ext;
             }
         }
@@ -1393,9 +1394,9 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             if (null !== ($val = $this->hint->getValue())) {
                 $out->hint = $val;
             }
-            $ext = $this->hint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->hint->_nonValueFieldDefined()) {
+                $ext = $this->hint->jsonSerialize();
+                unset($ext->value);
                 $out->_hint = $ext;
             }
         }
@@ -1403,9 +1404,9 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             if (null !== ($val = $this->path->getValue())) {
                 $out->path = $val;
             }
-            $ext = $this->path->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->path->_nonValueFieldDefined()) {
+                $ext = $this->path->jsonSerialize();
+                unset($ext->value);
                 $out->_path = $ext;
             }
         }
@@ -1413,15 +1414,15 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             if (null !== ($val = $this->sourceId->getValue())) {
                 $out->sourceId = $val;
             }
-            $ext = $this->sourceId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sourceId->_nonValueFieldDefined()) {
+                $ext = $this->sourceId->jsonSerialize();
+                unset($ext->value);
                 $out->_sourceId = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

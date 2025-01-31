@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,14 +112,13 @@ class FHIRVirtualServiceDetail extends FHIRDataType
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_VIRTUAL_SERVICE_DETAIL;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_CHANNEL_TYPE = 'channelType';
     public const FIELD_ADDRESS_URL = 'addressUrl';
     public const FIELD_ADDRESS_URL_EXT = '_addressUrl';
     public const FIELD_ADDRESS_STRING = 'addressString';
     public const FIELD_ADDRESS_STRING_EXT = '_addressString';
     public const FIELD_ADDRESS_CONTACT_POINT = 'addressContactPoint';
-    public const FIELD_ADDRESS_CONTACT_POINT_EXT = '_addressContactPoint';
     public const FIELD_ADDRESS_EXTENDED_CONTACT_DETAIL = 'addressExtendedContactDetail';
     public const FIELD_ADDITIONAL_INFO = 'additionalInfo';
     public const FIELD_ADDITIONAL_INFO_EXT = '_additionalInfo';
@@ -128,19 +127,18 @@ class FHIRVirtualServiceDetail extends FHIRDataType
     public const FIELD_SESSION_KEY = 'sessionKey';
     public const FIELD_SESSION_KEY_EXT = '_sessionKey';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ADDRESS_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ADDRESS_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_ADDRESS_CONTACT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MAX_PARTICIPANTS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SESSION_KEY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -289,7 +287,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -298,7 +296,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -503,11 +501,9 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * use (requires knowledge of the specific type).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $addressContactPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAddressContactPoint(null|FHIRString|FHIRContactPoint $addressContactPoint,
-                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAddressContactPoint(null|FHIRString|FHIRContactPoint $addressContactPoint): self
     {
         if (null === $addressContactPoint) {
             unset($this->addressContactPoint);
@@ -517,33 +513,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
             $addressContactPoint = new FHIRContactPoint(value: $addressContactPoint);
         }
         $this->addressContactPoint = $addressContactPoint;
-        if ($this->_valueXMLLocations[self::FIELD_ADDRESS_CONTACT_POINT] !== $valueXMLLocation) {
-            $this->_setAddressContactPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the addressContactPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAddressContactPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ADDRESS_CONTACT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the addressContactPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAddressContactPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ADDRESS_CONTACT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -793,7 +762,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -940,7 +909,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -989,7 +958,8 @@ class FHIRVirtualServiceDetail extends FHIRDataType
                 $type->setMaxParticipants(FHIRPositiveInt::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SESSION_KEY === $cen) {
                 $type->setSessionKey(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1008,14 +978,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
                 $type->_setAddressStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setAddressString((string)$attributes[self::FIELD_ADDRESS_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_ADDRESS_CONTACT_POINT])) {
-            if (isset($type->addressContactPoint)) {
-                $type->addressContactPoint->setValue((string)$attributes[self::FIELD_ADDRESS_CONTACT_POINT]);
-                $type->_setAddressContactPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setAddressContactPoint((string)$attributes[self::FIELD_ADDRESS_CONTACT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_MAX_PARTICIPANTS])) {
@@ -1050,9 +1012,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
         if (isset($this->addressString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ADDRESS_STRING]) {
             $xw->writeAttribute(self::FIELD_ADDRESS_STRING, $this->addressString->_getFormattedValue());
         }
-        if (isset($this->addressContactPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ADDRESS_CONTACT_POINT]) {
-            $xw->writeAttribute(self::FIELD_ADDRESS_CONTACT_POINT, $this->addressContactPoint->_getFormattedValue());
-        }
         if (isset($this->maxParticipants) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MAX_PARTICIPANTS]) {
             $xw->writeAttribute(self::FIELD_MAX_PARTICIPANTS, $this->maxParticipants->_getFormattedValue());
         }
@@ -1079,11 +1038,9 @@ class FHIRVirtualServiceDetail extends FHIRDataType
             $this->addressString->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ADDRESS_STRING]);
             $xw->endElement();
         }
-        if (isset($this->addressContactPoint)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ADDRESS_CONTACT_POINT]
-                || $this->addressContactPoint->_nonValueFieldDefined())) {
+        if (isset($this->addressContactPoint)) {
             $xw->startElement(self::FIELD_ADDRESS_CONTACT_POINT);
-            $this->addressContactPoint->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ADDRESS_CONTACT_POINT]);
+            $this->addressContactPoint->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->addressExtendedContactDetail)) {
@@ -1159,15 +1116,8 @@ class FHIRVirtualServiceDetail extends FHIRDataType
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_ADDRESS_CONTACT_POINT])
-            || isset($json[self::FIELD_ADDRESS_CONTACT_POINT_EXT])
-            || array_key_exists(self::FIELD_ADDRESS_CONTACT_POINT, $json)
-            || array_key_exists(self::FIELD_ADDRESS_CONTACT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_ADDRESS_CONTACT_POINT] ?? null;
-            $type->setAddressContactPoint(FHIRContactPoint::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_ADDRESS_CONTACT_POINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_ADDRESS_CONTACT_POINT]) || array_key_exists(self::FIELD_ADDRESS_CONTACT_POINT, $json)) {
+            $type->setAddressContactPoint(FHIRContactPoint::jsonUnserialize($json[self::FIELD_ADDRESS_CONTACT_POINT], $config));
         }
         if (isset($json[self::FIELD_ADDRESS_EXTENDED_CONTACT_DETAIL]) || array_key_exists(self::FIELD_ADDRESS_EXTENDED_CONTACT_DETAIL, $json)) {
             $type->setAddressExtendedContactDetail(FHIRExtendedContactDetail::jsonUnserialize($json[self::FIELD_ADDRESS_EXTENDED_CONTACT_DETAIL], $config));
@@ -1226,9 +1176,9 @@ class FHIRVirtualServiceDetail extends FHIRDataType
             if (null !== ($val = $this->addressUrl->getValue())) {
                 $out->addressUrl = $val;
             }
-            $ext = $this->addressUrl->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->addressUrl->_nonValueFieldDefined()) {
+                $ext = $this->addressUrl->jsonSerialize();
+                unset($ext->value);
                 $out->_addressUrl = $ext;
             }
         }
@@ -1236,21 +1186,14 @@ class FHIRVirtualServiceDetail extends FHIRDataType
             if (null !== ($val = $this->addressString->getValue())) {
                 $out->addressString = $val;
             }
-            $ext = $this->addressString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->addressString->_nonValueFieldDefined()) {
+                $ext = $this->addressString->jsonSerialize();
+                unset($ext->value);
                 $out->_addressString = $ext;
             }
         }
         if (isset($this->addressContactPoint)) {
-            if (null !== ($val = $this->addressContactPoint->getValue())) {
-                $out->addressContactPoint = $val;
-            }
-            $ext = $this->addressContactPoint->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_addressContactPoint = $ext;
-            }
+            $out->addressContactPoint = $this->addressContactPoint;
         }
         if (isset($this->addressExtendedContactDetail)) {
             $out->addressExtendedContactDetail = $this->addressExtendedContactDetail;
@@ -1258,21 +1201,29 @@ class FHIRVirtualServiceDetail extends FHIRDataType
         if (isset($this->additionalInfo) && [] !== $this->additionalInfo) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->additionalInfo as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->additionalInfo = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_additionalInfo = $exts;
             }
         }
@@ -1280,9 +1231,9 @@ class FHIRVirtualServiceDetail extends FHIRDataType
             if (null !== ($val = $this->maxParticipants->getValue())) {
                 $out->maxParticipants = $val;
             }
-            $ext = $this->maxParticipants->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->maxParticipants->_nonValueFieldDefined()) {
+                $ext = $this->maxParticipants->jsonSerialize();
+                unset($ext->value);
                 $out->_maxParticipants = $ext;
             }
         }
@@ -1290,15 +1241,15 @@ class FHIRVirtualServiceDetail extends FHIRDataType
             if (null !== ($val = $this->sessionKey->getValue())) {
                 $out->sessionKey = $val;
             }
-            $ext = $this->sessionKey->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sessionKey->_nonValueFieldDefined()) {
+                $ext = $this->sessionKey->jsonSerialize();
+                unset($ext->value);
                 $out->_sessionKey = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

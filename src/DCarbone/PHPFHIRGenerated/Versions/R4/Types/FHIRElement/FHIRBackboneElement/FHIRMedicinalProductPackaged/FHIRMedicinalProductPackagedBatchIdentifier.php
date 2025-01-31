@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,26 +86,22 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_BATCH_IDENTIFIER;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_OUTER_PACKAGING = 'outerPackaging';
-    public const FIELD_OUTER_PACKAGING_EXT = '_outerPackaging';
     public const FIELD_IMMEDIATE_PACKAGING = 'immediatePackaging';
-    public const FIELD_IMMEDIATE_PACKAGING_EXT = '_immediatePackaging';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_OUTER_PACKAGING => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_OUTER_PACKAGING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_IMMEDIATE_PACKAGING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -158,7 +154,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -167,7 +163,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -192,11 +188,9 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * A number appearing on the outer packaging of a specific batch.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $outerPackaging
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOuterPackaging(null|FHIRString|FHIRIdentifier $outerPackaging,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOuterPackaging(null|FHIRString|FHIRIdentifier $outerPackaging): self
     {
         if (null === $outerPackaging) {
             unset($this->outerPackaging);
@@ -206,33 +200,6 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
             $outerPackaging = new FHIRIdentifier(value: $outerPackaging);
         }
         $this->outerPackaging = $outerPackaging;
-        if ($this->_valueXMLLocations[self::FIELD_OUTER_PACKAGING] !== $valueXMLLocation) {
-            $this->_setOuterPackagingValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the outerPackaging element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOuterPackagingValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_OUTER_PACKAGING];
-    }
-
-    /**
-     * Set the location the "value" field of the outerPackaging element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOuterPackagingValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_OUTER_PACKAGING] = $valueXMLLocation;
         return $this;
     }
 
@@ -260,11 +227,9 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * A number appearing on the immediate packaging (and not the outer packaging).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $immediatePackaging
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setImmediatePackaging(null|FHIRString|FHIRIdentifier $immediatePackaging,
-                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setImmediatePackaging(null|FHIRString|FHIRIdentifier $immediatePackaging): self
     {
         if (null === $immediatePackaging) {
             unset($this->immediatePackaging);
@@ -274,37 +239,10 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
             $immediatePackaging = new FHIRIdentifier(value: $immediatePackaging);
         }
         $this->immediatePackaging = $immediatePackaging;
-        if ($this->_valueXMLLocations[self::FIELD_IMMEDIATE_PACKAGING] !== $valueXMLLocation) {
-            $this->_setImmediatePackagingValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the immediatePackaging element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getImmediatePackagingValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_IMMEDIATE_PACKAGING];
-    }
-
-    /**
-     * Set the location the "value" field of the immediatePackaging element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setImmediatePackagingValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_IMMEDIATE_PACKAGING] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -396,7 +334,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -435,26 +373,11 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
                 $type->setOuterPackaging(FHIRIdentifier::xmlUnserialize($ce, $config));
             } else if (self::FIELD_IMMEDIATE_PACKAGING === $cen) {
                 $type->setImmediatePackaging(FHIRIdentifier::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_OUTER_PACKAGING])) {
-            if (isset($type->outerPackaging)) {
-                $type->outerPackaging->setValue((string)$attributes[self::FIELD_OUTER_PACKAGING]);
-                $type->_setOuterPackagingValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setOuterPackaging((string)$attributes[self::FIELD_OUTER_PACKAGING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_IMMEDIATE_PACKAGING])) {
-            if (isset($type->immediatePackaging)) {
-                $type->immediatePackaging->setValue((string)$attributes[self::FIELD_IMMEDIATE_PACKAGING]);
-                $type->_setImmediatePackagingValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setImmediatePackaging((string)$attributes[self::FIELD_IMMEDIATE_PACKAGING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         return $type;
     }
@@ -466,25 +389,15 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->outerPackaging) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_OUTER_PACKAGING]) {
-            $xw->writeAttribute(self::FIELD_OUTER_PACKAGING, $this->outerPackaging->_getFormattedValue());
-        }
-        if (isset($this->immediatePackaging) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_IMMEDIATE_PACKAGING]) {
-            $xw->writeAttribute(self::FIELD_IMMEDIATE_PACKAGING, $this->immediatePackaging->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->outerPackaging)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_OUTER_PACKAGING]
-                || $this->outerPackaging->_nonValueFieldDefined())) {
+        if (isset($this->outerPackaging)) {
             $xw->startElement(self::FIELD_OUTER_PACKAGING);
-            $this->outerPackaging->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_OUTER_PACKAGING]);
+            $this->outerPackaging->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->immediatePackaging)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_IMMEDIATE_PACKAGING]
-                || $this->immediatePackaging->_nonValueFieldDefined())) {
+        if (isset($this->immediatePackaging)) {
             $xw->startElement(self::FIELD_IMMEDIATE_PACKAGING);
-            $this->immediatePackaging->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_IMMEDIATE_PACKAGING]);
+            $this->immediatePackaging->xmlSerialize($xw, $config);
             $xw->endElement();
         }
     }
@@ -511,25 +424,11 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_OUTER_PACKAGING])
-            || isset($json[self::FIELD_OUTER_PACKAGING_EXT])
-            || array_key_exists(self::FIELD_OUTER_PACKAGING, $json)
-            || array_key_exists(self::FIELD_OUTER_PACKAGING_EXT, $json)) {
-            $value = $json[self::FIELD_OUTER_PACKAGING] ?? null;
-            $type->setOuterPackaging(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_OUTER_PACKAGING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_OUTER_PACKAGING]) || array_key_exists(self::FIELD_OUTER_PACKAGING, $json)) {
+            $type->setOuterPackaging(FHIRIdentifier::jsonUnserialize($json[self::FIELD_OUTER_PACKAGING], $config));
         }
-        if (isset($json[self::FIELD_IMMEDIATE_PACKAGING])
-            || isset($json[self::FIELD_IMMEDIATE_PACKAGING_EXT])
-            || array_key_exists(self::FIELD_IMMEDIATE_PACKAGING, $json)
-            || array_key_exists(self::FIELD_IMMEDIATE_PACKAGING_EXT, $json)) {
-            $value = $json[self::FIELD_IMMEDIATE_PACKAGING] ?? null;
-            $type->setImmediatePackaging(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_IMMEDIATE_PACKAGING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_IMMEDIATE_PACKAGING]) || array_key_exists(self::FIELD_IMMEDIATE_PACKAGING, $json)) {
+            $type->setImmediatePackaging(FHIRIdentifier::jsonUnserialize($json[self::FIELD_IMMEDIATE_PACKAGING], $config));
         }
         return $type;
     }
@@ -541,28 +440,14 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->outerPackaging)) {
-            if (null !== ($val = $this->outerPackaging->getValue())) {
-                $out->outerPackaging = $val;
-            }
-            $ext = $this->outerPackaging->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_outerPackaging = $ext;
-            }
+            $out->outerPackaging = $this->outerPackaging;
         }
         if (isset($this->immediatePackaging)) {
-            if (null !== ($val = $this->immediatePackaging->getValue())) {
-                $out->immediatePackaging = $val;
-            }
-            $ext = $this->immediatePackaging->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_immediatePackaging = $ext;
-            }
+            $out->immediatePackaging = $this->immediatePackaging;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

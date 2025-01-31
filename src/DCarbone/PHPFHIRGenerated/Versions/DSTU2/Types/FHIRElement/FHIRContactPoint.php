@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,7 +90,7 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONTACT_POINT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SYSTEM = 'system';
     public const FIELD_SYSTEM_EXT = '_system';
     public const FIELD_VALUE = 'value';
@@ -101,10 +101,10 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
     public const FIELD_RANK_EXT = '_rank';
     public const FIELD_PERIOD = 'period';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SYSTEM => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -112,7 +112,7 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
         self::FIELD_RANK => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Telecommunications form for contact point
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -206,7 +206,7 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -215,7 +215,7 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Telecommunications form for contact point
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -528,7 +528,7 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
         return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -639,18 +639,7 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
         return $errs;
     }
 
-    /* class_default.php:202 */
-    public function _nonValueFieldDefined(): bool
-    {
-        return isset($this->extension)
-               || isset($this->id)
-               || isset($this->system)
-               || isset($this->use)
-               || isset($this->rank)
-               || isset($this->period);
-    }
-
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -693,7 +682,8 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
                 $type->setRank(FHIRPositiveInt::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PERIOD === $cen) {
                 $type->setPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -746,7 +736,7 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
         if (isset($this->system) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SYSTEM]) {
             $xw->writeAttribute(self::FIELD_SYSTEM, $this->system->_getFormattedValue());
         }
-        if (isset($this->value) && ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueLocation) {
+        if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
         if (isset($this->use) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_USE]) {
@@ -763,16 +753,12 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
             $this->system->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_SYSTEM]);
             $xw->endElement();
         }
-        if (isset($this->value)) {
-            if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
-                $xw->text($this->value->_getFormattedValue());
-            } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
-                $xw->startElement(self::FIELD_VALUE);
-                $xw->writeAttribute(FHIRString::FIELD_VALUE, $this->value->_getFormattedValue());
-                $xw->endElement();
-            } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
-                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
-            }
+        if (isset($this->value)
+            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VALUE]
+                || $this->value->_nonValueFieldDefined())) {
+            $xw->startElement(self::FIELD_VALUE);
+            $this->value->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_VALUE]);
+            $xw->endElement();
         }
         if (isset($this->use)
             && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_USE]
@@ -873,9 +859,9 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
             if (null !== ($val = $this->system->getValue())) {
                 $out->system = $val;
             }
-            $ext = $this->system->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->system->_nonValueFieldDefined()) {
+                $ext = $this->system->jsonSerialize();
+                unset($ext->value);
                 $out->_system = $ext;
             }
         }
@@ -883,9 +869,9 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
             if (null !== ($val = $this->value->getValue())) {
                 $out->value = $val;
             }
-            $ext = $this->value->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->value->_nonValueFieldDefined()) {
+                $ext = $this->value->jsonSerialize();
+                unset($ext->value);
                 $out->_value = $ext;
             }
         }
@@ -893,9 +879,9 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
             if (null !== ($val = $this->use->getValue())) {
                 $out->use = $val;
             }
-            $ext = $this->use->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->use->_nonValueFieldDefined()) {
+                $ext = $this->use->jsonSerialize();
+                unset($ext->value);
                 $out->_use = $ext;
             }
         }
@@ -903,9 +889,9 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
             if (null !== ($val = $this->rank->getValue())) {
                 $out->rank = $val;
             }
-            $ext = $this->rank->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->rank->_nonValueFieldDefined()) {
+                $ext = $this->rank->jsonSerialize();
+                unset($ext->value);
                 $out->_rank = $ext;
             }
         }
@@ -914,7 +900,7 @@ class FHIRContactPoint extends FHIRElement implements ValueContainerTypeInterfac
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

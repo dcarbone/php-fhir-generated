@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,21 +107,19 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_GENE_ELEMENT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_ELEMENT = 'element';
-    public const FIELD_ELEMENT_EXT = '_element';
     public const FIELD_SOURCE = 'source';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_ELEMENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -189,7 +187,7 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -198,7 +196,7 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -259,11 +257,9 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setElement(null|FHIRString|FHIRIdentifier $element,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setElement(null|FHIRString|FHIRIdentifier $element): self
     {
         if (null === $element) {
             unset($this->element);
@@ -273,33 +269,6 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
             $element = new FHIRIdentifier(value: $element);
         }
         $this->element = $element;
-        if ($this->_valueXMLLocations[self::FIELD_ELEMENT] !== $valueXMLLocation) {
-            $this->_setElementValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the element element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getElementValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ELEMENT];
-    }
-
-    /**
-     * Set the location the "value" field of the element element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setElementValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ELEMENT] = $valueXMLLocation;
         return $this;
     }
 
@@ -367,7 +336,7 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -466,7 +435,7 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -507,18 +476,11 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
                 $type->setElement(FHIRIdentifier::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SOURCE === $cen) {
                 $type->addSource(FHIRReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_ELEMENT])) {
-            if (isset($type->element)) {
-                $type->element->setValue((string)$attributes[self::FIELD_ELEMENT]);
-                $type->_setElementValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setElement((string)$attributes[self::FIELD_ELEMENT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         return $type;
     }
@@ -530,20 +492,15 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->element) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ELEMENT]) {
-            $xw->writeAttribute(self::FIELD_ELEMENT, $this->element->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
             $xw->startElement(self::FIELD_TYPE);
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->element)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ELEMENT]
-                || $this->element->_nonValueFieldDefined())) {
+        if (isset($this->element)) {
             $xw->startElement(self::FIELD_ELEMENT);
-            $this->element->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ELEMENT]);
+            $this->element->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->source)) {
@@ -580,15 +537,8 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
             $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_ELEMENT])
-            || isset($json[self::FIELD_ELEMENT_EXT])
-            || array_key_exists(self::FIELD_ELEMENT, $json)
-            || array_key_exists(self::FIELD_ELEMENT_EXT, $json)) {
-            $value = $json[self::FIELD_ELEMENT] ?? null;
-            $type->setElement(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_ELEMENT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_ELEMENT]) || array_key_exists(self::FIELD_ELEMENT, $json)) {
+            $type->setElement(FHIRIdentifier::jsonUnserialize($json[self::FIELD_ELEMENT], $config));
         }
         if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
             $vs = $json[self::FIELD_SOURCE];
@@ -612,21 +562,14 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
             $out->type = $this->type;
         }
         if (isset($this->element)) {
-            if (null !== ($val = $this->element->getValue())) {
-                $out->element = $val;
-            }
-            $ext = $this->element->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_element = $ext;
-            }
+            $out->element = $this->element;
         }
         if (isset($this->source) && [] !== $this->source) {
             $out->source = $this->source;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

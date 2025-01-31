@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,26 +109,24 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INSURANCE_PLAN_DOT_GENERAL_COST;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_GROUP_SIZE = 'groupSize';
     public const FIELD_GROUP_SIZE_EXT = '_groupSize';
     public const FIELD_COST = 'cost';
-    public const FIELD_COST_EXT = '_cost';
     public const FIELD_COMMENT = 'comment';
     public const FIELD_COMMENT_EXT = '_comment';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_GROUP_SIZE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_COST => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_COMMENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -210,7 +208,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -219,7 +217,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -344,11 +342,9 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
      * Value of the cost.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $cost
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCost(null|FHIRDecimal|FHIRMoney $cost,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCost(null|FHIRDecimal|FHIRMoney $cost): self
     {
         if (null === $cost) {
             unset($this->cost);
@@ -358,33 +354,6 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
             $cost = new FHIRMoney(value: $cost);
         }
         $this->cost = $cost;
-        if ($this->_valueXMLLocations[self::FIELD_COST] !== $valueXMLLocation) {
-            $this->_setCostValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the cost element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCostValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COST];
-    }
-
-    /**
-     * Set the location the "value" field of the cost element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCostValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COST] = $valueXMLLocation;
         return $this;
     }
 
@@ -454,7 +423,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -565,7 +534,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -608,7 +577,8 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
                 $type->setCost(FHIRMoney::xmlUnserialize($ce, $config));
             } else if (self::FIELD_COMMENT === $cen) {
                 $type->setComment(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -619,14 +589,6 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
                 $type->_setGroupSizeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
                 $type->setGroupSize((string)$attributes[self::FIELD_GROUP_SIZE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_COST])) {
-            if (isset($type->cost)) {
-                $type->cost->setValue((string)$attributes[self::FIELD_COST]);
-                $type->_setCostValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setCost((string)$attributes[self::FIELD_COST], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             }
         }
         if (isset($attributes[self::FIELD_COMMENT])) {
@@ -650,9 +612,6 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
         if (isset($this->groupSize) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_GROUP_SIZE]) {
             $xw->writeAttribute(self::FIELD_GROUP_SIZE, $this->groupSize->_getFormattedValue());
         }
-        if (isset($this->cost) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COST]) {
-            $xw->writeAttribute(self::FIELD_COST, $this->cost->_getFormattedValue());
-        }
         if (isset($this->comment) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COMMENT]) {
             $xw->writeAttribute(self::FIELD_COMMENT, $this->comment->_getFormattedValue());
         }
@@ -669,11 +628,9 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
             $this->groupSize->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_GROUP_SIZE]);
             $xw->endElement();
         }
-        if (isset($this->cost)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_COST]
-                || $this->cost->_nonValueFieldDefined())) {
+        if (isset($this->cost)) {
             $xw->startElement(self::FIELD_COST);
-            $this->cost->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_COST]);
+            $this->cost->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->comment)
@@ -720,15 +677,8 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_COST])
-            || isset($json[self::FIELD_COST_EXT])
-            || array_key_exists(self::FIELD_COST, $json)
-            || array_key_exists(self::FIELD_COST_EXT, $json)) {
-            $value = $json[self::FIELD_COST] ?? null;
-            $type->setCost(FHIRMoney::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_COST_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_COST]) || array_key_exists(self::FIELD_COST, $json)) {
+            $type->setCost(FHIRMoney::jsonUnserialize($json[self::FIELD_COST], $config));
         }
         if (isset($json[self::FIELD_COMMENT])
             || isset($json[self::FIELD_COMMENT_EXT])
@@ -756,35 +706,28 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
             if (null !== ($val = $this->groupSize->getValue())) {
                 $out->groupSize = $val;
             }
-            $ext = $this->groupSize->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->groupSize->_nonValueFieldDefined()) {
+                $ext = $this->groupSize->jsonSerialize();
+                unset($ext->value);
                 $out->_groupSize = $ext;
             }
         }
         if (isset($this->cost)) {
-            if (null !== ($val = $this->cost->getValue())) {
-                $out->cost = $val;
-            }
-            $ext = $this->cost->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_cost = $ext;
-            }
+            $out->cost = $this->cost;
         }
         if (isset($this->comment)) {
             if (null !== ($val = $this->comment->getValue())) {
                 $out->comment = $val;
             }
-            $ext = $this->comment->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->comment->_nonValueFieldDefined()) {
+                $ext = $this->comment->jsonSerialize();
+                unset($ext->value);
                 $out->_comment = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,6 +74,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
@@ -97,7 +98,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_GOAL_DOT_TARGET;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_MEASURE = 'measure';
     public const FIELD_DETAIL_QUANTITY = 'detailQuantity';
     public const FIELD_DETAIL_RANGE = 'detailRange';
@@ -113,10 +114,10 @@ class FHIRGoalTarget extends FHIRBackboneElement
     public const FIELD_DUE_DATE_EXT = '_dueDate';
     public const FIELD_DUE_DURATION = 'dueDuration';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DETAIL_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DETAIL_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -124,7 +125,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
         self::FIELD_DUE_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -276,7 +277,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $measure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $detailQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $detailQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $detailRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $detailString
@@ -284,14 +285,14 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $detailInteger
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $detailRatio
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $dueDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $measure = null,
-                                null|FHIRQuantity $detailQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $detailQuantity = null,
                                 null|FHIRRange $detailRange = null,
                                 null|FHIRCodeableConcept $detailCodeableConcept = null,
                                 null|string|FHIRStringPrimitive|FHIRString $detailString = null,
@@ -299,7 +300,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $detailInteger = null,
                                 null|FHIRRatio $detailRatio = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $dueDate = null,
-                                null|FHIRDuration $dueDuration = null,
+                                null|FHIRDecimal|FHIRDuration $dueDuration = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -338,7 +339,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -347,7 +348,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -421,14 +422,17 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $detailQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $detailQuantity
      * @return static
      */
-    public function setDetailQuantity(null|FHIRQuantity $detailQuantity): self
+    public function setDetailQuantity(null|FHIRDecimal|FHIRQuantity $detailQuantity): self
     {
         if (null === $detailQuantity) {
             unset($this->detailQuantity);
             return $this;
+        }
+        if (!($detailQuantity instanceof FHIRQuantity)) {
+            $detailQuantity = new FHIRQuantity(value: $detailQuantity);
         }
         $this->detailQuantity = $detailQuantity;
         return $this;
@@ -889,20 +893,23 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * Indicates either the date or the duration after start by which the goal should
      * be met.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
      * @return static
      */
-    public function setDueDuration(null|FHIRDuration $dueDuration): self
+    public function setDueDuration(null|FHIRDecimal|FHIRDuration $dueDuration): self
     {
         if (null === $dueDuration) {
             unset($this->dueDuration);
             return $this;
         }
+        if (!($dueDuration instanceof FHIRDuration)) {
+            $dueDuration = new FHIRDuration(value: $dueDuration);
+        }
         $this->dueDuration = $dueDuration;
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1085,7 +1092,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1140,7 +1147,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
                 $type->setDueDate(FHIRDate::xmlUnserialize($ce, $config));
             } else if (self::FIELD_DUE_DURATION === $cen) {
                 $type->setDueDuration(FHIRDuration::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1365,9 +1373,9 @@ class FHIRGoalTarget extends FHIRBackboneElement
             if (null !== ($val = $this->detailString->getValue())) {
                 $out->detailString = $val;
             }
-            $ext = $this->detailString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->detailString->_nonValueFieldDefined()) {
+                $ext = $this->detailString->jsonSerialize();
+                unset($ext->value);
                 $out->_detailString = $ext;
             }
         }
@@ -1375,9 +1383,9 @@ class FHIRGoalTarget extends FHIRBackboneElement
             if (null !== ($val = $this->detailBoolean->getValue())) {
                 $out->detailBoolean = $val;
             }
-            $ext = $this->detailBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->detailBoolean->_nonValueFieldDefined()) {
+                $ext = $this->detailBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_detailBoolean = $ext;
             }
         }
@@ -1385,9 +1393,9 @@ class FHIRGoalTarget extends FHIRBackboneElement
             if (null !== ($val = $this->detailInteger->getValue())) {
                 $out->detailInteger = $val;
             }
-            $ext = $this->detailInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->detailInteger->_nonValueFieldDefined()) {
+                $ext = $this->detailInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_detailInteger = $ext;
             }
         }
@@ -1398,9 +1406,9 @@ class FHIRGoalTarget extends FHIRBackboneElement
             if (null !== ($val = $this->dueDate->getValue())) {
                 $out->dueDate = $val;
             }
-            $ext = $this->dueDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->dueDate->_nonValueFieldDefined()) {
+                $ext = $this->dueDate->jsonSerialize();
+                unset($ext->value);
                 $out->_dueDate = $ext;
             }
         }
@@ -1409,7 +1417,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

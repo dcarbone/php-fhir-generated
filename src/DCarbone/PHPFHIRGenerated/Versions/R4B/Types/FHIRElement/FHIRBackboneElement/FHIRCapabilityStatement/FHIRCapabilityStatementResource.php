@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CAPABILITY_STATEMENT_DOT_RESOURCE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_PROFILE = 'profile';
@@ -157,14 +157,14 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
     public const FIELD_SEARCH_PARAM = 'searchParam';
     public const FIELD_OPERATION = 'operation';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PROFILE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -178,7 +178,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         self::FIELD_CONDITIONAL_DELETE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -471,7 +471,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -480,7 +480,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -1681,7 +1681,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1953,7 +1953,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2022,7 +2022,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                 $type->addSearchParam(FHIRCapabilityStatementSearchParam::xmlUnserialize($ce, $config));
             } else if (self::FIELD_OPERATION === $cen) {
                 $type->addOperation(FHIRCapabilityStatementOperation::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -2503,9 +2504,9 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -2513,30 +2514,38 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (null !== ($val = $this->profile->getValue())) {
                 $out->profile = $val;
             }
-            $ext = $this->profile->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->profile->_nonValueFieldDefined()) {
+                $ext = $this->profile->jsonSerialize();
+                unset($ext->value);
                 $out->_profile = $ext;
             }
         }
         if (isset($this->supportedProfile) && [] !== $this->supportedProfile) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->supportedProfile as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->supportedProfile = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_supportedProfile = $exts;
             }
         }
@@ -2544,9 +2553,9 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (null !== ($val = $this->documentation->getValue())) {
                 $out->documentation = $val;
             }
-            $ext = $this->documentation->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->documentation->_nonValueFieldDefined()) {
+                $ext = $this->documentation->jsonSerialize();
+                unset($ext->value);
                 $out->_documentation = $ext;
             }
         }
@@ -2557,9 +2566,9 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (null !== ($val = $this->versioning->getValue())) {
                 $out->versioning = $val;
             }
-            $ext = $this->versioning->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->versioning->_nonValueFieldDefined()) {
+                $ext = $this->versioning->jsonSerialize();
+                unset($ext->value);
                 $out->_versioning = $ext;
             }
         }
@@ -2567,9 +2576,9 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (null !== ($val = $this->readHistory->getValue())) {
                 $out->readHistory = $val;
             }
-            $ext = $this->readHistory->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->readHistory->_nonValueFieldDefined()) {
+                $ext = $this->readHistory->jsonSerialize();
+                unset($ext->value);
                 $out->_readHistory = $ext;
             }
         }
@@ -2577,9 +2586,9 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (null !== ($val = $this->updateCreate->getValue())) {
                 $out->updateCreate = $val;
             }
-            $ext = $this->updateCreate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->updateCreate->_nonValueFieldDefined()) {
+                $ext = $this->updateCreate->jsonSerialize();
+                unset($ext->value);
                 $out->_updateCreate = $ext;
             }
         }
@@ -2587,9 +2596,9 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (null !== ($val = $this->conditionalCreate->getValue())) {
                 $out->conditionalCreate = $val;
             }
-            $ext = $this->conditionalCreate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->conditionalCreate->_nonValueFieldDefined()) {
+                $ext = $this->conditionalCreate->jsonSerialize();
+                unset($ext->value);
                 $out->_conditionalCreate = $ext;
             }
         }
@@ -2597,9 +2606,9 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (null !== ($val = $this->conditionalRead->getValue())) {
                 $out->conditionalRead = $val;
             }
-            $ext = $this->conditionalRead->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->conditionalRead->_nonValueFieldDefined()) {
+                $ext = $this->conditionalRead->jsonSerialize();
+                unset($ext->value);
                 $out->_conditionalRead = $ext;
             }
         }
@@ -2607,9 +2616,9 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (null !== ($val = $this->conditionalUpdate->getValue())) {
                 $out->conditionalUpdate = $val;
             }
-            $ext = $this->conditionalUpdate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->conditionalUpdate->_nonValueFieldDefined()) {
+                $ext = $this->conditionalUpdate->jsonSerialize();
+                unset($ext->value);
                 $out->_conditionalUpdate = $ext;
             }
         }
@@ -2617,72 +2626,96 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (null !== ($val = $this->conditionalDelete->getValue())) {
                 $out->conditionalDelete = $val;
             }
-            $ext = $this->conditionalDelete->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->conditionalDelete->_nonValueFieldDefined()) {
+                $ext = $this->conditionalDelete->jsonSerialize();
+                unset($ext->value);
                 $out->_conditionalDelete = $ext;
             }
         }
         if (isset($this->referencePolicy) && [] !== $this->referencePolicy) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->referencePolicy as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->referencePolicy = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_referencePolicy = $exts;
             }
         }
         if (isset($this->searchInclude) && [] !== $this->searchInclude) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->searchInclude as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->searchInclude = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_searchInclude = $exts;
             }
         }
         if (isset($this->searchRevInclude) && [] !== $this->searchRevInclude) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->searchRevInclude as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->searchRevInclude = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_searchRevInclude = $exts;
             }
         }
@@ -2694,7 +2727,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

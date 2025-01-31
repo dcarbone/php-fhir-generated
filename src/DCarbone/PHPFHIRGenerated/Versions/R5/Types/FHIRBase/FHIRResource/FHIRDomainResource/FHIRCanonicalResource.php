@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,48 +115,14 @@ class FHIRCanonicalResource extends FHIRDomainResource
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CANONICAL_RESOURCE;
 
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* constructor.php:63 */
-    /**
-     * FHIRCanonicalResource Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|string[] $fhirComments
-     */
-    public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
-                                null|FHIRMeta $meta = null,
-                                null|string|FHIRUriPrimitive|FHIRUri $implicitRules = null,
-                                null|string|FHIRCodePrimitive|FHIRCode $language = null,
-                                null|FHIRNarrative $text = null,
-                                null|iterable $contained = null,
-                                null|iterable $extension = null,
-                                null|iterable $modifierExtension = null,
-                                null|iterable $fhirComments = null)
-    {
-        parent::__construct(id: $id,
-                            meta: $meta,
-                            implicitRules: $implicitRules,
-                            language: $language,
-                            text: $text,
-                            contained: $contained,
-                            extension: $extension,
-                            modifierExtension: $modifierExtension,
-                            fhirComments: $fhirComments);
-    }
-
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -165,7 +131,7 @@ class FHIRCanonicalResource extends FHIRDomainResource
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -288,7 +254,7 @@ class FHIRCanonicalResource extends FHIRDomainResource
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -341,7 +307,8 @@ class FHIRCanonicalResource extends FHIRDomainResource
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -371,40 +338,39 @@ class FHIRCanonicalResource extends FHIRDomainResource
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     * @param string|\stdClass|array $json
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource $type
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource
+     * @throws \Exception
      */
-    public function xmlSerialize(null|XMLWriter $xw = null,
-                                 null|SerializeConfig $config = null): XMLWriter
+    public static function jsonUnserialize(string|\stdClass|array $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): self
     {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRCanonicalResource)) {
+            throw new \RuntimeException(sprintf(
+                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
         if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
+            $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
+        if (is_string($json)) {
+            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
+        } else if (is_object($json)) {
+            $json = (array)$json;
         }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('CanonicalResource', $this->_getSourceXMLNS());
-        }
-        parent::xmlSerialize($xw, $config);
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
+        parent::jsonUnserialize($json, $config, $type); 
+        return $type;
     }
-    /* class_default.php:238 */
+
+    /* class_default.php:236 */
     /**
      * @return string
      */

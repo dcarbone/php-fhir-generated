@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_INSTANCE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_RESOURCE_ID = 'resourceId';
     public const FIELD_RESOURCE_ID_EXT = '_resourceId';
     public const FIELD_RESOURCE_TYPE = 'resourceType';
@@ -101,7 +101,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
     public const FIELD_VERSION = 'version';
     public const FIELD_CONTAINED_INSTANCE = 'containedInstance';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_RESOURCE_ID => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -111,7 +111,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_RESOURCE_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RESOURCE_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -119,7 +119,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -230,7 +230,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -239,7 +239,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -635,7 +635,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -780,7 +780,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -827,7 +827,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
                 $type->addVersion(FHIRExampleScenarioVersion::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CONTAINED_INSTANCE === $cen) {
                 $type->addContainedInstance(FHIRExampleScenarioContainedInstance::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1024,9 +1025,9 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
             if (null !== ($val = $this->resourceId->getValue())) {
                 $out->resourceId = $val;
             }
-            $ext = $this->resourceId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->resourceId->_nonValueFieldDefined()) {
+                $ext = $this->resourceId->jsonSerialize();
+                unset($ext->value);
                 $out->_resourceId = $ext;
             }
         }
@@ -1034,9 +1035,9 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
             if (null !== ($val = $this->resourceType->getValue())) {
                 $out->resourceType = $val;
             }
-            $ext = $this->resourceType->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->resourceType->_nonValueFieldDefined()) {
+                $ext = $this->resourceType->jsonSerialize();
+                unset($ext->value);
                 $out->_resourceType = $ext;
             }
         }
@@ -1044,9 +1045,9 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1054,9 +1055,9 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -1068,7 +1069,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

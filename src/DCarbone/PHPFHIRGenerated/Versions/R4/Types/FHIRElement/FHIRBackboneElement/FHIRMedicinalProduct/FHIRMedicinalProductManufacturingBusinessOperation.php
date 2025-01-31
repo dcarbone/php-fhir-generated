@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,26 +90,24 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICINAL_PRODUCT_DOT_MANUFACTURING_BUSINESS_OPERATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_OPERATION_TYPE = 'operationType';
     public const FIELD_AUTHORISATION_REFERENCE_NUMBER = 'authorisationReferenceNumber';
-    public const FIELD_AUTHORISATION_REFERENCE_NUMBER_EXT = '_authorisationReferenceNumber';
     public const FIELD_EFFECTIVE_DATE = 'effectiveDate';
     public const FIELD_EFFECTIVE_DATE_EXT = '_effectiveDate';
     public const FIELD_CONFIDENTIALITY_INDICATOR = 'confidentialityIndicator';
     public const FIELD_MANUFACTURER = 'manufacturer';
     public const FIELD_REGULATOR = 'regulator';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_AUTHORISATION_REFERENCE_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EFFECTIVE_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -226,7 +224,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -235,7 +233,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -296,11 +294,9 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * Regulatory authorization reference number.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAuthorisationReferenceNumber(null|FHIRString|FHIRIdentifier $authorisationReferenceNumber,
-                                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAuthorisationReferenceNumber(null|FHIRString|FHIRIdentifier $authorisationReferenceNumber): self
     {
         if (null === $authorisationReferenceNumber) {
             unset($this->authorisationReferenceNumber);
@@ -310,33 +306,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
             $authorisationReferenceNumber = new FHIRIdentifier(value: $authorisationReferenceNumber);
         }
         $this->authorisationReferenceNumber = $authorisationReferenceNumber;
-        if ($this->_valueXMLLocations[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] !== $valueXMLLocation) {
-            $this->_setAuthorisationReferenceNumberValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the authorisationReferenceNumber element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAuthorisationReferenceNumberValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AUTHORISATION_REFERENCE_NUMBER];
-    }
-
-    /**
-     * Set the location the "value" field of the authorisationReferenceNumber element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAuthorisationReferenceNumberValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] = $valueXMLLocation;
         return $this;
     }
 
@@ -546,7 +515,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -681,7 +650,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -728,18 +697,11 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
                 $type->addManufacturer(FHIRReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_REGULATOR === $cen) {
                 $type->setRegulator(FHIRReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_AUTHORISATION_REFERENCE_NUMBER])) {
-            if (isset($type->authorisationReferenceNumber)) {
-                $type->authorisationReferenceNumber->setValue((string)$attributes[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]);
-                $type->_setAuthorisationReferenceNumberValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setAuthorisationReferenceNumber((string)$attributes[self::FIELD_AUTHORISATION_REFERENCE_NUMBER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         if (isset($attributes[self::FIELD_EFFECTIVE_DATE])) {
             if (isset($type->effectiveDate)) {
@@ -759,9 +721,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->authorisationReferenceNumber) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]) {
-            $xw->writeAttribute(self::FIELD_AUTHORISATION_REFERENCE_NUMBER, $this->authorisationReferenceNumber->_getFormattedValue());
-        }
         if (isset($this->effectiveDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EFFECTIVE_DATE]) {
             $xw->writeAttribute(self::FIELD_EFFECTIVE_DATE, $this->effectiveDate->_getFormattedValue());
         }
@@ -771,11 +730,9 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
             $this->operationType->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->authorisationReferenceNumber)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]
-                || $this->authorisationReferenceNumber->_nonValueFieldDefined())) {
+        if (isset($this->authorisationReferenceNumber)) {
             $xw->startElement(self::FIELD_AUTHORISATION_REFERENCE_NUMBER);
-            $this->authorisationReferenceNumber->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]);
+            $this->authorisationReferenceNumber->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->effectiveDate)
@@ -829,15 +786,8 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
         if (isset($json[self::FIELD_OPERATION_TYPE]) || array_key_exists(self::FIELD_OPERATION_TYPE, $json)) {
             $type->setOperationType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_OPERATION_TYPE], $config));
         }
-        if (isset($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER])
-            || isset($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER_EXT])
-            || array_key_exists(self::FIELD_AUTHORISATION_REFERENCE_NUMBER, $json)
-            || array_key_exists(self::FIELD_AUTHORISATION_REFERENCE_NUMBER_EXT, $json)) {
-            $value = $json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] ?? null;
-            $type->setAuthorisationReferenceNumber(FHIRIdentifier::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]) || array_key_exists(self::FIELD_AUTHORISATION_REFERENCE_NUMBER, $json)) {
+            $type->setAuthorisationReferenceNumber(FHIRIdentifier::jsonUnserialize($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER], $config));
         }
         if (isset($json[self::FIELD_EFFECTIVE_DATE])
             || isset($json[self::FIELD_EFFECTIVE_DATE_EXT])
@@ -877,22 +827,15 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
             $out->operationType = $this->operationType;
         }
         if (isset($this->authorisationReferenceNumber)) {
-            if (null !== ($val = $this->authorisationReferenceNumber->getValue())) {
-                $out->authorisationReferenceNumber = $val;
-            }
-            $ext = $this->authorisationReferenceNumber->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_authorisationReferenceNumber = $ext;
-            }
+            $out->authorisationReferenceNumber = $this->authorisationReferenceNumber;
         }
         if (isset($this->effectiveDate)) {
             if (null !== ($val = $this->effectiveDate->getValue())) {
                 $out->effectiveDate = $val;
             }
-            $ext = $this->effectiveDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->effectiveDate->_nonValueFieldDefined()) {
+                $ext = $this->effectiveDate->jsonSerialize();
+                unset($ext->value);
                 $out->_effectiveDate = $ext;
             }
         }
@@ -907,7 +850,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

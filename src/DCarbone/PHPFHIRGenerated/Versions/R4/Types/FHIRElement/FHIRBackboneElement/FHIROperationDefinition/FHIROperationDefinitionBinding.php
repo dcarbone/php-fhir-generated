@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,13 +89,13 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OPERATION_DEFINITION_DOT_BINDING;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_STRENGTH = 'strength';
     public const FIELD_STRENGTH_EXT = '_strength';
     public const FIELD_VALUE_SET = 'valueSet';
     public const FIELD_VALUE_SET_EXT = '_valueSet';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STRENGTH => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -105,13 +105,13 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STRENGTH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_SET => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Indication of the degree of conformance expectations associated with a binding.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -165,7 +165,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -174,7 +174,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Indication of the degree of conformance expectations associated with a binding.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -313,7 +313,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -410,7 +410,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -449,7 +449,8 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
                 $type->setStrength(FHIRBindingStrength::xmlUnserialize($ce, $config));
             } else if (self::FIELD_VALUE_SET === $cen) {
                 $type->setValueSet(FHIRCanonical::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -558,9 +559,9 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
             if (null !== ($val = $this->strength->getValue())) {
                 $out->strength = $val;
             }
-            $ext = $this->strength->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->strength->_nonValueFieldDefined()) {
+                $ext = $this->strength->jsonSerialize();
+                unset($ext->value);
                 $out->_strength = $ext;
             }
         }
@@ -568,15 +569,15 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
             if (null !== ($val = $this->valueSet->getValue())) {
                 $out->valueSet = $val;
             }
-            $ext = $this->valueSet->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueSet->_nonValueFieldDefined()) {
+                $ext = $this->valueSet->jsonSerialize();
+                unset($ext->value);
                 $out->_valueSet = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

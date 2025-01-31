@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_PAGE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SOURCE_URL = 'sourceUrl';
     public const FIELD_SOURCE_URL_EXT = '_sourceUrl';
     public const FIELD_SOURCE_STRING = 'sourceString';
@@ -129,7 +129,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     public const FIELD_GENERATION_EXT = '_generation';
     public const FIELD_PAGE = 'page';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_NAME => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -142,7 +142,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SOURCE_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SOURCE_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -152,7 +152,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         self::FIELD_GENERATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A URI that is a literal reference
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -282,7 +282,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -291,7 +291,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A URI that is a literal reference
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -761,7 +761,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -923,7 +923,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -972,7 +972,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 $type->setGeneration(FHIRGuidePageGeneration::xmlUnserialize($ce, $config));
             } else if (self::FIELD_PAGE === $cen) {
                 $type->addPage(FHIRImplementationGuidePage::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1209,9 +1210,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             if (null !== ($val = $this->sourceUrl->getValue())) {
                 $out->sourceUrl = $val;
             }
-            $ext = $this->sourceUrl->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sourceUrl->_nonValueFieldDefined()) {
+                $ext = $this->sourceUrl->jsonSerialize();
+                unset($ext->value);
                 $out->_sourceUrl = $ext;
             }
         }
@@ -1219,9 +1220,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             if (null !== ($val = $this->sourceString->getValue())) {
                 $out->sourceString = $val;
             }
-            $ext = $this->sourceString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sourceString->_nonValueFieldDefined()) {
+                $ext = $this->sourceString->jsonSerialize();
+                unset($ext->value);
                 $out->_sourceString = $ext;
             }
         }
@@ -1229,9 +1230,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             if (null !== ($val = $this->sourceMarkdown->getValue())) {
                 $out->sourceMarkdown = $val;
             }
-            $ext = $this->sourceMarkdown->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sourceMarkdown->_nonValueFieldDefined()) {
+                $ext = $this->sourceMarkdown->jsonSerialize();
+                unset($ext->value);
                 $out->_sourceMarkdown = $ext;
             }
         }
@@ -1239,9 +1240,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -1249,9 +1250,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             if (null !== ($val = $this->title->getValue())) {
                 $out->title = $val;
             }
-            $ext = $this->title->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->title->_nonValueFieldDefined()) {
+                $ext = $this->title->jsonSerialize();
+                unset($ext->value);
                 $out->_title = $ext;
             }
         }
@@ -1259,9 +1260,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             if (null !== ($val = $this->generation->getValue())) {
                 $out->generation = $val;
             }
-            $ext = $this->generation->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->generation->_nonValueFieldDefined()) {
+                $ext = $this->generation->jsonSerialize();
+                unset($ext->value);
                 $out->_generation = $ext;
             }
         }
@@ -1270,7 +1271,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

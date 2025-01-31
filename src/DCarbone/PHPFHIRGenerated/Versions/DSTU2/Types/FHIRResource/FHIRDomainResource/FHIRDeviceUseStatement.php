@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,13 +105,12 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_USE_STATEMENT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_BODY_SITE_CODEABLE_CONCEPT = 'bodySiteCodeableConcept';
     public const FIELD_BODY_SITE_REFERENCE = 'bodySiteReference';
     public const FIELD_WHEN_USED = 'whenUsed';
     public const FIELD_DEVICE = 'device';
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_INDICATION = 'indication';
     public const FIELD_NOTES = 'notes';
     public const FIELD_NOTES_EXT = '_notes';
@@ -123,7 +122,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
     public const FIELD_TIMING_DATE_TIME = 'timingDateTime';
     public const FIELD_TIMING_DATE_TIME_EXT = '_timingDateTime';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_DEVICE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -133,13 +132,13 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_RECORDED_ON => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TIMING_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -370,7 +369,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -379,7 +378,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -388,7 +387,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -594,14 +593,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -1004,7 +996,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1281,7 +1273,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1358,7 +1350,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
                 $type->setTimingPeriod(FHIRPeriod::xmlUnserialize($ce, $config));
             } else if (self::FIELD_TIMING_DATE_TIME === $cen) {
                 $type->setTimingDateTime(FHIRDateTime::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -1455,8 +1448,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
             $this->device->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -1556,22 +1549,13 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         if (isset($json[self::FIELD_DEVICE]) || array_key_exists(self::FIELD_DEVICE, $json)) {
             $type->setDevice(FHIRReference::jsonUnserialize($json[self::FIELD_DEVICE], $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INDICATION]) || array_key_exists(self::FIELD_INDICATION, $json)) {
@@ -1652,25 +1636,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
             $out->device = $this->device;
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->indication) && [] !== $this->indication) {
             $out->indication = $this->indication;
@@ -1678,21 +1644,29 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         if (isset($this->notes) && [] !== $this->notes) {
             $vals = [];
             $exts = [];
+            $hasVals = false;
+            $hasExts = false;
             foreach ($this->notes as $v) {
                 $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
                 if (null !== $val) {
+                    $hasVals = true;
                     $vals[] = $val;
+                } else {
+                    $vals[] = null;
                 }
-                if ([] !== $ext) {
+                if ($v->_nonValueFieldDefined()) {
+                    $hasExts = true;
+                    $ext = $v->jsonSerialize();
+                    unset($ext->value);
                     $exts[] = $ext;
+                } else {
+                    $exts[] = null;
                 }
             }
-            if ([] !== $vals) {
+            if ($hasVals) {
                 $out->notes = $vals;
             }
-            if (count((array)$ext) > 0) {
+            if ($hasExts) {
                 $out->_notes = $exts;
             }
         }
@@ -1700,9 +1674,9 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->recordedOn->getValue())) {
                 $out->recordedOn = $val;
             }
-            $ext = $this->recordedOn->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->recordedOn->_nonValueFieldDefined()) {
+                $ext = $this->recordedOn->jsonSerialize();
+                unset($ext->value);
                 $out->_recordedOn = $ext;
             }
         }
@@ -1719,16 +1693,16 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
             if (null !== ($val = $this->timingDateTime->getValue())) {
                 $out->timingDateTime = $val;
             }
-            $ext = $this->timingDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->timingDateTime->_nonValueFieldDefined()) {
+                $ext = $this->timingDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_timingDateTime = $ext;
             }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

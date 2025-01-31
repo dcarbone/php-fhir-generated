@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,9 +99,8 @@ class FHIRTimingRepeat extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TIMING_DOT_REPEAT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_BOUNDS_QUANTITY = 'boundsQuantity';
-    public const FIELD_BOUNDS_QUANTITY_EXT = '_boundsQuantity';
     public const FIELD_BOUNDS_RANGE = 'boundsRange';
     public const FIELD_BOUNDS_PERIOD = 'boundsPeriod';
     public const FIELD_COUNT = 'count';
@@ -125,12 +124,11 @@ class FHIRTimingRepeat extends FHIRElement
     public const FIELD_WHEN = 'when';
     public const FIELD_WHEN_EXT = '_when';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_BOUNDS_QUANTITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_COUNT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DURATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DURATION_MAX => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -143,7 +141,7 @@ class FHIRTimingRepeat extends FHIRElement
         self::FIELD_WHEN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
@@ -361,7 +359,7 @@ class FHIRTimingRepeat extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -370,7 +368,7 @@ class FHIRTimingRepeat extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
@@ -387,11 +385,9 @@ class FHIRTimingRepeat extends FHIRElement
      * length, or outer bounds for start and/or end limits of the timing schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration $boundsQuantity
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setBoundsQuantity(null|FHIRDecimal|FHIRDuration $boundsQuantity,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setBoundsQuantity(null|FHIRDecimal|FHIRDuration $boundsQuantity): self
     {
         if (null === $boundsQuantity) {
             unset($this->boundsQuantity);
@@ -401,33 +397,6 @@ class FHIRTimingRepeat extends FHIRElement
             $boundsQuantity = new FHIRDuration(value: $boundsQuantity);
         }
         $this->boundsQuantity = $boundsQuantity;
-        if ($this->_valueXMLLocations[self::FIELD_BOUNDS_QUANTITY] !== $valueXMLLocation) {
-            $this->_setBoundsQuantityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the boundsQuantity element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getBoundsQuantityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_BOUNDS_QUANTITY];
-    }
-
-    /**
-     * Set the location the "value" field of the boundsQuantity element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setBoundsQuantityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_BOUNDS_QUANTITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -1175,7 +1144,7 @@ class FHIRTimingRepeat extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1382,7 +1351,7 @@ class FHIRTimingRepeat extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1441,18 +1410,11 @@ class FHIRTimingRepeat extends FHIRElement
                 $type->setPeriodUnits(FHIRUnitsOfTime::xmlUnserialize($ce, $config));
             } else if (self::FIELD_WHEN === $cen) {
                 $type->setWhen(FHIREventTiming::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_BOUNDS_QUANTITY])) {
-            if (isset($type->boundsQuantity)) {
-                $type->boundsQuantity->setValue((string)$attributes[self::FIELD_BOUNDS_QUANTITY]);
-                $type->_setBoundsQuantityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setBoundsQuantity((string)$attributes[self::FIELD_BOUNDS_QUANTITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         if (isset($attributes[self::FIELD_COUNT])) {
             if (isset($type->count)) {
@@ -1544,9 +1506,6 @@ class FHIRTimingRepeat extends FHIRElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->boundsQuantity) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_BOUNDS_QUANTITY]) {
-            $xw->writeAttribute(self::FIELD_BOUNDS_QUANTITY, $this->boundsQuantity->_getFormattedValue());
-        }
         if (isset($this->count) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COUNT]) {
             $xw->writeAttribute(self::FIELD_COUNT, $this->count->_getFormattedValue());
         }
@@ -1578,11 +1537,9 @@ class FHIRTimingRepeat extends FHIRElement
             $xw->writeAttribute(self::FIELD_WHEN, $this->when->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->boundsQuantity)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_BOUNDS_QUANTITY]
-                || $this->boundsQuantity->_nonValueFieldDefined())) {
+        if (isset($this->boundsQuantity)) {
             $xw->startElement(self::FIELD_BOUNDS_QUANTITY);
-            $this->boundsQuantity->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_BOUNDS_QUANTITY]);
+            $this->boundsQuantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->boundsRange)) {
@@ -1689,15 +1646,8 @@ class FHIRTimingRepeat extends FHIRElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_BOUNDS_QUANTITY])
-            || isset($json[self::FIELD_BOUNDS_QUANTITY_EXT])
-            || array_key_exists(self::FIELD_BOUNDS_QUANTITY, $json)
-            || array_key_exists(self::FIELD_BOUNDS_QUANTITY_EXT, $json)) {
-            $value = $json[self::FIELD_BOUNDS_QUANTITY] ?? null;
-            $type->setBoundsQuantity(FHIRDuration::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDuration::FIELD_VALUE => $value]) + ($json[self::FIELD_BOUNDS_QUANTITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_BOUNDS_QUANTITY]) || array_key_exists(self::FIELD_BOUNDS_QUANTITY, $json)) {
+            $type->setBoundsQuantity(FHIRDuration::jsonUnserialize($json[self::FIELD_BOUNDS_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_BOUNDS_RANGE]) || array_key_exists(self::FIELD_BOUNDS_RANGE, $json)) {
             $type->setBoundsRange(FHIRRange::jsonUnserialize($json[self::FIELD_BOUNDS_RANGE], $config));
@@ -1815,14 +1765,7 @@ class FHIRTimingRepeat extends FHIRElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->boundsQuantity)) {
-            if (null !== ($val = $this->boundsQuantity->getValue())) {
-                $out->boundsQuantity = $val;
-            }
-            $ext = $this->boundsQuantity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_boundsQuantity = $ext;
-            }
+            $out->boundsQuantity = $this->boundsQuantity;
         }
         if (isset($this->boundsRange)) {
             $out->boundsRange = $this->boundsRange;
@@ -1834,9 +1777,9 @@ class FHIRTimingRepeat extends FHIRElement
             if (null !== ($val = $this->count->getValue())) {
                 $out->count = $val;
             }
-            $ext = $this->count->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->count->_nonValueFieldDefined()) {
+                $ext = $this->count->jsonSerialize();
+                unset($ext->value);
                 $out->_count = $ext;
             }
         }
@@ -1844,9 +1787,9 @@ class FHIRTimingRepeat extends FHIRElement
             if (null !== ($val = $this->duration->getValue())) {
                 $out->duration = $val;
             }
-            $ext = $this->duration->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->duration->_nonValueFieldDefined()) {
+                $ext = $this->duration->jsonSerialize();
+                unset($ext->value);
                 $out->_duration = $ext;
             }
         }
@@ -1854,9 +1797,9 @@ class FHIRTimingRepeat extends FHIRElement
             if (null !== ($val = $this->durationMax->getValue())) {
                 $out->durationMax = $val;
             }
-            $ext = $this->durationMax->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->durationMax->_nonValueFieldDefined()) {
+                $ext = $this->durationMax->jsonSerialize();
+                unset($ext->value);
                 $out->_durationMax = $ext;
             }
         }
@@ -1864,9 +1807,9 @@ class FHIRTimingRepeat extends FHIRElement
             if (null !== ($val = $this->durationUnits->getValue())) {
                 $out->durationUnits = $val;
             }
-            $ext = $this->durationUnits->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->durationUnits->_nonValueFieldDefined()) {
+                $ext = $this->durationUnits->jsonSerialize();
+                unset($ext->value);
                 $out->_durationUnits = $ext;
             }
         }
@@ -1874,9 +1817,9 @@ class FHIRTimingRepeat extends FHIRElement
             if (null !== ($val = $this->frequency->getValue())) {
                 $out->frequency = $val;
             }
-            $ext = $this->frequency->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->frequency->_nonValueFieldDefined()) {
+                $ext = $this->frequency->jsonSerialize();
+                unset($ext->value);
                 $out->_frequency = $ext;
             }
         }
@@ -1884,9 +1827,9 @@ class FHIRTimingRepeat extends FHIRElement
             if (null !== ($val = $this->frequencyMax->getValue())) {
                 $out->frequencyMax = $val;
             }
-            $ext = $this->frequencyMax->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->frequencyMax->_nonValueFieldDefined()) {
+                $ext = $this->frequencyMax->jsonSerialize();
+                unset($ext->value);
                 $out->_frequencyMax = $ext;
             }
         }
@@ -1894,9 +1837,9 @@ class FHIRTimingRepeat extends FHIRElement
             if (null !== ($val = $this->period->getValue())) {
                 $out->period = $val;
             }
-            $ext = $this->period->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->period->_nonValueFieldDefined()) {
+                $ext = $this->period->jsonSerialize();
+                unset($ext->value);
                 $out->_period = $ext;
             }
         }
@@ -1904,9 +1847,9 @@ class FHIRTimingRepeat extends FHIRElement
             if (null !== ($val = $this->periodMax->getValue())) {
                 $out->periodMax = $val;
             }
-            $ext = $this->periodMax->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->periodMax->_nonValueFieldDefined()) {
+                $ext = $this->periodMax->jsonSerialize();
+                unset($ext->value);
                 $out->_periodMax = $ext;
             }
         }
@@ -1914,9 +1857,9 @@ class FHIRTimingRepeat extends FHIRElement
             if (null !== ($val = $this->periodUnits->getValue())) {
                 $out->periodUnits = $val;
             }
-            $ext = $this->periodUnits->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->periodUnits->_nonValueFieldDefined()) {
+                $ext = $this->periodUnits->jsonSerialize();
+                unset($ext->value);
                 $out->_periodUnits = $ext;
             }
         }
@@ -1924,15 +1867,15 @@ class FHIRTimingRepeat extends FHIRElement
             if (null !== ($val = $this->when->getValue())) {
                 $out->when = $val;
             }
-            $ext = $this->when->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->when->_nonValueFieldDefined()) {
+                $ext = $this->when->jsonSerialize();
+                unset($ext->value);
                 $out->_when = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

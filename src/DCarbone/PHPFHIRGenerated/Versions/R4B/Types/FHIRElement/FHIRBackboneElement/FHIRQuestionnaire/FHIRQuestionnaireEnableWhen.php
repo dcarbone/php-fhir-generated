@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ENABLE_WHEN;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_QUESTION = 'question';
     public const FIELD_QUESTION_EXT = '_question';
     public const FIELD_OPERATOR = 'operator';
@@ -147,7 +147,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     public const FIELD_ANSWER_QUANTITY = 'answerQuantity';
     public const FIELD_ANSWER_REFERENCE = 'answerReference';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_QUESTION => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -187,7 +187,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_QUESTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_OPERATOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -200,7 +200,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         self::FIELD_ANSWER_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -352,7 +352,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $answerTime
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $answerString
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $answerCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $answerQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $answerQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $answerReference
      * @param null|string[] $fhirComments
      */
@@ -369,7 +369,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
                                 null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $answerTime = null,
                                 null|string|FHIRStringPrimitive|FHIRString $answerString = null,
                                 null|FHIRCoding $answerCoding = null,
-                                null|FHIRQuantity $answerQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $answerQuantity = null,
                                 null|FHIRReference $answerReference = null,
                                 null|iterable $fhirComments = null)
     {
@@ -415,7 +415,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -424,7 +424,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -1100,14 +1100,17 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $answerQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $answerQuantity
      * @return static
      */
-    public function setAnswerQuantity(null|FHIRQuantity $answerQuantity): self
+    public function setAnswerQuantity(null|FHIRDecimal|FHIRQuantity $answerQuantity): self
     {
         if (null === $answerQuantity) {
             unset($this->answerQuantity);
             return $this;
+        }
+        if (!($answerQuantity instanceof FHIRQuantity)) {
+            $answerQuantity = new FHIRQuantity(value: $answerQuantity);
         }
         $this->answerQuantity = $answerQuantity;
         return $this;
@@ -1149,7 +1152,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1416,7 +1419,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1475,7 +1478,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
                 $type->setAnswerQuantity(FHIRQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_ANSWER_REFERENCE === $cen) {
                 $type->setAnswerReference(FHIRReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1804,9 +1808,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             if (null !== ($val = $this->question->getValue())) {
                 $out->question = $val;
             }
-            $ext = $this->question->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->question->_nonValueFieldDefined()) {
+                $ext = $this->question->jsonSerialize();
+                unset($ext->value);
                 $out->_question = $ext;
             }
         }
@@ -1814,9 +1818,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             if (null !== ($val = $this->operator->getValue())) {
                 $out->operator = $val;
             }
-            $ext = $this->operator->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->operator->_nonValueFieldDefined()) {
+                $ext = $this->operator->jsonSerialize();
+                unset($ext->value);
                 $out->_operator = $ext;
             }
         }
@@ -1824,9 +1828,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             if (null !== ($val = $this->answerBoolean->getValue())) {
                 $out->answerBoolean = $val;
             }
-            $ext = $this->answerBoolean->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerBoolean->_nonValueFieldDefined()) {
+                $ext = $this->answerBoolean->jsonSerialize();
+                unset($ext->value);
                 $out->_answerBoolean = $ext;
             }
         }
@@ -1834,9 +1838,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             if (null !== ($val = $this->answerDecimal->getValue())) {
                 $out->answerDecimal = $val;
             }
-            $ext = $this->answerDecimal->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerDecimal->_nonValueFieldDefined()) {
+                $ext = $this->answerDecimal->jsonSerialize();
+                unset($ext->value);
                 $out->_answerDecimal = $ext;
             }
         }
@@ -1844,9 +1848,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             if (null !== ($val = $this->answerInteger->getValue())) {
                 $out->answerInteger = $val;
             }
-            $ext = $this->answerInteger->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerInteger->_nonValueFieldDefined()) {
+                $ext = $this->answerInteger->jsonSerialize();
+                unset($ext->value);
                 $out->_answerInteger = $ext;
             }
         }
@@ -1854,9 +1858,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             if (null !== ($val = $this->answerDate->getValue())) {
                 $out->answerDate = $val;
             }
-            $ext = $this->answerDate->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerDate->_nonValueFieldDefined()) {
+                $ext = $this->answerDate->jsonSerialize();
+                unset($ext->value);
                 $out->_answerDate = $ext;
             }
         }
@@ -1864,9 +1868,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             if (null !== ($val = $this->answerDateTime->getValue())) {
                 $out->answerDateTime = $val;
             }
-            $ext = $this->answerDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerDateTime->_nonValueFieldDefined()) {
+                $ext = $this->answerDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_answerDateTime = $ext;
             }
         }
@@ -1874,9 +1878,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             if (null !== ($val = $this->answerTime->getValue())) {
                 $out->answerTime = $val;
             }
-            $ext = $this->answerTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerTime->_nonValueFieldDefined()) {
+                $ext = $this->answerTime->jsonSerialize();
+                unset($ext->value);
                 $out->_answerTime = $ext;
             }
         }
@@ -1884,9 +1888,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             if (null !== ($val = $this->answerString->getValue())) {
                 $out->answerString = $val;
             }
-            $ext = $this->answerString->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->answerString->_nonValueFieldDefined()) {
+                $ext = $this->answerString->jsonSerialize();
+                unset($ext->value);
                 $out->_answerString = $ext;
             }
         }
@@ -1901,7 +1905,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

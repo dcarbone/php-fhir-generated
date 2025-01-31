@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,24 +88,20 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ADMINISTRATION;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SCHEDULE = 'schedule';
     public const FIELD_QUANTITY = 'quantity';
-    public const FIELD_QUANTITY_EXT = '_quantity';
     public const FIELD_RATE_QUANTITY = 'rateQuantity';
-    public const FIELD_RATE_QUANTITY_EXT = '_rateQuantity';
     public const FIELD_RATE_RATIO = 'rateRatio';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_QUANTITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
-        self::FIELD_RATE_QUANTITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are expected or requested to occur. The most common usage is
@@ -186,7 +182,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -195,7 +191,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are expected or requested to occur. The most common usage is
@@ -254,11 +250,9 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRSimpleQuantity $quantity,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setQuantity(null|FHIRDecimal|FHIRSimpleQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
@@ -268,33 +262,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
             $quantity = new FHIRSimpleQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
-        if ($this->_valueXMLLocations[self::FIELD_QUANTITY] !== $valueXMLLocation) {
-            $this->_setQuantityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the quantity element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getQuantityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_QUANTITY];
-    }
-
-    /**
-     * Set the location the "value" field of the quantity element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setQuantityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_QUANTITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -314,11 +281,9 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * according to the specified schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $rateQuantity
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRateQuantity(null|FHIRDecimal|FHIRSimpleQuantity $rateQuantity,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRateQuantity(null|FHIRDecimal|FHIRSimpleQuantity $rateQuantity): self
     {
         if (null === $rateQuantity) {
             unset($this->rateQuantity);
@@ -328,33 +293,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
             $rateQuantity = new FHIRSimpleQuantity(value: $rateQuantity);
         }
         $this->rateQuantity = $rateQuantity;
-        if ($this->_valueXMLLocations[self::FIELD_RATE_QUANTITY] !== $valueXMLLocation) {
-            $this->_setRateQuantityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the rateQuantity element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRateQuantityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RATE_QUANTITY];
-    }
-
-    /**
-     * Set the location the "value" field of the rateQuantity element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRateQuantityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RATE_QUANTITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -396,7 +334,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -507,7 +445,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -550,26 +488,11 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
                 $type->setRateQuantity(FHIRSimpleQuantity::xmlUnserialize($ce, $config));
             } else if (self::FIELD_RATE_RATIO === $cen) {
                 $type->setRateRatio(FHIRRatio::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_QUANTITY])) {
-            if (isset($type->quantity)) {
-                $type->quantity->setValue((string)$attributes[self::FIELD_QUANTITY]);
-                $type->_setQuantityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setQuantity((string)$attributes[self::FIELD_QUANTITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
-        }
-        if (isset($attributes[self::FIELD_RATE_QUANTITY])) {
-            if (isset($type->rateQuantity)) {
-                $type->rateQuantity->setValue((string)$attributes[self::FIELD_RATE_QUANTITY]);
-                $type->_setRateQuantityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setRateQuantity((string)$attributes[self::FIELD_RATE_QUANTITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         return $type;
     }
@@ -581,30 +504,20 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->quantity) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_QUANTITY]) {
-            $xw->writeAttribute(self::FIELD_QUANTITY, $this->quantity->_getFormattedValue());
-        }
-        if (isset($this->rateQuantity) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RATE_QUANTITY]) {
-            $xw->writeAttribute(self::FIELD_RATE_QUANTITY, $this->rateQuantity->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
         if (isset($this->schedule)) {
             $xw->startElement(self::FIELD_SCHEDULE);
             $this->schedule->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->quantity)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_QUANTITY]
-                || $this->quantity->_nonValueFieldDefined())) {
+        if (isset($this->quantity)) {
             $xw->startElement(self::FIELD_QUANTITY);
-            $this->quantity->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_QUANTITY]);
+            $this->quantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->rateQuantity)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_RATE_QUANTITY]
-                || $this->rateQuantity->_nonValueFieldDefined())) {
+        if (isset($this->rateQuantity)) {
             $xw->startElement(self::FIELD_RATE_QUANTITY);
-            $this->rateQuantity->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_RATE_QUANTITY]);
+            $this->rateQuantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->rateRatio)) {
@@ -639,25 +552,11 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
         if (isset($json[self::FIELD_SCHEDULE]) || array_key_exists(self::FIELD_SCHEDULE, $json)) {
             $type->setSchedule(FHIRTiming::jsonUnserialize($json[self::FIELD_SCHEDULE], $config));
         }
-        if (isset($json[self::FIELD_QUANTITY])
-            || isset($json[self::FIELD_QUANTITY_EXT])
-            || array_key_exists(self::FIELD_QUANTITY, $json)
-            || array_key_exists(self::FIELD_QUANTITY_EXT, $json)) {
-            $value = $json[self::FIELD_QUANTITY] ?? null;
-            $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_QUANTITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
+            $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_RATE_QUANTITY])
-            || isset($json[self::FIELD_RATE_QUANTITY_EXT])
-            || array_key_exists(self::FIELD_RATE_QUANTITY, $json)
-            || array_key_exists(self::FIELD_RATE_QUANTITY_EXT, $json)) {
-            $value = $json[self::FIELD_RATE_QUANTITY] ?? null;
-            $type->setRateQuantity(FHIRSimpleQuantity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_RATE_QUANTITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_RATE_QUANTITY]) || array_key_exists(self::FIELD_RATE_QUANTITY, $json)) {
+            $type->setRateQuantity(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_RATE_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_RATE_RATIO]) || array_key_exists(self::FIELD_RATE_RATIO, $json)) {
             $type->setRateRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_RATE_RATIO], $config));
@@ -675,31 +574,17 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
             $out->schedule = $this->schedule;
         }
         if (isset($this->quantity)) {
-            if (null !== ($val = $this->quantity->getValue())) {
-                $out->quantity = $val;
-            }
-            $ext = $this->quantity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_quantity = $ext;
-            }
+            $out->quantity = $this->quantity;
         }
         if (isset($this->rateQuantity)) {
-            if (null !== ($val = $this->rateQuantity->getValue())) {
-                $out->rateQuantity = $val;
-            }
-            $ext = $this->rateQuantity->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_rateQuantity = $ext;
-            }
+            $out->rateQuantity = $this->rateQuantity;
         }
         if (isset($this->rateRatio)) {
             $out->rateRatio = $this->rateRatio;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

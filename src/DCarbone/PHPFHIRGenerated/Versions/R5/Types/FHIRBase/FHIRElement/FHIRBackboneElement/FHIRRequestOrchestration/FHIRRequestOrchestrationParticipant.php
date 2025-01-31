@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_REQUEST_ORCHESTRATION_DOT_PARTICIPANT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_TYPE_CANONICAL = 'typeCanonical';
@@ -122,17 +122,17 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
     public const FIELD_ACTOR_CANONICAL_EXT = '_actorCanonical';
     public const FIELD_ACTOR_REFERENCE = 'actorReference';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TYPE_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ACTOR_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -261,7 +261,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -270,7 +270,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -611,7 +611,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -758,7 +758,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -807,7 +807,8 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
                 $type->setActorCanonical(FHIRCanonical::xmlUnserialize($ce, $config));
             } else if (self::FIELD_ACTOR_REFERENCE === $cen) {
                 $type->setActorReference(FHIRReference::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -976,9 +977,9 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
             if (null !== ($val = $this->type->getValue())) {
                 $out->type = $val;
             }
-            $ext = $this->type->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->type->_nonValueFieldDefined()) {
+                $ext = $this->type->jsonSerialize();
+                unset($ext->value);
                 $out->_type = $ext;
             }
         }
@@ -986,9 +987,9 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
             if (null !== ($val = $this->typeCanonical->getValue())) {
                 $out->typeCanonical = $val;
             }
-            $ext = $this->typeCanonical->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->typeCanonical->_nonValueFieldDefined()) {
+                $ext = $this->typeCanonical->jsonSerialize();
+                unset($ext->value);
                 $out->_typeCanonical = $ext;
             }
         }
@@ -1005,9 +1006,9 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
             if (null !== ($val = $this->actorCanonical->getValue())) {
                 $out->actorCanonical = $val;
             }
-            $ext = $this->actorCanonical->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->actorCanonical->_nonValueFieldDefined()) {
+                $ext = $this->actorCanonical->jsonSerialize();
+                unset($ext->value);
                 $out->_actorCanonical = $ext;
             }
         }
@@ -1016,7 +1017,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

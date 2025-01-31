@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -30,6 +30,9 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 
+/**
+ * This indicates an Element type that contains a "value" property
+ */
 interface ValueContainerTypeInterface extends ElementTypeInterface
 {
     /**
@@ -38,22 +41,5 @@ interface ValueContainerTypeInterface extends ElementTypeInterface
      * @return string
      */
     public function _getFormattedValue(): string;
-
-    /**
-     * Must return true if this primitive container type has a field set other than "value".  This is used during
-     * serialization.
-     *
-     * @return bool
-     */
-    public function _nonValueFieldDefined(): bool;
-
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
-     */
-    public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config,
-                                 null|ValueXMLLocationEnum $valueLocation = null): void;
 }
 

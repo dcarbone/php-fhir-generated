@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CARE_PLAN_DOT_ACTIVITY;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_GOAL = 'goal';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
@@ -101,7 +101,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     public const FIELD_DETAIL = 'detail';
     public const FIELD_SIMPLE = 'simple';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -114,14 +114,14 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PROHIBITED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NOTES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Internal reference that identifies the goals that this activity is intended to
      * contribute towards meeting.
@@ -244,7 +244,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -253,7 +253,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Internal reference that identifies the goals that this activity is intended to
      * contribute towards meeting.
@@ -643,7 +643,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -802,7 +802,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -856,7 +856,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
                 $type->setDetail(FHIRResourceReference::xmlUnserialize($ce, $config));
             } else if (self::FIELD_SIMPLE === $cen) {
                 $type->setSimple(FHIRCarePlanSimple::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1047,9 +1048,9 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -1057,9 +1058,9 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             if (null !== ($val = $this->prohibited->getValue())) {
                 $out->prohibited = $val;
             }
-            $ext = $this->prohibited->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->prohibited->_nonValueFieldDefined()) {
+                $ext = $this->prohibited->jsonSerialize();
+                unset($ext->value);
                 $out->_prohibited = $ext;
             }
         }
@@ -1070,9 +1071,9 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             if (null !== ($val = $this->notes->getValue())) {
                 $out->notes = $val;
             }
-            $ext = $this->notes->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->notes->_nonValueFieldDefined()) {
+                $ext = $this->notes->jsonSerialize();
+                unset($ext->value);
                 $out->_notes = $ext;
             }
         }
@@ -1084,7 +1085,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

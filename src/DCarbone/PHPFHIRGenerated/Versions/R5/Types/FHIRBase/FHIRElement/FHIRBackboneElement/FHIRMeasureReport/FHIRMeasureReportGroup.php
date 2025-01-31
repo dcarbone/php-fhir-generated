@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,6 +97,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
@@ -113,7 +114,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEASURE_REPORT_DOT_GROUP;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_LINK_ID = 'linkId';
     public const FIELD_LINK_ID_EXT = '_linkId';
     public const FIELD_CODE = 'code';
@@ -128,16 +129,16 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
     public const FIELD_MEASURE_SCORE_DURATION = 'measureScoreDuration';
     public const FIELD_STRATIFIER = 'stratifier';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_LINK_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MEASURE_SCORE_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -280,12 +281,12 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation[] $population
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measureScoreQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measureScoreQuantity
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $measureScoreDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $measureScoreCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $measureScorePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $measureScoreRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $measureScoreDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $measureScoreDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier[] $stratifier
      * @param null|string[] $fhirComments
      */
@@ -296,12 +297,12 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $code = null,
                                 null|FHIRReference $subject = null,
                                 null|iterable $population = null,
-                                null|FHIRQuantity $measureScoreQuantity = null,
+                                null|FHIRDecimal|FHIRQuantity $measureScoreQuantity = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $measureScoreDateTime = null,
                                 null|FHIRCodeableConcept $measureScoreCodeableConcept = null,
                                 null|FHIRPeriod $measureScorePeriod = null,
                                 null|FHIRRange $measureScoreRange = null,
-                                null|FHIRDuration $measureScoreDuration = null,
+                                null|FHIRDecimal|FHIRDuration $measureScoreDuration = null,
                                 null|iterable $stratifier = null,
                                 null|iterable $fhirComments = null)
     {
@@ -344,7 +345,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -353,7 +354,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -585,14 +586,17 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * measure type and scoring method, and based on the contents of the populations
      * defined in the group.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measureScoreQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measureScoreQuantity
      * @return static
      */
-    public function setMeasureScoreQuantity(null|FHIRQuantity $measureScoreQuantity): self
+    public function setMeasureScoreQuantity(null|FHIRDecimal|FHIRQuantity $measureScoreQuantity): self
     {
         if (null === $measureScoreQuantity) {
             unset($this->measureScoreQuantity);
             return $this;
+        }
+        if (!($measureScoreQuantity instanceof FHIRQuantity)) {
+            $measureScoreQuantity = new FHIRQuantity(value: $measureScoreQuantity);
         }
         $this->measureScoreQuantity = $measureScoreQuantity;
         return $this;
@@ -817,14 +821,17 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * measure type and scoring method, and based on the contents of the populations
      * defined in the group.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $measureScoreDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $measureScoreDuration
      * @return static
      */
-    public function setMeasureScoreDuration(null|FHIRDuration $measureScoreDuration): self
+    public function setMeasureScoreDuration(null|FHIRDecimal|FHIRDuration $measureScoreDuration): self
     {
         if (null === $measureScoreDuration) {
             unset($this->measureScoreDuration);
             return $this;
+        }
+        if (!($measureScoreDuration instanceof FHIRDuration)) {
+            $measureScoreDuration = new FHIRDuration(value: $measureScoreDuration);
         }
         $this->measureScoreDuration = $measureScoreDuration;
         return $this;
@@ -894,7 +901,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -1089,7 +1096,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1146,7 +1153,8 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
                 $type->setMeasureScoreDuration(FHIRDuration::xmlUnserialize($ce, $config));
             } else if (self::FIELD_STRATIFIER === $cen) {
                 $type->addStratifier(FHIRMeasureReportStratifier::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1343,9 +1351,9 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             if (null !== ($val = $this->linkId->getValue())) {
                 $out->linkId = $val;
             }
-            $ext = $this->linkId->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->linkId->_nonValueFieldDefined()) {
+                $ext = $this->linkId->jsonSerialize();
+                unset($ext->value);
                 $out->_linkId = $ext;
             }
         }
@@ -1365,9 +1373,9 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             if (null !== ($val = $this->measureScoreDateTime->getValue())) {
                 $out->measureScoreDateTime = $val;
             }
-            $ext = $this->measureScoreDateTime->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->measureScoreDateTime->_nonValueFieldDefined()) {
+                $ext = $this->measureScoreDateTime->jsonSerialize();
+                unset($ext->value);
                 $out->_measureScoreDateTime = $ext;
             }
         }
@@ -1388,7 +1396,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

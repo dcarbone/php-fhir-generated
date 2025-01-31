@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,13 +87,13 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMAGING_MANIFEST_DOT_INSTANCE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_SOP_CLASS = 'sopClass';
     public const FIELD_SOP_CLASS_EXT = '_sopClass';
     public const FIELD_UID = 'uid';
     public const FIELD_UID_EXT = '_uid';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_SOP_CLASS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -103,13 +103,13 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_SOP_CLASS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_UID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
@@ -162,7 +162,7 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -171,7 +171,7 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
@@ -308,7 +308,7 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -405,7 +405,7 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -444,7 +444,8 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
                 $type->setSopClass(FHIROid::xmlUnserialize($ce, $config));
             } else if (self::FIELD_UID === $cen) {
                 $type->setUid(FHIROid::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -553,9 +554,9 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
             if (null !== ($val = $this->sopClass->getValue())) {
                 $out->sopClass = $val;
             }
-            $ext = $this->sopClass->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->sopClass->_nonValueFieldDefined()) {
+                $ext = $this->sopClass->jsonSerialize();
+                unset($ext->value);
                 $out->_sopClass = $ext;
             }
         }
@@ -563,15 +564,15 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
             if (null !== ($val = $this->uid->getValue())) {
                 $out->uid = $val;
             }
-            $ext = $this->uid->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->uid->_nonValueFieldDefined()) {
+                $ext = $this->uid->jsonSerialize();
+                unset($ext->value);
                 $out->_uid = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

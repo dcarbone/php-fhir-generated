@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_EDIT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_START = 'start';
     public const FIELD_START_EXT = '_start';
     public const FIELD_END = 'end';
@@ -116,10 +116,10 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
     public const FIELD_REPLACED_SEQUENCE = 'replacedSequence';
     public const FIELD_REPLACED_SEQUENCE_EXT = '_replacedSequence';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_START => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_END => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -127,7 +127,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
         self::FIELD_REPLACED_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -220,7 +220,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -229,7 +229,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -518,7 +518,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -629,7 +629,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -672,7 +672,8 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
                 $type->setReplacementSequence(FHIRString::xmlUnserialize($ce, $config));
             } else if (self::FIELD_REPLACED_SEQUENCE === $cen) {
                 $type->setReplacedSequence(FHIRString::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -837,9 +838,9 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
             if (null !== ($val = $this->start->getValue())) {
                 $out->start = $val;
             }
-            $ext = $this->start->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->start->_nonValueFieldDefined()) {
+                $ext = $this->start->jsonSerialize();
+                unset($ext->value);
                 $out->_start = $ext;
             }
         }
@@ -847,9 +848,9 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
             if (null !== ($val = $this->end->getValue())) {
                 $out->end = $val;
             }
-            $ext = $this->end->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->end->_nonValueFieldDefined()) {
+                $ext = $this->end->jsonSerialize();
+                unset($ext->value);
                 $out->_end = $ext;
             }
         }
@@ -857,9 +858,9 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
             if (null !== ($val = $this->replacementSequence->getValue())) {
                 $out->replacementSequence = $val;
             }
-            $ext = $this->replacementSequence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->replacementSequence->_nonValueFieldDefined()) {
+                $ext = $this->replacementSequence->jsonSerialize();
+                unset($ext->value);
                 $out->_replacementSequence = $ext;
             }
         }
@@ -867,15 +868,15 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
             if (null !== ($val = $this->replacedSequence->getValue())) {
                 $out->replacedSequence = $val;
             }
-            $ext = $this->replacedSequence->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->replacedSequence->_nonValueFieldDefined()) {
+                $ext = $this->replacedSequence->jsonSerialize();
+                unset($ext->value);
                 $out->_replacedSequence = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedul
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRScheduleRepeat extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SCHEDULE_DOT_REPEAT;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_FREQUENCY = 'frequency';
     public const FIELD_FREQUENCY_EXT = '_frequency';
     public const FIELD_WHEN = 'when';
@@ -106,7 +106,7 @@ class FHIRScheduleRepeat extends FHIRElement
     public const FIELD_END = 'end';
     public const FIELD_END_EXT = '_end';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_ID => [
             Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -119,7 +119,7 @@ class FHIRScheduleRepeat extends FHIRElement
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_FREQUENCY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_WHEN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -129,7 +129,7 @@ class FHIRScheduleRepeat extends FHIRElement
         self::FIELD_END => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A whole number
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -234,7 +234,7 @@ class FHIRScheduleRepeat extends FHIRElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -243,7 +243,7 @@ class FHIRScheduleRepeat extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A whole number
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -634,7 +634,7 @@ class FHIRScheduleRepeat extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -767,7 +767,7 @@ class FHIRScheduleRepeat extends FHIRElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -812,7 +812,8 @@ class FHIRScheduleRepeat extends FHIRElement
                 $type->setCount(FHIRInteger::xmlUnserialize($ce, $config));
             } else if (self::FIELD_END === $cen) {
                 $type->setEnd(FHIRDateTime::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
@@ -1033,9 +1034,9 @@ class FHIRScheduleRepeat extends FHIRElement
             if (null !== ($val = $this->frequency->getValue())) {
                 $out->frequency = $val;
             }
-            $ext = $this->frequency->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->frequency->_nonValueFieldDefined()) {
+                $ext = $this->frequency->jsonSerialize();
+                unset($ext->value);
                 $out->_frequency = $ext;
             }
         }
@@ -1043,9 +1044,9 @@ class FHIRScheduleRepeat extends FHIRElement
             if (null !== ($val = $this->when->getValue())) {
                 $out->when = $val;
             }
-            $ext = $this->when->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->when->_nonValueFieldDefined()) {
+                $ext = $this->when->jsonSerialize();
+                unset($ext->value);
                 $out->_when = $ext;
             }
         }
@@ -1053,9 +1054,9 @@ class FHIRScheduleRepeat extends FHIRElement
             if (null !== ($val = $this->duration->getValue())) {
                 $out->duration = $val;
             }
-            $ext = $this->duration->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->duration->_nonValueFieldDefined()) {
+                $ext = $this->duration->jsonSerialize();
+                unset($ext->value);
                 $out->_duration = $ext;
             }
         }
@@ -1063,9 +1064,9 @@ class FHIRScheduleRepeat extends FHIRElement
             if (null !== ($val = $this->units->getValue())) {
                 $out->units = $val;
             }
-            $ext = $this->units->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->units->_nonValueFieldDefined()) {
+                $ext = $this->units->jsonSerialize();
+                unset($ext->value);
                 $out->_units = $ext;
             }
         }
@@ -1073,9 +1074,9 @@ class FHIRScheduleRepeat extends FHIRElement
             if (null !== ($val = $this->count->getValue())) {
                 $out->count = $val;
             }
-            $ext = $this->count->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->count->_nonValueFieldDefined()) {
+                $ext = $this->count->jsonSerialize();
+                unset($ext->value);
                 $out->_count = $ext;
             }
         }
@@ -1083,15 +1084,15 @@ class FHIRScheduleRepeat extends FHIRElement
             if (null !== ($val = $this->end->getValue())) {
                 $out->end = $val;
             }
-            $ext = $this->end->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->end->_nonValueFieldDefined()) {
+                $ext = $this->end->jsonSerialize();
+                unset($ext->value);
                 $out->_end = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

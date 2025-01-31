@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,11 +140,10 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CODE_SYSTEM;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_URL = 'url';
     public const FIELD_URL_EXT = '_url';
     public const FIELD_IDENTIFIER = 'identifier';
-    public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_VERSION = 'version';
     public const FIELD_VERSION_EXT = '_version';
     public const FIELD_NAME = 'name';
@@ -185,11 +184,10 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
     public const FIELD_COUNT = 'count';
     public const FIELD_COUNT_EXT = '_count';
     public const FIELD_FILTER = 'filter';
-    public const FIELD_FILTER_EXT = '_filter';
     public const FIELD_PROPERTY = 'property';
     public const FIELD_CONCEPT = 'concept';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [
         self::FIELD_STATUS => [
             Constants::VALIDATE_MIN_OCCURS => 1,
@@ -199,7 +197,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
         ],
     ];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -222,7 +220,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
         self::FIELD_COUNT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -702,7 +700,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -711,7 +709,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:149 */
+    /* class_default.php:148 */
     /**
      * @return string
      */
@@ -720,7 +718,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -871,14 +869,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             unset($this->identifier);
             return $this;
         }
-        $this->identifier = [];
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->identifier[] = $v;
-            } else {
-                $this->identifier[] = new FHIRIdentifier(value: $v);
-            }
-        }
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -2419,14 +2410,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             unset($this->filter);
             return $this;
         }
-        $this->filter = [];
-        foreach($filter as $v) {
-            if ($v instanceof FHIRCodeSystemFilter) {
-                $this->filter[] = $v;
-            } else {
-                $this->filter[] = new FHIRCodeSystemFilter(value: $v);
-            }
-        }
+        $this->filter = $filter;
         return $this;
     }
 
@@ -2567,7 +2551,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -3012,7 +2996,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -3117,7 +3101,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
                 $type->addProperty(FHIRCodeSystemProperty::xmlUnserialize($ce, $config));
             } else if (self::FIELD_CONCEPT === $cen) {
                 $type->addConcept(FHIRCodeSystemConcept::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -3388,8 +3373,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             $this->url->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_URL]);
             $xw->endElement();
         }
-        if (isset($this->identifier) && [] !== $this->identifier) {
-            foreach($this->identifier as $v) {
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
                 $xw->startElement(self::FIELD_IDENTIFIER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -3542,8 +3527,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             $this->count->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_COUNT]);
             $xw->endElement();
         }
-        if (isset($this->filter) && [] !== $this->filter) {
-            foreach($this->filter as $v) {
+        if (isset($this->filter)) {
+            foreach ($this->filter as $v) {
                 $xw->startElement(self::FIELD_FILTER);
                 $v->xmlSerialize($xw, $config);
                 $xw->endElement();
@@ -3612,22 +3597,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_VERSION])
@@ -3837,22 +3813,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
                 $config,
             ));
         }
-        if (isset($json[self::FIELD_FILTER])
-            || isset($json[self::FIELD_FILTER_EXT])
-            || array_key_exists(self::FIELD_FILTER, $json)
-            || array_key_exists(self::FIELD_FILTER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_FILTER] ?? []);
-            $ext = (array)($json[self::FIELD_FILTER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json[self::FIELD_FILTER]) || array_key_exists(self::FIELD_FILTER, $json)) {
+            $vs = $json[self::FIELD_FILTER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addFilter(FHIRCodeSystemFilter::jsonUnserialize(
-                    [FHIRCodeSystemFilter::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            foreach($vs as $v) {
+                $type->addFilter(FHIRCodeSystemFilter::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PROPERTY]) || array_key_exists(self::FIELD_PROPERTY, $json)) {
@@ -3886,40 +3853,22 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->url->getValue())) {
                 $out->url = $val;
             }
-            $ext = $this->url->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->url->_nonValueFieldDefined()) {
+                $ext = $this->url->jsonSerialize();
+                unset($ext->value);
                 $out->_url = $ext;
             }
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->identifier as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->identifier = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_identifier = $exts;
-            }
+            $out->identifier = $this->identifier;
         }
         if (isset($this->version)) {
             if (null !== ($val = $this->version->getValue())) {
                 $out->version = $val;
             }
-            $ext = $this->version->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->version->_nonValueFieldDefined()) {
+                $ext = $this->version->jsonSerialize();
+                unset($ext->value);
                 $out->_version = $ext;
             }
         }
@@ -3927,9 +3876,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->name->getValue())) {
                 $out->name = $val;
             }
-            $ext = $this->name->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->name->_nonValueFieldDefined()) {
+                $ext = $this->name->jsonSerialize();
+                unset($ext->value);
                 $out->_name = $ext;
             }
         }
@@ -3937,9 +3886,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->title->getValue())) {
                 $out->title = $val;
             }
-            $ext = $this->title->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->title->_nonValueFieldDefined()) {
+                $ext = $this->title->jsonSerialize();
+                unset($ext->value);
                 $out->_title = $ext;
             }
         }
@@ -3947,9 +3896,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->status->getValue())) {
                 $out->status = $val;
             }
-            $ext = $this->status->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->status->_nonValueFieldDefined()) {
+                $ext = $this->status->jsonSerialize();
+                unset($ext->value);
                 $out->_status = $ext;
             }
         }
@@ -3957,9 +3906,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->experimental->getValue())) {
                 $out->experimental = $val;
             }
-            $ext = $this->experimental->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->experimental->_nonValueFieldDefined()) {
+                $ext = $this->experimental->jsonSerialize();
+                unset($ext->value);
                 $out->_experimental = $ext;
             }
         }
@@ -3967,9 +3916,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->date->getValue())) {
                 $out->date = $val;
             }
-            $ext = $this->date->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->date->_nonValueFieldDefined()) {
+                $ext = $this->date->jsonSerialize();
+                unset($ext->value);
                 $out->_date = $ext;
             }
         }
@@ -3977,9 +3926,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->publisher->getValue())) {
                 $out->publisher = $val;
             }
-            $ext = $this->publisher->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->publisher->_nonValueFieldDefined()) {
+                $ext = $this->publisher->jsonSerialize();
+                unset($ext->value);
                 $out->_publisher = $ext;
             }
         }
@@ -3990,9 +3939,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->description->getValue())) {
                 $out->description = $val;
             }
-            $ext = $this->description->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->description->_nonValueFieldDefined()) {
+                $ext = $this->description->jsonSerialize();
+                unset($ext->value);
                 $out->_description = $ext;
             }
         }
@@ -4006,9 +3955,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->purpose->getValue())) {
                 $out->purpose = $val;
             }
-            $ext = $this->purpose->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->purpose->_nonValueFieldDefined()) {
+                $ext = $this->purpose->jsonSerialize();
+                unset($ext->value);
                 $out->_purpose = $ext;
             }
         }
@@ -4016,9 +3965,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->copyright->getValue())) {
                 $out->copyright = $val;
             }
-            $ext = $this->copyright->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->copyright->_nonValueFieldDefined()) {
+                $ext = $this->copyright->jsonSerialize();
+                unset($ext->value);
                 $out->_copyright = $ext;
             }
         }
@@ -4026,9 +3975,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->caseSensitive->getValue())) {
                 $out->caseSensitive = $val;
             }
-            $ext = $this->caseSensitive->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->caseSensitive->_nonValueFieldDefined()) {
+                $ext = $this->caseSensitive->jsonSerialize();
+                unset($ext->value);
                 $out->_caseSensitive = $ext;
             }
         }
@@ -4036,9 +3985,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->valueSet->getValue())) {
                 $out->valueSet = $val;
             }
-            $ext = $this->valueSet->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->valueSet->_nonValueFieldDefined()) {
+                $ext = $this->valueSet->jsonSerialize();
+                unset($ext->value);
                 $out->_valueSet = $ext;
             }
         }
@@ -4046,9 +3995,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->hierarchyMeaning->getValue())) {
                 $out->hierarchyMeaning = $val;
             }
-            $ext = $this->hierarchyMeaning->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->hierarchyMeaning->_nonValueFieldDefined()) {
+                $ext = $this->hierarchyMeaning->jsonSerialize();
+                unset($ext->value);
                 $out->_hierarchyMeaning = $ext;
             }
         }
@@ -4056,9 +4005,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->compositional->getValue())) {
                 $out->compositional = $val;
             }
-            $ext = $this->compositional->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->compositional->_nonValueFieldDefined()) {
+                $ext = $this->compositional->jsonSerialize();
+                unset($ext->value);
                 $out->_compositional = $ext;
             }
         }
@@ -4066,9 +4015,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->versionNeeded->getValue())) {
                 $out->versionNeeded = $val;
             }
-            $ext = $this->versionNeeded->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->versionNeeded->_nonValueFieldDefined()) {
+                $ext = $this->versionNeeded->jsonSerialize();
+                unset($ext->value);
                 $out->_versionNeeded = $ext;
             }
         }
@@ -4076,9 +4025,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->content->getValue())) {
                 $out->content = $val;
             }
-            $ext = $this->content->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->content->_nonValueFieldDefined()) {
+                $ext = $this->content->jsonSerialize();
+                unset($ext->value);
                 $out->_content = $ext;
             }
         }
@@ -4086,9 +4035,9 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->supplements->getValue())) {
                 $out->supplements = $val;
             }
-            $ext = $this->supplements->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->supplements->_nonValueFieldDefined()) {
+                $ext = $this->supplements->jsonSerialize();
+                unset($ext->value);
                 $out->_supplements = $ext;
             }
         }
@@ -4096,32 +4045,14 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
             if (null !== ($val = $this->count->getValue())) {
                 $out->count = $val;
             }
-            $ext = $this->count->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->count->_nonValueFieldDefined()) {
+                $ext = $this->count->jsonSerialize();
+                unset($ext->value);
                 $out->_count = $ext;
             }
         }
         if (isset($this->filter) && [] !== $this->filter) {
-            $vals = [];
-            $exts = [];
-            foreach ($this->filter as $v) {
-                $val = $v->getValue();
-                $ext = $v->jsonSerialize();
-                unset($ext->value);
-                if (null !== $val) {
-                    $vals[] = $val;
-                }
-                if ([] !== $ext) {
-                    $exts[] = $ext;
-                }
-            }
-            if ([] !== $vals) {
-                $out->filter = $vals;
-            }
-            if (count((array)$ext) > 0) {
-                $out->_filter = $exts;
-            }
+            $out->filter = $this->filter;
         }
         if (isset($this->property) && [] !== $this->property) {
             $out->property = $this->property;
@@ -4132,7 +4063,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
         $out->resourceType = $this->_getResourceType();
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

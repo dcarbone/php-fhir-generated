@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,20 +85,18 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TEST_SCRIPT_DOT_ACTION_1;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_OPERATION = 'operation';
     public const FIELD_ASSERT = 'assert';
-    public const FIELD_ASSERT_EXT = '_assert';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
-        self::FIELD_ASSERT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * A structured set of tests against a FHIR server implementation to determine
      * compliance against the FHIR specification.
@@ -148,7 +146,7 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -157,7 +155,7 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * A structured set of tests against a FHIR server implementation to determine
      * compliance against the FHIR specification.
@@ -212,11 +210,9 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
      * test behaves appropriately.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert $assert
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAssert(null|FHIRString|FHIRTestScriptAssert $assert,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAssert(null|FHIRString|FHIRTestScriptAssert $assert): self
     {
         if (null === $assert) {
             unset($this->assert);
@@ -226,37 +222,10 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
             $assert = new FHIRTestScriptAssert(value: $assert);
         }
         $this->assert = $assert;
-        if ($this->_valueXMLLocations[self::FIELD_ASSERT] !== $valueXMLLocation) {
-            $this->_setAssertValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the assert element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAssertValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ASSERT];
-    }
-
-    /**
-     * Set the location the "value" field of the assert element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAssertValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ASSERT] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -343,7 +312,7 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -382,18 +351,11 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
                 $type->setOperation(FHIRTestScriptOperation::xmlUnserialize($ce, $config));
             } else if (self::FIELD_ASSERT === $cen) {
                 $type->setAssert(FHIRTestScriptAssert::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-        }
-        if (isset($attributes[self::FIELD_ASSERT])) {
-            if (isset($type->assert)) {
-                $type->assert->setValue((string)$attributes[self::FIELD_ASSERT]);
-                $type->_setAssertValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            } else {
-                $type->setAssert((string)$attributes[self::FIELD_ASSERT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
-            }
         }
         return $type;
     }
@@ -405,20 +367,15 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
-        if (isset($this->assert) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ASSERT]) {
-            $xw->writeAttribute(self::FIELD_ASSERT, $this->assert->_getFormattedValue());
-        }
         parent::xmlSerialize($xw, $config);
         if (isset($this->operation)) {
             $xw->startElement(self::FIELD_OPERATION);
             $this->operation->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->assert)
-            && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ASSERT]
-                || $this->assert->_nonValueFieldDefined())) {
+        if (isset($this->assert)) {
             $xw->startElement(self::FIELD_ASSERT);
-            $this->assert->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_ASSERT]);
+            $this->assert->xmlSerialize($xw, $config);
             $xw->endElement();
         }
     }
@@ -448,15 +405,8 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
         if (isset($json[self::FIELD_OPERATION]) || array_key_exists(self::FIELD_OPERATION, $json)) {
             $type->setOperation(FHIRTestScriptOperation::jsonUnserialize($json[self::FIELD_OPERATION], $config));
         }
-        if (isset($json[self::FIELD_ASSERT])
-            || isset($json[self::FIELD_ASSERT_EXT])
-            || array_key_exists(self::FIELD_ASSERT, $json)
-            || array_key_exists(self::FIELD_ASSERT_EXT, $json)) {
-            $value = $json[self::FIELD_ASSERT] ?? null;
-            $type->setAssert(FHIRTestScriptAssert::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRTestScriptAssert::FIELD_VALUE => $value]) + ($json[self::FIELD_ASSERT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json[self::FIELD_ASSERT]) || array_key_exists(self::FIELD_ASSERT, $json)) {
+            $type->setAssert(FHIRTestScriptAssert::jsonUnserialize($json[self::FIELD_ASSERT], $config));
         }
         return $type;
     }
@@ -471,18 +421,11 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
             $out->operation = $this->operation;
         }
         if (isset($this->assert)) {
-            if (null !== ($val = $this->assert->getValue())) {
-                $out->assert = $val;
-            }
-            $ext = $this->assert->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
-                $out->_assert = $ext;
-            }
+            $out->assert = $this->assert;
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */

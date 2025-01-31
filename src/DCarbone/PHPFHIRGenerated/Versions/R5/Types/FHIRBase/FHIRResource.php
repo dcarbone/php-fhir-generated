@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 02:55+0000
+ * Class creation date: January 31st, 2025 23:45+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,7 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESOURCE;
 
-    /* class_default.php:48 */
+    /* class_default.php:47 */
     public const FIELD_ID = 'id';
     public const FIELD_ID_EXT = '_id';
     public const FIELD_META = 'meta';
@@ -120,17 +120,17 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
     public const FIELD_LANGUAGE = 'language';
     public const FIELD_LANGUAGE_EXT = '_language';
 
-    /* class_default.php:67 */
+    /* class_default.php:66 */
     private static array $_validationRules = [];
 
-    /* class_default.php:92 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_IMPLICIT_RULES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LANGUAGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:108 */
+    /* class_default.php:107 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -214,7 +214,7 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
         }
     }
 
-    /* class_default.php:137 */
+    /* class_default.php:136 */
     /**
      * @return string
      */
@@ -223,7 +223,7 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:163 */
+    /* class_default.php:162 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -480,7 +480,7 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:188 */
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
@@ -555,7 +555,7 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
         return $errs;
     }
 
-    /* class_default.php:213 */
+    /* class_default.php:212 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -596,7 +596,8 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($ce, $config));
             } else if (self::FIELD_LANGUAGE === $cen) {
                 $type->setLanguage(FHIRCode::xmlUnserialize($ce, $config));
-            }        }
+            }
+        }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
@@ -770,9 +771,9 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
             if (null !== ($val = $this->id->getValue())) {
                 $out->id = $val;
             }
-            $ext = $this->id->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->id->_nonValueFieldDefined()) {
+                $ext = $this->id->jsonSerialize();
+                unset($ext->value);
                 $out->_id = $ext;
             }
         }
@@ -783,9 +784,9 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
             if (null !== ($val = $this->implicitRules->getValue())) {
                 $out->implicitRules = $val;
             }
-            $ext = $this->implicitRules->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->implicitRules->_nonValueFieldDefined()) {
+                $ext = $this->implicitRules->jsonSerialize();
+                unset($ext->value);
                 $out->_implicitRules = $ext;
             }
         }
@@ -793,15 +794,15 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
             if (null !== ($val = $this->language->getValue())) {
                 $out->language = $val;
             }
-            $ext = $this->language->jsonSerialize();
-            unset($ext->value);
-            if (count((array)$ext) > 0) {
+            if ($this->language->_nonValueFieldDefined()) {
+                $ext = $this->language->jsonSerialize();
+                unset($ext->value);
                 $out->_language = $ext;
             }
         }
         return $out;
     }
-    /* class_default.php:238 */
+    /* class_default.php:236 */
     /**
      * @return string
      */
