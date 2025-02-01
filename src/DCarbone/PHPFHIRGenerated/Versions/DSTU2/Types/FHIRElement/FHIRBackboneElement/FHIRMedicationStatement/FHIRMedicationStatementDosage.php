@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 16:35+0000
+ * Class creation date: February 1st, 2025 22:01+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,9 +107,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  * administration is more formal and is not missing detailed information.
  */
 class FHIRMedicationStatementDosage extends FHIRBackboneElement
-{
-
-    // name of FHIR type this class describes
+{    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_STATEMENT_DOT_DOSAGE;
 
     /* class_default.php:47 */
@@ -1191,7 +1189,7 @@ class FHIRMedicationStatementDosage extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:212 */
+    /* class_default.php:211 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

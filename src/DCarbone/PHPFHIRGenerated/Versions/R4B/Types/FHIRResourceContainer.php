@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 16:35+0000
+ * Class creation date: February 1st, 2025 22:01+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,18 +86,20 @@ use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionTypeMap;
 
-class FHIRResourceContainer implements ElementTypeInterface, CommentContainerInterface
+class FHIRResourceContainer implements ResourceTypeInterface, CommentContainerInterface
 {
-    use CommentContainerTrait;
-
+    use CommentContainerTrait,
+        SourceXMLNamespaceTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESOURCE_CONTAINER;
@@ -162,15 +164,15 @@ class FHIRResourceContainer implements ElementTypeInterface, CommentContainerInt
     }
 
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param string|\SimpleXMLElement $element
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer
      * @throws \Exception
      */
-    public static function xmlUnserialize(\SimpleXMLElement $element,
-                                          UnserializeConfig $config,
-                                          null|ElementTypeInterface $type = null): self
+    public static function xmlUnserialize(string|\SimpleXMLElement $element,
+                                          null|UnserializeConfig $config = null,
+                                          null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -182,10 +184,19 @@ class FHIRResourceContainer implements ElementTypeInterface, CommentContainerInt
                 get_class($type)
             ));
         }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
+        }
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXMLNS((string)$ns);
+        }
         foreach ($element->children() as $child) {
             /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $class */
             $class = VersionTypeMap::getContainedTypeClassNameFromXML($child);
-            $type->setContainedType($class::xmlUnserialize($child, null, $config));
+            $type->setContainedType($class::xmlUnserialize($child, $config));
             break;
         }
         return $type;
@@ -197,15 +208,17 @@ class FHIRResourceContainer implements ElementTypeInterface, CommentContainerInt
      * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
      */
     public function xmlSerialize(null|XMLWriter $xw = null,
-                                 null|SerializeConfig $config = null): XMLWriter;
-
+                                 null|SerializeConfig $config = null): XMLWriter
     {
         $containedType = $this->getContainedType();
         if (null !== $containedType) {
             return $containedType->xmlSerialize($xw, $config);
         }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
         if (null === $xw) {
-            $xw = new XMLWriter();
+            $xw = new XMLWriter($config);
         }
         if (!$xw->isOpen()) {
             $xw->openMemory();
@@ -214,12 +227,9 @@ class FHIRResourceContainer implements ElementTypeInterface, CommentContainerInt
             $docStarted = true;
             $xw->startDocument();
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
         if (!$xw->isRootOpen()) {
             $rootOpened = true;
-            $xw->openRootNode($config, 'ResourceContainer', $this->_getSourceXMLNS());
+            $xw->openRootNode('ResourceContainer', $this->_getSourceXMLNS());
         }
         if (isset($rootOpened) && $rootOpened) {
             $xw->endElement();
@@ -231,15 +241,15 @@ class FHIRResourceContainer implements ElementTypeInterface, CommentContainerInt
     }
 
     /**
-     * @param array $json
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param string|\stdClass|array $json
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
-                                           UnserializeConfig $config,
-                                           null|ElementTypeInterface $type = null): self
+    public static function jsonUnserialize(string|\stdClass|array $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -251,9 +261,21 @@ class FHIRResourceContainer implements ElementTypeInterface, CommentContainerInt
                 get_class($type)
             ));
         }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($json)) {
+            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
+        } else if (is_object($json)) {
+            $json = (array)$json;
+        }
         if (isset($json[Constants::JSON_FIELD_FHIR_COMMENTS])) {
             $type->_setFHIRComments((array)$json[Constants::JSON_FIELD_FHIR_COMMENTS]);
-        }    }
+        }        /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $class */
+        $class = VersionTypeMap::getContainedTypeClassNameFromArray($json);
+        $type->setContainedType($class::jsonUnserialize($json));
+        return $type;
+    }
 
     public function __toString(): string
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 16:35+0000
+ * Class creation date: February 1st, 2025 22:01+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,9 +86,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * the MessageHeader resource instance is the first resource in the bundle.
  */
 class FHIRMessageHeaderDestination extends FHIRBackboneElement
-{
-
-    // name of FHIR type this class describes
+{    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MESSAGE_HEADER_DOT_DESTINATION;
 
     /* class_default.php:47 */
@@ -460,7 +458,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:212 */
+    /* class_default.php:211 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

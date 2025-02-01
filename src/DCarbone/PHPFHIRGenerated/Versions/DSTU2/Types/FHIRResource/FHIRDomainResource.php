@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 16:35+0000
+ * Class creation date: February 1st, 2025 22:01+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,9 +89,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionTypeMap;
  * A resource that includes narrative, extensions, and contained resources.
  */
 class FHIRDomainResource extends FHIRResource
-{
-
-    // name of FHIR type this class describes
+{    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DOMAIN_RESOURCE;
 
     /* class_default.php:47 */
@@ -608,7 +606,7 @@ class FHIRDomainResource extends FHIRResource
         return $errs;
     }
 
-    /* class_default.php:212 */
+    /* class_default.php:211 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

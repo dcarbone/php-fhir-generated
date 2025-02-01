@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 16:35+0000
+ * Class creation date: February 1st, 2025 22:01+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,7 +61,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept;
@@ -75,9 +75,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  * A reference to a document.
  */
 class FHIRDocumentReferenceContext extends FHIRBackboneElement
-{
-
-    // name of FHIR type this class describes
+{    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DOCUMENT_REFERENCE_DOT_CONTEXT;
 
     /* class_default.php:47 */
@@ -421,17 +419,17 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:212 */
+    /* class_default.php:211 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param string|\SimpleXMLElement $element
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext
      * @throws \Exception
      */
-    public static function xmlUnserialize(\SimpleXMLElement $element,
-                                          UnserializeConfig $config,
-                                          null|ElementTypeInterface $type = null): self
+    public static function xmlUnserialize(string|\SimpleXMLElement $element,
+                                          null|UnserializeConfig $config = null,
+                                          null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -442,6 +440,15 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
                 static::class,
                 get_class($type)
             ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
+        }
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXMLNS((string)$ns);
         }
         foreach ($element->children() as $ce) {
             $cen = $ce->getName();
@@ -472,12 +479,30 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
     }
 
     /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
      */
-    public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config): void
+    public function xmlSerialize(null|XMLWriter $xw = null,
+                                 null|SerializeConfig $config = null): XMLWriter
     {
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
+        if (null === $xw) {
+            $xw = new XMLWriter($config);
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $rootOpened = true;
+            $xw->openRootNode('DocumentReferenceContext', $this->_getSourceXMLNS());
+        }
         parent::xmlSerialize($xw, $config);
         if (isset($this->event)) {
             foreach ($this->event as $v) {
@@ -496,18 +521,25 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
             $this->facilityType->xmlSerialize($xw, $config);
             $xw->endElement();
         }
+        if (isset($rootOpened) && $rootOpened) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @param array $json
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param string|\stdClass|array $json
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
-                                           UnserializeConfig $config,
-                                           null|ElementTypeInterface $type = null): self
+    public static function jsonUnserialize(string|\stdClass|array $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -518,6 +550,14 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
                 static::class,
                 get_class($type)
             ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($json)) {
+            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
+        } else if (is_object($json)) {
+            $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_EVENT]) || array_key_exists(self::FIELD_EVENT, $json)) {

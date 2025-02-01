@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 16:35+0000
+ * Class creation date: February 1st, 2025 22:01+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,10 +95,9 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
-abstract class FHIRBase implements ElementTypeInterface, CommentContainerInterface
+abstract class FHIRBase implements CommentContainerInterface
 {
     use CommentContainerTrait;
-
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BASE;
@@ -132,60 +131,7 @@ abstract class FHIRBase implements ElementTypeInterface, CommentContainerInterfa
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:212 */
-    /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase
-     * @throws \Exception
-     */
-    public static function xmlUnserialize(\SimpleXMLElement $element,
-                                          UnserializeConfig $config,
-                                          null|ElementTypeInterface $type = null): self
-    {
-        if (null === $type) {
-            throw new \RuntimeException(sprintf('%s::xmlUnserialize: Cannot unserialize directly into root type', static::class));
-        } else if (!($type instanceof FHIRBase)) {
-            throw new \RuntimeException(sprintf(
-                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
-                static::class,
-                get_class($type)
-            ));
-        }
-        return $type;
-    }
-
-    /**
-     * @param array $json
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase
-     * @throws \Exception
-     */
-    public static function jsonUnserialize(array $json,
-                                           UnserializeConfig $config,
-                                           null|ElementTypeInterface $type = null): self
-    {
-        if (null === $type) {
-            throw new \RuntimeException(sprintf('%s::xmlUnserialize: Cannot unserialize directly into root type', static::class));
-        } else if (!($type instanceof FHIRBase)) {
-            throw new \RuntimeException(sprintf(
-                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
-                static::class,
-                get_class($type)
-            ));
-        }
-        if (isset($json[Constants::JSON_FIELD_FHIR_COMMENTS])) {
-            $type->_setFHIRComments((array)$json[Constants::JSON_FIELD_FHIR_COMMENTS]);
-        }
-        return $type;
-    }
-
-
-    /* class_default.php:237 */
+    /* class_default.php:238 */
     /**
      * @return string
      */

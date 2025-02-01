@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 16:35+0000
+ * Class creation date: February 1st, 2025 22:01+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,9 +80,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * Details of a Health Insurance product/plan provided by an organization.
  */
 class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
-{
-
-    // name of FHIR type this class describes
+{    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INSURANCE_PLAN_DOT_SPECIFIC_COST;
 
     /* class_default.php:47 */
@@ -349,7 +347,7 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
         return $errs;
     }
 
-    /* class_default.php:212 */
+    /* class_default.php:211 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

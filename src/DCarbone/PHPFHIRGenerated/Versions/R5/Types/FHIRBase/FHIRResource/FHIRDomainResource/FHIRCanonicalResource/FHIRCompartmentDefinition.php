@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 16:35+0000
+ * Class creation date: February 1st, 2025 22:01+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
 class FHIRCompartmentDefinition extends FHIRCanonicalResource implements VersionContainedTypeInterface
 {
     use SourceXMLNamespaceTrait;
-
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COMPARTMENT_DEFINITION;
@@ -2062,7 +2061,7 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
         return $errs;
     }
 
-    /* class_default.php:212 */
+    /* class_default.php:211 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

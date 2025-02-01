@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 16:35+0000
+ * Class creation date: February 1st, 2025 22:01+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,8 +61,9 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\Types\DSTU1PrimitiveContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Types\PrimitiveContainerTypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\ValueContainerTrait;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
@@ -75,10 +76,9 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  * The type of network access point that originated the audit event
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
-class FHIRSecurityEventParticipantNetworkType extends FHIRElement implements PrimitiveContainerTypeInterface
+class FHIRSecurityEventParticipantNetworkType extends FHIRElement implements DSTU1PrimitiveContainerTypeInterface
 {
     use ValueContainerTrait;
-
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SECURITY_EVENT_PARTICIPANT_NETWORK_TYPE;
@@ -252,24 +252,24 @@ class FHIRSecurityEventParticipantNetworkType extends FHIRElement implements Pri
         return $errs;
     }
 
-    /* class_default.php:201 */
+    /* class_default.php:200 */
     public function _nonValueFieldDefined(): bool
     {
         return isset($this->extension)
                || isset($this->id);
     }
 
-    /* class_default.php:212 */
+    /* class_default.php:211 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param string|\SimpleXMLElement $element
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventParticipantNetworkType $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventParticipantNetworkType
      * @throws \Exception
      */
-    public static function xmlUnserialize(\SimpleXMLElement $element,
-                                          UnserializeConfig $config,
-                                          null|ElementTypeInterface $type = null): self
+    public static function xmlUnserialize(string|\SimpleXMLElement $element,
+                                          null|UnserializeConfig $config = null,
+                                          null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -280,6 +280,15 @@ class FHIRSecurityEventParticipantNetworkType extends FHIRElement implements Pri
                 static::class,
                 get_class($type)
             ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
+        }
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXMLNS((string)$ns);
         }
         foreach ($element->children() as $ce) {
             $cen = $ce->getName();
@@ -312,15 +321,32 @@ class FHIRSecurityEventParticipantNetworkType extends FHIRElement implements Pri
     }
 
     /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
      */
-    public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config,
-                                 null|ValueXMLLocationEnum $valueLocation = null): void
+    public function xmlSerialize(null|XMLWriter $xw = null,
+                                 null|SerializeConfig $config = null,
+                                 null|ValueXMLLocationEnum $valueLocation = null): XMLWriter
     {
-        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
+        if (null === $xw) {
+            $xw = new XMLWriter($config);
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $rootOpened = true;
+            $xw->openRootNode('SecurityEventParticipantNetworkType', $this->_getSourceXMLNS());
+        }
         if (isset($this->value) && ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueLocation) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
@@ -336,18 +362,25 @@ class FHIRSecurityEventParticipantNetworkType extends FHIRElement implements Pri
                 $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
             }
         }
+        if (isset($rootOpened) && $rootOpened) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @param array $json
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param string|\stdClass|array $json
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventParticipantNetworkType $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventParticipantNetworkType
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
-                                           UnserializeConfig $config,
-                                           null|ElementTypeInterface $type = null): self
+    public static function jsonUnserialize(string|\stdClass|array $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -358,6 +391,14 @@ class FHIRSecurityEventParticipantNetworkType extends FHIRElement implements Pri
                 static::class,
                 get_class($type)
             ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($json)) {
+            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
+        } else if (is_object($json)) {
+            $json = (array)$json;
         }
         parent::jsonUnserialize($json, $config, $type); 
         if ([] === $json) {
