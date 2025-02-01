@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,6 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
@@ -154,7 +153,7 @@ class FHIRAdministrableProductDefinitionTargetSpecies extends FHIRBackboneElemen
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionWithdrawalPeriod[] $withdrawalPeriod
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionWithdrawalPeriod[] $withdrawalPeriod
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -256,14 +255,11 @@ class FHIRAdministrableProductDefinitionTargetSpecies extends FHIRBackboneElemen
      * A species specific time during which consumption of animal product is not
      * appropriate.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionWithdrawalPeriod $withdrawalPeriod
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionWithdrawalPeriod $withdrawalPeriod
      * @return static
      */
-    public function addWithdrawalPeriod(FHIRQuantity|FHIRAdministrableProductDefinitionWithdrawalPeriod $withdrawalPeriod): self
+    public function addWithdrawalPeriod(FHIRAdministrableProductDefinitionWithdrawalPeriod $withdrawalPeriod): self
     {
-        if (!($withdrawalPeriod instanceof FHIRAdministrableProductDefinitionWithdrawalPeriod)) {
-            $withdrawalPeriod = new FHIRAdministrableProductDefinitionWithdrawalPeriod(value: $withdrawalPeriod);
-        }
         if (!isset($this->withdrawalPeriod)) {
             $this->withdrawalPeriod = [];
         }
@@ -279,10 +275,10 @@ class FHIRAdministrableProductDefinitionTargetSpecies extends FHIRBackboneElemen
      * A species specific time during which consumption of animal product is not
      * appropriate.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionWithdrawalPeriod ...$withdrawalPeriod
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionWithdrawalPeriod ...$withdrawalPeriod
      * @return static
      */
-    public function setWithdrawalPeriod(FHIRQuantity|FHIRAdministrableProductDefinitionWithdrawalPeriod ...$withdrawalPeriod): self
+    public function setWithdrawalPeriod(FHIRAdministrableProductDefinitionWithdrawalPeriod ...$withdrawalPeriod): self
     {
         if ([] === $withdrawalPeriod) {
             unset($this->withdrawalPeriod);
@@ -504,13 +500,5 @@ class FHIRAdministrableProductDefinitionTargetSpecies extends FHIRBackboneElemen
             $out->withdrawalPeriod = $this->withdrawalPeriod;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

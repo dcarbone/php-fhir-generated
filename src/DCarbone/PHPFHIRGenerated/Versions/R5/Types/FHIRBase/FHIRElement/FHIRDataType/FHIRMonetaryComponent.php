@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode;
@@ -106,8 +105,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRMonetaryComponent extends FHIRDataType
 {
-    use SourceXMLNamespaceTrait;
-
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MONETARY_COMPONENT;
@@ -187,7 +184,7 @@ class FHIRMonetaryComponent extends FHIRDataType
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $amount
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -195,7 +192,7 @@ class FHIRMonetaryComponent extends FHIRDataType
                                 null|string|FHIRCodePrimitive|FHIRCode $type = null,
                                 null|FHIRCodeableConcept $code = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
-                                null|FHIRDecimal|FHIRMoney $amount = null,
+                                null|FHIRMoney $amount = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -420,17 +417,14 @@ class FHIRMonetaryComponent extends FHIRDataType
      *
      * Explicit value amount to be used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $amount
      * @return static
      */
-    public function setAmount(null|FHIRDecimal|FHIRMoney $amount): self
+    public function setAmount(null|FHIRMoney $amount): self
     {
         if (null === $amount) {
             unset($this->amount);
             return $this;
-        }
-        if (!($amount instanceof FHIRMoney)) {
-            $amount = new FHIRMoney(value: $amount);
         }
         $this->amount = $amount;
         return $this;
@@ -730,13 +724,5 @@ class FHIRMonetaryComponent extends FHIRDataType
             $out->amount = $this->amount;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

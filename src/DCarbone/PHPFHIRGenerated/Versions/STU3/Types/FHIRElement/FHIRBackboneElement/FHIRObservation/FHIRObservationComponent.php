@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity;
@@ -304,7 +303,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $valueString
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $valueRange
@@ -323,7 +322,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $code = null,
-                                null|FHIRDecimal|FHIRQuantity $valueQuantity = null,
+                                null|FHIRQuantity $valueQuantity = null,
                                 null|FHIRCodeableConcept $valueCodeableConcept = null,
                                 null|string|FHIRStringPrimitive|FHIRString $valueString = null,
                                 null|FHIRRange $valueRange = null,
@@ -459,17 +458,14 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(null|FHIRDecimal|FHIRQuantity $valueQuantity): self
+    public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
         if (null === $valueQuantity) {
             unset($this->valueQuantity);
             return $this;
-        }
-        if (!($valueQuantity instanceof FHIRQuantity)) {
-            $valueQuantity = new FHIRQuantity(value: $valueQuantity);
         }
         $this->valueQuantity = $valueQuantity;
         return $this;
@@ -1642,13 +1638,5 @@ class FHIRObservationComponent extends FHIRBackboneElement
             $out->referenceRange = $this->referenceRange;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -322,7 +322,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $power
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $backCurve
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $diameter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $duration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $duration
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $color
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $brand
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation[] $note
@@ -342,7 +342,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $power = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $backCurve = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $diameter = null,
-                                null|FHIRDecimal|FHIRQuantity $duration = null,
+                                null|FHIRQuantity $duration = null,
                                 null|string|FHIRStringPrimitive|FHIRString $color = null,
                                 null|string|FHIRStringPrimitive|FHIRString $brand = null,
                                 null|iterable $note = null,
@@ -1142,17 +1142,14 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * The recommended maximum wear period for the lens.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $duration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $duration
      * @return static
      */
-    public function setDuration(null|FHIRDecimal|FHIRQuantity $duration): self
+    public function setDuration(null|FHIRQuantity $duration): self
     {
         if (null === $duration) {
             unset($this->duration);
             return $this;
-        }
-        if (!($duration instanceof FHIRQuantity)) {
-            $duration = new FHIRQuantity(value: $duration);
         }
         $this->duration = $duration;
         return $this;
@@ -2213,13 +2210,5 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             $out->note = $this->note;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

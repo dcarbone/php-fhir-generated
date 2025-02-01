@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -224,7 +224,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $class
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $geometry
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $copolymerConnectivity
@@ -241,7 +241,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
                                 null|iterable $contained = null,
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRString|FHIRIdentifier $identifier = null,
+                                null|FHIRIdentifier $identifier = null,
                                 null|FHIRCodeableConcept $class = null,
                                 null|FHIRCodeableConcept $geometry = null,
                                 null|iterable $copolymerConnectivity = null,
@@ -326,17 +326,14 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * A business idenfier for this polymer, but typically this is handled by a
      * SubstanceDefinition identifier.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function setIdentifier(null|FHIRString|FHIRIdentifier $identifier): self
+    public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
         if (null === $identifier) {
             unset($this->identifier);
             return $this;
-        }
-        if (!($identifier instanceof FHIRIdentifier)) {
-            $identifier = new FHIRIdentifier(value: $identifier);
         }
         $this->identifier = $identifier;
         return $this;
@@ -1173,13 +1170,5 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

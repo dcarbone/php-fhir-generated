@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -309,7 +309,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRObservationDataType[] $permittedDataType
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $multipleResultsAllowed
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $method
@@ -553,14 +553,11 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRIdentifier $identifier): self
     {
-        if (!($identifier instanceof FHIRIdentifier)) {
-            $identifier = new FHIRIdentifier(value: $identifier);
-        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -576,10 +573,10 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1803,13 +1800,5 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

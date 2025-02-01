@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier;
@@ -412,7 +411,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $clinicalStatus
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $verificationStatus
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAllergyIntoleranceType $type
@@ -422,7 +421,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $patient
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $encounter
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $onsetDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $onsetPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $onsetRange
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $onsetString
@@ -452,7 +451,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
                                 null|FHIRReference $patient = null,
                                 null|FHIRReference $encounter = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $onsetDateTime = null,
-                                null|FHIRDecimal|FHIRAge $onsetAge = null,
+                                null|FHIRAge $onsetAge = null,
                                 null|FHIRPeriod $onsetPeriod = null,
                                 null|FHIRRange $onsetRange = null,
                                 null|string|FHIRStringPrimitive|FHIRString $onsetString = null,
@@ -592,14 +591,11 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRIdentifier $identifier): self
     {
-        if (!($identifier instanceof FHIRIdentifier)) {
-            $identifier = new FHIRIdentifier(value: $identifier);
-        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -617,10 +613,10 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1136,17 +1132,14 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @return static
      */
-    public function setOnsetAge(null|FHIRDecimal|FHIRAge $onsetAge): self
+    public function setOnsetAge(null|FHIRAge $onsetAge): self
     {
         if (null === $onsetAge) {
             unset($this->onsetAge);
             return $this;
-        }
-        if (!($onsetAge instanceof FHIRAge)) {
-            $onsetAge = new FHIRAge(value: $onsetAge);
         }
         $this->onsetAge = $onsetAge;
         return $this;
@@ -2658,13 +2651,5 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

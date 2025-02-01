@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -190,7 +190,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $display
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $definition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation[] $designation
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation[] $designation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1[] $property
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[] $concept
      * @param null|string[] $fhirComments
@@ -482,14 +482,11 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation $designation
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation $designation
      * @return static
      */
-    public function addDesignation(FHIRString|FHIRCodeSystemDesignation $designation): self
+    public function addDesignation(FHIRCodeSystemDesignation $designation): self
     {
-        if (!($designation instanceof FHIRCodeSystemDesignation)) {
-            $designation = new FHIRCodeSystemDesignation(value: $designation);
-        }
         if (!isset($this->designation)) {
             $this->designation = [];
         }
@@ -504,10 +501,10 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation ...$designation
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation ...$designation
      * @return static
      */
-    public function setDesignation(FHIRString|FHIRCodeSystemDesignation ...$designation): self
+    public function setDesignation(FHIRCodeSystemDesignation ...$designation): self
     {
         if ([] === $designation) {
             unset($this->designation);
@@ -1054,13 +1051,5 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
             $out->concept = $this->concept;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

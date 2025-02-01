@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -371,12 +371,12 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $valueUrl
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $valueRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $valueAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $valueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
      * @param null|string[] $fhirComments
      */
@@ -390,12 +390,12 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean = null,
                                 null|string|FHIRUrlPrimitive|FHIRUrl $valueUrl = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime = null,
-                                null|FHIRDecimal|FHIRQuantity $valueQuantity = null,
+                                null|FHIRQuantity $valueQuantity = null,
                                 null|FHIRRange $valueRange = null,
                                 null|FHIRRatio $valueRatio = null,
                                 null|FHIRAnnotation $valueAnnotation = null,
                                 null|FHIRAddress $valueAddress = null,
-                                null|FHIRDecimal|FHIRDuration $valueDuration = null,
+                                null|FHIRDuration $valueDuration = null,
                                 null|FHIRCodeableConcept $valueCodeableConcept = null,
                                 null|iterable $fhirComments = null)
     {
@@ -922,17 +922,14 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      *
      * The value of the attribute.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(null|FHIRDecimal|FHIRQuantity $valueQuantity): self
+    public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
         if (null === $valueQuantity) {
             unset($this->valueQuantity);
             return $this;
-        }
-        if (!($valueQuantity instanceof FHIRQuantity)) {
-            $valueQuantity = new FHIRQuantity(value: $valueQuantity);
         }
         $this->valueQuantity = $valueQuantity;
         return $this;
@@ -1109,17 +1106,14 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      *
      * The value of the attribute.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
      * @return static
      */
-    public function setValueDuration(null|FHIRDecimal|FHIRDuration $valueDuration): self
+    public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
         if (null === $valueDuration) {
             unset($this->valueDuration);
             return $this;
-        }
-        if (!($valueDuration instanceof FHIRDuration)) {
-            $valueDuration = new FHIRDuration(value: $valueDuration);
         }
         $this->valueDuration = $valueDuration;
         return $this;
@@ -1892,13 +1886,5 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
             $out->valueCodeableConcept = $this->valueCodeableConcept;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

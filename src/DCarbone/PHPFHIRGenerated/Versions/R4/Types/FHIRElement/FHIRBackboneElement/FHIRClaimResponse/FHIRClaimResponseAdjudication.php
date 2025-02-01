@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
@@ -84,7 +83,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * This resource provides the adjudication details from the processing of a Claim
  * resource.
  */
-class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements ValueContainerTypeInterface
+class FHIRClaimResponseAdjudication extends FHIRBackboneElement
 {
 
     // name of FHIR type this class describes
@@ -168,7 +167,7 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements Value
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $amount
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
      * @param null|string[] $fhirComments
      */
@@ -177,7 +176,7 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements Value
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $category = null,
                                 null|FHIRCodeableConcept $reason = null,
-                                null|FHIRDecimal|FHIRMoney $amount = null,
+                                null|FHIRMoney $amount = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $value = null,
                                 null|iterable $fhirComments = null)
     {
@@ -312,17 +311,14 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements Value
      *
      * Monetary amount associated with the category.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $amount
      * @return static
      */
-    public function setAmount(null|FHIRDecimal|FHIRMoney $amount): self
+    public function setAmount(null|FHIRMoney $amount): self
     {
         if (null === $amount) {
             unset($this->amount);
             return $this;
-        }
-        if (!($amount instanceof FHIRMoney)) {
-            $amount = new FHIRMoney(value: $amount);
         }
         $this->amount = $amount;
         return $this;
@@ -396,18 +392,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements Value
     {
         $this->_valueXMLLocations[self::FIELD_VALUE] = $valueXMLLocation;
         return $this;
-    }
-
-    /**
-     * Return the formatted value of this type's contained primitive type.
-     *
-     * @see \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
-     *
-     * @return string
-     */
-    public function _getFormattedValue(): string
-    {
-        return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
     /* class_default.php:188 */
@@ -589,13 +573,10 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements Value
     /**
      * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
      * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
      */
     public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config,
-                                 null|ValueXMLLocationEnum $valueLocation = null): void
+                                 SerializeConfig $config): void
     {
-        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
         if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
@@ -694,13 +675,5 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements Value
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return $this->_getFormattedValue();
     }
 }

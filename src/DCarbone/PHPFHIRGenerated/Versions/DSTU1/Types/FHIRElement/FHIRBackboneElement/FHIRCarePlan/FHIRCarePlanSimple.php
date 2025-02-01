@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,7 +67,6 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityCategory;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity;
@@ -259,8 +258,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $location
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference[] $performer
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $product
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dailyAmount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dailyAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $details
      * @param null|string[] $fhirComments
      */
@@ -275,8 +274,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
                                 null|FHIRResourceReference $location = null,
                                 null|iterable $performer = null,
                                 null|FHIRResourceReference $product = null,
-                                null|FHIRDecimal|FHIRQuantity $dailyAmount = null,
-                                null|FHIRDecimal|FHIRQuantity $quantity = null,
+                                null|FHIRQuantity $dailyAmount = null,
+                                null|FHIRQuantity $quantity = null,
                                 null|string|FHIRStringPrimitive|FHIRString $details = null,
                                 null|iterable $fhirComments = null)
     {
@@ -726,17 +725,14 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Identifies the quantity expected to be consumed in a given day.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dailyAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dailyAmount
      * @return static
      */
-    public function setDailyAmount(null|FHIRDecimal|FHIRQuantity $dailyAmount): self
+    public function setDailyAmount(null|FHIRQuantity $dailyAmount): self
     {
         if (null === $dailyAmount) {
             unset($this->dailyAmount);
             return $this;
-        }
-        if (!($dailyAmount instanceof FHIRQuantity)) {
-            $dailyAmount = new FHIRQuantity(value: $dailyAmount);
         }
         $this->dailyAmount = $dailyAmount;
         return $this;
@@ -767,17 +763,14 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Identifies the quantity expected to be supplied.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
-        }
-        if (!($quantity instanceof FHIRQuantity)) {
-            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -1371,13 +1364,5 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

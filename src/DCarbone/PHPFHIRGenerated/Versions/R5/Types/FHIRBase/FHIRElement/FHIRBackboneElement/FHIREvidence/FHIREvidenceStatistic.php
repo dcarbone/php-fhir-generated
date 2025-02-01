@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
@@ -267,12 +266,12 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[] $note
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $statisticType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $numberOfEvents
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $numberAffected
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize $sampleSize
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceAttributeEstimate[] $attributeEstimate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic[] $modelCharacteristic
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic[] $modelCharacteristic
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -282,7 +281,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
                                 null|iterable $note = null,
                                 null|FHIRCodeableConcept $statisticType = null,
                                 null|FHIRCodeableConcept $category = null,
-                                null|FHIRDecimal|FHIRQuantity $quantity = null,
+                                null|FHIRQuantity $quantity = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfEvents = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberAffected = null,
                                 null|FHIREvidenceSampleSize $sampleSize = null,
@@ -576,17 +575,14 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * Statistic value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
-        }
-        if (!($quantity instanceof FHIRQuantity)) {
-            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -867,14 +863,11 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * A component of the method to generate the statistic.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic $modelCharacteristic
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic $modelCharacteristic
      * @return static
      */
-    public function addModelCharacteristic(FHIRQuantity|FHIREvidenceModelCharacteristic $modelCharacteristic): self
+    public function addModelCharacteristic(FHIREvidenceModelCharacteristic $modelCharacteristic): self
     {
-        if (!($modelCharacteristic instanceof FHIREvidenceModelCharacteristic)) {
-            $modelCharacteristic = new FHIREvidenceModelCharacteristic(value: $modelCharacteristic);
-        }
         if (!isset($this->modelCharacteristic)) {
             $this->modelCharacteristic = [];
         }
@@ -890,10 +883,10 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * A component of the method to generate the statistic.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic ...$modelCharacteristic
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic ...$modelCharacteristic
      * @return static
      */
-    public function setModelCharacteristic(FHIRQuantity|FHIREvidenceModelCharacteristic ...$modelCharacteristic): self
+    public function setModelCharacteristic(FHIREvidenceModelCharacteristic ...$modelCharacteristic): self
     {
         if ([] === $modelCharacteristic) {
             unset($this->modelCharacteristic);
@@ -1407,13 +1400,5 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
             $out->modelCharacteristic = $this->modelCharacteristic;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

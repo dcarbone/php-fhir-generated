@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -315,8 +315,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $productCode
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $parent
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $request
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $biologicalSourceEvent
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $biologicalSourceEvent
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $processingFacility
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $division
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $productStatus
@@ -339,7 +339,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
                                 null|iterable $parent = null,
                                 null|iterable $request = null,
                                 null|iterable $identifier = null,
-                                null|FHIRString|FHIRIdentifier $biologicalSourceEvent = null,
+                                null|FHIRIdentifier $biologicalSourceEvent = null,
                                 null|iterable $processingFacility = null,
                                 null|string|FHIRStringPrimitive|FHIRString $division = null,
                                 null|FHIRCoding $productStatus = null,
@@ -656,14 +656,11 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * Unique instance identifiers assigned to a biologically derived product. Note:
      * This is a business identifier, not a resource identifier.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRIdentifier $identifier): self
     {
-        if (!($identifier instanceof FHIRIdentifier)) {
-            $identifier = new FHIRIdentifier(value: $identifier);
-        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -680,10 +677,10 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * Unique instance identifiers assigned to a biologically derived product. Note:
      * This is a business identifier, not a resource identifier.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -718,17 +715,14 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * An identifier that supports traceability to the event during which material in
      * this product from one or more biological entities was obtained or pooled.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $biologicalSourceEvent
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $biologicalSourceEvent
      * @return static
      */
-    public function setBiologicalSourceEvent(null|FHIRString|FHIRIdentifier $biologicalSourceEvent): self
+    public function setBiologicalSourceEvent(null|FHIRIdentifier $biologicalSourceEvent): self
     {
         if (null === $biologicalSourceEvent) {
             unset($this->biologicalSourceEvent);
             return $this;
-        }
-        if (!($biologicalSourceEvent instanceof FHIRIdentifier)) {
-            $biologicalSourceEvent = new FHIRIdentifier(value: $biologicalSourceEvent);
         }
         $this->biologicalSourceEvent = $biologicalSourceEvent;
         return $this;
@@ -1812,13 +1806,5 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

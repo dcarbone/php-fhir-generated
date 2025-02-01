@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -324,12 +323,12 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $presentationRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $presentationRatioRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $presentationCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $presentationQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $presentationQuantity
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $textPresentation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $concentrationRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $concentrationRatioRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $concentrationCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $concentrationQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $concentrationQuantity
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $textConcentration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $basis
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $measurementPoint
@@ -343,12 +342,12 @@ class FHIRIngredientStrength extends FHIRBackboneElement
                                 null|FHIRRatio $presentationRatio = null,
                                 null|FHIRRatioRange $presentationRatioRange = null,
                                 null|FHIRCodeableConcept $presentationCodeableConcept = null,
-                                null|FHIRDecimal|FHIRQuantity $presentationQuantity = null,
+                                null|FHIRQuantity $presentationQuantity = null,
                                 null|string|FHIRStringPrimitive|FHIRString $textPresentation = null,
                                 null|FHIRRatio $concentrationRatio = null,
                                 null|FHIRRatioRange $concentrationRatioRange = null,
                                 null|FHIRCodeableConcept $concentrationCodeableConcept = null,
-                                null|FHIRDecimal|FHIRQuantity $concentrationQuantity = null,
+                                null|FHIRQuantity $concentrationQuantity = null,
                                 null|string|FHIRStringPrimitive|FHIRString $textConcentration = null,
                                 null|FHIRCodeableConcept $basis = null,
                                 null|string|FHIRStringPrimitive|FHIRString $measurementPoint = null,
@@ -577,17 +576,14 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $presentationQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $presentationQuantity
      * @return static
      */
-    public function setPresentationQuantity(null|FHIRDecimal|FHIRQuantity $presentationQuantity): self
+    public function setPresentationQuantity(null|FHIRQuantity $presentationQuantity): self
     {
         if (null === $presentationQuantity) {
             unset($this->presentationQuantity);
             return $this;
-        }
-        if (!($presentationQuantity instanceof FHIRQuantity)) {
-            $presentationQuantity = new FHIRQuantity(value: $presentationQuantity);
         }
         $this->presentationQuantity = $presentationQuantity;
         return $this;
@@ -792,17 +788,14 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * The strength per unitary volume (or mass).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $concentrationQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $concentrationQuantity
      * @return static
      */
-    public function setConcentrationQuantity(null|FHIRDecimal|FHIRQuantity $concentrationQuantity): self
+    public function setConcentrationQuantity(null|FHIRQuantity $concentrationQuantity): self
     {
         if (null === $concentrationQuantity) {
             unset($this->concentrationQuantity);
             return $this;
-        }
-        if (!($concentrationQuantity instanceof FHIRQuantity)) {
-            $concentrationQuantity = new FHIRQuantity(value: $concentrationQuantity);
         }
         $this->concentrationQuantity = $concentrationQuantity;
         return $this;
@@ -1722,13 +1715,5 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             $out->referenceStrength = $this->referenceStrength;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

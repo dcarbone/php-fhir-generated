@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
@@ -350,9 +349,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $definitionId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue $definitionByTypeAndValue
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination $definitionByCombination
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $instancesRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $durationRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent[] $timeFromEvent
      * @param null|string[] $fhirComments
@@ -371,9 +370,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                                 null|string|FHIRIdPrimitive|FHIRId $definitionId = null,
                                 null|FHIREvidenceVariableDefinitionByTypeAndValue $definitionByTypeAndValue = null,
                                 null|FHIREvidenceVariableDefinitionByCombination $definitionByCombination = null,
-                                null|FHIRDecimal|FHIRQuantity $instancesQuantity = null,
+                                null|FHIRQuantity $instancesQuantity = null,
                                 null|FHIRRange $instancesRange = null,
-                                null|FHIRDecimal|FHIRQuantity $durationQuantity = null,
+                                null|FHIRQuantity $durationQuantity = null,
                                 null|FHIRRange $durationRange = null,
                                 null|iterable $timeFromEvent = null,
                                 null|iterable $fhirComments = null)
@@ -1060,17 +1059,14 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * Number of occurrences meeting the characteristic.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
      * @return static
      */
-    public function setInstancesQuantity(null|FHIRDecimal|FHIRQuantity $instancesQuantity): self
+    public function setInstancesQuantity(null|FHIRQuantity $instancesQuantity): self
     {
         if (null === $instancesQuantity) {
             unset($this->instancesQuantity);
             return $this;
-        }
-        if (!($instancesQuantity instanceof FHIRQuantity)) {
-            $instancesQuantity = new FHIRQuantity(value: $instancesQuantity);
         }
         $this->instancesQuantity = $instancesQuantity;
         return $this;
@@ -1135,17 +1131,14 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * Length of time in which the characteristic is met.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
      * @return static
      */
-    public function setDurationQuantity(null|FHIRDecimal|FHIRQuantity $durationQuantity): self
+    public function setDurationQuantity(null|FHIRQuantity $durationQuantity): self
     {
         if (null === $durationQuantity) {
             unset($this->durationQuantity);
             return $this;
-        }
-        if (!($durationQuantity instanceof FHIRQuantity)) {
-            $durationQuantity = new FHIRQuantity(value: $durationQuantity);
         }
         $this->durationQuantity = $durationQuantity;
         return $this;
@@ -1946,13 +1939,5 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             $out->timeFromEvent = $this->timeFromEvent;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

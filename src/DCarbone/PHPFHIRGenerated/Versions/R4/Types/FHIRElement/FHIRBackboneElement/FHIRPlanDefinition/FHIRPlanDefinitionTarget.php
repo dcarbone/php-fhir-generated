@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,6 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration;
@@ -185,20 +184,20 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $measure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $detailQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $detailQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $detailRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $due
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $due
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $measure = null,
-                                null|FHIRDecimal|FHIRQuantity $detailQuantity = null,
+                                null|FHIRQuantity $detailQuantity = null,
                                 null|FHIRRange $detailRange = null,
                                 null|FHIRCodeableConcept $detailCodeableConcept = null,
-                                null|FHIRDecimal|FHIRDuration $due = null,
+                                null|FHIRDuration $due = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -305,17 +304,14 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * value is missing, it indicates that the goal is achieved at any value at or
      * above the low value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $detailQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $detailQuantity
      * @return static
      */
-    public function setDetailQuantity(null|FHIRDecimal|FHIRQuantity $detailQuantity): self
+    public function setDetailQuantity(null|FHIRQuantity $detailQuantity): self
     {
         if (null === $detailQuantity) {
             unset($this->detailQuantity);
             return $this;
-        }
-        if (!($detailQuantity instanceof FHIRQuantity)) {
-            $detailQuantity = new FHIRQuantity(value: $detailQuantity);
         }
         $this->detailQuantity = $detailQuantity;
         return $this;
@@ -434,17 +430,14 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * Indicates the timeframe after the start of the goal in which the goal should be
      * met.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $due
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $due
      * @return static
      */
-    public function setDue(null|FHIRDecimal|FHIRDuration $due): self
+    public function setDue(null|FHIRDuration $due): self
     {
         if (null === $due) {
             unset($this->due);
             return $this;
-        }
-        if (!($due instanceof FHIRDuration)) {
-            $due = new FHIRDuration(value: $due);
         }
         $this->due = $due;
         return $this;
@@ -724,13 +717,5 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
             $out->due = $this->due;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -227,7 +227,7 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[] $note
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $level
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $range
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceAttributeEstimate[] $attributeEstimate
@@ -239,7 +239,7 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null,
                                 null|iterable $note = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|FHIRDecimal|FHIRQuantity $quantity = null,
+                                null|FHIRQuantity $quantity = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $level = null,
                                 null|FHIRRange $range = null,
                                 null|iterable $attributeEstimate = null,
@@ -486,17 +486,14 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * The singular quantity of the attribute estimate, for attribute estimates
      * represented as single values; also used to report unit of measure.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
-        }
-        if (!($quantity instanceof FHIRQuantity)) {
-            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -1068,13 +1065,5 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
             $out->attributeEstimate = $this->attributeEstimate;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

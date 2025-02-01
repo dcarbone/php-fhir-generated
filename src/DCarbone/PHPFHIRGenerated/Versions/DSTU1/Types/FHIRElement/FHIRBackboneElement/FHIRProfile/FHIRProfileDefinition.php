@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1044,10 +1044,10 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUuid $valueUuid
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $valueId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $valueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $valueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $valueIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $valueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $valuePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $valueRatio
@@ -1055,7 +1055,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData $valueSampledData
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName $valueHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $valueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $valueContact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $valueContact
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $valueSchedule
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $exampleBoolean
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $exampleInteger
@@ -1071,10 +1071,10 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUuid $exampleUuid
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $exampleId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $exampleAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $exampleCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $exampleCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $exampleQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $exampleQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $exampleRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $examplePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $exampleRatio
@@ -1082,7 +1082,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData $exampleSampledData
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName $exampleHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $exampleAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $exampleContact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $exampleContact
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $exampleSchedule
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $maxLength
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId[] $condition
@@ -1119,10 +1119,10 @@ class FHIRProfileDefinition extends FHIRBackboneElement
                                 null|string|FHIRUuidPrimitive|FHIRUuid $valueUuid = null,
                                 null|string|FHIRIdPrimitive|FHIRId $valueId = null,
                                 null|FHIRAttachment $valueAttachment = null,
-                                null|FHIRString|FHIRIdentifier $valueIdentifier = null,
+                                null|FHIRIdentifier $valueIdentifier = null,
                                 null|FHIRCodeableConcept $valueCodeableConcept = null,
                                 null|FHIRCoding $valueCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $valueQuantity = null,
+                                null|FHIRQuantity $valueQuantity = null,
                                 null|FHIRRange $valueRange = null,
                                 null|FHIRPeriod $valuePeriod = null,
                                 null|FHIRRatio $valueRatio = null,
@@ -1130,7 +1130,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
                                 null|FHIRSampledData $valueSampledData = null,
                                 null|FHIRHumanName $valueHumanName = null,
                                 null|FHIRAddress $valueAddress = null,
-                                null|FHIRString|FHIRContact $valueContact = null,
+                                null|FHIRContact $valueContact = null,
                                 null|FHIRSchedule $valueSchedule = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exampleBoolean = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $exampleInteger = null,
@@ -1146,10 +1146,10 @@ class FHIRProfileDefinition extends FHIRBackboneElement
                                 null|string|FHIRUuidPrimitive|FHIRUuid $exampleUuid = null,
                                 null|string|FHIRIdPrimitive|FHIRId $exampleId = null,
                                 null|FHIRAttachment $exampleAttachment = null,
-                                null|FHIRString|FHIRIdentifier $exampleIdentifier = null,
+                                null|FHIRIdentifier $exampleIdentifier = null,
                                 null|FHIRCodeableConcept $exampleCodeableConcept = null,
                                 null|FHIRCoding $exampleCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $exampleQuantity = null,
+                                null|FHIRQuantity $exampleQuantity = null,
                                 null|FHIRRange $exampleRange = null,
                                 null|FHIRPeriod $examplePeriod = null,
                                 null|FHIRRatio $exampleRatio = null,
@@ -1157,7 +1157,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
                                 null|FHIRSampledData $exampleSampledData = null,
                                 null|FHIRHumanName $exampleHumanName = null,
                                 null|FHIRAddress $exampleAddress = null,
-                                null|FHIRString|FHIRContact $exampleContact = null,
+                                null|FHIRContact $exampleContact = null,
                                 null|FHIRSchedule $exampleSchedule = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $maxLength = null,
                                 null|iterable $condition = null,
@@ -2896,17 +2896,14 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $valueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $valueIdentifier
      * @return static
      */
-    public function setValueIdentifier(null|FHIRString|FHIRIdentifier $valueIdentifier): self
+    public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
         if (null === $valueIdentifier) {
             unset($this->valueIdentifier);
             return $this;
-        }
-        if (!($valueIdentifier instanceof FHIRIdentifier)) {
-            $valueIdentifier = new FHIRIdentifier(value: $valueIdentifier);
         }
         $this->valueIdentifier = $valueIdentifier;
         return $this;
@@ -3007,17 +3004,14 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(null|FHIRDecimal|FHIRQuantity $valueQuantity): self
+    public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
         if (null === $valueQuantity) {
             unset($this->valueQuantity);
             return $this;
-        }
-        if (!($valueQuantity instanceof FHIRQuantity)) {
-            $valueQuantity = new FHIRQuantity(value: $valueQuantity);
         }
         $this->valueQuantity = $valueQuantity;
         return $this;
@@ -3290,17 +3284,14 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $valueContact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $valueContact
      * @return static
      */
-    public function setValueContact(null|FHIRString|FHIRContact $valueContact): self
+    public function setValueContact(null|FHIRContact $valueContact): self
     {
         if (null === $valueContact) {
             unset($this->valueContact);
             return $this;
-        }
-        if (!($valueContact instanceof FHIRContact)) {
-            $valueContact = new FHIRContact(value: $valueContact);
         }
         $this->valueContact = $valueContact;
         return $this;
@@ -4253,17 +4244,14 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * An example value for this element.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
      * @return static
      */
-    public function setExampleIdentifier(null|FHIRString|FHIRIdentifier $exampleIdentifier): self
+    public function setExampleIdentifier(null|FHIRIdentifier $exampleIdentifier): self
     {
         if (null === $exampleIdentifier) {
             unset($this->exampleIdentifier);
             return $this;
-        }
-        if (!($exampleIdentifier instanceof FHIRIdentifier)) {
-            $exampleIdentifier = new FHIRIdentifier(value: $exampleIdentifier);
         }
         $this->exampleIdentifier = $exampleIdentifier;
         return $this;
@@ -4364,17 +4352,14 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * An example value for this element.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $exampleQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $exampleQuantity
      * @return static
      */
-    public function setExampleQuantity(null|FHIRDecimal|FHIRQuantity $exampleQuantity): self
+    public function setExampleQuantity(null|FHIRQuantity $exampleQuantity): self
     {
         if (null === $exampleQuantity) {
             unset($this->exampleQuantity);
             return $this;
-        }
-        if (!($exampleQuantity instanceof FHIRQuantity)) {
-            $exampleQuantity = new FHIRQuantity(value: $exampleQuantity);
         }
         $this->exampleQuantity = $exampleQuantity;
         return $this;
@@ -4647,17 +4632,14 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * An example value for this element.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $exampleContact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $exampleContact
      * @return static
      */
-    public function setExampleContact(null|FHIRString|FHIRContact $exampleContact): self
+    public function setExampleContact(null|FHIRContact $exampleContact): self
     {
         if (null === $exampleContact) {
             unset($this->exampleContact);
             return $this;
-        }
-        if (!($exampleContact instanceof FHIRContact)) {
-            $exampleContact = new FHIRContact(value: $exampleContact);
         }
         $this->exampleContact = $exampleContact;
         return $this;
@@ -8166,13 +8148,5 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $out->mapping = $this->mapping;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

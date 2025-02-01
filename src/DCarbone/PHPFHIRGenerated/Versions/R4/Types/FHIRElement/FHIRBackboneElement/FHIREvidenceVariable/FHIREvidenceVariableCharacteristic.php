@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExpression;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGroupMeasure;
@@ -360,9 +359,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $exclude
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $participantEffectiveDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $participantEffectivePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $participantEffectiveTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $timeFromStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $timeFromStart
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRGroupMeasureList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGroupMeasure $groupMeasure
      * @param null|string[] $fhirComments
      */
@@ -380,9 +379,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $participantEffectiveDateTime = null,
                                 null|FHIRPeriod $participantEffectivePeriod = null,
-                                null|FHIRDecimal|FHIRDuration $participantEffectiveDuration = null,
+                                null|FHIRDuration $participantEffectiveDuration = null,
                                 null|FHIRTiming $participantEffectiveTiming = null,
-                                null|FHIRDecimal|FHIRDuration $timeFromStart = null,
+                                null|FHIRDuration $timeFromStart = null,
                                 null|string|FHIRGroupMeasureList|FHIRGroupMeasure $groupMeasure = null,
                                 null|iterable $fhirComments = null)
     {
@@ -1066,17 +1065,14 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * Indicates what effective period the study covers.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
      * @return static
      */
-    public function setParticipantEffectiveDuration(null|FHIRDecimal|FHIRDuration $participantEffectiveDuration): self
+    public function setParticipantEffectiveDuration(null|FHIRDuration $participantEffectiveDuration): self
     {
         if (null === $participantEffectiveDuration) {
             unset($this->participantEffectiveDuration);
             return $this;
-        }
-        if (!($participantEffectiveDuration instanceof FHIRDuration)) {
-            $participantEffectiveDuration = new FHIRDuration(value: $participantEffectiveDuration);
         }
         $this->participantEffectiveDuration = $participantEffectiveDuration;
         return $this;
@@ -1145,17 +1141,14 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * Indicates duration from the participant's study entry.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $timeFromStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $timeFromStart
      * @return static
      */
-    public function setTimeFromStart(null|FHIRDecimal|FHIRDuration $timeFromStart): self
+    public function setTimeFromStart(null|FHIRDuration $timeFromStart): self
     {
         if (null === $timeFromStart) {
             unset($this->timeFromStart);
             return $this;
-        }
-        if (!($timeFromStart instanceof FHIRDuration)) {
-            $timeFromStart = new FHIRDuration(value: $timeFromStart);
         }
         $this->timeFromStart = $timeFromStart;
         return $this;
@@ -1922,13 +1915,5 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcep
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod;
@@ -518,7 +517,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction[] $relatedAction
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $timingDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $timingRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $timingTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[] $participant
@@ -552,7 +551,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                                 null|iterable $relatedAction = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime = null,
                                 null|FHIRPeriod $timingPeriod = null,
-                                null|FHIRDecimal|FHIRDuration $timingDuration = null,
+                                null|FHIRDuration $timingDuration = null,
                                 null|FHIRRange $timingRange = null,
                                 null|FHIRTiming $timingTiming = null,
                                 null|iterable $participant = null,
@@ -1702,17 +1701,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * An optional value describing when the action should be performed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @return static
      */
-    public function setTimingDuration(null|FHIRDecimal|FHIRDuration $timingDuration): self
+    public function setTimingDuration(null|FHIRDuration $timingDuration): self
     {
         if (null === $timingDuration) {
             unset($this->timingDuration);
             return $this;
-        }
-        if (!($timingDuration instanceof FHIRDuration)) {
-            $timingDuration = new FHIRDuration(value: $timingDuration);
         }
         $this->timingDuration = $timingDuration;
         return $this;
@@ -3718,13 +3714,5 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             $out->action = $this->action;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

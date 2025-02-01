@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -251,12 +251,12 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $productOrService
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $modifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $unitPrice
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $unitPrice
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $factor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $net
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $net
      * @param null|string[]|int[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt[] $noteNumber
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[] $adjudication
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[] $adjudication
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail1[] $subDetail
      * @param null|string[] $fhirComments
      */
@@ -265,10 +265,10 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $productOrService = null,
                                 null|iterable $modifier = null,
-                                null|FHIRDecimal|FHIRQuantity $quantity = null,
-                                null|FHIRDecimal|FHIRMoney $unitPrice = null,
+                                null|FHIRQuantity $quantity = null,
+                                null|FHIRMoney $unitPrice = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
-                                null|FHIRDecimal|FHIRMoney $net = null,
+                                null|FHIRMoney $net = null,
                                 null|iterable $noteNumber = null,
                                 null|iterable $adjudication = null,
                                 null|iterable $subDetail = null,
@@ -452,17 +452,14 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      *
      * The number of repetitions of a service or product.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
-        }
-        if (!($quantity instanceof FHIRQuantity)) {
-            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -491,17 +488,14 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $unitPrice
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $unitPrice
      * @return static
      */
-    public function setUnitPrice(null|FHIRDecimal|FHIRMoney $unitPrice): self
+    public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
         if (null === $unitPrice) {
             unset($this->unitPrice);
             return $this;
-        }
-        if (!($unitPrice instanceof FHIRMoney)) {
-            $unitPrice = new FHIRMoney(value: $unitPrice);
         }
         $this->unitPrice = $unitPrice;
         return $this;
@@ -602,17 +596,14 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      * The quantity times the unit price for an additional service or product or
      * charge.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $net
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $net
      * @return static
      */
-    public function setNet(null|FHIRDecimal|FHIRMoney $net): self
+    public function setNet(null|FHIRMoney $net): self
     {
         if (null === $net) {
             unset($this->net);
             return $this;
-        }
-        if (!($net instanceof FHIRMoney)) {
-            $net = new FHIRMoney(value: $net);
         }
         $this->net = $net;
         return $this;
@@ -725,14 +716,11 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      *
      * The adjudication results.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
      * @return static
      */
-    public function addAdjudication(FHIRDecimal|FHIRClaimResponseAdjudication $adjudication): self
+    public function addAdjudication(FHIRClaimResponseAdjudication $adjudication): self
     {
-        if (!($adjudication instanceof FHIRClaimResponseAdjudication)) {
-            $adjudication = new FHIRClaimResponseAdjudication(value: $adjudication);
-        }
         if (!isset($this->adjudication)) {
             $this->adjudication = [];
         }
@@ -746,10 +734,10 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      *
      * The adjudication results.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication ...$adjudication
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication ...$adjudication
      * @return static
      */
-    public function setAdjudication(FHIRDecimal|FHIRClaimResponseAdjudication ...$adjudication): self
+    public function setAdjudication(FHIRClaimResponseAdjudication ...$adjudication): self
     {
         if ([] === $adjudication) {
             unset($this->adjudication);
@@ -1300,13 +1288,5 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
             $out->subDetail = $this->subDetail;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

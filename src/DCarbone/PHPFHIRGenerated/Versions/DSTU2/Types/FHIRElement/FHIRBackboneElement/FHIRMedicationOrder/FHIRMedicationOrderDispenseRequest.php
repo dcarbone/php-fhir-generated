@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,6 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt;
@@ -188,8 +187,8 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $medicationReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $validityPeriod
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $numberOfRepeatsAllowed
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -199,8 +198,8 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
                                 null|FHIRReference $medicationReference = null,
                                 null|FHIRPeriod $validityPeriod = null,
                                 null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $numberOfRepeatsAllowed = null,
-                                null|FHIRDecimal|FHIRSimpleQuantity $quantity = null,
-                                null|FHIRDecimal|FHIRDuration $expectedSupplyDuration = null,
+                                null|FHIRSimpleQuantity $quantity = null,
+                                null|FHIRDuration $expectedSupplyDuration = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -442,17 +441,14 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
     /**
      * The amount that is to be dispensed for one fill.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRSimpleQuantity $quantity): self
+    public function setQuantity(null|FHIRSimpleQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
-        }
-        if (!($quantity instanceof FHIRSimpleQuantity)) {
-            $quantity = new FHIRSimpleQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -473,17 +469,14 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @return static
      */
-    public function setExpectedSupplyDuration(null|FHIRDecimal|FHIRDuration $expectedSupplyDuration): self
+    public function setExpectedSupplyDuration(null|FHIRDuration $expectedSupplyDuration): self
     {
         if (null === $expectedSupplyDuration) {
             unset($this->expectedSupplyDuration);
             return $this;
-        }
-        if (!($expectedSupplyDuration instanceof FHIRDuration)) {
-            $expectedSupplyDuration = new FHIRDuration(value: $expectedSupplyDuration);
         }
         $this->expectedSupplyDuration = $expectedSupplyDuration;
         return $this;
@@ -815,13 +808,5 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
             $out->expectedSupplyDuration = $this->expectedSupplyDuration;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -221,7 +220,7 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $relationshipType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $targetClassifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $targetUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $targetIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $targetIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $targetReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAttachment $targetAttachment
      * @param null|string[] $fhirComments
@@ -232,7 +231,7 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $relationshipType = null,
                                 null|iterable $targetClassifier = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $targetUri = null,
-                                null|FHIRString|FHIRIdentifier $targetIdentifier = null,
+                                null|FHIRIdentifier $targetIdentifier = null,
                                 null|FHIRReference $targetReference = null,
                                 null|FHIRAttachment $targetAttachment = null,
                                 null|iterable $fhirComments = null)
@@ -463,17 +462,14 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * The article or artifact that the Citation Resource is related to.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $targetIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $targetIdentifier
      * @return static
      */
-    public function setTargetIdentifier(null|FHIRString|FHIRIdentifier $targetIdentifier): self
+    public function setTargetIdentifier(null|FHIRIdentifier $targetIdentifier): self
     {
         if (null === $targetIdentifier) {
             unset($this->targetIdentifier);
             return $this;
-        }
-        if (!($targetIdentifier instanceof FHIRIdentifier)) {
-            $targetIdentifier = new FHIRIdentifier(value: $targetIdentifier);
         }
         $this->targetIdentifier = $targetIdentifier;
         return $this;
@@ -906,13 +902,5 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
             $out->targetAttachment = $this->targetAttachment;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

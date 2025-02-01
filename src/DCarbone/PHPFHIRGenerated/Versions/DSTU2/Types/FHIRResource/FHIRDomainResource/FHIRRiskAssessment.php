@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -250,7 +250,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $condition
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $performer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $method
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference[] $basis
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[] $prediction
@@ -270,7 +270,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
                                 null|FHIRReference $condition = null,
                                 null|FHIRReference $encounter = null,
                                 null|FHIRReference $performer = null,
-                                null|FHIRString|FHIRIdentifier $identifier = null,
+                                null|FHIRIdentifier $identifier = null,
                                 null|FHIRCodeableConcept $method = null,
                                 null|iterable $basis = null,
                                 null|iterable $prediction = null,
@@ -568,17 +568,14 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      *
      * Business identifier assigned to the risk assessment.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function setIdentifier(null|FHIRString|FHIRIdentifier $identifier): self
+    public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
         if (null === $identifier) {
             unset($this->identifier);
             return $this;
-        }
-        if (!($identifier instanceof FHIRIdentifier)) {
-            $identifier = new FHIRIdentifier(value: $identifier);
         }
         $this->identifier = $identifier;
         return $this;
@@ -1416,13 +1413,5 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

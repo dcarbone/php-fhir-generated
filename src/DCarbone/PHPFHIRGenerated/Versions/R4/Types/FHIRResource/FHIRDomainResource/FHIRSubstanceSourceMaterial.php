@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -346,9 +346,9 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $sourceMaterialClass
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $sourceMaterialType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $sourceMaterialState
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $organismId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $organismId
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $organismName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[] $parentSubstanceId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[] $parentSubstanceId
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] $parentSubstanceName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $countryOfOrigin
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] $geographicalLocation
@@ -369,7 +369,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
                                 null|FHIRCodeableConcept $sourceMaterialClass = null,
                                 null|FHIRCodeableConcept $sourceMaterialType = null,
                                 null|FHIRCodeableConcept $sourceMaterialState = null,
-                                null|FHIRString|FHIRIdentifier $organismId = null,
+                                null|FHIRIdentifier $organismId = null,
                                 null|string|FHIRStringPrimitive|FHIRString $organismName = null,
                                 null|iterable $parentSubstanceId = null,
                                 null|iterable $parentSubstanceName = null,
@@ -589,17 +589,14 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * The unique identifier associated with the source material parent organism shall
      * be specified.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $organismId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $organismId
      * @return static
      */
-    public function setOrganismId(null|FHIRString|FHIRIdentifier $organismId): self
+    public function setOrganismId(null|FHIRIdentifier $organismId): self
     {
         if (null === $organismId) {
             unset($this->organismId);
             return $this;
-        }
-        if (!($organismId instanceof FHIRIdentifier)) {
-            $organismId = new FHIRIdentifier(value: $organismId);
         }
         $this->organismId = $organismId;
         return $this;
@@ -709,14 +706,11 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $parentSubstanceId
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $parentSubstanceId
      * @return static
      */
-    public function addParentSubstanceId(FHIRString|FHIRIdentifier $parentSubstanceId): self
+    public function addParentSubstanceId(FHIRIdentifier $parentSubstanceId): self
     {
-        if (!($parentSubstanceId instanceof FHIRIdentifier)) {
-            $parentSubstanceId = new FHIRIdentifier(value: $parentSubstanceId);
-        }
         if (!isset($this->parentSubstanceId)) {
             $this->parentSubstanceId = [];
         }
@@ -733,10 +727,10 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$parentSubstanceId
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$parentSubstanceId
      * @return static
      */
-    public function setParentSubstanceId(FHIRString|FHIRIdentifier ...$parentSubstanceId): self
+    public function setParentSubstanceId(FHIRIdentifier ...$parentSubstanceId): self
     {
         if ([] === $parentSubstanceId) {
             unset($this->parentSubstanceId);
@@ -2037,13 +2031,5 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

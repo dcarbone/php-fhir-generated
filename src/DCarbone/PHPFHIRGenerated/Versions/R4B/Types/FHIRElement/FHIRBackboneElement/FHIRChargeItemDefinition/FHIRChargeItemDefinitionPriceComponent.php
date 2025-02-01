@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -187,7 +187,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRInvoicePriceComponentTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInvoicePriceComponentType $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $factor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $amount
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -196,7 +196,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
                                 null|string|FHIRInvoicePriceComponentTypeEnum|FHIRInvoicePriceComponentType $type = null,
                                 null|FHIRCodeableConcept $code = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
-                                null|FHIRDecimal|FHIRMoney $amount = null,
+                                null|FHIRMoney $amount = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -418,17 +418,14 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
      *
      * The amount calculated for this component.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $amount
      * @return static
      */
-    public function setAmount(null|FHIRDecimal|FHIRMoney $amount): self
+    public function setAmount(null|FHIRMoney $amount): self
     {
         if (null === $amount) {
             unset($this->amount);
             return $this;
-        }
-        if (!($amount instanceof FHIRMoney)) {
-            $amount = new FHIRMoney(value: $amount);
         }
         $this->amount = $amount;
         return $this;
@@ -742,13 +739,5 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
             $out->amount = $this->amount;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

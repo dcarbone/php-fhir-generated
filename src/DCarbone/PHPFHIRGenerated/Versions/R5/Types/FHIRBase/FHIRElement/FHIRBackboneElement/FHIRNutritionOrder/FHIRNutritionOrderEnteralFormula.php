@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
@@ -258,10 +257,10 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $baseFormulaProductName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[] $deliveryDevice
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdditive[] $additive
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $caloricDensity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $caloricDensity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $routeOfAdministration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[] $administration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxVolumeToDeliver
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxVolumeToDeliver
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $administrationInstruction
      * @param null|string[] $fhirComments
      */
@@ -272,10 +271,10 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $baseFormulaProductName = null,
                                 null|iterable $deliveryDevice = null,
                                 null|iterable $additive = null,
-                                null|FHIRDecimal|FHIRQuantity $caloricDensity = null,
+                                null|FHIRQuantity $caloricDensity = null,
                                 null|FHIRCodeableConcept $routeOfAdministration = null,
                                 null|iterable $administration = null,
-                                null|FHIRDecimal|FHIRQuantity $maxVolumeToDeliver = null,
+                                null|FHIRQuantity $maxVolumeToDeliver = null,
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $administrationInstruction = null,
                                 null|iterable $fhirComments = null)
     {
@@ -593,17 +592,14 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * formula that provides 24 calories per fluid ounce or an adult may require an
      * enteral formula that provides 1.5 calorie/mL.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $caloricDensity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $caloricDensity
      * @return static
      */
-    public function setCaloricDensity(null|FHIRDecimal|FHIRQuantity $caloricDensity): self
+    public function setCaloricDensity(null|FHIRQuantity $caloricDensity): self
     {
         if (null === $caloricDensity) {
             unset($this->caloricDensity);
             return $this;
-        }
-        if (!($caloricDensity instanceof FHIRQuantity)) {
-            $caloricDensity = new FHIRQuantity(value: $caloricDensity);
         }
         $this->caloricDensity = $caloricDensity;
         return $this;
@@ -746,17 +742,14 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * The maximum total quantity of formula that may be administered to a subject over
      * the period of time, e.g. 1440 mL over 24 hours.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxVolumeToDeliver
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxVolumeToDeliver
      * @return static
      */
-    public function setMaxVolumeToDeliver(null|FHIRDecimal|FHIRQuantity $maxVolumeToDeliver): self
+    public function setMaxVolumeToDeliver(null|FHIRQuantity $maxVolumeToDeliver): self
     {
         if (null === $maxVolumeToDeliver) {
             unset($this->maxVolumeToDeliver);
             return $this;
-        }
-        if (!($maxVolumeToDeliver instanceof FHIRQuantity)) {
-            $maxVolumeToDeliver = new FHIRQuantity(value: $maxVolumeToDeliver);
         }
         $this->maxVolumeToDeliver = $maxVolumeToDeliver;
         return $this;
@@ -1290,13 +1283,5 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration;
@@ -161,9 +160,9 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity[] $areaUnderCurve
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity[] $lethalDose50
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $halfLifePeriod
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity[] $areaUnderCurve
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity[] $lethalDose50
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $halfLifePeriod
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -171,7 +170,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|iterable $areaUnderCurve = null,
                                 null|iterable $lethalDose50 = null,
-                                null|FHIRDecimal|FHIRDuration $halfLifePeriod = null,
+                                null|FHIRDuration $halfLifePeriod = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -235,14 +234,11 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      *
      * The drug concentration measured at certain discrete points in time.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $areaUnderCurve
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $areaUnderCurve
      * @return static
      */
-    public function addAreaUnderCurve(FHIRDecimal|FHIRQuantity $areaUnderCurve): self
+    public function addAreaUnderCurve(FHIRQuantity $areaUnderCurve): self
     {
-        if (!($areaUnderCurve instanceof FHIRQuantity)) {
-            $areaUnderCurve = new FHIRQuantity(value: $areaUnderCurve);
-        }
         if (!isset($this->areaUnderCurve)) {
             $this->areaUnderCurve = [];
         }
@@ -259,10 +255,10 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      *
      * The drug concentration measured at certain discrete points in time.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity ...$areaUnderCurve
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity ...$areaUnderCurve
      * @return static
      */
-    public function setAreaUnderCurve(FHIRDecimal|FHIRQuantity ...$areaUnderCurve): self
+    public function setAreaUnderCurve(FHIRQuantity ...$areaUnderCurve): self
     {
         if ([] === $areaUnderCurve) {
             unset($this->areaUnderCurve);
@@ -308,14 +304,11 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      *
      * The median lethal dose of a drug.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $lethalDose50
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $lethalDose50
      * @return static
      */
-    public function addLethalDose50(FHIRDecimal|FHIRQuantity $lethalDose50): self
+    public function addLethalDose50(FHIRQuantity $lethalDose50): self
     {
-        if (!($lethalDose50 instanceof FHIRQuantity)) {
-            $lethalDose50 = new FHIRQuantity(value: $lethalDose50);
-        }
         if (!isset($this->lethalDose50)) {
             $this->lethalDose50 = [];
         }
@@ -332,10 +325,10 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      *
      * The median lethal dose of a drug.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity ...$lethalDose50
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity ...$lethalDose50
      * @return static
      */
-    public function setLethalDose50(FHIRDecimal|FHIRQuantity ...$lethalDose50): self
+    public function setLethalDose50(FHIRQuantity ...$lethalDose50): self
     {
         if ([] === $lethalDose50) {
             unset($this->lethalDose50);
@@ -368,17 +361,14 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * The time required for any specified property (e.g., the concentration of a
      * substance in the body) to decrease by half.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $halfLifePeriod
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $halfLifePeriod
      * @return static
      */
-    public function setHalfLifePeriod(null|FHIRDecimal|FHIRDuration $halfLifePeriod): self
+    public function setHalfLifePeriod(null|FHIRDuration $halfLifePeriod): self
     {
         if (null === $halfLifePeriod) {
             unset($this->halfLifePeriod);
             return $this;
-        }
-        if (!($halfLifePeriod instanceof FHIRDuration)) {
-            $halfLifePeriod = new FHIRDuration(value: $halfLifePeriod);
         }
         $this->halfLifePeriod = $halfLifePeriod;
         return $this;
@@ -624,13 +614,5 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
             $out->halfLifePeriod = $this->halfLifePeriod;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

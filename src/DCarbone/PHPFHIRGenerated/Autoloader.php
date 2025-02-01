@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,9 @@ abstract class Autoloader
         'DCarbone\PHPFHIRGenerated\VersionEnum' => __DIR__ . '/VersionEnum.php',
         'DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait' => __DIR__ . '/SourceXMLNamespaceTrait.php',
         'DCarbone\PHPFHIRGenerated\Types\PrimitiveContainerTypeInterface' => __DIR__ . '/Types/PrimitiveContainerTypeInterface.php',
+        'DCarbone\PHPFHIRGenerated\Types\ValueContainerTrait' => __DIR__ . '/Types/ValueContainerTrait.php',
         'DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface' => __DIR__ . '/Types/ValueContainerTypeInterface.php',
+        'DCarbone\PHPFHIRGenerated\Types\Dstu1TypeInterface' => __DIR__ . '/Types/Dstu1TypeInterface.php',
         'DCarbone\PHPFHIRGenerated\Types\TypeInterface' => __DIR__ . '/Types/TypeInterface.php',
         'DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait' => __DIR__ . '/Types/CommentContainerTrait.php',
         'DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface' => __DIR__ . '/Types/ResourceTypeInterface.php',

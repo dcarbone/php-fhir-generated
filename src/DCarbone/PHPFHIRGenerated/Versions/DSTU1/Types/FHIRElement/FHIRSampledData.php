@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -206,7 +206,7 @@ class FHIRSampledData extends FHIRElement
      * FHIRSampledData Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $origin
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $origin
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $period
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $factor
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $lowerLimit
@@ -217,7 +217,7 @@ class FHIRSampledData extends FHIRElement
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
-                                null|FHIRDecimal|FHIRQuantity $origin = null,
+                                null|FHIRQuantity $origin = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $period = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $lowerLimit = null,
@@ -289,17 +289,14 @@ class FHIRSampledData extends FHIRElement
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $origin
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $origin
      * @return static
      */
-    public function setOrigin(null|FHIRDecimal|FHIRQuantity $origin): self
+    public function setOrigin(null|FHIRQuantity $origin): self
     {
         if (null === $origin) {
             unset($this->origin);
             return $this;
-        }
-        if (!($origin instanceof FHIRQuantity)) {
-            $origin = new FHIRQuantity(value: $origin);
         }
         $this->origin = $origin;
         return $this;
@@ -1189,13 +1186,5 @@ class FHIRSampledData extends FHIRElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFinancialResourceStatusCodes;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId;
@@ -328,7 +327,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $created
@@ -338,8 +337,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRRemittanceOutcomeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRemittanceOutcome $outcome
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $disposition
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $paymentDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $paymentAmount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $paymentIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $paymentAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $paymentIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[] $detail
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $formCode
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[] $processNote
@@ -363,8 +362,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
                                 null|string|FHIRRemittanceOutcomeList|FHIRRemittanceOutcome $outcome = null,
                                 null|string|FHIRStringPrimitive|FHIRString $disposition = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $paymentDate = null,
-                                null|FHIRDecimal|FHIRMoney $paymentAmount = null,
-                                null|FHIRString|FHIRIdentifier $paymentIdentifier = null,
+                                null|FHIRMoney $paymentAmount = null,
+                                null|FHIRIdentifier $paymentIdentifier = null,
                                 null|iterable $detail = null,
                                 null|FHIRCodeableConcept $formCode = null,
                                 null|iterable $processNote = null,
@@ -479,14 +478,11 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * A unique identifier assigned to this payment reconciliation.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRIdentifier $identifier): self
     {
-        if (!($identifier instanceof FHIRIdentifier)) {
-            $identifier = new FHIRIdentifier(value: $identifier);
-        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -502,10 +498,10 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * A unique identifier assigned to this payment reconciliation.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1008,17 +1004,14 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * Total payment amount as indicated on the financial instrument.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $paymentAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $paymentAmount
      * @return static
      */
-    public function setPaymentAmount(null|FHIRDecimal|FHIRMoney $paymentAmount): self
+    public function setPaymentAmount(null|FHIRMoney $paymentAmount): self
     {
         if (null === $paymentAmount) {
             unset($this->paymentAmount);
             return $this;
-        }
-        if (!($paymentAmount instanceof FHIRMoney)) {
-            $paymentAmount = new FHIRMoney(value: $paymentAmount);
         }
         $this->paymentAmount = $paymentAmount;
         return $this;
@@ -1047,17 +1040,14 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * Issuer's unique identifier for the payment instrument.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $paymentIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $paymentIdentifier
      * @return static
      */
-    public function setPaymentIdentifier(null|FHIRString|FHIRIdentifier $paymentIdentifier): self
+    public function setPaymentIdentifier(null|FHIRIdentifier $paymentIdentifier): self
     {
         if (null === $paymentIdentifier) {
             unset($this->paymentIdentifier);
             return $this;
-        }
-        if (!($paymentIdentifier instanceof FHIRIdentifier)) {
-            $paymentIdentifier = new FHIRIdentifier(value: $paymentIdentifier);
         }
         $this->paymentIdentifier = $paymentIdentifier;
         return $this;
@@ -2057,13 +2047,5 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,8 +70,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
 
 class FHIRUnsignedIntPrimitive implements PrimitiveTypeInterface
 {
-    use SourceXMLNamespaceTrait;
-
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_UNSIGNED_INT_HYPHEN_PRIMITIVE;
@@ -218,7 +216,8 @@ class FHIRUnsignedIntPrimitive implements PrimitiveTypeInterface
     {
         return intval($this->getValue(), 10);
     }
-    /* class_default.php:236 */
+
+    /* class_default.php:237 */
     /**
      * @return string
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,6 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
@@ -189,9 +188,9 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $allowedString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -200,9 +199,9 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $type = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $allowedUnsignedInt = null,
                                 null|string|FHIRStringPrimitive|FHIRString $allowedString = null,
-                                null|FHIRDecimal|FHIRMoney $allowedMoney = null,
+                                null|FHIRMoney $allowedMoney = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $usedUnsignedInt = null,
-                                null|FHIRDecimal|FHIRMoney $usedMoney = null,
+                                null|FHIRMoney $usedMoney = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -428,17 +427,14 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
      *
      * Benefits allowed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
      * @return static
      */
-    public function setAllowedMoney(null|FHIRDecimal|FHIRMoney $allowedMoney): self
+    public function setAllowedMoney(null|FHIRMoney $allowedMoney): self
     {
         if (null === $allowedMoney) {
             unset($this->allowedMoney);
             return $this;
-        }
-        if (!($allowedMoney instanceof FHIRMoney)) {
-            $allowedMoney = new FHIRMoney(value: $allowedMoney);
         }
         $this->allowedMoney = $allowedMoney;
         return $this;
@@ -531,17 +527,14 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
      *
      * Benefits used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
      * @return static
      */
-    public function setUsedMoney(null|FHIRDecimal|FHIRMoney $usedMoney): self
+    public function setUsedMoney(null|FHIRMoney $usedMoney): self
     {
         if (null === $usedMoney) {
             unset($this->usedMoney);
             return $this;
-        }
-        if (!($usedMoney instanceof FHIRMoney)) {
-            $usedMoney = new FHIRMoney(value: $usedMoney);
         }
         $this->usedMoney = $usedMoney;
         return $this;
@@ -932,13 +925,5 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
             $out->usedMoney = $this->usedMoney;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

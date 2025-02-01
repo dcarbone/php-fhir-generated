@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneEleme
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge;
@@ -287,7 +286,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate $bornDate
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $bornString
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $deceasedBoolean
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $deceasedRange
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate $deceasedDate
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $deceasedString
@@ -304,7 +303,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $bornDate = null,
                                 null|string|FHIRStringPrimitive|FHIRString $bornString = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean = null,
-                                null|FHIRDecimal|FHIRAge $deceasedAge = null,
+                                null|FHIRAge $deceasedAge = null,
                                 null|FHIRRange $deceasedRange = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $deceasedDate = null,
                                 null|string|FHIRStringPrimitive|FHIRString $deceasedString = null,
@@ -727,17 +726,14 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
      * @return static
      */
-    public function setDeceasedAge(null|FHIRDecimal|FHIRAge $deceasedAge): self
+    public function setDeceasedAge(null|FHIRAge $deceasedAge): self
     {
         if (null === $deceasedAge) {
             unset($this->deceasedAge);
             return $this;
-        }
-        if (!($deceasedAge instanceof FHIRAge)) {
-            $deceasedAge = new FHIRAge(value: $deceasedAge);
         }
         $this->deceasedAge = $deceasedAge;
         return $this;
@@ -1722,13 +1718,5 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             $out->condition = $this->condition;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

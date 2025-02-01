@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange;
@@ -255,7 +254,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $substanceCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $relationship
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $isDefining
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $amountRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $amountRatio
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
@@ -271,7 +270,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $substanceCodeableConcept = null,
                                 null|FHIRCodeableConcept $relationship = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDefining = null,
-                                null|FHIRDecimal|FHIRQuantity $amountQuantity = null,
+                                null|FHIRQuantity $amountQuantity = null,
                                 null|FHIRRange $amountRange = null,
                                 null|FHIRRatio $amountRatio = null,
                                 null|string|FHIRStringPrimitive|FHIRString $amountString = null,
@@ -532,17 +531,14 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * a substance has some percentage of the active substance in relation to some
      * other.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
      * @return static
      */
-    public function setAmountQuantity(null|FHIRDecimal|FHIRQuantity $amountQuantity): self
+    public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
     {
         if (null === $amountQuantity) {
             unset($this->amountQuantity);
             return $this;
-        }
-        if (!($amountQuantity instanceof FHIRQuantity)) {
-            $amountQuantity = new FHIRQuantity(value: $amountQuantity);
         }
         $this->amountQuantity = $amountQuantity;
         return $this;
@@ -1318,13 +1314,5 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
             $out->source = $this->source;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

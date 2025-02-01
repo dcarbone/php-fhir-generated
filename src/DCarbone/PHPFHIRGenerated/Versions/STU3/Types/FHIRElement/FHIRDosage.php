@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -342,13 +342,13 @@ class FHIRDosage extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $route
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $method
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $doseRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $doseQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $doseQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio $maxDosePerPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $maxDosePerAdministration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $maxDosePerLifetime
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $maxDosePerAdministration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $maxDosePerLifetime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio $rateRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $rateRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $rateQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $rateQuantity
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -364,13 +364,13 @@ class FHIRDosage extends FHIRElement
                                 null|FHIRCodeableConcept $route = null,
                                 null|FHIRCodeableConcept $method = null,
                                 null|FHIRRange $doseRange = null,
-                                null|FHIRDecimal|FHIRQuantity $doseQuantity = null,
+                                null|FHIRQuantity $doseQuantity = null,
                                 null|FHIRRatio $maxDosePerPeriod = null,
-                                null|FHIRDecimal|FHIRQuantity $maxDosePerAdministration = null,
-                                null|FHIRDecimal|FHIRQuantity $maxDosePerLifetime = null,
+                                null|FHIRQuantity $maxDosePerAdministration = null,
+                                null|FHIRQuantity $maxDosePerLifetime = null,
                                 null|FHIRRatio $rateRatio = null,
                                 null|FHIRRange $rateRange = null,
-                                null|FHIRDecimal|FHIRQuantity $rateQuantity = null,
+                                null|FHIRQuantity $rateQuantity = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -1026,17 +1026,14 @@ class FHIRDosage extends FHIRElement
      *
      * Amount of medication per dose.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $doseQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $doseQuantity
      * @return static
      */
-    public function setDoseQuantity(null|FHIRDecimal|FHIRQuantity $doseQuantity): self
+    public function setDoseQuantity(null|FHIRQuantity $doseQuantity): self
     {
         if (null === $doseQuantity) {
             unset($this->doseQuantity);
             return $this;
-        }
-        if (!($doseQuantity instanceof FHIRQuantity)) {
-            $doseQuantity = new FHIRQuantity(value: $doseQuantity);
         }
         $this->doseQuantity = $doseQuantity;
         return $this;
@@ -1103,17 +1100,14 @@ class FHIRDosage extends FHIRElement
      *
      * Upper limit on medication per administration.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $maxDosePerAdministration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $maxDosePerAdministration
      * @return static
      */
-    public function setMaxDosePerAdministration(null|FHIRDecimal|FHIRQuantity $maxDosePerAdministration): self
+    public function setMaxDosePerAdministration(null|FHIRQuantity $maxDosePerAdministration): self
     {
         if (null === $maxDosePerAdministration) {
             unset($this->maxDosePerAdministration);
             return $this;
-        }
-        if (!($maxDosePerAdministration instanceof FHIRQuantity)) {
-            $maxDosePerAdministration = new FHIRQuantity(value: $maxDosePerAdministration);
         }
         $this->maxDosePerAdministration = $maxDosePerAdministration;
         return $this;
@@ -1144,17 +1138,14 @@ class FHIRDosage extends FHIRElement
      *
      * Upper limit on medication per lifetime of the patient.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $maxDosePerLifetime
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $maxDosePerLifetime
      * @return static
      */
-    public function setMaxDosePerLifetime(null|FHIRDecimal|FHIRQuantity $maxDosePerLifetime): self
+    public function setMaxDosePerLifetime(null|FHIRQuantity $maxDosePerLifetime): self
     {
         if (null === $maxDosePerLifetime) {
             unset($this->maxDosePerLifetime);
             return $this;
-        }
-        if (!($maxDosePerLifetime instanceof FHIRQuantity)) {
-            $maxDosePerLifetime = new FHIRQuantity(value: $maxDosePerLifetime);
         }
         $this->maxDosePerLifetime = $maxDosePerLifetime;
         return $this;
@@ -1255,17 +1246,14 @@ class FHIRDosage extends FHIRElement
      *
      * Amount of medication per unit of time.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $rateQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $rateQuantity
      * @return static
      */
-    public function setRateQuantity(null|FHIRDecimal|FHIRQuantity $rateQuantity): self
+    public function setRateQuantity(null|FHIRQuantity $rateQuantity): self
     {
         if (null === $rateQuantity) {
             unset($this->rateQuantity);
             return $this;
-        }
-        if (!($rateQuantity instanceof FHIRQuantity)) {
-            $rateQuantity = new FHIRQuantity(value: $rateQuantity);
         }
         $this->rateQuantity = $rateQuantity;
         return $this;
@@ -1972,13 +1960,5 @@ class FHIRDosage extends FHIRElement
             $out->rateQuantity = $this->rateQuantity;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

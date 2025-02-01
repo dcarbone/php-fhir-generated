@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,14 +126,14 @@ class FHIRRange extends FHIRElement
      * FHIRRange Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $low
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $high
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $low
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $high
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
-                                null|FHIRDecimal|FHIRQuantity $low = null,
-                                null|FHIRDecimal|FHIRQuantity $high = null,
+                                null|FHIRQuantity $low = null,
+                                null|FHIRQuantity $high = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -182,17 +182,14 @@ class FHIRRange extends FHIRElement
      *
      * The low limit. The boundary is inclusive.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $low
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $low
      * @return static
      */
-    public function setLow(null|FHIRDecimal|FHIRQuantity $low): self
+    public function setLow(null|FHIRQuantity $low): self
     {
         if (null === $low) {
             unset($this->low);
             return $this;
-        }
-        if (!($low instanceof FHIRQuantity)) {
-            $low = new FHIRQuantity(value: $low);
         }
         $this->low = $low;
         return $this;
@@ -223,17 +220,14 @@ class FHIRRange extends FHIRElement
      *
      * The high limit. The boundary is inclusive.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $high
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $high
      * @return static
      */
-    public function setHigh(null|FHIRDecimal|FHIRQuantity $high): self
+    public function setHigh(null|FHIRQuantity $high): self
     {
         if (null === $high) {
             unset($this->high);
             return $this;
-        }
-        if (!($high instanceof FHIRQuantity)) {
-            $high = new FHIRQuantity(value: $high);
         }
         $this->high = $high;
         return $this;
@@ -424,13 +418,5 @@ class FHIRRange extends FHIRElement
             $out->high = $this->high;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

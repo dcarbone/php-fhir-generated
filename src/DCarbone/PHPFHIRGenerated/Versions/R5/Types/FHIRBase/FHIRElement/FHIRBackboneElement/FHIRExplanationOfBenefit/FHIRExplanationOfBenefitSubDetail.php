@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
@@ -370,19 +369,19 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $traceNumber
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $traceNumber
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $revenue
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $productOrService
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $productOrServiceEnd
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $modifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $programCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $patientPaid
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $unitPrice
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $patientPaid
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $unitPrice
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tax
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $net
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tax
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $net
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $udi
      * @param null|string[]|int[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $noteNumber
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitReviewOutcome $reviewOutcome
@@ -400,12 +399,12 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $productOrServiceEnd = null,
                                 null|iterable $modifier = null,
                                 null|iterable $programCode = null,
-                                null|FHIRDecimal|FHIRMoney $patientPaid = null,
-                                null|FHIRDecimal|FHIRQuantity $quantity = null,
-                                null|FHIRDecimal|FHIRMoney $unitPrice = null,
+                                null|FHIRMoney $patientPaid = null,
+                                null|FHIRQuantity $quantity = null,
+                                null|FHIRMoney $unitPrice = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
-                                null|FHIRDecimal|FHIRMoney $tax = null,
-                                null|FHIRDecimal|FHIRMoney $net = null,
+                                null|FHIRMoney $tax = null,
+                                null|FHIRMoney $net = null,
                                 null|iterable $udi = null,
                                 null|iterable $noteNumber = null,
                                 null|FHIRExplanationOfBenefitReviewOutcome $reviewOutcome = null,
@@ -586,14 +585,11 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * Trace number for tracking purposes. May be defined at the jurisdiction level or
      * between trading partners.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $traceNumber
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $traceNumber
      * @return static
      */
-    public function addTraceNumber(FHIRString|FHIRIdentifier $traceNumber): self
+    public function addTraceNumber(FHIRIdentifier $traceNumber): self
     {
-        if (!($traceNumber instanceof FHIRIdentifier)) {
-            $traceNumber = new FHIRIdentifier(value: $traceNumber);
-        }
         if (!isset($this->traceNumber)) {
             $this->traceNumber = [];
         }
@@ -610,10 +606,10 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * Trace number for tracking purposes. May be defined at the jurisdiction level or
      * between trading partners.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$traceNumber
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$traceNumber
      * @return static
      */
-    public function setTraceNumber(FHIRString|FHIRIdentifier ...$traceNumber): self
+    public function setTraceNumber(FHIRIdentifier ...$traceNumber): self
     {
         if ([] === $traceNumber) {
             unset($this->traceNumber);
@@ -947,17 +943,14 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * specifically for the item and detail level, to the provider for goods and
      * services.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $patientPaid
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $patientPaid
      * @return static
      */
-    public function setPatientPaid(null|FHIRDecimal|FHIRMoney $patientPaid): self
+    public function setPatientPaid(null|FHIRMoney $patientPaid): self
     {
         if (null === $patientPaid) {
             unset($this->patientPaid);
             return $this;
-        }
-        if (!($patientPaid instanceof FHIRMoney)) {
-            $patientPaid = new FHIRMoney(value: $patientPaid);
         }
         $this->patientPaid = $patientPaid;
         return $this;
@@ -988,17 +981,14 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      *
      * The number of repetitions of a service or product.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
-        }
-        if (!($quantity instanceof FHIRQuantity)) {
-            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -1027,17 +1017,14 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $unitPrice
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $unitPrice
      * @return static
      */
-    public function setUnitPrice(null|FHIRDecimal|FHIRMoney $unitPrice): self
+    public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
         if (null === $unitPrice) {
             unset($this->unitPrice);
             return $this;
-        }
-        if (!($unitPrice instanceof FHIRMoney)) {
-            $unitPrice = new FHIRMoney(value: $unitPrice);
         }
         $this->unitPrice = $unitPrice;
         return $this;
@@ -1136,17 +1123,14 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      *
      * The total of taxes applicable for this product or service.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tax
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tax
      * @return static
      */
-    public function setTax(null|FHIRDecimal|FHIRMoney $tax): self
+    public function setTax(null|FHIRMoney $tax): self
     {
         if (null === $tax) {
             unset($this->tax);
             return $this;
-        }
-        if (!($tax instanceof FHIRMoney)) {
-            $tax = new FHIRMoney(value: $tax);
         }
         $this->tax = $tax;
         return $this;
@@ -1175,17 +1159,14 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * The total amount claimed for the line item.detail.subDetail. Net = unit price *
      * quantity * factor.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $net
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $net
      * @return static
      */
-    public function setNet(null|FHIRDecimal|FHIRMoney $net): self
+    public function setNet(null|FHIRMoney $net): self
     {
         if (null === $net) {
             unset($this->net);
             return $this;
-        }
-        if (!($net instanceof FHIRMoney)) {
-            $net = new FHIRMoney(value: $net);
         }
         $this->net = $net;
         return $this;
@@ -2171,13 +2152,5 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
             $out->adjudication = $this->adjudication;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

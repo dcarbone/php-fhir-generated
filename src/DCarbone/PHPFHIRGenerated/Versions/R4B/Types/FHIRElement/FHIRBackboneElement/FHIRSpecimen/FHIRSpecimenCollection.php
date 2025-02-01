@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity;
@@ -247,12 +246,12 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $collector
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $collectedDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $collectedPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $duration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $duration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $method
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $bodySite
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $fastingStatusCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $fastingStatusDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $fastingStatusDuration
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -261,12 +260,12 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                                 null|FHIRReference $collector = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $collectedDateTime = null,
                                 null|FHIRPeriod $collectedPeriod = null,
-                                null|FHIRDecimal|FHIRDuration $duration = null,
-                                null|FHIRDecimal|FHIRQuantity $quantity = null,
+                                null|FHIRDuration $duration = null,
+                                null|FHIRQuantity $quantity = null,
                                 null|FHIRCodeableConcept $method = null,
                                 null|FHIRCodeableConcept $bodySite = null,
                                 null|FHIRCodeableConcept $fastingStatusCodeableConcept = null,
-                                null|FHIRDecimal|FHIRDuration $fastingStatusDuration = null,
+                                null|FHIRDuration $fastingStatusDuration = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -477,17 +476,14 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * The span of time over which the collection of a specimen occurred.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $duration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $duration
      * @return static
      */
-    public function setDuration(null|FHIRDecimal|FHIRDuration $duration): self
+    public function setDuration(null|FHIRDuration $duration): self
     {
         if (null === $duration) {
             unset($this->duration);
             return $this;
-        }
-        if (!($duration instanceof FHIRDuration)) {
-            $duration = new FHIRDuration(value: $duration);
         }
         $this->duration = $duration;
         return $this;
@@ -520,17 +516,14 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * The quantity of specimen collected; for instance the volume of a blood sample,
      * or the physical measurement of an anatomic pathology sample.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
-        }
-        if (!($quantity instanceof FHIRQuantity)) {
-            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -673,17 +666,14 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * Abstinence or reduction from some or all food, drink, or both, for a period of
      * time prior to sample collection.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $fastingStatusDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $fastingStatusDuration
      * @return static
      */
-    public function setFastingStatusDuration(null|FHIRDecimal|FHIRDuration $fastingStatusDuration): self
+    public function setFastingStatusDuration(null|FHIRDuration $fastingStatusDuration): self
     {
         if (null === $fastingStatusDuration) {
             unset($this->fastingStatusDuration);
             return $this;
-        }
-        if (!($fastingStatusDuration instanceof FHIRDuration)) {
-            $fastingStatusDuration = new FHIRDuration(value: $fastingStatusDuration);
         }
         $this->fastingStatusDuration = $fastingStatusDuration;
         return $this;
@@ -1090,13 +1080,5 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
             $out->fastingStatusDuration = $this->fastingStatusDuration;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

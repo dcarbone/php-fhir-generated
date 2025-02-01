@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,6 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity;
@@ -185,11 +184,11 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $capacity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $specimenQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $capacity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $specimenQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $additiveCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $additiveReference
      * @param null|string[] $fhirComments
@@ -200,8 +199,8 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
                                 null|iterable $identifier = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|FHIRDecimal|FHIRSimpleQuantity $capacity = null,
-                                null|FHIRDecimal|FHIRSimpleQuantity $specimenQuantity = null,
+                                null|FHIRSimpleQuantity $capacity = null,
+                                null|FHIRSimpleQuantity $specimenQuantity = null,
                                 null|FHIRCodeableConcept $additiveCodeableConcept = null,
                                 null|FHIRReference $additiveReference = null,
                                 null|iterable $fhirComments = null)
@@ -279,14 +278,11 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * identifier, etc. The container ID may differ from the specimen id in some
      * circumstances.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRIdentifier $identifier): self
     {
-        if (!($identifier instanceof FHIRIdentifier)) {
-            $identifier = new FHIRIdentifier(value: $identifier);
-        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -303,10 +299,10 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * identifier, etc. The container ID may differ from the specimen id in some
      * circumstances.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -431,17 +427,14 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
     /**
      * The capacity (volume or other measure) the container may contain.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $capacity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $capacity
      * @return static
      */
-    public function setCapacity(null|FHIRDecimal|FHIRSimpleQuantity $capacity): self
+    public function setCapacity(null|FHIRSimpleQuantity $capacity): self
     {
         if (null === $capacity) {
             unset($this->capacity);
             return $this;
-        }
-        if (!($capacity instanceof FHIRSimpleQuantity)) {
-            $capacity = new FHIRSimpleQuantity(value: $capacity);
         }
         $this->capacity = $capacity;
         return $this;
@@ -462,17 +455,14 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * The quantity of specimen in the container; may be volume, dimensions, or other
      * appropriate measurements, depending on the specimen type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $specimenQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $specimenQuantity
      * @return static
      */
-    public function setSpecimenQuantity(null|FHIRDecimal|FHIRSimpleQuantity $specimenQuantity): self
+    public function setSpecimenQuantity(null|FHIRSimpleQuantity $specimenQuantity): self
     {
         if (null === $specimenQuantity) {
             unset($this->specimenQuantity);
             return $this;
-        }
-        if (!($specimenQuantity instanceof FHIRSimpleQuantity)) {
-            $specimenQuantity = new FHIRSimpleQuantity(value: $specimenQuantity);
         }
         $this->specimenQuantity = $specimenQuantity;
         return $this;
@@ -911,13 +901,5 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
             $out->additiveReference = $this->additiveReference;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

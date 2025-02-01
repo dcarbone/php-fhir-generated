@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,11 +68,9 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
@@ -83,7 +81,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
 /**
  * Information about a medication that is used to support knowledge.
  */
-class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement implements ValueContainerTypeInterface
+class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
 {
 
     // name of FHIR type this class describes
@@ -153,7 +151,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $characteristicCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $characteristicQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $characteristicQuantity
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] $value
      * @param null|string[] $fhirComments
      */
@@ -161,7 +159,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $characteristicCodeableConcept = null,
-                                null|FHIRDecimal|FHIRQuantity $characteristicQuantity = null,
+                                null|FHIRQuantity $characteristicQuantity = null,
                                 null|iterable $value = null,
                                 null|iterable $fhirComments = null)
     {
@@ -255,17 +253,14 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
      * Specific characteristic that is relevant to the administration guideline (e.g.
      * height, weight, gender).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $characteristicQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $characteristicQuantity
      * @return static
      */
-    public function setCharacteristicQuantity(null|FHIRDecimal|FHIRQuantity $characteristicQuantity): self
+    public function setCharacteristicQuantity(null|FHIRQuantity $characteristicQuantity): self
     {
         if (null === $characteristicQuantity) {
             unset($this->characteristicQuantity);
             return $this;
-        }
-        if (!($characteristicQuantity instanceof FHIRQuantity)) {
-            $characteristicQuantity = new FHIRQuantity(value: $characteristicQuantity);
         }
         $this->characteristicQuantity = $characteristicQuantity;
         return $this;
@@ -343,18 +338,6 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
             }
         }
         return $this;
-    }
-
-    /**
-     * Return the formatted value of this type's contained primitive type.
-     *
-     * @see \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
-     *
-     * @return string
-     */
-    public function _getFormattedValue(): string
-    {
-        return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
     /* class_default.php:188 */
@@ -519,13 +502,10 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
     /**
      * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
      * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
      */
     public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config,
-                                 null|ValueXMLLocationEnum $valueLocation = null): void
+                                 SerializeConfig $config): void
     {
-        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
         parent::xmlSerialize($xw, $config);
         if (isset($this->characteristicCodeableConcept)) {
             $xw->startElement(self::FIELD_CHARACTERISTIC_CODEABLE_CONCEPT);
@@ -637,13 +617,5 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return $this->_getFormattedValue();
     }
 }

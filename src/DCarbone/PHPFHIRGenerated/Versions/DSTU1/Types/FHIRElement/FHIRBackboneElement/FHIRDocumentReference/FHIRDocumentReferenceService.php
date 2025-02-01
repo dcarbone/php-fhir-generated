@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -141,7 +141,7 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $address
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter[] $parameter
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter[] $parameter
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -305,14 +305,11 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      *
      * A list of named parameters that is used in the service call.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter $parameter
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter $parameter
      * @return static
      */
-    public function addParameter(FHIRString|FHIRDocumentReferenceParameter $parameter): self
+    public function addParameter(FHIRDocumentReferenceParameter $parameter): self
     {
-        if (!($parameter instanceof FHIRDocumentReferenceParameter)) {
-            $parameter = new FHIRDocumentReferenceParameter(value: $parameter);
-        }
         if (!isset($this->parameter)) {
             $this->parameter = [];
         }
@@ -325,10 +322,10 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      *
      * A list of named parameters that is used in the service call.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter ...$parameter
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter ...$parameter
      * @return static
      */
-    public function setParameter(FHIRString|FHIRDocumentReferenceParameter ...$parameter): self
+    public function setParameter(FHIRDocumentReferenceParameter ...$parameter): self
     {
         if ([] === $parameter) {
             unset($this->parameter);
@@ -602,13 +599,5 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
             $out->parameter = $this->parameter;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

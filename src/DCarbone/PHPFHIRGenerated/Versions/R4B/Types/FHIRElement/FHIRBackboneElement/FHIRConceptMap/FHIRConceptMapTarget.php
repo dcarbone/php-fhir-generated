@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -218,8 +218,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $display
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConceptMapEquivalenceEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConceptMapEquivalence $equivalence
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $comment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[] $dependsOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[] $product
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[] $dependsOn
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[] $product
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -573,14 +573,11 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * applicable if the specified element can be resolved, and it has the specified
      * value.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $dependsOn
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $dependsOn
      * @return static
      */
-    public function addDependsOn(FHIRString|FHIRConceptMapDependsOn $dependsOn): self
+    public function addDependsOn(FHIRConceptMapDependsOn $dependsOn): self
     {
-        if (!($dependsOn instanceof FHIRConceptMapDependsOn)) {
-            $dependsOn = new FHIRConceptMapDependsOn(value: $dependsOn);
-        }
         if (!isset($this->dependsOn)) {
             $this->dependsOn = [];
         }
@@ -597,10 +594,10 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * applicable if the specified element can be resolved, and it has the specified
      * value.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn ...$dependsOn
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn ...$dependsOn
      * @return static
      */
-    public function setDependsOn(FHIRString|FHIRConceptMapDependsOn ...$dependsOn): self
+    public function setDependsOn(FHIRConceptMapDependsOn ...$dependsOn): self
     {
         if ([] === $dependsOn) {
             unset($this->dependsOn);
@@ -648,14 +645,11 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * or source that is in context. The mapping may still be useful without a place
      * for the additional data elements, but the equivalence cannot be relied on.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $product
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $product
      * @return static
      */
-    public function addProduct(FHIRString|FHIRConceptMapDependsOn $product): self
+    public function addProduct(FHIRConceptMapDependsOn $product): self
     {
-        if (!($product instanceof FHIRConceptMapDependsOn)) {
-            $product = new FHIRConceptMapDependsOn(value: $product);
-        }
         if (!isset($this->product)) {
             $this->product = [];
         }
@@ -673,10 +667,10 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * or source that is in context. The mapping may still be useful without a place
      * for the additional data elements, but the equivalence cannot be relied on.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn ...$product
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn ...$product
      * @return static
      */
-    public function setProduct(FHIRString|FHIRConceptMapDependsOn ...$product): self
+    public function setProduct(FHIRConceptMapDependsOn ...$product): self
     {
         if ([] === $product) {
             unset($this->product);
@@ -1114,13 +1108,5 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             $out->product = $this->product;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

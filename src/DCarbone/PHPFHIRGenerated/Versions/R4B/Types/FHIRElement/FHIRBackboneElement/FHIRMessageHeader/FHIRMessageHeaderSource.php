@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -201,7 +201,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $software
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $contact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $contact
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUrl $endpoint
      * @param null|string[] $fhirComments
      */
@@ -211,7 +211,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $name = null,
                                 null|string|FHIRStringPrimitive|FHIRString $software = null,
                                 null|string|FHIRStringPrimitive|FHIRString $version = null,
-                                null|FHIRString|FHIRContactPoint $contact = null,
+                                null|FHIRContactPoint $contact = null,
                                 null|string|FHIRUrlPrimitive|FHIRUrl $endpoint = null,
                                 null|iterable $fhirComments = null)
     {
@@ -471,17 +471,14 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * An e-mail, phone, website or other contact point to use to resolve issues with
      * message communications.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $contact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $contact
      * @return static
      */
-    public function setContact(null|FHIRString|FHIRContactPoint $contact): self
+    public function setContact(null|FHIRContactPoint $contact): self
     {
         if (null === $contact) {
             unset($this->contact);
             return $this;
-        }
-        if (!($contact instanceof FHIRContactPoint)) {
-            $contact = new FHIRContactPoint(value: $contact);
         }
         $this->contact = $contact;
         return $this;
@@ -940,13 +937,5 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

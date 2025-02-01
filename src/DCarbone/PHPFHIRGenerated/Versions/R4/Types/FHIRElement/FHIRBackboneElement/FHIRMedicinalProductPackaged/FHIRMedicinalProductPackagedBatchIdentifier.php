@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,6 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
@@ -131,15 +130,15 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $outerPackaging
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $immediatePackaging
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $outerPackaging
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $immediatePackaging
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRString|FHIRIdentifier $outerPackaging = null,
-                                null|FHIRString|FHIRIdentifier $immediatePackaging = null,
+                                null|FHIRIdentifier $outerPackaging = null,
+                                null|FHIRIdentifier $immediatePackaging = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -187,17 +186,14 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      *
      * A number appearing on the outer packaging of a specific batch.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $outerPackaging
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $outerPackaging
      * @return static
      */
-    public function setOuterPackaging(null|FHIRString|FHIRIdentifier $outerPackaging): self
+    public function setOuterPackaging(null|FHIRIdentifier $outerPackaging): self
     {
         if (null === $outerPackaging) {
             unset($this->outerPackaging);
             return $this;
-        }
-        if (!($outerPackaging instanceof FHIRIdentifier)) {
-            $outerPackaging = new FHIRIdentifier(value: $outerPackaging);
         }
         $this->outerPackaging = $outerPackaging;
         return $this;
@@ -226,17 +222,14 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      *
      * A number appearing on the immediate packaging (and not the outer packaging).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $immediatePackaging
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $immediatePackaging
      * @return static
      */
-    public function setImmediatePackaging(null|FHIRString|FHIRIdentifier $immediatePackaging): self
+    public function setImmediatePackaging(null|FHIRIdentifier $immediatePackaging): self
     {
         if (null === $immediatePackaging) {
             unset($this->immediatePackaging);
             return $this;
-        }
-        if (!($immediatePackaging instanceof FHIRIdentifier)) {
-            $immediatePackaging = new FHIRIdentifier(value: $immediatePackaging);
         }
         $this->immediatePackaging = $immediatePackaging;
         return $this;
@@ -446,13 +439,5 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
             $out->immediatePackaging = $this->immediatePackaging;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

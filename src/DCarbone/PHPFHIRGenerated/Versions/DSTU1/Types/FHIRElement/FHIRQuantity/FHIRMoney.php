@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -507,13 +507,10 @@ class FHIRMoney extends FHIRQuantity
     /**
      * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
      * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
      */
     public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config,
-                                 null|ValueXMLLocationEnum $valueLocation = null): void
+                                 SerializeConfig $config): void
     {
-        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
         if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
@@ -532,7 +529,7 @@ class FHIRMoney extends FHIRQuantity
         if (isset($this->id) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ID]) {
             $xw->writeAttribute(self::FIELD_ID, $this->id->_getFormattedValue());
         }
-        parent::xmlSerialize($xw, $config, $valueLocation);
+        parent::xmlSerialize($xw, $config);
         if (isset($this->value)
             && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_VALUE]
                 || $this->value->_nonValueFieldDefined())) {
@@ -667,13 +664,5 @@ class FHIRMoney extends FHIRQuantity
     {
         $out = parent::jsonSerialize();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return $this->_getFormattedValue();
     }
 }

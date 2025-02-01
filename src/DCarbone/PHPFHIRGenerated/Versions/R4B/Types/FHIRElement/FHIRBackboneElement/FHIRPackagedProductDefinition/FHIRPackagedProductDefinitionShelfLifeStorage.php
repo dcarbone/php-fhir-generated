@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,7 +90,6 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
@@ -186,7 +185,7 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $periodDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $periodDuration
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $periodString
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $specialPrecautionsForStorage
      * @param null|string[] $fhirComments
@@ -195,7 +194,7 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|FHIRDecimal|FHIRDuration $periodDuration = null,
+                                null|FHIRDuration $periodDuration = null,
                                 null|string|FHIRStringPrimitive|FHIRString $periodString = null,
                                 null|iterable $specialPrecautionsForStorage = null,
                                 null|iterable $fhirComments = null)
@@ -301,17 +300,14 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $periodDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $periodDuration
      * @return static
      */
-    public function setPeriodDuration(null|FHIRDecimal|FHIRDuration $periodDuration): self
+    public function setPeriodDuration(null|FHIRDuration $periodDuration): self
     {
         if (null === $periodDuration) {
             unset($this->periodDuration);
             return $this;
-        }
-        if (!($periodDuration instanceof FHIRDuration)) {
-            $periodDuration = new FHIRDuration(value: $periodDuration);
         }
         $this->periodDuration = $periodDuration;
         return $this;
@@ -746,13 +742,5 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
             $out->specialPrecautionsForStorage = $this->specialPrecautionsForStorage;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

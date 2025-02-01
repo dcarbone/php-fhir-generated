@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPopulation;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta;
@@ -232,7 +231,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $diseaseStatus
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $comorbidity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $intendedEffect
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $duration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $duration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[] $otherTherapy
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] $undesirableEffect
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPopulation[] $population
@@ -251,7 +250,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
                                 null|FHIRCodeableConcept $diseaseStatus = null,
                                 null|iterable $comorbidity = null,
                                 null|FHIRCodeableConcept $intendedEffect = null,
-                                null|FHIRDecimal|FHIRQuantity $duration = null,
+                                null|FHIRQuantity $duration = null,
                                 null|iterable $otherTherapy = null,
                                 null|iterable $undesirableEffect = null,
                                 null|iterable $population = null,
@@ -578,17 +577,14 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      *
      * Timing or duration information as part of the indication.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $duration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $duration
      * @return static
      */
-    public function setDuration(null|FHIRDecimal|FHIRQuantity $duration): self
+    public function setDuration(null|FHIRQuantity $duration): self
     {
         if (null === $duration) {
             unset($this->duration);
             return $this;
-        }
-        if (!($duration instanceof FHIRQuantity)) {
-            $duration = new FHIRQuantity(value: $duration);
         }
         $this->duration = $duration;
         return $this;
@@ -1330,13 +1326,5 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

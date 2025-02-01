@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity;
@@ -223,11 +222,11 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestInitialFill $initialFill
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $dispenseInterval
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $dispenseInterval
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $validityPeriod
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $numberOfRepeatsAllowed
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $performer
      * @param null|string[] $fhirComments
      */
@@ -235,11 +234,11 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRMedicationRequestInitialFill $initialFill = null,
-                                null|FHIRDecimal|FHIRDuration $dispenseInterval = null,
+                                null|FHIRDuration $dispenseInterval = null,
                                 null|FHIRPeriod $validityPeriod = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfRepeatsAllowed = null,
-                                null|FHIRDecimal|FHIRQuantity $quantity = null,
-                                null|FHIRDecimal|FHIRDuration $expectedSupplyDuration = null,
+                                null|FHIRQuantity $quantity = null,
+                                null|FHIRDuration $expectedSupplyDuration = null,
                                 null|FHIRReference $performer = null,
                                 null|iterable $fhirComments = null)
     {
@@ -339,17 +338,14 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * The minimum period of time that must occur between dispenses of the medication.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $dispenseInterval
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $dispenseInterval
      * @return static
      */
-    public function setDispenseInterval(null|FHIRDecimal|FHIRDuration $dispenseInterval): self
+    public function setDispenseInterval(null|FHIRDuration $dispenseInterval): self
     {
         if (null === $dispenseInterval) {
             unset($this->dispenseInterval);
             return $this;
-        }
-        if (!($dispenseInterval instanceof FHIRDuration)) {
-            $dispenseInterval = new FHIRDuration(value: $dispenseInterval);
         }
         $this->dispenseInterval = $dispenseInterval;
         return $this;
@@ -494,17 +490,14 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * The amount that is to be dispensed for one fill.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(null|FHIRDecimal|FHIRQuantity $quantity): self
+    public function setQuantity(null|FHIRQuantity $quantity): self
     {
         if (null === $quantity) {
             unset($this->quantity);
             return $this;
-        }
-        if (!($quantity instanceof FHIRQuantity)) {
-            $quantity = new FHIRQuantity(value: $quantity);
         }
         $this->quantity = $quantity;
         return $this;
@@ -533,17 +526,14 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @return static
      */
-    public function setExpectedSupplyDuration(null|FHIRDecimal|FHIRDuration $expectedSupplyDuration): self
+    public function setExpectedSupplyDuration(null|FHIRDuration $expectedSupplyDuration): self
     {
         if (null === $expectedSupplyDuration) {
             unset($this->expectedSupplyDuration);
             return $this;
-        }
-        if (!($expectedSupplyDuration instanceof FHIRDuration)) {
-            $expectedSupplyDuration = new FHIRDuration(value: $expectedSupplyDuration);
         }
         $this->expectedSupplyDuration = $expectedSupplyDuration;
         return $this;
@@ -934,13 +924,5 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
             $out->performer = $this->performer;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

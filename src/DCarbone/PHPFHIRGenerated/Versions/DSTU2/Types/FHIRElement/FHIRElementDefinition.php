@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -3625,10 +3625,10 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMarkdown $defaultValueMarkdown
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation $defaultValueAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment $defaultValueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $defaultValueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $defaultValueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $defaultValuePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $defaultValueRatio
@@ -3637,7 +3637,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSignature $defaultValueSignature
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHumanName $defaultValueHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAddress $defaultValueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming $defaultValueTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $defaultValueMeta
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMarkdown $meaningWhenMissing
@@ -3660,10 +3660,10 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMarkdown $fixedMarkdown
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation $fixedAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment $fixedAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $fixedIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $fixedIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $fixedCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $fixedCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $fixedQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $fixedQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $fixedRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $fixedPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $fixedRatio
@@ -3672,7 +3672,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSignature $fixedSignature
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHumanName $fixedHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAddress $fixedAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $fixedContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $fixedContactPoint
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming $fixedTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $fixedMeta
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $patternBoolean
@@ -3694,10 +3694,10 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMarkdown $patternMarkdown
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation $patternAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment $patternAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $patternIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $patternIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $patternCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $patternCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $patternQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $patternQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $patternRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $patternPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $patternRatio
@@ -3706,7 +3706,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSignature $patternSignature
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHumanName $patternHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAddress $patternAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $patternContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $patternContactPoint
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming $patternTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $patternMeta
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $exampleBoolean
@@ -3728,10 +3728,10 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMarkdown $exampleMarkdown
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation $exampleAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment $exampleAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $exampleCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $exampleCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $exampleQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $exampleQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $exampleRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $examplePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $exampleRatio
@@ -3740,7 +3740,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSignature $exampleSignature
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHumanName $exampleHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAddress $exampleAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $exampleContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $exampleContactPoint
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming $exampleTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $exampleMeta
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $minValueBoolean
@@ -3762,10 +3762,10 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMarkdown $minValueMarkdown
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation $minValueAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment $minValueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $minValueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $minValueIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $minValueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $minValueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $minValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $minValueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $minValueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $minValuePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $minValueRatio
@@ -3774,7 +3774,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSignature $minValueSignature
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHumanName $minValueHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAddress $minValueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $minValueContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $minValueContactPoint
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming $minValueTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $minValueMeta
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $maxValueBoolean
@@ -3796,10 +3796,10 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMarkdown $maxValueMarkdown
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation $maxValueAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment $maxValueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $maxValueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $maxValueIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $maxValueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $maxValueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $maxValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $maxValueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $maxValueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $maxValuePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $maxValueRatio
@@ -3808,7 +3808,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSignature $maxValueSignature
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHumanName $maxValueHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAddress $maxValueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $maxValueContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $maxValueContactPoint
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming $maxValueTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $maxValueMeta
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger $maxLength
@@ -3858,10 +3858,10 @@ class FHIRElementDefinition extends FHIRElement
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $defaultValueMarkdown = null,
                                 null|FHIRAnnotation $defaultValueAnnotation = null,
                                 null|FHIRAttachment $defaultValueAttachment = null,
-                                null|FHIRString|FHIRIdentifier $defaultValueIdentifier = null,
+                                null|FHIRIdentifier $defaultValueIdentifier = null,
                                 null|FHIRCodeableConcept $defaultValueCodeableConcept = null,
                                 null|FHIRCoding $defaultValueCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $defaultValueQuantity = null,
+                                null|FHIRQuantity $defaultValueQuantity = null,
                                 null|FHIRRange $defaultValueRange = null,
                                 null|FHIRPeriod $defaultValuePeriod = null,
                                 null|FHIRRatio $defaultValueRatio = null,
@@ -3870,7 +3870,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRSignature $defaultValueSignature = null,
                                 null|FHIRHumanName $defaultValueHumanName = null,
                                 null|FHIRAddress $defaultValueAddress = null,
-                                null|FHIRString|FHIRContactPoint $defaultValueContactPoint = null,
+                                null|FHIRContactPoint $defaultValueContactPoint = null,
                                 null|FHIRTiming $defaultValueTiming = null,
                                 null|FHIRMeta $defaultValueMeta = null,
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $meaningWhenMissing = null,
@@ -3893,10 +3893,10 @@ class FHIRElementDefinition extends FHIRElement
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $fixedMarkdown = null,
                                 null|FHIRAnnotation $fixedAnnotation = null,
                                 null|FHIRAttachment $fixedAttachment = null,
-                                null|FHIRString|FHIRIdentifier $fixedIdentifier = null,
+                                null|FHIRIdentifier $fixedIdentifier = null,
                                 null|FHIRCodeableConcept $fixedCodeableConcept = null,
                                 null|FHIRCoding $fixedCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $fixedQuantity = null,
+                                null|FHIRQuantity $fixedQuantity = null,
                                 null|FHIRRange $fixedRange = null,
                                 null|FHIRPeriod $fixedPeriod = null,
                                 null|FHIRRatio $fixedRatio = null,
@@ -3905,7 +3905,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRSignature $fixedSignature = null,
                                 null|FHIRHumanName $fixedHumanName = null,
                                 null|FHIRAddress $fixedAddress = null,
-                                null|FHIRString|FHIRContactPoint $fixedContactPoint = null,
+                                null|FHIRContactPoint $fixedContactPoint = null,
                                 null|FHIRTiming $fixedTiming = null,
                                 null|FHIRMeta $fixedMeta = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $patternBoolean = null,
@@ -3927,10 +3927,10 @@ class FHIRElementDefinition extends FHIRElement
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $patternMarkdown = null,
                                 null|FHIRAnnotation $patternAnnotation = null,
                                 null|FHIRAttachment $patternAttachment = null,
-                                null|FHIRString|FHIRIdentifier $patternIdentifier = null,
+                                null|FHIRIdentifier $patternIdentifier = null,
                                 null|FHIRCodeableConcept $patternCodeableConcept = null,
                                 null|FHIRCoding $patternCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $patternQuantity = null,
+                                null|FHIRQuantity $patternQuantity = null,
                                 null|FHIRRange $patternRange = null,
                                 null|FHIRPeriod $patternPeriod = null,
                                 null|FHIRRatio $patternRatio = null,
@@ -3939,7 +3939,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRSignature $patternSignature = null,
                                 null|FHIRHumanName $patternHumanName = null,
                                 null|FHIRAddress $patternAddress = null,
-                                null|FHIRString|FHIRContactPoint $patternContactPoint = null,
+                                null|FHIRContactPoint $patternContactPoint = null,
                                 null|FHIRTiming $patternTiming = null,
                                 null|FHIRMeta $patternMeta = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exampleBoolean = null,
@@ -3961,10 +3961,10 @@ class FHIRElementDefinition extends FHIRElement
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $exampleMarkdown = null,
                                 null|FHIRAnnotation $exampleAnnotation = null,
                                 null|FHIRAttachment $exampleAttachment = null,
-                                null|FHIRString|FHIRIdentifier $exampleIdentifier = null,
+                                null|FHIRIdentifier $exampleIdentifier = null,
                                 null|FHIRCodeableConcept $exampleCodeableConcept = null,
                                 null|FHIRCoding $exampleCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $exampleQuantity = null,
+                                null|FHIRQuantity $exampleQuantity = null,
                                 null|FHIRRange $exampleRange = null,
                                 null|FHIRPeriod $examplePeriod = null,
                                 null|FHIRRatio $exampleRatio = null,
@@ -3973,7 +3973,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRSignature $exampleSignature = null,
                                 null|FHIRHumanName $exampleHumanName = null,
                                 null|FHIRAddress $exampleAddress = null,
-                                null|FHIRString|FHIRContactPoint $exampleContactPoint = null,
+                                null|FHIRContactPoint $exampleContactPoint = null,
                                 null|FHIRTiming $exampleTiming = null,
                                 null|FHIRMeta $exampleMeta = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $minValueBoolean = null,
@@ -3995,10 +3995,10 @@ class FHIRElementDefinition extends FHIRElement
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $minValueMarkdown = null,
                                 null|FHIRAnnotation $minValueAnnotation = null,
                                 null|FHIRAttachment $minValueAttachment = null,
-                                null|FHIRString|FHIRIdentifier $minValueIdentifier = null,
+                                null|FHIRIdentifier $minValueIdentifier = null,
                                 null|FHIRCodeableConcept $minValueCodeableConcept = null,
                                 null|FHIRCoding $minValueCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $minValueQuantity = null,
+                                null|FHIRQuantity $minValueQuantity = null,
                                 null|FHIRRange $minValueRange = null,
                                 null|FHIRPeriod $minValuePeriod = null,
                                 null|FHIRRatio $minValueRatio = null,
@@ -4007,7 +4007,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRSignature $minValueSignature = null,
                                 null|FHIRHumanName $minValueHumanName = null,
                                 null|FHIRAddress $minValueAddress = null,
-                                null|FHIRString|FHIRContactPoint $minValueContactPoint = null,
+                                null|FHIRContactPoint $minValueContactPoint = null,
                                 null|FHIRTiming $minValueTiming = null,
                                 null|FHIRMeta $minValueMeta = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $maxValueBoolean = null,
@@ -4029,10 +4029,10 @@ class FHIRElementDefinition extends FHIRElement
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $maxValueMarkdown = null,
                                 null|FHIRAnnotation $maxValueAnnotation = null,
                                 null|FHIRAttachment $maxValueAttachment = null,
-                                null|FHIRString|FHIRIdentifier $maxValueIdentifier = null,
+                                null|FHIRIdentifier $maxValueIdentifier = null,
                                 null|FHIRCodeableConcept $maxValueCodeableConcept = null,
                                 null|FHIRCoding $maxValueCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $maxValueQuantity = null,
+                                null|FHIRQuantity $maxValueQuantity = null,
                                 null|FHIRRange $maxValueRange = null,
                                 null|FHIRPeriod $maxValuePeriod = null,
                                 null|FHIRRatio $maxValueRatio = null,
@@ -4041,7 +4041,7 @@ class FHIRElementDefinition extends FHIRElement
                                 null|FHIRSignature $maxValueSignature = null,
                                 null|FHIRHumanName $maxValueHumanName = null,
                                 null|FHIRAddress $maxValueAddress = null,
-                                null|FHIRString|FHIRContactPoint $maxValueContactPoint = null,
+                                null|FHIRContactPoint $maxValueContactPoint = null,
                                 null|FHIRTiming $maxValueTiming = null,
                                 null|FHIRMeta $maxValueMeta = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $maxLength = null,
@@ -7134,17 +7134,14 @@ class FHIRElementDefinition extends FHIRElement
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
      * @return static
      */
-    public function setDefaultValueIdentifier(null|FHIRString|FHIRIdentifier $defaultValueIdentifier): self
+    public function setDefaultValueIdentifier(null|FHIRIdentifier $defaultValueIdentifier): self
     {
         if (null === $defaultValueIdentifier) {
             unset($this->defaultValueIdentifier);
             return $this;
-        }
-        if (!($defaultValueIdentifier instanceof FHIRIdentifier)) {
-            $defaultValueIdentifier = new FHIRIdentifier(value: $defaultValueIdentifier);
         }
         $this->defaultValueIdentifier = $defaultValueIdentifier;
         return $this;
@@ -7251,17 +7248,14 @@ class FHIRElementDefinition extends FHIRElement
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @return static
      */
-    public function setDefaultValueQuantity(null|FHIRDecimal|FHIRQuantity $defaultValueQuantity): self
+    public function setDefaultValueQuantity(null|FHIRQuantity $defaultValueQuantity): self
     {
         if (null === $defaultValueQuantity) {
             unset($this->defaultValueQuantity);
             return $this;
-        }
-        if (!($defaultValueQuantity instanceof FHIRQuantity)) {
-            $defaultValueQuantity = new FHIRQuantity(value: $defaultValueQuantity);
         }
         $this->defaultValueQuantity = $defaultValueQuantity;
         return $this;
@@ -7592,17 +7586,14 @@ class FHIRElementDefinition extends FHIRElement
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
      * @return static
      */
-    public function setDefaultValueContactPoint(null|FHIRString|FHIRContactPoint $defaultValueContactPoint): self
+    public function setDefaultValueContactPoint(null|FHIRContactPoint $defaultValueContactPoint): self
     {
         if (null === $defaultValueContactPoint) {
             unset($this->defaultValueContactPoint);
             return $this;
-        }
-        if (!($defaultValueContactPoint instanceof FHIRContactPoint)) {
-            $defaultValueContactPoint = new FHIRContactPoint(value: $defaultValueContactPoint);
         }
         $this->defaultValueContactPoint = $defaultValueContactPoint;
         return $this;
@@ -9137,17 +9128,14 @@ class FHIRElementDefinition extends FHIRElement
      * all values must be an exact match (case and accent sensitive). Missing
      * elements/attributes must also be missing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $fixedIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $fixedIdentifier
      * @return static
      */
-    public function setFixedIdentifier(null|FHIRString|FHIRIdentifier $fixedIdentifier): self
+    public function setFixedIdentifier(null|FHIRIdentifier $fixedIdentifier): self
     {
         if (null === $fixedIdentifier) {
             unset($this->fixedIdentifier);
             return $this;
-        }
-        if (!($fixedIdentifier instanceof FHIRIdentifier)) {
-            $fixedIdentifier = new FHIRIdentifier(value: $fixedIdentifier);
         }
         $this->fixedIdentifier = $fixedIdentifier;
         return $this;
@@ -9266,17 +9254,14 @@ class FHIRElementDefinition extends FHIRElement
      * all values must be an exact match (case and accent sensitive). Missing
      * elements/attributes must also be missing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $fixedQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $fixedQuantity
      * @return static
      */
-    public function setFixedQuantity(null|FHIRDecimal|FHIRQuantity $fixedQuantity): self
+    public function setFixedQuantity(null|FHIRQuantity $fixedQuantity): self
     {
         if (null === $fixedQuantity) {
             unset($this->fixedQuantity);
             return $this;
-        }
-        if (!($fixedQuantity instanceof FHIRQuantity)) {
-            $fixedQuantity = new FHIRQuantity(value: $fixedQuantity);
         }
         $this->fixedQuantity = $fixedQuantity;
         return $this;
@@ -9643,17 +9628,14 @@ class FHIRElementDefinition extends FHIRElement
      * all values must be an exact match (case and accent sensitive). Missing
      * elements/attributes must also be missing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $fixedContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $fixedContactPoint
      * @return static
      */
-    public function setFixedContactPoint(null|FHIRString|FHIRContactPoint $fixedContactPoint): self
+    public function setFixedContactPoint(null|FHIRContactPoint $fixedContactPoint): self
     {
         if (null === $fixedContactPoint) {
             unset($this->fixedContactPoint);
             return $this;
-        }
-        if (!($fixedContactPoint instanceof FHIRContactPoint)) {
-            $fixedContactPoint = new FHIRContactPoint(value: $fixedContactPoint);
         }
         $this->fixedContactPoint = $fixedContactPoint;
         return $this;
@@ -11156,17 +11138,14 @@ class FHIRElementDefinition extends FHIRElement
      * present in the pattern must match exactly (case-sensitive, accent-sensitive,
      * etc.).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $patternIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $patternIdentifier
      * @return static
      */
-    public function setPatternIdentifier(null|FHIRString|FHIRIdentifier $patternIdentifier): self
+    public function setPatternIdentifier(null|FHIRIdentifier $patternIdentifier): self
     {
         if (null === $patternIdentifier) {
             unset($this->patternIdentifier);
             return $this;
-        }
-        if (!($patternIdentifier instanceof FHIRIdentifier)) {
-            $patternIdentifier = new FHIRIdentifier(value: $patternIdentifier);
         }
         $this->patternIdentifier = $patternIdentifier;
         return $this;
@@ -11291,17 +11270,14 @@ class FHIRElementDefinition extends FHIRElement
      * present in the pattern must match exactly (case-sensitive, accent-sensitive,
      * etc.).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $patternQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $patternQuantity
      * @return static
      */
-    public function setPatternQuantity(null|FHIRDecimal|FHIRQuantity $patternQuantity): self
+    public function setPatternQuantity(null|FHIRQuantity $patternQuantity): self
     {
         if (null === $patternQuantity) {
             unset($this->patternQuantity);
             return $this;
-        }
-        if (!($patternQuantity instanceof FHIRQuantity)) {
-            $patternQuantity = new FHIRQuantity(value: $patternQuantity);
         }
         $this->patternQuantity = $patternQuantity;
         return $this;
@@ -11686,17 +11662,14 @@ class FHIRElementDefinition extends FHIRElement
      * present in the pattern must match exactly (case-sensitive, accent-sensitive,
      * etc.).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $patternContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $patternContactPoint
      * @return static
      */
-    public function setPatternContactPoint(null|FHIRString|FHIRContactPoint $patternContactPoint): self
+    public function setPatternContactPoint(null|FHIRContactPoint $patternContactPoint): self
     {
         if (null === $patternContactPoint) {
             unset($this->patternContactPoint);
             return $this;
-        }
-        if (!($patternContactPoint instanceof FHIRContactPoint)) {
-            $patternContactPoint = new FHIRContactPoint(value: $patternContactPoint);
         }
         $this->patternContactPoint = $patternContactPoint;
         return $this;
@@ -13083,17 +13056,14 @@ class FHIRElementDefinition extends FHIRElement
      * A sample value for this element demonstrating the type of information that would
      * typically be captured.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $exampleIdentifier
      * @return static
      */
-    public function setExampleIdentifier(null|FHIRString|FHIRIdentifier $exampleIdentifier): self
+    public function setExampleIdentifier(null|FHIRIdentifier $exampleIdentifier): self
     {
         if (null === $exampleIdentifier) {
             unset($this->exampleIdentifier);
             return $this;
-        }
-        if (!($exampleIdentifier instanceof FHIRIdentifier)) {
-            $exampleIdentifier = new FHIRIdentifier(value: $exampleIdentifier);
         }
         $this->exampleIdentifier = $exampleIdentifier;
         return $this;
@@ -13200,17 +13170,14 @@ class FHIRElementDefinition extends FHIRElement
      * A sample value for this element demonstrating the type of information that would
      * typically be captured.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $exampleQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $exampleQuantity
      * @return static
      */
-    public function setExampleQuantity(null|FHIRDecimal|FHIRQuantity $exampleQuantity): self
+    public function setExampleQuantity(null|FHIRQuantity $exampleQuantity): self
     {
         if (null === $exampleQuantity) {
             unset($this->exampleQuantity);
             return $this;
-        }
-        if (!($exampleQuantity instanceof FHIRQuantity)) {
-            $exampleQuantity = new FHIRQuantity(value: $exampleQuantity);
         }
         $this->exampleQuantity = $exampleQuantity;
         return $this;
@@ -13541,17 +13508,14 @@ class FHIRElementDefinition extends FHIRElement
      * A sample value for this element demonstrating the type of information that would
      * typically be captured.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $exampleContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $exampleContactPoint
      * @return static
      */
-    public function setExampleContactPoint(null|FHIRString|FHIRContactPoint $exampleContactPoint): self
+    public function setExampleContactPoint(null|FHIRContactPoint $exampleContactPoint): self
     {
         if (null === $exampleContactPoint) {
             unset($this->exampleContactPoint);
             return $this;
-        }
-        if (!($exampleContactPoint instanceof FHIRContactPoint)) {
-            $exampleContactPoint = new FHIRContactPoint(value: $exampleContactPoint);
         }
         $this->exampleContactPoint = $exampleContactPoint;
         return $this;
@@ -14966,17 +14930,14 @@ class FHIRElementDefinition extends FHIRElement
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $minValueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $minValueIdentifier
      * @return static
      */
-    public function setMinValueIdentifier(null|FHIRString|FHIRIdentifier $minValueIdentifier): self
+    public function setMinValueIdentifier(null|FHIRIdentifier $minValueIdentifier): self
     {
         if (null === $minValueIdentifier) {
             unset($this->minValueIdentifier);
             return $this;
-        }
-        if (!($minValueIdentifier instanceof FHIRIdentifier)) {
-            $minValueIdentifier = new FHIRIdentifier(value: $minValueIdentifier);
         }
         $this->minValueIdentifier = $minValueIdentifier;
         return $this;
@@ -15089,17 +15050,14 @@ class FHIRElementDefinition extends FHIRElement
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $minValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $minValueQuantity
      * @return static
      */
-    public function setMinValueQuantity(null|FHIRDecimal|FHIRQuantity $minValueQuantity): self
+    public function setMinValueQuantity(null|FHIRQuantity $minValueQuantity): self
     {
         if (null === $minValueQuantity) {
             unset($this->minValueQuantity);
             return $this;
-        }
-        if (!($minValueQuantity instanceof FHIRQuantity)) {
-            $minValueQuantity = new FHIRQuantity(value: $minValueQuantity);
         }
         $this->minValueQuantity = $minValueQuantity;
         return $this;
@@ -15448,17 +15406,14 @@ class FHIRElementDefinition extends FHIRElement
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $minValueContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $minValueContactPoint
      * @return static
      */
-    public function setMinValueContactPoint(null|FHIRString|FHIRContactPoint $minValueContactPoint): self
+    public function setMinValueContactPoint(null|FHIRContactPoint $minValueContactPoint): self
     {
         if (null === $minValueContactPoint) {
             unset($this->minValueContactPoint);
             return $this;
-        }
-        if (!($minValueContactPoint instanceof FHIRContactPoint)) {
-            $minValueContactPoint = new FHIRContactPoint(value: $minValueContactPoint);
         }
         $this->minValueContactPoint = $minValueContactPoint;
         return $this;
@@ -16877,17 +16832,14 @@ class FHIRElementDefinition extends FHIRElement
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $maxValueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $maxValueIdentifier
      * @return static
      */
-    public function setMaxValueIdentifier(null|FHIRString|FHIRIdentifier $maxValueIdentifier): self
+    public function setMaxValueIdentifier(null|FHIRIdentifier $maxValueIdentifier): self
     {
         if (null === $maxValueIdentifier) {
             unset($this->maxValueIdentifier);
             return $this;
-        }
-        if (!($maxValueIdentifier instanceof FHIRIdentifier)) {
-            $maxValueIdentifier = new FHIRIdentifier(value: $maxValueIdentifier);
         }
         $this->maxValueIdentifier = $maxValueIdentifier;
         return $this;
@@ -17000,17 +16952,14 @@ class FHIRElementDefinition extends FHIRElement
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $maxValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity $maxValueQuantity
      * @return static
      */
-    public function setMaxValueQuantity(null|FHIRDecimal|FHIRQuantity $maxValueQuantity): self
+    public function setMaxValueQuantity(null|FHIRQuantity $maxValueQuantity): self
     {
         if (null === $maxValueQuantity) {
             unset($this->maxValueQuantity);
             return $this;
-        }
-        if (!($maxValueQuantity instanceof FHIRQuantity)) {
-            $maxValueQuantity = new FHIRQuantity(value: $maxValueQuantity);
         }
         $this->maxValueQuantity = $maxValueQuantity;
         return $this;
@@ -17359,17 +17308,14 @@ class FHIRElementDefinition extends FHIRElement
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $maxValueContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $maxValueContactPoint
      * @return static
      */
-    public function setMaxValueContactPoint(null|FHIRString|FHIRContactPoint $maxValueContactPoint): self
+    public function setMaxValueContactPoint(null|FHIRContactPoint $maxValueContactPoint): self
     {
         if (null === $maxValueContactPoint) {
             unset($this->maxValueContactPoint);
             return $this;
-        }
-        if (!($maxValueContactPoint instanceof FHIRContactPoint)) {
-            $maxValueContactPoint = new FHIRContactPoint(value: $maxValueContactPoint);
         }
         $this->maxValueContactPoint = $maxValueContactPoint;
         return $this;
@@ -27178,13 +27124,5 @@ class FHIRElementDefinition extends FHIRElement
             $out->mapping = $this->mapping;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

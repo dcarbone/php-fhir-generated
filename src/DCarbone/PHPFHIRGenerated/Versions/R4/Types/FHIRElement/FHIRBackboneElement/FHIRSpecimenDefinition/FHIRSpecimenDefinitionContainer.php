@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,6 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
@@ -220,8 +219,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $cap
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $capacity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $minimumVolumeQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $capacity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $minimumVolumeQuantity
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $minimumVolumeString
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive[] $additive
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $preparation
@@ -234,8 +233,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $type = null,
                                 null|FHIRCodeableConcept $cap = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
-                                null|FHIRDecimal|FHIRQuantity $capacity = null,
-                                null|FHIRDecimal|FHIRQuantity $minimumVolumeQuantity = null,
+                                null|FHIRQuantity $capacity = null,
+                                null|FHIRQuantity $minimumVolumeQuantity = null,
                                 null|string|FHIRStringPrimitive|FHIRString $minimumVolumeString = null,
                                 null|iterable $additive = null,
                                 null|string|FHIRStringPrimitive|FHIRString $preparation = null,
@@ -483,17 +482,14 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      *
      * The capacity (volume or other measure) of this kind of container.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $capacity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $capacity
      * @return static
      */
-    public function setCapacity(null|FHIRDecimal|FHIRQuantity $capacity): self
+    public function setCapacity(null|FHIRQuantity $capacity): self
     {
         if (null === $capacity) {
             unset($this->capacity);
             return $this;
-        }
-        if (!($capacity instanceof FHIRQuantity)) {
-            $capacity = new FHIRQuantity(value: $capacity);
         }
         $this->capacity = $capacity;
         return $this;
@@ -524,17 +520,14 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      *
      * The minimum volume to be conditioned in the container.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $minimumVolumeQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $minimumVolumeQuantity
      * @return static
      */
-    public function setMinimumVolumeQuantity(null|FHIRDecimal|FHIRQuantity $minimumVolumeQuantity): self
+    public function setMinimumVolumeQuantity(null|FHIRQuantity $minimumVolumeQuantity): self
     {
         if (null === $minimumVolumeQuantity) {
             unset($this->minimumVolumeQuantity);
             return $this;
-        }
-        if (!($minimumVolumeQuantity instanceof FHIRQuantity)) {
-            $minimumVolumeQuantity = new FHIRQuantity(value: $minimumVolumeQuantity);
         }
         $this->minimumVolumeQuantity = $minimumVolumeQuantity;
         return $this;
@@ -1198,13 +1191,5 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

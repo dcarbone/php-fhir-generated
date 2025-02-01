@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
@@ -84,7 +83,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * without being substantially changed through that activity. The device may be a
  * medical or non-medical device.
  */
-class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTypeInterface
+class FHIRDeviceVersion extends FHIRBackboneElement
 {
 
     // name of FHIR type this class describes
@@ -149,7 +148,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $component
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $component
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $value
      * @param null|string[] $fhirComments
      */
@@ -157,7 +156,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|FHIRString|FHIRIdentifier $component = null,
+                                null|FHIRIdentifier $component = null,
                                 null|string|FHIRStringPrimitive|FHIRString $value = null,
                                 null|iterable $fhirComments = null)
     {
@@ -245,17 +244,14 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
      *
      * A single component of the device version.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $component
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $component
      * @return static
      */
-    public function setComponent(null|FHIRString|FHIRIdentifier $component): self
+    public function setComponent(null|FHIRIdentifier $component): self
     {
         if (null === $component) {
             unset($this->component);
             return $this;
-        }
-        if (!($component instanceof FHIRIdentifier)) {
-            $component = new FHIRIdentifier(value: $component);
         }
         $this->component = $component;
         return $this;
@@ -325,18 +321,6 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
     {
         $this->_valueXMLLocations[self::FIELD_VALUE] = $valueXMLLocation;
         return $this;
-    }
-
-    /**
-     * Return the formatted value of this type's contained primitive type.
-     *
-     * @see \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
-     *
-     * @return string
-     */
-    public function _getFormattedValue(): string
-    {
-        return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
     /* class_default.php:188 */
@@ -504,13 +488,10 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
     /**
      * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
      * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
      */
     public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config,
-                                 null|ValueXMLLocationEnum $valueLocation = null): void
+                                 SerializeConfig $config): void
     {
-        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
         if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
@@ -598,13 +579,5 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements ValueContainerTyp
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return $this->_getFormattedValue();
     }
 }

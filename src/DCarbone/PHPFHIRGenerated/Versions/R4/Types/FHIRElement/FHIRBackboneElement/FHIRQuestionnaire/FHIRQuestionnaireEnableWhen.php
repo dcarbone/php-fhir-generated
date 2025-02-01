@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -333,7 +333,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRTime $answerTime
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $answerString
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $answerCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $answerQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $answerQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $answerReference
      * @param null|string[] $fhirComments
      */
@@ -350,7 +350,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
                                 null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $answerTime = null,
                                 null|string|FHIRStringPrimitive|FHIRString $answerString = null,
                                 null|FHIRCoding $answerCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $answerQuantity = null,
+                                null|FHIRQuantity $answerQuantity = null,
                                 null|FHIRReference $answerReference = null,
                                 null|iterable $fhirComments = null)
     {
@@ -1083,17 +1083,14 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $answerQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $answerQuantity
      * @return static
      */
-    public function setAnswerQuantity(null|FHIRDecimal|FHIRQuantity $answerQuantity): self
+    public function setAnswerQuantity(null|FHIRQuantity $answerQuantity): self
     {
         if (null === $answerQuantity) {
             unset($this->answerQuantity);
             return $this;
-        }
-        if (!($answerQuantity instanceof FHIRQuantity)) {
-            $answerQuantity = new FHIRQuantity(value: $answerQuantity);
         }
         $this->answerQuantity = $answerQuantity;
         return $this;
@@ -1887,13 +1884,5 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             $out->answerReference = $this->answerReference;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

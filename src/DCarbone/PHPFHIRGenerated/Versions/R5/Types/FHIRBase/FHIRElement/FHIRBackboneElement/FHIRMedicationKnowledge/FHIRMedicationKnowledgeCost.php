@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -201,7 +200,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod[] $effectiveDate
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $source
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $costMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $costMoney
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $costCodeableConcept
      * @param null|string[] $fhirComments
      */
@@ -211,7 +210,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
                                 null|iterable $effectiveDate = null,
                                 null|FHIRCodeableConcept $type = null,
                                 null|string|FHIRStringPrimitive|FHIRString $source = null,
-                                null|FHIRDecimal|FHIRMoney $costMoney = null,
+                                null|FHIRMoney $costMoney = null,
                                 null|FHIRCodeableConcept $costCodeableConcept = null,
                                 null|iterable $fhirComments = null)
     {
@@ -437,17 +436,14 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
      * of the medication.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $costMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $costMoney
      * @return static
      */
-    public function setCostMoney(null|FHIRDecimal|FHIRMoney $costMoney): self
+    public function setCostMoney(null|FHIRMoney $costMoney): self
     {
         if (null === $costMoney) {
             unset($this->costMoney);
             return $this;
-        }
-        if (!($costMoney instanceof FHIRMoney)) {
-            $costMoney = new FHIRMoney(value: $costMoney);
         }
         $this->costMoney = $costMoney;
         return $this;
@@ -815,13 +811,5 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
             $out->costCodeableConcept = $this->costCodeableConcept;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

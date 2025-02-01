@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,14 +26,8 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 
-interface PrimitiveTypeInterface extends TypeInterface, \JsonSerializable
+interface PrimitiveTypeInterface extends TypeInterface, ValueContainerTypeInterface
 {
-    /**
-     * Must return the appropriate "formatted" stringified version of this primitive type's value
-     *
-     * @return string
-     */
-    public function _getFormattedValue(): string;
+
 }

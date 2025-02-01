@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRProvenanceEntityRole;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -202,7 +201,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRProvenanceEntityRoleList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRProvenanceEntityRole $role
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $whatUri
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $whatReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $whatIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $whatIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[] $agent
      * @param null|string[] $fhirComments
      */
@@ -212,7 +211,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                                 null|string|FHIRProvenanceEntityRoleList|FHIRProvenanceEntityRole $role = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $whatUri = null,
                                 null|FHIRReference $whatReference = null,
-                                null|FHIRString|FHIRIdentifier $whatIdentifier = null,
+                                null|FHIRIdentifier $whatIdentifier = null,
                                 null|iterable $agent = null,
                                 null|iterable $fhirComments = null)
     {
@@ -438,17 +437,14 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $whatIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $whatIdentifier
      * @return static
      */
-    public function setWhatIdentifier(null|FHIRString|FHIRIdentifier $whatIdentifier): self
+    public function setWhatIdentifier(null|FHIRIdentifier $whatIdentifier): self
     {
         if (null === $whatIdentifier) {
             unset($this->whatIdentifier);
             return $this;
-        }
-        if (!($whatIdentifier instanceof FHIRIdentifier)) {
-            $whatIdentifier = new FHIRIdentifier(value: $whatIdentifier);
         }
         $this->whatIdentifier = $whatIdentifier;
         return $this;
@@ -901,13 +897,5 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             $out->agent = $this->agent;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -149,7 +149,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $display
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[] $designation
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[] $designation
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -353,14 +353,11 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * Additional representations for this concept when used in this value set - other
      * languages, aliases, specialized purposes, used for particular purposes, etc.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation $designation
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation $designation
      * @return static
      */
-    public function addDesignation(FHIRString|FHIRValueSetDesignation $designation): self
+    public function addDesignation(FHIRValueSetDesignation $designation): self
     {
-        if (!($designation instanceof FHIRValueSetDesignation)) {
-            $designation = new FHIRValueSetDesignation(value: $designation);
-        }
         if (!isset($this->designation)) {
             $this->designation = [];
         }
@@ -374,10 +371,10 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * Additional representations for this concept when used in this value set - other
      * languages, aliases, specialized purposes, used for particular purposes, etc.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation ...$designation
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation ...$designation
      * @return static
      */
-    public function setDesignation(FHIRString|FHIRValueSetDesignation ...$designation): self
+    public function setDesignation(FHIRValueSetDesignation ...$designation): self
     {
         if ([] === $designation) {
             unset($this->designation);
@@ -678,13 +675,5 @@ class FHIRValueSetConcept extends FHIRBackboneElement
             $out->designation = $this->designation;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

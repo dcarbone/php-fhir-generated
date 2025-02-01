@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,13 +88,11 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -102,7 +100,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
 /**
  * Details of a Health Insurance product/plan provided by an organization.
  */
-class FHIRInsurancePlanCost extends FHIRBackboneElement implements ValueContainerTypeInterface
+class FHIRInsurancePlanCost extends FHIRBackboneElement
 {
 
     // name of FHIR type this class describes
@@ -184,7 +182,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements ValueContaine
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $applicability
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $qualifiers
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $value
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -193,7 +191,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements ValueContaine
                                 null|FHIRCodeableConcept $type = null,
                                 null|FHIRCodeableConcept $applicability = null,
                                 null|iterable $qualifiers = null,
-                                null|FHIRDecimal|FHIRQuantity $value = null,
+                                null|FHIRQuantity $value = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -395,32 +393,17 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements ValueContaine
      * The actual cost value. (some of the costs may be represented as percentages
      * rather than currency, e.g. 10% coinsurance).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $value
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $value
      * @return static
      */
-    public function setValue(null|FHIRDecimal|FHIRQuantity $value): self
+    public function setValue(null|FHIRQuantity $value): self
     {
         if (null === $value) {
             unset($this->value);
             return $this;
         }
-        if (!($value instanceof FHIRQuantity)) {
-            $value = new FHIRQuantity(value: $value);
-        }
         $this->value = $value;
         return $this;
-    }
-
-    /**
-     * Return the formatted value of this type's contained primitive type.
-     *
-     * @see \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
-     *
-     * @return string
-     */
-    public function _getFormattedValue(): string
-    {
-        return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
     /* class_default.php:188 */
@@ -594,13 +577,10 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements ValueContaine
     /**
      * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
      * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
      */
     public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config,
-                                 null|ValueXMLLocationEnum $valueLocation = null): void
+                                 SerializeConfig $config): void
     {
-        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
             $xw->startElement(self::FIELD_TYPE);
@@ -688,13 +668,5 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements ValueContaine
             $out->value = $this->value;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return $this->_getFormattedValue();
     }
 }

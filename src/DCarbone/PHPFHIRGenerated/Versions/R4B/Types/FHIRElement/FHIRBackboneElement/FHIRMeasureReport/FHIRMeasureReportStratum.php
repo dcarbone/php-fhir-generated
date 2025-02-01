@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,11 +87,9 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
@@ -102,7 +100,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  * The MeasureReport resource contains the results of the calculation of a measure;
  * and optionally a reference to the resources involved in that calculation.
  */
-class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueContainerTypeInterface
+class FHIRMeasureReportStratum extends FHIRBackboneElement
 {
 
     // name of FHIR type this class describes
@@ -175,9 +173,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $value
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent[] $component
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent[] $component
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1[] $population
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $measureScore
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $measureScore
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -186,7 +184,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
                                 null|FHIRCodeableConcept $value = null,
                                 null|iterable $component = null,
                                 null|iterable $population = null,
-                                null|FHIRDecimal|FHIRQuantity $measureScore = null,
+                                null|FHIRQuantity $measureScore = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -287,14 +285,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
      *
      * A stratifier component value.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent $component
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent $component
      * @return static
      */
-    public function addComponent(FHIRCodeableConcept|FHIRMeasureReportComponent $component): self
+    public function addComponent(FHIRMeasureReportComponent $component): self
     {
-        if (!($component instanceof FHIRMeasureReportComponent)) {
-            $component = new FHIRMeasureReportComponent(value: $component);
-        }
         if (!isset($this->component)) {
             $this->component = [];
         }
@@ -308,10 +303,10 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
      *
      * A stratifier component value.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent ...$component
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent ...$component
      * @return static
      */
-    public function setComponent(FHIRCodeableConcept|FHIRMeasureReportComponent ...$component): self
+    public function setComponent(FHIRMeasureReportComponent ...$component): self
     {
         if ([] === $component) {
             unset($this->component);
@@ -412,32 +407,17 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
      * The measure score for this stratum, calculated as appropriate for the measure
      * type and scoring method, and based on only the members of this stratum.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $measureScore
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $measureScore
      * @return static
      */
-    public function setMeasureScore(null|FHIRDecimal|FHIRQuantity $measureScore): self
+    public function setMeasureScore(null|FHIRQuantity $measureScore): self
     {
         if (null === $measureScore) {
             unset($this->measureScore);
             return $this;
         }
-        if (!($measureScore instanceof FHIRQuantity)) {
-            $measureScore = new FHIRQuantity(value: $measureScore);
-        }
         $this->measureScore = $measureScore;
         return $this;
-    }
-
-    /**
-     * Return the formatted value of this type's contained primitive type.
-     *
-     * @see \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
-     *
-     * @return string
-     */
-    public function _getFormattedValue(): string
-    {
-        return isset($this->value) ? $this->value->_getFormattedValue() : '';
     }
 
     /* class_default.php:188 */
@@ -606,13 +586,10 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
     /**
      * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
      * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
      */
     public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config,
-                                 null|ValueXMLLocationEnum $valueLocation = null): void
+                                 SerializeConfig $config): void
     {
-        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
         parent::xmlSerialize($xw, $config);
         if (isset($this->value)) {
             $xw->startElement(self::FIELD_VALUE);
@@ -708,13 +685,5 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
             $out->measureScore = $this->measureScore;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return $this->_getFormattedValue();
     }
 }

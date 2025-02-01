@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta;
@@ -663,12 +662,12 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical[] $instantiatesCanonical
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri[] $instantiatesUri
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $basedOn
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $replaces
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $requisition
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $requisition
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRRequestStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRequestStatus $status
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRRequestIntentEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRequestIntent $intent
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $category
@@ -676,7 +675,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $doNotPerform
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $orderDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantityQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantityQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $quantityRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $quantityRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $subject
@@ -716,7 +715,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
                                 null|iterable $instantiatesUri = null,
                                 null|iterable $basedOn = null,
                                 null|iterable $replaces = null,
-                                null|FHIRString|FHIRIdentifier $requisition = null,
+                                null|FHIRIdentifier $requisition = null,
                                 null|string|FHIRRequestStatusEnum|FHIRRequestStatus $status = null,
                                 null|string|FHIRRequestIntentEnum|FHIRRequestIntent $intent = null,
                                 null|iterable $category = null,
@@ -724,7 +723,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform = null,
                                 null|FHIRCodeableConcept $code = null,
                                 null|iterable $orderDetail = null,
-                                null|FHIRDecimal|FHIRQuantity $quantityQuantity = null,
+                                null|FHIRQuantity $quantityQuantity = null,
                                 null|FHIRRatio $quantityRatio = null,
                                 null|FHIRRange $quantityRange = null,
                                 null|FHIRReference $subject = null,
@@ -931,14 +930,11 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * Identifiers assigned to this order instance by the orderer and/or the receiver
      * and/or order fulfiller.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRIdentifier $identifier): self
     {
-        if (!($identifier instanceof FHIRIdentifier)) {
-            $identifier = new FHIRIdentifier(value: $identifier);
-        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -955,10 +951,10 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * Identifiers assigned to this order instance by the orderer and/or the receiver
      * and/or order fulfiller.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1283,17 +1279,14 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * less simultaneously by a single author, representing the composite or group
      * identifier.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $requisition
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $requisition
      * @return static
      */
-    public function setRequisition(null|FHIRString|FHIRIdentifier $requisition): self
+    public function setRequisition(null|FHIRIdentifier $requisition): self
     {
         if (null === $requisition) {
             unset($this->requisition);
             return $this;
-        }
-        if (!($requisition instanceof FHIRIdentifier)) {
-            $requisition = new FHIRIdentifier(value: $requisition);
         }
         $this->requisition = $requisition;
         return $this;
@@ -1766,17 +1759,14 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
      * or a range (2.0 to 1.8 Gy per fraction).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantityQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantityQuantity
      * @return static
      */
-    public function setQuantityQuantity(null|FHIRDecimal|FHIRQuantity $quantityQuantity): self
+    public function setQuantityQuantity(null|FHIRQuantity $quantityQuantity): self
     {
         if (null === $quantityQuantity) {
             unset($this->quantityQuantity);
             return $this;
-        }
-        if (!($quantityQuantity instanceof FHIRQuantity)) {
-            $quantityQuantity = new FHIRQuantity(value: $quantityQuantity);
         }
         $this->quantityQuantity = $quantityQuantity;
         return $this;
@@ -4834,13 +4824,5 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

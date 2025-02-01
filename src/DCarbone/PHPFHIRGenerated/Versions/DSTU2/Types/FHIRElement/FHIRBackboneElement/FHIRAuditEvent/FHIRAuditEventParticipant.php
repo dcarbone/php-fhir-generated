@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -260,7 +260,7 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept[] $role
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $reference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $altId
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $requestor
@@ -276,7 +276,7 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|iterable $role = null,
                                 null|FHIRReference $reference = null,
-                                null|FHIRString|FHIRIdentifier $userId = null,
+                                null|FHIRIdentifier $userId = null,
                                 null|string|FHIRStringPrimitive|FHIRString $altId = null,
                                 null|string|FHIRStringPrimitive|FHIRString $name = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requestor = null,
@@ -464,17 +464,14 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      *
      * Unique identifier for the user actively participating in the event.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
      * @return static
      */
-    public function setUserId(null|FHIRString|FHIRIdentifier $userId): self
+    public function setUserId(null|FHIRIdentifier $userId): self
     {
         if (null === $userId) {
             unset($this->userId);
             return $this;
-        }
-        if (!($userId instanceof FHIRIdentifier)) {
-            $userId = new FHIRIdentifier(value: $userId);
         }
         $this->userId = $userId;
         return $this;
@@ -1504,13 +1501,5 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
             $out->purposeOfUse = $this->purposeOfUse;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

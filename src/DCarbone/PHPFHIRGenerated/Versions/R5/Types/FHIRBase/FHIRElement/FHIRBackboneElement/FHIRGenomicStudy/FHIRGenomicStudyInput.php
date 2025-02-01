@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -173,7 +172,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $file
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $generatedByReference
      * @param null|string[] $fhirComments
      */
@@ -182,7 +181,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRReference $file = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|FHIRString|FHIRIdentifier $generatedByIdentifier = null,
+                                null|FHIRIdentifier $generatedByIdentifier = null,
                                 null|FHIRReference $generatedByReference = null,
                                 null|iterable $fhirComments = null)
     {
@@ -307,17 +306,14 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      *
      * The analysis event or other GenomicStudy that generated this input file.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
      * @return static
      */
-    public function setGeneratedByIdentifier(null|FHIRString|FHIRIdentifier $generatedByIdentifier): self
+    public function setGeneratedByIdentifier(null|FHIRIdentifier $generatedByIdentifier): self
     {
         if (null === $generatedByIdentifier) {
             unset($this->generatedByIdentifier);
             return $this;
-        }
-        if (!($generatedByIdentifier instanceof FHIRIdentifier)) {
-            $generatedByIdentifier = new FHIRIdentifier(value: $generatedByIdentifier);
         }
         $this->generatedByIdentifier = $generatedByIdentifier;
         return $this;
@@ -606,13 +602,5 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
             $out->generatedByReference = $this->generatedByReference;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

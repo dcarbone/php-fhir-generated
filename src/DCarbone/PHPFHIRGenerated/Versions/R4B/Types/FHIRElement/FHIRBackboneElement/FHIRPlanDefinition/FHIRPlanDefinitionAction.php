@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod;
@@ -651,9 +650,9 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement[] $output
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction[] $relatedAction
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $timingDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $timingAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $timingAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $timingRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $timingTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[] $participant
@@ -691,9 +690,9 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                                 null|iterable $output = null,
                                 null|iterable $relatedAction = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime = null,
-                                null|FHIRDecimal|FHIRAge $timingAge = null,
+                                null|FHIRAge $timingAge = null,
                                 null|FHIRPeriod $timingPeriod = null,
-                                null|FHIRDecimal|FHIRDuration $timingDuration = null,
+                                null|FHIRDuration $timingDuration = null,
                                 null|FHIRRange $timingRange = null,
                                 null|FHIRTiming $timingTiming = null,
                                 null|iterable $participant = null,
@@ -2088,17 +2087,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * An optional value describing when the action should be performed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $timingAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $timingAge
      * @return static
      */
-    public function setTimingAge(null|FHIRDecimal|FHIRAge $timingAge): self
+    public function setTimingAge(null|FHIRAge $timingAge): self
     {
         if (null === $timingAge) {
             unset($this->timingAge);
             return $this;
-        }
-        if (!($timingAge instanceof FHIRAge)) {
-            $timingAge = new FHIRAge(value: $timingAge);
         }
         $this->timingAge = $timingAge;
         return $this;
@@ -2159,17 +2155,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * An optional value describing when the action should be performed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @return static
      */
-    public function setTimingDuration(null|FHIRDecimal|FHIRDuration $timingDuration): self
+    public function setTimingDuration(null|FHIRDuration $timingDuration): self
     {
         if (null === $timingDuration) {
             unset($this->timingDuration);
             return $this;
-        }
-        if (!($timingDuration instanceof FHIRDuration)) {
-            $timingDuration = new FHIRDuration(value: $timingDuration);
         }
         $this->timingDuration = $timingDuration;
         return $this;
@@ -4595,13 +4588,5 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             $out->action = $this->action;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

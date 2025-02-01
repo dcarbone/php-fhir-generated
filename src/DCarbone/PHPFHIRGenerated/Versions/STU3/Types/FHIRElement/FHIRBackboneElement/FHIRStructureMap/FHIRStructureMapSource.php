@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -796,20 +796,20 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $defaultValueUnsignedInt
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $defaultValueUri
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAddress $defaultValueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation $defaultValueAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $defaultValueAttachment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $defaultValueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHumanName $defaultValueHumanName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $defaultValueMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $defaultValueMoney
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $defaultValuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $defaultValueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio $defaultValueRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $defaultValueReference
@@ -848,20 +848,20 @@ class FHIRStructureMapSource extends FHIRBackboneElement
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $defaultValueUnsignedInt = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $defaultValueUri = null,
                                 null|FHIRAddress $defaultValueAddress = null,
-                                null|FHIRDecimal|FHIRAge $defaultValueAge = null,
+                                null|FHIRAge $defaultValueAge = null,
                                 null|FHIRAnnotation $defaultValueAnnotation = null,
                                 null|FHIRAttachment $defaultValueAttachment = null,
                                 null|FHIRCodeableConcept $defaultValueCodeableConcept = null,
                                 null|FHIRCoding $defaultValueCoding = null,
-                                null|FHIRString|FHIRContactPoint $defaultValueContactPoint = null,
-                                null|FHIRDecimal|FHIRCount $defaultValueCount = null,
-                                null|FHIRDecimal|FHIRDistance $defaultValueDistance = null,
-                                null|FHIRDecimal|FHIRDuration $defaultValueDuration = null,
+                                null|FHIRContactPoint $defaultValueContactPoint = null,
+                                null|FHIRCount $defaultValueCount = null,
+                                null|FHIRDistance $defaultValueDistance = null,
+                                null|FHIRDuration $defaultValueDuration = null,
                                 null|FHIRHumanName $defaultValueHumanName = null,
-                                null|FHIRString|FHIRIdentifier $defaultValueIdentifier = null,
-                                null|FHIRDecimal|FHIRMoney $defaultValueMoney = null,
+                                null|FHIRIdentifier $defaultValueIdentifier = null,
+                                null|FHIRMoney $defaultValueMoney = null,
                                 null|FHIRPeriod $defaultValuePeriod = null,
-                                null|FHIRDecimal|FHIRQuantity $defaultValueQuantity = null,
+                                null|FHIRQuantity $defaultValueQuantity = null,
                                 null|FHIRRange $defaultValueRange = null,
                                 null|FHIRRatio $defaultValueRatio = null,
                                 null|FHIRReference $defaultValueReference = null,
@@ -2462,17 +2462,14 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A value to use if there is no existing value in the source object.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
      * @return static
      */
-    public function setDefaultValueAge(null|FHIRDecimal|FHIRAge $defaultValueAge): self
+    public function setDefaultValueAge(null|FHIRAge $defaultValueAge): self
     {
         if (null === $defaultValueAge) {
             unset($this->defaultValueAge);
             return $this;
-        }
-        if (!($defaultValueAge instanceof FHIRAge)) {
-            $defaultValueAge = new FHIRAge(value: $defaultValueAge);
         }
         $this->defaultValueAge = $defaultValueAge;
         return $this;
@@ -2641,17 +2638,14 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A value to use if there is no existing value in the source object.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
      * @return static
      */
-    public function setDefaultValueContactPoint(null|FHIRString|FHIRContactPoint $defaultValueContactPoint): self
+    public function setDefaultValueContactPoint(null|FHIRContactPoint $defaultValueContactPoint): self
     {
         if (null === $defaultValueContactPoint) {
             unset($this->defaultValueContactPoint);
             return $this;
-        }
-        if (!($defaultValueContactPoint instanceof FHIRContactPoint)) {
-            $defaultValueContactPoint = new FHIRContactPoint(value: $defaultValueContactPoint);
         }
         $this->defaultValueContactPoint = $defaultValueContactPoint;
         return $this;
@@ -2682,17 +2676,14 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A value to use if there is no existing value in the source object.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
      * @return static
      */
-    public function setDefaultValueCount(null|FHIRDecimal|FHIRCount $defaultValueCount): self
+    public function setDefaultValueCount(null|FHIRCount $defaultValueCount): self
     {
         if (null === $defaultValueCount) {
             unset($this->defaultValueCount);
             return $this;
-        }
-        if (!($defaultValueCount instanceof FHIRCount)) {
-            $defaultValueCount = new FHIRCount(value: $defaultValueCount);
         }
         $this->defaultValueCount = $defaultValueCount;
         return $this;
@@ -2719,17 +2710,14 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A value to use if there is no existing value in the source object.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
      * @return static
      */
-    public function setDefaultValueDistance(null|FHIRDecimal|FHIRDistance $defaultValueDistance): self
+    public function setDefaultValueDistance(null|FHIRDistance $defaultValueDistance): self
     {
         if (null === $defaultValueDistance) {
             unset($this->defaultValueDistance);
             return $this;
-        }
-        if (!($defaultValueDistance instanceof FHIRDistance)) {
-            $defaultValueDistance = new FHIRDistance(value: $defaultValueDistance);
         }
         $this->defaultValueDistance = $defaultValueDistance;
         return $this;
@@ -2756,17 +2744,14 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A value to use if there is no existing value in the source object.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
      * @return static
      */
-    public function setDefaultValueDuration(null|FHIRDecimal|FHIRDuration $defaultValueDuration): self
+    public function setDefaultValueDuration(null|FHIRDuration $defaultValueDuration): self
     {
         if (null === $defaultValueDuration) {
             unset($this->defaultValueDuration);
             return $this;
-        }
-        if (!($defaultValueDuration instanceof FHIRDuration)) {
-            $defaultValueDuration = new FHIRDuration(value: $defaultValueDuration);
         }
         $this->defaultValueDuration = $defaultValueDuration;
         return $this;
@@ -2827,17 +2812,14 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A value to use if there is no existing value in the source object.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
      * @return static
      */
-    public function setDefaultValueIdentifier(null|FHIRString|FHIRIdentifier $defaultValueIdentifier): self
+    public function setDefaultValueIdentifier(null|FHIRIdentifier $defaultValueIdentifier): self
     {
         if (null === $defaultValueIdentifier) {
             unset($this->defaultValueIdentifier);
             return $this;
-        }
-        if (!($defaultValueIdentifier instanceof FHIRIdentifier)) {
-            $defaultValueIdentifier = new FHIRIdentifier(value: $defaultValueIdentifier);
         }
         $this->defaultValueIdentifier = $defaultValueIdentifier;
         return $this;
@@ -2864,17 +2846,14 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A value to use if there is no existing value in the source object.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $defaultValueMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $defaultValueMoney
      * @return static
      */
-    public function setDefaultValueMoney(null|FHIRDecimal|FHIRMoney $defaultValueMoney): self
+    public function setDefaultValueMoney(null|FHIRMoney $defaultValueMoney): self
     {
         if (null === $defaultValueMoney) {
             unset($this->defaultValueMoney);
             return $this;
-        }
-        if (!($defaultValueMoney instanceof FHIRMoney)) {
-            $defaultValueMoney = new FHIRMoney(value: $defaultValueMoney);
         }
         $this->defaultValueMoney = $defaultValueMoney;
         return $this;
@@ -2939,17 +2918,14 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A value to use if there is no existing value in the source object.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @return static
      */
-    public function setDefaultValueQuantity(null|FHIRDecimal|FHIRQuantity $defaultValueQuantity): self
+    public function setDefaultValueQuantity(null|FHIRQuantity $defaultValueQuantity): self
     {
         if (null === $defaultValueQuantity) {
             unset($this->defaultValueQuantity);
             return $this;
-        }
-        if (!($defaultValueQuantity instanceof FHIRQuantity)) {
-            $defaultValueQuantity = new FHIRQuantity(value: $defaultValueQuantity);
         }
         $this->defaultValueQuantity = $defaultValueQuantity;
         return $this;
@@ -5555,13 +5531,5 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

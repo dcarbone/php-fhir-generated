@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,6 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
@@ -141,15 +140,15 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $service
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $fee
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication4[] $adjudication
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $fee
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication4[] $adjudication
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCoding $service = null,
-                                null|FHIRDecimal|FHIRMoney $fee = null,
+                                null|FHIRMoney $fee = null,
                                 null|iterable $adjudication = null,
                                 null|iterable $fhirComments = null)
     {
@@ -225,17 +224,14 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
     /**
      * The fee charged for the professional service or product..
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $fee
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $fee
      * @return static
      */
-    public function setFee(null|FHIRDecimal|FHIRMoney $fee): self
+    public function setFee(null|FHIRMoney $fee): self
     {
         if (null === $fee) {
             unset($this->fee);
             return $this;
-        }
-        if (!($fee instanceof FHIRMoney)) {
-            $fee = new FHIRMoney(value: $fee);
         }
         $this->fee = $fee;
         return $this;
@@ -271,14 +267,11 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      *
      * The adjudications results.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication4 $adjudication
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication4 $adjudication
      * @return static
      */
-    public function addAdjudication(FHIRDecimal|FHIRClaimResponseAdjudication4 $adjudication): self
+    public function addAdjudication(FHIRClaimResponseAdjudication4 $adjudication): self
     {
-        if (!($adjudication instanceof FHIRClaimResponseAdjudication4)) {
-            $adjudication = new FHIRClaimResponseAdjudication4(value: $adjudication);
-        }
         if (!isset($this->adjudication)) {
             $this->adjudication = [];
         }
@@ -292,10 +285,10 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      *
      * The adjudications results.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication4 ...$adjudication
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication4 ...$adjudication
      * @return static
      */
-    public function setAdjudication(FHIRDecimal|FHIRClaimResponseAdjudication4 ...$adjudication): self
+    public function setAdjudication(FHIRClaimResponseAdjudication4 ...$adjudication): self
     {
         if ([] === $adjudication) {
             unset($this->adjudication);
@@ -542,13 +535,5 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
             $out->adjudication = $this->adjudication;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

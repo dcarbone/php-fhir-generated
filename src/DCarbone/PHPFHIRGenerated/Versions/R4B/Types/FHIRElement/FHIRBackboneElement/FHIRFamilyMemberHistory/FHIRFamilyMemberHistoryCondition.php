@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge;
@@ -244,7 +243,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $outcome
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $contributedToDeath
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $onsetRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $onsetPeriod
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $onsetString
@@ -257,7 +256,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $code = null,
                                 null|FHIRCodeableConcept $outcome = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $contributedToDeath = null,
-                                null|FHIRDecimal|FHIRAge $onsetAge = null,
+                                null|FHIRAge $onsetAge = null,
                                 null|FHIRRange $onsetRange = null,
                                 null|FHIRPeriod $onsetPeriod = null,
                                 null|string|FHIRStringPrimitive|FHIRString $onsetString = null,
@@ -473,17 +472,14 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @return static
      */
-    public function setOnsetAge(null|FHIRDecimal|FHIRAge $onsetAge): self
+    public function setOnsetAge(null|FHIRAge $onsetAge): self
     {
         if (null === $onsetAge) {
             unset($this->onsetAge);
             return $this;
-        }
-        if (!($onsetAge instanceof FHIRAge)) {
-            $onsetAge = new FHIRAge(value: $onsetAge);
         }
         $this->onsetAge = $onsetAge;
         return $this;
@@ -1118,13 +1114,5 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
             $out->note = $this->note;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

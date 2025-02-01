@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -243,8 +242,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $nutritionProduct
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $schedule
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $amount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rate
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rate
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $notConsumed
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $notConsumedReason
      * @param null|string[] $fhirComments
@@ -255,8 +254,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $type = null,
                                 null|FHIRCodeableReference $nutritionProduct = null,
                                 null|FHIRTiming $schedule = null,
-                                null|FHIRDecimal|FHIRQuantity $amount = null,
-                                null|FHIRDecimal|FHIRQuantity $rate = null,
+                                null|FHIRQuantity $amount = null,
+                                null|FHIRQuantity $rate = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $notConsumed = null,
                                 null|FHIRCodeableConcept $notConsumedReason = null,
                                 null|iterable $fhirComments = null)
@@ -445,17 +444,14 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      *
      * Quantity of the specified food.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $amount
      * @return static
      */
-    public function setAmount(null|FHIRDecimal|FHIRQuantity $amount): self
+    public function setAmount(null|FHIRQuantity $amount): self
     {
         if (null === $amount) {
             unset($this->amount);
             return $this;
-        }
-        if (!($amount instanceof FHIRQuantity)) {
-            $amount = new FHIRQuantity(value: $amount);
         }
         $this->amount = $amount;
         return $this;
@@ -486,17 +482,14 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      *
      * Rate at which enteral feeding was administered.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rate
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rate
      * @return static
      */
-    public function setRate(null|FHIRDecimal|FHIRQuantity $rate): self
+    public function setRate(null|FHIRQuantity $rate): self
     {
         if (null === $rate) {
             unset($this->rate);
             return $this;
-        }
-        if (!($rate instanceof FHIRQuantity)) {
-            $rate = new FHIRQuantity(value: $rate);
         }
         $this->rate = $rate;
         return $this;
@@ -971,13 +964,5 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
             $out->notConsumedReason = $this->notConsumedReason;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

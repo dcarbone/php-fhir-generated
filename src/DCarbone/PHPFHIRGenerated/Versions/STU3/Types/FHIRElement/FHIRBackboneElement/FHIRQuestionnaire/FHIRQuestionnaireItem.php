@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -508,7 +508,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $initialUri
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $initialAttachment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $initialCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $initialQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $initialQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $initialReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[] $item
      * @param null|string[] $fhirComments
@@ -539,7 +539,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                                 null|string|FHIRUriPrimitive|FHIRUri $initialUri = null,
                                 null|FHIRAttachment $initialAttachment = null,
                                 null|FHIRCoding $initialCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $initialQuantity = null,
+                                null|FHIRQuantity $initialQuantity = null,
                                 null|FHIRReference $initialReference = null,
                                 null|iterable $item = null,
                                 null|iterable $fhirComments = null)
@@ -2143,17 +2143,14 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $initialQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $initialQuantity
      * @return static
      */
-    public function setInitialQuantity(null|FHIRDecimal|FHIRQuantity $initialQuantity): self
+    public function setInitialQuantity(null|FHIRQuantity $initialQuantity): self
     {
         if (null === $initialQuantity) {
             unset($this->initialQuantity);
             return $this;
-        }
-        if (!($initialQuantity instanceof FHIRQuantity)) {
-            $initialQuantity = new FHIRQuantity(value: $initialQuantity);
         }
         $this->initialQuantity = $initialQuantity;
         return $this;
@@ -3559,13 +3556,5 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             $out->item = $this->item;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

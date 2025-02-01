@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -250,7 +250,7 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $display
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[] $designation
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[] $designation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[] $contains
      * @param null|string[] $fhirComments
      */
@@ -761,14 +761,11 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * purposes, used for particular purposes, etc. These are relevant when the
      * conditions of the expansion do not fix to a single correct representation.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation $designation
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation $designation
      * @return static
      */
-    public function addDesignation(FHIRString|FHIRValueSetDesignation $designation): self
+    public function addDesignation(FHIRValueSetDesignation $designation): self
     {
-        if (!($designation instanceof FHIRValueSetDesignation)) {
-            $designation = new FHIRValueSetDesignation(value: $designation);
-        }
         if (!isset($this->designation)) {
             $this->designation = [];
         }
@@ -786,10 +783,10 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * purposes, used for particular purposes, etc. These are relevant when the
      * conditions of the expansion do not fix to a single correct representation.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation ...$designation
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation ...$designation
      * @return static
      */
-    public function setDesignation(FHIRString|FHIRValueSetDesignation ...$designation): self
+    public function setDesignation(FHIRValueSetDesignation ...$designation): self
     {
         if ([] === $designation) {
             unset($this->designation);
@@ -1393,13 +1390,5 @@ class FHIRValueSetContains extends FHIRBackboneElement
             $out->contains = $this->contains;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

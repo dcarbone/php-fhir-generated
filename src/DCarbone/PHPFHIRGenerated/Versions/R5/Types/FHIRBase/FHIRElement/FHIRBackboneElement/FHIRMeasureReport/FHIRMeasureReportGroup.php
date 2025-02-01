@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
@@ -281,12 +280,12 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation[] $population
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measureScoreQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measureScoreQuantity
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $measureScoreDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $measureScoreCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $measureScorePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $measureScoreRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $measureScoreDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $measureScoreDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier[] $stratifier
      * @param null|string[] $fhirComments
      */
@@ -297,12 +296,12 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $code = null,
                                 null|FHIRReference $subject = null,
                                 null|iterable $population = null,
-                                null|FHIRDecimal|FHIRQuantity $measureScoreQuantity = null,
+                                null|FHIRQuantity $measureScoreQuantity = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $measureScoreDateTime = null,
                                 null|FHIRCodeableConcept $measureScoreCodeableConcept = null,
                                 null|FHIRPeriod $measureScorePeriod = null,
                                 null|FHIRRange $measureScoreRange = null,
-                                null|FHIRDecimal|FHIRDuration $measureScoreDuration = null,
+                                null|FHIRDuration $measureScoreDuration = null,
                                 null|iterable $stratifier = null,
                                 null|iterable $fhirComments = null)
     {
@@ -586,17 +585,14 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * measure type and scoring method, and based on the contents of the populations
      * defined in the group.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measureScoreQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measureScoreQuantity
      * @return static
      */
-    public function setMeasureScoreQuantity(null|FHIRDecimal|FHIRQuantity $measureScoreQuantity): self
+    public function setMeasureScoreQuantity(null|FHIRQuantity $measureScoreQuantity): self
     {
         if (null === $measureScoreQuantity) {
             unset($this->measureScoreQuantity);
             return $this;
-        }
-        if (!($measureScoreQuantity instanceof FHIRQuantity)) {
-            $measureScoreQuantity = new FHIRQuantity(value: $measureScoreQuantity);
         }
         $this->measureScoreQuantity = $measureScoreQuantity;
         return $this;
@@ -821,17 +817,14 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * measure type and scoring method, and based on the contents of the populations
      * defined in the group.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $measureScoreDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $measureScoreDuration
      * @return static
      */
-    public function setMeasureScoreDuration(null|FHIRDecimal|FHIRDuration $measureScoreDuration): self
+    public function setMeasureScoreDuration(null|FHIRDuration $measureScoreDuration): self
     {
         if (null === $measureScoreDuration) {
             unset($this->measureScoreDuration);
             return $this;
-        }
-        if (!($measureScoreDuration instanceof FHIRDuration)) {
-            $measureScoreDuration = new FHIRDuration(value: $measureScoreDuration);
         }
         $this->measureScoreDuration = $measureScoreDuration;
         return $this;
@@ -1395,13 +1388,5 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             $out->stratifier = $this->stratifier;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -347,7 +347,7 @@ class FHIRTimingRepeat extends FHIRElement
      * FHIRTimingRepeat Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $boundsRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $boundsPeriod
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $count
@@ -368,7 +368,7 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
-                                null|FHIRDecimal|FHIRDuration $boundsDuration = null,
+                                null|FHIRDuration $boundsDuration = null,
                                 null|FHIRRange $boundsRange = null,
                                 null|FHIRPeriod $boundsPeriod = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $count = null,
@@ -476,17 +476,14 @@ class FHIRTimingRepeat extends FHIRElement
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
      * @return static
      */
-    public function setBoundsDuration(null|FHIRDecimal|FHIRDuration $boundsDuration): self
+    public function setBoundsDuration(null|FHIRDuration $boundsDuration): self
     {
         if (null === $boundsDuration) {
             unset($this->boundsDuration);
             return $this;
-        }
-        if (!($boundsDuration instanceof FHIRDuration)) {
-            $boundsDuration = new FHIRDuration(value: $boundsDuration);
         }
         $this->boundsDuration = $boundsDuration;
         return $this;
@@ -2518,13 +2515,5 @@ class FHIRTimingRepeat extends FHIRElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

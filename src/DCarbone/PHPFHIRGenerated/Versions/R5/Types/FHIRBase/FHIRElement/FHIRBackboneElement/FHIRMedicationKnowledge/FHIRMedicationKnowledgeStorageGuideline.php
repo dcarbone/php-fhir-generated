@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
@@ -175,7 +174,7 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $reference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[] $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $stabilityDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $stabilityDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeEnvironmentalSetting[] $environmentalSetting
      * @param null|string[] $fhirComments
      */
@@ -184,7 +183,7 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $reference = null,
                                 null|iterable $note = null,
-                                null|FHIRDecimal|FHIRDuration $stabilityDuration = null,
+                                null|FHIRDuration $stabilityDuration = null,
                                 null|iterable $environmentalSetting = null,
                                 null|iterable $fhirComments = null)
     {
@@ -372,17 +371,14 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * Duration that the medication remains stable if the environmentalSetting is
      * respected.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $stabilityDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $stabilityDuration
      * @return static
      */
-    public function setStabilityDuration(null|FHIRDecimal|FHIRDuration $stabilityDuration): self
+    public function setStabilityDuration(null|FHIRDuration $stabilityDuration): self
     {
         if (null === $stabilityDuration) {
             unset($this->stabilityDuration);
             return $this;
-        }
-        if (!($stabilityDuration instanceof FHIRDuration)) {
-            $stabilityDuration = new FHIRDuration(value: $stabilityDuration);
         }
         $this->stabilityDuration = $stabilityDuration;
         return $this;
@@ -744,13 +740,5 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
             $out->environmentalSetting = $this->environmentalSetting;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

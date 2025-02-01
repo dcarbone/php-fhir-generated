@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,6 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRActionRelationshipType;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration;
@@ -192,7 +191,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $actionId
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRActionRelationshipType $relationship
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $offsetRange
      * @param null|string[] $fhirComments
      */
@@ -201,7 +200,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRIdPrimitive|FHIRId $actionId = null,
                                 null|string|FHIRActionRelationshipTypeEnum|FHIRActionRelationshipType $relationship = null,
-                                null|FHIRDecimal|FHIRDuration $offsetDuration = null,
+                                null|FHIRDuration $offsetDuration = null,
                                 null|FHIRRange $offsetRange = null,
                                 null|iterable $fhirComments = null)
     {
@@ -390,17 +389,14 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
      * @return static
      */
-    public function setOffsetDuration(null|FHIRDecimal|FHIRDuration $offsetDuration): self
+    public function setOffsetDuration(null|FHIRDuration $offsetDuration): self
     {
         if (null === $offsetDuration) {
             unset($this->offsetDuration);
             return $this;
-        }
-        if (!($offsetDuration instanceof FHIRDuration)) {
-            $offsetDuration = new FHIRDuration(value: $offsetDuration);
         }
         $this->offsetDuration = $offsetDuration;
         return $this;
@@ -755,13 +751,5 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             $out->offsetRange = $this->offsetRange;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

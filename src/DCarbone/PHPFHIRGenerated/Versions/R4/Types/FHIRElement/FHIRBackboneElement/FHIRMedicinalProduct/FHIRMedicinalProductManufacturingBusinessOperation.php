@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
@@ -182,7 +181,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $operationType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $effectiveDate
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $confidentialityIndicator
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] $manufacturer
@@ -193,7 +192,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $operationType = null,
-                                null|FHIRString|FHIRIdentifier $authorisationReferenceNumber = null,
+                                null|FHIRIdentifier $authorisationReferenceNumber = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDate = null,
                                 null|FHIRCodeableConcept $confidentialityIndicator = null,
                                 null|iterable $manufacturer = null,
@@ -293,17 +292,14 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      *
      * Regulatory authorization reference number.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
      * @return static
      */
-    public function setAuthorisationReferenceNumber(null|FHIRString|FHIRIdentifier $authorisationReferenceNumber): self
+    public function setAuthorisationReferenceNumber(null|FHIRIdentifier $authorisationReferenceNumber): self
     {
         if (null === $authorisationReferenceNumber) {
             unset($this->authorisationReferenceNumber);
             return $this;
-        }
-        if (!($authorisationReferenceNumber instanceof FHIRIdentifier)) {
-            $authorisationReferenceNumber = new FHIRIdentifier(value: $authorisationReferenceNumber);
         }
         $this->authorisationReferenceNumber = $authorisationReferenceNumber;
         return $this;
@@ -849,13 +845,5 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
             $out->regulator = $this->regulator;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

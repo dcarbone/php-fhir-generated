@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
@@ -168,7 +167,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage[] $dosage
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $indicationReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics[] $patientCharacteristics
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics[] $patientCharacteristics
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -366,14 +365,11 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * Characteristics of the patient that are relevant to the administration
      * guidelines (for example, height, weight, gender, etc.).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics
      * @return static
      */
-    public function addPatientCharacteristics(FHIRString|FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics): self
+    public function addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics): self
     {
-        if (!($patientCharacteristics instanceof FHIRMedicationKnowledgePatientCharacteristics)) {
-            $patientCharacteristics = new FHIRMedicationKnowledgePatientCharacteristics(value: $patientCharacteristics);
-        }
         if (!isset($this->patientCharacteristics)) {
             $this->patientCharacteristics = [];
         }
@@ -387,10 +383,10 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * Characteristics of the patient that are relevant to the administration
      * guidelines (for example, height, weight, gender, etc.).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics ...$patientCharacteristics
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics ...$patientCharacteristics
      * @return static
      */
-    public function setPatientCharacteristics(FHIRString|FHIRMedicationKnowledgePatientCharacteristics ...$patientCharacteristics): self
+    public function setPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics ...$patientCharacteristics): self
     {
         if ([] === $patientCharacteristics) {
             unset($this->patientCharacteristics);
@@ -665,13 +661,5 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
             $out->patientCharacteristics = $this->patientCharacteristics;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

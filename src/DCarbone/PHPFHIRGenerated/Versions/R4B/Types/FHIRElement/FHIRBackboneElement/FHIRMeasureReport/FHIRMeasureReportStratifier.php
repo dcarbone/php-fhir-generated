@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,7 +147,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum[] $stratum
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum[] $stratum
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -280,14 +280,11 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * For example, when stratifying on administrative gender, there will be four
      * strata, one for each possible gender value.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum $stratum
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum $stratum
      * @return static
      */
-    public function addStratum(FHIRCodeableConcept|FHIRMeasureReportStratum $stratum): self
+    public function addStratum(FHIRMeasureReportStratum $stratum): self
     {
-        if (!($stratum instanceof FHIRMeasureReportStratum)) {
-            $stratum = new FHIRMeasureReportStratum(value: $stratum);
-        }
         if (!isset($this->stratum)) {
             $this->stratum = [];
         }
@@ -303,10 +300,10 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * For example, when stratifying on administrative gender, there will be four
      * strata, one for each possible gender value.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum ...$stratum
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum ...$stratum
      * @return static
      */
-    public function setStratum(FHIRCodeableConcept|FHIRMeasureReportStratum ...$stratum): self
+    public function setStratum(FHIRMeasureReportStratum ...$stratum): self
     {
         if ([] === $stratum) {
             unset($this->stratum);
@@ -531,13 +528,5 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
             $out->stratum = $this->stratum;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSpecimenCo
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSpecimenContainedPreference;
@@ -211,7 +210,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSpecimenContainedPreferenceList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSpecimenContainedPreference $preference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer $container
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $requirement
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $retentionTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $retentionTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $rejectionCriterion
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling[] $handling
      * @param null|string[] $fhirComments
@@ -224,7 +223,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                                 null|string|FHIRSpecimenContainedPreferenceList|FHIRSpecimenContainedPreference $preference = null,
                                 null|FHIRSpecimenDefinitionContainer $container = null,
                                 null|string|FHIRStringPrimitive|FHIRString $requirement = null,
-                                null|FHIRDecimal|FHIRDuration $retentionTime = null,
+                                null|FHIRDuration $retentionTime = null,
                                 null|iterable $rejectionCriterion = null,
                                 null|iterable $handling = null,
                                 null|iterable $fhirComments = null)
@@ -554,17 +553,14 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * The usual time that a specimen of this kind is retained after the ordered tests
      * are completed, for the purpose of additional testing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $retentionTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $retentionTime
      * @return static
      */
-    public function setRetentionTime(null|FHIRDecimal|FHIRDuration $retentionTime): self
+    public function setRetentionTime(null|FHIRDuration $retentionTime): self
     {
         if (null === $retentionTime) {
             unset($this->retentionTime);
             return $this;
-        }
-        if (!($retentionTime instanceof FHIRDuration)) {
-            $retentionTime = new FHIRDuration(value: $retentionTime);
         }
         $this->retentionTime = $retentionTime;
         return $this;
@@ -1149,13 +1145,5 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             $out->handling = $this->handling;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

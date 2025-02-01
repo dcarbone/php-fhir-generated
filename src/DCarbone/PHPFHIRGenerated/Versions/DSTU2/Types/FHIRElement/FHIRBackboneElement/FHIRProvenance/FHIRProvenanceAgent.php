@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
@@ -175,7 +174,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $role
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $actor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceRelatedAgent[] $relatedAgent
      * @param null|string[] $fhirComments
      */
@@ -184,7 +183,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCoding $role = null,
                                 null|FHIRReference $actor = null,
-                                null|FHIRString|FHIRIdentifier $userId = null,
+                                null|FHIRIdentifier $userId = null,
                                 null|iterable $relatedAgent = null,
                                 null|iterable $fhirComments = null)
     {
@@ -305,17 +304,14 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * The identity of the agent as known by the authorization system.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
      * @return static
      */
-    public function setUserId(null|FHIRString|FHIRIdentifier $userId): self
+    public function setUserId(null|FHIRIdentifier $userId): self
     {
         if (null === $userId) {
             unset($this->userId);
             return $this;
-        }
-        if (!($userId instanceof FHIRIdentifier)) {
-            $userId = new FHIRIdentifier(value: $userId);
         }
         $this->userId = $userId;
         return $this;
@@ -674,13 +670,5 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
             $out->relatedAgent = $this->relatedAgent;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

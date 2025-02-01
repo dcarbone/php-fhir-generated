@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,7 +145,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $specType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $componentId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $componentId
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $productionSpec
      * @param null|string[] $fhirComments
      */
@@ -153,7 +153,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $specType = null,
-                                null|FHIRString|FHIRIdentifier $componentId = null,
+                                null|FHIRIdentifier $componentId = null,
                                 null|string|FHIRStringPrimitive|FHIRString $productionSpec = null,
                                 null|iterable $fhirComments = null)
     {
@@ -245,17 +245,14 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * manufacture specific standard components using a private OID. 11073-10101 has a
      * partition for private OID semantic that the manufacture can make use of.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $componentId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $componentId
      * @return static
      */
-    public function setComponentId(null|FHIRString|FHIRIdentifier $componentId): self
+    public function setComponentId(null|FHIRIdentifier $componentId): self
     {
         if (null === $componentId) {
             unset($this->componentId);
             return $this;
-        }
-        if (!($componentId instanceof FHIRIdentifier)) {
-            $componentId = new FHIRIdentifier(value: $componentId);
         }
         $this->componentId = $componentId;
         return $this;
@@ -578,13 +575,5 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

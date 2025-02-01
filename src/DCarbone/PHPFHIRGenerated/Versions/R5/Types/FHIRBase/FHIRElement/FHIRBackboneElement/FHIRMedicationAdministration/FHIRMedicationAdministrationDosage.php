@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -237,9 +236,9 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $site
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $route
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $method
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $dose
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $dose
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $rateRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rateQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rateQuantity
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -249,9 +248,9 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $site = null,
                                 null|FHIRCodeableConcept $route = null,
                                 null|FHIRCodeableConcept $method = null,
-                                null|FHIRDecimal|FHIRQuantity $dose = null,
+                                null|FHIRQuantity $dose = null,
                                 null|FHIRRatio $rateRatio = null,
-                                null|FHIRDecimal|FHIRQuantity $rateQuantity = null,
+                                null|FHIRQuantity $rateQuantity = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -512,17 +511,14 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * when the administration is essentially an instantaneous event such as a
      * swallowing a tablet or giving an injection.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $dose
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $dose
      * @return static
      */
-    public function setDose(null|FHIRDecimal|FHIRQuantity $dose): self
+    public function setDose(null|FHIRQuantity $dose): self
     {
         if (null === $dose) {
             unset($this->dose);
             return $this;
-        }
-        if (!($dose instanceof FHIRQuantity)) {
-            $dose = new FHIRQuantity(value: $dose);
         }
         $this->dose = $dose;
         return $this;
@@ -601,17 +597,14 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
      * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rateQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $rateQuantity
      * @return static
      */
-    public function setRateQuantity(null|FHIRDecimal|FHIRQuantity $rateQuantity): self
+    public function setRateQuantity(null|FHIRQuantity $rateQuantity): self
     {
         if (null === $rateQuantity) {
             unset($this->rateQuantity);
             return $this;
-        }
-        if (!($rateQuantity instanceof FHIRQuantity)) {
-            $rateQuantity = new FHIRQuantity(value: $rateQuantity);
         }
         $this->rateQuantity = $rateQuantity;
         return $this;
@@ -968,13 +961,5 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
             $out->rateQuantity = $this->rateQuantity;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

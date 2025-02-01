@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -159,16 +159,16 @@ class FHIRRatioRange extends FHIRElement
      * FHIRRatioRange Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $lowNumerator
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $highNumerator
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $denominator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $lowNumerator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $highNumerator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $denominator
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
-                                null|FHIRDecimal|FHIRQuantity $lowNumerator = null,
-                                null|FHIRDecimal|FHIRQuantity $highNumerator = null,
-                                null|FHIRDecimal|FHIRQuantity $denominator = null,
+                                null|FHIRQuantity $lowNumerator = null,
+                                null|FHIRQuantity $highNumerator = null,
+                                null|FHIRQuantity $denominator = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -220,17 +220,14 @@ class FHIRRatioRange extends FHIRElement
      *
      * The value of the low limit numerator.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $lowNumerator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $lowNumerator
      * @return static
      */
-    public function setLowNumerator(null|FHIRDecimal|FHIRQuantity $lowNumerator): self
+    public function setLowNumerator(null|FHIRQuantity $lowNumerator): self
     {
         if (null === $lowNumerator) {
             unset($this->lowNumerator);
             return $this;
-        }
-        if (!($lowNumerator instanceof FHIRQuantity)) {
-            $lowNumerator = new FHIRQuantity(value: $lowNumerator);
         }
         $this->lowNumerator = $lowNumerator;
         return $this;
@@ -261,17 +258,14 @@ class FHIRRatioRange extends FHIRElement
      *
      * The value of the high limit numerator.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $highNumerator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $highNumerator
      * @return static
      */
-    public function setHighNumerator(null|FHIRDecimal|FHIRQuantity $highNumerator): self
+    public function setHighNumerator(null|FHIRQuantity $highNumerator): self
     {
         if (null === $highNumerator) {
             unset($this->highNumerator);
             return $this;
-        }
-        if (!($highNumerator instanceof FHIRQuantity)) {
-            $highNumerator = new FHIRQuantity(value: $highNumerator);
         }
         $this->highNumerator = $highNumerator;
         return $this;
@@ -302,17 +296,14 @@ class FHIRRatioRange extends FHIRElement
      *
      * The value of the denominator.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $denominator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $denominator
      * @return static
      */
-    public function setDenominator(null|FHIRDecimal|FHIRQuantity $denominator): self
+    public function setDenominator(null|FHIRQuantity $denominator): self
     {
         if (null === $denominator) {
             unset($this->denominator);
             return $this;
-        }
-        if (!($denominator instanceof FHIRQuantity)) {
-            $denominator = new FHIRQuantity(value: $denominator);
         }
         $this->denominator = $denominator;
         return $this;
@@ -528,13 +519,5 @@ class FHIRRatioRange extends FHIRElement
             $out->denominator = $this->denominator;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

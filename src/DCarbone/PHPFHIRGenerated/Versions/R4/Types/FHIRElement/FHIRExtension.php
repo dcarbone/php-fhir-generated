@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -843,20 +843,20 @@ class FHIRExtension extends FHIRElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl $valueUrl
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUuid $valueUuid
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress $valueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $valueAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $valueAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation $valueAnnotation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $valueAttachment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $valueContactPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $valueCount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $valueDistance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $valueContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $valueCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $valueDistance
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRHumanName $valueHumanName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $valueIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $valueMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $valueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $valueMoney
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $valueRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $valueRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $valueReference
@@ -898,20 +898,20 @@ class FHIRExtension extends FHIRElement
                                 null|string|FHIRUrlPrimitive|FHIRUrl $valueUrl = null,
                                 null|string|FHIRUuidPrimitive|FHIRUuid $valueUuid = null,
                                 null|FHIRAddress $valueAddress = null,
-                                null|FHIRDecimal|FHIRAge $valueAge = null,
+                                null|FHIRAge $valueAge = null,
                                 null|FHIRAnnotation $valueAnnotation = null,
                                 null|FHIRAttachment $valueAttachment = null,
                                 null|FHIRCodeableConcept $valueCodeableConcept = null,
                                 null|FHIRCoding $valueCoding = null,
-                                null|FHIRString|FHIRContactPoint $valueContactPoint = null,
-                                null|FHIRDecimal|FHIRCount $valueCount = null,
-                                null|FHIRDecimal|FHIRDistance $valueDistance = null,
-                                null|FHIRDecimal|FHIRDuration $valueDuration = null,
+                                null|FHIRContactPoint $valueContactPoint = null,
+                                null|FHIRCount $valueCount = null,
+                                null|FHIRDistance $valueDistance = null,
+                                null|FHIRDuration $valueDuration = null,
                                 null|FHIRHumanName $valueHumanName = null,
-                                null|FHIRString|FHIRIdentifier $valueIdentifier = null,
-                                null|FHIRDecimal|FHIRMoney $valueMoney = null,
+                                null|FHIRIdentifier $valueIdentifier = null,
+                                null|FHIRMoney $valueMoney = null,
                                 null|FHIRPeriod $valuePeriod = null,
-                                null|FHIRDecimal|FHIRQuantity $valueQuantity = null,
+                                null|FHIRQuantity $valueQuantity = null,
                                 null|FHIRRange $valueRange = null,
                                 null|FHIRRatio $valueRatio = null,
                                 null|FHIRReference $valueReference = null,
@@ -2492,17 +2492,14 @@ class FHIRExtension extends FHIRElement
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $valueAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $valueAge
      * @return static
      */
-    public function setValueAge(null|FHIRDecimal|FHIRAge $valueAge): self
+    public function setValueAge(null|FHIRAge $valueAge): self
     {
         if (null === $valueAge) {
             unset($this->valueAge);
             return $this;
-        }
-        if (!($valueAge instanceof FHIRAge)) {
-            $valueAge = new FHIRAge(value: $valueAge);
         }
         $this->valueAge = $valueAge;
         return $this;
@@ -2681,17 +2678,14 @@ class FHIRExtension extends FHIRElement
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $valueContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $valueContactPoint
      * @return static
      */
-    public function setValueContactPoint(null|FHIRString|FHIRContactPoint $valueContactPoint): self
+    public function setValueContactPoint(null|FHIRContactPoint $valueContactPoint): self
     {
         if (null === $valueContactPoint) {
             unset($this->valueContactPoint);
             return $this;
-        }
-        if (!($valueContactPoint instanceof FHIRContactPoint)) {
-            $valueContactPoint = new FHIRContactPoint(value: $valueContactPoint);
         }
         $this->valueContactPoint = $valueContactPoint;
         return $this;
@@ -2724,17 +2718,14 @@ class FHIRExtension extends FHIRElement
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $valueCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRCount $valueCount
      * @return static
      */
-    public function setValueCount(null|FHIRDecimal|FHIRCount $valueCount): self
+    public function setValueCount(null|FHIRCount $valueCount): self
     {
         if (null === $valueCount) {
             unset($this->valueCount);
             return $this;
-        }
-        if (!($valueCount instanceof FHIRCount)) {
-            $valueCount = new FHIRCount(value: $valueCount);
         }
         $this->valueCount = $valueCount;
         return $this;
@@ -2763,17 +2754,14 @@ class FHIRExtension extends FHIRElement
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $valueDistance
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDistance $valueDistance
      * @return static
      */
-    public function setValueDistance(null|FHIRDecimal|FHIRDistance $valueDistance): self
+    public function setValueDistance(null|FHIRDistance $valueDistance): self
     {
         if (null === $valueDistance) {
             unset($this->valueDistance);
             return $this;
-        }
-        if (!($valueDistance instanceof FHIRDistance)) {
-            $valueDistance = new FHIRDistance(value: $valueDistance);
         }
         $this->valueDistance = $valueDistance;
         return $this;
@@ -2802,17 +2790,14 @@ class FHIRExtension extends FHIRElement
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
      * @return static
      */
-    public function setValueDuration(null|FHIRDecimal|FHIRDuration $valueDuration): self
+    public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
         if (null === $valueDuration) {
             unset($this->valueDuration);
             return $this;
-        }
-        if (!($valueDuration instanceof FHIRDuration)) {
-            $valueDuration = new FHIRDuration(value: $valueDuration);
         }
         $this->valueDuration = $valueDuration;
         return $this;
@@ -2879,17 +2864,14 @@ class FHIRExtension extends FHIRElement
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $valueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $valueIdentifier
      * @return static
      */
-    public function setValueIdentifier(null|FHIRString|FHIRIdentifier $valueIdentifier): self
+    public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
         if (null === $valueIdentifier) {
             unset($this->valueIdentifier);
             return $this;
-        }
-        if (!($valueIdentifier instanceof FHIRIdentifier)) {
-            $valueIdentifier = new FHIRIdentifier(value: $valueIdentifier);
         }
         $this->valueIdentifier = $valueIdentifier;
         return $this;
@@ -2918,17 +2900,14 @@ class FHIRExtension extends FHIRElement
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $valueMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $valueMoney
      * @return static
      */
-    public function setValueMoney(null|FHIRDecimal|FHIRMoney $valueMoney): self
+    public function setValueMoney(null|FHIRMoney $valueMoney): self
     {
         if (null === $valueMoney) {
             unset($this->valueMoney);
             return $this;
-        }
-        if (!($valueMoney instanceof FHIRMoney)) {
-            $valueMoney = new FHIRMoney(value: $valueMoney);
         }
         $this->valueMoney = $valueMoney;
         return $this;
@@ -2997,17 +2976,14 @@ class FHIRExtension extends FHIRElement
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(null|FHIRDecimal|FHIRQuantity $valueQuantity): self
+    public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
         if (null === $valueQuantity) {
             unset($this->valueQuantity);
             return $this;
-        }
-        if (!($valueQuantity instanceof FHIRQuantity)) {
-            $valueQuantity = new FHIRQuantity(value: $valueQuantity);
         }
         $this->valueQuantity = $valueQuantity;
         return $this;
@@ -5641,13 +5617,5 @@ class FHIRExtension extends FHIRElement
             $out->url = $this->url;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

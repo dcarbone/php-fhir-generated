@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,17 +26,10 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-
-/**
- * This indicates an Element type that contains a "value" property
- */
-interface ValueContainerTypeInterface extends ElementTypeInterface
+interface ValueContainerTypeInterface
 {
     /**
-     * Must return the appropriate "formatted" stringified version of this type's contained primitive type's value
+     * Must return the formatted string representation of this type's "value" field.
      *
      * @return string
      */

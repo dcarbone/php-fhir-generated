@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -254,9 +254,9 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sequence
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $length
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $sequenceAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $nTerminalModificationId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $nTerminalModificationId
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $nTerminalModification
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $cTerminalModificationId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $cTerminalModificationId
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $cTerminalModification
      * @param null|string[] $fhirComments
      */
@@ -267,9 +267,9 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $sequence = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $length = null,
                                 null|FHIRAttachment $sequenceAttachment = null,
-                                null|FHIRString|FHIRIdentifier $nTerminalModificationId = null,
+                                null|FHIRIdentifier $nTerminalModificationId = null,
                                 null|string|FHIRStringPrimitive|FHIRString $nTerminalModification = null,
-                                null|FHIRString|FHIRIdentifier $cTerminalModificationId = null,
+                                null|FHIRIdentifier $cTerminalModificationId = null,
                                 null|string|FHIRStringPrimitive|FHIRString $cTerminalModification = null,
                                 null|iterable $fhirComments = null)
     {
@@ -600,17 +600,14 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $nTerminalModificationId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $nTerminalModificationId
      * @return static
      */
-    public function setNTerminalModificationId(null|FHIRString|FHIRIdentifier $nTerminalModificationId): self
+    public function setNTerminalModificationId(null|FHIRIdentifier $nTerminalModificationId): self
     {
         if (null === $nTerminalModificationId) {
             unset($this->nTerminalModificationId);
             return $this;
-        }
-        if (!($nTerminalModificationId instanceof FHIRIdentifier)) {
-            $nTerminalModificationId = new FHIRIdentifier(value: $nTerminalModificationId);
         }
         $this->nTerminalModificationId = $nTerminalModificationId;
         return $this;
@@ -709,17 +706,14 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $cTerminalModificationId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $cTerminalModificationId
      * @return static
      */
-    public function setCTerminalModificationId(null|FHIRString|FHIRIdentifier $cTerminalModificationId): self
+    public function setCTerminalModificationId(null|FHIRIdentifier $cTerminalModificationId): self
     {
         if (null === $cTerminalModificationId) {
             unset($this->cTerminalModificationId);
             return $this;
-        }
-        if (!($cTerminalModificationId instanceof FHIRIdentifier)) {
-            $cTerminalModificationId = new FHIRIdentifier(value: $cTerminalModificationId);
         }
         $this->cTerminalModificationId = $cTerminalModificationId;
         return $this;
@@ -1275,13 +1269,5 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

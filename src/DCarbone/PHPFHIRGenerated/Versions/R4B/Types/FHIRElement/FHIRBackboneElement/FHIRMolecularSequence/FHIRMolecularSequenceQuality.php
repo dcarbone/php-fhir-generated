@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -351,7 +351,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $standardSequence
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $start
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $end
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $score
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $score
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $method
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $truthTP
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $queryTP
@@ -371,7 +371,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $standardSequence = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $start = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $end = null,
-                                null|FHIRDecimal|FHIRQuantity $score = null,
+                                null|FHIRQuantity $score = null,
                                 null|FHIRCodeableConcept $method = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $truthTP = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $queryTP = null,
@@ -708,17 +708,14 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * The score of an experimentally derived feature such as a p-value
      * ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $score
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $score
      * @return static
      */
-    public function setScore(null|FHIRDecimal|FHIRQuantity $score): self
+    public function setScore(null|FHIRQuantity $score): self
     {
         if (null === $score) {
             unset($this->score);
             return $this;
-        }
-        if (!($score instanceof FHIRQuantity)) {
-            $score = new FHIRQuantity(value: $score);
         }
         $this->score = $score;
         return $this;
@@ -2190,13 +2187,5 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
             $out->roc = $this->roc;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

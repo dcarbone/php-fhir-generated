@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -306,18 +306,18 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $issuer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $bin
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $bin
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $period
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $subscriberId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $subscriberId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $group
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $plan
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $subPlan
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $dependent
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $sequence
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subscriber
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $network
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $network
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference[] $contract
      * @param null|string[] $fhirComments
      */
@@ -330,10 +330,10 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRReference $issuer = null,
-                                null|FHIRString|FHIRIdentifier $bin = null,
+                                null|FHIRIdentifier $bin = null,
                                 null|FHIRPeriod $period = null,
                                 null|FHIRCoding $type = null,
-                                null|FHIRString|FHIRIdentifier $subscriberId = null,
+                                null|FHIRIdentifier $subscriberId = null,
                                 null|iterable $identifier = null,
                                 null|string|FHIRStringPrimitive|FHIRString $group = null,
                                 null|string|FHIRStringPrimitive|FHIRString $plan = null,
@@ -341,7 +341,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
                                 null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dependent = null,
                                 null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null,
                                 null|FHIRReference $subscriber = null,
-                                null|FHIRString|FHIRIdentifier $network = null,
+                                null|FHIRIdentifier $network = null,
                                 null|iterable $contract = null,
                                 null|iterable $fhirComments = null)
     {
@@ -476,17 +476,14 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * eclaims if the insurer themselves don't have a BIN number for all of their
      * business.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $bin
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $bin
      * @return static
      */
-    public function setBin(null|FHIRString|FHIRIdentifier $bin): self
+    public function setBin(null|FHIRIdentifier $bin): self
     {
         if (null === $bin) {
             unset($this->bin);
             return $this;
-        }
-        if (!($bin instanceof FHIRIdentifier)) {
-            $bin = new FHIRIdentifier(value: $bin);
         }
         $this->bin = $bin;
         return $this;
@@ -587,17 +584,14 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The id issued to the subscriber.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $subscriberId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $subscriberId
      * @return static
      */
-    public function setSubscriberId(null|FHIRString|FHIRIdentifier $subscriberId): self
+    public function setSubscriberId(null|FHIRIdentifier $subscriberId): self
     {
         if (null === $subscriberId) {
             unset($this->subscriberId);
             return $this;
-        }
-        if (!($subscriberId instanceof FHIRIdentifier)) {
-            $subscriberId = new FHIRIdentifier(value: $subscriberId);
         }
         $this->subscriberId = $subscriberId;
         return $this;
@@ -639,14 +633,11 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * a Member Id, Subscriber Id, Certificate number or Personal Health Number or Case
      * ID.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRIdentifier $identifier): self
     {
-        if (!($identifier instanceof FHIRIdentifier)) {
-            $identifier = new FHIRIdentifier(value: $identifier);
-        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -663,10 +654,10 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * a Member Id, Subscriber Id, Certificate number or Personal Health Number or Case
      * ID.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1077,17 +1068,14 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The identifier for a community of providers.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $network
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $network
      * @return static
      */
-    public function setNetwork(null|FHIRString|FHIRIdentifier $network): self
+    public function setNetwork(null|FHIRIdentifier $network): self
     {
         if (null === $network) {
             unset($this->network);
             return $this;
-        }
-        if (!($network instanceof FHIRIdentifier)) {
-            $network = new FHIRIdentifier(value: $network);
         }
         $this->network = $network;
         return $this;
@@ -1940,13 +1928,5 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

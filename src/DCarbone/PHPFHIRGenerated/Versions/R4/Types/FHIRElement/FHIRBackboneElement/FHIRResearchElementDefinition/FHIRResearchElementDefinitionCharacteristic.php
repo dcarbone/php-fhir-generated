@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExpression;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGroupMeasure;
@@ -422,16 +421,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $studyEffectiveDescription
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $studyEffectiveDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $studyEffectivePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $studyEffectiveTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveTimeFromStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveTimeFromStart
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRGroupMeasureList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGroupMeasure $studyEffectiveGroupMeasure
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $participantEffectiveDescription
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $participantEffectiveDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $participantEffectivePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $participantEffectiveTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveTimeFromStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveTimeFromStart
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRGroupMeasureList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGroupMeasure $participantEffectiveGroupMeasure
      * @param null|string[] $fhirComments
      */
@@ -448,16 +447,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $studyEffectiveDescription = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $studyEffectiveDateTime = null,
                                 null|FHIRPeriod $studyEffectivePeriod = null,
-                                null|FHIRDecimal|FHIRDuration $studyEffectiveDuration = null,
+                                null|FHIRDuration $studyEffectiveDuration = null,
                                 null|FHIRTiming $studyEffectiveTiming = null,
-                                null|FHIRDecimal|FHIRDuration $studyEffectiveTimeFromStart = null,
+                                null|FHIRDuration $studyEffectiveTimeFromStart = null,
                                 null|string|FHIRGroupMeasureList|FHIRGroupMeasure $studyEffectiveGroupMeasure = null,
                                 null|string|FHIRStringPrimitive|FHIRString $participantEffectiveDescription = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $participantEffectiveDateTime = null,
                                 null|FHIRPeriod $participantEffectivePeriod = null,
-                                null|FHIRDecimal|FHIRDuration $participantEffectiveDuration = null,
+                                null|FHIRDuration $participantEffectiveDuration = null,
                                 null|FHIRTiming $participantEffectiveTiming = null,
-                                null|FHIRDecimal|FHIRDuration $participantEffectiveTimeFromStart = null,
+                                null|FHIRDuration $participantEffectiveTimeFromStart = null,
                                 null|string|FHIRGroupMeasureList|FHIRGroupMeasure $participantEffectiveGroupMeasure = null,
                                 null|iterable $fhirComments = null)
     {
@@ -1111,17 +1110,14 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * Indicates what effective period the study covers.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveDuration
      * @return static
      */
-    public function setStudyEffectiveDuration(null|FHIRDecimal|FHIRDuration $studyEffectiveDuration): self
+    public function setStudyEffectiveDuration(null|FHIRDuration $studyEffectiveDuration): self
     {
         if (null === $studyEffectiveDuration) {
             unset($this->studyEffectiveDuration);
             return $this;
-        }
-        if (!($studyEffectiveDuration instanceof FHIRDuration)) {
-            $studyEffectiveDuration = new FHIRDuration(value: $studyEffectiveDuration);
         }
         $this->studyEffectiveDuration = $studyEffectiveDuration;
         return $this;
@@ -1190,17 +1186,14 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * Indicates duration from the study initiation.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveTimeFromStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveTimeFromStart
      * @return static
      */
-    public function setStudyEffectiveTimeFromStart(null|FHIRDecimal|FHIRDuration $studyEffectiveTimeFromStart): self
+    public function setStudyEffectiveTimeFromStart(null|FHIRDuration $studyEffectiveTimeFromStart): self
     {
         if (null === $studyEffectiveTimeFromStart) {
             unset($this->studyEffectiveTimeFromStart);
             return $this;
-        }
-        if (!($studyEffectiveTimeFromStart instanceof FHIRDuration)) {
-            $studyEffectiveTimeFromStart = new FHIRDuration(value: $studyEffectiveTimeFromStart);
         }
         $this->studyEffectiveTimeFromStart = $studyEffectiveTimeFromStart;
         return $this;
@@ -1463,17 +1456,14 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * Indicates what effective period the study covers.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
      * @return static
      */
-    public function setParticipantEffectiveDuration(null|FHIRDecimal|FHIRDuration $participantEffectiveDuration): self
+    public function setParticipantEffectiveDuration(null|FHIRDuration $participantEffectiveDuration): self
     {
         if (null === $participantEffectiveDuration) {
             unset($this->participantEffectiveDuration);
             return $this;
-        }
-        if (!($participantEffectiveDuration instanceof FHIRDuration)) {
-            $participantEffectiveDuration = new FHIRDuration(value: $participantEffectiveDuration);
         }
         $this->participantEffectiveDuration = $participantEffectiveDuration;
         return $this;
@@ -1542,17 +1532,14 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * Indicates duration from the participant's study entry.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveTimeFromStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveTimeFromStart
      * @return static
      */
-    public function setParticipantEffectiveTimeFromStart(null|FHIRDecimal|FHIRDuration $participantEffectiveTimeFromStart): self
+    public function setParticipantEffectiveTimeFromStart(null|FHIRDuration $participantEffectiveTimeFromStart): self
     {
         if (null === $participantEffectiveTimeFromStart) {
             unset($this->participantEffectiveTimeFromStart);
             return $this;
-        }
-        if (!($participantEffectiveTimeFromStart instanceof FHIRDuration)) {
-            $participantEffectiveTimeFromStart = new FHIRDuration(value: $participantEffectiveTimeFromStart);
         }
         $this->participantEffectiveTimeFromStart = $participantEffectiveTimeFromStart;
         return $this;
@@ -2540,13 +2527,5 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             }
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

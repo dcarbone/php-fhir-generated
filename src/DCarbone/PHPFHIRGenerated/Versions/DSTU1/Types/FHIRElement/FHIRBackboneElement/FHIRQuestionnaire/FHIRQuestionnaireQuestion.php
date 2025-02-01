@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -655,10 +655,10 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUuid $dataUuid
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $dataId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $dataAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $dataIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $dataIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $dataCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $dataCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dataQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dataQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $dataRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $dataPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $dataRatio
@@ -666,7 +666,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData $dataSampledData
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName $dataHumanName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $dataAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $dataContact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $dataContact
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $dataSchedule
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $remarks
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup[] $group
@@ -700,10 +700,10 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
                                 null|string|FHIRUuidPrimitive|FHIRUuid $dataUuid = null,
                                 null|string|FHIRIdPrimitive|FHIRId $dataId = null,
                                 null|FHIRAttachment $dataAttachment = null,
-                                null|FHIRString|FHIRIdentifier $dataIdentifier = null,
+                                null|FHIRIdentifier $dataIdentifier = null,
                                 null|FHIRCodeableConcept $dataCodeableConcept = null,
                                 null|FHIRCoding $dataCoding = null,
-                                null|FHIRDecimal|FHIRQuantity $dataQuantity = null,
+                                null|FHIRQuantity $dataQuantity = null,
                                 null|FHIRRange $dataRange = null,
                                 null|FHIRPeriod $dataPeriod = null,
                                 null|FHIRRatio $dataRatio = null,
@@ -711,7 +711,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
                                 null|FHIRSampledData $dataSampledData = null,
                                 null|FHIRHumanName $dataHumanName = null,
                                 null|FHIRAddress $dataAddress = null,
-                                null|FHIRString|FHIRContact $dataContact = null,
+                                null|FHIRContact $dataContact = null,
                                 null|FHIRSchedule $dataSchedule = null,
                                 null|string|FHIRStringPrimitive|FHIRString $remarks = null,
                                 null|iterable $group = null,
@@ -2422,17 +2422,14 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $dataIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $dataIdentifier
      * @return static
      */
-    public function setDataIdentifier(null|FHIRString|FHIRIdentifier $dataIdentifier): self
+    public function setDataIdentifier(null|FHIRIdentifier $dataIdentifier): self
     {
         if (null === $dataIdentifier) {
             unset($this->dataIdentifier);
             return $this;
-        }
-        if (!($dataIdentifier instanceof FHIRIdentifier)) {
-            $dataIdentifier = new FHIRIdentifier(value: $dataIdentifier);
         }
         $this->dataIdentifier = $dataIdentifier;
         return $this;
@@ -2533,17 +2530,14 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dataQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dataQuantity
      * @return static
      */
-    public function setDataQuantity(null|FHIRDecimal|FHIRQuantity $dataQuantity): self
+    public function setDataQuantity(null|FHIRQuantity $dataQuantity): self
     {
         if (null === $dataQuantity) {
             unset($this->dataQuantity);
             return $this;
-        }
-        if (!($dataQuantity instanceof FHIRQuantity)) {
-            $dataQuantity = new FHIRQuantity(value: $dataQuantity);
         }
         $this->dataQuantity = $dataQuantity;
         return $this;
@@ -2816,17 +2810,14 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $dataContact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $dataContact
      * @return static
      */
-    public function setDataContact(null|FHIRString|FHIRContact $dataContact): self
+    public function setDataContact(null|FHIRContact $dataContact): self
     {
         if (null === $dataContact) {
             unset($this->dataContact);
             return $this;
-        }
-        if (!($dataContact instanceof FHIRContact)) {
-            $dataContact = new FHIRContact(value: $dataContact);
         }
         $this->dataContact = $dataContact;
         return $this;
@@ -4765,13 +4756,5 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $out->group = $this->group;
         }
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

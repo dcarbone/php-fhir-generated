@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 23:45+0000
+ * Class creation date: February 1st, 2025 16:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier;
@@ -413,7 +412,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $request
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $ruleset
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $originalRuleset
@@ -427,14 +426,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[] $item
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem[] $addItem
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[] $error
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $totalCost
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $unallocDeductable
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $totalBenefit
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $paymentAdjustment
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $totalCost
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $unallocDeductable
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $totalBenefit
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $paymentAdjustment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $paymentAdjustmentReason
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $paymentDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $paymentAmount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $paymentRef
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $paymentAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $paymentRef
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $reserved
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $form
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseNote[] $note
@@ -463,14 +462,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
                                 null|iterable $item = null,
                                 null|iterable $addItem = null,
                                 null|iterable $error = null,
-                                null|FHIRDecimal|FHIRMoney $totalCost = null,
-                                null|FHIRDecimal|FHIRMoney $unallocDeductable = null,
-                                null|FHIRDecimal|FHIRMoney $totalBenefit = null,
-                                null|FHIRDecimal|FHIRMoney $paymentAdjustment = null,
+                                null|FHIRMoney $totalCost = null,
+                                null|FHIRMoney $unallocDeductable = null,
+                                null|FHIRMoney $totalBenefit = null,
+                                null|FHIRMoney $paymentAdjustment = null,
                                 null|FHIRCoding $paymentAdjustmentReason = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $paymentDate = null,
-                                null|FHIRDecimal|FHIRMoney $paymentAmount = null,
-                                null|FHIRString|FHIRIdentifier $paymentRef = null,
+                                null|FHIRMoney $paymentAmount = null,
+                                null|FHIRIdentifier $paymentRef = null,
                                 null|FHIRCoding $reserved = null,
                                 null|FHIRCoding $form = null,
                                 null|iterable $note = null,
@@ -617,14 +616,11 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      *
      * The Response business identifier.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRIdentifier $identifier): self
     {
-        if (!($identifier instanceof FHIRIdentifier)) {
-            $identifier = new FHIRIdentifier(value: $identifier);
-        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -639,10 +635,10 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      *
      * The Response business identifier.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1296,17 +1292,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
     /**
      * The total cost of the services reported.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $totalCost
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $totalCost
      * @return static
      */
-    public function setTotalCost(null|FHIRDecimal|FHIRMoney $totalCost): self
+    public function setTotalCost(null|FHIRMoney $totalCost): self
     {
         if (null === $totalCost) {
             unset($this->totalCost);
             return $this;
-        }
-        if (!($totalCost instanceof FHIRMoney)) {
-            $totalCost = new FHIRMoney(value: $totalCost);
         }
         $this->totalCost = $totalCost;
         return $this;
@@ -1327,17 +1320,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * The amount of deductible applied which was not allocated to any particular
      * service line.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $unallocDeductable
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $unallocDeductable
      * @return static
      */
-    public function setUnallocDeductable(null|FHIRDecimal|FHIRMoney $unallocDeductable): self
+    public function setUnallocDeductable(null|FHIRMoney $unallocDeductable): self
     {
         if (null === $unallocDeductable) {
             unset($this->unallocDeductable);
             return $this;
-        }
-        if (!($unallocDeductable instanceof FHIRMoney)) {
-            $unallocDeductable = new FHIRMoney(value: $unallocDeductable);
         }
         $this->unallocDeductable = $unallocDeductable;
         return $this;
@@ -1358,17 +1348,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * Total amount of benefit payable (Equal to sum of the Benefit amounts from all
      * detail lines and additions less the Unallocated Deductible).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $totalBenefit
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $totalBenefit
      * @return static
      */
-    public function setTotalBenefit(null|FHIRDecimal|FHIRMoney $totalBenefit): self
+    public function setTotalBenefit(null|FHIRMoney $totalBenefit): self
     {
         if (null === $totalBenefit) {
             unset($this->totalBenefit);
             return $this;
-        }
-        if (!($totalBenefit instanceof FHIRMoney)) {
-            $totalBenefit = new FHIRMoney(value: $totalBenefit);
         }
         $this->totalBenefit = $totalBenefit;
         return $this;
@@ -1389,17 +1376,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * Adjustment to the payment of this transaction which is not related to
      * adjudication of this transaction.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $paymentAdjustment
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $paymentAdjustment
      * @return static
      */
-    public function setPaymentAdjustment(null|FHIRDecimal|FHIRMoney $paymentAdjustment): self
+    public function setPaymentAdjustment(null|FHIRMoney $paymentAdjustment): self
     {
         if (null === $paymentAdjustment) {
             unset($this->paymentAdjustment);
             return $this;
-        }
-        if (!($paymentAdjustment instanceof FHIRMoney)) {
-            $paymentAdjustment = new FHIRMoney(value: $paymentAdjustment);
         }
         $this->paymentAdjustment = $paymentAdjustment;
         return $this;
@@ -1520,17 +1504,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
     /**
      * Payable less any payment adjustment.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $paymentAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $paymentAmount
      * @return static
      */
-    public function setPaymentAmount(null|FHIRDecimal|FHIRMoney $paymentAmount): self
+    public function setPaymentAmount(null|FHIRMoney $paymentAmount): self
     {
         if (null === $paymentAmount) {
             unset($this->paymentAmount);
             return $this;
-        }
-        if (!($paymentAmount instanceof FHIRMoney)) {
-            $paymentAmount = new FHIRMoney(value: $paymentAmount);
         }
         $this->paymentAmount = $paymentAmount;
         return $this;
@@ -1557,17 +1538,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      *
      * Payment identifier.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $paymentRef
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $paymentRef
      * @return static
      */
-    public function setPaymentRef(null|FHIRString|FHIRIdentifier $paymentRef): self
+    public function setPaymentRef(null|FHIRIdentifier $paymentRef): self
     {
         if (null === $paymentRef) {
             unset($this->paymentRef);
             return $this;
-        }
-        if (!($paymentRef instanceof FHIRIdentifier)) {
-            $paymentRef = new FHIRIdentifier(value: $paymentRef);
         }
         $this->paymentRef = $paymentRef;
         return $this;
@@ -2851,13 +2829,5 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
         }
         $out->resourceType = $this->_getResourceType();
         return $out;
-    }
-    /* class_default.php:236 */
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }
