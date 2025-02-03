@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,83 +83,23 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
-use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
 
 class FHIRFHIRVersionEnum extends FHIRCodePrimitive
-{    // name of FHIR type this class describes
+{
+    use TypeValidationsTrait;
+
+    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_FHIRVERSION_ENUM;
 
 
     /* class_default.php:66 */
-    private static array $_validationRules = [
-        self::FIELD_VALUE => [
-            Constants::VALIDATE_PATTERN => '/^[^\\s]+( [^\\s]+)*$/',
-            Constants::VALIDATE_MIN_LENGTH => 1,
-            Constants::VALIDATE_ENUM => [
-                0 => '0.01',
-                1 => '0.05',
-                2 => '0.06',
-                3 => '0.11',
-                4 => '0.0',
-                5 => '0.0.80',
-                6 => '0.0.81',
-                7 => '0.0.82',
-                8 => '0.4',
-                9 => '0.4.0',
-                10 => '0.5',
-                11 => '0.5.0',
-                12 => '1.0',
-                13 => '1.0.0',
-                14 => '1.0.1',
-                15 => '1.0.2',
-                16 => '1.1',
-                17 => '1.1.0',
-                18 => '1.4',
-                19 => '1.4.0',
-                20 => '1.6',
-                21 => '1.6.0',
-                22 => '1.8',
-                23 => '1.8.0',
-                24 => '3.0',
-                25 => '3.0.0',
-                26 => '3.0.1',
-                27 => '3.0.2',
-                28 => '3.3',
-                29 => '3.3.0',
-                30 => '3.5',
-                31 => '3.5.0',
-                32 => '4.0',
-                33 => '4.0.0',
-                34 => '4.0.1',
-                35 => '4.1',
-                36 => '4.1.0',
-                37 => '4.2',
-                38 => '4.2.0',
-                39 => '4.3',
-                40 => '4.3.0',
-                41 => '4.3.0-cibuild',
-                42 => '4.3.0-snapshot1',
-                43 => '4.4',
-                44 => '4.4.0',
-                45 => '4.5',
-                46 => '4.5.0',
-                47 => '4.6',
-                48 => '4.6.0',
-                49 => '5.0',
-                50 => '5.0.0',
-                51 => '5.0.0-cibuild',
-                52 => '5.0.0-snapshot1',
-                53 => '5.0.0-snapshot2',
-                54 => '5.0.0-ballot',
-                55 => '5.0.0-snapshot3',
-                56 => '5.0.0-draft-final',
-            ],
-        ],
-    ];
+    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:136 */
+    /* class_default.php:143 */
     /**
      * @return string
      */
@@ -168,46 +108,7 @@ class FHIRFHIRVersionEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:188 */
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
-     * was generated from.
-     *
-     * An empty array indicates no validation errors occurred.
-     *
-     * @return array
-     */
-    public function _getValidationErrors(): array
-    {
-        $errs = parent::_getValidationErrors();
-        $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_VALUE])) {
-            $v = $this->getValue();
-            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE])) {
-                        $errs[self::FIELD_VALUE] = [];
-                    }
-                    $errs[self::FIELD_VALUE][$rule] = $err;
-                }
-            }
-        }
-        return $errs;
-    }
-
-    /* class_default.php:211 */
+    /* class_default.php:195 */
 
     /**
      * @return null|string

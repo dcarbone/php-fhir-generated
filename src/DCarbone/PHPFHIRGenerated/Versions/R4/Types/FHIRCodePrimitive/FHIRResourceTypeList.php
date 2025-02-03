@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,177 +63,26 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
-use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
 
 class FHIRResourceTypeList extends FHIRCodePrimitive
-{    // name of FHIR type this class describes
+{
+    use TypeValidationsTrait;
+
+    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESOURCE_TYPE_HYPHEN_LIST;
 
     /* class_default.php:47 */
 
     /* class_default.php:66 */
-    private static array $_validationRules = [
-        self::FIELD_VALUE => [
-            Constants::VALIDATE_ENUM => [
-                0 => 'Account',
-                1 => 'ActivityDefinition',
-                2 => 'AdverseEvent',
-                3 => 'AllergyIntolerance',
-                4 => 'Appointment',
-                5 => 'AppointmentResponse',
-                6 => 'AuditEvent',
-                7 => 'Basic',
-                8 => 'Binary',
-                9 => 'BiologicallyDerivedProduct',
-                10 => 'BodyStructure',
-                11 => 'Bundle',
-                12 => 'CapabilityStatement',
-                13 => 'CarePlan',
-                14 => 'CareTeam',
-                15 => 'CatalogEntry',
-                16 => 'ChargeItem',
-                17 => 'ChargeItemDefinition',
-                18 => 'Claim',
-                19 => 'ClaimResponse',
-                20 => 'ClinicalImpression',
-                21 => 'CodeSystem',
-                22 => 'Communication',
-                23 => 'CommunicationRequest',
-                24 => 'CompartmentDefinition',
-                25 => 'Composition',
-                26 => 'ConceptMap',
-                27 => 'Condition',
-                28 => 'Consent',
-                29 => 'Contract',
-                30 => 'Coverage',
-                31 => 'CoverageEligibilityRequest',
-                32 => 'CoverageEligibilityResponse',
-                33 => 'DetectedIssue',
-                34 => 'Device',
-                35 => 'DeviceDefinition',
-                36 => 'DeviceMetric',
-                37 => 'DeviceRequest',
-                38 => 'DeviceUseStatement',
-                39 => 'DiagnosticReport',
-                40 => 'DocumentManifest',
-                41 => 'DocumentReference',
-                42 => 'DomainResource',
-                43 => 'EffectEvidenceSynthesis',
-                44 => 'Encounter',
-                45 => 'Endpoint',
-                46 => 'EnrollmentRequest',
-                47 => 'EnrollmentResponse',
-                48 => 'EpisodeOfCare',
-                49 => 'EventDefinition',
-                50 => 'Evidence',
-                51 => 'EvidenceVariable',
-                52 => 'ExampleScenario',
-                53 => 'ExplanationOfBenefit',
-                54 => 'FamilyMemberHistory',
-                55 => 'Flag',
-                56 => 'Goal',
-                57 => 'GraphDefinition',
-                58 => 'Group',
-                59 => 'GuidanceResponse',
-                60 => 'HealthcareService',
-                61 => 'ImagingStudy',
-                62 => 'Immunization',
-                63 => 'ImmunizationEvaluation',
-                64 => 'ImmunizationRecommendation',
-                65 => 'ImplementationGuide',
-                66 => 'InsurancePlan',
-                67 => 'Invoice',
-                68 => 'Library',
-                69 => 'Linkage',
-                70 => 'List',
-                71 => 'Location',
-                72 => 'Measure',
-                73 => 'MeasureReport',
-                74 => 'Media',
-                75 => 'Medication',
-                76 => 'MedicationAdministration',
-                77 => 'MedicationDispense',
-                78 => 'MedicationKnowledge',
-                79 => 'MedicationRequest',
-                80 => 'MedicationStatement',
-                81 => 'MedicinalProduct',
-                82 => 'MedicinalProductAuthorization',
-                83 => 'MedicinalProductContraindication',
-                84 => 'MedicinalProductIndication',
-                85 => 'MedicinalProductIngredient',
-                86 => 'MedicinalProductInteraction',
-                87 => 'MedicinalProductManufactured',
-                88 => 'MedicinalProductPackaged',
-                89 => 'MedicinalProductPharmaceutical',
-                90 => 'MedicinalProductUndesirableEffect',
-                91 => 'MessageDefinition',
-                92 => 'MessageHeader',
-                93 => 'MolecularSequence',
-                94 => 'NamingSystem',
-                95 => 'NutritionOrder',
-                96 => 'Observation',
-                97 => 'ObservationDefinition',
-                98 => 'OperationDefinition',
-                99 => 'OperationOutcome',
-                100 => 'Organization',
-                101 => 'OrganizationAffiliation',
-                102 => 'Parameters',
-                103 => 'Patient',
-                104 => 'PaymentNotice',
-                105 => 'PaymentReconciliation',
-                106 => 'Person',
-                107 => 'PlanDefinition',
-                108 => 'Practitioner',
-                109 => 'PractitionerRole',
-                110 => 'Procedure',
-                111 => 'Provenance',
-                112 => 'Questionnaire',
-                113 => 'QuestionnaireResponse',
-                114 => 'RelatedPerson',
-                115 => 'RequestGroup',
-                116 => 'ResearchDefinition',
-                117 => 'ResearchElementDefinition',
-                118 => 'ResearchStudy',
-                119 => 'ResearchSubject',
-                120 => 'Resource',
-                121 => 'RiskAssessment',
-                122 => 'RiskEvidenceSynthesis',
-                123 => 'Schedule',
-                124 => 'SearchParameter',
-                125 => 'ServiceRequest',
-                126 => 'Slot',
-                127 => 'Specimen',
-                128 => 'SpecimenDefinition',
-                129 => 'StructureDefinition',
-                130 => 'StructureMap',
-                131 => 'Subscription',
-                132 => 'Substance',
-                133 => 'SubstanceNucleicAcid',
-                134 => 'SubstancePolymer',
-                135 => 'SubstanceProtein',
-                136 => 'SubstanceReferenceInformation',
-                137 => 'SubstanceSourceMaterial',
-                138 => 'SubstanceSpecification',
-                139 => 'SupplyDelivery',
-                140 => 'SupplyRequest',
-                141 => 'Task',
-                142 => 'TerminologyCapabilities',
-                143 => 'TestReport',
-                144 => 'TestScript',
-                145 => 'ValueSet',
-                146 => 'VerificationResult',
-                147 => 'VisionPrescription',
-            ],
-        ],
-    ];
+    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:107 */
-    /** @var string */
-    protected string $value;
+    /* class_default.php:111 */
 
-    /* class_default.php:136 */
+    /* class_default.php:143 */
     /**
      * @return string
      */
@@ -242,69 +91,7 @@ class FHIRResourceTypeList extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:188 */
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
-     * was generated from.
-     *
-     * An empty array indicates no validation errors occurred.
-     *
-     * @return array
-     */
-    public function _getValidationErrors(): array
-    {
-        $errs = parent::_getValidationErrors();
-        $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_VALUE]) && null !== $this->value) {
-            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $this->_getFormattedValue());
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE])) {
-                        $errs[self::FIELD_VALUE] = [];
-                    }
-                    $errs[self::FIELD_VALUE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE])) {
-            $v = $this->getValue();
-            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE])) {
-                        $errs[self::FIELD_VALUE] = [];
-                    }
-                    $errs[self::FIELD_VALUE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE])) {
-            $v = $this->getValue();
-            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE])) {
-                        $errs[self::FIELD_VALUE] = [];
-                    }
-                    $errs[self::FIELD_VALUE][$rule] = $err;
-                }
-            }
-        }
-        return $errs;
-    }
-
-    /* class_default.php:211 */
+    /* class_default.php:195 */
 
     /**
      * @return null|string

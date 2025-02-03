@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,11 +87,11 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
+use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
@@ -104,7 +104,8 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
 {
-    use CommentContainerTrait,
+    use TypeValidationsTrait,
+        CommentContainerTrait,
         SourceXMLNamespaceTrait;
 
     // name of FHIR type this class describes
@@ -120,16 +121,17 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
     public const FIELD_LANGUAGE_EXT = '_language';
 
     /* class_default.php:66 */
-    private static array $_validationRules = [];
+    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:91 */
+    /* class_default.php:95 */
     private array $_valueXMLLocations = [
         self::FIELD_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_IMPLICIT_RULES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LANGUAGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:111 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -180,7 +182,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
      */
     protected FHIRCode $language;
 
-    /* constructor.php:63 */
+    /* constructor.php:62 */
     /**
      * FHIRResource Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $id
@@ -212,7 +214,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
         }
     }
 
-    /* class_default.php:136 */
+    /* class_default.php:143 */
     /**
      * @return string
      */
@@ -221,7 +223,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:169 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -472,34 +474,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
         return $this;
     }
 
-    /* class_default.php:188 */
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
-     * was generated from.
-     *
-     * An empty array indicates no validation errors occurred.
-     *
-     * @return array
-     */
-    public function _getValidationErrors(): array
-    {
-        $errs = [];
-        $validationRules = $this->_getValidationRules();
-        return $errs;
-    }
-
-    /* class_default.php:211 */
+    /* class_default.php:195 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -755,7 +730,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
         return $out;
     }
 
-    /* class_default.php:238 */
+    /* class_default.php:222 */
     /**
      * @return string
      */

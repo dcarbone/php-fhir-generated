@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,7 +67,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal;
@@ -82,7 +82,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIntegerPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIREventTimingList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRUnitsOfTimeList;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
 
 /**
@@ -94,7 +93,10 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  * elements, an \@id referenced from the Narrative, or extensions
  */
 class FHIRTimingRepeat extends FHIRElement
-{    // name of FHIR type this class describes
+{
+    use TypeValidationsTrait;
+
+    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TIMING_DOT_REPEAT;
 
     /* class_default.php:47 */
@@ -123,9 +125,10 @@ class FHIRTimingRepeat extends FHIRElement
     public const FIELD_WHEN_EXT = '_when';
 
     /* class_default.php:66 */
-    private static array $_validationRules = [];
+    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:91 */
+    /* class_default.php:95 */
     private array $_valueXMLLocations = [
         self::FIELD_COUNT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DURATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -139,7 +142,7 @@ class FHIRTimingRepeat extends FHIRElement
         self::FIELD_WHEN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:111 */
     /**
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
@@ -276,7 +279,7 @@ class FHIRTimingRepeat extends FHIRElement
      */
     protected FHIREventTiming $when;
 
-    /* constructor.php:63 */
+    /* constructor.php:62 */
     /**
      * FHIRTimingRepeat Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
@@ -357,7 +360,7 @@ class FHIRTimingRepeat extends FHIRElement
         }
     }
 
-    /* class_default.php:136 */
+    /* class_default.php:143 */
     /**
      * @return string
      */
@@ -366,7 +369,7 @@ class FHIRTimingRepeat extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:169 */
     /**
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
@@ -1139,214 +1142,7 @@ class FHIRTimingRepeat extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:188 */
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
-     * was generated from.
-     *
-     * An empty array indicates no validation errors occurred.
-     *
-     * @return array
-     */
-    public function _getValidationErrors(): array
-    {
-        $errs = parent::_getValidationErrors();
-        $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_BOUNDS_QUANTITY])) {
-            $v = $this->getBoundsQuantity();
-            foreach($validationRules[self::FIELD_BOUNDS_QUANTITY] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_BOUNDS_QUANTITY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BOUNDS_QUANTITY])) {
-                        $errs[self::FIELD_BOUNDS_QUANTITY] = [];
-                    }
-                    $errs[self::FIELD_BOUNDS_QUANTITY][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_BOUNDS_RANGE])) {
-            $v = $this->getBoundsRange();
-            foreach($validationRules[self::FIELD_BOUNDS_RANGE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_BOUNDS_RANGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BOUNDS_RANGE])) {
-                        $errs[self::FIELD_BOUNDS_RANGE] = [];
-                    }
-                    $errs[self::FIELD_BOUNDS_RANGE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_BOUNDS_PERIOD])) {
-            $v = $this->getBoundsPeriod();
-            foreach($validationRules[self::FIELD_BOUNDS_PERIOD] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_BOUNDS_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BOUNDS_PERIOD])) {
-                        $errs[self::FIELD_BOUNDS_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_BOUNDS_PERIOD][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_COUNT])) {
-            $v = $this->getCount();
-            foreach($validationRules[self::FIELD_COUNT] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_COUNT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COUNT])) {
-                        $errs[self::FIELD_COUNT] = [];
-                    }
-                    $errs[self::FIELD_COUNT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DURATION])) {
-            $v = $this->getDuration();
-            foreach($validationRules[self::FIELD_DURATION] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_DURATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DURATION])) {
-                        $errs[self::FIELD_DURATION] = [];
-                    }
-                    $errs[self::FIELD_DURATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DURATION_MAX])) {
-            $v = $this->getDurationMax();
-            foreach($validationRules[self::FIELD_DURATION_MAX] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_DURATION_MAX, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DURATION_MAX])) {
-                        $errs[self::FIELD_DURATION_MAX] = [];
-                    }
-                    $errs[self::FIELD_DURATION_MAX][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DURATION_UNITS])) {
-            $v = $this->getDurationUnits();
-            foreach($validationRules[self::FIELD_DURATION_UNITS] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_DURATION_UNITS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DURATION_UNITS])) {
-                        $errs[self::FIELD_DURATION_UNITS] = [];
-                    }
-                    $errs[self::FIELD_DURATION_UNITS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_FREQUENCY])) {
-            $v = $this->getFrequency();
-            foreach($validationRules[self::FIELD_FREQUENCY] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_FREQUENCY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FREQUENCY])) {
-                        $errs[self::FIELD_FREQUENCY] = [];
-                    }
-                    $errs[self::FIELD_FREQUENCY][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_FREQUENCY_MAX])) {
-            $v = $this->getFrequencyMax();
-            foreach($validationRules[self::FIELD_FREQUENCY_MAX] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_FREQUENCY_MAX, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FREQUENCY_MAX])) {
-                        $errs[self::FIELD_FREQUENCY_MAX] = [];
-                    }
-                    $errs[self::FIELD_FREQUENCY_MAX][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PERIOD])) {
-            $v = $this->getPeriod();
-            foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PERIOD])) {
-                        $errs[self::FIELD_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_PERIOD][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PERIOD_MAX])) {
-            $v = $this->getPeriodMax();
-            foreach($validationRules[self::FIELD_PERIOD_MAX] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_PERIOD_MAX, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PERIOD_MAX])) {
-                        $errs[self::FIELD_PERIOD_MAX] = [];
-                    }
-                    $errs[self::FIELD_PERIOD_MAX][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PERIOD_UNITS])) {
-            $v = $this->getPeriodUnits();
-            foreach($validationRules[self::FIELD_PERIOD_UNITS] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_PERIOD_UNITS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PERIOD_UNITS])) {
-                        $errs[self::FIELD_PERIOD_UNITS] = [];
-                    }
-                    $errs[self::FIELD_PERIOD_UNITS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_WHEN])) {
-            $v = $this->getWhen();
-            foreach($validationRules[self::FIELD_WHEN] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_WHEN, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_WHEN])) {
-                        $errs[self::FIELD_WHEN] = [];
-                    }
-                    $errs[self::FIELD_WHEN][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_EXTENSION])) {
-            $v = $this->getExtension();
-            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_EXTENSION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXTENSION])) {
-                        $errs[self::FIELD_EXTENSION] = [];
-                    }
-                    $errs[self::FIELD_EXTENSION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ID])) {
-            $v = $this->getId();
-            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ID, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ID])) {
-                        $errs[self::FIELD_ID] = [];
-                    }
-                    $errs[self::FIELD_ID][$rule] = $err;
-                }
-            }
-        }
-        return $errs;
-    }
-
-    /* class_default.php:211 */
+    /* class_default.php:195 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

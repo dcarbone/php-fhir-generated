@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
@@ -97,7 +97,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
 
 /**
@@ -107,7 +106,10 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * expressing complex contributorship roles, and referencing computable resources.
  */
 class FHIRCitationPublicationForm extends FHIRBackboneElement
-{    // name of FHIR type this class describes
+{
+    use TypeValidationsTrait;
+
+    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CITATION_DOT_PUBLICATION_FORM;
 
     /* class_default.php:47 */
@@ -140,9 +142,10 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
     public const FIELD_COPYRIGHT_EXT = '_copyright';
 
     /* class_default.php:66 */
-    private static array $_validationRules = [];
+    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:91 */
+    /* class_default.php:95 */
     private array $_valueXMLLocations = [
         self::FIELD_VOLUME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ISSUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -158,7 +161,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
         self::FIELD_COPYRIGHT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:111 */
     /**
      * The Citation Resource enables reference to any knowledge artifact for purposes
      * of identification and attribution. The Citation Resource supports existing
@@ -337,7 +340,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      */
     protected FHIRMarkdown $copyright;
 
-    /* constructor.php:63 */
+    /* constructor.php:62 */
     /**
      * FHIRCitationPublicationForm Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -431,7 +434,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:136 */
+    /* class_default.php:143 */
     /**
      * @return string
      */
@@ -440,7 +443,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:169 */
     /**
      * The Citation Resource enables reference to any knowledge artifact for purposes
      * of identification and attribution. The Citation Resource supports existing
@@ -1420,250 +1423,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:188 */
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
-     * was generated from.
-     *
-     * An empty array indicates no validation errors occurred.
-     *
-     * @return array
-     */
-    public function _getValidationErrors(): array
-    {
-        $errs = parent::_getValidationErrors();
-        $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_PUBLISHED_IN])) {
-            $v = $this->getPublishedIn();
-            foreach($validationRules[self::FIELD_PUBLISHED_IN] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_PUBLISHED_IN, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PUBLISHED_IN])) {
-                        $errs[self::FIELD_PUBLISHED_IN] = [];
-                    }
-                    $errs[self::FIELD_PUBLISHED_IN][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CITED_MEDIUM])) {
-            $v = $this->getCitedMedium();
-            foreach($validationRules[self::FIELD_CITED_MEDIUM] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_CITED_MEDIUM, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CITED_MEDIUM])) {
-                        $errs[self::FIELD_CITED_MEDIUM] = [];
-                    }
-                    $errs[self::FIELD_CITED_MEDIUM][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VOLUME])) {
-            $v = $this->getVolume();
-            foreach($validationRules[self::FIELD_VOLUME] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VOLUME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VOLUME])) {
-                        $errs[self::FIELD_VOLUME] = [];
-                    }
-                    $errs[self::FIELD_VOLUME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ISSUE])) {
-            $v = $this->getIssue();
-            foreach($validationRules[self::FIELD_ISSUE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ISSUE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ISSUE])) {
-                        $errs[self::FIELD_ISSUE] = [];
-                    }
-                    $errs[self::FIELD_ISSUE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ARTICLE_DATE])) {
-            $v = $this->getArticleDate();
-            foreach($validationRules[self::FIELD_ARTICLE_DATE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ARTICLE_DATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ARTICLE_DATE])) {
-                        $errs[self::FIELD_ARTICLE_DATE] = [];
-                    }
-                    $errs[self::FIELD_ARTICLE_DATE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PUBLICATION_DATE_TEXT])) {
-            $v = $this->getPublicationDateText();
-            foreach($validationRules[self::FIELD_PUBLICATION_DATE_TEXT] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_PUBLICATION_DATE_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PUBLICATION_DATE_TEXT])) {
-                        $errs[self::FIELD_PUBLICATION_DATE_TEXT] = [];
-                    }
-                    $errs[self::FIELD_PUBLICATION_DATE_TEXT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PUBLICATION_DATE_SEASON])) {
-            $v = $this->getPublicationDateSeason();
-            foreach($validationRules[self::FIELD_PUBLICATION_DATE_SEASON] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_PUBLICATION_DATE_SEASON, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PUBLICATION_DATE_SEASON])) {
-                        $errs[self::FIELD_PUBLICATION_DATE_SEASON] = [];
-                    }
-                    $errs[self::FIELD_PUBLICATION_DATE_SEASON][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_LAST_REVISION_DATE])) {
-            $v = $this->getLastRevisionDate();
-            foreach($validationRules[self::FIELD_LAST_REVISION_DATE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_LAST_REVISION_DATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LAST_REVISION_DATE])) {
-                        $errs[self::FIELD_LAST_REVISION_DATE] = [];
-                    }
-                    $errs[self::FIELD_LAST_REVISION_DATE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_LANGUAGE])) {
-            $v = $this->getLanguage();
-            foreach($validationRules[self::FIELD_LANGUAGE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_LANGUAGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LANGUAGE])) {
-                        $errs[self::FIELD_LANGUAGE] = [];
-                    }
-                    $errs[self::FIELD_LANGUAGE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ACCESSION_NUMBER])) {
-            $v = $this->getAccessionNumber();
-            foreach($validationRules[self::FIELD_ACCESSION_NUMBER] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ACCESSION_NUMBER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ACCESSION_NUMBER])) {
-                        $errs[self::FIELD_ACCESSION_NUMBER] = [];
-                    }
-                    $errs[self::FIELD_ACCESSION_NUMBER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PAGE_STRING])) {
-            $v = $this->getPageString();
-            foreach($validationRules[self::FIELD_PAGE_STRING] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_PAGE_STRING, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PAGE_STRING])) {
-                        $errs[self::FIELD_PAGE_STRING] = [];
-                    }
-                    $errs[self::FIELD_PAGE_STRING][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_FIRST_PAGE])) {
-            $v = $this->getFirstPage();
-            foreach($validationRules[self::FIELD_FIRST_PAGE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_FIRST_PAGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FIRST_PAGE])) {
-                        $errs[self::FIELD_FIRST_PAGE] = [];
-                    }
-                    $errs[self::FIELD_FIRST_PAGE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_LAST_PAGE])) {
-            $v = $this->getLastPage();
-            foreach($validationRules[self::FIELD_LAST_PAGE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_LAST_PAGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LAST_PAGE])) {
-                        $errs[self::FIELD_LAST_PAGE] = [];
-                    }
-                    $errs[self::FIELD_LAST_PAGE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PAGE_COUNT])) {
-            $v = $this->getPageCount();
-            foreach($validationRules[self::FIELD_PAGE_COUNT] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_PAGE_COUNT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PAGE_COUNT])) {
-                        $errs[self::FIELD_PAGE_COUNT] = [];
-                    }
-                    $errs[self::FIELD_PAGE_COUNT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_COPYRIGHT])) {
-            $v = $this->getCopyright();
-            foreach($validationRules[self::FIELD_COPYRIGHT] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_COPYRIGHT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COPYRIGHT])) {
-                        $errs[self::FIELD_COPYRIGHT] = [];
-                    }
-                    $errs[self::FIELD_COPYRIGHT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
-            $v = $this->getModifierExtension();
-            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
-                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
-                    }
-                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_EXTENSION])) {
-            $v = $this->getExtension();
-            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_EXTENSION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXTENSION])) {
-                        $errs[self::FIELD_EXTENSION] = [];
-                    }
-                    $errs[self::FIELD_EXTENSION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ID])) {
-            $v = $this->getId();
-            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ID, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ID])) {
-                        $errs[self::FIELD_ID] = [];
-                    }
-                    $errs[self::FIELD_ID][$rule] = $err;
-                }
-            }
-        }
-        return $errs;
-    }
-
-    /* class_default.php:211 */
+    /* class_default.php:195 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

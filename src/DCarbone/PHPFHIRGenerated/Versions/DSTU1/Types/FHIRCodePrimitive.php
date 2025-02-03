@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,14 +58,15 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
-use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
+use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
 class FHIRCodePrimitive implements PrimitiveTypeInterface
 {
-    use SourceXMLNamespaceTrait;
+    use TypeValidationsTrait,
+        SourceXMLNamespaceTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CODE_HYPHEN_PRIMITIVE;
@@ -74,17 +75,18 @@ class FHIRCodePrimitive implements PrimitiveTypeInterface
     public const FIELD_VALUE = 'value';
 
     /* class_default.php:66 */
-    private static array $_validationRules = [
+    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
             Constants::VALIDATE_MIN_LENGTH => 1,
         ],
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:111 */
     /** @var string */
     protected string $value;
 
-    /* constructor.php:50 */
+    /* constructor.php:49 */
     /**
      * FHIRCodePrimitive Constructor
      * @param null|string $value
@@ -94,7 +96,7 @@ class FHIRCodePrimitive implements PrimitiveTypeInterface
         $this->setValue(value: $value);
     }
 
-    /* class_default.php:136 */
+    /* class_default.php:143 */
     /**
      * @return string
      */
@@ -103,7 +105,7 @@ class FHIRCodePrimitive implements PrimitiveTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:169 */
     /**
      * @return null|string
      */
@@ -134,45 +136,7 @@ class FHIRCodePrimitive implements PrimitiveTypeInterface
         return (string)$this->getValue();
     }
 
-    /* class_default.php:188 */
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
-     * was generated from.
-     *
-     * An empty array indicates no validation errors occurred.
-     *
-     * @return array
-     */
-    public function _getValidationErrors(): array
-    {
-        $errs = [];
-        $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_VALUE]) && null !== $this->value) {
-            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $this->_getFormattedValue());
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE])) {
-                        $errs[self::FIELD_VALUE] = [];
-                    }
-                    $errs[self::FIELD_VALUE][$rule] = $err;
-                }
-            }
-        }
-        return $errs;
-    }
-
-    /* class_default.php:211 */
+    /* class_default.php:195 */
 
     /**
      * @return null|string
@@ -182,7 +146,7 @@ class FHIRCodePrimitive implements PrimitiveTypeInterface
         return $this->getValue();
     }
 
-    /* class_default.php:238 */
+    /* class_default.php:222 */
     /**
      * @return string
      */

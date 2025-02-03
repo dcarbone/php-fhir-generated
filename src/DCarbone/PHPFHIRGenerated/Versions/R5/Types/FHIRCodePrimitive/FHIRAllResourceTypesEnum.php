@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,188 +83,23 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
-use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
 
 class FHIRAllResourceTypesEnum extends FHIRCodePrimitive
-{    // name of FHIR type this class describes
+{
+    use TypeValidationsTrait;
+
+    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ALL_RESOURCE_TYPES_ENUM;
 
 
     /* class_default.php:66 */
-    private static array $_validationRules = [
-        self::FIELD_VALUE => [
-            Constants::VALIDATE_PATTERN => '/^[^\\s]+( [^\\s]+)*$/',
-            Constants::VALIDATE_MIN_LENGTH => 1,
-            Constants::VALIDATE_ENUM => [
-                0 => 'Account',
-                1 => 'ActivityDefinition',
-                2 => 'ActorDefinition',
-                3 => 'AdministrableProductDefinition',
-                4 => 'AdverseEvent',
-                5 => 'AllergyIntolerance',
-                6 => 'Appointment',
-                7 => 'AppointmentResponse',
-                8 => 'ArtifactAssessment',
-                9 => 'AuditEvent',
-                10 => 'Basic',
-                11 => 'Binary',
-                12 => 'BiologicallyDerivedProduct',
-                13 => 'BiologicallyDerivedProductDispense',
-                14 => 'BodyStructure',
-                15 => 'Bundle',
-                16 => 'CanonicalResource',
-                17 => 'CapabilityStatement',
-                18 => 'CarePlan',
-                19 => 'CareTeam',
-                20 => 'ChargeItem',
-                21 => 'ChargeItemDefinition',
-                22 => 'Citation',
-                23 => 'Claim',
-                24 => 'ClaimResponse',
-                25 => 'ClinicalImpression',
-                26 => 'ClinicalUseDefinition',
-                27 => 'CodeSystem',
-                28 => 'Communication',
-                29 => 'CommunicationRequest',
-                30 => 'CompartmentDefinition',
-                31 => 'Composition',
-                32 => 'ConceptMap',
-                33 => 'Condition',
-                34 => 'ConditionDefinition',
-                35 => 'Consent',
-                36 => 'Contract',
-                37 => 'Coverage',
-                38 => 'CoverageEligibilityRequest',
-                39 => 'CoverageEligibilityResponse',
-                40 => 'DetectedIssue',
-                41 => 'Device',
-                42 => 'DeviceAssociation',
-                43 => 'DeviceDefinition',
-                44 => 'DeviceDispense',
-                45 => 'DeviceMetric',
-                46 => 'DeviceRequest',
-                47 => 'DeviceUsage',
-                48 => 'DiagnosticReport',
-                49 => 'DocumentReference',
-                50 => 'DomainResource',
-                51 => 'Encounter',
-                52 => 'EncounterHistory',
-                53 => 'Endpoint',
-                54 => 'EnrollmentRequest',
-                55 => 'EnrollmentResponse',
-                56 => 'EpisodeOfCare',
-                57 => 'EventDefinition',
-                58 => 'Evidence',
-                59 => 'EvidenceReport',
-                60 => 'EvidenceVariable',
-                61 => 'ExampleScenario',
-                62 => 'ExplanationOfBenefit',
-                63 => 'FamilyMemberHistory',
-                64 => 'Flag',
-                65 => 'FormularyItem',
-                66 => 'GenomicStudy',
-                67 => 'Goal',
-                68 => 'GraphDefinition',
-                69 => 'Group',
-                70 => 'GuidanceResponse',
-                71 => 'HealthcareService',
-                72 => 'ImagingSelection',
-                73 => 'ImagingStudy',
-                74 => 'Immunization',
-                75 => 'ImmunizationEvaluation',
-                76 => 'ImmunizationRecommendation',
-                77 => 'ImplementationGuide',
-                78 => 'Ingredient',
-                79 => 'InsurancePlan',
-                80 => 'InventoryItem',
-                81 => 'InventoryReport',
-                82 => 'Invoice',
-                83 => 'Library',
-                84 => 'Linkage',
-                85 => 'List',
-                86 => 'Location',
-                87 => 'ManufacturedItemDefinition',
-                88 => 'Measure',
-                89 => 'MeasureReport',
-                90 => 'Medication',
-                91 => 'MedicationAdministration',
-                92 => 'MedicationDispense',
-                93 => 'MedicationKnowledge',
-                94 => 'MedicationRequest',
-                95 => 'MedicationStatement',
-                96 => 'MedicinalProductDefinition',
-                97 => 'MessageDefinition',
-                98 => 'MessageHeader',
-                99 => 'MetadataResource',
-                100 => 'MolecularSequence',
-                101 => 'NamingSystem',
-                102 => 'NutritionIntake',
-                103 => 'NutritionOrder',
-                104 => 'NutritionProduct',
-                105 => 'Observation',
-                106 => 'ObservationDefinition',
-                107 => 'OperationDefinition',
-                108 => 'OperationOutcome',
-                109 => 'Organization',
-                110 => 'OrganizationAffiliation',
-                111 => 'PackagedProductDefinition',
-                112 => 'Parameters',
-                113 => 'Patient',
-                114 => 'PaymentNotice',
-                115 => 'PaymentReconciliation',
-                116 => 'Permission',
-                117 => 'Person',
-                118 => 'PlanDefinition',
-                119 => 'Practitioner',
-                120 => 'PractitionerRole',
-                121 => 'Procedure',
-                122 => 'Provenance',
-                123 => 'Questionnaire',
-                124 => 'QuestionnaireResponse',
-                125 => 'RegulatedAuthorization',
-                126 => 'RelatedPerson',
-                127 => 'RequestOrchestration',
-                128 => 'Requirements',
-                129 => 'ResearchStudy',
-                130 => 'ResearchSubject',
-                131 => 'Resource',
-                132 => 'RiskAssessment',
-                133 => 'Schedule',
-                134 => 'SearchParameter',
-                135 => 'ServiceRequest',
-                136 => 'Slot',
-                137 => 'Specimen',
-                138 => 'SpecimenDefinition',
-                139 => 'StructureDefinition',
-                140 => 'StructureMap',
-                141 => 'Subscription',
-                142 => 'SubscriptionStatus',
-                143 => 'SubscriptionTopic',
-                144 => 'Substance',
-                145 => 'SubstanceDefinition',
-                146 => 'SubstanceNucleicAcid',
-                147 => 'SubstancePolymer',
-                148 => 'SubstanceProtein',
-                149 => 'SubstanceReferenceInformation',
-                150 => 'SubstanceSourceMaterial',
-                151 => 'SupplyDelivery',
-                152 => 'SupplyRequest',
-                153 => 'Task',
-                154 => 'TerminologyCapabilities',
-                155 => 'TestPlan',
-                156 => 'TestReport',
-                157 => 'TestScript',
-                158 => 'Transport',
-                159 => 'ValueSet',
-                160 => 'VerificationResult',
-                161 => 'VisionPrescription',
-            ],
-        ],
-    ];
+    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:136 */
+    /* class_default.php:143 */
     /**
      * @return string
      */
@@ -273,46 +108,7 @@ class FHIRAllResourceTypesEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:188 */
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
-     * was generated from.
-     *
-     * An empty array indicates no validation errors occurred.
-     *
-     * @return array
-     */
-    public function _getValidationErrors(): array
-    {
-        $errs = parent::_getValidationErrors();
-        $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_VALUE])) {
-            $v = $this->getValue();
-            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE])) {
-                        $errs[self::FIELD_VALUE] = [];
-                    }
-                    $errs[self::FIELD_VALUE][$rule] = $err;
-                }
-            }
-        }
-        return $errs;
-    }
-
-    /* class_default.php:211 */
+    /* class_default.php:195 */
 
     /**
      * @return null|string

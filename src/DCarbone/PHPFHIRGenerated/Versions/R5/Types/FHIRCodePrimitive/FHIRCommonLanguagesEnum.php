@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,108 +83,23 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
-use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
 
 class FHIRCommonLanguagesEnum extends FHIRCodePrimitive
-{    // name of FHIR type this class describes
+{
+    use TypeValidationsTrait;
+
+    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COMMON_LANGUAGES_ENUM;
 
 
     /* class_default.php:66 */
-    private static array $_validationRules = [
-        self::FIELD_VALUE => [
-            Constants::VALIDATE_PATTERN => '/^[^\\s]+( [^\\s]+)*$/',
-            Constants::VALIDATE_MIN_LENGTH => 1,
-            Constants::VALIDATE_ENUM => [
-                0 => 'ar',
-                1 => 'bg',
-                2 => 'bg-BG',
-                3 => 'bn',
-                4 => 'cs',
-                5 => 'cs-CZ',
-                6 => 'bs',
-                7 => 'bs-BA',
-                8 => 'da',
-                9 => 'da-DK',
-                10 => 'de',
-                11 => 'de-AT',
-                12 => 'de-CH',
-                13 => 'de-DE',
-                14 => 'el',
-                15 => 'el-GR',
-                16 => 'en',
-                17 => 'en-AU',
-                18 => 'en-CA',
-                19 => 'en-GB',
-                20 => 'en-IN',
-                21 => 'en-NZ',
-                22 => 'en-SG',
-                23 => 'en-US',
-                24 => 'es',
-                25 => 'es-AR',
-                26 => 'es-ES',
-                27 => 'es-UY',
-                28 => 'et',
-                29 => 'et-EE',
-                30 => 'fi',
-                31 => 'fr',
-                32 => 'fr-BE',
-                33 => 'fr-CH',
-                34 => 'fr-FR',
-                35 => 'fi-FI',
-                36 => 'fr-CA',
-                37 => 'fy',
-                38 => 'fy-NL',
-                39 => 'hi',
-                40 => 'hr',
-                41 => 'hr-HR',
-                42 => 'is',
-                43 => 'is-IS',
-                44 => 'it',
-                45 => 'it-CH',
-                46 => 'it-IT',
-                47 => 'ja',
-                48 => 'ko',
-                49 => 'lt',
-                50 => 'lt-LT',
-                51 => 'lv',
-                52 => 'lv-LV',
-                53 => 'nl',
-                54 => 'nl-BE',
-                55 => 'nl-NL',
-                56 => 'no',
-                57 => 'no-NO',
-                58 => 'pa',
-                59 => 'pl',
-                60 => 'pl-PL',
-                61 => 'pt',
-                62 => 'pt-PT',
-                63 => 'pt-BR',
-                64 => 'ro',
-                65 => 'ro-RO',
-                66 => 'ru',
-                67 => 'ru-RU',
-                68 => 'sk',
-                69 => 'sk-SK',
-                70 => 'sl',
-                71 => 'sl-SI',
-                72 => 'sr',
-                73 => 'sr-RS',
-                74 => 'sv',
-                75 => 'sv-SE',
-                76 => 'te',
-                77 => 'zh',
-                78 => 'zh-CN',
-                79 => 'zh-HK',
-                80 => 'zh-SG',
-                81 => 'zh-TW',
-            ],
-        ],
-    ];
+    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:136 */
+    /* class_default.php:143 */
     /**
      * @return string
      */
@@ -193,46 +108,7 @@ class FHIRCommonLanguagesEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:188 */
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
-     * was generated from.
-     *
-     * An empty array indicates no validation errors occurred.
-     *
-     * @return array
-     */
-    public function _getValidationErrors(): array
-    {
-        $errs = parent::_getValidationErrors();
-        $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_VALUE])) {
-            $v = $this->getValue();
-            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE])) {
-                        $errs[self::FIELD_VALUE] = [];
-                    }
-                    $errs[self::FIELD_VALUE][$rule] = $err;
-                }
-            }
-        }
-        return $errs;
-    }
-
-    /* class_default.php:211 */
+    /* class_default.php:195 */
 
     /**
      * @return null|string

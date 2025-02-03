@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,77 +83,23 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
-use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
 
 class FHIROperationOutcomeCodesEnum extends FHIRCodePrimitive
-{    // name of FHIR type this class describes
+{
+    use TypeValidationsTrait;
+
+    // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OPERATION_OUTCOME_CODES_ENUM;
 
 
     /* class_default.php:66 */
-    private static array $_validationRules = [
-        self::FIELD_VALUE => [
-            Constants::VALIDATE_PATTERN => '/^[^\\s]+( [^\\s]+)*$/',
-            Constants::VALIDATE_MIN_LENGTH => 1,
-            Constants::VALIDATE_ENUM => [
-                0 => 'DELETE_MULTIPLE_MATCHES',
-                1 => 'MSG_AUTH_REQUIRED',
-                2 => 'MSG_BAD_FORMAT',
-                3 => 'MSG_BAD_SYNTAX',
-                4 => 'MSG_CANT_PARSE_CONTENT',
-                5 => 'MSG_CANT_PARSE_ROOT',
-                6 => 'MSG_CREATED',
-                7 => 'MSG_DATE_FORMAT',
-                8 => 'MSG_DELETED',
-                9 => 'MSG_DELETED_DONE',
-                10 => 'MSG_DELETED_ID',
-                11 => 'MSG_DUPLICATE_ID',
-                12 => 'MSG_ERROR_PARSING',
-                13 => 'MSG_ID_INVALID',
-                14 => 'MSG_ID_TOO_LONG',
-                15 => 'MSG_INVALID_ID',
-                16 => 'MSG_JSON_OBJECT',
-                17 => 'MSG_LOCAL_FAIL',
-                18 => 'MSG_NO_EXIST',
-                19 => 'MSG_NO_MATCH',
-                20 => 'MSG_NO_MODULE',
-                21 => 'MSG_NO_SUMMARY',
-                22 => 'MSG_OP_NOT_ALLOWED',
-                23 => 'MSG_PARAM_CHAINED',
-                24 => 'MSG_PARAM_INVALID',
-                25 => 'MSG_PARAM_MODIFIER_INVALID',
-                26 => 'MSG_PARAM_NO_REPEAT',
-                27 => 'MSG_PARAM_UNKNOWN',
-                28 => 'MSG_REMOTE_FAIL',
-                29 => 'MSG_RESOURCE_EXAMPLE_PROTECTED',
-                30 => 'MSG_RESOURCE_ID_FAIL',
-                31 => 'MSG_RESOURCE_ID_MISMATCH',
-                32 => 'MSG_RESOURCE_ID_MISSING',
-                33 => 'MSG_RESOURCE_NOT_ALLOWED',
-                34 => 'MSG_RESOURCE_REQUIRED',
-                35 => 'MSG_RESOURCE_TYPE_MISMATCH',
-                36 => 'MSG_SORT_UNKNOWN',
-                37 => 'MSG_TRANSACTION_DUPLICATE_ID',
-                38 => 'MSG_TRANSACTION_MISSING_ID',
-                39 => 'MSG_UNHANDLED_NODE_TYPE',
-                40 => 'MSG_UNKNOWN_CONTENT',
-                41 => 'MSG_UNKNOWN_OPERATION',
-                42 => 'MSG_UNKNOWN_TYPE',
-                43 => 'MSG_UPDATED',
-                44 => 'MSG_VERSION_AWARE',
-                45 => 'MSG_VERSION_AWARE_CONFLICT',
-                46 => 'MSG_VERSION_AWARE_URL',
-                47 => 'MSG_WRONG_NS',
-                48 => 'SEARCH_MULTIPLE',
-                49 => 'SEARCH_NONE',
-                50 => 'UPDATE_MULTIPLE_MATCHES',
-            ],
-        ],
-    ];
+    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:136 */
+    /* class_default.php:143 */
     /**
      * @return string
      */
@@ -162,46 +108,7 @@ class FHIROperationOutcomeCodesEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:188 */
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
-     * was generated from.
-     *
-     * An empty array indicates no validation errors occurred.
-     *
-     * @return array
-     */
-    public function _getValidationErrors(): array
-    {
-        $errs = parent::_getValidationErrors();
-        $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_VALUE])) {
-            $v = $this->getValue();
-            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE])) {
-                        $errs[self::FIELD_VALUE] = [];
-                    }
-                    $errs[self::FIELD_VALUE][$rule] = $err;
-                }
-            }
-        }
-        return $errs;
-    }
-
-    /* class_default.php:211 */
+    /* class_default.php:195 */
 
     /**
      * @return null|string

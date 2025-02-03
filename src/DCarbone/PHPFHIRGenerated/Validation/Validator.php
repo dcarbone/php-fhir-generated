@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -40,7 +40,7 @@ class Validator
      * @param null|array|\DCarbone\PHPFHIRGenerated\Types\TypeInterface $value
      * @return null|string
      */
-    public static function assertMinOccurs(string $typeName, string $fieldName, int $expected, null|array|TypeInterface $value): null|string
+    public static function assertMinOccurs(string $typeName, string $fieldName, int $expected, null|array|PrimitiveTypeInterface $value): null|string
     {
         if (0 >= $expected || (1 === $expected && $value instanceof TypeInterface)) {
             return null;
@@ -171,21 +171,24 @@ class Validator
     /**
      * @param string $typeName
      * @param string $fieldName
-     * @param string $ruleName
+     * @param string $rule
      * @param mixed $constraint
      * @param mixed $value
      * @return null|string
      */
-    public static function validateField(string $typeName, string $fieldName, string $ruleName, mixed $constraint, mixed $value): null|string
+    public static function validateField(string $typeName, string $fieldName, string $rule, mixed $constraint, mixed $value): null|string
     {
-        return match ($ruleName) {
+        if (null === $constraint) {
+            return null;
+        }
+        return match ($rule) {
             Constants::VALIDATE_ENUM => static::assertValueInEnum($typeName, $fieldName, $constraint, $value),
             Constants::VALIDATE_MIN_LENGTH => static::assertMinLength($typeName, $fieldName, $constraint, $value),
             Constants::VALIDATE_MAX_LENGTH => static::assertMaxLength($typeName, $fieldName, $constraint, $value),
             Constants::VALIDATE_MIN_OCCURS => static::assertMinOccurs($typeName, $fieldName, $constraint, $value),
             Constants::VALIDATE_MAX_OCCURS => static::assertMaxOccurs($typeName, $fieldName, $constraint, $value),
             Constants::VALIDATE_PATTERN => static::assertPatternMatch($typeName, $fieldName, $constraint, $value),
-            default => sprintf('Type "%s" specifies unknown validation for field "%s": Name "%s"; Constraint "%s"', $typeName, $fieldName, $ruleName, var_export($constraint, true)),
+            default => sprintf('Type "%s" specifies unknown validation for field "%s": Name "%s"; Constraint "%s"', $typeName, $fieldName, $rule, var_export($constraint, true)),
         };
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 1st, 2025 22:01+0000
+ * Class creation date: February 3rd, 2025 17:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -34,13 +34,6 @@ interface TypeInterface extends \JsonSerializable
      * @return string
      */
     public function _getFHIRTypeName(): string;
-
-    /**
-     * Must return an associative array in structure ["field" => ["rule" => {constraint}]] to be used during validation
-     *
-     * @return array
-     */
-    public function _getValidationRules(): array;
 
     /**
      * Must return associative array where, if there are validation errors, the keys are the names of fields within the
