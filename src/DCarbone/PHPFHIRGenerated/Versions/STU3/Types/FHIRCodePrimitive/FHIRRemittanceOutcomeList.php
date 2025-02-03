@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 17:23+0000
+ * Class creation date: February 3rd, 2025 17:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,13 +91,31 @@ class FHIRRemittanceOutcomeList extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:195 */
+    /* class_default.php:208 */
 
     /**
-     * @return null|string
+     * @param array $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRRemittanceOutcomeList $type
+     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRRemittanceOutcomeList
+     * @throws \Exception
      */
-    public function jsonSerialize(): mixed
+    public static function jsonUnserialize(array $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
-        return $this->getValue();
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRRemittanceOutcomeList)) {
+            throw new \RuntimeException(sprintf(
+                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        parent::jsonUnserialize($json, $config, $type); 
+        return $type;
     }
+
 }

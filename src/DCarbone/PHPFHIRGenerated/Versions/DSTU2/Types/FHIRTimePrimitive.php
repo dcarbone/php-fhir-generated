@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 17:23+0000
+ * Class creation date: February 3rd, 2025 17:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -161,7 +161,7 @@ class FHIRTimePrimitive implements PrimitiveTypeInterface
         return (string)$this->getValue();
     }
 
-    /* class_default.php:195 */
+    /* class_default.php:208 */
 
     /**
      * @return null|string
@@ -171,7 +171,7 @@ class FHIRTimePrimitive implements PrimitiveTypeInterface
         return $this->getValue();
     }
 
-    /* class_default.php:222 */
+    /* class_default.php:235 */
     /**
      * @return string
      */
