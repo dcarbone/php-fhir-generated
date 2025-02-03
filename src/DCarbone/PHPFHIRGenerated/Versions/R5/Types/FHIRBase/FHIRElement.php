@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 17:37+0000
+ * Class creation date: February 3rd, 2025 23:46+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
-class FHIRElement extends FHIRBase
+class FHIRElement extends FHIRBase implements ElementTypeInterface
 {
     use TypeValidationsTrait;
 
