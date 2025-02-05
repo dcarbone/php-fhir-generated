@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,6 +58,8 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -66,15 +68,16 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 class FHIRUuidPrimitive implements PrimitiveTypeInterface
 {
     use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait,
         SourceXMLNamespaceTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_UUID_HYPHEN_PRIMITIVE;
 
-    /* class_default.php:47 */
     public const FIELD_VALUE = 'value';
 
-    /* class_default.php:66 */
+    /* class_primitive.php:60 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
@@ -83,11 +86,11 @@ class FHIRUuidPrimitive implements PrimitiveTypeInterface
         ],
     ];
 
-    /* class_default.php:111 */
+    /* class_primitive.php:80 */
     /** @var string */
     protected string $value;
 
-    /* constructor.php:49 */
+    /* class_primitive.php:98 */
     /**
      * FHIRUuidPrimitive Constructor
      * @param null|string $value
@@ -97,7 +100,7 @@ class FHIRUuidPrimitive implements PrimitiveTypeInterface
         $this->setValue(value: $value);
     }
 
-    /* class_default.php:143 */
+    /* class_primitive.php:116 */
     /**
      * @return string
      */
@@ -106,7 +109,26 @@ class FHIRUuidPrimitive implements PrimitiveTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /**
+     * Specify whether this value must be represented as a string when serializing to JSON.
+     *
+     * @param bool $jsonAsString
+     * @return self
+     */
+    public function _setJSONAsString(bool $jsonAsString): self
+    {
+        $this->_jsonAsString = $jsonAsString;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function _getJSONAsString(): bool
+    {
+        return $this->_jsonAsString;
+    }
+
     /**
      * @return null|string
      */
@@ -114,7 +136,6 @@ class FHIRUuidPrimitive implements PrimitiveTypeInterface
     {
         return $this->value ?? null;
     }
-
     /**
      * @param null|string $value
      * @return static
@@ -132,27 +153,18 @@ class FHIRUuidPrimitive implements PrimitiveTypeInterface
     /**
      * @return string
      */
-    public function _getFormattedValue(): string
+    public function _getValueAsString(): string
     {
         return (string)$this->getValue();
     }
 
-    /* class_default.php:208 */
-
-    /**
-     * @return null|string
-     */
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): string
     {
-        return $this->getValue();
+        return $this->value ?? '';
     }
 
-    /* class_default.php:235 */
-    /**
-     * @return string
-     */
     public function __toString(): string
     {
-        return $this->_getFormattedValue();
+        return $this->_getValueAsString();
     }
 }

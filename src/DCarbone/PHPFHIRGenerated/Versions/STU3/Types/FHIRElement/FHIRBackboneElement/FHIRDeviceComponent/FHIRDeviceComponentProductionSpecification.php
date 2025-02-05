@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -82,27 +84,29 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_COMPONENT_DOT_PRODUCTION_SPECIFICATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SPEC_TYPE = 'specType';
     public const FIELD_COMPONENT_ID = 'componentId';
     public const FIELD_PRODUCTION_SPEC = 'productionSpec';
     public const FIELD_PRODUCTION_SPEC_EXT = '_productionSpec';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_PRODUCTION_SPEC => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -138,7 +142,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      */
     protected FHIRString $productionSpec;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDeviceComponentProductionSpecification Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -172,7 +176,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -181,7 +185,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -280,11 +284,9 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * The printable string defining the component.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $productionSpec
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setProductionSpec(null|string|FHIRStringPrimitive|FHIRString $productionSpec,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setProductionSpec(null|string|FHIRStringPrimitive|FHIRString $productionSpec): self
     {
         if (null === $productionSpec) {
             unset($this->productionSpec);
@@ -294,37 +296,10 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
             $productionSpec = new FHIRString(value: $productionSpec);
         }
         $this->productionSpec = $productionSpec;
-        if ($this->_valueXMLLocations[self::FIELD_PRODUCTION_SPEC] !== $valueXMLLocation) {
-            $this->_setProductionSpecValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the productionSpec element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getProductionSpecValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PRODUCTION_SPEC];
-    }
-
-    /**
-     * Set the location the "value" field of the productionSpec element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setProductionSpecValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PRODUCTION_SPEC] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -353,9 +328,11 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -369,15 +346,16 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PRODUCTION_SPEC])) {
             if (isset($type->productionSpec)) {
                 $type->productionSpec->setValue((string)$attributes[self::FIELD_PRODUCTION_SPEC]);
-                $type->_setProductionSpecValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setProductionSpec((string)$attributes[self::FIELD_PRODUCTION_SPEC], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setProductionSpec((string)$attributes[self::FIELD_PRODUCTION_SPEC]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PRODUCTION_SPEC, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -390,7 +368,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->productionSpec) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PRODUCTION_SPEC]) {
-            $xw->writeAttribute(self::FIELD_PRODUCTION_SPEC, $this->productionSpec->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PRODUCTION_SPEC, $this->productionSpec->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->specType)) {
@@ -413,13 +391,13 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -434,21 +412,27 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SPEC_TYPE]) || array_key_exists(self::FIELD_SPEC_TYPE, $json)) {
-            $type->setSpecType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SPEC_TYPE], $config));
+        if (isset($json->specType) || property_exists($json, self::FIELD_SPEC_TYPE)) {
+            if (is_array($json->specType)) {
+                $type->setSpecType(FHIRCodeableConcept::jsonUnserialize(reset($json->specType), $config));
+            } else {
+                $type->setSpecType(FHIRCodeableConcept::jsonUnserialize($json->specType, $config));
+            }
         }
-        if (isset($json[self::FIELD_COMPONENT_ID]) || array_key_exists(self::FIELD_COMPONENT_ID, $json)) {
-            $type->setComponentId(FHIRIdentifier::jsonUnserialize($json[self::FIELD_COMPONENT_ID], $config));
+        if (isset($json->componentId) || property_exists($json, self::FIELD_COMPONENT_ID)) {
+            if (is_array($json->componentId)) {
+                $type->setComponentId(FHIRIdentifier::jsonUnserialize(reset($json->componentId), $config));
+            } else {
+                $type->setComponentId(FHIRIdentifier::jsonUnserialize($json->componentId, $config));
+            }
         }
-        if (isset($json[self::FIELD_PRODUCTION_SPEC])
-            || isset($json[self::FIELD_PRODUCTION_SPEC_EXT])
-            || array_key_exists(self::FIELD_PRODUCTION_SPEC, $json)
-            || array_key_exists(self::FIELD_PRODUCTION_SPEC_EXT, $json)) {
-            $value = $json[self::FIELD_PRODUCTION_SPEC] ?? null;
-            $type->setProductionSpec(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PRODUCTION_SPEC_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->productionSpec)
+            || isset($json->_productionSpec)
+            || property_exists($json, self::FIELD_PRODUCTION_SPEC)
+            || property_exists($json, self::FIELD_PRODUCTION_SPEC_EXT)) {
+            $v = $json->_productionSpec ?? new \stdClass();
+            $v->value = $json->productionSpec ?? null;
+            $type->setProductionSpec(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

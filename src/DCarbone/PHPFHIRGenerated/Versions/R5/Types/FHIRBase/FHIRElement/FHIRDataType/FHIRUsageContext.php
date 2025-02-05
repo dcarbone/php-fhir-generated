@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,43 +105,33 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRUsageContext extends FHIRDataType
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_USAGE_CONTEXT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_CODE = 'code';
     public const FIELD_VALUE_CODEABLE_CONCEPT = 'valueCodeableConcept';
     public const FIELD_VALUE_QUANTITY = 'valueQuantity';
     public const FIELD_VALUE_RANGE = 'valueRange';
     public const FIELD_VALUE_REFERENCE = 'valueReference';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CODE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
-        self::FIELD_VALUE_CODEABLE_CONCEPT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE_QUANTITY => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE_RANGE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE_REFERENCE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -158,7 +150,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
@@ -171,7 +164,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
@@ -182,7 +176,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
@@ -193,13 +188,14 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
     protected FHIRReference $valueReference;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRUsageContext Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -240,7 +236,7 @@ class FHIRUsageContext extends FHIRDataType
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -249,7 +245,7 @@ class FHIRUsageContext extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -293,7 +289,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
@@ -309,7 +306,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
      * @return static
@@ -332,7 +330,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
@@ -349,7 +348,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
      * @return static
@@ -370,7 +370,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
@@ -385,7 +386,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
      * @return static
@@ -406,7 +408,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
@@ -421,7 +424,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
      * @return static
@@ -436,7 +440,7 @@ class FHIRUsageContext extends FHIRDataType
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -465,9 +469,11 @@ class FHIRUsageContext extends FHIRDataType
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_CODE === $cen) {
                 $type->setCode(FHIRCoding::xmlUnserialize($ce, $config));
@@ -483,7 +489,8 @@ class FHIRUsageContext extends FHIRDataType
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -524,13 +531,13 @@ class FHIRUsageContext extends FHIRDataType
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -545,20 +552,40 @@ class FHIRUsageContext extends FHIRDataType
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCoding::jsonUnserialize($json[self::FIELD_CODE], $config));
+        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
+            if (is_array($json->code)) {
+                $type->setCode(FHIRCoding::jsonUnserialize(reset($json->code), $config));
+            } else {
+                $type->setCode(FHIRCoding::jsonUnserialize($json->code, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_VALUE_CODEABLE_CONCEPT, $json)) {
-            $type->setValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VALUE_CODEABLE_CONCEPT], $config));
+        if (isset($json->valueCodeableConcept) || property_exists($json, self::FIELD_VALUE_CODEABLE_CONCEPT)) {
+            if (is_array($json->valueCodeableConcept)) {
+                $type->setValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->valueCodeableConcept), $config));
+            } else {
+                $type->setValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->valueCodeableConcept, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_QUANTITY]) || array_key_exists(self::FIELD_VALUE_QUANTITY, $json)) {
-            $type->setValueQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_VALUE_QUANTITY], $config));
+        if (isset($json->valueQuantity) || property_exists($json, self::FIELD_VALUE_QUANTITY)) {
+            if (is_array($json->valueQuantity)) {
+                $type->setValueQuantity(FHIRQuantity::jsonUnserialize(reset($json->valueQuantity), $config));
+            } else {
+                $type->setValueQuantity(FHIRQuantity::jsonUnserialize($json->valueQuantity, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_RANGE]) || array_key_exists(self::FIELD_VALUE_RANGE, $json)) {
-            $type->setValueRange(FHIRRange::jsonUnserialize($json[self::FIELD_VALUE_RANGE], $config));
+        if (isset($json->valueRange) || property_exists($json, self::FIELD_VALUE_RANGE)) {
+            if (is_array($json->valueRange)) {
+                $type->setValueRange(FHIRRange::jsonUnserialize(reset($json->valueRange), $config));
+            } else {
+                $type->setValueRange(FHIRRange::jsonUnserialize($json->valueRange, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_REFERENCE]) || array_key_exists(self::FIELD_VALUE_REFERENCE, $json)) {
-            $type->setValueReference(FHIRReference::jsonUnserialize($json[self::FIELD_VALUE_REFERENCE], $config));
+        if (isset($json->valueReference) || property_exists($json, self::FIELD_VALUE_REFERENCE)) {
+            if (is_array($json->valueReference)) {
+                $type->setValueReference(FHIRReference::jsonUnserialize(reset($json->valueReference), $config));
+            } else {
+                $type->setValueReference(FHIRReference::jsonUnserialize($json->valueReference, $config));
+            }
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,26 +58,30 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
 class FHIRReactionSeverityList extends FHIRStringPrimitive
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_REACTION_SEVERITY_HYPHEN_LIST;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -86,39 +90,5 @@ class FHIRReactionSeverityList extends FHIRStringPrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:208 */
-
-    /**
-     * @param string|\stdClass|array $json
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRReactionSeverityList $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRReactionSeverityList
-     * @throws \Exception
-     */
-    public static function jsonUnserialize(string|\stdClass|array $json,
-                                           null|UnserializeConfig $config = null,
-                                           null|ResourceTypeInterface $type = null): self
-    {
-        if (null === $type) {
-            $type = new static();
-        } else if (!($type instanceof FHIRReactionSeverityList)) {
-            throw new \RuntimeException(sprintf(
-                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
-                static::class,
-                get_class($type)
-            ));
-        }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type); 
-        return $type;
-    }
-
+    /* class_default.php:199 */
 }

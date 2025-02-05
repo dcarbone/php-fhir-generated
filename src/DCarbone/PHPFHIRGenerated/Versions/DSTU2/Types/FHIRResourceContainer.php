@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,8 +63,10 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait;
@@ -79,6 +81,8 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionTypeMap;
 class FHIRResourceContainer implements ResourceTypeInterface, CommentContainerInterface
 {
     use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait,
         CommentContainerTrait,
         SourceXMLNamespaceTrait;
 
@@ -222,13 +226,13 @@ class FHIRResourceContainer implements ResourceTypeInterface, CommentContainerIn
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -246,14 +250,12 @@ class FHIRResourceContainer implements ResourceTypeInterface, CommentContainerIn
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
-        if (isset($json[Constants::JSON_FIELD_FHIR_COMMENTS])) {
-            $type->_setFHIRComments((array)$json[Constants::JSON_FIELD_FHIR_COMMENTS]);
+        if (isset($json->{Constants::JSON_FIELD_FHIR_COMMENTS})) {
+            $type->_setFHIRComments((array)$json->{Constants::JSON_FIELD_FHIR_COMMENTS});
         }        /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $class */
-        $class = VersionTypeMap::getContainedTypeClassNameFromArray($json);
+        $class = VersionTypeMap::getContainedTypeClassNameFromJSON($json);
         $type->setContainedType($class::jsonUnserialize($json));
         return $type;
     }

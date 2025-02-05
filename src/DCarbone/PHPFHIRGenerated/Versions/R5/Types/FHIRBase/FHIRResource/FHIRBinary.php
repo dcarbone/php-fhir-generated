@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -112,19 +114,21 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface;
  */
 class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BINARY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_CONTENT_TYPE = 'contentType';
     public const FIELD_CONTENT_TYPE_EXT = '_contentType';
     public const FIELD_SECURITY_CONTEXT = 'securityContext';
     public const FIELD_DATA = 'data';
     public const FIELD_DATA_EXT = '_data';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CONTENT_TYPE => [
@@ -132,13 +136,13 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTENT_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DATA => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -179,7 +183,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
      */
     protected FHIRBase64Binary $data;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRBinary Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -216,7 +220,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -225,7 +229,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -234,7 +238,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -259,11 +263,9 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
      * MimeType of the binary content represented as a standard MimeType (BCP 13).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $contentType
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
     {
         if (null === $contentType) {
             unset($this->contentType);
@@ -273,33 +275,6 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
             $contentType = new FHIRCode(value: $contentType);
         }
         $this->contentType = $contentType;
-        if ($this->_valueXMLLocations[self::FIELD_CONTENT_TYPE] !== $valueXMLLocation) {
-            $this->_setContentTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the contentType element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getContentTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CONTENT_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the contentType element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setContentTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CONTENT_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -375,11 +350,9 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
      * The actual content, base64 encoded.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $data
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setData(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $data,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setData(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $data): self
     {
         if (null === $data) {
             unset($this->data);
@@ -389,37 +362,10 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
             $data = new FHIRBase64Binary(value: $data);
         }
         $this->data = $data;
-        if ($this->_valueXMLLocations[self::FIELD_DATA] !== $valueXMLLocation) {
-            $this->_setDataValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the data element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA];
-    }
-
-    /**
-     * Set the location the "value" field of the data element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -472,42 +418,42 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CONTENT_TYPE])) {
             if (isset($type->contentType)) {
                 $type->contentType->setValue((string)$attributes[self::FIELD_CONTENT_TYPE]);
-                $type->_setContentTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setContentType((string)$attributes[self::FIELD_CONTENT_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setContentType((string)$attributes[self::FIELD_CONTENT_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CONTENT_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA])) {
             if (isset($type->data)) {
                 $type->data->setValue((string)$attributes[self::FIELD_DATA]);
-                $type->_setDataValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setData((string)$attributes[self::FIELD_DATA], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setData((string)$attributes[self::FIELD_DATA]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -538,10 +484,10 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
             $xw->openRootNode('Binary', $this->_getSourceXMLNS());
         }
         if (isset($this->contentType) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CONTENT_TYPE]) {
-            $xw->writeAttribute(self::FIELD_CONTENT_TYPE, $this->contentType->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CONTENT_TYPE, $this->contentType->_getValueAsString());
         }
         if (isset($this->data) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA]) {
-            $xw->writeAttribute(self::FIELD_DATA, $this->data->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA, $this->data->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->contentType)
@@ -573,13 +519,13 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRBinary $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRBinary
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -597,33 +543,31 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_CONTENT_TYPE])
-            || isset($json[self::FIELD_CONTENT_TYPE_EXT])
-            || array_key_exists(self::FIELD_CONTENT_TYPE, $json)
-            || array_key_exists(self::FIELD_CONTENT_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_CONTENT_TYPE] ?? null;
-            $type->setContentType(FHIRCode::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_CONTENT_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->contentType)
+            || isset($json->_contentType)
+            || property_exists($json, self::FIELD_CONTENT_TYPE)
+            || property_exists($json, self::FIELD_CONTENT_TYPE_EXT)) {
+            $v = $json->_contentType ?? new \stdClass();
+            $v->value = $json->contentType ?? null;
+            $type->setContentType(FHIRCode::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SECURITY_CONTEXT]) || array_key_exists(self::FIELD_SECURITY_CONTEXT, $json)) {
-            $type->setSecurityContext(FHIRReference::jsonUnserialize($json[self::FIELD_SECURITY_CONTEXT], $config));
+        if (isset($json->securityContext) || property_exists($json, self::FIELD_SECURITY_CONTEXT)) {
+            if (is_array($json->securityContext)) {
+                $type->setSecurityContext(FHIRReference::jsonUnserialize(reset($json->securityContext), $config));
+            } else {
+                $type->setSecurityContext(FHIRReference::jsonUnserialize($json->securityContext, $config));
+            }
         }
-        if (isset($json[self::FIELD_DATA])
-            || isset($json[self::FIELD_DATA_EXT])
-            || array_key_exists(self::FIELD_DATA, $json)
-            || array_key_exists(self::FIELD_DATA_EXT, $json)) {
-            $value = $json[self::FIELD_DATA] ?? null;
-            $type->setData(FHIRBase64Binary::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBase64Binary::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->data)
+            || isset($json->_data)
+            || property_exists($json, self::FIELD_DATA)
+            || property_exists($json, self::FIELD_DATA_EXT)) {
+            $v = $json->_data ?? new \stdClass();
+            $v->value = $json->data ?? null;
+            $type->setData(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
         return $type;
     }

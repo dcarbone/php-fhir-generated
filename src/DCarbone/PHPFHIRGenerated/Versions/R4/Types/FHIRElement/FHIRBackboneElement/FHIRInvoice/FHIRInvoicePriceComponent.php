@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -86,12 +88,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRInvoicePriceComponent extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INVOICE_DOT_PRICE_COMPONENT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_CODE = 'code';
@@ -99,7 +103,7 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
     public const FIELD_FACTOR_EXT = '_factor';
     public const FIELD_AMOUNT = 'amount';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -107,13 +111,13 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FACTOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Codes indicating the kind of the price component.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -158,7 +162,7 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
      */
     protected FHIRMoney $amount;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRInvoicePriceComponent Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -166,7 +170,7 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRInvoicePriceComponentTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInvoicePriceComponentType $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $factor
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $factor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $amount
      * @param null|string[] $fhirComments
      */
@@ -175,7 +179,7 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRInvoicePriceComponentTypeList|FHIRInvoicePriceComponentType $type = null,
                                 null|FHIRCodeableConcept $code = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
                                 null|FHIRMoney $amount = null,
                                 null|iterable $fhirComments = null)
     {
@@ -197,7 +201,7 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -206,7 +210,7 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Codes indicating the kind of the price component.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -227,11 +231,9 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
      * This code identifies the type of the component.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRInvoicePriceComponentTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInvoicePriceComponentType $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRInvoicePriceComponentTypeList|FHIRInvoicePriceComponentType $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRInvoicePriceComponentTypeList|FHIRInvoicePriceComponentType $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -241,33 +243,6 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
             $type = new FHIRInvoicePriceComponentType(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -334,12 +309,10 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
      * The factor that has been applied on the base price for calculating this
      * component.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $factor
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $factor
      * @return static
      */
-    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
         if (null === $factor) {
             unset($this->factor);
@@ -349,33 +322,6 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
             $factor = new FHIRDecimal(value: $factor);
         }
         $this->factor = $factor;
-        if ($this->_valueXMLLocations[self::FIELD_FACTOR] !== $valueXMLLocation) {
-            $this->_setFactorValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the factor element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFactorValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FACTOR];
-    }
-
-    /**
-     * Set the location the "value" field of the factor element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFactorValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FACTOR] = $valueXMLLocation;
         return $this;
     }
 
@@ -413,7 +359,7 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -442,9 +388,11 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -460,23 +408,24 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_FACTOR])) {
             if (isset($type->factor)) {
                 $type->factor->setValue((string)$attributes[self::FIELD_FACTOR]);
-                $type->_setFactorValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setFactor((string)$attributes[self::FIELD_FACTOR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setFactor((string)$attributes[self::FIELD_FACTOR]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_FACTOR, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -489,10 +438,10 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         if (isset($this->factor) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FACTOR]) {
-            $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)
@@ -522,13 +471,13 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoicePriceComponent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoicePriceComponent
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -543,31 +492,35 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRInvoicePriceComponentType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInvoicePriceComponentType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRInvoicePriceComponentType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
+        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
+            if (is_array($json->code)) {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($json->code), $config));
+            } else {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize($json->code, $config));
+            }
         }
-        if (isset($json[self::FIELD_FACTOR])
-            || isset($json[self::FIELD_FACTOR_EXT])
-            || array_key_exists(self::FIELD_FACTOR, $json)
-            || array_key_exists(self::FIELD_FACTOR_EXT, $json)) {
-            $value = $json[self::FIELD_FACTOR] ?? null;
-            $type->setFactor(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_FACTOR_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->factor)
+            || isset($json->_factor)
+            || property_exists($json, self::FIELD_FACTOR)
+            || property_exists($json, self::FIELD_FACTOR_EXT)) {
+            $v = $json->_factor ?? new \stdClass();
+            $v->value = $json->factor ?? null;
+            $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
-            $type->setAmount(FHIRMoney::jsonUnserialize($json[self::FIELD_AMOUNT], $config));
+        if (isset($json->amount) || property_exists($json, self::FIELD_AMOUNT)) {
+            if (is_array($json->amount)) {
+                $type->setAmount(FHIRMoney::jsonUnserialize(reset($json->amount), $config));
+            } else {
+                $type->setAmount(FHIRMoney::jsonUnserialize($json->amount, $config));
+            }
         }
         return $type;
     }

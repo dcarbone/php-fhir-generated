@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -101,24 +103,26 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRAvailability extends FHIRDataType
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_AVAILABILITY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_AVAILABLE_TIME = 'availableTime';
     public const FIELD_NOT_AVAILABLE_TIME = 'notAvailableTime';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Availability data for an {item}.
      * If the element is present, it must have a value for at least one of the defined
@@ -140,7 +144,7 @@ class FHIRAvailability extends FHIRDataType
      */
     protected array $notAvailableTime;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAvailability Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -166,7 +170,7 @@ class FHIRAvailability extends FHIRDataType
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -175,7 +179,7 @@ class FHIRAvailability extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Availability data for an {item}.
      * If the element is present, it must have a value for at least one of the defined
@@ -304,7 +308,7 @@ class FHIRAvailability extends FHIRDataType
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -333,9 +337,11 @@ class FHIRAvailability extends FHIRDataType
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_AVAILABLE_TIME === $cen) {
                 $type->addAvailableTime(FHIRAvailabilityAvailableTime::xmlUnserialize($ce, $config));
@@ -345,7 +351,8 @@ class FHIRAvailability extends FHIRDataType
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -375,13 +382,13 @@ class FHIRAvailability extends FHIRDataType
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -396,21 +403,25 @@ class FHIRAvailability extends FHIRDataType
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_AVAILABLE_TIME]) || array_key_exists(self::FIELD_AVAILABLE_TIME, $json)) {
-            $vs = $json[self::FIELD_AVAILABLE_TIME];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->availableTime) || property_exists($json, self::FIELD_AVAILABLE_TIME)) {
+            if (is_object($json->availableTime)) {
+                $vals = [$json->availableTime];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_AVAILABLE_TIME, true);
+            } else {
+                $vals = $json->availableTime;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAvailableTime(FHIRAvailabilityAvailableTime::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_NOT_AVAILABLE_TIME]) || array_key_exists(self::FIELD_NOT_AVAILABLE_TIME, $json)) {
-            $vs = $json[self::FIELD_NOT_AVAILABLE_TIME];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->notAvailableTime) || property_exists($json, self::FIELD_NOT_AVAILABLE_TIME)) {
+            if (is_object($json->notAvailableTime)) {
+                $vals = [$json->notAvailableTime];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_NOT_AVAILABLE_TIME, true);
+            } else {
+                $vals = $json->notAvailableTime;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addNotAvailableTime(FHIRAvailabilityNotAvailableTime::jsonUnserialize($v, $config));
             }
         }
@@ -424,10 +435,18 @@ class FHIRAvailability extends FHIRDataType
     {
         $out = parent::jsonSerialize();
         if (isset($this->availableTime) && [] !== $this->availableTime) {
-            $out->availableTime = $this->availableTime;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_AVAILABLE_TIME) && 1 === count($this->availableTime)) {
+                $out->availableTime = $this->availableTime[0];
+            } else {
+                $out->availableTime = $this->availableTime;
+            }
         }
         if (isset($this->notAvailableTime) && [] !== $this->notAvailableTime) {
-            $out->notAvailableTime = $this->notAvailableTime;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_NOT_AVAILABLE_TIME) && 1 === count($this->notAvailableTime)) {
+                $out->notAvailableTime = $this->notAvailableTime[0];
+            } else {
+                $out->notAvailableTime = $this->notAvailableTime;
+            }
         }
         return $out;
     }

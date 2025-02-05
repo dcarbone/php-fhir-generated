@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -104,19 +106,21 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRInventoryItemName extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INVENTORY_ITEM_DOT_NAME;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_NAME_TYPE = 'nameType';
     public const FIELD_LANGUAGE = 'language';
     public const FIELD_LANGUAGE_EXT = '_language';
     public const FIELD_NAME = 'name';
     public const FIELD_NAME_EXT = '_name';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_NAME_TYPE => [
@@ -130,13 +134,13 @@ class FHIRInventoryItemName extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_LANGUAGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -167,7 +171,7 @@ class FHIRInventoryItemName extends FHIRBackboneElement
      */
     protected FHIRString $name;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRInventoryItemName Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -201,7 +205,7 @@ class FHIRInventoryItemName extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -210,7 +214,7 @@ class FHIRInventoryItemName extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -265,11 +269,9 @@ class FHIRInventoryItemName extends FHIRBackboneElement
      * The language that the item name is expressed in.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCommonLanguagesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCommonLanguages $language
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLanguage(null|string|FHIRCommonLanguagesEnum|FHIRCommonLanguages $language,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLanguage(null|string|FHIRCommonLanguagesEnum|FHIRCommonLanguages $language): self
     {
         if (null === $language) {
             unset($this->language);
@@ -279,33 +281,6 @@ class FHIRInventoryItemName extends FHIRBackboneElement
             $language = new FHIRCommonLanguages(value: $language);
         }
         $this->language = $language;
-        if ($this->_valueXMLLocations[self::FIELD_LANGUAGE] !== $valueXMLLocation) {
-            $this->_setLanguageValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the language element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLanguageValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LANGUAGE];
-    }
-
-    /**
-     * Set the location the "value" field of the language element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLanguageValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LANGUAGE] = $valueXMLLocation;
         return $this;
     }
 
@@ -331,11 +306,9 @@ class FHIRInventoryItemName extends FHIRBackboneElement
      * The name or designation that the item is given.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
         if (null === $name) {
             unset($this->name);
@@ -345,37 +318,10 @@ class FHIRInventoryItemName extends FHIRBackboneElement
             $name = new FHIRString(value: $name);
         }
         $this->name = $name;
-        if ($this->_valueXMLLocations[self::FIELD_NAME] !== $valueXMLLocation) {
-            $this->_setNameValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the name element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNameValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NAME];
-    }
-
-    /**
-     * Set the location the "value" field of the name element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NAME] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -404,9 +350,11 @@ class FHIRInventoryItemName extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -420,23 +368,24 @@ class FHIRInventoryItemName extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NAME])) {
             if (isset($type->name)) {
                 $type->name->setValue((string)$attributes[self::FIELD_NAME]);
-                $type->_setNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setName((string)$attributes[self::FIELD_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setName((string)$attributes[self::FIELD_NAME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NAME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -449,10 +398,10 @@ class FHIRInventoryItemName extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->language) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LANGUAGE]) {
-            $xw->writeAttribute(self::FIELD_LANGUAGE, $this->language->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LANGUAGE, $this->language->_getValueAsString());
         }
         if (isset($this->name) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NAME]) {
-            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->nameType)) {
@@ -477,13 +426,13 @@ class FHIRInventoryItemName extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemName $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemName
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -498,28 +447,28 @@ class FHIRInventoryItemName extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_NAME_TYPE]) || array_key_exists(self::FIELD_NAME_TYPE, $json)) {
-            $type->setNameType(FHIRCoding::jsonUnserialize($json[self::FIELD_NAME_TYPE], $config));
+        if (isset($json->nameType) || property_exists($json, self::FIELD_NAME_TYPE)) {
+            if (is_array($json->nameType)) {
+                $type->setNameType(FHIRCoding::jsonUnserialize(reset($json->nameType), $config));
+            } else {
+                $type->setNameType(FHIRCoding::jsonUnserialize($json->nameType, $config));
+            }
         }
-        if (isset($json[self::FIELD_LANGUAGE])
-            || isset($json[self::FIELD_LANGUAGE_EXT])
-            || array_key_exists(self::FIELD_LANGUAGE, $json)
-            || array_key_exists(self::FIELD_LANGUAGE_EXT, $json)) {
-            $value = $json[self::FIELD_LANGUAGE] ?? null;
-            $type->setLanguage(FHIRCommonLanguages::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCommonLanguages::FIELD_VALUE => $value]) + ($json[self::FIELD_LANGUAGE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->language)
+            || isset($json->_language)
+            || property_exists($json, self::FIELD_LANGUAGE)
+            || property_exists($json, self::FIELD_LANGUAGE_EXT)) {
+            $v = $json->_language ?? new \stdClass();
+            $v->value = $json->language ?? null;
+            $type->setLanguage(FHIRCommonLanguages::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_NAME])
-            || isset($json[self::FIELD_NAME_EXT])
-            || array_key_exists(self::FIELD_NAME, $json)
-            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
-            $value = $json[self::FIELD_NAME] ?? null;
-            $type->setName(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->name)
+            || isset($json->_name)
+            || property_exists($json, self::FIELD_NAME)
+            || property_exists($json, self::FIELD_NAME_EXT)) {
+            $v = $json->_name ?? new \stdClass();
+            $v->value = $json->name ?? null;
+            $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

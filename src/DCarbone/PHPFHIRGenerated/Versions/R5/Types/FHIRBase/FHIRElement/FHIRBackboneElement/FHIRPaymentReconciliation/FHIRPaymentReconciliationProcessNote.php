@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,28 +104,30 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PAYMENT_RECONCILIATION_DOT_PROCESS_NOTE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_TEXT = 'text';
     public const FIELD_TEXT_EXT = '_text';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TEXT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -143,7 +147,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
      */
     protected FHIRString $text;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRPaymentReconciliationProcessNote Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -172,7 +176,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -181,7 +185,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -200,11 +204,9 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
      * The business purpose of the note text.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRNoteTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRNoteType $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRNoteTypeEnum|FHIRNoteType $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRNoteTypeEnum|FHIRNoteType $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -214,33 +216,6 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
             $type = new FHIRNoteType(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -266,11 +241,9 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
      * The explanation or description associated with the processing.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $text
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setText(null|string|FHIRStringPrimitive|FHIRString $text,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
         if (null === $text) {
             unset($this->text);
@@ -280,37 +253,10 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
             $text = new FHIRString(value: $text);
         }
         $this->text = $text;
-        if ($this->_valueXMLLocations[self::FIELD_TEXT] !== $valueXMLLocation) {
-            $this->_setTextValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the text element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTextValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TEXT];
-    }
-
-    /**
-     * Set the location the "value" field of the text element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTextValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TEXT] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -339,9 +285,11 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -353,23 +301,24 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TEXT])) {
             if (isset($type->text)) {
                 $type->text->setValue((string)$attributes[self::FIELD_TEXT]);
-                $type->_setTextValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setText((string)$attributes[self::FIELD_TEXT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setText((string)$attributes[self::FIELD_TEXT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TEXT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -382,10 +331,10 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         if (isset($this->text) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TEXT]) {
-            $xw->writeAttribute(self::FIELD_TEXT, $this->text->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TEXT, $this->text->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)
@@ -405,13 +354,13 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -426,25 +375,21 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRNoteType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRNoteType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRNoteType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TEXT])
-            || isset($json[self::FIELD_TEXT_EXT])
-            || array_key_exists(self::FIELD_TEXT, $json)
-            || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
-            $value = $json[self::FIELD_TEXT] ?? null;
-            $type->setText(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->text)
+            || isset($json->_text)
+            || property_exists($json, self::FIELD_TEXT)
+            || property_exists($json, self::FIELD_TEXT_EXT)) {
+            $v = $json->_text ?? new \stdClass();
+            $v->value = $json->text ?? null;
+            $type->setText(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

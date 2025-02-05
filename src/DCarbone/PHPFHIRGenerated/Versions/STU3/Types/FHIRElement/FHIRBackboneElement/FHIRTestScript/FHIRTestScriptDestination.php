@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -83,17 +85,19 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRTestScriptDestination extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TEST_SCRIPT_DOT_DESTINATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_INDEX = 'index';
     public const FIELD_INDEX_EXT = '_index';
     public const FIELD_PROFILE = 'profile';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_INDEX => [
@@ -104,12 +108,12 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_INDEX => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -132,20 +136,20 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
      */
     protected FHIRCoding $profile;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRTestScriptDestination Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $index
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $index
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $profile
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $index = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $index = null,
                                 null|FHIRCoding $profile = null,
                                 null|iterable $fhirComments = null)
     {
@@ -161,7 +165,7 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -170,7 +174,7 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -194,12 +198,10 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
      * Abstract name given to a destination server in this test script. The name is
      * provided as a number starting at 1.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $index
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $index
      * @return static
      */
-    public function setIndex(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $index,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIndex(null|string|float|FHIRIntegerPrimitive|FHIRInteger $index): self
     {
         if (null === $index) {
             unset($this->index);
@@ -209,33 +211,6 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
             $index = new FHIRInteger(value: $index);
         }
         $this->index = $index;
-        if ($this->_valueXMLLocations[self::FIELD_INDEX] !== $valueXMLLocation) {
-            $this->_setIndexValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the index element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIndexValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INDEX];
-    }
-
-    /**
-     * Set the location the "value" field of the index element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIndexValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INDEX] = $valueXMLLocation;
         return $this;
     }
 
@@ -273,7 +248,7 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -302,9 +277,11 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -316,15 +293,16 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INDEX])) {
             if (isset($type->index)) {
                 $type->index->setValue((string)$attributes[self::FIELD_INDEX]);
-                $type->_setIndexValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIndex((string)$attributes[self::FIELD_INDEX], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIndex((string)$attributes[self::FIELD_INDEX]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INDEX, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -337,7 +315,7 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->index) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INDEX]) {
-            $xw->writeAttribute(self::FIELD_INDEX, $this->index->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INDEX, $this->index->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->index)
@@ -355,13 +333,13 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -376,18 +354,20 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_INDEX])
-            || isset($json[self::FIELD_INDEX_EXT])
-            || array_key_exists(self::FIELD_INDEX, $json)
-            || array_key_exists(self::FIELD_INDEX_EXT, $json)) {
-            $value = $json[self::FIELD_INDEX] ?? null;
-            $type->setIndex(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_INDEX_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->index)
+            || isset($json->_index)
+            || property_exists($json, self::FIELD_INDEX)
+            || property_exists($json, self::FIELD_INDEX_EXT)) {
+            $v = $json->_index ?? new \stdClass();
+            $v->value = $json->index ?? null;
+            $type->setIndex(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PROFILE]) || array_key_exists(self::FIELD_PROFILE, $json)) {
-            $type->setProfile(FHIRCoding::jsonUnserialize($json[self::FIELD_PROFILE], $config));
+        if (isset($json->profile) || property_exists($json, self::FIELD_PROFILE)) {
+            if (is_array($json->profile)) {
+                $type->setProfile(FHIRCoding::jsonUnserialize(reset($json->profile), $config));
+            } else {
+                $type->setProfile(FHIRCoding::jsonUnserialize($json->profile, $config));
+            }
         }
         return $type;
     }

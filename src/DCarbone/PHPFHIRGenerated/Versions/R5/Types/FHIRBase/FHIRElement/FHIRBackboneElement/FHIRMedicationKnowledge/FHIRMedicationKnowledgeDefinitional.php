@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -100,27 +102,29 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_DEFINITIONAL;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DEFINITION = 'definition';
     public const FIELD_DOSE_FORM = 'doseForm';
     public const FIELD_INTENDED_ROUTE = 'intendedRoute';
     public const FIELD_INGREDIENT = 'ingredient';
     public const FIELD_DRUG_CHARACTERISTIC = 'drugCharacteristic';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -171,7 +175,7 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      */
     protected array $drugCharacteristic;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedicationKnowledgeDefinitional Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -215,7 +219,7 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -224,7 +228,7 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -511,7 +515,7 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -540,9 +544,11 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -560,7 +566,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -609,13 +616,13 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDefinitional $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDefinitional
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -630,42 +637,54 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DEFINITION]) || array_key_exists(self::FIELD_DEFINITION, $json)) {
-            $vs = $json[self::FIELD_DEFINITION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->definition) || property_exists($json, self::FIELD_DEFINITION)) {
+            if (is_object($json->definition)) {
+                $vals = [$json->definition];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DEFINITION, true);
+            } else {
+                $vals = $json->definition;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addDefinition(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DOSE_FORM]) || array_key_exists(self::FIELD_DOSE_FORM, $json)) {
-            $type->setDoseForm(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DOSE_FORM], $config));
-        }
-        if (isset($json[self::FIELD_INTENDED_ROUTE]) || array_key_exists(self::FIELD_INTENDED_ROUTE, $json)) {
-            $vs = $json[self::FIELD_INTENDED_ROUTE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->doseForm) || property_exists($json, self::FIELD_DOSE_FORM)) {
+            if (is_array($json->doseForm)) {
+                $type->setDoseForm(FHIRCodeableConcept::jsonUnserialize(reset($json->doseForm), $config));
+            } else {
+                $type->setDoseForm(FHIRCodeableConcept::jsonUnserialize($json->doseForm, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->intendedRoute) || property_exists($json, self::FIELD_INTENDED_ROUTE)) {
+            if (is_object($json->intendedRoute)) {
+                $vals = [$json->intendedRoute];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_INTENDED_ROUTE, true);
+            } else {
+                $vals = $json->intendedRoute;
+            }
+            foreach($vals as $v) {
                 $type->addIntendedRoute(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_INGREDIENT]) || array_key_exists(self::FIELD_INGREDIENT, $json)) {
-            $vs = $json[self::FIELD_INGREDIENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->ingredient) || property_exists($json, self::FIELD_INGREDIENT)) {
+            if (is_object($json->ingredient)) {
+                $vals = [$json->ingredient];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_INGREDIENT, true);
+            } else {
+                $vals = $json->ingredient;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIngredient(FHIRMedicationKnowledgeIngredient::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DRUG_CHARACTERISTIC]) || array_key_exists(self::FIELD_DRUG_CHARACTERISTIC, $json)) {
-            $vs = $json[self::FIELD_DRUG_CHARACTERISTIC];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->drugCharacteristic) || property_exists($json, self::FIELD_DRUG_CHARACTERISTIC)) {
+            if (is_object($json->drugCharacteristic)) {
+                $vals = [$json->drugCharacteristic];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DRUG_CHARACTERISTIC, true);
+            } else {
+                $vals = $json->drugCharacteristic;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic::jsonUnserialize($v, $config));
             }
         }
@@ -679,19 +698,35 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->definition) && [] !== $this->definition) {
-            $out->definition = $this->definition;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DEFINITION) && 1 === count($this->definition)) {
+                $out->definition = $this->definition[0];
+            } else {
+                $out->definition = $this->definition;
+            }
         }
         if (isset($this->doseForm)) {
             $out->doseForm = $this->doseForm;
         }
         if (isset($this->intendedRoute) && [] !== $this->intendedRoute) {
-            $out->intendedRoute = $this->intendedRoute;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_INTENDED_ROUTE) && 1 === count($this->intendedRoute)) {
+                $out->intendedRoute = $this->intendedRoute[0];
+            } else {
+                $out->intendedRoute = $this->intendedRoute;
+            }
         }
         if (isset($this->ingredient) && [] !== $this->ingredient) {
-            $out->ingredient = $this->ingredient;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_INGREDIENT) && 1 === count($this->ingredient)) {
+                $out->ingredient = $this->ingredient[0];
+            } else {
+                $out->ingredient = $this->ingredient;
+            }
         }
         if (isset($this->drugCharacteristic) && [] !== $this->drugCharacteristic) {
-            $out->drugCharacteristic = $this->drugCharacteristic;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DRUG_CHARACTERISTIC) && 1 === count($this->drugCharacteristic)) {
+                $out->drugCharacteristic = $this->drugCharacteristic[0];
+            } else {
+                $out->drugCharacteristic = $this->drugCharacteristic;
+            }
         }
         return $out;
     }

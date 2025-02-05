@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -80,12 +82,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  */
 class FHIRListEntry extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_LIST_DOT_ENTRY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_FLAG = 'flag';
     public const FIELD_DELETED = 'deleted';
     public const FIELD_DELETED_EXT = '_deleted';
@@ -93,7 +97,7 @@ class FHIRListEntry extends FHIRBackboneElement
     public const FIELD_DATE_EXT = '_date';
     public const FIELD_ITEM = 'item';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ITEM => [
@@ -101,13 +105,13 @@ class FHIRListEntry extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DELETED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -152,7 +156,7 @@ class FHIRListEntry extends FHIRBackboneElement
      */
     protected FHIRResourceReference $item;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRListEntry Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -191,7 +195,7 @@ class FHIRListEntry extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -200,7 +204,7 @@ class FHIRListEntry extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -291,11 +295,9 @@ class FHIRListEntry extends FHIRBackboneElement
      * True if this item is marked as deleted in the list.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $deleted
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDeleted(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deleted,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDeleted(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deleted): self
     {
         if (null === $deleted) {
             unset($this->deleted);
@@ -305,33 +307,6 @@ class FHIRListEntry extends FHIRBackboneElement
             $deleted = new FHIRBoolean(value: $deleted);
         }
         $this->deleted = $deleted;
-        if ($this->_valueXMLLocations[self::FIELD_DELETED] !== $valueXMLLocation) {
-            $this->_setDeletedValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the deleted element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDeletedValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DELETED];
-    }
-
-    /**
-     * Set the location the "value" field of the deleted element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDeletedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DELETED] = $valueXMLLocation;
         return $this;
     }
 
@@ -361,11 +336,9 @@ class FHIRListEntry extends FHIRBackboneElement
      * When this item was added to the list.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
         if (null === $date) {
             unset($this->date);
@@ -375,33 +348,6 @@ class FHIRListEntry extends FHIRBackboneElement
             $date = new FHIRDateTime(value: $date);
         }
         $this->date = $date;
-        if ($this->_valueXMLLocations[self::FIELD_DATE] !== $valueXMLLocation) {
-            $this->_setDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the date element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the date element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -439,7 +385,7 @@ class FHIRListEntry extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -477,9 +423,11 @@ class FHIRListEntry extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -495,23 +443,24 @@ class FHIRListEntry extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DELETED])) {
             if (isset($type->deleted)) {
                 $type->deleted->setValue((string)$attributes[self::FIELD_DELETED]);
-                $type->_setDeletedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDeleted((string)$attributes[self::FIELD_DELETED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDeleted((string)$attributes[self::FIELD_DELETED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DELETED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATE])) {
             if (isset($type->date)) {
                 $type->date->setValue((string)$attributes[self::FIELD_DATE]);
-                $type->_setDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDate((string)$attributes[self::FIELD_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDate((string)$attributes[self::FIELD_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -542,10 +491,10 @@ class FHIRListEntry extends FHIRBackboneElement
             $xw->openRootNode('ListEntry', $this->_getSourceXMLNS());
         }
         if (isset($this->deleted) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DELETED]) {
-            $xw->writeAttribute(self::FIELD_DELETED, $this->deleted->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DELETED, $this->deleted->_getValueAsString());
         }
         if (isset($this->date) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATE]) {
-            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->flag)) {
@@ -584,13 +533,13 @@ class FHIRListEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRList\FHIRListEntry $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRList\FHIRListEntry
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -608,42 +557,42 @@ class FHIRListEntry extends FHIRBackboneElement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_FLAG]) || array_key_exists(self::FIELD_FLAG, $json)) {
-            $vs = $json[self::FIELD_FLAG];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->flag) || property_exists($json, self::FIELD_FLAG)) {
+            if (is_object($json->flag)) {
+                $vals = [$json->flag];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_FLAG, true);
+            } else {
+                $vals = $json->flag;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addFlag(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DELETED])
-            || isset($json[self::FIELD_DELETED_EXT])
-            || array_key_exists(self::FIELD_DELETED, $json)
-            || array_key_exists(self::FIELD_DELETED_EXT, $json)) {
-            $value = $json[self::FIELD_DELETED] ?? null;
-            $type->setDeleted(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_DELETED_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->deleted)
+            || isset($json->_deleted)
+            || property_exists($json, self::FIELD_DELETED)
+            || property_exists($json, self::FIELD_DELETED_EXT)) {
+            $v = $json->_deleted ?? new \stdClass();
+            $v->value = $json->deleted ?? null;
+            $type->setDeleted(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DATE])
-            || isset($json[self::FIELD_DATE_EXT])
-            || array_key_exists(self::FIELD_DATE, $json)
-            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_DATE] ?? null;
-            $type->setDate(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->date)
+            || isset($json->_date)
+            || property_exists($json, self::FIELD_DATE)
+            || property_exists($json, self::FIELD_DATE_EXT)) {
+            $v = $json->_date ?? new \stdClass();
+            $v->value = $json->date ?? null;
+            $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
-            $type->setItem(FHIRResourceReference::jsonUnserialize($json[self::FIELD_ITEM], $config));
+        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
+            if (is_array($json->item)) {
+                $type->setItem(FHIRResourceReference::jsonUnserialize(reset($json->item), $config));
+            } else {
+                $type->setItem(FHIRResourceReference::jsonUnserialize($json->item, $config));
+            }
         }
         return $type;
     }
@@ -655,7 +604,11 @@ class FHIRListEntry extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->flag) && [] !== $this->flag) {
-            $out->flag = $this->flag;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_FLAG) && 1 === count($this->flag)) {
+                $out->flag = $this->flag[0];
+            } else {
+                $out->flag = $this->flag;
+            }
         }
         if (isset($this->deleted)) {
             if (null !== ($val = $this->deleted->getValue())) {

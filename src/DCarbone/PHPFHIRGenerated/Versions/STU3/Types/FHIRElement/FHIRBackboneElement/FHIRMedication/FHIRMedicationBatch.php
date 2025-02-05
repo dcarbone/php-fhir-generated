@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -82,28 +84,30 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRMedicationBatch extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_DOT_BATCH;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_LOT_NUMBER = 'lotNumber';
     public const FIELD_LOT_NUMBER_EXT = '_lotNumber';
     public const FIELD_EXPIRATION_DATE = 'expirationDate';
     public const FIELD_EXPIRATION_DATE_EXT = '_expirationDate';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_LOT_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXPIRATION_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -128,7 +132,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement
      */
     protected FHIRDateTime $expirationDate;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedicationBatch Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -157,7 +161,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -166,7 +170,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -189,11 +193,9 @@ class FHIRMedicationBatch extends FHIRBackboneElement
      * The assigned lot number of a batch of the specified product.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $lotNumber
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber): self
     {
         if (null === $lotNumber) {
             unset($this->lotNumber);
@@ -203,33 +205,6 @@ class FHIRMedicationBatch extends FHIRBackboneElement
             $lotNumber = new FHIRString(value: $lotNumber);
         }
         $this->lotNumber = $lotNumber;
-        if ($this->_valueXMLLocations[self::FIELD_LOT_NUMBER] !== $valueXMLLocation) {
-            $this->_setLotNumberValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the lotNumber element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLotNumberValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LOT_NUMBER];
-    }
-
-    /**
-     * Set the location the "value" field of the lotNumber element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLotNumberValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LOT_NUMBER] = $valueXMLLocation;
         return $this;
     }
 
@@ -261,11 +236,9 @@ class FHIRMedicationBatch extends FHIRBackboneElement
      * When this specific batch of product will expire.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $expirationDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExpirationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expirationDate,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExpirationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expirationDate): self
     {
         if (null === $expirationDate) {
             unset($this->expirationDate);
@@ -275,37 +248,10 @@ class FHIRMedicationBatch extends FHIRBackboneElement
             $expirationDate = new FHIRDateTime(value: $expirationDate);
         }
         $this->expirationDate = $expirationDate;
-        if ($this->_valueXMLLocations[self::FIELD_EXPIRATION_DATE] !== $valueXMLLocation) {
-            $this->_setExpirationDateValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the expirationDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExpirationDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXPIRATION_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the expirationDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExpirationDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXPIRATION_DATE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -334,9 +280,11 @@ class FHIRMedicationBatch extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -348,23 +296,24 @@ class FHIRMedicationBatch extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LOT_NUMBER])) {
             if (isset($type->lotNumber)) {
                 $type->lotNumber->setValue((string)$attributes[self::FIELD_LOT_NUMBER]);
-                $type->_setLotNumberValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLotNumber((string)$attributes[self::FIELD_LOT_NUMBER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLotNumber((string)$attributes[self::FIELD_LOT_NUMBER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LOT_NUMBER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_EXPIRATION_DATE])) {
             if (isset($type->expirationDate)) {
                 $type->expirationDate->setValue((string)$attributes[self::FIELD_EXPIRATION_DATE]);
-                $type->_setExpirationDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setExpirationDate((string)$attributes[self::FIELD_EXPIRATION_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setExpirationDate((string)$attributes[self::FIELD_EXPIRATION_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_EXPIRATION_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -377,10 +326,10 @@ class FHIRMedicationBatch extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->lotNumber) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LOT_NUMBER]) {
-            $xw->writeAttribute(self::FIELD_LOT_NUMBER, $this->lotNumber->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LOT_NUMBER, $this->lotNumber->_getValueAsString());
         }
         if (isset($this->expirationDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXPIRATION_DATE]) {
-            $xw->writeAttribute(self::FIELD_EXPIRATION_DATE, $this->expirationDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_EXPIRATION_DATE, $this->expirationDate->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->lotNumber)
@@ -400,13 +349,13 @@ class FHIRMedicationBatch extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -421,25 +370,21 @@ class FHIRMedicationBatch extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LOT_NUMBER])
-            || isset($json[self::FIELD_LOT_NUMBER_EXT])
-            || array_key_exists(self::FIELD_LOT_NUMBER, $json)
-            || array_key_exists(self::FIELD_LOT_NUMBER_EXT, $json)) {
-            $value = $json[self::FIELD_LOT_NUMBER] ?? null;
-            $type->setLotNumber(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_LOT_NUMBER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->lotNumber)
+            || isset($json->_lotNumber)
+            || property_exists($json, self::FIELD_LOT_NUMBER)
+            || property_exists($json, self::FIELD_LOT_NUMBER_EXT)) {
+            $v = $json->_lotNumber ?? new \stdClass();
+            $v->value = $json->lotNumber ?? null;
+            $type->setLotNumber(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_EXPIRATION_DATE])
-            || isset($json[self::FIELD_EXPIRATION_DATE_EXT])
-            || array_key_exists(self::FIELD_EXPIRATION_DATE, $json)
-            || array_key_exists(self::FIELD_EXPIRATION_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_EXPIRATION_DATE] ?? null;
-            $type->setExpirationDate(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPIRATION_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->expirationDate)
+            || isset($json->_expirationDate)
+            || property_exists($json, self::FIELD_EXPIRATION_DATE)
+            || property_exists($json, self::FIELD_EXPIRATION_DATE_EXT)) {
+            $v = $json->_expirationDate ?? new \stdClass();
+            $v->value = $json->expirationDate ?? null;
+            $type->setExpirationDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
         return $type;
     }

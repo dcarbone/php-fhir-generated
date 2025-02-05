@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -105,12 +107,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CAPABILITY_STATEMENT_DOT_SOFTWARE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_NAME = 'name';
     public const FIELD_NAME_EXT = '_name';
     public const FIELD_VERSION = 'version';
@@ -118,7 +122,7 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
     public const FIELD_RELEASE_DATE = 'releaseDate';
     public const FIELD_RELEASE_DATE_EXT = '_releaseDate';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_NAME => [
@@ -126,14 +130,14 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RELEASE_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -168,7 +172,7 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
      */
     protected FHIRDateTime $releaseDate;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCapabilityStatementSoftware Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -202,7 +206,7 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -211,7 +215,7 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -234,11 +238,9 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
      * Name the software is known by.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
         if (null === $name) {
             unset($this->name);
@@ -248,33 +250,6 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
             $name = new FHIRString(value: $name);
         }
         $this->name = $name;
-        if ($this->_valueXMLLocations[self::FIELD_NAME] !== $valueXMLLocation) {
-            $this->_setNameValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the name element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNameValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NAME];
-    }
-
-    /**
-     * Set the location the "value" field of the name element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NAME] = $valueXMLLocation;
         return $this;
     }
 
@@ -300,11 +275,9 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
      * The version identifier for the software covered by this statement.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
         if (null === $version) {
             unset($this->version);
@@ -314,33 +287,6 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
             $version = new FHIRString(value: $version);
         }
         $this->version = $version;
-        if ($this->_valueXMLLocations[self::FIELD_VERSION] !== $valueXMLLocation) {
-            $this->_setVersionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the version element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getVersionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VERSION];
-    }
-
-    /**
-     * Set the location the "value" field of the version element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setVersionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VERSION] = $valueXMLLocation;
         return $this;
     }
 
@@ -372,11 +318,9 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
      * Date this version of the software was released.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $releaseDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReleaseDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $releaseDate,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setReleaseDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $releaseDate): self
     {
         if (null === $releaseDate) {
             unset($this->releaseDate);
@@ -386,37 +330,10 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
             $releaseDate = new FHIRDateTime(value: $releaseDate);
         }
         $this->releaseDate = $releaseDate;
-        if ($this->_valueXMLLocations[self::FIELD_RELEASE_DATE] !== $valueXMLLocation) {
-            $this->_setReleaseDateValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the releaseDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getReleaseDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RELEASE_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the releaseDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setReleaseDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RELEASE_DATE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -445,9 +362,11 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -461,31 +380,32 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NAME])) {
             if (isset($type->name)) {
                 $type->name->setValue((string)$attributes[self::FIELD_NAME]);
-                $type->_setNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setName((string)$attributes[self::FIELD_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setName((string)$attributes[self::FIELD_NAME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NAME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VERSION])) {
             if (isset($type->version)) {
                 $type->version->setValue((string)$attributes[self::FIELD_VERSION]);
-                $type->_setVersionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setVersion((string)$attributes[self::FIELD_VERSION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setVersion((string)$attributes[self::FIELD_VERSION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VERSION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RELEASE_DATE])) {
             if (isset($type->releaseDate)) {
                 $type->releaseDate->setValue((string)$attributes[self::FIELD_RELEASE_DATE]);
-                $type->_setReleaseDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setReleaseDate((string)$attributes[self::FIELD_RELEASE_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setReleaseDate((string)$attributes[self::FIELD_RELEASE_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RELEASE_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -498,13 +418,13 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->name) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NAME]) {
-            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getValueAsString());
         }
         if (isset($this->version) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VERSION]) {
-            $xw->writeAttribute(self::FIELD_VERSION, $this->version->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VERSION, $this->version->_getValueAsString());
         }
         if (isset($this->releaseDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RELEASE_DATE]) {
-            $xw->writeAttribute(self::FIELD_RELEASE_DATE, $this->releaseDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RELEASE_DATE, $this->releaseDate->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->name)
@@ -531,13 +451,13 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -552,35 +472,29 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_NAME])
-            || isset($json[self::FIELD_NAME_EXT])
-            || array_key_exists(self::FIELD_NAME, $json)
-            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
-            $value = $json[self::FIELD_NAME] ?? null;
-            $type->setName(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->name)
+            || isset($json->_name)
+            || property_exists($json, self::FIELD_NAME)
+            || property_exists($json, self::FIELD_NAME_EXT)) {
+            $v = $json->_name ?? new \stdClass();
+            $v->value = $json->name ?? null;
+            $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VERSION])
-            || isset($json[self::FIELD_VERSION_EXT])
-            || array_key_exists(self::FIELD_VERSION, $json)
-            || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
-            $value = $json[self::FIELD_VERSION] ?? null;
-            $type->setVersion(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->version)
+            || isset($json->_version)
+            || property_exists($json, self::FIELD_VERSION)
+            || property_exists($json, self::FIELD_VERSION_EXT)) {
+            $v = $json->_version ?? new \stdClass();
+            $v->value = $json->version ?? null;
+            $type->setVersion(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_RELEASE_DATE])
-            || isset($json[self::FIELD_RELEASE_DATE_EXT])
-            || array_key_exists(self::FIELD_RELEASE_DATE, $json)
-            || array_key_exists(self::FIELD_RELEASE_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_RELEASE_DATE] ?? null;
-            $type->setReleaseDate(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_RELEASE_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->releaseDate)
+            || isset($json->_releaseDate)
+            || property_exists($json, self::FIELD_RELEASE_DATE)
+            || property_exists($json, self::FIELD_RELEASE_DATE_EXT)) {
+            $v = $json->_releaseDate ?? new \stdClass();
+            $v->value = $json->releaseDate ?? null;
+            $type->setReleaseDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
         return $type;
     }

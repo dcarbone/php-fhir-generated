@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -84,12 +86,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_PROTOCOL;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DOSE_SEQUENCE = 'doseSequence';
     public const FIELD_DOSE_SEQUENCE_EXT = '_doseSequence';
     public const FIELD_DESCRIPTION = 'description';
@@ -98,18 +102,18 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
     public const FIELD_SERIES = 'series';
     public const FIELD_SERIES_EXT = '_series';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DOSE_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SERIES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -154,13 +158,13 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
      */
     protected FHIRString $series;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRImmunizationRecommendationProtocol Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $doseSequence
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $doseSequence
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $authority
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $series
@@ -169,7 +173,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseSequence = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseSequence = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
                                 null|FHIRReference $authority = null,
                                 null|string|FHIRStringPrimitive|FHIRString $series = null,
@@ -193,7 +197,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -202,7 +206,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -226,12 +230,10 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
      * Indicates the nominal position in a series of the next dose. This is the
      * recommended dose number as per a specified protocol.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $doseSequence
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $doseSequence
      * @return static
      */
-    public function setDoseSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseSequence,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDoseSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseSequence): self
     {
         if (null === $doseSequence) {
             unset($this->doseSequence);
@@ -241,33 +243,6 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
             $doseSequence = new FHIRPositiveInt(value: $doseSequence);
         }
         $this->doseSequence = $doseSequence;
-        if ($this->_valueXMLLocations[self::FIELD_DOSE_SEQUENCE] !== $valueXMLLocation) {
-            $this->_setDoseSequenceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the doseSequence element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDoseSequenceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DOSE_SEQUENCE];
-    }
-
-    /**
-     * Set the location the "value" field of the doseSequence element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDoseSequenceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DOSE_SEQUENCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -295,11 +270,9 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
      * administered.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
         if (null === $description) {
             unset($this->description);
@@ -309,33 +282,6 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
             $description = new FHIRString(value: $description);
         }
         $this->description = $description;
-        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
-            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the description element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
-    }
-
-    /**
-     * Set the location the "value" field of the description element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -397,11 +343,9 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
      * context of an authority.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $series
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSeries(null|string|FHIRStringPrimitive|FHIRString $series,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSeries(null|string|FHIRStringPrimitive|FHIRString $series): self
     {
         if (null === $series) {
             unset($this->series);
@@ -411,37 +355,10 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
             $series = new FHIRString(value: $series);
         }
         $this->series = $series;
-        if ($this->_valueXMLLocations[self::FIELD_SERIES] !== $valueXMLLocation) {
-            $this->_setSeriesValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the series element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSeriesValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SERIES];
-    }
-
-    /**
-     * Set the location the "value" field of the series element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSeriesValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SERIES] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -470,9 +387,11 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -488,31 +407,32 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DOSE_SEQUENCE])) {
             if (isset($type->doseSequence)) {
                 $type->doseSequence->setValue((string)$attributes[self::FIELD_DOSE_SEQUENCE]);
-                $type->_setDoseSequenceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDoseSequence((string)$attributes[self::FIELD_DOSE_SEQUENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDoseSequence((string)$attributes[self::FIELD_DOSE_SEQUENCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DOSE_SEQUENCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             if (isset($type->description)) {
                 $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DESCRIPTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SERIES])) {
             if (isset($type->series)) {
                 $type->series->setValue((string)$attributes[self::FIELD_SERIES]);
-                $type->_setSeriesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSeries((string)$attributes[self::FIELD_SERIES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSeries((string)$attributes[self::FIELD_SERIES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SERIES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -525,13 +445,13 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->doseSequence) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DOSE_SEQUENCE]) {
-            $xw->writeAttribute(self::FIELD_DOSE_SEQUENCE, $this->doseSequence->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DOSE_SEQUENCE, $this->doseSequence->_getValueAsString());
         }
         if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getValueAsString());
         }
         if (isset($this->series) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SERIES]) {
-            $xw->writeAttribute(self::FIELD_SERIES, $this->series->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SERIES, $this->series->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->doseSequence)
@@ -563,13 +483,13 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -584,38 +504,36 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DOSE_SEQUENCE])
-            || isset($json[self::FIELD_DOSE_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_DOSE_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_DOSE_SEQUENCE_EXT, $json)) {
-            $value = $json[self::FIELD_DOSE_SEQUENCE] ?? null;
-            $type->setDoseSequence(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_DOSE_SEQUENCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->doseSequence)
+            || isset($json->_doseSequence)
+            || property_exists($json, self::FIELD_DOSE_SEQUENCE)
+            || property_exists($json, self::FIELD_DOSE_SEQUENCE_EXT)) {
+            $v = $json->_doseSequence ?? new \stdClass();
+            $v->value = $json->doseSequence ?? null;
+            $type->setDoseSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DESCRIPTION])
-            || isset($json[self::FIELD_DESCRIPTION_EXT])
-            || array_key_exists(self::FIELD_DESCRIPTION, $json)
-            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
-            $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $type->setDescription(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->description)
+            || isset($json->_description)
+            || property_exists($json, self::FIELD_DESCRIPTION)
+            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $json->_description ?? new \stdClass();
+            $v->value = $json->description ?? null;
+            $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_AUTHORITY]) || array_key_exists(self::FIELD_AUTHORITY, $json)) {
-            $type->setAuthority(FHIRReference::jsonUnserialize($json[self::FIELD_AUTHORITY], $config));
+        if (isset($json->authority) || property_exists($json, self::FIELD_AUTHORITY)) {
+            if (is_array($json->authority)) {
+                $type->setAuthority(FHIRReference::jsonUnserialize(reset($json->authority), $config));
+            } else {
+                $type->setAuthority(FHIRReference::jsonUnserialize($json->authority, $config));
+            }
         }
-        if (isset($json[self::FIELD_SERIES])
-            || isset($json[self::FIELD_SERIES_EXT])
-            || array_key_exists(self::FIELD_SERIES, $json)
-            || array_key_exists(self::FIELD_SERIES_EXT, $json)) {
-            $value = $json[self::FIELD_SERIES] ?? null;
-            $type->setSeries(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SERIES_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->series)
+            || isset($json->_series)
+            || property_exists($json, self::FIELD_SERIES)
+            || property_exists($json, self::FIELD_SERIES_EXT)) {
+            $v = $json->_series ?? new \stdClass();
+            $v->value = $json->series ?? null;
+            $type->setSeries(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -86,12 +88,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRConsentExcept extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONSENT_DOT_EXCEPT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_PERIOD = 'period';
@@ -104,7 +108,7 @@ class FHIRConsentExcept extends FHIRBackboneElement
     public const FIELD_DATA_PERIOD = 'dataPeriod';
     public const FIELD_DATA = 'data';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -112,12 +116,12 @@ class FHIRConsentExcept extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * How an exception statement is applied, such as adding additional consent or
      * removing consent
@@ -228,7 +232,7 @@ class FHIRConsentExcept extends FHIRBackboneElement
      */
     protected array $data;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRConsentExcept Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -297,7 +301,7 @@ class FHIRConsentExcept extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -306,7 +310,7 @@ class FHIRConsentExcept extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * How an exception statement is applied, such as adding additional consent or
      * removing consent
@@ -329,11 +333,9 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * Action to take - permit or deny - when the exception conditions are met.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConsentExceptTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConsentExceptType $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRConsentExceptTypeList|FHIRConsentExceptType $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRConsentExceptTypeList|FHIRConsentExceptType $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -343,33 +345,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
             $type = new FHIRConsentExceptType(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -915,7 +890,7 @@ class FHIRConsentExcept extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -944,9 +919,11 @@ class FHIRConsentExcept extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -974,15 +951,16 @@ class FHIRConsentExcept extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -995,7 +973,7 @@ class FHIRConsentExcept extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)
@@ -1067,13 +1045,13 @@ class FHIRConsentExcept extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentExcept $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentExcept
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1088,82 +1066,102 @@ class FHIRConsentExcept extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRConsentExceptType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRConsentExceptType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRConsentExceptType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_ACTOR]) || array_key_exists(self::FIELD_ACTOR, $json)) {
-            $vs = $json[self::FIELD_ACTOR];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->actor) || property_exists($json, self::FIELD_ACTOR)) {
+            if (is_object($json->actor)) {
+                $vals = [$json->actor];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ACTOR, true);
+            } else {
+                $vals = $json->actor;
+            }
+            foreach($vals as $v) {
                 $type->addActor(FHIRConsentActor1::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ACTION]) || array_key_exists(self::FIELD_ACTION, $json)) {
-            $vs = $json[self::FIELD_ACTION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->action) || property_exists($json, self::FIELD_ACTION)) {
+            if (is_object($json->action)) {
+                $vals = [$json->action];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ACTION, true);
+            } else {
+                $vals = $json->action;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAction(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SECURITY_LABEL]) || array_key_exists(self::FIELD_SECURITY_LABEL, $json)) {
-            $vs = $json[self::FIELD_SECURITY_LABEL];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->securityLabel) || property_exists($json, self::FIELD_SECURITY_LABEL)) {
+            if (is_object($json->securityLabel)) {
+                $vals = [$json->securityLabel];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SECURITY_LABEL, true);
+            } else {
+                $vals = $json->securityLabel;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSecurityLabel(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PURPOSE]) || array_key_exists(self::FIELD_PURPOSE, $json)) {
-            $vs = $json[self::FIELD_PURPOSE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->purpose) || property_exists($json, self::FIELD_PURPOSE)) {
+            if (is_object($json->purpose)) {
+                $vals = [$json->purpose];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PURPOSE, true);
+            } else {
+                $vals = $json->purpose;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addPurpose(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CLASS]) || array_key_exists(self::FIELD_CLASS, $json)) {
-            $vs = $json[self::FIELD_CLASS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->class) || property_exists($json, self::FIELD_CLASS)) {
+            if (is_object($json->class)) {
+                $vals = [$json->class];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CLASS, true);
+            } else {
+                $vals = $json->class;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addClass(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $vs = $json[self::FIELD_CODE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
+            if (is_object($json->code)) {
+                $vals = [$json->code];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CODE, true);
+            } else {
+                $vals = $json->code;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addCode(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DATA_PERIOD]) || array_key_exists(self::FIELD_DATA_PERIOD, $json)) {
-            $type->setDataPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_DATA_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_DATA]) || array_key_exists(self::FIELD_DATA, $json)) {
-            $vs = $json[self::FIELD_DATA];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->dataPeriod) || property_exists($json, self::FIELD_DATA_PERIOD)) {
+            if (is_array($json->dataPeriod)) {
+                $type->setDataPeriod(FHIRPeriod::jsonUnserialize(reset($json->dataPeriod), $config));
+            } else {
+                $type->setDataPeriod(FHIRPeriod::jsonUnserialize($json->dataPeriod, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->data) || property_exists($json, self::FIELD_DATA)) {
+            if (is_object($json->data)) {
+                $vals = [$json->data];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DATA, true);
+            } else {
+                $vals = $json->data;
+            }
+            foreach($vals as $v) {
                 $type->addData(FHIRConsentData1::jsonUnserialize($v, $config));
             }
         }
@@ -1190,28 +1188,56 @@ class FHIRConsentExcept extends FHIRBackboneElement
             $out->period = $this->period;
         }
         if (isset($this->actor) && [] !== $this->actor) {
-            $out->actor = $this->actor;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ACTOR) && 1 === count($this->actor)) {
+                $out->actor = $this->actor[0];
+            } else {
+                $out->actor = $this->actor;
+            }
         }
         if (isset($this->action) && [] !== $this->action) {
-            $out->action = $this->action;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ACTION) && 1 === count($this->action)) {
+                $out->action = $this->action[0];
+            } else {
+                $out->action = $this->action;
+            }
         }
         if (isset($this->securityLabel) && [] !== $this->securityLabel) {
-            $out->securityLabel = $this->securityLabel;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SECURITY_LABEL) && 1 === count($this->securityLabel)) {
+                $out->securityLabel = $this->securityLabel[0];
+            } else {
+                $out->securityLabel = $this->securityLabel;
+            }
         }
         if (isset($this->purpose) && [] !== $this->purpose) {
-            $out->purpose = $this->purpose;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PURPOSE) && 1 === count($this->purpose)) {
+                $out->purpose = $this->purpose[0];
+            } else {
+                $out->purpose = $this->purpose;
+            }
         }
         if (isset($this->class) && [] !== $this->class) {
-            $out->class = $this->class;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CLASS) && 1 === count($this->class)) {
+                $out->class = $this->class[0];
+            } else {
+                $out->class = $this->class;
+            }
         }
         if (isset($this->code) && [] !== $this->code) {
-            $out->code = $this->code;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CODE) && 1 === count($this->code)) {
+                $out->code = $this->code[0];
+            } else {
+                $out->code = $this->code;
+            }
         }
         if (isset($this->dataPeriod)) {
             $out->dataPeriod = $this->dataPeriod;
         }
         if (isset($this->data) && [] !== $this->data) {
-            $out->data = $this->data;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DATA) && 1 === count($this->data)) {
+                $out->data = $this->data[0];
+            } else {
+                $out->data = $this->data;
+            }
         }
         return $out;
     }

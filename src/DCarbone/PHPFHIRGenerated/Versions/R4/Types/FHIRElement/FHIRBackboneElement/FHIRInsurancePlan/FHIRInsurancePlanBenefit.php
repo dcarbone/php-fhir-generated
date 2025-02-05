@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -81,18 +83,20 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRInsurancePlanBenefit extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INSURANCE_PLAN_DOT_BENEFIT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_REQUIREMENT = 'requirement';
     public const FIELD_REQUIREMENT_EXT = '_requirement';
     public const FIELD_LIMIT = 'limit';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -100,12 +104,12 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_REQUIREMENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -136,7 +140,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      */
     protected array $limit;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRInsurancePlanBenefit Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -170,7 +174,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -179,7 +183,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -238,11 +242,9 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      * The referral requirements to have access/coverage for this benefit.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $requirement
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRequirement(null|string|FHIRStringPrimitive|FHIRString $requirement,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRequirement(null|string|FHIRStringPrimitive|FHIRString $requirement): self
     {
         if (null === $requirement) {
             unset($this->requirement);
@@ -252,33 +254,6 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             $requirement = new FHIRString(value: $requirement);
         }
         $this->requirement = $requirement;
-        if ($this->_valueXMLLocations[self::FIELD_REQUIREMENT] !== $valueXMLLocation) {
-            $this->_setRequirementValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the requirement element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRequirementValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_REQUIREMENT];
-    }
-
-    /**
-     * Set the location the "value" field of the requirement element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRequirementValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_REQUIREMENT] = $valueXMLLocation;
         return $this;
     }
 
@@ -340,7 +315,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -369,9 +344,11 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -385,15 +362,16 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_REQUIREMENT])) {
             if (isset($type->requirement)) {
                 $type->requirement->setValue((string)$attributes[self::FIELD_REQUIREMENT]);
-                $type->_setRequirementValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRequirement((string)$attributes[self::FIELD_REQUIREMENT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRequirement((string)$attributes[self::FIELD_REQUIREMENT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_REQUIREMENT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -406,7 +384,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->requirement) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REQUIREMENT]) {
-            $xw->writeAttribute(self::FIELD_REQUIREMENT, $this->requirement->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_REQUIREMENT, $this->requirement->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -431,13 +409,13 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -452,25 +430,29 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_REQUIREMENT])
-            || isset($json[self::FIELD_REQUIREMENT_EXT])
-            || array_key_exists(self::FIELD_REQUIREMENT, $json)
-            || array_key_exists(self::FIELD_REQUIREMENT_EXT, $json)) {
-            $value = $json[self::FIELD_REQUIREMENT] ?? null;
-            $type->setRequirement(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUIREMENT_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_LIMIT]) || array_key_exists(self::FIELD_LIMIT, $json)) {
-            $vs = $json[self::FIELD_LIMIT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->requirement)
+            || isset($json->_requirement)
+            || property_exists($json, self::FIELD_REQUIREMENT)
+            || property_exists($json, self::FIELD_REQUIREMENT_EXT)) {
+            $v = $json->_requirement ?? new \stdClass();
+            $v->value = $json->requirement ?? null;
+            $type->setRequirement(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->limit) || property_exists($json, self::FIELD_LIMIT)) {
+            if (is_object($json->limit)) {
+                $vals = [$json->limit];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_LIMIT, true);
+            } else {
+                $vals = $json->limit;
+            }
+            foreach($vals as $v) {
                 $type->addLimit(FHIRInsurancePlanLimit::jsonUnserialize($v, $config));
             }
         }
@@ -497,7 +479,11 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             }
         }
         if (isset($this->limit) && [] !== $this->limit) {
-            $out->limit = $this->limit;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_LIMIT) && 1 === count($this->limit)) {
+                $out->limit = $this->limit[0];
+            } else {
+                $out->limit = $this->limit;
+            }
         }
         return $out;
     }

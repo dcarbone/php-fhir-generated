@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,16 +104,18 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLINICAL_USE_DEFINITION_DOT_OTHER_THERAPY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_RELATIONSHIP_TYPE = 'relationshipType';
     public const FIELD_TREATMENT = 'treatment';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_RELATIONSHIP_TYPE => [
@@ -122,11 +126,11 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -153,7 +157,7 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
      */
     protected FHIRCodeableReference $treatment;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRClinicalUseDefinitionOtherTherapy Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -182,7 +186,7 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -191,7 +195,7 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -270,7 +274,7 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -299,9 +303,11 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -313,7 +319,8 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -339,13 +346,13 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionOtherTherapy $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionOtherTherapy
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -360,11 +367,19 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_RELATIONSHIP_TYPE]) || array_key_exists(self::FIELD_RELATIONSHIP_TYPE, $json)) {
-            $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_RELATIONSHIP_TYPE], $config));
+        if (isset($json->relationshipType) || property_exists($json, self::FIELD_RELATIONSHIP_TYPE)) {
+            if (is_array($json->relationshipType)) {
+                $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize(reset($json->relationshipType), $config));
+            } else {
+                $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize($json->relationshipType, $config));
+            }
         }
-        if (isset($json[self::FIELD_TREATMENT]) || array_key_exists(self::FIELD_TREATMENT, $json)) {
-            $type->setTreatment(FHIRCodeableReference::jsonUnserialize($json[self::FIELD_TREATMENT], $config));
+        if (isset($json->treatment) || property_exists($json, self::FIELD_TREATMENT)) {
+            if (is_array($json->treatment)) {
+                $type->setTreatment(FHIRCodeableReference::jsonUnserialize(reset($json->treatment), $config));
+            } else {
+                $type->setTreatment(FHIRCodeableReference::jsonUnserialize($json->treatment, $config));
+            }
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -106,12 +108,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRDeviceName extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_DOT_NAME;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_VALUE = 'value';
     public const FIELD_VALUE_EXT = '_value';
     public const FIELD_TYPE = 'type';
@@ -119,7 +123,7 @@ class FHIRDeviceName extends FHIRBackboneElement
     public const FIELD_DISPLAY = 'display';
     public const FIELD_DISPLAY_EXT = '_display';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
@@ -130,14 +134,14 @@ class FHIRDeviceName extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DISPLAY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -167,7 +171,7 @@ class FHIRDeviceName extends FHIRBackboneElement
      */
     protected FHIRBoolean $display;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDeviceName Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -201,7 +205,7 @@ class FHIRDeviceName extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -210,7 +214,7 @@ class FHIRDeviceName extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -233,11 +237,9 @@ class FHIRDeviceName extends FHIRBackboneElement
      * The actual name that identifies the device.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
         if (null === $value) {
             unset($this->value);
@@ -247,33 +249,6 @@ class FHIRDeviceName extends FHIRBackboneElement
             $value = new FHIRString(value: $value);
         }
         $this->value = $value;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE] !== $valueXMLLocation) {
-            $this->_setValueValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the value element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE];
-    }
-
-    /**
-     * Set the location the "value" field of the value element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE] = $valueXMLLocation;
         return $this;
     }
 
@@ -297,11 +272,9 @@ class FHIRDeviceName extends FHIRBackboneElement
      * PatientReportedName.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceNameTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceNameType $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRDeviceNameTypeEnum|FHIRDeviceNameType $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRDeviceNameTypeEnum|FHIRDeviceNameType $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -311,33 +284,6 @@ class FHIRDeviceName extends FHIRBackboneElement
             $type = new FHIRDeviceNameType(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -361,11 +307,9 @@ class FHIRDeviceName extends FHIRBackboneElement
      * Indicates the default or preferred name to be displayed.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $display
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDisplay(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $display,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDisplay(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $display): self
     {
         if (null === $display) {
             unset($this->display);
@@ -375,37 +319,10 @@ class FHIRDeviceName extends FHIRBackboneElement
             $display = new FHIRBoolean(value: $display);
         }
         $this->display = $display;
-        if ($this->_valueXMLLocations[self::FIELD_DISPLAY] !== $valueXMLLocation) {
-            $this->_setDisplayValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the display element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDisplayValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DISPLAY];
-    }
-
-    /**
-     * Set the location the "value" field of the display element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDisplayValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DISPLAY] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -434,9 +351,11 @@ class FHIRDeviceName extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -450,31 +369,32 @@ class FHIRDeviceName extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE])) {
             if (isset($type->value)) {
                 $type->value->setValue((string)$attributes[self::FIELD_VALUE]);
-                $type->_setValueValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValue((string)$attributes[self::FIELD_VALUE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setValue((string)$attributes[self::FIELD_VALUE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VALUE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DISPLAY])) {
             if (isset($type->display)) {
                 $type->display->setValue((string)$attributes[self::FIELD_DISPLAY]);
-                $type->_setDisplayValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDisplay((string)$attributes[self::FIELD_DISPLAY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDisplay((string)$attributes[self::FIELD_DISPLAY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DISPLAY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -487,13 +407,13 @@ class FHIRDeviceName extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
-            $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getValueAsString());
         }
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         if (isset($this->display) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DISPLAY]) {
-            $xw->writeAttribute(self::FIELD_DISPLAY, $this->display->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DISPLAY, $this->display->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->value)
@@ -520,13 +440,13 @@ class FHIRDeviceName extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceName $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceName
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -541,35 +461,29 @@ class FHIRDeviceName extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_VALUE])
-            || isset($json[self::FIELD_VALUE_EXT])
-            || array_key_exists(self::FIELD_VALUE, $json)
-            || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE] ?? null;
-            $type->setValue(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->value)
+            || isset($json->_value)
+            || property_exists($json, self::FIELD_VALUE)
+            || property_exists($json, self::FIELD_VALUE_EXT)) {
+            $v = $json->_value ?? new \stdClass();
+            $v->value = $json->value ?? null;
+            $type->setValue(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRDeviceNameType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDeviceNameType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRDeviceNameType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DISPLAY])
-            || isset($json[self::FIELD_DISPLAY_EXT])
-            || array_key_exists(self::FIELD_DISPLAY, $json)
-            || array_key_exists(self::FIELD_DISPLAY_EXT, $json)) {
-            $value = $json[self::FIELD_DISPLAY] ?? null;
-            $type->setDisplay(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_DISPLAY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->display)
+            || isset($json->_display)
+            || property_exists($json, self::FIELD_DISPLAY)
+            || property_exists($json, self::FIELD_DISPLAY_EXT)) {
+            $v = $json->_display ?? new \stdClass();
+            $v->value = $json->display ?? null;
+            $type->setDisplay(FHIRBoolean::jsonUnserialize($v, $config));
         }
         return $type;
     }

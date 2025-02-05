@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -82,27 +84,29 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  */
 class FHIRSubstanceInstance extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_DOT_INSTANCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_EXPIRY = 'expiry';
     public const FIELD_EXPIRY_EXT = '_expiry';
     public const FIELD_QUANTITY = 'quantity';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_EXPIRY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -135,7 +139,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
      */
     protected FHIRSimpleQuantity $quantity;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstanceInstance Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
@@ -169,7 +173,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -178,7 +182,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -245,11 +249,9 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
      * arbitrary date is used for expiry.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $expiry
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExpiry(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expiry,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExpiry(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expiry): self
     {
         if (null === $expiry) {
             unset($this->expiry);
@@ -259,33 +261,6 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
             $expiry = new FHIRDateTime(value: $expiry);
         }
         $this->expiry = $expiry;
-        if ($this->_valueXMLLocations[self::FIELD_EXPIRY] !== $valueXMLLocation) {
-            $this->_setExpiryValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the expiry element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExpiryValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXPIRY];
-    }
-
-    /**
-     * Set the location the "value" field of the expiry element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExpiryValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXPIRY] = $valueXMLLocation;
         return $this;
     }
 
@@ -315,7 +290,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -344,9 +319,11 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -360,15 +337,16 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_EXPIRY])) {
             if (isset($type->expiry)) {
                 $type->expiry->setValue((string)$attributes[self::FIELD_EXPIRY]);
-                $type->_setExpiryValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setExpiry((string)$attributes[self::FIELD_EXPIRY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setExpiry((string)$attributes[self::FIELD_EXPIRY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_EXPIRY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -381,7 +359,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->expiry) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXPIRY]) {
-            $xw->writeAttribute(self::FIELD_EXPIRY, $this->expiry->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_EXPIRY, $this->expiry->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -404,13 +382,13 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -425,21 +403,27 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_IDENTIFIER], $config));
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_array($json->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+            } else {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
+            }
         }
-        if (isset($json[self::FIELD_EXPIRY])
-            || isset($json[self::FIELD_EXPIRY_EXT])
-            || array_key_exists(self::FIELD_EXPIRY, $json)
-            || array_key_exists(self::FIELD_EXPIRY_EXT, $json)) {
-            $value = $json[self::FIELD_EXPIRY] ?? null;
-            $type->setExpiry(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPIRY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->expiry)
+            || isset($json->_expiry)
+            || property_exists($json, self::FIELD_EXPIRY)
+            || property_exists($json, self::FIELD_EXPIRY_EXT)) {
+            $v = $json->_expiry ?? new \stdClass();
+            $v->value = $json->expiry ?? null;
+            $type->setExpiry(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
+        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
+            if (is_array($json->quantity)) {
+                $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize(reset($json->quantity), $config));
+            } else {
+                $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize($json->quantity, $config));
+            }
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -101,16 +103,18 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_RELATED_MEDICATION_KNOWLEDGE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_REFERENCE = 'reference';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -121,11 +125,11 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -148,7 +152,7 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
      */
     protected array $reference;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedicationKnowledgeRelatedMedicationKnowledge Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -177,7 +181,7 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -186,7 +190,7 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -287,7 +291,7 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -316,9 +320,11 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -330,7 +336,8 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -358,13 +365,13 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -379,15 +386,21 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_REFERENCE]) || array_key_exists(self::FIELD_REFERENCE, $json)) {
-            $vs = $json[self::FIELD_REFERENCE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->reference) || property_exists($json, self::FIELD_REFERENCE)) {
+            if (is_object($json->reference)) {
+                $vals = [$json->reference];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_REFERENCE, true);
+            } else {
+                $vals = $json->reference;
+            }
+            foreach($vals as $v) {
                 $type->addReference(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -404,7 +417,11 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
             $out->type = $this->type;
         }
         if (isset($this->reference) && [] !== $this->reference) {
-            $out->reference = $this->reference;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_REFERENCE) && 1 === count($this->reference)) {
+                $out->reference = $this->reference[0];
+            } else {
+                $out->reference = $this->reference;
+            }
         }
         return $out;
     }

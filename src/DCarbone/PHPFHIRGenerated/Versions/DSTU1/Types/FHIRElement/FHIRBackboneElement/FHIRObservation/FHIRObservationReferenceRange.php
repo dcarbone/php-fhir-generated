@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -57,9 +57,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -77,26 +79,28 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  */
 class FHIRObservationReferenceRange extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_LOW = 'low';
     public const FIELD_HIGH = 'high';
     public const FIELD_MEANING = 'meaning';
     public const FIELD_AGE = 'age';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -146,7 +150,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      */
     protected FHIRRange $age;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRObservationReferenceRange Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -185,7 +189,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -194,7 +198,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -347,7 +351,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -385,9 +389,11 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -403,7 +409,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -464,13 +471,13 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -488,22 +495,36 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LOW]) || array_key_exists(self::FIELD_LOW, $json)) {
-            $type->setLow(FHIRQuantity::jsonUnserialize($json[self::FIELD_LOW], $config));
+        if (isset($json->low) || property_exists($json, self::FIELD_LOW)) {
+            if (is_array($json->low)) {
+                $type->setLow(FHIRQuantity::jsonUnserialize(reset($json->low), $config));
+            } else {
+                $type->setLow(FHIRQuantity::jsonUnserialize($json->low, $config));
+            }
         }
-        if (isset($json[self::FIELD_HIGH]) || array_key_exists(self::FIELD_HIGH, $json)) {
-            $type->setHigh(FHIRQuantity::jsonUnserialize($json[self::FIELD_HIGH], $config));
+        if (isset($json->high) || property_exists($json, self::FIELD_HIGH)) {
+            if (is_array($json->high)) {
+                $type->setHigh(FHIRQuantity::jsonUnserialize(reset($json->high), $config));
+            } else {
+                $type->setHigh(FHIRQuantity::jsonUnserialize($json->high, $config));
+            }
         }
-        if (isset($json[self::FIELD_MEANING]) || array_key_exists(self::FIELD_MEANING, $json)) {
-            $type->setMeaning(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MEANING], $config));
+        if (isset($json->meaning) || property_exists($json, self::FIELD_MEANING)) {
+            if (is_array($json->meaning)) {
+                $type->setMeaning(FHIRCodeableConcept::jsonUnserialize(reset($json->meaning), $config));
+            } else {
+                $type->setMeaning(FHIRCodeableConcept::jsonUnserialize($json->meaning, $config));
+            }
         }
-        if (isset($json[self::FIELD_AGE]) || array_key_exists(self::FIELD_AGE, $json)) {
-            $type->setAge(FHIRRange::jsonUnserialize($json[self::FIELD_AGE], $config));
+        if (isset($json->age) || property_exists($json, self::FIELD_AGE)) {
+            if (is_array($json->age)) {
+                $type->setAge(FHIRRange::jsonUnserialize(reset($json->age), $config));
+            } else {
+                $type->setAge(FHIRRange::jsonUnserialize($json->age, $config));
+            }
         }
         return $type;
     }

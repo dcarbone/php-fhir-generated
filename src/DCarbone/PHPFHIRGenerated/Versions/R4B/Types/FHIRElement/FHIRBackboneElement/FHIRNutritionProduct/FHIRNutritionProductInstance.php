@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,12 +105,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRNutritionProductInstance extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_PRODUCT_DOT_INSTANCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_QUANTITY = 'quantity';
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_LOT_NUMBER = 'lotNumber';
@@ -118,18 +122,18 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
     public const FIELD_USE_BY = 'useBy';
     public const FIELD_USE_BY_EXT = '_useBy';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_LOT_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXPIRY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_USE_BY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -193,7 +197,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      */
     protected FHIRDateTime $useBy;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRNutritionProductInstance Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -237,7 +241,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -246,7 +250,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -376,11 +380,9 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * The identification of the batch or lot of the product.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $lotNumber
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber): self
     {
         if (null === $lotNumber) {
             unset($this->lotNumber);
@@ -390,33 +392,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             $lotNumber = new FHIRString(value: $lotNumber);
         }
         $this->lotNumber = $lotNumber;
-        if ($this->_valueXMLLocations[self::FIELD_LOT_NUMBER] !== $valueXMLLocation) {
-            $this->_setLotNumberValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the lotNumber element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLotNumberValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LOT_NUMBER];
-    }
-
-    /**
-     * Set the location the "value" field of the lotNumber element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLotNumberValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LOT_NUMBER] = $valueXMLLocation;
         return $this;
     }
 
@@ -450,11 +425,9 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * condition, or its use is not advised or not allowed.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $expiry
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExpiry(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expiry,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExpiry(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expiry): self
     {
         if (null === $expiry) {
             unset($this->expiry);
@@ -464,33 +437,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             $expiry = new FHIRDateTime(value: $expiry);
         }
         $this->expiry = $expiry;
-        if ($this->_valueXMLLocations[self::FIELD_EXPIRY] !== $valueXMLLocation) {
-            $this->_setExpiryValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the expiry element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExpiryValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXPIRY];
-    }
-
-    /**
-     * Set the location the "value" field of the expiry element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExpiryValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXPIRY] = $valueXMLLocation;
         return $this;
     }
 
@@ -524,11 +470,9 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * condition, or its use is not advised or not allowed.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $useBy
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUseBy(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $useBy,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUseBy(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $useBy): self
     {
         if (null === $useBy) {
             unset($this->useBy);
@@ -538,37 +482,10 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             $useBy = new FHIRDateTime(value: $useBy);
         }
         $this->useBy = $useBy;
-        if ($this->_valueXMLLocations[self::FIELD_USE_BY] !== $valueXMLLocation) {
-            $this->_setUseByValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the useBy element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUseByValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_USE_BY];
-    }
-
-    /**
-     * Set the location the "value" field of the useBy element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUseByValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_USE_BY] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -597,9 +514,11 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -617,31 +536,32 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LOT_NUMBER])) {
             if (isset($type->lotNumber)) {
                 $type->lotNumber->setValue((string)$attributes[self::FIELD_LOT_NUMBER]);
-                $type->_setLotNumberValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLotNumber((string)$attributes[self::FIELD_LOT_NUMBER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLotNumber((string)$attributes[self::FIELD_LOT_NUMBER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LOT_NUMBER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_EXPIRY])) {
             if (isset($type->expiry)) {
                 $type->expiry->setValue((string)$attributes[self::FIELD_EXPIRY]);
-                $type->_setExpiryValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setExpiry((string)$attributes[self::FIELD_EXPIRY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setExpiry((string)$attributes[self::FIELD_EXPIRY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_EXPIRY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_USE_BY])) {
             if (isset($type->useBy)) {
                 $type->useBy->setValue((string)$attributes[self::FIELD_USE_BY]);
-                $type->_setUseByValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUseBy((string)$attributes[self::FIELD_USE_BY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUseBy((string)$attributes[self::FIELD_USE_BY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_USE_BY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -654,13 +574,13 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->lotNumber) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LOT_NUMBER]) {
-            $xw->writeAttribute(self::FIELD_LOT_NUMBER, $this->lotNumber->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LOT_NUMBER, $this->lotNumber->_getValueAsString());
         }
         if (isset($this->expiry) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXPIRY]) {
-            $xw->writeAttribute(self::FIELD_EXPIRY, $this->expiry->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_EXPIRY, $this->expiry->_getValueAsString());
         }
         if (isset($this->useBy) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_USE_BY]) {
-            $xw->writeAttribute(self::FIELD_USE_BY, $this->useBy->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_USE_BY, $this->useBy->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->quantity)) {
@@ -699,13 +619,13 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -720,47 +640,47 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
+            if (is_array($json->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+            } else {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
+            }
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_LOT_NUMBER])
-            || isset($json[self::FIELD_LOT_NUMBER_EXT])
-            || array_key_exists(self::FIELD_LOT_NUMBER, $json)
-            || array_key_exists(self::FIELD_LOT_NUMBER_EXT, $json)) {
-            $value = $json[self::FIELD_LOT_NUMBER] ?? null;
-            $type->setLotNumber(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_LOT_NUMBER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->lotNumber)
+            || isset($json->_lotNumber)
+            || property_exists($json, self::FIELD_LOT_NUMBER)
+            || property_exists($json, self::FIELD_LOT_NUMBER_EXT)) {
+            $v = $json->_lotNumber ?? new \stdClass();
+            $v->value = $json->lotNumber ?? null;
+            $type->setLotNumber(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_EXPIRY])
-            || isset($json[self::FIELD_EXPIRY_EXT])
-            || array_key_exists(self::FIELD_EXPIRY, $json)
-            || array_key_exists(self::FIELD_EXPIRY_EXT, $json)) {
-            $value = $json[self::FIELD_EXPIRY] ?? null;
-            $type->setExpiry(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPIRY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->expiry)
+            || isset($json->_expiry)
+            || property_exists($json, self::FIELD_EXPIRY)
+            || property_exists($json, self::FIELD_EXPIRY_EXT)) {
+            $v = $json->_expiry ?? new \stdClass();
+            $v->value = $json->expiry ?? null;
+            $type->setExpiry(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_USE_BY])
-            || isset($json[self::FIELD_USE_BY_EXT])
-            || array_key_exists(self::FIELD_USE_BY, $json)
-            || array_key_exists(self::FIELD_USE_BY_EXT, $json)) {
-            $value = $json[self::FIELD_USE_BY] ?? null;
-            $type->setUseBy(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_USE_BY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->useBy)
+            || isset($json->_useBy)
+            || property_exists($json, self::FIELD_USE_BY)
+            || property_exists($json, self::FIELD_USE_BY_EXT)) {
+            $v = $json->_useBy ?? new \stdClass();
+            $v->value = $json->useBy ?? null;
+            $type->setUseBy(FHIRDateTime::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -775,7 +695,11 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             $out->quantity = $this->quantity;
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->lotNumber)) {
             if (null !== ($val = $this->lotNumber->getValue())) {

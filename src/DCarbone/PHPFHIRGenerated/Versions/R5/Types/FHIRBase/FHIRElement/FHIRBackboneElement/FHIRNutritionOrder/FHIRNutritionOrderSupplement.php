@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,12 +104,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRNutritionOrderSupplement extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_ORDER_DOT_SUPPLEMENT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_PRODUCT_NAME = 'productName';
     public const FIELD_PRODUCT_NAME_EXT = '_productName';
@@ -116,17 +120,17 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
     public const FIELD_INSTRUCTION = 'instruction';
     public const FIELD_INSTRUCTION_EXT = '_instruction';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_PRODUCT_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INSTRUCTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -183,7 +187,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      */
     protected FHIRString $instruction;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRNutritionOrderSupplement Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -227,7 +231,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -236,7 +240,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -299,11 +303,9 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * Shake".
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $productName
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setProductName(null|string|FHIRStringPrimitive|FHIRString $productName,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setProductName(null|string|FHIRStringPrimitive|FHIRString $productName): self
     {
         if (null === $productName) {
             unset($this->productName);
@@ -313,33 +315,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             $productName = new FHIRString(value: $productName);
         }
         $this->productName = $productName;
-        if ($this->_valueXMLLocations[self::FIELD_PRODUCT_NAME] !== $valueXMLLocation) {
-            $this->_setProductNameValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the productName element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getProductNameValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PRODUCT_NAME];
-    }
-
-    /**
-     * Set the location the "value" field of the productName element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setProductNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PRODUCT_NAME] = $valueXMLLocation;
         return $this;
     }
 
@@ -437,11 +412,9 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * supplement.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $instruction
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setInstruction(null|string|FHIRStringPrimitive|FHIRString $instruction,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setInstruction(null|string|FHIRStringPrimitive|FHIRString $instruction): self
     {
         if (null === $instruction) {
             unset($this->instruction);
@@ -451,37 +424,10 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             $instruction = new FHIRString(value: $instruction);
         }
         $this->instruction = $instruction;
-        if ($this->_valueXMLLocations[self::FIELD_INSTRUCTION] !== $valueXMLLocation) {
-            $this->_setInstructionValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the instruction element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getInstructionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INSTRUCTION];
-    }
-
-    /**
-     * Set the location the "value" field of the instruction element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setInstructionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INSTRUCTION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -510,9 +456,11 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -530,23 +478,24 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PRODUCT_NAME])) {
             if (isset($type->productName)) {
                 $type->productName->setValue((string)$attributes[self::FIELD_PRODUCT_NAME]);
-                $type->_setProductNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setProductName((string)$attributes[self::FIELD_PRODUCT_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setProductName((string)$attributes[self::FIELD_PRODUCT_NAME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PRODUCT_NAME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INSTRUCTION])) {
             if (isset($type->instruction)) {
                 $type->instruction->setValue((string)$attributes[self::FIELD_INSTRUCTION]);
-                $type->_setInstructionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInstruction((string)$attributes[self::FIELD_INSTRUCTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setInstruction((string)$attributes[self::FIELD_INSTRUCTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INSTRUCTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -559,10 +508,10 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->productName) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PRODUCT_NAME]) {
-            $xw->writeAttribute(self::FIELD_PRODUCT_NAME, $this->productName->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PRODUCT_NAME, $this->productName->_getValueAsString());
         }
         if (isset($this->instruction) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INSTRUCTION]) {
-            $xw->writeAttribute(self::FIELD_INSTRUCTION, $this->instruction->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INSTRUCTION, $this->instruction->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -597,13 +546,13 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -618,34 +567,42 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableReference::jsonUnserialize($json[self::FIELD_TYPE], $config));
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableReference::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableReference::jsonUnserialize($json->type, $config));
+            }
         }
-        if (isset($json[self::FIELD_PRODUCT_NAME])
-            || isset($json[self::FIELD_PRODUCT_NAME_EXT])
-            || array_key_exists(self::FIELD_PRODUCT_NAME, $json)
-            || array_key_exists(self::FIELD_PRODUCT_NAME_EXT, $json)) {
-            $value = $json[self::FIELD_PRODUCT_NAME] ?? null;
-            $type->setProductName(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PRODUCT_NAME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->productName)
+            || isset($json->_productName)
+            || property_exists($json, self::FIELD_PRODUCT_NAME)
+            || property_exists($json, self::FIELD_PRODUCT_NAME_EXT)) {
+            $v = $json->_productName ?? new \stdClass();
+            $v->value = $json->productName ?? null;
+            $type->setProductName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SCHEDULE]) || array_key_exists(self::FIELD_SCHEDULE, $json)) {
-            $type->setSchedule(FHIRNutritionOrderSchedule1::jsonUnserialize($json[self::FIELD_SCHEDULE], $config));
+        if (isset($json->schedule) || property_exists($json, self::FIELD_SCHEDULE)) {
+            if (is_array($json->schedule)) {
+                $type->setSchedule(FHIRNutritionOrderSchedule1::jsonUnserialize(reset($json->schedule), $config));
+            } else {
+                $type->setSchedule(FHIRNutritionOrderSchedule1::jsonUnserialize($json->schedule, $config));
+            }
         }
-        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
+        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
+            if (is_array($json->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+            } else {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+            }
         }
-        if (isset($json[self::FIELD_INSTRUCTION])
-            || isset($json[self::FIELD_INSTRUCTION_EXT])
-            || array_key_exists(self::FIELD_INSTRUCTION, $json)
-            || array_key_exists(self::FIELD_INSTRUCTION_EXT, $json)) {
-            $value = $json[self::FIELD_INSTRUCTION] ?? null;
-            $type->setInstruction(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_INSTRUCTION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->instruction)
+            || isset($json->_instruction)
+            || property_exists($json, self::FIELD_INSTRUCTION)
+            || property_exists($json, self::FIELD_INSTRUCTION_EXT)) {
+            $v = $json->_instruction ?? new \stdClass();
+            $v->value = $json->instruction ?? null;
+            $type->setInstruction(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

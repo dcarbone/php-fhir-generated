@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -104,28 +106,30 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRProductShelfLife extends FHIRBackboneType
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PRODUCT_SHELF_LIFE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_PERIOD_DURATION = 'periodDuration';
     public const FIELD_PERIOD_STRING = 'periodString';
     public const FIELD_PERIOD_STRING_EXT = '_periodString';
     public const FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE = 'specialPrecautionsForStorage';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_PERIOD_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -150,7 +154,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration 
      */
@@ -163,7 +168,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
@@ -182,7 +188,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
      */
     protected array $specialPrecautionsForStorage;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRProductShelfLife Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -221,7 +227,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -230,7 +236,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -285,7 +291,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
@@ -302,7 +309,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $periodDuration
      * @return static
@@ -325,7 +333,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
@@ -342,14 +351,13 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $periodString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPeriodString(null|string|FHIRStringPrimitive|FHIRString $periodString,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPeriodString(null|string|FHIRStringPrimitive|FHIRString $periodString): self
     {
         if (null === $periodString) {
             unset($this->periodString);
@@ -359,33 +367,6 @@ class FHIRProductShelfLife extends FHIRBackboneType
             $periodString = new FHIRString(value: $periodString);
         }
         $this->periodString = $periodString;
-        if ($this->_valueXMLLocations[self::FIELD_PERIOD_STRING] !== $valueXMLLocation) {
-            $this->_setPeriodStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the periodString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPeriodStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PERIOD_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the periodString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPeriodStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PERIOD_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -462,7 +443,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -491,9 +472,11 @@ class FHIRProductShelfLife extends FHIRBackboneType
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -509,15 +492,16 @@ class FHIRProductShelfLife extends FHIRBackboneType
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PERIOD_STRING])) {
             if (isset($type->periodString)) {
                 $type->periodString->setValue((string)$attributes[self::FIELD_PERIOD_STRING]);
-                $type->_setPeriodStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPeriodString((string)$attributes[self::FIELD_PERIOD_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPeriodString((string)$attributes[self::FIELD_PERIOD_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PERIOD_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -530,7 +514,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
                                  SerializeConfig $config): void
     {
         if (isset($this->periodString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PERIOD_STRING]) {
-            $xw->writeAttribute(self::FIELD_PERIOD_STRING, $this->periodString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PERIOD_STRING, $this->periodString->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -560,13 +544,13 @@ class FHIRProductShelfLife extends FHIRBackboneType
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRProductShelfLife $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRProductShelfLife
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -581,28 +565,36 @@ class FHIRProductShelfLife extends FHIRBackboneType
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_PERIOD_DURATION]) || array_key_exists(self::FIELD_PERIOD_DURATION, $json)) {
-            $type->setPeriodDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_PERIOD_DURATION], $config));
-        }
-        if (isset($json[self::FIELD_PERIOD_STRING])
-            || isset($json[self::FIELD_PERIOD_STRING_EXT])
-            || array_key_exists(self::FIELD_PERIOD_STRING, $json)
-            || array_key_exists(self::FIELD_PERIOD_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_PERIOD_STRING] ?? null;
-            $type->setPeriodString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PERIOD_STRING_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE]) || array_key_exists(self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE, $json)) {
-            $vs = $json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->periodDuration) || property_exists($json, self::FIELD_PERIOD_DURATION)) {
+            if (is_array($json->periodDuration)) {
+                $type->setPeriodDuration(FHIRDuration::jsonUnserialize(reset($json->periodDuration), $config));
+            } else {
+                $type->setPeriodDuration(FHIRDuration::jsonUnserialize($json->periodDuration, $config));
+            }
+        }
+        if (isset($json->periodString)
+            || isset($json->_periodString)
+            || property_exists($json, self::FIELD_PERIOD_STRING)
+            || property_exists($json, self::FIELD_PERIOD_STRING_EXT)) {
+            $v = $json->_periodString ?? new \stdClass();
+            $v->value = $json->periodString ?? null;
+            $type->setPeriodString(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->specialPrecautionsForStorage) || property_exists($json, self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE)) {
+            if (is_object($json->specialPrecautionsForStorage)) {
+                $vals = [$json->specialPrecautionsForStorage];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE, true);
+            } else {
+                $vals = $json->specialPrecautionsForStorage;
+            }
+            foreach($vals as $v) {
                 $type->addSpecialPrecautionsForStorage(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
@@ -632,7 +624,11 @@ class FHIRProductShelfLife extends FHIRBackboneType
             }
         }
         if (isset($this->specialPrecautionsForStorage) && [] !== $this->specialPrecautionsForStorage) {
-            $out->specialPrecautionsForStorage = $this->specialPrecautionsForStorage;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE) && 1 === count($this->specialPrecautionsForStorage)) {
+                $out->specialPrecautionsForStorage = $this->specialPrecautionsForStorage[0];
+            } else {
+                $out->specialPrecautionsForStorage = $this->specialPrecautionsForStorage;
+            }
         }
         return $out;
     }

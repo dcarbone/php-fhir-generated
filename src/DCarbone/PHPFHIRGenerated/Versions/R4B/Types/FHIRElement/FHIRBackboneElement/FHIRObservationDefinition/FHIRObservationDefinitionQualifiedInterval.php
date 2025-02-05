@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -106,12 +108,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OBSERVATION_DEFINITION_DOT_QUALIFIED_INTERVAL;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_CATEGORY = 'category';
     public const FIELD_CATEGORY_EXT = '_category';
     public const FIELD_RANGE = 'range';
@@ -124,18 +128,18 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
     public const FIELD_CONDITION = 'condition';
     public const FIELD_CONDITION_EXT = '_condition';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_CATEGORY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_GENDER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CONDITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -220,7 +224,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      */
     protected FHIRString $condition;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRObservationDefinitionQualifiedInterval Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -279,7 +283,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -288,7 +292,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -309,11 +313,9 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * conforming to this ObservationDefinition.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRObservationRangeCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRObservationRangeCategory $category
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCategory(null|string|FHIRObservationRangeCategoryEnum|FHIRObservationRangeCategory $category,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCategory(null|string|FHIRObservationRangeCategoryEnum|FHIRObservationRangeCategory $category): self
     {
         if (null === $category) {
             unset($this->category);
@@ -323,33 +325,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             $category = new FHIRObservationRangeCategory(value: $category);
         }
         $this->category = $category;
-        if ($this->_valueXMLLocations[self::FIELD_CATEGORY] !== $valueXMLLocation) {
-            $this->_setCategoryValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the category element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCategoryValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CATEGORY];
-    }
-
-    /**
-     * Set the location the "value" field of the category element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCategoryValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CATEGORY] = $valueXMLLocation;
         return $this;
     }
 
@@ -512,11 +487,9 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * Sex of the population the range applies to.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRAdministrativeGenderEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAdministrativeGender $gender
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGender(null|string|FHIRAdministrativeGenderEnum|FHIRAdministrativeGender $gender,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setGender(null|string|FHIRAdministrativeGenderEnum|FHIRAdministrativeGender $gender): self
     {
         if (null === $gender) {
             unset($this->gender);
@@ -526,33 +499,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             $gender = new FHIRAdministrativeGender(value: $gender);
         }
         $this->gender = $gender;
-        if ($this->_valueXMLLocations[self::FIELD_GENDER] !== $valueXMLLocation) {
-            $this->_setGenderValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the gender element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getGenderValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_GENDER];
-    }
-
-    /**
-     * Set the location the "value" field of the gender element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setGenderValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_GENDER] = $valueXMLLocation;
         return $this;
     }
 
@@ -650,11 +596,9 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * Text based condition for which the reference range is valid.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $condition
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition): self
     {
         if (null === $condition) {
             unset($this->condition);
@@ -664,37 +608,10 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             $condition = new FHIRString(value: $condition);
         }
         $this->condition = $condition;
-        if ($this->_valueXMLLocations[self::FIELD_CONDITION] !== $valueXMLLocation) {
-            $this->_setConditionValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the condition element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getConditionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CONDITION];
-    }
-
-    /**
-     * Set the location the "value" field of the condition element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setConditionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CONDITION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -723,9 +640,11 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -749,31 +668,32 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CATEGORY])) {
             if (isset($type->category)) {
                 $type->category->setValue((string)$attributes[self::FIELD_CATEGORY]);
-                $type->_setCategoryValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCategory((string)$attributes[self::FIELD_CATEGORY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCategory((string)$attributes[self::FIELD_CATEGORY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CATEGORY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_GENDER])) {
             if (isset($type->gender)) {
                 $type->gender->setValue((string)$attributes[self::FIELD_GENDER]);
-                $type->_setGenderValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setGender((string)$attributes[self::FIELD_GENDER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setGender((string)$attributes[self::FIELD_GENDER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_GENDER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CONDITION])) {
             if (isset($type->condition)) {
                 $type->condition->setValue((string)$attributes[self::FIELD_CONDITION]);
-                $type->_setConditionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCondition((string)$attributes[self::FIELD_CONDITION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCondition((string)$attributes[self::FIELD_CONDITION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CONDITION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -786,13 +706,13 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->category) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CATEGORY]) {
-            $xw->writeAttribute(self::FIELD_CATEGORY, $this->category->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CATEGORY, $this->category->_getValueAsString());
         }
         if (isset($this->gender) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_GENDER]) {
-            $xw->writeAttribute(self::FIELD_GENDER, $this->gender->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_GENDER, $this->gender->_getValueAsString());
         }
         if (isset($this->condition) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CONDITION]) {
-            $xw->writeAttribute(self::FIELD_CONDITION, $this->condition->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CONDITION, $this->condition->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->category)
@@ -846,13 +766,13 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -867,56 +787,68 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_CATEGORY])
-            || isset($json[self::FIELD_CATEGORY_EXT])
-            || array_key_exists(self::FIELD_CATEGORY, $json)
-            || array_key_exists(self::FIELD_CATEGORY_EXT, $json)) {
-            $value = $json[self::FIELD_CATEGORY] ?? null;
-            $type->setCategory(FHIRObservationRangeCategory::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRObservationRangeCategory::FIELD_VALUE => $value]) + ($json[self::FIELD_CATEGORY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->category)
+            || isset($json->_category)
+            || property_exists($json, self::FIELD_CATEGORY)
+            || property_exists($json, self::FIELD_CATEGORY_EXT)) {
+            $v = $json->_category ?? new \stdClass();
+            $v->value = $json->category ?? null;
+            $type->setCategory(FHIRObservationRangeCategory::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_RANGE]) || array_key_exists(self::FIELD_RANGE, $json)) {
-            $type->setRange(FHIRRange::jsonUnserialize($json[self::FIELD_RANGE], $config));
-        }
-        if (isset($json[self::FIELD_CONTEXT]) || array_key_exists(self::FIELD_CONTEXT, $json)) {
-            $type->setContext(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CONTEXT], $config));
-        }
-        if (isset($json[self::FIELD_APPLIES_TO]) || array_key_exists(self::FIELD_APPLIES_TO, $json)) {
-            $vs = $json[self::FIELD_APPLIES_TO];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->range) || property_exists($json, self::FIELD_RANGE)) {
+            if (is_array($json->range)) {
+                $type->setRange(FHIRRange::jsonUnserialize(reset($json->range), $config));
+            } else {
+                $type->setRange(FHIRRange::jsonUnserialize($json->range, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->context) || property_exists($json, self::FIELD_CONTEXT)) {
+            if (is_array($json->context)) {
+                $type->setContext(FHIRCodeableConcept::jsonUnserialize(reset($json->context), $config));
+            } else {
+                $type->setContext(FHIRCodeableConcept::jsonUnserialize($json->context, $config));
+            }
+        }
+        if (isset($json->appliesTo) || property_exists($json, self::FIELD_APPLIES_TO)) {
+            if (is_object($json->appliesTo)) {
+                $vals = [$json->appliesTo];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_APPLIES_TO, true);
+            } else {
+                $vals = $json->appliesTo;
+            }
+            foreach($vals as $v) {
                 $type->addAppliesTo(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_GENDER])
-            || isset($json[self::FIELD_GENDER_EXT])
-            || array_key_exists(self::FIELD_GENDER, $json)
-            || array_key_exists(self::FIELD_GENDER_EXT, $json)) {
-            $value = $json[self::FIELD_GENDER] ?? null;
-            $type->setGender(FHIRAdministrativeGender::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRAdministrativeGender::FIELD_VALUE => $value]) + ($json[self::FIELD_GENDER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->gender)
+            || isset($json->_gender)
+            || property_exists($json, self::FIELD_GENDER)
+            || property_exists($json, self::FIELD_GENDER_EXT)) {
+            $v = $json->_gender ?? new \stdClass();
+            $v->value = $json->gender ?? null;
+            $type->setGender(FHIRAdministrativeGender::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_AGE]) || array_key_exists(self::FIELD_AGE, $json)) {
-            $type->setAge(FHIRRange::jsonUnserialize($json[self::FIELD_AGE], $config));
+        if (isset($json->age) || property_exists($json, self::FIELD_AGE)) {
+            if (is_array($json->age)) {
+                $type->setAge(FHIRRange::jsonUnserialize(reset($json->age), $config));
+            } else {
+                $type->setAge(FHIRRange::jsonUnserialize($json->age, $config));
+            }
         }
-        if (isset($json[self::FIELD_GESTATIONAL_AGE]) || array_key_exists(self::FIELD_GESTATIONAL_AGE, $json)) {
-            $type->setGestationalAge(FHIRRange::jsonUnserialize($json[self::FIELD_GESTATIONAL_AGE], $config));
+        if (isset($json->gestationalAge) || property_exists($json, self::FIELD_GESTATIONAL_AGE)) {
+            if (is_array($json->gestationalAge)) {
+                $type->setGestationalAge(FHIRRange::jsonUnserialize(reset($json->gestationalAge), $config));
+            } else {
+                $type->setGestationalAge(FHIRRange::jsonUnserialize($json->gestationalAge, $config));
+            }
         }
-        if (isset($json[self::FIELD_CONDITION])
-            || isset($json[self::FIELD_CONDITION_EXT])
-            || array_key_exists(self::FIELD_CONDITION, $json)
-            || array_key_exists(self::FIELD_CONDITION_EXT, $json)) {
-            $value = $json[self::FIELD_CONDITION] ?? null;
-            $type->setCondition(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CONDITION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->condition)
+            || isset($json->_condition)
+            || property_exists($json, self::FIELD_CONDITION)
+            || property_exists($json, self::FIELD_CONDITION_EXT)) {
+            $v = $json->_condition ?? new \stdClass();
+            $v->value = $json->condition ?? null;
+            $type->setCondition(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -944,7 +876,11 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             $out->context = $this->context;
         }
         if (isset($this->appliesTo) && [] !== $this->appliesTo) {
-            $out->appliesTo = $this->appliesTo;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_APPLIES_TO) && 1 === count($this->appliesTo)) {
+                $out->appliesTo = $this->appliesTo[0];
+            } else {
+                $out->appliesTo = $this->appliesTo;
+            }
         }
         if (isset($this->gender)) {
             if (null !== ($val = $this->gender->getValue())) {

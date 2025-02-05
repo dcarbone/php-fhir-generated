@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -84,18 +86,20 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRAccountGuarantor extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ACCOUNT_DOT_GUARANTOR;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_PARTY = 'party';
     public const FIELD_ON_HOLD = 'onHold';
     public const FIELD_ON_HOLD_EXT = '_onHold';
     public const FIELD_PERIOD = 'period';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PARTY => [
@@ -103,12 +107,12 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_ON_HOLD => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -140,7 +144,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      */
     protected FHIRPeriod $period;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAccountGuarantor Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -174,7 +178,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -183,7 +187,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -240,11 +244,9 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      * temporarily suspended.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $onHold
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOnHold(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $onHold,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOnHold(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $onHold): self
     {
         if (null === $onHold) {
             unset($this->onHold);
@@ -254,33 +256,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
             $onHold = new FHIRBoolean(value: $onHold);
         }
         $this->onHold = $onHold;
-        if ($this->_valueXMLLocations[self::FIELD_ON_HOLD] !== $valueXMLLocation) {
-            $this->_setOnHoldValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the onHold element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOnHoldValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ON_HOLD];
-    }
-
-    /**
-     * Set the location the "value" field of the onHold element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOnHoldValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ON_HOLD] = $valueXMLLocation;
         return $this;
     }
 
@@ -318,7 +293,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -347,9 +322,11 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -363,15 +340,16 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ON_HOLD])) {
             if (isset($type->onHold)) {
                 $type->onHold->setValue((string)$attributes[self::FIELD_ON_HOLD]);
-                $type->_setOnHoldValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOnHold((string)$attributes[self::FIELD_ON_HOLD], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setOnHold((string)$attributes[self::FIELD_ON_HOLD]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ON_HOLD, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -384,7 +362,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->onHold) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ON_HOLD]) {
-            $xw->writeAttribute(self::FIELD_ON_HOLD, $this->onHold->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ON_HOLD, $this->onHold->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->party)) {
@@ -407,13 +385,13 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -428,21 +406,27 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PARTY]) || array_key_exists(self::FIELD_PARTY, $json)) {
-            $type->setParty(FHIRReference::jsonUnserialize($json[self::FIELD_PARTY], $config));
+        if (isset($json->party) || property_exists($json, self::FIELD_PARTY)) {
+            if (is_array($json->party)) {
+                $type->setParty(FHIRReference::jsonUnserialize(reset($json->party), $config));
+            } else {
+                $type->setParty(FHIRReference::jsonUnserialize($json->party, $config));
+            }
         }
-        if (isset($json[self::FIELD_ON_HOLD])
-            || isset($json[self::FIELD_ON_HOLD_EXT])
-            || array_key_exists(self::FIELD_ON_HOLD, $json)
-            || array_key_exists(self::FIELD_ON_HOLD_EXT, $json)) {
-            $value = $json[self::FIELD_ON_HOLD] ?? null;
-            $type->setOnHold(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_ON_HOLD_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->onHold)
+            || isset($json->_onHold)
+            || property_exists($json, self::FIELD_ON_HOLD)
+            || property_exists($json, self::FIELD_ON_HOLD_EXT)) {
+            $v = $json->_onHold ?? new \stdClass();
+            $v->value = $json->onHold ?? null;
+            $type->setOnHold(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+            }
         }
         return $type;
     }

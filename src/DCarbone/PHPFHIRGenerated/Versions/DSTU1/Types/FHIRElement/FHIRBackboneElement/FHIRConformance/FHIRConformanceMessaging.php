@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -82,12 +84,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  */
 class FHIRConformanceMessaging extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONFORMANCE_DOT_MESSAGING;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ENDPOINT = 'endpoint';
     public const FIELD_ENDPOINT_EXT = '_endpoint';
     public const FIELD_RELIABLE_CACHE = 'reliableCache';
@@ -96,7 +100,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
     public const FIELD_DOCUMENTATION_EXT = '_documentation';
     public const FIELD_EVENT = 'event';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_EVENT => [
@@ -104,14 +108,14 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_ENDPOINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RELIABLE_CACHE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DOCUMENTATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * String of characters used to identify a name or a resource
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -153,14 +157,14 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      */
     protected array $event;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRConformanceMessaging Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $endpoint
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $reliableCache
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $reliableCache
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $documentation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent[] $event
      * @param null|string[] $fhirComments
@@ -169,7 +173,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $endpoint = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $reliableCache = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $reliableCache = null,
                                 null|string|FHIRStringPrimitive|FHIRString $documentation = null,
                                 null|iterable $event = null,
                                 null|iterable $fhirComments = null)
@@ -192,7 +196,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -201,7 +205,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * String of characters used to identify a name or a resource
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -222,11 +226,9 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * An address to which messages and/or replies are to be sent.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $endpoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEndpoint(null|string|FHIRUriPrimitive|FHIRUri $endpoint,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setEndpoint(null|string|FHIRUriPrimitive|FHIRUri $endpoint): self
     {
         if (null === $endpoint) {
             unset($this->endpoint);
@@ -236,33 +238,6 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             $endpoint = new FHIRUri(value: $endpoint);
         }
         $this->endpoint = $endpoint;
-        if ($this->_valueXMLLocations[self::FIELD_ENDPOINT] !== $valueXMLLocation) {
-            $this->_setEndpointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the endpoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getEndpointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ENDPOINT];
-    }
-
-    /**
-     * Set the location the "value" field of the endpoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setEndpointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ENDPOINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -287,12 +262,10 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * Length if the receiver's reliable messaging cache (if a receiver) or how long
      * the cache length on the receiver should be (if a sender).
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $reliableCache
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $reliableCache
      * @return static
      */
-    public function setReliableCache(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $reliableCache,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setReliableCache(null|string|float|FHIRIntegerPrimitive|FHIRInteger $reliableCache): self
     {
         if (null === $reliableCache) {
             unset($this->reliableCache);
@@ -302,33 +275,6 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             $reliableCache = new FHIRInteger(value: $reliableCache);
         }
         $this->reliableCache = $reliableCache;
-        if ($this->_valueXMLLocations[self::FIELD_RELIABLE_CACHE] !== $valueXMLLocation) {
-            $this->_setReliableCacheValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the reliableCache element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getReliableCacheValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RELIABLE_CACHE];
-    }
-
-    /**
-     * Set the location the "value" field of the reliableCache element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setReliableCacheValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RELIABLE_CACHE] = $valueXMLLocation;
         return $this;
     }
 
@@ -356,11 +302,9 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * becoming an authorized messaging exchange partner.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $documentation
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
         if (null === $documentation) {
             unset($this->documentation);
@@ -370,33 +314,6 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             $documentation = new FHIRString(value: $documentation);
         }
         $this->documentation = $documentation;
-        if ($this->_valueXMLLocations[self::FIELD_DOCUMENTATION] !== $valueXMLLocation) {
-            $this->_setDocumentationValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the documentation element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDocumentationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DOCUMENTATION];
-    }
-
-    /**
-     * Set the location the "value" field of the documentation element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDocumentationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DOCUMENTATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -464,7 +381,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -502,9 +419,11 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -520,31 +439,32 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ENDPOINT])) {
             if (isset($type->endpoint)) {
                 $type->endpoint->setValue((string)$attributes[self::FIELD_ENDPOINT]);
-                $type->_setEndpointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setEndpoint((string)$attributes[self::FIELD_ENDPOINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setEndpoint((string)$attributes[self::FIELD_ENDPOINT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ENDPOINT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RELIABLE_CACHE])) {
             if (isset($type->reliableCache)) {
                 $type->reliableCache->setValue((string)$attributes[self::FIELD_RELIABLE_CACHE]);
-                $type->_setReliableCacheValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setReliableCache((string)$attributes[self::FIELD_RELIABLE_CACHE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setReliableCache((string)$attributes[self::FIELD_RELIABLE_CACHE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RELIABLE_CACHE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DOCUMENTATION])) {
             if (isset($type->documentation)) {
                 $type->documentation->setValue((string)$attributes[self::FIELD_DOCUMENTATION]);
-                $type->_setDocumentationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDocumentation((string)$attributes[self::FIELD_DOCUMENTATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDocumentation((string)$attributes[self::FIELD_DOCUMENTATION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DOCUMENTATION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -575,13 +495,13 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             $xw->openRootNode('ConformanceMessaging', $this->_getSourceXMLNS());
         }
         if (isset($this->endpoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ENDPOINT]) {
-            $xw->writeAttribute(self::FIELD_ENDPOINT, $this->endpoint->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ENDPOINT, $this->endpoint->_getValueAsString());
         }
         if (isset($this->reliableCache) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RELIABLE_CACHE]) {
-            $xw->writeAttribute(self::FIELD_RELIABLE_CACHE, $this->reliableCache->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RELIABLE_CACHE, $this->reliableCache->_getValueAsString());
         }
         if (isset($this->documentation) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DOCUMENTATION]) {
-            $xw->writeAttribute(self::FIELD_DOCUMENTATION, $this->documentation->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DOCUMENTATION, $this->documentation->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->endpoint)
@@ -622,13 +542,13 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -646,47 +566,41 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ENDPOINT])
-            || isset($json[self::FIELD_ENDPOINT_EXT])
-            || array_key_exists(self::FIELD_ENDPOINT, $json)
-            || array_key_exists(self::FIELD_ENDPOINT_EXT, $json)) {
-            $value = $json[self::FIELD_ENDPOINT] ?? null;
-            $type->setEndpoint(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ENDPOINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->endpoint)
+            || isset($json->_endpoint)
+            || property_exists($json, self::FIELD_ENDPOINT)
+            || property_exists($json, self::FIELD_ENDPOINT_EXT)) {
+            $v = $json->_endpoint ?? new \stdClass();
+            $v->value = $json->endpoint ?? null;
+            $type->setEndpoint(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_RELIABLE_CACHE])
-            || isset($json[self::FIELD_RELIABLE_CACHE_EXT])
-            || array_key_exists(self::FIELD_RELIABLE_CACHE, $json)
-            || array_key_exists(self::FIELD_RELIABLE_CACHE_EXT, $json)) {
-            $value = $json[self::FIELD_RELIABLE_CACHE] ?? null;
-            $type->setReliableCache(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_RELIABLE_CACHE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->reliableCache)
+            || isset($json->_reliableCache)
+            || property_exists($json, self::FIELD_RELIABLE_CACHE)
+            || property_exists($json, self::FIELD_RELIABLE_CACHE_EXT)) {
+            $v = $json->_reliableCache ?? new \stdClass();
+            $v->value = $json->reliableCache ?? null;
+            $type->setReliableCache(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DOCUMENTATION])
-            || isset($json[self::FIELD_DOCUMENTATION_EXT])
-            || array_key_exists(self::FIELD_DOCUMENTATION, $json)
-            || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
-            $value = $json[self::FIELD_DOCUMENTATION] ?? null;
-            $type->setDocumentation(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DOCUMENTATION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->documentation)
+            || isset($json->_documentation)
+            || property_exists($json, self::FIELD_DOCUMENTATION)
+            || property_exists($json, self::FIELD_DOCUMENTATION_EXT)) {
+            $v = $json->_documentation ?? new \stdClass();
+            $v->value = $json->documentation ?? null;
+            $type->setDocumentation(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_EVENT]) || array_key_exists(self::FIELD_EVENT, $json)) {
-            $vs = $json[self::FIELD_EVENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->event) || property_exists($json, self::FIELD_EVENT)) {
+            if (is_object($json->event)) {
+                $vals = [$json->event];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_EVENT, true);
+            } else {
+                $vals = $json->event;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addEvent(FHIRConformanceEvent::jsonUnserialize($v, $config));
             }
         }
@@ -730,7 +644,11 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             }
         }
         if (isset($this->event) && [] !== $this->event) {
-            $out->event = $this->event;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_EVENT) && 1 === count($this->event)) {
+                $out->event = $this->event[0];
+            } else {
+                $out->event = $this->event;
+            }
         }
         return $out;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -133,12 +135,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
  */
 class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DIAGNOSTIC_REPORT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_BASED_ON = 'basedOn';
     public const FIELD_STATUS = 'status';
@@ -166,7 +170,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
     public const FIELD_CONCLUSION_CODE = 'conclusionCode';
     public const FIELD_PRESENTED_FORM = 'presentedForm';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
@@ -177,7 +181,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EFFECTIVE_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -185,7 +189,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
         self::FIELD_CONCLUSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -274,7 +278,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
      * The time or time-period the observed values are related to. When the subject of
      * the report is a patient, this is usually either the time of the procedure or of
      * specimen collection(s), but very often the source of the date/time is not known,
-     * only the date/time itself.
+     * only the date/time itself. (choose any one of effective*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
      */
@@ -287,7 +291,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
      * The time or time-period the observed values are related to. When the subject of
      * the report is a patient, this is usually either the time of the procedure or of
      * specimen collection(s), but very often the source of the date/time is not known,
-     * only the date/time itself.
+     * only the date/time itself. (choose any one of effective*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
      */
@@ -457,7 +461,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
      */
     protected array $presentedForm;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDiagnosticReport Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -601,7 +605,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -610,7 +614,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -619,7 +623,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -769,11 +773,9 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
      * The status of the diagnostic report.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDiagnosticReportStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDiagnosticReportStatus $status
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|string|FHIRDiagnosticReportStatusEnum|FHIRDiagnosticReportStatus $status,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStatus(null|string|FHIRDiagnosticReportStatusEnum|FHIRDiagnosticReportStatus $status): self
     {
         if (null === $status) {
             unset($this->status);
@@ -783,33 +785,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
             $status = new FHIRDiagnosticReportStatus(value: $status);
         }
         $this->status = $status;
-        if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
-            $this->_setStatusValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the status element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStatusValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STATUS];
-    }
-
-    /**
-     * Set the location the "value" field of the status element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -1008,7 +983,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
      * The time or time-period the observed values are related to. When the subject of
      * the report is a patient, this is usually either the time of the procedure or of
      * specimen collection(s), but very often the source of the date/time is not known,
-     * only the date/time itself.
+     * only the date/time itself. (choose any one of effective*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
@@ -1029,14 +1004,12 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
      * The time or time-period the observed values are related to. When the subject of
      * the report is a patient, this is usually either the time of the procedure or of
      * specimen collection(s), but very often the source of the date/time is not known,
-     * only the date/time itself.
+     * only the date/time itself. (choose any one of effective*, but only one)
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $effectiveDateTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDateTime,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDateTime): self
     {
         if (null === $effectiveDateTime) {
             unset($this->effectiveDateTime);
@@ -1046,33 +1019,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
             $effectiveDateTime = new FHIRDateTime(value: $effectiveDateTime);
         }
         $this->effectiveDateTime = $effectiveDateTime;
-        if ($this->_valueXMLLocations[self::FIELD_EFFECTIVE_DATE_TIME] !== $valueXMLLocation) {
-            $this->_setEffectiveDateTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the effectiveDateTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getEffectiveDateTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EFFECTIVE_DATE_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the effectiveDateTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setEffectiveDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EFFECTIVE_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -1084,7 +1030,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
      * The time or time-period the observed values are related to. When the subject of
      * the report is a patient, this is usually either the time of the procedure or of
      * specimen collection(s), but very often the source of the date/time is not known,
-     * only the date/time itself.
+     * only the date/time itself. (choose any one of effective*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
@@ -1101,7 +1047,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
      * The time or time-period the observed values are related to. When the subject of
      * the report is a patient, this is usually either the time of the procedure or of
      * specimen collection(s), but very often the source of the date/time is not known,
-     * only the date/time itself.
+     * only the date/time itself. (choose any one of effective*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectivePeriod
      * @return static
@@ -1146,11 +1092,9 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
      * providers, typically after the report was reviewed and verified.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $issued
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIssued(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $issued,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIssued(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $issued): self
     {
         if (null === $issued) {
             unset($this->issued);
@@ -1160,33 +1104,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
             $issued = new FHIRInstant(value: $issued);
         }
         $this->issued = $issued;
-        if ($this->_valueXMLLocations[self::FIELD_ISSUED] !== $valueXMLLocation) {
-            $this->_setIssuedValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the issued element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIssuedValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ISSUED];
-    }
-
-    /**
-     * Set the location the "value" field of the issued element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIssuedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ISSUED] = $valueXMLLocation;
         return $this;
     }
 
@@ -1833,11 +1750,9 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
      * (interpretation/impression) of the diagnostic report.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $conclusion
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setConclusion(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $conclusion,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setConclusion(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $conclusion): self
     {
         if (null === $conclusion) {
             unset($this->conclusion);
@@ -1847,33 +1762,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
             $conclusion = new FHIRMarkdown(value: $conclusion);
         }
         $this->conclusion = $conclusion;
-        if ($this->_valueXMLLocations[self::FIELD_CONCLUSION] !== $valueXMLLocation) {
-            $this->_setConclusionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the conclusion element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getConclusionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CONCLUSION];
-    }
-
-    /**
-     * Set the location the "value" field of the conclusion element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setConclusionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CONCLUSION] = $valueXMLLocation;
         return $this;
     }
 
@@ -2014,7 +1902,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2117,58 +2005,58 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STATUS])) {
             if (isset($type->status)) {
                 $type->status->setValue((string)$attributes[self::FIELD_STATUS]);
-                $type->_setStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStatus((string)$attributes[self::FIELD_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStatus((string)$attributes[self::FIELD_STATUS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STATUS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_EFFECTIVE_DATE_TIME])) {
             if (isset($type->effectiveDateTime)) {
                 $type->effectiveDateTime->setValue((string)$attributes[self::FIELD_EFFECTIVE_DATE_TIME]);
-                $type->_setEffectiveDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setEffectiveDateTime((string)$attributes[self::FIELD_EFFECTIVE_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setEffectiveDateTime((string)$attributes[self::FIELD_EFFECTIVE_DATE_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_EFFECTIVE_DATE_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ISSUED])) {
             if (isset($type->issued)) {
                 $type->issued->setValue((string)$attributes[self::FIELD_ISSUED]);
-                $type->_setIssuedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIssued((string)$attributes[self::FIELD_ISSUED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIssued((string)$attributes[self::FIELD_ISSUED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ISSUED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CONCLUSION])) {
             if (isset($type->conclusion)) {
                 $type->conclusion->setValue((string)$attributes[self::FIELD_CONCLUSION]);
-                $type->_setConclusionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setConclusion((string)$attributes[self::FIELD_CONCLUSION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setConclusion((string)$attributes[self::FIELD_CONCLUSION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CONCLUSION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -2199,16 +2087,16 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
             $xw->openRootNode('DiagnosticReport', $this->_getSourceXMLNS());
         }
         if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
-            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getValueAsString());
         }
         if (isset($this->effectiveDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EFFECTIVE_DATE_TIME]) {
-            $xw->writeAttribute(self::FIELD_EFFECTIVE_DATE_TIME, $this->effectiveDateTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_EFFECTIVE_DATE_TIME, $this->effectiveDateTime->_getValueAsString());
         }
         if (isset($this->issued) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ISSUED]) {
-            $xw->writeAttribute(self::FIELD_ISSUED, $this->issued->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ISSUED, $this->issued->_getValueAsString());
         }
         if (isset($this->conclusion) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CONCLUSION]) {
-            $xw->writeAttribute(self::FIELD_CONCLUSION, $this->conclusion->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CONCLUSION, $this->conclusion->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -2365,13 +2253,13 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -2389,180 +2277,216 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_BASED_ON]) || array_key_exists(self::FIELD_BASED_ON, $json)) {
-            $vs = $json[self::FIELD_BASED_ON];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->basedOn) || property_exists($json, self::FIELD_BASED_ON)) {
+            if (is_object($json->basedOn)) {
+                $vals = [$json->basedOn];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_BASED_ON, true);
+            } else {
+                $vals = $json->basedOn;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addBasedOn(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STATUS])
-            || isset($json[self::FIELD_STATUS_EXT])
-            || array_key_exists(self::FIELD_STATUS, $json)
-            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
-            $value = $json[self::FIELD_STATUS] ?? null;
-            $type->setStatus(FHIRDiagnosticReportStatus::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDiagnosticReportStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->status)
+            || isset($json->_status)
+            || property_exists($json, self::FIELD_STATUS)
+            || property_exists($json, self::FIELD_STATUS_EXT)) {
+            $v = $json->_status ?? new \stdClass();
+            $v->value = $json->status ?? null;
+            $type->setStatus(FHIRDiagnosticReportStatus::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            $vs = $json[self::FIELD_CATEGORY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->category) || property_exists($json, self::FIELD_CATEGORY)) {
+            if (is_object($json->category)) {
+                $vals = [$json->category];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CATEGORY, true);
+            } else {
+                $vals = $json->category;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
-        }
-        if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
-        }
-        if (isset($json[self::FIELD_ENCOUNTER]) || array_key_exists(self::FIELD_ENCOUNTER, $json)) {
-            $type->setEncounter(FHIRReference::jsonUnserialize($json[self::FIELD_ENCOUNTER], $config));
-        }
-        if (isset($json[self::FIELD_EFFECTIVE_DATE_TIME])
-            || isset($json[self::FIELD_EFFECTIVE_DATE_TIME_EXT])
-            || array_key_exists(self::FIELD_EFFECTIVE_DATE_TIME, $json)
-            || array_key_exists(self::FIELD_EFFECTIVE_DATE_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_EFFECTIVE_DATE_TIME] ?? null;
-            $type->setEffectiveDateTime(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_EFFECTIVE_DATE_TIME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_EFFECTIVE_PERIOD]) || array_key_exists(self::FIELD_EFFECTIVE_PERIOD, $json)) {
-            $type->setEffectivePeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_EFFECTIVE_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_ISSUED])
-            || isset($json[self::FIELD_ISSUED_EXT])
-            || array_key_exists(self::FIELD_ISSUED, $json)
-            || array_key_exists(self::FIELD_ISSUED_EXT, $json)) {
-            $value = $json[self::FIELD_ISSUED] ?? null;
-            $type->setIssued(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_ISSUED_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_PERFORMER]) || array_key_exists(self::FIELD_PERFORMER, $json)) {
-            $vs = $json[self::FIELD_PERFORMER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
+            if (is_array($json->code)) {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($json->code), $config));
+            } else {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize($json->code, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
+            if (is_array($json->subject)) {
+                $type->setSubject(FHIRReference::jsonUnserialize(reset($json->subject), $config));
+            } else {
+                $type->setSubject(FHIRReference::jsonUnserialize($json->subject, $config));
+            }
+        }
+        if (isset($json->encounter) || property_exists($json, self::FIELD_ENCOUNTER)) {
+            if (is_array($json->encounter)) {
+                $type->setEncounter(FHIRReference::jsonUnserialize(reset($json->encounter), $config));
+            } else {
+                $type->setEncounter(FHIRReference::jsonUnserialize($json->encounter, $config));
+            }
+        }
+        if (isset($json->effectiveDateTime)
+            || isset($json->_effectiveDateTime)
+            || property_exists($json, self::FIELD_EFFECTIVE_DATE_TIME)
+            || property_exists($json, self::FIELD_EFFECTIVE_DATE_TIME_EXT)) {
+            $v = $json->_effectiveDateTime ?? new \stdClass();
+            $v->value = $json->effectiveDateTime ?? null;
+            $type->setEffectiveDateTime(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->effectivePeriod) || property_exists($json, self::FIELD_EFFECTIVE_PERIOD)) {
+            if (is_array($json->effectivePeriod)) {
+                $type->setEffectivePeriod(FHIRPeriod::jsonUnserialize(reset($json->effectivePeriod), $config));
+            } else {
+                $type->setEffectivePeriod(FHIRPeriod::jsonUnserialize($json->effectivePeriod, $config));
+            }
+        }
+        if (isset($json->issued)
+            || isset($json->_issued)
+            || property_exists($json, self::FIELD_ISSUED)
+            || property_exists($json, self::FIELD_ISSUED_EXT)) {
+            $v = $json->_issued ?? new \stdClass();
+            $v->value = $json->issued ?? null;
+            $type->setIssued(FHIRInstant::jsonUnserialize($v, $config));
+        }
+        if (isset($json->performer) || property_exists($json, self::FIELD_PERFORMER)) {
+            if (is_object($json->performer)) {
+                $vals = [$json->performer];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PERFORMER, true);
+            } else {
+                $vals = $json->performer;
+            }
+            foreach($vals as $v) {
                 $type->addPerformer(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_RESULTS_INTERPRETER]) || array_key_exists(self::FIELD_RESULTS_INTERPRETER, $json)) {
-            $vs = $json[self::FIELD_RESULTS_INTERPRETER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->resultsInterpreter) || property_exists($json, self::FIELD_RESULTS_INTERPRETER)) {
+            if (is_object($json->resultsInterpreter)) {
+                $vals = [$json->resultsInterpreter];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RESULTS_INTERPRETER, true);
+            } else {
+                $vals = $json->resultsInterpreter;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addResultsInterpreter(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SPECIMEN]) || array_key_exists(self::FIELD_SPECIMEN, $json)) {
-            $vs = $json[self::FIELD_SPECIMEN];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->specimen) || property_exists($json, self::FIELD_SPECIMEN)) {
+            if (is_object($json->specimen)) {
+                $vals = [$json->specimen];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SPECIMEN, true);
+            } else {
+                $vals = $json->specimen;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSpecimen(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_RESULT]) || array_key_exists(self::FIELD_RESULT, $json)) {
-            $vs = $json[self::FIELD_RESULT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->result) || property_exists($json, self::FIELD_RESULT)) {
+            if (is_object($json->result)) {
+                $vals = [$json->result];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RESULT, true);
+            } else {
+                $vals = $json->result;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addResult(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
-            $vs = $json[self::FIELD_NOTE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->note) || property_exists($json, self::FIELD_NOTE)) {
+            if (is_object($json->note)) {
+                $vals = [$json->note];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTE, true);
+            } else {
+                $vals = $json->note;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STUDY]) || array_key_exists(self::FIELD_STUDY, $json)) {
-            $vs = $json[self::FIELD_STUDY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->study) || property_exists($json, self::FIELD_STUDY)) {
+            if (is_object($json->study)) {
+                $vals = [$json->study];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_STUDY, true);
+            } else {
+                $vals = $json->study;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addStudy(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SUPPORTING_INFO]) || array_key_exists(self::FIELD_SUPPORTING_INFO, $json)) {
-            $vs = $json[self::FIELD_SUPPORTING_INFO];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->supportingInfo) || property_exists($json, self::FIELD_SUPPORTING_INFO)) {
+            if (is_object($json->supportingInfo)) {
+                $vals = [$json->supportingInfo];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUPPORTING_INFO, true);
+            } else {
+                $vals = $json->supportingInfo;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSupportingInfo(FHIRDiagnosticReportSupportingInfo::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MEDIA]) || array_key_exists(self::FIELD_MEDIA, $json)) {
-            $vs = $json[self::FIELD_MEDIA];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->media) || property_exists($json, self::FIELD_MEDIA)) {
+            if (is_object($json->media)) {
+                $vals = [$json->media];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_MEDIA, true);
+            } else {
+                $vals = $json->media;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addMedia(FHIRDiagnosticReportMedia::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_COMPOSITION]) || array_key_exists(self::FIELD_COMPOSITION, $json)) {
-            $type->setComposition(FHIRReference::jsonUnserialize($json[self::FIELD_COMPOSITION], $config));
-        }
-        if (isset($json[self::FIELD_CONCLUSION])
-            || isset($json[self::FIELD_CONCLUSION_EXT])
-            || array_key_exists(self::FIELD_CONCLUSION, $json)
-            || array_key_exists(self::FIELD_CONCLUSION_EXT, $json)) {
-            $value = $json[self::FIELD_CONCLUSION] ?? null;
-            $type->setConclusion(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_CONCLUSION_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_CONCLUSION_CODE]) || array_key_exists(self::FIELD_CONCLUSION_CODE, $json)) {
-            $vs = $json[self::FIELD_CONCLUSION_CODE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->composition) || property_exists($json, self::FIELD_COMPOSITION)) {
+            if (is_array($json->composition)) {
+                $type->setComposition(FHIRReference::jsonUnserialize(reset($json->composition), $config));
+            } else {
+                $type->setComposition(FHIRReference::jsonUnserialize($json->composition, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->conclusion)
+            || isset($json->_conclusion)
+            || property_exists($json, self::FIELD_CONCLUSION)
+            || property_exists($json, self::FIELD_CONCLUSION_EXT)) {
+            $v = $json->_conclusion ?? new \stdClass();
+            $v->value = $json->conclusion ?? null;
+            $type->setConclusion(FHIRMarkdown::jsonUnserialize($v, $config));
+        }
+        if (isset($json->conclusionCode) || property_exists($json, self::FIELD_CONCLUSION_CODE)) {
+            if (is_object($json->conclusionCode)) {
+                $vals = [$json->conclusionCode];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CONCLUSION_CODE, true);
+            } else {
+                $vals = $json->conclusionCode;
+            }
+            foreach($vals as $v) {
                 $type->addConclusionCode(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PRESENTED_FORM]) || array_key_exists(self::FIELD_PRESENTED_FORM, $json)) {
-            $vs = $json[self::FIELD_PRESENTED_FORM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->presentedForm) || property_exists($json, self::FIELD_PRESENTED_FORM)) {
+            if (is_object($json->presentedForm)) {
+                $vals = [$json->presentedForm];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PRESENTED_FORM, true);
+            } else {
+                $vals = $json->presentedForm;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addPresentedForm(FHIRAttachment::jsonUnserialize($v, $config));
             }
         }
@@ -2576,10 +2500,18 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->basedOn) && [] !== $this->basedOn) {
-            $out->basedOn = $this->basedOn;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_BASED_ON) && 1 === count($this->basedOn)) {
+                $out->basedOn = $this->basedOn[0];
+            } else {
+                $out->basedOn = $this->basedOn;
+            }
         }
         if (isset($this->status)) {
             if (null !== ($val = $this->status->getValue())) {
@@ -2592,7 +2524,11 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
             }
         }
         if (isset($this->category) && [] !== $this->category) {
-            $out->category = $this->category;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CATEGORY) && 1 === count($this->category)) {
+                $out->category = $this->category[0];
+            } else {
+                $out->category = $this->category;
+            }
         }
         if (isset($this->code)) {
             $out->code = $this->code;
@@ -2627,28 +2563,60 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
             }
         }
         if (isset($this->performer) && [] !== $this->performer) {
-            $out->performer = $this->performer;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PERFORMER) && 1 === count($this->performer)) {
+                $out->performer = $this->performer[0];
+            } else {
+                $out->performer = $this->performer;
+            }
         }
         if (isset($this->resultsInterpreter) && [] !== $this->resultsInterpreter) {
-            $out->resultsInterpreter = $this->resultsInterpreter;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RESULTS_INTERPRETER) && 1 === count($this->resultsInterpreter)) {
+                $out->resultsInterpreter = $this->resultsInterpreter[0];
+            } else {
+                $out->resultsInterpreter = $this->resultsInterpreter;
+            }
         }
         if (isset($this->specimen) && [] !== $this->specimen) {
-            $out->specimen = $this->specimen;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SPECIMEN) && 1 === count($this->specimen)) {
+                $out->specimen = $this->specimen[0];
+            } else {
+                $out->specimen = $this->specimen;
+            }
         }
         if (isset($this->result) && [] !== $this->result) {
-            $out->result = $this->result;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RESULT) && 1 === count($this->result)) {
+                $out->result = $this->result[0];
+            } else {
+                $out->result = $this->result;
+            }
         }
         if (isset($this->note) && [] !== $this->note) {
-            $out->note = $this->note;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_NOTE) && 1 === count($this->note)) {
+                $out->note = $this->note[0];
+            } else {
+                $out->note = $this->note;
+            }
         }
         if (isset($this->study) && [] !== $this->study) {
-            $out->study = $this->study;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_STUDY) && 1 === count($this->study)) {
+                $out->study = $this->study[0];
+            } else {
+                $out->study = $this->study;
+            }
         }
         if (isset($this->supportingInfo) && [] !== $this->supportingInfo) {
-            $out->supportingInfo = $this->supportingInfo;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUPPORTING_INFO) && 1 === count($this->supportingInfo)) {
+                $out->supportingInfo = $this->supportingInfo[0];
+            } else {
+                $out->supportingInfo = $this->supportingInfo;
+            }
         }
         if (isset($this->media) && [] !== $this->media) {
-            $out->media = $this->media;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_MEDIA) && 1 === count($this->media)) {
+                $out->media = $this->media[0];
+            } else {
+                $out->media = $this->media;
+            }
         }
         if (isset($this->composition)) {
             $out->composition = $this->composition;
@@ -2664,10 +2632,18 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements VersionContaine
             }
         }
         if (isset($this->conclusionCode) && [] !== $this->conclusionCode) {
-            $out->conclusionCode = $this->conclusionCode;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CONCLUSION_CODE) && 1 === count($this->conclusionCode)) {
+                $out->conclusionCode = $this->conclusionCode[0];
+            } else {
+                $out->conclusionCode = $this->conclusionCode;
+            }
         }
         if (isset($this->presentedForm) && [] !== $this->presentedForm) {
-            $out->presentedForm = $this->presentedForm;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PRESENTED_FORM) && 1 === count($this->presentedForm)) {
+                $out->presentedForm = $this->presentedForm[0];
+            } else {
+                $out->presentedForm = $this->presentedForm;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

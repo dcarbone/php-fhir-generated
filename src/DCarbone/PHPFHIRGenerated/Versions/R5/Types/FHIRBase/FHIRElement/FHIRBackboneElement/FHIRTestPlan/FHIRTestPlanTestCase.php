@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -101,12 +103,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRTestPlanTestCase extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TEST_PLAN_DOT_TEST_CASE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SEQUENCE = 'sequence';
     public const FIELD_SEQUENCE_EXT = '_sequence';
     public const FIELD_SCOPE = 'scope';
@@ -115,16 +119,16 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
     public const FIELD_TEST_DATA = 'testData';
     public const FIELD_ASSERTION = 'assertion';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -182,13 +186,13 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      */
     protected array $assertion;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRTestPlanTestCase Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $sequence
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $sequence
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $scope
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanDependency1[] $dependency
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun[] $testRun
@@ -199,7 +203,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $sequence = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $sequence = null,
                                 null|iterable $scope = null,
                                 null|iterable $dependency = null,
                                 null|iterable $testRun = null,
@@ -231,7 +235,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -240,7 +244,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -264,12 +268,10 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * Sequence of test case - an ordinal number that indicates the order for the
      * present test case in the test plan.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $sequence
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $sequence
      * @return static
      */
-    public function setSequence(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $sequence,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSequence(null|string|float|FHIRIntegerPrimitive|FHIRInteger $sequence): self
     {
         if (null === $sequence) {
             unset($this->sequence);
@@ -279,33 +281,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
             $sequence = new FHIRInteger(value: $sequence);
         }
         $this->sequence = $sequence;
-        if ($this->_valueXMLLocations[self::FIELD_SEQUENCE] !== $valueXMLLocation) {
-            $this->_setSequenceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the sequence element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSequenceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SEQUENCE];
-    }
-
-    /**
-     * Set the location the "value" field of the sequence element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSequenceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SEQUENCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -614,7 +589,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -643,9 +618,11 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -665,15 +642,16 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SEQUENCE])) {
             if (isset($type->sequence)) {
                 $type->sequence->setValue((string)$attributes[self::FIELD_SEQUENCE]);
-                $type->_setSequenceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SEQUENCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -686,7 +664,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->sequence) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SEQUENCE]) {
-            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->sequence)
@@ -734,13 +712,13 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestCase $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestCase
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -755,58 +733,66 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SEQUENCE])
-            || isset($json[self::FIELD_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
-            $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $type->setSequence(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sequence)
+            || isset($json->_sequence)
+            || property_exists($json, self::FIELD_SEQUENCE)
+            || property_exists($json, self::FIELD_SEQUENCE_EXT)) {
+            $v = $json->_sequence ?? new \stdClass();
+            $v->value = $json->sequence ?? null;
+            $type->setSequence(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SCOPE]) || array_key_exists(self::FIELD_SCOPE, $json)) {
-            $vs = $json[self::FIELD_SCOPE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->scope) || property_exists($json, self::FIELD_SCOPE)) {
+            if (is_object($json->scope)) {
+                $vals = [$json->scope];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SCOPE, true);
+            } else {
+                $vals = $json->scope;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addScope(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DEPENDENCY]) || array_key_exists(self::FIELD_DEPENDENCY, $json)) {
-            $vs = $json[self::FIELD_DEPENDENCY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->dependency) || property_exists($json, self::FIELD_DEPENDENCY)) {
+            if (is_object($json->dependency)) {
+                $vals = [$json->dependency];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DEPENDENCY, true);
+            } else {
+                $vals = $json->dependency;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addDependency(FHIRTestPlanDependency1::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TEST_RUN]) || array_key_exists(self::FIELD_TEST_RUN, $json)) {
-            $vs = $json[self::FIELD_TEST_RUN];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->testRun) || property_exists($json, self::FIELD_TEST_RUN)) {
+            if (is_object($json->testRun)) {
+                $vals = [$json->testRun];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TEST_RUN, true);
+            } else {
+                $vals = $json->testRun;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTestRun(FHIRTestPlanTestRun::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TEST_DATA]) || array_key_exists(self::FIELD_TEST_DATA, $json)) {
-            $vs = $json[self::FIELD_TEST_DATA];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->testData) || property_exists($json, self::FIELD_TEST_DATA)) {
+            if (is_object($json->testData)) {
+                $vals = [$json->testData];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TEST_DATA, true);
+            } else {
+                $vals = $json->testData;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTestData(FHIRTestPlanTestData::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ASSERTION]) || array_key_exists(self::FIELD_ASSERTION, $json)) {
-            $vs = $json[self::FIELD_ASSERTION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->assertion) || property_exists($json, self::FIELD_ASSERTION)) {
+            if (is_object($json->assertion)) {
+                $vals = [$json->assertion];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ASSERTION, true);
+            } else {
+                $vals = $json->assertion;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAssertion(FHIRTestPlanAssertion::jsonUnserialize($v, $config));
             }
         }
@@ -830,19 +816,39 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
             }
         }
         if (isset($this->scope) && [] !== $this->scope) {
-            $out->scope = $this->scope;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SCOPE) && 1 === count($this->scope)) {
+                $out->scope = $this->scope[0];
+            } else {
+                $out->scope = $this->scope;
+            }
         }
         if (isset($this->dependency) && [] !== $this->dependency) {
-            $out->dependency = $this->dependency;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DEPENDENCY) && 1 === count($this->dependency)) {
+                $out->dependency = $this->dependency[0];
+            } else {
+                $out->dependency = $this->dependency;
+            }
         }
         if (isset($this->testRun) && [] !== $this->testRun) {
-            $out->testRun = $this->testRun;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TEST_RUN) && 1 === count($this->testRun)) {
+                $out->testRun = $this->testRun[0];
+            } else {
+                $out->testRun = $this->testRun;
+            }
         }
         if (isset($this->testData) && [] !== $this->testData) {
-            $out->testData = $this->testData;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TEST_DATA) && 1 === count($this->testData)) {
+                $out->testData = $this->testData[0];
+            } else {
+                $out->testData = $this->testData;
+            }
         }
         if (isset($this->assertion) && [] !== $this->assertion) {
-            $out->assertion = $this->assertion;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ASSERTION) && 1 === count($this->assertion)) {
+                $out->assertion = $this->assertion[0];
+            } else {
+                $out->assertion = $this->assertion;
+            }
         }
         return $out;
     }

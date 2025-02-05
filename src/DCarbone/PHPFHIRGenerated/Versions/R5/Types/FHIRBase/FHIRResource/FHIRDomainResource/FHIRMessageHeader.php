@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -122,12 +124,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
  */
 class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MESSAGE_HEADER;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_EVENT_CODING = 'eventCoding';
     public const FIELD_EVENT_CANONICAL = 'eventCanonical';
     public const FIELD_EVENT_CANONICAL_EXT = '_eventCanonical';
@@ -142,27 +146,21 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
     public const FIELD_DEFINITION = 'definition';
     public const FIELD_DEFINITION_EXT = '_definition';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
-        self::FIELD_EVENT_CODING => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_EVENT_CANONICAL => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
         self::FIELD_SOURCE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_EVENT_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DEFINITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -170,7 +168,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding 
      */
@@ -183,7 +182,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical 
      */
@@ -291,7 +291,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      */
     protected FHIRCanonical $definition;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMessageHeader Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -380,7 +380,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -389,7 +389,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -398,7 +398,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -406,7 +406,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
@@ -422,7 +423,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $eventCoding
      * @return static
@@ -445,7 +447,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
@@ -462,14 +465,13 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $eventCanonical
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEventCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $eventCanonical,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setEventCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $eventCanonical): self
     {
         if (null === $eventCanonical) {
             unset($this->eventCanonical);
@@ -479,33 +481,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $eventCanonical = new FHIRCanonical(value: $eventCanonical);
         }
         $this->eventCanonical = $eventCanonical;
-        if ($this->_valueXMLLocations[self::FIELD_EVENT_CANONICAL] !== $valueXMLLocation) {
-            $this->_setEventCanonicalValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the eventCanonical element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getEventCanonicalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EVENT_CANONICAL];
-    }
-
-    /**
-     * Set the location the "value" field of the eventCanonical element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setEventCanonicalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EVENT_CANONICAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -889,11 +864,9 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * Permanent link to the MessageDefinition for this message.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $definition
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition): self
     {
         if (null === $definition) {
             unset($this->definition);
@@ -903,37 +876,10 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $definition = new FHIRCanonical(value: $definition);
         }
         $this->definition = $definition;
-        if ($this->_valueXMLLocations[self::FIELD_DEFINITION] !== $valueXMLLocation) {
-            $this->_setDefinitionValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the definition element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDefinitionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEFINITION];
-    }
-
-    /**
-     * Set the location the "value" field of the definition element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDefinitionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEFINITION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1014,42 +960,42 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_EVENT_CANONICAL])) {
             if (isset($type->eventCanonical)) {
                 $type->eventCanonical->setValue((string)$attributes[self::FIELD_EVENT_CANONICAL]);
-                $type->_setEventCanonicalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setEventCanonical((string)$attributes[self::FIELD_EVENT_CANONICAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setEventCanonical((string)$attributes[self::FIELD_EVENT_CANONICAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_EVENT_CANONICAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DEFINITION])) {
             if (isset($type->definition)) {
                 $type->definition->setValue((string)$attributes[self::FIELD_DEFINITION]);
-                $type->_setDefinitionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDefinition((string)$attributes[self::FIELD_DEFINITION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDefinition((string)$attributes[self::FIELD_DEFINITION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DEFINITION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1080,10 +1026,10 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $xw->openRootNode('MessageHeader', $this->_getSourceXMLNS());
         }
         if (isset($this->eventCanonical) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EVENT_CANONICAL]) {
-            $xw->writeAttribute(self::FIELD_EVENT_CANONICAL, $this->eventCanonical->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_EVENT_CANONICAL, $this->eventCanonical->_getValueAsString());
         }
         if (isset($this->definition) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFINITION]) {
-            $xw->writeAttribute(self::FIELD_DEFINITION, $this->definition->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DEFINITION, $this->definition->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->eventCoding)) {
@@ -1159,13 +1105,13 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMessageHeader $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMessageHeader
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1183,69 +1129,95 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_EVENT_CODING]) || array_key_exists(self::FIELD_EVENT_CODING, $json)) {
-            $type->setEventCoding(FHIRCoding::jsonUnserialize($json[self::FIELD_EVENT_CODING], $config));
-        }
-        if (isset($json[self::FIELD_EVENT_CANONICAL])
-            || isset($json[self::FIELD_EVENT_CANONICAL_EXT])
-            || array_key_exists(self::FIELD_EVENT_CANONICAL, $json)
-            || array_key_exists(self::FIELD_EVENT_CANONICAL_EXT, $json)) {
-            $value = $json[self::FIELD_EVENT_CANONICAL] ?? null;
-            $type->setEventCanonical(FHIRCanonical::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_EVENT_CANONICAL_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DESTINATION]) || array_key_exists(self::FIELD_DESTINATION, $json)) {
-            $vs = $json[self::FIELD_DESTINATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->eventCoding) || property_exists($json, self::FIELD_EVENT_CODING)) {
+            if (is_array($json->eventCoding)) {
+                $type->setEventCoding(FHIRCoding::jsonUnserialize(reset($json->eventCoding), $config));
+            } else {
+                $type->setEventCoding(FHIRCoding::jsonUnserialize($json->eventCoding, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->eventCanonical)
+            || isset($json->_eventCanonical)
+            || property_exists($json, self::FIELD_EVENT_CANONICAL)
+            || property_exists($json, self::FIELD_EVENT_CANONICAL_EXT)) {
+            $v = $json->_eventCanonical ?? new \stdClass();
+            $v->value = $json->eventCanonical ?? null;
+            $type->setEventCanonical(FHIRCanonical::jsonUnserialize($v, $config));
+        }
+        if (isset($json->destination) || property_exists($json, self::FIELD_DESTINATION)) {
+            if (is_object($json->destination)) {
+                $vals = [$json->destination];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DESTINATION, true);
+            } else {
+                $vals = $json->destination;
+            }
+            foreach($vals as $v) {
                 $type->addDestination(FHIRMessageHeaderDestination::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SENDER]) || array_key_exists(self::FIELD_SENDER, $json)) {
-            $type->setSender(FHIRReference::jsonUnserialize($json[self::FIELD_SENDER], $config));
-        }
-        if (isset($json[self::FIELD_AUTHOR]) || array_key_exists(self::FIELD_AUTHOR, $json)) {
-            $type->setAuthor(FHIRReference::jsonUnserialize($json[self::FIELD_AUTHOR], $config));
-        }
-        if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $type->setSource(FHIRMessageHeaderSource::jsonUnserialize($json[self::FIELD_SOURCE], $config));
-        }
-        if (isset($json[self::FIELD_RESPONSIBLE]) || array_key_exists(self::FIELD_RESPONSIBLE, $json)) {
-            $type->setResponsible(FHIRReference::jsonUnserialize($json[self::FIELD_RESPONSIBLE], $config));
-        }
-        if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            $type->setReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REASON], $config));
-        }
-        if (isset($json[self::FIELD_RESPONSE]) || array_key_exists(self::FIELD_RESPONSE, $json)) {
-            $type->setResponse(FHIRMessageHeaderResponse::jsonUnserialize($json[self::FIELD_RESPONSE], $config));
-        }
-        if (isset($json[self::FIELD_FOCUS]) || array_key_exists(self::FIELD_FOCUS, $json)) {
-            $vs = $json[self::FIELD_FOCUS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->sender) || property_exists($json, self::FIELD_SENDER)) {
+            if (is_array($json->sender)) {
+                $type->setSender(FHIRReference::jsonUnserialize(reset($json->sender), $config));
+            } else {
+                $type->setSender(FHIRReference::jsonUnserialize($json->sender, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->author) || property_exists($json, self::FIELD_AUTHOR)) {
+            if (is_array($json->author)) {
+                $type->setAuthor(FHIRReference::jsonUnserialize(reset($json->author), $config));
+            } else {
+                $type->setAuthor(FHIRReference::jsonUnserialize($json->author, $config));
+            }
+        }
+        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
+            if (is_array($json->source)) {
+                $type->setSource(FHIRMessageHeaderSource::jsonUnserialize(reset($json->source), $config));
+            } else {
+                $type->setSource(FHIRMessageHeaderSource::jsonUnserialize($json->source, $config));
+            }
+        }
+        if (isset($json->responsible) || property_exists($json, self::FIELD_RESPONSIBLE)) {
+            if (is_array($json->responsible)) {
+                $type->setResponsible(FHIRReference::jsonUnserialize(reset($json->responsible), $config));
+            } else {
+                $type->setResponsible(FHIRReference::jsonUnserialize($json->responsible, $config));
+            }
+        }
+        if (isset($json->reason) || property_exists($json, self::FIELD_REASON)) {
+            if (is_array($json->reason)) {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize(reset($json->reason), $config));
+            } else {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize($json->reason, $config));
+            }
+        }
+        if (isset($json->response) || property_exists($json, self::FIELD_RESPONSE)) {
+            if (is_array($json->response)) {
+                $type->setResponse(FHIRMessageHeaderResponse::jsonUnserialize(reset($json->response), $config));
+            } else {
+                $type->setResponse(FHIRMessageHeaderResponse::jsonUnserialize($json->response, $config));
+            }
+        }
+        if (isset($json->focus) || property_exists($json, self::FIELD_FOCUS)) {
+            if (is_object($json->focus)) {
+                $vals = [$json->focus];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_FOCUS, true);
+            } else {
+                $vals = $json->focus;
+            }
+            foreach($vals as $v) {
                 $type->addFocus(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DEFINITION])
-            || isset($json[self::FIELD_DEFINITION_EXT])
-            || array_key_exists(self::FIELD_DEFINITION, $json)
-            || array_key_exists(self::FIELD_DEFINITION_EXT, $json)) {
-            $value = $json[self::FIELD_DEFINITION] ?? null;
-            $type->setDefinition(FHIRCanonical::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFINITION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->definition)
+            || isset($json->_definition)
+            || property_exists($json, self::FIELD_DEFINITION)
+            || property_exists($json, self::FIELD_DEFINITION_EXT)) {
+            $v = $json->_definition ?? new \stdClass();
+            $v->value = $json->definition ?? null;
+            $type->setDefinition(FHIRCanonical::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -1270,7 +1242,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             }
         }
         if (isset($this->destination) && [] !== $this->destination) {
-            $out->destination = $this->destination;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DESTINATION) && 1 === count($this->destination)) {
+                $out->destination = $this->destination[0];
+            } else {
+                $out->destination = $this->destination;
+            }
         }
         if (isset($this->sender)) {
             $out->sender = $this->sender;
@@ -1291,7 +1267,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $out->response = $this->response;
         }
         if (isset($this->focus) && [] !== $this->focus) {
-            $out->focus = $this->focus;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_FOCUS) && 1 === count($this->focus)) {
+                $out->focus = $this->focus[0];
+            } else {
+                $out->focus = $this->focus;
+            }
         }
         if (isset($this->definition)) {
             if (null !== ($val = $this->definition->getValue())) {

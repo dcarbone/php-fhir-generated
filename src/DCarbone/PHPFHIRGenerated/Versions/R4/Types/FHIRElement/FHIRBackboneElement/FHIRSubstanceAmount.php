@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -90,12 +92,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRSubstanceAmount extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_AMOUNT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_AMOUNT_QUANTITY = 'amountQuantity';
     public const FIELD_AMOUNT_RANGE = 'amountRange';
     public const FIELD_AMOUNT_STRING = 'amountString';
@@ -105,17 +109,17 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     public const FIELD_AMOUNT_TEXT_EXT = '_amountText';
     public const FIELD_REFERENCE_RANGE = 'referenceRange';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_AMOUNT_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_AMOUNT_TEXT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -197,7 +201,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      */
     protected FHIRSubstanceAmountReferenceRange $referenceRange;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstanceAmount Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -246,7 +250,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -255,7 +259,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -362,11 +366,9 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * value for a given element is given, it would be captured in this field.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
         if (null === $amountString) {
             unset($this->amountString);
@@ -376,33 +378,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
             $amountString = new FHIRString(value: $amountString);
         }
         $this->amountString = $amountString;
-        if ($this->_valueXMLLocations[self::FIELD_AMOUNT_STRING] !== $valueXMLLocation) {
-            $this->_setAmountStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the amountString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAmountStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AMOUNT_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the amountString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAmountStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AMOUNT_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -476,11 +451,9 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * A textual comment on a numeric value.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountText
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAmountText(null|string|FHIRStringPrimitive|FHIRString $amountText,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAmountText(null|string|FHIRStringPrimitive|FHIRString $amountText): self
     {
         if (null === $amountText) {
             unset($this->amountText);
@@ -490,33 +463,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
             $amountText = new FHIRString(value: $amountText);
         }
         $this->amountText = $amountText;
-        if ($this->_valueXMLLocations[self::FIELD_AMOUNT_TEXT] !== $valueXMLLocation) {
-            $this->_setAmountTextValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the amountText element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAmountTextValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AMOUNT_TEXT];
-    }
-
-    /**
-     * Set the location the "value" field of the amountText element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAmountTextValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AMOUNT_TEXT] = $valueXMLLocation;
         return $this;
     }
 
@@ -564,7 +510,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -593,9 +539,11 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -615,23 +563,24 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_AMOUNT_STRING])) {
             if (isset($type->amountString)) {
                 $type->amountString->setValue((string)$attributes[self::FIELD_AMOUNT_STRING]);
-                $type->_setAmountStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAmountString((string)$attributes[self::FIELD_AMOUNT_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAmountString((string)$attributes[self::FIELD_AMOUNT_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_AMOUNT_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_AMOUNT_TEXT])) {
             if (isset($type->amountText)) {
                 $type->amountText->setValue((string)$attributes[self::FIELD_AMOUNT_TEXT]);
-                $type->_setAmountTextValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAmountText((string)$attributes[self::FIELD_AMOUNT_TEXT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAmountText((string)$attributes[self::FIELD_AMOUNT_TEXT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_AMOUNT_TEXT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -644,10 +593,10 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->amountString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AMOUNT_STRING]) {
-            $xw->writeAttribute(self::FIELD_AMOUNT_STRING, $this->amountString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_AMOUNT_STRING, $this->amountString->_getValueAsString());
         }
         if (isset($this->amountText) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AMOUNT_TEXT]) {
-            $xw->writeAttribute(self::FIELD_AMOUNT_TEXT, $this->amountText->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_AMOUNT_TEXT, $this->amountText->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->amountQuantity)) {
@@ -687,13 +636,13 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -708,37 +657,49 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_AMOUNT_QUANTITY]) || array_key_exists(self::FIELD_AMOUNT_QUANTITY, $json)) {
-            $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_AMOUNT_QUANTITY], $config));
+        if (isset($json->amountQuantity) || property_exists($json, self::FIELD_AMOUNT_QUANTITY)) {
+            if (is_array($json->amountQuantity)) {
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize(reset($json->amountQuantity), $config));
+            } else {
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($json->amountQuantity, $config));
+            }
         }
-        if (isset($json[self::FIELD_AMOUNT_RANGE]) || array_key_exists(self::FIELD_AMOUNT_RANGE, $json)) {
-            $type->setAmountRange(FHIRRange::jsonUnserialize($json[self::FIELD_AMOUNT_RANGE], $config));
+        if (isset($json->amountRange) || property_exists($json, self::FIELD_AMOUNT_RANGE)) {
+            if (is_array($json->amountRange)) {
+                $type->setAmountRange(FHIRRange::jsonUnserialize(reset($json->amountRange), $config));
+            } else {
+                $type->setAmountRange(FHIRRange::jsonUnserialize($json->amountRange, $config));
+            }
         }
-        if (isset($json[self::FIELD_AMOUNT_STRING])
-            || isset($json[self::FIELD_AMOUNT_STRING_EXT])
-            || array_key_exists(self::FIELD_AMOUNT_STRING, $json)
-            || array_key_exists(self::FIELD_AMOUNT_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_AMOUNT_STRING] ?? null;
-            $type->setAmountString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_AMOUNT_STRING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->amountString)
+            || isset($json->_amountString)
+            || property_exists($json, self::FIELD_AMOUNT_STRING)
+            || property_exists($json, self::FIELD_AMOUNT_STRING_EXT)) {
+            $v = $json->_amountString ?? new \stdClass();
+            $v->value = $json->amountString ?? null;
+            $type->setAmountString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_AMOUNT_TYPE]) || array_key_exists(self::FIELD_AMOUNT_TYPE, $json)) {
-            $type->setAmountType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_AMOUNT_TYPE], $config));
+        if (isset($json->amountType) || property_exists($json, self::FIELD_AMOUNT_TYPE)) {
+            if (is_array($json->amountType)) {
+                $type->setAmountType(FHIRCodeableConcept::jsonUnserialize(reset($json->amountType), $config));
+            } else {
+                $type->setAmountType(FHIRCodeableConcept::jsonUnserialize($json->amountType, $config));
+            }
         }
-        if (isset($json[self::FIELD_AMOUNT_TEXT])
-            || isset($json[self::FIELD_AMOUNT_TEXT_EXT])
-            || array_key_exists(self::FIELD_AMOUNT_TEXT, $json)
-            || array_key_exists(self::FIELD_AMOUNT_TEXT_EXT, $json)) {
-            $value = $json[self::FIELD_AMOUNT_TEXT] ?? null;
-            $type->setAmountText(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_AMOUNT_TEXT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->amountText)
+            || isset($json->_amountText)
+            || property_exists($json, self::FIELD_AMOUNT_TEXT)
+            || property_exists($json, self::FIELD_AMOUNT_TEXT_EXT)) {
+            $v = $json->_amountText ?? new \stdClass();
+            $v->value = $json->amountText ?? null;
+            $type->setAmountText(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_REFERENCE_RANGE]) || array_key_exists(self::FIELD_REFERENCE_RANGE, $json)) {
-            $type->setReferenceRange(FHIRSubstanceAmountReferenceRange::jsonUnserialize($json[self::FIELD_REFERENCE_RANGE], $config));
+        if (isset($json->referenceRange) || property_exists($json, self::FIELD_REFERENCE_RANGE)) {
+            if (is_array($json->referenceRange)) {
+                $type->setReferenceRange(FHIRSubstanceAmountReferenceRange::jsonUnserialize(reset($json->referenceRange), $config));
+            } else {
+                $type->setReferenceRange(FHIRSubstanceAmountReferenceRange::jsonUnserialize($json->referenceRange, $config));
+            }
         }
         return $type;
     }

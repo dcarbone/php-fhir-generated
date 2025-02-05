@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,12 +105,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SPECIMEN_DEFINITION_DOT_CONTAINER;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_MATERIAL = 'material';
     public const FIELD_TYPE = 'type';
     public const FIELD_CAP = 'cap';
@@ -122,18 +126,18 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
     public const FIELD_PREPARATION = 'preparation';
     public const FIELD_PREPARATION_EXT = '_preparation';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MINIMUM_VOLUME_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PREPARATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -200,7 +204,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
@@ -210,7 +215,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
@@ -240,7 +246,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      */
     protected FHIRMarkdown $preparation;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSpecimenDefinitionContainer Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -304,7 +310,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -313,7 +319,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -452,11 +458,9 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * The textual description of the kind of container.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
         if (null === $description) {
             unset($this->description);
@@ -466,33 +470,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
             $description = new FHIRMarkdown(value: $description);
         }
         $this->description = $description;
-        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
-            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the description element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
-    }
-
-    /**
-     * Set the location the "value" field of the description element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -541,7 +518,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
@@ -557,7 +535,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $minimumVolumeQuantity
      * @return static
@@ -577,7 +556,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
@@ -591,14 +571,13 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $minimumVolumeString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMinimumVolumeString(null|string|FHIRStringPrimitive|FHIRString $minimumVolumeString,
-                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMinimumVolumeString(null|string|FHIRStringPrimitive|FHIRString $minimumVolumeString): self
     {
         if (null === $minimumVolumeString) {
             unset($this->minimumVolumeString);
@@ -608,33 +587,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
             $minimumVolumeString = new FHIRString(value: $minimumVolumeString);
         }
         $this->minimumVolumeString = $minimumVolumeString;
-        if ($this->_valueXMLLocations[self::FIELD_MINIMUM_VOLUME_STRING] !== $valueXMLLocation) {
-            $this->_setMinimumVolumeStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the minimumVolumeString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMinimumVolumeStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MINIMUM_VOLUME_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the minimumVolumeString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMinimumVolumeStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MINIMUM_VOLUME_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -731,11 +683,9 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * specimen.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $preparation
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPreparation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $preparation,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPreparation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $preparation): self
     {
         if (null === $preparation) {
             unset($this->preparation);
@@ -745,37 +695,10 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
             $preparation = new FHIRMarkdown(value: $preparation);
         }
         $this->preparation = $preparation;
-        if ($this->_valueXMLLocations[self::FIELD_PREPARATION] !== $valueXMLLocation) {
-            $this->_setPreparationValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the preparation element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPreparationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PREPARATION];
-    }
-
-    /**
-     * Set the location the "value" field of the preparation element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPreparationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PREPARATION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -804,9 +727,11 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -832,31 +757,32 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             if (isset($type->description)) {
                 $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DESCRIPTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MINIMUM_VOLUME_STRING])) {
             if (isset($type->minimumVolumeString)) {
                 $type->minimumVolumeString->setValue((string)$attributes[self::FIELD_MINIMUM_VOLUME_STRING]);
-                $type->_setMinimumVolumeStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMinimumVolumeString((string)$attributes[self::FIELD_MINIMUM_VOLUME_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMinimumVolumeString((string)$attributes[self::FIELD_MINIMUM_VOLUME_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MINIMUM_VOLUME_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PREPARATION])) {
             if (isset($type->preparation)) {
                 $type->preparation->setValue((string)$attributes[self::FIELD_PREPARATION]);
-                $type->_setPreparationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPreparation((string)$attributes[self::FIELD_PREPARATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPreparation((string)$attributes[self::FIELD_PREPARATION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PREPARATION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -869,13 +795,13 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getValueAsString());
         }
         if (isset($this->minimumVolumeString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MINIMUM_VOLUME_STRING]) {
-            $xw->writeAttribute(self::FIELD_MINIMUM_VOLUME_STRING, $this->minimumVolumeString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MINIMUM_VOLUME_STRING, $this->minimumVolumeString->_getValueAsString());
         }
         if (isset($this->preparation) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PREPARATION]) {
-            $xw->writeAttribute(self::FIELD_PREPARATION, $this->preparation->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PREPARATION, $this->preparation->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->material)) {
@@ -934,13 +860,13 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -955,59 +881,75 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_MATERIAL]) || array_key_exists(self::FIELD_MATERIAL, $json)) {
-            $type->setMaterial(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MATERIAL], $config));
-        }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_CAP]) || array_key_exists(self::FIELD_CAP, $json)) {
-            $type->setCap(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CAP], $config));
-        }
-        if (isset($json[self::FIELD_DESCRIPTION])
-            || isset($json[self::FIELD_DESCRIPTION_EXT])
-            || array_key_exists(self::FIELD_DESCRIPTION, $json)
-            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
-            $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $type->setDescription(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_CAPACITY]) || array_key_exists(self::FIELD_CAPACITY, $json)) {
-            $type->setCapacity(FHIRQuantity::jsonUnserialize($json[self::FIELD_CAPACITY], $config));
-        }
-        if (isset($json[self::FIELD_MINIMUM_VOLUME_QUANTITY]) || array_key_exists(self::FIELD_MINIMUM_VOLUME_QUANTITY, $json)) {
-            $type->setMinimumVolumeQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_MINIMUM_VOLUME_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_MINIMUM_VOLUME_STRING])
-            || isset($json[self::FIELD_MINIMUM_VOLUME_STRING_EXT])
-            || array_key_exists(self::FIELD_MINIMUM_VOLUME_STRING, $json)
-            || array_key_exists(self::FIELD_MINIMUM_VOLUME_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_MINIMUM_VOLUME_STRING] ?? null;
-            $type->setMinimumVolumeString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MINIMUM_VOLUME_STRING_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ADDITIVE]) || array_key_exists(self::FIELD_ADDITIVE, $json)) {
-            $vs = $json[self::FIELD_ADDITIVE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->material) || property_exists($json, self::FIELD_MATERIAL)) {
+            if (is_array($json->material)) {
+                $type->setMaterial(FHIRCodeableConcept::jsonUnserialize(reset($json->material), $config));
+            } else {
+                $type->setMaterial(FHIRCodeableConcept::jsonUnserialize($json->material, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
+        }
+        if (isset($json->cap) || property_exists($json, self::FIELD_CAP)) {
+            if (is_array($json->cap)) {
+                $type->setCap(FHIRCodeableConcept::jsonUnserialize(reset($json->cap), $config));
+            } else {
+                $type->setCap(FHIRCodeableConcept::jsonUnserialize($json->cap, $config));
+            }
+        }
+        if (isset($json->description)
+            || isset($json->_description)
+            || property_exists($json, self::FIELD_DESCRIPTION)
+            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $json->_description ?? new \stdClass();
+            $v->value = $json->description ?? null;
+            $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
+        }
+        if (isset($json->capacity) || property_exists($json, self::FIELD_CAPACITY)) {
+            if (is_array($json->capacity)) {
+                $type->setCapacity(FHIRQuantity::jsonUnserialize(reset($json->capacity), $config));
+            } else {
+                $type->setCapacity(FHIRQuantity::jsonUnserialize($json->capacity, $config));
+            }
+        }
+        if (isset($json->minimumVolumeQuantity) || property_exists($json, self::FIELD_MINIMUM_VOLUME_QUANTITY)) {
+            if (is_array($json->minimumVolumeQuantity)) {
+                $type->setMinimumVolumeQuantity(FHIRQuantity::jsonUnserialize(reset($json->minimumVolumeQuantity), $config));
+            } else {
+                $type->setMinimumVolumeQuantity(FHIRQuantity::jsonUnserialize($json->minimumVolumeQuantity, $config));
+            }
+        }
+        if (isset($json->minimumVolumeString)
+            || isset($json->_minimumVolumeString)
+            || property_exists($json, self::FIELD_MINIMUM_VOLUME_STRING)
+            || property_exists($json, self::FIELD_MINIMUM_VOLUME_STRING_EXT)) {
+            $v = $json->_minimumVolumeString ?? new \stdClass();
+            $v->value = $json->minimumVolumeString ?? null;
+            $type->setMinimumVolumeString(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->additive) || property_exists($json, self::FIELD_ADDITIVE)) {
+            if (is_object($json->additive)) {
+                $vals = [$json->additive];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ADDITIVE, true);
+            } else {
+                $vals = $json->additive;
+            }
+            foreach($vals as $v) {
                 $type->addAdditive(FHIRSpecimenDefinitionAdditive::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PREPARATION])
-            || isset($json[self::FIELD_PREPARATION_EXT])
-            || array_key_exists(self::FIELD_PREPARATION, $json)
-            || array_key_exists(self::FIELD_PREPARATION_EXT, $json)) {
-            $value = $json[self::FIELD_PREPARATION] ?? null;
-            $type->setPreparation(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_PREPARATION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->preparation)
+            || isset($json->_preparation)
+            || property_exists($json, self::FIELD_PREPARATION)
+            || property_exists($json, self::FIELD_PREPARATION_EXT)) {
+            $v = $json->_preparation ?? new \stdClass();
+            $v->value = $json->preparation ?? null;
+            $type->setPreparation(FHIRMarkdown::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -1054,7 +996,11 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
             }
         }
         if (isset($this->additive) && [] !== $this->additive) {
-            $out->additive = $this->additive;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ADDITIVE) && 1 === count($this->additive)) {
+                $out->additive = $this->additive[0];
+            } else {
+                $out->additive = $this->additive;
+            }
         }
         if (isset($this->preparation)) {
             if (null !== ($val = $this->preparation->getValue())) {

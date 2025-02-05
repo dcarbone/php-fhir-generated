@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,12 +105,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLINICAL_USE_DEFINITION_DOT_INDICATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DISEASE_SYMPTOM_PROCEDURE = 'diseaseSymptomProcedure';
     public const FIELD_DISEASE_STATUS = 'diseaseStatus';
     public const FIELD_COMORBIDITY = 'comorbidity';
@@ -119,16 +123,16 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
     public const FIELD_UNDESIRABLE_EFFECT = 'undesirableEffect';
     public const FIELD_OTHER_THERAPY = 'otherTherapy';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DURATION_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -222,7 +226,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      */
     protected array $otherTherapy;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRClinicalUseDefinitionIndication Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -281,7 +285,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -290,7 +294,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -536,11 +540,9 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * less than 6 months).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $durationString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDurationString(null|string|FHIRStringPrimitive|FHIRString $durationString,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDurationString(null|string|FHIRStringPrimitive|FHIRString $durationString): self
     {
         if (null === $durationString) {
             unset($this->durationString);
@@ -550,33 +552,6 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
             $durationString = new FHIRString(value: $durationString);
         }
         $this->durationString = $durationString;
-        if ($this->_valueXMLLocations[self::FIELD_DURATION_STRING] !== $valueXMLLocation) {
-            $this->_setDurationStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the durationString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDurationStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DURATION_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the durationString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDurationStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DURATION_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -711,7 +686,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -740,9 +715,11 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -766,15 +743,16 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DURATION_STRING])) {
             if (isset($type->durationString)) {
                 $type->durationString->setValue((string)$attributes[self::FIELD_DURATION_STRING]);
-                $type->_setDurationStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDurationString((string)$attributes[self::FIELD_DURATION_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDurationString((string)$attributes[self::FIELD_DURATION_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DURATION_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -787,7 +765,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->durationString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DURATION_STRING]) {
-            $xw->writeAttribute(self::FIELD_DURATION_STRING, $this->durationString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DURATION_STRING, $this->durationString->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->diseaseSymptomProcedure)) {
@@ -841,13 +819,13 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionIndication $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionIndication
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -862,52 +840,72 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DISEASE_SYMPTOM_PROCEDURE]) || array_key_exists(self::FIELD_DISEASE_SYMPTOM_PROCEDURE, $json)) {
-            $type->setDiseaseSymptomProcedure(FHIRCodeableReference::jsonUnserialize($json[self::FIELD_DISEASE_SYMPTOM_PROCEDURE], $config));
-        }
-        if (isset($json[self::FIELD_DISEASE_STATUS]) || array_key_exists(self::FIELD_DISEASE_STATUS, $json)) {
-            $type->setDiseaseStatus(FHIRCodeableReference::jsonUnserialize($json[self::FIELD_DISEASE_STATUS], $config));
-        }
-        if (isset($json[self::FIELD_COMORBIDITY]) || array_key_exists(self::FIELD_COMORBIDITY, $json)) {
-            $vs = $json[self::FIELD_COMORBIDITY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->diseaseSymptomProcedure) || property_exists($json, self::FIELD_DISEASE_SYMPTOM_PROCEDURE)) {
+            if (is_array($json->diseaseSymptomProcedure)) {
+                $type->setDiseaseSymptomProcedure(FHIRCodeableReference::jsonUnserialize(reset($json->diseaseSymptomProcedure), $config));
+            } else {
+                $type->setDiseaseSymptomProcedure(FHIRCodeableReference::jsonUnserialize($json->diseaseSymptomProcedure, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->diseaseStatus) || property_exists($json, self::FIELD_DISEASE_STATUS)) {
+            if (is_array($json->diseaseStatus)) {
+                $type->setDiseaseStatus(FHIRCodeableReference::jsonUnserialize(reset($json->diseaseStatus), $config));
+            } else {
+                $type->setDiseaseStatus(FHIRCodeableReference::jsonUnserialize($json->diseaseStatus, $config));
+            }
+        }
+        if (isset($json->comorbidity) || property_exists($json, self::FIELD_COMORBIDITY)) {
+            if (is_object($json->comorbidity)) {
+                $vals = [$json->comorbidity];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_COMORBIDITY, true);
+            } else {
+                $vals = $json->comorbidity;
+            }
+            foreach($vals as $v) {
                 $type->addComorbidity(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_INTENDED_EFFECT]) || array_key_exists(self::FIELD_INTENDED_EFFECT, $json)) {
-            $type->setIntendedEffect(FHIRCodeableReference::jsonUnserialize($json[self::FIELD_INTENDED_EFFECT], $config));
-        }
-        if (isset($json[self::FIELD_DURATION_RANGE]) || array_key_exists(self::FIELD_DURATION_RANGE, $json)) {
-            $type->setDurationRange(FHIRRange::jsonUnserialize($json[self::FIELD_DURATION_RANGE], $config));
-        }
-        if (isset($json[self::FIELD_DURATION_STRING])
-            || isset($json[self::FIELD_DURATION_STRING_EXT])
-            || array_key_exists(self::FIELD_DURATION_STRING, $json)
-            || array_key_exists(self::FIELD_DURATION_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_DURATION_STRING] ?? null;
-            $type->setDurationString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DURATION_STRING_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_UNDESIRABLE_EFFECT]) || array_key_exists(self::FIELD_UNDESIRABLE_EFFECT, $json)) {
-            $vs = $json[self::FIELD_UNDESIRABLE_EFFECT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->intendedEffect) || property_exists($json, self::FIELD_INTENDED_EFFECT)) {
+            if (is_array($json->intendedEffect)) {
+                $type->setIntendedEffect(FHIRCodeableReference::jsonUnserialize(reset($json->intendedEffect), $config));
+            } else {
+                $type->setIntendedEffect(FHIRCodeableReference::jsonUnserialize($json->intendedEffect, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->durationRange) || property_exists($json, self::FIELD_DURATION_RANGE)) {
+            if (is_array($json->durationRange)) {
+                $type->setDurationRange(FHIRRange::jsonUnserialize(reset($json->durationRange), $config));
+            } else {
+                $type->setDurationRange(FHIRRange::jsonUnserialize($json->durationRange, $config));
+            }
+        }
+        if (isset($json->durationString)
+            || isset($json->_durationString)
+            || property_exists($json, self::FIELD_DURATION_STRING)
+            || property_exists($json, self::FIELD_DURATION_STRING_EXT)) {
+            $v = $json->_durationString ?? new \stdClass();
+            $v->value = $json->durationString ?? null;
+            $type->setDurationString(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->undesirableEffect) || property_exists($json, self::FIELD_UNDESIRABLE_EFFECT)) {
+            if (is_object($json->undesirableEffect)) {
+                $vals = [$json->undesirableEffect];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_UNDESIRABLE_EFFECT, true);
+            } else {
+                $vals = $json->undesirableEffect;
+            }
+            foreach($vals as $v) {
                 $type->addUndesirableEffect(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_OTHER_THERAPY]) || array_key_exists(self::FIELD_OTHER_THERAPY, $json)) {
-            $vs = $json[self::FIELD_OTHER_THERAPY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->otherTherapy) || property_exists($json, self::FIELD_OTHER_THERAPY)) {
+            if (is_object($json->otherTherapy)) {
+                $vals = [$json->otherTherapy];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_OTHER_THERAPY, true);
+            } else {
+                $vals = $json->otherTherapy;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addOtherTherapy(FHIRClinicalUseDefinitionOtherTherapy::jsonUnserialize($v, $config));
             }
         }
@@ -927,7 +925,11 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
             $out->diseaseStatus = $this->diseaseStatus;
         }
         if (isset($this->comorbidity) && [] !== $this->comorbidity) {
-            $out->comorbidity = $this->comorbidity;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_COMORBIDITY) && 1 === count($this->comorbidity)) {
+                $out->comorbidity = $this->comorbidity[0];
+            } else {
+                $out->comorbidity = $this->comorbidity;
+            }
         }
         if (isset($this->intendedEffect)) {
             $out->intendedEffect = $this->intendedEffect;
@@ -946,10 +948,18 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
             }
         }
         if (isset($this->undesirableEffect) && [] !== $this->undesirableEffect) {
-            $out->undesirableEffect = $this->undesirableEffect;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_UNDESIRABLE_EFFECT) && 1 === count($this->undesirableEffect)) {
+                $out->undesirableEffect = $this->undesirableEffect[0];
+            } else {
+                $out->undesirableEffect = $this->undesirableEffect;
+            }
         }
         if (isset($this->otherTherapy) && [] !== $this->otherTherapy) {
-            $out->otherTherapy = $this->otherTherapy;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_OTHER_THERAPY) && 1 === count($this->otherTherapy)) {
+                $out->otherTherapy = $this->otherTherapy[0];
+            } else {
+                $out->otherTherapy = $this->otherTherapy;
+            }
         }
         return $out;
     }

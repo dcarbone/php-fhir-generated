@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,9 @@ abstract class Autoloader
         'DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait' => __DIR__ . '/Validation/TypeValidationsTrait.php',
         'DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig' => __DIR__ . '/Encoding/SerializeConfig.php',
         'DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum' => __DIR__ . '/Encoding/ValueXMLLocationEnum.php',
+        'DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait' => __DIR__ . '/Encoding/JSONSerializationOptionsTrait.php',
         'DCarbone\PHPFHIRGenerated\Encoding\ResourceParser' => __DIR__ . '/Encoding/ResourceParser.php',
+        'DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait' => __DIR__ . '/Encoding/XMLSerializationOptionsTrait.php',
         'DCarbone\PHPFHIRGenerated\Encoding\XMLWriter' => __DIR__ . '/Encoding/XMLWriter.php',
         'DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig' => __DIR__ . '/Encoding/UnserializeConfig.php',
     ];

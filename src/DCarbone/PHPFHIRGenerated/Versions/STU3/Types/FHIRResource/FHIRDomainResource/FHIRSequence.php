@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,12 +104,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionTypeMap;
  */
 class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SEQUENCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
@@ -128,7 +132,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
     public const FIELD_REPOSITORY = 'repository';
     public const FIELD_POINTER = 'pointer';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_COORDINATE_SYSTEM => [
@@ -136,7 +140,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_COORDINATE_SYSTEM => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -144,7 +148,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
         self::FIELD_READ_COVERAGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -305,7 +309,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      */
     protected array $pointer;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSequence Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
@@ -318,7 +322,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $type
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $coordinateSystem
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $coordinateSystem
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $specimen
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $device
@@ -328,7 +332,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant[] $variant
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $observedSeq
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality[] $quality
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $readCoverage
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $readCoverage
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository[] $repository
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] $pointer
      * @param null|string[] $fhirComments
@@ -343,7 +347,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
                                 null|string|FHIRCodePrimitive|FHIRCode $type = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $coordinateSystem = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $coordinateSystem = null,
                                 null|FHIRReference $patient = null,
                                 null|FHIRReference $specimen = null,
                                 null|FHIRReference $device = null,
@@ -353,7 +357,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
                                 null|iterable $variant = null,
                                 null|string|FHIRStringPrimitive|FHIRString $observedSeq = null,
                                 null|iterable $quality = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $readCoverage = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $readCoverage = null,
                                 null|iterable $repository = null,
                                 null|iterable $pointer = null,
                                 null|iterable $fhirComments = null)
@@ -414,7 +418,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -423,7 +427,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -432,7 +436,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -524,11 +528,9 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRCodePrimitive|FHIRCode $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -538,33 +540,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             $type = new FHIRCode(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -593,12 +568,10 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive
      * start and inclusive end).
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $coordinateSystem
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $coordinateSystem
      * @return static
      */
-    public function setCoordinateSystem(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $coordinateSystem,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCoordinateSystem(null|string|float|FHIRIntegerPrimitive|FHIRInteger $coordinateSystem): self
     {
         if (null === $coordinateSystem) {
             unset($this->coordinateSystem);
@@ -608,33 +581,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             $coordinateSystem = new FHIRInteger(value: $coordinateSystem);
         }
         $this->coordinateSystem = $coordinateSystem;
-        if ($this->_valueXMLLocations[self::FIELD_COORDINATE_SYSTEM] !== $valueXMLLocation) {
-            $this->_setCoordinateSystemValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the coordinateSystem element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCoordinateSystemValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COORDINATE_SYSTEM];
-    }
-
-    /**
-     * Set the location the "value" field of the coordinateSystem element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCoordinateSystemValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COORDINATE_SYSTEM] = $valueXMLLocation;
         return $this;
     }
 
@@ -940,11 +886,9 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * and end by referenceSeq.windowEnd.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $observedSeq
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setObservedSeq(null|string|FHIRStringPrimitive|FHIRString $observedSeq,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setObservedSeq(null|string|FHIRStringPrimitive|FHIRString $observedSeq): self
     {
         if (null === $observedSeq) {
             unset($this->observedSeq);
@@ -954,33 +898,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             $observedSeq = new FHIRString(value: $observedSeq);
         }
         $this->observedSeq = $observedSeq;
-        if ($this->_valueXMLLocations[self::FIELD_OBSERVED_SEQ] !== $valueXMLLocation) {
-            $this->_setObservedSeqValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the observedSeq element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getObservedSeqValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_OBSERVED_SEQ];
-    }
-
-    /**
-     * Set the location the "value" field of the observedSeq element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setObservedSeqValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_OBSERVED_SEQ] = $valueXMLLocation;
         return $this;
     }
 
@@ -1071,12 +988,10 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * Coverage (read depth or depth) is the average number of reads representing a
      * given nucleotide in the reconstructed sequence.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $readCoverage
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $readCoverage
      * @return static
      */
-    public function setReadCoverage(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $readCoverage,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setReadCoverage(null|string|float|FHIRIntegerPrimitive|FHIRInteger $readCoverage): self
     {
         if (null === $readCoverage) {
             unset($this->readCoverage);
@@ -1086,33 +1001,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             $readCoverage = new FHIRInteger(value: $readCoverage);
         }
         $this->readCoverage = $readCoverage;
-        if ($this->_valueXMLLocations[self::FIELD_READ_COVERAGE] !== $valueXMLLocation) {
-            $this->_setReadCoverageValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the readCoverage element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getReadCoverageValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_READ_COVERAGE];
-    }
-
-    /**
-     * Set the location the "value" field of the readCoverage element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setReadCoverageValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_READ_COVERAGE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1241,7 +1129,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1330,58 +1218,58 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_COORDINATE_SYSTEM])) {
             if (isset($type->coordinateSystem)) {
                 $type->coordinateSystem->setValue((string)$attributes[self::FIELD_COORDINATE_SYSTEM]);
-                $type->_setCoordinateSystemValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCoordinateSystem((string)$attributes[self::FIELD_COORDINATE_SYSTEM], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCoordinateSystem((string)$attributes[self::FIELD_COORDINATE_SYSTEM]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_COORDINATE_SYSTEM, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_OBSERVED_SEQ])) {
             if (isset($type->observedSeq)) {
                 $type->observedSeq->setValue((string)$attributes[self::FIELD_OBSERVED_SEQ]);
-                $type->_setObservedSeqValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setObservedSeq((string)$attributes[self::FIELD_OBSERVED_SEQ], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setObservedSeq((string)$attributes[self::FIELD_OBSERVED_SEQ]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_OBSERVED_SEQ, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_READ_COVERAGE])) {
             if (isset($type->readCoverage)) {
                 $type->readCoverage->setValue((string)$attributes[self::FIELD_READ_COVERAGE]);
-                $type->_setReadCoverageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setReadCoverage((string)$attributes[self::FIELD_READ_COVERAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setReadCoverage((string)$attributes[self::FIELD_READ_COVERAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_READ_COVERAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1412,16 +1300,16 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             $xw->openRootNode('Sequence', $this->_getSourceXMLNS());
         }
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         if (isset($this->coordinateSystem) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COORDINATE_SYSTEM]) {
-            $xw->writeAttribute(self::FIELD_COORDINATE_SYSTEM, $this->coordinateSystem->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_COORDINATE_SYSTEM, $this->coordinateSystem->_getValueAsString());
         }
         if (isset($this->observedSeq) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_OBSERVED_SEQ]) {
-            $xw->writeAttribute(self::FIELD_OBSERVED_SEQ, $this->observedSeq->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_OBSERVED_SEQ, $this->observedSeq->_getValueAsString());
         }
         if (isset($this->readCoverage) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_READ_COVERAGE]) {
-            $xw->writeAttribute(self::FIELD_READ_COVERAGE, $this->readCoverage->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_READ_COVERAGE, $this->readCoverage->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1527,13 +1415,13 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRSequence $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRSequence
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1551,111 +1439,135 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRCode::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRCode::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_COORDINATE_SYSTEM])
-            || isset($json[self::FIELD_COORDINATE_SYSTEM_EXT])
-            || array_key_exists(self::FIELD_COORDINATE_SYSTEM, $json)
-            || array_key_exists(self::FIELD_COORDINATE_SYSTEM_EXT, $json)) {
-            $value = $json[self::FIELD_COORDINATE_SYSTEM] ?? null;
-            $type->setCoordinateSystem(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_COORDINATE_SYSTEM_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->coordinateSystem)
+            || isset($json->_coordinateSystem)
+            || property_exists($json, self::FIELD_COORDINATE_SYSTEM)
+            || property_exists($json, self::FIELD_COORDINATE_SYSTEM_EXT)) {
+            $v = $json->_coordinateSystem ?? new \stdClass();
+            $v->value = $json->coordinateSystem ?? null;
+            $type->setCoordinateSystem(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PATIENT]) || array_key_exists(self::FIELD_PATIENT, $json)) {
-            $type->setPatient(FHIRReference::jsonUnserialize($json[self::FIELD_PATIENT], $config));
-        }
-        if (isset($json[self::FIELD_SPECIMEN]) || array_key_exists(self::FIELD_SPECIMEN, $json)) {
-            $type->setSpecimen(FHIRReference::jsonUnserialize($json[self::FIELD_SPECIMEN], $config));
-        }
-        if (isset($json[self::FIELD_DEVICE]) || array_key_exists(self::FIELD_DEVICE, $json)) {
-            $type->setDevice(FHIRReference::jsonUnserialize($json[self::FIELD_DEVICE], $config));
-        }
-        if (isset($json[self::FIELD_PERFORMER]) || array_key_exists(self::FIELD_PERFORMER, $json)) {
-            $type->setPerformer(FHIRReference::jsonUnserialize($json[self::FIELD_PERFORMER], $config));
-        }
-        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_REFERENCE_SEQ]) || array_key_exists(self::FIELD_REFERENCE_SEQ, $json)) {
-            $type->setReferenceSeq(FHIRSequenceReferenceSeq::jsonUnserialize($json[self::FIELD_REFERENCE_SEQ], $config));
-        }
-        if (isset($json[self::FIELD_VARIANT]) || array_key_exists(self::FIELD_VARIANT, $json)) {
-            $vs = $json[self::FIELD_VARIANT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->patient) || property_exists($json, self::FIELD_PATIENT)) {
+            if (is_array($json->patient)) {
+                $type->setPatient(FHIRReference::jsonUnserialize(reset($json->patient), $config));
+            } else {
+                $type->setPatient(FHIRReference::jsonUnserialize($json->patient, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->specimen) || property_exists($json, self::FIELD_SPECIMEN)) {
+            if (is_array($json->specimen)) {
+                $type->setSpecimen(FHIRReference::jsonUnserialize(reset($json->specimen), $config));
+            } else {
+                $type->setSpecimen(FHIRReference::jsonUnserialize($json->specimen, $config));
+            }
+        }
+        if (isset($json->device) || property_exists($json, self::FIELD_DEVICE)) {
+            if (is_array($json->device)) {
+                $type->setDevice(FHIRReference::jsonUnserialize(reset($json->device), $config));
+            } else {
+                $type->setDevice(FHIRReference::jsonUnserialize($json->device, $config));
+            }
+        }
+        if (isset($json->performer) || property_exists($json, self::FIELD_PERFORMER)) {
+            if (is_array($json->performer)) {
+                $type->setPerformer(FHIRReference::jsonUnserialize(reset($json->performer), $config));
+            } else {
+                $type->setPerformer(FHIRReference::jsonUnserialize($json->performer, $config));
+            }
+        }
+        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
+            if (is_array($json->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+            } else {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+            }
+        }
+        if (isset($json->referenceSeq) || property_exists($json, self::FIELD_REFERENCE_SEQ)) {
+            if (is_array($json->referenceSeq)) {
+                $type->setReferenceSeq(FHIRSequenceReferenceSeq::jsonUnserialize(reset($json->referenceSeq), $config));
+            } else {
+                $type->setReferenceSeq(FHIRSequenceReferenceSeq::jsonUnserialize($json->referenceSeq, $config));
+            }
+        }
+        if (isset($json->variant) || property_exists($json, self::FIELD_VARIANT)) {
+            if (is_object($json->variant)) {
+                $vals = [$json->variant];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_VARIANT, true);
+            } else {
+                $vals = $json->variant;
+            }
+            foreach($vals as $v) {
                 $type->addVariant(FHIRSequenceVariant::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_OBSERVED_SEQ])
-            || isset($json[self::FIELD_OBSERVED_SEQ_EXT])
-            || array_key_exists(self::FIELD_OBSERVED_SEQ, $json)
-            || array_key_exists(self::FIELD_OBSERVED_SEQ_EXT, $json)) {
-            $value = $json[self::FIELD_OBSERVED_SEQ] ?? null;
-            $type->setObservedSeq(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_OBSERVED_SEQ_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->observedSeq)
+            || isset($json->_observedSeq)
+            || property_exists($json, self::FIELD_OBSERVED_SEQ)
+            || property_exists($json, self::FIELD_OBSERVED_SEQ_EXT)) {
+            $v = $json->_observedSeq ?? new \stdClass();
+            $v->value = $json->observedSeq ?? null;
+            $type->setObservedSeq(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_QUALITY]) || array_key_exists(self::FIELD_QUALITY, $json)) {
-            $vs = $json[self::FIELD_QUALITY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->quality) || property_exists($json, self::FIELD_QUALITY)) {
+            if (is_object($json->quality)) {
+                $vals = [$json->quality];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_QUALITY, true);
+            } else {
+                $vals = $json->quality;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addQuality(FHIRSequenceQuality::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_READ_COVERAGE])
-            || isset($json[self::FIELD_READ_COVERAGE_EXT])
-            || array_key_exists(self::FIELD_READ_COVERAGE, $json)
-            || array_key_exists(self::FIELD_READ_COVERAGE_EXT, $json)) {
-            $value = $json[self::FIELD_READ_COVERAGE] ?? null;
-            $type->setReadCoverage(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_READ_COVERAGE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->readCoverage)
+            || isset($json->_readCoverage)
+            || property_exists($json, self::FIELD_READ_COVERAGE)
+            || property_exists($json, self::FIELD_READ_COVERAGE_EXT)) {
+            $v = $json->_readCoverage ?? new \stdClass();
+            $v->value = $json->readCoverage ?? null;
+            $type->setReadCoverage(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_REPOSITORY]) || array_key_exists(self::FIELD_REPOSITORY, $json)) {
-            $vs = $json[self::FIELD_REPOSITORY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->repository) || property_exists($json, self::FIELD_REPOSITORY)) {
+            if (is_object($json->repository)) {
+                $vals = [$json->repository];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_REPOSITORY, true);
+            } else {
+                $vals = $json->repository;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addRepository(FHIRSequenceRepository::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_POINTER]) || array_key_exists(self::FIELD_POINTER, $json)) {
-            $vs = $json[self::FIELD_POINTER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->pointer) || property_exists($json, self::FIELD_POINTER)) {
+            if (is_object($json->pointer)) {
+                $vals = [$json->pointer];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_POINTER, true);
+            } else {
+                $vals = $json->pointer;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addPointer(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -1669,7 +1581,11 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->type)) {
             if (null !== ($val = $this->type->getValue())) {
@@ -1710,7 +1626,11 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             $out->referenceSeq = $this->referenceSeq;
         }
         if (isset($this->variant) && [] !== $this->variant) {
-            $out->variant = $this->variant;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_VARIANT) && 1 === count($this->variant)) {
+                $out->variant = $this->variant[0];
+            } else {
+                $out->variant = $this->variant;
+            }
         }
         if (isset($this->observedSeq)) {
             if (null !== ($val = $this->observedSeq->getValue())) {
@@ -1723,7 +1643,11 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             }
         }
         if (isset($this->quality) && [] !== $this->quality) {
-            $out->quality = $this->quality;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_QUALITY) && 1 === count($this->quality)) {
+                $out->quality = $this->quality[0];
+            } else {
+                $out->quality = $this->quality;
+            }
         }
         if (isset($this->readCoverage)) {
             if (null !== ($val = $this->readCoverage->getValue())) {
@@ -1736,10 +1660,18 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             }
         }
         if (isset($this->repository) && [] !== $this->repository) {
-            $out->repository = $this->repository;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_REPOSITORY) && 1 === count($this->repository)) {
+                $out->repository = $this->repository[0];
+            } else {
+                $out->repository = $this->repository;
+            }
         }
         if (isset($this->pointer) && [] !== $this->pointer) {
-            $out->pointer = $this->pointer;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_POINTER) && 1 === count($this->pointer)) {
+                $out->pointer = $this->pointer[0];
+            } else {
+                $out->pointer = $this->pointer;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

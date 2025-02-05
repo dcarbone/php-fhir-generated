@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -85,12 +87,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRMeta extends FHIRElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_META;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_VERSION_ID = 'versionId';
     public const FIELD_VERSION_ID_EXT = '_versionId';
     public const FIELD_LAST_UPDATED = 'lastUpdated';
@@ -102,18 +106,18 @@ class FHIRMeta extends FHIRElement
     public const FIELD_SECURITY = 'security';
     public const FIELD_TAG = 'tag';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_VERSION_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LAST_UPDATED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SOURCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -191,7 +195,7 @@ class FHIRMeta extends FHIRElement
      */
     protected array $tag;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMeta Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -237,7 +241,7 @@ class FHIRMeta extends FHIRElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -246,7 +250,7 @@ class FHIRMeta extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -277,11 +281,9 @@ class FHIRMeta extends FHIRElement
      * URL. This value changes when the resource is created, updated, or deleted.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $versionId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVersionId(null|string|FHIRIdPrimitive|FHIRId $versionId,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setVersionId(null|string|FHIRIdPrimitive|FHIRId $versionId): self
     {
         if (null === $versionId) {
             unset($this->versionId);
@@ -291,33 +293,6 @@ class FHIRMeta extends FHIRElement
             $versionId = new FHIRId(value: $versionId);
         }
         $this->versionId = $versionId;
-        if ($this->_valueXMLLocations[self::FIELD_VERSION_ID] !== $valueXMLLocation) {
-            $this->_setVersionIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the versionId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getVersionIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VERSION_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the versionId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setVersionIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VERSION_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -349,11 +324,9 @@ class FHIRMeta extends FHIRElement
      * When the resource last changed - e.g. when the version changed.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInstant $lastUpdated
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLastUpdated(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastUpdated,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLastUpdated(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastUpdated): self
     {
         if (null === $lastUpdated) {
             unset($this->lastUpdated);
@@ -363,33 +336,6 @@ class FHIRMeta extends FHIRElement
             $lastUpdated = new FHIRInstant(value: $lastUpdated);
         }
         $this->lastUpdated = $lastUpdated;
-        if ($this->_valueXMLLocations[self::FIELD_LAST_UPDATED] !== $valueXMLLocation) {
-            $this->_setLastUpdatedValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the lastUpdated element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLastUpdatedValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LAST_UPDATED];
-    }
-
-    /**
-     * Set the location the "value" field of the lastUpdated element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLastUpdatedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LAST_UPDATED] = $valueXMLLocation;
         return $this;
     }
 
@@ -421,11 +367,9 @@ class FHIRMeta extends FHIRElement
      * another FHIR server, document, message, database, etc.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $source
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSource(null|string|FHIRUriPrimitive|FHIRUri $source,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSource(null|string|FHIRUriPrimitive|FHIRUri $source): self
     {
         if (null === $source) {
             unset($this->source);
@@ -435,33 +379,6 @@ class FHIRMeta extends FHIRElement
             $source = new FHIRUri(value: $source);
         }
         $this->source = $source;
-        if ($this->_valueXMLLocations[self::FIELD_SOURCE] !== $valueXMLLocation) {
-            $this->_setSourceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the source element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSourceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SOURCE];
-    }
-
-    /**
-     * Set the location the "value" field of the source element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSourceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SOURCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -685,7 +602,7 @@ class FHIRMeta extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -714,9 +631,11 @@ class FHIRMeta extends FHIRElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_VERSION_ID === $cen) {
                 $type->setVersionId(FHIRId::xmlUnserialize($ce, $config));
@@ -734,31 +653,32 @@ class FHIRMeta extends FHIRElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VERSION_ID])) {
             if (isset($type->versionId)) {
                 $type->versionId->setValue((string)$attributes[self::FIELD_VERSION_ID]);
-                $type->_setVersionIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setVersionId((string)$attributes[self::FIELD_VERSION_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setVersionId((string)$attributes[self::FIELD_VERSION_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VERSION_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LAST_UPDATED])) {
             if (isset($type->lastUpdated)) {
                 $type->lastUpdated->setValue((string)$attributes[self::FIELD_LAST_UPDATED]);
-                $type->_setLastUpdatedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLastUpdated((string)$attributes[self::FIELD_LAST_UPDATED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLastUpdated((string)$attributes[self::FIELD_LAST_UPDATED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LAST_UPDATED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SOURCE])) {
             if (isset($type->source)) {
                 $type->source->setValue((string)$attributes[self::FIELD_SOURCE]);
-                $type->_setSourceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSource((string)$attributes[self::FIELD_SOURCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSource((string)$attributes[self::FIELD_SOURCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SOURCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -771,13 +691,13 @@ class FHIRMeta extends FHIRElement
                                  SerializeConfig $config): void
     {
         if (isset($this->versionId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VERSION_ID]) {
-            $xw->writeAttribute(self::FIELD_VERSION_ID, $this->versionId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VERSION_ID, $this->versionId->_getValueAsString());
         }
         if (isset($this->lastUpdated) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LAST_UPDATED]) {
-            $xw->writeAttribute(self::FIELD_LAST_UPDATED, $this->lastUpdated->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LAST_UPDATED, $this->lastUpdated->_getValueAsString());
         }
         if (isset($this->source) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SOURCE]) {
-            $xw->writeAttribute(self::FIELD_SOURCE, $this->source->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SOURCE, $this->source->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->versionId)
@@ -825,13 +745,13 @@ class FHIRMeta extends FHIRElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -846,69 +766,66 @@ class FHIRMeta extends FHIRElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_VERSION_ID])
-            || isset($json[self::FIELD_VERSION_ID_EXT])
-            || array_key_exists(self::FIELD_VERSION_ID, $json)
-            || array_key_exists(self::FIELD_VERSION_ID_EXT, $json)) {
-            $value = $json[self::FIELD_VERSION_ID] ?? null;
-            $type->setVersionId(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSION_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->versionId)
+            || isset($json->_versionId)
+            || property_exists($json, self::FIELD_VERSION_ID)
+            || property_exists($json, self::FIELD_VERSION_ID_EXT)) {
+            $v = $json->_versionId ?? new \stdClass();
+            $v->value = $json->versionId ?? null;
+            $type->setVersionId(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_LAST_UPDATED])
-            || isset($json[self::FIELD_LAST_UPDATED_EXT])
-            || array_key_exists(self::FIELD_LAST_UPDATED, $json)
-            || array_key_exists(self::FIELD_LAST_UPDATED_EXT, $json)) {
-            $value = $json[self::FIELD_LAST_UPDATED] ?? null;
-            $type->setLastUpdated(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_LAST_UPDATED_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->lastUpdated)
+            || isset($json->_lastUpdated)
+            || property_exists($json, self::FIELD_LAST_UPDATED)
+            || property_exists($json, self::FIELD_LAST_UPDATED_EXT)) {
+            $v = $json->_lastUpdated ?? new \stdClass();
+            $v->value = $json->lastUpdated ?? null;
+            $type->setLastUpdated(FHIRInstant::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SOURCE])
-            || isset($json[self::FIELD_SOURCE_EXT])
-            || array_key_exists(self::FIELD_SOURCE, $json)
-            || array_key_exists(self::FIELD_SOURCE_EXT, $json)) {
-            $value = $json[self::FIELD_SOURCE] ?? null;
-            $type->setSource(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->source)
+            || isset($json->_source)
+            || property_exists($json, self::FIELD_SOURCE)
+            || property_exists($json, self::FIELD_SOURCE_EXT)) {
+            $v = $json->_source ?? new \stdClass();
+            $v->value = $json->source ?? null;
+            $type->setSource(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PROFILE])
-            || isset($json[self::FIELD_PROFILE_EXT])
-            || array_key_exists(self::FIELD_PROFILE, $json)
-            || array_key_exists(self::FIELD_PROFILE_EXT, $json)) {
-            $value = (array)($json[self::FIELD_PROFILE] ?? []);
-            $ext = (array)($json[self::FIELD_PROFILE_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->profile)
+            || isset($json->_profile)
+            || property_exists($json, self::FIELD_PROFILE)
+            || property_exists($json, self::FIELD_PROFILE_EXT)) {
+            $vals = (array)($json->profile ?? []);
+            $exts = (array)($json->FIELD_PROFILE_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addProfile(FHIRCanonical::jsonUnserialize(
-                    [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addProfile(FHIRCanonical::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SECURITY]) || array_key_exists(self::FIELD_SECURITY, $json)) {
-            $vs = $json[self::FIELD_SECURITY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->security) || property_exists($json, self::FIELD_SECURITY)) {
+            if (is_object($json->security)) {
+                $vals = [$json->security];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SECURITY, true);
+            } else {
+                $vals = $json->security;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSecurity(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TAG]) || array_key_exists(self::FIELD_TAG, $json)) {
-            $vs = $json[self::FIELD_TAG];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->tag) || property_exists($json, self::FIELD_TAG)) {
+            if (is_object($json->tag)) {
+                $vals = [$json->tag];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TAG, true);
+            } else {
+                $vals = $json->tag;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTag(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
@@ -981,10 +898,18 @@ class FHIRMeta extends FHIRElement
             }
         }
         if (isset($this->security) && [] !== $this->security) {
-            $out->security = $this->security;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SECURITY) && 1 === count($this->security)) {
+                $out->security = $this->security[0];
+            } else {
+                $out->security = $this->security;
+            }
         }
         if (isset($this->tag) && [] !== $this->tag) {
-            $out->tag = $this->tag;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TAG) && 1 === count($this->tag)) {
+                $out->tag = $this->tag[0];
+            } else {
+                $out->tag = $this->tag;
+            }
         }
         return $out;
     }

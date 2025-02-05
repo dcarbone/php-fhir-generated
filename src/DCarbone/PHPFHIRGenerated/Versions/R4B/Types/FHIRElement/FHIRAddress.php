@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -105,12 +107,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRAddress extends FHIRElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ADDRESS;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_USE = 'use';
     public const FIELD_USE_EXT = '_use';
     public const FIELD_TYPE = 'type';
@@ -131,11 +135,11 @@ class FHIRAddress extends FHIRElement
     public const FIELD_COUNTRY_EXT = '_country';
     public const FIELD_PERIOD = 'period';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_USE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -147,7 +151,7 @@ class FHIRAddress extends FHIRElement
         self::FIELD_COUNTRY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * The use of an address.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -252,7 +256,7 @@ class FHIRAddress extends FHIRElement
      */
     protected FHIRPeriod $period;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAddress Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -318,7 +322,7 @@ class FHIRAddress extends FHIRElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -327,7 +331,7 @@ class FHIRAddress extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * The use of an address.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -348,11 +352,9 @@ class FHIRAddress extends FHIRElement
      * The purpose of this address.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRAddressUseEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddressUse $use
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUse(null|string|FHIRAddressUseEnum|FHIRAddressUse $use,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUse(null|string|FHIRAddressUseEnum|FHIRAddressUse $use): self
     {
         if (null === $use) {
             unset($this->use);
@@ -362,33 +364,6 @@ class FHIRAddress extends FHIRElement
             $use = new FHIRAddressUse(value: $use);
         }
         $this->use = $use;
-        if ($this->_valueXMLLocations[self::FIELD_USE] !== $valueXMLLocation) {
-            $this->_setUseValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the use element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUseValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_USE];
-    }
-
-    /**
-     * Set the location the "value" field of the use element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUseValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_USE] = $valueXMLLocation;
         return $this;
     }
 
@@ -414,11 +389,9 @@ class FHIRAddress extends FHIRElement
      * addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRAddressTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddressType $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRAddressTypeEnum|FHIRAddressType $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRAddressTypeEnum|FHIRAddressType $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -428,33 +401,6 @@ class FHIRAddress extends FHIRElement
             $type = new FHIRAddressType(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -482,11 +428,9 @@ class FHIRAddress extends FHIRElement
      * This may be provided instead of or as well as the specific parts.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $text
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setText(null|string|FHIRStringPrimitive|FHIRString $text,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
         if (null === $text) {
             unset($this->text);
@@ -496,33 +440,6 @@ class FHIRAddress extends FHIRElement
             $text = new FHIRString(value: $text);
         }
         $this->text = $text;
-        if ($this->_valueXMLLocations[self::FIELD_TEXT] !== $valueXMLLocation) {
-            $this->_setTextValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the text element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTextValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TEXT];
-    }
-
-    /**
-     * Set the location the "value" field of the text element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTextValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TEXT] = $valueXMLLocation;
         return $this;
     }
 
@@ -627,11 +544,9 @@ class FHIRAddress extends FHIRElement
      * center.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $city
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCity(null|string|FHIRStringPrimitive|FHIRString $city,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCity(null|string|FHIRStringPrimitive|FHIRString $city): self
     {
         if (null === $city) {
             unset($this->city);
@@ -641,33 +556,6 @@ class FHIRAddress extends FHIRElement
             $city = new FHIRString(value: $city);
         }
         $this->city = $city;
-        if ($this->_valueXMLLocations[self::FIELD_CITY] !== $valueXMLLocation) {
-            $this->_setCityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the city element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CITY];
-    }
-
-    /**
-     * Set the location the "value" field of the city element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -693,11 +581,9 @@ class FHIRAddress extends FHIRElement
      * The name of the administrative area (county).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $district
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDistrict(null|string|FHIRStringPrimitive|FHIRString $district,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDistrict(null|string|FHIRStringPrimitive|FHIRString $district): self
     {
         if (null === $district) {
             unset($this->district);
@@ -707,33 +593,6 @@ class FHIRAddress extends FHIRElement
             $district = new FHIRString(value: $district);
         }
         $this->district = $district;
-        if ($this->_valueXMLLocations[self::FIELD_DISTRICT] !== $valueXMLLocation) {
-            $this->_setDistrictValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the district element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDistrictValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DISTRICT];
-    }
-
-    /**
-     * Set the location the "value" field of the district element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDistrictValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DISTRICT] = $valueXMLLocation;
         return $this;
     }
 
@@ -761,11 +620,9 @@ class FHIRAddress extends FHIRElement
      * A code may be used if codes are in common use (e.g. US 2 letter state codes).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $state
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setState(null|string|FHIRStringPrimitive|FHIRString $state,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setState(null|string|FHIRStringPrimitive|FHIRString $state): self
     {
         if (null === $state) {
             unset($this->state);
@@ -775,33 +632,6 @@ class FHIRAddress extends FHIRElement
             $state = new FHIRString(value: $state);
         }
         $this->state = $state;
-        if ($this->_valueXMLLocations[self::FIELD_STATE] !== $valueXMLLocation) {
-            $this->_setStateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the state element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STATE];
-    }
-
-    /**
-     * Set the location the "value" field of the state element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -827,11 +657,9 @@ class FHIRAddress extends FHIRElement
      * A postal code designating a region defined by the postal service.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $postalCode
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPostalCode(null|string|FHIRStringPrimitive|FHIRString $postalCode,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPostalCode(null|string|FHIRStringPrimitive|FHIRString $postalCode): self
     {
         if (null === $postalCode) {
             unset($this->postalCode);
@@ -841,33 +669,6 @@ class FHIRAddress extends FHIRElement
             $postalCode = new FHIRString(value: $postalCode);
         }
         $this->postalCode = $postalCode;
-        if ($this->_valueXMLLocations[self::FIELD_POSTAL_CODE] !== $valueXMLLocation) {
-            $this->_setPostalCodeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the postalCode element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPostalCodeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_POSTAL_CODE];
-    }
-
-    /**
-     * Set the location the "value" field of the postalCode element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPostalCodeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_POSTAL_CODE] = $valueXMLLocation;
         return $this;
     }
 
@@ -893,11 +694,9 @@ class FHIRAddress extends FHIRElement
      * Country - a nation as commonly understood or generally accepted.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $country
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCountry(null|string|FHIRStringPrimitive|FHIRString $country,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCountry(null|string|FHIRStringPrimitive|FHIRString $country): self
     {
         if (null === $country) {
             unset($this->country);
@@ -907,33 +706,6 @@ class FHIRAddress extends FHIRElement
             $country = new FHIRString(value: $country);
         }
         $this->country = $country;
-        if ($this->_valueXMLLocations[self::FIELD_COUNTRY] !== $valueXMLLocation) {
-            $this->_setCountryValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the country element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCountryValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COUNTRY];
-    }
-
-    /**
-     * Set the location the "value" field of the country element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCountryValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COUNTRY] = $valueXMLLocation;
         return $this;
     }
 
@@ -971,7 +743,7 @@ class FHIRAddress extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1000,9 +772,11 @@ class FHIRAddress extends FHIRElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_USE === $cen) {
                 $type->setUse(FHIRAddressUse::xmlUnserialize($ce, $config));
@@ -1028,71 +802,72 @@ class FHIRAddress extends FHIRElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_USE])) {
             if (isset($type->use)) {
                 $type->use->setValue((string)$attributes[self::FIELD_USE]);
-                $type->_setUseValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUse((string)$attributes[self::FIELD_USE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUse((string)$attributes[self::FIELD_USE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_USE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TEXT])) {
             if (isset($type->text)) {
                 $type->text->setValue((string)$attributes[self::FIELD_TEXT]);
-                $type->_setTextValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setText((string)$attributes[self::FIELD_TEXT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setText((string)$attributes[self::FIELD_TEXT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TEXT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CITY])) {
             if (isset($type->city)) {
                 $type->city->setValue((string)$attributes[self::FIELD_CITY]);
-                $type->_setCityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCity((string)$attributes[self::FIELD_CITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCity((string)$attributes[self::FIELD_CITY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CITY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DISTRICT])) {
             if (isset($type->district)) {
                 $type->district->setValue((string)$attributes[self::FIELD_DISTRICT]);
-                $type->_setDistrictValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDistrict((string)$attributes[self::FIELD_DISTRICT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDistrict((string)$attributes[self::FIELD_DISTRICT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DISTRICT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STATE])) {
             if (isset($type->state)) {
                 $type->state->setValue((string)$attributes[self::FIELD_STATE]);
-                $type->_setStateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setState((string)$attributes[self::FIELD_STATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setState((string)$attributes[self::FIELD_STATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_POSTAL_CODE])) {
             if (isset($type->postalCode)) {
                 $type->postalCode->setValue((string)$attributes[self::FIELD_POSTAL_CODE]);
-                $type->_setPostalCodeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPostalCode((string)$attributes[self::FIELD_POSTAL_CODE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPostalCode((string)$attributes[self::FIELD_POSTAL_CODE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_POSTAL_CODE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_COUNTRY])) {
             if (isset($type->country)) {
                 $type->country->setValue((string)$attributes[self::FIELD_COUNTRY]);
-                $type->_setCountryValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCountry((string)$attributes[self::FIELD_COUNTRY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCountry((string)$attributes[self::FIELD_COUNTRY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_COUNTRY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1105,28 +880,28 @@ class FHIRAddress extends FHIRElement
                                  SerializeConfig $config): void
     {
         if (isset($this->use) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_USE]) {
-            $xw->writeAttribute(self::FIELD_USE, $this->use->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_USE, $this->use->_getValueAsString());
         }
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         if (isset($this->text) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TEXT]) {
-            $xw->writeAttribute(self::FIELD_TEXT, $this->text->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TEXT, $this->text->_getValueAsString());
         }
         if (isset($this->city) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CITY]) {
-            $xw->writeAttribute(self::FIELD_CITY, $this->city->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CITY, $this->city->_getValueAsString());
         }
         if (isset($this->district) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DISTRICT]) {
-            $xw->writeAttribute(self::FIELD_DISTRICT, $this->district->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DISTRICT, $this->district->_getValueAsString());
         }
         if (isset($this->state) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATE]) {
-            $xw->writeAttribute(self::FIELD_STATE, $this->state->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STATE, $this->state->_getValueAsString());
         }
         if (isset($this->postalCode) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_POSTAL_CODE]) {
-            $xw->writeAttribute(self::FIELD_POSTAL_CODE, $this->postalCode->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_POSTAL_CODE, $this->postalCode->_getValueAsString());
         }
         if (isset($this->country) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COUNTRY]) {
-            $xw->writeAttribute(self::FIELD_COUNTRY, $this->country->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_COUNTRY, $this->country->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->use)
@@ -1200,13 +975,13 @@ class FHIRAddress extends FHIRElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1221,106 +996,93 @@ class FHIRAddress extends FHIRElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_USE])
-            || isset($json[self::FIELD_USE_EXT])
-            || array_key_exists(self::FIELD_USE, $json)
-            || array_key_exists(self::FIELD_USE_EXT, $json)) {
-            $value = $json[self::FIELD_USE] ?? null;
-            $type->setUse(FHIRAddressUse::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRAddressUse::FIELD_VALUE => $value]) + ($json[self::FIELD_USE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->use)
+            || isset($json->_use)
+            || property_exists($json, self::FIELD_USE)
+            || property_exists($json, self::FIELD_USE_EXT)) {
+            $v = $json->_use ?? new \stdClass();
+            $v->value = $json->use ?? null;
+            $type->setUse(FHIRAddressUse::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRAddressType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRAddressType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRAddressType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TEXT])
-            || isset($json[self::FIELD_TEXT_EXT])
-            || array_key_exists(self::FIELD_TEXT, $json)
-            || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
-            $value = $json[self::FIELD_TEXT] ?? null;
-            $type->setText(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->text)
+            || isset($json->_text)
+            || property_exists($json, self::FIELD_TEXT)
+            || property_exists($json, self::FIELD_TEXT_EXT)) {
+            $v = $json->_text ?? new \stdClass();
+            $v->value = $json->text ?? null;
+            $type->setText(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_LINE])
-            || isset($json[self::FIELD_LINE_EXT])
-            || array_key_exists(self::FIELD_LINE, $json)
-            || array_key_exists(self::FIELD_LINE_EXT, $json)) {
-            $value = (array)($json[self::FIELD_LINE] ?? []);
-            $ext = (array)($json[self::FIELD_LINE_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->line)
+            || isset($json->_line)
+            || property_exists($json, self::FIELD_LINE)
+            || property_exists($json, self::FIELD_LINE_EXT)) {
+            $vals = (array)($json->line ?? []);
+            $exts = (array)($json->FIELD_LINE_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addLine(FHIRString::jsonUnserialize(
-                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addLine(FHIRString::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CITY])
-            || isset($json[self::FIELD_CITY_EXT])
-            || array_key_exists(self::FIELD_CITY, $json)
-            || array_key_exists(self::FIELD_CITY_EXT, $json)) {
-            $value = $json[self::FIELD_CITY] ?? null;
-            $type->setCity(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->city)
+            || isset($json->_city)
+            || property_exists($json, self::FIELD_CITY)
+            || property_exists($json, self::FIELD_CITY_EXT)) {
+            $v = $json->_city ?? new \stdClass();
+            $v->value = $json->city ?? null;
+            $type->setCity(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DISTRICT])
-            || isset($json[self::FIELD_DISTRICT_EXT])
-            || array_key_exists(self::FIELD_DISTRICT, $json)
-            || array_key_exists(self::FIELD_DISTRICT_EXT, $json)) {
-            $value = $json[self::FIELD_DISTRICT] ?? null;
-            $type->setDistrict(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DISTRICT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->district)
+            || isset($json->_district)
+            || property_exists($json, self::FIELD_DISTRICT)
+            || property_exists($json, self::FIELD_DISTRICT_EXT)) {
+            $v = $json->_district ?? new \stdClass();
+            $v->value = $json->district ?? null;
+            $type->setDistrict(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_STATE])
-            || isset($json[self::FIELD_STATE_EXT])
-            || array_key_exists(self::FIELD_STATE, $json)
-            || array_key_exists(self::FIELD_STATE_EXT, $json)) {
-            $value = $json[self::FIELD_STATE] ?? null;
-            $type->setState(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_STATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->state)
+            || isset($json->_state)
+            || property_exists($json, self::FIELD_STATE)
+            || property_exists($json, self::FIELD_STATE_EXT)) {
+            $v = $json->_state ?? new \stdClass();
+            $v->value = $json->state ?? null;
+            $type->setState(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_POSTAL_CODE])
-            || isset($json[self::FIELD_POSTAL_CODE_EXT])
-            || array_key_exists(self::FIELD_POSTAL_CODE, $json)
-            || array_key_exists(self::FIELD_POSTAL_CODE_EXT, $json)) {
-            $value = $json[self::FIELD_POSTAL_CODE] ?? null;
-            $type->setPostalCode(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_POSTAL_CODE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->postalCode)
+            || isset($json->_postalCode)
+            || property_exists($json, self::FIELD_POSTAL_CODE)
+            || property_exists($json, self::FIELD_POSTAL_CODE_EXT)) {
+            $v = $json->_postalCode ?? new \stdClass();
+            $v->value = $json->postalCode ?? null;
+            $type->setPostalCode(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_COUNTRY])
-            || isset($json[self::FIELD_COUNTRY_EXT])
-            || array_key_exists(self::FIELD_COUNTRY, $json)
-            || array_key_exists(self::FIELD_COUNTRY_EXT, $json)) {
-            $value = $json[self::FIELD_COUNTRY] ?? null;
-            $type->setCountry(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_COUNTRY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->country)
+            || isset($json->_country)
+            || property_exists($json, self::FIELD_COUNTRY)
+            || property_exists($json, self::FIELD_COUNTRY_EXT)) {
+            $v = $json->_country ?? new \stdClass();
+            $v->value = $json->country ?? null;
+            $type->setCountry(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+            }
         }
         return $type;
     }

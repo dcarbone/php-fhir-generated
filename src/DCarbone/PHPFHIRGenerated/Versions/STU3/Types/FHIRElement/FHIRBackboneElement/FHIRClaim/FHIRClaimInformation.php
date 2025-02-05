@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -90,12 +92,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRClaimInformation extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_DOT_INFORMATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SEQUENCE = 'sequence';
     public const FIELD_SEQUENCE_EXT = '_sequence';
     public const FIELD_CATEGORY = 'category';
@@ -110,7 +114,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
     public const FIELD_VALUE_REFERENCE = 'valueReference';
     public const FIELD_REASON = 'reason';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SEQUENCE => [
@@ -121,14 +125,14 @@ class FHIRClaimInformation extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TIMING_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -244,13 +248,13 @@ class FHIRClaimInformation extends FHIRBackboneElement
      */
     protected FHIRCodeableConcept $reason;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRClaimInformation Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $timingDate
@@ -265,7 +269,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null,
                                 null|FHIRCodeableConcept $category = null,
                                 null|FHIRCodeableConcept $code = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate = null,
@@ -313,7 +317,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -322,7 +326,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -344,12 +348,10 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Sequence of the information element which serves to provide a link.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
      * @return static
      */
-    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
         if (null === $sequence) {
             unset($this->sequence);
@@ -359,33 +361,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
             $sequence = new FHIRPositiveInt(value: $sequence);
         }
         $this->sequence = $sequence;
-        if ($this->_valueXMLLocations[self::FIELD_SEQUENCE] !== $valueXMLLocation) {
-            $this->_setSequenceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the sequence element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSequenceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SEQUENCE];
-    }
-
-    /**
-     * Set the location the "value" field of the sequence element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSequenceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SEQUENCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -491,11 +466,9 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * The date when or period to which this information refers.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $timingDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate): self
     {
         if (null === $timingDate) {
             unset($this->timingDate);
@@ -505,33 +478,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
             $timingDate = new FHIRDate(value: $timingDate);
         }
         $this->timingDate = $timingDate;
-        if ($this->_valueXMLLocations[self::FIELD_TIMING_DATE] !== $valueXMLLocation) {
-            $this->_setTimingDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the timingDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTimingDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TIMING_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the timingDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTimingDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TIMING_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -593,11 +539,9 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * including references to the data or the actual inclusion of the data.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $valueString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
         if (null === $valueString) {
             unset($this->valueString);
@@ -607,33 +551,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
             $valueString = new FHIRString(value: $valueString);
         }
         $this->valueString = $valueString;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE_STRING] !== $valueXMLLocation) {
-            $this->_setValueStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the valueString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the valueString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -787,7 +704,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -816,9 +733,11 @@ class FHIRClaimInformation extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -846,31 +765,32 @@ class FHIRClaimInformation extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SEQUENCE])) {
             if (isset($type->sequence)) {
                 $type->sequence->setValue((string)$attributes[self::FIELD_SEQUENCE]);
-                $type->_setSequenceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SEQUENCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TIMING_DATE])) {
             if (isset($type->timingDate)) {
                 $type->timingDate->setValue((string)$attributes[self::FIELD_TIMING_DATE]);
-                $type->_setTimingDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTimingDate((string)$attributes[self::FIELD_TIMING_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTimingDate((string)$attributes[self::FIELD_TIMING_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TIMING_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE_STRING])) {
             if (isset($type->valueString)) {
                 $type->valueString->setValue((string)$attributes[self::FIELD_VALUE_STRING]);
-                $type->_setValueStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValueString((string)$attributes[self::FIELD_VALUE_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setValueString((string)$attributes[self::FIELD_VALUE_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VALUE_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -883,13 +803,13 @@ class FHIRClaimInformation extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->sequence) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SEQUENCE]) {
-            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->_getValueAsString());
         }
         if (isset($this->timingDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TIMING_DATE]) {
-            $xw->writeAttribute(self::FIELD_TIMING_DATE, $this->timingDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TIMING_DATE, $this->timingDate->_getValueAsString());
         }
         if (isset($this->valueString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_STRING]) {
-            $xw->writeAttribute(self::FIELD_VALUE_STRING, $this->valueString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VALUE_STRING, $this->valueString->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->sequence)
@@ -951,13 +871,13 @@ class FHIRClaimInformation extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInformation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInformation
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -972,56 +892,78 @@ class FHIRClaimInformation extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SEQUENCE])
-            || isset($json[self::FIELD_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
-            $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $type->setSequence(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sequence)
+            || isset($json->_sequence)
+            || property_exists($json, self::FIELD_SEQUENCE)
+            || property_exists($json, self::FIELD_SEQUENCE_EXT)) {
+            $v = $json->_sequence ?? new \stdClass();
+            $v->value = $json->sequence ?? null;
+            $type->setSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CATEGORY], $config));
+        if (isset($json->category) || property_exists($json, self::FIELD_CATEGORY)) {
+            if (is_array($json->category)) {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize(reset($json->category), $config));
+            } else {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json->category, $config));
+            }
         }
-        if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
+        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
+            if (is_array($json->code)) {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($json->code), $config));
+            } else {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize($json->code, $config));
+            }
         }
-        if (isset($json[self::FIELD_TIMING_DATE])
-            || isset($json[self::FIELD_TIMING_DATE_EXT])
-            || array_key_exists(self::FIELD_TIMING_DATE, $json)
-            || array_key_exists(self::FIELD_TIMING_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_TIMING_DATE] ?? null;
-            $type->setTimingDate(FHIRDate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_TIMING_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->timingDate)
+            || isset($json->_timingDate)
+            || property_exists($json, self::FIELD_TIMING_DATE)
+            || property_exists($json, self::FIELD_TIMING_DATE_EXT)) {
+            $v = $json->_timingDate ?? new \stdClass();
+            $v->value = $json->timingDate ?? null;
+            $type->setTimingDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TIMING_PERIOD]) || array_key_exists(self::FIELD_TIMING_PERIOD, $json)) {
-            $type->setTimingPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_TIMING_PERIOD], $config));
+        if (isset($json->timingPeriod) || property_exists($json, self::FIELD_TIMING_PERIOD)) {
+            if (is_array($json->timingPeriod)) {
+                $type->setTimingPeriod(FHIRPeriod::jsonUnserialize(reset($json->timingPeriod), $config));
+            } else {
+                $type->setTimingPeriod(FHIRPeriod::jsonUnserialize($json->timingPeriod, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_STRING])
-            || isset($json[self::FIELD_VALUE_STRING_EXT])
-            || array_key_exists(self::FIELD_VALUE_STRING, $json)
-            || array_key_exists(self::FIELD_VALUE_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE_STRING] ?? null;
-            $type->setValueString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_STRING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->valueString)
+            || isset($json->_valueString)
+            || property_exists($json, self::FIELD_VALUE_STRING)
+            || property_exists($json, self::FIELD_VALUE_STRING_EXT)) {
+            $v = $json->_valueString ?? new \stdClass();
+            $v->value = $json->valueString ?? null;
+            $type->setValueString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VALUE_QUANTITY]) || array_key_exists(self::FIELD_VALUE_QUANTITY, $json)) {
-            $type->setValueQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_VALUE_QUANTITY], $config));
+        if (isset($json->valueQuantity) || property_exists($json, self::FIELD_VALUE_QUANTITY)) {
+            if (is_array($json->valueQuantity)) {
+                $type->setValueQuantity(FHIRQuantity::jsonUnserialize(reset($json->valueQuantity), $config));
+            } else {
+                $type->setValueQuantity(FHIRQuantity::jsonUnserialize($json->valueQuantity, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_ATTACHMENT]) || array_key_exists(self::FIELD_VALUE_ATTACHMENT, $json)) {
-            $type->setValueAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_VALUE_ATTACHMENT], $config));
+        if (isset($json->valueAttachment) || property_exists($json, self::FIELD_VALUE_ATTACHMENT)) {
+            if (is_array($json->valueAttachment)) {
+                $type->setValueAttachment(FHIRAttachment::jsonUnserialize(reset($json->valueAttachment), $config));
+            } else {
+                $type->setValueAttachment(FHIRAttachment::jsonUnserialize($json->valueAttachment, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_REFERENCE]) || array_key_exists(self::FIELD_VALUE_REFERENCE, $json)) {
-            $type->setValueReference(FHIRReference::jsonUnserialize($json[self::FIELD_VALUE_REFERENCE], $config));
+        if (isset($json->valueReference) || property_exists($json, self::FIELD_VALUE_REFERENCE)) {
+            if (is_array($json->valueReference)) {
+                $type->setValueReference(FHIRReference::jsonUnserialize(reset($json->valueReference), $config));
+            } else {
+                $type->setValueReference(FHIRReference::jsonUnserialize($json->valueReference, $config));
+            }
         }
-        if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            $type->setReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REASON], $config));
+        if (isset($json->reason) || property_exists($json, self::FIELD_REASON)) {
+            if (is_array($json->reason)) {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize(reset($json->reason), $config));
+            } else {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize($json->reason, $config));
+            }
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -100,26 +102,28 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BODY_STRUCTURE_DOT_BODY_LANDMARK_ORIENTATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_LANDMARK_DESCRIPTION = 'landmarkDescription';
     public const FIELD_CLOCK_FACE_POSITION = 'clockFacePosition';
     public const FIELD_DISTANCE_FROM_LANDMARK = 'distanceFromLandmark';
     public const FIELD_SURFACE_ORIENTATION = 'surfaceOrientation';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -165,7 +169,7 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      */
     protected array $surfaceOrientation;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRBodyStructureBodyLandmarkOrientation Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -204,7 +208,7 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -213,7 +217,7 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -482,7 +486,7 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -511,9 +515,11 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -529,7 +535,8 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -573,13 +580,13 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureBodyLandmarkOrientation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureBodyLandmarkOrientation
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -594,39 +601,47 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LANDMARK_DESCRIPTION]) || array_key_exists(self::FIELD_LANDMARK_DESCRIPTION, $json)) {
-            $vs = $json[self::FIELD_LANDMARK_DESCRIPTION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->landmarkDescription) || property_exists($json, self::FIELD_LANDMARK_DESCRIPTION)) {
+            if (is_object($json->landmarkDescription)) {
+                $vals = [$json->landmarkDescription];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_LANDMARK_DESCRIPTION, true);
+            } else {
+                $vals = $json->landmarkDescription;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addLandmarkDescription(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CLOCK_FACE_POSITION]) || array_key_exists(self::FIELD_CLOCK_FACE_POSITION, $json)) {
-            $vs = $json[self::FIELD_CLOCK_FACE_POSITION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->clockFacePosition) || property_exists($json, self::FIELD_CLOCK_FACE_POSITION)) {
+            if (is_object($json->clockFacePosition)) {
+                $vals = [$json->clockFacePosition];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CLOCK_FACE_POSITION, true);
+            } else {
+                $vals = $json->clockFacePosition;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addClockFacePosition(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DISTANCE_FROM_LANDMARK]) || array_key_exists(self::FIELD_DISTANCE_FROM_LANDMARK, $json)) {
-            $vs = $json[self::FIELD_DISTANCE_FROM_LANDMARK];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->distanceFromLandmark) || property_exists($json, self::FIELD_DISTANCE_FROM_LANDMARK)) {
+            if (is_object($json->distanceFromLandmark)) {
+                $vals = [$json->distanceFromLandmark];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DISTANCE_FROM_LANDMARK, true);
+            } else {
+                $vals = $json->distanceFromLandmark;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addDistanceFromLandmark(FHIRBodyStructureDistanceFromLandmark::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SURFACE_ORIENTATION]) || array_key_exists(self::FIELD_SURFACE_ORIENTATION, $json)) {
-            $vs = $json[self::FIELD_SURFACE_ORIENTATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->surfaceOrientation) || property_exists($json, self::FIELD_SURFACE_ORIENTATION)) {
+            if (is_object($json->surfaceOrientation)) {
+                $vals = [$json->surfaceOrientation];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SURFACE_ORIENTATION, true);
+            } else {
+                $vals = $json->surfaceOrientation;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSurfaceOrientation(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
@@ -640,16 +655,32 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->landmarkDescription) && [] !== $this->landmarkDescription) {
-            $out->landmarkDescription = $this->landmarkDescription;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_LANDMARK_DESCRIPTION) && 1 === count($this->landmarkDescription)) {
+                $out->landmarkDescription = $this->landmarkDescription[0];
+            } else {
+                $out->landmarkDescription = $this->landmarkDescription;
+            }
         }
         if (isset($this->clockFacePosition) && [] !== $this->clockFacePosition) {
-            $out->clockFacePosition = $this->clockFacePosition;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CLOCK_FACE_POSITION) && 1 === count($this->clockFacePosition)) {
+                $out->clockFacePosition = $this->clockFacePosition[0];
+            } else {
+                $out->clockFacePosition = $this->clockFacePosition;
+            }
         }
         if (isset($this->distanceFromLandmark) && [] !== $this->distanceFromLandmark) {
-            $out->distanceFromLandmark = $this->distanceFromLandmark;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DISTANCE_FROM_LANDMARK) && 1 === count($this->distanceFromLandmark)) {
+                $out->distanceFromLandmark = $this->distanceFromLandmark[0];
+            } else {
+                $out->distanceFromLandmark = $this->distanceFromLandmark;
+            }
         }
         if (isset($this->surfaceOrientation) && [] !== $this->surfaceOrientation) {
-            $out->surfaceOrientation = $this->surfaceOrientation;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SURFACE_ORIENTATION) && 1 === count($this->surfaceOrientation)) {
+                $out->surfaceOrientation = $this->surfaceOrientation[0];
+            } else {
+                $out->surfaceOrientation = $this->surfaceOrientation;
+            }
         }
         return $out;
     }

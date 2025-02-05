@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -101,27 +103,29 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRTestPlanScript extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TEST_PLAN_DOT_SCRIPT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_LANGUAGE = 'language';
     public const FIELD_SOURCE_STRING = 'sourceString';
     public const FIELD_SOURCE_STRING_EXT = '_sourceString';
     public const FIELD_SOURCE_REFERENCE = 'sourceReference';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SOURCE_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -139,7 +143,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
@@ -150,13 +154,13 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
     protected FHIRReference $sourceReference;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRTestPlanScript Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -190,7 +194,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -199,7 +203,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -242,7 +246,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
@@ -257,14 +261,12 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sourceString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
         if (null === $sourceString) {
             unset($this->sourceString);
@@ -274,33 +276,6 @@ class FHIRTestPlanScript extends FHIRBackboneElement
             $sourceString = new FHIRString(value: $sourceString);
         }
         $this->sourceString = $sourceString;
-        if ($this->_valueXMLLocations[self::FIELD_SOURCE_STRING] !== $valueXMLLocation) {
-            $this->_setSourceStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the sourceString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSourceStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SOURCE_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the sourceString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSourceStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SOURCE_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -310,7 +285,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
@@ -325,7 +300,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $sourceReference
      * @return static
@@ -340,7 +315,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -369,9 +344,11 @@ class FHIRTestPlanScript extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -385,15 +362,16 @@ class FHIRTestPlanScript extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SOURCE_STRING])) {
             if (isset($type->sourceString)) {
                 $type->sourceString->setValue((string)$attributes[self::FIELD_SOURCE_STRING]);
-                $type->_setSourceStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSourceString((string)$attributes[self::FIELD_SOURCE_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSourceString((string)$attributes[self::FIELD_SOURCE_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SOURCE_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -406,7 +384,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->sourceString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SOURCE_STRING]) {
-            $xw->writeAttribute(self::FIELD_SOURCE_STRING, $this->sourceString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SOURCE_STRING, $this->sourceString->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->language)) {
@@ -429,13 +407,13 @@ class FHIRTestPlanScript extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanScript $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanScript
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -450,21 +428,27 @@ class FHIRTestPlanScript extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LANGUAGE]) || array_key_exists(self::FIELD_LANGUAGE, $json)) {
-            $type->setLanguage(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_LANGUAGE], $config));
+        if (isset($json->language) || property_exists($json, self::FIELD_LANGUAGE)) {
+            if (is_array($json->language)) {
+                $type->setLanguage(FHIRCodeableConcept::jsonUnserialize(reset($json->language), $config));
+            } else {
+                $type->setLanguage(FHIRCodeableConcept::jsonUnserialize($json->language, $config));
+            }
         }
-        if (isset($json[self::FIELD_SOURCE_STRING])
-            || isset($json[self::FIELD_SOURCE_STRING_EXT])
-            || array_key_exists(self::FIELD_SOURCE_STRING, $json)
-            || array_key_exists(self::FIELD_SOURCE_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_SOURCE_STRING] ?? null;
-            $type->setSourceString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_STRING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sourceString)
+            || isset($json->_sourceString)
+            || property_exists($json, self::FIELD_SOURCE_STRING)
+            || property_exists($json, self::FIELD_SOURCE_STRING_EXT)) {
+            $v = $json->_sourceString ?? new \stdClass();
+            $v->value = $json->sourceString ?? null;
+            $type->setSourceString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SOURCE_REFERENCE]) || array_key_exists(self::FIELD_SOURCE_REFERENCE, $json)) {
-            $type->setSourceReference(FHIRReference::jsonUnserialize($json[self::FIELD_SOURCE_REFERENCE], $config));
+        if (isset($json->sourceReference) || property_exists($json, self::FIELD_SOURCE_REFERENCE)) {
+            if (is_array($json->sourceReference)) {
+                $type->setSourceReference(FHIRReference::jsonUnserialize(reset($json->sourceReference), $config));
+            } else {
+                $type->setSourceReference(FHIRReference::jsonUnserialize($json->sourceReference, $config));
+            }
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -82,26 +84,28 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRInsurancePlanContact extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INSURANCE_PLAN_DOT_CONTACT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_PURPOSE = 'purpose';
     public const FIELD_NAME = 'name';
     public const FIELD_TELECOM = 'telecom';
     public const FIELD_ADDRESS = 'address';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -150,7 +154,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
      */
     protected FHIRAddress $address;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRInsurancePlanContact Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -189,7 +193,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -198,7 +202,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -381,7 +385,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -410,9 +414,11 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -428,7 +434,8 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -466,13 +473,13 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanContact $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanContact
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -487,23 +494,37 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PURPOSE]) || array_key_exists(self::FIELD_PURPOSE, $json)) {
-            $type->setPurpose(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PURPOSE], $config));
-        }
-        if (isset($json[self::FIELD_NAME]) || array_key_exists(self::FIELD_NAME, $json)) {
-            $type->setName(FHIRHumanName::jsonUnserialize($json[self::FIELD_NAME], $config));
-        }
-        if (isset($json[self::FIELD_TELECOM]) || array_key_exists(self::FIELD_TELECOM, $json)) {
-            $vs = $json[self::FIELD_TELECOM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->purpose) || property_exists($json, self::FIELD_PURPOSE)) {
+            if (is_array($json->purpose)) {
+                $type->setPurpose(FHIRCodeableConcept::jsonUnserialize(reset($json->purpose), $config));
+            } else {
+                $type->setPurpose(FHIRCodeableConcept::jsonUnserialize($json->purpose, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->name) || property_exists($json, self::FIELD_NAME)) {
+            if (is_array($json->name)) {
+                $type->setName(FHIRHumanName::jsonUnserialize(reset($json->name), $config));
+            } else {
+                $type->setName(FHIRHumanName::jsonUnserialize($json->name, $config));
+            }
+        }
+        if (isset($json->telecom) || property_exists($json, self::FIELD_TELECOM)) {
+            if (is_object($json->telecom)) {
+                $vals = [$json->telecom];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TELECOM, true);
+            } else {
+                $vals = $json->telecom;
+            }
+            foreach($vals as $v) {
                 $type->addTelecom(FHIRContactPoint::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ADDRESS]) || array_key_exists(self::FIELD_ADDRESS, $json)) {
-            $type->setAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_ADDRESS], $config));
+        if (isset($json->address) || property_exists($json, self::FIELD_ADDRESS)) {
+            if (is_array($json->address)) {
+                $type->setAddress(FHIRAddress::jsonUnserialize(reset($json->address), $config));
+            } else {
+                $type->setAddress(FHIRAddress::jsonUnserialize($json->address, $config));
+            }
         }
         return $type;
     }
@@ -521,7 +542,11 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
             $out->name = $this->name;
         }
         if (isset($this->telecom) && [] !== $this->telecom) {
-            $out->telecom = $this->telecom;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TELECOM) && 1 === count($this->telecom)) {
+                $out->telecom = $this->telecom[0];
+            } else {
+                $out->telecom = $this->telecom;
+            }
         }
         if (isset($this->address)) {
             $out->address = $this->address;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -105,12 +107,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRPlanDefinitionGoal extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PLAN_DEFINITION_DOT_GOAL;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_CATEGORY = 'category';
     public const FIELD_DESCRIPTION = 'description';
     public const FIELD_PRIORITY = 'priority';
@@ -119,7 +123,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
     public const FIELD_DOCUMENTATION = 'documentation';
     public const FIELD_TARGET = 'target';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_DESCRIPTION => [
@@ -127,11 +131,11 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -217,7 +221,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      */
     protected array $target;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRPlanDefinitionGoal Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -271,7 +275,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -280,7 +284,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -644,7 +648,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -673,9 +677,11 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -697,7 +703,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -754,13 +761,13 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -775,42 +782,64 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CATEGORY], $config));
-        }
-        if (isset($json[self::FIELD_DESCRIPTION]) || array_key_exists(self::FIELD_DESCRIPTION, $json)) {
-            $type->setDescription(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DESCRIPTION], $config));
-        }
-        if (isset($json[self::FIELD_PRIORITY]) || array_key_exists(self::FIELD_PRIORITY, $json)) {
-            $type->setPriority(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRIORITY], $config));
-        }
-        if (isset($json[self::FIELD_START]) || array_key_exists(self::FIELD_START, $json)) {
-            $type->setStart(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_START], $config));
-        }
-        if (isset($json[self::FIELD_ADDRESSES]) || array_key_exists(self::FIELD_ADDRESSES, $json)) {
-            $vs = $json[self::FIELD_ADDRESSES];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->category) || property_exists($json, self::FIELD_CATEGORY)) {
+            if (is_array($json->category)) {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize(reset($json->category), $config));
+            } else {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json->category, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->description) || property_exists($json, self::FIELD_DESCRIPTION)) {
+            if (is_array($json->description)) {
+                $type->setDescription(FHIRCodeableConcept::jsonUnserialize(reset($json->description), $config));
+            } else {
+                $type->setDescription(FHIRCodeableConcept::jsonUnserialize($json->description, $config));
+            }
+        }
+        if (isset($json->priority) || property_exists($json, self::FIELD_PRIORITY)) {
+            if (is_array($json->priority)) {
+                $type->setPriority(FHIRCodeableConcept::jsonUnserialize(reset($json->priority), $config));
+            } else {
+                $type->setPriority(FHIRCodeableConcept::jsonUnserialize($json->priority, $config));
+            }
+        }
+        if (isset($json->start) || property_exists($json, self::FIELD_START)) {
+            if (is_array($json->start)) {
+                $type->setStart(FHIRCodeableConcept::jsonUnserialize(reset($json->start), $config));
+            } else {
+                $type->setStart(FHIRCodeableConcept::jsonUnserialize($json->start, $config));
+            }
+        }
+        if (isset($json->addresses) || property_exists($json, self::FIELD_ADDRESSES)) {
+            if (is_object($json->addresses)) {
+                $vals = [$json->addresses];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ADDRESSES, true);
+            } else {
+                $vals = $json->addresses;
+            }
+            foreach($vals as $v) {
                 $type->addAddresses(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DOCUMENTATION]) || array_key_exists(self::FIELD_DOCUMENTATION, $json)) {
-            $vs = $json[self::FIELD_DOCUMENTATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->documentation) || property_exists($json, self::FIELD_DOCUMENTATION)) {
+            if (is_object($json->documentation)) {
+                $vals = [$json->documentation];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DOCUMENTATION, true);
+            } else {
+                $vals = $json->documentation;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addDocumentation(FHIRRelatedArtifact::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TARGET]) || array_key_exists(self::FIELD_TARGET, $json)) {
-            $vs = $json[self::FIELD_TARGET];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->target) || property_exists($json, self::FIELD_TARGET)) {
+            if (is_object($json->target)) {
+                $vals = [$json->target];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TARGET, true);
+            } else {
+                $vals = $json->target;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTarget(FHIRPlanDefinitionTarget::jsonUnserialize($v, $config));
             }
         }
@@ -836,13 +865,25 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
             $out->start = $this->start;
         }
         if (isset($this->addresses) && [] !== $this->addresses) {
-            $out->addresses = $this->addresses;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ADDRESSES) && 1 === count($this->addresses)) {
+                $out->addresses = $this->addresses[0];
+            } else {
+                $out->addresses = $this->addresses;
+            }
         }
         if (isset($this->documentation) && [] !== $this->documentation) {
-            $out->documentation = $this->documentation;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DOCUMENTATION) && 1 === count($this->documentation)) {
+                $out->documentation = $this->documentation[0];
+            } else {
+                $out->documentation = $this->documentation;
+            }
         }
         if (isset($this->target) && [] !== $this->target) {
-            $out->target = $this->target;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TARGET) && 1 === count($this->target)) {
+                $out->target = $this->target[0];
+            } else {
+                $out->target = $this->target;
+            }
         }
         return $out;
     }

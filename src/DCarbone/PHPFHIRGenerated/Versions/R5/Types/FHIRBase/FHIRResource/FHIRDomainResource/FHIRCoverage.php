@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -129,12 +131,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
  */
 class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COVERAGE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
@@ -162,7 +166,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
     public const FIELD_CONTRACT = 'contract';
     public const FIELD_INSURANCE_PLAN = 'insurancePlan';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
@@ -176,7 +180,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_KIND => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -186,7 +190,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
         self::FIELD_SUBROGATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -403,7 +407,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      */
     protected FHIRReference $insurancePlan;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCoverage Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -428,7 +432,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $insurer
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageClass[] $class
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $order
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $order
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $network
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCostToBeneficiary[] $costToBeneficiary
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $subrogation
@@ -458,7 +462,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
                                 null|FHIRPeriod $period = null,
                                 null|FHIRReference $insurer = null,
                                 null|iterable $class = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $order = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $order = null,
                                 null|string|FHIRStringPrimitive|FHIRString $network = null,
                                 null|iterable $costToBeneficiary = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $subrogation = null,
@@ -537,7 +541,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -546,7 +550,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -555,7 +559,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -641,11 +645,9 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * The status of the resource instance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStatus(null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status): self
     {
         if (null === $status) {
             unset($this->status);
@@ -655,33 +657,6 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             $status = new FHIRFinancialResourceStatusCodes(value: $status);
         }
         $this->status = $status;
-        if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
-            $this->_setStatusValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the status element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStatusValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STATUS];
-    }
-
-    /**
-     * Set the location the "value" field of the status element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -703,11 +678,9 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * The nature of the coverage be it insurance, or cash payment such as self-pay.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRKindEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRKind $kind
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setKind(null|string|FHIRKindEnum|FHIRKind $kind,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setKind(null|string|FHIRKindEnum|FHIRKind $kind): self
     {
         if (null === $kind) {
             unset($this->kind);
@@ -717,33 +690,6 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             $kind = new FHIRKind(value: $kind);
         }
         $this->kind = $kind;
-        if ($this->_valueXMLLocations[self::FIELD_KIND] !== $valueXMLLocation) {
-            $this->_setKindValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the kind element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getKindValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_KIND];
-    }
-
-    /**
-     * Set the location the "value" field of the kind element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setKindValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_KIND] = $valueXMLLocation;
         return $this;
     }
 
@@ -1046,11 +992,9 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * A designator for a dependent under the coverage.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $dependent
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDependent(null|string|FHIRStringPrimitive|FHIRString $dependent,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDependent(null|string|FHIRStringPrimitive|FHIRString $dependent): self
     {
         if (null === $dependent) {
             unset($this->dependent);
@@ -1060,33 +1004,6 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             $dependent = new FHIRString(value: $dependent);
         }
         $this->dependent = $dependent;
-        if ($this->_valueXMLLocations[self::FIELD_DEPENDENT] !== $valueXMLLocation) {
-            $this->_setDependentValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dependent element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDependentValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEPENDENT];
-    }
-
-    /**
-     * Set the location the "value" field of the dependent element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDependentValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEPENDENT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1294,12 +1211,10 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * coverages (1) and (2) above would be applicatble and would apply in the order
      * specified in parenthesis.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $order
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $order
      * @return static
      */
-    public function setOrder(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $order,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOrder(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $order): self
     {
         if (null === $order) {
             unset($this->order);
@@ -1309,33 +1224,6 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             $order = new FHIRPositiveInt(value: $order);
         }
         $this->order = $order;
-        if ($this->_valueXMLLocations[self::FIELD_ORDER] !== $valueXMLLocation) {
-            $this->_setOrderValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the order element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOrderValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ORDER];
-    }
-
-    /**
-     * Set the location the "value" field of the order element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOrderValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ORDER] = $valueXMLLocation;
         return $this;
     }
 
@@ -1365,11 +1253,9 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * 'in-network' rate, otherwise 'out of network' terms and conditions apply.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $network
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNetwork(null|string|FHIRStringPrimitive|FHIRString $network,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setNetwork(null|string|FHIRStringPrimitive|FHIRString $network): self
     {
         if (null === $network) {
             unset($this->network);
@@ -1379,33 +1265,6 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             $network = new FHIRString(value: $network);
         }
         $this->network = $network;
-        if ($this->_valueXMLLocations[self::FIELD_NETWORK] !== $valueXMLLocation) {
-            $this->_setNetworkValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the network element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNetworkValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NETWORK];
-    }
-
-    /**
-     * Set the location the "value" field of the network element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNetworkValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NETWORK] = $valueXMLLocation;
         return $this;
     }
 
@@ -1495,11 +1354,9 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * adjudication but to provide insurers with the details to recover costs.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $subrogation
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSubrogation(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $subrogation,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSubrogation(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $subrogation): self
     {
         if (null === $subrogation) {
             unset($this->subrogation);
@@ -1509,33 +1366,6 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             $subrogation = new FHIRBoolean(value: $subrogation);
         }
         $this->subrogation = $subrogation;
-        if ($this->_valueXMLLocations[self::FIELD_SUBROGATION] !== $valueXMLLocation) {
-            $this->_setSubrogationValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the subrogation element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSubrogationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SUBROGATION];
-    }
-
-    /**
-     * Set the location the "value" field of the subrogation element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSubrogationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SUBROGATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -1639,7 +1469,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1738,74 +1568,74 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STATUS])) {
             if (isset($type->status)) {
                 $type->status->setValue((string)$attributes[self::FIELD_STATUS]);
-                $type->_setStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStatus((string)$attributes[self::FIELD_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStatus((string)$attributes[self::FIELD_STATUS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STATUS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_KIND])) {
             if (isset($type->kind)) {
                 $type->kind->setValue((string)$attributes[self::FIELD_KIND]);
-                $type->_setKindValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setKind((string)$attributes[self::FIELD_KIND], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setKind((string)$attributes[self::FIELD_KIND]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_KIND, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DEPENDENT])) {
             if (isset($type->dependent)) {
                 $type->dependent->setValue((string)$attributes[self::FIELD_DEPENDENT]);
-                $type->_setDependentValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDependent((string)$attributes[self::FIELD_DEPENDENT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDependent((string)$attributes[self::FIELD_DEPENDENT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DEPENDENT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ORDER])) {
             if (isset($type->order)) {
                 $type->order->setValue((string)$attributes[self::FIELD_ORDER]);
-                $type->_setOrderValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOrder((string)$attributes[self::FIELD_ORDER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setOrder((string)$attributes[self::FIELD_ORDER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ORDER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NETWORK])) {
             if (isset($type->network)) {
                 $type->network->setValue((string)$attributes[self::FIELD_NETWORK]);
-                $type->_setNetworkValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNetwork((string)$attributes[self::FIELD_NETWORK], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setNetwork((string)$attributes[self::FIELD_NETWORK]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NETWORK, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SUBROGATION])) {
             if (isset($type->subrogation)) {
                 $type->subrogation->setValue((string)$attributes[self::FIELD_SUBROGATION]);
-                $type->_setSubrogationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSubrogation((string)$attributes[self::FIELD_SUBROGATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSubrogation((string)$attributes[self::FIELD_SUBROGATION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SUBROGATION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1836,22 +1666,22 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             $xw->openRootNode('Coverage', $this->_getSourceXMLNS());
         }
         if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
-            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getValueAsString());
         }
         if (isset($this->kind) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_KIND]) {
-            $xw->writeAttribute(self::FIELD_KIND, $this->kind->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_KIND, $this->kind->_getValueAsString());
         }
         if (isset($this->dependent) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEPENDENT]) {
-            $xw->writeAttribute(self::FIELD_DEPENDENT, $this->dependent->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DEPENDENT, $this->dependent->_getValueAsString());
         }
         if (isset($this->order) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ORDER]) {
-            $xw->writeAttribute(self::FIELD_ORDER, $this->order->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ORDER, $this->order->_getValueAsString());
         }
         if (isset($this->network) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NETWORK]) {
-            $xw->writeAttribute(self::FIELD_NETWORK, $this->network->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NETWORK, $this->network->_getValueAsString());
         }
         if (isset($this->subrogation) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SUBROGATION]) {
-            $xw->writeAttribute(self::FIELD_SUBROGATION, $this->subrogation->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SUBROGATION, $this->subrogation->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1988,13 +1818,13 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCoverage $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCoverage
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -2012,148 +1842,178 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STATUS])
-            || isset($json[self::FIELD_STATUS_EXT])
-            || array_key_exists(self::FIELD_STATUS, $json)
-            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
-            $value = $json[self::FIELD_STATUS] ?? null;
-            $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRFinancialResourceStatusCodes::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->status)
+            || isset($json->_status)
+            || property_exists($json, self::FIELD_STATUS)
+            || property_exists($json, self::FIELD_STATUS_EXT)) {
+            $v = $json->_status ?? new \stdClass();
+            $v->value = $json->status ?? null;
+            $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_KIND])
-            || isset($json[self::FIELD_KIND_EXT])
-            || array_key_exists(self::FIELD_KIND, $json)
-            || array_key_exists(self::FIELD_KIND_EXT, $json)) {
-            $value = $json[self::FIELD_KIND] ?? null;
-            $type->setKind(FHIRKind::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRKind::FIELD_VALUE => $value]) + ($json[self::FIELD_KIND_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->kind)
+            || isset($json->_kind)
+            || property_exists($json, self::FIELD_KIND)
+            || property_exists($json, self::FIELD_KIND_EXT)) {
+            $v = $json->_kind ?? new \stdClass();
+            $v->value = $json->kind ?? null;
+            $type->setKind(FHIRKind::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PAYMENT_BY]) || array_key_exists(self::FIELD_PAYMENT_BY, $json)) {
-            $vs = $json[self::FIELD_PAYMENT_BY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->paymentBy) || property_exists($json, self::FIELD_PAYMENT_BY)) {
+            if (is_object($json->paymentBy)) {
+                $vals = [$json->paymentBy];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PAYMENT_BY, true);
+            } else {
+                $vals = $json->paymentBy;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addPaymentBy(FHIRCoveragePaymentBy::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_POLICY_HOLDER]) || array_key_exists(self::FIELD_POLICY_HOLDER, $json)) {
-            $type->setPolicyHolder(FHIRReference::jsonUnserialize($json[self::FIELD_POLICY_HOLDER], $config));
-        }
-        if (isset($json[self::FIELD_SUBSCRIBER]) || array_key_exists(self::FIELD_SUBSCRIBER, $json)) {
-            $type->setSubscriber(FHIRReference::jsonUnserialize($json[self::FIELD_SUBSCRIBER], $config));
-        }
-        if (isset($json[self::FIELD_SUBSCRIBER_ID]) || array_key_exists(self::FIELD_SUBSCRIBER_ID, $json)) {
-            $vs = $json[self::FIELD_SUBSCRIBER_ID];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->policyHolder) || property_exists($json, self::FIELD_POLICY_HOLDER)) {
+            if (is_array($json->policyHolder)) {
+                $type->setPolicyHolder(FHIRReference::jsonUnserialize(reset($json->policyHolder), $config));
+            } else {
+                $type->setPolicyHolder(FHIRReference::jsonUnserialize($json->policyHolder, $config));
+            }
+        }
+        if (isset($json->subscriber) || property_exists($json, self::FIELD_SUBSCRIBER)) {
+            if (is_array($json->subscriber)) {
+                $type->setSubscriber(FHIRReference::jsonUnserialize(reset($json->subscriber), $config));
+            } else {
+                $type->setSubscriber(FHIRReference::jsonUnserialize($json->subscriber, $config));
+            }
+        }
+        if (isset($json->subscriberId) || property_exists($json, self::FIELD_SUBSCRIBER_ID)) {
+            if (is_object($json->subscriberId)) {
+                $vals = [$json->subscriberId];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBSCRIBER_ID, true);
+            } else {
+                $vals = $json->subscriberId;
+            }
+            foreach($vals as $v) {
                 $type->addSubscriberId(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_BENEFICIARY]) || array_key_exists(self::FIELD_BENEFICIARY, $json)) {
-            $type->setBeneficiary(FHIRReference::jsonUnserialize($json[self::FIELD_BENEFICIARY], $config));
-        }
-        if (isset($json[self::FIELD_DEPENDENT])
-            || isset($json[self::FIELD_DEPENDENT_EXT])
-            || array_key_exists(self::FIELD_DEPENDENT, $json)
-            || array_key_exists(self::FIELD_DEPENDENT_EXT, $json)) {
-            $value = $json[self::FIELD_DEPENDENT] ?? null;
-            $type->setDependent(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DEPENDENT_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_RELATIONSHIP]) || array_key_exists(self::FIELD_RELATIONSHIP, $json)) {
-            $type->setRelationship(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_RELATIONSHIP], $config));
-        }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_INSURER]) || array_key_exists(self::FIELD_INSURER, $json)) {
-            $type->setInsurer(FHIRReference::jsonUnserialize($json[self::FIELD_INSURER], $config));
-        }
-        if (isset($json[self::FIELD_CLASS]) || array_key_exists(self::FIELD_CLASS, $json)) {
-            $vs = $json[self::FIELD_CLASS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->beneficiary) || property_exists($json, self::FIELD_BENEFICIARY)) {
+            if (is_array($json->beneficiary)) {
+                $type->setBeneficiary(FHIRReference::jsonUnserialize(reset($json->beneficiary), $config));
+            } else {
+                $type->setBeneficiary(FHIRReference::jsonUnserialize($json->beneficiary, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->dependent)
+            || isset($json->_dependent)
+            || property_exists($json, self::FIELD_DEPENDENT)
+            || property_exists($json, self::FIELD_DEPENDENT_EXT)) {
+            $v = $json->_dependent ?? new \stdClass();
+            $v->value = $json->dependent ?? null;
+            $type->setDependent(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->relationship) || property_exists($json, self::FIELD_RELATIONSHIP)) {
+            if (is_array($json->relationship)) {
+                $type->setRelationship(FHIRCodeableConcept::jsonUnserialize(reset($json->relationship), $config));
+            } else {
+                $type->setRelationship(FHIRCodeableConcept::jsonUnserialize($json->relationship, $config));
+            }
+        }
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+            }
+        }
+        if (isset($json->insurer) || property_exists($json, self::FIELD_INSURER)) {
+            if (is_array($json->insurer)) {
+                $type->setInsurer(FHIRReference::jsonUnserialize(reset($json->insurer), $config));
+            } else {
+                $type->setInsurer(FHIRReference::jsonUnserialize($json->insurer, $config));
+            }
+        }
+        if (isset($json->class) || property_exists($json, self::FIELD_CLASS)) {
+            if (is_object($json->class)) {
+                $vals = [$json->class];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CLASS, true);
+            } else {
+                $vals = $json->class;
+            }
+            foreach($vals as $v) {
                 $type->addClass(FHIRCoverageClass::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ORDER])
-            || isset($json[self::FIELD_ORDER_EXT])
-            || array_key_exists(self::FIELD_ORDER, $json)
-            || array_key_exists(self::FIELD_ORDER_EXT, $json)) {
-            $value = $json[self::FIELD_ORDER] ?? null;
-            $type->setOrder(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_ORDER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->order)
+            || isset($json->_order)
+            || property_exists($json, self::FIELD_ORDER)
+            || property_exists($json, self::FIELD_ORDER_EXT)) {
+            $v = $json->_order ?? new \stdClass();
+            $v->value = $json->order ?? null;
+            $type->setOrder(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_NETWORK])
-            || isset($json[self::FIELD_NETWORK_EXT])
-            || array_key_exists(self::FIELD_NETWORK, $json)
-            || array_key_exists(self::FIELD_NETWORK_EXT, $json)) {
-            $value = $json[self::FIELD_NETWORK] ?? null;
-            $type->setNetwork(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NETWORK_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->network)
+            || isset($json->_network)
+            || property_exists($json, self::FIELD_NETWORK)
+            || property_exists($json, self::FIELD_NETWORK_EXT)) {
+            $v = $json->_network ?? new \stdClass();
+            $v->value = $json->network ?? null;
+            $type->setNetwork(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_COST_TO_BENEFICIARY]) || array_key_exists(self::FIELD_COST_TO_BENEFICIARY, $json)) {
-            $vs = $json[self::FIELD_COST_TO_BENEFICIARY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->costToBeneficiary) || property_exists($json, self::FIELD_COST_TO_BENEFICIARY)) {
+            if (is_object($json->costToBeneficiary)) {
+                $vals = [$json->costToBeneficiary];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_COST_TO_BENEFICIARY, true);
+            } else {
+                $vals = $json->costToBeneficiary;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addCostToBeneficiary(FHIRCoverageCostToBeneficiary::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SUBROGATION])
-            || isset($json[self::FIELD_SUBROGATION_EXT])
-            || array_key_exists(self::FIELD_SUBROGATION, $json)
-            || array_key_exists(self::FIELD_SUBROGATION_EXT, $json)) {
-            $value = $json[self::FIELD_SUBROGATION] ?? null;
-            $type->setSubrogation(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_SUBROGATION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->subrogation)
+            || isset($json->_subrogation)
+            || property_exists($json, self::FIELD_SUBROGATION)
+            || property_exists($json, self::FIELD_SUBROGATION_EXT)) {
+            $v = $json->_subrogation ?? new \stdClass();
+            $v->value = $json->subrogation ?? null;
+            $type->setSubrogation(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CONTRACT]) || array_key_exists(self::FIELD_CONTRACT, $json)) {
-            $vs = $json[self::FIELD_CONTRACT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->contract) || property_exists($json, self::FIELD_CONTRACT)) {
+            if (is_object($json->contract)) {
+                $vals = [$json->contract];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTRACT, true);
+            } else {
+                $vals = $json->contract;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addContract(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_INSURANCE_PLAN]) || array_key_exists(self::FIELD_INSURANCE_PLAN, $json)) {
-            $type->setInsurancePlan(FHIRReference::jsonUnserialize($json[self::FIELD_INSURANCE_PLAN], $config));
+        if (isset($json->insurancePlan) || property_exists($json, self::FIELD_INSURANCE_PLAN)) {
+            if (is_array($json->insurancePlan)) {
+                $type->setInsurancePlan(FHIRReference::jsonUnserialize(reset($json->insurancePlan), $config));
+            } else {
+                $type->setInsurancePlan(FHIRReference::jsonUnserialize($json->insurancePlan, $config));
+            }
         }
         return $type;
     }
@@ -2165,7 +2025,11 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->status)) {
             if (null !== ($val = $this->status->getValue())) {
@@ -2188,7 +2052,11 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             }
         }
         if (isset($this->paymentBy) && [] !== $this->paymentBy) {
-            $out->paymentBy = $this->paymentBy;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PAYMENT_BY) && 1 === count($this->paymentBy)) {
+                $out->paymentBy = $this->paymentBy[0];
+            } else {
+                $out->paymentBy = $this->paymentBy;
+            }
         }
         if (isset($this->type)) {
             $out->type = $this->type;
@@ -2200,7 +2068,11 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             $out->subscriber = $this->subscriber;
         }
         if (isset($this->subscriberId) && [] !== $this->subscriberId) {
-            $out->subscriberId = $this->subscriberId;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUBSCRIBER_ID) && 1 === count($this->subscriberId)) {
+                $out->subscriberId = $this->subscriberId[0];
+            } else {
+                $out->subscriberId = $this->subscriberId;
+            }
         }
         if (isset($this->beneficiary)) {
             $out->beneficiary = $this->beneficiary;
@@ -2225,7 +2097,11 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             $out->insurer = $this->insurer;
         }
         if (isset($this->class) && [] !== $this->class) {
-            $out->class = $this->class;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CLASS) && 1 === count($this->class)) {
+                $out->class = $this->class[0];
+            } else {
+                $out->class = $this->class;
+            }
         }
         if (isset($this->order)) {
             if (null !== ($val = $this->order->getValue())) {
@@ -2248,7 +2124,11 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             }
         }
         if (isset($this->costToBeneficiary) && [] !== $this->costToBeneficiary) {
-            $out->costToBeneficiary = $this->costToBeneficiary;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_COST_TO_BENEFICIARY) && 1 === count($this->costToBeneficiary)) {
+                $out->costToBeneficiary = $this->costToBeneficiary[0];
+            } else {
+                $out->costToBeneficiary = $this->costToBeneficiary;
+            }
         }
         if (isset($this->subrogation)) {
             if (null !== ($val = $this->subrogation->getValue())) {
@@ -2261,7 +2141,11 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             }
         }
         if (isset($this->contract) && [] !== $this->contract) {
-            $out->contract = $this->contract;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CONTRACT) && 1 === count($this->contract)) {
+                $out->contract = $this->contract[0];
+            } else {
+                $out->contract = $this->contract;
+            }
         }
         if (isset($this->insurancePlan)) {
             $out->insurancePlan = $this->insurancePlan;

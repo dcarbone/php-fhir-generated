@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -79,19 +81,21 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  */
 class FHIRSecurityEventSource extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SECURITY_EVENT_DOT_SOURCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SITE = 'site';
     public const FIELD_SITE_EXT = '_site';
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_TYPE = 'type';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_IDENTIFIER => [
@@ -99,13 +103,13 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SITE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -135,7 +139,7 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
      */
     protected array $type;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSecurityEventSource Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -169,7 +173,7 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -178,7 +182,7 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -199,11 +203,9 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
      * Logical source location within the healthcare enterprise network.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $site
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSite(null|string|FHIRStringPrimitive|FHIRString $site,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSite(null|string|FHIRStringPrimitive|FHIRString $site): self
     {
         if (null === $site) {
             unset($this->site);
@@ -213,33 +215,6 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
             $site = new FHIRString(value: $site);
         }
         $this->site = $site;
-        if ($this->_valueXMLLocations[self::FIELD_SITE] !== $valueXMLLocation) {
-            $this->_setSiteValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the site element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSiteValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SITE];
-    }
-
-    /**
-     * Set the location the "value" field of the site element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSiteValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SITE] = $valueXMLLocation;
         return $this;
     }
 
@@ -263,11 +238,9 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
      * Identifier of the source where the event originated.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $identifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentifier(null|string|FHIRStringPrimitive|FHIRString $identifier,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIdentifier(null|string|FHIRStringPrimitive|FHIRString $identifier): self
     {
         if (null === $identifier) {
             unset($this->identifier);
@@ -277,33 +250,6 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
             $identifier = new FHIRString(value: $identifier);
         }
         $this->identifier = $identifier;
-        if ($this->_valueXMLLocations[self::FIELD_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the identifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the identifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -371,7 +317,7 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -409,9 +355,11 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -425,23 +373,24 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SITE])) {
             if (isset($type->site)) {
                 $type->site->setValue((string)$attributes[self::FIELD_SITE]);
-                $type->_setSiteValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSite((string)$attributes[self::FIELD_SITE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSite((string)$attributes[self::FIELD_SITE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SITE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IDENTIFIER])) {
             if (isset($type->identifier)) {
                 $type->identifier->setValue((string)$attributes[self::FIELD_IDENTIFIER]);
-                $type->_setIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIdentifier((string)$attributes[self::FIELD_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIdentifier((string)$attributes[self::FIELD_IDENTIFIER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IDENTIFIER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -472,10 +421,10 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
             $xw->openRootNode('SecurityEventSource', $this->_getSourceXMLNS());
         }
         if (isset($this->site) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SITE]) {
-            $xw->writeAttribute(self::FIELD_SITE, $this->site->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SITE, $this->site->_getValueAsString());
         }
         if (isset($this->identifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_IDENTIFIER, $this->identifier->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_IDENTIFIER, $this->identifier->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->site)
@@ -509,13 +458,13 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventSource $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventSource
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -533,37 +482,33 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SITE])
-            || isset($json[self::FIELD_SITE_EXT])
-            || array_key_exists(self::FIELD_SITE, $json)
-            || array_key_exists(self::FIELD_SITE_EXT, $json)) {
-            $value = $json[self::FIELD_SITE] ?? null;
-            $type->setSite(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SITE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->site)
+            || isset($json->_site)
+            || property_exists($json, self::FIELD_SITE)
+            || property_exists($json, self::FIELD_SITE_EXT)) {
+            $v = $json->_site ?? new \stdClass();
+            $v->value = $json->site ?? null;
+            $type->setSite(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER])
-            || isset($json[self::FIELD_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
-            $type->setIdentifier(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->identifier)
+            || isset($json->_identifier)
+            || property_exists($json, self::FIELD_IDENTIFIER)
+            || property_exists($json, self::FIELD_IDENTIFIER_EXT)) {
+            $v = $json->_identifier ?? new \stdClass();
+            $v->value = $json->identifier ?? null;
+            $type->setIdentifier(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $vs = $json[self::FIELD_TYPE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_object($json->type)) {
+                $vals = [$json->type];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TYPE, true);
+            } else {
+                $vals = $json->type;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addType(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
@@ -597,7 +542,11 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
             }
         }
         if (isset($this->type) && [] !== $this->type) {
-            $out->type = $this->type;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TYPE) && 1 === count($this->type)) {
+                $out->type = $this->type[0];
+            } else {
+                $out->type = $this->type;
+            }
         }
         return $out;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -91,12 +93,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypeMap;
  */
 class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RELATED_PERSON;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_PATIENT = 'patient';
     public const FIELD_RELATIONSHIP = 'relationship';
@@ -106,7 +110,7 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
     public const FIELD_ADDRESS = 'address';
     public const FIELD_PHOTO = 'photo';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PATIENT => [
@@ -114,11 +118,11 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -205,7 +209,7 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
      */
     protected array $photo;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRRelatedPerson Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -273,7 +277,7 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -282,7 +286,7 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -291,7 +295,7 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -665,7 +669,7 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -703,9 +707,11 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -739,15 +745,16 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -834,13 +841,13 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRRelatedPerson $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRRelatedPerson
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -858,50 +865,74 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PATIENT]) || array_key_exists(self::FIELD_PATIENT, $json)) {
-            $type->setPatient(FHIRResourceReference::jsonUnserialize($json[self::FIELD_PATIENT], $config));
-        }
-        if (isset($json[self::FIELD_RELATIONSHIP]) || array_key_exists(self::FIELD_RELATIONSHIP, $json)) {
-            $type->setRelationship(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_RELATIONSHIP], $config));
-        }
-        if (isset($json[self::FIELD_NAME]) || array_key_exists(self::FIELD_NAME, $json)) {
-            $type->setName(FHIRHumanName::jsonUnserialize($json[self::FIELD_NAME], $config));
-        }
-        if (isset($json[self::FIELD_TELECOM]) || array_key_exists(self::FIELD_TELECOM, $json)) {
-            $vs = $json[self::FIELD_TELECOM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->patient) || property_exists($json, self::FIELD_PATIENT)) {
+            if (is_array($json->patient)) {
+                $type->setPatient(FHIRResourceReference::jsonUnserialize(reset($json->patient), $config));
+            } else {
+                $type->setPatient(FHIRResourceReference::jsonUnserialize($json->patient, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->relationship) || property_exists($json, self::FIELD_RELATIONSHIP)) {
+            if (is_array($json->relationship)) {
+                $type->setRelationship(FHIRCodeableConcept::jsonUnserialize(reset($json->relationship), $config));
+            } else {
+                $type->setRelationship(FHIRCodeableConcept::jsonUnserialize($json->relationship, $config));
+            }
+        }
+        if (isset($json->name) || property_exists($json, self::FIELD_NAME)) {
+            if (is_array($json->name)) {
+                $type->setName(FHIRHumanName::jsonUnserialize(reset($json->name), $config));
+            } else {
+                $type->setName(FHIRHumanName::jsonUnserialize($json->name, $config));
+            }
+        }
+        if (isset($json->telecom) || property_exists($json, self::FIELD_TELECOM)) {
+            if (is_object($json->telecom)) {
+                $vals = [$json->telecom];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TELECOM, true);
+            } else {
+                $vals = $json->telecom;
+            }
+            foreach($vals as $v) {
                 $type->addTelecom(FHIRContact::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_GENDER]) || array_key_exists(self::FIELD_GENDER, $json)) {
-            $type->setGender(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_GENDER], $config));
-        }
-        if (isset($json[self::FIELD_ADDRESS]) || array_key_exists(self::FIELD_ADDRESS, $json)) {
-            $type->setAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_ADDRESS], $config));
-        }
-        if (isset($json[self::FIELD_PHOTO]) || array_key_exists(self::FIELD_PHOTO, $json)) {
-            $vs = $json[self::FIELD_PHOTO];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->gender) || property_exists($json, self::FIELD_GENDER)) {
+            if (is_array($json->gender)) {
+                $type->setGender(FHIRCodeableConcept::jsonUnserialize(reset($json->gender), $config));
+            } else {
+                $type->setGender(FHIRCodeableConcept::jsonUnserialize($json->gender, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->address) || property_exists($json, self::FIELD_ADDRESS)) {
+            if (is_array($json->address)) {
+                $type->setAddress(FHIRAddress::jsonUnserialize(reset($json->address), $config));
+            } else {
+                $type->setAddress(FHIRAddress::jsonUnserialize($json->address, $config));
+            }
+        }
+        if (isset($json->photo) || property_exists($json, self::FIELD_PHOTO)) {
+            if (is_object($json->photo)) {
+                $vals = [$json->photo];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PHOTO, true);
+            } else {
+                $vals = $json->photo;
+            }
+            foreach($vals as $v) {
                 $type->addPhoto(FHIRAttachment::jsonUnserialize($v, $config));
             }
         }
@@ -915,7 +946,11 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->patient)) {
             $out->patient = $this->patient;
@@ -927,7 +962,11 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
             $out->name = $this->name;
         }
         if (isset($this->telecom) && [] !== $this->telecom) {
-            $out->telecom = $this->telecom;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TELECOM) && 1 === count($this->telecom)) {
+                $out->telecom = $this->telecom[0];
+            } else {
+                $out->telecom = $this->telecom;
+            }
         }
         if (isset($this->gender)) {
             $out->gender = $this->gender;
@@ -936,7 +975,11 @@ class FHIRRelatedPerson extends FHIRResource implements VersionContainedTypeInte
             $out->address = $this->address;
         }
         if (isset($this->photo) && [] !== $this->photo) {
-            $out->photo = $this->photo;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PHOTO) && 1 === count($this->photo)) {
+                $out->photo = $this->photo[0];
+            } else {
+                $out->photo = $this->photo;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

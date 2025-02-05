@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -104,17 +106,19 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRRelatedPersonCommunication extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RELATED_PERSON_DOT_COMMUNICATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_LANGUAGE = 'language';
     public const FIELD_PREFERRED = 'preferred';
     public const FIELD_PREFERRED_EXT = '_preferred';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_LANGUAGE => [
@@ -122,12 +126,12 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_PREFERRED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -153,7 +157,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
      */
     protected FHIRBoolean $preferred;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRRelatedPersonCommunication Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -182,7 +186,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -191,7 +195,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -256,11 +260,9 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
      * he masters up a certain level).
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $preferred
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred): self
     {
         if (null === $preferred) {
             unset($this->preferred);
@@ -270,37 +272,10 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
             $preferred = new FHIRBoolean(value: $preferred);
         }
         $this->preferred = $preferred;
-        if ($this->_valueXMLLocations[self::FIELD_PREFERRED] !== $valueXMLLocation) {
-            $this->_setPreferredValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the preferred element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPreferredValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PREFERRED];
-    }
-
-    /**
-     * Set the location the "value" field of the preferred element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPreferredValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PREFERRED] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -329,9 +304,11 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -343,15 +320,16 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PREFERRED])) {
             if (isset($type->preferred)) {
                 $type->preferred->setValue((string)$attributes[self::FIELD_PREFERRED]);
-                $type->_setPreferredValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPreferred((string)$attributes[self::FIELD_PREFERRED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPreferred((string)$attributes[self::FIELD_PREFERRED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PREFERRED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -364,7 +342,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->preferred) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PREFERRED]) {
-            $xw->writeAttribute(self::FIELD_PREFERRED, $this->preferred->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PREFERRED, $this->preferred->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->language)) {
@@ -382,13 +360,13 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -403,18 +381,20 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LANGUAGE]) || array_key_exists(self::FIELD_LANGUAGE, $json)) {
-            $type->setLanguage(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_LANGUAGE], $config));
+        if (isset($json->language) || property_exists($json, self::FIELD_LANGUAGE)) {
+            if (is_array($json->language)) {
+                $type->setLanguage(FHIRCodeableConcept::jsonUnserialize(reset($json->language), $config));
+            } else {
+                $type->setLanguage(FHIRCodeableConcept::jsonUnserialize($json->language, $config));
+            }
         }
-        if (isset($json[self::FIELD_PREFERRED])
-            || isset($json[self::FIELD_PREFERRED_EXT])
-            || array_key_exists(self::FIELD_PREFERRED, $json)
-            || array_key_exists(self::FIELD_PREFERRED_EXT, $json)) {
-            $value = $json[self::FIELD_PREFERRED] ?? null;
-            $type->setPreferred(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_PREFERRED_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->preferred)
+            || isset($json->_preferred)
+            || property_exists($json, self::FIELD_PREFERRED)
+            || property_exists($json, self::FIELD_PREFERRED_EXT)) {
+            $v = $json->_preferred ?? new \stdClass();
+            $v->value = $json->preferred ?? null;
+            $type->setPreferred(FHIRBoolean::jsonUnserialize($v, $config));
         }
         return $type;
     }

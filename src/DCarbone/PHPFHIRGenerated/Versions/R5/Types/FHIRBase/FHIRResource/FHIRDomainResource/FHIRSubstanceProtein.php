@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -124,12 +126,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
  */
 class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_PROTEIN;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SEQUENCE_TYPE = 'sequenceType';
     public const FIELD_NUMBER_OF_SUBUNITS = 'numberOfSubunits';
     public const FIELD_NUMBER_OF_SUBUNITS_EXT = '_numberOfSubunits';
@@ -137,16 +141,16 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
     public const FIELD_DISULFIDE_LINKAGE_EXT = '_disulfideLinkage';
     public const FIELD_SUBUNIT = 'subunit';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_NUMBER_OF_SUBUNITS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -210,7 +214,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
      */
     protected array $subunit;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstanceProtein Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -222,7 +226,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sequenceType
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $numberOfSubunits
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $numberOfSubunits
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[] $disulfideLinkage
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit[] $subunit
      * @param null|string[] $fhirComments
@@ -236,7 +240,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $sequenceType = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits = null,
                                 null|iterable $disulfideLinkage = null,
                                 null|iterable $subunit = null,
                                 null|iterable $fhirComments = null)
@@ -264,7 +268,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -273,7 +277,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -282,7 +286,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -348,12 +352,10 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
      * number of subunits constituting the SubstanceProtein shall be described. It is
      * possible that the number of subunits can be variable.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $numberOfSubunits
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $numberOfSubunits
      * @return static
      */
-    public function setNumberOfSubunits(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setNumberOfSubunits(null|string|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits): self
     {
         if (null === $numberOfSubunits) {
             unset($this->numberOfSubunits);
@@ -363,33 +365,6 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
             $numberOfSubunits = new FHIRInteger(value: $numberOfSubunits);
         }
         $this->numberOfSubunits = $numberOfSubunits;
-        if ($this->_valueXMLLocations[self::FIELD_NUMBER_OF_SUBUNITS] !== $valueXMLLocation) {
-            $this->_setNumberOfSubunitsValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the numberOfSubunits element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNumberOfSubunitsValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NUMBER_OF_SUBUNITS];
-    }
-
-    /**
-     * Set the location the "value" field of the numberOfSubunits element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNumberOfSubunitsValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NUMBER_OF_SUBUNITS] = $valueXMLLocation;
         return $this;
     }
 
@@ -582,7 +557,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -649,34 +624,34 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NUMBER_OF_SUBUNITS])) {
             if (isset($type->numberOfSubunits)) {
                 $type->numberOfSubunits->setValue((string)$attributes[self::FIELD_NUMBER_OF_SUBUNITS]);
-                $type->_setNumberOfSubunitsValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNumberOfSubunits((string)$attributes[self::FIELD_NUMBER_OF_SUBUNITS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setNumberOfSubunits((string)$attributes[self::FIELD_NUMBER_OF_SUBUNITS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NUMBER_OF_SUBUNITS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -707,7 +682,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
             $xw->openRootNode('SubstanceProtein', $this->_getSourceXMLNS());
         }
         if (isset($this->numberOfSubunits) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NUMBER_OF_SUBUNITS]) {
-            $xw->writeAttribute(self::FIELD_NUMBER_OF_SUBUNITS, $this->numberOfSubunits->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NUMBER_OF_SUBUNITS, $this->numberOfSubunits->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->sequenceType)) {
@@ -746,13 +721,13 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSubstanceProtein $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSubstanceProtein
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -770,48 +745,49 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SEQUENCE_TYPE]) || array_key_exists(self::FIELD_SEQUENCE_TYPE, $json)) {
-            $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SEQUENCE_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_NUMBER_OF_SUBUNITS])
-            || isset($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT])
-            || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS, $json)
-            || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS_EXT, $json)) {
-            $value = $json[self::FIELD_NUMBER_OF_SUBUNITS] ?? null;
-            $type->setNumberOfSubunits(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DISULFIDE_LINKAGE])
-            || isset($json[self::FIELD_DISULFIDE_LINKAGE_EXT])
-            || array_key_exists(self::FIELD_DISULFIDE_LINKAGE, $json)
-            || array_key_exists(self::FIELD_DISULFIDE_LINKAGE_EXT, $json)) {
-            $value = (array)($json[self::FIELD_DISULFIDE_LINKAGE] ?? []);
-            $ext = (array)($json[self::FIELD_DISULFIDE_LINKAGE_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
-            }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addDisulfideLinkage(FHIRString::jsonUnserialize(
-                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+        if (isset($json->sequenceType) || property_exists($json, self::FIELD_SEQUENCE_TYPE)) {
+            if (is_array($json->sequenceType)) {
+                $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize(reset($json->sequenceType), $config));
+            } else {
+                $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize($json->sequenceType, $config));
             }
         }
-        if (isset($json[self::FIELD_SUBUNIT]) || array_key_exists(self::FIELD_SUBUNIT, $json)) {
-            $vs = $json[self::FIELD_SUBUNIT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->numberOfSubunits)
+            || isset($json->_numberOfSubunits)
+            || property_exists($json, self::FIELD_NUMBER_OF_SUBUNITS)
+            || property_exists($json, self::FIELD_NUMBER_OF_SUBUNITS_EXT)) {
+            $v = $json->_numberOfSubunits ?? new \stdClass();
+            $v->value = $json->numberOfSubunits ?? null;
+            $type->setNumberOfSubunits(FHIRInteger::jsonUnserialize($v, $config));
+        }
+        if (isset($json->disulfideLinkage)
+            || isset($json->_disulfideLinkage)
+            || property_exists($json, self::FIELD_DISULFIDE_LINKAGE)
+            || property_exists($json, self::FIELD_DISULFIDE_LINKAGE_EXT)) {
+            $vals = (array)($json->disulfideLinkage ?? []);
+            $exts = (array)($json->FIELD_DISULFIDE_LINKAGE_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            foreach($vs as $v) {
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addDisulfideLinkage(FHIRString::jsonUnserialize($v, $config));
+            }
+        }
+        if (isset($json->subunit) || property_exists($json, self::FIELD_SUBUNIT)) {
+            if (is_object($json->subunit)) {
+                $vals = [$json->subunit];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBUNIT, true);
+            } else {
+                $vals = $json->subunit;
+            }
+            foreach($vals as $v) {
                 $type->addSubunit(FHIRSubstanceProteinSubunit::jsonUnserialize($v, $config));
             }
         }
@@ -867,7 +843,11 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
             }
         }
         if (isset($this->subunit) && [] !== $this->subunit) {
-            $out->subunit = $this->subunit;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUBUNIT) && 1 === count($this->subunit)) {
+                $out->subunit = $this->subunit[0];
+            } else {
+                $out->subunit = $this->subunit;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

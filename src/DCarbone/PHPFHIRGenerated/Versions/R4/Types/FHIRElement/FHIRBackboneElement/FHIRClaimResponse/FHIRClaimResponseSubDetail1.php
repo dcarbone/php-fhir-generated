@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,12 +89,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_SUB_DETAIL_1;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_PRODUCT_OR_SERVICE = 'productOrService';
     public const FIELD_MODIFIER = 'modifier';
     public const FIELD_QUANTITY = 'quantity';
@@ -104,7 +108,7 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
     public const FIELD_NOTE_NUMBER_EXT = '_noteNumber';
     public const FIELD_ADJUDICATION = 'adjudication';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PRODUCT_OR_SERVICE => [
@@ -115,12 +119,12 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_FACTOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -214,7 +218,7 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
      */
     protected array $adjudication;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRClaimResponseSubDetail1 Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -224,9 +228,9 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $modifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $quantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $unitPrice
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $factor
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $factor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $net
-     * @param null|string[]|int[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt[] $noteNumber
+     * @param null|string[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt[] $noteNumber
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[] $adjudication
      * @param null|string[] $fhirComments
      */
@@ -237,7 +241,7 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
                                 null|iterable $modifier = null,
                                 null|FHIRQuantity $quantity = null,
                                 null|FHIRMoney $unitPrice = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
                                 null|FHIRMoney $net = null,
                                 null|iterable $noteNumber = null,
                                 null|iterable $adjudication = null,
@@ -273,7 +277,7 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -282,7 +286,7 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -494,12 +498,10 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $factor
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $factor
      * @return static
      */
-    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
         if (null === $factor) {
             unset($this->factor);
@@ -509,33 +511,6 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
             $factor = new FHIRDecimal(value: $factor);
         }
         $this->factor = $factor;
-        if ($this->_valueXMLLocations[self::FIELD_FACTOR] !== $valueXMLLocation) {
-            $this->_setFactorValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the factor element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFactorValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FACTOR];
-    }
-
-    /**
-     * Set the location the "value" field of the factor element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFactorValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FACTOR] = $valueXMLLocation;
         return $this;
     }
 
@@ -609,10 +584,10 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $noteNumber
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $noteNumber
      * @return static
      */
-    public function addNoteNumber(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
+    public function addNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
     {
         if (!($noteNumber instanceof FHIRPositiveInt)) {
             $noteNumber = new FHIRPositiveInt(value: $noteNumber);
@@ -632,10 +607,10 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt ...$noteNumber
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt ...$noteNumber
      * @return static
      */
-    public function setNoteNumber(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
+    public function setNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
     {
         if ([] === $noteNumber) {
             unset($this->noteNumber);
@@ -713,7 +688,7 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -742,9 +717,11 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -768,15 +745,16 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_FACTOR])) {
             if (isset($type->factor)) {
                 $type->factor->setValue((string)$attributes[self::FIELD_FACTOR]);
-                $type->_setFactorValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setFactor((string)$attributes[self::FIELD_FACTOR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setFactor((string)$attributes[self::FIELD_FACTOR]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_FACTOR, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -789,7 +767,7 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->factor) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FACTOR]) {
-            $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->productOrService)) {
@@ -843,13 +821,13 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail1 $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail1
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -864,61 +842,78 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PRODUCT_OR_SERVICE]) || array_key_exists(self::FIELD_PRODUCT_OR_SERVICE, $json)) {
-            $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRODUCT_OR_SERVICE], $config));
-        }
-        if (isset($json[self::FIELD_MODIFIER]) || array_key_exists(self::FIELD_MODIFIER, $json)) {
-            $vs = $json[self::FIELD_MODIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->productOrService) || property_exists($json, self::FIELD_PRODUCT_OR_SERVICE)) {
+            if (is_array($json->productOrService)) {
+                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize(reset($json->productOrService), $config));
+            } else {
+                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize($json->productOrService, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->modifier) || property_exists($json, self::FIELD_MODIFIER)) {
+            if (is_object($json->modifier)) {
+                $vals = [$json->modifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_MODIFIER, true);
+            } else {
+                $vals = $json->modifier;
+            }
+            foreach($vals as $v) {
                 $type->addModifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_UNIT_PRICE]) || array_key_exists(self::FIELD_UNIT_PRICE, $json)) {
-            $type->setUnitPrice(FHIRMoney::jsonUnserialize($json[self::FIELD_UNIT_PRICE], $config));
-        }
-        if (isset($json[self::FIELD_FACTOR])
-            || isset($json[self::FIELD_FACTOR_EXT])
-            || array_key_exists(self::FIELD_FACTOR, $json)
-            || array_key_exists(self::FIELD_FACTOR_EXT, $json)) {
-            $value = $json[self::FIELD_FACTOR] ?? null;
-            $type->setFactor(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_FACTOR_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_NET]) || array_key_exists(self::FIELD_NET, $json)) {
-            $type->setNet(FHIRMoney::jsonUnserialize($json[self::FIELD_NET], $config));
-        }
-        if (isset($json[self::FIELD_NOTE_NUMBER])
-            || isset($json[self::FIELD_NOTE_NUMBER_EXT])
-            || array_key_exists(self::FIELD_NOTE_NUMBER, $json)
-            || array_key_exists(self::FIELD_NOTE_NUMBER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_NOTE_NUMBER] ?? []);
-            $ext = (array)($json[self::FIELD_NOTE_NUMBER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
-            }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize(
-                    [FHIRPositiveInt::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
+            if (is_array($json->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+            } else {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
             }
         }
-        if (isset($json[self::FIELD_ADJUDICATION]) || array_key_exists(self::FIELD_ADJUDICATION, $json)) {
-            $vs = $json[self::FIELD_ADJUDICATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->unitPrice) || property_exists($json, self::FIELD_UNIT_PRICE)) {
+            if (is_array($json->unitPrice)) {
+                $type->setUnitPrice(FHIRMoney::jsonUnserialize(reset($json->unitPrice), $config));
+            } else {
+                $type->setUnitPrice(FHIRMoney::jsonUnserialize($json->unitPrice, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->factor)
+            || isset($json->_factor)
+            || property_exists($json, self::FIELD_FACTOR)
+            || property_exists($json, self::FIELD_FACTOR_EXT)) {
+            $v = $json->_factor ?? new \stdClass();
+            $v->value = $json->factor ?? null;
+            $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
+        }
+        if (isset($json->net) || property_exists($json, self::FIELD_NET)) {
+            if (is_array($json->net)) {
+                $type->setNet(FHIRMoney::jsonUnserialize(reset($json->net), $config));
+            } else {
+                $type->setNet(FHIRMoney::jsonUnserialize($json->net, $config));
+            }
+        }
+        if (isset($json->noteNumber)
+            || isset($json->_noteNumber)
+            || property_exists($json, self::FIELD_NOTE_NUMBER)
+            || property_exists($json, self::FIELD_NOTE_NUMBER_EXT)) {
+            $vals = (array)($json->noteNumber ?? []);
+            $exts = (array)($json->FIELD_NOTE_NUMBER_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
+            }
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
+            }
+        }
+        if (isset($json->adjudication) || property_exists($json, self::FIELD_ADJUDICATION)) {
+            if (is_object($json->adjudication)) {
+                $vals = [$json->adjudication];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ADJUDICATION, true);
+            } else {
+                $vals = $json->adjudication;
+            }
+            foreach($vals as $v) {
                 $type->addAdjudication(FHIRClaimResponseAdjudication::jsonUnserialize($v, $config));
             }
         }
@@ -935,7 +930,11 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
             $out->productOrService = $this->productOrService;
         }
         if (isset($this->modifier) && [] !== $this->modifier) {
-            $out->modifier = $this->modifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_MODIFIER) && 1 === count($this->modifier)) {
+                $out->modifier = $this->modifier[0];
+            } else {
+                $out->modifier = $this->modifier;
+            }
         }
         if (isset($this->quantity)) {
             $out->quantity = $this->quantity;
@@ -986,7 +985,11 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
             }
         }
         if (isset($this->adjudication) && [] !== $this->adjudication) {
-            $out->adjudication = $this->adjudication;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ADJUDICATION) && 1 === count($this->adjudication)) {
+                $out->adjudication = $this->adjudication[0];
+            } else {
+                $out->adjudication = $this->adjudication;
+            }
         }
         return $out;
     }

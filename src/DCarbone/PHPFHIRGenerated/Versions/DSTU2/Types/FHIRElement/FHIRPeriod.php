@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -80,28 +82,30 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  */
 class FHIRPeriod extends FHIRElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PERIOD;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_START = 'start';
     public const FIELD_START_EXT = '_start';
     public const FIELD_END = 'end';
     public const FIELD_END_EXT = '_end';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_START => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_END => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -131,7 +135,7 @@ class FHIRPeriod extends FHIRElement
      */
     protected FHIRDateTime $end;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRPeriod Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
@@ -157,7 +161,7 @@ class FHIRPeriod extends FHIRElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -166,7 +170,7 @@ class FHIRPeriod extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -195,11 +199,9 @@ class FHIRPeriod extends FHIRElement
      * The start of the period. The boundary is inclusive.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $start
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStart(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $start,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStart(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $start): self
     {
         if (null === $start) {
             unset($this->start);
@@ -209,33 +211,6 @@ class FHIRPeriod extends FHIRElement
             $start = new FHIRDateTime(value: $start);
         }
         $this->start = $start;
-        if ($this->_valueXMLLocations[self::FIELD_START] !== $valueXMLLocation) {
-            $this->_setStartValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the start element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStartValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_START];
-    }
-
-    /**
-     * Set the location the "value" field of the start element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStartValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_START] = $valueXMLLocation;
         return $this;
     }
 
@@ -271,11 +246,9 @@ class FHIRPeriod extends FHIRElement
      * which means that period is expected/planned to end at that time.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $end
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEnd(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $end,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setEnd(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $end): self
     {
         if (null === $end) {
             unset($this->end);
@@ -285,37 +258,10 @@ class FHIRPeriod extends FHIRElement
             $end = new FHIRDateTime(value: $end);
         }
         $this->end = $end;
-        if ($this->_valueXMLLocations[self::FIELD_END] !== $valueXMLLocation) {
-            $this->_setEndValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the end element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getEndValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_END];
-    }
-
-    /**
-     * Set the location the "value" field of the end element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setEndValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_END] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -344,9 +290,11 @@ class FHIRPeriod extends FHIRElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_START === $cen) {
                 $type->setStart(FHIRDateTime::xmlUnserialize($ce, $config));
@@ -356,23 +304,24 @@ class FHIRPeriod extends FHIRElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_START])) {
             if (isset($type->start)) {
                 $type->start->setValue((string)$attributes[self::FIELD_START]);
-                $type->_setStartValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStart((string)$attributes[self::FIELD_START], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStart((string)$attributes[self::FIELD_START]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_START, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_END])) {
             if (isset($type->end)) {
                 $type->end->setValue((string)$attributes[self::FIELD_END]);
-                $type->_setEndValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setEnd((string)$attributes[self::FIELD_END], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setEnd((string)$attributes[self::FIELD_END]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_END, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -385,10 +334,10 @@ class FHIRPeriod extends FHIRElement
                                  SerializeConfig $config): void
     {
         if (isset($this->start) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_START]) {
-            $xw->writeAttribute(self::FIELD_START, $this->start->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_START, $this->start->_getValueAsString());
         }
         if (isset($this->end) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_END]) {
-            $xw->writeAttribute(self::FIELD_END, $this->end->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_END, $this->end->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->start)
@@ -408,13 +357,13 @@ class FHIRPeriod extends FHIRElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -429,25 +378,21 @@ class FHIRPeriod extends FHIRElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_START])
-            || isset($json[self::FIELD_START_EXT])
-            || array_key_exists(self::FIELD_START, $json)
-            || array_key_exists(self::FIELD_START_EXT, $json)) {
-            $value = $json[self::FIELD_START] ?? null;
-            $type->setStart(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_START_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->start)
+            || isset($json->_start)
+            || property_exists($json, self::FIELD_START)
+            || property_exists($json, self::FIELD_START_EXT)) {
+            $v = $json->_start ?? new \stdClass();
+            $v->value = $json->start ?? null;
+            $type->setStart(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_END])
-            || isset($json[self::FIELD_END_EXT])
-            || array_key_exists(self::FIELD_END, $json)
-            || array_key_exists(self::FIELD_END_EXT, $json)) {
-            $value = $json[self::FIELD_END] ?? null;
-            $type->setEnd(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_END_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->end)
+            || isset($json->_end)
+            || property_exists($json, self::FIELD_END)
+            || property_exists($json, self::FIELD_END_EXT)) {
+            $v = $json->_end ?? new \stdClass();
+            $v->value = $json->end ?? null;
+            $type->setEnd(FHIRDateTime::jsonUnserialize($v, $config));
         }
         return $type;
     }

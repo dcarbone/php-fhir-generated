@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -97,12 +99,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypeMap;
  */
 class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROVENANCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TARGET = 'target';
     public const FIELD_PERIOD = 'period';
     public const FIELD_RECORDED = 'recorded';
@@ -116,7 +120,7 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
     public const FIELD_INTEGRITY_SIGNATURE = 'integritySignature';
     public const FIELD_INTEGRITY_SIGNATURE_EXT = '_integritySignature';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TARGET => [
@@ -127,13 +131,13 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_RECORDED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INTEGRITY_SIGNATURE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -238,7 +242,7 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
      */
     protected FHIRString $integritySignature;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRProvenance Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -311,7 +315,7 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -320,7 +324,7 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -329,7 +333,7 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -454,11 +458,9 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
      * The instant of time at which the activity was recorded.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant $recorded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded): self
     {
         if (null === $recorded) {
             unset($this->recorded);
@@ -468,33 +470,6 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
             $recorded = new FHIRInstant(value: $recorded);
         }
         $this->recorded = $recorded;
-        if ($this->_valueXMLLocations[self::FIELD_RECORDED] !== $valueXMLLocation) {
-            $this->_setRecordedValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the recorded element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRecordedValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RECORDED];
-    }
-
-    /**
-     * Set the location the "value" field of the recorded element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRecordedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RECORDED] = $valueXMLLocation;
         return $this;
     }
 
@@ -822,11 +797,9 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
      * non-repudiation.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $integritySignature
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIntegritySignature(null|string|FHIRStringPrimitive|FHIRString $integritySignature,
-                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIntegritySignature(null|string|FHIRStringPrimitive|FHIRString $integritySignature): self
     {
         if (null === $integritySignature) {
             unset($this->integritySignature);
@@ -836,37 +809,10 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
             $integritySignature = new FHIRString(value: $integritySignature);
         }
         $this->integritySignature = $integritySignature;
-        if ($this->_valueXMLLocations[self::FIELD_INTEGRITY_SIGNATURE] !== $valueXMLLocation) {
-            $this->_setIntegritySignatureValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the integritySignature element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIntegritySignatureValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INTEGRITY_SIGNATURE];
-    }
-
-    /**
-     * Set the location the "value" field of the integritySignature element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIntegritySignatureValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INTEGRITY_SIGNATURE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -904,9 +850,11 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -942,31 +890,32 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RECORDED])) {
             if (isset($type->recorded)) {
                 $type->recorded->setValue((string)$attributes[self::FIELD_RECORDED]);
-                $type->_setRecordedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRecorded((string)$attributes[self::FIELD_RECORDED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRecorded((string)$attributes[self::FIELD_RECORDED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RECORDED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INTEGRITY_SIGNATURE])) {
             if (isset($type->integritySignature)) {
                 $type->integritySignature->setValue((string)$attributes[self::FIELD_INTEGRITY_SIGNATURE]);
-                $type->_setIntegritySignatureValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIntegritySignature((string)$attributes[self::FIELD_INTEGRITY_SIGNATURE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIntegritySignature((string)$attributes[self::FIELD_INTEGRITY_SIGNATURE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INTEGRITY_SIGNATURE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -997,10 +946,10 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
             $xw->openRootNode('Provenance', $this->_getSourceXMLNS());
         }
         if (isset($this->recorded) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RECORDED]) {
-            $xw->writeAttribute(self::FIELD_RECORDED, $this->recorded->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RECORDED, $this->recorded->_getValueAsString());
         }
         if (isset($this->integritySignature) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INTEGRITY_SIGNATURE]) {
-            $xw->writeAttribute(self::FIELD_INTEGRITY_SIGNATURE, $this->integritySignature->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INTEGRITY_SIGNATURE, $this->integritySignature->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->target)) {
@@ -1070,13 +1019,13 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1094,84 +1043,95 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TARGET]) || array_key_exists(self::FIELD_TARGET, $json)) {
-            $vs = $json[self::FIELD_TARGET];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->target) || property_exists($json, self::FIELD_TARGET)) {
+            if (is_object($json->target)) {
+                $vals = [$json->target];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TARGET, true);
+            } else {
+                $vals = $json->target;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTarget(FHIRResourceReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_RECORDED])
-            || isset($json[self::FIELD_RECORDED_EXT])
-            || array_key_exists(self::FIELD_RECORDED, $json)
-            || array_key_exists(self::FIELD_RECORDED_EXT, $json)) {
-            $value = $json[self::FIELD_RECORDED] ?? null;
-            $type->setRecorded(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_RECORDED_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            $type->setReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REASON], $config));
-        }
-        if (isset($json[self::FIELD_LOCATION]) || array_key_exists(self::FIELD_LOCATION, $json)) {
-            $type->setLocation(FHIRResourceReference::jsonUnserialize($json[self::FIELD_LOCATION], $config));
-        }
-        if (isset($json[self::FIELD_POLICY])
-            || isset($json[self::FIELD_POLICY_EXT])
-            || array_key_exists(self::FIELD_POLICY, $json)
-            || array_key_exists(self::FIELD_POLICY_EXT, $json)) {
-            $value = (array)($json[self::FIELD_POLICY] ?? []);
-            $ext = (array)($json[self::FIELD_POLICY_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
-            }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addPolicy(FHIRUri::jsonUnserialize(
-                    [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
             }
         }
-        if (isset($json[self::FIELD_AGENT]) || array_key_exists(self::FIELD_AGENT, $json)) {
-            $vs = $json[self::FIELD_AGENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->recorded)
+            || isset($json->_recorded)
+            || property_exists($json, self::FIELD_RECORDED)
+            || property_exists($json, self::FIELD_RECORDED_EXT)) {
+            $v = $json->_recorded ?? new \stdClass();
+            $v->value = $json->recorded ?? null;
+            $type->setRecorded(FHIRInstant::jsonUnserialize($v, $config));
+        }
+        if (isset($json->reason) || property_exists($json, self::FIELD_REASON)) {
+            if (is_array($json->reason)) {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize(reset($json->reason), $config));
+            } else {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize($json->reason, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->location) || property_exists($json, self::FIELD_LOCATION)) {
+            if (is_array($json->location)) {
+                $type->setLocation(FHIRResourceReference::jsonUnserialize(reset($json->location), $config));
+            } else {
+                $type->setLocation(FHIRResourceReference::jsonUnserialize($json->location, $config));
+            }
+        }
+        if (isset($json->policy)
+            || isset($json->_policy)
+            || property_exists($json, self::FIELD_POLICY)
+            || property_exists($json, self::FIELD_POLICY_EXT)) {
+            $vals = (array)($json->policy ?? []);
+            $exts = (array)($json->FIELD_POLICY_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
+            }
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addPolicy(FHIRUri::jsonUnserialize($v, $config));
+            }
+        }
+        if (isset($json->agent) || property_exists($json, self::FIELD_AGENT)) {
+            if (is_object($json->agent)) {
+                $vals = [$json->agent];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_AGENT, true);
+            } else {
+                $vals = $json->agent;
+            }
+            foreach($vals as $v) {
                 $type->addAgent(FHIRProvenanceAgent::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ENTITY]) || array_key_exists(self::FIELD_ENTITY, $json)) {
-            $vs = $json[self::FIELD_ENTITY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->entity) || property_exists($json, self::FIELD_ENTITY)) {
+            if (is_object($json->entity)) {
+                $vals = [$json->entity];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ENTITY, true);
+            } else {
+                $vals = $json->entity;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addEntity(FHIRProvenanceEntity::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_INTEGRITY_SIGNATURE])
-            || isset($json[self::FIELD_INTEGRITY_SIGNATURE_EXT])
-            || array_key_exists(self::FIELD_INTEGRITY_SIGNATURE, $json)
-            || array_key_exists(self::FIELD_INTEGRITY_SIGNATURE_EXT, $json)) {
-            $value = $json[self::FIELD_INTEGRITY_SIGNATURE] ?? null;
-            $type->setIntegritySignature(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_INTEGRITY_SIGNATURE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->integritySignature)
+            || isset($json->_integritySignature)
+            || property_exists($json, self::FIELD_INTEGRITY_SIGNATURE)
+            || property_exists($json, self::FIELD_INTEGRITY_SIGNATURE_EXT)) {
+            $v = $json->_integritySignature ?? new \stdClass();
+            $v->value = $json->integritySignature ?? null;
+            $type->setIntegritySignature(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -1183,7 +1143,11 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
     {
         $out = parent::jsonSerialize();
         if (isset($this->target) && [] !== $this->target) {
-            $out->target = $this->target;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TARGET) && 1 === count($this->target)) {
+                $out->target = $this->target[0];
+            } else {
+                $out->target = $this->target;
+            }
         }
         if (isset($this->period)) {
             $out->period = $this->period;
@@ -1234,10 +1198,18 @@ class FHIRProvenance extends FHIRResource implements VersionContainedTypeInterfa
             }
         }
         if (isset($this->agent) && [] !== $this->agent) {
-            $out->agent = $this->agent;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_AGENT) && 1 === count($this->agent)) {
+                $out->agent = $this->agent[0];
+            } else {
+                $out->agent = $this->agent;
+            }
         }
         if (isset($this->entity) && [] !== $this->entity) {
-            $out->entity = $this->entity;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ENTITY) && 1 === count($this->entity)) {
+                $out->entity = $this->entity[0];
+            } else {
+                $out->entity = $this->entity;
+            }
         }
         if (isset($this->integritySignature)) {
             if (null !== ($val = $this->integritySignature->getValue())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
@@ -131,12 +133,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
 class FHIREvidenceReport extends FHIRMetadataResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait,
         SourceXMLNamespaceTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EVIDENCE_REPORT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_URL = 'url';
     public const FIELD_URL_EXT = '_url';
     public const FIELD_STATUS = 'status';
@@ -161,7 +165,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
     public const FIELD_RELATES_TO = 'relatesTo';
     public const FIELD_SECTION = 'section';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
@@ -172,7 +176,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -180,7 +184,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
         self::FIELD_PUBLISHER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -251,7 +255,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
@@ -265,7 +270,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
      */
@@ -403,7 +409,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      */
     protected array $section;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIREvidenceReport Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -532,7 +538,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -541,7 +547,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -550,7 +556,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -583,11 +589,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * the same when the summary is stored on different servers.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
         if (null === $url) {
             unset($this->url);
@@ -597,33 +601,6 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             $url = new FHIRUri(value: $url);
         }
         $this->url = $url;
-        if ($this->_valueXMLLocations[self::FIELD_URL] !== $valueXMLLocation) {
-            $this->_setUrlValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the url element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUrlValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_URL];
-    }
-
-    /**
-     * Set the location the "value" field of the url element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUrlValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_URL] = $valueXMLLocation;
         return $this;
     }
 
@@ -645,11 +622,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * The status of this summary. Enables tracking the life-cycle of the content.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
         if (null === $status) {
             unset($this->status);
@@ -659,33 +634,6 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             $status = new FHIRPublicationStatus(value: $status);
         }
         $this->status = $status;
-        if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
-            $this->_setStatusValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the status element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStatusValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STATUS];
-    }
-
-    /**
-     * Set the location the "value" field of the status element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -922,7 +870,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
@@ -936,7 +885,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $citeAsReference
      * @return static
@@ -960,7 +910,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
@@ -978,14 +929,13 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $citeAsMarkdown
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCiteAsMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $citeAsMarkdown,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCiteAsMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $citeAsMarkdown): self
     {
         if (null === $citeAsMarkdown) {
             unset($this->citeAsMarkdown);
@@ -995,33 +945,6 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             $citeAsMarkdown = new FHIRMarkdown(value: $citeAsMarkdown);
         }
         $this->citeAsMarkdown = $citeAsMarkdown;
-        if ($this->_valueXMLLocations[self::FIELD_CITE_AS_MARKDOWN] !== $valueXMLLocation) {
-            $this->_setCiteAsMarkdownValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the citeAsMarkdown element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCiteAsMarkdownValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CITE_AS_MARKDOWN];
-    }
-
-    /**
-     * Set the location the "value" field of the citeAsMarkdown element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCiteAsMarkdownValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CITE_AS_MARKDOWN] = $valueXMLLocation;
         return $this;
     }
 
@@ -1257,11 +1180,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * ongoing maintenance of the evidence report.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
         if (null === $publisher) {
             unset($this->publisher);
@@ -1271,33 +1192,6 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             $publisher = new FHIRString(value: $publisher);
         }
         $this->publisher = $publisher;
-        if ($this->_valueXMLLocations[self::FIELD_PUBLISHER] !== $valueXMLLocation) {
-            $this->_setPublisherValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the publisher element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPublisherValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PUBLISHER];
-    }
-
-    /**
-     * Set the location the "value" field of the publisher element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPublisherValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PUBLISHER] = $valueXMLLocation;
         return $this;
     }
 
@@ -1767,7 +1661,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1864,58 +1758,58 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_URL])) {
             if (isset($type->url)) {
                 $type->url->setValue((string)$attributes[self::FIELD_URL]);
-                $type->_setUrlValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUrl((string)$attributes[self::FIELD_URL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUrl((string)$attributes[self::FIELD_URL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_URL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STATUS])) {
             if (isset($type->status)) {
                 $type->status->setValue((string)$attributes[self::FIELD_STATUS]);
-                $type->_setStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStatus((string)$attributes[self::FIELD_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStatus((string)$attributes[self::FIELD_STATUS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STATUS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CITE_AS_MARKDOWN])) {
             if (isset($type->citeAsMarkdown)) {
                 $type->citeAsMarkdown->setValue((string)$attributes[self::FIELD_CITE_AS_MARKDOWN]);
-                $type->_setCiteAsMarkdownValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCiteAsMarkdown((string)$attributes[self::FIELD_CITE_AS_MARKDOWN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCiteAsMarkdown((string)$attributes[self::FIELD_CITE_AS_MARKDOWN]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CITE_AS_MARKDOWN, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PUBLISHER])) {
             if (isset($type->publisher)) {
                 $type->publisher->setValue((string)$attributes[self::FIELD_PUBLISHER]);
-                $type->_setPublisherValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPublisher((string)$attributes[self::FIELD_PUBLISHER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPublisher((string)$attributes[self::FIELD_PUBLISHER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PUBLISHER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1946,16 +1840,16 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             $xw->openRootNode('EvidenceReport', $this->_getSourceXMLNS());
         }
         if (isset($this->url) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_URL]) {
-            $xw->writeAttribute(self::FIELD_URL, $this->url->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_URL, $this->url->_getValueAsString());
         }
         if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
-            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getValueAsString());
         }
         if (isset($this->citeAsMarkdown) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CITE_AS_MARKDOWN]) {
-            $xw->writeAttribute(self::FIELD_CITE_AS_MARKDOWN, $this->citeAsMarkdown->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CITE_AS_MARKDOWN, $this->citeAsMarkdown->_getValueAsString());
         }
         if (isset($this->publisher) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PUBLISHER]) {
-            $xw->writeAttribute(self::FIELD_PUBLISHER, $this->publisher->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PUBLISHER, $this->publisher->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->url)
@@ -2095,13 +1989,13 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIREvidenceReport $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIREvidenceReport
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -2119,165 +2013,191 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_URL])
-            || isset($json[self::FIELD_URL_EXT])
-            || array_key_exists(self::FIELD_URL, $json)
-            || array_key_exists(self::FIELD_URL_EXT, $json)) {
-            $value = $json[self::FIELD_URL] ?? null;
-            $type->setUrl(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_URL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->url)
+            || isset($json->_url)
+            || property_exists($json, self::FIELD_URL)
+            || property_exists($json, self::FIELD_URL_EXT)) {
+            $v = $json->_url ?? new \stdClass();
+            $v->value = $json->url ?? null;
+            $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_STATUS])
-            || isset($json[self::FIELD_STATUS_EXT])
-            || array_key_exists(self::FIELD_STATUS, $json)
-            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
-            $value = $json[self::FIELD_STATUS] ?? null;
-            $type->setStatus(FHIRPublicationStatus::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPublicationStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->status)
+            || isset($json->_status)
+            || property_exists($json, self::FIELD_STATUS)
+            || property_exists($json, self::FIELD_STATUS_EXT)) {
+            $v = $json->_status ?? new \stdClass();
+            $v->value = $json->status ?? null;
+            $type->setStatus(FHIRPublicationStatus::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_USE_CONTEXT]) || array_key_exists(self::FIELD_USE_CONTEXT, $json)) {
-            $vs = $json[self::FIELD_USE_CONTEXT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->useContext) || property_exists($json, self::FIELD_USE_CONTEXT)) {
+            if (is_object($json->useContext)) {
+                $vals = [$json->useContext];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_USE_CONTEXT, true);
+            } else {
+                $vals = $json->useContext;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addUseContext(FHIRUsageContext::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_RELATED_IDENTIFIER]) || array_key_exists(self::FIELD_RELATED_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_RELATED_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->relatedIdentifier) || property_exists($json, self::FIELD_RELATED_IDENTIFIER)) {
+            if (is_object($json->relatedIdentifier)) {
+                $vals = [$json->relatedIdentifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RELATED_IDENTIFIER, true);
+            } else {
+                $vals = $json->relatedIdentifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addRelatedIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CITE_AS_REFERENCE]) || array_key_exists(self::FIELD_CITE_AS_REFERENCE, $json)) {
-            $type->setCiteAsReference(FHIRReference::jsonUnserialize($json[self::FIELD_CITE_AS_REFERENCE], $config));
-        }
-        if (isset($json[self::FIELD_CITE_AS_MARKDOWN])
-            || isset($json[self::FIELD_CITE_AS_MARKDOWN_EXT])
-            || array_key_exists(self::FIELD_CITE_AS_MARKDOWN, $json)
-            || array_key_exists(self::FIELD_CITE_AS_MARKDOWN_EXT, $json)) {
-            $value = $json[self::FIELD_CITE_AS_MARKDOWN] ?? null;
-            $type->setCiteAsMarkdown(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_CITE_AS_MARKDOWN_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
-            $vs = $json[self::FIELD_NOTE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->citeAsReference) || property_exists($json, self::FIELD_CITE_AS_REFERENCE)) {
+            if (is_array($json->citeAsReference)) {
+                $type->setCiteAsReference(FHIRReference::jsonUnserialize(reset($json->citeAsReference), $config));
+            } else {
+                $type->setCiteAsReference(FHIRReference::jsonUnserialize($json->citeAsReference, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->citeAsMarkdown)
+            || isset($json->_citeAsMarkdown)
+            || property_exists($json, self::FIELD_CITE_AS_MARKDOWN)
+            || property_exists($json, self::FIELD_CITE_AS_MARKDOWN_EXT)) {
+            $v = $json->_citeAsMarkdown ?? new \stdClass();
+            $v->value = $json->citeAsMarkdown ?? null;
+            $type->setCiteAsMarkdown(FHIRMarkdown::jsonUnserialize($v, $config));
+        }
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
+        }
+        if (isset($json->note) || property_exists($json, self::FIELD_NOTE)) {
+            if (is_object($json->note)) {
+                $vals = [$json->note];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTE, true);
+            } else {
+                $vals = $json->note;
+            }
+            foreach($vals as $v) {
                 $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_RELATED_ARTIFACT]) || array_key_exists(self::FIELD_RELATED_ARTIFACT, $json)) {
-            $vs = $json[self::FIELD_RELATED_ARTIFACT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->relatedArtifact) || property_exists($json, self::FIELD_RELATED_ARTIFACT)) {
+            if (is_object($json->relatedArtifact)) {
+                $vals = [$json->relatedArtifact];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RELATED_ARTIFACT, true);
+            } else {
+                $vals = $json->relatedArtifact;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addRelatedArtifact(FHIRRelatedArtifact::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIREvidenceReportSubject::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
-        }
-        if (isset($json[self::FIELD_PUBLISHER])
-            || isset($json[self::FIELD_PUBLISHER_EXT])
-            || array_key_exists(self::FIELD_PUBLISHER, $json)
-            || array_key_exists(self::FIELD_PUBLISHER_EXT, $json)) {
-            $value = $json[self::FIELD_PUBLISHER] ?? null;
-            $type->setPublisher(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PUBLISHER_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_CONTACT]) || array_key_exists(self::FIELD_CONTACT, $json)) {
-            $vs = $json[self::FIELD_CONTACT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
+            if (is_array($json->subject)) {
+                $type->setSubject(FHIREvidenceReportSubject::jsonUnserialize(reset($json->subject), $config));
+            } else {
+                $type->setSubject(FHIREvidenceReportSubject::jsonUnserialize($json->subject, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->publisher)
+            || isset($json->_publisher)
+            || property_exists($json, self::FIELD_PUBLISHER)
+            || property_exists($json, self::FIELD_PUBLISHER_EXT)) {
+            $v = $json->_publisher ?? new \stdClass();
+            $v->value = $json->publisher ?? null;
+            $type->setPublisher(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->contact) || property_exists($json, self::FIELD_CONTACT)) {
+            if (is_object($json->contact)) {
+                $vals = [$json->contact];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTACT, true);
+            } else {
+                $vals = $json->contact;
+            }
+            foreach($vals as $v) {
                 $type->addContact(FHIRContactDetail::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_AUTHOR]) || array_key_exists(self::FIELD_AUTHOR, $json)) {
-            $vs = $json[self::FIELD_AUTHOR];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->author) || property_exists($json, self::FIELD_AUTHOR)) {
+            if (is_object($json->author)) {
+                $vals = [$json->author];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_AUTHOR, true);
+            } else {
+                $vals = $json->author;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAuthor(FHIRContactDetail::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_EDITOR]) || array_key_exists(self::FIELD_EDITOR, $json)) {
-            $vs = $json[self::FIELD_EDITOR];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->editor) || property_exists($json, self::FIELD_EDITOR)) {
+            if (is_object($json->editor)) {
+                $vals = [$json->editor];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_EDITOR, true);
+            } else {
+                $vals = $json->editor;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addEditor(FHIRContactDetail::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REVIEWER]) || array_key_exists(self::FIELD_REVIEWER, $json)) {
-            $vs = $json[self::FIELD_REVIEWER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->reviewer) || property_exists($json, self::FIELD_REVIEWER)) {
+            if (is_object($json->reviewer)) {
+                $vals = [$json->reviewer];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_REVIEWER, true);
+            } else {
+                $vals = $json->reviewer;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addReviewer(FHIRContactDetail::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ENDORSER]) || array_key_exists(self::FIELD_ENDORSER, $json)) {
-            $vs = $json[self::FIELD_ENDORSER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->endorser) || property_exists($json, self::FIELD_ENDORSER)) {
+            if (is_object($json->endorser)) {
+                $vals = [$json->endorser];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ENDORSER, true);
+            } else {
+                $vals = $json->endorser;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addEndorser(FHIRContactDetail::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_RELATES_TO]) || array_key_exists(self::FIELD_RELATES_TO, $json)) {
-            $vs = $json[self::FIELD_RELATES_TO];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->relatesTo) || property_exists($json, self::FIELD_RELATES_TO)) {
+            if (is_object($json->relatesTo)) {
+                $vals = [$json->relatesTo];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RELATES_TO, true);
+            } else {
+                $vals = $json->relatesTo;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addRelatesTo(FHIREvidenceReportRelatesTo::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SECTION]) || array_key_exists(self::FIELD_SECTION, $json)) {
-            $vs = $json[self::FIELD_SECTION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->section) || property_exists($json, self::FIELD_SECTION)) {
+            if (is_object($json->section)) {
+                $vals = [$json->section];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SECTION, true);
+            } else {
+                $vals = $json->section;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSection(FHIREvidenceReportSection::jsonUnserialize($v, $config));
             }
         }
@@ -2311,13 +2231,25 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             }
         }
         if (isset($this->useContext) && [] !== $this->useContext) {
-            $out->useContext = $this->useContext;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_USE_CONTEXT) && 1 === count($this->useContext)) {
+                $out->useContext = $this->useContext[0];
+            } else {
+                $out->useContext = $this->useContext;
+            }
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->relatedIdentifier) && [] !== $this->relatedIdentifier) {
-            $out->relatedIdentifier = $this->relatedIdentifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RELATED_IDENTIFIER) && 1 === count($this->relatedIdentifier)) {
+                $out->relatedIdentifier = $this->relatedIdentifier[0];
+            } else {
+                $out->relatedIdentifier = $this->relatedIdentifier;
+            }
         }
         if (isset($this->citeAsReference)) {
             $out->citeAsReference = $this->citeAsReference;
@@ -2336,10 +2268,18 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             $out->type = $this->type;
         }
         if (isset($this->note) && [] !== $this->note) {
-            $out->note = $this->note;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_NOTE) && 1 === count($this->note)) {
+                $out->note = $this->note[0];
+            } else {
+                $out->note = $this->note;
+            }
         }
         if (isset($this->relatedArtifact) && [] !== $this->relatedArtifact) {
-            $out->relatedArtifact = $this->relatedArtifact;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RELATED_ARTIFACT) && 1 === count($this->relatedArtifact)) {
+                $out->relatedArtifact = $this->relatedArtifact[0];
+            } else {
+                $out->relatedArtifact = $this->relatedArtifact;
+            }
         }
         if (isset($this->subject)) {
             $out->subject = $this->subject;
@@ -2355,25 +2295,53 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             }
         }
         if (isset($this->contact) && [] !== $this->contact) {
-            $out->contact = $this->contact;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CONTACT) && 1 === count($this->contact)) {
+                $out->contact = $this->contact[0];
+            } else {
+                $out->contact = $this->contact;
+            }
         }
         if (isset($this->author) && [] !== $this->author) {
-            $out->author = $this->author;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_AUTHOR) && 1 === count($this->author)) {
+                $out->author = $this->author[0];
+            } else {
+                $out->author = $this->author;
+            }
         }
         if (isset($this->editor) && [] !== $this->editor) {
-            $out->editor = $this->editor;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_EDITOR) && 1 === count($this->editor)) {
+                $out->editor = $this->editor[0];
+            } else {
+                $out->editor = $this->editor;
+            }
         }
         if (isset($this->reviewer) && [] !== $this->reviewer) {
-            $out->reviewer = $this->reviewer;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_REVIEWER) && 1 === count($this->reviewer)) {
+                $out->reviewer = $this->reviewer[0];
+            } else {
+                $out->reviewer = $this->reviewer;
+            }
         }
         if (isset($this->endorser) && [] !== $this->endorser) {
-            $out->endorser = $this->endorser;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ENDORSER) && 1 === count($this->endorser)) {
+                $out->endorser = $this->endorser[0];
+            } else {
+                $out->endorser = $this->endorser;
+            }
         }
         if (isset($this->relatesTo) && [] !== $this->relatesTo) {
-            $out->relatesTo = $this->relatesTo;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RELATES_TO) && 1 === count($this->relatesTo)) {
+                $out->relatesTo = $this->relatesTo[0];
+            } else {
+                $out->relatesTo = $this->relatesTo;
+            }
         }
         if (isset($this->section) && [] !== $this->section) {
-            $out->section = $this->section;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SECTION) && 1 === count($this->section)) {
+                $out->section = $this->section[0];
+            } else {
+                $out->section = $this->section;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

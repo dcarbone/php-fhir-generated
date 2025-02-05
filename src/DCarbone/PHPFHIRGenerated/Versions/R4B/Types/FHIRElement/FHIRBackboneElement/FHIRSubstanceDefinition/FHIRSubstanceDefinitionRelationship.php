@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -107,12 +109,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_DEFINITION_DOT_RELATIONSHIP;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SUBSTANCE_DEFINITION_REFERENCE = 'substanceDefinitionReference';
     public const FIELD_SUBSTANCE_DEFINITION_CODEABLE_CONCEPT = 'substanceDefinitionCodeableConcept';
     public const FIELD_TYPE = 'type';
@@ -126,7 +130,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
     public const FIELD_COMPARATOR = 'comparator';
     public const FIELD_SOURCE = 'source';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -134,13 +138,13 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_IS_DEFINING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_AMOUNT_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -257,7 +261,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      */
     protected array $source;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstanceDefinitionRelationship Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -326,7 +330,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -335,7 +339,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -468,11 +472,9 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      * relationships.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $isDefining
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIsDefining(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDefining,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIsDefining(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDefining): self
     {
         if (null === $isDefining) {
             unset($this->isDefining);
@@ -482,33 +484,6 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
             $isDefining = new FHIRBoolean(value: $isDefining);
         }
         $this->isDefining = $isDefining;
-        if ($this->_valueXMLLocations[self::FIELD_IS_DEFINING] !== $valueXMLLocation) {
-            $this->_setIsDefiningValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the isDefining element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIsDefiningValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_IS_DEFINING];
-    }
-
-    /**
-     * Set the location the "value" field of the isDefining element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIsDefiningValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_IS_DEFINING] = $valueXMLLocation;
         return $this;
     }
 
@@ -620,11 +595,9 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      * other.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $amountString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
         if (null === $amountString) {
             unset($this->amountString);
@@ -634,33 +607,6 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
             $amountString = new FHIRString(value: $amountString);
         }
         $this->amountString = $amountString;
-        if ($this->_valueXMLLocations[self::FIELD_AMOUNT_STRING] !== $valueXMLLocation) {
-            $this->_setAmountStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the amountString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAmountStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AMOUNT_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the amountString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAmountStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AMOUNT_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -800,7 +746,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -829,9 +775,11 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -859,23 +807,24 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IS_DEFINING])) {
             if (isset($type->isDefining)) {
                 $type->isDefining->setValue((string)$attributes[self::FIELD_IS_DEFINING]);
-                $type->_setIsDefiningValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIsDefining((string)$attributes[self::FIELD_IS_DEFINING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIsDefining((string)$attributes[self::FIELD_IS_DEFINING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IS_DEFINING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_AMOUNT_STRING])) {
             if (isset($type->amountString)) {
                 $type->amountString->setValue((string)$attributes[self::FIELD_AMOUNT_STRING]);
-                $type->_setAmountStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAmountString((string)$attributes[self::FIELD_AMOUNT_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAmountString((string)$attributes[self::FIELD_AMOUNT_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_AMOUNT_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -888,10 +837,10 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->isDefining) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_IS_DEFINING]) {
-            $xw->writeAttribute(self::FIELD_IS_DEFINING, $this->isDefining->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_IS_DEFINING, $this->isDefining->_getValueAsString());
         }
         if (isset($this->amountString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AMOUNT_STRING]) {
-            $xw->writeAttribute(self::FIELD_AMOUNT_STRING, $this->amountString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_AMOUNT_STRING, $this->amountString->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->substanceDefinitionReference)) {
@@ -953,13 +902,13 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRelationship $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRelationship
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -974,53 +923,79 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SUBSTANCE_DEFINITION_REFERENCE]) || array_key_exists(self::FIELD_SUBSTANCE_DEFINITION_REFERENCE, $json)) {
-            $type->setSubstanceDefinitionReference(FHIRReference::jsonUnserialize($json[self::FIELD_SUBSTANCE_DEFINITION_REFERENCE], $config));
-        }
-        if (isset($json[self::FIELD_SUBSTANCE_DEFINITION_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_SUBSTANCE_DEFINITION_CODEABLE_CONCEPT, $json)) {
-            $type->setSubstanceDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SUBSTANCE_DEFINITION_CODEABLE_CONCEPT], $config));
-        }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_IS_DEFINING])
-            || isset($json[self::FIELD_IS_DEFINING_EXT])
-            || array_key_exists(self::FIELD_IS_DEFINING, $json)
-            || array_key_exists(self::FIELD_IS_DEFINING_EXT, $json)) {
-            $value = $json[self::FIELD_IS_DEFINING] ?? null;
-            $type->setIsDefining(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_IS_DEFINING_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_AMOUNT_QUANTITY]) || array_key_exists(self::FIELD_AMOUNT_QUANTITY, $json)) {
-            $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_AMOUNT_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_AMOUNT_RATIO]) || array_key_exists(self::FIELD_AMOUNT_RATIO, $json)) {
-            $type->setAmountRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_AMOUNT_RATIO], $config));
-        }
-        if (isset($json[self::FIELD_AMOUNT_STRING])
-            || isset($json[self::FIELD_AMOUNT_STRING_EXT])
-            || array_key_exists(self::FIELD_AMOUNT_STRING, $json)
-            || array_key_exists(self::FIELD_AMOUNT_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_AMOUNT_STRING] ?? null;
-            $type->setAmountString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_AMOUNT_STRING_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_RATIO_HIGH_LIMIT_AMOUNT]) || array_key_exists(self::FIELD_RATIO_HIGH_LIMIT_AMOUNT, $json)) {
-            $type->setRatioHighLimitAmount(FHIRRatio::jsonUnserialize($json[self::FIELD_RATIO_HIGH_LIMIT_AMOUNT], $config));
-        }
-        if (isset($json[self::FIELD_COMPARATOR]) || array_key_exists(self::FIELD_COMPARATOR, $json)) {
-            $type->setComparator(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_COMPARATOR], $config));
-        }
-        if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $vs = $json[self::FIELD_SOURCE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->substanceDefinitionReference) || property_exists($json, self::FIELD_SUBSTANCE_DEFINITION_REFERENCE)) {
+            if (is_array($json->substanceDefinitionReference)) {
+                $type->setSubstanceDefinitionReference(FHIRReference::jsonUnserialize(reset($json->substanceDefinitionReference), $config));
+            } else {
+                $type->setSubstanceDefinitionReference(FHIRReference::jsonUnserialize($json->substanceDefinitionReference, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->substanceDefinitionCodeableConcept) || property_exists($json, self::FIELD_SUBSTANCE_DEFINITION_CODEABLE_CONCEPT)) {
+            if (is_array($json->substanceDefinitionCodeableConcept)) {
+                $type->setSubstanceDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->substanceDefinitionCodeableConcept), $config));
+            } else {
+                $type->setSubstanceDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->substanceDefinitionCodeableConcept, $config));
+            }
+        }
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
+        }
+        if (isset($json->isDefining)
+            || isset($json->_isDefining)
+            || property_exists($json, self::FIELD_IS_DEFINING)
+            || property_exists($json, self::FIELD_IS_DEFINING_EXT)) {
+            $v = $json->_isDefining ?? new \stdClass();
+            $v->value = $json->isDefining ?? null;
+            $type->setIsDefining(FHIRBoolean::jsonUnserialize($v, $config));
+        }
+        if (isset($json->amountQuantity) || property_exists($json, self::FIELD_AMOUNT_QUANTITY)) {
+            if (is_array($json->amountQuantity)) {
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize(reset($json->amountQuantity), $config));
+            } else {
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($json->amountQuantity, $config));
+            }
+        }
+        if (isset($json->amountRatio) || property_exists($json, self::FIELD_AMOUNT_RATIO)) {
+            if (is_array($json->amountRatio)) {
+                $type->setAmountRatio(FHIRRatio::jsonUnserialize(reset($json->amountRatio), $config));
+            } else {
+                $type->setAmountRatio(FHIRRatio::jsonUnserialize($json->amountRatio, $config));
+            }
+        }
+        if (isset($json->amountString)
+            || isset($json->_amountString)
+            || property_exists($json, self::FIELD_AMOUNT_STRING)
+            || property_exists($json, self::FIELD_AMOUNT_STRING_EXT)) {
+            $v = $json->_amountString ?? new \stdClass();
+            $v->value = $json->amountString ?? null;
+            $type->setAmountString(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->ratioHighLimitAmount) || property_exists($json, self::FIELD_RATIO_HIGH_LIMIT_AMOUNT)) {
+            if (is_array($json->ratioHighLimitAmount)) {
+                $type->setRatioHighLimitAmount(FHIRRatio::jsonUnserialize(reset($json->ratioHighLimitAmount), $config));
+            } else {
+                $type->setRatioHighLimitAmount(FHIRRatio::jsonUnserialize($json->ratioHighLimitAmount, $config));
+            }
+        }
+        if (isset($json->comparator) || property_exists($json, self::FIELD_COMPARATOR)) {
+            if (is_array($json->comparator)) {
+                $type->setComparator(FHIRCodeableConcept::jsonUnserialize(reset($json->comparator), $config));
+            } else {
+                $type->setComparator(FHIRCodeableConcept::jsonUnserialize($json->comparator, $config));
+            }
+        }
+        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
+            if (is_object($json->source)) {
+                $vals = [$json->source];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SOURCE, true);
+            } else {
+                $vals = $json->source;
+            }
+            foreach($vals as $v) {
                 $type->addSource(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -1075,7 +1050,11 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
             $out->comparator = $this->comparator;
         }
         if (isset($this->source) && [] !== $this->source) {
-            $out->source = $this->source;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SOURCE) && 1 === count($this->source)) {
+                $out->source = $this->source[0];
+            } else {
+                $out->source = $this->source;
+            }
         }
         return $out;
     }

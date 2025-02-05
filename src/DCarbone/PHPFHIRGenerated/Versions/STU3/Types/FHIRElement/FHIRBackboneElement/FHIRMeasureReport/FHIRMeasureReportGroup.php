@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -82,19 +84,21 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRMeasureReportGroup extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEASURE_REPORT_DOT_GROUP;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_POPULATION = 'population';
     public const FIELD_MEASURE_SCORE = 'measureScore';
     public const FIELD_MEASURE_SCORE_EXT = '_measureScore';
     public const FIELD_STRATIFIER = 'stratifier';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_IDENTIFIER => [
@@ -102,12 +106,12 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_MEASURE_SCORE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -150,7 +154,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      */
     protected array $stratifier;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMeasureReportGroup Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -158,7 +162,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation[] $population
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $measureScore
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $measureScore
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier[] $stratifier
      * @param null|string[] $fhirComments
      */
@@ -167,7 +171,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRIdentifier $identifier = null,
                                 null|iterable $population = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $measureScore = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $measureScore = null,
                                 null|iterable $stratifier = null,
                                 null|iterable $fhirComments = null)
     {
@@ -189,7 +193,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -198,7 +202,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -321,12 +325,10 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * measure type and scoring method, and based on the contents of the populations
      * defined in the group.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $measureScore
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $measureScore
      * @return static
      */
-    public function setMeasureScore(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $measureScore,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMeasureScore(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $measureScore): self
     {
         if (null === $measureScore) {
             unset($this->measureScore);
@@ -336,33 +338,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             $measureScore = new FHIRDecimal(value: $measureScore);
         }
         $this->measureScore = $measureScore;
-        if ($this->_valueXMLLocations[self::FIELD_MEASURE_SCORE] !== $valueXMLLocation) {
-            $this->_setMeasureScoreValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the measureScore element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMeasureScoreValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MEASURE_SCORE];
-    }
-
-    /**
-     * Set the location the "value" field of the measureScore element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMeasureScoreValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MEASURE_SCORE] = $valueXMLLocation;
         return $this;
     }
 
@@ -427,7 +402,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -456,9 +431,11 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -474,15 +451,16 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MEASURE_SCORE])) {
             if (isset($type->measureScore)) {
                 $type->measureScore->setValue((string)$attributes[self::FIELD_MEASURE_SCORE]);
-                $type->_setMeasureScoreValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMeasureScore((string)$attributes[self::FIELD_MEASURE_SCORE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMeasureScore((string)$attributes[self::FIELD_MEASURE_SCORE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MEASURE_SCORE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -495,7 +473,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->measureScore) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MEASURE_SCORE]) {
-            $xw->writeAttribute(self::FIELD_MEASURE_SCORE, $this->measureScore->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MEASURE_SCORE, $this->measureScore->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -527,13 +505,13 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -548,34 +526,40 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_IDENTIFIER], $config));
-        }
-        if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
-            $vs = $json[self::FIELD_POPULATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_array($json->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+            } else {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->population) || property_exists($json, self::FIELD_POPULATION)) {
+            if (is_object($json->population)) {
+                $vals = [$json->population];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_POPULATION, true);
+            } else {
+                $vals = $json->population;
+            }
+            foreach($vals as $v) {
                 $type->addPopulation(FHIRMeasureReportPopulation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MEASURE_SCORE])
-            || isset($json[self::FIELD_MEASURE_SCORE_EXT])
-            || array_key_exists(self::FIELD_MEASURE_SCORE, $json)
-            || array_key_exists(self::FIELD_MEASURE_SCORE_EXT, $json)) {
-            $value = $json[self::FIELD_MEASURE_SCORE] ?? null;
-            $type->setMeasureScore(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_MEASURE_SCORE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->measureScore)
+            || isset($json->_measureScore)
+            || property_exists($json, self::FIELD_MEASURE_SCORE)
+            || property_exists($json, self::FIELD_MEASURE_SCORE_EXT)) {
+            $v = $json->_measureScore ?? new \stdClass();
+            $v->value = $json->measureScore ?? null;
+            $type->setMeasureScore(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_STRATIFIER]) || array_key_exists(self::FIELD_STRATIFIER, $json)) {
-            $vs = $json[self::FIELD_STRATIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->stratifier) || property_exists($json, self::FIELD_STRATIFIER)) {
+            if (is_object($json->stratifier)) {
+                $vals = [$json->stratifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_STRATIFIER, true);
+            } else {
+                $vals = $json->stratifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addStratifier(FHIRMeasureReportStratifier::jsonUnserialize($v, $config));
             }
         }
@@ -592,7 +576,11 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             $out->identifier = $this->identifier;
         }
         if (isset($this->population) && [] !== $this->population) {
-            $out->population = $this->population;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_POPULATION) && 1 === count($this->population)) {
+                $out->population = $this->population[0];
+            } else {
+                $out->population = $this->population;
+            }
         }
         if (isset($this->measureScore)) {
             if (null !== ($val = $this->measureScore->getValue())) {
@@ -605,7 +593,11 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             }
         }
         if (isset($this->stratifier) && [] !== $this->stratifier) {
-            $out->stratifier = $this->stratifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_STRATIFIER) && 1 === count($this->stratifier)) {
+                $out->stratifier = $this->stratifier[0];
+            } else {
+                $out->stratifier = $this->stratifier;
+            }
         }
         return $out;
     }

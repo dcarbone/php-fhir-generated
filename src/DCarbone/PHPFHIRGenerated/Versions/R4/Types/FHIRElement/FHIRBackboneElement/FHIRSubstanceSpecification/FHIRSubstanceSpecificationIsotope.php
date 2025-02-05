@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -82,27 +84,29 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_ISOTOPE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_NAME = 'name';
     public const FIELD_SUBSTITUTION = 'substitution';
     public const FIELD_HALF_LIFE = 'halfLife';
     public const FIELD_MOLECULAR_WEIGHT = 'molecularWeight';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -158,7 +162,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      */
     protected FHIRSubstanceSpecificationMolecularWeight $molecularWeight;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstanceSpecificationIsotope Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -202,7 +206,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -211,7 +215,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -390,7 +394,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -419,9 +423,11 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -439,7 +445,8 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -480,13 +487,13 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -501,20 +508,40 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_IDENTIFIER], $config));
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_array($json->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+            } else {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
+            }
         }
-        if (isset($json[self::FIELD_NAME]) || array_key_exists(self::FIELD_NAME, $json)) {
-            $type->setName(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_NAME], $config));
+        if (isset($json->name) || property_exists($json, self::FIELD_NAME)) {
+            if (is_array($json->name)) {
+                $type->setName(FHIRCodeableConcept::jsonUnserialize(reset($json->name), $config));
+            } else {
+                $type->setName(FHIRCodeableConcept::jsonUnserialize($json->name, $config));
+            }
         }
-        if (isset($json[self::FIELD_SUBSTITUTION]) || array_key_exists(self::FIELD_SUBSTITUTION, $json)) {
-            $type->setSubstitution(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SUBSTITUTION], $config));
+        if (isset($json->substitution) || property_exists($json, self::FIELD_SUBSTITUTION)) {
+            if (is_array($json->substitution)) {
+                $type->setSubstitution(FHIRCodeableConcept::jsonUnserialize(reset($json->substitution), $config));
+            } else {
+                $type->setSubstitution(FHIRCodeableConcept::jsonUnserialize($json->substitution, $config));
+            }
         }
-        if (isset($json[self::FIELD_HALF_LIFE]) || array_key_exists(self::FIELD_HALF_LIFE, $json)) {
-            $type->setHalfLife(FHIRQuantity::jsonUnserialize($json[self::FIELD_HALF_LIFE], $config));
+        if (isset($json->halfLife) || property_exists($json, self::FIELD_HALF_LIFE)) {
+            if (is_array($json->halfLife)) {
+                $type->setHalfLife(FHIRQuantity::jsonUnserialize(reset($json->halfLife), $config));
+            } else {
+                $type->setHalfLife(FHIRQuantity::jsonUnserialize($json->halfLife, $config));
+            }
         }
-        if (isset($json[self::FIELD_MOLECULAR_WEIGHT]) || array_key_exists(self::FIELD_MOLECULAR_WEIGHT, $json)) {
-            $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::jsonUnserialize($json[self::FIELD_MOLECULAR_WEIGHT], $config));
+        if (isset($json->molecularWeight) || property_exists($json, self::FIELD_MOLECULAR_WEIGHT)) {
+            if (is_array($json->molecularWeight)) {
+                $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::jsonUnserialize(reset($json->molecularWeight), $config));
+            } else {
+                $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::jsonUnserialize($json->molecularWeight, $config));
+            }
         }
         return $type;
     }

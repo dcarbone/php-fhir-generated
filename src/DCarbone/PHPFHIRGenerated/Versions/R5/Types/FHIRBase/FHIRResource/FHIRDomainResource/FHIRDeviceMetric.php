@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -122,12 +124,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
  */
 class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_METRIC;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_TYPE = 'type';
     public const FIELD_UNIT = 'unit';
@@ -141,7 +145,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
     public const FIELD_MEASUREMENT_FREQUENCY = 'measurementFrequency';
     public const FIELD_CALIBRATION = 'calibration';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -155,14 +159,14 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_OPERATIONAL_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_COLOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CATEGORY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -266,7 +270,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      */
     protected array $calibration;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDeviceMetric Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -345,7 +349,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -354,7 +358,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -363,7 +367,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -562,11 +566,9 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * Standby, etc.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceMetricOperationalStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOperationalStatus(null|string|FHIRDeviceMetricOperationalStatusEnum|FHIRDeviceMetricOperationalStatus $operationalStatus,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOperationalStatus(null|string|FHIRDeviceMetricOperationalStatusEnum|FHIRDeviceMetricOperationalStatus $operationalStatus): self
     {
         if (null === $operationalStatus) {
             unset($this->operationalStatus);
@@ -576,33 +578,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             $operationalStatus = new FHIRDeviceMetricOperationalStatus(value: $operationalStatus);
         }
         $this->operationalStatus = $operationalStatus;
-        if ($this->_valueXMLLocations[self::FIELD_OPERATIONAL_STATUS] !== $valueXMLLocation) {
-            $this->_setOperationalStatusValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the operationalStatus element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOperationalStatusValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_OPERATIONAL_STATUS];
-    }
-
-    /**
-     * Set the location the "value" field of the operationalStatus element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOperationalStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_OPERATIONAL_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -632,11 +607,9 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * and PR and SpO2 in magenta.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive\FHIRColorCodesOrRGBEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRColorCodesOrRGB $color
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setColor(null|string|FHIRColorCodesOrRGBEnum|FHIRColorCodesOrRGB $color,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setColor(null|string|FHIRColorCodesOrRGBEnum|FHIRColorCodesOrRGB $color): self
     {
         if (null === $color) {
             unset($this->color);
@@ -646,33 +619,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             $color = new FHIRColorCodesOrRGB(value: $color);
         }
         $this->color = $color;
-        if ($this->_valueXMLLocations[self::FIELD_COLOR] !== $valueXMLLocation) {
-            $this->_setColorValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the color element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getColorValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COLOR];
-    }
-
-    /**
-     * Set the location the "value" field of the color element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setColorValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COLOR] = $valueXMLLocation;
         return $this;
     }
 
@@ -696,11 +642,9 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * be for example a setting, measurement, or calculation.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceMetricCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricCategory $category
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCategory(null|string|FHIRDeviceMetricCategoryEnum|FHIRDeviceMetricCategory $category,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCategory(null|string|FHIRDeviceMetricCategoryEnum|FHIRDeviceMetricCategory $category): self
     {
         if (null === $category) {
             unset($this->category);
@@ -710,33 +654,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             $category = new FHIRDeviceMetricCategory(value: $category);
         }
         $this->category = $category;
-        if ($this->_valueXMLLocations[self::FIELD_CATEGORY] !== $valueXMLLocation) {
-            $this->_setCategoryValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the category element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCategoryValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CATEGORY];
-    }
-
-    /**
-     * Set the location the "value" field of the category element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCategoryValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CATEGORY] = $valueXMLLocation;
         return $this;
     }
 
@@ -851,7 +768,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -928,50 +845,50 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_OPERATIONAL_STATUS])) {
             if (isset($type->operationalStatus)) {
                 $type->operationalStatus->setValue((string)$attributes[self::FIELD_OPERATIONAL_STATUS]);
-                $type->_setOperationalStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOperationalStatus((string)$attributes[self::FIELD_OPERATIONAL_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setOperationalStatus((string)$attributes[self::FIELD_OPERATIONAL_STATUS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_OPERATIONAL_STATUS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_COLOR])) {
             if (isset($type->color)) {
                 $type->color->setValue((string)$attributes[self::FIELD_COLOR]);
-                $type->_setColorValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setColor((string)$attributes[self::FIELD_COLOR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setColor((string)$attributes[self::FIELD_COLOR]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_COLOR, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CATEGORY])) {
             if (isset($type->category)) {
                 $type->category->setValue((string)$attributes[self::FIELD_CATEGORY]);
-                $type->_setCategoryValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCategory((string)$attributes[self::FIELD_CATEGORY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCategory((string)$attributes[self::FIELD_CATEGORY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CATEGORY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1002,13 +919,13 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             $xw->openRootNode('DeviceMetric', $this->_getSourceXMLNS());
         }
         if (isset($this->operationalStatus) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_OPERATIONAL_STATUS]) {
-            $xw->writeAttribute(self::FIELD_OPERATIONAL_STATUS, $this->operationalStatus->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_OPERATIONAL_STATUS, $this->operationalStatus->_getValueAsString());
         }
         if (isset($this->color) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COLOR]) {
-            $xw->writeAttribute(self::FIELD_COLOR, $this->color->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_COLOR, $this->color->_getValueAsString());
         }
         if (isset($this->category) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CATEGORY]) {
-            $xw->writeAttribute(self::FIELD_CATEGORY, $this->category->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CATEGORY, $this->category->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1076,13 +993,13 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDeviceMetric $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1100,68 +1017,80 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_UNIT]) || array_key_exists(self::FIELD_UNIT, $json)) {
-            $type->setUnit(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_UNIT], $config));
-        }
-        if (isset($json[self::FIELD_DEVICE]) || array_key_exists(self::FIELD_DEVICE, $json)) {
-            $type->setDevice(FHIRReference::jsonUnserialize($json[self::FIELD_DEVICE], $config));
-        }
-        if (isset($json[self::FIELD_OPERATIONAL_STATUS])
-            || isset($json[self::FIELD_OPERATIONAL_STATUS_EXT])
-            || array_key_exists(self::FIELD_OPERATIONAL_STATUS, $json)
-            || array_key_exists(self::FIELD_OPERATIONAL_STATUS_EXT, $json)) {
-            $value = $json[self::FIELD_OPERATIONAL_STATUS] ?? null;
-            $type->setOperationalStatus(FHIRDeviceMetricOperationalStatus::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDeviceMetricOperationalStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_OPERATIONAL_STATUS_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_COLOR])
-            || isset($json[self::FIELD_COLOR_EXT])
-            || array_key_exists(self::FIELD_COLOR, $json)
-            || array_key_exists(self::FIELD_COLOR_EXT, $json)) {
-            $value = $json[self::FIELD_COLOR] ?? null;
-            $type->setColor(FHIRColorCodesOrRGB::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRColorCodesOrRGB::FIELD_VALUE => $value]) + ($json[self::FIELD_COLOR_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_CATEGORY])
-            || isset($json[self::FIELD_CATEGORY_EXT])
-            || array_key_exists(self::FIELD_CATEGORY, $json)
-            || array_key_exists(self::FIELD_CATEGORY_EXT, $json)) {
-            $value = $json[self::FIELD_CATEGORY] ?? null;
-            $type->setCategory(FHIRDeviceMetricCategory::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDeviceMetricCategory::FIELD_VALUE => $value]) + ($json[self::FIELD_CATEGORY_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_MEASUREMENT_FREQUENCY]) || array_key_exists(self::FIELD_MEASUREMENT_FREQUENCY, $json)) {
-            $type->setMeasurementFrequency(FHIRQuantity::jsonUnserialize($json[self::FIELD_MEASUREMENT_FREQUENCY], $config));
-        }
-        if (isset($json[self::FIELD_CALIBRATION]) || array_key_exists(self::FIELD_CALIBRATION, $json)) {
-            $vs = $json[self::FIELD_CALIBRATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->unit) || property_exists($json, self::FIELD_UNIT)) {
+            if (is_array($json->unit)) {
+                $type->setUnit(FHIRCodeableConcept::jsonUnserialize(reset($json->unit), $config));
+            } else {
+                $type->setUnit(FHIRCodeableConcept::jsonUnserialize($json->unit, $config));
+            }
+        }
+        if (isset($json->device) || property_exists($json, self::FIELD_DEVICE)) {
+            if (is_array($json->device)) {
+                $type->setDevice(FHIRReference::jsonUnserialize(reset($json->device), $config));
+            } else {
+                $type->setDevice(FHIRReference::jsonUnserialize($json->device, $config));
+            }
+        }
+        if (isset($json->operationalStatus)
+            || isset($json->_operationalStatus)
+            || property_exists($json, self::FIELD_OPERATIONAL_STATUS)
+            || property_exists($json, self::FIELD_OPERATIONAL_STATUS_EXT)) {
+            $v = $json->_operationalStatus ?? new \stdClass();
+            $v->value = $json->operationalStatus ?? null;
+            $type->setOperationalStatus(FHIRDeviceMetricOperationalStatus::jsonUnserialize($v, $config));
+        }
+        if (isset($json->color)
+            || isset($json->_color)
+            || property_exists($json, self::FIELD_COLOR)
+            || property_exists($json, self::FIELD_COLOR_EXT)) {
+            $v = $json->_color ?? new \stdClass();
+            $v->value = $json->color ?? null;
+            $type->setColor(FHIRColorCodesOrRGB::jsonUnserialize($v, $config));
+        }
+        if (isset($json->category)
+            || isset($json->_category)
+            || property_exists($json, self::FIELD_CATEGORY)
+            || property_exists($json, self::FIELD_CATEGORY_EXT)) {
+            $v = $json->_category ?? new \stdClass();
+            $v->value = $json->category ?? null;
+            $type->setCategory(FHIRDeviceMetricCategory::jsonUnserialize($v, $config));
+        }
+        if (isset($json->measurementFrequency) || property_exists($json, self::FIELD_MEASUREMENT_FREQUENCY)) {
+            if (is_array($json->measurementFrequency)) {
+                $type->setMeasurementFrequency(FHIRQuantity::jsonUnserialize(reset($json->measurementFrequency), $config));
+            } else {
+                $type->setMeasurementFrequency(FHIRQuantity::jsonUnserialize($json->measurementFrequency, $config));
+            }
+        }
+        if (isset($json->calibration) || property_exists($json, self::FIELD_CALIBRATION)) {
+            if (is_object($json->calibration)) {
+                $vals = [$json->calibration];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CALIBRATION, true);
+            } else {
+                $vals = $json->calibration;
+            }
+            foreach($vals as $v) {
                 $type->addCalibration(FHIRDeviceMetricCalibration::jsonUnserialize($v, $config));
             }
         }
@@ -1175,7 +1104,11 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->type)) {
             $out->type = $this->type;
@@ -1220,7 +1153,11 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             $out->measurementFrequency = $this->measurementFrequency;
         }
         if (isset($this->calibration) && [] !== $this->calibration) {
-            $out->calibration = $this->calibration;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CALIBRATION) && 1 === count($this->calibration)) {
+                $out->calibration = $this->calibration[0];
+            } else {
+                $out->calibration = $this->calibration;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

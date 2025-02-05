@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -112,32 +113,27 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_INSTANCE_CODEABLE_CONCEPT = 'instanceCodeableConcept';
     public const FIELD_INSTANCE_REFERENCE = 'instanceReference';
     public const FIELD_CAUSALITY = 'causality';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [
-        self::FIELD_INSTANCE_CODEABLE_CONCEPT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_INSTANCE_REFERENCE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
+    private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -146,7 +142,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device.
+     * device. (choose any one of instance*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
@@ -158,7 +154,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device.
+     * device. (choose any one of instance*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
@@ -183,7 +179,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      */
     protected FHIRAdverseEventCausality $causality;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAdverseEventSuspectEntity Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -217,7 +213,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -226,7 +222,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -235,7 +231,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device.
+     * device. (choose any one of instance*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
@@ -252,7 +248,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device.
+     * device. (choose any one of instance*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $instanceCodeableConcept
      * @return static
@@ -274,7 +270,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device.
+     * device. (choose any one of instance*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
@@ -290,7 +286,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device.
+     * device. (choose any one of instance*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $instanceReference
      * @return static
@@ -357,7 +353,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -386,9 +382,11 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -402,7 +400,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -433,13 +432,13 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -454,14 +453,26 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_INSTANCE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_INSTANCE_CODEABLE_CONCEPT, $json)) {
-            $type->setInstanceCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_INSTANCE_CODEABLE_CONCEPT], $config));
+        if (isset($json->instanceCodeableConcept) || property_exists($json, self::FIELD_INSTANCE_CODEABLE_CONCEPT)) {
+            if (is_array($json->instanceCodeableConcept)) {
+                $type->setInstanceCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->instanceCodeableConcept), $config));
+            } else {
+                $type->setInstanceCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->instanceCodeableConcept, $config));
+            }
         }
-        if (isset($json[self::FIELD_INSTANCE_REFERENCE]) || array_key_exists(self::FIELD_INSTANCE_REFERENCE, $json)) {
-            $type->setInstanceReference(FHIRReference::jsonUnserialize($json[self::FIELD_INSTANCE_REFERENCE], $config));
+        if (isset($json->instanceReference) || property_exists($json, self::FIELD_INSTANCE_REFERENCE)) {
+            if (is_array($json->instanceReference)) {
+                $type->setInstanceReference(FHIRReference::jsonUnserialize(reset($json->instanceReference), $config));
+            } else {
+                $type->setInstanceReference(FHIRReference::jsonUnserialize($json->instanceReference, $config));
+            }
         }
-        if (isset($json[self::FIELD_CAUSALITY]) || array_key_exists(self::FIELD_CAUSALITY, $json)) {
-            $type->setCausality(FHIRAdverseEventCausality::jsonUnserialize($json[self::FIELD_CAUSALITY], $config));
+        if (isset($json->causality) || property_exists($json, self::FIELD_CAUSALITY)) {
+            if (is_array($json->causality)) {
+                $type->setCausality(FHIRAdverseEventCausality::jsonUnserialize(reset($json->causality), $config));
+            } else {
+                $type->setCausality(FHIRAdverseEventCausality::jsonUnserialize($json->causality, $config));
+            }
         }
         return $type;
     }

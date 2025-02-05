@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -108,12 +110,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_DEFINITION_BY_TYPE_AND_VALUE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_METHOD = 'method';
     public const FIELD_DEVICE = 'device';
@@ -127,39 +131,21 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
     public const FIELD_VALUE_ID_EXT = '_valueId';
     public const FIELD_OFFSET = 'offset';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
-        self::FIELD_VALUE_CODEABLE_CONCEPT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE_BOOLEAN => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE_QUANTITY => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE_RANGE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE_REFERENCE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE_ID => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_VALUE_BOOLEAN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -198,7 +184,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
@@ -207,7 +194,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
      */
@@ -219,7 +207,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
@@ -229,7 +218,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
@@ -239,7 +229,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
@@ -252,7 +243,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId 
      */
@@ -270,7 +262,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      */
     protected FHIRCodeableConcept $offset;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIREvidenceVariableDefinitionByTypeAndValue Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -339,7 +331,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -348,7 +340,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -492,7 +484,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
@@ -507,7 +500,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
      * @return static
@@ -526,7 +520,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
@@ -539,14 +534,13 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
         if (null === $valueBoolean) {
             unset($this->valueBoolean);
@@ -556,33 +550,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
             $valueBoolean = new FHIRBoolean(value: $valueBoolean);
         }
         $this->valueBoolean = $valueBoolean;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE_BOOLEAN] !== $valueXMLLocation) {
-            $this->_setValueBooleanValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the valueBoolean element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueBooleanValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE_BOOLEAN];
-    }
-
-    /**
-     * Set the location the "value" field of the valueBoolean element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueBooleanValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE_BOOLEAN] = $valueXMLLocation;
         return $this;
     }
 
@@ -593,7 +560,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
@@ -609,7 +577,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
      * @return static
@@ -629,7 +598,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
@@ -643,7 +613,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
      * @return static
@@ -663,7 +634,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
@@ -677,7 +649,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
      * @return static
@@ -700,7 +673,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
@@ -717,14 +691,13 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type.
+     * Defines the characteristic when paired with characteristic.type. (choose any one
+     * of value*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $valueId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
         if (null === $valueId) {
             unset($this->valueId);
@@ -734,33 +707,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
             $valueId = new FHIRId(value: $valueId);
         }
         $this->valueId = $valueId;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE_ID] !== $valueXMLLocation) {
-            $this->_setValueIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the valueId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the valueId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -802,7 +748,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -831,9 +777,11 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -861,23 +809,24 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE_BOOLEAN])) {
             if (isset($type->valueBoolean)) {
                 $type->valueBoolean->setValue((string)$attributes[self::FIELD_VALUE_BOOLEAN]);
-                $type->_setValueBooleanValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValueBoolean((string)$attributes[self::FIELD_VALUE_BOOLEAN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setValueBoolean((string)$attributes[self::FIELD_VALUE_BOOLEAN]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VALUE_BOOLEAN, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE_ID])) {
             if (isset($type->valueId)) {
                 $type->valueId->setValue((string)$attributes[self::FIELD_VALUE_ID]);
-                $type->_setValueIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValueId((string)$attributes[self::FIELD_VALUE_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setValueId((string)$attributes[self::FIELD_VALUE_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VALUE_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -890,10 +839,10 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->valueBoolean) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_BOOLEAN]) {
-            $xw->writeAttribute(self::FIELD_VALUE_BOOLEAN, $this->valueBoolean->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VALUE_BOOLEAN, $this->valueBoolean->_getValueAsString());
         }
         if (isset($this->valueId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_ID]) {
-            $xw->writeAttribute(self::FIELD_VALUE_ID, $this->valueId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VALUE_ID, $this->valueId->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -955,13 +904,13 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -976,55 +925,81 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_METHOD]) || array_key_exists(self::FIELD_METHOD, $json)) {
-            $vs = $json[self::FIELD_METHOD];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->method) || property_exists($json, self::FIELD_METHOD)) {
+            if (is_object($json->method)) {
+                $vals = [$json->method];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_METHOD, true);
+            } else {
+                $vals = $json->method;
+            }
+            foreach($vals as $v) {
                 $type->addMethod(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DEVICE]) || array_key_exists(self::FIELD_DEVICE, $json)) {
-            $type->setDevice(FHIRReference::jsonUnserialize($json[self::FIELD_DEVICE], $config));
+        if (isset($json->device) || property_exists($json, self::FIELD_DEVICE)) {
+            if (is_array($json->device)) {
+                $type->setDevice(FHIRReference::jsonUnserialize(reset($json->device), $config));
+            } else {
+                $type->setDevice(FHIRReference::jsonUnserialize($json->device, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_VALUE_CODEABLE_CONCEPT, $json)) {
-            $type->setValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VALUE_CODEABLE_CONCEPT], $config));
+        if (isset($json->valueCodeableConcept) || property_exists($json, self::FIELD_VALUE_CODEABLE_CONCEPT)) {
+            if (is_array($json->valueCodeableConcept)) {
+                $type->setValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->valueCodeableConcept), $config));
+            } else {
+                $type->setValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->valueCodeableConcept, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_BOOLEAN])
-            || isset($json[self::FIELD_VALUE_BOOLEAN_EXT])
-            || array_key_exists(self::FIELD_VALUE_BOOLEAN, $json)
-            || array_key_exists(self::FIELD_VALUE_BOOLEAN_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE_BOOLEAN] ?? null;
-            $type->setValueBoolean(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_BOOLEAN_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->valueBoolean)
+            || isset($json->_valueBoolean)
+            || property_exists($json, self::FIELD_VALUE_BOOLEAN)
+            || property_exists($json, self::FIELD_VALUE_BOOLEAN_EXT)) {
+            $v = $json->_valueBoolean ?? new \stdClass();
+            $v->value = $json->valueBoolean ?? null;
+            $type->setValueBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VALUE_QUANTITY]) || array_key_exists(self::FIELD_VALUE_QUANTITY, $json)) {
-            $type->setValueQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_VALUE_QUANTITY], $config));
+        if (isset($json->valueQuantity) || property_exists($json, self::FIELD_VALUE_QUANTITY)) {
+            if (is_array($json->valueQuantity)) {
+                $type->setValueQuantity(FHIRQuantity::jsonUnserialize(reset($json->valueQuantity), $config));
+            } else {
+                $type->setValueQuantity(FHIRQuantity::jsonUnserialize($json->valueQuantity, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_RANGE]) || array_key_exists(self::FIELD_VALUE_RANGE, $json)) {
-            $type->setValueRange(FHIRRange::jsonUnserialize($json[self::FIELD_VALUE_RANGE], $config));
+        if (isset($json->valueRange) || property_exists($json, self::FIELD_VALUE_RANGE)) {
+            if (is_array($json->valueRange)) {
+                $type->setValueRange(FHIRRange::jsonUnserialize(reset($json->valueRange), $config));
+            } else {
+                $type->setValueRange(FHIRRange::jsonUnserialize($json->valueRange, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_REFERENCE]) || array_key_exists(self::FIELD_VALUE_REFERENCE, $json)) {
-            $type->setValueReference(FHIRReference::jsonUnserialize($json[self::FIELD_VALUE_REFERENCE], $config));
+        if (isset($json->valueReference) || property_exists($json, self::FIELD_VALUE_REFERENCE)) {
+            if (is_array($json->valueReference)) {
+                $type->setValueReference(FHIRReference::jsonUnserialize(reset($json->valueReference), $config));
+            } else {
+                $type->setValueReference(FHIRReference::jsonUnserialize($json->valueReference, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_ID])
-            || isset($json[self::FIELD_VALUE_ID_EXT])
-            || array_key_exists(self::FIELD_VALUE_ID, $json)
-            || array_key_exists(self::FIELD_VALUE_ID_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE_ID] ?? null;
-            $type->setValueId(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->valueId)
+            || isset($json->_valueId)
+            || property_exists($json, self::FIELD_VALUE_ID)
+            || property_exists($json, self::FIELD_VALUE_ID_EXT)) {
+            $v = $json->_valueId ?? new \stdClass();
+            $v->value = $json->valueId ?? null;
+            $type->setValueId(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_OFFSET]) || array_key_exists(self::FIELD_OFFSET, $json)) {
-            $type->setOffset(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_OFFSET], $config));
+        if (isset($json->offset) || property_exists($json, self::FIELD_OFFSET)) {
+            if (is_array($json->offset)) {
+                $type->setOffset(FHIRCodeableConcept::jsonUnserialize(reset($json->offset), $config));
+            } else {
+                $type->setOffset(FHIRCodeableConcept::jsonUnserialize($json->offset, $config));
+            }
         }
         return $type;
     }
@@ -1039,7 +1014,11 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
             $out->type = $this->type;
         }
         if (isset($this->method) && [] !== $this->method) {
-            $out->method = $this->method;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_METHOD) && 1 === count($this->method)) {
+                $out->method = $this->method[0];
+            } else {
+                $out->method = $this->method;
+            }
         }
         if (isset($this->device)) {
             $out->device = $this->device;

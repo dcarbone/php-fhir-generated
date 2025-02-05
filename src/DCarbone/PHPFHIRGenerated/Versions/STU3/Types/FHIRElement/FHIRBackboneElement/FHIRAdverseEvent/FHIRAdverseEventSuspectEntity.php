@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,12 +89,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_INSTANCE = 'instance';
     public const FIELD_CAUSALITY = 'causality';
     public const FIELD_CAUSALITY_EXT = '_causality';
@@ -103,7 +107,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     public const FIELD_CAUSALITY_AUTHOR = 'causalityAuthor';
     public const FIELD_CAUSALITY_RESULT = 'causalityResult';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_INSTANCE => [
@@ -111,13 +115,13 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_CAUSALITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -193,7 +197,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      */
     protected FHIRCodeableConcept $causalityResult;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAdverseEventSuspectEntity Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -247,7 +251,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -256,7 +260,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -315,11 +319,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * causality1 | causality2.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAdverseEventCausalityList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAdverseEventCausality $causality
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCausality(null|string|FHIRAdverseEventCausalityList|FHIRAdverseEventCausality $causality,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCausality(null|string|FHIRAdverseEventCausalityList|FHIRAdverseEventCausality $causality): self
     {
         if (null === $causality) {
             unset($this->causality);
@@ -329,33 +331,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             $causality = new FHIRAdverseEventCausality(value: $causality);
         }
         $this->causality = $causality;
-        if ($this->_valueXMLLocations[self::FIELD_CAUSALITY] !== $valueXMLLocation) {
-            $this->_setCausalityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the causality element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCausalityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CAUSALITY];
-    }
-
-    /**
-     * Set the location the "value" field of the causality element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCausalityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CAUSALITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -417,11 +392,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * AdverseEvent.suspectEntity.causalityProductRelatedness.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $causalityProductRelatedness
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCausalityProductRelatedness(null|string|FHIRStringPrimitive|FHIRString $causalityProductRelatedness,
-                                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCausalityProductRelatedness(null|string|FHIRStringPrimitive|FHIRString $causalityProductRelatedness): self
     {
         if (null === $causalityProductRelatedness) {
             unset($this->causalityProductRelatedness);
@@ -431,33 +404,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             $causalityProductRelatedness = new FHIRString(value: $causalityProductRelatedness);
         }
         $this->causalityProductRelatedness = $causalityProductRelatedness;
-        if ($this->_valueXMLLocations[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] !== $valueXMLLocation) {
-            $this->_setCausalityProductRelatednessValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the causalityProductRelatedness element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCausalityProductRelatednessValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS];
-    }
-
-    /**
-     * Set the location the "value" field of the causalityProductRelatedness element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCausalityProductRelatednessValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = $valueXMLLocation;
         return $this;
     }
 
@@ -567,7 +513,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -596,9 +542,11 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -620,23 +568,24 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CAUSALITY])) {
             if (isset($type->causality)) {
                 $type->causality->setValue((string)$attributes[self::FIELD_CAUSALITY]);
-                $type->_setCausalityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCausality((string)$attributes[self::FIELD_CAUSALITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCausality((string)$attributes[self::FIELD_CAUSALITY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CAUSALITY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
             if (isset($type->causalityProductRelatedness)) {
                 $type->causalityProductRelatedness->setValue((string)$attributes[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]);
-                $type->_setCausalityProductRelatednessValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCausalityProductRelatedness((string)$attributes[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCausalityProductRelatedness((string)$attributes[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -649,10 +598,10 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->causality) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CAUSALITY]) {
-            $xw->writeAttribute(self::FIELD_CAUSALITY, $this->causality->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CAUSALITY, $this->causality->_getValueAsString());
         }
         if (isset($this->causalityProductRelatedness) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]) {
-            $xw->writeAttribute(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, $this->causalityProductRelatedness->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, $this->causalityProductRelatedness->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->instance)) {
@@ -697,13 +646,13 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -718,40 +667,56 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_INSTANCE]) || array_key_exists(self::FIELD_INSTANCE, $json)) {
-            $type->setInstance(FHIRReference::jsonUnserialize($json[self::FIELD_INSTANCE], $config));
+        if (isset($json->instance) || property_exists($json, self::FIELD_INSTANCE)) {
+            if (is_array($json->instance)) {
+                $type->setInstance(FHIRReference::jsonUnserialize(reset($json->instance), $config));
+            } else {
+                $type->setInstance(FHIRReference::jsonUnserialize($json->instance, $config));
+            }
         }
-        if (isset($json[self::FIELD_CAUSALITY])
-            || isset($json[self::FIELD_CAUSALITY_EXT])
-            || array_key_exists(self::FIELD_CAUSALITY, $json)
-            || array_key_exists(self::FIELD_CAUSALITY_EXT, $json)) {
-            $value = $json[self::FIELD_CAUSALITY] ?? null;
-            $type->setCausality(FHIRAdverseEventCausality::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRAdverseEventCausality::FIELD_VALUE => $value]) + ($json[self::FIELD_CAUSALITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->causality)
+            || isset($json->_causality)
+            || property_exists($json, self::FIELD_CAUSALITY)
+            || property_exists($json, self::FIELD_CAUSALITY_EXT)) {
+            $v = $json->_causality ?? new \stdClass();
+            $v->value = $json->causality ?? null;
+            $type->setCausality(FHIRAdverseEventCausality::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CAUSALITY_ASSESSMENT]) || array_key_exists(self::FIELD_CAUSALITY_ASSESSMENT, $json)) {
-            $type->setCausalityAssessment(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CAUSALITY_ASSESSMENT], $config));
+        if (isset($json->causalityAssessment) || property_exists($json, self::FIELD_CAUSALITY_ASSESSMENT)) {
+            if (is_array($json->causalityAssessment)) {
+                $type->setCausalityAssessment(FHIRCodeableConcept::jsonUnserialize(reset($json->causalityAssessment), $config));
+            } else {
+                $type->setCausalityAssessment(FHIRCodeableConcept::jsonUnserialize($json->causalityAssessment, $config));
+            }
         }
-        if (isset($json[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])
-            || isset($json[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT])
-            || array_key_exists(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, $json)
-            || array_key_exists(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT, $json)) {
-            $value = $json[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] ?? null;
-            $type->setCausalityProductRelatedness(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->causalityProductRelatedness)
+            || isset($json->_causalityProductRelatedness)
+            || property_exists($json, self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS)
+            || property_exists($json, self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT)) {
+            $v = $json->_causalityProductRelatedness ?? new \stdClass();
+            $v->value = $json->causalityProductRelatedness ?? null;
+            $type->setCausalityProductRelatedness(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CAUSALITY_METHOD]) || array_key_exists(self::FIELD_CAUSALITY_METHOD, $json)) {
-            $type->setCausalityMethod(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CAUSALITY_METHOD], $config));
+        if (isset($json->causalityMethod) || property_exists($json, self::FIELD_CAUSALITY_METHOD)) {
+            if (is_array($json->causalityMethod)) {
+                $type->setCausalityMethod(FHIRCodeableConcept::jsonUnserialize(reset($json->causalityMethod), $config));
+            } else {
+                $type->setCausalityMethod(FHIRCodeableConcept::jsonUnserialize($json->causalityMethod, $config));
+            }
         }
-        if (isset($json[self::FIELD_CAUSALITY_AUTHOR]) || array_key_exists(self::FIELD_CAUSALITY_AUTHOR, $json)) {
-            $type->setCausalityAuthor(FHIRReference::jsonUnserialize($json[self::FIELD_CAUSALITY_AUTHOR], $config));
+        if (isset($json->causalityAuthor) || property_exists($json, self::FIELD_CAUSALITY_AUTHOR)) {
+            if (is_array($json->causalityAuthor)) {
+                $type->setCausalityAuthor(FHIRReference::jsonUnserialize(reset($json->causalityAuthor), $config));
+            } else {
+                $type->setCausalityAuthor(FHIRReference::jsonUnserialize($json->causalityAuthor, $config));
+            }
         }
-        if (isset($json[self::FIELD_CAUSALITY_RESULT]) || array_key_exists(self::FIELD_CAUSALITY_RESULT, $json)) {
-            $type->setCausalityResult(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CAUSALITY_RESULT], $config));
+        if (isset($json->causalityResult) || property_exists($json, self::FIELD_CAUSALITY_RESULT)) {
+            if (is_array($json->causalityResult)) {
+                $type->setCausalityResult(FHIRCodeableConcept::jsonUnserialize(reset($json->causalityResult), $config));
+            } else {
+                $type->setCausalityResult(FHIRCodeableConcept::jsonUnserialize($json->causalityResult, $config));
+            }
         }
         return $type;
     }

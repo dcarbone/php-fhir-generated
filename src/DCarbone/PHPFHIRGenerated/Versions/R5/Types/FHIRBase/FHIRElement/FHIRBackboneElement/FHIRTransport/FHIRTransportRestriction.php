@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,27 +104,29 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRTransportRestriction extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TRANSPORT_DOT_RESTRICTION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_REPETITIONS = 'repetitions';
     public const FIELD_REPETITIONS_EXT = '_repetitions';
     public const FIELD_PERIOD = 'period';
     public const FIELD_RECIPIENT = 'recipient';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_REPETITIONS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -155,13 +159,13 @@ class FHIRTransportRestriction extends FHIRBackboneElement
      */
     protected array $recipient;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRTransportRestriction Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $repetitions
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $repetitions
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $recipient
      * @param null|string[] $fhirComments
@@ -169,7 +173,7 @@ class FHIRTransportRestriction extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $repetitions = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $repetitions = null,
                                 null|FHIRPeriod $period = null,
                                 null|iterable $recipient = null,
                                 null|iterable $fhirComments = null)
@@ -189,7 +193,7 @@ class FHIRTransportRestriction extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -198,7 +202,7 @@ class FHIRTransportRestriction extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -220,12 +224,10 @@ class FHIRTransportRestriction extends FHIRBackboneElement
      *
      * Indicates the number of times the requested action should occur.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $repetitions
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $repetitions
      * @return static
      */
-    public function setRepetitions(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $repetitions,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRepetitions(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $repetitions): self
     {
         if (null === $repetitions) {
             unset($this->repetitions);
@@ -235,33 +237,6 @@ class FHIRTransportRestriction extends FHIRBackboneElement
             $repetitions = new FHIRPositiveInt(value: $repetitions);
         }
         $this->repetitions = $repetitions;
-        if ($this->_valueXMLLocations[self::FIELD_REPETITIONS] !== $valueXMLLocation) {
-            $this->_setRepetitionsValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the repetitions element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRepetitionsValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_REPETITIONS];
-    }
-
-    /**
-     * Set the location the "value" field of the repetitions element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRepetitionsValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_REPETITIONS] = $valueXMLLocation;
         return $this;
     }
 
@@ -366,7 +341,7 @@ class FHIRTransportRestriction extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -395,9 +370,11 @@ class FHIRTransportRestriction extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -411,15 +388,16 @@ class FHIRTransportRestriction extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_REPETITIONS])) {
             if (isset($type->repetitions)) {
                 $type->repetitions->setValue((string)$attributes[self::FIELD_REPETITIONS]);
-                $type->_setRepetitionsValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRepetitions((string)$attributes[self::FIELD_REPETITIONS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRepetitions((string)$attributes[self::FIELD_REPETITIONS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_REPETITIONS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -432,7 +410,7 @@ class FHIRTransportRestriction extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->repetitions) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REPETITIONS]) {
-            $xw->writeAttribute(self::FIELD_REPETITIONS, $this->repetitions->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_REPETITIONS, $this->repetitions->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->repetitions)
@@ -457,13 +435,13 @@ class FHIRTransportRestriction extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportRestriction $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportRestriction
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -478,25 +456,29 @@ class FHIRTransportRestriction extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_REPETITIONS])
-            || isset($json[self::FIELD_REPETITIONS_EXT])
-            || array_key_exists(self::FIELD_REPETITIONS, $json)
-            || array_key_exists(self::FIELD_REPETITIONS_EXT, $json)) {
-            $value = $json[self::FIELD_REPETITIONS] ?? null;
-            $type->setRepetitions(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_REPETITIONS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->repetitions)
+            || isset($json->_repetitions)
+            || property_exists($json, self::FIELD_REPETITIONS)
+            || property_exists($json, self::FIELD_REPETITIONS_EXT)) {
+            $v = $json->_repetitions ?? new \stdClass();
+            $v->value = $json->repetitions ?? null;
+            $type->setRepetitions(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_RECIPIENT]) || array_key_exists(self::FIELD_RECIPIENT, $json)) {
-            $vs = $json[self::FIELD_RECIPIENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->recipient) || property_exists($json, self::FIELD_RECIPIENT)) {
+            if (is_object($json->recipient)) {
+                $vals = [$json->recipient];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RECIPIENT, true);
+            } else {
+                $vals = $json->recipient;
+            }
+            foreach($vals as $v) {
                 $type->addRecipient(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -523,7 +505,11 @@ class FHIRTransportRestriction extends FHIRBackboneElement
             $out->period = $this->period;
         }
         if (isset($this->recipient) && [] !== $this->recipient) {
-            $out->recipient = $this->recipient;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RECIPIENT) && 1 === count($this->recipient)) {
+                $out->recipient = $this->recipient[0];
+            } else {
+                $out->recipient = $this->recipient;
+            }
         }
         return $out;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,17 +104,19 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CATALOG_ENTRY_DOT_RELATED_ENTRY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_RELATIONTYPE = 'relationtype';
     public const FIELD_RELATIONTYPE_EXT = '_relationtype';
     public const FIELD_ITEM = 'item';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_RELATIONTYPE => [
@@ -123,12 +127,12 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_RELATIONTYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -149,7 +153,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
      */
     protected FHIRReference $item;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCatalogEntryRelatedEntry Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -178,7 +182,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -187,7 +191,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -208,11 +212,9 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
      * containerPackage, usedIn, uses, requires, etc.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCatalogEntryRelationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCatalogEntryRelationType $relationtype
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRelationtype(null|string|FHIRCatalogEntryRelationTypeEnum|FHIRCatalogEntryRelationType $relationtype,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRelationtype(null|string|FHIRCatalogEntryRelationTypeEnum|FHIRCatalogEntryRelationType $relationtype): self
     {
         if (null === $relationtype) {
             unset($this->relationtype);
@@ -222,33 +224,6 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
             $relationtype = new FHIRCatalogEntryRelationType(value: $relationtype);
         }
         $this->relationtype = $relationtype;
-        if ($this->_valueXMLLocations[self::FIELD_RELATIONTYPE] !== $valueXMLLocation) {
-            $this->_setRelationtypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the relationtype element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRelationtypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RELATIONTYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the relationtype element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRelationtypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RELATIONTYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -286,7 +261,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -315,9 +290,11 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -329,15 +306,16 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RELATIONTYPE])) {
             if (isset($type->relationtype)) {
                 $type->relationtype->setValue((string)$attributes[self::FIELD_RELATIONTYPE]);
-                $type->_setRelationtypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRelationtype((string)$attributes[self::FIELD_RELATIONTYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRelationtype((string)$attributes[self::FIELD_RELATIONTYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RELATIONTYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -350,7 +328,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->relationtype) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RELATIONTYPE]) {
-            $xw->writeAttribute(self::FIELD_RELATIONTYPE, $this->relationtype->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RELATIONTYPE, $this->relationtype->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->relationtype)
@@ -368,13 +346,13 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -389,18 +367,20 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_RELATIONTYPE])
-            || isset($json[self::FIELD_RELATIONTYPE_EXT])
-            || array_key_exists(self::FIELD_RELATIONTYPE, $json)
-            || array_key_exists(self::FIELD_RELATIONTYPE_EXT, $json)) {
-            $value = $json[self::FIELD_RELATIONTYPE] ?? null;
-            $type->setRelationtype(FHIRCatalogEntryRelationType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCatalogEntryRelationType::FIELD_VALUE => $value]) + ($json[self::FIELD_RELATIONTYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->relationtype)
+            || isset($json->_relationtype)
+            || property_exists($json, self::FIELD_RELATIONTYPE)
+            || property_exists($json, self::FIELD_RELATIONTYPE_EXT)) {
+            $v = $json->_relationtype ?? new \stdClass();
+            $v->value = $json->relationtype ?? null;
+            $type->setRelationtype(FHIRCatalogEntryRelationType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
-            $type->setItem(FHIRReference::jsonUnserialize($json[self::FIELD_ITEM], $config));
+        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
+            if (is_array($json->item)) {
+                $type->setItem(FHIRReference::jsonUnserialize(reset($json->item), $config));
+            } else {
+                $type->setItem(FHIRReference::jsonUnserialize($json->item, $config));
+            }
         }
         return $type;
     }

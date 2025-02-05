@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -113,12 +115,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_LINK_ID = 'linkId';
     public const FIELD_LINK_ID_EXT = '_linkId';
     public const FIELD_DESCRIPTION = 'description';
@@ -141,11 +145,11 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     public const FIELD_DURATION_RANGE = 'durationRange';
     public const FIELD_TIME_FROM_EVENT = 'timeFromEvent';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_LINK_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -154,7 +158,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         self::FIELD_DEFINITION_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -286,7 +290,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic.
+     * Number of occurrences meeting the characteristic. (choose any one of instances*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
@@ -296,7 +301,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic.
+     * Number of occurrences meeting the characteristic. (choose any one of instances*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
@@ -308,7 +314,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met.
+     * Length of time in which the characteristic is met. (choose any one of duration*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
@@ -318,7 +325,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met.
+     * Length of time in which the characteristic is met. (choose any one of duration*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
@@ -333,7 +341,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      */
     protected array $timeFromEvent;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIREvidenceVariableCharacteristic Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -432,7 +440,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -441,7 +449,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -470,11 +478,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Label used for when a characteristic refers to another characteristic.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $linkId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLinkId(null|string|FHIRIdPrimitive|FHIRId $linkId,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLinkId(null|string|FHIRIdPrimitive|FHIRId $linkId): self
     {
         if (null === $linkId) {
             unset($this->linkId);
@@ -484,33 +490,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             $linkId = new FHIRId(value: $linkId);
         }
         $this->linkId = $linkId;
-        if ($this->_valueXMLLocations[self::FIELD_LINK_ID] !== $valueXMLLocation) {
-            $this->_setLinkIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the linkId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLinkIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LINK_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the linkId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLinkIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LINK_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -546,11 +525,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * to communicate the criteria to an end-user.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
         if (null === $description) {
             unset($this->description);
@@ -560,33 +537,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             $description = new FHIRMarkdown(value: $description);
         }
         $this->description = $description;
-        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
-            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the description element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
-    }
-
-    /**
-     * Set the location the "value" field of the description element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -679,11 +629,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * matching this characteristic definition is equivalent to meeting this criterion.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $exclude
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude): self
     {
         if (null === $exclude) {
             unset($this->exclude);
@@ -693,33 +641,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             $exclude = new FHIRBoolean(value: $exclude);
         }
         $this->exclude = $exclude;
-        if ($this->_valueXMLLocations[self::FIELD_EXCLUDE] !== $valueXMLLocation) {
-            $this->_setExcludeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the exclude element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExcludeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXCLUDE];
-    }
-
-    /**
-     * Set the location the "value" field of the exclude element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExcludeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXCLUDE] = $valueXMLLocation;
         return $this;
     }
 
@@ -781,11 +702,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Defines the characteristic using Canonical.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $definitionCanonical
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical,
-                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical): self
     {
         if (null === $definitionCanonical) {
             unset($this->definitionCanonical);
@@ -795,33 +714,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             $definitionCanonical = new FHIRCanonical(value: $definitionCanonical);
         }
         $this->definitionCanonical = $definitionCanonical;
-        if ($this->_valueXMLLocations[self::FIELD_DEFINITION_CANONICAL] !== $valueXMLLocation) {
-            $this->_setDefinitionCanonicalValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the definitionCanonical element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDefinitionCanonicalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEFINITION_CANONICAL];
-    }
-
-    /**
-     * Set the location the "value" field of the definitionCanonical element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDefinitionCanonicalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEFINITION_CANONICAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -927,11 +819,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Defines the characteristic using id.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $definitionId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefinitionId(null|string|FHIRIdPrimitive|FHIRId $definitionId,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDefinitionId(null|string|FHIRIdPrimitive|FHIRId $definitionId): self
     {
         if (null === $definitionId) {
             unset($this->definitionId);
@@ -941,33 +831,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             $definitionId = new FHIRId(value: $definitionId);
         }
         $this->definitionId = $definitionId;
-        if ($this->_valueXMLLocations[self::FIELD_DEFINITION_ID] !== $valueXMLLocation) {
-            $this->_setDefinitionIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the definitionId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDefinitionIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEFINITION_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the definitionId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDefinitionIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEFINITION_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -1042,7 +905,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic.
+     * Number of occurrences meeting the characteristic. (choose any one of instances*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
@@ -1058,7 +922,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic.
+     * Number of occurrences meeting the characteristic. (choose any one of instances*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
      * @return static
@@ -1078,7 +943,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic.
+     * Number of occurrences meeting the characteristic. (choose any one of instances*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
@@ -1092,7 +958,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic.
+     * Number of occurrences meeting the characteristic. (choose any one of instances*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $instancesRange
      * @return static
@@ -1114,7 +981,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met.
+     * Length of time in which the characteristic is met. (choose any one of duration*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
@@ -1130,7 +998,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met.
+     * Length of time in which the characteristic is met. (choose any one of duration*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
      * @return static
@@ -1150,7 +1019,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met.
+     * Length of time in which the characteristic is met. (choose any one of duration*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
@@ -1164,7 +1034,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met.
+     * Length of time in which the characteristic is met. (choose any one of duration*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $durationRange
      * @return static
@@ -1240,7 +1111,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1269,9 +1140,11 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1311,47 +1184,48 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LINK_ID])) {
             if (isset($type->linkId)) {
                 $type->linkId->setValue((string)$attributes[self::FIELD_LINK_ID]);
-                $type->_setLinkIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLinkId((string)$attributes[self::FIELD_LINK_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLinkId((string)$attributes[self::FIELD_LINK_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LINK_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             if (isset($type->description)) {
                 $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DESCRIPTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_EXCLUDE])) {
             if (isset($type->exclude)) {
                 $type->exclude->setValue((string)$attributes[self::FIELD_EXCLUDE]);
-                $type->_setExcludeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setExclude((string)$attributes[self::FIELD_EXCLUDE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setExclude((string)$attributes[self::FIELD_EXCLUDE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_EXCLUDE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DEFINITION_CANONICAL])) {
             if (isset($type->definitionCanonical)) {
                 $type->definitionCanonical->setValue((string)$attributes[self::FIELD_DEFINITION_CANONICAL]);
-                $type->_setDefinitionCanonicalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDefinitionCanonical((string)$attributes[self::FIELD_DEFINITION_CANONICAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDefinitionCanonical((string)$attributes[self::FIELD_DEFINITION_CANONICAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DEFINITION_CANONICAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DEFINITION_ID])) {
             if (isset($type->definitionId)) {
                 $type->definitionId->setValue((string)$attributes[self::FIELD_DEFINITION_ID]);
-                $type->_setDefinitionIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDefinitionId((string)$attributes[self::FIELD_DEFINITION_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDefinitionId((string)$attributes[self::FIELD_DEFINITION_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DEFINITION_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1364,19 +1238,19 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->linkId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LINK_ID]) {
-            $xw->writeAttribute(self::FIELD_LINK_ID, $this->linkId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LINK_ID, $this->linkId->_getValueAsString());
         }
         if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getValueAsString());
         }
         if (isset($this->exclude) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXCLUDE]) {
-            $xw->writeAttribute(self::FIELD_EXCLUDE, $this->exclude->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_EXCLUDE, $this->exclude->_getValueAsString());
         }
         if (isset($this->definitionCanonical) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFINITION_CANONICAL]) {
-            $xw->writeAttribute(self::FIELD_DEFINITION_CANONICAL, $this->definitionCanonical->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DEFINITION_CANONICAL, $this->definitionCanonical->_getValueAsString());
         }
         if (isset($this->definitionId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFINITION_ID]) {
-            $xw->writeAttribute(self::FIELD_DEFINITION_ID, $this->definitionId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DEFINITION_ID, $this->definitionId->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->linkId)
@@ -1476,13 +1350,13 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1497,98 +1371,128 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LINK_ID])
-            || isset($json[self::FIELD_LINK_ID_EXT])
-            || array_key_exists(self::FIELD_LINK_ID, $json)
-            || array_key_exists(self::FIELD_LINK_ID_EXT, $json)) {
-            $value = $json[self::FIELD_LINK_ID] ?? null;
-            $type->setLinkId(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_LINK_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->linkId)
+            || isset($json->_linkId)
+            || property_exists($json, self::FIELD_LINK_ID)
+            || property_exists($json, self::FIELD_LINK_ID_EXT)) {
+            $v = $json->_linkId ?? new \stdClass();
+            $v->value = $json->linkId ?? null;
+            $type->setLinkId(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DESCRIPTION])
-            || isset($json[self::FIELD_DESCRIPTION_EXT])
-            || array_key_exists(self::FIELD_DESCRIPTION, $json)
-            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
-            $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $type->setDescription(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->description)
+            || isset($json->_description)
+            || property_exists($json, self::FIELD_DESCRIPTION)
+            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $json->_description ?? new \stdClass();
+            $v->value = $json->description ?? null;
+            $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
-            $vs = $json[self::FIELD_NOTE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->note) || property_exists($json, self::FIELD_NOTE)) {
+            if (is_object($json->note)) {
+                $vals = [$json->note];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTE, true);
+            } else {
+                $vals = $json->note;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_EXCLUDE])
-            || isset($json[self::FIELD_EXCLUDE_EXT])
-            || array_key_exists(self::FIELD_EXCLUDE, $json)
-            || array_key_exists(self::FIELD_EXCLUDE_EXT, $json)) {
-            $value = $json[self::FIELD_EXCLUDE] ?? null;
-            $type->setExclude(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_EXCLUDE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->exclude)
+            || isset($json->_exclude)
+            || property_exists($json, self::FIELD_EXCLUDE)
+            || property_exists($json, self::FIELD_EXCLUDE_EXT)) {
+            $v = $json->_exclude ?? new \stdClass();
+            $v->value = $json->exclude ?? null;
+            $type->setExclude(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DEFINITION_REFERENCE]) || array_key_exists(self::FIELD_DEFINITION_REFERENCE, $json)) {
-            $type->setDefinitionReference(FHIRReference::jsonUnserialize($json[self::FIELD_DEFINITION_REFERENCE], $config));
-        }
-        if (isset($json[self::FIELD_DEFINITION_CANONICAL])
-            || isset($json[self::FIELD_DEFINITION_CANONICAL_EXT])
-            || array_key_exists(self::FIELD_DEFINITION_CANONICAL, $json)
-            || array_key_exists(self::FIELD_DEFINITION_CANONICAL_EXT, $json)) {
-            $value = $json[self::FIELD_DEFINITION_CANONICAL] ?? null;
-            $type->setDefinitionCanonical(FHIRCanonical::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFINITION_CANONICAL_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DEFINITION_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_DEFINITION_CODEABLE_CONCEPT, $json)) {
-            $type->setDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DEFINITION_CODEABLE_CONCEPT], $config));
-        }
-        if (isset($json[self::FIELD_DEFINITION_EXPRESSION]) || array_key_exists(self::FIELD_DEFINITION_EXPRESSION, $json)) {
-            $type->setDefinitionExpression(FHIRExpression::jsonUnserialize($json[self::FIELD_DEFINITION_EXPRESSION], $config));
-        }
-        if (isset($json[self::FIELD_DEFINITION_ID])
-            || isset($json[self::FIELD_DEFINITION_ID_EXT])
-            || array_key_exists(self::FIELD_DEFINITION_ID, $json)
-            || array_key_exists(self::FIELD_DEFINITION_ID_EXT, $json)) {
-            $value = $json[self::FIELD_DEFINITION_ID] ?? null;
-            $type->setDefinitionId(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFINITION_ID_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DEFINITION_BY_TYPE_AND_VALUE]) || array_key_exists(self::FIELD_DEFINITION_BY_TYPE_AND_VALUE, $json)) {
-            $type->setDefinitionByTypeAndValue(FHIREvidenceVariableDefinitionByTypeAndValue::jsonUnserialize($json[self::FIELD_DEFINITION_BY_TYPE_AND_VALUE], $config));
-        }
-        if (isset($json[self::FIELD_DEFINITION_BY_COMBINATION]) || array_key_exists(self::FIELD_DEFINITION_BY_COMBINATION, $json)) {
-            $type->setDefinitionByCombination(FHIREvidenceVariableDefinitionByCombination::jsonUnserialize($json[self::FIELD_DEFINITION_BY_COMBINATION], $config));
-        }
-        if (isset($json[self::FIELD_INSTANCES_QUANTITY]) || array_key_exists(self::FIELD_INSTANCES_QUANTITY, $json)) {
-            $type->setInstancesQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_INSTANCES_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_INSTANCES_RANGE]) || array_key_exists(self::FIELD_INSTANCES_RANGE, $json)) {
-            $type->setInstancesRange(FHIRRange::jsonUnserialize($json[self::FIELD_INSTANCES_RANGE], $config));
-        }
-        if (isset($json[self::FIELD_DURATION_QUANTITY]) || array_key_exists(self::FIELD_DURATION_QUANTITY, $json)) {
-            $type->setDurationQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_DURATION_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_DURATION_RANGE]) || array_key_exists(self::FIELD_DURATION_RANGE, $json)) {
-            $type->setDurationRange(FHIRRange::jsonUnserialize($json[self::FIELD_DURATION_RANGE], $config));
-        }
-        if (isset($json[self::FIELD_TIME_FROM_EVENT]) || array_key_exists(self::FIELD_TIME_FROM_EVENT, $json)) {
-            $vs = $json[self::FIELD_TIME_FROM_EVENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->definitionReference) || property_exists($json, self::FIELD_DEFINITION_REFERENCE)) {
+            if (is_array($json->definitionReference)) {
+                $type->setDefinitionReference(FHIRReference::jsonUnserialize(reset($json->definitionReference), $config));
+            } else {
+                $type->setDefinitionReference(FHIRReference::jsonUnserialize($json->definitionReference, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->definitionCanonical)
+            || isset($json->_definitionCanonical)
+            || property_exists($json, self::FIELD_DEFINITION_CANONICAL)
+            || property_exists($json, self::FIELD_DEFINITION_CANONICAL_EXT)) {
+            $v = $json->_definitionCanonical ?? new \stdClass();
+            $v->value = $json->definitionCanonical ?? null;
+            $type->setDefinitionCanonical(FHIRCanonical::jsonUnserialize($v, $config));
+        }
+        if (isset($json->definitionCodeableConcept) || property_exists($json, self::FIELD_DEFINITION_CODEABLE_CONCEPT)) {
+            if (is_array($json->definitionCodeableConcept)) {
+                $type->setDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->definitionCodeableConcept), $config));
+            } else {
+                $type->setDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->definitionCodeableConcept, $config));
+            }
+        }
+        if (isset($json->definitionExpression) || property_exists($json, self::FIELD_DEFINITION_EXPRESSION)) {
+            if (is_array($json->definitionExpression)) {
+                $type->setDefinitionExpression(FHIRExpression::jsonUnserialize(reset($json->definitionExpression), $config));
+            } else {
+                $type->setDefinitionExpression(FHIRExpression::jsonUnserialize($json->definitionExpression, $config));
+            }
+        }
+        if (isset($json->definitionId)
+            || isset($json->_definitionId)
+            || property_exists($json, self::FIELD_DEFINITION_ID)
+            || property_exists($json, self::FIELD_DEFINITION_ID_EXT)) {
+            $v = $json->_definitionId ?? new \stdClass();
+            $v->value = $json->definitionId ?? null;
+            $type->setDefinitionId(FHIRId::jsonUnserialize($v, $config));
+        }
+        if (isset($json->definitionByTypeAndValue) || property_exists($json, self::FIELD_DEFINITION_BY_TYPE_AND_VALUE)) {
+            if (is_array($json->definitionByTypeAndValue)) {
+                $type->setDefinitionByTypeAndValue(FHIREvidenceVariableDefinitionByTypeAndValue::jsonUnserialize(reset($json->definitionByTypeAndValue), $config));
+            } else {
+                $type->setDefinitionByTypeAndValue(FHIREvidenceVariableDefinitionByTypeAndValue::jsonUnserialize($json->definitionByTypeAndValue, $config));
+            }
+        }
+        if (isset($json->definitionByCombination) || property_exists($json, self::FIELD_DEFINITION_BY_COMBINATION)) {
+            if (is_array($json->definitionByCombination)) {
+                $type->setDefinitionByCombination(FHIREvidenceVariableDefinitionByCombination::jsonUnserialize(reset($json->definitionByCombination), $config));
+            } else {
+                $type->setDefinitionByCombination(FHIREvidenceVariableDefinitionByCombination::jsonUnserialize($json->definitionByCombination, $config));
+            }
+        }
+        if (isset($json->instancesQuantity) || property_exists($json, self::FIELD_INSTANCES_QUANTITY)) {
+            if (is_array($json->instancesQuantity)) {
+                $type->setInstancesQuantity(FHIRQuantity::jsonUnserialize(reset($json->instancesQuantity), $config));
+            } else {
+                $type->setInstancesQuantity(FHIRQuantity::jsonUnserialize($json->instancesQuantity, $config));
+            }
+        }
+        if (isset($json->instancesRange) || property_exists($json, self::FIELD_INSTANCES_RANGE)) {
+            if (is_array($json->instancesRange)) {
+                $type->setInstancesRange(FHIRRange::jsonUnserialize(reset($json->instancesRange), $config));
+            } else {
+                $type->setInstancesRange(FHIRRange::jsonUnserialize($json->instancesRange, $config));
+            }
+        }
+        if (isset($json->durationQuantity) || property_exists($json, self::FIELD_DURATION_QUANTITY)) {
+            if (is_array($json->durationQuantity)) {
+                $type->setDurationQuantity(FHIRQuantity::jsonUnserialize(reset($json->durationQuantity), $config));
+            } else {
+                $type->setDurationQuantity(FHIRQuantity::jsonUnserialize($json->durationQuantity, $config));
+            }
+        }
+        if (isset($json->durationRange) || property_exists($json, self::FIELD_DURATION_RANGE)) {
+            if (is_array($json->durationRange)) {
+                $type->setDurationRange(FHIRRange::jsonUnserialize(reset($json->durationRange), $config));
+            } else {
+                $type->setDurationRange(FHIRRange::jsonUnserialize($json->durationRange, $config));
+            }
+        }
+        if (isset($json->timeFromEvent) || property_exists($json, self::FIELD_TIME_FROM_EVENT)) {
+            if (is_object($json->timeFromEvent)) {
+                $vals = [$json->timeFromEvent];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TIME_FROM_EVENT, true);
+            } else {
+                $vals = $json->timeFromEvent;
+            }
+            foreach($vals as $v) {
                 $type->addTimeFromEvent(FHIREvidenceVariableTimeFromEvent::jsonUnserialize($v, $config));
             }
         }
@@ -1622,7 +1526,11 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             }
         }
         if (isset($this->note) && [] !== $this->note) {
-            $out->note = $this->note;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_NOTE) && 1 === count($this->note)) {
+                $out->note = $this->note[0];
+            } else {
+                $out->note = $this->note;
+            }
         }
         if (isset($this->exclude)) {
             if (null !== ($val = $this->exclude->getValue())) {
@@ -1682,7 +1590,11 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             $out->durationRange = $this->durationRange;
         }
         if (isset($this->timeFromEvent) && [] !== $this->timeFromEvent) {
-            $out->timeFromEvent = $this->timeFromEvent;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TIME_FROM_EVENT) && 1 === count($this->timeFromEvent)) {
+                $out->timeFromEvent = $this->timeFromEvent[0];
+            } else {
+                $out->timeFromEvent = $this->timeFromEvent;
+            }
         }
         return $out;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,12 +105,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRIngredientStrength extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INGREDIENT_DOT_STRENGTH;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_PRESENTATION_RATIO = 'presentationRatio';
     public const FIELD_PRESENTATION_RATIO_RANGE = 'presentationRatioRange';
     public const FIELD_PRESENTATION_CODEABLE_CONCEPT = 'presentationCodeableConcept';
@@ -127,18 +131,18 @@ class FHIRIngredientStrength extends FHIRBackboneElement
     public const FIELD_COUNTRY = 'country';
     public const FIELD_REFERENCE_STRENGTH = 'referenceStrength';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TEXT_PRESENTATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TEXT_CONCENTRATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MEASUREMENT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
@@ -149,7 +153,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio 
      */
@@ -163,7 +168,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange 
      */
@@ -178,7 +184,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
@@ -194,7 +201,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
@@ -216,7 +224,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio 
      */
@@ -226,7 +235,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange 
      */
@@ -237,7 +247,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
@@ -249,7 +260,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
@@ -315,7 +327,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      */
     protected array $referenceStrength;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRIngredientStrength Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -404,7 +416,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -413,7 +425,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
@@ -424,7 +436,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
@@ -443,7 +456,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $presentationRatio
      * @return static
@@ -467,7 +481,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
      */
@@ -485,7 +500,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $presentationRatioRange
      * @return static
@@ -510,7 +526,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
@@ -529,7 +546,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $presentationCodeableConcept
      * @return static
@@ -555,7 +573,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
@@ -575,7 +594,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $presentationQuantity
      * @return static
@@ -614,11 +634,9 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * part of it - with the rest being in Strength.presentation as a ratio.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $textPresentation
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTextPresentation(null|string|FHIRStringPrimitive|FHIRString $textPresentation,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTextPresentation(null|string|FHIRStringPrimitive|FHIRString $textPresentation): self
     {
         if (null === $textPresentation) {
             unset($this->textPresentation);
@@ -628,33 +646,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             $textPresentation = new FHIRString(value: $textPresentation);
         }
         $this->textPresentation = $textPresentation;
-        if ($this->_valueXMLLocations[self::FIELD_TEXT_PRESENTATION] !== $valueXMLLocation) {
-            $this->_setTextPresentationValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the textPresentation element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTextPresentationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TEXT_PRESENTATION];
-    }
-
-    /**
-     * Set the location the "value" field of the textPresentation element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTextPresentationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TEXT_PRESENTATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -664,7 +655,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
@@ -679,7 +671,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $concentrationRatio
      * @return static
@@ -699,7 +692,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
      */
@@ -713,7 +707,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $concentrationRatioRange
      * @return static
@@ -734,7 +729,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
@@ -749,7 +745,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $concentrationCodeableConcept
      * @return static
@@ -771,7 +768,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
@@ -787,7 +785,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $concentrationQuantity
      * @return static
@@ -826,11 +825,9 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * part of it - with the rest being in Strength.concentration as a ratio.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $textConcentration
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTextConcentration(null|string|FHIRStringPrimitive|FHIRString $textConcentration,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTextConcentration(null|string|FHIRStringPrimitive|FHIRString $textConcentration): self
     {
         if (null === $textConcentration) {
             unset($this->textConcentration);
@@ -840,33 +837,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             $textConcentration = new FHIRString(value: $textConcentration);
         }
         $this->textConcentration = $textConcentration;
-        if ($this->_valueXMLLocations[self::FIELD_TEXT_CONCENTRATION] !== $valueXMLLocation) {
-            $this->_setTextConcentrationValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the textConcentration element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTextConcentrationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TEXT_CONCENTRATION];
-    }
-
-    /**
-     * Set the location the "value" field of the textConcentration element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTextConcentrationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TEXT_CONCENTRATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -936,11 +906,9 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * relative to the point of aerosolization.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $measurementPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint): self
     {
         if (null === $measurementPoint) {
             unset($this->measurementPoint);
@@ -950,33 +918,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             $measurementPoint = new FHIRString(value: $measurementPoint);
         }
         $this->measurementPoint = $measurementPoint;
-        if ($this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT] !== $valueXMLLocation) {
-            $this->_setMeasurementPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the measurementPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMeasurementPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the measurementPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMeasurementPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1120,7 +1061,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1149,9 +1090,11 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1187,31 +1130,32 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TEXT_PRESENTATION])) {
             if (isset($type->textPresentation)) {
                 $type->textPresentation->setValue((string)$attributes[self::FIELD_TEXT_PRESENTATION]);
-                $type->_setTextPresentationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTextPresentation((string)$attributes[self::FIELD_TEXT_PRESENTATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTextPresentation((string)$attributes[self::FIELD_TEXT_PRESENTATION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TEXT_PRESENTATION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TEXT_CONCENTRATION])) {
             if (isset($type->textConcentration)) {
                 $type->textConcentration->setValue((string)$attributes[self::FIELD_TEXT_CONCENTRATION]);
-                $type->_setTextConcentrationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTextConcentration((string)$attributes[self::FIELD_TEXT_CONCENTRATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTextConcentration((string)$attributes[self::FIELD_TEXT_CONCENTRATION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TEXT_CONCENTRATION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MEASUREMENT_POINT])) {
             if (isset($type->measurementPoint)) {
                 $type->measurementPoint->setValue((string)$attributes[self::FIELD_MEASUREMENT_POINT]);
-                $type->_setMeasurementPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMeasurementPoint((string)$attributes[self::FIELD_MEASUREMENT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMeasurementPoint((string)$attributes[self::FIELD_MEASUREMENT_POINT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MEASUREMENT_POINT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1224,13 +1168,13 @@ class FHIRIngredientStrength extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->textPresentation) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TEXT_PRESENTATION]) {
-            $xw->writeAttribute(self::FIELD_TEXT_PRESENTATION, $this->textPresentation->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TEXT_PRESENTATION, $this->textPresentation->_getValueAsString());
         }
         if (isset($this->textConcentration) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TEXT_CONCENTRATION]) {
-            $xw->writeAttribute(self::FIELD_TEXT_CONCENTRATION, $this->textConcentration->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TEXT_CONCENTRATION, $this->textConcentration->_getValueAsString());
         }
         if (isset($this->measurementPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT]) {
-            $xw->writeAttribute(self::FIELD_MEASUREMENT_POINT, $this->measurementPoint->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MEASUREMENT_POINT, $this->measurementPoint->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->presentationRatio)) {
@@ -1316,13 +1260,13 @@ class FHIRIngredientStrength extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1337,78 +1281,112 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PRESENTATION_RATIO]) || array_key_exists(self::FIELD_PRESENTATION_RATIO, $json)) {
-            $type->setPresentationRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_PRESENTATION_RATIO], $config));
-        }
-        if (isset($json[self::FIELD_PRESENTATION_RATIO_RANGE]) || array_key_exists(self::FIELD_PRESENTATION_RATIO_RANGE, $json)) {
-            $type->setPresentationRatioRange(FHIRRatioRange::jsonUnserialize($json[self::FIELD_PRESENTATION_RATIO_RANGE], $config));
-        }
-        if (isset($json[self::FIELD_PRESENTATION_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_PRESENTATION_CODEABLE_CONCEPT, $json)) {
-            $type->setPresentationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRESENTATION_CODEABLE_CONCEPT], $config));
-        }
-        if (isset($json[self::FIELD_PRESENTATION_QUANTITY]) || array_key_exists(self::FIELD_PRESENTATION_QUANTITY, $json)) {
-            $type->setPresentationQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_PRESENTATION_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_TEXT_PRESENTATION])
-            || isset($json[self::FIELD_TEXT_PRESENTATION_EXT])
-            || array_key_exists(self::FIELD_TEXT_PRESENTATION, $json)
-            || array_key_exists(self::FIELD_TEXT_PRESENTATION_EXT, $json)) {
-            $value = $json[self::FIELD_TEXT_PRESENTATION] ?? null;
-            $type->setTextPresentation(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_PRESENTATION_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_CONCENTRATION_RATIO]) || array_key_exists(self::FIELD_CONCENTRATION_RATIO, $json)) {
-            $type->setConcentrationRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_CONCENTRATION_RATIO], $config));
-        }
-        if (isset($json[self::FIELD_CONCENTRATION_RATIO_RANGE]) || array_key_exists(self::FIELD_CONCENTRATION_RATIO_RANGE, $json)) {
-            $type->setConcentrationRatioRange(FHIRRatioRange::jsonUnserialize($json[self::FIELD_CONCENTRATION_RATIO_RANGE], $config));
-        }
-        if (isset($json[self::FIELD_CONCENTRATION_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_CONCENTRATION_CODEABLE_CONCEPT, $json)) {
-            $type->setConcentrationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CONCENTRATION_CODEABLE_CONCEPT], $config));
-        }
-        if (isset($json[self::FIELD_CONCENTRATION_QUANTITY]) || array_key_exists(self::FIELD_CONCENTRATION_QUANTITY, $json)) {
-            $type->setConcentrationQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_CONCENTRATION_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_TEXT_CONCENTRATION])
-            || isset($json[self::FIELD_TEXT_CONCENTRATION_EXT])
-            || array_key_exists(self::FIELD_TEXT_CONCENTRATION, $json)
-            || array_key_exists(self::FIELD_TEXT_CONCENTRATION_EXT, $json)) {
-            $value = $json[self::FIELD_TEXT_CONCENTRATION] ?? null;
-            $type->setTextConcentration(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_CONCENTRATION_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_BASIS]) || array_key_exists(self::FIELD_BASIS, $json)) {
-            $type->setBasis(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_BASIS], $config));
-        }
-        if (isset($json[self::FIELD_MEASUREMENT_POINT])
-            || isset($json[self::FIELD_MEASUREMENT_POINT_EXT])
-            || array_key_exists(self::FIELD_MEASUREMENT_POINT, $json)
-            || array_key_exists(self::FIELD_MEASUREMENT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_MEASUREMENT_POINT] ?? null;
-            $type->setMeasurementPoint(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MEASUREMENT_POINT_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_COUNTRY]) || array_key_exists(self::FIELD_COUNTRY, $json)) {
-            $vs = $json[self::FIELD_COUNTRY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->presentationRatio) || property_exists($json, self::FIELD_PRESENTATION_RATIO)) {
+            if (is_array($json->presentationRatio)) {
+                $type->setPresentationRatio(FHIRRatio::jsonUnserialize(reset($json->presentationRatio), $config));
+            } else {
+                $type->setPresentationRatio(FHIRRatio::jsonUnserialize($json->presentationRatio, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->presentationRatioRange) || property_exists($json, self::FIELD_PRESENTATION_RATIO_RANGE)) {
+            if (is_array($json->presentationRatioRange)) {
+                $type->setPresentationRatioRange(FHIRRatioRange::jsonUnserialize(reset($json->presentationRatioRange), $config));
+            } else {
+                $type->setPresentationRatioRange(FHIRRatioRange::jsonUnserialize($json->presentationRatioRange, $config));
+            }
+        }
+        if (isset($json->presentationCodeableConcept) || property_exists($json, self::FIELD_PRESENTATION_CODEABLE_CONCEPT)) {
+            if (is_array($json->presentationCodeableConcept)) {
+                $type->setPresentationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->presentationCodeableConcept), $config));
+            } else {
+                $type->setPresentationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->presentationCodeableConcept, $config));
+            }
+        }
+        if (isset($json->presentationQuantity) || property_exists($json, self::FIELD_PRESENTATION_QUANTITY)) {
+            if (is_array($json->presentationQuantity)) {
+                $type->setPresentationQuantity(FHIRQuantity::jsonUnserialize(reset($json->presentationQuantity), $config));
+            } else {
+                $type->setPresentationQuantity(FHIRQuantity::jsonUnserialize($json->presentationQuantity, $config));
+            }
+        }
+        if (isset($json->textPresentation)
+            || isset($json->_textPresentation)
+            || property_exists($json, self::FIELD_TEXT_PRESENTATION)
+            || property_exists($json, self::FIELD_TEXT_PRESENTATION_EXT)) {
+            $v = $json->_textPresentation ?? new \stdClass();
+            $v->value = $json->textPresentation ?? null;
+            $type->setTextPresentation(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->concentrationRatio) || property_exists($json, self::FIELD_CONCENTRATION_RATIO)) {
+            if (is_array($json->concentrationRatio)) {
+                $type->setConcentrationRatio(FHIRRatio::jsonUnserialize(reset($json->concentrationRatio), $config));
+            } else {
+                $type->setConcentrationRatio(FHIRRatio::jsonUnserialize($json->concentrationRatio, $config));
+            }
+        }
+        if (isset($json->concentrationRatioRange) || property_exists($json, self::FIELD_CONCENTRATION_RATIO_RANGE)) {
+            if (is_array($json->concentrationRatioRange)) {
+                $type->setConcentrationRatioRange(FHIRRatioRange::jsonUnserialize(reset($json->concentrationRatioRange), $config));
+            } else {
+                $type->setConcentrationRatioRange(FHIRRatioRange::jsonUnserialize($json->concentrationRatioRange, $config));
+            }
+        }
+        if (isset($json->concentrationCodeableConcept) || property_exists($json, self::FIELD_CONCENTRATION_CODEABLE_CONCEPT)) {
+            if (is_array($json->concentrationCodeableConcept)) {
+                $type->setConcentrationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->concentrationCodeableConcept), $config));
+            } else {
+                $type->setConcentrationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->concentrationCodeableConcept, $config));
+            }
+        }
+        if (isset($json->concentrationQuantity) || property_exists($json, self::FIELD_CONCENTRATION_QUANTITY)) {
+            if (is_array($json->concentrationQuantity)) {
+                $type->setConcentrationQuantity(FHIRQuantity::jsonUnserialize(reset($json->concentrationQuantity), $config));
+            } else {
+                $type->setConcentrationQuantity(FHIRQuantity::jsonUnserialize($json->concentrationQuantity, $config));
+            }
+        }
+        if (isset($json->textConcentration)
+            || isset($json->_textConcentration)
+            || property_exists($json, self::FIELD_TEXT_CONCENTRATION)
+            || property_exists($json, self::FIELD_TEXT_CONCENTRATION_EXT)) {
+            $v = $json->_textConcentration ?? new \stdClass();
+            $v->value = $json->textConcentration ?? null;
+            $type->setTextConcentration(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->basis) || property_exists($json, self::FIELD_BASIS)) {
+            if (is_array($json->basis)) {
+                $type->setBasis(FHIRCodeableConcept::jsonUnserialize(reset($json->basis), $config));
+            } else {
+                $type->setBasis(FHIRCodeableConcept::jsonUnserialize($json->basis, $config));
+            }
+        }
+        if (isset($json->measurementPoint)
+            || isset($json->_measurementPoint)
+            || property_exists($json, self::FIELD_MEASUREMENT_POINT)
+            || property_exists($json, self::FIELD_MEASUREMENT_POINT_EXT)) {
+            $v = $json->_measurementPoint ?? new \stdClass();
+            $v->value = $json->measurementPoint ?? null;
+            $type->setMeasurementPoint(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->country) || property_exists($json, self::FIELD_COUNTRY)) {
+            if (is_object($json->country)) {
+                $vals = [$json->country];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_COUNTRY, true);
+            } else {
+                $vals = $json->country;
+            }
+            foreach($vals as $v) {
                 $type->addCountry(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REFERENCE_STRENGTH]) || array_key_exists(self::FIELD_REFERENCE_STRENGTH, $json)) {
-            $vs = $json[self::FIELD_REFERENCE_STRENGTH];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->referenceStrength) || property_exists($json, self::FIELD_REFERENCE_STRENGTH)) {
+            if (is_object($json->referenceStrength)) {
+                $vals = [$json->referenceStrength];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_REFERENCE_STRENGTH, true);
+            } else {
+                $vals = $json->referenceStrength;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addReferenceStrength(FHIRIngredientReferenceStrength::jsonUnserialize($v, $config));
             }
         }
@@ -1479,10 +1457,18 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             }
         }
         if (isset($this->country) && [] !== $this->country) {
-            $out->country = $this->country;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_COUNTRY) && 1 === count($this->country)) {
+                $out->country = $this->country[0];
+            } else {
+                $out->country = $this->country;
+            }
         }
         if (isset($this->referenceStrength) && [] !== $this->referenceStrength) {
-            $out->referenceStrength = $this->referenceStrength;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_REFERENCE_STRENGTH) && 1 === count($this->referenceStrength)) {
+                $out->referenceStrength = $this->referenceStrength[0];
+            } else {
+                $out->referenceStrength = $this->referenceStrength;
+            }
         }
         return $out;
     }

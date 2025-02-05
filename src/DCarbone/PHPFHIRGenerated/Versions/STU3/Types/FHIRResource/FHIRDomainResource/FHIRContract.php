@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -109,12 +111,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionTypeMap;
  */
 class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONTRACT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
@@ -142,17 +146,17 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
     public const FIELD_LEGAL = 'legal';
     public const FIELD_RULE = 'rule';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ISSUED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -424,7 +428,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      */
     protected array $rule;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRContract Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
@@ -578,7 +582,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -587,7 +591,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -596,7 +600,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -651,11 +655,9 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * The status of the resource instance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRContractResourceStatusCodesList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContractResourceStatusCodes $status
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|string|FHIRContractResourceStatusCodesList|FHIRContractResourceStatusCodes $status,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStatus(null|string|FHIRContractResourceStatusCodesList|FHIRContractResourceStatusCodes $status): self
     {
         if (null === $status) {
             unset($this->status);
@@ -665,33 +667,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             $status = new FHIRContractResourceStatusCodes(value: $status);
         }
         $this->status = $status;
-        if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
-            $this->_setStatusValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the status element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStatusValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STATUS];
-    }
-
-    /**
-     * Set the location the "value" field of the status element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -723,11 +698,9 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * When this Contract was issued.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $issued
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIssued(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $issued,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIssued(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $issued): self
     {
         if (null === $issued) {
             unset($this->issued);
@@ -737,33 +710,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             $issued = new FHIRDateTime(value: $issued);
         }
         $this->issued = $issued;
-        if ($this->_valueXMLLocations[self::FIELD_ISSUED] !== $valueXMLLocation) {
-            $this->_setIssuedValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the issued element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIssuedValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ISSUED];
-    }
-
-    /**
-     * Set the location the "value" field of the issued element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIssuedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ISSUED] = $valueXMLLocation;
         return $this;
     }
 
@@ -2003,7 +1949,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2110,42 +2056,42 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STATUS])) {
             if (isset($type->status)) {
                 $type->status->setValue((string)$attributes[self::FIELD_STATUS]);
-                $type->_setStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStatus((string)$attributes[self::FIELD_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStatus((string)$attributes[self::FIELD_STATUS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STATUS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ISSUED])) {
             if (isset($type->issued)) {
                 $type->issued->setValue((string)$attributes[self::FIELD_ISSUED]);
-                $type->_setIssuedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIssued((string)$attributes[self::FIELD_ISSUED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIssued((string)$attributes[self::FIELD_ISSUED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ISSUED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -2176,10 +2122,10 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             $xw->openRootNode('Contract', $this->_getSourceXMLNS());
         }
         if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
-            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getValueAsString());
         }
         if (isset($this->issued) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ISSUED]) {
-            $xw->writeAttribute(self::FIELD_ISSUED, $this->issued->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ISSUED, $this->issued->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -2346,13 +2292,13 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRContract $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRContract
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -2370,184 +2316,236 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_IDENTIFIER], $config));
-        }
-        if (isset($json[self::FIELD_STATUS])
-            || isset($json[self::FIELD_STATUS_EXT])
-            || array_key_exists(self::FIELD_STATUS, $json)
-            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
-            $value = $json[self::FIELD_STATUS] ?? null;
-            $type->setStatus(FHIRContractResourceStatusCodes::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRContractResourceStatusCodes::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ISSUED])
-            || isset($json[self::FIELD_ISSUED_EXT])
-            || array_key_exists(self::FIELD_ISSUED, $json)
-            || array_key_exists(self::FIELD_ISSUED_EXT, $json)) {
-            $value = $json[self::FIELD_ISSUED] ?? null;
-            $type->setIssued(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_ISSUED_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_APPLIES]) || array_key_exists(self::FIELD_APPLIES, $json)) {
-            $type->setApplies(FHIRPeriod::jsonUnserialize($json[self::FIELD_APPLIES], $config));
-        }
-        if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $vs = $json[self::FIELD_SUBJECT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_array($json->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+            } else {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->status)
+            || isset($json->_status)
+            || property_exists($json, self::FIELD_STATUS)
+            || property_exists($json, self::FIELD_STATUS_EXT)) {
+            $v = $json->_status ?? new \stdClass();
+            $v->value = $json->status ?? null;
+            $type->setStatus(FHIRContractResourceStatusCodes::jsonUnserialize($v, $config));
+        }
+        if (isset($json->issued)
+            || isset($json->_issued)
+            || property_exists($json, self::FIELD_ISSUED)
+            || property_exists($json, self::FIELD_ISSUED_EXT)) {
+            $v = $json->_issued ?? new \stdClass();
+            $v->value = $json->issued ?? null;
+            $type->setIssued(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->applies) || property_exists($json, self::FIELD_APPLIES)) {
+            if (is_array($json->applies)) {
+                $type->setApplies(FHIRPeriod::jsonUnserialize(reset($json->applies), $config));
+            } else {
+                $type->setApplies(FHIRPeriod::jsonUnserialize($json->applies, $config));
+            }
+        }
+        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
+            if (is_object($json->subject)) {
+                $vals = [$json->subject];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBJECT, true);
+            } else {
+                $vals = $json->subject;
+            }
+            foreach($vals as $v) {
                 $type->addSubject(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TOPIC]) || array_key_exists(self::FIELD_TOPIC, $json)) {
-            $vs = $json[self::FIELD_TOPIC];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->topic) || property_exists($json, self::FIELD_TOPIC)) {
+            if (is_object($json->topic)) {
+                $vals = [$json->topic];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TOPIC, true);
+            } else {
+                $vals = $json->topic;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTopic(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_AUTHORITY]) || array_key_exists(self::FIELD_AUTHORITY, $json)) {
-            $vs = $json[self::FIELD_AUTHORITY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->authority) || property_exists($json, self::FIELD_AUTHORITY)) {
+            if (is_object($json->authority)) {
+                $vals = [$json->authority];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_AUTHORITY, true);
+            } else {
+                $vals = $json->authority;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAuthority(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DOMAIN]) || array_key_exists(self::FIELD_DOMAIN, $json)) {
-            $vs = $json[self::FIELD_DOMAIN];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->domain) || property_exists($json, self::FIELD_DOMAIN)) {
+            if (is_object($json->domain)) {
+                $vals = [$json->domain];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DOMAIN, true);
+            } else {
+                $vals = $json->domain;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addDomain(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_SUB_TYPE]) || array_key_exists(self::FIELD_SUB_TYPE, $json)) {
-            $vs = $json[self::FIELD_SUB_TYPE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->subType) || property_exists($json, self::FIELD_SUB_TYPE)) {
+            if (is_object($json->subType)) {
+                $vals = [$json->subType];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUB_TYPE, true);
+            } else {
+                $vals = $json->subType;
+            }
+            foreach($vals as $v) {
                 $type->addSubType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ACTION]) || array_key_exists(self::FIELD_ACTION, $json)) {
-            $vs = $json[self::FIELD_ACTION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->action) || property_exists($json, self::FIELD_ACTION)) {
+            if (is_object($json->action)) {
+                $vals = [$json->action];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ACTION, true);
+            } else {
+                $vals = $json->action;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAction(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ACTION_REASON]) || array_key_exists(self::FIELD_ACTION_REASON, $json)) {
-            $vs = $json[self::FIELD_ACTION_REASON];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->actionReason) || property_exists($json, self::FIELD_ACTION_REASON)) {
+            if (is_object($json->actionReason)) {
+                $vals = [$json->actionReason];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ACTION_REASON, true);
+            } else {
+                $vals = $json->actionReason;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addActionReason(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DECISION_TYPE]) || array_key_exists(self::FIELD_DECISION_TYPE, $json)) {
-            $type->setDecisionType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DECISION_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_CONTENT_DERIVATIVE]) || array_key_exists(self::FIELD_CONTENT_DERIVATIVE, $json)) {
-            $type->setContentDerivative(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CONTENT_DERIVATIVE], $config));
-        }
-        if (isset($json[self::FIELD_SECURITY_LABEL]) || array_key_exists(self::FIELD_SECURITY_LABEL, $json)) {
-            $vs = $json[self::FIELD_SECURITY_LABEL];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->decisionType) || property_exists($json, self::FIELD_DECISION_TYPE)) {
+            if (is_array($json->decisionType)) {
+                $type->setDecisionType(FHIRCodeableConcept::jsonUnserialize(reset($json->decisionType), $config));
+            } else {
+                $type->setDecisionType(FHIRCodeableConcept::jsonUnserialize($json->decisionType, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->contentDerivative) || property_exists($json, self::FIELD_CONTENT_DERIVATIVE)) {
+            if (is_array($json->contentDerivative)) {
+                $type->setContentDerivative(FHIRCodeableConcept::jsonUnserialize(reset($json->contentDerivative), $config));
+            } else {
+                $type->setContentDerivative(FHIRCodeableConcept::jsonUnserialize($json->contentDerivative, $config));
+            }
+        }
+        if (isset($json->securityLabel) || property_exists($json, self::FIELD_SECURITY_LABEL)) {
+            if (is_object($json->securityLabel)) {
+                $vals = [$json->securityLabel];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SECURITY_LABEL, true);
+            } else {
+                $vals = $json->securityLabel;
+            }
+            foreach($vals as $v) {
                 $type->addSecurityLabel(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_AGENT]) || array_key_exists(self::FIELD_AGENT, $json)) {
-            $vs = $json[self::FIELD_AGENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->agent) || property_exists($json, self::FIELD_AGENT)) {
+            if (is_object($json->agent)) {
+                $vals = [$json->agent];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_AGENT, true);
+            } else {
+                $vals = $json->agent;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAgent(FHIRContractAgent::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SIGNER]) || array_key_exists(self::FIELD_SIGNER, $json)) {
-            $vs = $json[self::FIELD_SIGNER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->signer) || property_exists($json, self::FIELD_SIGNER)) {
+            if (is_object($json->signer)) {
+                $vals = [$json->signer];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SIGNER, true);
+            } else {
+                $vals = $json->signer;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSigner(FHIRContractSigner::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_VALUED_ITEM]) || array_key_exists(self::FIELD_VALUED_ITEM, $json)) {
-            $vs = $json[self::FIELD_VALUED_ITEM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->valuedItem) || property_exists($json, self::FIELD_VALUED_ITEM)) {
+            if (is_object($json->valuedItem)) {
+                $vals = [$json->valuedItem];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_VALUED_ITEM, true);
+            } else {
+                $vals = $json->valuedItem;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addValuedItem(FHIRContractValuedItem::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TERM]) || array_key_exists(self::FIELD_TERM, $json)) {
-            $vs = $json[self::FIELD_TERM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->term) || property_exists($json, self::FIELD_TERM)) {
+            if (is_object($json->term)) {
+                $vals = [$json->term];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TERM, true);
+            } else {
+                $vals = $json->term;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTerm(FHIRContractTerm::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_BINDING_ATTACHMENT]) || array_key_exists(self::FIELD_BINDING_ATTACHMENT, $json)) {
-            $type->setBindingAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_BINDING_ATTACHMENT], $config));
-        }
-        if (isset($json[self::FIELD_BINDING_REFERENCE]) || array_key_exists(self::FIELD_BINDING_REFERENCE, $json)) {
-            $type->setBindingReference(FHIRReference::jsonUnserialize($json[self::FIELD_BINDING_REFERENCE], $config));
-        }
-        if (isset($json[self::FIELD_FRIENDLY]) || array_key_exists(self::FIELD_FRIENDLY, $json)) {
-            $vs = $json[self::FIELD_FRIENDLY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->bindingAttachment) || property_exists($json, self::FIELD_BINDING_ATTACHMENT)) {
+            if (is_array($json->bindingAttachment)) {
+                $type->setBindingAttachment(FHIRAttachment::jsonUnserialize(reset($json->bindingAttachment), $config));
+            } else {
+                $type->setBindingAttachment(FHIRAttachment::jsonUnserialize($json->bindingAttachment, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->bindingReference) || property_exists($json, self::FIELD_BINDING_REFERENCE)) {
+            if (is_array($json->bindingReference)) {
+                $type->setBindingReference(FHIRReference::jsonUnserialize(reset($json->bindingReference), $config));
+            } else {
+                $type->setBindingReference(FHIRReference::jsonUnserialize($json->bindingReference, $config));
+            }
+        }
+        if (isset($json->friendly) || property_exists($json, self::FIELD_FRIENDLY)) {
+            if (is_object($json->friendly)) {
+                $vals = [$json->friendly];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_FRIENDLY, true);
+            } else {
+                $vals = $json->friendly;
+            }
+            foreach($vals as $v) {
                 $type->addFriendly(FHIRContractFriendly::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_LEGAL]) || array_key_exists(self::FIELD_LEGAL, $json)) {
-            $vs = $json[self::FIELD_LEGAL];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->legal) || property_exists($json, self::FIELD_LEGAL)) {
+            if (is_object($json->legal)) {
+                $vals = [$json->legal];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_LEGAL, true);
+            } else {
+                $vals = $json->legal;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addLegal(FHIRContractLegal::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_RULE]) || array_key_exists(self::FIELD_RULE, $json)) {
-            $vs = $json[self::FIELD_RULE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->rule) || property_exists($json, self::FIELD_RULE)) {
+            if (is_object($json->rule)) {
+                $vals = [$json->rule];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RULE, true);
+            } else {
+                $vals = $json->rule;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addRule(FHIRContractRule::jsonUnserialize($v, $config));
             }
         }
@@ -2587,28 +2585,56 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             $out->applies = $this->applies;
         }
         if (isset($this->subject) && [] !== $this->subject) {
-            $out->subject = $this->subject;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUBJECT) && 1 === count($this->subject)) {
+                $out->subject = $this->subject[0];
+            } else {
+                $out->subject = $this->subject;
+            }
         }
         if (isset($this->topic) && [] !== $this->topic) {
-            $out->topic = $this->topic;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TOPIC) && 1 === count($this->topic)) {
+                $out->topic = $this->topic[0];
+            } else {
+                $out->topic = $this->topic;
+            }
         }
         if (isset($this->authority) && [] !== $this->authority) {
-            $out->authority = $this->authority;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_AUTHORITY) && 1 === count($this->authority)) {
+                $out->authority = $this->authority[0];
+            } else {
+                $out->authority = $this->authority;
+            }
         }
         if (isset($this->domain) && [] !== $this->domain) {
-            $out->domain = $this->domain;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DOMAIN) && 1 === count($this->domain)) {
+                $out->domain = $this->domain[0];
+            } else {
+                $out->domain = $this->domain;
+            }
         }
         if (isset($this->type)) {
             $out->type = $this->type;
         }
         if (isset($this->subType) && [] !== $this->subType) {
-            $out->subType = $this->subType;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUB_TYPE) && 1 === count($this->subType)) {
+                $out->subType = $this->subType[0];
+            } else {
+                $out->subType = $this->subType;
+            }
         }
         if (isset($this->action) && [] !== $this->action) {
-            $out->action = $this->action;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ACTION) && 1 === count($this->action)) {
+                $out->action = $this->action[0];
+            } else {
+                $out->action = $this->action;
+            }
         }
         if (isset($this->actionReason) && [] !== $this->actionReason) {
-            $out->actionReason = $this->actionReason;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ACTION_REASON) && 1 === count($this->actionReason)) {
+                $out->actionReason = $this->actionReason[0];
+            } else {
+                $out->actionReason = $this->actionReason;
+            }
         }
         if (isset($this->decisionType)) {
             $out->decisionType = $this->decisionType;
@@ -2617,19 +2643,39 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             $out->contentDerivative = $this->contentDerivative;
         }
         if (isset($this->securityLabel) && [] !== $this->securityLabel) {
-            $out->securityLabel = $this->securityLabel;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SECURITY_LABEL) && 1 === count($this->securityLabel)) {
+                $out->securityLabel = $this->securityLabel[0];
+            } else {
+                $out->securityLabel = $this->securityLabel;
+            }
         }
         if (isset($this->agent) && [] !== $this->agent) {
-            $out->agent = $this->agent;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_AGENT) && 1 === count($this->agent)) {
+                $out->agent = $this->agent[0];
+            } else {
+                $out->agent = $this->agent;
+            }
         }
         if (isset($this->signer) && [] !== $this->signer) {
-            $out->signer = $this->signer;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SIGNER) && 1 === count($this->signer)) {
+                $out->signer = $this->signer[0];
+            } else {
+                $out->signer = $this->signer;
+            }
         }
         if (isset($this->valuedItem) && [] !== $this->valuedItem) {
-            $out->valuedItem = $this->valuedItem;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_VALUED_ITEM) && 1 === count($this->valuedItem)) {
+                $out->valuedItem = $this->valuedItem[0];
+            } else {
+                $out->valuedItem = $this->valuedItem;
+            }
         }
         if (isset($this->term) && [] !== $this->term) {
-            $out->term = $this->term;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TERM) && 1 === count($this->term)) {
+                $out->term = $this->term[0];
+            } else {
+                $out->term = $this->term;
+            }
         }
         if (isset($this->bindingAttachment)) {
             $out->bindingAttachment = $this->bindingAttachment;
@@ -2638,13 +2684,25 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             $out->bindingReference = $this->bindingReference;
         }
         if (isset($this->friendly) && [] !== $this->friendly) {
-            $out->friendly = $this->friendly;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_FRIENDLY) && 1 === count($this->friendly)) {
+                $out->friendly = $this->friendly[0];
+            } else {
+                $out->friendly = $this->friendly;
+            }
         }
         if (isset($this->legal) && [] !== $this->legal) {
-            $out->legal = $this->legal;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_LEGAL) && 1 === count($this->legal)) {
+                $out->legal = $this->legal[0];
+            } else {
+                $out->legal = $this->legal;
+            }
         }
         if (isset($this->rule) && [] !== $this->rule) {
-            $out->rule = $this->rule;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RULE) && 1 === count($this->rule)) {
+                $out->rule = $this->rule[0];
+            } else {
+                $out->rule = $this->rule;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

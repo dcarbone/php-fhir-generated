@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -86,12 +88,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRBundleRequest extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BUNDLE_DOT_REQUEST;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_METHOD = 'method';
     public const FIELD_METHOD_EXT = '_method';
     public const FIELD_URL = 'url';
@@ -105,7 +109,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     public const FIELD_IF_NONE_EXIST = 'ifNoneExist';
     public const FIELD_IF_NONE_EXIST_EXT = '_ifNoneExist';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_METHOD => [
@@ -116,7 +120,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_METHOD => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -126,7 +130,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
         self::FIELD_IF_NONE_EXIST => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * HTTP verbs (in the HTTP command line).
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -197,7 +201,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
      */
     protected FHIRString $ifNoneExist;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRBundleRequest Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -246,7 +250,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -255,7 +259,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * HTTP verbs (in the HTTP command line).
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -278,11 +282,9 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * transaction response.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRHTTPVerbList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHTTPVerb $method
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMethod(null|string|FHIRHTTPVerbList|FHIRHTTPVerb $method,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMethod(null|string|FHIRHTTPVerbList|FHIRHTTPVerb $method): self
     {
         if (null === $method) {
             unset($this->method);
@@ -292,33 +294,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
             $method = new FHIRHTTPVerb(value: $method);
         }
         $this->method = $method;
-        if ($this->_valueXMLLocations[self::FIELD_METHOD] !== $valueXMLLocation) {
-            $this->_setMethodValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the method element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMethodValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_METHOD];
-    }
-
-    /**
-     * Set the location the "value" field of the method element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMethodValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_METHOD] = $valueXMLLocation;
         return $this;
     }
 
@@ -346,11 +321,9 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * is posted).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $url
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
         if (null === $url) {
             unset($this->url);
@@ -360,33 +333,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
             $url = new FHIRUri(value: $url);
         }
         $this->url = $url;
-        if ($this->_valueXMLLocations[self::FIELD_URL] !== $valueXMLLocation) {
-            $this->_setUrlValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the url element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUrlValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_URL];
-    }
-
-    /**
-     * Set the location the "value" field of the url element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUrlValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_URL] = $valueXMLLocation;
         return $this;
     }
 
@@ -414,11 +360,9 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * documentation for ["Conditional Read"](http.html#cread).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $ifNoneMatch
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIfNoneMatch(null|string|FHIRStringPrimitive|FHIRString $ifNoneMatch,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIfNoneMatch(null|string|FHIRStringPrimitive|FHIRString $ifNoneMatch): self
     {
         if (null === $ifNoneMatch) {
             unset($this->ifNoneMatch);
@@ -428,33 +372,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
             $ifNoneMatch = new FHIRString(value: $ifNoneMatch);
         }
         $this->ifNoneMatch = $ifNoneMatch;
-        if ($this->_valueXMLLocations[self::FIELD_IF_NONE_MATCH] !== $valueXMLLocation) {
-            $this->_setIfNoneMatchValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the ifNoneMatch element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIfNoneMatchValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_IF_NONE_MATCH];
-    }
-
-    /**
-     * Set the location the "value" field of the ifNoneMatch element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIfNoneMatchValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_IF_NONE_MATCH] = $valueXMLLocation;
         return $this;
     }
 
@@ -486,11 +403,9 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * documentation for ["Conditional Read"](http.html#cread).
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $ifModifiedSince
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIfModifiedSince(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $ifModifiedSince,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIfModifiedSince(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $ifModifiedSince): self
     {
         if (null === $ifModifiedSince) {
             unset($this->ifModifiedSince);
@@ -500,33 +415,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
             $ifModifiedSince = new FHIRInstant(value: $ifModifiedSince);
         }
         $this->ifModifiedSince = $ifModifiedSince;
-        if ($this->_valueXMLLocations[self::FIELD_IF_MODIFIED_SINCE] !== $valueXMLLocation) {
-            $this->_setIfModifiedSinceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the ifModifiedSince element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIfModifiedSinceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_IF_MODIFIED_SINCE];
-    }
-
-    /**
-     * Set the location the "value" field of the ifModifiedSince element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIfModifiedSinceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_IF_MODIFIED_SINCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -554,11 +442,9 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * the API section ["Managing Resource Contention"](http.html#concurrency).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $ifMatch
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIfMatch(null|string|FHIRStringPrimitive|FHIRString $ifMatch,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIfMatch(null|string|FHIRStringPrimitive|FHIRString $ifMatch): self
     {
         if (null === $ifMatch) {
             unset($this->ifMatch);
@@ -568,33 +454,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
             $ifMatch = new FHIRString(value: $ifMatch);
         }
         $this->ifMatch = $ifMatch;
-        if ($this->_valueXMLLocations[self::FIELD_IF_MATCH] !== $valueXMLLocation) {
-            $this->_setIfMatchValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the ifMatch element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIfMatchValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_IF_MATCH];
-    }
-
-    /**
-     * Set the location the "value" field of the ifMatch element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIfMatchValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_IF_MATCH] = $valueXMLLocation;
         return $this;
     }
 
@@ -626,11 +485,9 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * follows the "?" (not including the "?").
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $ifNoneExist
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIfNoneExist(null|string|FHIRStringPrimitive|FHIRString $ifNoneExist,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIfNoneExist(null|string|FHIRStringPrimitive|FHIRString $ifNoneExist): self
     {
         if (null === $ifNoneExist) {
             unset($this->ifNoneExist);
@@ -640,37 +497,10 @@ class FHIRBundleRequest extends FHIRBackboneElement
             $ifNoneExist = new FHIRString(value: $ifNoneExist);
         }
         $this->ifNoneExist = $ifNoneExist;
-        if ($this->_valueXMLLocations[self::FIELD_IF_NONE_EXIST] !== $valueXMLLocation) {
-            $this->_setIfNoneExistValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the ifNoneExist element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIfNoneExistValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_IF_NONE_EXIST];
-    }
-
-    /**
-     * Set the location the "value" field of the ifNoneExist element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIfNoneExistValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_IF_NONE_EXIST] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -699,9 +529,11 @@ class FHIRBundleRequest extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -721,55 +553,56 @@ class FHIRBundleRequest extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_METHOD])) {
             if (isset($type->method)) {
                 $type->method->setValue((string)$attributes[self::FIELD_METHOD]);
-                $type->_setMethodValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMethod((string)$attributes[self::FIELD_METHOD], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMethod((string)$attributes[self::FIELD_METHOD]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_METHOD, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_URL])) {
             if (isset($type->url)) {
                 $type->url->setValue((string)$attributes[self::FIELD_URL]);
-                $type->_setUrlValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUrl((string)$attributes[self::FIELD_URL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUrl((string)$attributes[self::FIELD_URL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_URL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IF_NONE_MATCH])) {
             if (isset($type->ifNoneMatch)) {
                 $type->ifNoneMatch->setValue((string)$attributes[self::FIELD_IF_NONE_MATCH]);
-                $type->_setIfNoneMatchValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIfNoneMatch((string)$attributes[self::FIELD_IF_NONE_MATCH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIfNoneMatch((string)$attributes[self::FIELD_IF_NONE_MATCH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IF_NONE_MATCH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IF_MODIFIED_SINCE])) {
             if (isset($type->ifModifiedSince)) {
                 $type->ifModifiedSince->setValue((string)$attributes[self::FIELD_IF_MODIFIED_SINCE]);
-                $type->_setIfModifiedSinceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIfModifiedSince((string)$attributes[self::FIELD_IF_MODIFIED_SINCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIfModifiedSince((string)$attributes[self::FIELD_IF_MODIFIED_SINCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IF_MODIFIED_SINCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IF_MATCH])) {
             if (isset($type->ifMatch)) {
                 $type->ifMatch->setValue((string)$attributes[self::FIELD_IF_MATCH]);
-                $type->_setIfMatchValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIfMatch((string)$attributes[self::FIELD_IF_MATCH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIfMatch((string)$attributes[self::FIELD_IF_MATCH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IF_MATCH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IF_NONE_EXIST])) {
             if (isset($type->ifNoneExist)) {
                 $type->ifNoneExist->setValue((string)$attributes[self::FIELD_IF_NONE_EXIST]);
-                $type->_setIfNoneExistValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIfNoneExist((string)$attributes[self::FIELD_IF_NONE_EXIST], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIfNoneExist((string)$attributes[self::FIELD_IF_NONE_EXIST]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IF_NONE_EXIST, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -782,22 +615,22 @@ class FHIRBundleRequest extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->method) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_METHOD]) {
-            $xw->writeAttribute(self::FIELD_METHOD, $this->method->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_METHOD, $this->method->_getValueAsString());
         }
         if (isset($this->url) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_URL]) {
-            $xw->writeAttribute(self::FIELD_URL, $this->url->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_URL, $this->url->_getValueAsString());
         }
         if (isset($this->ifNoneMatch) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_IF_NONE_MATCH]) {
-            $xw->writeAttribute(self::FIELD_IF_NONE_MATCH, $this->ifNoneMatch->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_IF_NONE_MATCH, $this->ifNoneMatch->_getValueAsString());
         }
         if (isset($this->ifModifiedSince) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_IF_MODIFIED_SINCE]) {
-            $xw->writeAttribute(self::FIELD_IF_MODIFIED_SINCE, $this->ifModifiedSince->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_IF_MODIFIED_SINCE, $this->ifModifiedSince->_getValueAsString());
         }
         if (isset($this->ifMatch) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_IF_MATCH]) {
-            $xw->writeAttribute(self::FIELD_IF_MATCH, $this->ifMatch->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_IF_MATCH, $this->ifMatch->_getValueAsString());
         }
         if (isset($this->ifNoneExist) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_IF_NONE_EXIST]) {
-            $xw->writeAttribute(self::FIELD_IF_NONE_EXIST, $this->ifNoneExist->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_IF_NONE_EXIST, $this->ifNoneExist->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->method)
@@ -845,13 +678,13 @@ class FHIRBundleRequest extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -866,65 +699,53 @@ class FHIRBundleRequest extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_METHOD])
-            || isset($json[self::FIELD_METHOD_EXT])
-            || array_key_exists(self::FIELD_METHOD, $json)
-            || array_key_exists(self::FIELD_METHOD_EXT, $json)) {
-            $value = $json[self::FIELD_METHOD] ?? null;
-            $type->setMethod(FHIRHTTPVerb::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRHTTPVerb::FIELD_VALUE => $value]) + ($json[self::FIELD_METHOD_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->method)
+            || isset($json->_method)
+            || property_exists($json, self::FIELD_METHOD)
+            || property_exists($json, self::FIELD_METHOD_EXT)) {
+            $v = $json->_method ?? new \stdClass();
+            $v->value = $json->method ?? null;
+            $type->setMethod(FHIRHTTPVerb::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_URL])
-            || isset($json[self::FIELD_URL_EXT])
-            || array_key_exists(self::FIELD_URL, $json)
-            || array_key_exists(self::FIELD_URL_EXT, $json)) {
-            $value = $json[self::FIELD_URL] ?? null;
-            $type->setUrl(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_URL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->url)
+            || isset($json->_url)
+            || property_exists($json, self::FIELD_URL)
+            || property_exists($json, self::FIELD_URL_EXT)) {
+            $v = $json->_url ?? new \stdClass();
+            $v->value = $json->url ?? null;
+            $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_IF_NONE_MATCH])
-            || isset($json[self::FIELD_IF_NONE_MATCH_EXT])
-            || array_key_exists(self::FIELD_IF_NONE_MATCH, $json)
-            || array_key_exists(self::FIELD_IF_NONE_MATCH_EXT, $json)) {
-            $value = $json[self::FIELD_IF_NONE_MATCH] ?? null;
-            $type->setIfNoneMatch(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_IF_NONE_MATCH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->ifNoneMatch)
+            || isset($json->_ifNoneMatch)
+            || property_exists($json, self::FIELD_IF_NONE_MATCH)
+            || property_exists($json, self::FIELD_IF_NONE_MATCH_EXT)) {
+            $v = $json->_ifNoneMatch ?? new \stdClass();
+            $v->value = $json->ifNoneMatch ?? null;
+            $type->setIfNoneMatch(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_IF_MODIFIED_SINCE])
-            || isset($json[self::FIELD_IF_MODIFIED_SINCE_EXT])
-            || array_key_exists(self::FIELD_IF_MODIFIED_SINCE, $json)
-            || array_key_exists(self::FIELD_IF_MODIFIED_SINCE_EXT, $json)) {
-            $value = $json[self::FIELD_IF_MODIFIED_SINCE] ?? null;
-            $type->setIfModifiedSince(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_IF_MODIFIED_SINCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->ifModifiedSince)
+            || isset($json->_ifModifiedSince)
+            || property_exists($json, self::FIELD_IF_MODIFIED_SINCE)
+            || property_exists($json, self::FIELD_IF_MODIFIED_SINCE_EXT)) {
+            $v = $json->_ifModifiedSince ?? new \stdClass();
+            $v->value = $json->ifModifiedSince ?? null;
+            $type->setIfModifiedSince(FHIRInstant::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_IF_MATCH])
-            || isset($json[self::FIELD_IF_MATCH_EXT])
-            || array_key_exists(self::FIELD_IF_MATCH, $json)
-            || array_key_exists(self::FIELD_IF_MATCH_EXT, $json)) {
-            $value = $json[self::FIELD_IF_MATCH] ?? null;
-            $type->setIfMatch(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_IF_MATCH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->ifMatch)
+            || isset($json->_ifMatch)
+            || property_exists($json, self::FIELD_IF_MATCH)
+            || property_exists($json, self::FIELD_IF_MATCH_EXT)) {
+            $v = $json->_ifMatch ?? new \stdClass();
+            $v->value = $json->ifMatch ?? null;
+            $type->setIfMatch(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_IF_NONE_EXIST])
-            || isset($json[self::FIELD_IF_NONE_EXIST_EXT])
-            || array_key_exists(self::FIELD_IF_NONE_EXIST, $json)
-            || array_key_exists(self::FIELD_IF_NONE_EXIST_EXT, $json)) {
-            $value = $json[self::FIELD_IF_NONE_EXIST] ?? null;
-            $type->setIfNoneExist(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_IF_NONE_EXIST_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->ifNoneExist)
+            || isset($json->_ifNoneExist)
+            || property_exists($json, self::FIELD_IF_NONE_EXIST)
+            || property_exists($json, self::FIELD_IF_NONE_EXIST_EXT)) {
+            $v = $json->_ifNoneExist ?? new \stdClass();
+            $v->value = $json->ifNoneExist ?? null;
+            $type->setIfNoneExist(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

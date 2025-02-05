@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -106,12 +108,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SUBUNIT = 'subunit';
     public const FIELD_SUBUNIT_EXT = '_subunit';
     public const FIELD_SEQUENCE = 'sequence';
@@ -124,18 +128,18 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     public const FIELD_LINKAGE = 'linkage';
     public const FIELD_SUGAR = 'sugar';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SUBUNIT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LENGTH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -231,15 +235,15 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      */
     protected array $sugar;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstanceNucleicAcidSubunit Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $subunit
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $subunit
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sequence
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $length
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $length
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $sequenceAttachment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $fivePrime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $threePrime
@@ -250,9 +254,9 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $subunit = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $subunit = null,
                                 null|string|FHIRStringPrimitive|FHIRString $sequence = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $length = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $length = null,
                                 null|FHIRAttachment $sequenceAttachment = null,
                                 null|FHIRCodeableConcept $fivePrime = null,
                                 null|FHIRCodeableConcept $threePrime = null,
@@ -290,7 +294,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -299,7 +303,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -325,12 +329,10 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * Sequences of the same length will be ordered by molecular weight. Subunits that
      * have identical sequences will be repeated and have sequential subscripts.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $subunit
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $subunit
      * @return static
      */
-    public function setSubunit(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $subunit,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSubunit(null|string|float|FHIRIntegerPrimitive|FHIRInteger $subunit): self
     {
         if (null === $subunit) {
             unset($this->subunit);
@@ -340,33 +342,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             $subunit = new FHIRInteger(value: $subunit);
         }
         $this->subunit = $subunit;
-        if ($this->_valueXMLLocations[self::FIELD_SUBUNIT] !== $valueXMLLocation) {
-            $this->_setSubunitValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the subunit element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSubunitValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SUBUNIT];
-    }
-
-    /**
-     * Set the location the "value" field of the subunit element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSubunitValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SUBUNIT] = $valueXMLLocation;
         return $this;
     }
 
@@ -396,11 +371,9 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * non-phosphate linkage should also be captured.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sequence
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSequence(null|string|FHIRStringPrimitive|FHIRString $sequence,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSequence(null|string|FHIRStringPrimitive|FHIRString $sequence): self
     {
         if (null === $sequence) {
             unset($this->sequence);
@@ -410,33 +383,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             $sequence = new FHIRString(value: $sequence);
         }
         $this->sequence = $sequence;
-        if ($this->_valueXMLLocations[self::FIELD_SEQUENCE] !== $valueXMLLocation) {
-            $this->_setSequenceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the sequence element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSequenceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SEQUENCE];
-    }
-
-    /**
-     * Set the location the "value" field of the sequence element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSequenceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SEQUENCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -461,12 +407,10 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      *
      * The length of the sequence shall be captured.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $length
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $length
      * @return static
      */
-    public function setLength(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $length,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $length): self
     {
         if (null === $length) {
             unset($this->length);
@@ -476,33 +420,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             $length = new FHIRInteger(value: $length);
         }
         $this->length = $length;
-        if ($this->_valueXMLLocations[self::FIELD_LENGTH] !== $valueXMLLocation) {
-            $this->_setLengthValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the length element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLengthValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LENGTH];
-    }
-
-    /**
-     * Set the location the "value" field of the length element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLengthValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LENGTH] = $valueXMLLocation;
         return $this;
     }
 
@@ -758,7 +675,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -787,9 +704,11 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -813,31 +732,32 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SUBUNIT])) {
             if (isset($type->subunit)) {
                 $type->subunit->setValue((string)$attributes[self::FIELD_SUBUNIT]);
-                $type->_setSubunitValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSubunit((string)$attributes[self::FIELD_SUBUNIT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSubunit((string)$attributes[self::FIELD_SUBUNIT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SUBUNIT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SEQUENCE])) {
             if (isset($type->sequence)) {
                 $type->sequence->setValue((string)$attributes[self::FIELD_SEQUENCE]);
-                $type->_setSequenceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SEQUENCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LENGTH])) {
             if (isset($type->length)) {
                 $type->length->setValue((string)$attributes[self::FIELD_LENGTH]);
-                $type->_setLengthValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLength((string)$attributes[self::FIELD_LENGTH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLength((string)$attributes[self::FIELD_LENGTH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LENGTH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -850,13 +770,13 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->subunit) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SUBUNIT]) {
-            $xw->writeAttribute(self::FIELD_SUBUNIT, $this->subunit->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SUBUNIT, $this->subunit->_getValueAsString());
         }
         if (isset($this->sequence) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SEQUENCE]) {
-            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->_getValueAsString());
         }
         if (isset($this->length) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LENGTH]) {
-            $xw->writeAttribute(self::FIELD_LENGTH, $this->length->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LENGTH, $this->length->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->subunit)
@@ -912,13 +832,13 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -933,60 +853,70 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SUBUNIT])
-            || isset($json[self::FIELD_SUBUNIT_EXT])
-            || array_key_exists(self::FIELD_SUBUNIT, $json)
-            || array_key_exists(self::FIELD_SUBUNIT_EXT, $json)) {
-            $value = $json[self::FIELD_SUBUNIT] ?? null;
-            $type->setSubunit(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_SUBUNIT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->subunit)
+            || isset($json->_subunit)
+            || property_exists($json, self::FIELD_SUBUNIT)
+            || property_exists($json, self::FIELD_SUBUNIT_EXT)) {
+            $v = $json->_subunit ?? new \stdClass();
+            $v->value = $json->subunit ?? null;
+            $type->setSubunit(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SEQUENCE])
-            || isset($json[self::FIELD_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
-            $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $type->setSequence(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sequence)
+            || isset($json->_sequence)
+            || property_exists($json, self::FIELD_SEQUENCE)
+            || property_exists($json, self::FIELD_SEQUENCE_EXT)) {
+            $v = $json->_sequence ?? new \stdClass();
+            $v->value = $json->sequence ?? null;
+            $type->setSequence(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_LENGTH])
-            || isset($json[self::FIELD_LENGTH_EXT])
-            || array_key_exists(self::FIELD_LENGTH, $json)
-            || array_key_exists(self::FIELD_LENGTH_EXT, $json)) {
-            $value = $json[self::FIELD_LENGTH] ?? null;
-            $type->setLength(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_LENGTH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->length)
+            || isset($json->_length)
+            || property_exists($json, self::FIELD_LENGTH)
+            || property_exists($json, self::FIELD_LENGTH_EXT)) {
+            $v = $json->_length ?? new \stdClass();
+            $v->value = $json->length ?? null;
+            $type->setLength(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SEQUENCE_ATTACHMENT]) || array_key_exists(self::FIELD_SEQUENCE_ATTACHMENT, $json)) {
-            $type->setSequenceAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_SEQUENCE_ATTACHMENT], $config));
-        }
-        if (isset($json[self::FIELD_FIVE_PRIME]) || array_key_exists(self::FIELD_FIVE_PRIME, $json)) {
-            $type->setFivePrime(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FIVE_PRIME], $config));
-        }
-        if (isset($json[self::FIELD_THREE_PRIME]) || array_key_exists(self::FIELD_THREE_PRIME, $json)) {
-            $type->setThreePrime(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_THREE_PRIME], $config));
-        }
-        if (isset($json[self::FIELD_LINKAGE]) || array_key_exists(self::FIELD_LINKAGE, $json)) {
-            $vs = $json[self::FIELD_LINKAGE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->sequenceAttachment) || property_exists($json, self::FIELD_SEQUENCE_ATTACHMENT)) {
+            if (is_array($json->sequenceAttachment)) {
+                $type->setSequenceAttachment(FHIRAttachment::jsonUnserialize(reset($json->sequenceAttachment), $config));
+            } else {
+                $type->setSequenceAttachment(FHIRAttachment::jsonUnserialize($json->sequenceAttachment, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->fivePrime) || property_exists($json, self::FIELD_FIVE_PRIME)) {
+            if (is_array($json->fivePrime)) {
+                $type->setFivePrime(FHIRCodeableConcept::jsonUnserialize(reset($json->fivePrime), $config));
+            } else {
+                $type->setFivePrime(FHIRCodeableConcept::jsonUnserialize($json->fivePrime, $config));
+            }
+        }
+        if (isset($json->threePrime) || property_exists($json, self::FIELD_THREE_PRIME)) {
+            if (is_array($json->threePrime)) {
+                $type->setThreePrime(FHIRCodeableConcept::jsonUnserialize(reset($json->threePrime), $config));
+            } else {
+                $type->setThreePrime(FHIRCodeableConcept::jsonUnserialize($json->threePrime, $config));
+            }
+        }
+        if (isset($json->linkage) || property_exists($json, self::FIELD_LINKAGE)) {
+            if (is_object($json->linkage)) {
+                $vals = [$json->linkage];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_LINKAGE, true);
+            } else {
+                $vals = $json->linkage;
+            }
+            foreach($vals as $v) {
                 $type->addLinkage(FHIRSubstanceNucleicAcidLinkage::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SUGAR]) || array_key_exists(self::FIELD_SUGAR, $json)) {
-            $vs = $json[self::FIELD_SUGAR];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->sugar) || property_exists($json, self::FIELD_SUGAR)) {
+            if (is_object($json->sugar)) {
+                $vals = [$json->sugar];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUGAR, true);
+            } else {
+                $vals = $json->sugar;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSugar(FHIRSubstanceNucleicAcidSugar::jsonUnserialize($v, $config));
             }
         }
@@ -1039,10 +969,18 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             $out->threePrime = $this->threePrime;
         }
         if (isset($this->linkage) && [] !== $this->linkage) {
-            $out->linkage = $this->linkage;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_LINKAGE) && 1 === count($this->linkage)) {
+                $out->linkage = $this->linkage[0];
+            } else {
+                $out->linkage = $this->linkage;
+            }
         }
         if (isset($this->sugar) && [] !== $this->sugar) {
-            $out->sugar = $this->sugar;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUGAR) && 1 === count($this->sugar)) {
+                $out->sugar = $this->sugar[0];
+            } else {
+                $out->sugar = $this->sugar;
+            }
         }
         return $out;
     }

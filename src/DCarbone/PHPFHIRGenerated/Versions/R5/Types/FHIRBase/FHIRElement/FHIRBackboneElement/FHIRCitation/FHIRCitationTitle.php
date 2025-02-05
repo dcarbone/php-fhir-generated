@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -105,18 +107,20 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRCitationTitle extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CITATION_DOT_TITLE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_LANGUAGE = 'language';
     public const FIELD_TEXT = 'text';
     public const FIELD_TEXT_EXT = '_text';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TEXT => [
@@ -124,12 +128,12 @@ class FHIRCitationTitle extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TEXT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -167,7 +171,7 @@ class FHIRCitationTitle extends FHIRBackboneElement
      */
     protected FHIRMarkdown $text;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCitationTitle Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -201,7 +205,7 @@ class FHIRCitationTitle extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -210,7 +214,7 @@ class FHIRCitationTitle extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -344,11 +348,9 @@ class FHIRCitationTitle extends FHIRBackboneElement
      * The title of the article or artifact.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $text
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setText(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $text,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setText(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $text): self
     {
         if (null === $text) {
             unset($this->text);
@@ -358,37 +360,10 @@ class FHIRCitationTitle extends FHIRBackboneElement
             $text = new FHIRMarkdown(value: $text);
         }
         $this->text = $text;
-        if ($this->_valueXMLLocations[self::FIELD_TEXT] !== $valueXMLLocation) {
-            $this->_setTextValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the text element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTextValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TEXT];
-    }
-
-    /**
-     * Set the location the "value" field of the text element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTextValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TEXT] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -417,9 +392,11 @@ class FHIRCitationTitle extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -433,15 +410,16 @@ class FHIRCitationTitle extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TEXT])) {
             if (isset($type->text)) {
                 $type->text->setValue((string)$attributes[self::FIELD_TEXT]);
-                $type->_setTextValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setText((string)$attributes[self::FIELD_TEXT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setText((string)$attributes[self::FIELD_TEXT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TEXT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -454,7 +432,7 @@ class FHIRCitationTitle extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->text) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TEXT]) {
-            $xw->writeAttribute(self::FIELD_TEXT, $this->text->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TEXT, $this->text->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -479,13 +457,13 @@ class FHIRCitationTitle extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationTitle $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationTitle
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -500,27 +478,31 @@ class FHIRCitationTitle extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $vs = $json[self::FIELD_TYPE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_object($json->type)) {
+                $vals = [$json->type];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TYPE, true);
+            } else {
+                $vals = $json->type;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_LANGUAGE]) || array_key_exists(self::FIELD_LANGUAGE, $json)) {
-            $type->setLanguage(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_LANGUAGE], $config));
+        if (isset($json->language) || property_exists($json, self::FIELD_LANGUAGE)) {
+            if (is_array($json->language)) {
+                $type->setLanguage(FHIRCodeableConcept::jsonUnserialize(reset($json->language), $config));
+            } else {
+                $type->setLanguage(FHIRCodeableConcept::jsonUnserialize($json->language, $config));
+            }
         }
-        if (isset($json[self::FIELD_TEXT])
-            || isset($json[self::FIELD_TEXT_EXT])
-            || array_key_exists(self::FIELD_TEXT, $json)
-            || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
-            $value = $json[self::FIELD_TEXT] ?? null;
-            $type->setText(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->text)
+            || isset($json->_text)
+            || property_exists($json, self::FIELD_TEXT)
+            || property_exists($json, self::FIELD_TEXT_EXT)) {
+            $v = $json->_text ?? new \stdClass();
+            $v->value = $json->text ?? null;
+            $type->setText(FHIRMarkdown::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -532,7 +514,11 @@ class FHIRCitationTitle extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->type) && [] !== $this->type) {
-            $out->type = $this->type;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TYPE) && 1 === count($this->type)) {
+                $out->type = $this->type[0];
+            } else {
+                $out->type = $this->type;
+            }
         }
         if (isset($this->language)) {
             $out->language = $this->language;

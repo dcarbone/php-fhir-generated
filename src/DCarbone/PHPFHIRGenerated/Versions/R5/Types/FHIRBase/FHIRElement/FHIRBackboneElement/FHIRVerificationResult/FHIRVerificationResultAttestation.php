@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -105,12 +107,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRVerificationResultAttestation extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_WHO = 'who';
     public const FIELD_ON_BEHALF_OF = 'onBehalfOf';
     public const FIELD_COMMUNICATION_METHOD = 'communicationMethod';
@@ -123,18 +127,18 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     public const FIELD_PROXY_SIGNATURE = 'proxySignature';
     public const FIELD_SOURCE_SIGNATURE = 'sourceSignature';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SOURCE_IDENTITY_CERTIFICATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PROXY_IDENTITY_CERTIFICATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -230,7 +234,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      */
     protected FHIRSignature $sourceSignature;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRVerificationResultAttestation Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -289,7 +293,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -298,7 +302,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -429,11 +433,9 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * The date the information was attested to.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $date
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
         if (null === $date) {
             unset($this->date);
@@ -443,33 +445,6 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
             $date = new FHIRDate(value: $date);
         }
         $this->date = $date;
-        if ($this->_valueXMLLocations[self::FIELD_DATE] !== $valueXMLLocation) {
-            $this->_setDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the date element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the date element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -495,11 +470,9 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * A digital identity certificate associated with the attestation source.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sourceIdentityCertificate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSourceIdentityCertificate(null|string|FHIRStringPrimitive|FHIRString $sourceIdentityCertificate,
-                                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSourceIdentityCertificate(null|string|FHIRStringPrimitive|FHIRString $sourceIdentityCertificate): self
     {
         if (null === $sourceIdentityCertificate) {
             unset($this->sourceIdentityCertificate);
@@ -509,33 +482,6 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
             $sourceIdentityCertificate = new FHIRString(value: $sourceIdentityCertificate);
         }
         $this->sourceIdentityCertificate = $sourceIdentityCertificate;
-        if ($this->_valueXMLLocations[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] !== $valueXMLLocation) {
-            $this->_setSourceIdentityCertificateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the sourceIdentityCertificate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSourceIdentityCertificateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SOURCE_IDENTITY_CERTIFICATE];
-    }
-
-    /**
-     * Set the location the "value" field of the sourceIdentityCertificate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSourceIdentityCertificateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -563,11 +509,9 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * attested information on behalf of the attestation source.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $proxyIdentityCertificate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setProxyIdentityCertificate(null|string|FHIRStringPrimitive|FHIRString $proxyIdentityCertificate,
-                                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setProxyIdentityCertificate(null|string|FHIRStringPrimitive|FHIRString $proxyIdentityCertificate): self
     {
         if (null === $proxyIdentityCertificate) {
             unset($this->proxyIdentityCertificate);
@@ -577,33 +521,6 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
             $proxyIdentityCertificate = new FHIRString(value: $proxyIdentityCertificate);
         }
         $this->proxyIdentityCertificate = $proxyIdentityCertificate;
-        if ($this->_valueXMLLocations[self::FIELD_PROXY_IDENTITY_CERTIFICATE] !== $valueXMLLocation) {
-            $this->_setProxyIdentityCertificateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the proxyIdentityCertificate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getProxyIdentityCertificateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PROXY_IDENTITY_CERTIFICATE];
-    }
-
-    /**
-     * Set the location the "value" field of the proxyIdentityCertificate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setProxyIdentityCertificateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PROXY_IDENTITY_CERTIFICATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -695,7 +612,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -724,9 +641,11 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -750,31 +669,32 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATE])) {
             if (isset($type->date)) {
                 $type->date->setValue((string)$attributes[self::FIELD_DATE]);
-                $type->_setDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDate((string)$attributes[self::FIELD_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDate((string)$attributes[self::FIELD_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SOURCE_IDENTITY_CERTIFICATE])) {
             if (isset($type->sourceIdentityCertificate)) {
                 $type->sourceIdentityCertificate->setValue((string)$attributes[self::FIELD_SOURCE_IDENTITY_CERTIFICATE]);
-                $type->_setSourceIdentityCertificateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSourceIdentityCertificate((string)$attributes[self::FIELD_SOURCE_IDENTITY_CERTIFICATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSourceIdentityCertificate((string)$attributes[self::FIELD_SOURCE_IDENTITY_CERTIFICATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SOURCE_IDENTITY_CERTIFICATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PROXY_IDENTITY_CERTIFICATE])) {
             if (isset($type->proxyIdentityCertificate)) {
                 $type->proxyIdentityCertificate->setValue((string)$attributes[self::FIELD_PROXY_IDENTITY_CERTIFICATE]);
-                $type->_setProxyIdentityCertificateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setProxyIdentityCertificate((string)$attributes[self::FIELD_PROXY_IDENTITY_CERTIFICATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setProxyIdentityCertificate((string)$attributes[self::FIELD_PROXY_IDENTITY_CERTIFICATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PROXY_IDENTITY_CERTIFICATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -787,13 +707,13 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->date) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATE]) {
-            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getValueAsString());
         }
         if (isset($this->sourceIdentityCertificate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SOURCE_IDENTITY_CERTIFICATE]) {
-            $xw->writeAttribute(self::FIELD_SOURCE_IDENTITY_CERTIFICATE, $this->sourceIdentityCertificate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SOURCE_IDENTITY_CERTIFICATE, $this->sourceIdentityCertificate->_getValueAsString());
         }
         if (isset($this->proxyIdentityCertificate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PROXY_IDENTITY_CERTIFICATE]) {
-            $xw->writeAttribute(self::FIELD_PROXY_IDENTITY_CERTIFICATE, $this->proxyIdentityCertificate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PROXY_IDENTITY_CERTIFICATE, $this->proxyIdentityCertificate->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->who)) {
@@ -845,13 +765,13 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -866,50 +786,64 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_WHO]) || array_key_exists(self::FIELD_WHO, $json)) {
-            $type->setWho(FHIRReference::jsonUnserialize($json[self::FIELD_WHO], $config));
+        if (isset($json->who) || property_exists($json, self::FIELD_WHO)) {
+            if (is_array($json->who)) {
+                $type->setWho(FHIRReference::jsonUnserialize(reset($json->who), $config));
+            } else {
+                $type->setWho(FHIRReference::jsonUnserialize($json->who, $config));
+            }
         }
-        if (isset($json[self::FIELD_ON_BEHALF_OF]) || array_key_exists(self::FIELD_ON_BEHALF_OF, $json)) {
-            $type->setOnBehalfOf(FHIRReference::jsonUnserialize($json[self::FIELD_ON_BEHALF_OF], $config));
+        if (isset($json->onBehalfOf) || property_exists($json, self::FIELD_ON_BEHALF_OF)) {
+            if (is_array($json->onBehalfOf)) {
+                $type->setOnBehalfOf(FHIRReference::jsonUnserialize(reset($json->onBehalfOf), $config));
+            } else {
+                $type->setOnBehalfOf(FHIRReference::jsonUnserialize($json->onBehalfOf, $config));
+            }
         }
-        if (isset($json[self::FIELD_COMMUNICATION_METHOD]) || array_key_exists(self::FIELD_COMMUNICATION_METHOD, $json)) {
-            $type->setCommunicationMethod(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_COMMUNICATION_METHOD], $config));
+        if (isset($json->communicationMethod) || property_exists($json, self::FIELD_COMMUNICATION_METHOD)) {
+            if (is_array($json->communicationMethod)) {
+                $type->setCommunicationMethod(FHIRCodeableConcept::jsonUnserialize(reset($json->communicationMethod), $config));
+            } else {
+                $type->setCommunicationMethod(FHIRCodeableConcept::jsonUnserialize($json->communicationMethod, $config));
+            }
         }
-        if (isset($json[self::FIELD_DATE])
-            || isset($json[self::FIELD_DATE_EXT])
-            || array_key_exists(self::FIELD_DATE, $json)
-            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_DATE] ?? null;
-            $type->setDate(FHIRDate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->date)
+            || isset($json->_date)
+            || property_exists($json, self::FIELD_DATE)
+            || property_exists($json, self::FIELD_DATE_EXT)) {
+            $v = $json->_date ?? new \stdClass();
+            $v->value = $json->date ?? null;
+            $type->setDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE])
-            || isset($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT])
-            || array_key_exists(self::FIELD_SOURCE_IDENTITY_CERTIFICATE, $json)
-            || array_key_exists(self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT, $json)) {
-            $value = $json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] ?? null;
-            $type->setSourceIdentityCertificate(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sourceIdentityCertificate)
+            || isset($json->_sourceIdentityCertificate)
+            || property_exists($json, self::FIELD_SOURCE_IDENTITY_CERTIFICATE)
+            || property_exists($json, self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT)) {
+            $v = $json->_sourceIdentityCertificate ?? new \stdClass();
+            $v->value = $json->sourceIdentityCertificate ?? null;
+            $type->setSourceIdentityCertificate(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE])
-            || isset($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT])
-            || array_key_exists(self::FIELD_PROXY_IDENTITY_CERTIFICATE, $json)
-            || array_key_exists(self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT, $json)) {
-            $value = $json[self::FIELD_PROXY_IDENTITY_CERTIFICATE] ?? null;
-            $type->setProxyIdentityCertificate(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->proxyIdentityCertificate)
+            || isset($json->_proxyIdentityCertificate)
+            || property_exists($json, self::FIELD_PROXY_IDENTITY_CERTIFICATE)
+            || property_exists($json, self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT)) {
+            $v = $json->_proxyIdentityCertificate ?? new \stdClass();
+            $v->value = $json->proxyIdentityCertificate ?? null;
+            $type->setProxyIdentityCertificate(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PROXY_SIGNATURE]) || array_key_exists(self::FIELD_PROXY_SIGNATURE, $json)) {
-            $type->setProxySignature(FHIRSignature::jsonUnserialize($json[self::FIELD_PROXY_SIGNATURE], $config));
+        if (isset($json->proxySignature) || property_exists($json, self::FIELD_PROXY_SIGNATURE)) {
+            if (is_array($json->proxySignature)) {
+                $type->setProxySignature(FHIRSignature::jsonUnserialize(reset($json->proxySignature), $config));
+            } else {
+                $type->setProxySignature(FHIRSignature::jsonUnserialize($json->proxySignature, $config));
+            }
         }
-        if (isset($json[self::FIELD_SOURCE_SIGNATURE]) || array_key_exists(self::FIELD_SOURCE_SIGNATURE, $json)) {
-            $type->setSourceSignature(FHIRSignature::jsonUnserialize($json[self::FIELD_SOURCE_SIGNATURE], $config));
+        if (isset($json->sourceSignature) || property_exists($json, self::FIELD_SOURCE_SIGNATURE)) {
+            if (is_array($json->sourceSignature)) {
+                $type->setSourceSignature(FHIRSignature::jsonUnserialize(reset($json->sourceSignature), $config));
+            } else {
+                $type->setSourceSignature(FHIRSignature::jsonUnserialize($json->sourceSignature, $config));
+            }
         }
         return $type;
     }

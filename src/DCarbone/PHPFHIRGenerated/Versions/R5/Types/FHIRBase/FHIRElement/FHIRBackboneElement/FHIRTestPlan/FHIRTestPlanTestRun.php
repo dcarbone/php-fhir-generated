@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -100,26 +102,28 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRTestPlanTestRun extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TEST_PLAN_DOT_TEST_RUN;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_NARRATIVE = 'narrative';
     public const FIELD_NARRATIVE_EXT = '_narrative';
     public const FIELD_SCRIPT = 'script';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_NARRATIVE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -144,7 +148,7 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
      */
     protected FHIRTestPlanScript $script;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRTestPlanTestRun Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -173,7 +177,7 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -182,7 +186,7 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -213,11 +217,9 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
      * The narrative description of the tests.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $narrative
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNarrative(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $narrative,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setNarrative(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $narrative): self
     {
         if (null === $narrative) {
             unset($this->narrative);
@@ -227,33 +229,6 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
             $narrative = new FHIRMarkdown(value: $narrative);
         }
         $this->narrative = $narrative;
-        if ($this->_valueXMLLocations[self::FIELD_NARRATIVE] !== $valueXMLLocation) {
-            $this->_setNarrativeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the narrative element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNarrativeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NARRATIVE];
-    }
-
-    /**
-     * Set the location the "value" field of the narrative element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNarrativeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NARRATIVE] = $valueXMLLocation;
         return $this;
     }
 
@@ -289,7 +264,7 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -318,9 +293,11 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -332,15 +309,16 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NARRATIVE])) {
             if (isset($type->narrative)) {
                 $type->narrative->setValue((string)$attributes[self::FIELD_NARRATIVE]);
-                $type->_setNarrativeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNarrative((string)$attributes[self::FIELD_NARRATIVE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setNarrative((string)$attributes[self::FIELD_NARRATIVE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NARRATIVE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -353,7 +331,7 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->narrative) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NARRATIVE]) {
-            $xw->writeAttribute(self::FIELD_NARRATIVE, $this->narrative->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NARRATIVE, $this->narrative->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->narrative)
@@ -371,13 +349,13 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -392,18 +370,20 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_NARRATIVE])
-            || isset($json[self::FIELD_NARRATIVE_EXT])
-            || array_key_exists(self::FIELD_NARRATIVE, $json)
-            || array_key_exists(self::FIELD_NARRATIVE_EXT, $json)) {
-            $value = $json[self::FIELD_NARRATIVE] ?? null;
-            $type->setNarrative(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_NARRATIVE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->narrative)
+            || isset($json->_narrative)
+            || property_exists($json, self::FIELD_NARRATIVE)
+            || property_exists($json, self::FIELD_NARRATIVE_EXT)) {
+            $v = $json->_narrative ?? new \stdClass();
+            $v->value = $json->narrative ?? null;
+            $type->setNarrative(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SCRIPT]) || array_key_exists(self::FIELD_SCRIPT, $json)) {
-            $type->setScript(FHIRTestPlanScript::jsonUnserialize($json[self::FIELD_SCRIPT], $config));
+        if (isset($json->script) || property_exists($json, self::FIELD_SCRIPT)) {
+            if (is_array($json->script)) {
+                $type->setScript(FHIRTestPlanScript::jsonUnserialize(reset($json->script), $config));
+            } else {
+                $type->setScript(FHIRTestPlanScript::jsonUnserialize($json->script, $config));
+            }
         }
         return $type;
     }

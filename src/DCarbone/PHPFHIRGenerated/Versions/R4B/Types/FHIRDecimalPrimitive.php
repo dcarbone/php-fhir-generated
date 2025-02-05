@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,39 +83,48 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
 
 class FHIRDecimalPrimitive implements PrimitiveTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DECIMAL_HYPHEN_PRIMITIVE;
 
-    /* class_default.php:47 */
     public const FIELD_VALUE = 'value';
 
-    /* class_default.php:66 */
+    /* class_primitive.php:60 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:111 */
-    /** @var float */
-    protected float $value;
+    /* class_primitive.php:80 */
+    /** @var string */
+    protected string $value;
 
-    /* constructor.php:49 */
+    /** @var bool */
+    private bool $_jsonAsString;
+
+    /* class_primitive.php:98 */
     /**
      * FHIRDecimalPrimitive Constructor
-     * @param null|string|float|int $value
+     * @param null|string|int|float $value
+     * @param bool $jsonAsString If true forces this value to string during JSON serialization.
      */
-    public function __construct(null|string|float|int $value = null)
+    public function __construct(null|string|int|float $value = null,
+                                bool $jsonAsString = false)
     {
         $this->setValue(value: $value);
+        $this->_jsonAsString = $jsonAsString;
     }
 
-    /* class_default.php:143 */
+    /* class_primitive.php:116 */
     /**
      * @return string
      */
@@ -124,75 +133,88 @@ class FHIRDecimalPrimitive implements PrimitiveTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
     /**
-     * @return null|float
+     * Specify whether this value must be represented as a string when serializing to JSON.
+     *
+     * @param bool $jsonAsString
+     * @return self
      */
-    public function getValue(): null|float
+    public function _setJSONAsString(bool $jsonAsString): self
     {
-        return $this->value ?? null;
-    }
-
-    /** @var int */
-    private int $_decimals = 1;
-
-    /** @var bool */
-    private bool $_commas = false;
-
-    /**
-     * @param null|string|float|int $value
-     * @return static
-     */
-    public function setValue(null|string|float|int $value): self
-    {
-        if (null === $value) {
-            unset($this->value);
-            $this->_decimals = 1;
-            $this->_commas = false;
-            return $this;
-        }
-        $str = (string)$value;
-        $dec = strstr($str, '.');
-        if ($this->_commas = str_contains($str, ',')) {
-            $str = str_replace(',', '', $str);
-        }
-        if (false === $dec) {
-            $this->_decimals = 0;
-        } else {
-            $this->_decimals = strlen($dec) - 1;
-        }
-        $this->value = floatval($str);
+        $this->_jsonAsString = $jsonAsString;
         return $this;
     }
 
     /**
-     * @return string
+     * @return bool
      */
-    public function _getFormattedValue(): string
+    public function _getJSONAsString(): bool
     {
-        $v = $this->getValue();
-        if (null === $v) {
-            return '0.0';
-        }
-        return number_format($v, $this->_decimals, '.', $this->_commas ? ',' : '');
+        return $this->_jsonAsString;
     }
 
-    /* class_default.php:208 */
+    /**
+     * @return null|string
+     */
+    public function getValue(): null|string
+    {
+        return $this->value ?? null;
+    }
 
     /**
+     * @param null|string|int|float $value
+     * @return static
+     */
+    public function setValue(null|string|int|float $value): self
+    {
+        if (null === $value) {
+            unset($this->value);
+            return $this;
+        }
+        $this->_jsonAsString = is_string($value);
+        if (is_float($value)) {
+            $str = serialize($value);
+            $this->value = substr($str, 2, strlen($str) - 3);
+        } else {
+            $this->value = (string)$value;
+        }
+        return $this;
+    }
+
+    /**
+     * Return the float representation of this value.
+     *
+     * WARNING: This is subject to rounding errors.
+     * @see https://www.php.net/manual/en/language.types.float.php
+     *
      * @return null|float
      */
-    public function jsonSerialize(): mixed
+    public function _getValueAsFloat(): null|float
     {
-        return $this->getValue();
+        if (isset($this->value)) {
+            return (float)$this->value;
+        }
+        return null;
     }
 
-    /* class_default.php:235 */
     /**
      * @return string
      */
+    public function _getValueAsString(): string
+    {
+        return $this->value ?? '';
+    }
+
+    public function jsonSerialize(): float|string
+    {
+        if ($this->_jsonAsString) {
+            return $this->value ?? '';
+        }
+        return (float)($this->value ?? 0.0);
+    }
+
     public function __toString(): string
     {
-        return $this->_getFormattedValue();
+        return $this->_getValueAsString();
     }
 }

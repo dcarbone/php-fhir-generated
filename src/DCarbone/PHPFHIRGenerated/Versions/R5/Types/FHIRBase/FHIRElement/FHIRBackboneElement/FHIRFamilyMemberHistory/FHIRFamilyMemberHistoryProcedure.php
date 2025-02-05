@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -110,12 +112,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_FAMILY_MEMBER_HISTORY_DOT_PROCEDURE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_CODE = 'code';
     public const FIELD_OUTCOME = 'outcome';
     public const FIELD_CONTRIBUTED_TO_DEATH = 'contributedToDeath';
@@ -129,7 +133,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
     public const FIELD_PERFORMED_DATE_TIME_EXT = '_performedDateTime';
     public const FIELD_NOTE = 'note';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CODE => [
@@ -137,14 +141,14 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTRIBUTED_TO_DEATH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PERFORMED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PERFORMED_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -187,7 +191,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge 
      */
@@ -199,7 +204,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
@@ -211,7 +217,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
      */
@@ -223,7 +230,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
@@ -239,7 +247,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
      */
@@ -256,7 +265,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      */
     protected array $note;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRFamilyMemberHistoryProcedure Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -320,7 +329,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -329,7 +338,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -430,11 +439,9 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * contributedToDeath is not populated, then it is unknown.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $contributedToDeath
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setContributedToDeath(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $contributedToDeath,
-                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setContributedToDeath(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $contributedToDeath): self
     {
         if (null === $contributedToDeath) {
             unset($this->contributedToDeath);
@@ -444,33 +451,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             $contributedToDeath = new FHIRBoolean(value: $contributedToDeath);
         }
         $this->contributedToDeath = $contributedToDeath;
-        if ($this->_valueXMLLocations[self::FIELD_CONTRIBUTED_TO_DEATH] !== $valueXMLLocation) {
-            $this->_setContributedToDeathValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the contributedToDeath element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getContributedToDeathValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CONTRIBUTED_TO_DEATH];
-    }
-
-    /**
-     * Set the location the "value" field of the contributedToDeath element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setContributedToDeathValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CONTRIBUTED_TO_DEATH] = $valueXMLLocation;
         return $this;
     }
 
@@ -481,7 +461,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
@@ -497,7 +478,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $performedAge
      * @return static
@@ -519,7 +501,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
@@ -535,7 +518,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $performedRange
      * @return static
@@ -557,7 +541,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
@@ -573,7 +558,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $performedPeriod
      * @return static
@@ -595,7 +581,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
@@ -611,14 +598,13 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $performedString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPerformedString(null|string|FHIRStringPrimitive|FHIRString $performedString,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPerformedString(null|string|FHIRStringPrimitive|FHIRString $performedString): self
     {
         if (null === $performedString) {
             unset($this->performedString);
@@ -628,33 +614,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             $performedString = new FHIRString(value: $performedString);
         }
         $this->performedString = $performedString;
-        if ($this->_valueXMLLocations[self::FIELD_PERFORMED_STRING] !== $valueXMLLocation) {
-            $this->_setPerformedStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the performedString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPerformedStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PERFORMED_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the performedString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPerformedStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PERFORMED_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -669,7 +628,8 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
@@ -689,14 +649,13 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured.
+     * date, and also allows for the length of the procedure to be captured. (choose
+     * any one of performed*, but only one)
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $performedDateTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPerformedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $performedDateTime,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPerformedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $performedDateTime): self
     {
         if (null === $performedDateTime) {
             unset($this->performedDateTime);
@@ -706,33 +665,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             $performedDateTime = new FHIRDateTime(value: $performedDateTime);
         }
         $this->performedDateTime = $performedDateTime;
-        if ($this->_valueXMLLocations[self::FIELD_PERFORMED_DATE_TIME] !== $valueXMLLocation) {
-            $this->_setPerformedDateTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the performedDateTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPerformedDateTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PERFORMED_DATE_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the performedDateTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPerformedDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PERFORMED_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -803,7 +735,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -832,9 +764,11 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -860,31 +794,32 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CONTRIBUTED_TO_DEATH])) {
             if (isset($type->contributedToDeath)) {
                 $type->contributedToDeath->setValue((string)$attributes[self::FIELD_CONTRIBUTED_TO_DEATH]);
-                $type->_setContributedToDeathValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setContributedToDeath((string)$attributes[self::FIELD_CONTRIBUTED_TO_DEATH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setContributedToDeath((string)$attributes[self::FIELD_CONTRIBUTED_TO_DEATH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CONTRIBUTED_TO_DEATH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PERFORMED_STRING])) {
             if (isset($type->performedString)) {
                 $type->performedString->setValue((string)$attributes[self::FIELD_PERFORMED_STRING]);
-                $type->_setPerformedStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPerformedString((string)$attributes[self::FIELD_PERFORMED_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPerformedString((string)$attributes[self::FIELD_PERFORMED_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PERFORMED_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PERFORMED_DATE_TIME])) {
             if (isset($type->performedDateTime)) {
                 $type->performedDateTime->setValue((string)$attributes[self::FIELD_PERFORMED_DATE_TIME]);
-                $type->_setPerformedDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPerformedDateTime((string)$attributes[self::FIELD_PERFORMED_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPerformedDateTime((string)$attributes[self::FIELD_PERFORMED_DATE_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PERFORMED_DATE_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -897,13 +832,13 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->contributedToDeath) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CONTRIBUTED_TO_DEATH]) {
-            $xw->writeAttribute(self::FIELD_CONTRIBUTED_TO_DEATH, $this->contributedToDeath->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CONTRIBUTED_TO_DEATH, $this->contributedToDeath->_getValueAsString());
         }
         if (isset($this->performedString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PERFORMED_STRING]) {
-            $xw->writeAttribute(self::FIELD_PERFORMED_STRING, $this->performedString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PERFORMED_STRING, $this->performedString->_getValueAsString());
         }
         if (isset($this->performedDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PERFORMED_DATE_TIME]) {
-            $xw->writeAttribute(self::FIELD_PERFORMED_DATE_TIME, $this->performedDateTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PERFORMED_DATE_TIME, $this->performedDateTime->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->code)) {
@@ -962,13 +897,13 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryProcedure $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryProcedure
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -983,57 +918,73 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
-        }
-        if (isset($json[self::FIELD_OUTCOME]) || array_key_exists(self::FIELD_OUTCOME, $json)) {
-            $type->setOutcome(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_OUTCOME], $config));
-        }
-        if (isset($json[self::FIELD_CONTRIBUTED_TO_DEATH])
-            || isset($json[self::FIELD_CONTRIBUTED_TO_DEATH_EXT])
-            || array_key_exists(self::FIELD_CONTRIBUTED_TO_DEATH, $json)
-            || array_key_exists(self::FIELD_CONTRIBUTED_TO_DEATH_EXT, $json)) {
-            $value = $json[self::FIELD_CONTRIBUTED_TO_DEATH] ?? null;
-            $type->setContributedToDeath(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_CONTRIBUTED_TO_DEATH_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_PERFORMED_AGE]) || array_key_exists(self::FIELD_PERFORMED_AGE, $json)) {
-            $type->setPerformedAge(FHIRAge::jsonUnserialize($json[self::FIELD_PERFORMED_AGE], $config));
-        }
-        if (isset($json[self::FIELD_PERFORMED_RANGE]) || array_key_exists(self::FIELD_PERFORMED_RANGE, $json)) {
-            $type->setPerformedRange(FHIRRange::jsonUnserialize($json[self::FIELD_PERFORMED_RANGE], $config));
-        }
-        if (isset($json[self::FIELD_PERFORMED_PERIOD]) || array_key_exists(self::FIELD_PERFORMED_PERIOD, $json)) {
-            $type->setPerformedPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERFORMED_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_PERFORMED_STRING])
-            || isset($json[self::FIELD_PERFORMED_STRING_EXT])
-            || array_key_exists(self::FIELD_PERFORMED_STRING, $json)
-            || array_key_exists(self::FIELD_PERFORMED_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_PERFORMED_STRING] ?? null;
-            $type->setPerformedString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PERFORMED_STRING_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_PERFORMED_DATE_TIME])
-            || isset($json[self::FIELD_PERFORMED_DATE_TIME_EXT])
-            || array_key_exists(self::FIELD_PERFORMED_DATE_TIME, $json)
-            || array_key_exists(self::FIELD_PERFORMED_DATE_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_PERFORMED_DATE_TIME] ?? null;
-            $type->setPerformedDateTime(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_PERFORMED_DATE_TIME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
-            $vs = $json[self::FIELD_NOTE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
+            if (is_array($json->code)) {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($json->code), $config));
+            } else {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize($json->code, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->outcome) || property_exists($json, self::FIELD_OUTCOME)) {
+            if (is_array($json->outcome)) {
+                $type->setOutcome(FHIRCodeableConcept::jsonUnserialize(reset($json->outcome), $config));
+            } else {
+                $type->setOutcome(FHIRCodeableConcept::jsonUnserialize($json->outcome, $config));
+            }
+        }
+        if (isset($json->contributedToDeath)
+            || isset($json->_contributedToDeath)
+            || property_exists($json, self::FIELD_CONTRIBUTED_TO_DEATH)
+            || property_exists($json, self::FIELD_CONTRIBUTED_TO_DEATH_EXT)) {
+            $v = $json->_contributedToDeath ?? new \stdClass();
+            $v->value = $json->contributedToDeath ?? null;
+            $type->setContributedToDeath(FHIRBoolean::jsonUnserialize($v, $config));
+        }
+        if (isset($json->performedAge) || property_exists($json, self::FIELD_PERFORMED_AGE)) {
+            if (is_array($json->performedAge)) {
+                $type->setPerformedAge(FHIRAge::jsonUnserialize(reset($json->performedAge), $config));
+            } else {
+                $type->setPerformedAge(FHIRAge::jsonUnserialize($json->performedAge, $config));
+            }
+        }
+        if (isset($json->performedRange) || property_exists($json, self::FIELD_PERFORMED_RANGE)) {
+            if (is_array($json->performedRange)) {
+                $type->setPerformedRange(FHIRRange::jsonUnserialize(reset($json->performedRange), $config));
+            } else {
+                $type->setPerformedRange(FHIRRange::jsonUnserialize($json->performedRange, $config));
+            }
+        }
+        if (isset($json->performedPeriod) || property_exists($json, self::FIELD_PERFORMED_PERIOD)) {
+            if (is_array($json->performedPeriod)) {
+                $type->setPerformedPeriod(FHIRPeriod::jsonUnserialize(reset($json->performedPeriod), $config));
+            } else {
+                $type->setPerformedPeriod(FHIRPeriod::jsonUnserialize($json->performedPeriod, $config));
+            }
+        }
+        if (isset($json->performedString)
+            || isset($json->_performedString)
+            || property_exists($json, self::FIELD_PERFORMED_STRING)
+            || property_exists($json, self::FIELD_PERFORMED_STRING_EXT)) {
+            $v = $json->_performedString ?? new \stdClass();
+            $v->value = $json->performedString ?? null;
+            $type->setPerformedString(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->performedDateTime)
+            || isset($json->_performedDateTime)
+            || property_exists($json, self::FIELD_PERFORMED_DATE_TIME)
+            || property_exists($json, self::FIELD_PERFORMED_DATE_TIME_EXT)) {
+            $v = $json->_performedDateTime ?? new \stdClass();
+            $v->value = $json->performedDateTime ?? null;
+            $type->setPerformedDateTime(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->note) || property_exists($json, self::FIELD_NOTE)) {
+            if (is_object($json->note)) {
+                $vals = [$json->note];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTE, true);
+            } else {
+                $vals = $json->note;
+            }
+            foreach($vals as $v) {
                 $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
@@ -1092,7 +1043,11 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             }
         }
         if (isset($this->note) && [] !== $this->note) {
-            $out->note = $this->note;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_NOTE) && 1 === count($this->note)) {
+                $out->note = $this->note[0];
+            } else {
+                $out->note = $this->note;
+            }
         }
         return $out;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,12 +89,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRMessageDefinitionFocus extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MESSAGE_DEFINITION_DOT_FOCUS;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_CODE = 'code';
     public const FIELD_CODE_EXT = '_code';
     public const FIELD_PROFILE = 'profile';
@@ -101,7 +105,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
     public const FIELD_MAX = 'max';
     public const FIELD_MAX_EXT = '_max';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CODE => [
@@ -109,14 +113,14 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_CODE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MIN => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MAX => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * The kind of activity the definition is describing
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -160,7 +164,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      */
     protected FHIRString $max;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMessageDefinitionFocus Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -199,7 +203,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -208,7 +212,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * The kind of activity the definition is describing
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -229,11 +233,9 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * The kind of resource that must be the focus for this message.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRResourceTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRResourceType $code
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCode(null|string|FHIRResourceTypeList|FHIRResourceType $code,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCode(null|string|FHIRResourceTypeList|FHIRResourceType $code): self
     {
         if (null === $code) {
             unset($this->code);
@@ -243,39 +245,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             $code = new FHIRResourceType(value: $code);
         }
         $this->code = $code;
-        if ($this->_valueXMLLocations[self::FIELD_CODE] !== $valueXMLLocation) {
-            $this->_setCodeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the code element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCodeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CODE];
-    }
-
-    /**
-     * Set the location the "value" field of the code element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCodeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        if (ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueXMLLocation) {
-            throw new \InvalidArgumentException(sprintf(
-                'Cannot set "%s" as value XML serialize location for primitive property "code" on type "MessageDefinition.Focus"',
-                $valueXMLLocation->name,
-            ));
-        }
-        $this->_valueXMLLocations[self::FIELD_CODE] = $valueXMLLocation;
         return $this;
     }
 
@@ -339,11 +308,9 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * by a message in order for it to be valid against this MessageDefinition.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $min
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMin(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $min,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMin(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $min): self
     {
         if (null === $min) {
             unset($this->min);
@@ -353,33 +320,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             $min = new FHIRUnsignedInt(value: $min);
         }
         $this->min = $min;
-        if ($this->_valueXMLLocations[self::FIELD_MIN] !== $valueXMLLocation) {
-            $this->_setMinValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the min element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMinValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MIN];
-    }
-
-    /**
-     * Set the location the "value" field of the min element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMinValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MIN] = $valueXMLLocation;
         return $this;
     }
 
@@ -407,11 +347,9 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * by a message in order for it to be valid against this MessageDefinition.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $max
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMax(null|string|FHIRStringPrimitive|FHIRString $max,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
         if (null === $max) {
             unset($this->max);
@@ -421,37 +359,10 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             $max = new FHIRString(value: $max);
         }
         $this->max = $max;
-        if ($this->_valueXMLLocations[self::FIELD_MAX] !== $valueXMLLocation) {
-            $this->_setMaxValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the max element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMaxValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MAX];
-    }
-
-    /**
-     * Set the location the "value" field of the max element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMaxValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MAX] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -480,9 +391,11 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -498,31 +411,32 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CODE])) {
             if (isset($type->code)) {
                 $type->code->setValue((string)$attributes[self::FIELD_CODE]);
-                $type->_setCodeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCode((string)$attributes[self::FIELD_CODE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCode((string)$attributes[self::FIELD_CODE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CODE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MIN])) {
             if (isset($type->min)) {
                 $type->min->setValue((string)$attributes[self::FIELD_MIN]);
-                $type->_setMinValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMin((string)$attributes[self::FIELD_MIN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMin((string)$attributes[self::FIELD_MIN]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MIN, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MAX])) {
             if (isset($type->max)) {
                 $type->max->setValue((string)$attributes[self::FIELD_MAX]);
-                $type->_setMaxValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMax((string)$attributes[self::FIELD_MAX], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMax((string)$attributes[self::FIELD_MAX]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MAX, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -535,13 +449,13 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->code) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CODE]) {
-            $xw->writeAttribute(self::FIELD_CODE, $this->code->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CODE, $this->code->_getValueAsString());
         }
         if (isset($this->min) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MIN]) {
-            $xw->writeAttribute(self::FIELD_MIN, $this->min->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MIN, $this->min->_getValueAsString());
         }
         if (isset($this->max) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MAX]) {
-            $xw->writeAttribute(self::FIELD_MAX, $this->max->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MAX, $this->max->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->code)
@@ -573,13 +487,13 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -594,38 +508,36 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_CODE])
-            || isset($json[self::FIELD_CODE_EXT])
-            || array_key_exists(self::FIELD_CODE, $json)
-            || array_key_exists(self::FIELD_CODE_EXT, $json)) {
-            $value = $json[self::FIELD_CODE] ?? null;
-            $type->setCode(FHIRResourceType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRResourceType::FIELD_VALUE => $value]) + ($json[self::FIELD_CODE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->code)
+            || isset($json->_code)
+            || property_exists($json, self::FIELD_CODE)
+            || property_exists($json, self::FIELD_CODE_EXT)) {
+            $v = $json->_code ?? new \stdClass();
+            $v->value = $json->code ?? null;
+            $type->setCode(FHIRResourceType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PROFILE]) || array_key_exists(self::FIELD_PROFILE, $json)) {
-            $type->setProfile(FHIRReference::jsonUnserialize($json[self::FIELD_PROFILE], $config));
+        if (isset($json->profile) || property_exists($json, self::FIELD_PROFILE)) {
+            if (is_array($json->profile)) {
+                $type->setProfile(FHIRReference::jsonUnserialize(reset($json->profile), $config));
+            } else {
+                $type->setProfile(FHIRReference::jsonUnserialize($json->profile, $config));
+            }
         }
-        if (isset($json[self::FIELD_MIN])
-            || isset($json[self::FIELD_MIN_EXT])
-            || array_key_exists(self::FIELD_MIN, $json)
-            || array_key_exists(self::FIELD_MIN_EXT, $json)) {
-            $value = $json[self::FIELD_MIN] ?? null;
-            $type->setMin(FHIRUnsignedInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_MIN_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->min)
+            || isset($json->_min)
+            || property_exists($json, self::FIELD_MIN)
+            || property_exists($json, self::FIELD_MIN_EXT)) {
+            $v = $json->_min ?? new \stdClass();
+            $v->value = $json->min ?? null;
+            $type->setMin(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_MAX])
-            || isset($json[self::FIELD_MAX_EXT])
-            || array_key_exists(self::FIELD_MAX, $json)
-            || array_key_exists(self::FIELD_MAX_EXT, $json)) {
-            $value = $json[self::FIELD_MAX] ?? null;
-            $type->setMax(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MAX_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->max)
+            || isset($json->_max)
+            || property_exists($json, self::FIELD_MAX)
+            || property_exists($json, self::FIELD_MAX_EXT)) {
+            $v = $json->_max ?? new \stdClass();
+            $v->value = $json->max ?? null;
+            $type->setMax(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

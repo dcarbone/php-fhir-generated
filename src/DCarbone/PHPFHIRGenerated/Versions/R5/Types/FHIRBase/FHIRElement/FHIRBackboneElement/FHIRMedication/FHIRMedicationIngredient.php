@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -108,12 +110,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRMedicationIngredient extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_DOT_INGREDIENT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ITEM = 'item';
     public const FIELD_IS_ACTIVE = 'isActive';
     public const FIELD_IS_ACTIVE_EXT = '_isActive';
@@ -121,7 +125,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
     public const FIELD_STRENGTH_CODEABLE_CONCEPT = 'strengthCodeableConcept';
     public const FIELD_STRENGTH_QUANTITY = 'strengthQuantity';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ITEM => [
@@ -129,12 +133,12 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_IS_ACTIVE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -167,7 +171,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio 
      */
@@ -181,7 +186,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
@@ -196,13 +202,14 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
     protected FHIRQuantity $strengthQuantity;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedicationIngredient Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -246,7 +253,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -255,7 +262,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -318,11 +325,9 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * drug.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $isActive
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIsActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isActive,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIsActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isActive): self
     {
         if (null === $isActive) {
             unset($this->isActive);
@@ -332,33 +337,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
             $isActive = new FHIRBoolean(value: $isActive);
         }
         $this->isActive = $isActive;
-        if ($this->_valueXMLLocations[self::FIELD_IS_ACTIVE] !== $valueXMLLocation) {
-            $this->_setIsActiveValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the isActive element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIsActiveValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_IS_ACTIVE];
-    }
-
-    /**
-     * Set the location the "value" field of the isActive element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIsActiveValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_IS_ACTIVE] = $valueXMLLocation;
         return $this;
     }
 
@@ -371,7 +349,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
@@ -389,7 +368,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $strengthRatio
      * @return static
@@ -413,7 +393,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
@@ -431,7 +412,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $strengthCodeableConcept
      * @return static
@@ -456,7 +438,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
@@ -475,7 +458,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $strengthQuantity
      * @return static
@@ -490,7 +474,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -519,9 +503,11 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -539,15 +525,16 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IS_ACTIVE])) {
             if (isset($type->isActive)) {
                 $type->isActive->setValue((string)$attributes[self::FIELD_IS_ACTIVE]);
-                $type->_setIsActiveValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIsActive((string)$attributes[self::FIELD_IS_ACTIVE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIsActive((string)$attributes[self::FIELD_IS_ACTIVE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IS_ACTIVE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -560,7 +547,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->isActive) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_IS_ACTIVE]) {
-            $xw->writeAttribute(self::FIELD_IS_ACTIVE, $this->isActive->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_IS_ACTIVE, $this->isActive->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->item)) {
@@ -593,13 +580,13 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -614,27 +601,41 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
-            $type->setItem(FHIRCodeableReference::jsonUnserialize($json[self::FIELD_ITEM], $config));
+        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
+            if (is_array($json->item)) {
+                $type->setItem(FHIRCodeableReference::jsonUnserialize(reset($json->item), $config));
+            } else {
+                $type->setItem(FHIRCodeableReference::jsonUnserialize($json->item, $config));
+            }
         }
-        if (isset($json[self::FIELD_IS_ACTIVE])
-            || isset($json[self::FIELD_IS_ACTIVE_EXT])
-            || array_key_exists(self::FIELD_IS_ACTIVE, $json)
-            || array_key_exists(self::FIELD_IS_ACTIVE_EXT, $json)) {
-            $value = $json[self::FIELD_IS_ACTIVE] ?? null;
-            $type->setIsActive(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_IS_ACTIVE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->isActive)
+            || isset($json->_isActive)
+            || property_exists($json, self::FIELD_IS_ACTIVE)
+            || property_exists($json, self::FIELD_IS_ACTIVE_EXT)) {
+            $v = $json->_isActive ?? new \stdClass();
+            $v->value = $json->isActive ?? null;
+            $type->setIsActive(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_STRENGTH_RATIO]) || array_key_exists(self::FIELD_STRENGTH_RATIO, $json)) {
-            $type->setStrengthRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_STRENGTH_RATIO], $config));
+        if (isset($json->strengthRatio) || property_exists($json, self::FIELD_STRENGTH_RATIO)) {
+            if (is_array($json->strengthRatio)) {
+                $type->setStrengthRatio(FHIRRatio::jsonUnserialize(reset($json->strengthRatio), $config));
+            } else {
+                $type->setStrengthRatio(FHIRRatio::jsonUnserialize($json->strengthRatio, $config));
+            }
         }
-        if (isset($json[self::FIELD_STRENGTH_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_STRENGTH_CODEABLE_CONCEPT, $json)) {
-            $type->setStrengthCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_STRENGTH_CODEABLE_CONCEPT], $config));
+        if (isset($json->strengthCodeableConcept) || property_exists($json, self::FIELD_STRENGTH_CODEABLE_CONCEPT)) {
+            if (is_array($json->strengthCodeableConcept)) {
+                $type->setStrengthCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->strengthCodeableConcept), $config));
+            } else {
+                $type->setStrengthCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->strengthCodeableConcept, $config));
+            }
         }
-        if (isset($json[self::FIELD_STRENGTH_QUANTITY]) || array_key_exists(self::FIELD_STRENGTH_QUANTITY, $json)) {
-            $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_STRENGTH_QUANTITY], $config));
+        if (isset($json->strengthQuantity) || property_exists($json, self::FIELD_STRENGTH_QUANTITY)) {
+            if (is_array($json->strengthQuantity)) {
+                $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize(reset($json->strengthQuantity), $config));
+            } else {
+                $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize($json->strengthQuantity, $config));
+            }
         }
         return $type;
     }

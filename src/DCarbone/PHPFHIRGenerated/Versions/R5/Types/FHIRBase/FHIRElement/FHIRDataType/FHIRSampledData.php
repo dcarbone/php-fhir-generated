@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -112,12 +114,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRSampledData extends FHIRDataType
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SAMPLED_DATA;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ORIGIN = 'origin';
     public const FIELD_INTERVAL = 'interval';
     public const FIELD_INTERVAL_EXT = '_interval';
@@ -138,7 +142,7 @@ class FHIRSampledData extends FHIRDataType
     public const FIELD_DATA = 'data';
     public const FIELD_DATA_EXT = '_data';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ORIGIN => [
@@ -152,7 +156,7 @@ class FHIRSampledData extends FHIRDataType
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_INTERVAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INTERVAL_UNIT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -165,7 +169,7 @@ class FHIRSampledData extends FHIRDataType
         self::FIELD_DATA => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -285,18 +289,18 @@ class FHIRSampledData extends FHIRDataType
      */
     protected FHIRSampledDataDataType $data;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSampledData Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $origin
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $interval
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $interval
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $intervalUnit
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $lowerLimit
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $upperLimit
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dimensions
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $lowerLimit
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $upperLimit
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dimensions
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $codeMap
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $offsets
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRSampledDataDataTypePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSampledDataDataType $data
@@ -305,12 +309,12 @@ class FHIRSampledData extends FHIRDataType
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|FHIRQuantity $origin = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $interval = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $interval = null,
                                 null|string|FHIRCodePrimitive|FHIRCode $intervalUnit = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $lowerLimit = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $upperLimit = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dimensions = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $lowerLimit = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $upperLimit = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dimensions = null,
                                 null|string|FHIRCanonicalPrimitive|FHIRCanonical $codeMap = null,
                                 null|string|FHIRStringPrimitive|FHIRString $offsets = null,
                                 null|string|FHIRSampledDataDataTypePrimitive|FHIRSampledDataDataType $data = null,
@@ -351,7 +355,7 @@ class FHIRSampledData extends FHIRDataType
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -360,7 +364,7 @@ class FHIRSampledData extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -426,12 +430,10 @@ class FHIRSampledData extends FHIRDataType
      * Amount of intervalUnits between samples, e.g. milliseconds for time-based
      * sampling.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $interval
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $interval
      * @return static
      */
-    public function setInterval(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $interval,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setInterval(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $interval): self
     {
         if (null === $interval) {
             unset($this->interval);
@@ -441,33 +443,6 @@ class FHIRSampledData extends FHIRDataType
             $interval = new FHIRDecimal(value: $interval);
         }
         $this->interval = $interval;
-        if ($this->_valueXMLLocations[self::FIELD_INTERVAL] !== $valueXMLLocation) {
-            $this->_setIntervalValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the interval element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIntervalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INTERVAL];
-    }
-
-    /**
-     * Set the location the "value" field of the interval element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIntervalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INTERVAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -495,11 +470,9 @@ class FHIRSampledData extends FHIRDataType
      * The measurement unit in which the sample interval is expressed.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $intervalUnit
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIntervalUnit(null|string|FHIRCodePrimitive|FHIRCode $intervalUnit,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIntervalUnit(null|string|FHIRCodePrimitive|FHIRCode $intervalUnit): self
     {
         if (null === $intervalUnit) {
             unset($this->intervalUnit);
@@ -509,33 +482,6 @@ class FHIRSampledData extends FHIRDataType
             $intervalUnit = new FHIRCode(value: $intervalUnit);
         }
         $this->intervalUnit = $intervalUnit;
-        if ($this->_valueXMLLocations[self::FIELD_INTERVAL_UNIT] !== $valueXMLLocation) {
-            $this->_setIntervalUnitValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the intervalUnit element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIntervalUnitValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INTERVAL_UNIT];
-    }
-
-    /**
-     * Set the location the "value" field of the intervalUnit element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIntervalUnitValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INTERVAL_UNIT] = $valueXMLLocation;
         return $this;
     }
 
@@ -564,12 +510,10 @@ class FHIRSampledData extends FHIRDataType
      * A correction factor that is applied to the sampled data points before they are
      * added to the origin.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
      * @return static
      */
-    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
         if (null === $factor) {
             unset($this->factor);
@@ -579,33 +523,6 @@ class FHIRSampledData extends FHIRDataType
             $factor = new FHIRDecimal(value: $factor);
         }
         $this->factor = $factor;
-        if ($this->_valueXMLLocations[self::FIELD_FACTOR] !== $valueXMLLocation) {
-            $this->_setFactorValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the factor element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFactorValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FACTOR];
-    }
-
-    /**
-     * Set the location the "value" field of the factor element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFactorValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FACTOR] = $valueXMLLocation;
         return $this;
     }
 
@@ -634,12 +551,10 @@ class FHIRSampledData extends FHIRDataType
      * The lower limit of detection of the measured points. This is needed if any of
      * the data points have the value "L" (lower than detection limit).
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $lowerLimit
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $lowerLimit
      * @return static
      */
-    public function setLowerLimit(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $lowerLimit,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLowerLimit(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $lowerLimit): self
     {
         if (null === $lowerLimit) {
             unset($this->lowerLimit);
@@ -649,33 +564,6 @@ class FHIRSampledData extends FHIRDataType
             $lowerLimit = new FHIRDecimal(value: $lowerLimit);
         }
         $this->lowerLimit = $lowerLimit;
-        if ($this->_valueXMLLocations[self::FIELD_LOWER_LIMIT] !== $valueXMLLocation) {
-            $this->_setLowerLimitValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the lowerLimit element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLowerLimitValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LOWER_LIMIT];
-    }
-
-    /**
-     * Set the location the "value" field of the lowerLimit element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLowerLimitValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LOWER_LIMIT] = $valueXMLLocation;
         return $this;
     }
 
@@ -704,12 +592,10 @@ class FHIRSampledData extends FHIRDataType
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $upperLimit
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $upperLimit
      * @return static
      */
-    public function setUpperLimit(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $upperLimit,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUpperLimit(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $upperLimit): self
     {
         if (null === $upperLimit) {
             unset($this->upperLimit);
@@ -719,33 +605,6 @@ class FHIRSampledData extends FHIRDataType
             $upperLimit = new FHIRDecimal(value: $upperLimit);
         }
         $this->upperLimit = $upperLimit;
-        if ($this->_valueXMLLocations[self::FIELD_UPPER_LIMIT] !== $valueXMLLocation) {
-            $this->_setUpperLimitValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the upperLimit element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUpperLimitValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_UPPER_LIMIT];
-    }
-
-    /**
-     * Set the location the "value" field of the upperLimit element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUpperLimitValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_UPPER_LIMIT] = $valueXMLLocation;
         return $this;
     }
 
@@ -774,12 +633,10 @@ class FHIRSampledData extends FHIRDataType
      * one, then the dimensions will be interlaced - all the sample points for a point
      * in time will be recorded at once.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dimensions
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dimensions
      * @return static
      */
-    public function setDimensions(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dimensions,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDimensions(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dimensions): self
     {
         if (null === $dimensions) {
             unset($this->dimensions);
@@ -789,33 +646,6 @@ class FHIRSampledData extends FHIRDataType
             $dimensions = new FHIRPositiveInt(value: $dimensions);
         }
         $this->dimensions = $dimensions;
-        if ($this->_valueXMLLocations[self::FIELD_DIMENSIONS] !== $valueXMLLocation) {
-            $this->_setDimensionsValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dimensions element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDimensionsValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DIMENSIONS];
-    }
-
-    /**
-     * Set the location the "value" field of the dimensions element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDimensionsValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DIMENSIONS] = $valueXMLLocation;
         return $this;
     }
 
@@ -843,11 +673,9 @@ class FHIRSampledData extends FHIRDataType
      * Reference to ConceptMap that defines the codes used in the data.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $codeMap
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCodeMap(null|string|FHIRCanonicalPrimitive|FHIRCanonical $codeMap,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCodeMap(null|string|FHIRCanonicalPrimitive|FHIRCanonical $codeMap): self
     {
         if (null === $codeMap) {
             unset($this->codeMap);
@@ -857,33 +685,6 @@ class FHIRSampledData extends FHIRDataType
             $codeMap = new FHIRCanonical(value: $codeMap);
         }
         $this->codeMap = $codeMap;
-        if ($this->_valueXMLLocations[self::FIELD_CODE_MAP] !== $valueXMLLocation) {
-            $this->_setCodeMapValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the codeMap element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCodeMapValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CODE_MAP];
-    }
-
-    /**
-     * Set the location the "value" field of the codeMap element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCodeMapValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CODE_MAP] = $valueXMLLocation;
         return $this;
     }
 
@@ -917,11 +718,9 @@ class FHIRSampledData extends FHIRDataType
      * for a timing offset.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $offsets
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOffsets(null|string|FHIRStringPrimitive|FHIRString $offsets,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOffsets(null|string|FHIRStringPrimitive|FHIRString $offsets): self
     {
         if (null === $offsets) {
             unset($this->offsets);
@@ -931,33 +730,6 @@ class FHIRSampledData extends FHIRDataType
             $offsets = new FHIRString(value: $offsets);
         }
         $this->offsets = $offsets;
-        if ($this->_valueXMLLocations[self::FIELD_OFFSETS] !== $valueXMLLocation) {
-            $this->_setOffsetsValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the offsets element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOffsetsValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_OFFSETS];
-    }
-
-    /**
-     * Set the location the "value" field of the offsets element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOffsetsValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_OFFSETS] = $valueXMLLocation;
         return $this;
     }
 
@@ -981,11 +753,9 @@ class FHIRSampledData extends FHIRDataType
      * decimal values.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRSampledDataDataTypePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSampledDataDataType $data
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setData(null|string|FHIRSampledDataDataTypePrimitive|FHIRSampledDataDataType $data,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setData(null|string|FHIRSampledDataDataTypePrimitive|FHIRSampledDataDataType $data): self
     {
         if (null === $data) {
             unset($this->data);
@@ -995,37 +765,10 @@ class FHIRSampledData extends FHIRDataType
             $data = new FHIRSampledDataDataType(value: $data);
         }
         $this->data = $data;
-        if ($this->_valueXMLLocations[self::FIELD_DATA] !== $valueXMLLocation) {
-            $this->_setDataValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the data element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA];
-    }
-
-    /**
-     * Set the location the "value" field of the data element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1054,9 +797,11 @@ class FHIRSampledData extends FHIRDataType
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_ORIGIN === $cen) {
                 $type->setOrigin(FHIRQuantity::xmlUnserialize($ce, $config));
@@ -1082,79 +827,80 @@ class FHIRSampledData extends FHIRDataType
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INTERVAL])) {
             if (isset($type->interval)) {
                 $type->interval->setValue((string)$attributes[self::FIELD_INTERVAL]);
-                $type->_setIntervalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInterval((string)$attributes[self::FIELD_INTERVAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setInterval((string)$attributes[self::FIELD_INTERVAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INTERVAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INTERVAL_UNIT])) {
             if (isset($type->intervalUnit)) {
                 $type->intervalUnit->setValue((string)$attributes[self::FIELD_INTERVAL_UNIT]);
-                $type->_setIntervalUnitValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIntervalUnit((string)$attributes[self::FIELD_INTERVAL_UNIT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIntervalUnit((string)$attributes[self::FIELD_INTERVAL_UNIT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INTERVAL_UNIT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_FACTOR])) {
             if (isset($type->factor)) {
                 $type->factor->setValue((string)$attributes[self::FIELD_FACTOR]);
-                $type->_setFactorValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setFactor((string)$attributes[self::FIELD_FACTOR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setFactor((string)$attributes[self::FIELD_FACTOR]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_FACTOR, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LOWER_LIMIT])) {
             if (isset($type->lowerLimit)) {
                 $type->lowerLimit->setValue((string)$attributes[self::FIELD_LOWER_LIMIT]);
-                $type->_setLowerLimitValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLowerLimit((string)$attributes[self::FIELD_LOWER_LIMIT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLowerLimit((string)$attributes[self::FIELD_LOWER_LIMIT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LOWER_LIMIT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_UPPER_LIMIT])) {
             if (isset($type->upperLimit)) {
                 $type->upperLimit->setValue((string)$attributes[self::FIELD_UPPER_LIMIT]);
-                $type->_setUpperLimitValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUpperLimit((string)$attributes[self::FIELD_UPPER_LIMIT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUpperLimit((string)$attributes[self::FIELD_UPPER_LIMIT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_UPPER_LIMIT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DIMENSIONS])) {
             if (isset($type->dimensions)) {
                 $type->dimensions->setValue((string)$attributes[self::FIELD_DIMENSIONS]);
-                $type->_setDimensionsValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDimensions((string)$attributes[self::FIELD_DIMENSIONS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDimensions((string)$attributes[self::FIELD_DIMENSIONS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DIMENSIONS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CODE_MAP])) {
             if (isset($type->codeMap)) {
                 $type->codeMap->setValue((string)$attributes[self::FIELD_CODE_MAP]);
-                $type->_setCodeMapValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCodeMap((string)$attributes[self::FIELD_CODE_MAP], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCodeMap((string)$attributes[self::FIELD_CODE_MAP]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CODE_MAP, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_OFFSETS])) {
             if (isset($type->offsets)) {
                 $type->offsets->setValue((string)$attributes[self::FIELD_OFFSETS]);
-                $type->_setOffsetsValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOffsets((string)$attributes[self::FIELD_OFFSETS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setOffsets((string)$attributes[self::FIELD_OFFSETS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_OFFSETS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA])) {
             if (isset($type->data)) {
                 $type->data->setValue((string)$attributes[self::FIELD_DATA]);
-                $type->_setDataValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setData((string)$attributes[self::FIELD_DATA], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setData((string)$attributes[self::FIELD_DATA]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1167,31 +913,31 @@ class FHIRSampledData extends FHIRDataType
                                  SerializeConfig $config): void
     {
         if (isset($this->interval) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INTERVAL]) {
-            $xw->writeAttribute(self::FIELD_INTERVAL, $this->interval->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INTERVAL, $this->interval->_getValueAsString());
         }
         if (isset($this->intervalUnit) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INTERVAL_UNIT]) {
-            $xw->writeAttribute(self::FIELD_INTERVAL_UNIT, $this->intervalUnit->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INTERVAL_UNIT, $this->intervalUnit->_getValueAsString());
         }
         if (isset($this->factor) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FACTOR]) {
-            $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->_getValueAsString());
         }
         if (isset($this->lowerLimit) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LOWER_LIMIT]) {
-            $xw->writeAttribute(self::FIELD_LOWER_LIMIT, $this->lowerLimit->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LOWER_LIMIT, $this->lowerLimit->_getValueAsString());
         }
         if (isset($this->upperLimit) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_UPPER_LIMIT]) {
-            $xw->writeAttribute(self::FIELD_UPPER_LIMIT, $this->upperLimit->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_UPPER_LIMIT, $this->upperLimit->_getValueAsString());
         }
         if (isset($this->dimensions) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DIMENSIONS]) {
-            $xw->writeAttribute(self::FIELD_DIMENSIONS, $this->dimensions->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DIMENSIONS, $this->dimensions->_getValueAsString());
         }
         if (isset($this->codeMap) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CODE_MAP]) {
-            $xw->writeAttribute(self::FIELD_CODE_MAP, $this->codeMap->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CODE_MAP, $this->codeMap->_getValueAsString());
         }
         if (isset($this->offsets) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_OFFSETS]) {
-            $xw->writeAttribute(self::FIELD_OFFSETS, $this->offsets->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_OFFSETS, $this->offsets->_getValueAsString());
         }
         if (isset($this->data) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA]) {
-            $xw->writeAttribute(self::FIELD_DATA, $this->data->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA, $this->data->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->origin)) {
@@ -1265,13 +1011,13 @@ class FHIRSampledData extends FHIRDataType
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1286,98 +1032,84 @@ class FHIRSampledData extends FHIRDataType
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ORIGIN]) || array_key_exists(self::FIELD_ORIGIN, $json)) {
-            $type->setOrigin(FHIRQuantity::jsonUnserialize($json[self::FIELD_ORIGIN], $config));
+        if (isset($json->origin) || property_exists($json, self::FIELD_ORIGIN)) {
+            if (is_array($json->origin)) {
+                $type->setOrigin(FHIRQuantity::jsonUnserialize(reset($json->origin), $config));
+            } else {
+                $type->setOrigin(FHIRQuantity::jsonUnserialize($json->origin, $config));
+            }
         }
-        if (isset($json[self::FIELD_INTERVAL])
-            || isset($json[self::FIELD_INTERVAL_EXT])
-            || array_key_exists(self::FIELD_INTERVAL, $json)
-            || array_key_exists(self::FIELD_INTERVAL_EXT, $json)) {
-            $value = $json[self::FIELD_INTERVAL] ?? null;
-            $type->setInterval(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_INTERVAL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->interval)
+            || isset($json->_interval)
+            || property_exists($json, self::FIELD_INTERVAL)
+            || property_exists($json, self::FIELD_INTERVAL_EXT)) {
+            $v = $json->_interval ?? new \stdClass();
+            $v->value = $json->interval ?? null;
+            $type->setInterval(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_INTERVAL_UNIT])
-            || isset($json[self::FIELD_INTERVAL_UNIT_EXT])
-            || array_key_exists(self::FIELD_INTERVAL_UNIT, $json)
-            || array_key_exists(self::FIELD_INTERVAL_UNIT_EXT, $json)) {
-            $value = $json[self::FIELD_INTERVAL_UNIT] ?? null;
-            $type->setIntervalUnit(FHIRCode::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_INTERVAL_UNIT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->intervalUnit)
+            || isset($json->_intervalUnit)
+            || property_exists($json, self::FIELD_INTERVAL_UNIT)
+            || property_exists($json, self::FIELD_INTERVAL_UNIT_EXT)) {
+            $v = $json->_intervalUnit ?? new \stdClass();
+            $v->value = $json->intervalUnit ?? null;
+            $type->setIntervalUnit(FHIRCode::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_FACTOR])
-            || isset($json[self::FIELD_FACTOR_EXT])
-            || array_key_exists(self::FIELD_FACTOR, $json)
-            || array_key_exists(self::FIELD_FACTOR_EXT, $json)) {
-            $value = $json[self::FIELD_FACTOR] ?? null;
-            $type->setFactor(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_FACTOR_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->factor)
+            || isset($json->_factor)
+            || property_exists($json, self::FIELD_FACTOR)
+            || property_exists($json, self::FIELD_FACTOR_EXT)) {
+            $v = $json->_factor ?? new \stdClass();
+            $v->value = $json->factor ?? null;
+            $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_LOWER_LIMIT])
-            || isset($json[self::FIELD_LOWER_LIMIT_EXT])
-            || array_key_exists(self::FIELD_LOWER_LIMIT, $json)
-            || array_key_exists(self::FIELD_LOWER_LIMIT_EXT, $json)) {
-            $value = $json[self::FIELD_LOWER_LIMIT] ?? null;
-            $type->setLowerLimit(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_LOWER_LIMIT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->lowerLimit)
+            || isset($json->_lowerLimit)
+            || property_exists($json, self::FIELD_LOWER_LIMIT)
+            || property_exists($json, self::FIELD_LOWER_LIMIT_EXT)) {
+            $v = $json->_lowerLimit ?? new \stdClass();
+            $v->value = $json->lowerLimit ?? null;
+            $type->setLowerLimit(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_UPPER_LIMIT])
-            || isset($json[self::FIELD_UPPER_LIMIT_EXT])
-            || array_key_exists(self::FIELD_UPPER_LIMIT, $json)
-            || array_key_exists(self::FIELD_UPPER_LIMIT_EXT, $json)) {
-            $value = $json[self::FIELD_UPPER_LIMIT] ?? null;
-            $type->setUpperLimit(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_UPPER_LIMIT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->upperLimit)
+            || isset($json->_upperLimit)
+            || property_exists($json, self::FIELD_UPPER_LIMIT)
+            || property_exists($json, self::FIELD_UPPER_LIMIT_EXT)) {
+            $v = $json->_upperLimit ?? new \stdClass();
+            $v->value = $json->upperLimit ?? null;
+            $type->setUpperLimit(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DIMENSIONS])
-            || isset($json[self::FIELD_DIMENSIONS_EXT])
-            || array_key_exists(self::FIELD_DIMENSIONS, $json)
-            || array_key_exists(self::FIELD_DIMENSIONS_EXT, $json)) {
-            $value = $json[self::FIELD_DIMENSIONS] ?? null;
-            $type->setDimensions(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_DIMENSIONS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->dimensions)
+            || isset($json->_dimensions)
+            || property_exists($json, self::FIELD_DIMENSIONS)
+            || property_exists($json, self::FIELD_DIMENSIONS_EXT)) {
+            $v = $json->_dimensions ?? new \stdClass();
+            $v->value = $json->dimensions ?? null;
+            $type->setDimensions(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CODE_MAP])
-            || isset($json[self::FIELD_CODE_MAP_EXT])
-            || array_key_exists(self::FIELD_CODE_MAP, $json)
-            || array_key_exists(self::FIELD_CODE_MAP_EXT, $json)) {
-            $value = $json[self::FIELD_CODE_MAP] ?? null;
-            $type->setCodeMap(FHIRCanonical::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_CODE_MAP_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->codeMap)
+            || isset($json->_codeMap)
+            || property_exists($json, self::FIELD_CODE_MAP)
+            || property_exists($json, self::FIELD_CODE_MAP_EXT)) {
+            $v = $json->_codeMap ?? new \stdClass();
+            $v->value = $json->codeMap ?? null;
+            $type->setCodeMap(FHIRCanonical::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_OFFSETS])
-            || isset($json[self::FIELD_OFFSETS_EXT])
-            || array_key_exists(self::FIELD_OFFSETS, $json)
-            || array_key_exists(self::FIELD_OFFSETS_EXT, $json)) {
-            $value = $json[self::FIELD_OFFSETS] ?? null;
-            $type->setOffsets(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_OFFSETS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->offsets)
+            || isset($json->_offsets)
+            || property_exists($json, self::FIELD_OFFSETS)
+            || property_exists($json, self::FIELD_OFFSETS_EXT)) {
+            $v = $json->_offsets ?? new \stdClass();
+            $v->value = $json->offsets ?? null;
+            $type->setOffsets(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DATA])
-            || isset($json[self::FIELD_DATA_EXT])
-            || array_key_exists(self::FIELD_DATA, $json)
-            || array_key_exists(self::FIELD_DATA_EXT, $json)) {
-            $value = $json[self::FIELD_DATA] ?? null;
-            $type->setData(FHIRSampledDataDataType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSampledDataDataType::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->data)
+            || isset($json->_data)
+            || property_exists($json, self::FIELD_DATA)
+            || property_exists($json, self::FIELD_DATA_EXT)) {
+            $v = $json->_data ?? new \stdClass();
+            $v->value = $json->data ?? null;
+            $type->setData(FHIRSampledDataDataType::jsonUnserialize($v, $config));
         }
         return $type;
     }

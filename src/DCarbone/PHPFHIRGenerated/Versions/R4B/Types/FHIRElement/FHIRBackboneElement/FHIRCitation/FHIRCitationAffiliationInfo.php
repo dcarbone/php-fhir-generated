@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,29 +105,31 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRCitationAffiliationInfo extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CITATION_DOT_AFFILIATION_INFO;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_AFFILIATION = 'affiliation';
     public const FIELD_AFFILIATION_EXT = '_affiliation';
     public const FIELD_ROLE = 'role';
     public const FIELD_ROLE_EXT = '_role';
     public const FIELD_IDENTIFIER = 'identifier';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_AFFILIATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ROLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -158,7 +162,7 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
      */
     protected array $identifier;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCitationAffiliationInfo Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -192,7 +196,7 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -201,7 +205,7 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -224,11 +228,9 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
      * Display for the organization.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $affiliation
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAffiliation(null|string|FHIRStringPrimitive|FHIRString $affiliation,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAffiliation(null|string|FHIRStringPrimitive|FHIRString $affiliation): self
     {
         if (null === $affiliation) {
             unset($this->affiliation);
@@ -238,33 +240,6 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
             $affiliation = new FHIRString(value: $affiliation);
         }
         $this->affiliation = $affiliation;
-        if ($this->_valueXMLLocations[self::FIELD_AFFILIATION] !== $valueXMLLocation) {
-            $this->_setAffiliationValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the affiliation element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAffiliationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AFFILIATION];
-    }
-
-    /**
-     * Set the location the "value" field of the affiliation element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAffiliationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AFFILIATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -290,11 +265,9 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
      * Role within the organization, such as professional title.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $role
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRole(null|string|FHIRStringPrimitive|FHIRString $role,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRole(null|string|FHIRStringPrimitive|FHIRString $role): self
     {
         if (null === $role) {
             unset($this->role);
@@ -304,33 +277,6 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
             $role = new FHIRString(value: $role);
         }
         $this->role = $role;
-        if ($this->_valueXMLLocations[self::FIELD_ROLE] !== $valueXMLLocation) {
-            $this->_setRoleValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the role element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRoleValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ROLE];
-    }
-
-    /**
-     * Set the location the "value" field of the role element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRoleValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ROLE] = $valueXMLLocation;
         return $this;
     }
 
@@ -401,7 +347,7 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -430,9 +376,11 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -446,23 +394,24 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_AFFILIATION])) {
             if (isset($type->affiliation)) {
                 $type->affiliation->setValue((string)$attributes[self::FIELD_AFFILIATION]);
-                $type->_setAffiliationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAffiliation((string)$attributes[self::FIELD_AFFILIATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAffiliation((string)$attributes[self::FIELD_AFFILIATION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_AFFILIATION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ROLE])) {
             if (isset($type->role)) {
                 $type->role->setValue((string)$attributes[self::FIELD_ROLE]);
-                $type->_setRoleValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRole((string)$attributes[self::FIELD_ROLE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRole((string)$attributes[self::FIELD_ROLE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ROLE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -475,10 +424,10 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->affiliation) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AFFILIATION]) {
-            $xw->writeAttribute(self::FIELD_AFFILIATION, $this->affiliation->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_AFFILIATION, $this->affiliation->_getValueAsString());
         }
         if (isset($this->role) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ROLE]) {
-            $xw->writeAttribute(self::FIELD_ROLE, $this->role->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ROLE, $this->role->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->affiliation)
@@ -505,13 +454,13 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -526,32 +475,30 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_AFFILIATION])
-            || isset($json[self::FIELD_AFFILIATION_EXT])
-            || array_key_exists(self::FIELD_AFFILIATION, $json)
-            || array_key_exists(self::FIELD_AFFILIATION_EXT, $json)) {
-            $value = $json[self::FIELD_AFFILIATION] ?? null;
-            $type->setAffiliation(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_AFFILIATION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->affiliation)
+            || isset($json->_affiliation)
+            || property_exists($json, self::FIELD_AFFILIATION)
+            || property_exists($json, self::FIELD_AFFILIATION_EXT)) {
+            $v = $json->_affiliation ?? new \stdClass();
+            $v->value = $json->affiliation ?? null;
+            $type->setAffiliation(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ROLE])
-            || isset($json[self::FIELD_ROLE_EXT])
-            || array_key_exists(self::FIELD_ROLE, $json)
-            || array_key_exists(self::FIELD_ROLE_EXT, $json)) {
-            $value = $json[self::FIELD_ROLE] ?? null;
-            $type->setRole(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ROLE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->role)
+            || isset($json->_role)
+            || property_exists($json, self::FIELD_ROLE)
+            || property_exists($json, self::FIELD_ROLE_EXT)) {
+            $v = $json->_role ?? new \stdClass();
+            $v->value = $json->role ?? null;
+            $type->setRole(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
@@ -585,7 +532,11 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
             }
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         return $out;
     }

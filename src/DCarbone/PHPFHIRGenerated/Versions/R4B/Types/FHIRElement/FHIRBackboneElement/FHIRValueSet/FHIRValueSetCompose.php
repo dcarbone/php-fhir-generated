@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -106,12 +108,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRValueSetCompose extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_VALUE_SET_DOT_COMPOSE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_LOCKED_DATE = 'lockedDate';
     public const FIELD_LOCKED_DATE_EXT = '_lockedDate';
     public const FIELD_INACTIVE = 'inactive';
@@ -119,7 +123,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     public const FIELD_INCLUDE = 'include';
     public const FIELD_EXCLUDE = 'exclude';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_INCLUDE => [
@@ -127,13 +131,13 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_LOCKED_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INACTIVE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -185,7 +189,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      */
     protected array $exclude;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRValueSetCompose Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -224,7 +228,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -233,7 +237,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -262,11 +266,9 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * that are not already tied to a specific version.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $lockedDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLockedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lockedDate,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLockedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lockedDate): self
     {
         if (null === $lockedDate) {
             unset($this->lockedDate);
@@ -276,33 +278,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             $lockedDate = new FHIRDate(value: $lockedDate);
         }
         $this->lockedDate = $lockedDate;
-        if ($this->_valueXMLLocations[self::FIELD_LOCKED_DATE] !== $valueXMLLocation) {
-            $this->_setLockedDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the lockedDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLockedDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LOCKED_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the lockedDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLockedDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LOCKED_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -336,11 +311,9 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * expected to be included).
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $inactive
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setInactive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inactive,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setInactive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inactive): self
     {
         if (null === $inactive) {
             unset($this->inactive);
@@ -350,33 +323,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             $inactive = new FHIRBoolean(value: $inactive);
         }
         $this->inactive = $inactive;
-        if ($this->_valueXMLLocations[self::FIELD_INACTIVE] !== $valueXMLLocation) {
-            $this->_setInactiveValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the inactive element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getInactiveValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INACTIVE];
-    }
-
-    /**
-     * Set the location the "value" field of the inactive element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setInactiveValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INACTIVE] = $valueXMLLocation;
         return $this;
     }
 
@@ -517,7 +463,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -546,9 +492,11 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -564,23 +512,24 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LOCKED_DATE])) {
             if (isset($type->lockedDate)) {
                 $type->lockedDate->setValue((string)$attributes[self::FIELD_LOCKED_DATE]);
-                $type->_setLockedDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLockedDate((string)$attributes[self::FIELD_LOCKED_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLockedDate((string)$attributes[self::FIELD_LOCKED_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LOCKED_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INACTIVE])) {
             if (isset($type->inactive)) {
                 $type->inactive->setValue((string)$attributes[self::FIELD_INACTIVE]);
-                $type->_setInactiveValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInactive((string)$attributes[self::FIELD_INACTIVE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setInactive((string)$attributes[self::FIELD_INACTIVE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INACTIVE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -593,10 +542,10 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->lockedDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LOCKED_DATE]) {
-            $xw->writeAttribute(self::FIELD_LOCKED_DATE, $this->lockedDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LOCKED_DATE, $this->lockedDate->_getValueAsString());
         }
         if (isset($this->inactive) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INACTIVE]) {
-            $xw->writeAttribute(self::FIELD_INACTIVE, $this->inactive->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INACTIVE, $this->inactive->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->lockedDate)
@@ -630,13 +579,13 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -651,41 +600,41 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LOCKED_DATE])
-            || isset($json[self::FIELD_LOCKED_DATE_EXT])
-            || array_key_exists(self::FIELD_LOCKED_DATE, $json)
-            || array_key_exists(self::FIELD_LOCKED_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_LOCKED_DATE] ?? null;
-            $type->setLockedDate(FHIRDate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_LOCKED_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->lockedDate)
+            || isset($json->_lockedDate)
+            || property_exists($json, self::FIELD_LOCKED_DATE)
+            || property_exists($json, self::FIELD_LOCKED_DATE_EXT)) {
+            $v = $json->_lockedDate ?? new \stdClass();
+            $v->value = $json->lockedDate ?? null;
+            $type->setLockedDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_INACTIVE])
-            || isset($json[self::FIELD_INACTIVE_EXT])
-            || array_key_exists(self::FIELD_INACTIVE, $json)
-            || array_key_exists(self::FIELD_INACTIVE_EXT, $json)) {
-            $value = $json[self::FIELD_INACTIVE] ?? null;
-            $type->setInactive(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_INACTIVE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->inactive)
+            || isset($json->_inactive)
+            || property_exists($json, self::FIELD_INACTIVE)
+            || property_exists($json, self::FIELD_INACTIVE_EXT)) {
+            $v = $json->_inactive ?? new \stdClass();
+            $v->value = $json->inactive ?? null;
+            $type->setInactive(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_INCLUDE]) || array_key_exists(self::FIELD_INCLUDE, $json)) {
-            $vs = $json[self::FIELD_INCLUDE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->include) || property_exists($json, self::FIELD_INCLUDE)) {
+            if (is_object($json->include)) {
+                $vals = [$json->include];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_INCLUDE, true);
+            } else {
+                $vals = $json->include;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addInclude(FHIRValueSetInclude::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_EXCLUDE]) || array_key_exists(self::FIELD_EXCLUDE, $json)) {
-            $vs = $json[self::FIELD_EXCLUDE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->exclude) || property_exists($json, self::FIELD_EXCLUDE)) {
+            if (is_object($json->exclude)) {
+                $vals = [$json->exclude];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_EXCLUDE, true);
+            } else {
+                $vals = $json->exclude;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addExclude(FHIRValueSetInclude::jsonUnserialize($v, $config));
             }
         }
@@ -719,10 +668,18 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             }
         }
         if (isset($this->include) && [] !== $this->include) {
-            $out->include = $this->include;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_INCLUDE) && 1 === count($this->include)) {
+                $out->include = $this->include[0];
+            } else {
+                $out->include = $this->include;
+            }
         }
         if (isset($this->exclude) && [] !== $this->exclude) {
-            $out->exclude = $this->exclude;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_EXCLUDE) && 1 === count($this->exclude)) {
+                $out->exclude = $this->exclude[0];
+            } else {
+                $out->exclude = $this->exclude;
+            }
         }
         return $out;
     }

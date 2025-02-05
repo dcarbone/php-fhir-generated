@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -104,12 +106,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRImmunizationEducation extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMMUNIZATION_DOT_EDUCATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DOCUMENT_TYPE = 'documentType';
     public const FIELD_DOCUMENT_TYPE_EXT = '_documentType';
     public const FIELD_REFERENCE = 'reference';
@@ -119,11 +123,11 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
     public const FIELD_PRESENTATION_DATE = 'presentationDate';
     public const FIELD_PRESENTATION_DATE_EXT = '_presentationDate';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DOCUMENT_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_REFERENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -131,7 +135,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         self::FIELD_PRESENTATION_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -180,7 +184,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      */
     protected FHIRDateTime $presentationDate;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRImmunizationEducation Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -219,7 +223,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -228,7 +232,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -251,11 +255,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * Identifier of the material presented to the patient.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $documentType
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDocumentType(null|string|FHIRStringPrimitive|FHIRString $documentType,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDocumentType(null|string|FHIRStringPrimitive|FHIRString $documentType): self
     {
         if (null === $documentType) {
             unset($this->documentType);
@@ -265,33 +267,6 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             $documentType = new FHIRString(value: $documentType);
         }
         $this->documentType = $documentType;
-        if ($this->_valueXMLLocations[self::FIELD_DOCUMENT_TYPE] !== $valueXMLLocation) {
-            $this->_setDocumentTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the documentType element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDocumentTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DOCUMENT_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the documentType element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDocumentTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DOCUMENT_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -319,11 +294,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * information was on line.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $reference
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference): self
     {
         if (null === $reference) {
             unset($this->reference);
@@ -333,33 +306,6 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             $reference = new FHIRUri(value: $reference);
         }
         $this->reference = $reference;
-        if ($this->_valueXMLLocations[self::FIELD_REFERENCE] !== $valueXMLLocation) {
-            $this->_setReferenceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the reference element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getReferenceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_REFERENCE];
-    }
-
-    /**
-     * Set the location the "value" field of the reference element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setReferenceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_REFERENCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -391,11 +337,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * Date the educational material was published.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $publicationDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPublicationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $publicationDate,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPublicationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $publicationDate): self
     {
         if (null === $publicationDate) {
             unset($this->publicationDate);
@@ -405,33 +349,6 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             $publicationDate = new FHIRDateTime(value: $publicationDate);
         }
         $this->publicationDate = $publicationDate;
-        if ($this->_valueXMLLocations[self::FIELD_PUBLICATION_DATE] !== $valueXMLLocation) {
-            $this->_setPublicationDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the publicationDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPublicationDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PUBLICATION_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the publicationDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPublicationDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PUBLICATION_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -463,11 +380,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * Date the educational material was given to the patient.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $presentationDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPresentationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $presentationDate,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPresentationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $presentationDate): self
     {
         if (null === $presentationDate) {
             unset($this->presentationDate);
@@ -477,37 +392,10 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             $presentationDate = new FHIRDateTime(value: $presentationDate);
         }
         $this->presentationDate = $presentationDate;
-        if ($this->_valueXMLLocations[self::FIELD_PRESENTATION_DATE] !== $valueXMLLocation) {
-            $this->_setPresentationDateValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the presentationDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPresentationDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PRESENTATION_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the presentationDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPresentationDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PRESENTATION_DATE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -536,9 +424,11 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -554,39 +444,40 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DOCUMENT_TYPE])) {
             if (isset($type->documentType)) {
                 $type->documentType->setValue((string)$attributes[self::FIELD_DOCUMENT_TYPE]);
-                $type->_setDocumentTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDocumentType((string)$attributes[self::FIELD_DOCUMENT_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDocumentType((string)$attributes[self::FIELD_DOCUMENT_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DOCUMENT_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_REFERENCE])) {
             if (isset($type->reference)) {
                 $type->reference->setValue((string)$attributes[self::FIELD_REFERENCE]);
-                $type->_setReferenceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setReference((string)$attributes[self::FIELD_REFERENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setReference((string)$attributes[self::FIELD_REFERENCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_REFERENCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PUBLICATION_DATE])) {
             if (isset($type->publicationDate)) {
                 $type->publicationDate->setValue((string)$attributes[self::FIELD_PUBLICATION_DATE]);
-                $type->_setPublicationDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPublicationDate((string)$attributes[self::FIELD_PUBLICATION_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPublicationDate((string)$attributes[self::FIELD_PUBLICATION_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PUBLICATION_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PRESENTATION_DATE])) {
             if (isset($type->presentationDate)) {
                 $type->presentationDate->setValue((string)$attributes[self::FIELD_PRESENTATION_DATE]);
-                $type->_setPresentationDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPresentationDate((string)$attributes[self::FIELD_PRESENTATION_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPresentationDate((string)$attributes[self::FIELD_PRESENTATION_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PRESENTATION_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -599,16 +490,16 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->documentType) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DOCUMENT_TYPE]) {
-            $xw->writeAttribute(self::FIELD_DOCUMENT_TYPE, $this->documentType->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DOCUMENT_TYPE, $this->documentType->_getValueAsString());
         }
         if (isset($this->reference) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REFERENCE]) {
-            $xw->writeAttribute(self::FIELD_REFERENCE, $this->reference->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_REFERENCE, $this->reference->_getValueAsString());
         }
         if (isset($this->publicationDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PUBLICATION_DATE]) {
-            $xw->writeAttribute(self::FIELD_PUBLICATION_DATE, $this->publicationDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PUBLICATION_DATE, $this->publicationDate->_getValueAsString());
         }
         if (isset($this->presentationDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PRESENTATION_DATE]) {
-            $xw->writeAttribute(self::FIELD_PRESENTATION_DATE, $this->presentationDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PRESENTATION_DATE, $this->presentationDate->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->documentType)
@@ -642,13 +533,13 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -663,45 +554,37 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DOCUMENT_TYPE])
-            || isset($json[self::FIELD_DOCUMENT_TYPE_EXT])
-            || array_key_exists(self::FIELD_DOCUMENT_TYPE, $json)
-            || array_key_exists(self::FIELD_DOCUMENT_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_DOCUMENT_TYPE] ?? null;
-            $type->setDocumentType(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DOCUMENT_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->documentType)
+            || isset($json->_documentType)
+            || property_exists($json, self::FIELD_DOCUMENT_TYPE)
+            || property_exists($json, self::FIELD_DOCUMENT_TYPE_EXT)) {
+            $v = $json->_documentType ?? new \stdClass();
+            $v->value = $json->documentType ?? null;
+            $type->setDocumentType(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_REFERENCE])
-            || isset($json[self::FIELD_REFERENCE_EXT])
-            || array_key_exists(self::FIELD_REFERENCE, $json)
-            || array_key_exists(self::FIELD_REFERENCE_EXT, $json)) {
-            $value = $json[self::FIELD_REFERENCE] ?? null;
-            $type->setReference(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_REFERENCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->reference)
+            || isset($json->_reference)
+            || property_exists($json, self::FIELD_REFERENCE)
+            || property_exists($json, self::FIELD_REFERENCE_EXT)) {
+            $v = $json->_reference ?? new \stdClass();
+            $v->value = $json->reference ?? null;
+            $type->setReference(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PUBLICATION_DATE])
-            || isset($json[self::FIELD_PUBLICATION_DATE_EXT])
-            || array_key_exists(self::FIELD_PUBLICATION_DATE, $json)
-            || array_key_exists(self::FIELD_PUBLICATION_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_PUBLICATION_DATE] ?? null;
-            $type->setPublicationDate(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_PUBLICATION_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->publicationDate)
+            || isset($json->_publicationDate)
+            || property_exists($json, self::FIELD_PUBLICATION_DATE)
+            || property_exists($json, self::FIELD_PUBLICATION_DATE_EXT)) {
+            $v = $json->_publicationDate ?? new \stdClass();
+            $v->value = $json->publicationDate ?? null;
+            $type->setPublicationDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PRESENTATION_DATE])
-            || isset($json[self::FIELD_PRESENTATION_DATE_EXT])
-            || array_key_exists(self::FIELD_PRESENTATION_DATE, $json)
-            || array_key_exists(self::FIELD_PRESENTATION_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_PRESENTATION_DATE] ?? null;
-            $type->setPresentationDate(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_PRESENTATION_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->presentationDate)
+            || isset($json->_presentationDate)
+            || property_exists($json, self::FIELD_PRESENTATION_DATE)
+            || property_exists($json, self::FIELD_PRESENTATION_DATE_EXT)) {
+            $v = $json->_presentationDate ?? new \stdClass();
+            $v->value = $json->presentationDate ?? null;
+            $type->setPresentationDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
         return $type;
     }

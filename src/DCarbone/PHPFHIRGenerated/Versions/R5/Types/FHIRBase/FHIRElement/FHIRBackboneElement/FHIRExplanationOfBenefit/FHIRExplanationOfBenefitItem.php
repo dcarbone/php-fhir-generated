@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -114,12 +116,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_ITEM;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SEQUENCE = 'sequence';
     public const FIELD_SEQUENCE_EXT = '_sequence';
     public const FIELD_CARE_TEAM_SEQUENCE = 'careTeamSequence';
@@ -160,7 +164,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     public const FIELD_ADJUDICATION = 'adjudication';
     public const FIELD_DETAIL = 'detail';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SEQUENCE => [
@@ -168,14 +172,14 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SERVICED_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FACTOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -332,7 +336,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate 
      */
@@ -343,7 +347,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
      */
@@ -354,7 +358,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
@@ -369,7 +374,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress 
      */
@@ -379,7 +385,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
@@ -527,17 +534,17 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      */
     protected array $detail;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRExplanationOfBenefitItem Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
-     * @param null|string[]|int[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $careTeamSequence
-     * @param null|string[]|int[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $diagnosisSequence
-     * @param null|string[]|int[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $procedureSequence
-     * @param null|string[]|int[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $informationSequence
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
+     * @param null|string[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $careTeamSequence
+     * @param null|string[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $diagnosisSequence
+     * @param null|string[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $procedureSequence
+     * @param null|string[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $informationSequence
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $traceNumber
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $revenue
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
@@ -554,13 +561,13 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $patientPaid
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $unitPrice
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tax
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $net
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $udi
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBodySite[] $bodySite
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $encounter
-     * @param null|string[]|int[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $noteNumber
+     * @param null|string[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $noteNumber
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitReviewOutcome $reviewOutcome
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[] $adjudication
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail[] $detail
@@ -569,7 +576,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null,
                                 null|iterable $careTeamSequence = null,
                                 null|iterable $diagnosisSequence = null,
                                 null|iterable $procedureSequence = null,
@@ -590,7 +597,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                                 null|FHIRMoney $patientPaid = null,
                                 null|FHIRQuantity $quantity = null,
                                 null|FHIRMoney $unitPrice = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor = null,
                                 null|FHIRMoney $tax = null,
                                 null|FHIRMoney $net = null,
                                 null|iterable $udi = null,
@@ -701,7 +708,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -710,7 +717,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -732,12 +739,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * A number to uniquely identify item entries.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
      * @return static
      */
-    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
         if (null === $sequence) {
             unset($this->sequence);
@@ -747,33 +752,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $sequence = new FHIRPositiveInt(value: $sequence);
         }
         $this->sequence = $sequence;
-        if ($this->_valueXMLLocations[self::FIELD_SEQUENCE] !== $valueXMLLocation) {
-            $this->_setSequenceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the sequence element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSequenceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SEQUENCE];
-    }
-
-    /**
-     * Set the location the "value" field of the sequence element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSequenceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SEQUENCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -809,10 +787,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Care team members related to this service or product.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $careTeamSequence
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $careTeamSequence
      * @return static
      */
-    public function addCareTeamSequence(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $careTeamSequence): self
+    public function addCareTeamSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $careTeamSequence): self
     {
         if (!($careTeamSequence instanceof FHIRPositiveInt)) {
             $careTeamSequence = new FHIRPositiveInt(value: $careTeamSequence);
@@ -831,10 +809,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Care team members related to this service or product.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$careTeamSequence
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$careTeamSequence
      * @return static
      */
-    public function setCareTeamSequence(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$careTeamSequence): self
+    public function setCareTeamSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$careTeamSequence): self
     {
         if ([] === $careTeamSequence) {
             unset($this->careTeamSequence);
@@ -883,10 +861,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Diagnoses applicable for this service or product.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $diagnosisSequence
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $diagnosisSequence
      * @return static
      */
-    public function addDiagnosisSequence(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $diagnosisSequence): self
+    public function addDiagnosisSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $diagnosisSequence): self
     {
         if (!($diagnosisSequence instanceof FHIRPositiveInt)) {
             $diagnosisSequence = new FHIRPositiveInt(value: $diagnosisSequence);
@@ -905,10 +883,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Diagnoses applicable for this service or product.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$diagnosisSequence
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$diagnosisSequence
      * @return static
      */
-    public function setDiagnosisSequence(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$diagnosisSequence): self
+    public function setDiagnosisSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$diagnosisSequence): self
     {
         if ([] === $diagnosisSequence) {
             unset($this->diagnosisSequence);
@@ -957,10 +935,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Procedures applicable for this service or product.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $procedureSequence
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $procedureSequence
      * @return static
      */
-    public function addProcedureSequence(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $procedureSequence): self
+    public function addProcedureSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $procedureSequence): self
     {
         if (!($procedureSequence instanceof FHIRPositiveInt)) {
             $procedureSequence = new FHIRPositiveInt(value: $procedureSequence);
@@ -979,10 +957,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Procedures applicable for this service or product.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$procedureSequence
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$procedureSequence
      * @return static
      */
-    public function setProcedureSequence(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$procedureSequence): self
+    public function setProcedureSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$procedureSequence): self
     {
         if ([] === $procedureSequence) {
             unset($this->procedureSequence);
@@ -1033,10 +1011,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * Exceptions, special conditions and supporting information applicable for this
      * service or product.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $informationSequence
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $informationSequence
      * @return static
      */
-    public function addInformationSequence(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $informationSequence): self
+    public function addInformationSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $informationSequence): self
     {
         if (!($informationSequence instanceof FHIRPositiveInt)) {
             $informationSequence = new FHIRPositiveInt(value: $informationSequence);
@@ -1056,10 +1034,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * Exceptions, special conditions and supporting information applicable for this
      * service or product.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$informationSequence
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$informationSequence
      * @return static
      */
-    public function setInformationSequence(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$informationSequence): self
+    public function setInformationSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$informationSequence): self
     {
         if ([] === $informationSequence) {
             unset($this->informationSequence);
@@ -1516,7 +1494,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
@@ -1532,14 +1510,12 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $servicedDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate): self
     {
         if (null === $servicedDate) {
             unset($this->servicedDate);
@@ -1549,33 +1525,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $servicedDate = new FHIRDate(value: $servicedDate);
         }
         $this->servicedDate = $servicedDate;
-        if ($this->_valueXMLLocations[self::FIELD_SERVICED_DATE] !== $valueXMLLocation) {
-            $this->_setServicedDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the servicedDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getServicedDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SERVICED_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the servicedDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setServicedDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SERVICED_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1585,7 +1534,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
@@ -1600,7 +1549,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $servicedPeriod
      * @return static
@@ -1621,7 +1570,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
@@ -1636,7 +1586,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $locationCodeableConcept
      * @return static
@@ -1661,7 +1612,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
@@ -1680,7 +1632,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $locationAddress
      * @return static
@@ -1700,7 +1653,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
@@ -1714,7 +1668,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $locationReference
      * @return static
@@ -1868,12 +1823,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
      * @return static
      */
-    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
         if (null === $factor) {
             unset($this->factor);
@@ -1883,33 +1836,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $factor = new FHIRDecimal(value: $factor);
         }
         $this->factor = $factor;
-        if ($this->_valueXMLLocations[self::FIELD_FACTOR] !== $valueXMLLocation) {
-            $this->_setFactorValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the factor element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFactorValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FACTOR];
-    }
-
-    /**
-     * Set the location the "value" field of the factor element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFactorValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FACTOR] = $valueXMLLocation;
         return $this;
     }
 
@@ -2209,10 +2135,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $noteNumber
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $noteNumber
      * @return static
      */
-    public function addNoteNumber(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
+    public function addNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
     {
         if (!($noteNumber instanceof FHIRPositiveInt)) {
             $noteNumber = new FHIRPositiveInt(value: $noteNumber);
@@ -2232,10 +2158,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$noteNumber
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$noteNumber
      * @return static
      */
-    public function setNoteNumber(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
+    public function setNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
     {
         if ([] === $noteNumber) {
             unset($this->noteNumber);
@@ -2420,7 +2346,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -2449,9 +2375,11 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2521,31 +2449,32 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SEQUENCE])) {
             if (isset($type->sequence)) {
                 $type->sequence->setValue((string)$attributes[self::FIELD_SEQUENCE]);
-                $type->_setSequenceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SEQUENCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SERVICED_DATE])) {
             if (isset($type->servicedDate)) {
                 $type->servicedDate->setValue((string)$attributes[self::FIELD_SERVICED_DATE]);
-                $type->_setServicedDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setServicedDate((string)$attributes[self::FIELD_SERVICED_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setServicedDate((string)$attributes[self::FIELD_SERVICED_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SERVICED_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_FACTOR])) {
             if (isset($type->factor)) {
                 $type->factor->setValue((string)$attributes[self::FIELD_FACTOR]);
-                $type->_setFactorValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setFactor((string)$attributes[self::FIELD_FACTOR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setFactor((string)$attributes[self::FIELD_FACTOR]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_FACTOR, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -2558,13 +2487,13 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->sequence) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SEQUENCE]) {
-            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->_getValueAsString());
         }
         if (isset($this->servicedDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SERVICED_DATE]) {
-            $xw->writeAttribute(self::FIELD_SERVICED_DATE, $this->servicedDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SERVICED_DATE, $this->servicedDate->_getValueAsString());
         }
         if (isset($this->factor) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FACTOR]) {
-            $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->sequence)
@@ -2759,13 +2688,13 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -2780,246 +2709,309 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SEQUENCE])
-            || isset($json[self::FIELD_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
-            $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $type->setSequence(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sequence)
+            || isset($json->_sequence)
+            || property_exists($json, self::FIELD_SEQUENCE)
+            || property_exists($json, self::FIELD_SEQUENCE_EXT)) {
+            $v = $json->_sequence ?? new \stdClass();
+            $v->value = $json->sequence ?? null;
+            $type->setSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CARE_TEAM_SEQUENCE])
-            || isset($json[self::FIELD_CARE_TEAM_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_CARE_TEAM_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_CARE_TEAM_SEQUENCE_EXT, $json)) {
-            $value = (array)($json[self::FIELD_CARE_TEAM_SEQUENCE] ?? []);
-            $ext = (array)($json[self::FIELD_CARE_TEAM_SEQUENCE_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->careTeamSequence)
+            || isset($json->_careTeamSequence)
+            || property_exists($json, self::FIELD_CARE_TEAM_SEQUENCE)
+            || property_exists($json, self::FIELD_CARE_TEAM_SEQUENCE_EXT)) {
+            $vals = (array)($json->careTeamSequence ?? []);
+            $exts = (array)($json->FIELD_CARE_TEAM_SEQUENCE_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addCareTeamSequence(FHIRPositiveInt::jsonUnserialize(
-                    [FHIRPositiveInt::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addCareTeamSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DIAGNOSIS_SEQUENCE])
-            || isset($json[self::FIELD_DIAGNOSIS_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_DIAGNOSIS_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_DIAGNOSIS_SEQUENCE_EXT, $json)) {
-            $value = (array)($json[self::FIELD_DIAGNOSIS_SEQUENCE] ?? []);
-            $ext = (array)($json[self::FIELD_DIAGNOSIS_SEQUENCE_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->diagnosisSequence)
+            || isset($json->_diagnosisSequence)
+            || property_exists($json, self::FIELD_DIAGNOSIS_SEQUENCE)
+            || property_exists($json, self::FIELD_DIAGNOSIS_SEQUENCE_EXT)) {
+            $vals = (array)($json->diagnosisSequence ?? []);
+            $exts = (array)($json->FIELD_DIAGNOSIS_SEQUENCE_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addDiagnosisSequence(FHIRPositiveInt::jsonUnserialize(
-                    [FHIRPositiveInt::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
-            }
-        }
-        if (isset($json[self::FIELD_PROCEDURE_SEQUENCE])
-            || isset($json[self::FIELD_PROCEDURE_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_PROCEDURE_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_PROCEDURE_SEQUENCE_EXT, $json)) {
-            $value = (array)($json[self::FIELD_PROCEDURE_SEQUENCE] ?? []);
-            $ext = (array)($json[self::FIELD_PROCEDURE_SEQUENCE_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
-            }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addProcedureSequence(FHIRPositiveInt::jsonUnserialize(
-                    [FHIRPositiveInt::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addDiagnosisSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_INFORMATION_SEQUENCE])
-            || isset($json[self::FIELD_INFORMATION_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_INFORMATION_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_INFORMATION_SEQUENCE_EXT, $json)) {
-            $value = (array)($json[self::FIELD_INFORMATION_SEQUENCE] ?? []);
-            $ext = (array)($json[self::FIELD_INFORMATION_SEQUENCE_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->procedureSequence)
+            || isset($json->_procedureSequence)
+            || property_exists($json, self::FIELD_PROCEDURE_SEQUENCE)
+            || property_exists($json, self::FIELD_PROCEDURE_SEQUENCE_EXT)) {
+            $vals = (array)($json->procedureSequence ?? []);
+            $exts = (array)($json->FIELD_PROCEDURE_SEQUENCE_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addInformationSequence(FHIRPositiveInt::jsonUnserialize(
-                    [FHIRPositiveInt::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addProcedureSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TRACE_NUMBER]) || array_key_exists(self::FIELD_TRACE_NUMBER, $json)) {
-            $vs = $json[self::FIELD_TRACE_NUMBER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->informationSequence)
+            || isset($json->_informationSequence)
+            || property_exists($json, self::FIELD_INFORMATION_SEQUENCE)
+            || property_exists($json, self::FIELD_INFORMATION_SEQUENCE_EXT)) {
+            $vals = (array)($json->informationSequence ?? []);
+            $exts = (array)($json->FIELD_INFORMATION_SEQUENCE_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            foreach($vs as $v) {
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addInformationSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
+            }
+        }
+        if (isset($json->traceNumber) || property_exists($json, self::FIELD_TRACE_NUMBER)) {
+            if (is_object($json->traceNumber)) {
+                $vals = [$json->traceNumber];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TRACE_NUMBER, true);
+            } else {
+                $vals = $json->traceNumber;
+            }
+            foreach($vals as $v) {
                 $type->addTraceNumber(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REVENUE]) || array_key_exists(self::FIELD_REVENUE, $json)) {
-            $type->setRevenue(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REVENUE], $config));
-        }
-        if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CATEGORY], $config));
-        }
-        if (isset($json[self::FIELD_PRODUCT_OR_SERVICE]) || array_key_exists(self::FIELD_PRODUCT_OR_SERVICE, $json)) {
-            $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRODUCT_OR_SERVICE], $config));
-        }
-        if (isset($json[self::FIELD_PRODUCT_OR_SERVICE_END]) || array_key_exists(self::FIELD_PRODUCT_OR_SERVICE_END, $json)) {
-            $type->setProductOrServiceEnd(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRODUCT_OR_SERVICE_END], $config));
-        }
-        if (isset($json[self::FIELD_REQUEST]) || array_key_exists(self::FIELD_REQUEST, $json)) {
-            $vs = $json[self::FIELD_REQUEST];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->revenue) || property_exists($json, self::FIELD_REVENUE)) {
+            if (is_array($json->revenue)) {
+                $type->setRevenue(FHIRCodeableConcept::jsonUnserialize(reset($json->revenue), $config));
+            } else {
+                $type->setRevenue(FHIRCodeableConcept::jsonUnserialize($json->revenue, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->category) || property_exists($json, self::FIELD_CATEGORY)) {
+            if (is_array($json->category)) {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize(reset($json->category), $config));
+            } else {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json->category, $config));
+            }
+        }
+        if (isset($json->productOrService) || property_exists($json, self::FIELD_PRODUCT_OR_SERVICE)) {
+            if (is_array($json->productOrService)) {
+                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize(reset($json->productOrService), $config));
+            } else {
+                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize($json->productOrService, $config));
+            }
+        }
+        if (isset($json->productOrServiceEnd) || property_exists($json, self::FIELD_PRODUCT_OR_SERVICE_END)) {
+            if (is_array($json->productOrServiceEnd)) {
+                $type->setProductOrServiceEnd(FHIRCodeableConcept::jsonUnserialize(reset($json->productOrServiceEnd), $config));
+            } else {
+                $type->setProductOrServiceEnd(FHIRCodeableConcept::jsonUnserialize($json->productOrServiceEnd, $config));
+            }
+        }
+        if (isset($json->request) || property_exists($json, self::FIELD_REQUEST)) {
+            if (is_object($json->request)) {
+                $vals = [$json->request];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_REQUEST, true);
+            } else {
+                $vals = $json->request;
+            }
+            foreach($vals as $v) {
                 $type->addRequest(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MODIFIER]) || array_key_exists(self::FIELD_MODIFIER, $json)) {
-            $vs = $json[self::FIELD_MODIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->modifier) || property_exists($json, self::FIELD_MODIFIER)) {
+            if (is_object($json->modifier)) {
+                $vals = [$json->modifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_MODIFIER, true);
+            } else {
+                $vals = $json->modifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addModifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PROGRAM_CODE]) || array_key_exists(self::FIELD_PROGRAM_CODE, $json)) {
-            $vs = $json[self::FIELD_PROGRAM_CODE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->programCode) || property_exists($json, self::FIELD_PROGRAM_CODE)) {
+            if (is_object($json->programCode)) {
+                $vals = [$json->programCode];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PROGRAM_CODE, true);
+            } else {
+                $vals = $json->programCode;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addProgramCode(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SERVICED_DATE])
-            || isset($json[self::FIELD_SERVICED_DATE_EXT])
-            || array_key_exists(self::FIELD_SERVICED_DATE, $json)
-            || array_key_exists(self::FIELD_SERVICED_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_SERVICED_DATE] ?? null;
-            $type->setServicedDate(FHIRDate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_SERVICED_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->servicedDate)
+            || isset($json->_servicedDate)
+            || property_exists($json, self::FIELD_SERVICED_DATE)
+            || property_exists($json, self::FIELD_SERVICED_DATE_EXT)) {
+            $v = $json->_servicedDate ?? new \stdClass();
+            $v->value = $json->servicedDate ?? null;
+            $type->setServicedDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SERVICED_PERIOD]) || array_key_exists(self::FIELD_SERVICED_PERIOD, $json)) {
-            $type->setServicedPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_SERVICED_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_LOCATION_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_LOCATION_CODEABLE_CONCEPT, $json)) {
-            $type->setLocationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_LOCATION_CODEABLE_CONCEPT], $config));
-        }
-        if (isset($json[self::FIELD_LOCATION_ADDRESS]) || array_key_exists(self::FIELD_LOCATION_ADDRESS, $json)) {
-            $type->setLocationAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_LOCATION_ADDRESS], $config));
-        }
-        if (isset($json[self::FIELD_LOCATION_REFERENCE]) || array_key_exists(self::FIELD_LOCATION_REFERENCE, $json)) {
-            $type->setLocationReference(FHIRReference::jsonUnserialize($json[self::FIELD_LOCATION_REFERENCE], $config));
-        }
-        if (isset($json[self::FIELD_PATIENT_PAID]) || array_key_exists(self::FIELD_PATIENT_PAID, $json)) {
-            $type->setPatientPaid(FHIRMoney::jsonUnserialize($json[self::FIELD_PATIENT_PAID], $config));
-        }
-        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_UNIT_PRICE]) || array_key_exists(self::FIELD_UNIT_PRICE, $json)) {
-            $type->setUnitPrice(FHIRMoney::jsonUnserialize($json[self::FIELD_UNIT_PRICE], $config));
-        }
-        if (isset($json[self::FIELD_FACTOR])
-            || isset($json[self::FIELD_FACTOR_EXT])
-            || array_key_exists(self::FIELD_FACTOR, $json)
-            || array_key_exists(self::FIELD_FACTOR_EXT, $json)) {
-            $value = $json[self::FIELD_FACTOR] ?? null;
-            $type->setFactor(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_FACTOR_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_TAX]) || array_key_exists(self::FIELD_TAX, $json)) {
-            $type->setTax(FHIRMoney::jsonUnserialize($json[self::FIELD_TAX], $config));
-        }
-        if (isset($json[self::FIELD_NET]) || array_key_exists(self::FIELD_NET, $json)) {
-            $type->setNet(FHIRMoney::jsonUnserialize($json[self::FIELD_NET], $config));
-        }
-        if (isset($json[self::FIELD_UDI]) || array_key_exists(self::FIELD_UDI, $json)) {
-            $vs = $json[self::FIELD_UDI];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->servicedPeriod) || property_exists($json, self::FIELD_SERVICED_PERIOD)) {
+            if (is_array($json->servicedPeriod)) {
+                $type->setServicedPeriod(FHIRPeriod::jsonUnserialize(reset($json->servicedPeriod), $config));
+            } else {
+                $type->setServicedPeriod(FHIRPeriod::jsonUnserialize($json->servicedPeriod, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->locationCodeableConcept) || property_exists($json, self::FIELD_LOCATION_CODEABLE_CONCEPT)) {
+            if (is_array($json->locationCodeableConcept)) {
+                $type->setLocationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->locationCodeableConcept), $config));
+            } else {
+                $type->setLocationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->locationCodeableConcept, $config));
+            }
+        }
+        if (isset($json->locationAddress) || property_exists($json, self::FIELD_LOCATION_ADDRESS)) {
+            if (is_array($json->locationAddress)) {
+                $type->setLocationAddress(FHIRAddress::jsonUnserialize(reset($json->locationAddress), $config));
+            } else {
+                $type->setLocationAddress(FHIRAddress::jsonUnserialize($json->locationAddress, $config));
+            }
+        }
+        if (isset($json->locationReference) || property_exists($json, self::FIELD_LOCATION_REFERENCE)) {
+            if (is_array($json->locationReference)) {
+                $type->setLocationReference(FHIRReference::jsonUnserialize(reset($json->locationReference), $config));
+            } else {
+                $type->setLocationReference(FHIRReference::jsonUnserialize($json->locationReference, $config));
+            }
+        }
+        if (isset($json->patientPaid) || property_exists($json, self::FIELD_PATIENT_PAID)) {
+            if (is_array($json->patientPaid)) {
+                $type->setPatientPaid(FHIRMoney::jsonUnserialize(reset($json->patientPaid), $config));
+            } else {
+                $type->setPatientPaid(FHIRMoney::jsonUnserialize($json->patientPaid, $config));
+            }
+        }
+        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
+            if (is_array($json->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+            } else {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+            }
+        }
+        if (isset($json->unitPrice) || property_exists($json, self::FIELD_UNIT_PRICE)) {
+            if (is_array($json->unitPrice)) {
+                $type->setUnitPrice(FHIRMoney::jsonUnserialize(reset($json->unitPrice), $config));
+            } else {
+                $type->setUnitPrice(FHIRMoney::jsonUnserialize($json->unitPrice, $config));
+            }
+        }
+        if (isset($json->factor)
+            || isset($json->_factor)
+            || property_exists($json, self::FIELD_FACTOR)
+            || property_exists($json, self::FIELD_FACTOR_EXT)) {
+            $v = $json->_factor ?? new \stdClass();
+            $v->value = $json->factor ?? null;
+            $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
+        }
+        if (isset($json->tax) || property_exists($json, self::FIELD_TAX)) {
+            if (is_array($json->tax)) {
+                $type->setTax(FHIRMoney::jsonUnserialize(reset($json->tax), $config));
+            } else {
+                $type->setTax(FHIRMoney::jsonUnserialize($json->tax, $config));
+            }
+        }
+        if (isset($json->net) || property_exists($json, self::FIELD_NET)) {
+            if (is_array($json->net)) {
+                $type->setNet(FHIRMoney::jsonUnserialize(reset($json->net), $config));
+            } else {
+                $type->setNet(FHIRMoney::jsonUnserialize($json->net, $config));
+            }
+        }
+        if (isset($json->udi) || property_exists($json, self::FIELD_UDI)) {
+            if (is_object($json->udi)) {
+                $vals = [$json->udi];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_UDI, true);
+            } else {
+                $vals = $json->udi;
+            }
+            foreach($vals as $v) {
                 $type->addUdi(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_BODY_SITE]) || array_key_exists(self::FIELD_BODY_SITE, $json)) {
-            $vs = $json[self::FIELD_BODY_SITE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->bodySite) || property_exists($json, self::FIELD_BODY_SITE)) {
+            if (is_object($json->bodySite)) {
+                $vals = [$json->bodySite];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_BODY_SITE, true);
+            } else {
+                $vals = $json->bodySite;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addBodySite(FHIRExplanationOfBenefitBodySite::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ENCOUNTER]) || array_key_exists(self::FIELD_ENCOUNTER, $json)) {
-            $vs = $json[self::FIELD_ENCOUNTER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->encounter) || property_exists($json, self::FIELD_ENCOUNTER)) {
+            if (is_object($json->encounter)) {
+                $vals = [$json->encounter];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ENCOUNTER, true);
+            } else {
+                $vals = $json->encounter;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addEncounter(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_NOTE_NUMBER])
-            || isset($json[self::FIELD_NOTE_NUMBER_EXT])
-            || array_key_exists(self::FIELD_NOTE_NUMBER, $json)
-            || array_key_exists(self::FIELD_NOTE_NUMBER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_NOTE_NUMBER] ?? []);
-            $ext = (array)($json[self::FIELD_NOTE_NUMBER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->noteNumber)
+            || isset($json->_noteNumber)
+            || property_exists($json, self::FIELD_NOTE_NUMBER)
+            || property_exists($json, self::FIELD_NOTE_NUMBER_EXT)) {
+            $vals = (array)($json->noteNumber ?? []);
+            $exts = (array)($json->FIELD_NOTE_NUMBER_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize(
-                    [FHIRPositiveInt::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REVIEW_OUTCOME]) || array_key_exists(self::FIELD_REVIEW_OUTCOME, $json)) {
-            $type->setReviewOutcome(FHIRExplanationOfBenefitReviewOutcome::jsonUnserialize($json[self::FIELD_REVIEW_OUTCOME], $config));
-        }
-        if (isset($json[self::FIELD_ADJUDICATION]) || array_key_exists(self::FIELD_ADJUDICATION, $json)) {
-            $vs = $json[self::FIELD_ADJUDICATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->reviewOutcome) || property_exists($json, self::FIELD_REVIEW_OUTCOME)) {
+            if (is_array($json->reviewOutcome)) {
+                $type->setReviewOutcome(FHIRExplanationOfBenefitReviewOutcome::jsonUnserialize(reset($json->reviewOutcome), $config));
+            } else {
+                $type->setReviewOutcome(FHIRExplanationOfBenefitReviewOutcome::jsonUnserialize($json->reviewOutcome, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->adjudication) || property_exists($json, self::FIELD_ADJUDICATION)) {
+            if (is_object($json->adjudication)) {
+                $vals = [$json->adjudication];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ADJUDICATION, true);
+            } else {
+                $vals = $json->adjudication;
+            }
+            foreach($vals as $v) {
                 $type->addAdjudication(FHIRExplanationOfBenefitAdjudication::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DETAIL]) || array_key_exists(self::FIELD_DETAIL, $json)) {
-            $vs = $json[self::FIELD_DETAIL];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->detail) || property_exists($json, self::FIELD_DETAIL)) {
+            if (is_object($json->detail)) {
+                $vals = [$json->detail];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DETAIL, true);
+            } else {
+                $vals = $json->detail;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addDetail(FHIRExplanationOfBenefitDetail::jsonUnserialize($v, $config));
             }
         }
@@ -3159,7 +3151,11 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             }
         }
         if (isset($this->traceNumber) && [] !== $this->traceNumber) {
-            $out->traceNumber = $this->traceNumber;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TRACE_NUMBER) && 1 === count($this->traceNumber)) {
+                $out->traceNumber = $this->traceNumber[0];
+            } else {
+                $out->traceNumber = $this->traceNumber;
+            }
         }
         if (isset($this->revenue)) {
             $out->revenue = $this->revenue;
@@ -3174,13 +3170,25 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $out->productOrServiceEnd = $this->productOrServiceEnd;
         }
         if (isset($this->request) && [] !== $this->request) {
-            $out->request = $this->request;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_REQUEST) && 1 === count($this->request)) {
+                $out->request = $this->request[0];
+            } else {
+                $out->request = $this->request;
+            }
         }
         if (isset($this->modifier) && [] !== $this->modifier) {
-            $out->modifier = $this->modifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_MODIFIER) && 1 === count($this->modifier)) {
+                $out->modifier = $this->modifier[0];
+            } else {
+                $out->modifier = $this->modifier;
+            }
         }
         if (isset($this->programCode) && [] !== $this->programCode) {
-            $out->programCode = $this->programCode;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PROGRAM_CODE) && 1 === count($this->programCode)) {
+                $out->programCode = $this->programCode[0];
+            } else {
+                $out->programCode = $this->programCode;
+            }
         }
         if (isset($this->servicedDate)) {
             if (null !== ($val = $this->servicedDate->getValue())) {
@@ -3230,13 +3238,25 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $out->net = $this->net;
         }
         if (isset($this->udi) && [] !== $this->udi) {
-            $out->udi = $this->udi;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_UDI) && 1 === count($this->udi)) {
+                $out->udi = $this->udi[0];
+            } else {
+                $out->udi = $this->udi;
+            }
         }
         if (isset($this->bodySite) && [] !== $this->bodySite) {
-            $out->bodySite = $this->bodySite;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_BODY_SITE) && 1 === count($this->bodySite)) {
+                $out->bodySite = $this->bodySite[0];
+            } else {
+                $out->bodySite = $this->bodySite;
+            }
         }
         if (isset($this->encounter) && [] !== $this->encounter) {
-            $out->encounter = $this->encounter;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ENCOUNTER) && 1 === count($this->encounter)) {
+                $out->encounter = $this->encounter[0];
+            } else {
+                $out->encounter = $this->encounter;
+            }
         }
         if (isset($this->noteNumber) && [] !== $this->noteNumber) {
             $vals = [];
@@ -3271,10 +3291,18 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $out->reviewOutcome = $this->reviewOutcome;
         }
         if (isset($this->adjudication) && [] !== $this->adjudication) {
-            $out->adjudication = $this->adjudication;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ADJUDICATION) && 1 === count($this->adjudication)) {
+                $out->adjudication = $this->adjudication[0];
+            } else {
+                $out->adjudication = $this->adjudication;
+            }
         }
         if (isset($this->detail) && [] !== $this->detail) {
-            $out->detail = $this->detail;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DETAIL) && 1 === count($this->detail)) {
+                $out->detail = $this->detail[0];
+            } else {
+                $out->detail = $this->detail;
+            }
         }
         return $out;
     }

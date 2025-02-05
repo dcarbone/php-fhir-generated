@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,12 +104,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionTypeMap;
  */
 class FHIRCommunicationRequest extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COMMUNICATION_REQUEST;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_CATEGORY = 'category';
     public const FIELD_SENDER = 'sender';
@@ -127,18 +131,18 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
     public const FIELD_SUBJECT = 'subject';
     public const FIELD_PRIORITY = 'priority';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SCHEDULED_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_REQUESTED_ON => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -307,7 +311,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      */
     protected FHIRCodeableConcept $priority;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCommunicationRequest Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
@@ -416,7 +420,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -425,7 +429,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -434,7 +438,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -835,11 +839,9 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * The status of the proposal or order.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRCommunicationRequestStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCommunicationRequestStatus $status
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|string|FHIRCommunicationRequestStatusList|FHIRCommunicationRequestStatus $status,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStatus(null|string|FHIRCommunicationRequestStatusList|FHIRCommunicationRequestStatus $status): self
     {
         if (null === $status) {
             unset($this->status);
@@ -849,33 +851,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
             $status = new FHIRCommunicationRequestStatus(value: $status);
         }
         $this->status = $status;
-        if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
-            $this->_setStatusValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the status element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStatusValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STATUS];
-    }
-
-    /**
-     * Set the location the "value" field of the status element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -941,11 +916,9 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * The time when this communication is to occur.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $scheduledDateTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setScheduledDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $scheduledDateTime,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setScheduledDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $scheduledDateTime): self
     {
         if (null === $scheduledDateTime) {
             unset($this->scheduledDateTime);
@@ -955,33 +928,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
             $scheduledDateTime = new FHIRDateTime(value: $scheduledDateTime);
         }
         $this->scheduledDateTime = $scheduledDateTime;
-        if ($this->_valueXMLLocations[self::FIELD_SCHEDULED_DATE_TIME] !== $valueXMLLocation) {
-            $this->_setScheduledDateTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the scheduledDateTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getScheduledDateTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SCHEDULED_DATE_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the scheduledDateTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setScheduledDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SCHEDULED_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -1114,11 +1060,9 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * The time when the request was made.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $requestedOn
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRequestedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $requestedOn,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRequestedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $requestedOn): self
     {
         if (null === $requestedOn) {
             unset($this->requestedOn);
@@ -1128,33 +1072,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
             $requestedOn = new FHIRDateTime(value: $requestedOn);
         }
         $this->requestedOn = $requestedOn;
-        if ($this->_valueXMLLocations[self::FIELD_REQUESTED_ON] !== $valueXMLLocation) {
-            $this->_setRequestedOnValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the requestedOn element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRequestedOnValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_REQUESTED_ON];
-    }
-
-    /**
-     * Set the location the "value" field of the requestedOn element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRequestedOnValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_REQUESTED_ON] = $valueXMLLocation;
         return $this;
     }
 
@@ -1230,7 +1147,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1319,50 +1236,50 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STATUS])) {
             if (isset($type->status)) {
                 $type->status->setValue((string)$attributes[self::FIELD_STATUS]);
-                $type->_setStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStatus((string)$attributes[self::FIELD_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStatus((string)$attributes[self::FIELD_STATUS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STATUS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SCHEDULED_DATE_TIME])) {
             if (isset($type->scheduledDateTime)) {
                 $type->scheduledDateTime->setValue((string)$attributes[self::FIELD_SCHEDULED_DATE_TIME]);
-                $type->_setScheduledDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setScheduledDateTime((string)$attributes[self::FIELD_SCHEDULED_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setScheduledDateTime((string)$attributes[self::FIELD_SCHEDULED_DATE_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SCHEDULED_DATE_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_REQUESTED_ON])) {
             if (isset($type->requestedOn)) {
                 $type->requestedOn->setValue((string)$attributes[self::FIELD_REQUESTED_ON]);
-                $type->_setRequestedOnValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRequestedOn((string)$attributes[self::FIELD_REQUESTED_ON], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRequestedOn((string)$attributes[self::FIELD_REQUESTED_ON]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_REQUESTED_ON, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1393,13 +1310,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
             $xw->openRootNode('CommunicationRequest', $this->_getSourceXMLNS());
         }
         if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
-            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getValueAsString());
         }
         if (isset($this->scheduledDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SCHEDULED_DATE_TIME]) {
-            $xw->writeAttribute(self::FIELD_SCHEDULED_DATE_TIME, $this->scheduledDateTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SCHEDULED_DATE_TIME, $this->scheduledDateTime->_getValueAsString());
         }
         if (isset($this->requestedOn) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REQUESTED_ON]) {
-            $xw->writeAttribute(self::FIELD_REQUESTED_ON, $this->requestedOn->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_REQUESTED_ON, $this->requestedOn->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1503,13 +1420,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1527,106 +1444,136 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CATEGORY], $config));
-        }
-        if (isset($json[self::FIELD_SENDER]) || array_key_exists(self::FIELD_SENDER, $json)) {
-            $type->setSender(FHIRReference::jsonUnserialize($json[self::FIELD_SENDER], $config));
-        }
-        if (isset($json[self::FIELD_RECIPIENT]) || array_key_exists(self::FIELD_RECIPIENT, $json)) {
-            $vs = $json[self::FIELD_RECIPIENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->category) || property_exists($json, self::FIELD_CATEGORY)) {
+            if (is_array($json->category)) {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize(reset($json->category), $config));
+            } else {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json->category, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->sender) || property_exists($json, self::FIELD_SENDER)) {
+            if (is_array($json->sender)) {
+                $type->setSender(FHIRReference::jsonUnserialize(reset($json->sender), $config));
+            } else {
+                $type->setSender(FHIRReference::jsonUnserialize($json->sender, $config));
+            }
+        }
+        if (isset($json->recipient) || property_exists($json, self::FIELD_RECIPIENT)) {
+            if (is_object($json->recipient)) {
+                $vals = [$json->recipient];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RECIPIENT, true);
+            } else {
+                $vals = $json->recipient;
+            }
+            foreach($vals as $v) {
                 $type->addRecipient(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PAYLOAD]) || array_key_exists(self::FIELD_PAYLOAD, $json)) {
-            $vs = $json[self::FIELD_PAYLOAD];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->payload) || property_exists($json, self::FIELD_PAYLOAD)) {
+            if (is_object($json->payload)) {
+                $vals = [$json->payload];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PAYLOAD, true);
+            } else {
+                $vals = $json->payload;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addPayload(FHIRCommunicationRequestPayload::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MEDIUM]) || array_key_exists(self::FIELD_MEDIUM, $json)) {
-            $vs = $json[self::FIELD_MEDIUM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->medium) || property_exists($json, self::FIELD_MEDIUM)) {
+            if (is_object($json->medium)) {
+                $vals = [$json->medium];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_MEDIUM, true);
+            } else {
+                $vals = $json->medium;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addMedium(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REQUESTER]) || array_key_exists(self::FIELD_REQUESTER, $json)) {
-            $type->setRequester(FHIRReference::jsonUnserialize($json[self::FIELD_REQUESTER], $config));
-        }
-        if (isset($json[self::FIELD_STATUS])
-            || isset($json[self::FIELD_STATUS_EXT])
-            || array_key_exists(self::FIELD_STATUS, $json)
-            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
-            $value = $json[self::FIELD_STATUS] ?? null;
-            $type->setStatus(FHIRCommunicationRequestStatus::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCommunicationRequestStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ENCOUNTER]) || array_key_exists(self::FIELD_ENCOUNTER, $json)) {
-            $type->setEncounter(FHIRReference::jsonUnserialize($json[self::FIELD_ENCOUNTER], $config));
-        }
-        if (isset($json[self::FIELD_SCHEDULED_DATE_TIME])
-            || isset($json[self::FIELD_SCHEDULED_DATE_TIME_EXT])
-            || array_key_exists(self::FIELD_SCHEDULED_DATE_TIME, $json)
-            || array_key_exists(self::FIELD_SCHEDULED_DATE_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_SCHEDULED_DATE_TIME] ?? null;
-            $type->setScheduledDateTime(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_SCHEDULED_DATE_TIME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_SCHEDULED_PERIOD]) || array_key_exists(self::FIELD_SCHEDULED_PERIOD, $json)) {
-            $type->setScheduledPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_SCHEDULED_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            $vs = $json[self::FIELD_REASON];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->requester) || property_exists($json, self::FIELD_REQUESTER)) {
+            if (is_array($json->requester)) {
+                $type->setRequester(FHIRReference::jsonUnserialize(reset($json->requester), $config));
+            } else {
+                $type->setRequester(FHIRReference::jsonUnserialize($json->requester, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->status)
+            || isset($json->_status)
+            || property_exists($json, self::FIELD_STATUS)
+            || property_exists($json, self::FIELD_STATUS_EXT)) {
+            $v = $json->_status ?? new \stdClass();
+            $v->value = $json->status ?? null;
+            $type->setStatus(FHIRCommunicationRequestStatus::jsonUnserialize($v, $config));
+        }
+        if (isset($json->encounter) || property_exists($json, self::FIELD_ENCOUNTER)) {
+            if (is_array($json->encounter)) {
+                $type->setEncounter(FHIRReference::jsonUnserialize(reset($json->encounter), $config));
+            } else {
+                $type->setEncounter(FHIRReference::jsonUnserialize($json->encounter, $config));
+            }
+        }
+        if (isset($json->scheduledDateTime)
+            || isset($json->_scheduledDateTime)
+            || property_exists($json, self::FIELD_SCHEDULED_DATE_TIME)
+            || property_exists($json, self::FIELD_SCHEDULED_DATE_TIME_EXT)) {
+            $v = $json->_scheduledDateTime ?? new \stdClass();
+            $v->value = $json->scheduledDateTime ?? null;
+            $type->setScheduledDateTime(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->scheduledPeriod) || property_exists($json, self::FIELD_SCHEDULED_PERIOD)) {
+            if (is_array($json->scheduledPeriod)) {
+                $type->setScheduledPeriod(FHIRPeriod::jsonUnserialize(reset($json->scheduledPeriod), $config));
+            } else {
+                $type->setScheduledPeriod(FHIRPeriod::jsonUnserialize($json->scheduledPeriod, $config));
+            }
+        }
+        if (isset($json->reason) || property_exists($json, self::FIELD_REASON)) {
+            if (is_object($json->reason)) {
+                $vals = [$json->reason];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_REASON, true);
+            } else {
+                $vals = $json->reason;
+            }
+            foreach($vals as $v) {
                 $type->addReason(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REQUESTED_ON])
-            || isset($json[self::FIELD_REQUESTED_ON_EXT])
-            || array_key_exists(self::FIELD_REQUESTED_ON, $json)
-            || array_key_exists(self::FIELD_REQUESTED_ON_EXT, $json)) {
-            $value = $json[self::FIELD_REQUESTED_ON] ?? null;
-            $type->setRequestedOn(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUESTED_ON_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->requestedOn)
+            || isset($json->_requestedOn)
+            || property_exists($json, self::FIELD_REQUESTED_ON)
+            || property_exists($json, self::FIELD_REQUESTED_ON_EXT)) {
+            $v = $json->_requestedOn ?? new \stdClass();
+            $v->value = $json->requestedOn ?? null;
+            $type->setRequestedOn(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
+        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
+            if (is_array($json->subject)) {
+                $type->setSubject(FHIRReference::jsonUnserialize(reset($json->subject), $config));
+            } else {
+                $type->setSubject(FHIRReference::jsonUnserialize($json->subject, $config));
+            }
         }
-        if (isset($json[self::FIELD_PRIORITY]) || array_key_exists(self::FIELD_PRIORITY, $json)) {
-            $type->setPriority(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRIORITY], $config));
+        if (isset($json->priority) || property_exists($json, self::FIELD_PRIORITY)) {
+            if (is_array($json->priority)) {
+                $type->setPriority(FHIRCodeableConcept::jsonUnserialize(reset($json->priority), $config));
+            } else {
+                $type->setPriority(FHIRCodeableConcept::jsonUnserialize($json->priority, $config));
+            }
         }
         return $type;
     }
@@ -1638,7 +1585,11 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->category)) {
             $out->category = $this->category;
@@ -1647,13 +1598,25 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
             $out->sender = $this->sender;
         }
         if (isset($this->recipient) && [] !== $this->recipient) {
-            $out->recipient = $this->recipient;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RECIPIENT) && 1 === count($this->recipient)) {
+                $out->recipient = $this->recipient[0];
+            } else {
+                $out->recipient = $this->recipient;
+            }
         }
         if (isset($this->payload) && [] !== $this->payload) {
-            $out->payload = $this->payload;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PAYLOAD) && 1 === count($this->payload)) {
+                $out->payload = $this->payload[0];
+            } else {
+                $out->payload = $this->payload;
+            }
         }
         if (isset($this->medium) && [] !== $this->medium) {
-            $out->medium = $this->medium;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_MEDIUM) && 1 === count($this->medium)) {
+                $out->medium = $this->medium[0];
+            } else {
+                $out->medium = $this->medium;
+            }
         }
         if (isset($this->requester)) {
             $out->requester = $this->requester;
@@ -1685,7 +1648,11 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
             $out->scheduledPeriod = $this->scheduledPeriod;
         }
         if (isset($this->reason) && [] !== $this->reason) {
-            $out->reason = $this->reason;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_REASON) && 1 === count($this->reason)) {
+                $out->reason = $this->reason[0];
+            } else {
+                $out->reason = $this->reason;
+            }
         }
         if (isset($this->requestedOn)) {
             if (null !== ($val = $this->requestedOn->getValue())) {

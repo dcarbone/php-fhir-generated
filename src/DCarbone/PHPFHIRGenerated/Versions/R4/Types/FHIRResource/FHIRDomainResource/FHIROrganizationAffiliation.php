@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -99,12 +101,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionTypeMap;
  */
 class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ORGANIZATION_AFFILIATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_ACTIVE = 'active';
     public const FIELD_ACTIVE_EXT = '_active';
@@ -119,16 +123,16 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
     public const FIELD_TELECOM = 'telecom';
     public const FIELD_ENDPOINT = 'endpoint';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_ACTIVE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -257,7 +261,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      */
     protected array $endpoint;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIROrganizationAffiliation Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
@@ -351,7 +355,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -360,7 +364,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -369,7 +373,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -457,11 +461,9 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * Whether this organization affiliation record is in active use.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $active
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
         if (null === $active) {
             unset($this->active);
@@ -471,33 +473,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
             $active = new FHIRBoolean(value: $active);
         }
         $this->active = $active;
-        if ($this->_valueXMLLocations[self::FIELD_ACTIVE] !== $valueXMLLocation) {
-            $this->_setActiveValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the active element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getActiveValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ACTIVE];
-    }
-
-    /**
-     * Set the location the "value" field of the active element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setActiveValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ACTIVE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1070,7 +1045,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1153,34 +1128,34 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ACTIVE])) {
             if (isset($type->active)) {
                 $type->active->setValue((string)$attributes[self::FIELD_ACTIVE]);
-                $type->_setActiveValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setActive((string)$attributes[self::FIELD_ACTIVE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setActive((string)$attributes[self::FIELD_ACTIVE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ACTIVE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1211,7 +1186,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
             $xw->openRootNode('OrganizationAffiliation', $this->_getSourceXMLNS());
         }
         if (isset($this->active) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ACTIVE]) {
-            $xw->writeAttribute(self::FIELD_ACTIVE, $this->active->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ACTIVE, $this->active->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1302,13 +1277,13 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1326,99 +1301,123 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ACTIVE])
-            || isset($json[self::FIELD_ACTIVE_EXT])
-            || array_key_exists(self::FIELD_ACTIVE, $json)
-            || array_key_exists(self::FIELD_ACTIVE_EXT, $json)) {
-            $value = $json[self::FIELD_ACTIVE] ?? null;
-            $type->setActive(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_ACTIVE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->active)
+            || isset($json->_active)
+            || property_exists($json, self::FIELD_ACTIVE)
+            || property_exists($json, self::FIELD_ACTIVE_EXT)) {
+            $v = $json->_active ?? new \stdClass();
+            $v->value = $json->active ?? null;
+            $type->setActive(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_ORGANIZATION]) || array_key_exists(self::FIELD_ORGANIZATION, $json)) {
-            $type->setOrganization(FHIRReference::jsonUnserialize($json[self::FIELD_ORGANIZATION], $config));
-        }
-        if (isset($json[self::FIELD_PARTICIPATING_ORGANIZATION]) || array_key_exists(self::FIELD_PARTICIPATING_ORGANIZATION, $json)) {
-            $type->setParticipatingOrganization(FHIRReference::jsonUnserialize($json[self::FIELD_PARTICIPATING_ORGANIZATION], $config));
-        }
-        if (isset($json[self::FIELD_NETWORK]) || array_key_exists(self::FIELD_NETWORK, $json)) {
-            $vs = $json[self::FIELD_NETWORK];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->organization) || property_exists($json, self::FIELD_ORGANIZATION)) {
+            if (is_array($json->organization)) {
+                $type->setOrganization(FHIRReference::jsonUnserialize(reset($json->organization), $config));
+            } else {
+                $type->setOrganization(FHIRReference::jsonUnserialize($json->organization, $config));
+            }
+        }
+        if (isset($json->participatingOrganization) || property_exists($json, self::FIELD_PARTICIPATING_ORGANIZATION)) {
+            if (is_array($json->participatingOrganization)) {
+                $type->setParticipatingOrganization(FHIRReference::jsonUnserialize(reset($json->participatingOrganization), $config));
+            } else {
+                $type->setParticipatingOrganization(FHIRReference::jsonUnserialize($json->participatingOrganization, $config));
+            }
+        }
+        if (isset($json->network) || property_exists($json, self::FIELD_NETWORK)) {
+            if (is_object($json->network)) {
+                $vals = [$json->network];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_NETWORK, true);
+            } else {
+                $vals = $json->network;
+            }
+            foreach($vals as $v) {
                 $type->addNetwork(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $vs = $json[self::FIELD_CODE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
+            if (is_object($json->code)) {
+                $vals = [$json->code];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CODE, true);
+            } else {
+                $vals = $json->code;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addCode(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SPECIALTY]) || array_key_exists(self::FIELD_SPECIALTY, $json)) {
-            $vs = $json[self::FIELD_SPECIALTY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->specialty) || property_exists($json, self::FIELD_SPECIALTY)) {
+            if (is_object($json->specialty)) {
+                $vals = [$json->specialty];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SPECIALTY, true);
+            } else {
+                $vals = $json->specialty;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSpecialty(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_LOCATION]) || array_key_exists(self::FIELD_LOCATION, $json)) {
-            $vs = $json[self::FIELD_LOCATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->location) || property_exists($json, self::FIELD_LOCATION)) {
+            if (is_object($json->location)) {
+                $vals = [$json->location];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_LOCATION, true);
+            } else {
+                $vals = $json->location;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addLocation(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_HEALTHCARE_SERVICE]) || array_key_exists(self::FIELD_HEALTHCARE_SERVICE, $json)) {
-            $vs = $json[self::FIELD_HEALTHCARE_SERVICE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->healthcareService) || property_exists($json, self::FIELD_HEALTHCARE_SERVICE)) {
+            if (is_object($json->healthcareService)) {
+                $vals = [$json->healthcareService];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_HEALTHCARE_SERVICE, true);
+            } else {
+                $vals = $json->healthcareService;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addHealthcareService(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TELECOM]) || array_key_exists(self::FIELD_TELECOM, $json)) {
-            $vs = $json[self::FIELD_TELECOM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->telecom) || property_exists($json, self::FIELD_TELECOM)) {
+            if (is_object($json->telecom)) {
+                $vals = [$json->telecom];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TELECOM, true);
+            } else {
+                $vals = $json->telecom;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTelecom(FHIRContactPoint::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ENDPOINT]) || array_key_exists(self::FIELD_ENDPOINT, $json)) {
-            $vs = $json[self::FIELD_ENDPOINT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->endpoint) || property_exists($json, self::FIELD_ENDPOINT)) {
+            if (is_object($json->endpoint)) {
+                $vals = [$json->endpoint];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ENDPOINT, true);
+            } else {
+                $vals = $json->endpoint;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addEndpoint(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -1432,7 +1431,11 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->active)) {
             if (null !== ($val = $this->active->getValue())) {
@@ -1454,25 +1457,53 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
             $out->participatingOrganization = $this->participatingOrganization;
         }
         if (isset($this->network) && [] !== $this->network) {
-            $out->network = $this->network;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_NETWORK) && 1 === count($this->network)) {
+                $out->network = $this->network[0];
+            } else {
+                $out->network = $this->network;
+            }
         }
         if (isset($this->code) && [] !== $this->code) {
-            $out->code = $this->code;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CODE) && 1 === count($this->code)) {
+                $out->code = $this->code[0];
+            } else {
+                $out->code = $this->code;
+            }
         }
         if (isset($this->specialty) && [] !== $this->specialty) {
-            $out->specialty = $this->specialty;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SPECIALTY) && 1 === count($this->specialty)) {
+                $out->specialty = $this->specialty[0];
+            } else {
+                $out->specialty = $this->specialty;
+            }
         }
         if (isset($this->location) && [] !== $this->location) {
-            $out->location = $this->location;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_LOCATION) && 1 === count($this->location)) {
+                $out->location = $this->location[0];
+            } else {
+                $out->location = $this->location;
+            }
         }
         if (isset($this->healthcareService) && [] !== $this->healthcareService) {
-            $out->healthcareService = $this->healthcareService;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_HEALTHCARE_SERVICE) && 1 === count($this->healthcareService)) {
+                $out->healthcareService = $this->healthcareService[0];
+            } else {
+                $out->healthcareService = $this->healthcareService;
+            }
         }
         if (isset($this->telecom) && [] !== $this->telecom) {
-            $out->telecom = $this->telecom;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TELECOM) && 1 === count($this->telecom)) {
+                $out->telecom = $this->telecom[0];
+            } else {
+                $out->telecom = $this->telecom;
+            }
         }
         if (isset($this->endpoint) && [] !== $this->endpoint) {
-            $out->endpoint = $this->endpoint;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ENDPOINT) && 1 === count($this->endpoint)) {
+                $out->endpoint = $this->endpoint[0];
+            } else {
+                $out->endpoint = $this->endpoint;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

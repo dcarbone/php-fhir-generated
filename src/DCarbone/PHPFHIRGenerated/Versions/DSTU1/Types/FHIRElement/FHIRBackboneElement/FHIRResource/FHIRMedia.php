@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -95,12 +97,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypeMap;
  */
 class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDIA;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_SUBTYPE = 'subtype';
@@ -122,7 +126,7 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
     public const FIELD_LENGTH_EXT = '_length';
     public const FIELD_CONTENT = 'content';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -133,7 +137,7 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -144,7 +148,7 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
         self::FIELD_LENGTH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Whether the Media is a photo, video, or audio
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -286,7 +290,7 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      */
     protected FHIRAttachment $content;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedia Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -303,10 +307,10 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $operator
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $view
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $deviceName
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $height
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $width
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $frames
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $length
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $height
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $width
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $frames
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $length
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $content
      * @param null|string[] $fhirComments
      */
@@ -324,10 +328,10 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
                                 null|FHIRResourceReference $operator = null,
                                 null|FHIRCodeableConcept $view = null,
                                 null|string|FHIRStringPrimitive|FHIRString $deviceName = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $height = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $width = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $frames = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $length = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $height = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $width = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $frames = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $length = null,
                                 null|FHIRAttachment $content = null,
                                 null|iterable $fhirComments = null)
     {
@@ -379,7 +383,7 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -388,7 +392,7 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -397,7 +401,7 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Whether the Media is a photo, video, or audio
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -420,11 +424,9 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * recording.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMediaTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMediaType $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRMediaTypeList|FHIRMediaType $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRMediaTypeList|FHIRMediaType $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -434,33 +436,6 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             $type = new FHIRMediaType(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -602,11 +577,9 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * the recording is not insignificant, this is the end of the recording.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $dateTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime): self
     {
         if (null === $dateTime) {
             unset($this->dateTime);
@@ -616,33 +589,6 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             $dateTime = new FHIRDateTime(value: $dateTime);
         }
         $this->dateTime = $dateTime;
-        if ($this->_valueXMLLocations[self::FIELD_DATE_TIME] !== $valueXMLLocation) {
-            $this->_setDateTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dateTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDateTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATE_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the dateTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -772,11 +718,9 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * recording.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $deviceName
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDeviceName(null|string|FHIRStringPrimitive|FHIRString $deviceName,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDeviceName(null|string|FHIRStringPrimitive|FHIRString $deviceName): self
     {
         if (null === $deviceName) {
             unset($this->deviceName);
@@ -786,33 +730,6 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             $deviceName = new FHIRString(value: $deviceName);
         }
         $this->deviceName = $deviceName;
-        if ($this->_valueXMLLocations[self::FIELD_DEVICE_NAME] !== $valueXMLLocation) {
-            $this->_setDeviceNameValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the deviceName element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDeviceNameValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEVICE_NAME];
-    }
-
-    /**
-     * Set the location the "value" field of the deviceName element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDeviceNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEVICE_NAME] = $valueXMLLocation;
         return $this;
     }
 
@@ -835,12 +752,10 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      *
      * Height of the image in pixels(photo/video).
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $height
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $height
      * @return static
      */
-    public function setHeight(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $height,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setHeight(null|string|float|FHIRIntegerPrimitive|FHIRInteger $height): self
     {
         if (null === $height) {
             unset($this->height);
@@ -850,33 +765,6 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             $height = new FHIRInteger(value: $height);
         }
         $this->height = $height;
-        if ($this->_valueXMLLocations[self::FIELD_HEIGHT] !== $valueXMLLocation) {
-            $this->_setHeightValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the height element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getHeightValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_HEIGHT];
-    }
-
-    /**
-     * Set the location the "value" field of the height element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setHeightValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_HEIGHT] = $valueXMLLocation;
         return $this;
     }
 
@@ -899,12 +787,10 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      *
      * Width of the image in pixels (photo/video).
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $width
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $width
      * @return static
      */
-    public function setWidth(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $width,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setWidth(null|string|float|FHIRIntegerPrimitive|FHIRInteger $width): self
     {
         if (null === $width) {
             unset($this->width);
@@ -914,33 +800,6 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             $width = new FHIRInteger(value: $width);
         }
         $this->width = $width;
-        if ($this->_valueXMLLocations[self::FIELD_WIDTH] !== $valueXMLLocation) {
-            $this->_setWidthValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the width element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getWidthValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_WIDTH];
-    }
-
-    /**
-     * Set the location the "value" field of the width element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setWidthValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_WIDTH] = $valueXMLLocation;
         return $this;
     }
 
@@ -971,12 +830,10 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * to alert interface software that a multi-frame capable rendering widget is
      * required.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $frames
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $frames
      * @return static
      */
-    public function setFrames(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $frames,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFrames(null|string|float|FHIRIntegerPrimitive|FHIRInteger $frames): self
     {
         if (null === $frames) {
             unset($this->frames);
@@ -986,33 +843,6 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             $frames = new FHIRInteger(value: $frames);
         }
         $this->frames = $frames;
-        if ($this->_valueXMLLocations[self::FIELD_FRAMES] !== $valueXMLLocation) {
-            $this->_setFramesValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the frames element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFramesValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FRAMES];
-    }
-
-    /**
-     * Set the location the "value" field of the frames element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFramesValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FRAMES] = $valueXMLLocation;
         return $this;
     }
 
@@ -1035,12 +865,10 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      *
      * The length of the recording in seconds - for audio and video.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $length
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $length
      * @return static
      */
-    public function setLength(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $length,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $length): self
     {
         if (null === $length) {
             unset($this->length);
@@ -1050,33 +878,6 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             $length = new FHIRInteger(value: $length);
         }
         $this->length = $length;
-        if ($this->_valueXMLLocations[self::FIELD_LENGTH] !== $valueXMLLocation) {
-            $this->_setLengthValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the length element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLengthValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LENGTH];
-    }
-
-    /**
-     * Set the location the "value" field of the length element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLengthValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LENGTH] = $valueXMLLocation;
         return $this;
     }
 
@@ -1116,7 +917,7 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1154,9 +955,11 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1200,71 +1003,72 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATE_TIME])) {
             if (isset($type->dateTime)) {
                 $type->dateTime->setValue((string)$attributes[self::FIELD_DATE_TIME]);
-                $type->_setDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDateTime((string)$attributes[self::FIELD_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDateTime((string)$attributes[self::FIELD_DATE_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATE_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DEVICE_NAME])) {
             if (isset($type->deviceName)) {
                 $type->deviceName->setValue((string)$attributes[self::FIELD_DEVICE_NAME]);
-                $type->_setDeviceNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDeviceName((string)$attributes[self::FIELD_DEVICE_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDeviceName((string)$attributes[self::FIELD_DEVICE_NAME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DEVICE_NAME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_HEIGHT])) {
             if (isset($type->height)) {
                 $type->height->setValue((string)$attributes[self::FIELD_HEIGHT]);
-                $type->_setHeightValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setHeight((string)$attributes[self::FIELD_HEIGHT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setHeight((string)$attributes[self::FIELD_HEIGHT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_HEIGHT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_WIDTH])) {
             if (isset($type->width)) {
                 $type->width->setValue((string)$attributes[self::FIELD_WIDTH]);
-                $type->_setWidthValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setWidth((string)$attributes[self::FIELD_WIDTH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setWidth((string)$attributes[self::FIELD_WIDTH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_WIDTH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_FRAMES])) {
             if (isset($type->frames)) {
                 $type->frames->setValue((string)$attributes[self::FIELD_FRAMES]);
-                $type->_setFramesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setFrames((string)$attributes[self::FIELD_FRAMES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setFrames((string)$attributes[self::FIELD_FRAMES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_FRAMES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LENGTH])) {
             if (isset($type->length)) {
                 $type->length->setValue((string)$attributes[self::FIELD_LENGTH]);
-                $type->_setLengthValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLength((string)$attributes[self::FIELD_LENGTH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLength((string)$attributes[self::FIELD_LENGTH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LENGTH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1295,25 +1099,25 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             $xw->openRootNode('Media', $this->_getSourceXMLNS());
         }
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         if (isset($this->dateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATE_TIME]) {
-            $xw->writeAttribute(self::FIELD_DATE_TIME, $this->dateTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATE_TIME, $this->dateTime->_getValueAsString());
         }
         if (isset($this->deviceName) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEVICE_NAME]) {
-            $xw->writeAttribute(self::FIELD_DEVICE_NAME, $this->deviceName->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DEVICE_NAME, $this->deviceName->_getValueAsString());
         }
         if (isset($this->height) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_HEIGHT]) {
-            $xw->writeAttribute(self::FIELD_HEIGHT, $this->height->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_HEIGHT, $this->height->_getValueAsString());
         }
         if (isset($this->width) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_WIDTH]) {
-            $xw->writeAttribute(self::FIELD_WIDTH, $this->width->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_WIDTH, $this->width->_getValueAsString());
         }
         if (isset($this->frames) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FRAMES]) {
-            $xw->writeAttribute(self::FIELD_FRAMES, $this->frames->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_FRAMES, $this->frames->_getValueAsString());
         }
         if (isset($this->length) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LENGTH]) {
-            $xw->writeAttribute(self::FIELD_LENGTH, $this->length->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LENGTH, $this->length->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)
@@ -1407,13 +1211,13 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedia $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedia
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1431,104 +1235,110 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRMediaType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMediaType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRMediaType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SUBTYPE]) || array_key_exists(self::FIELD_SUBTYPE, $json)) {
-            $type->setSubtype(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SUBTYPE], $config));
-        }
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->subtype) || property_exists($json, self::FIELD_SUBTYPE)) {
+            if (is_array($json->subtype)) {
+                $type->setSubtype(FHIRCodeableConcept::jsonUnserialize(reset($json->subtype), $config));
+            } else {
+                $type->setSubtype(FHIRCodeableConcept::jsonUnserialize($json->subtype, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
+            }
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DATE_TIME])
-            || isset($json[self::FIELD_DATE_TIME_EXT])
-            || array_key_exists(self::FIELD_DATE_TIME, $json)
-            || array_key_exists(self::FIELD_DATE_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_DATE_TIME] ?? null;
-            $type->setDateTime(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_TIME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->dateTime)
+            || isset($json->_dateTime)
+            || property_exists($json, self::FIELD_DATE_TIME)
+            || property_exists($json, self::FIELD_DATE_TIME_EXT)) {
+            $v = $json->_dateTime ?? new \stdClass();
+            $v->value = $json->dateTime ?? null;
+            $type->setDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRResourceReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
+        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
+            if (is_array($json->subject)) {
+                $type->setSubject(FHIRResourceReference::jsonUnserialize(reset($json->subject), $config));
+            } else {
+                $type->setSubject(FHIRResourceReference::jsonUnserialize($json->subject, $config));
+            }
         }
-        if (isset($json[self::FIELD_OPERATOR]) || array_key_exists(self::FIELD_OPERATOR, $json)) {
-            $type->setOperator(FHIRResourceReference::jsonUnserialize($json[self::FIELD_OPERATOR], $config));
+        if (isset($json->operator) || property_exists($json, self::FIELD_OPERATOR)) {
+            if (is_array($json->operator)) {
+                $type->setOperator(FHIRResourceReference::jsonUnserialize(reset($json->operator), $config));
+            } else {
+                $type->setOperator(FHIRResourceReference::jsonUnserialize($json->operator, $config));
+            }
         }
-        if (isset($json[self::FIELD_VIEW]) || array_key_exists(self::FIELD_VIEW, $json)) {
-            $type->setView(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VIEW], $config));
+        if (isset($json->view) || property_exists($json, self::FIELD_VIEW)) {
+            if (is_array($json->view)) {
+                $type->setView(FHIRCodeableConcept::jsonUnserialize(reset($json->view), $config));
+            } else {
+                $type->setView(FHIRCodeableConcept::jsonUnserialize($json->view, $config));
+            }
         }
-        if (isset($json[self::FIELD_DEVICE_NAME])
-            || isset($json[self::FIELD_DEVICE_NAME_EXT])
-            || array_key_exists(self::FIELD_DEVICE_NAME, $json)
-            || array_key_exists(self::FIELD_DEVICE_NAME_EXT, $json)) {
-            $value = $json[self::FIELD_DEVICE_NAME] ?? null;
-            $type->setDeviceName(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DEVICE_NAME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->deviceName)
+            || isset($json->_deviceName)
+            || property_exists($json, self::FIELD_DEVICE_NAME)
+            || property_exists($json, self::FIELD_DEVICE_NAME_EXT)) {
+            $v = $json->_deviceName ?? new \stdClass();
+            $v->value = $json->deviceName ?? null;
+            $type->setDeviceName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_HEIGHT])
-            || isset($json[self::FIELD_HEIGHT_EXT])
-            || array_key_exists(self::FIELD_HEIGHT, $json)
-            || array_key_exists(self::FIELD_HEIGHT_EXT, $json)) {
-            $value = $json[self::FIELD_HEIGHT] ?? null;
-            $type->setHeight(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_HEIGHT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->height)
+            || isset($json->_height)
+            || property_exists($json, self::FIELD_HEIGHT)
+            || property_exists($json, self::FIELD_HEIGHT_EXT)) {
+            $v = $json->_height ?? new \stdClass();
+            $v->value = $json->height ?? null;
+            $type->setHeight(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_WIDTH])
-            || isset($json[self::FIELD_WIDTH_EXT])
-            || array_key_exists(self::FIELD_WIDTH, $json)
-            || array_key_exists(self::FIELD_WIDTH_EXT, $json)) {
-            $value = $json[self::FIELD_WIDTH] ?? null;
-            $type->setWidth(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_WIDTH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->width)
+            || isset($json->_width)
+            || property_exists($json, self::FIELD_WIDTH)
+            || property_exists($json, self::FIELD_WIDTH_EXT)) {
+            $v = $json->_width ?? new \stdClass();
+            $v->value = $json->width ?? null;
+            $type->setWidth(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_FRAMES])
-            || isset($json[self::FIELD_FRAMES_EXT])
-            || array_key_exists(self::FIELD_FRAMES, $json)
-            || array_key_exists(self::FIELD_FRAMES_EXT, $json)) {
-            $value = $json[self::FIELD_FRAMES] ?? null;
-            $type->setFrames(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_FRAMES_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->frames)
+            || isset($json->_frames)
+            || property_exists($json, self::FIELD_FRAMES)
+            || property_exists($json, self::FIELD_FRAMES_EXT)) {
+            $v = $json->_frames ?? new \stdClass();
+            $v->value = $json->frames ?? null;
+            $type->setFrames(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_LENGTH])
-            || isset($json[self::FIELD_LENGTH_EXT])
-            || array_key_exists(self::FIELD_LENGTH, $json)
-            || array_key_exists(self::FIELD_LENGTH_EXT, $json)) {
-            $value = $json[self::FIELD_LENGTH] ?? null;
-            $type->setLength(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_LENGTH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->length)
+            || isset($json->_length)
+            || property_exists($json, self::FIELD_LENGTH)
+            || property_exists($json, self::FIELD_LENGTH_EXT)) {
+            $v = $json->_length ?? new \stdClass();
+            $v->value = $json->length ?? null;
+            $type->setLength(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CONTENT]) || array_key_exists(self::FIELD_CONTENT, $json)) {
-            $type->setContent(FHIRAttachment::jsonUnserialize($json[self::FIELD_CONTENT], $config));
+        if (isset($json->content) || property_exists($json, self::FIELD_CONTENT)) {
+            if (is_array($json->content)) {
+                $type->setContent(FHIRAttachment::jsonUnserialize(reset($json->content), $config));
+            } else {
+                $type->setContent(FHIRAttachment::jsonUnserialize($json->content, $config));
+            }
         }
         return $type;
     }
@@ -1553,7 +1363,11 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
             $out->subtype = $this->subtype;
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->dateTime)) {
             if (null !== ($val = $this->dateTime->getValue())) {

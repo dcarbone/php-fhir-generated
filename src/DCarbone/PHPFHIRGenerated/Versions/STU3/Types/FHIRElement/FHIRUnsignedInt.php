@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveContainerTypeInterface;
@@ -84,15 +86,17 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
 class FHIRUnsignedInt extends FHIRElement implements PrimitiveContainerTypeInterface
 {
     use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait,
         ValueContainerTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_UNSIGNED_INT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_VALUE = 'value';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
@@ -100,16 +104,16 @@ class FHIRUnsignedInt extends FHIRElement implements PrimitiveContainerTypeInter
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /** @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive */
     protected FHIRUnsignedIntPrimitive $value;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRUnsignedInt Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -130,7 +134,7 @@ class FHIRUnsignedInt extends FHIRElement implements PrimitiveContainerTypeInter
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -139,7 +143,7 @@ class FHIRUnsignedInt extends FHIRElement implements PrimitiveContainerTypeInter
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive
      */
@@ -150,11 +154,9 @@ class FHIRUnsignedInt extends FHIRElement implements PrimitiveContainerTypeInter
 
     /**
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive $value
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|int|float|FHIRUnsignedIntPrimitive $value,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValue(null|string|int|float|FHIRUnsignedIntPrimitive $value): self
     {
         if (null === $value) {
             unset($this->value);
@@ -164,50 +166,17 @@ class FHIRUnsignedInt extends FHIRElement implements PrimitiveContainerTypeInter
             $value = new FHIRUnsignedIntPrimitive(value: $value);
         }
         $this->value = $value;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE] !== $valueXMLLocation) {
-            $this->_setValueValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the value element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE];
-    }
-
-    /**
-     * Set the location the "value" field of the value element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        if (ValueXMLLocationEnum::PARENT_ATTRIBUTE === $valueXMLLocation) {
-            throw new \InvalidArgumentException(sprintf(
-                'Cannot set "%s" as value XML serialize location for property "value" on value container type "unsignedInt"',
-                $valueXMLLocation->name,
-            ));
-        }
-        $this->_valueXMLLocations[self::FIELD_VALUE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:197 */
+    /* class_default.php:188 */
     public function _nonValueFieldDefined(): bool
     {
     return isset($this->extension)
             || isset($this->id);
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -236,25 +205,31 @@ class FHIRUnsignedInt extends FHIRElement implements PrimitiveContainerTypeInter
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_VALUE === $cen) {
                 $va = $ce->attributes()[FHIRUnsignedIntPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setValue((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setValue((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_VALUE, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setValue((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setValue((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_VALUE, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             }
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE])) {
-            $type->setValue((string)$attributes[self::FIELD_VALUE], ValueXMLLocationEnum::CONTAINER_ATTRIBUTE);
+            $type->setValue((string)$attributes[self::FIELD_VALUE]);
+            $type->_setXMLFieldValueLocation(self::FIELD_VALUE, ValueXMLLocationEnum::CONTAINER_ATTRIBUTE);
         }
         return $type;
     }
@@ -270,30 +245,30 @@ class FHIRUnsignedInt extends FHIRElement implements PrimitiveContainerTypeInter
     {
         $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
         if (isset($this->value) && ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueLocation) {
-            $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->value)) {
             if (ValueXMLLocationEnum::CONTAINER_VALUE === $valueLocation) {
-                $xw->text($this->value->_getFormattedValue());
+                $xw->text($this->value->_getValueAsString());
             } else if (ValueXMLLocationEnum::ELEMENT_ATTRIBUTE === $valueLocation) {
                 $xw->startElement(self::FIELD_VALUE);
-                $xw->writeAttribute(FHIRUnsignedIntPrimitive::FIELD_VALUE, $this->value->_getFormattedValue());
+                $xw->writeAttribute(FHIRUnsignedIntPrimitive::FIELD_VALUE, $this->value->_getValueAsString());
                 $xw->endElement();
             } else if (ValueXMLLocationEnum::ELEMENT_VALUE === $valueLocation) {
-                $xw->writeElement(self::FIELD_VALUE, $this->value->_getFormattedValue());
+                $xw->writeElement(self::FIELD_VALUE, $this->value->_getValueAsString());
             }
         }
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -308,11 +283,8 @@ class FHIRUnsignedInt extends FHIRElement implements PrimitiveContainerTypeInter
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if ([] === $json) {
-            return $type;
-        }
-        if (isset($json[self::FIELD_VALUE]) || array_key_exists(self::FIELD_VALUE, $json)) {
-            $type->setValue($json[self::FIELD_VALUE]);
+        if (isset($json->value) || property_exists($json, self::FIELD_VALUE)) {
+            $type->setValue($json->value);
         }
         return $type;
     }

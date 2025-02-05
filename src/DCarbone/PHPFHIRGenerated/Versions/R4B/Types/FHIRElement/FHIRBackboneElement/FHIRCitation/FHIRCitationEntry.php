@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -111,12 +113,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRCitationEntry extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CITATION_DOT_ENTRY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_NAME = 'name';
     public const FIELD_INITIALS = 'initials';
     public const FIELD_INITIALS_EXT = '_initials';
@@ -134,11 +138,11 @@ class FHIRCitationEntry extends FHIRBackboneElement
     public const FIELD_LIST_ORDER = 'listOrder';
     public const FIELD_LIST_ORDER_EXT = '_listOrder';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_INITIALS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_COLLECTIVE_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -146,7 +150,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
         self::FIELD_LIST_ORDER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
@@ -278,7 +282,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      */
     protected FHIRPositiveInt $listOrder;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCitationEntry Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -295,7 +299,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $role
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance[] $contributionInstance
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $correspondingContact
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $listOrder
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $listOrder
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -312,7 +316,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $role = null,
                                 null|iterable $contributionInstance = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $correspondingContact = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $listOrder = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $listOrder = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -357,7 +361,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -366,7 +370,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
@@ -423,11 +427,9 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * Initials for forename.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $initials
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setInitials(null|string|FHIRStringPrimitive|FHIRString $initials,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setInitials(null|string|FHIRStringPrimitive|FHIRString $initials): self
     {
         if (null === $initials) {
             unset($this->initials);
@@ -437,33 +439,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
             $initials = new FHIRString(value: $initials);
         }
         $this->initials = $initials;
-        if ($this->_valueXMLLocations[self::FIELD_INITIALS] !== $valueXMLLocation) {
-            $this->_setInitialsValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the initials element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getInitialsValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INITIALS];
-    }
-
-    /**
-     * Set the location the "value" field of the initials element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setInitialsValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INITIALS] = $valueXMLLocation;
         return $this;
     }
 
@@ -489,11 +464,9 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * Used for collective or corporate name as an author.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $collectiveName
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCollectiveName(null|string|FHIRStringPrimitive|FHIRString $collectiveName,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCollectiveName(null|string|FHIRStringPrimitive|FHIRString $collectiveName): self
     {
         if (null === $collectiveName) {
             unset($this->collectiveName);
@@ -503,33 +476,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
             $collectiveName = new FHIRString(value: $collectiveName);
         }
         $this->collectiveName = $collectiveName;
-        if ($this->_valueXMLLocations[self::FIELD_COLLECTIVE_NAME] !== $valueXMLLocation) {
-            $this->_setCollectiveNameValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the collectiveName element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCollectiveNameValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COLLECTIVE_NAME];
-    }
-
-    /**
-     * Set the location the "value" field of the collectiveName element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCollectiveNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COLLECTIVE_NAME] = $valueXMLLocation;
         return $this;
     }
 
@@ -1003,11 +949,9 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * Indication of which contributor is the corresponding contributor for the role.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $correspondingContact
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCorrespondingContact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $correspondingContact,
-                                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCorrespondingContact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $correspondingContact): self
     {
         if (null === $correspondingContact) {
             unset($this->correspondingContact);
@@ -1017,33 +961,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
             $correspondingContact = new FHIRBoolean(value: $correspondingContact);
         }
         $this->correspondingContact = $correspondingContact;
-        if ($this->_valueXMLLocations[self::FIELD_CORRESPONDING_CONTACT] !== $valueXMLLocation) {
-            $this->_setCorrespondingContactValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the correspondingContact element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCorrespondingContactValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CORRESPONDING_CONTACT];
-    }
-
-    /**
-     * Set the location the "value" field of the correspondingContact element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCorrespondingContactValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CORRESPONDING_CONTACT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1068,12 +985,10 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Used to code order of authors.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $listOrder
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $listOrder
      * @return static
      */
-    public function setListOrder(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $listOrder,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setListOrder(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $listOrder): self
     {
         if (null === $listOrder) {
             unset($this->listOrder);
@@ -1083,37 +998,10 @@ class FHIRCitationEntry extends FHIRBackboneElement
             $listOrder = new FHIRPositiveInt(value: $listOrder);
         }
         $this->listOrder = $listOrder;
-        if ($this->_valueXMLLocations[self::FIELD_LIST_ORDER] !== $valueXMLLocation) {
-            $this->_setListOrderValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the listOrder element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getListOrderValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LIST_ORDER];
-    }
-
-    /**
-     * Set the location the "value" field of the listOrder element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setListOrderValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LIST_ORDER] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1142,9 +1030,11 @@ class FHIRCitationEntry extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1176,39 +1066,40 @@ class FHIRCitationEntry extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INITIALS])) {
             if (isset($type->initials)) {
                 $type->initials->setValue((string)$attributes[self::FIELD_INITIALS]);
-                $type->_setInitialsValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInitials((string)$attributes[self::FIELD_INITIALS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setInitials((string)$attributes[self::FIELD_INITIALS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INITIALS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_COLLECTIVE_NAME])) {
             if (isset($type->collectiveName)) {
                 $type->collectiveName->setValue((string)$attributes[self::FIELD_COLLECTIVE_NAME]);
-                $type->_setCollectiveNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCollectiveName((string)$attributes[self::FIELD_COLLECTIVE_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCollectiveName((string)$attributes[self::FIELD_COLLECTIVE_NAME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_COLLECTIVE_NAME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CORRESPONDING_CONTACT])) {
             if (isset($type->correspondingContact)) {
                 $type->correspondingContact->setValue((string)$attributes[self::FIELD_CORRESPONDING_CONTACT]);
-                $type->_setCorrespondingContactValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCorrespondingContact((string)$attributes[self::FIELD_CORRESPONDING_CONTACT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCorrespondingContact((string)$attributes[self::FIELD_CORRESPONDING_CONTACT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CORRESPONDING_CONTACT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LIST_ORDER])) {
             if (isset($type->listOrder)) {
                 $type->listOrder->setValue((string)$attributes[self::FIELD_LIST_ORDER]);
-                $type->_setListOrderValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setListOrder((string)$attributes[self::FIELD_LIST_ORDER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setListOrder((string)$attributes[self::FIELD_LIST_ORDER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LIST_ORDER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1221,16 +1112,16 @@ class FHIRCitationEntry extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->initials) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INITIALS]) {
-            $xw->writeAttribute(self::FIELD_INITIALS, $this->initials->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INITIALS, $this->initials->_getValueAsString());
         }
         if (isset($this->collectiveName) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COLLECTIVE_NAME]) {
-            $xw->writeAttribute(self::FIELD_COLLECTIVE_NAME, $this->collectiveName->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_COLLECTIVE_NAME, $this->collectiveName->_getValueAsString());
         }
         if (isset($this->correspondingContact) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CORRESPONDING_CONTACT]) {
-            $xw->writeAttribute(self::FIELD_CORRESPONDING_CONTACT, $this->correspondingContact->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CORRESPONDING_CONTACT, $this->correspondingContact->_getValueAsString());
         }
         if (isset($this->listOrder) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LIST_ORDER]) {
-            $xw->writeAttribute(self::FIELD_LIST_ORDER, $this->listOrder->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LIST_ORDER, $this->listOrder->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->name)) {
@@ -1316,13 +1207,13 @@ class FHIRCitationEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1337,105 +1228,117 @@ class FHIRCitationEntry extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_NAME]) || array_key_exists(self::FIELD_NAME, $json)) {
-            $type->setName(FHIRHumanName::jsonUnserialize($json[self::FIELD_NAME], $config));
-        }
-        if (isset($json[self::FIELD_INITIALS])
-            || isset($json[self::FIELD_INITIALS_EXT])
-            || array_key_exists(self::FIELD_INITIALS, $json)
-            || array_key_exists(self::FIELD_INITIALS_EXT, $json)) {
-            $value = $json[self::FIELD_INITIALS] ?? null;
-            $type->setInitials(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_INITIALS_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_COLLECTIVE_NAME])
-            || isset($json[self::FIELD_COLLECTIVE_NAME_EXT])
-            || array_key_exists(self::FIELD_COLLECTIVE_NAME, $json)
-            || array_key_exists(self::FIELD_COLLECTIVE_NAME_EXT, $json)) {
-            $value = $json[self::FIELD_COLLECTIVE_NAME] ?? null;
-            $type->setCollectiveName(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_COLLECTIVE_NAME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->name) || property_exists($json, self::FIELD_NAME)) {
+            if (is_array($json->name)) {
+                $type->setName(FHIRHumanName::jsonUnserialize(reset($json->name), $config));
+            } else {
+                $type->setName(FHIRHumanName::jsonUnserialize($json->name, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->initials)
+            || isset($json->_initials)
+            || property_exists($json, self::FIELD_INITIALS)
+            || property_exists($json, self::FIELD_INITIALS_EXT)) {
+            $v = $json->_initials ?? new \stdClass();
+            $v->value = $json->initials ?? null;
+            $type->setInitials(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->collectiveName)
+            || isset($json->_collectiveName)
+            || property_exists($json, self::FIELD_COLLECTIVE_NAME)
+            || property_exists($json, self::FIELD_COLLECTIVE_NAME_EXT)) {
+            $v = $json->_collectiveName ?? new \stdClass();
+            $v->value = $json->collectiveName ?? null;
+            $type->setCollectiveName(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
+            }
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_AFFILIATION_INFO]) || array_key_exists(self::FIELD_AFFILIATION_INFO, $json)) {
-            $vs = $json[self::FIELD_AFFILIATION_INFO];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->affiliationInfo) || property_exists($json, self::FIELD_AFFILIATION_INFO)) {
+            if (is_object($json->affiliationInfo)) {
+                $vals = [$json->affiliationInfo];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_AFFILIATION_INFO, true);
+            } else {
+                $vals = $json->affiliationInfo;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAffiliationInfo(FHIRCitationAffiliationInfo::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ADDRESS]) || array_key_exists(self::FIELD_ADDRESS, $json)) {
-            $vs = $json[self::FIELD_ADDRESS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->address) || property_exists($json, self::FIELD_ADDRESS)) {
+            if (is_object($json->address)) {
+                $vals = [$json->address];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ADDRESS, true);
+            } else {
+                $vals = $json->address;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAddress(FHIRAddress::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TELECOM]) || array_key_exists(self::FIELD_TELECOM, $json)) {
-            $vs = $json[self::FIELD_TELECOM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->telecom) || property_exists($json, self::FIELD_TELECOM)) {
+            if (is_object($json->telecom)) {
+                $vals = [$json->telecom];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TELECOM, true);
+            } else {
+                $vals = $json->telecom;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTelecom(FHIRContactPoint::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CONTRIBUTION_TYPE]) || array_key_exists(self::FIELD_CONTRIBUTION_TYPE, $json)) {
-            $vs = $json[self::FIELD_CONTRIBUTION_TYPE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->contributionType) || property_exists($json, self::FIELD_CONTRIBUTION_TYPE)) {
+            if (is_object($json->contributionType)) {
+                $vals = [$json->contributionType];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTRIBUTION_TYPE, true);
+            } else {
+                $vals = $json->contributionType;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addContributionType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            $type->setRole(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ROLE], $config));
-        }
-        if (isset($json[self::FIELD_CONTRIBUTION_INSTANCE]) || array_key_exists(self::FIELD_CONTRIBUTION_INSTANCE, $json)) {
-            $vs = $json[self::FIELD_CONTRIBUTION_INSTANCE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
+            if (is_array($json->role)) {
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($json->role), $config));
+            } else {
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize($json->role, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->contributionInstance) || property_exists($json, self::FIELD_CONTRIBUTION_INSTANCE)) {
+            if (is_object($json->contributionInstance)) {
+                $vals = [$json->contributionInstance];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTRIBUTION_INSTANCE, true);
+            } else {
+                $vals = $json->contributionInstance;
+            }
+            foreach($vals as $v) {
                 $type->addContributionInstance(FHIRCitationContributionInstance::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CORRESPONDING_CONTACT])
-            || isset($json[self::FIELD_CORRESPONDING_CONTACT_EXT])
-            || array_key_exists(self::FIELD_CORRESPONDING_CONTACT, $json)
-            || array_key_exists(self::FIELD_CORRESPONDING_CONTACT_EXT, $json)) {
-            $value = $json[self::FIELD_CORRESPONDING_CONTACT] ?? null;
-            $type->setCorrespondingContact(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_CORRESPONDING_CONTACT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->correspondingContact)
+            || isset($json->_correspondingContact)
+            || property_exists($json, self::FIELD_CORRESPONDING_CONTACT)
+            || property_exists($json, self::FIELD_CORRESPONDING_CONTACT_EXT)) {
+            $v = $json->_correspondingContact ?? new \stdClass();
+            $v->value = $json->correspondingContact ?? null;
+            $type->setCorrespondingContact(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_LIST_ORDER])
-            || isset($json[self::FIELD_LIST_ORDER_EXT])
-            || array_key_exists(self::FIELD_LIST_ORDER, $json)
-            || array_key_exists(self::FIELD_LIST_ORDER_EXT, $json)) {
-            $value = $json[self::FIELD_LIST_ORDER] ?? null;
-            $type->setListOrder(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_LIST_ORDER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->listOrder)
+            || isset($json->_listOrder)
+            || property_exists($json, self::FIELD_LIST_ORDER)
+            || property_exists($json, self::FIELD_LIST_ORDER_EXT)) {
+            $v = $json->_listOrder ?? new \stdClass();
+            $v->value = $json->listOrder ?? null;
+            $type->setListOrder(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -1470,25 +1373,49 @@ class FHIRCitationEntry extends FHIRBackboneElement
             }
         }
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->affiliationInfo) && [] !== $this->affiliationInfo) {
-            $out->affiliationInfo = $this->affiliationInfo;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_AFFILIATION_INFO) && 1 === count($this->affiliationInfo)) {
+                $out->affiliationInfo = $this->affiliationInfo[0];
+            } else {
+                $out->affiliationInfo = $this->affiliationInfo;
+            }
         }
         if (isset($this->address) && [] !== $this->address) {
-            $out->address = $this->address;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ADDRESS) && 1 === count($this->address)) {
+                $out->address = $this->address[0];
+            } else {
+                $out->address = $this->address;
+            }
         }
         if (isset($this->telecom) && [] !== $this->telecom) {
-            $out->telecom = $this->telecom;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TELECOM) && 1 === count($this->telecom)) {
+                $out->telecom = $this->telecom[0];
+            } else {
+                $out->telecom = $this->telecom;
+            }
         }
         if (isset($this->contributionType) && [] !== $this->contributionType) {
-            $out->contributionType = $this->contributionType;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CONTRIBUTION_TYPE) && 1 === count($this->contributionType)) {
+                $out->contributionType = $this->contributionType[0];
+            } else {
+                $out->contributionType = $this->contributionType;
+            }
         }
         if (isset($this->role)) {
             $out->role = $this->role;
         }
         if (isset($this->contributionInstance) && [] !== $this->contributionInstance) {
-            $out->contributionInstance = $this->contributionInstance;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CONTRIBUTION_INSTANCE) && 1 === count($this->contributionInstance)) {
+                $out->contributionInstance = $this->contributionInstance[0];
+            } else {
+                $out->contributionInstance = $this->contributionInstance;
+            }
         }
         if (isset($this->correspondingContact)) {
             if (null !== ($val = $this->correspondingContact->getValue())) {

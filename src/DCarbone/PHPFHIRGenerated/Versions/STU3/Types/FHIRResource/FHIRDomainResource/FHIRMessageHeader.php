@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,12 +104,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionTypeMap;
  */
 class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MESSAGE_HEADER;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_EVENT = 'event';
     public const FIELD_DESTINATION = 'destination';
     public const FIELD_RECEIVER = 'receiver';
@@ -122,7 +126,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
     public const FIELD_RESPONSE = 'response';
     public const FIELD_FOCUS = 'focus';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_EVENT => [
@@ -136,12 +140,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TIMESTAMP => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -281,7 +285,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      */
     protected array $focus;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMessageHeader Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
@@ -375,7 +379,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -384,7 +388,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -393,7 +397,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -595,11 +599,9 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The time that the message was sent.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $timestamp
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp): self
     {
         if (null === $timestamp) {
             unset($this->timestamp);
@@ -609,33 +611,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $timestamp = new FHIRInstant(value: $timestamp);
         }
         $this->timestamp = $timestamp;
-        if ($this->_valueXMLLocations[self::FIELD_TIMESTAMP] !== $valueXMLLocation) {
-            $this->_setTimestampValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the timestamp element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTimestampValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TIMESTAMP];
-    }
-
-    /**
-     * Set the location the "value" field of the timestamp element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTimestampValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TIMESTAMP] = $valueXMLLocation;
         return $this;
     }
 
@@ -932,7 +907,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1015,34 +990,34 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TIMESTAMP])) {
             if (isset($type->timestamp)) {
                 $type->timestamp->setValue((string)$attributes[self::FIELD_TIMESTAMP]);
-                $type->_setTimestampValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTimestamp((string)$attributes[self::FIELD_TIMESTAMP], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTimestamp((string)$attributes[self::FIELD_TIMESTAMP]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TIMESTAMP, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1073,7 +1048,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $xw->openRootNode('MessageHeader', $this->_getSourceXMLNS());
         }
         if (isset($this->timestamp) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TIMESTAMP]) {
-            $xw->writeAttribute(self::FIELD_TIMESTAMP, $this->timestamp->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TIMESTAMP, $this->timestamp->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->event)) {
@@ -1152,13 +1127,13 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRMessageHeader $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRMessageHeader
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1176,63 +1151,99 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_EVENT]) || array_key_exists(self::FIELD_EVENT, $json)) {
-            $type->setEvent(FHIRCoding::jsonUnserialize($json[self::FIELD_EVENT], $config));
-        }
-        if (isset($json[self::FIELD_DESTINATION]) || array_key_exists(self::FIELD_DESTINATION, $json)) {
-            $vs = $json[self::FIELD_DESTINATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->event) || property_exists($json, self::FIELD_EVENT)) {
+            if (is_array($json->event)) {
+                $type->setEvent(FHIRCoding::jsonUnserialize(reset($json->event), $config));
+            } else {
+                $type->setEvent(FHIRCoding::jsonUnserialize($json->event, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->destination) || property_exists($json, self::FIELD_DESTINATION)) {
+            if (is_object($json->destination)) {
+                $vals = [$json->destination];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DESTINATION, true);
+            } else {
+                $vals = $json->destination;
+            }
+            foreach($vals as $v) {
                 $type->addDestination(FHIRMessageHeaderDestination::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_RECEIVER]) || array_key_exists(self::FIELD_RECEIVER, $json)) {
-            $type->setReceiver(FHIRReference::jsonUnserialize($json[self::FIELD_RECEIVER], $config));
-        }
-        if (isset($json[self::FIELD_SENDER]) || array_key_exists(self::FIELD_SENDER, $json)) {
-            $type->setSender(FHIRReference::jsonUnserialize($json[self::FIELD_SENDER], $config));
-        }
-        if (isset($json[self::FIELD_TIMESTAMP])
-            || isset($json[self::FIELD_TIMESTAMP_EXT])
-            || array_key_exists(self::FIELD_TIMESTAMP, $json)
-            || array_key_exists(self::FIELD_TIMESTAMP_EXT, $json)) {
-            $value = $json[self::FIELD_TIMESTAMP] ?? null;
-            $type->setTimestamp(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_TIMESTAMP_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ENTERER]) || array_key_exists(self::FIELD_ENTERER, $json)) {
-            $type->setEnterer(FHIRReference::jsonUnserialize($json[self::FIELD_ENTERER], $config));
-        }
-        if (isset($json[self::FIELD_AUTHOR]) || array_key_exists(self::FIELD_AUTHOR, $json)) {
-            $type->setAuthor(FHIRReference::jsonUnserialize($json[self::FIELD_AUTHOR], $config));
-        }
-        if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $type->setSource(FHIRMessageHeaderSource::jsonUnserialize($json[self::FIELD_SOURCE], $config));
-        }
-        if (isset($json[self::FIELD_RESPONSIBLE]) || array_key_exists(self::FIELD_RESPONSIBLE, $json)) {
-            $type->setResponsible(FHIRReference::jsonUnserialize($json[self::FIELD_RESPONSIBLE], $config));
-        }
-        if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            $type->setReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REASON], $config));
-        }
-        if (isset($json[self::FIELD_RESPONSE]) || array_key_exists(self::FIELD_RESPONSE, $json)) {
-            $type->setResponse(FHIRMessageHeaderResponse::jsonUnserialize($json[self::FIELD_RESPONSE], $config));
-        }
-        if (isset($json[self::FIELD_FOCUS]) || array_key_exists(self::FIELD_FOCUS, $json)) {
-            $vs = $json[self::FIELD_FOCUS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->receiver) || property_exists($json, self::FIELD_RECEIVER)) {
+            if (is_array($json->receiver)) {
+                $type->setReceiver(FHIRReference::jsonUnserialize(reset($json->receiver), $config));
+            } else {
+                $type->setReceiver(FHIRReference::jsonUnserialize($json->receiver, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->sender) || property_exists($json, self::FIELD_SENDER)) {
+            if (is_array($json->sender)) {
+                $type->setSender(FHIRReference::jsonUnserialize(reset($json->sender), $config));
+            } else {
+                $type->setSender(FHIRReference::jsonUnserialize($json->sender, $config));
+            }
+        }
+        if (isset($json->timestamp)
+            || isset($json->_timestamp)
+            || property_exists($json, self::FIELD_TIMESTAMP)
+            || property_exists($json, self::FIELD_TIMESTAMP_EXT)) {
+            $v = $json->_timestamp ?? new \stdClass();
+            $v->value = $json->timestamp ?? null;
+            $type->setTimestamp(FHIRInstant::jsonUnserialize($v, $config));
+        }
+        if (isset($json->enterer) || property_exists($json, self::FIELD_ENTERER)) {
+            if (is_array($json->enterer)) {
+                $type->setEnterer(FHIRReference::jsonUnserialize(reset($json->enterer), $config));
+            } else {
+                $type->setEnterer(FHIRReference::jsonUnserialize($json->enterer, $config));
+            }
+        }
+        if (isset($json->author) || property_exists($json, self::FIELD_AUTHOR)) {
+            if (is_array($json->author)) {
+                $type->setAuthor(FHIRReference::jsonUnserialize(reset($json->author), $config));
+            } else {
+                $type->setAuthor(FHIRReference::jsonUnserialize($json->author, $config));
+            }
+        }
+        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
+            if (is_array($json->source)) {
+                $type->setSource(FHIRMessageHeaderSource::jsonUnserialize(reset($json->source), $config));
+            } else {
+                $type->setSource(FHIRMessageHeaderSource::jsonUnserialize($json->source, $config));
+            }
+        }
+        if (isset($json->responsible) || property_exists($json, self::FIELD_RESPONSIBLE)) {
+            if (is_array($json->responsible)) {
+                $type->setResponsible(FHIRReference::jsonUnserialize(reset($json->responsible), $config));
+            } else {
+                $type->setResponsible(FHIRReference::jsonUnserialize($json->responsible, $config));
+            }
+        }
+        if (isset($json->reason) || property_exists($json, self::FIELD_REASON)) {
+            if (is_array($json->reason)) {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize(reset($json->reason), $config));
+            } else {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize($json->reason, $config));
+            }
+        }
+        if (isset($json->response) || property_exists($json, self::FIELD_RESPONSE)) {
+            if (is_array($json->response)) {
+                $type->setResponse(FHIRMessageHeaderResponse::jsonUnserialize(reset($json->response), $config));
+            } else {
+                $type->setResponse(FHIRMessageHeaderResponse::jsonUnserialize($json->response, $config));
+            }
+        }
+        if (isset($json->focus) || property_exists($json, self::FIELD_FOCUS)) {
+            if (is_object($json->focus)) {
+                $vals = [$json->focus];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_FOCUS, true);
+            } else {
+                $vals = $json->focus;
+            }
+            foreach($vals as $v) {
                 $type->addFocus(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -1249,7 +1260,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $out->event = $this->event;
         }
         if (isset($this->destination) && [] !== $this->destination) {
-            $out->destination = $this->destination;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DESTINATION) && 1 === count($this->destination)) {
+                $out->destination = $this->destination[0];
+            } else {
+                $out->destination = $this->destination;
+            }
         }
         if (isset($this->receiver)) {
             $out->receiver = $this->receiver;
@@ -1286,7 +1301,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $out->response = $this->response;
         }
         if (isset($this->focus) && [] !== $this->focus) {
-            $out->focus = $this->focus;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_FOCUS) && 1 === count($this->focus)) {
+                $out->focus = $this->focus[0];
+            } else {
+                $out->focus = $this->focus;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

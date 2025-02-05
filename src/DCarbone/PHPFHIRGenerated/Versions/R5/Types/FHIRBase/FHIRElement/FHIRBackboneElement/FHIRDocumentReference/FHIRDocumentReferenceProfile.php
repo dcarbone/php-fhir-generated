@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -112,45 +113,37 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRDocumentReferenceProfile extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DOCUMENT_REFERENCE_DOT_PROFILE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_VALUE_CODING = 'valueCoding';
     public const FIELD_VALUE_URI = 'valueUri';
     public const FIELD_VALUE_URI_EXT = '_valueUri';
     public const FIELD_VALUE_CANONICAL = 'valueCanonical';
     public const FIELD_VALUE_CANONICAL_EXT = '_valueCanonical';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [
-        self::FIELD_VALUE_CODING => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE_URI => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_VALUE_CANONICAL => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-    ];
+    private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_VALUE_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding 
      */
@@ -160,7 +153,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
      */
@@ -171,13 +164,13 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical 
      */
     protected FHIRCanonical $valueCanonical;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDocumentReferenceProfile Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -211,7 +204,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -220,13 +213,13 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
@@ -240,7 +233,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
      * @return static
@@ -260,7 +253,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
@@ -274,14 +267,12 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
         if (null === $valueUri) {
             unset($this->valueUri);
@@ -291,33 +282,6 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
             $valueUri = new FHIRUri(value: $valueUri);
         }
         $this->valueUri = $valueUri;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE_URI] !== $valueXMLLocation) {
-            $this->_setValueUriValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the valueUri element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueUriValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE_URI];
-    }
-
-    /**
-     * Set the location the "value" field of the valueUri element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueUriValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE_URI] = $valueXMLLocation;
         return $this;
     }
 
@@ -327,7 +291,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
@@ -342,14 +306,12 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueCanonical
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueCanonical,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueCanonical): self
     {
         if (null === $valueCanonical) {
             unset($this->valueCanonical);
@@ -359,37 +321,10 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
             $valueCanonical = new FHIRCanonical(value: $valueCanonical);
         }
         $this->valueCanonical = $valueCanonical;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE_CANONICAL] !== $valueXMLLocation) {
-            $this->_setValueCanonicalValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the valueCanonical element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueCanonicalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE_CANONICAL];
-    }
-
-    /**
-     * Set the location the "value" field of the valueCanonical element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueCanonicalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE_CANONICAL] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -418,9 +353,11 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -434,23 +371,24 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE_URI])) {
             if (isset($type->valueUri)) {
                 $type->valueUri->setValue((string)$attributes[self::FIELD_VALUE_URI]);
-                $type->_setValueUriValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValueUri((string)$attributes[self::FIELD_VALUE_URI], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setValueUri((string)$attributes[self::FIELD_VALUE_URI]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VALUE_URI, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE_CANONICAL])) {
             if (isset($type->valueCanonical)) {
                 $type->valueCanonical->setValue((string)$attributes[self::FIELD_VALUE_CANONICAL]);
-                $type->_setValueCanonicalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValueCanonical((string)$attributes[self::FIELD_VALUE_CANONICAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setValueCanonical((string)$attributes[self::FIELD_VALUE_CANONICAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VALUE_CANONICAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -463,10 +401,10 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->valueUri) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_URI]) {
-            $xw->writeAttribute(self::FIELD_VALUE_URI, $this->valueUri->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VALUE_URI, $this->valueUri->_getValueAsString());
         }
         if (isset($this->valueCanonical) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_CANONICAL]) {
-            $xw->writeAttribute(self::FIELD_VALUE_CANONICAL, $this->valueCanonical->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VALUE_CANONICAL, $this->valueCanonical->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->valueCoding)) {
@@ -491,13 +429,13 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceProfile $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceProfile
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -512,28 +450,28 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_VALUE_CODING]) || array_key_exists(self::FIELD_VALUE_CODING, $json)) {
-            $type->setValueCoding(FHIRCoding::jsonUnserialize($json[self::FIELD_VALUE_CODING], $config));
+        if (isset($json->valueCoding) || property_exists($json, self::FIELD_VALUE_CODING)) {
+            if (is_array($json->valueCoding)) {
+                $type->setValueCoding(FHIRCoding::jsonUnserialize(reset($json->valueCoding), $config));
+            } else {
+                $type->setValueCoding(FHIRCoding::jsonUnserialize($json->valueCoding, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALUE_URI])
-            || isset($json[self::FIELD_VALUE_URI_EXT])
-            || array_key_exists(self::FIELD_VALUE_URI, $json)
-            || array_key_exists(self::FIELD_VALUE_URI_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE_URI] ?? null;
-            $type->setValueUri(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_URI_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->valueUri)
+            || isset($json->_valueUri)
+            || property_exists($json, self::FIELD_VALUE_URI)
+            || property_exists($json, self::FIELD_VALUE_URI_EXT)) {
+            $v = $json->_valueUri ?? new \stdClass();
+            $v->value = $json->valueUri ?? null;
+            $type->setValueUri(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VALUE_CANONICAL])
-            || isset($json[self::FIELD_VALUE_CANONICAL_EXT])
-            || array_key_exists(self::FIELD_VALUE_CANONICAL, $json)
-            || array_key_exists(self::FIELD_VALUE_CANONICAL_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE_CANONICAL] ?? null;
-            $type->setValueCanonical(FHIRCanonical::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_CANONICAL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->valueCanonical)
+            || isset($json->_valueCanonical)
+            || property_exists($json, self::FIELD_VALUE_CANONICAL)
+            || property_exists($json, self::FIELD_VALUE_CANONICAL_EXT)) {
+            $v = $json->_valueCanonical ?? new \stdClass();
+            $v->value = $json->valueCanonical ?? null;
+            $type->setValueCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
         return $type;
     }

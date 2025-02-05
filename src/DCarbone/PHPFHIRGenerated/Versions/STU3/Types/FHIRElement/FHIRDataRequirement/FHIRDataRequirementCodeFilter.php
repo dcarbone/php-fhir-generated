@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequ
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequ
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -88,12 +90,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRDataRequirementCodeFilter extends FHIRElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_CODE_FILTER;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_PATH = 'path';
     public const FIELD_PATH_EXT = '_path';
     public const FIELD_VALUE_SET_STRING = 'valueSetString';
@@ -104,7 +108,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     public const FIELD_VALUE_CODING = 'valueCoding';
     public const FIELD_VALUE_CODEABLE_CONCEPT = 'valueCodeableConcept';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PATH => [
@@ -112,13 +116,13 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_PATH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_SET_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -202,7 +206,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      */
     protected array $valueCodeableConcept;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDataRequirementCodeFilter Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -248,7 +252,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -257,7 +261,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -290,11 +294,9 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * CodeableConcept.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $path
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPath(null|string|FHIRStringPrimitive|FHIRString $path,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
         if (null === $path) {
             unset($this->path);
@@ -304,33 +306,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
             $path = new FHIRString(value: $path);
         }
         $this->path = $path;
-        if ($this->_valueXMLLocations[self::FIELD_PATH] !== $valueXMLLocation) {
-            $this->_setPathValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the path element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPathValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PATH];
-    }
-
-    /**
-     * Set the location the "value" field of the path element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPathValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PATH] = $valueXMLLocation;
         return $this;
     }
 
@@ -362,11 +337,9 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * specified valueset.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $valueSetString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueSetString(null|string|FHIRStringPrimitive|FHIRString $valueSetString,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValueSetString(null|string|FHIRStringPrimitive|FHIRString $valueSetString): self
     {
         if (null === $valueSetString) {
             unset($this->valueSetString);
@@ -376,33 +349,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
             $valueSetString = new FHIRString(value: $valueSetString);
         }
         $this->valueSetString = $valueSetString;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE_SET_STRING] !== $valueXMLLocation) {
-            $this->_setValueSetStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the valueSetString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueSetStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE_SET_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the valueSetString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueSetStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE_SET_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -681,7 +627,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -710,9 +656,11 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_PATH === $cen) {
                 $type->setPath(FHIRString::xmlUnserialize($ce, $config));
@@ -730,23 +678,24 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PATH])) {
             if (isset($type->path)) {
                 $type->path->setValue((string)$attributes[self::FIELD_PATH]);
-                $type->_setPathValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPath((string)$attributes[self::FIELD_PATH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPath((string)$attributes[self::FIELD_PATH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PATH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE_SET_STRING])) {
             if (isset($type->valueSetString)) {
                 $type->valueSetString->setValue((string)$attributes[self::FIELD_VALUE_SET_STRING]);
-                $type->_setValueSetStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValueSetString((string)$attributes[self::FIELD_VALUE_SET_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setValueSetString((string)$attributes[self::FIELD_VALUE_SET_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VALUE_SET_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -759,10 +708,10 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                                  SerializeConfig $config): void
     {
         if (isset($this->path) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PATH]) {
-            $xw->writeAttribute(self::FIELD_PATH, $this->path->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PATH, $this->path->_getValueAsString());
         }
         if (isset($this->valueSetString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_SET_STRING]) {
-            $xw->writeAttribute(self::FIELD_VALUE_SET_STRING, $this->valueSetString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VALUE_SET_STRING, $this->valueSetString->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->path)
@@ -808,13 +757,13 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -829,62 +778,65 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PATH])
-            || isset($json[self::FIELD_PATH_EXT])
-            || array_key_exists(self::FIELD_PATH, $json)
-            || array_key_exists(self::FIELD_PATH_EXT, $json)) {
-            $value = $json[self::FIELD_PATH] ?? null;
-            $type->setPath(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PATH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->path)
+            || isset($json->_path)
+            || property_exists($json, self::FIELD_PATH)
+            || property_exists($json, self::FIELD_PATH_EXT)) {
+            $v = $json->_path ?? new \stdClass();
+            $v->value = $json->path ?? null;
+            $type->setPath(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VALUE_SET_STRING])
-            || isset($json[self::FIELD_VALUE_SET_STRING_EXT])
-            || array_key_exists(self::FIELD_VALUE_SET_STRING, $json)
-            || array_key_exists(self::FIELD_VALUE_SET_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE_SET_STRING] ?? null;
-            $type->setValueSetString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_SET_STRING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->valueSetString)
+            || isset($json->_valueSetString)
+            || property_exists($json, self::FIELD_VALUE_SET_STRING)
+            || property_exists($json, self::FIELD_VALUE_SET_STRING_EXT)) {
+            $v = $json->_valueSetString ?? new \stdClass();
+            $v->value = $json->valueSetString ?? null;
+            $type->setValueSetString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VALUE_SET_REFERENCE]) || array_key_exists(self::FIELD_VALUE_SET_REFERENCE, $json)) {
-            $type->setValueSetReference(FHIRReference::jsonUnserialize($json[self::FIELD_VALUE_SET_REFERENCE], $config));
-        }
-        if (isset($json[self::FIELD_VALUE_CODE])
-            || isset($json[self::FIELD_VALUE_CODE_EXT])
-            || array_key_exists(self::FIELD_VALUE_CODE, $json)
-            || array_key_exists(self::FIELD_VALUE_CODE_EXT, $json)) {
-            $value = (array)($json[self::FIELD_VALUE_CODE] ?? []);
-            $ext = (array)($json[self::FIELD_VALUE_CODE_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
-            }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addValueCode(FHIRCode::jsonUnserialize(
-                    [FHIRCode::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+        if (isset($json->valueSetReference) || property_exists($json, self::FIELD_VALUE_SET_REFERENCE)) {
+            if (is_array($json->valueSetReference)) {
+                $type->setValueSetReference(FHIRReference::jsonUnserialize(reset($json->valueSetReference), $config));
+            } else {
+                $type->setValueSetReference(FHIRReference::jsonUnserialize($json->valueSetReference, $config));
             }
         }
-        if (isset($json[self::FIELD_VALUE_CODING]) || array_key_exists(self::FIELD_VALUE_CODING, $json)) {
-            $vs = $json[self::FIELD_VALUE_CODING];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->valueCode)
+            || isset($json->_valueCode)
+            || property_exists($json, self::FIELD_VALUE_CODE)
+            || property_exists($json, self::FIELD_VALUE_CODE_EXT)) {
+            $vals = (array)($json->valueCode ?? []);
+            $exts = (array)($json->FIELD_VALUE_CODE_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            foreach($vs as $v) {
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addValueCode(FHIRCode::jsonUnserialize($v, $config));
+            }
+        }
+        if (isset($json->valueCoding) || property_exists($json, self::FIELD_VALUE_CODING)) {
+            if (is_object($json->valueCoding)) {
+                $vals = [$json->valueCoding];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_VALUE_CODING, true);
+            } else {
+                $vals = $json->valueCoding;
+            }
+            foreach($vals as $v) {
                 $type->addValueCoding(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_VALUE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_VALUE_CODEABLE_CONCEPT, $json)) {
-            $vs = $json[self::FIELD_VALUE_CODEABLE_CONCEPT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->valueCodeableConcept) || property_exists($json, self::FIELD_VALUE_CODEABLE_CONCEPT)) {
+            if (is_object($json->valueCodeableConcept)) {
+                $vals = [$json->valueCodeableConcept];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_VALUE_CODEABLE_CONCEPT, true);
+            } else {
+                $vals = $json->valueCodeableConcept;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
@@ -950,10 +902,18 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
             }
         }
         if (isset($this->valueCoding) && [] !== $this->valueCoding) {
-            $out->valueCoding = $this->valueCoding;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_VALUE_CODING) && 1 === count($this->valueCoding)) {
+                $out->valueCoding = $this->valueCoding[0];
+            } else {
+                $out->valueCoding = $this->valueCoding;
+            }
         }
         if (isset($this->valueCodeableConcept) && [] !== $this->valueCodeableConcept) {
-            $out->valueCodeableConcept = $this->valueCodeableConcept;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_VALUE_CODEABLE_CONCEPT) && 1 === count($this->valueCodeableConcept)) {
+                $out->valueCodeableConcept = $this->valueCodeableConcept[0];
+            } else {
+                $out->valueCodeableConcept = $this->valueCodeableConcept;
+            }
         }
         return $out;
     }

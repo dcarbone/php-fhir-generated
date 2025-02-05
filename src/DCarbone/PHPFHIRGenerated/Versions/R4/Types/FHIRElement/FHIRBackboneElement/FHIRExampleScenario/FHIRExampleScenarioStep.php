@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -80,28 +82,30 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRExampleScenarioStep extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_STEP;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_PROCESS = 'process';
     public const FIELD_PAUSE = 'pause';
     public const FIELD_PAUSE_EXT = '_pause';
     public const FIELD_OPERATION = 'operation';
     public const FIELD_ALTERNATIVE = 'alternative';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_PAUSE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Example of workflow instance.
      *
@@ -137,7 +141,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      */
     protected array $alternative;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRExampleScenarioStep Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -176,7 +180,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -185,7 +189,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Example of workflow instance.
      *
@@ -264,11 +268,9 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * If there is a pause in the flow.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $pause
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPause(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $pause,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPause(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $pause): self
     {
         if (null === $pause) {
             unset($this->pause);
@@ -278,33 +280,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             $pause = new FHIRBoolean(value: $pause);
         }
         $this->pause = $pause;
-        if ($this->_valueXMLLocations[self::FIELD_PAUSE] !== $valueXMLLocation) {
-            $this->_setPauseValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the pause element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPauseValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PAUSE];
-    }
-
-    /**
-     * Set the location the "value" field of the pause element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPauseValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PAUSE] = $valueXMLLocation;
         return $this;
     }
 
@@ -399,7 +374,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -428,9 +403,11 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -446,15 +423,16 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PAUSE])) {
             if (isset($type->pause)) {
                 $type->pause->setValue((string)$attributes[self::FIELD_PAUSE]);
-                $type->_setPauseValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPause((string)$attributes[self::FIELD_PAUSE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPause((string)$attributes[self::FIELD_PAUSE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PAUSE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -467,7 +445,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->pause) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PAUSE]) {
-            $xw->writeAttribute(self::FIELD_PAUSE, $this->pause->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PAUSE, $this->pause->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->process)) {
@@ -499,13 +477,13 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -520,34 +498,40 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PROCESS]) || array_key_exists(self::FIELD_PROCESS, $json)) {
-            $vs = $json[self::FIELD_PROCESS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->process) || property_exists($json, self::FIELD_PROCESS)) {
+            if (is_object($json->process)) {
+                $vals = [$json->process];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PROCESS, true);
+            } else {
+                $vals = $json->process;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addProcess(FHIRExampleScenarioProcess::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PAUSE])
-            || isset($json[self::FIELD_PAUSE_EXT])
-            || array_key_exists(self::FIELD_PAUSE, $json)
-            || array_key_exists(self::FIELD_PAUSE_EXT, $json)) {
-            $value = $json[self::FIELD_PAUSE] ?? null;
-            $type->setPause(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_PAUSE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->pause)
+            || isset($json->_pause)
+            || property_exists($json, self::FIELD_PAUSE)
+            || property_exists($json, self::FIELD_PAUSE_EXT)) {
+            $v = $json->_pause ?? new \stdClass();
+            $v->value = $json->pause ?? null;
+            $type->setPause(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_OPERATION]) || array_key_exists(self::FIELD_OPERATION, $json)) {
-            $type->setOperation(FHIRExampleScenarioOperation::jsonUnserialize($json[self::FIELD_OPERATION], $config));
-        }
-        if (isset($json[self::FIELD_ALTERNATIVE]) || array_key_exists(self::FIELD_ALTERNATIVE, $json)) {
-            $vs = $json[self::FIELD_ALTERNATIVE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->operation) || property_exists($json, self::FIELD_OPERATION)) {
+            if (is_array($json->operation)) {
+                $type->setOperation(FHIRExampleScenarioOperation::jsonUnserialize(reset($json->operation), $config));
+            } else {
+                $type->setOperation(FHIRExampleScenarioOperation::jsonUnserialize($json->operation, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->alternative) || property_exists($json, self::FIELD_ALTERNATIVE)) {
+            if (is_object($json->alternative)) {
+                $vals = [$json->alternative];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ALTERNATIVE, true);
+            } else {
+                $vals = $json->alternative;
+            }
+            foreach($vals as $v) {
                 $type->addAlternative(FHIRExampleScenarioAlternative::jsonUnserialize($v, $config));
             }
         }
@@ -561,7 +545,11 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->process) && [] !== $this->process) {
-            $out->process = $this->process;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PROCESS) && 1 === count($this->process)) {
+                $out->process = $this->process[0];
+            } else {
+                $out->process = $this->process;
+            }
         }
         if (isset($this->pause)) {
             if (null !== ($val = $this->pause->getValue())) {
@@ -577,7 +565,11 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             $out->operation = $this->operation;
         }
         if (isset($this->alternative) && [] !== $this->alternative) {
-            $out->alternative = $this->alternative;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ALTERNATIVE) && 1 === count($this->alternative)) {
+                $out->alternative = $this->alternative[0];
+            } else {
+                $out->alternative = $this->alternative;
+            }
         }
         return $out;
     }

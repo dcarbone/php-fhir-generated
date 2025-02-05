@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -127,12 +129,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionTypeMap;
  */
 class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PAYMENT_RECONCILIATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
@@ -154,7 +158,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
     public const FIELD_FORM_CODE = 'formCode';
     public const FIELD_PROCESS_NOTE = 'processNote';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
@@ -171,7 +175,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CREATED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -180,7 +184,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
         self::FIELD_PAYMENT_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -335,7 +339,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      */
     protected array $processNote;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRPaymentReconciliation Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $id
@@ -444,7 +448,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -453,7 +457,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -462,7 +466,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -548,11 +552,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * The status of the resource instance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFinancialResourceStatusCodes $status
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStatus(null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status): self
     {
         if (null === $status) {
             unset($this->status);
@@ -562,33 +564,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             $status = new FHIRFinancialResourceStatusCodes(value: $status);
         }
         $this->status = $status;
-        if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
-            $this->_setStatusValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the status element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStatusValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STATUS];
-    }
-
-    /**
-     * Set the location the "value" field of the status element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -656,11 +631,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * The date when the resource was created.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $created
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
         if (null === $created) {
             unset($this->created);
@@ -670,33 +643,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             $created = new FHIRDateTime(value: $created);
         }
         $this->created = $created;
-        if ($this->_valueXMLLocations[self::FIELD_CREATED] !== $valueXMLLocation) {
-            $this->_setCreatedValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the created element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCreatedValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CREATED];
-    }
-
-    /**
-     * Set the location the "value" field of the created element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCreatedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CREATED] = $valueXMLLocation;
         return $this;
     }
 
@@ -820,11 +766,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * The outcome of a request for a reconciliation.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRRemittanceOutcomeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRemittanceOutcome $outcome
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOutcome(null|string|FHIRRemittanceOutcomeEnum|FHIRRemittanceOutcome $outcome,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOutcome(null|string|FHIRRemittanceOutcomeEnum|FHIRRemittanceOutcome $outcome): self
     {
         if (null === $outcome) {
             unset($this->outcome);
@@ -834,33 +778,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             $outcome = new FHIRRemittanceOutcome(value: $outcome);
         }
         $this->outcome = $outcome;
-        if ($this->_valueXMLLocations[self::FIELD_OUTCOME] !== $valueXMLLocation) {
-            $this->_setOutcomeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the outcome element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOutcomeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_OUTCOME];
-    }
-
-    /**
-     * Set the location the "value" field of the outcome element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOutcomeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_OUTCOME] = $valueXMLLocation;
         return $this;
     }
 
@@ -888,11 +805,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * reconciliation.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $disposition
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition): self
     {
         if (null === $disposition) {
             unset($this->disposition);
@@ -902,33 +817,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             $disposition = new FHIRString(value: $disposition);
         }
         $this->disposition = $disposition;
-        if ($this->_valueXMLLocations[self::FIELD_DISPOSITION] !== $valueXMLLocation) {
-            $this->_setDispositionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the disposition element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDispositionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DISPOSITION];
-    }
-
-    /**
-     * Set the location the "value" field of the disposition element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDispositionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DISPOSITION] = $valueXMLLocation;
         return $this;
     }
 
@@ -956,11 +844,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * The date of payment as indicated on the financial instrument.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $paymentDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPaymentDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $paymentDate,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPaymentDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $paymentDate): self
     {
         if (null === $paymentDate) {
             unset($this->paymentDate);
@@ -970,33 +856,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             $paymentDate = new FHIRDate(value: $paymentDate);
         }
         $this->paymentDate = $paymentDate;
-        if ($this->_valueXMLLocations[self::FIELD_PAYMENT_DATE] !== $valueXMLLocation) {
-            $this->_setPaymentDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the paymentDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPaymentDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PAYMENT_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the paymentDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPaymentDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PAYMENT_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1228,7 +1087,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1317,66 +1176,66 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STATUS])) {
             if (isset($type->status)) {
                 $type->status->setValue((string)$attributes[self::FIELD_STATUS]);
-                $type->_setStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStatus((string)$attributes[self::FIELD_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStatus((string)$attributes[self::FIELD_STATUS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STATUS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CREATED])) {
             if (isset($type->created)) {
                 $type->created->setValue((string)$attributes[self::FIELD_CREATED]);
-                $type->_setCreatedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCreated((string)$attributes[self::FIELD_CREATED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCreated((string)$attributes[self::FIELD_CREATED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CREATED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_OUTCOME])) {
             if (isset($type->outcome)) {
                 $type->outcome->setValue((string)$attributes[self::FIELD_OUTCOME]);
-                $type->_setOutcomeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOutcome((string)$attributes[self::FIELD_OUTCOME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setOutcome((string)$attributes[self::FIELD_OUTCOME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_OUTCOME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DISPOSITION])) {
             if (isset($type->disposition)) {
                 $type->disposition->setValue((string)$attributes[self::FIELD_DISPOSITION]);
-                $type->_setDispositionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDisposition((string)$attributes[self::FIELD_DISPOSITION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDisposition((string)$attributes[self::FIELD_DISPOSITION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DISPOSITION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PAYMENT_DATE])) {
             if (isset($type->paymentDate)) {
                 $type->paymentDate->setValue((string)$attributes[self::FIELD_PAYMENT_DATE]);
-                $type->_setPaymentDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPaymentDate((string)$attributes[self::FIELD_PAYMENT_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPaymentDate((string)$attributes[self::FIELD_PAYMENT_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PAYMENT_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1407,19 +1266,19 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             $xw->openRootNode('PaymentReconciliation', $this->_getSourceXMLNS());
         }
         if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
-            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getValueAsString());
         }
         if (isset($this->created) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CREATED]) {
-            $xw->writeAttribute(self::FIELD_CREATED, $this->created->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CREATED, $this->created->_getValueAsString());
         }
         if (isset($this->outcome) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_OUTCOME]) {
-            $xw->writeAttribute(self::FIELD_OUTCOME, $this->outcome->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_OUTCOME, $this->outcome->_getValueAsString());
         }
         if (isset($this->disposition) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DISPOSITION]) {
-            $xw->writeAttribute(self::FIELD_DISPOSITION, $this->disposition->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DISPOSITION, $this->disposition->_getValueAsString());
         }
         if (isset($this->paymentDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PAYMENT_DATE]) {
-            $xw->writeAttribute(self::FIELD_PAYMENT_DATE, $this->paymentDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PAYMENT_DATE, $this->paymentDate->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1523,13 +1382,13 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1547,106 +1406,128 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STATUS])
-            || isset($json[self::FIELD_STATUS_EXT])
-            || array_key_exists(self::FIELD_STATUS, $json)
-            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
-            $value = $json[self::FIELD_STATUS] ?? null;
-            $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRFinancialResourceStatusCodes::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->status)
+            || isset($json->_status)
+            || property_exists($json, self::FIELD_STATUS)
+            || property_exists($json, self::FIELD_STATUS_EXT)) {
+            $v = $json->_status ?? new \stdClass();
+            $v->value = $json->status ?? null;
+            $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_CREATED])
-            || isset($json[self::FIELD_CREATED_EXT])
-            || array_key_exists(self::FIELD_CREATED, $json)
-            || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
-            $value = $json[self::FIELD_CREATED] ?? null;
-            $type->setCreated(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_CREATED_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_PAYMENT_ISSUER]) || array_key_exists(self::FIELD_PAYMENT_ISSUER, $json)) {
-            $type->setPaymentIssuer(FHIRReference::jsonUnserialize($json[self::FIELD_PAYMENT_ISSUER], $config));
-        }
-        if (isset($json[self::FIELD_REQUEST]) || array_key_exists(self::FIELD_REQUEST, $json)) {
-            $type->setRequest(FHIRReference::jsonUnserialize($json[self::FIELD_REQUEST], $config));
-        }
-        if (isset($json[self::FIELD_REQUESTOR]) || array_key_exists(self::FIELD_REQUESTOR, $json)) {
-            $type->setRequestor(FHIRReference::jsonUnserialize($json[self::FIELD_REQUESTOR], $config));
-        }
-        if (isset($json[self::FIELD_OUTCOME])
-            || isset($json[self::FIELD_OUTCOME_EXT])
-            || array_key_exists(self::FIELD_OUTCOME, $json)
-            || array_key_exists(self::FIELD_OUTCOME_EXT, $json)) {
-            $value = $json[self::FIELD_OUTCOME] ?? null;
-            $type->setOutcome(FHIRRemittanceOutcome::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRRemittanceOutcome::FIELD_VALUE => $value]) + ($json[self::FIELD_OUTCOME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DISPOSITION])
-            || isset($json[self::FIELD_DISPOSITION_EXT])
-            || array_key_exists(self::FIELD_DISPOSITION, $json)
-            || array_key_exists(self::FIELD_DISPOSITION_EXT, $json)) {
-            $value = $json[self::FIELD_DISPOSITION] ?? null;
-            $type->setDisposition(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DISPOSITION_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_PAYMENT_DATE])
-            || isset($json[self::FIELD_PAYMENT_DATE_EXT])
-            || array_key_exists(self::FIELD_PAYMENT_DATE, $json)
-            || array_key_exists(self::FIELD_PAYMENT_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_PAYMENT_DATE] ?? null;
-            $type->setPaymentDate(FHIRDate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_PAYMENT_DATE_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_PAYMENT_AMOUNT]) || array_key_exists(self::FIELD_PAYMENT_AMOUNT, $json)) {
-            $type->setPaymentAmount(FHIRMoney::jsonUnserialize($json[self::FIELD_PAYMENT_AMOUNT], $config));
-        }
-        if (isset($json[self::FIELD_PAYMENT_IDENTIFIER]) || array_key_exists(self::FIELD_PAYMENT_IDENTIFIER, $json)) {
-            $type->setPaymentIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_PAYMENT_IDENTIFIER], $config));
-        }
-        if (isset($json[self::FIELD_DETAIL]) || array_key_exists(self::FIELD_DETAIL, $json)) {
-            $vs = $json[self::FIELD_DETAIL];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->created)
+            || isset($json->_created)
+            || property_exists($json, self::FIELD_CREATED)
+            || property_exists($json, self::FIELD_CREATED_EXT)) {
+            $v = $json->_created ?? new \stdClass();
+            $v->value = $json->created ?? null;
+            $type->setCreated(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->paymentIssuer) || property_exists($json, self::FIELD_PAYMENT_ISSUER)) {
+            if (is_array($json->paymentIssuer)) {
+                $type->setPaymentIssuer(FHIRReference::jsonUnserialize(reset($json->paymentIssuer), $config));
+            } else {
+                $type->setPaymentIssuer(FHIRReference::jsonUnserialize($json->paymentIssuer, $config));
+            }
+        }
+        if (isset($json->request) || property_exists($json, self::FIELD_REQUEST)) {
+            if (is_array($json->request)) {
+                $type->setRequest(FHIRReference::jsonUnserialize(reset($json->request), $config));
+            } else {
+                $type->setRequest(FHIRReference::jsonUnserialize($json->request, $config));
+            }
+        }
+        if (isset($json->requestor) || property_exists($json, self::FIELD_REQUESTOR)) {
+            if (is_array($json->requestor)) {
+                $type->setRequestor(FHIRReference::jsonUnserialize(reset($json->requestor), $config));
+            } else {
+                $type->setRequestor(FHIRReference::jsonUnserialize($json->requestor, $config));
+            }
+        }
+        if (isset($json->outcome)
+            || isset($json->_outcome)
+            || property_exists($json, self::FIELD_OUTCOME)
+            || property_exists($json, self::FIELD_OUTCOME_EXT)) {
+            $v = $json->_outcome ?? new \stdClass();
+            $v->value = $json->outcome ?? null;
+            $type->setOutcome(FHIRRemittanceOutcome::jsonUnserialize($v, $config));
+        }
+        if (isset($json->disposition)
+            || isset($json->_disposition)
+            || property_exists($json, self::FIELD_DISPOSITION)
+            || property_exists($json, self::FIELD_DISPOSITION_EXT)) {
+            $v = $json->_disposition ?? new \stdClass();
+            $v->value = $json->disposition ?? null;
+            $type->setDisposition(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->paymentDate)
+            || isset($json->_paymentDate)
+            || property_exists($json, self::FIELD_PAYMENT_DATE)
+            || property_exists($json, self::FIELD_PAYMENT_DATE_EXT)) {
+            $v = $json->_paymentDate ?? new \stdClass();
+            $v->value = $json->paymentDate ?? null;
+            $type->setPaymentDate(FHIRDate::jsonUnserialize($v, $config));
+        }
+        if (isset($json->paymentAmount) || property_exists($json, self::FIELD_PAYMENT_AMOUNT)) {
+            if (is_array($json->paymentAmount)) {
+                $type->setPaymentAmount(FHIRMoney::jsonUnserialize(reset($json->paymentAmount), $config));
+            } else {
+                $type->setPaymentAmount(FHIRMoney::jsonUnserialize($json->paymentAmount, $config));
+            }
+        }
+        if (isset($json->paymentIdentifier) || property_exists($json, self::FIELD_PAYMENT_IDENTIFIER)) {
+            if (is_array($json->paymentIdentifier)) {
+                $type->setPaymentIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->paymentIdentifier), $config));
+            } else {
+                $type->setPaymentIdentifier(FHIRIdentifier::jsonUnserialize($json->paymentIdentifier, $config));
+            }
+        }
+        if (isset($json->detail) || property_exists($json, self::FIELD_DETAIL)) {
+            if (is_object($json->detail)) {
+                $vals = [$json->detail];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DETAIL, true);
+            } else {
+                $vals = $json->detail;
+            }
+            foreach($vals as $v) {
                 $type->addDetail(FHIRPaymentReconciliationDetail::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_FORM_CODE]) || array_key_exists(self::FIELD_FORM_CODE, $json)) {
-            $type->setFormCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FORM_CODE], $config));
-        }
-        if (isset($json[self::FIELD_PROCESS_NOTE]) || array_key_exists(self::FIELD_PROCESS_NOTE, $json)) {
-            $vs = $json[self::FIELD_PROCESS_NOTE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->formCode) || property_exists($json, self::FIELD_FORM_CODE)) {
+            if (is_array($json->formCode)) {
+                $type->setFormCode(FHIRCodeableConcept::jsonUnserialize(reset($json->formCode), $config));
+            } else {
+                $type->setFormCode(FHIRCodeableConcept::jsonUnserialize($json->formCode, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->processNote) || property_exists($json, self::FIELD_PROCESS_NOTE)) {
+            if (is_object($json->processNote)) {
+                $vals = [$json->processNote];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PROCESS_NOTE, true);
+            } else {
+                $vals = $json->processNote;
+            }
+            foreach($vals as $v) {
                 $type->addProcessNote(FHIRPaymentReconciliationProcessNote::jsonUnserialize($v, $config));
             }
         }
@@ -1660,7 +1541,11 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->status)) {
             if (null !== ($val = $this->status->getValue())) {
@@ -1731,13 +1616,21 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             $out->paymentIdentifier = $this->paymentIdentifier;
         }
         if (isset($this->detail) && [] !== $this->detail) {
-            $out->detail = $this->detail;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DETAIL) && 1 === count($this->detail)) {
+                $out->detail = $this->detail[0];
+            } else {
+                $out->detail = $this->detail;
+            }
         }
         if (isset($this->formCode)) {
             $out->formCode = $this->formCode;
         }
         if (isset($this->processNote) && [] !== $this->processNote) {
-            $out->processNote = $this->processNote;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PROCESS_NOTE) && 1 === count($this->processNote)) {
+                $out->processNote = $this->processNote[0];
+            } else {
+                $out->processNote = $this->processNote;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

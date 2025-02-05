@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -105,12 +107,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRTriggerDefinition extends FHIRElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TRIGGER_DEFINITION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_NAME = 'name';
@@ -124,7 +128,7 @@ class FHIRTriggerDefinition extends FHIRElement
     public const FIELD_DATA = 'data';
     public const FIELD_CONDITION = 'condition';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -132,7 +136,7 @@ class FHIRTriggerDefinition extends FHIRElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -140,7 +144,7 @@ class FHIRTriggerDefinition extends FHIRElement
         self::FIELD_TIMING_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * The type of trigger.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -236,7 +240,7 @@ class FHIRTriggerDefinition extends FHIRElement
      */
     protected FHIRExpression $condition;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRTriggerDefinition Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -292,7 +296,7 @@ class FHIRTriggerDefinition extends FHIRElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -301,7 +305,7 @@ class FHIRTriggerDefinition extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * The type of trigger.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -322,11 +326,9 @@ class FHIRTriggerDefinition extends FHIRElement
      * The type of triggering event.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRTriggerTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTriggerType $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRTriggerTypeEnum|FHIRTriggerType $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRTriggerTypeEnum|FHIRTriggerType $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -336,33 +338,6 @@ class FHIRTriggerDefinition extends FHIRElement
             $type = new FHIRTriggerType(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -392,11 +367,9 @@ class FHIRTriggerDefinition extends FHIRElement
      * identifies the event in a local context.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
         if (null === $name) {
             unset($this->name);
@@ -406,33 +379,6 @@ class FHIRTriggerDefinition extends FHIRElement
             $name = new FHIRString(value: $name);
         }
         $this->name = $name;
-        if ($this->_valueXMLLocations[self::FIELD_NAME] !== $valueXMLLocation) {
-            $this->_setNameValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the name element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNameValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NAME];
-    }
-
-    /**
-     * Set the location the "value" field of the name element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NAME] = $valueXMLLocation;
         return $this;
     }
 
@@ -536,11 +482,9 @@ class FHIRTriggerDefinition extends FHIRElement
      * The timing of the event (if this is a periodic trigger).
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $timingDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate): self
     {
         if (null === $timingDate) {
             unset($this->timingDate);
@@ -550,33 +494,6 @@ class FHIRTriggerDefinition extends FHIRElement
             $timingDate = new FHIRDate(value: $timingDate);
         }
         $this->timingDate = $timingDate;
-        if ($this->_valueXMLLocations[self::FIELD_TIMING_DATE] !== $valueXMLLocation) {
-            $this->_setTimingDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the timingDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTimingDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TIMING_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the timingDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTimingDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TIMING_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -608,11 +525,9 @@ class FHIRTriggerDefinition extends FHIRElement
      * The timing of the event (if this is a periodic trigger).
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $timingDateTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
         if (null === $timingDateTime) {
             unset($this->timingDateTime);
@@ -622,33 +537,6 @@ class FHIRTriggerDefinition extends FHIRElement
             $timingDateTime = new FHIRDateTime(value: $timingDateTime);
         }
         $this->timingDateTime = $timingDateTime;
-        if ($this->_valueXMLLocations[self::FIELD_TIMING_DATE_TIME] !== $valueXMLLocation) {
-            $this->_setTimingDateTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the timingDateTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTimingDateTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TIMING_DATE_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the timingDateTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTimingDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TIMING_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -762,7 +650,7 @@ class FHIRTriggerDefinition extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -791,9 +679,11 @@ class FHIRTriggerDefinition extends FHIRElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_TYPE === $cen) {
                 $type->setType(FHIRTriggerType::xmlUnserialize($ce, $config));
@@ -815,39 +705,40 @@ class FHIRTriggerDefinition extends FHIRElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NAME])) {
             if (isset($type->name)) {
                 $type->name->setValue((string)$attributes[self::FIELD_NAME]);
-                $type->_setNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setName((string)$attributes[self::FIELD_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setName((string)$attributes[self::FIELD_NAME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NAME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TIMING_DATE])) {
             if (isset($type->timingDate)) {
                 $type->timingDate->setValue((string)$attributes[self::FIELD_TIMING_DATE]);
-                $type->_setTimingDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTimingDate((string)$attributes[self::FIELD_TIMING_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTimingDate((string)$attributes[self::FIELD_TIMING_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TIMING_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TIMING_DATE_TIME])) {
             if (isset($type->timingDateTime)) {
                 $type->timingDateTime->setValue((string)$attributes[self::FIELD_TIMING_DATE_TIME]);
-                $type->_setTimingDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTimingDateTime((string)$attributes[self::FIELD_TIMING_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTimingDateTime((string)$attributes[self::FIELD_TIMING_DATE_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TIMING_DATE_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -860,16 +751,16 @@ class FHIRTriggerDefinition extends FHIRElement
                                  SerializeConfig $config): void
     {
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         if (isset($this->name) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NAME]) {
-            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getValueAsString());
         }
         if (isset($this->timingDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TIMING_DATE]) {
-            $xw->writeAttribute(self::FIELD_TIMING_DATE, $this->timingDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TIMING_DATE, $this->timingDate->_getValueAsString());
         }
         if (isset($this->timingDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TIMING_DATE_TIME]) {
-            $xw->writeAttribute(self::FIELD_TIMING_DATE_TIME, $this->timingDateTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TIMING_DATE_TIME, $this->timingDateTime->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)
@@ -925,13 +816,13 @@ class FHIRTriggerDefinition extends FHIRElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTriggerDefinition $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTriggerDefinition
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -946,63 +837,69 @@ class FHIRTriggerDefinition extends FHIRElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRTriggerType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRTriggerType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRTriggerType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_NAME])
-            || isset($json[self::FIELD_NAME_EXT])
-            || array_key_exists(self::FIELD_NAME, $json)
-            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
-            $value = $json[self::FIELD_NAME] ?? null;
-            $type->setName(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->name)
+            || isset($json->_name)
+            || property_exists($json, self::FIELD_NAME)
+            || property_exists($json, self::FIELD_NAME_EXT)) {
+            $v = $json->_name ?? new \stdClass();
+            $v->value = $json->name ?? null;
+            $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TIMING_TIMING]) || array_key_exists(self::FIELD_TIMING_TIMING, $json)) {
-            $type->setTimingTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_TIMING_TIMING], $config));
-        }
-        if (isset($json[self::FIELD_TIMING_REFERENCE]) || array_key_exists(self::FIELD_TIMING_REFERENCE, $json)) {
-            $type->setTimingReference(FHIRReference::jsonUnserialize($json[self::FIELD_TIMING_REFERENCE], $config));
-        }
-        if (isset($json[self::FIELD_TIMING_DATE])
-            || isset($json[self::FIELD_TIMING_DATE_EXT])
-            || array_key_exists(self::FIELD_TIMING_DATE, $json)
-            || array_key_exists(self::FIELD_TIMING_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_TIMING_DATE] ?? null;
-            $type->setTimingDate(FHIRDate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_TIMING_DATE_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_TIMING_DATE_TIME])
-            || isset($json[self::FIELD_TIMING_DATE_TIME_EXT])
-            || array_key_exists(self::FIELD_TIMING_DATE_TIME, $json)
-            || array_key_exists(self::FIELD_TIMING_DATE_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_TIMING_DATE_TIME] ?? null;
-            $type->setTimingDateTime(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_TIMING_DATE_TIME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA]) || array_key_exists(self::FIELD_DATA, $json)) {
-            $vs = $json[self::FIELD_DATA];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->timingTiming) || property_exists($json, self::FIELD_TIMING_TIMING)) {
+            if (is_array($json->timingTiming)) {
+                $type->setTimingTiming(FHIRTiming::jsonUnserialize(reset($json->timingTiming), $config));
+            } else {
+                $type->setTimingTiming(FHIRTiming::jsonUnserialize($json->timingTiming, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->timingReference) || property_exists($json, self::FIELD_TIMING_REFERENCE)) {
+            if (is_array($json->timingReference)) {
+                $type->setTimingReference(FHIRReference::jsonUnserialize(reset($json->timingReference), $config));
+            } else {
+                $type->setTimingReference(FHIRReference::jsonUnserialize($json->timingReference, $config));
+            }
+        }
+        if (isset($json->timingDate)
+            || isset($json->_timingDate)
+            || property_exists($json, self::FIELD_TIMING_DATE)
+            || property_exists($json, self::FIELD_TIMING_DATE_EXT)) {
+            $v = $json->_timingDate ?? new \stdClass();
+            $v->value = $json->timingDate ?? null;
+            $type->setTimingDate(FHIRDate::jsonUnserialize($v, $config));
+        }
+        if (isset($json->timingDateTime)
+            || isset($json->_timingDateTime)
+            || property_exists($json, self::FIELD_TIMING_DATE_TIME)
+            || property_exists($json, self::FIELD_TIMING_DATE_TIME_EXT)) {
+            $v = $json->_timingDateTime ?? new \stdClass();
+            $v->value = $json->timingDateTime ?? null;
+            $type->setTimingDateTime(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->data) || property_exists($json, self::FIELD_DATA)) {
+            if (is_object($json->data)) {
+                $vals = [$json->data];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DATA, true);
+            } else {
+                $vals = $json->data;
+            }
+            foreach($vals as $v) {
                 $type->addData(FHIRDataRequirement::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CONDITION]) || array_key_exists(self::FIELD_CONDITION, $json)) {
-            $type->setCondition(FHIRExpression::jsonUnserialize($json[self::FIELD_CONDITION], $config));
+        if (isset($json->condition) || property_exists($json, self::FIELD_CONDITION)) {
+            if (is_array($json->condition)) {
+                $type->setCondition(FHIRExpression::jsonUnserialize(reset($json->condition), $config));
+            } else {
+                $type->setCondition(FHIRExpression::jsonUnserialize($json->condition, $config));
+            }
         }
         return $type;
     }
@@ -1060,7 +957,11 @@ class FHIRTriggerDefinition extends FHIRElement
             }
         }
         if (isset($this->data) && [] !== $this->data) {
-            $out->data = $this->data;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DATA) && 1 === count($this->data)) {
+                $out->data = $this->data[0];
+            } else {
+                $out->data = $this->data;
+            }
         }
         if (isset($this->condition)) {
             $out->condition = $this->condition;

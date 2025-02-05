@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -85,12 +87,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_BENEFIT_BALANCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_CATEGORY = 'category';
     public const FIELD_SUB_CATEGORY = 'subCategory';
     public const FIELD_EXCLUDED = 'excluded';
@@ -104,7 +108,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
     public const FIELD_TERM = 'term';
     public const FIELD_FINANCIAL = 'financial';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CATEGORY => [
@@ -112,14 +116,14 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_EXCLUDED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -218,7 +222,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      */
     protected array $financial;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRExplanationOfBenefitBenefitBalance Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -282,7 +286,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -291,7 +295,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -386,11 +390,9 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * False indicated the service is included in the coverage.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $excluded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExcluded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $excluded,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExcluded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $excluded): self
     {
         if (null === $excluded) {
             unset($this->excluded);
@@ -400,33 +402,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
             $excluded = new FHIRBoolean(value: $excluded);
         }
         $this->excluded = $excluded;
-        if ($this->_valueXMLLocations[self::FIELD_EXCLUDED] !== $valueXMLLocation) {
-            $this->_setExcludedValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the excluded element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExcludedValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXCLUDED];
-    }
-
-    /**
-     * Set the location the "value" field of the excluded element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExcludedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXCLUDED] = $valueXMLLocation;
         return $this;
     }
 
@@ -452,11 +427,9 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * A short name or tag for the benefit, for example MED01, or DENT2.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
         if (null === $name) {
             unset($this->name);
@@ -466,33 +439,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
             $name = new FHIRString(value: $name);
         }
         $this->name = $name;
-        if ($this->_valueXMLLocations[self::FIELD_NAME] !== $valueXMLLocation) {
-            $this->_setNameValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the name element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNameValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NAME];
-    }
-
-    /**
-     * Set the location the "value" field of the name element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NAME] = $valueXMLLocation;
         return $this;
     }
 
@@ -520,11 +466,9 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * 50% of major but exclused Ortho, Implants and Costmetic services'.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
         if (null === $description) {
             unset($this->description);
@@ -534,33 +478,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
             $description = new FHIRString(value: $description);
         }
         $this->description = $description;
-        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
-            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the description element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
-    }
-
-    /**
-     * Set the location the "value" field of the description element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -738,7 +655,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -767,9 +684,11 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -795,31 +714,32 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_EXCLUDED])) {
             if (isset($type->excluded)) {
                 $type->excluded->setValue((string)$attributes[self::FIELD_EXCLUDED]);
-                $type->_setExcludedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setExcluded((string)$attributes[self::FIELD_EXCLUDED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setExcluded((string)$attributes[self::FIELD_EXCLUDED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_EXCLUDED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NAME])) {
             if (isset($type->name)) {
                 $type->name->setValue((string)$attributes[self::FIELD_NAME]);
-                $type->_setNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setName((string)$attributes[self::FIELD_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setName((string)$attributes[self::FIELD_NAME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NAME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             if (isset($type->description)) {
                 $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DESCRIPTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -832,13 +752,13 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->excluded) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXCLUDED]) {
-            $xw->writeAttribute(self::FIELD_EXCLUDED, $this->excluded->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_EXCLUDED, $this->excluded->_getValueAsString());
         }
         if (isset($this->name) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NAME]) {
-            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getValueAsString());
         }
         if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->category)) {
@@ -897,13 +817,13 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -918,57 +838,73 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CATEGORY], $config));
-        }
-        if (isset($json[self::FIELD_SUB_CATEGORY]) || array_key_exists(self::FIELD_SUB_CATEGORY, $json)) {
-            $type->setSubCategory(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SUB_CATEGORY], $config));
-        }
-        if (isset($json[self::FIELD_EXCLUDED])
-            || isset($json[self::FIELD_EXCLUDED_EXT])
-            || array_key_exists(self::FIELD_EXCLUDED, $json)
-            || array_key_exists(self::FIELD_EXCLUDED_EXT, $json)) {
-            $value = $json[self::FIELD_EXCLUDED] ?? null;
-            $type->setExcluded(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_EXCLUDED_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_NAME])
-            || isset($json[self::FIELD_NAME_EXT])
-            || array_key_exists(self::FIELD_NAME, $json)
-            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
-            $value = $json[self::FIELD_NAME] ?? null;
-            $type->setName(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DESCRIPTION])
-            || isset($json[self::FIELD_DESCRIPTION_EXT])
-            || array_key_exists(self::FIELD_DESCRIPTION, $json)
-            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
-            $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $type->setDescription(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_NETWORK]) || array_key_exists(self::FIELD_NETWORK, $json)) {
-            $type->setNetwork(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_NETWORK], $config));
-        }
-        if (isset($json[self::FIELD_UNIT]) || array_key_exists(self::FIELD_UNIT, $json)) {
-            $type->setUnit(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_UNIT], $config));
-        }
-        if (isset($json[self::FIELD_TERM]) || array_key_exists(self::FIELD_TERM, $json)) {
-            $type->setTerm(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TERM], $config));
-        }
-        if (isset($json[self::FIELD_FINANCIAL]) || array_key_exists(self::FIELD_FINANCIAL, $json)) {
-            $vs = $json[self::FIELD_FINANCIAL];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->category) || property_exists($json, self::FIELD_CATEGORY)) {
+            if (is_array($json->category)) {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize(reset($json->category), $config));
+            } else {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json->category, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->subCategory) || property_exists($json, self::FIELD_SUB_CATEGORY)) {
+            if (is_array($json->subCategory)) {
+                $type->setSubCategory(FHIRCodeableConcept::jsonUnserialize(reset($json->subCategory), $config));
+            } else {
+                $type->setSubCategory(FHIRCodeableConcept::jsonUnserialize($json->subCategory, $config));
+            }
+        }
+        if (isset($json->excluded)
+            || isset($json->_excluded)
+            || property_exists($json, self::FIELD_EXCLUDED)
+            || property_exists($json, self::FIELD_EXCLUDED_EXT)) {
+            $v = $json->_excluded ?? new \stdClass();
+            $v->value = $json->excluded ?? null;
+            $type->setExcluded(FHIRBoolean::jsonUnserialize($v, $config));
+        }
+        if (isset($json->name)
+            || isset($json->_name)
+            || property_exists($json, self::FIELD_NAME)
+            || property_exists($json, self::FIELD_NAME_EXT)) {
+            $v = $json->_name ?? new \stdClass();
+            $v->value = $json->name ?? null;
+            $type->setName(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->description)
+            || isset($json->_description)
+            || property_exists($json, self::FIELD_DESCRIPTION)
+            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $json->_description ?? new \stdClass();
+            $v->value = $json->description ?? null;
+            $type->setDescription(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->network) || property_exists($json, self::FIELD_NETWORK)) {
+            if (is_array($json->network)) {
+                $type->setNetwork(FHIRCodeableConcept::jsonUnserialize(reset($json->network), $config));
+            } else {
+                $type->setNetwork(FHIRCodeableConcept::jsonUnserialize($json->network, $config));
+            }
+        }
+        if (isset($json->unit) || property_exists($json, self::FIELD_UNIT)) {
+            if (is_array($json->unit)) {
+                $type->setUnit(FHIRCodeableConcept::jsonUnserialize(reset($json->unit), $config));
+            } else {
+                $type->setUnit(FHIRCodeableConcept::jsonUnserialize($json->unit, $config));
+            }
+        }
+        if (isset($json->term) || property_exists($json, self::FIELD_TERM)) {
+            if (is_array($json->term)) {
+                $type->setTerm(FHIRCodeableConcept::jsonUnserialize(reset($json->term), $config));
+            } else {
+                $type->setTerm(FHIRCodeableConcept::jsonUnserialize($json->term, $config));
+            }
+        }
+        if (isset($json->financial) || property_exists($json, self::FIELD_FINANCIAL)) {
+            if (is_object($json->financial)) {
+                $vals = [$json->financial];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_FINANCIAL, true);
+            } else {
+                $vals = $json->financial;
+            }
+            foreach($vals as $v) {
                 $type->addFinancial(FHIRExplanationOfBenefitFinancial::jsonUnserialize($v, $config));
             }
         }
@@ -1027,7 +963,11 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
             $out->term = $this->term;
         }
         if (isset($this->financial) && [] !== $this->financial) {
-            $out->financial = $this->financial;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_FINANCIAL) && 1 === count($this->financial)) {
+                $out->financial = $this->financial[0];
+            } else {
+                $out->financial = $this->financial;
+            }
         }
         return $out;
     }

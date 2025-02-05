@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -107,12 +109,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_STARTING_SEQUENCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_GENOME_ASSEMBLY = 'genomeAssembly';
     public const FIELD_CHROMOSOME = 'chromosome';
     public const FIELD_SEQUENCE_CODEABLE_CONCEPT = 'sequenceCodeableConcept';
@@ -128,11 +132,11 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
     public const FIELD_STRAND = 'strand';
     public const FIELD_STRAND_EXT = '_strand';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SEQUENCE_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_WINDOW_START => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -141,7 +145,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
         self::FIELD_STRAND => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -173,7 +177,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
@@ -183,7 +188,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
@@ -193,7 +199,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
@@ -241,7 +248,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      */
     protected FHIRStrandType $strand;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMolecularSequenceStartingSequence Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -252,8 +259,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sequenceCodeableConcept
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sequenceString
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $sequenceReference
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $windowStart
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $windowEnd
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $windowStart
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $windowEnd
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROrientationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROrientationType $orientation
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStrandTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStrandType $strand
      * @param null|string[] $fhirComments
@@ -266,8 +273,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $sequenceCodeableConcept = null,
                                 null|string|FHIRStringPrimitive|FHIRString $sequenceString = null,
                                 null|FHIRReference $sequenceReference = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $windowStart = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $windowEnd = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $windowStart = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $windowEnd = null,
                                 null|string|FHIROrientationTypeEnum|FHIROrientationType $orientation = null,
                                 null|string|FHIRStrandTypeEnum|FHIRStrandType $strand = null,
                                 null|iterable $fhirComments = null)
@@ -305,7 +312,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -314,7 +321,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -399,7 +406,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
@@ -414,7 +422,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sequenceCodeableConcept
      * @return static
@@ -434,7 +443,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
@@ -448,14 +458,13 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sequenceString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSequenceString(null|string|FHIRStringPrimitive|FHIRString $sequenceString,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSequenceString(null|string|FHIRStringPrimitive|FHIRString $sequenceString): self
     {
         if (null === $sequenceString) {
             unset($this->sequenceString);
@@ -465,33 +474,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             $sequenceString = new FHIRString(value: $sequenceString);
         }
         $this->sequenceString = $sequenceString;
-        if ($this->_valueXMLLocations[self::FIELD_SEQUENCE_STRING] !== $valueXMLLocation) {
-            $this->_setSequenceStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the sequenceString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSequenceStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SEQUENCE_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the sequenceString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSequenceStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SEQUENCE_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -500,7 +482,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
@@ -514,7 +497,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $sequenceReference
      * @return static
@@ -552,12 +536,10 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * Start position of the window on the starting sequence. This value should honor
      * the rules of the coordinateSystem.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $windowStart
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $windowStart
      * @return static
      */
-    public function setWindowStart(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $windowStart,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setWindowStart(null|string|float|FHIRIntegerPrimitive|FHIRInteger $windowStart): self
     {
         if (null === $windowStart) {
             unset($this->windowStart);
@@ -567,33 +549,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             $windowStart = new FHIRInteger(value: $windowStart);
         }
         $this->windowStart = $windowStart;
-        if ($this->_valueXMLLocations[self::FIELD_WINDOW_START] !== $valueXMLLocation) {
-            $this->_setWindowStartValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the windowStart element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getWindowStartValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_WINDOW_START];
-    }
-
-    /**
-     * Set the location the "value" field of the windowStart element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setWindowStartValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_WINDOW_START] = $valueXMLLocation;
         return $this;
     }
 
@@ -620,12 +575,10 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * End position of the window on the starting sequence. This value should honor the
      * rules of the coordinateSystem.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $windowEnd
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $windowEnd
      * @return static
      */
-    public function setWindowEnd(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $windowEnd,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setWindowEnd(null|string|float|FHIRIntegerPrimitive|FHIRInteger $windowEnd): self
     {
         if (null === $windowEnd) {
             unset($this->windowEnd);
@@ -635,33 +588,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             $windowEnd = new FHIRInteger(value: $windowEnd);
         }
         $this->windowEnd = $windowEnd;
-        if ($this->_valueXMLLocations[self::FIELD_WINDOW_END] !== $valueXMLLocation) {
-            $this->_setWindowEndValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the windowEnd element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getWindowEndValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_WINDOW_END];
-    }
-
-    /**
-     * Set the location the "value" field of the windowEnd element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setWindowEndValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_WINDOW_END] = $valueXMLLocation;
         return $this;
     }
 
@@ -687,11 +613,9 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * opposite complementary strand is the "antisense" strand.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROrientationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROrientationType $orientation
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOrientation(null|string|FHIROrientationTypeEnum|FHIROrientationType $orientation,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOrientation(null|string|FHIROrientationTypeEnum|FHIROrientationType $orientation): self
     {
         if (null === $orientation) {
             unset($this->orientation);
@@ -701,33 +625,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             $orientation = new FHIROrientationType(value: $orientation);
         }
         $this->orientation = $orientation;
-        if ($this->_valueXMLLocations[self::FIELD_ORIENTATION] !== $valueXMLLocation) {
-            $this->_setOrientationValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the orientation element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOrientationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ORIENTATION];
-    }
-
-    /**
-     * Set the location the "value" field of the orientation element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOrientationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ORIENTATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -753,11 +650,9 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * 5'-end is on the long arm.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStrandTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStrandType $strand
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStrand(null|string|FHIRStrandTypeEnum|FHIRStrandType $strand,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStrand(null|string|FHIRStrandTypeEnum|FHIRStrandType $strand): self
     {
         if (null === $strand) {
             unset($this->strand);
@@ -767,37 +662,10 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             $strand = new FHIRStrandType(value: $strand);
         }
         $this->strand = $strand;
-        if ($this->_valueXMLLocations[self::FIELD_STRAND] !== $valueXMLLocation) {
-            $this->_setStrandValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the strand element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStrandValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STRAND];
-    }
-
-    /**
-     * Set the location the "value" field of the strand element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStrandValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STRAND] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -826,9 +694,11 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -854,47 +724,48 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SEQUENCE_STRING])) {
             if (isset($type->sequenceString)) {
                 $type->sequenceString->setValue((string)$attributes[self::FIELD_SEQUENCE_STRING]);
-                $type->_setSequenceStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSequenceString((string)$attributes[self::FIELD_SEQUENCE_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSequenceString((string)$attributes[self::FIELD_SEQUENCE_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SEQUENCE_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_WINDOW_START])) {
             if (isset($type->windowStart)) {
                 $type->windowStart->setValue((string)$attributes[self::FIELD_WINDOW_START]);
-                $type->_setWindowStartValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setWindowStart((string)$attributes[self::FIELD_WINDOW_START], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setWindowStart((string)$attributes[self::FIELD_WINDOW_START]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_WINDOW_START, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_WINDOW_END])) {
             if (isset($type->windowEnd)) {
                 $type->windowEnd->setValue((string)$attributes[self::FIELD_WINDOW_END]);
-                $type->_setWindowEndValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setWindowEnd((string)$attributes[self::FIELD_WINDOW_END], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setWindowEnd((string)$attributes[self::FIELD_WINDOW_END]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_WINDOW_END, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ORIENTATION])) {
             if (isset($type->orientation)) {
                 $type->orientation->setValue((string)$attributes[self::FIELD_ORIENTATION]);
-                $type->_setOrientationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOrientation((string)$attributes[self::FIELD_ORIENTATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setOrientation((string)$attributes[self::FIELD_ORIENTATION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ORIENTATION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STRAND])) {
             if (isset($type->strand)) {
                 $type->strand->setValue((string)$attributes[self::FIELD_STRAND]);
-                $type->_setStrandValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStrand((string)$attributes[self::FIELD_STRAND], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStrand((string)$attributes[self::FIELD_STRAND]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STRAND, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -907,19 +778,19 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->sequenceString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SEQUENCE_STRING]) {
-            $xw->writeAttribute(self::FIELD_SEQUENCE_STRING, $this->sequenceString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SEQUENCE_STRING, $this->sequenceString->_getValueAsString());
         }
         if (isset($this->windowStart) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_WINDOW_START]) {
-            $xw->writeAttribute(self::FIELD_WINDOW_START, $this->windowStart->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_WINDOW_START, $this->windowStart->_getValueAsString());
         }
         if (isset($this->windowEnd) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_WINDOW_END]) {
-            $xw->writeAttribute(self::FIELD_WINDOW_END, $this->windowEnd->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_WINDOW_END, $this->windowEnd->_getValueAsString());
         }
         if (isset($this->orientation) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ORIENTATION]) {
-            $xw->writeAttribute(self::FIELD_ORIENTATION, $this->orientation->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ORIENTATION, $this->orientation->_getValueAsString());
         }
         if (isset($this->strand) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STRAND]) {
-            $xw->writeAttribute(self::FIELD_STRAND, $this->strand->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STRAND, $this->strand->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->genomeAssembly)) {
@@ -980,13 +851,13 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStartingSequence $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStartingSequence
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1001,67 +872,73 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_GENOME_ASSEMBLY]) || array_key_exists(self::FIELD_GENOME_ASSEMBLY, $json)) {
-            $type->setGenomeAssembly(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_GENOME_ASSEMBLY], $config));
+        if (isset($json->genomeAssembly) || property_exists($json, self::FIELD_GENOME_ASSEMBLY)) {
+            if (is_array($json->genomeAssembly)) {
+                $type->setGenomeAssembly(FHIRCodeableConcept::jsonUnserialize(reset($json->genomeAssembly), $config));
+            } else {
+                $type->setGenomeAssembly(FHIRCodeableConcept::jsonUnserialize($json->genomeAssembly, $config));
+            }
         }
-        if (isset($json[self::FIELD_CHROMOSOME]) || array_key_exists(self::FIELD_CHROMOSOME, $json)) {
-            $type->setChromosome(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CHROMOSOME], $config));
+        if (isset($json->chromosome) || property_exists($json, self::FIELD_CHROMOSOME)) {
+            if (is_array($json->chromosome)) {
+                $type->setChromosome(FHIRCodeableConcept::jsonUnserialize(reset($json->chromosome), $config));
+            } else {
+                $type->setChromosome(FHIRCodeableConcept::jsonUnserialize($json->chromosome, $config));
+            }
         }
-        if (isset($json[self::FIELD_SEQUENCE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_SEQUENCE_CODEABLE_CONCEPT, $json)) {
-            $type->setSequenceCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SEQUENCE_CODEABLE_CONCEPT], $config));
+        if (isset($json->sequenceCodeableConcept) || property_exists($json, self::FIELD_SEQUENCE_CODEABLE_CONCEPT)) {
+            if (is_array($json->sequenceCodeableConcept)) {
+                $type->setSequenceCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->sequenceCodeableConcept), $config));
+            } else {
+                $type->setSequenceCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->sequenceCodeableConcept, $config));
+            }
         }
-        if (isset($json[self::FIELD_SEQUENCE_STRING])
-            || isset($json[self::FIELD_SEQUENCE_STRING_EXT])
-            || array_key_exists(self::FIELD_SEQUENCE_STRING, $json)
-            || array_key_exists(self::FIELD_SEQUENCE_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_SEQUENCE_STRING] ?? null;
-            $type->setSequenceString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_STRING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sequenceString)
+            || isset($json->_sequenceString)
+            || property_exists($json, self::FIELD_SEQUENCE_STRING)
+            || property_exists($json, self::FIELD_SEQUENCE_STRING_EXT)) {
+            $v = $json->_sequenceString ?? new \stdClass();
+            $v->value = $json->sequenceString ?? null;
+            $type->setSequenceString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SEQUENCE_REFERENCE]) || array_key_exists(self::FIELD_SEQUENCE_REFERENCE, $json)) {
-            $type->setSequenceReference(FHIRReference::jsonUnserialize($json[self::FIELD_SEQUENCE_REFERENCE], $config));
+        if (isset($json->sequenceReference) || property_exists($json, self::FIELD_SEQUENCE_REFERENCE)) {
+            if (is_array($json->sequenceReference)) {
+                $type->setSequenceReference(FHIRReference::jsonUnserialize(reset($json->sequenceReference), $config));
+            } else {
+                $type->setSequenceReference(FHIRReference::jsonUnserialize($json->sequenceReference, $config));
+            }
         }
-        if (isset($json[self::FIELD_WINDOW_START])
-            || isset($json[self::FIELD_WINDOW_START_EXT])
-            || array_key_exists(self::FIELD_WINDOW_START, $json)
-            || array_key_exists(self::FIELD_WINDOW_START_EXT, $json)) {
-            $value = $json[self::FIELD_WINDOW_START] ?? null;
-            $type->setWindowStart(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_WINDOW_START_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->windowStart)
+            || isset($json->_windowStart)
+            || property_exists($json, self::FIELD_WINDOW_START)
+            || property_exists($json, self::FIELD_WINDOW_START_EXT)) {
+            $v = $json->_windowStart ?? new \stdClass();
+            $v->value = $json->windowStart ?? null;
+            $type->setWindowStart(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_WINDOW_END])
-            || isset($json[self::FIELD_WINDOW_END_EXT])
-            || array_key_exists(self::FIELD_WINDOW_END, $json)
-            || array_key_exists(self::FIELD_WINDOW_END_EXT, $json)) {
-            $value = $json[self::FIELD_WINDOW_END] ?? null;
-            $type->setWindowEnd(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_WINDOW_END_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->windowEnd)
+            || isset($json->_windowEnd)
+            || property_exists($json, self::FIELD_WINDOW_END)
+            || property_exists($json, self::FIELD_WINDOW_END_EXT)) {
+            $v = $json->_windowEnd ?? new \stdClass();
+            $v->value = $json->windowEnd ?? null;
+            $type->setWindowEnd(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ORIENTATION])
-            || isset($json[self::FIELD_ORIENTATION_EXT])
-            || array_key_exists(self::FIELD_ORIENTATION, $json)
-            || array_key_exists(self::FIELD_ORIENTATION_EXT, $json)) {
-            $value = $json[self::FIELD_ORIENTATION] ?? null;
-            $type->setOrientation(FHIROrientationType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIROrientationType::FIELD_VALUE => $value]) + ($json[self::FIELD_ORIENTATION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->orientation)
+            || isset($json->_orientation)
+            || property_exists($json, self::FIELD_ORIENTATION)
+            || property_exists($json, self::FIELD_ORIENTATION_EXT)) {
+            $v = $json->_orientation ?? new \stdClass();
+            $v->value = $json->orientation ?? null;
+            $type->setOrientation(FHIROrientationType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_STRAND])
-            || isset($json[self::FIELD_STRAND_EXT])
-            || array_key_exists(self::FIELD_STRAND, $json)
-            || array_key_exists(self::FIELD_STRAND_EXT, $json)) {
-            $value = $json[self::FIELD_STRAND] ?? null;
-            $type->setStrand(FHIRStrandType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRStrandType::FIELD_VALUE => $value]) + ($json[self::FIELD_STRAND_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->strand)
+            || isset($json->_strand)
+            || property_exists($json, self::FIELD_STRAND)
+            || property_exists($json, self::FIELD_STRAND_EXT)) {
+            $v = $json->_strand ?? new \stdClass();
+            $v->value = $json->strand ?? null;
+            $type->setStrand(FHIRStrandType::jsonUnserialize($v, $config));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -104,17 +106,19 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRConsentData extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONSENT_DOT_DATA;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_MEANING = 'meaning';
     public const FIELD_MEANING_EXT = '_meaning';
     public const FIELD_REFERENCE = 'reference';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_MEANING => [
@@ -125,12 +129,12 @@ class FHIRConsentData extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_MEANING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -151,7 +155,7 @@ class FHIRConsentData extends FHIRBackboneElement
      */
     protected FHIRReference $reference;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRConsentData Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -180,7 +184,7 @@ class FHIRConsentData extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -189,7 +193,7 @@ class FHIRConsentData extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -208,11 +212,9 @@ class FHIRConsentData extends FHIRBackboneElement
      * How the resource reference is interpreted when testing consent restrictions.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConsentDataMeaningEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConsentDataMeaning $meaning
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMeaning(null|string|FHIRConsentDataMeaningEnum|FHIRConsentDataMeaning $meaning,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMeaning(null|string|FHIRConsentDataMeaningEnum|FHIRConsentDataMeaning $meaning): self
     {
         if (null === $meaning) {
             unset($this->meaning);
@@ -222,33 +224,6 @@ class FHIRConsentData extends FHIRBackboneElement
             $meaning = new FHIRConsentDataMeaning(value: $meaning);
         }
         $this->meaning = $meaning;
-        if ($this->_valueXMLLocations[self::FIELD_MEANING] !== $valueXMLLocation) {
-            $this->_setMeaningValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the meaning element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMeaningValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MEANING];
-    }
-
-    /**
-     * Set the location the "value" field of the meaning element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMeaningValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MEANING] = $valueXMLLocation;
         return $this;
     }
 
@@ -288,7 +263,7 @@ class FHIRConsentData extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -317,9 +292,11 @@ class FHIRConsentData extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -331,15 +308,16 @@ class FHIRConsentData extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MEANING])) {
             if (isset($type->meaning)) {
                 $type->meaning->setValue((string)$attributes[self::FIELD_MEANING]);
-                $type->_setMeaningValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMeaning((string)$attributes[self::FIELD_MEANING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMeaning((string)$attributes[self::FIELD_MEANING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MEANING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -352,7 +330,7 @@ class FHIRConsentData extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->meaning) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MEANING]) {
-            $xw->writeAttribute(self::FIELD_MEANING, $this->meaning->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MEANING, $this->meaning->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->meaning)
@@ -370,13 +348,13 @@ class FHIRConsentData extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -391,18 +369,20 @@ class FHIRConsentData extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_MEANING])
-            || isset($json[self::FIELD_MEANING_EXT])
-            || array_key_exists(self::FIELD_MEANING, $json)
-            || array_key_exists(self::FIELD_MEANING_EXT, $json)) {
-            $value = $json[self::FIELD_MEANING] ?? null;
-            $type->setMeaning(FHIRConsentDataMeaning::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRConsentDataMeaning::FIELD_VALUE => $value]) + ($json[self::FIELD_MEANING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->meaning)
+            || isset($json->_meaning)
+            || property_exists($json, self::FIELD_MEANING)
+            || property_exists($json, self::FIELD_MEANING_EXT)) {
+            $v = $json->_meaning ?? new \stdClass();
+            $v->value = $json->meaning ?? null;
+            $type->setMeaning(FHIRConsentDataMeaning::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_REFERENCE]) || array_key_exists(self::FIELD_REFERENCE, $json)) {
-            $type->setReference(FHIRReference::jsonUnserialize($json[self::FIELD_REFERENCE], $config));
+        if (isset($json->reference) || property_exists($json, self::FIELD_REFERENCE)) {
+            if (is_array($json->reference)) {
+                $type->setReference(FHIRReference::jsonUnserialize(reset($json->reference), $config));
+            } else {
+                $type->setReference(FHIRReference::jsonUnserialize($json->reference, $config));
+            }
         }
         return $type;
     }

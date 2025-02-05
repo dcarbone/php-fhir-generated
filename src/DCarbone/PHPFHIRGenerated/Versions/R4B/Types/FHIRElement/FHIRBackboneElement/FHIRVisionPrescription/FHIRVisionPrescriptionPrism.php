@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -104,18 +106,20 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_PRISM;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_AMOUNT = 'amount';
     public const FIELD_AMOUNT_EXT = '_amount';
     public const FIELD_BASE = 'base';
     public const FIELD_BASE_EXT = '_base';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_AMOUNT => [
@@ -126,13 +130,13 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_AMOUNT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_BASE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -153,20 +157,20 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
      */
     protected FHIRVisionBase $base;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRVisionPrescriptionPrism Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $amount
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $amount
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRVisionBaseEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRVisionBase $base
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $amount = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $amount = null,
                                 null|string|FHIRVisionBaseEnum|FHIRVisionBase $base = null,
                                 null|iterable $fhirComments = null)
     {
@@ -182,7 +186,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -191,7 +195,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -215,12 +219,10 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
      *
      * Amount of prism to compensate for eye alignment in fractional units.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $amount
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $amount
      * @return static
      */
-    public function setAmount(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $amount,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAmount(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $amount): self
     {
         if (null === $amount) {
             unset($this->amount);
@@ -230,33 +232,6 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
             $amount = new FHIRDecimal(value: $amount);
         }
         $this->amount = $amount;
-        if ($this->_valueXMLLocations[self::FIELD_AMOUNT] !== $valueXMLLocation) {
-            $this->_setAmountValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the amount element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAmountValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AMOUNT];
-    }
-
-    /**
-     * Set the location the "value" field of the amount element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAmountValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AMOUNT] = $valueXMLLocation;
         return $this;
     }
 
@@ -278,11 +253,9 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
      * The relative base, or reference lens edge, for the prism.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRVisionBaseEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRVisionBase $base
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setBase(null|string|FHIRVisionBaseEnum|FHIRVisionBase $base,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setBase(null|string|FHIRVisionBaseEnum|FHIRVisionBase $base): self
     {
         if (null === $base) {
             unset($this->base);
@@ -292,37 +265,10 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
             $base = new FHIRVisionBase(value: $base);
         }
         $this->base = $base;
-        if ($this->_valueXMLLocations[self::FIELD_BASE] !== $valueXMLLocation) {
-            $this->_setBaseValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the base element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getBaseValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_BASE];
-    }
-
-    /**
-     * Set the location the "value" field of the base element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setBaseValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_BASE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -351,9 +297,11 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -365,23 +313,24 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_AMOUNT])) {
             if (isset($type->amount)) {
                 $type->amount->setValue((string)$attributes[self::FIELD_AMOUNT]);
-                $type->_setAmountValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAmount((string)$attributes[self::FIELD_AMOUNT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAmount((string)$attributes[self::FIELD_AMOUNT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_AMOUNT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_BASE])) {
             if (isset($type->base)) {
                 $type->base->setValue((string)$attributes[self::FIELD_BASE]);
-                $type->_setBaseValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setBase((string)$attributes[self::FIELD_BASE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setBase((string)$attributes[self::FIELD_BASE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_BASE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -394,10 +343,10 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->amount) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AMOUNT]) {
-            $xw->writeAttribute(self::FIELD_AMOUNT, $this->amount->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_AMOUNT, $this->amount->_getValueAsString());
         }
         if (isset($this->base) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_BASE]) {
-            $xw->writeAttribute(self::FIELD_BASE, $this->base->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_BASE, $this->base->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->amount)
@@ -417,13 +366,13 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -438,25 +387,21 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_AMOUNT])
-            || isset($json[self::FIELD_AMOUNT_EXT])
-            || array_key_exists(self::FIELD_AMOUNT, $json)
-            || array_key_exists(self::FIELD_AMOUNT_EXT, $json)) {
-            $value = $json[self::FIELD_AMOUNT] ?? null;
-            $type->setAmount(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_AMOUNT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->amount)
+            || isset($json->_amount)
+            || property_exists($json, self::FIELD_AMOUNT)
+            || property_exists($json, self::FIELD_AMOUNT_EXT)) {
+            $v = $json->_amount ?? new \stdClass();
+            $v->value = $json->amount ?? null;
+            $type->setAmount(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_BASE])
-            || isset($json[self::FIELD_BASE_EXT])
-            || array_key_exists(self::FIELD_BASE, $json)
-            || array_key_exists(self::FIELD_BASE_EXT, $json)) {
-            $value = $json[self::FIELD_BASE] ?? null;
-            $type->setBase(FHIRVisionBase::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRVisionBase::FIELD_VALUE => $value]) + ($json[self::FIELD_BASE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->base)
+            || isset($json->_base)
+            || property_exists($json, self::FIELD_BASE)
+            || property_exists($json, self::FIELD_BASE_EXT)) {
+            $v = $json->_base ?? new \stdClass();
+            $v->value = $json->base ?? null;
+            $type->setBase(FHIRVisionBase::jsonUnserialize($v, $config));
         }
         return $type;
     }

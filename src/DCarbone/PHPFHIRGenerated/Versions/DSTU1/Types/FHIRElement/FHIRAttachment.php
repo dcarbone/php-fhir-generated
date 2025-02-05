@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -80,12 +82,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  */
 class FHIRAttachment extends FHIRElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ATTACHMENT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_CONTENT_TYPE = 'contentType';
     public const FIELD_CONTENT_TYPE_EXT = '_contentType';
     public const FIELD_LANGUAGE = 'language';
@@ -101,7 +105,7 @@ class FHIRAttachment extends FHIRElement
     public const FIELD_TITLE = 'title';
     public const FIELD_TITLE_EXT = '_title';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CONTENT_TYPE => [
@@ -109,7 +113,7 @@ class FHIRAttachment extends FHIRElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTENT_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LANGUAGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -120,7 +124,7 @@ class FHIRAttachment extends FHIRElement
         self::FIELD_TITLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -193,7 +197,7 @@ class FHIRAttachment extends FHIRElement
      */
     protected FHIRString $title;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAttachment Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -202,7 +206,7 @@ class FHIRAttachment extends FHIRElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $data
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $url
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $size
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $size
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $hash
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $title
      * @param null|string[] $fhirComments
@@ -213,7 +217,7 @@ class FHIRAttachment extends FHIRElement
                                 null|string|FHIRCodePrimitive|FHIRCode $language = null,
                                 null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $data = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $url = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $size = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $size = null,
                                 null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $hash = null,
                                 null|string|FHIRStringPrimitive|FHIRString $title = null,
                                 null|iterable $fhirComments = null)
@@ -244,7 +248,7 @@ class FHIRAttachment extends FHIRElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -253,7 +257,7 @@ class FHIRAttachment extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -282,11 +286,9 @@ class FHIRAttachment extends FHIRElement
      * charset where appropriate.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $contentType
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
     {
         if (null === $contentType) {
             unset($this->contentType);
@@ -296,33 +298,6 @@ class FHIRAttachment extends FHIRElement
             $contentType = new FHIRCode(value: $contentType);
         }
         $this->contentType = $contentType;
-        if ($this->_valueXMLLocations[self::FIELD_CONTENT_TYPE] !== $valueXMLLocation) {
-            $this->_setContentTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the contentType element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getContentTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CONTENT_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the contentType element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setContentTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CONTENT_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -352,11 +327,9 @@ class FHIRAttachment extends FHIRElement
      * BCP 47.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
         if (null === $language) {
             unset($this->language);
@@ -366,33 +339,6 @@ class FHIRAttachment extends FHIRElement
             $language = new FHIRCode(value: $language);
         }
         $this->language = $language;
-        if ($this->_valueXMLLocations[self::FIELD_LANGUAGE] !== $valueXMLLocation) {
-            $this->_setLanguageValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the language element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLanguageValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LANGUAGE];
-    }
-
-    /**
-     * Set the location the "value" field of the language element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLanguageValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LANGUAGE] = $valueXMLLocation;
         return $this;
     }
 
@@ -418,11 +364,9 @@ class FHIRAttachment extends FHIRElement
      * using base64.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $data
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setData(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $data,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setData(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $data): self
     {
         if (null === $data) {
             unset($this->data);
@@ -432,33 +376,6 @@ class FHIRAttachment extends FHIRElement
             $data = new FHIRBase64Binary(value: $data);
         }
         $this->data = $data;
-        if ($this->_valueXMLLocations[self::FIELD_DATA] !== $valueXMLLocation) {
-            $this->_setDataValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the data element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA];
-    }
-
-    /**
-     * Set the location the "value" field of the data element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA] = $valueXMLLocation;
         return $this;
     }
 
@@ -482,11 +399,9 @@ class FHIRAttachment extends FHIRElement
      * An alternative location where the data can be accessed.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $url
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
         if (null === $url) {
             unset($this->url);
@@ -496,33 +411,6 @@ class FHIRAttachment extends FHIRElement
             $url = new FHIRUri(value: $url);
         }
         $this->url = $url;
-        if ($this->_valueXMLLocations[self::FIELD_URL] !== $valueXMLLocation) {
-            $this->_setUrlValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the url element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUrlValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_URL];
-    }
-
-    /**
-     * Set the location the "value" field of the url element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUrlValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_URL] = $valueXMLLocation;
         return $this;
     }
 
@@ -545,12 +433,10 @@ class FHIRAttachment extends FHIRElement
      *
      * The number of bytes of data that make up this attachment.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $size
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $size
      * @return static
      */
-    public function setSize(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $size,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSize(null|string|float|FHIRIntegerPrimitive|FHIRInteger $size): self
     {
         if (null === $size) {
             unset($this->size);
@@ -560,33 +446,6 @@ class FHIRAttachment extends FHIRElement
             $size = new FHIRInteger(value: $size);
         }
         $this->size = $size;
-        if ($this->_valueXMLLocations[self::FIELD_SIZE] !== $valueXMLLocation) {
-            $this->_setSizeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the size element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSizeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SIZE];
-    }
-
-    /**
-     * Set the location the "value" field of the size element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSizeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SIZE] = $valueXMLLocation;
         return $this;
     }
 
@@ -610,11 +469,9 @@ class FHIRAttachment extends FHIRElement
      * The calculated hash of the data using SHA-1. Represented using base64.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $hash
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setHash(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $hash,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setHash(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $hash): self
     {
         if (null === $hash) {
             unset($this->hash);
@@ -624,33 +481,6 @@ class FHIRAttachment extends FHIRElement
             $hash = new FHIRBase64Binary(value: $hash);
         }
         $this->hash = $hash;
-        if ($this->_valueXMLLocations[self::FIELD_HASH] !== $valueXMLLocation) {
-            $this->_setHashValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the hash element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getHashValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_HASH];
-    }
-
-    /**
-     * Set the location the "value" field of the hash element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setHashValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_HASH] = $valueXMLLocation;
         return $this;
     }
 
@@ -674,11 +504,9 @@ class FHIRAttachment extends FHIRElement
      * A label or set of text to display in place of the data.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $title
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
         if (null === $title) {
             unset($this->title);
@@ -688,37 +516,10 @@ class FHIRAttachment extends FHIRElement
             $title = new FHIRString(value: $title);
         }
         $this->title = $title;
-        if ($this->_valueXMLLocations[self::FIELD_TITLE] !== $valueXMLLocation) {
-            $this->_setTitleValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the title element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTitleValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TITLE];
-    }
-
-    /**
-     * Set the location the "value" field of the title element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTitleValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TITLE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -756,9 +557,11 @@ class FHIRAttachment extends FHIRElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_CONTENT_TYPE === $cen) {
                 $type->setContentType(FHIRCode::xmlUnserialize($ce, $config));
@@ -778,63 +581,64 @@ class FHIRAttachment extends FHIRElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CONTENT_TYPE])) {
             if (isset($type->contentType)) {
                 $type->contentType->setValue((string)$attributes[self::FIELD_CONTENT_TYPE]);
-                $type->_setContentTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setContentType((string)$attributes[self::FIELD_CONTENT_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setContentType((string)$attributes[self::FIELD_CONTENT_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CONTENT_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA])) {
             if (isset($type->data)) {
                 $type->data->setValue((string)$attributes[self::FIELD_DATA]);
-                $type->_setDataValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setData((string)$attributes[self::FIELD_DATA], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setData((string)$attributes[self::FIELD_DATA]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_URL])) {
             if (isset($type->url)) {
                 $type->url->setValue((string)$attributes[self::FIELD_URL]);
-                $type->_setUrlValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUrl((string)$attributes[self::FIELD_URL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUrl((string)$attributes[self::FIELD_URL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_URL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SIZE])) {
             if (isset($type->size)) {
                 $type->size->setValue((string)$attributes[self::FIELD_SIZE]);
-                $type->_setSizeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSize((string)$attributes[self::FIELD_SIZE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSize((string)$attributes[self::FIELD_SIZE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SIZE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_HASH])) {
             if (isset($type->hash)) {
                 $type->hash->setValue((string)$attributes[self::FIELD_HASH]);
-                $type->_setHashValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setHash((string)$attributes[self::FIELD_HASH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setHash((string)$attributes[self::FIELD_HASH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_HASH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TITLE])) {
             if (isset($type->title)) {
                 $type->title->setValue((string)$attributes[self::FIELD_TITLE]);
-                $type->_setTitleValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTitle((string)$attributes[self::FIELD_TITLE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTitle((string)$attributes[self::FIELD_TITLE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TITLE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -865,25 +669,25 @@ class FHIRAttachment extends FHIRElement
             $xw->openRootNode('Attachment', $this->_getSourceXMLNS());
         }
         if (isset($this->contentType) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CONTENT_TYPE]) {
-            $xw->writeAttribute(self::FIELD_CONTENT_TYPE, $this->contentType->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CONTENT_TYPE, $this->contentType->_getValueAsString());
         }
         if (isset($this->language) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LANGUAGE]) {
-            $xw->writeAttribute(self::FIELD_LANGUAGE, $this->language->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LANGUAGE, $this->language->_getValueAsString());
         }
         if (isset($this->data) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA]) {
-            $xw->writeAttribute(self::FIELD_DATA, $this->data->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA, $this->data->_getValueAsString());
         }
         if (isset($this->url) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_URL]) {
-            $xw->writeAttribute(self::FIELD_URL, $this->url->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_URL, $this->url->_getValueAsString());
         }
         if (isset($this->size) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SIZE]) {
-            $xw->writeAttribute(self::FIELD_SIZE, $this->size->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SIZE, $this->size->_getValueAsString());
         }
         if (isset($this->hash) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_HASH]) {
-            $xw->writeAttribute(self::FIELD_HASH, $this->hash->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_HASH, $this->hash->_getValueAsString());
         }
         if (isset($this->title) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TITLE]) {
-            $xw->writeAttribute(self::FIELD_TITLE, $this->title->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TITLE, $this->title->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->contentType)
@@ -945,13 +749,13 @@ class FHIRAttachment extends FHIRElement
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -969,80 +773,64 @@ class FHIRAttachment extends FHIRElement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_CONTENT_TYPE])
-            || isset($json[self::FIELD_CONTENT_TYPE_EXT])
-            || array_key_exists(self::FIELD_CONTENT_TYPE, $json)
-            || array_key_exists(self::FIELD_CONTENT_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_CONTENT_TYPE] ?? null;
-            $type->setContentType(FHIRCode::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_CONTENT_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->contentType)
+            || isset($json->_contentType)
+            || property_exists($json, self::FIELD_CONTENT_TYPE)
+            || property_exists($json, self::FIELD_CONTENT_TYPE_EXT)) {
+            $v = $json->_contentType ?? new \stdClass();
+            $v->value = $json->contentType ?? null;
+            $type->setContentType(FHIRCode::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_LANGUAGE])
-            || isset($json[self::FIELD_LANGUAGE_EXT])
-            || array_key_exists(self::FIELD_LANGUAGE, $json)
-            || array_key_exists(self::FIELD_LANGUAGE_EXT, $json)) {
-            $value = $json[self::FIELD_LANGUAGE] ?? null;
-            $type->setLanguage(FHIRCode::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_LANGUAGE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->language)
+            || isset($json->_language)
+            || property_exists($json, self::FIELD_LANGUAGE)
+            || property_exists($json, self::FIELD_LANGUAGE_EXT)) {
+            $v = $json->_language ?? new \stdClass();
+            $v->value = $json->language ?? null;
+            $type->setLanguage(FHIRCode::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DATA])
-            || isset($json[self::FIELD_DATA_EXT])
-            || array_key_exists(self::FIELD_DATA, $json)
-            || array_key_exists(self::FIELD_DATA_EXT, $json)) {
-            $value = $json[self::FIELD_DATA] ?? null;
-            $type->setData(FHIRBase64Binary::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBase64Binary::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->data)
+            || isset($json->_data)
+            || property_exists($json, self::FIELD_DATA)
+            || property_exists($json, self::FIELD_DATA_EXT)) {
+            $v = $json->_data ?? new \stdClass();
+            $v->value = $json->data ?? null;
+            $type->setData(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_URL])
-            || isset($json[self::FIELD_URL_EXT])
-            || array_key_exists(self::FIELD_URL, $json)
-            || array_key_exists(self::FIELD_URL_EXT, $json)) {
-            $value = $json[self::FIELD_URL] ?? null;
-            $type->setUrl(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_URL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->url)
+            || isset($json->_url)
+            || property_exists($json, self::FIELD_URL)
+            || property_exists($json, self::FIELD_URL_EXT)) {
+            $v = $json->_url ?? new \stdClass();
+            $v->value = $json->url ?? null;
+            $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SIZE])
-            || isset($json[self::FIELD_SIZE_EXT])
-            || array_key_exists(self::FIELD_SIZE, $json)
-            || array_key_exists(self::FIELD_SIZE_EXT, $json)) {
-            $value = $json[self::FIELD_SIZE] ?? null;
-            $type->setSize(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_SIZE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->size)
+            || isset($json->_size)
+            || property_exists($json, self::FIELD_SIZE)
+            || property_exists($json, self::FIELD_SIZE_EXT)) {
+            $v = $json->_size ?? new \stdClass();
+            $v->value = $json->size ?? null;
+            $type->setSize(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_HASH])
-            || isset($json[self::FIELD_HASH_EXT])
-            || array_key_exists(self::FIELD_HASH, $json)
-            || array_key_exists(self::FIELD_HASH_EXT, $json)) {
-            $value = $json[self::FIELD_HASH] ?? null;
-            $type->setHash(FHIRBase64Binary::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBase64Binary::FIELD_VALUE => $value]) + ($json[self::FIELD_HASH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->hash)
+            || isset($json->_hash)
+            || property_exists($json, self::FIELD_HASH)
+            || property_exists($json, self::FIELD_HASH_EXT)) {
+            $v = $json->_hash ?? new \stdClass();
+            $v->value = $json->hash ?? null;
+            $type->setHash(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TITLE])
-            || isset($json[self::FIELD_TITLE_EXT])
-            || array_key_exists(self::FIELD_TITLE, $json)
-            || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
-            $value = $json[self::FIELD_TITLE] ?? null;
-            $type->setTitle(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TITLE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->title)
+            || isset($json->_title)
+            || property_exists($json, self::FIELD_TITLE)
+            || property_exists($json, self::FIELD_TITLE_EXT)) {
+            $v = $json->_title ?? new \stdClass();
+            $v->value = $json->title ?? null;
+            $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

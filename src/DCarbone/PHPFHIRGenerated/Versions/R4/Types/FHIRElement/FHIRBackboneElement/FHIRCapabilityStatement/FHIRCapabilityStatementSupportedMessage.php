@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -86,18 +88,20 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CAPABILITY_STATEMENT_DOT_SUPPORTED_MESSAGE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_MODE = 'mode';
     public const FIELD_MODE_EXT = '_mode';
     public const FIELD_DEFINITION = 'definition';
     public const FIELD_DEFINITION_EXT = '_definition';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_MODE => [
@@ -108,13 +112,13 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_MODE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DEFINITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * The mode of a message capability statement.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -137,7 +141,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
      */
     protected FHIRCanonical $definition;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCapabilityStatementSupportedMessage Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -166,7 +170,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -175,7 +179,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * The mode of a message capability statement.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -196,11 +200,9 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
      * The mode of this event declaration - whether application is sender or receiver.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIREventCapabilityModeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIREventCapabilityMode $mode
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMode(null|string|FHIREventCapabilityModeList|FHIREventCapabilityMode $mode,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMode(null|string|FHIREventCapabilityModeList|FHIREventCapabilityMode $mode): self
     {
         if (null === $mode) {
             unset($this->mode);
@@ -210,33 +212,6 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
             $mode = new FHIREventCapabilityMode(value: $mode);
         }
         $this->mode = $mode;
-        if ($this->_valueXMLLocations[self::FIELD_MODE] !== $valueXMLLocation) {
-            $this->_setModeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the mode element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getModeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MODE];
-    }
-
-    /**
-     * Set the location the "value" field of the mode element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setModeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MODE] = $valueXMLLocation;
         return $this;
     }
 
@@ -266,11 +241,9 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
      * structure, allowed responses, etc.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $definition
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition): self
     {
         if (null === $definition) {
             unset($this->definition);
@@ -280,37 +253,10 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
             $definition = new FHIRCanonical(value: $definition);
         }
         $this->definition = $definition;
-        if ($this->_valueXMLLocations[self::FIELD_DEFINITION] !== $valueXMLLocation) {
-            $this->_setDefinitionValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the definition element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDefinitionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEFINITION];
-    }
-
-    /**
-     * Set the location the "value" field of the definition element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDefinitionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEFINITION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -339,9 +285,11 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -353,23 +301,24 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MODE])) {
             if (isset($type->mode)) {
                 $type->mode->setValue((string)$attributes[self::FIELD_MODE]);
-                $type->_setModeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMode((string)$attributes[self::FIELD_MODE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMode((string)$attributes[self::FIELD_MODE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MODE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DEFINITION])) {
             if (isset($type->definition)) {
                 $type->definition->setValue((string)$attributes[self::FIELD_DEFINITION]);
-                $type->_setDefinitionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDefinition((string)$attributes[self::FIELD_DEFINITION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDefinition((string)$attributes[self::FIELD_DEFINITION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DEFINITION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -382,10 +331,10 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->mode) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MODE]) {
-            $xw->writeAttribute(self::FIELD_MODE, $this->mode->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MODE, $this->mode->_getValueAsString());
         }
         if (isset($this->definition) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFINITION]) {
-            $xw->writeAttribute(self::FIELD_DEFINITION, $this->definition->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DEFINITION, $this->definition->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->mode)
@@ -405,13 +354,13 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -426,25 +375,21 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_MODE])
-            || isset($json[self::FIELD_MODE_EXT])
-            || array_key_exists(self::FIELD_MODE, $json)
-            || array_key_exists(self::FIELD_MODE_EXT, $json)) {
-            $value = $json[self::FIELD_MODE] ?? null;
-            $type->setMode(FHIREventCapabilityMode::jsonUnserialize(
-                (is_array($value) ? $value : [FHIREventCapabilityMode::FIELD_VALUE => $value]) + ($json[self::FIELD_MODE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->mode)
+            || isset($json->_mode)
+            || property_exists($json, self::FIELD_MODE)
+            || property_exists($json, self::FIELD_MODE_EXT)) {
+            $v = $json->_mode ?? new \stdClass();
+            $v->value = $json->mode ?? null;
+            $type->setMode(FHIREventCapabilityMode::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DEFINITION])
-            || isset($json[self::FIELD_DEFINITION_EXT])
-            || array_key_exists(self::FIELD_DEFINITION, $json)
-            || array_key_exists(self::FIELD_DEFINITION_EXT, $json)) {
-            $value = $json[self::FIELD_DEFINITION] ?? null;
-            $type->setDefinition(FHIRCanonical::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFINITION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->definition)
+            || isset($json->_definition)
+            || property_exists($json, self::FIELD_DEFINITION)
+            || property_exists($json, self::FIELD_DEFINITION_EXT)) {
+            $v = $json->_definition ?? new \stdClass();
+            $v->value = $json->definition ?? null;
+            $type->setDefinition(FHIRCanonical::jsonUnserialize($v, $config));
         }
         return $type;
     }

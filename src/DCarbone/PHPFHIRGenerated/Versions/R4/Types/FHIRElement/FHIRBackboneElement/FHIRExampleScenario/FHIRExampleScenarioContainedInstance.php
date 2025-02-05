@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -80,18 +82,20 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_CONTAINED_INSTANCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_RESOURCE_ID = 'resourceId';
     public const FIELD_RESOURCE_ID_EXT = '_resourceId';
     public const FIELD_VERSION_ID = 'versionId';
     public const FIELD_VERSION_ID_EXT = '_versionId';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_RESOURCE_ID => [
@@ -99,13 +103,13 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_RESOURCE_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -127,7 +131,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
      */
     protected FHIRString $versionId;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRExampleScenarioContainedInstance Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -156,7 +160,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -165,7 +169,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -188,11 +192,9 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
      * Each resource contained in the instance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $resourceId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setResourceId(null|string|FHIRStringPrimitive|FHIRString $resourceId,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setResourceId(null|string|FHIRStringPrimitive|FHIRString $resourceId): self
     {
         if (null === $resourceId) {
             unset($this->resourceId);
@@ -202,33 +204,6 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
             $resourceId = new FHIRString(value: $resourceId);
         }
         $this->resourceId = $resourceId;
-        if ($this->_valueXMLLocations[self::FIELD_RESOURCE_ID] !== $valueXMLLocation) {
-            $this->_setResourceIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the resourceId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getResourceIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RESOURCE_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the resourceId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setResourceIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RESOURCE_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -254,11 +229,9 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
      * A specific version of a resource contained in the instance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $versionId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVersionId(null|string|FHIRStringPrimitive|FHIRString $versionId,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setVersionId(null|string|FHIRStringPrimitive|FHIRString $versionId): self
     {
         if (null === $versionId) {
             unset($this->versionId);
@@ -268,37 +241,10 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
             $versionId = new FHIRString(value: $versionId);
         }
         $this->versionId = $versionId;
-        if ($this->_valueXMLLocations[self::FIELD_VERSION_ID] !== $valueXMLLocation) {
-            $this->_setVersionIdValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the versionId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getVersionIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VERSION_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the versionId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setVersionIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VERSION_ID] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -327,9 +273,11 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -341,23 +289,24 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RESOURCE_ID])) {
             if (isset($type->resourceId)) {
                 $type->resourceId->setValue((string)$attributes[self::FIELD_RESOURCE_ID]);
-                $type->_setResourceIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setResourceId((string)$attributes[self::FIELD_RESOURCE_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setResourceId((string)$attributes[self::FIELD_RESOURCE_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RESOURCE_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VERSION_ID])) {
             if (isset($type->versionId)) {
                 $type->versionId->setValue((string)$attributes[self::FIELD_VERSION_ID]);
-                $type->_setVersionIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setVersionId((string)$attributes[self::FIELD_VERSION_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setVersionId((string)$attributes[self::FIELD_VERSION_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VERSION_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -370,10 +319,10 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->resourceId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RESOURCE_ID]) {
-            $xw->writeAttribute(self::FIELD_RESOURCE_ID, $this->resourceId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RESOURCE_ID, $this->resourceId->_getValueAsString());
         }
         if (isset($this->versionId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VERSION_ID]) {
-            $xw->writeAttribute(self::FIELD_VERSION_ID, $this->versionId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VERSION_ID, $this->versionId->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->resourceId)
@@ -393,13 +342,13 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -414,25 +363,21 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_RESOURCE_ID])
-            || isset($json[self::FIELD_RESOURCE_ID_EXT])
-            || array_key_exists(self::FIELD_RESOURCE_ID, $json)
-            || array_key_exists(self::FIELD_RESOURCE_ID_EXT, $json)) {
-            $value = $json[self::FIELD_RESOURCE_ID] ?? null;
-            $type->setResourceId(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_RESOURCE_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->resourceId)
+            || isset($json->_resourceId)
+            || property_exists($json, self::FIELD_RESOURCE_ID)
+            || property_exists($json, self::FIELD_RESOURCE_ID_EXT)) {
+            $v = $json->_resourceId ?? new \stdClass();
+            $v->value = $json->resourceId ?? null;
+            $type->setResourceId(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VERSION_ID])
-            || isset($json[self::FIELD_VERSION_ID_EXT])
-            || array_key_exists(self::FIELD_VERSION_ID, $json)
-            || array_key_exists(self::FIELD_VERSION_ID_EXT, $json)) {
-            $value = $json[self::FIELD_VERSION_ID] ?? null;
-            $type->setVersionId(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSION_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->versionId)
+            || isset($json->_versionId)
+            || property_exists($json, self::FIELD_VERSION_ID)
+            || property_exists($json, self::FIELD_VERSION_ID_EXT)) {
+            $v = $json->_versionId ?? new \stdClass();
+            $v->value = $json->versionId ?? null;
+            $type->setVersionId(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

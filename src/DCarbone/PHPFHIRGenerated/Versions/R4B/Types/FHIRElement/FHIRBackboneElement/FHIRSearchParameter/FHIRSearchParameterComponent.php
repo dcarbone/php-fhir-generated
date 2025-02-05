@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,18 +105,20 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRSearchParameterComponent extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SEARCH_PARAMETER_DOT_COMPONENT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DEFINITION = 'definition';
     public const FIELD_DEFINITION_EXT = '_definition';
     public const FIELD_EXPRESSION = 'expression';
     public const FIELD_EXPRESSION_EXT = '_expression';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_DEFINITION => [
@@ -125,13 +129,13 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DEFINITION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_EXPRESSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
@@ -155,7 +159,7 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      */
     protected FHIRString $expression;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSearchParameterComponent Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -184,7 +188,7 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -193,7 +197,7 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
@@ -218,11 +222,9 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      * The definition of the search parameter that describes this part.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $definition
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition): self
     {
         if (null === $definition) {
             unset($this->definition);
@@ -232,33 +234,6 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
             $definition = new FHIRCanonical(value: $definition);
         }
         $this->definition = $definition;
-        if ($this->_valueXMLLocations[self::FIELD_DEFINITION] !== $valueXMLLocation) {
-            $this->_setDefinitionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the definition element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDefinitionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEFINITION];
-    }
-
-    /**
-     * Set the location the "value" field of the definition element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDefinitionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEFINITION] = $valueXMLLocation;
         return $this;
     }
 
@@ -286,11 +261,9 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      * output of the main SearchParameter.expression.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $expression
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
         if (null === $expression) {
             unset($this->expression);
@@ -300,37 +273,10 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
             $expression = new FHIRString(value: $expression);
         }
         $this->expression = $expression;
-        if ($this->_valueXMLLocations[self::FIELD_EXPRESSION] !== $valueXMLLocation) {
-            $this->_setExpressionValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the expression element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExpressionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXPRESSION];
-    }
-
-    /**
-     * Set the location the "value" field of the expression element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExpressionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXPRESSION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -359,9 +305,11 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -373,23 +321,24 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DEFINITION])) {
             if (isset($type->definition)) {
                 $type->definition->setValue((string)$attributes[self::FIELD_DEFINITION]);
-                $type->_setDefinitionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDefinition((string)$attributes[self::FIELD_DEFINITION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDefinition((string)$attributes[self::FIELD_DEFINITION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DEFINITION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_EXPRESSION])) {
             if (isset($type->expression)) {
                 $type->expression->setValue((string)$attributes[self::FIELD_EXPRESSION]);
-                $type->_setExpressionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setExpression((string)$attributes[self::FIELD_EXPRESSION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setExpression((string)$attributes[self::FIELD_EXPRESSION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_EXPRESSION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -402,10 +351,10 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->definition) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEFINITION]) {
-            $xw->writeAttribute(self::FIELD_DEFINITION, $this->definition->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DEFINITION, $this->definition->_getValueAsString());
         }
         if (isset($this->expression) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXPRESSION]) {
-            $xw->writeAttribute(self::FIELD_EXPRESSION, $this->expression->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_EXPRESSION, $this->expression->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->definition)
@@ -425,13 +374,13 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -446,25 +395,21 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DEFINITION])
-            || isset($json[self::FIELD_DEFINITION_EXT])
-            || array_key_exists(self::FIELD_DEFINITION, $json)
-            || array_key_exists(self::FIELD_DEFINITION_EXT, $json)) {
-            $value = $json[self::FIELD_DEFINITION] ?? null;
-            $type->setDefinition(FHIRCanonical::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFINITION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->definition)
+            || isset($json->_definition)
+            || property_exists($json, self::FIELD_DEFINITION)
+            || property_exists($json, self::FIELD_DEFINITION_EXT)) {
+            $v = $json->_definition ?? new \stdClass();
+            $v->value = $json->definition ?? null;
+            $type->setDefinition(FHIRCanonical::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_EXPRESSION])
-            || isset($json[self::FIELD_EXPRESSION_EXT])
-            || array_key_exists(self::FIELD_EXPRESSION, $json)
-            || array_key_exists(self::FIELD_EXPRESSION_EXT, $json)) {
-            $value = $json[self::FIELD_EXPRESSION] ?? null;
-            $type->setExpression(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPRESSION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->expression)
+            || isset($json->_expression)
+            || property_exists($json, self::FIELD_EXPRESSION)
+            || property_exists($json, self::FIELD_EXPRESSION_EXT)) {
+            $v = $json->_expression ?? new \stdClass();
+            $v->value = $json->expression ?? null;
+            $type->setExpression(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -84,18 +86,20 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRCommunicationRequestPayload extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COMMUNICATION_REQUEST_DOT_PAYLOAD;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_CONTENT_STRING = 'contentString';
     public const FIELD_CONTENT_STRING_EXT = '_contentString';
     public const FIELD_CONTENT_ATTACHMENT = 'contentAttachment';
     public const FIELD_CONTENT_REFERENCE = 'contentReference';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CONTENT_STRING => [
@@ -109,12 +113,12 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTENT_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -149,7 +153,7 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
      */
     protected FHIRReference $contentReference;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCommunicationRequestPayload Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -183,7 +187,7 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -192,7 +196,7 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -217,11 +221,9 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
      * communication).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $contentString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setContentString(null|string|FHIRStringPrimitive|FHIRString $contentString,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setContentString(null|string|FHIRStringPrimitive|FHIRString $contentString): self
     {
         if (null === $contentString) {
             unset($this->contentString);
@@ -231,33 +233,6 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
             $contentString = new FHIRString(value: $contentString);
         }
         $this->contentString = $contentString;
-        if ($this->_valueXMLLocations[self::FIELD_CONTENT_STRING] !== $valueXMLLocation) {
-            $this->_setContentStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the contentString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getContentStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CONTENT_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the contentString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setContentStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CONTENT_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -333,7 +308,7 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -362,9 +337,11 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -378,15 +355,16 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CONTENT_STRING])) {
             if (isset($type->contentString)) {
                 $type->contentString->setValue((string)$attributes[self::FIELD_CONTENT_STRING]);
-                $type->_setContentStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setContentString((string)$attributes[self::FIELD_CONTENT_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setContentString((string)$attributes[self::FIELD_CONTENT_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CONTENT_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -399,7 +377,7 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->contentString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CONTENT_STRING]) {
-            $xw->writeAttribute(self::FIELD_CONTENT_STRING, $this->contentString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CONTENT_STRING, $this->contentString->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->contentString)
@@ -422,13 +400,13 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -443,21 +421,27 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_CONTENT_STRING])
-            || isset($json[self::FIELD_CONTENT_STRING_EXT])
-            || array_key_exists(self::FIELD_CONTENT_STRING, $json)
-            || array_key_exists(self::FIELD_CONTENT_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_CONTENT_STRING] ?? null;
-            $type->setContentString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CONTENT_STRING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->contentString)
+            || isset($json->_contentString)
+            || property_exists($json, self::FIELD_CONTENT_STRING)
+            || property_exists($json, self::FIELD_CONTENT_STRING_EXT)) {
+            $v = $json->_contentString ?? new \stdClass();
+            $v->value = $json->contentString ?? null;
+            $type->setContentString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CONTENT_ATTACHMENT]) || array_key_exists(self::FIELD_CONTENT_ATTACHMENT, $json)) {
-            $type->setContentAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_CONTENT_ATTACHMENT], $config));
+        if (isset($json->contentAttachment) || property_exists($json, self::FIELD_CONTENT_ATTACHMENT)) {
+            if (is_array($json->contentAttachment)) {
+                $type->setContentAttachment(FHIRAttachment::jsonUnserialize(reset($json->contentAttachment), $config));
+            } else {
+                $type->setContentAttachment(FHIRAttachment::jsonUnserialize($json->contentAttachment, $config));
+            }
         }
-        if (isset($json[self::FIELD_CONTENT_REFERENCE]) || array_key_exists(self::FIELD_CONTENT_REFERENCE, $json)) {
-            $type->setContentReference(FHIRReference::jsonUnserialize($json[self::FIELD_CONTENT_REFERENCE], $config));
+        if (isset($json->contentReference) || property_exists($json, self::FIELD_CONTENT_REFERENCE)) {
+            if (is_array($json->contentReference)) {
+                $type->setContentReference(FHIRReference::jsonUnserialize(reset($json->contentReference), $config));
+            } else {
+                $type->setContentReference(FHIRReference::jsonUnserialize($json->contentReference, $config));
+            }
         }
         return $type;
     }

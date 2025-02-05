@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -118,12 +120,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
  */
 class FHIRResearchSubject extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESEARCH_SUBJECT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_STATUS = 'status';
     public const FIELD_STATUS_EXT = '_status';
@@ -137,7 +141,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
     public const FIELD_ACTUAL_COMPARISON_GROUP_EXT = '_actualComparisonGroup';
     public const FIELD_CONSENT = 'consent';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
@@ -151,14 +155,14 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ASSIGNED_COMPARISON_GROUP => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ACTUAL_COMPARISON_GROUP => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -257,7 +261,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      */
     protected array $consent;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRResearchSubject Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -336,7 +340,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -345,7 +349,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -354,7 +358,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -440,11 +444,9 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * The publication state of the resource (not of the subject).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
         if (null === $status) {
             unset($this->status);
@@ -454,33 +456,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
             $status = new FHIRPublicationStatus(value: $status);
         }
         $this->status = $status;
-        if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
-            $this->_setStatusValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the status element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStatusValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STATUS];
-    }
-
-    /**
-     * Set the location the "value" field of the status element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -680,11 +655,9 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * this study.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $assignedComparisonGroup
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAssignedComparisonGroup(null|string|FHIRIdPrimitive|FHIRId $assignedComparisonGroup,
-                                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAssignedComparisonGroup(null|string|FHIRIdPrimitive|FHIRId $assignedComparisonGroup): self
     {
         if (null === $assignedComparisonGroup) {
             unset($this->assignedComparisonGroup);
@@ -694,33 +667,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
             $assignedComparisonGroup = new FHIRId(value: $assignedComparisonGroup);
         }
         $this->assignedComparisonGroup = $assignedComparisonGroup;
-        if ($this->_valueXMLLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP] !== $valueXMLLocation) {
-            $this->_setAssignedComparisonGroupValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the assignedComparisonGroup element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAssignedComparisonGroupValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP];
-    }
-
-    /**
-     * Set the location the "value" field of the assignedComparisonGroup element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAssignedComparisonGroupValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP] = $valueXMLLocation;
         return $this;
     }
 
@@ -754,11 +700,9 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * study.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $actualComparisonGroup
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setActualComparisonGroup(null|string|FHIRIdPrimitive|FHIRId $actualComparisonGroup,
-                                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setActualComparisonGroup(null|string|FHIRIdPrimitive|FHIRId $actualComparisonGroup): self
     {
         if (null === $actualComparisonGroup) {
             unset($this->actualComparisonGroup);
@@ -768,33 +712,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
             $actualComparisonGroup = new FHIRId(value: $actualComparisonGroup);
         }
         $this->actualComparisonGroup = $actualComparisonGroup;
-        if ($this->_valueXMLLocations[self::FIELD_ACTUAL_COMPARISON_GROUP] !== $valueXMLLocation) {
-            $this->_setActualComparisonGroupValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the actualComparisonGroup element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getActualComparisonGroupValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ACTUAL_COMPARISON_GROUP];
-    }
-
-    /**
-     * Set the location the "value" field of the actualComparisonGroup element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setActualComparisonGroupValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ACTUAL_COMPARISON_GROUP] = $valueXMLLocation;
         return $this;
     }
 
@@ -862,7 +779,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -939,50 +856,50 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STATUS])) {
             if (isset($type->status)) {
                 $type->status->setValue((string)$attributes[self::FIELD_STATUS]);
-                $type->_setStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStatus((string)$attributes[self::FIELD_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStatus((string)$attributes[self::FIELD_STATUS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STATUS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ASSIGNED_COMPARISON_GROUP])) {
             if (isset($type->assignedComparisonGroup)) {
                 $type->assignedComparisonGroup->setValue((string)$attributes[self::FIELD_ASSIGNED_COMPARISON_GROUP]);
-                $type->_setAssignedComparisonGroupValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAssignedComparisonGroup((string)$attributes[self::FIELD_ASSIGNED_COMPARISON_GROUP], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAssignedComparisonGroup((string)$attributes[self::FIELD_ASSIGNED_COMPARISON_GROUP]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ASSIGNED_COMPARISON_GROUP, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ACTUAL_COMPARISON_GROUP])) {
             if (isset($type->actualComparisonGroup)) {
                 $type->actualComparisonGroup->setValue((string)$attributes[self::FIELD_ACTUAL_COMPARISON_GROUP]);
-                $type->_setActualComparisonGroupValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setActualComparisonGroup((string)$attributes[self::FIELD_ACTUAL_COMPARISON_GROUP], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setActualComparisonGroup((string)$attributes[self::FIELD_ACTUAL_COMPARISON_GROUP]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ACTUAL_COMPARISON_GROUP, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1013,13 +930,13 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
             $xw->openRootNode('ResearchSubject', $this->_getSourceXMLNS());
         }
         if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
-            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getValueAsString());
         }
         if (isset($this->assignedComparisonGroup) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP]) {
-            $xw->writeAttribute(self::FIELD_ASSIGNED_COMPARISON_GROUP, $this->assignedComparisonGroup->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ASSIGNED_COMPARISON_GROUP, $this->assignedComparisonGroup->_getValueAsString());
         }
         if (isset($this->actualComparisonGroup) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ACTUAL_COMPARISON_GROUP]) {
-            $xw->writeAttribute(self::FIELD_ACTUAL_COMPARISON_GROUP, $this->actualComparisonGroup->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ACTUAL_COMPARISON_GROUP, $this->actualComparisonGroup->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1089,13 +1006,13 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRResearchSubject $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRResearchSubject
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1113,74 +1030,84 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STATUS])
-            || isset($json[self::FIELD_STATUS_EXT])
-            || array_key_exists(self::FIELD_STATUS, $json)
-            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
-            $value = $json[self::FIELD_STATUS] ?? null;
-            $type->setStatus(FHIRPublicationStatus::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPublicationStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->status)
+            || isset($json->_status)
+            || property_exists($json, self::FIELD_STATUS)
+            || property_exists($json, self::FIELD_STATUS_EXT)) {
+            $v = $json->_status ?? new \stdClass();
+            $v->value = $json->status ?? null;
+            $type->setStatus(FHIRPublicationStatus::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PROGRESS]) || array_key_exists(self::FIELD_PROGRESS, $json)) {
-            $vs = $json[self::FIELD_PROGRESS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->progress) || property_exists($json, self::FIELD_PROGRESS)) {
+            if (is_object($json->progress)) {
+                $vals = [$json->progress];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PROGRESS, true);
+            } else {
+                $vals = $json->progress;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addProgress(FHIRResearchSubjectProgress::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_STUDY]) || array_key_exists(self::FIELD_STUDY, $json)) {
-            $type->setStudy(FHIRReference::jsonUnserialize($json[self::FIELD_STUDY], $config));
-        }
-        if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
-        }
-        if (isset($json[self::FIELD_ASSIGNED_COMPARISON_GROUP])
-            || isset($json[self::FIELD_ASSIGNED_COMPARISON_GROUP_EXT])
-            || array_key_exists(self::FIELD_ASSIGNED_COMPARISON_GROUP, $json)
-            || array_key_exists(self::FIELD_ASSIGNED_COMPARISON_GROUP_EXT, $json)) {
-            $value = $json[self::FIELD_ASSIGNED_COMPARISON_GROUP] ?? null;
-            $type->setAssignedComparisonGroup(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_ASSIGNED_COMPARISON_GROUP_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ACTUAL_COMPARISON_GROUP])
-            || isset($json[self::FIELD_ACTUAL_COMPARISON_GROUP_EXT])
-            || array_key_exists(self::FIELD_ACTUAL_COMPARISON_GROUP, $json)
-            || array_key_exists(self::FIELD_ACTUAL_COMPARISON_GROUP_EXT, $json)) {
-            $value = $json[self::FIELD_ACTUAL_COMPARISON_GROUP] ?? null;
-            $type->setActualComparisonGroup(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_ACTUAL_COMPARISON_GROUP_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_CONSENT]) || array_key_exists(self::FIELD_CONSENT, $json)) {
-            $vs = $json[self::FIELD_CONSENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->study) || property_exists($json, self::FIELD_STUDY)) {
+            if (is_array($json->study)) {
+                $type->setStudy(FHIRReference::jsonUnserialize(reset($json->study), $config));
+            } else {
+                $type->setStudy(FHIRReference::jsonUnserialize($json->study, $config));
+            }
+        }
+        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
+            if (is_array($json->subject)) {
+                $type->setSubject(FHIRReference::jsonUnserialize(reset($json->subject), $config));
+            } else {
+                $type->setSubject(FHIRReference::jsonUnserialize($json->subject, $config));
+            }
+        }
+        if (isset($json->assignedComparisonGroup)
+            || isset($json->_assignedComparisonGroup)
+            || property_exists($json, self::FIELD_ASSIGNED_COMPARISON_GROUP)
+            || property_exists($json, self::FIELD_ASSIGNED_COMPARISON_GROUP_EXT)) {
+            $v = $json->_assignedComparisonGroup ?? new \stdClass();
+            $v->value = $json->assignedComparisonGroup ?? null;
+            $type->setAssignedComparisonGroup(FHIRId::jsonUnserialize($v, $config));
+        }
+        if (isset($json->actualComparisonGroup)
+            || isset($json->_actualComparisonGroup)
+            || property_exists($json, self::FIELD_ACTUAL_COMPARISON_GROUP)
+            || property_exists($json, self::FIELD_ACTUAL_COMPARISON_GROUP_EXT)) {
+            $v = $json->_actualComparisonGroup ?? new \stdClass();
+            $v->value = $json->actualComparisonGroup ?? null;
+            $type->setActualComparisonGroup(FHIRId::jsonUnserialize($v, $config));
+        }
+        if (isset($json->consent) || property_exists($json, self::FIELD_CONSENT)) {
+            if (is_object($json->consent)) {
+                $vals = [$json->consent];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CONSENT, true);
+            } else {
+                $vals = $json->consent;
+            }
+            foreach($vals as $v) {
                 $type->addConsent(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -1194,7 +1121,11 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->status)) {
             if (null !== ($val = $this->status->getValue())) {
@@ -1207,7 +1138,11 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
             }
         }
         if (isset($this->progress) && [] !== $this->progress) {
-            $out->progress = $this->progress;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PROGRESS) && 1 === count($this->progress)) {
+                $out->progress = $this->progress[0];
+            } else {
+                $out->progress = $this->progress;
+            }
         }
         if (isset($this->period)) {
             $out->period = $this->period;
@@ -1239,7 +1174,11 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
             }
         }
         if (isset($this->consent) && [] !== $this->consent) {
-            $out->consent = $this->consent;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CONSENT) && 1 === count($this->consent)) {
+                $out->consent = $this->consent[0];
+            } else {
+                $out->consent = $this->consent;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

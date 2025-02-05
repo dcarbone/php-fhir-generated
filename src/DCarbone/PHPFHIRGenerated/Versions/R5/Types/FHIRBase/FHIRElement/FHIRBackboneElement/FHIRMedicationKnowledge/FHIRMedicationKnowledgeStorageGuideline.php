@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,28 +104,30 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_STORAGE_GUIDELINE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_REFERENCE = 'reference';
     public const FIELD_REFERENCE_EXT = '_reference';
     public const FIELD_NOTE = 'note';
     public const FIELD_STABILITY_DURATION = 'stabilityDuration';
     public const FIELD_ENVIRONMENTAL_SETTING = 'environmentalSetting';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_REFERENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -167,7 +171,7 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      */
     protected array $environmentalSetting;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedicationKnowledgeStorageGuideline Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -206,7 +210,7 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -215,7 +219,7 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -238,11 +242,9 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * Reference to additional information about the storage guidelines.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $reference
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference): self
     {
         if (null === $reference) {
             unset($this->reference);
@@ -252,33 +254,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
             $reference = new FHIRUri(value: $reference);
         }
         $this->reference = $reference;
-        if ($this->_valueXMLLocations[self::FIELD_REFERENCE] !== $valueXMLLocation) {
-            $this->_setReferenceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the reference element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getReferenceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_REFERENCE];
-    }
-
-    /**
-     * Set the location the "value" field of the reference element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setReferenceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_REFERENCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -449,7 +424,7 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -478,9 +453,11 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -496,15 +473,16 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_REFERENCE])) {
             if (isset($type->reference)) {
                 $type->reference->setValue((string)$attributes[self::FIELD_REFERENCE]);
-                $type->_setReferenceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setReference((string)$attributes[self::FIELD_REFERENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setReference((string)$attributes[self::FIELD_REFERENCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_REFERENCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -517,7 +495,7 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->reference) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REFERENCE]) {
-            $xw->writeAttribute(self::FIELD_REFERENCE, $this->reference->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_REFERENCE, $this->reference->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->reference)
@@ -549,13 +527,13 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeStorageGuideline $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeStorageGuideline
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -570,34 +548,40 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_REFERENCE])
-            || isset($json[self::FIELD_REFERENCE_EXT])
-            || array_key_exists(self::FIELD_REFERENCE, $json)
-            || array_key_exists(self::FIELD_REFERENCE_EXT, $json)) {
-            $value = $json[self::FIELD_REFERENCE] ?? null;
-            $type->setReference(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_REFERENCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->reference)
+            || isset($json->_reference)
+            || property_exists($json, self::FIELD_REFERENCE)
+            || property_exists($json, self::FIELD_REFERENCE_EXT)) {
+            $v = $json->_reference ?? new \stdClass();
+            $v->value = $json->reference ?? null;
+            $type->setReference(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
-            $vs = $json[self::FIELD_NOTE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->note) || property_exists($json, self::FIELD_NOTE)) {
+            if (is_object($json->note)) {
+                $vals = [$json->note];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTE, true);
+            } else {
+                $vals = $json->note;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STABILITY_DURATION]) || array_key_exists(self::FIELD_STABILITY_DURATION, $json)) {
-            $type->setStabilityDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_STABILITY_DURATION], $config));
-        }
-        if (isset($json[self::FIELD_ENVIRONMENTAL_SETTING]) || array_key_exists(self::FIELD_ENVIRONMENTAL_SETTING, $json)) {
-            $vs = $json[self::FIELD_ENVIRONMENTAL_SETTING];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->stabilityDuration) || property_exists($json, self::FIELD_STABILITY_DURATION)) {
+            if (is_array($json->stabilityDuration)) {
+                $type->setStabilityDuration(FHIRDuration::jsonUnserialize(reset($json->stabilityDuration), $config));
+            } else {
+                $type->setStabilityDuration(FHIRDuration::jsonUnserialize($json->stabilityDuration, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->environmentalSetting) || property_exists($json, self::FIELD_ENVIRONMENTAL_SETTING)) {
+            if (is_object($json->environmentalSetting)) {
+                $vals = [$json->environmentalSetting];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ENVIRONMENTAL_SETTING, true);
+            } else {
+                $vals = $json->environmentalSetting;
+            }
+            foreach($vals as $v) {
                 $type->addEnvironmentalSetting(FHIRMedicationKnowledgeEnvironmentalSetting::jsonUnserialize($v, $config));
             }
         }
@@ -621,13 +605,21 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
             }
         }
         if (isset($this->note) && [] !== $this->note) {
-            $out->note = $this->note;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_NOTE) && 1 === count($this->note)) {
+                $out->note = $this->note[0];
+            } else {
+                $out->note = $this->note;
+            }
         }
         if (isset($this->stabilityDuration)) {
             $out->stabilityDuration = $this->stabilityDuration;
         }
         if (isset($this->environmentalSetting) && [] !== $this->environmentalSetting) {
-            $out->environmentalSetting = $this->environmentalSetting;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ENVIRONMENTAL_SETTING) && 1 === count($this->environmentalSetting)) {
+                $out->environmentalSetting = $this->environmentalSetting[0];
+            } else {
+                $out->environmentalSetting = $this->environmentalSetting;
+            }
         }
         return $out;
     }

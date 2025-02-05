@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,19 +105,21 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRContractSecurityLabel extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONTRACT_DOT_SECURITY_LABEL;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_NUMBER = 'number';
     public const FIELD_NUMBER_EXT = '_number';
     public const FIELD_CLASSIFICATION = 'classification';
     public const FIELD_CATEGORY = 'category';
     public const FIELD_CONTROL = 'control';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CLASSIFICATION => [
@@ -123,11 +127,11 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -172,7 +176,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      */
     protected array $control;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRContractSecurityLabel Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -211,7 +215,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -220,7 +224,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -465,7 +469,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -494,9 +498,11 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -512,7 +518,8 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -554,13 +561,13 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -575,42 +582,49 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_NUMBER])
-            || isset($json[self::FIELD_NUMBER_EXT])
-            || array_key_exists(self::FIELD_NUMBER, $json)
-            || array_key_exists(self::FIELD_NUMBER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_NUMBER] ?? []);
-            $ext = (array)($json[self::FIELD_NUMBER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->number)
+            || isset($json->_number)
+            || property_exists($json, self::FIELD_NUMBER)
+            || property_exists($json, self::FIELD_NUMBER_EXT)) {
+            $vals = (array)($json->number ?? []);
+            $exts = (array)($json->FIELD_NUMBER_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addNumber(FHIRUnsignedInt::jsonUnserialize(
-                    [FHIRUnsignedInt::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addNumber(FHIRUnsignedInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CLASSIFICATION]) || array_key_exists(self::FIELD_CLASSIFICATION, $json)) {
-            $type->setClassification(FHIRCoding::jsonUnserialize($json[self::FIELD_CLASSIFICATION], $config));
-        }
-        if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            $vs = $json[self::FIELD_CATEGORY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->classification) || property_exists($json, self::FIELD_CLASSIFICATION)) {
+            if (is_array($json->classification)) {
+                $type->setClassification(FHIRCoding::jsonUnserialize(reset($json->classification), $config));
+            } else {
+                $type->setClassification(FHIRCoding::jsonUnserialize($json->classification, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->category) || property_exists($json, self::FIELD_CATEGORY)) {
+            if (is_object($json->category)) {
+                $vals = [$json->category];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CATEGORY, true);
+            } else {
+                $vals = $json->category;
+            }
+            foreach($vals as $v) {
                 $type->addCategory(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CONTROL]) || array_key_exists(self::FIELD_CONTROL, $json)) {
-            $vs = $json[self::FIELD_CONTROL];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->control) || property_exists($json, self::FIELD_CONTROL)) {
+            if (is_object($json->control)) {
+                $vals = [$json->control];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTROL, true);
+            } else {
+                $vals = $json->control;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addControl(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
@@ -656,10 +670,18 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
             $out->classification = $this->classification;
         }
         if (isset($this->category) && [] !== $this->category) {
-            $out->category = $this->category;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CATEGORY) && 1 === count($this->category)) {
+                $out->category = $this->category[0];
+            } else {
+                $out->category = $this->category;
+            }
         }
         if (isset($this->control) && [] !== $this->control) {
-            $out->control = $this->control;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CONTROL) && 1 === count($this->control)) {
+                $out->control = $this->control[0];
+            } else {
+                $out->control = $this->control;
+            }
         }
         return $out;
     }

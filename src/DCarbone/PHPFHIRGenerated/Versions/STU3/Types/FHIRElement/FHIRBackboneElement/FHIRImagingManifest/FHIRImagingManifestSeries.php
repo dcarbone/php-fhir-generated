@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -83,18 +85,20 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRImagingManifestSeries extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMAGING_MANIFEST_DOT_SERIES;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_UID = 'uid';
     public const FIELD_UID_EXT = '_uid';
     public const FIELD_ENDPOINT = 'endpoint';
     public const FIELD_INSTANCE = 'instance';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_UID => [
@@ -105,12 +109,12 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_UID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
@@ -145,7 +149,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      */
     protected array $instance;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRImagingManifestSeries Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -179,7 +183,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -188,7 +192,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
@@ -213,11 +217,9 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * Series instance UID of the SOP instances in the selection.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid $uid
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUid(null|string|FHIROidPrimitive|FHIROid $uid,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
         if (null === $uid) {
             unset($this->uid);
@@ -227,33 +229,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
             $uid = new FHIROid(value: $uid);
         }
         $this->uid = $uid;
-        if ($this->_valueXMLLocations[self::FIELD_UID] !== $valueXMLLocation) {
-            $this->_setUidValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the uid element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUidValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_UID];
-    }
-
-    /**
-     * Set the location the "value" field of the uid element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUidValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_UID] = $valueXMLLocation;
         return $this;
     }
 
@@ -391,7 +366,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -420,9 +395,11 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -436,15 +413,16 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_UID])) {
             if (isset($type->uid)) {
                 $type->uid->setValue((string)$attributes[self::FIELD_UID]);
-                $type->_setUidValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUid((string)$attributes[self::FIELD_UID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUid((string)$attributes[self::FIELD_UID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_UID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -457,7 +435,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->uid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_UID]) {
-            $xw->writeAttribute(self::FIELD_UID, $this->uid->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_UID, $this->uid->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->uid)
@@ -484,13 +462,13 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -505,31 +483,33 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_UID])
-            || isset($json[self::FIELD_UID_EXT])
-            || array_key_exists(self::FIELD_UID, $json)
-            || array_key_exists(self::FIELD_UID_EXT, $json)) {
-            $value = $json[self::FIELD_UID] ?? null;
-            $type->setUid(FHIROid::jsonUnserialize(
-                (is_array($value) ? $value : [FHIROid::FIELD_VALUE => $value]) + ($json[self::FIELD_UID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->uid)
+            || isset($json->_uid)
+            || property_exists($json, self::FIELD_UID)
+            || property_exists($json, self::FIELD_UID_EXT)) {
+            $v = $json->_uid ?? new \stdClass();
+            $v->value = $json->uid ?? null;
+            $type->setUid(FHIROid::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ENDPOINT]) || array_key_exists(self::FIELD_ENDPOINT, $json)) {
-            $vs = $json[self::FIELD_ENDPOINT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->endpoint) || property_exists($json, self::FIELD_ENDPOINT)) {
+            if (is_object($json->endpoint)) {
+                $vals = [$json->endpoint];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ENDPOINT, true);
+            } else {
+                $vals = $json->endpoint;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addEndpoint(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_INSTANCE]) || array_key_exists(self::FIELD_INSTANCE, $json)) {
-            $vs = $json[self::FIELD_INSTANCE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->instance) || property_exists($json, self::FIELD_INSTANCE)) {
+            if (is_object($json->instance)) {
+                $vals = [$json->instance];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_INSTANCE, true);
+            } else {
+                $vals = $json->instance;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addInstance(FHIRImagingManifestInstance::jsonUnserialize($v, $config));
             }
         }
@@ -553,10 +533,18 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
             }
         }
         if (isset($this->endpoint) && [] !== $this->endpoint) {
-            $out->endpoint = $this->endpoint;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ENDPOINT) && 1 === count($this->endpoint)) {
+                $out->endpoint = $this->endpoint[0];
+            } else {
+                $out->endpoint = $this->endpoint;
+            }
         }
         if (isset($this->instance) && [] !== $this->instance) {
-            $out->instance = $this->instance;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_INSTANCE) && 1 === count($this->instance)) {
+                $out->instance = $this->instance[0];
+            } else {
+                $out->instance = $this->instance;
+            }
         }
         return $out;
     }

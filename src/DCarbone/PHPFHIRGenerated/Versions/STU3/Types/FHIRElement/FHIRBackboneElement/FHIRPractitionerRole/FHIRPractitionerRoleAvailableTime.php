@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -85,12 +87,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PRACTITIONER_ROLE_DOT_AVAILABLE_TIME;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DAYS_OF_WEEK = 'daysOfWeek';
     public const FIELD_DAYS_OF_WEEK_EXT = '_daysOfWeek';
     public const FIELD_ALL_DAY = 'allDay';
@@ -100,18 +104,18 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
     public const FIELD_AVAILABLE_END_TIME = 'availableEndTime';
     public const FIELD_AVAILABLE_END_TIME_EXT = '_availableEndTime';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_ALL_DAY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_AVAILABLE_START_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_AVAILABLE_END_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * The days of the week.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -151,7 +155,7 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      */
     protected FHIRTime $availableEndTime;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRPractitionerRoleAvailableTime Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -190,7 +194,7 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -199,7 +203,7 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * The days of the week.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -291,11 +295,9 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $allDay
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAllDay(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allDay,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAllDay(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allDay): self
     {
         if (null === $allDay) {
             unset($this->allDay);
@@ -305,33 +307,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
             $allDay = new FHIRBoolean(value: $allDay);
         }
         $this->allDay = $allDay;
-        if ($this->_valueXMLLocations[self::FIELD_ALL_DAY] !== $valueXMLLocation) {
-            $this->_setAllDayValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the allDay element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAllDayValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ALL_DAY];
-    }
-
-    /**
-     * Set the location the "value" field of the allDay element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAllDayValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ALL_DAY] = $valueXMLLocation;
         return $this;
     }
 
@@ -357,11 +332,9 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      * ignored.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime $availableStartTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAvailableStartTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableStartTime,
-                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAvailableStartTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableStartTime): self
     {
         if (null === $availableStartTime) {
             unset($this->availableStartTime);
@@ -371,33 +344,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
             $availableStartTime = new FHIRTime(value: $availableStartTime);
         }
         $this->availableStartTime = $availableStartTime;
-        if ($this->_valueXMLLocations[self::FIELD_AVAILABLE_START_TIME] !== $valueXMLLocation) {
-            $this->_setAvailableStartTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the availableStartTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAvailableStartTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AVAILABLE_START_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the availableStartTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAvailableStartTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AVAILABLE_START_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -423,11 +369,9 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      * ignored.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime $availableEndTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAvailableEndTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableEndTime,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAvailableEndTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableEndTime): self
     {
         if (null === $availableEndTime) {
             unset($this->availableEndTime);
@@ -437,37 +381,10 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
             $availableEndTime = new FHIRTime(value: $availableEndTime);
         }
         $this->availableEndTime = $availableEndTime;
-        if ($this->_valueXMLLocations[self::FIELD_AVAILABLE_END_TIME] !== $valueXMLLocation) {
-            $this->_setAvailableEndTimeValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the availableEndTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAvailableEndTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AVAILABLE_END_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the availableEndTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAvailableEndTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AVAILABLE_END_TIME] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -496,9 +413,11 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -514,31 +433,32 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ALL_DAY])) {
             if (isset($type->allDay)) {
                 $type->allDay->setValue((string)$attributes[self::FIELD_ALL_DAY]);
-                $type->_setAllDayValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAllDay((string)$attributes[self::FIELD_ALL_DAY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAllDay((string)$attributes[self::FIELD_ALL_DAY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ALL_DAY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_AVAILABLE_START_TIME])) {
             if (isset($type->availableStartTime)) {
                 $type->availableStartTime->setValue((string)$attributes[self::FIELD_AVAILABLE_START_TIME]);
-                $type->_setAvailableStartTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAvailableStartTime((string)$attributes[self::FIELD_AVAILABLE_START_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAvailableStartTime((string)$attributes[self::FIELD_AVAILABLE_START_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_AVAILABLE_START_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_AVAILABLE_END_TIME])) {
             if (isset($type->availableEndTime)) {
                 $type->availableEndTime->setValue((string)$attributes[self::FIELD_AVAILABLE_END_TIME]);
-                $type->_setAvailableEndTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAvailableEndTime((string)$attributes[self::FIELD_AVAILABLE_END_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAvailableEndTime((string)$attributes[self::FIELD_AVAILABLE_END_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_AVAILABLE_END_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -551,13 +471,13 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->allDay) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ALL_DAY]) {
-            $xw->writeAttribute(self::FIELD_ALL_DAY, $this->allDay->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ALL_DAY, $this->allDay->_getValueAsString());
         }
         if (isset($this->availableStartTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AVAILABLE_START_TIME]) {
-            $xw->writeAttribute(self::FIELD_AVAILABLE_START_TIME, $this->availableStartTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_AVAILABLE_START_TIME, $this->availableStartTime->_getValueAsString());
         }
         if (isset($this->availableEndTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AVAILABLE_END_TIME]) {
-            $xw->writeAttribute(self::FIELD_AVAILABLE_END_TIME, $this->availableEndTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_AVAILABLE_END_TIME, $this->availableEndTime->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->daysOfWeek) && [] !== $this->daysOfWeek) {
@@ -591,13 +511,13 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -612,53 +532,46 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DAYS_OF_WEEK])
-            || isset($json[self::FIELD_DAYS_OF_WEEK_EXT])
-            || array_key_exists(self::FIELD_DAYS_OF_WEEK, $json)
-            || array_key_exists(self::FIELD_DAYS_OF_WEEK_EXT, $json)) {
-            $value = (array)($json[self::FIELD_DAYS_OF_WEEK] ?? []);
-            $ext = (array)($json[self::FIELD_DAYS_OF_WEEK_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->daysOfWeek)
+            || isset($json->_daysOfWeek)
+            || property_exists($json, self::FIELD_DAYS_OF_WEEK)
+            || property_exists($json, self::FIELD_DAYS_OF_WEEK_EXT)) {
+            $vals = (array)($json->daysOfWeek ?? []);
+            $exts = (array)($json->FIELD_DAYS_OF_WEEK_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addDaysOfWeek(FHIRDaysOfWeek::jsonUnserialize(
-                    [FHIRDaysOfWeek::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addDaysOfWeek(FHIRDaysOfWeek::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ALL_DAY])
-            || isset($json[self::FIELD_ALL_DAY_EXT])
-            || array_key_exists(self::FIELD_ALL_DAY, $json)
-            || array_key_exists(self::FIELD_ALL_DAY_EXT, $json)) {
-            $value = $json[self::FIELD_ALL_DAY] ?? null;
-            $type->setAllDay(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_ALL_DAY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->allDay)
+            || isset($json->_allDay)
+            || property_exists($json, self::FIELD_ALL_DAY)
+            || property_exists($json, self::FIELD_ALL_DAY_EXT)) {
+            $v = $json->_allDay ?? new \stdClass();
+            $v->value = $json->allDay ?? null;
+            $type->setAllDay(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_AVAILABLE_START_TIME])
-            || isset($json[self::FIELD_AVAILABLE_START_TIME_EXT])
-            || array_key_exists(self::FIELD_AVAILABLE_START_TIME, $json)
-            || array_key_exists(self::FIELD_AVAILABLE_START_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_AVAILABLE_START_TIME] ?? null;
-            $type->setAvailableStartTime(FHIRTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRTime::FIELD_VALUE => $value]) + ($json[self::FIELD_AVAILABLE_START_TIME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->availableStartTime)
+            || isset($json->_availableStartTime)
+            || property_exists($json, self::FIELD_AVAILABLE_START_TIME)
+            || property_exists($json, self::FIELD_AVAILABLE_START_TIME_EXT)) {
+            $v = $json->_availableStartTime ?? new \stdClass();
+            $v->value = $json->availableStartTime ?? null;
+            $type->setAvailableStartTime(FHIRTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_AVAILABLE_END_TIME])
-            || isset($json[self::FIELD_AVAILABLE_END_TIME_EXT])
-            || array_key_exists(self::FIELD_AVAILABLE_END_TIME, $json)
-            || array_key_exists(self::FIELD_AVAILABLE_END_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_AVAILABLE_END_TIME] ?? null;
-            $type->setAvailableEndTime(FHIRTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRTime::FIELD_VALUE => $value]) + ($json[self::FIELD_AVAILABLE_END_TIME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->availableEndTime)
+            || isset($json->_availableEndTime)
+            || property_exists($json, self::FIELD_AVAILABLE_END_TIME)
+            || property_exists($json, self::FIELD_AVAILABLE_END_TIME_EXT)) {
+            $v = $json->_availableEndTime ?? new \stdClass();
+            $v->value = $json->availableEndTime ?? null;
+            $type->setAvailableEndTime(FHIRTime::jsonUnserialize($v, $config));
         }
         return $type;
     }

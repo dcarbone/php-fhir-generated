@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -90,12 +92,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRAuditEventAgent extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_AUDIT_EVENT_DOT_AGENT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ROLE = 'role';
     public const FIELD_REFERENCE = 'reference';
     public const FIELD_USER_ID = 'userId';
@@ -112,7 +116,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
     public const FIELD_NETWORK = 'network';
     public const FIELD_PURPOSE_OF_USE = 'purposeOfUse';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_REQUESTOR => [
@@ -120,14 +124,14 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_ALT_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_REQUESTOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -250,7 +254,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      */
     protected array $purposeOfUse;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAuditEventAgent Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -324,7 +328,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -333,7 +337,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -501,11 +505,9 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * common authentication system (e.g. single sign-on), if available.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $altId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAltId(null|string|FHIRStringPrimitive|FHIRString $altId,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAltId(null|string|FHIRStringPrimitive|FHIRString $altId): self
     {
         if (null === $altId) {
             unset($this->altId);
@@ -515,33 +517,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             $altId = new FHIRString(value: $altId);
         }
         $this->altId = $altId;
-        if ($this->_valueXMLLocations[self::FIELD_ALT_ID] !== $valueXMLLocation) {
-            $this->_setAltIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the altId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAltIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ALT_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the altId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAltIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ALT_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -567,11 +542,9 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * Human-meaningful name for the agent.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
         if (null === $name) {
             unset($this->name);
@@ -581,33 +554,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             $name = new FHIRString(value: $name);
         }
         $this->name = $name;
-        if ($this->_valueXMLLocations[self::FIELD_NAME] !== $valueXMLLocation) {
-            $this->_setNameValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the name element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNameValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NAME];
-    }
-
-    /**
-     * Set the location the "value" field of the name element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NAME] = $valueXMLLocation;
         return $this;
     }
 
@@ -633,11 +579,9 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * being audited.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $requestor
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRequestor(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requestor,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRequestor(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requestor): self
     {
         if (null === $requestor) {
             unset($this->requestor);
@@ -647,33 +591,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             $requestor = new FHIRBoolean(value: $requestor);
         }
         $this->requestor = $requestor;
-        if ($this->_valueXMLLocations[self::FIELD_REQUESTOR] !== $valueXMLLocation) {
-            $this->_setRequestorValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the requestor element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRequestorValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_REQUESTOR];
-    }
-
-    /**
-     * Set the location the "value" field of the requestor element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRequestorValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_REQUESTOR] = $valueXMLLocation;
         return $this;
     }
 
@@ -933,7 +850,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -962,9 +879,11 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -994,31 +913,32 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ALT_ID])) {
             if (isset($type->altId)) {
                 $type->altId->setValue((string)$attributes[self::FIELD_ALT_ID]);
-                $type->_setAltIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAltId((string)$attributes[self::FIELD_ALT_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAltId((string)$attributes[self::FIELD_ALT_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ALT_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NAME])) {
             if (isset($type->name)) {
                 $type->name->setValue((string)$attributes[self::FIELD_NAME]);
-                $type->_setNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setName((string)$attributes[self::FIELD_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setName((string)$attributes[self::FIELD_NAME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NAME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_REQUESTOR])) {
             if (isset($type->requestor)) {
                 $type->requestor->setValue((string)$attributes[self::FIELD_REQUESTOR]);
-                $type->_setRequestorValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRequestor((string)$attributes[self::FIELD_REQUESTOR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRequestor((string)$attributes[self::FIELD_REQUESTOR]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_REQUESTOR, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1031,13 +951,13 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->altId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ALT_ID]) {
-            $xw->writeAttribute(self::FIELD_ALT_ID, $this->altId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ALT_ID, $this->altId->_getValueAsString());
         }
         if (isset($this->name) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NAME]) {
-            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getValueAsString());
         }
         if (isset($this->requestor) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REQUESTOR]) {
-            $xw->writeAttribute(self::FIELD_REQUESTOR, $this->requestor->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_REQUESTOR, $this->requestor->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->role)) {
@@ -1110,13 +1030,13 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1131,84 +1051,101 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            $vs = $json[self::FIELD_ROLE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
+            if (is_object($json->role)) {
+                $vals = [$json->role];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ROLE, true);
+            } else {
+                $vals = $json->role;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addRole(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REFERENCE]) || array_key_exists(self::FIELD_REFERENCE, $json)) {
-            $type->setReference(FHIRReference::jsonUnserialize($json[self::FIELD_REFERENCE], $config));
-        }
-        if (isset($json[self::FIELD_USER_ID]) || array_key_exists(self::FIELD_USER_ID, $json)) {
-            $type->setUserId(FHIRIdentifier::jsonUnserialize($json[self::FIELD_USER_ID], $config));
-        }
-        if (isset($json[self::FIELD_ALT_ID])
-            || isset($json[self::FIELD_ALT_ID_EXT])
-            || array_key_exists(self::FIELD_ALT_ID, $json)
-            || array_key_exists(self::FIELD_ALT_ID_EXT, $json)) {
-            $value = $json[self::FIELD_ALT_ID] ?? null;
-            $type->setAltId(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ALT_ID_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_NAME])
-            || isset($json[self::FIELD_NAME_EXT])
-            || array_key_exists(self::FIELD_NAME, $json)
-            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
-            $value = $json[self::FIELD_NAME] ?? null;
-            $type->setName(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_REQUESTOR])
-            || isset($json[self::FIELD_REQUESTOR_EXT])
-            || array_key_exists(self::FIELD_REQUESTOR, $json)
-            || array_key_exists(self::FIELD_REQUESTOR_EXT, $json)) {
-            $value = $json[self::FIELD_REQUESTOR] ?? null;
-            $type->setRequestor(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUESTOR_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_LOCATION]) || array_key_exists(self::FIELD_LOCATION, $json)) {
-            $type->setLocation(FHIRReference::jsonUnserialize($json[self::FIELD_LOCATION], $config));
-        }
-        if (isset($json[self::FIELD_POLICY])
-            || isset($json[self::FIELD_POLICY_EXT])
-            || array_key_exists(self::FIELD_POLICY, $json)
-            || array_key_exists(self::FIELD_POLICY_EXT, $json)) {
-            $value = (array)($json[self::FIELD_POLICY] ?? []);
-            $ext = (array)($json[self::FIELD_POLICY_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
-            }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addPolicy(FHIRUri::jsonUnserialize(
-                    [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+        if (isset($json->reference) || property_exists($json, self::FIELD_REFERENCE)) {
+            if (is_array($json->reference)) {
+                $type->setReference(FHIRReference::jsonUnserialize(reset($json->reference), $config));
+            } else {
+                $type->setReference(FHIRReference::jsonUnserialize($json->reference, $config));
             }
         }
-        if (isset($json[self::FIELD_MEDIA]) || array_key_exists(self::FIELD_MEDIA, $json)) {
-            $type->setMedia(FHIRCoding::jsonUnserialize($json[self::FIELD_MEDIA], $config));
-        }
-        if (isset($json[self::FIELD_NETWORK]) || array_key_exists(self::FIELD_NETWORK, $json)) {
-            $type->setNetwork(FHIRAuditEventNetwork::jsonUnserialize($json[self::FIELD_NETWORK], $config));
-        }
-        if (isset($json[self::FIELD_PURPOSE_OF_USE]) || array_key_exists(self::FIELD_PURPOSE_OF_USE, $json)) {
-            $vs = $json[self::FIELD_PURPOSE_OF_USE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->userId) || property_exists($json, self::FIELD_USER_ID)) {
+            if (is_array($json->userId)) {
+                $type->setUserId(FHIRIdentifier::jsonUnserialize(reset($json->userId), $config));
+            } else {
+                $type->setUserId(FHIRIdentifier::jsonUnserialize($json->userId, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->altId)
+            || isset($json->_altId)
+            || property_exists($json, self::FIELD_ALT_ID)
+            || property_exists($json, self::FIELD_ALT_ID_EXT)) {
+            $v = $json->_altId ?? new \stdClass();
+            $v->value = $json->altId ?? null;
+            $type->setAltId(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->name)
+            || isset($json->_name)
+            || property_exists($json, self::FIELD_NAME)
+            || property_exists($json, self::FIELD_NAME_EXT)) {
+            $v = $json->_name ?? new \stdClass();
+            $v->value = $json->name ?? null;
+            $type->setName(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->requestor)
+            || isset($json->_requestor)
+            || property_exists($json, self::FIELD_REQUESTOR)
+            || property_exists($json, self::FIELD_REQUESTOR_EXT)) {
+            $v = $json->_requestor ?? new \stdClass();
+            $v->value = $json->requestor ?? null;
+            $type->setRequestor(FHIRBoolean::jsonUnserialize($v, $config));
+        }
+        if (isset($json->location) || property_exists($json, self::FIELD_LOCATION)) {
+            if (is_array($json->location)) {
+                $type->setLocation(FHIRReference::jsonUnserialize(reset($json->location), $config));
+            } else {
+                $type->setLocation(FHIRReference::jsonUnserialize($json->location, $config));
+            }
+        }
+        if (isset($json->policy)
+            || isset($json->_policy)
+            || property_exists($json, self::FIELD_POLICY)
+            || property_exists($json, self::FIELD_POLICY_EXT)) {
+            $vals = (array)($json->policy ?? []);
+            $exts = (array)($json->FIELD_POLICY_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
+            }
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addPolicy(FHIRUri::jsonUnserialize($v, $config));
+            }
+        }
+        if (isset($json->media) || property_exists($json, self::FIELD_MEDIA)) {
+            if (is_array($json->media)) {
+                $type->setMedia(FHIRCoding::jsonUnserialize(reset($json->media), $config));
+            } else {
+                $type->setMedia(FHIRCoding::jsonUnserialize($json->media, $config));
+            }
+        }
+        if (isset($json->network) || property_exists($json, self::FIELD_NETWORK)) {
+            if (is_array($json->network)) {
+                $type->setNetwork(FHIRAuditEventNetwork::jsonUnserialize(reset($json->network), $config));
+            } else {
+                $type->setNetwork(FHIRAuditEventNetwork::jsonUnserialize($json->network, $config));
+            }
+        }
+        if (isset($json->purposeOfUse) || property_exists($json, self::FIELD_PURPOSE_OF_USE)) {
+            if (is_object($json->purposeOfUse)) {
+                $vals = [$json->purposeOfUse];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PURPOSE_OF_USE, true);
+            } else {
+                $vals = $json->purposeOfUse;
+            }
+            foreach($vals as $v) {
                 $type->addPurposeOfUse(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
@@ -1222,7 +1159,11 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->role) && [] !== $this->role) {
-            $out->role = $this->role;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ROLE) && 1 === count($this->role)) {
+                $out->role = $this->role[0];
+            } else {
+                $out->role = $this->role;
+            }
         }
         if (isset($this->reference)) {
             $out->reference = $this->reference;
@@ -1299,7 +1240,11 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             $out->network = $this->network;
         }
         if (isset($this->purposeOfUse) && [] !== $this->purposeOfUse) {
-            $out->purposeOfUse = $this->purposeOfUse;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PURPOSE_OF_USE) && 1 === count($this->purposeOfUse)) {
+                $out->purposeOfUse = $this->purposeOfUse[0];
+            } else {
+                $out->purposeOfUse = $this->purposeOfUse;
+            }
         }
         return $out;
     }

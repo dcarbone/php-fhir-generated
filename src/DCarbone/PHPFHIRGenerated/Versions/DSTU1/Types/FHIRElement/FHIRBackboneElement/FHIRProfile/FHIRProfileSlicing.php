@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -81,12 +83,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  */
 class FHIRProfileSlicing extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROFILE_DOT_SLICING;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DISCRIMINATOR = 'discriminator';
     public const FIELD_DISCRIMINATOR_EXT = '_discriminator';
     public const FIELD_ORDERED = 'ordered';
@@ -94,7 +98,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     public const FIELD_RULES = 'rules';
     public const FIELD_RULES_EXT = '_rules';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_DISCRIMINATOR => [
@@ -108,14 +112,14 @@ class FHIRProfileSlicing extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DISCRIMINATOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ORDERED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RULES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
@@ -152,7 +156,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      */
     protected FHIRSlicingRules $rules;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRProfileSlicing Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -186,7 +190,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -195,7 +199,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
@@ -228,11 +232,9 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      * the allowed values for that element in each of the slices.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $discriminator
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDiscriminator(null|string|FHIRIdPrimitive|FHIRId $discriminator,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDiscriminator(null|string|FHIRIdPrimitive|FHIRId $discriminator): self
     {
         if (null === $discriminator) {
             unset($this->discriminator);
@@ -242,33 +244,6 @@ class FHIRProfileSlicing extends FHIRBackboneElement
             $discriminator = new FHIRId(value: $discriminator);
         }
         $this->discriminator = $discriminator;
-        if ($this->_valueXMLLocations[self::FIELD_DISCRIMINATOR] !== $valueXMLLocation) {
-            $this->_setDiscriminatorValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the discriminator element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDiscriminatorValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DISCRIMINATOR];
-    }
-
-    /**
-     * Set the location the "value" field of the discriminator element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDiscriminatorValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DISCRIMINATOR] = $valueXMLLocation;
         return $this;
     }
 
@@ -294,11 +269,9 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      * profile.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $ordered
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOrdered(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $ordered,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOrdered(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $ordered): self
     {
         if (null === $ordered) {
             unset($this->ordered);
@@ -308,33 +281,6 @@ class FHIRProfileSlicing extends FHIRBackboneElement
             $ordered = new FHIRBoolean(value: $ordered);
         }
         $this->ordered = $ordered;
-        if ($this->_valueXMLLocations[self::FIELD_ORDERED] !== $valueXMLLocation) {
-            $this->_setOrderedValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the ordered element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOrderedValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ORDERED];
-    }
-
-    /**
-     * Set the location the "value" field of the ordered element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOrderedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ORDERED] = $valueXMLLocation;
         return $this;
     }
 
@@ -360,11 +306,9 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      * profile authors can also say that additional slices are only allowed at the end.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSlicingRulesList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSlicingRules $rules
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRules(null|string|FHIRSlicingRulesList|FHIRSlicingRules $rules,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRules(null|string|FHIRSlicingRulesList|FHIRSlicingRules $rules): self
     {
         if (null === $rules) {
             unset($this->rules);
@@ -374,37 +318,10 @@ class FHIRProfileSlicing extends FHIRBackboneElement
             $rules = new FHIRSlicingRules(value: $rules);
         }
         $this->rules = $rules;
-        if ($this->_valueXMLLocations[self::FIELD_RULES] !== $valueXMLLocation) {
-            $this->_setRulesValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the rules element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRulesValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RULES];
-    }
-
-    /**
-     * Set the location the "value" field of the rules element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRulesValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RULES] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -442,9 +359,11 @@ class FHIRProfileSlicing extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -458,31 +377,32 @@ class FHIRProfileSlicing extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DISCRIMINATOR])) {
             if (isset($type->discriminator)) {
                 $type->discriminator->setValue((string)$attributes[self::FIELD_DISCRIMINATOR]);
-                $type->_setDiscriminatorValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDiscriminator((string)$attributes[self::FIELD_DISCRIMINATOR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDiscriminator((string)$attributes[self::FIELD_DISCRIMINATOR]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DISCRIMINATOR, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ORDERED])) {
             if (isset($type->ordered)) {
                 $type->ordered->setValue((string)$attributes[self::FIELD_ORDERED]);
-                $type->_setOrderedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOrdered((string)$attributes[self::FIELD_ORDERED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setOrdered((string)$attributes[self::FIELD_ORDERED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ORDERED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RULES])) {
             if (isset($type->rules)) {
                 $type->rules->setValue((string)$attributes[self::FIELD_RULES]);
-                $type->_setRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRules((string)$attributes[self::FIELD_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRules((string)$attributes[self::FIELD_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -513,13 +433,13 @@ class FHIRProfileSlicing extends FHIRBackboneElement
             $xw->openRootNode('ProfileSlicing', $this->_getSourceXMLNS());
         }
         if (isset($this->discriminator) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DISCRIMINATOR]) {
-            $xw->writeAttribute(self::FIELD_DISCRIMINATOR, $this->discriminator->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DISCRIMINATOR, $this->discriminator->_getValueAsString());
         }
         if (isset($this->ordered) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ORDERED]) {
-            $xw->writeAttribute(self::FIELD_ORDERED, $this->ordered->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ORDERED, $this->ordered->_getValueAsString());
         }
         if (isset($this->rules) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RULES]) {
-            $xw->writeAttribute(self::FIELD_RULES, $this->rules->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RULES, $this->rules->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->discriminator)
@@ -553,13 +473,13 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -577,40 +497,32 @@ class FHIRProfileSlicing extends FHIRBackboneElement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DISCRIMINATOR])
-            || isset($json[self::FIELD_DISCRIMINATOR_EXT])
-            || array_key_exists(self::FIELD_DISCRIMINATOR, $json)
-            || array_key_exists(self::FIELD_DISCRIMINATOR_EXT, $json)) {
-            $value = $json[self::FIELD_DISCRIMINATOR] ?? null;
-            $type->setDiscriminator(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_DISCRIMINATOR_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->discriminator)
+            || isset($json->_discriminator)
+            || property_exists($json, self::FIELD_DISCRIMINATOR)
+            || property_exists($json, self::FIELD_DISCRIMINATOR_EXT)) {
+            $v = $json->_discriminator ?? new \stdClass();
+            $v->value = $json->discriminator ?? null;
+            $type->setDiscriminator(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ORDERED])
-            || isset($json[self::FIELD_ORDERED_EXT])
-            || array_key_exists(self::FIELD_ORDERED, $json)
-            || array_key_exists(self::FIELD_ORDERED_EXT, $json)) {
-            $value = $json[self::FIELD_ORDERED] ?? null;
-            $type->setOrdered(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_ORDERED_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->ordered)
+            || isset($json->_ordered)
+            || property_exists($json, self::FIELD_ORDERED)
+            || property_exists($json, self::FIELD_ORDERED_EXT)) {
+            $v = $json->_ordered ?? new \stdClass();
+            $v->value = $json->ordered ?? null;
+            $type->setOrdered(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_RULES])
-            || isset($json[self::FIELD_RULES_EXT])
-            || array_key_exists(self::FIELD_RULES, $json)
-            || array_key_exists(self::FIELD_RULES_EXT, $json)) {
-            $value = $json[self::FIELD_RULES] ?? null;
-            $type->setRules(FHIRSlicingRules::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSlicingRules::FIELD_VALUE => $value]) + ($json[self::FIELD_RULES_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->rules)
+            || isset($json->_rules)
+            || property_exists($json, self::FIELD_RULES)
+            || property_exists($json, self::FIELD_RULES_EXT)) {
+            $v = $json->_rules ?? new \stdClass();
+            $v->value = $json->rules ?? null;
+            $type->setRules(FHIRSlicingRules::jsonUnserialize($v, $config));
         }
         return $type;
     }

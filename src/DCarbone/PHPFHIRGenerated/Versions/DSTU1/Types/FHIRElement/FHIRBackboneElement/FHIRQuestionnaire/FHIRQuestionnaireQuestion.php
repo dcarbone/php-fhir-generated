@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -57,9 +57,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -115,12 +117,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  */
 class FHIRQuestionnaireQuestion extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_QUESTIONNAIRE_DOT_QUESTION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_NAME = 'name';
     public const FIELD_TEXT = 'text';
     public const FIELD_TEXT_EXT = '_text';
@@ -184,11 +188,11 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
     public const FIELD_REMARKS_EXT = '_remarks';
     public const FIELD_GROUP = 'group';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TEXT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ANSWER_DECIMAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -214,7 +218,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         self::FIELD_REMARKS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -625,7 +629,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      */
     protected array $group;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRQuestionnaireQuestion Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -633,8 +637,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $text
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $answerDecimal
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $answerInteger
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $answerDecimal
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $answerInteger
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $answerBoolean
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate $answerDate
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $answerString
@@ -643,8 +647,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding[] $choice
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $options
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $dataBoolean
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $dataInteger
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $dataDecimal
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $dataInteger
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $dataDecimal
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $dataBase64Binary
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant $dataInstant
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $dataString
@@ -678,8 +682,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $name = null,
                                 null|string|FHIRStringPrimitive|FHIRString $text = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $answerDecimal = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $answerInteger = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $answerDecimal = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $answerInteger = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $answerBoolean = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $answerDate = null,
                                 null|string|FHIRStringPrimitive|FHIRString $answerString = null,
@@ -688,8 +692,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
                                 null|iterable $choice = null,
                                 null|FHIRResourceReference $options = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $dataBoolean = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $dataInteger = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $dataDecimal = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $dataInteger = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $dataDecimal = null,
                                 null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $dataBase64Binary = null,
                                 null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $dataInstant = null,
                                 null|string|FHIRStringPrimitive|FHIRString $dataString = null,
@@ -844,7 +848,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -853,7 +857,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -912,11 +916,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Text of the question as it is shown to the user.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $text
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setText(null|string|FHIRStringPrimitive|FHIRString $text,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
         if (null === $text) {
             unset($this->text);
@@ -926,33 +928,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $text = new FHIRString(value: $text);
         }
         $this->text = $text;
-        if ($this->_valueXMLLocations[self::FIELD_TEXT] !== $valueXMLLocation) {
-            $this->_setTextValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the text element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTextValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TEXT];
-    }
-
-    /**
-     * Set the location the "value" field of the text element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTextValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TEXT] = $valueXMLLocation;
         return $this;
     }
 
@@ -975,12 +950,10 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Single-valued answer to the question.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $answerDecimal
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $answerDecimal
      * @return static
      */
-    public function setAnswerDecimal(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $answerDecimal,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAnswerDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $answerDecimal): self
     {
         if (null === $answerDecimal) {
             unset($this->answerDecimal);
@@ -990,33 +963,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $answerDecimal = new FHIRDecimal(value: $answerDecimal);
         }
         $this->answerDecimal = $answerDecimal;
-        if ($this->_valueXMLLocations[self::FIELD_ANSWER_DECIMAL] !== $valueXMLLocation) {
-            $this->_setAnswerDecimalValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the answerDecimal element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAnswerDecimalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ANSWER_DECIMAL];
-    }
-
-    /**
-     * Set the location the "value" field of the answerDecimal element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAnswerDecimalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ANSWER_DECIMAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -1039,12 +985,10 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Single-valued answer to the question.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $answerInteger
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $answerInteger
      * @return static
      */
-    public function setAnswerInteger(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $answerInteger,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAnswerInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $answerInteger): self
     {
         if (null === $answerInteger) {
             unset($this->answerInteger);
@@ -1054,33 +998,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $answerInteger = new FHIRInteger(value: $answerInteger);
         }
         $this->answerInteger = $answerInteger;
-        if ($this->_valueXMLLocations[self::FIELD_ANSWER_INTEGER] !== $valueXMLLocation) {
-            $this->_setAnswerIntegerValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the answerInteger element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAnswerIntegerValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ANSWER_INTEGER];
-    }
-
-    /**
-     * Set the location the "value" field of the answerInteger element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAnswerIntegerValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ANSWER_INTEGER] = $valueXMLLocation;
         return $this;
     }
 
@@ -1104,11 +1021,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Single-valued answer to the question.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $answerBoolean
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAnswerBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $answerBoolean,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAnswerBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $answerBoolean): self
     {
         if (null === $answerBoolean) {
             unset($this->answerBoolean);
@@ -1118,33 +1033,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $answerBoolean = new FHIRBoolean(value: $answerBoolean);
         }
         $this->answerBoolean = $answerBoolean;
-        if ($this->_valueXMLLocations[self::FIELD_ANSWER_BOOLEAN] !== $valueXMLLocation) {
-            $this->_setAnswerBooleanValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the answerBoolean element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAnswerBooleanValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ANSWER_BOOLEAN];
-    }
-
-    /**
-     * Set the location the "value" field of the answerBoolean element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAnswerBooleanValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ANSWER_BOOLEAN] = $valueXMLLocation;
         return $this;
     }
 
@@ -1172,11 +1060,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Single-valued answer to the question.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate $answerDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAnswerDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $answerDate,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAnswerDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $answerDate): self
     {
         if (null === $answerDate) {
             unset($this->answerDate);
@@ -1186,33 +1072,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $answerDate = new FHIRDate(value: $answerDate);
         }
         $this->answerDate = $answerDate;
-        if ($this->_valueXMLLocations[self::FIELD_ANSWER_DATE] !== $valueXMLLocation) {
-            $this->_setAnswerDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the answerDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAnswerDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ANSWER_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the answerDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAnswerDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ANSWER_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1236,11 +1095,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Single-valued answer to the question.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $answerString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAnswerString(null|string|FHIRStringPrimitive|FHIRString $answerString,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAnswerString(null|string|FHIRStringPrimitive|FHIRString $answerString): self
     {
         if (null === $answerString) {
             unset($this->answerString);
@@ -1250,33 +1107,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $answerString = new FHIRString(value: $answerString);
         }
         $this->answerString = $answerString;
-        if ($this->_valueXMLLocations[self::FIELD_ANSWER_STRING] !== $valueXMLLocation) {
-            $this->_setAnswerStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the answerString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAnswerStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ANSWER_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the answerString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAnswerStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ANSWER_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -1306,11 +1136,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Single-valued answer to the question.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $answerDateTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAnswerDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $answerDateTime,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAnswerDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $answerDateTime): self
     {
         if (null === $answerDateTime) {
             unset($this->answerDateTime);
@@ -1320,33 +1148,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $answerDateTime = new FHIRDateTime(value: $answerDateTime);
         }
         $this->answerDateTime = $answerDateTime;
-        if ($this->_valueXMLLocations[self::FIELD_ANSWER_DATE_TIME] !== $valueXMLLocation) {
-            $this->_setAnswerDateTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the answerDateTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAnswerDateTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ANSWER_DATE_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the answerDateTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAnswerDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ANSWER_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -1370,11 +1171,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Single-valued answer to the question.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant $answerInstant
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAnswerInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $answerInstant,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAnswerInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $answerInstant): self
     {
         if (null === $answerInstant) {
             unset($this->answerInstant);
@@ -1384,33 +1183,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $answerInstant = new FHIRInstant(value: $answerInstant);
         }
         $this->answerInstant = $answerInstant;
-        if ($this->_valueXMLLocations[self::FIELD_ANSWER_INSTANT] !== $valueXMLLocation) {
-            $this->_setAnswerInstantValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the answerInstant element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAnswerInstantValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ANSWER_INSTANT];
-    }
-
-    /**
-     * Set the location the "value" field of the answerInstant element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAnswerInstantValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ANSWER_INSTANT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1532,11 +1304,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $dataBoolean
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $dataBoolean,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $dataBoolean): self
     {
         if (null === $dataBoolean) {
             unset($this->dataBoolean);
@@ -1546,33 +1316,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataBoolean = new FHIRBoolean(value: $dataBoolean);
         }
         $this->dataBoolean = $dataBoolean;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_BOOLEAN] !== $valueXMLLocation) {
-            $this->_setDataBooleanValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataBoolean element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataBooleanValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_BOOLEAN];
-    }
-
-    /**
-     * Set the location the "value" field of the dataBoolean element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataBooleanValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_BOOLEAN] = $valueXMLLocation;
         return $this;
     }
 
@@ -1595,12 +1338,10 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $dataInteger
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $dataInteger
      * @return static
      */
-    public function setDataInteger(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $dataInteger,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $dataInteger): self
     {
         if (null === $dataInteger) {
             unset($this->dataInteger);
@@ -1610,33 +1351,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataInteger = new FHIRInteger(value: $dataInteger);
         }
         $this->dataInteger = $dataInteger;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_INTEGER] !== $valueXMLLocation) {
-            $this->_setDataIntegerValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataInteger element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataIntegerValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_INTEGER];
-    }
-
-    /**
-     * Set the location the "value" field of the dataInteger element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataIntegerValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_INTEGER] = $valueXMLLocation;
         return $this;
     }
 
@@ -1659,12 +1373,10 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $dataDecimal
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $dataDecimal
      * @return static
      */
-    public function setDataDecimal(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $dataDecimal,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $dataDecimal): self
     {
         if (null === $dataDecimal) {
             unset($this->dataDecimal);
@@ -1674,33 +1386,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataDecimal = new FHIRDecimal(value: $dataDecimal);
         }
         $this->dataDecimal = $dataDecimal;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_DECIMAL] !== $valueXMLLocation) {
-            $this->_setDataDecimalValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataDecimal element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataDecimalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_DECIMAL];
-    }
-
-    /**
-     * Set the location the "value" field of the dataDecimal element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataDecimalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_DECIMAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -1724,11 +1409,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $dataBase64Binary
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $dataBase64Binary,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $dataBase64Binary): self
     {
         if (null === $dataBase64Binary) {
             unset($this->dataBase64Binary);
@@ -1738,33 +1421,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataBase64Binary = new FHIRBase64Binary(value: $dataBase64Binary);
         }
         $this->dataBase64Binary = $dataBase64Binary;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_BASE_64BINARY] !== $valueXMLLocation) {
-            $this->_setDataBase64BinaryValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataBase64Binary element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataBase64BinaryValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_BASE_64BINARY];
-    }
-
-    /**
-     * Set the location the "value" field of the dataBase64Binary element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataBase64BinaryValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_BASE_64BINARY] = $valueXMLLocation;
         return $this;
     }
 
@@ -1788,11 +1444,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant $dataInstant
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $dataInstant,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $dataInstant): self
     {
         if (null === $dataInstant) {
             unset($this->dataInstant);
@@ -1802,33 +1456,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataInstant = new FHIRInstant(value: $dataInstant);
         }
         $this->dataInstant = $dataInstant;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_INSTANT] !== $valueXMLLocation) {
-            $this->_setDataInstantValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataInstant element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataInstantValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_INSTANT];
-    }
-
-    /**
-     * Set the location the "value" field of the dataInstant element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataInstantValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_INSTANT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1852,11 +1479,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $dataString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataString(null|string|FHIRStringPrimitive|FHIRString $dataString,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataString(null|string|FHIRStringPrimitive|FHIRString $dataString): self
     {
         if (null === $dataString) {
             unset($this->dataString);
@@ -1866,33 +1491,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataString = new FHIRString(value: $dataString);
         }
         $this->dataString = $dataString;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_STRING] !== $valueXMLLocation) {
-            $this->_setDataStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the dataString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -1916,11 +1514,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $dataUri
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataUri(null|string|FHIRUriPrimitive|FHIRUri $dataUri,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataUri(null|string|FHIRUriPrimitive|FHIRUri $dataUri): self
     {
         if (null === $dataUri) {
             unset($this->dataUri);
@@ -1930,33 +1526,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataUri = new FHIRUri(value: $dataUri);
         }
         $this->dataUri = $dataUri;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_URI] !== $valueXMLLocation) {
-            $this->_setDataUriValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataUri element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataUriValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_URI];
-    }
-
-    /**
-     * Set the location the "value" field of the dataUri element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataUriValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_URI] = $valueXMLLocation;
         return $this;
     }
 
@@ -1984,11 +1553,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate $dataDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $dataDate,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $dataDate): self
     {
         if (null === $dataDate) {
             unset($this->dataDate);
@@ -1998,33 +1565,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataDate = new FHIRDate(value: $dataDate);
         }
         $this->dataDate = $dataDate;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_DATE] !== $valueXMLLocation) {
-            $this->_setDataDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the dataDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -2054,11 +1594,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $dataDateTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dataDateTime,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dataDateTime): self
     {
         if (null === $dataDateTime) {
             unset($this->dataDateTime);
@@ -2068,33 +1606,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataDateTime = new FHIRDateTime(value: $dataDateTime);
         }
         $this->dataDateTime = $dataDateTime;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_DATE_TIME] !== $valueXMLLocation) {
-            $this->_setDataDateTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataDateTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataDateTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_DATE_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the dataDateTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -2122,11 +1633,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $dataCode
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataCode(null|string|FHIRCodePrimitive|FHIRCode $dataCode,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataCode(null|string|FHIRCodePrimitive|FHIRCode $dataCode): self
     {
         if (null === $dataCode) {
             unset($this->dataCode);
@@ -2136,33 +1645,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataCode = new FHIRCode(value: $dataCode);
         }
         $this->dataCode = $dataCode;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_CODE] !== $valueXMLLocation) {
-            $this->_setDataCodeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataCode element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataCodeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_CODE];
-    }
-
-    /**
-     * Set the location the "value" field of the dataCode element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataCodeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_CODE] = $valueXMLLocation;
         return $this;
     }
 
@@ -2188,11 +1670,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid $dataOid
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataOid(null|string|FHIROidPrimitive|FHIROid $dataOid,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataOid(null|string|FHIROidPrimitive|FHIROid $dataOid): self
     {
         if (null === $dataOid) {
             unset($this->dataOid);
@@ -2202,33 +1682,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataOid = new FHIROid(value: $dataOid);
         }
         $this->dataOid = $dataOid;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_OID] !== $valueXMLLocation) {
-            $this->_setDataOidValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataOid element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataOidValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_OID];
-    }
-
-    /**
-     * Set the location the "value" field of the dataOid element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataOidValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_OID] = $valueXMLLocation;
         return $this;
     }
 
@@ -2254,11 +1707,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUuid $dataUuid
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataUuid(null|string|FHIRUuidPrimitive|FHIRUuid $dataUuid,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataUuid(null|string|FHIRUuidPrimitive|FHIRUuid $dataUuid): self
     {
         if (null === $dataUuid) {
             unset($this->dataUuid);
@@ -2268,33 +1719,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataUuid = new FHIRUuid(value: $dataUuid);
         }
         $this->dataUuid = $dataUuid;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_UUID] !== $valueXMLLocation) {
-            $this->_setDataUuidValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataUuid element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataUuidValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_UUID];
-    }
-
-    /**
-     * Set the location the "value" field of the dataUuid element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataUuidValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_UUID] = $valueXMLLocation;
         return $this;
     }
 
@@ -2324,11 +1748,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured answer in the form of a FHIR Resource or datatype.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $dataId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDataId(null|string|FHIRIdPrimitive|FHIRId $dataId,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDataId(null|string|FHIRIdPrimitive|FHIRId $dataId): self
     {
         if (null === $dataId) {
             unset($this->dataId);
@@ -2338,33 +1760,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $dataId = new FHIRId(value: $dataId);
         }
         $this->dataId = $dataId;
-        if ($this->_valueXMLLocations[self::FIELD_DATA_ID] !== $valueXMLLocation) {
-            $this->_setDataIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dataId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDataIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATA_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the dataId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDataIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATA_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -2884,11 +2279,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * to contain information that is part of the answer itself.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $remarks
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRemarks(null|string|FHIRStringPrimitive|FHIRString $remarks,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRemarks(null|string|FHIRStringPrimitive|FHIRString $remarks): self
     {
         if (null === $remarks) {
             unset($this->remarks);
@@ -2898,33 +2291,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $remarks = new FHIRString(value: $remarks);
         }
         $this->remarks = $remarks;
-        if ($this->_valueXMLLocations[self::FIELD_REMARKS] !== $valueXMLLocation) {
-            $this->_setRemarksValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the remarks element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRemarksValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_REMARKS];
-    }
-
-    /**
-     * Set the location the "value" field of the remarks element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRemarksValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_REMARKS] = $valueXMLLocation;
         return $this;
     }
 
@@ -2998,7 +2364,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -3036,9 +2402,11 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -3126,183 +2494,184 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TEXT])) {
             if (isset($type->text)) {
                 $type->text->setValue((string)$attributes[self::FIELD_TEXT]);
-                $type->_setTextValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setText((string)$attributes[self::FIELD_TEXT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setText((string)$attributes[self::FIELD_TEXT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TEXT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ANSWER_DECIMAL])) {
             if (isset($type->answerDecimal)) {
                 $type->answerDecimal->setValue((string)$attributes[self::FIELD_ANSWER_DECIMAL]);
-                $type->_setAnswerDecimalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAnswerDecimal((string)$attributes[self::FIELD_ANSWER_DECIMAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAnswerDecimal((string)$attributes[self::FIELD_ANSWER_DECIMAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ANSWER_DECIMAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ANSWER_INTEGER])) {
             if (isset($type->answerInteger)) {
                 $type->answerInteger->setValue((string)$attributes[self::FIELD_ANSWER_INTEGER]);
-                $type->_setAnswerIntegerValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAnswerInteger((string)$attributes[self::FIELD_ANSWER_INTEGER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAnswerInteger((string)$attributes[self::FIELD_ANSWER_INTEGER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ANSWER_INTEGER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ANSWER_BOOLEAN])) {
             if (isset($type->answerBoolean)) {
                 $type->answerBoolean->setValue((string)$attributes[self::FIELD_ANSWER_BOOLEAN]);
-                $type->_setAnswerBooleanValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAnswerBoolean((string)$attributes[self::FIELD_ANSWER_BOOLEAN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAnswerBoolean((string)$attributes[self::FIELD_ANSWER_BOOLEAN]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ANSWER_BOOLEAN, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ANSWER_DATE])) {
             if (isset($type->answerDate)) {
                 $type->answerDate->setValue((string)$attributes[self::FIELD_ANSWER_DATE]);
-                $type->_setAnswerDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAnswerDate((string)$attributes[self::FIELD_ANSWER_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAnswerDate((string)$attributes[self::FIELD_ANSWER_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ANSWER_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ANSWER_STRING])) {
             if (isset($type->answerString)) {
                 $type->answerString->setValue((string)$attributes[self::FIELD_ANSWER_STRING]);
-                $type->_setAnswerStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAnswerString((string)$attributes[self::FIELD_ANSWER_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAnswerString((string)$attributes[self::FIELD_ANSWER_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ANSWER_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ANSWER_DATE_TIME])) {
             if (isset($type->answerDateTime)) {
                 $type->answerDateTime->setValue((string)$attributes[self::FIELD_ANSWER_DATE_TIME]);
-                $type->_setAnswerDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAnswerDateTime((string)$attributes[self::FIELD_ANSWER_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAnswerDateTime((string)$attributes[self::FIELD_ANSWER_DATE_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ANSWER_DATE_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ANSWER_INSTANT])) {
             if (isset($type->answerInstant)) {
                 $type->answerInstant->setValue((string)$attributes[self::FIELD_ANSWER_INSTANT]);
-                $type->_setAnswerInstantValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAnswerInstant((string)$attributes[self::FIELD_ANSWER_INSTANT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAnswerInstant((string)$attributes[self::FIELD_ANSWER_INSTANT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ANSWER_INSTANT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_BOOLEAN])) {
             if (isset($type->dataBoolean)) {
                 $type->dataBoolean->setValue((string)$attributes[self::FIELD_DATA_BOOLEAN]);
-                $type->_setDataBooleanValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataBoolean((string)$attributes[self::FIELD_DATA_BOOLEAN], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataBoolean((string)$attributes[self::FIELD_DATA_BOOLEAN]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_BOOLEAN, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_INTEGER])) {
             if (isset($type->dataInteger)) {
                 $type->dataInteger->setValue((string)$attributes[self::FIELD_DATA_INTEGER]);
-                $type->_setDataIntegerValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataInteger((string)$attributes[self::FIELD_DATA_INTEGER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataInteger((string)$attributes[self::FIELD_DATA_INTEGER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_INTEGER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_DECIMAL])) {
             if (isset($type->dataDecimal)) {
                 $type->dataDecimal->setValue((string)$attributes[self::FIELD_DATA_DECIMAL]);
-                $type->_setDataDecimalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataDecimal((string)$attributes[self::FIELD_DATA_DECIMAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataDecimal((string)$attributes[self::FIELD_DATA_DECIMAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_DECIMAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_BASE_64BINARY])) {
             if (isset($type->dataBase64Binary)) {
                 $type->dataBase64Binary->setValue((string)$attributes[self::FIELD_DATA_BASE_64BINARY]);
-                $type->_setDataBase64BinaryValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataBase64Binary((string)$attributes[self::FIELD_DATA_BASE_64BINARY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataBase64Binary((string)$attributes[self::FIELD_DATA_BASE_64BINARY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_BASE_64BINARY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_INSTANT])) {
             if (isset($type->dataInstant)) {
                 $type->dataInstant->setValue((string)$attributes[self::FIELD_DATA_INSTANT]);
-                $type->_setDataInstantValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataInstant((string)$attributes[self::FIELD_DATA_INSTANT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataInstant((string)$attributes[self::FIELD_DATA_INSTANT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_INSTANT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_STRING])) {
             if (isset($type->dataString)) {
                 $type->dataString->setValue((string)$attributes[self::FIELD_DATA_STRING]);
-                $type->_setDataStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataString((string)$attributes[self::FIELD_DATA_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataString((string)$attributes[self::FIELD_DATA_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_URI])) {
             if (isset($type->dataUri)) {
                 $type->dataUri->setValue((string)$attributes[self::FIELD_DATA_URI]);
-                $type->_setDataUriValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataUri((string)$attributes[self::FIELD_DATA_URI], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataUri((string)$attributes[self::FIELD_DATA_URI]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_URI, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_DATE])) {
             if (isset($type->dataDate)) {
                 $type->dataDate->setValue((string)$attributes[self::FIELD_DATA_DATE]);
-                $type->_setDataDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataDate((string)$attributes[self::FIELD_DATA_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataDate((string)$attributes[self::FIELD_DATA_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_DATE_TIME])) {
             if (isset($type->dataDateTime)) {
                 $type->dataDateTime->setValue((string)$attributes[self::FIELD_DATA_DATE_TIME]);
-                $type->_setDataDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataDateTime((string)$attributes[self::FIELD_DATA_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataDateTime((string)$attributes[self::FIELD_DATA_DATE_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_DATE_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_CODE])) {
             if (isset($type->dataCode)) {
                 $type->dataCode->setValue((string)$attributes[self::FIELD_DATA_CODE]);
-                $type->_setDataCodeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataCode((string)$attributes[self::FIELD_DATA_CODE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataCode((string)$attributes[self::FIELD_DATA_CODE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_CODE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_OID])) {
             if (isset($type->dataOid)) {
                 $type->dataOid->setValue((string)$attributes[self::FIELD_DATA_OID]);
-                $type->_setDataOidValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataOid((string)$attributes[self::FIELD_DATA_OID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataOid((string)$attributes[self::FIELD_DATA_OID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_OID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_UUID])) {
             if (isset($type->dataUuid)) {
                 $type->dataUuid->setValue((string)$attributes[self::FIELD_DATA_UUID]);
-                $type->_setDataUuidValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataUuid((string)$attributes[self::FIELD_DATA_UUID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataUuid((string)$attributes[self::FIELD_DATA_UUID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_UUID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATA_ID])) {
             if (isset($type->dataId)) {
                 $type->dataId->setValue((string)$attributes[self::FIELD_DATA_ID]);
-                $type->_setDataIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDataId((string)$attributes[self::FIELD_DATA_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDataId((string)$attributes[self::FIELD_DATA_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATA_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_REMARKS])) {
             if (isset($type->remarks)) {
                 $type->remarks->setValue((string)$attributes[self::FIELD_REMARKS]);
-                $type->_setRemarksValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRemarks((string)$attributes[self::FIELD_REMARKS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRemarks((string)$attributes[self::FIELD_REMARKS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_REMARKS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -3333,70 +2702,70 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $xw->openRootNode('QuestionnaireQuestion', $this->_getSourceXMLNS());
         }
         if (isset($this->text) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TEXT]) {
-            $xw->writeAttribute(self::FIELD_TEXT, $this->text->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TEXT, $this->text->_getValueAsString());
         }
         if (isset($this->answerDecimal) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ANSWER_DECIMAL]) {
-            $xw->writeAttribute(self::FIELD_ANSWER_DECIMAL, $this->answerDecimal->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ANSWER_DECIMAL, $this->answerDecimal->_getValueAsString());
         }
         if (isset($this->answerInteger) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ANSWER_INTEGER]) {
-            $xw->writeAttribute(self::FIELD_ANSWER_INTEGER, $this->answerInteger->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ANSWER_INTEGER, $this->answerInteger->_getValueAsString());
         }
         if (isset($this->answerBoolean) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ANSWER_BOOLEAN]) {
-            $xw->writeAttribute(self::FIELD_ANSWER_BOOLEAN, $this->answerBoolean->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ANSWER_BOOLEAN, $this->answerBoolean->_getValueAsString());
         }
         if (isset($this->answerDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ANSWER_DATE]) {
-            $xw->writeAttribute(self::FIELD_ANSWER_DATE, $this->answerDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ANSWER_DATE, $this->answerDate->_getValueAsString());
         }
         if (isset($this->answerString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ANSWER_STRING]) {
-            $xw->writeAttribute(self::FIELD_ANSWER_STRING, $this->answerString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ANSWER_STRING, $this->answerString->_getValueAsString());
         }
         if (isset($this->answerDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ANSWER_DATE_TIME]) {
-            $xw->writeAttribute(self::FIELD_ANSWER_DATE_TIME, $this->answerDateTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ANSWER_DATE_TIME, $this->answerDateTime->_getValueAsString());
         }
         if (isset($this->answerInstant) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ANSWER_INSTANT]) {
-            $xw->writeAttribute(self::FIELD_ANSWER_INSTANT, $this->answerInstant->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ANSWER_INSTANT, $this->answerInstant->_getValueAsString());
         }
         if (isset($this->dataBoolean) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_BOOLEAN]) {
-            $xw->writeAttribute(self::FIELD_DATA_BOOLEAN, $this->dataBoolean->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_BOOLEAN, $this->dataBoolean->_getValueAsString());
         }
         if (isset($this->dataInteger) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_INTEGER]) {
-            $xw->writeAttribute(self::FIELD_DATA_INTEGER, $this->dataInteger->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_INTEGER, $this->dataInteger->_getValueAsString());
         }
         if (isset($this->dataDecimal) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_DECIMAL]) {
-            $xw->writeAttribute(self::FIELD_DATA_DECIMAL, $this->dataDecimal->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_DECIMAL, $this->dataDecimal->_getValueAsString());
         }
         if (isset($this->dataBase64Binary) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_BASE_64BINARY]) {
-            $xw->writeAttribute(self::FIELD_DATA_BASE_64BINARY, $this->dataBase64Binary->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_BASE_64BINARY, $this->dataBase64Binary->_getValueAsString());
         }
         if (isset($this->dataInstant) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_INSTANT]) {
-            $xw->writeAttribute(self::FIELD_DATA_INSTANT, $this->dataInstant->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_INSTANT, $this->dataInstant->_getValueAsString());
         }
         if (isset($this->dataString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_STRING]) {
-            $xw->writeAttribute(self::FIELD_DATA_STRING, $this->dataString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_STRING, $this->dataString->_getValueAsString());
         }
         if (isset($this->dataUri) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_URI]) {
-            $xw->writeAttribute(self::FIELD_DATA_URI, $this->dataUri->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_URI, $this->dataUri->_getValueAsString());
         }
         if (isset($this->dataDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_DATE]) {
-            $xw->writeAttribute(self::FIELD_DATA_DATE, $this->dataDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_DATE, $this->dataDate->_getValueAsString());
         }
         if (isset($this->dataDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_DATE_TIME]) {
-            $xw->writeAttribute(self::FIELD_DATA_DATE_TIME, $this->dataDateTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_DATE_TIME, $this->dataDateTime->_getValueAsString());
         }
         if (isset($this->dataCode) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_CODE]) {
-            $xw->writeAttribute(self::FIELD_DATA_CODE, $this->dataCode->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_CODE, $this->dataCode->_getValueAsString());
         }
         if (isset($this->dataOid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_OID]) {
-            $xw->writeAttribute(self::FIELD_DATA_OID, $this->dataOid->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_OID, $this->dataOid->_getValueAsString());
         }
         if (isset($this->dataUuid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_UUID]) {
-            $xw->writeAttribute(self::FIELD_DATA_UUID, $this->dataUuid->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_UUID, $this->dataUuid->_getValueAsString());
         }
         if (isset($this->dataId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATA_ID]) {
-            $xw->writeAttribute(self::FIELD_DATA_ID, $this->dataId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATA_ID, $this->dataId->_getValueAsString());
         }
         if (isset($this->remarks) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REMARKS]) {
-            $xw->writeAttribute(self::FIELD_REMARKS, $this->remarks->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_REMARKS, $this->remarks->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->name)) {
@@ -3657,13 +3026,13 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -3681,294 +3050,316 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_NAME]) || array_key_exists(self::FIELD_NAME, $json)) {
-            $type->setName(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_NAME], $config));
-        }
-        if (isset($json[self::FIELD_TEXT])
-            || isset($json[self::FIELD_TEXT_EXT])
-            || array_key_exists(self::FIELD_TEXT, $json)
-            || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
-            $value = $json[self::FIELD_TEXT] ?? null;
-            $type->setText(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ANSWER_DECIMAL])
-            || isset($json[self::FIELD_ANSWER_DECIMAL_EXT])
-            || array_key_exists(self::FIELD_ANSWER_DECIMAL, $json)
-            || array_key_exists(self::FIELD_ANSWER_DECIMAL_EXT, $json)) {
-            $value = $json[self::FIELD_ANSWER_DECIMAL] ?? null;
-            $type->setAnswerDecimal(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_ANSWER_DECIMAL_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ANSWER_INTEGER])
-            || isset($json[self::FIELD_ANSWER_INTEGER_EXT])
-            || array_key_exists(self::FIELD_ANSWER_INTEGER, $json)
-            || array_key_exists(self::FIELD_ANSWER_INTEGER_EXT, $json)) {
-            $value = $json[self::FIELD_ANSWER_INTEGER] ?? null;
-            $type->setAnswerInteger(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_ANSWER_INTEGER_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ANSWER_BOOLEAN])
-            || isset($json[self::FIELD_ANSWER_BOOLEAN_EXT])
-            || array_key_exists(self::FIELD_ANSWER_BOOLEAN, $json)
-            || array_key_exists(self::FIELD_ANSWER_BOOLEAN_EXT, $json)) {
-            $value = $json[self::FIELD_ANSWER_BOOLEAN] ?? null;
-            $type->setAnswerBoolean(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_ANSWER_BOOLEAN_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ANSWER_DATE])
-            || isset($json[self::FIELD_ANSWER_DATE_EXT])
-            || array_key_exists(self::FIELD_ANSWER_DATE, $json)
-            || array_key_exists(self::FIELD_ANSWER_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_ANSWER_DATE] ?? null;
-            $type->setAnswerDate(FHIRDate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_ANSWER_DATE_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ANSWER_STRING])
-            || isset($json[self::FIELD_ANSWER_STRING_EXT])
-            || array_key_exists(self::FIELD_ANSWER_STRING, $json)
-            || array_key_exists(self::FIELD_ANSWER_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_ANSWER_STRING] ?? null;
-            $type->setAnswerString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ANSWER_STRING_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ANSWER_DATE_TIME])
-            || isset($json[self::FIELD_ANSWER_DATE_TIME_EXT])
-            || array_key_exists(self::FIELD_ANSWER_DATE_TIME, $json)
-            || array_key_exists(self::FIELD_ANSWER_DATE_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_ANSWER_DATE_TIME] ?? null;
-            $type->setAnswerDateTime(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_ANSWER_DATE_TIME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ANSWER_INSTANT])
-            || isset($json[self::FIELD_ANSWER_INSTANT_EXT])
-            || array_key_exists(self::FIELD_ANSWER_INSTANT, $json)
-            || array_key_exists(self::FIELD_ANSWER_INSTANT_EXT, $json)) {
-            $value = $json[self::FIELD_ANSWER_INSTANT] ?? null;
-            $type->setAnswerInstant(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_ANSWER_INSTANT_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_CHOICE]) || array_key_exists(self::FIELD_CHOICE, $json)) {
-            $vs = $json[self::FIELD_CHOICE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->name) || property_exists($json, self::FIELD_NAME)) {
+            if (is_array($json->name)) {
+                $type->setName(FHIRCodeableConcept::jsonUnserialize(reset($json->name), $config));
+            } else {
+                $type->setName(FHIRCodeableConcept::jsonUnserialize($json->name, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->text)
+            || isset($json->_text)
+            || property_exists($json, self::FIELD_TEXT)
+            || property_exists($json, self::FIELD_TEXT_EXT)) {
+            $v = $json->_text ?? new \stdClass();
+            $v->value = $json->text ?? null;
+            $type->setText(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->answerDecimal)
+            || isset($json->_answerDecimal)
+            || property_exists($json, self::FIELD_ANSWER_DECIMAL)
+            || property_exists($json, self::FIELD_ANSWER_DECIMAL_EXT)) {
+            $v = $json->_answerDecimal ?? new \stdClass();
+            $v->value = $json->answerDecimal ?? null;
+            $type->setAnswerDecimal(FHIRDecimal::jsonUnserialize($v, $config));
+        }
+        if (isset($json->answerInteger)
+            || isset($json->_answerInteger)
+            || property_exists($json, self::FIELD_ANSWER_INTEGER)
+            || property_exists($json, self::FIELD_ANSWER_INTEGER_EXT)) {
+            $v = $json->_answerInteger ?? new \stdClass();
+            $v->value = $json->answerInteger ?? null;
+            $type->setAnswerInteger(FHIRInteger::jsonUnserialize($v, $config));
+        }
+        if (isset($json->answerBoolean)
+            || isset($json->_answerBoolean)
+            || property_exists($json, self::FIELD_ANSWER_BOOLEAN)
+            || property_exists($json, self::FIELD_ANSWER_BOOLEAN_EXT)) {
+            $v = $json->_answerBoolean ?? new \stdClass();
+            $v->value = $json->answerBoolean ?? null;
+            $type->setAnswerBoolean(FHIRBoolean::jsonUnserialize($v, $config));
+        }
+        if (isset($json->answerDate)
+            || isset($json->_answerDate)
+            || property_exists($json, self::FIELD_ANSWER_DATE)
+            || property_exists($json, self::FIELD_ANSWER_DATE_EXT)) {
+            $v = $json->_answerDate ?? new \stdClass();
+            $v->value = $json->answerDate ?? null;
+            $type->setAnswerDate(FHIRDate::jsonUnserialize($v, $config));
+        }
+        if (isset($json->answerString)
+            || isset($json->_answerString)
+            || property_exists($json, self::FIELD_ANSWER_STRING)
+            || property_exists($json, self::FIELD_ANSWER_STRING_EXT)) {
+            $v = $json->_answerString ?? new \stdClass();
+            $v->value = $json->answerString ?? null;
+            $type->setAnswerString(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->answerDateTime)
+            || isset($json->_answerDateTime)
+            || property_exists($json, self::FIELD_ANSWER_DATE_TIME)
+            || property_exists($json, self::FIELD_ANSWER_DATE_TIME_EXT)) {
+            $v = $json->_answerDateTime ?? new \stdClass();
+            $v->value = $json->answerDateTime ?? null;
+            $type->setAnswerDateTime(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->answerInstant)
+            || isset($json->_answerInstant)
+            || property_exists($json, self::FIELD_ANSWER_INSTANT)
+            || property_exists($json, self::FIELD_ANSWER_INSTANT_EXT)) {
+            $v = $json->_answerInstant ?? new \stdClass();
+            $v->value = $json->answerInstant ?? null;
+            $type->setAnswerInstant(FHIRInstant::jsonUnserialize($v, $config));
+        }
+        if (isset($json->choice) || property_exists($json, self::FIELD_CHOICE)) {
+            if (is_object($json->choice)) {
+                $vals = [$json->choice];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CHOICE, true);
+            } else {
+                $vals = $json->choice;
+            }
+            foreach($vals as $v) {
                 $type->addChoice(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_OPTIONS]) || array_key_exists(self::FIELD_OPTIONS, $json)) {
-            $type->setOptions(FHIRResourceReference::jsonUnserialize($json[self::FIELD_OPTIONS], $config));
-        }
-        if (isset($json[self::FIELD_DATA_BOOLEAN])
-            || isset($json[self::FIELD_DATA_BOOLEAN_EXT])
-            || array_key_exists(self::FIELD_DATA_BOOLEAN, $json)
-            || array_key_exists(self::FIELD_DATA_BOOLEAN_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_BOOLEAN] ?? null;
-            $type->setDataBoolean(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_BOOLEAN_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_INTEGER])
-            || isset($json[self::FIELD_DATA_INTEGER_EXT])
-            || array_key_exists(self::FIELD_DATA_INTEGER, $json)
-            || array_key_exists(self::FIELD_DATA_INTEGER_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_INTEGER] ?? null;
-            $type->setDataInteger(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_INTEGER_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_DECIMAL])
-            || isset($json[self::FIELD_DATA_DECIMAL_EXT])
-            || array_key_exists(self::FIELD_DATA_DECIMAL, $json)
-            || array_key_exists(self::FIELD_DATA_DECIMAL_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_DECIMAL] ?? null;
-            $type->setDataDecimal(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_DECIMAL_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_BASE_64BINARY])
-            || isset($json[self::FIELD_DATA_BASE_64BINARY_EXT])
-            || array_key_exists(self::FIELD_DATA_BASE_64BINARY, $json)
-            || array_key_exists(self::FIELD_DATA_BASE_64BINARY_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_BASE_64BINARY] ?? null;
-            $type->setDataBase64Binary(FHIRBase64Binary::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBase64Binary::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_BASE_64BINARY_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_INSTANT])
-            || isset($json[self::FIELD_DATA_INSTANT_EXT])
-            || array_key_exists(self::FIELD_DATA_INSTANT, $json)
-            || array_key_exists(self::FIELD_DATA_INSTANT_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_INSTANT] ?? null;
-            $type->setDataInstant(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_INSTANT_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_STRING])
-            || isset($json[self::FIELD_DATA_STRING_EXT])
-            || array_key_exists(self::FIELD_DATA_STRING, $json)
-            || array_key_exists(self::FIELD_DATA_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_STRING] ?? null;
-            $type->setDataString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_STRING_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_URI])
-            || isset($json[self::FIELD_DATA_URI_EXT])
-            || array_key_exists(self::FIELD_DATA_URI, $json)
-            || array_key_exists(self::FIELD_DATA_URI_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_URI] ?? null;
-            $type->setDataUri(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_URI_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_DATE])
-            || isset($json[self::FIELD_DATA_DATE_EXT])
-            || array_key_exists(self::FIELD_DATA_DATE, $json)
-            || array_key_exists(self::FIELD_DATA_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_DATE] ?? null;
-            $type->setDataDate(FHIRDate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_DATE_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_DATE_TIME])
-            || isset($json[self::FIELD_DATA_DATE_TIME_EXT])
-            || array_key_exists(self::FIELD_DATA_DATE_TIME, $json)
-            || array_key_exists(self::FIELD_DATA_DATE_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_DATE_TIME] ?? null;
-            $type->setDataDateTime(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_DATE_TIME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_CODE])
-            || isset($json[self::FIELD_DATA_CODE_EXT])
-            || array_key_exists(self::FIELD_DATA_CODE, $json)
-            || array_key_exists(self::FIELD_DATA_CODE_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_CODE] ?? null;
-            $type->setDataCode(FHIRCode::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_CODE_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_OID])
-            || isset($json[self::FIELD_DATA_OID_EXT])
-            || array_key_exists(self::FIELD_DATA_OID, $json)
-            || array_key_exists(self::FIELD_DATA_OID_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_OID] ?? null;
-            $type->setDataOid(FHIROid::jsonUnserialize(
-                (is_array($value) ? $value : [FHIROid::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_OID_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_UUID])
-            || isset($json[self::FIELD_DATA_UUID_EXT])
-            || array_key_exists(self::FIELD_DATA_UUID, $json)
-            || array_key_exists(self::FIELD_DATA_UUID_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_UUID] ?? null;
-            $type->setDataUuid(FHIRUuid::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUuid::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_UUID_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_ID])
-            || isset($json[self::FIELD_DATA_ID_EXT])
-            || array_key_exists(self::FIELD_DATA_ID, $json)
-            || array_key_exists(self::FIELD_DATA_ID_EXT, $json)) {
-            $value = $json[self::FIELD_DATA_ID] ?? null;
-            $type->setDataId(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_DATA_ID_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATA_ATTACHMENT]) || array_key_exists(self::FIELD_DATA_ATTACHMENT, $json)) {
-            $type->setDataAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_DATA_ATTACHMENT], $config));
-        }
-        if (isset($json[self::FIELD_DATA_IDENTIFIER]) || array_key_exists(self::FIELD_DATA_IDENTIFIER, $json)) {
-            $type->setDataIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_DATA_IDENTIFIER], $config));
-        }
-        if (isset($json[self::FIELD_DATA_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_DATA_CODEABLE_CONCEPT, $json)) {
-            $type->setDataCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DATA_CODEABLE_CONCEPT], $config));
-        }
-        if (isset($json[self::FIELD_DATA_CODING]) || array_key_exists(self::FIELD_DATA_CODING, $json)) {
-            $type->setDataCoding(FHIRCoding::jsonUnserialize($json[self::FIELD_DATA_CODING], $config));
-        }
-        if (isset($json[self::FIELD_DATA_QUANTITY]) || array_key_exists(self::FIELD_DATA_QUANTITY, $json)) {
-            $type->setDataQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_DATA_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_DATA_RANGE]) || array_key_exists(self::FIELD_DATA_RANGE, $json)) {
-            $type->setDataRange(FHIRRange::jsonUnserialize($json[self::FIELD_DATA_RANGE], $config));
-        }
-        if (isset($json[self::FIELD_DATA_PERIOD]) || array_key_exists(self::FIELD_DATA_PERIOD, $json)) {
-            $type->setDataPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_DATA_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_DATA_RATIO]) || array_key_exists(self::FIELD_DATA_RATIO, $json)) {
-            $type->setDataRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_DATA_RATIO], $config));
-        }
-        if (isset($json[self::FIELD_DATA_RESOURCE]) || array_key_exists(self::FIELD_DATA_RESOURCE, $json)) {
-            $type->setDataResource(FHIRResourceReference::jsonUnserialize($json[self::FIELD_DATA_RESOURCE], $config));
-        }
-        if (isset($json[self::FIELD_DATA_SAMPLED_DATA]) || array_key_exists(self::FIELD_DATA_SAMPLED_DATA, $json)) {
-            $type->setDataSampledData(FHIRSampledData::jsonUnserialize($json[self::FIELD_DATA_SAMPLED_DATA], $config));
-        }
-        if (isset($json[self::FIELD_DATA_HUMAN_NAME]) || array_key_exists(self::FIELD_DATA_HUMAN_NAME, $json)) {
-            $type->setDataHumanName(FHIRHumanName::jsonUnserialize($json[self::FIELD_DATA_HUMAN_NAME], $config));
-        }
-        if (isset($json[self::FIELD_DATA_ADDRESS]) || array_key_exists(self::FIELD_DATA_ADDRESS, $json)) {
-            $type->setDataAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_DATA_ADDRESS], $config));
-        }
-        if (isset($json[self::FIELD_DATA_CONTACT]) || array_key_exists(self::FIELD_DATA_CONTACT, $json)) {
-            $type->setDataContact(FHIRContact::jsonUnserialize($json[self::FIELD_DATA_CONTACT], $config));
-        }
-        if (isset($json[self::FIELD_DATA_SCHEDULE]) || array_key_exists(self::FIELD_DATA_SCHEDULE, $json)) {
-            $type->setDataSchedule(FHIRSchedule::jsonUnserialize($json[self::FIELD_DATA_SCHEDULE], $config));
-        }
-        if (isset($json[self::FIELD_REMARKS])
-            || isset($json[self::FIELD_REMARKS_EXT])
-            || array_key_exists(self::FIELD_REMARKS, $json)
-            || array_key_exists(self::FIELD_REMARKS_EXT, $json)) {
-            $value = $json[self::FIELD_REMARKS] ?? null;
-            $type->setRemarks(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REMARKS_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_GROUP]) || array_key_exists(self::FIELD_GROUP, $json)) {
-            $vs = $json[self::FIELD_GROUP];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->options) || property_exists($json, self::FIELD_OPTIONS)) {
+            if (is_array($json->options)) {
+                $type->setOptions(FHIRResourceReference::jsonUnserialize(reset($json->options), $config));
+            } else {
+                $type->setOptions(FHIRResourceReference::jsonUnserialize($json->options, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->dataBoolean)
+            || isset($json->_dataBoolean)
+            || property_exists($json, self::FIELD_DATA_BOOLEAN)
+            || property_exists($json, self::FIELD_DATA_BOOLEAN_EXT)) {
+            $v = $json->_dataBoolean ?? new \stdClass();
+            $v->value = $json->dataBoolean ?? null;
+            $type->setDataBoolean(FHIRBoolean::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataInteger)
+            || isset($json->_dataInteger)
+            || property_exists($json, self::FIELD_DATA_INTEGER)
+            || property_exists($json, self::FIELD_DATA_INTEGER_EXT)) {
+            $v = $json->_dataInteger ?? new \stdClass();
+            $v->value = $json->dataInteger ?? null;
+            $type->setDataInteger(FHIRInteger::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataDecimal)
+            || isset($json->_dataDecimal)
+            || property_exists($json, self::FIELD_DATA_DECIMAL)
+            || property_exists($json, self::FIELD_DATA_DECIMAL_EXT)) {
+            $v = $json->_dataDecimal ?? new \stdClass();
+            $v->value = $json->dataDecimal ?? null;
+            $type->setDataDecimal(FHIRDecimal::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataBase64Binary)
+            || isset($json->_dataBase64Binary)
+            || property_exists($json, self::FIELD_DATA_BASE_64BINARY)
+            || property_exists($json, self::FIELD_DATA_BASE_64BINARY_EXT)) {
+            $v = $json->_dataBase64Binary ?? new \stdClass();
+            $v->value = $json->dataBase64Binary ?? null;
+            $type->setDataBase64Binary(FHIRBase64Binary::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataInstant)
+            || isset($json->_dataInstant)
+            || property_exists($json, self::FIELD_DATA_INSTANT)
+            || property_exists($json, self::FIELD_DATA_INSTANT_EXT)) {
+            $v = $json->_dataInstant ?? new \stdClass();
+            $v->value = $json->dataInstant ?? null;
+            $type->setDataInstant(FHIRInstant::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataString)
+            || isset($json->_dataString)
+            || property_exists($json, self::FIELD_DATA_STRING)
+            || property_exists($json, self::FIELD_DATA_STRING_EXT)) {
+            $v = $json->_dataString ?? new \stdClass();
+            $v->value = $json->dataString ?? null;
+            $type->setDataString(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataUri)
+            || isset($json->_dataUri)
+            || property_exists($json, self::FIELD_DATA_URI)
+            || property_exists($json, self::FIELD_DATA_URI_EXT)) {
+            $v = $json->_dataUri ?? new \stdClass();
+            $v->value = $json->dataUri ?? null;
+            $type->setDataUri(FHIRUri::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataDate)
+            || isset($json->_dataDate)
+            || property_exists($json, self::FIELD_DATA_DATE)
+            || property_exists($json, self::FIELD_DATA_DATE_EXT)) {
+            $v = $json->_dataDate ?? new \stdClass();
+            $v->value = $json->dataDate ?? null;
+            $type->setDataDate(FHIRDate::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataDateTime)
+            || isset($json->_dataDateTime)
+            || property_exists($json, self::FIELD_DATA_DATE_TIME)
+            || property_exists($json, self::FIELD_DATA_DATE_TIME_EXT)) {
+            $v = $json->_dataDateTime ?? new \stdClass();
+            $v->value = $json->dataDateTime ?? null;
+            $type->setDataDateTime(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataCode)
+            || isset($json->_dataCode)
+            || property_exists($json, self::FIELD_DATA_CODE)
+            || property_exists($json, self::FIELD_DATA_CODE_EXT)) {
+            $v = $json->_dataCode ?? new \stdClass();
+            $v->value = $json->dataCode ?? null;
+            $type->setDataCode(FHIRCode::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataOid)
+            || isset($json->_dataOid)
+            || property_exists($json, self::FIELD_DATA_OID)
+            || property_exists($json, self::FIELD_DATA_OID_EXT)) {
+            $v = $json->_dataOid ?? new \stdClass();
+            $v->value = $json->dataOid ?? null;
+            $type->setDataOid(FHIROid::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataUuid)
+            || isset($json->_dataUuid)
+            || property_exists($json, self::FIELD_DATA_UUID)
+            || property_exists($json, self::FIELD_DATA_UUID_EXT)) {
+            $v = $json->_dataUuid ?? new \stdClass();
+            $v->value = $json->dataUuid ?? null;
+            $type->setDataUuid(FHIRUuid::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataId)
+            || isset($json->_dataId)
+            || property_exists($json, self::FIELD_DATA_ID)
+            || property_exists($json, self::FIELD_DATA_ID_EXT)) {
+            $v = $json->_dataId ?? new \stdClass();
+            $v->value = $json->dataId ?? null;
+            $type->setDataId(FHIRId::jsonUnserialize($v, $config));
+        }
+        if (isset($json->dataAttachment) || property_exists($json, self::FIELD_DATA_ATTACHMENT)) {
+            if (is_array($json->dataAttachment)) {
+                $type->setDataAttachment(FHIRAttachment::jsonUnserialize(reset($json->dataAttachment), $config));
+            } else {
+                $type->setDataAttachment(FHIRAttachment::jsonUnserialize($json->dataAttachment, $config));
+            }
+        }
+        if (isset($json->dataIdentifier) || property_exists($json, self::FIELD_DATA_IDENTIFIER)) {
+            if (is_array($json->dataIdentifier)) {
+                $type->setDataIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->dataIdentifier), $config));
+            } else {
+                $type->setDataIdentifier(FHIRIdentifier::jsonUnserialize($json->dataIdentifier, $config));
+            }
+        }
+        if (isset($json->dataCodeableConcept) || property_exists($json, self::FIELD_DATA_CODEABLE_CONCEPT)) {
+            if (is_array($json->dataCodeableConcept)) {
+                $type->setDataCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->dataCodeableConcept), $config));
+            } else {
+                $type->setDataCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->dataCodeableConcept, $config));
+            }
+        }
+        if (isset($json->dataCoding) || property_exists($json, self::FIELD_DATA_CODING)) {
+            if (is_array($json->dataCoding)) {
+                $type->setDataCoding(FHIRCoding::jsonUnserialize(reset($json->dataCoding), $config));
+            } else {
+                $type->setDataCoding(FHIRCoding::jsonUnserialize($json->dataCoding, $config));
+            }
+        }
+        if (isset($json->dataQuantity) || property_exists($json, self::FIELD_DATA_QUANTITY)) {
+            if (is_array($json->dataQuantity)) {
+                $type->setDataQuantity(FHIRQuantity::jsonUnserialize(reset($json->dataQuantity), $config));
+            } else {
+                $type->setDataQuantity(FHIRQuantity::jsonUnserialize($json->dataQuantity, $config));
+            }
+        }
+        if (isset($json->dataRange) || property_exists($json, self::FIELD_DATA_RANGE)) {
+            if (is_array($json->dataRange)) {
+                $type->setDataRange(FHIRRange::jsonUnserialize(reset($json->dataRange), $config));
+            } else {
+                $type->setDataRange(FHIRRange::jsonUnserialize($json->dataRange, $config));
+            }
+        }
+        if (isset($json->dataPeriod) || property_exists($json, self::FIELD_DATA_PERIOD)) {
+            if (is_array($json->dataPeriod)) {
+                $type->setDataPeriod(FHIRPeriod::jsonUnserialize(reset($json->dataPeriod), $config));
+            } else {
+                $type->setDataPeriod(FHIRPeriod::jsonUnserialize($json->dataPeriod, $config));
+            }
+        }
+        if (isset($json->dataRatio) || property_exists($json, self::FIELD_DATA_RATIO)) {
+            if (is_array($json->dataRatio)) {
+                $type->setDataRatio(FHIRRatio::jsonUnserialize(reset($json->dataRatio), $config));
+            } else {
+                $type->setDataRatio(FHIRRatio::jsonUnserialize($json->dataRatio, $config));
+            }
+        }
+        if (isset($json->dataResource) || property_exists($json, self::FIELD_DATA_RESOURCE)) {
+            if (is_array($json->dataResource)) {
+                $type->setDataResource(FHIRResourceReference::jsonUnserialize(reset($json->dataResource), $config));
+            } else {
+                $type->setDataResource(FHIRResourceReference::jsonUnserialize($json->dataResource, $config));
+            }
+        }
+        if (isset($json->dataSampledData) || property_exists($json, self::FIELD_DATA_SAMPLED_DATA)) {
+            if (is_array($json->dataSampledData)) {
+                $type->setDataSampledData(FHIRSampledData::jsonUnserialize(reset($json->dataSampledData), $config));
+            } else {
+                $type->setDataSampledData(FHIRSampledData::jsonUnserialize($json->dataSampledData, $config));
+            }
+        }
+        if (isset($json->dataHumanName) || property_exists($json, self::FIELD_DATA_HUMAN_NAME)) {
+            if (is_array($json->dataHumanName)) {
+                $type->setDataHumanName(FHIRHumanName::jsonUnserialize(reset($json->dataHumanName), $config));
+            } else {
+                $type->setDataHumanName(FHIRHumanName::jsonUnserialize($json->dataHumanName, $config));
+            }
+        }
+        if (isset($json->dataAddress) || property_exists($json, self::FIELD_DATA_ADDRESS)) {
+            if (is_array($json->dataAddress)) {
+                $type->setDataAddress(FHIRAddress::jsonUnserialize(reset($json->dataAddress), $config));
+            } else {
+                $type->setDataAddress(FHIRAddress::jsonUnserialize($json->dataAddress, $config));
+            }
+        }
+        if (isset($json->dataContact) || property_exists($json, self::FIELD_DATA_CONTACT)) {
+            if (is_array($json->dataContact)) {
+                $type->setDataContact(FHIRContact::jsonUnserialize(reset($json->dataContact), $config));
+            } else {
+                $type->setDataContact(FHIRContact::jsonUnserialize($json->dataContact, $config));
+            }
+        }
+        if (isset($json->dataSchedule) || property_exists($json, self::FIELD_DATA_SCHEDULE)) {
+            if (is_array($json->dataSchedule)) {
+                $type->setDataSchedule(FHIRSchedule::jsonUnserialize(reset($json->dataSchedule), $config));
+            } else {
+                $type->setDataSchedule(FHIRSchedule::jsonUnserialize($json->dataSchedule, $config));
+            }
+        }
+        if (isset($json->remarks)
+            || isset($json->_remarks)
+            || property_exists($json, self::FIELD_REMARKS)
+            || property_exists($json, self::FIELD_REMARKS_EXT)) {
+            $v = $json->_remarks ?? new \stdClass();
+            $v->value = $json->remarks ?? null;
+            $type->setRemarks(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->group) || property_exists($json, self::FIELD_GROUP)) {
+            if (is_object($json->group)) {
+                $vals = [$json->group];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_GROUP, true);
+            } else {
+                $vals = $json->group;
+            }
+            foreach($vals as $v) {
                 $type->addGroup(FHIRQuestionnaireGroup::jsonUnserialize($v, $config));
             }
         }
@@ -4065,7 +3456,11 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             }
         }
         if (isset($this->choice) && [] !== $this->choice) {
-            $out->choice = $this->choice;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CHOICE) && 1 === count($this->choice)) {
+                $out->choice = $this->choice[0];
+            } else {
+                $out->choice = $this->choice;
+            }
         }
         if (isset($this->options)) {
             $out->options = $this->options;
@@ -4253,7 +3648,11 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             }
         }
         if (isset($this->group) && [] !== $this->group) {
-            $out->group = $this->group;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_GROUP) && 1 === count($this->group)) {
+                $out->group = $this->group[0];
+            } else {
+                $out->group = $this->group;
+            }
         }
         return $out;
     }

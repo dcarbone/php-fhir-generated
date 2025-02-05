@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -57,9 +57,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -80,12 +82,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  */
 class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_PRESCRIPTION_DOT_DISPENSE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_MEDICATION = 'medication';
     public const FIELD_VALIDITY_PERIOD = 'validityPeriod';
     public const FIELD_NUMBER_OF_REPEATS_ALLOWED = 'numberOfRepeatsAllowed';
@@ -93,16 +97,16 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     public const FIELD_QUANTITY = 'quantity';
     public const FIELD_EXPECTED_SUPPLY_DURATION = 'expectedSupplyDuration';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_NUMBER_OF_REPEATS_ALLOWED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -171,7 +175,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      */
     protected FHIRDuration $expectedSupplyDuration;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedicationPrescriptionDispense Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -179,7 +183,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $medication
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $validityPeriod
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $numberOfRepeatsAllowed
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $numberOfRepeatsAllowed
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @param null|string[] $fhirComments
@@ -189,7 +193,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRResourceReference $medication = null,
                                 null|FHIRPeriod $validityPeriod = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfRepeatsAllowed = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $numberOfRepeatsAllowed = null,
                                 null|FHIRQuantity $quantity = null,
                                 null|FHIRDuration $expectedSupplyDuration = null,
                                 null|iterable $fhirComments = null)
@@ -215,7 +219,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -224,7 +228,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -338,12 +342,10 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * example, the number of times the prescribed quantity is to be supplied including
      * the initial standard fill.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $numberOfRepeatsAllowed
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $numberOfRepeatsAllowed
      * @return static
      */
-    public function setNumberOfRepeatsAllowed(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfRepeatsAllowed,
-                                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setNumberOfRepeatsAllowed(null|string|float|FHIRIntegerPrimitive|FHIRInteger $numberOfRepeatsAllowed): self
     {
         if (null === $numberOfRepeatsAllowed) {
             unset($this->numberOfRepeatsAllowed);
@@ -353,33 +355,6 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
             $numberOfRepeatsAllowed = new FHIRInteger(value: $numberOfRepeatsAllowed);
         }
         $this->numberOfRepeatsAllowed = $numberOfRepeatsAllowed;
-        if ($this->_valueXMLLocations[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] !== $valueXMLLocation) {
-            $this->_setNumberOfRepeatsAllowedValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the numberOfRepeatsAllowed element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNumberOfRepeatsAllowedValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NUMBER_OF_REPEATS_ALLOWED];
-    }
-
-    /**
-     * Set the location the "value" field of the numberOfRepeatsAllowed element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNumberOfRepeatsAllowedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] = $valueXMLLocation;
         return $this;
     }
 
@@ -461,7 +436,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -499,9 +474,11 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -519,15 +496,16 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
             if (isset($type->numberOfRepeatsAllowed)) {
                 $type->numberOfRepeatsAllowed->setValue((string)$attributes[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]);
-                $type->_setNumberOfRepeatsAllowedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNumberOfRepeatsAllowed((string)$attributes[self::FIELD_NUMBER_OF_REPEATS_ALLOWED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setNumberOfRepeatsAllowed((string)$attributes[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NUMBER_OF_REPEATS_ALLOWED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -558,7 +536,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
             $xw->openRootNode('MedicationPrescriptionDispense', $this->_getSourceXMLNS());
         }
         if (isset($this->numberOfRepeatsAllowed) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]) {
-            $xw->writeAttribute(self::FIELD_NUMBER_OF_REPEATS_ALLOWED, $this->numberOfRepeatsAllowed->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NUMBER_OF_REPEATS_ALLOWED, $this->numberOfRepeatsAllowed->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->medication)) {
@@ -598,13 +576,13 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -622,32 +600,44 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_MEDICATION]) || array_key_exists(self::FIELD_MEDICATION, $json)) {
-            $type->setMedication(FHIRResourceReference::jsonUnserialize($json[self::FIELD_MEDICATION], $config));
+        if (isset($json->medication) || property_exists($json, self::FIELD_MEDICATION)) {
+            if (is_array($json->medication)) {
+                $type->setMedication(FHIRResourceReference::jsonUnserialize(reset($json->medication), $config));
+            } else {
+                $type->setMedication(FHIRResourceReference::jsonUnserialize($json->medication, $config));
+            }
         }
-        if (isset($json[self::FIELD_VALIDITY_PERIOD]) || array_key_exists(self::FIELD_VALIDITY_PERIOD, $json)) {
-            $type->setValidityPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_VALIDITY_PERIOD], $config));
+        if (isset($json->validityPeriod) || property_exists($json, self::FIELD_VALIDITY_PERIOD)) {
+            if (is_array($json->validityPeriod)) {
+                $type->setValidityPeriod(FHIRPeriod::jsonUnserialize(reset($json->validityPeriod), $config));
+            } else {
+                $type->setValidityPeriod(FHIRPeriod::jsonUnserialize($json->validityPeriod, $config));
+            }
         }
-        if (isset($json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])
-            || isset($json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT])
-            || array_key_exists(self::FIELD_NUMBER_OF_REPEATS_ALLOWED, $json)
-            || array_key_exists(self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT, $json)) {
-            $value = $json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] ?? null;
-            $type->setNumberOfRepeatsAllowed(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->numberOfRepeatsAllowed)
+            || isset($json->_numberOfRepeatsAllowed)
+            || property_exists($json, self::FIELD_NUMBER_OF_REPEATS_ALLOWED)
+            || property_exists($json, self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT)) {
+            $v = $json->_numberOfRepeatsAllowed ?? new \stdClass();
+            $v->value = $json->numberOfRepeatsAllowed ?? null;
+            $type->setNumberOfRepeatsAllowed(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
+        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
+            if (is_array($json->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+            } else {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+            }
         }
-        if (isset($json[self::FIELD_EXPECTED_SUPPLY_DURATION]) || array_key_exists(self::FIELD_EXPECTED_SUPPLY_DURATION, $json)) {
-            $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_EXPECTED_SUPPLY_DURATION], $config));
+        if (isset($json->expectedSupplyDuration) || property_exists($json, self::FIELD_EXPECTED_SUPPLY_DURATION)) {
+            if (is_array($json->expectedSupplyDuration)) {
+                $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize(reset($json->expectedSupplyDuration), $config));
+            } else {
+                $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize($json->expectedSupplyDuration, $config));
+            }
         }
         return $type;
     }

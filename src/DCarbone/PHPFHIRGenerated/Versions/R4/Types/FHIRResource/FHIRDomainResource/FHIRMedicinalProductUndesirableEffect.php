@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -94,27 +96,29 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionTypeMap;
  */
 class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICINAL_PRODUCT_UNDESIRABLE_EFFECT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SUBJECT = 'subject';
     public const FIELD_SYMPTOM_CONDITION_EFFECT = 'symptomConditionEffect';
     public const FIELD_CLASSIFICATION = 'classification';
     public const FIELD_FREQUENCY_OF_OCCURRENCE = 'frequencyOfOccurrence';
     public const FIELD_POPULATION = 'population';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -169,7 +173,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      */
     protected array $population;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedicinalProductUndesirableEffect Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
@@ -228,7 +232,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -237,7 +241,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -246,7 +250,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -483,7 +487,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -552,26 +556,26 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -641,13 +645,13 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -665,35 +669,49 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $vs = $json[self::FIELD_SUBJECT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
+            if (is_object($json->subject)) {
+                $vals = [$json->subject];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBJECT, true);
+            } else {
+                $vals = $json->subject;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSubject(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SYMPTOM_CONDITION_EFFECT]) || array_key_exists(self::FIELD_SYMPTOM_CONDITION_EFFECT, $json)) {
-            $type->setSymptomConditionEffect(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SYMPTOM_CONDITION_EFFECT], $config));
-        }
-        if (isset($json[self::FIELD_CLASSIFICATION]) || array_key_exists(self::FIELD_CLASSIFICATION, $json)) {
-            $type->setClassification(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CLASSIFICATION], $config));
-        }
-        if (isset($json[self::FIELD_FREQUENCY_OF_OCCURRENCE]) || array_key_exists(self::FIELD_FREQUENCY_OF_OCCURRENCE, $json)) {
-            $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FREQUENCY_OF_OCCURRENCE], $config));
-        }
-        if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
-            $vs = $json[self::FIELD_POPULATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->symptomConditionEffect) || property_exists($json, self::FIELD_SYMPTOM_CONDITION_EFFECT)) {
+            if (is_array($json->symptomConditionEffect)) {
+                $type->setSymptomConditionEffect(FHIRCodeableConcept::jsonUnserialize(reset($json->symptomConditionEffect), $config));
+            } else {
+                $type->setSymptomConditionEffect(FHIRCodeableConcept::jsonUnserialize($json->symptomConditionEffect, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->classification) || property_exists($json, self::FIELD_CLASSIFICATION)) {
+            if (is_array($json->classification)) {
+                $type->setClassification(FHIRCodeableConcept::jsonUnserialize(reset($json->classification), $config));
+            } else {
+                $type->setClassification(FHIRCodeableConcept::jsonUnserialize($json->classification, $config));
+            }
+        }
+        if (isset($json->frequencyOfOccurrence) || property_exists($json, self::FIELD_FREQUENCY_OF_OCCURRENCE)) {
+            if (is_array($json->frequencyOfOccurrence)) {
+                $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize(reset($json->frequencyOfOccurrence), $config));
+            } else {
+                $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize($json->frequencyOfOccurrence, $config));
+            }
+        }
+        if (isset($json->population) || property_exists($json, self::FIELD_POPULATION)) {
+            if (is_object($json->population)) {
+                $vals = [$json->population];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_POPULATION, true);
+            } else {
+                $vals = $json->population;
+            }
+            foreach($vals as $v) {
                 $type->addPopulation(FHIRPopulation::jsonUnserialize($v, $config));
             }
         }
@@ -707,7 +725,11 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
     {
         $out = parent::jsonSerialize();
         if (isset($this->subject) && [] !== $this->subject) {
-            $out->subject = $this->subject;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUBJECT) && 1 === count($this->subject)) {
+                $out->subject = $this->subject[0];
+            } else {
+                $out->subject = $this->subject;
+            }
         }
         if (isset($this->symptomConditionEffect)) {
             $out->symptomConditionEffect = $this->symptomConditionEffect;
@@ -719,7 +741,11 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
             $out->frequencyOfOccurrence = $this->frequencyOfOccurrence;
         }
         if (isset($this->population) && [] !== $this->population) {
-            $out->population = $this->population;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_POPULATION) && 1 === count($this->population)) {
+                $out->population = $this->population[0];
+            } else {
+                $out->population = $this->population;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

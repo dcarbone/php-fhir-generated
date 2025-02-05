@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementD
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,12 +89,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRElementDefinitionBinding extends FHIRElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_BINDING;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_STRENGTH = 'strength';
     public const FIELD_STRENGTH_EXT = '_strength';
     public const FIELD_DESCRIPTION = 'description';
@@ -101,7 +105,7 @@ class FHIRElementDefinitionBinding extends FHIRElement
     public const FIELD_VALUE_SET_URI_EXT = '_valueSetUri';
     public const FIELD_VALUE_SET_REFERENCE = 'valueSetReference';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STRENGTH => [
@@ -109,14 +113,14 @@ class FHIRElementDefinitionBinding extends FHIRElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_STRENGTH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_SET_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Indication of the degree of conformance expectations associated with a binding.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -169,7 +173,7 @@ class FHIRElementDefinitionBinding extends FHIRElement
      */
     protected FHIRReference $valueSetReference;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRElementDefinitionBinding Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -205,7 +209,7 @@ class FHIRElementDefinitionBinding extends FHIRElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -214,7 +218,7 @@ class FHIRElementDefinitionBinding extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Indication of the degree of conformance expectations associated with a binding.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -239,11 +243,9 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * instances.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRBindingStrengthList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBindingStrength $strength
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStrength(null|string|FHIRBindingStrengthList|FHIRBindingStrength $strength,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStrength(null|string|FHIRBindingStrengthList|FHIRBindingStrength $strength): self
     {
         if (null === $strength) {
             unset($this->strength);
@@ -253,33 +255,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
             $strength = new FHIRBindingStrength(value: $strength);
         }
         $this->strength = $strength;
-        if ($this->_valueXMLLocations[self::FIELD_STRENGTH] !== $valueXMLLocation) {
-            $this->_setStrengthValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the strength element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStrengthValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STRENGTH];
-    }
-
-    /**
-     * Set the location the "value" field of the strength element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStrengthValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STRENGTH] = $valueXMLLocation;
         return $this;
     }
 
@@ -305,11 +280,9 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * Describes the intended use of this particular set of codes.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
         if (null === $description) {
             unset($this->description);
@@ -319,33 +292,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
             $description = new FHIRString(value: $description);
         }
         $this->description = $description;
-        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
-            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the description element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
-    }
-
-    /**
-     * Set the location the "value" field of the description element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -381,11 +327,9 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * types - then use a uri.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $valueSetUri
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueSetUri(null|string|FHIRUriPrimitive|FHIRUri $valueSetUri,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValueSetUri(null|string|FHIRUriPrimitive|FHIRUri $valueSetUri): self
     {
         if (null === $valueSetUri) {
             unset($this->valueSetUri);
@@ -395,33 +339,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
             $valueSetUri = new FHIRUri(value: $valueSetUri);
         }
         $this->valueSetUri = $valueSetUri;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE_SET_URI] !== $valueXMLLocation) {
-            $this->_setValueSetUriValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the valueSetUri element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueSetUriValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE_SET_URI];
-    }
-
-    /**
-     * Set the location the "value" field of the valueSetUri element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueSetUriValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE_SET_URI] = $valueXMLLocation;
         return $this;
     }
 
@@ -469,7 +386,7 @@ class FHIRElementDefinitionBinding extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -498,9 +415,11 @@ class FHIRElementDefinitionBinding extends FHIRElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_STRENGTH === $cen) {
                 $type->setStrength(FHIRBindingStrength::xmlUnserialize($ce, $config));
@@ -514,31 +433,32 @@ class FHIRElementDefinitionBinding extends FHIRElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STRENGTH])) {
             if (isset($type->strength)) {
                 $type->strength->setValue((string)$attributes[self::FIELD_STRENGTH]);
-                $type->_setStrengthValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStrength((string)$attributes[self::FIELD_STRENGTH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStrength((string)$attributes[self::FIELD_STRENGTH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STRENGTH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             if (isset($type->description)) {
                 $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DESCRIPTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE_SET_URI])) {
             if (isset($type->valueSetUri)) {
                 $type->valueSetUri->setValue((string)$attributes[self::FIELD_VALUE_SET_URI]);
-                $type->_setValueSetUriValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValueSetUri((string)$attributes[self::FIELD_VALUE_SET_URI], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setValueSetUri((string)$attributes[self::FIELD_VALUE_SET_URI]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VALUE_SET_URI, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -551,13 +471,13 @@ class FHIRElementDefinitionBinding extends FHIRElement
                                  SerializeConfig $config): void
     {
         if (isset($this->strength) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STRENGTH]) {
-            $xw->writeAttribute(self::FIELD_STRENGTH, $this->strength->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STRENGTH, $this->strength->_getValueAsString());
         }
         if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getValueAsString());
         }
         if (isset($this->valueSetUri) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE_SET_URI]) {
-            $xw->writeAttribute(self::FIELD_VALUE_SET_URI, $this->valueSetUri->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VALUE_SET_URI, $this->valueSetUri->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->strength)
@@ -589,13 +509,13 @@ class FHIRElementDefinitionBinding extends FHIRElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -610,38 +530,36 @@ class FHIRElementDefinitionBinding extends FHIRElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_STRENGTH])
-            || isset($json[self::FIELD_STRENGTH_EXT])
-            || array_key_exists(self::FIELD_STRENGTH, $json)
-            || array_key_exists(self::FIELD_STRENGTH_EXT, $json)) {
-            $value = $json[self::FIELD_STRENGTH] ?? null;
-            $type->setStrength(FHIRBindingStrength::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBindingStrength::FIELD_VALUE => $value]) + ($json[self::FIELD_STRENGTH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->strength)
+            || isset($json->_strength)
+            || property_exists($json, self::FIELD_STRENGTH)
+            || property_exists($json, self::FIELD_STRENGTH_EXT)) {
+            $v = $json->_strength ?? new \stdClass();
+            $v->value = $json->strength ?? null;
+            $type->setStrength(FHIRBindingStrength::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DESCRIPTION])
-            || isset($json[self::FIELD_DESCRIPTION_EXT])
-            || array_key_exists(self::FIELD_DESCRIPTION, $json)
-            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
-            $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $type->setDescription(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->description)
+            || isset($json->_description)
+            || property_exists($json, self::FIELD_DESCRIPTION)
+            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $json->_description ?? new \stdClass();
+            $v->value = $json->description ?? null;
+            $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VALUE_SET_URI])
-            || isset($json[self::FIELD_VALUE_SET_URI_EXT])
-            || array_key_exists(self::FIELD_VALUE_SET_URI, $json)
-            || array_key_exists(self::FIELD_VALUE_SET_URI_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE_SET_URI] ?? null;
-            $type->setValueSetUri(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_SET_URI_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->valueSetUri)
+            || isset($json->_valueSetUri)
+            || property_exists($json, self::FIELD_VALUE_SET_URI)
+            || property_exists($json, self::FIELD_VALUE_SET_URI_EXT)) {
+            $v = $json->_valueSetUri ?? new \stdClass();
+            $v->value = $json->valueSetUri ?? null;
+            $type->setValueSetUri(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VALUE_SET_REFERENCE]) || array_key_exists(self::FIELD_VALUE_SET_REFERENCE, $json)) {
-            $type->setValueSetReference(FHIRReference::jsonUnserialize($json[self::FIELD_VALUE_SET_REFERENCE], $config));
+        if (isset($json->valueSetReference) || property_exists($json, self::FIELD_VALUE_SET_REFERENCE)) {
+            if (is_array($json->valueSetReference)) {
+                $type->setValueSetReference(FHIRReference::jsonUnserialize(reset($json->valueSetReference), $config));
+            } else {
+                $type->setValueSetReference(FHIRReference::jsonUnserialize($json->valueSetReference, $config));
+            }
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -108,12 +110,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PAYMENT_RECONCILIATION_DOT_ALLOCATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_PREDECESSOR = 'predecessor';
     public const FIELD_TARGET = 'target';
@@ -133,18 +137,18 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
     public const FIELD_PAYEE = 'payee';
     public const FIELD_AMOUNT = 'amount';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TARGET_ITEM_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TARGET_ITEM_POSITIVE_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -184,7 +188,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
@@ -197,7 +201,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier 
      */
@@ -209,7 +213,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt 
      */
@@ -310,7 +314,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      */
     protected FHIRMoney $amount;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRPaymentReconciliationAllocation Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -321,7 +325,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $target
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $targetItemString
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $targetItemIdentifier
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $targetItemPositiveInt
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $targetItemPositiveInt
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $account
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
@@ -341,7 +345,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
                                 null|FHIRReference $target = null,
                                 null|string|FHIRStringPrimitive|FHIRString $targetItemString = null,
                                 null|FHIRIdentifier $targetItemIdentifier = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $targetItemPositiveInt = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $targetItemPositiveInt = null,
                                 null|FHIRReference $encounter = null,
                                 null|FHIRReference $account = null,
                                 null|FHIRCodeableConcept $type = null,
@@ -404,7 +408,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -413,7 +417,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -527,7 +531,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
@@ -543,14 +547,12 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $targetItemString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTargetItemString(null|string|FHIRStringPrimitive|FHIRString $targetItemString,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTargetItemString(null|string|FHIRStringPrimitive|FHIRString $targetItemString): self
     {
         if (null === $targetItemString) {
             unset($this->targetItemString);
@@ -560,33 +562,6 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             $targetItemString = new FHIRString(value: $targetItemString);
         }
         $this->targetItemString = $targetItemString;
-        if ($this->_valueXMLLocations[self::FIELD_TARGET_ITEM_STRING] !== $valueXMLLocation) {
-            $this->_setTargetItemStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the targetItemString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTargetItemStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TARGET_ITEM_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the targetItemString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTargetItemStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TARGET_ITEM_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -598,7 +573,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
@@ -615,7 +590,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $targetItemIdentifier
      * @return static
@@ -637,7 +612,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
@@ -653,14 +628,12 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $targetItemPositiveInt
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $targetItemPositiveInt
      * @return static
      */
-    public function setTargetItemPositiveInt(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $targetItemPositiveInt,
-                                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTargetItemPositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $targetItemPositiveInt): self
     {
         if (null === $targetItemPositiveInt) {
             unset($this->targetItemPositiveInt);
@@ -670,33 +643,6 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             $targetItemPositiveInt = new FHIRPositiveInt(value: $targetItemPositiveInt);
         }
         $this->targetItemPositiveInt = $targetItemPositiveInt;
-        if ($this->_valueXMLLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT] !== $valueXMLLocation) {
-            $this->_setTargetItemPositiveIntValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the targetItemPositiveInt element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTargetItemPositiveIntValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT];
-    }
-
-    /**
-     * Set the location the "value" field of the targetItemPositiveInt element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTargetItemPositiveIntValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT] = $valueXMLLocation;
         return $this;
     }
 
@@ -900,11 +846,9 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * The date from the response resource containing a commitment to pay.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $date
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
         if (null === $date) {
             unset($this->date);
@@ -914,33 +858,6 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             $date = new FHIRDate(value: $date);
         }
         $this->date = $date;
-        if ($this->_valueXMLLocations[self::FIELD_DATE] !== $valueXMLLocation) {
-            $this->_setDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the date element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the date element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1048,7 +965,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1077,9 +994,11 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1117,31 +1036,32 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TARGET_ITEM_STRING])) {
             if (isset($type->targetItemString)) {
                 $type->targetItemString->setValue((string)$attributes[self::FIELD_TARGET_ITEM_STRING]);
-                $type->_setTargetItemStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTargetItemString((string)$attributes[self::FIELD_TARGET_ITEM_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTargetItemString((string)$attributes[self::FIELD_TARGET_ITEM_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TARGET_ITEM_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TARGET_ITEM_POSITIVE_INT])) {
             if (isset($type->targetItemPositiveInt)) {
                 $type->targetItemPositiveInt->setValue((string)$attributes[self::FIELD_TARGET_ITEM_POSITIVE_INT]);
-                $type->_setTargetItemPositiveIntValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTargetItemPositiveInt((string)$attributes[self::FIELD_TARGET_ITEM_POSITIVE_INT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTargetItemPositiveInt((string)$attributes[self::FIELD_TARGET_ITEM_POSITIVE_INT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TARGET_ITEM_POSITIVE_INT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATE])) {
             if (isset($type->date)) {
                 $type->date->setValue((string)$attributes[self::FIELD_DATE]);
-                $type->_setDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDate((string)$attributes[self::FIELD_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDate((string)$attributes[self::FIELD_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1154,13 +1074,13 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->targetItemString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TARGET_ITEM_STRING]) {
-            $xw->writeAttribute(self::FIELD_TARGET_ITEM_STRING, $this->targetItemString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TARGET_ITEM_STRING, $this->targetItemString->_getValueAsString());
         }
         if (isset($this->targetItemPositiveInt) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT]) {
-            $xw->writeAttribute(self::FIELD_TARGET_ITEM_POSITIVE_INT, $this->targetItemPositiveInt->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TARGET_ITEM_POSITIVE_INT, $this->targetItemPositiveInt->_getValueAsString());
         }
         if (isset($this->date) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATE]) {
-            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1247,13 +1167,13 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationAllocation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationAllocation
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1268,71 +1188,113 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_IDENTIFIER], $config));
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_array($json->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+            } else {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
+            }
         }
-        if (isset($json[self::FIELD_PREDECESSOR]) || array_key_exists(self::FIELD_PREDECESSOR, $json)) {
-            $type->setPredecessor(FHIRIdentifier::jsonUnserialize($json[self::FIELD_PREDECESSOR], $config));
+        if (isset($json->predecessor) || property_exists($json, self::FIELD_PREDECESSOR)) {
+            if (is_array($json->predecessor)) {
+                $type->setPredecessor(FHIRIdentifier::jsonUnserialize(reset($json->predecessor), $config));
+            } else {
+                $type->setPredecessor(FHIRIdentifier::jsonUnserialize($json->predecessor, $config));
+            }
         }
-        if (isset($json[self::FIELD_TARGET]) || array_key_exists(self::FIELD_TARGET, $json)) {
-            $type->setTarget(FHIRReference::jsonUnserialize($json[self::FIELD_TARGET], $config));
+        if (isset($json->target) || property_exists($json, self::FIELD_TARGET)) {
+            if (is_array($json->target)) {
+                $type->setTarget(FHIRReference::jsonUnserialize(reset($json->target), $config));
+            } else {
+                $type->setTarget(FHIRReference::jsonUnserialize($json->target, $config));
+            }
         }
-        if (isset($json[self::FIELD_TARGET_ITEM_STRING])
-            || isset($json[self::FIELD_TARGET_ITEM_STRING_EXT])
-            || array_key_exists(self::FIELD_TARGET_ITEM_STRING, $json)
-            || array_key_exists(self::FIELD_TARGET_ITEM_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_TARGET_ITEM_STRING] ?? null;
-            $type->setTargetItemString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TARGET_ITEM_STRING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->targetItemString)
+            || isset($json->_targetItemString)
+            || property_exists($json, self::FIELD_TARGET_ITEM_STRING)
+            || property_exists($json, self::FIELD_TARGET_ITEM_STRING_EXT)) {
+            $v = $json->_targetItemString ?? new \stdClass();
+            $v->value = $json->targetItemString ?? null;
+            $type->setTargetItemString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TARGET_ITEM_IDENTIFIER]) || array_key_exists(self::FIELD_TARGET_ITEM_IDENTIFIER, $json)) {
-            $type->setTargetItemIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_TARGET_ITEM_IDENTIFIER], $config));
+        if (isset($json->targetItemIdentifier) || property_exists($json, self::FIELD_TARGET_ITEM_IDENTIFIER)) {
+            if (is_array($json->targetItemIdentifier)) {
+                $type->setTargetItemIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->targetItemIdentifier), $config));
+            } else {
+                $type->setTargetItemIdentifier(FHIRIdentifier::jsonUnserialize($json->targetItemIdentifier, $config));
+            }
         }
-        if (isset($json[self::FIELD_TARGET_ITEM_POSITIVE_INT])
-            || isset($json[self::FIELD_TARGET_ITEM_POSITIVE_INT_EXT])
-            || array_key_exists(self::FIELD_TARGET_ITEM_POSITIVE_INT, $json)
-            || array_key_exists(self::FIELD_TARGET_ITEM_POSITIVE_INT_EXT, $json)) {
-            $value = $json[self::FIELD_TARGET_ITEM_POSITIVE_INT] ?? null;
-            $type->setTargetItemPositiveInt(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_TARGET_ITEM_POSITIVE_INT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->targetItemPositiveInt)
+            || isset($json->_targetItemPositiveInt)
+            || property_exists($json, self::FIELD_TARGET_ITEM_POSITIVE_INT)
+            || property_exists($json, self::FIELD_TARGET_ITEM_POSITIVE_INT_EXT)) {
+            $v = $json->_targetItemPositiveInt ?? new \stdClass();
+            $v->value = $json->targetItemPositiveInt ?? null;
+            $type->setTargetItemPositiveInt(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ENCOUNTER]) || array_key_exists(self::FIELD_ENCOUNTER, $json)) {
-            $type->setEncounter(FHIRReference::jsonUnserialize($json[self::FIELD_ENCOUNTER], $config));
+        if (isset($json->encounter) || property_exists($json, self::FIELD_ENCOUNTER)) {
+            if (is_array($json->encounter)) {
+                $type->setEncounter(FHIRReference::jsonUnserialize(reset($json->encounter), $config));
+            } else {
+                $type->setEncounter(FHIRReference::jsonUnserialize($json->encounter, $config));
+            }
         }
-        if (isset($json[self::FIELD_ACCOUNT]) || array_key_exists(self::FIELD_ACCOUNT, $json)) {
-            $type->setAccount(FHIRReference::jsonUnserialize($json[self::FIELD_ACCOUNT], $config));
+        if (isset($json->account) || property_exists($json, self::FIELD_ACCOUNT)) {
+            if (is_array($json->account)) {
+                $type->setAccount(FHIRReference::jsonUnserialize(reset($json->account), $config));
+            } else {
+                $type->setAccount(FHIRReference::jsonUnserialize($json->account, $config));
+            }
         }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
         }
-        if (isset($json[self::FIELD_SUBMITTER]) || array_key_exists(self::FIELD_SUBMITTER, $json)) {
-            $type->setSubmitter(FHIRReference::jsonUnserialize($json[self::FIELD_SUBMITTER], $config));
+        if (isset($json->submitter) || property_exists($json, self::FIELD_SUBMITTER)) {
+            if (is_array($json->submitter)) {
+                $type->setSubmitter(FHIRReference::jsonUnserialize(reset($json->submitter), $config));
+            } else {
+                $type->setSubmitter(FHIRReference::jsonUnserialize($json->submitter, $config));
+            }
         }
-        if (isset($json[self::FIELD_RESPONSE]) || array_key_exists(self::FIELD_RESPONSE, $json)) {
-            $type->setResponse(FHIRReference::jsonUnserialize($json[self::FIELD_RESPONSE], $config));
+        if (isset($json->response) || property_exists($json, self::FIELD_RESPONSE)) {
+            if (is_array($json->response)) {
+                $type->setResponse(FHIRReference::jsonUnserialize(reset($json->response), $config));
+            } else {
+                $type->setResponse(FHIRReference::jsonUnserialize($json->response, $config));
+            }
         }
-        if (isset($json[self::FIELD_DATE])
-            || isset($json[self::FIELD_DATE_EXT])
-            || array_key_exists(self::FIELD_DATE, $json)
-            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_DATE] ?? null;
-            $type->setDate(FHIRDate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->date)
+            || isset($json->_date)
+            || property_exists($json, self::FIELD_DATE)
+            || property_exists($json, self::FIELD_DATE_EXT)) {
+            $v = $json->_date ?? new \stdClass();
+            $v->value = $json->date ?? null;
+            $type->setDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_RESPONSIBLE]) || array_key_exists(self::FIELD_RESPONSIBLE, $json)) {
-            $type->setResponsible(FHIRReference::jsonUnserialize($json[self::FIELD_RESPONSIBLE], $config));
+        if (isset($json->responsible) || property_exists($json, self::FIELD_RESPONSIBLE)) {
+            if (is_array($json->responsible)) {
+                $type->setResponsible(FHIRReference::jsonUnserialize(reset($json->responsible), $config));
+            } else {
+                $type->setResponsible(FHIRReference::jsonUnserialize($json->responsible, $config));
+            }
         }
-        if (isset($json[self::FIELD_PAYEE]) || array_key_exists(self::FIELD_PAYEE, $json)) {
-            $type->setPayee(FHIRReference::jsonUnserialize($json[self::FIELD_PAYEE], $config));
+        if (isset($json->payee) || property_exists($json, self::FIELD_PAYEE)) {
+            if (is_array($json->payee)) {
+                $type->setPayee(FHIRReference::jsonUnserialize(reset($json->payee), $config));
+            } else {
+                $type->setPayee(FHIRReference::jsonUnserialize($json->payee, $config));
+            }
         }
-        if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
-            $type->setAmount(FHIRMoney::jsonUnserialize($json[self::FIELD_AMOUNT], $config));
+        if (isset($json->amount) || property_exists($json, self::FIELD_AMOUNT)) {
+            if (is_array($json->amount)) {
+                $type->setAmount(FHIRMoney::jsonUnserialize(reset($json->amount), $config));
+            } else {
+                $type->setAmount(FHIRMoney::jsonUnserialize($json->amount, $config));
+            }
         }
         return $type;
     }

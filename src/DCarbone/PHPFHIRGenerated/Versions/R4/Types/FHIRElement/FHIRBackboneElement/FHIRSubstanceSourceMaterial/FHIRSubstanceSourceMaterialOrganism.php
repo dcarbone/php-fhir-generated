@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -92,12 +94,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_FAMILY = 'family';
     public const FIELD_GENUS = 'genus';
     public const FIELD_SPECIES = 'species';
@@ -108,16 +112,16 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
     public const FIELD_HYBRID = 'hybrid';
     public const FIELD_ORGANISM_GENERAL = 'organismGeneral';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_INTRASPECIFIC_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -239,7 +243,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      */
     protected FHIRSubstanceSourceMaterialOrganismGeneral $organismGeneral;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstanceSourceMaterialOrganism Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -298,7 +302,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -307,7 +311,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -486,11 +490,9 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * shall contain the syntax of the antigen in line with the WHO convention.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $intraspecificDescription
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIntraspecificDescription(null|string|FHIRStringPrimitive|FHIRString $intraspecificDescription,
-                                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIntraspecificDescription(null|string|FHIRStringPrimitive|FHIRString $intraspecificDescription): self
     {
         if (null === $intraspecificDescription) {
             unset($this->intraspecificDescription);
@@ -500,33 +502,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
             $intraspecificDescription = new FHIRString(value: $intraspecificDescription);
         }
         $this->intraspecificDescription = $intraspecificDescription;
-        if ($this->_valueXMLLocations[self::FIELD_INTRASPECIFIC_DESCRIPTION] !== $valueXMLLocation) {
-            $this->_setIntraspecificDescriptionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the intraspecificDescription element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIntraspecificDescriptionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INTRASPECIFIC_DESCRIPTION];
-    }
-
-    /**
-     * Set the location the "value" field of the intraspecificDescription element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIntraspecificDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INTRASPECIFIC_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -732,7 +707,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -761,9 +736,11 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -787,15 +764,16 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INTRASPECIFIC_DESCRIPTION])) {
             if (isset($type->intraspecificDescription)) {
                 $type->intraspecificDescription->setValue((string)$attributes[self::FIELD_INTRASPECIFIC_DESCRIPTION]);
-                $type->_setIntraspecificDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIntraspecificDescription((string)$attributes[self::FIELD_INTRASPECIFIC_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIntraspecificDescription((string)$attributes[self::FIELD_INTRASPECIFIC_DESCRIPTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INTRASPECIFIC_DESCRIPTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -808,7 +786,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->intraspecificDescription) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INTRASPECIFIC_DESCRIPTION]) {
-            $xw->writeAttribute(self::FIELD_INTRASPECIFIC_DESCRIPTION, $this->intraspecificDescription->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INTRASPECIFIC_DESCRIPTION, $this->intraspecificDescription->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->family)) {
@@ -858,13 +836,13 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -879,42 +857,66 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_FAMILY]) || array_key_exists(self::FIELD_FAMILY, $json)) {
-            $type->setFamily(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FAMILY], $config));
-        }
-        if (isset($json[self::FIELD_GENUS]) || array_key_exists(self::FIELD_GENUS, $json)) {
-            $type->setGenus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_GENUS], $config));
-        }
-        if (isset($json[self::FIELD_SPECIES]) || array_key_exists(self::FIELD_SPECIES, $json)) {
-            $type->setSpecies(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SPECIES], $config));
-        }
-        if (isset($json[self::FIELD_INTRASPECIFIC_TYPE]) || array_key_exists(self::FIELD_INTRASPECIFIC_TYPE, $json)) {
-            $type->setIntraspecificType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_INTRASPECIFIC_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_INTRASPECIFIC_DESCRIPTION])
-            || isset($json[self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT])
-            || array_key_exists(self::FIELD_INTRASPECIFIC_DESCRIPTION, $json)
-            || array_key_exists(self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT, $json)) {
-            $value = $json[self::FIELD_INTRASPECIFIC_DESCRIPTION] ?? null;
-            $type->setIntraspecificDescription(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_AUTHOR]) || array_key_exists(self::FIELD_AUTHOR, $json)) {
-            $vs = $json[self::FIELD_AUTHOR];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->family) || property_exists($json, self::FIELD_FAMILY)) {
+            if (is_array($json->family)) {
+                $type->setFamily(FHIRCodeableConcept::jsonUnserialize(reset($json->family), $config));
+            } else {
+                $type->setFamily(FHIRCodeableConcept::jsonUnserialize($json->family, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->genus) || property_exists($json, self::FIELD_GENUS)) {
+            if (is_array($json->genus)) {
+                $type->setGenus(FHIRCodeableConcept::jsonUnserialize(reset($json->genus), $config));
+            } else {
+                $type->setGenus(FHIRCodeableConcept::jsonUnserialize($json->genus, $config));
+            }
+        }
+        if (isset($json->species) || property_exists($json, self::FIELD_SPECIES)) {
+            if (is_array($json->species)) {
+                $type->setSpecies(FHIRCodeableConcept::jsonUnserialize(reset($json->species), $config));
+            } else {
+                $type->setSpecies(FHIRCodeableConcept::jsonUnserialize($json->species, $config));
+            }
+        }
+        if (isset($json->intraspecificType) || property_exists($json, self::FIELD_INTRASPECIFIC_TYPE)) {
+            if (is_array($json->intraspecificType)) {
+                $type->setIntraspecificType(FHIRCodeableConcept::jsonUnserialize(reset($json->intraspecificType), $config));
+            } else {
+                $type->setIntraspecificType(FHIRCodeableConcept::jsonUnserialize($json->intraspecificType, $config));
+            }
+        }
+        if (isset($json->intraspecificDescription)
+            || isset($json->_intraspecificDescription)
+            || property_exists($json, self::FIELD_INTRASPECIFIC_DESCRIPTION)
+            || property_exists($json, self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT)) {
+            $v = $json->_intraspecificDescription ?? new \stdClass();
+            $v->value = $json->intraspecificDescription ?? null;
+            $type->setIntraspecificDescription(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->author) || property_exists($json, self::FIELD_AUTHOR)) {
+            if (is_object($json->author)) {
+                $vals = [$json->author];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_AUTHOR, true);
+            } else {
+                $vals = $json->author;
+            }
+            foreach($vals as $v) {
                 $type->addAuthor(FHIRSubstanceSourceMaterialAuthor::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_HYBRID]) || array_key_exists(self::FIELD_HYBRID, $json)) {
-            $type->setHybrid(FHIRSubstanceSourceMaterialHybrid::jsonUnserialize($json[self::FIELD_HYBRID], $config));
+        if (isset($json->hybrid) || property_exists($json, self::FIELD_HYBRID)) {
+            if (is_array($json->hybrid)) {
+                $type->setHybrid(FHIRSubstanceSourceMaterialHybrid::jsonUnserialize(reset($json->hybrid), $config));
+            } else {
+                $type->setHybrid(FHIRSubstanceSourceMaterialHybrid::jsonUnserialize($json->hybrid, $config));
+            }
         }
-        if (isset($json[self::FIELD_ORGANISM_GENERAL]) || array_key_exists(self::FIELD_ORGANISM_GENERAL, $json)) {
-            $type->setOrganismGeneral(FHIRSubstanceSourceMaterialOrganismGeneral::jsonUnserialize($json[self::FIELD_ORGANISM_GENERAL], $config));
+        if (isset($json->organismGeneral) || property_exists($json, self::FIELD_ORGANISM_GENERAL)) {
+            if (is_array($json->organismGeneral)) {
+                $type->setOrganismGeneral(FHIRSubstanceSourceMaterialOrganismGeneral::jsonUnserialize(reset($json->organismGeneral), $config));
+            } else {
+                $type->setOrganismGeneral(FHIRSubstanceSourceMaterialOrganismGeneral::jsonUnserialize($json->organismGeneral, $config));
+            }
         }
         return $type;
     }
@@ -948,7 +950,11 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
             }
         }
         if (isset($this->author) && [] !== $this->author) {
-            $out->author = $this->author;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_AUTHOR) && 1 === count($this->author)) {
+                $out->author = $this->author[0];
+            } else {
+                $out->author = $this->author;
+            }
         }
         if (isset($this->hybrid)) {
             $out->hybrid = $this->hybrid;

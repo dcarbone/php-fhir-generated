@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,39 +63,48 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
 
 class FHIRBooleanPrimitive implements PrimitiveTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BOOLEAN_HYPHEN_PRIMITIVE;
 
-    /* class_default.php:47 */
     public const FIELD_VALUE = 'value';
 
-    /* class_default.php:66 */
+    /* class_primitive.php:60 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:111 */
+    /* class_primitive.php:80 */
     /** @var bool */
     protected bool $value;
 
-    /* constructor.php:49 */
+    /** @var bool */
+    private bool $_jsonAsString;
+
+    /* class_primitive.php:98 */
     /**
      * FHIRBooleanPrimitive Constructor
      * @param null|string|bool $value
+     * @param bool $jsonAsString If true forces this value to string during JSON serialization.
      */
-    public function __construct(null|string|bool $value = null)
+    public function __construct(null|string|bool $value = null,
+                                bool $jsonAsString = false)
     {
         $this->setValue(value: $value);
+        $this->_jsonAsString = $jsonAsString;
     }
 
-    /* class_default.php:143 */
+    /* class_primitive.php:116 */
     /**
      * @return string
      */
@@ -104,7 +113,26 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /**
+     * Specify whether this value must be represented as a string when serializing to JSON.
+     *
+     * @param bool $jsonAsString
+     * @return self
+     */
+    public function _setJSONAsString(bool $jsonAsString): self
+    {
+        $this->_jsonAsString = $jsonAsString;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function _getJSONAsString(): bool
+    {
+        return $this->_jsonAsString;
+    }
+
     /**
      * @return null|bool
      */
@@ -112,7 +140,6 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
     {
         return $this->value ?? null;
     }
-
     /**
      * @param null|string|bool $value
      * @return static
@@ -122,6 +149,7 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
         if (null === $value) {
             unset($this->value);
         } elseif (is_string($value)) {
+            $this->_jsonAsString = true;
             $this->value = Constants::STRING_TRUE === strtolower($value);
         } else {
             $this->value = (bool)$value;
@@ -132,27 +160,25 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
     /**
      * @return string
      */
-    public function _getFormattedValue(): string
+    public function _getValueAsString(): string
     {
-        return $this->getValue() ? Constants::STRING_TRUE : Constants::STRING_FALSE;
+        return ($this->value ?? false)
+            ? Constants::STRING_TRUE
+            : Constants::STRING_FALSE;
     }
 
-    /* class_default.php:208 */
-
-    /**
-     * @return null|bool
-     */
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): bool|string
     {
-        return $this->getValue();
+        if ($this->_jsonAsString) {
+            return ($this->value ?? false)
+                ? Constants::STRING_TRUE
+                : Constants::STRING_FALSE;
+        }
+        return $this->value ?? false;
     }
 
-    /* class_default.php:235 */
-    /**
-     * @return string
-     */
     public function __toString(): string
     {
-        return $this->_getFormattedValue();
+        return $this->_getValueAsString();
     }
 }

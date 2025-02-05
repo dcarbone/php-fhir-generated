@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -34,8 +34,8 @@ trait ValueContainerTrait
      *
      * @return string
      */
-    public function _getFormattedValue(): string
+    public function _getValueAsString(): string
     {
-        return isset($this->value) ? $this->value->_getFormattedValue() : '';
+        return isset($this->value) ? $this->value->_getValueAsString() : '';
     }
 }

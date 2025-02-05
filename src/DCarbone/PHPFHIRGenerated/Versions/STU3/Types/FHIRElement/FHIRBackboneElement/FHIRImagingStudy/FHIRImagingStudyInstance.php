@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -88,12 +90,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRImagingStudyInstance extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMAGING_STUDY_DOT_INSTANCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_UID = 'uid';
     public const FIELD_UID_EXT = '_uid';
     public const FIELD_NUMBER = 'number';
@@ -103,7 +107,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     public const FIELD_TITLE = 'title';
     public const FIELD_TITLE_EXT = '_title';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_UID => [
@@ -114,7 +118,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_UID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -122,7 +126,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         self::FIELD_TITLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
@@ -166,7 +170,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      */
     protected FHIRString $title;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRImagingStudyInstance Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -205,7 +209,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -214,7 +218,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
@@ -239,11 +243,9 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * Formal identifier for this image or other content.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid $uid
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUid(null|string|FHIROidPrimitive|FHIROid $uid,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
         if (null === $uid) {
             unset($this->uid);
@@ -253,33 +255,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
             $uid = new FHIROid(value: $uid);
         }
         $this->uid = $uid;
-        if ($this->_valueXMLLocations[self::FIELD_UID] !== $valueXMLLocation) {
-            $this->_setUidValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the uid element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUidValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_UID];
-    }
-
-    /**
-     * Set the location the "value" field of the uid element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUidValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_UID] = $valueXMLLocation;
         return $this;
     }
 
@@ -305,11 +280,9 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * The number of instance in the series.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $number
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number): self
     {
         if (null === $number) {
             unset($this->number);
@@ -319,33 +292,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
             $number = new FHIRUnsignedInt(value: $number);
         }
         $this->number = $number;
-        if ($this->_valueXMLLocations[self::FIELD_NUMBER] !== $valueXMLLocation) {
-            $this->_setNumberValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the number element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNumberValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NUMBER];
-    }
-
-    /**
-     * Set the location the "value" field of the number element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNumberValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NUMBER] = $valueXMLLocation;
         return $this;
     }
 
@@ -373,11 +319,9 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * DICOM instance type.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid $sopClass
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSopClass(null|string|FHIROidPrimitive|FHIROid $sopClass,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSopClass(null|string|FHIROidPrimitive|FHIROid $sopClass): self
     {
         if (null === $sopClass) {
             unset($this->sopClass);
@@ -387,33 +331,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
             $sopClass = new FHIROid(value: $sopClass);
         }
         $this->sopClass = $sopClass;
-        if ($this->_valueXMLLocations[self::FIELD_SOP_CLASS] !== $valueXMLLocation) {
-            $this->_setSopClassValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the sopClass element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSopClassValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SOP_CLASS];
-    }
-
-    /**
-     * Set the location the "value" field of the sopClass element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSopClassValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SOP_CLASS] = $valueXMLLocation;
         return $this;
     }
 
@@ -439,11 +356,9 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * The description of the instance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $title
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
         if (null === $title) {
             unset($this->title);
@@ -453,37 +368,10 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
             $title = new FHIRString(value: $title);
         }
         $this->title = $title;
-        if ($this->_valueXMLLocations[self::FIELD_TITLE] !== $valueXMLLocation) {
-            $this->_setTitleValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the title element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTitleValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TITLE];
-    }
-
-    /**
-     * Set the location the "value" field of the title element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTitleValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TITLE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -512,9 +400,11 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -530,39 +420,40 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_UID])) {
             if (isset($type->uid)) {
                 $type->uid->setValue((string)$attributes[self::FIELD_UID]);
-                $type->_setUidValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUid((string)$attributes[self::FIELD_UID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUid((string)$attributes[self::FIELD_UID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_UID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NUMBER])) {
             if (isset($type->number)) {
                 $type->number->setValue((string)$attributes[self::FIELD_NUMBER]);
-                $type->_setNumberValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNumber((string)$attributes[self::FIELD_NUMBER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setNumber((string)$attributes[self::FIELD_NUMBER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NUMBER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SOP_CLASS])) {
             if (isset($type->sopClass)) {
                 $type->sopClass->setValue((string)$attributes[self::FIELD_SOP_CLASS]);
-                $type->_setSopClassValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSopClass((string)$attributes[self::FIELD_SOP_CLASS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSopClass((string)$attributes[self::FIELD_SOP_CLASS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SOP_CLASS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TITLE])) {
             if (isset($type->title)) {
                 $type->title->setValue((string)$attributes[self::FIELD_TITLE]);
-                $type->_setTitleValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTitle((string)$attributes[self::FIELD_TITLE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTitle((string)$attributes[self::FIELD_TITLE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TITLE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -575,16 +466,16 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->uid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_UID]) {
-            $xw->writeAttribute(self::FIELD_UID, $this->uid->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_UID, $this->uid->_getValueAsString());
         }
         if (isset($this->number) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NUMBER]) {
-            $xw->writeAttribute(self::FIELD_NUMBER, $this->number->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NUMBER, $this->number->_getValueAsString());
         }
         if (isset($this->sopClass) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SOP_CLASS]) {
-            $xw->writeAttribute(self::FIELD_SOP_CLASS, $this->sopClass->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SOP_CLASS, $this->sopClass->_getValueAsString());
         }
         if (isset($this->title) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TITLE]) {
-            $xw->writeAttribute(self::FIELD_TITLE, $this->title->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TITLE, $this->title->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->uid)
@@ -618,13 +509,13 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -639,45 +530,37 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_UID])
-            || isset($json[self::FIELD_UID_EXT])
-            || array_key_exists(self::FIELD_UID, $json)
-            || array_key_exists(self::FIELD_UID_EXT, $json)) {
-            $value = $json[self::FIELD_UID] ?? null;
-            $type->setUid(FHIROid::jsonUnserialize(
-                (is_array($value) ? $value : [FHIROid::FIELD_VALUE => $value]) + ($json[self::FIELD_UID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->uid)
+            || isset($json->_uid)
+            || property_exists($json, self::FIELD_UID)
+            || property_exists($json, self::FIELD_UID_EXT)) {
+            $v = $json->_uid ?? new \stdClass();
+            $v->value = $json->uid ?? null;
+            $type->setUid(FHIROid::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_NUMBER])
-            || isset($json[self::FIELD_NUMBER_EXT])
-            || array_key_exists(self::FIELD_NUMBER, $json)
-            || array_key_exists(self::FIELD_NUMBER_EXT, $json)) {
-            $value = $json[self::FIELD_NUMBER] ?? null;
-            $type->setNumber(FHIRUnsignedInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_NUMBER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->number)
+            || isset($json->_number)
+            || property_exists($json, self::FIELD_NUMBER)
+            || property_exists($json, self::FIELD_NUMBER_EXT)) {
+            $v = $json->_number ?? new \stdClass();
+            $v->value = $json->number ?? null;
+            $type->setNumber(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SOP_CLASS])
-            || isset($json[self::FIELD_SOP_CLASS_EXT])
-            || array_key_exists(self::FIELD_SOP_CLASS, $json)
-            || array_key_exists(self::FIELD_SOP_CLASS_EXT, $json)) {
-            $value = $json[self::FIELD_SOP_CLASS] ?? null;
-            $type->setSopClass(FHIROid::jsonUnserialize(
-                (is_array($value) ? $value : [FHIROid::FIELD_VALUE => $value]) + ($json[self::FIELD_SOP_CLASS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sopClass)
+            || isset($json->_sopClass)
+            || property_exists($json, self::FIELD_SOP_CLASS)
+            || property_exists($json, self::FIELD_SOP_CLASS_EXT)) {
+            $v = $json->_sopClass ?? new \stdClass();
+            $v->value = $json->sopClass ?? null;
+            $type->setSopClass(FHIROid::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TITLE])
-            || isset($json[self::FIELD_TITLE_EXT])
-            || array_key_exists(self::FIELD_TITLE, $json)
-            || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
-            $value = $json[self::FIELD_TITLE] ?? null;
-            $type->setTitle(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TITLE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->title)
+            || isset($json->_title)
+            || property_exists($json, self::FIELD_TITLE)
+            || property_exists($json, self::FIELD_TITLE_EXT)) {
+            $v = $json->_title ?? new \stdClass();
+            $v->value = $json->title ?? null;
+            $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

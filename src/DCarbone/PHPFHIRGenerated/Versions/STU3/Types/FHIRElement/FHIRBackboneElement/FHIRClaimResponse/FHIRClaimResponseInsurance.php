@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -86,12 +88,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRClaimResponseInsurance extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_INSURANCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SEQUENCE = 'sequence';
     public const FIELD_SEQUENCE_EXT = '_sequence';
     public const FIELD_FOCAL = 'focal';
@@ -103,7 +107,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
     public const FIELD_PRE_AUTH_REF_EXT = '_preAuthRef';
     public const FIELD_CLAIM_RESPONSE = 'claimResponse';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SEQUENCE => [
@@ -117,14 +121,14 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FOCAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_BUSINESS_ARRANGEMENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -187,13 +191,13 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
      */
     protected FHIRReference $claimResponse;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRClaimResponseInsurance Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $focal
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $coverage
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $businessArrangement
@@ -204,7 +208,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $focal = null,
                                 null|FHIRReference $coverage = null,
                                 null|string|FHIRStringPrimitive|FHIRString $businessArrangement = null,
@@ -236,7 +240,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -245,7 +249,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -267,12 +271,10 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
      *
      * A service line item.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
      * @return static
      */
-    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
         if (null === $sequence) {
             unset($this->sequence);
@@ -282,33 +284,6 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
             $sequence = new FHIRPositiveInt(value: $sequence);
         }
         $this->sequence = $sequence;
-        if ($this->_valueXMLLocations[self::FIELD_SEQUENCE] !== $valueXMLLocation) {
-            $this->_setSequenceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the sequence element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSequenceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SEQUENCE];
-    }
-
-    /**
-     * Set the location the "value" field of the sequence element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSequenceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SEQUENCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -334,11 +309,9 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
      * Coverage against which the claim is to be adjudicated.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $focal
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFocal(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $focal,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFocal(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $focal): self
     {
         if (null === $focal) {
             unset($this->focal);
@@ -348,33 +321,6 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
             $focal = new FHIRBoolean(value: $focal);
         }
         $this->focal = $focal;
-        if ($this->_valueXMLLocations[self::FIELD_FOCAL] !== $valueXMLLocation) {
-            $this->_setFocalValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the focal element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFocalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FOCAL];
-    }
-
-    /**
-     * Set the location the "value" field of the focal element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFocalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FOCAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -436,11 +382,9 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
      * conditions.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $businessArrangement
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setBusinessArrangement(null|string|FHIRStringPrimitive|FHIRString $businessArrangement,
-                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setBusinessArrangement(null|string|FHIRStringPrimitive|FHIRString $businessArrangement): self
     {
         if (null === $businessArrangement) {
             unset($this->businessArrangement);
@@ -450,33 +394,6 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
             $businessArrangement = new FHIRString(value: $businessArrangement);
         }
         $this->businessArrangement = $businessArrangement;
-        if ($this->_valueXMLLocations[self::FIELD_BUSINESS_ARRANGEMENT] !== $valueXMLLocation) {
-            $this->_setBusinessArrangementValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the businessArrangement element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getBusinessArrangementValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_BUSINESS_ARRANGEMENT];
-    }
-
-    /**
-     * Set the location the "value" field of the businessArrangement element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setBusinessArrangementValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_BUSINESS_ARRANGEMENT] = $valueXMLLocation;
         return $this;
     }
 
@@ -588,7 +505,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -617,9 +534,11 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -639,31 +558,32 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SEQUENCE])) {
             if (isset($type->sequence)) {
                 $type->sequence->setValue((string)$attributes[self::FIELD_SEQUENCE]);
-                $type->_setSequenceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SEQUENCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_FOCAL])) {
             if (isset($type->focal)) {
                 $type->focal->setValue((string)$attributes[self::FIELD_FOCAL]);
-                $type->_setFocalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setFocal((string)$attributes[self::FIELD_FOCAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setFocal((string)$attributes[self::FIELD_FOCAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_FOCAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_BUSINESS_ARRANGEMENT])) {
             if (isset($type->businessArrangement)) {
                 $type->businessArrangement->setValue((string)$attributes[self::FIELD_BUSINESS_ARRANGEMENT]);
-                $type->_setBusinessArrangementValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setBusinessArrangement((string)$attributes[self::FIELD_BUSINESS_ARRANGEMENT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setBusinessArrangement((string)$attributes[self::FIELD_BUSINESS_ARRANGEMENT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_BUSINESS_ARRANGEMENT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -676,13 +596,13 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->sequence) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SEQUENCE]) {
-            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->_getValueAsString());
         }
         if (isset($this->focal) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FOCAL]) {
-            $xw->writeAttribute(self::FIELD_FOCAL, $this->focal->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_FOCAL, $this->focal->_getValueAsString());
         }
         if (isset($this->businessArrangement) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_BUSINESS_ARRANGEMENT]) {
-            $xw->writeAttribute(self::FIELD_BUSINESS_ARRANGEMENT, $this->businessArrangement->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_BUSINESS_ARRANGEMENT, $this->businessArrangement->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->sequence)
@@ -726,13 +646,13 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -747,59 +667,60 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SEQUENCE])
-            || isset($json[self::FIELD_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
-            $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $type->setSequence(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sequence)
+            || isset($json->_sequence)
+            || property_exists($json, self::FIELD_SEQUENCE)
+            || property_exists($json, self::FIELD_SEQUENCE_EXT)) {
+            $v = $json->_sequence ?? new \stdClass();
+            $v->value = $json->sequence ?? null;
+            $type->setSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_FOCAL])
-            || isset($json[self::FIELD_FOCAL_EXT])
-            || array_key_exists(self::FIELD_FOCAL, $json)
-            || array_key_exists(self::FIELD_FOCAL_EXT, $json)) {
-            $value = $json[self::FIELD_FOCAL] ?? null;
-            $type->setFocal(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_FOCAL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->focal)
+            || isset($json->_focal)
+            || property_exists($json, self::FIELD_FOCAL)
+            || property_exists($json, self::FIELD_FOCAL_EXT)) {
+            $v = $json->_focal ?? new \stdClass();
+            $v->value = $json->focal ?? null;
+            $type->setFocal(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_COVERAGE]) || array_key_exists(self::FIELD_COVERAGE, $json)) {
-            $type->setCoverage(FHIRReference::jsonUnserialize($json[self::FIELD_COVERAGE], $config));
-        }
-        if (isset($json[self::FIELD_BUSINESS_ARRANGEMENT])
-            || isset($json[self::FIELD_BUSINESS_ARRANGEMENT_EXT])
-            || array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT, $json)
-            || array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT_EXT, $json)) {
-            $value = $json[self::FIELD_BUSINESS_ARRANGEMENT] ?? null;
-            $type->setBusinessArrangement(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_BUSINESS_ARRANGEMENT_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_PRE_AUTH_REF])
-            || isset($json[self::FIELD_PRE_AUTH_REF_EXT])
-            || array_key_exists(self::FIELD_PRE_AUTH_REF, $json)
-            || array_key_exists(self::FIELD_PRE_AUTH_REF_EXT, $json)) {
-            $value = (array)($json[self::FIELD_PRE_AUTH_REF] ?? []);
-            $ext = (array)($json[self::FIELD_PRE_AUTH_REF_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
-            }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addPreAuthRef(FHIRString::jsonUnserialize(
-                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+        if (isset($json->coverage) || property_exists($json, self::FIELD_COVERAGE)) {
+            if (is_array($json->coverage)) {
+                $type->setCoverage(FHIRReference::jsonUnserialize(reset($json->coverage), $config));
+            } else {
+                $type->setCoverage(FHIRReference::jsonUnserialize($json->coverage, $config));
             }
         }
-        if (isset($json[self::FIELD_CLAIM_RESPONSE]) || array_key_exists(self::FIELD_CLAIM_RESPONSE, $json)) {
-            $type->setClaimResponse(FHIRReference::jsonUnserialize($json[self::FIELD_CLAIM_RESPONSE], $config));
+        if (isset($json->businessArrangement)
+            || isset($json->_businessArrangement)
+            || property_exists($json, self::FIELD_BUSINESS_ARRANGEMENT)
+            || property_exists($json, self::FIELD_BUSINESS_ARRANGEMENT_EXT)) {
+            $v = $json->_businessArrangement ?? new \stdClass();
+            $v->value = $json->businessArrangement ?? null;
+            $type->setBusinessArrangement(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->preAuthRef)
+            || isset($json->_preAuthRef)
+            || property_exists($json, self::FIELD_PRE_AUTH_REF)
+            || property_exists($json, self::FIELD_PRE_AUTH_REF_EXT)) {
+            $vals = (array)($json->preAuthRef ?? []);
+            $exts = (array)($json->FIELD_PRE_AUTH_REF_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
+            }
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addPreAuthRef(FHIRString::jsonUnserialize($v, $config));
+            }
+        }
+        if (isset($json->claimResponse) || property_exists($json, self::FIELD_CLAIM_RESPONSE)) {
+            if (is_array($json->claimResponse)) {
+                $type->setClaimResponse(FHIRReference::jsonUnserialize(reset($json->claimResponse), $config));
+            } else {
+                $type->setClaimResponse(FHIRReference::jsonUnserialize($json->claimResponse, $config));
+            }
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,12 +89,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  */
 class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DATE = 'date';
     public const FIELD_DATE_EXT = '_date';
     public const FIELD_VACCINE_CODE = 'vaccineCode';
@@ -104,7 +108,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     public const FIELD_SUPPORTING_IMMUNIZATION = 'supportingImmunization';
     public const FIELD_SUPPORTING_PATIENT_INFORMATION = 'supportingPatientInformation';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_DATE => [
@@ -118,13 +122,13 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DOSE_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -215,7 +219,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     protected array $supportingPatientInformation;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRImmunizationRecommendationRecommendation Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
@@ -223,7 +227,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $vaccineCode
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $doseNumber
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $doseNumber
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $forecastStatus
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[] $dateCriterion
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol $protocol
@@ -236,7 +240,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date = null,
                                 null|FHIRCodeableConcept $vaccineCode = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseNumber = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseNumber = null,
                                 null|FHIRCodeableConcept $forecastStatus = null,
                                 null|iterable $dateCriterion = null,
                                 null|FHIRImmunizationRecommendationProtocol $protocol = null,
@@ -274,7 +278,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -283,7 +287,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -312,11 +316,9 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * The date the immunization recommendation was created.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
         if (null === $date) {
             unset($this->date);
@@ -326,33 +328,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             $date = new FHIRDateTime(value: $date);
         }
         $this->date = $date;
-        if ($this->_valueXMLLocations[self::FIELD_DATE] !== $valueXMLLocation) {
-            $this->_setDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the date element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the date element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -415,12 +390,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * This indicates the next recommended dose number (e.g. dose 2 is the next
      * recommended dose).
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $doseNumber
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $doseNumber
      * @return static
      */
-    public function setDoseNumber(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseNumber,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDoseNumber(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseNumber): self
     {
         if (null === $doseNumber) {
             unset($this->doseNumber);
@@ -430,33 +403,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             $doseNumber = new FHIRPositiveInt(value: $doseNumber);
         }
         $this->doseNumber = $doseNumber;
-        if ($this->_valueXMLLocations[self::FIELD_DOSE_NUMBER] !== $valueXMLLocation) {
-            $this->_setDoseNumberValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the doseNumber element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDoseNumberValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DOSE_NUMBER];
-    }
-
-    /**
-     * Set the location the "value" field of the doseNumber element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDoseNumberValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DOSE_NUMBER] = $valueXMLLocation;
         return $this;
     }
 
@@ -730,7 +676,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -759,9 +705,11 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -785,23 +733,24 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATE])) {
             if (isset($type->date)) {
                 $type->date->setValue((string)$attributes[self::FIELD_DATE]);
-                $type->_setDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDate((string)$attributes[self::FIELD_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDate((string)$attributes[self::FIELD_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DOSE_NUMBER])) {
             if (isset($type->doseNumber)) {
                 $type->doseNumber->setValue((string)$attributes[self::FIELD_DOSE_NUMBER]);
-                $type->_setDoseNumberValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDoseNumber((string)$attributes[self::FIELD_DOSE_NUMBER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDoseNumber((string)$attributes[self::FIELD_DOSE_NUMBER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DOSE_NUMBER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -814,10 +763,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->date) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATE]) {
-            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getValueAsString());
         }
         if (isset($this->doseNumber) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DOSE_NUMBER]) {
-            $xw->writeAttribute(self::FIELD_DOSE_NUMBER, $this->doseNumber->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DOSE_NUMBER, $this->doseNumber->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->date)
@@ -873,13 +822,13 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -894,59 +843,73 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DATE])
-            || isset($json[self::FIELD_DATE_EXT])
-            || array_key_exists(self::FIELD_DATE, $json)
-            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_DATE] ?? null;
-            $type->setDate(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->date)
+            || isset($json->_date)
+            || property_exists($json, self::FIELD_DATE)
+            || property_exists($json, self::FIELD_DATE_EXT)) {
+            $v = $json->_date ?? new \stdClass();
+            $v->value = $json->date ?? null;
+            $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VACCINE_CODE]) || array_key_exists(self::FIELD_VACCINE_CODE, $json)) {
-            $type->setVaccineCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VACCINE_CODE], $config));
-        }
-        if (isset($json[self::FIELD_DOSE_NUMBER])
-            || isset($json[self::FIELD_DOSE_NUMBER_EXT])
-            || array_key_exists(self::FIELD_DOSE_NUMBER, $json)
-            || array_key_exists(self::FIELD_DOSE_NUMBER_EXT, $json)) {
-            $value = $json[self::FIELD_DOSE_NUMBER] ?? null;
-            $type->setDoseNumber(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_DOSE_NUMBER_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_FORECAST_STATUS]) || array_key_exists(self::FIELD_FORECAST_STATUS, $json)) {
-            $type->setForecastStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FORECAST_STATUS], $config));
-        }
-        if (isset($json[self::FIELD_DATE_CRITERION]) || array_key_exists(self::FIELD_DATE_CRITERION, $json)) {
-            $vs = $json[self::FIELD_DATE_CRITERION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->vaccineCode) || property_exists($json, self::FIELD_VACCINE_CODE)) {
+            if (is_array($json->vaccineCode)) {
+                $type->setVaccineCode(FHIRCodeableConcept::jsonUnserialize(reset($json->vaccineCode), $config));
+            } else {
+                $type->setVaccineCode(FHIRCodeableConcept::jsonUnserialize($json->vaccineCode, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->doseNumber)
+            || isset($json->_doseNumber)
+            || property_exists($json, self::FIELD_DOSE_NUMBER)
+            || property_exists($json, self::FIELD_DOSE_NUMBER_EXT)) {
+            $v = $json->_doseNumber ?? new \stdClass();
+            $v->value = $json->doseNumber ?? null;
+            $type->setDoseNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
+        }
+        if (isset($json->forecastStatus) || property_exists($json, self::FIELD_FORECAST_STATUS)) {
+            if (is_array($json->forecastStatus)) {
+                $type->setForecastStatus(FHIRCodeableConcept::jsonUnserialize(reset($json->forecastStatus), $config));
+            } else {
+                $type->setForecastStatus(FHIRCodeableConcept::jsonUnserialize($json->forecastStatus, $config));
+            }
+        }
+        if (isset($json->dateCriterion) || property_exists($json, self::FIELD_DATE_CRITERION)) {
+            if (is_object($json->dateCriterion)) {
+                $vals = [$json->dateCriterion];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DATE_CRITERION, true);
+            } else {
+                $vals = $json->dateCriterion;
+            }
+            foreach($vals as $v) {
                 $type->addDateCriterion(FHIRImmunizationRecommendationDateCriterion::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PROTOCOL]) || array_key_exists(self::FIELD_PROTOCOL, $json)) {
-            $type->setProtocol(FHIRImmunizationRecommendationProtocol::jsonUnserialize($json[self::FIELD_PROTOCOL], $config));
-        }
-        if (isset($json[self::FIELD_SUPPORTING_IMMUNIZATION]) || array_key_exists(self::FIELD_SUPPORTING_IMMUNIZATION, $json)) {
-            $vs = $json[self::FIELD_SUPPORTING_IMMUNIZATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->protocol) || property_exists($json, self::FIELD_PROTOCOL)) {
+            if (is_array($json->protocol)) {
+                $type->setProtocol(FHIRImmunizationRecommendationProtocol::jsonUnserialize(reset($json->protocol), $config));
+            } else {
+                $type->setProtocol(FHIRImmunizationRecommendationProtocol::jsonUnserialize($json->protocol, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->supportingImmunization) || property_exists($json, self::FIELD_SUPPORTING_IMMUNIZATION)) {
+            if (is_object($json->supportingImmunization)) {
+                $vals = [$json->supportingImmunization];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUPPORTING_IMMUNIZATION, true);
+            } else {
+                $vals = $json->supportingImmunization;
+            }
+            foreach($vals as $v) {
                 $type->addSupportingImmunization(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SUPPORTING_PATIENT_INFORMATION]) || array_key_exists(self::FIELD_SUPPORTING_PATIENT_INFORMATION, $json)) {
-            $vs = $json[self::FIELD_SUPPORTING_PATIENT_INFORMATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->supportingPatientInformation) || property_exists($json, self::FIELD_SUPPORTING_PATIENT_INFORMATION)) {
+            if (is_object($json->supportingPatientInformation)) {
+                $vals = [$json->supportingPatientInformation];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUPPORTING_PATIENT_INFORMATION, true);
+            } else {
+                $vals = $json->supportingPatientInformation;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSupportingPatientInformation(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -986,16 +949,28 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             $out->forecastStatus = $this->forecastStatus;
         }
         if (isset($this->dateCriterion) && [] !== $this->dateCriterion) {
-            $out->dateCriterion = $this->dateCriterion;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DATE_CRITERION) && 1 === count($this->dateCriterion)) {
+                $out->dateCriterion = $this->dateCriterion[0];
+            } else {
+                $out->dateCriterion = $this->dateCriterion;
+            }
         }
         if (isset($this->protocol)) {
             $out->protocol = $this->protocol;
         }
         if (isset($this->supportingImmunization) && [] !== $this->supportingImmunization) {
-            $out->supportingImmunization = $this->supportingImmunization;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUPPORTING_IMMUNIZATION) && 1 === count($this->supportingImmunization)) {
+                $out->supportingImmunization = $this->supportingImmunization[0];
+            } else {
+                $out->supportingImmunization = $this->supportingImmunization;
+            }
         }
         if (isset($this->supportingPatientInformation) && [] !== $this->supportingPatientInformation) {
-            $out->supportingPatientInformation = $this->supportingPatientInformation;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUPPORTING_PATIENT_INFORMATION) && 1 === count($this->supportingPatientInformation)) {
+                $out->supportingPatientInformation = $this->supportingPatientInformation[0];
+            } else {
+                $out->supportingPatientInformation = $this->supportingPatientInformation;
+            }
         }
         return $out;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,12 +89,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  */
 class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_OUTCOME = 'outcome';
     public const FIELD_PROBABILITY_DECIMAL = 'probabilityDecimal';
     public const FIELD_PROBABILITY_DECIMAL_EXT = '_probabilityDecimal';
@@ -105,7 +109,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     public const FIELD_RATIONALE = 'rationale';
     public const FIELD_RATIONALE_EXT = '_rationale';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_OUTCOME => [
@@ -113,14 +117,14 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_PROBABILITY_DECIMAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RELATIVE_RISK => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RATIONALE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -212,17 +216,17 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      */
     protected FHIRString $rationale;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRRiskAssessmentPrediction Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $outcome
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $probabilityDecimal
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $probabilityDecimal
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $probabilityRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $probabilityCodeableConcept
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $relativeRisk
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $relativeRisk
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $whenPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $whenRange
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $rationale
@@ -232,10 +236,10 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $outcome = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $probabilityDecimal = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $probabilityDecimal = null,
                                 null|FHIRRange $probabilityRange = null,
                                 null|FHIRCodeableConcept $probabilityCodeableConcept = null,
-                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $relativeRisk = null,
+                                null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $relativeRisk = null,
                                 null|FHIRPeriod $whenPeriod = null,
                                 null|FHIRRange $whenRange = null,
                                 null|string|FHIRStringPrimitive|FHIRString $rationale = null,
@@ -271,7 +275,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -280,7 +284,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -342,12 +346,10 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * How likely is the outcome (in the specified timeframe).
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $probabilityDecimal
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $probabilityDecimal
      * @return static
      */
-    public function setProbabilityDecimal(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $probabilityDecimal,
-                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setProbabilityDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $probabilityDecimal): self
     {
         if (null === $probabilityDecimal) {
             unset($this->probabilityDecimal);
@@ -357,33 +359,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $probabilityDecimal = new FHIRDecimal(value: $probabilityDecimal);
         }
         $this->probabilityDecimal = $probabilityDecimal;
-        if ($this->_valueXMLLocations[self::FIELD_PROBABILITY_DECIMAL] !== $valueXMLLocation) {
-            $this->_setProbabilityDecimalValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the probabilityDecimal element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getProbabilityDecimalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PROBABILITY_DECIMAL];
-    }
-
-    /**
-     * Set the location the "value" field of the probabilityDecimal element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setProbabilityDecimalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PROBABILITY_DECIMAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -486,12 +461,10 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * greater than 1 = higher risk than the population, numbers less than 1 = lower
      * risk.).
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $relativeRisk
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $relativeRisk
      * @return static
      */
-    public function setRelativeRisk(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $relativeRisk,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRelativeRisk(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $relativeRisk): self
     {
         if (null === $relativeRisk) {
             unset($this->relativeRisk);
@@ -501,33 +474,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $relativeRisk = new FHIRDecimal(value: $relativeRisk);
         }
         $this->relativeRisk = $relativeRisk;
-        if ($this->_valueXMLLocations[self::FIELD_RELATIVE_RISK] !== $valueXMLLocation) {
-            $this->_setRelativeRiskValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the relativeRisk element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRelativeRiskValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RELATIVE_RISK];
-    }
-
-    /**
-     * Set the location the "value" field of the relativeRisk element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRelativeRiskValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RELATIVE_RISK] = $valueXMLLocation;
         return $this;
     }
 
@@ -625,11 +571,9 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * Additional information explaining the basis for the prediction.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $rationale
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRationale(null|string|FHIRStringPrimitive|FHIRString $rationale,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRationale(null|string|FHIRStringPrimitive|FHIRString $rationale): self
     {
         if (null === $rationale) {
             unset($this->rationale);
@@ -639,37 +583,10 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $rationale = new FHIRString(value: $rationale);
         }
         $this->rationale = $rationale;
-        if ($this->_valueXMLLocations[self::FIELD_RATIONALE] !== $valueXMLLocation) {
-            $this->_setRationaleValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the rationale element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRationaleValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RATIONALE];
-    }
-
-    /**
-     * Set the location the "value" field of the rationale element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRationaleValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RATIONALE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -698,9 +615,11 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -724,31 +643,32 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PROBABILITY_DECIMAL])) {
             if (isset($type->probabilityDecimal)) {
                 $type->probabilityDecimal->setValue((string)$attributes[self::FIELD_PROBABILITY_DECIMAL]);
-                $type->_setProbabilityDecimalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setProbabilityDecimal((string)$attributes[self::FIELD_PROBABILITY_DECIMAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setProbabilityDecimal((string)$attributes[self::FIELD_PROBABILITY_DECIMAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PROBABILITY_DECIMAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RELATIVE_RISK])) {
             if (isset($type->relativeRisk)) {
                 $type->relativeRisk->setValue((string)$attributes[self::FIELD_RELATIVE_RISK]);
-                $type->_setRelativeRiskValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRelativeRisk((string)$attributes[self::FIELD_RELATIVE_RISK], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRelativeRisk((string)$attributes[self::FIELD_RELATIVE_RISK]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RELATIVE_RISK, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RATIONALE])) {
             if (isset($type->rationale)) {
                 $type->rationale->setValue((string)$attributes[self::FIELD_RATIONALE]);
-                $type->_setRationaleValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRationale((string)$attributes[self::FIELD_RATIONALE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRationale((string)$attributes[self::FIELD_RATIONALE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RATIONALE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -761,13 +681,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->probabilityDecimal) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PROBABILITY_DECIMAL]) {
-            $xw->writeAttribute(self::FIELD_PROBABILITY_DECIMAL, $this->probabilityDecimal->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PROBABILITY_DECIMAL, $this->probabilityDecimal->_getValueAsString());
         }
         if (isset($this->relativeRisk) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RELATIVE_RISK]) {
-            $xw->writeAttribute(self::FIELD_RELATIVE_RISK, $this->relativeRisk->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RELATIVE_RISK, $this->relativeRisk->_getValueAsString());
         }
         if (isset($this->rationale) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RATIONALE]) {
-            $xw->writeAttribute(self::FIELD_RATIONALE, $this->rationale->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RATIONALE, $this->rationale->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->outcome)) {
@@ -819,13 +739,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -840,50 +760,64 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_OUTCOME]) || array_key_exists(self::FIELD_OUTCOME, $json)) {
-            $type->setOutcome(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_OUTCOME], $config));
+        if (isset($json->outcome) || property_exists($json, self::FIELD_OUTCOME)) {
+            if (is_array($json->outcome)) {
+                $type->setOutcome(FHIRCodeableConcept::jsonUnserialize(reset($json->outcome), $config));
+            } else {
+                $type->setOutcome(FHIRCodeableConcept::jsonUnserialize($json->outcome, $config));
+            }
         }
-        if (isset($json[self::FIELD_PROBABILITY_DECIMAL])
-            || isset($json[self::FIELD_PROBABILITY_DECIMAL_EXT])
-            || array_key_exists(self::FIELD_PROBABILITY_DECIMAL, $json)
-            || array_key_exists(self::FIELD_PROBABILITY_DECIMAL_EXT, $json)) {
-            $value = $json[self::FIELD_PROBABILITY_DECIMAL] ?? null;
-            $type->setProbabilityDecimal(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_PROBABILITY_DECIMAL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->probabilityDecimal)
+            || isset($json->_probabilityDecimal)
+            || property_exists($json, self::FIELD_PROBABILITY_DECIMAL)
+            || property_exists($json, self::FIELD_PROBABILITY_DECIMAL_EXT)) {
+            $v = $json->_probabilityDecimal ?? new \stdClass();
+            $v->value = $json->probabilityDecimal ?? null;
+            $type->setProbabilityDecimal(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PROBABILITY_RANGE]) || array_key_exists(self::FIELD_PROBABILITY_RANGE, $json)) {
-            $type->setProbabilityRange(FHIRRange::jsonUnserialize($json[self::FIELD_PROBABILITY_RANGE], $config));
+        if (isset($json->probabilityRange) || property_exists($json, self::FIELD_PROBABILITY_RANGE)) {
+            if (is_array($json->probabilityRange)) {
+                $type->setProbabilityRange(FHIRRange::jsonUnserialize(reset($json->probabilityRange), $config));
+            } else {
+                $type->setProbabilityRange(FHIRRange::jsonUnserialize($json->probabilityRange, $config));
+            }
         }
-        if (isset($json[self::FIELD_PROBABILITY_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_PROBABILITY_CODEABLE_CONCEPT, $json)) {
-            $type->setProbabilityCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PROBABILITY_CODEABLE_CONCEPT], $config));
+        if (isset($json->probabilityCodeableConcept) || property_exists($json, self::FIELD_PROBABILITY_CODEABLE_CONCEPT)) {
+            if (is_array($json->probabilityCodeableConcept)) {
+                $type->setProbabilityCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->probabilityCodeableConcept), $config));
+            } else {
+                $type->setProbabilityCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->probabilityCodeableConcept, $config));
+            }
         }
-        if (isset($json[self::FIELD_RELATIVE_RISK])
-            || isset($json[self::FIELD_RELATIVE_RISK_EXT])
-            || array_key_exists(self::FIELD_RELATIVE_RISK, $json)
-            || array_key_exists(self::FIELD_RELATIVE_RISK_EXT, $json)) {
-            $value = $json[self::FIELD_RELATIVE_RISK] ?? null;
-            $type->setRelativeRisk(FHIRDecimal::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_RELATIVE_RISK_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->relativeRisk)
+            || isset($json->_relativeRisk)
+            || property_exists($json, self::FIELD_RELATIVE_RISK)
+            || property_exists($json, self::FIELD_RELATIVE_RISK_EXT)) {
+            $v = $json->_relativeRisk ?? new \stdClass();
+            $v->value = $json->relativeRisk ?? null;
+            $type->setRelativeRisk(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_WHEN_PERIOD]) || array_key_exists(self::FIELD_WHEN_PERIOD, $json)) {
-            $type->setWhenPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_WHEN_PERIOD], $config));
+        if (isset($json->whenPeriod) || property_exists($json, self::FIELD_WHEN_PERIOD)) {
+            if (is_array($json->whenPeriod)) {
+                $type->setWhenPeriod(FHIRPeriod::jsonUnserialize(reset($json->whenPeriod), $config));
+            } else {
+                $type->setWhenPeriod(FHIRPeriod::jsonUnserialize($json->whenPeriod, $config));
+            }
         }
-        if (isset($json[self::FIELD_WHEN_RANGE]) || array_key_exists(self::FIELD_WHEN_RANGE, $json)) {
-            $type->setWhenRange(FHIRRange::jsonUnserialize($json[self::FIELD_WHEN_RANGE], $config));
+        if (isset($json->whenRange) || property_exists($json, self::FIELD_WHEN_RANGE)) {
+            if (is_array($json->whenRange)) {
+                $type->setWhenRange(FHIRRange::jsonUnserialize(reset($json->whenRange), $config));
+            } else {
+                $type->setWhenRange(FHIRRange::jsonUnserialize($json->whenRange, $config));
+            }
         }
-        if (isset($json[self::FIELD_RATIONALE])
-            || isset($json[self::FIELD_RATIONALE_EXT])
-            || array_key_exists(self::FIELD_RATIONALE, $json)
-            || array_key_exists(self::FIELD_RATIONALE_EXT, $json)) {
-            $value = $json[self::FIELD_RATIONALE] ?? null;
-            $type->setRationale(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_RATIONALE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->rationale)
+            || isset($json->_rationale)
+            || property_exists($json, self::FIELD_RATIONALE)
+            || property_exists($json, self::FIELD_RATIONALE_EXT)) {
+            $v = $json->_rationale ?? new \stdClass();
+            $v->value = $json->rationale ?? null;
+            $type->setRationale(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

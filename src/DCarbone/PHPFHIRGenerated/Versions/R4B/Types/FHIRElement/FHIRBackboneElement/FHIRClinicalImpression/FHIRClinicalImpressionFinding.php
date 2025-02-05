@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -107,27 +109,29 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRClinicalImpressionFinding extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLINICAL_IMPRESSION_DOT_FINDING;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ITEM_CODEABLE_CONCEPT = 'itemCodeableConcept';
     public const FIELD_ITEM_REFERENCE = 'itemReference';
     public const FIELD_BASIS = 'basis';
     public const FIELD_BASIS_EXT = '_basis';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_BASIS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -162,7 +166,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      */
     protected FHIRString $basis;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRClinicalImpressionFinding Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -196,7 +200,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -205,7 +209,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -302,11 +306,9 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      * Which investigations support finding or diagnosis.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $basis
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setBasis(null|string|FHIRStringPrimitive|FHIRString $basis,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setBasis(null|string|FHIRStringPrimitive|FHIRString $basis): self
     {
         if (null === $basis) {
             unset($this->basis);
@@ -316,37 +318,10 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
             $basis = new FHIRString(value: $basis);
         }
         $this->basis = $basis;
-        if ($this->_valueXMLLocations[self::FIELD_BASIS] !== $valueXMLLocation) {
-            $this->_setBasisValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the basis element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getBasisValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_BASIS];
-    }
-
-    /**
-     * Set the location the "value" field of the basis element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setBasisValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_BASIS] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -375,9 +350,11 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -391,15 +368,16 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_BASIS])) {
             if (isset($type->basis)) {
                 $type->basis->setValue((string)$attributes[self::FIELD_BASIS]);
-                $type->_setBasisValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setBasis((string)$attributes[self::FIELD_BASIS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setBasis((string)$attributes[self::FIELD_BASIS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_BASIS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -412,7 +390,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->basis) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_BASIS]) {
-            $xw->writeAttribute(self::FIELD_BASIS, $this->basis->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_BASIS, $this->basis->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->itemCodeableConcept)) {
@@ -435,13 +413,13 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -456,21 +434,27 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ITEM_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_ITEM_CODEABLE_CONCEPT, $json)) {
-            $type->setItemCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ITEM_CODEABLE_CONCEPT], $config));
+        if (isset($json->itemCodeableConcept) || property_exists($json, self::FIELD_ITEM_CODEABLE_CONCEPT)) {
+            if (is_array($json->itemCodeableConcept)) {
+                $type->setItemCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->itemCodeableConcept), $config));
+            } else {
+                $type->setItemCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->itemCodeableConcept, $config));
+            }
         }
-        if (isset($json[self::FIELD_ITEM_REFERENCE]) || array_key_exists(self::FIELD_ITEM_REFERENCE, $json)) {
-            $type->setItemReference(FHIRReference::jsonUnserialize($json[self::FIELD_ITEM_REFERENCE], $config));
+        if (isset($json->itemReference) || property_exists($json, self::FIELD_ITEM_REFERENCE)) {
+            if (is_array($json->itemReference)) {
+                $type->setItemReference(FHIRReference::jsonUnserialize(reset($json->itemReference), $config));
+            } else {
+                $type->setItemReference(FHIRReference::jsonUnserialize($json->itemReference, $config));
+            }
         }
-        if (isset($json[self::FIELD_BASIS])
-            || isset($json[self::FIELD_BASIS_EXT])
-            || array_key_exists(self::FIELD_BASIS, $json)
-            || array_key_exists(self::FIELD_BASIS_EXT, $json)) {
-            $value = $json[self::FIELD_BASIS] ?? null;
-            $type->setBasis(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_BASIS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->basis)
+            || isset($json->_basis)
+            || property_exists($json, self::FIELD_BASIS)
+            || property_exists($json, self::FIELD_BASIS_EXT)) {
+            $v = $json->_basis ?? new \stdClass();
+            $v->value = $json->basis ?? null;
+            $type->setBasis(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

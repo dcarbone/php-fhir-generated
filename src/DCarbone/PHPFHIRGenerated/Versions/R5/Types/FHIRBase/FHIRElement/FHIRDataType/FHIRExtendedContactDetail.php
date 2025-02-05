@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -100,12 +102,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRExtendedContactDetail extends FHIRDataType
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_EXTENDED_CONTACT_DETAIL;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_PURPOSE = 'purpose';
     public const FIELD_NAME = 'name';
     public const FIELD_TELECOM = 'telecom';
@@ -113,15 +117,15 @@ class FHIRExtendedContactDetail extends FHIRDataType
     public const FIELD_ORGANIZATION = 'organization';
     public const FIELD_PERIOD = 'period';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -195,7 +199,7 @@ class FHIRExtendedContactDetail extends FHIRDataType
      */
     protected FHIRPeriod $period;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRExtendedContactDetail Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -241,7 +245,7 @@ class FHIRExtendedContactDetail extends FHIRDataType
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -250,7 +254,7 @@ class FHIRExtendedContactDetail extends FHIRDataType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -543,7 +547,7 @@ class FHIRExtendedContactDetail extends FHIRDataType
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -572,9 +576,11 @@ class FHIRExtendedContactDetail extends FHIRDataType
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_PURPOSE === $cen) {
                 $type->setPurpose(FHIRCodeableConcept::xmlUnserialize($ce, $config));
@@ -592,7 +598,8 @@ class FHIRExtendedContactDetail extends FHIRDataType
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -642,13 +649,13 @@ class FHIRExtendedContactDetail extends FHIRDataType
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -663,35 +670,55 @@ class FHIRExtendedContactDetail extends FHIRDataType
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PURPOSE]) || array_key_exists(self::FIELD_PURPOSE, $json)) {
-            $type->setPurpose(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PURPOSE], $config));
-        }
-        if (isset($json[self::FIELD_NAME]) || array_key_exists(self::FIELD_NAME, $json)) {
-            $vs = $json[self::FIELD_NAME];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->purpose) || property_exists($json, self::FIELD_PURPOSE)) {
+            if (is_array($json->purpose)) {
+                $type->setPurpose(FHIRCodeableConcept::jsonUnserialize(reset($json->purpose), $config));
+            } else {
+                $type->setPurpose(FHIRCodeableConcept::jsonUnserialize($json->purpose, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->name) || property_exists($json, self::FIELD_NAME)) {
+            if (is_object($json->name)) {
+                $vals = [$json->name];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_NAME, true);
+            } else {
+                $vals = $json->name;
+            }
+            foreach($vals as $v) {
                 $type->addName(FHIRHumanName::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TELECOM]) || array_key_exists(self::FIELD_TELECOM, $json)) {
-            $vs = $json[self::FIELD_TELECOM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->telecom) || property_exists($json, self::FIELD_TELECOM)) {
+            if (is_object($json->telecom)) {
+                $vals = [$json->telecom];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TELECOM, true);
+            } else {
+                $vals = $json->telecom;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTelecom(FHIRContactPoint::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ADDRESS]) || array_key_exists(self::FIELD_ADDRESS, $json)) {
-            $type->setAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_ADDRESS], $config));
+        if (isset($json->address) || property_exists($json, self::FIELD_ADDRESS)) {
+            if (is_array($json->address)) {
+                $type->setAddress(FHIRAddress::jsonUnserialize(reset($json->address), $config));
+            } else {
+                $type->setAddress(FHIRAddress::jsonUnserialize($json->address, $config));
+            }
         }
-        if (isset($json[self::FIELD_ORGANIZATION]) || array_key_exists(self::FIELD_ORGANIZATION, $json)) {
-            $type->setOrganization(FHIRReference::jsonUnserialize($json[self::FIELD_ORGANIZATION], $config));
+        if (isset($json->organization) || property_exists($json, self::FIELD_ORGANIZATION)) {
+            if (is_array($json->organization)) {
+                $type->setOrganization(FHIRReference::jsonUnserialize(reset($json->organization), $config));
+            } else {
+                $type->setOrganization(FHIRReference::jsonUnserialize($json->organization, $config));
+            }
         }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+            }
         }
         return $type;
     }
@@ -706,10 +733,18 @@ class FHIRExtendedContactDetail extends FHIRDataType
             $out->purpose = $this->purpose;
         }
         if (isset($this->name) && [] !== $this->name) {
-            $out->name = $this->name;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_NAME) && 1 === count($this->name)) {
+                $out->name = $this->name[0];
+            } else {
+                $out->name = $this->name;
+            }
         }
         if (isset($this->telecom) && [] !== $this->telecom) {
-            $out->telecom = $this->telecom;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TELECOM) && 1 === count($this->telecom)) {
+                $out->telecom = $this->telecom[0];
+            } else {
+                $out->telecom = $this->telecom;
+            }
         }
         if (isset($this->address)) {
             $out->address = $this->address;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -100,12 +102,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionTypeMap;
  */
 class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RISK_ASSESSMENT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SUBJECT = 'subject';
     public const FIELD_DATE = 'date';
     public const FIELD_DATE_EXT = '_date';
@@ -119,17 +123,17 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
     public const FIELD_MITIGATION = 'mitigation';
     public const FIELD_MITIGATION_EXT = '_mitigation';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MITIGATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -236,7 +240,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      */
     protected FHIRString $mitigation;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRRiskAssessment Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
@@ -320,7 +324,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -329,7 +333,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -338,7 +342,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -401,11 +405,9 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * The date (and possibly time) the risk assessment was performed.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
         if (null === $date) {
             unset($this->date);
@@ -415,33 +417,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
             $date = new FHIRDateTime(value: $date);
         }
         $this->date = $date;
-        if ($this->_valueXMLLocations[self::FIELD_DATE] !== $valueXMLLocation) {
-            $this->_setDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the date element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the date element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -769,11 +744,9 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * A description of the steps that might be taken to reduce the identified risk(s).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $mitigation
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMitigation(null|string|FHIRStringPrimitive|FHIRString $mitigation,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMitigation(null|string|FHIRStringPrimitive|FHIRString $mitigation): self
     {
         if (null === $mitigation) {
             unset($this->mitigation);
@@ -783,37 +756,10 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
             $mitigation = new FHIRString(value: $mitigation);
         }
         $this->mitigation = $mitigation;
-        if ($this->_valueXMLLocations[self::FIELD_MITIGATION] !== $valueXMLLocation) {
-            $this->_setMitigationValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the mitigation element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMitigationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MITIGATION];
-    }
-
-    /**
-     * Set the location the "value" field of the mitigation element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMitigationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MITIGATION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -892,42 +838,42 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATE])) {
             if (isset($type->date)) {
                 $type->date->setValue((string)$attributes[self::FIELD_DATE]);
-                $type->_setDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDate((string)$attributes[self::FIELD_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDate((string)$attributes[self::FIELD_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MITIGATION])) {
             if (isset($type->mitigation)) {
                 $type->mitigation->setValue((string)$attributes[self::FIELD_MITIGATION]);
-                $type->_setMitigationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMitigation((string)$attributes[self::FIELD_MITIGATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMitigation((string)$attributes[self::FIELD_MITIGATION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MITIGATION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -958,10 +904,10 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
             $xw->openRootNode('RiskAssessment', $this->_getSourceXMLNS());
         }
         if (isset($this->date) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATE]) {
-            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getValueAsString());
         }
         if (isset($this->mitigation) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MITIGATION]) {
-            $xw->writeAttribute(self::FIELD_MITIGATION, $this->mitigation->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MITIGATION, $this->mitigation->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->subject)) {
@@ -1032,13 +978,13 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRRiskAssessment $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1056,66 +1002,88 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
-        }
-        if (isset($json[self::FIELD_DATE])
-            || isset($json[self::FIELD_DATE_EXT])
-            || array_key_exists(self::FIELD_DATE, $json)
-            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_DATE] ?? null;
-            $type->setDate(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_CONDITION]) || array_key_exists(self::FIELD_CONDITION, $json)) {
-            $type->setCondition(FHIRReference::jsonUnserialize($json[self::FIELD_CONDITION], $config));
-        }
-        if (isset($json[self::FIELD_ENCOUNTER]) || array_key_exists(self::FIELD_ENCOUNTER, $json)) {
-            $type->setEncounter(FHIRReference::jsonUnserialize($json[self::FIELD_ENCOUNTER], $config));
-        }
-        if (isset($json[self::FIELD_PERFORMER]) || array_key_exists(self::FIELD_PERFORMER, $json)) {
-            $type->setPerformer(FHIRReference::jsonUnserialize($json[self::FIELD_PERFORMER], $config));
-        }
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_IDENTIFIER], $config));
-        }
-        if (isset($json[self::FIELD_METHOD]) || array_key_exists(self::FIELD_METHOD, $json)) {
-            $type->setMethod(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_METHOD], $config));
-        }
-        if (isset($json[self::FIELD_BASIS]) || array_key_exists(self::FIELD_BASIS, $json)) {
-            $vs = $json[self::FIELD_BASIS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
+            if (is_array($json->subject)) {
+                $type->setSubject(FHIRReference::jsonUnserialize(reset($json->subject), $config));
+            } else {
+                $type->setSubject(FHIRReference::jsonUnserialize($json->subject, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->date)
+            || isset($json->_date)
+            || property_exists($json, self::FIELD_DATE)
+            || property_exists($json, self::FIELD_DATE_EXT)) {
+            $v = $json->_date ?? new \stdClass();
+            $v->value = $json->date ?? null;
+            $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->condition) || property_exists($json, self::FIELD_CONDITION)) {
+            if (is_array($json->condition)) {
+                $type->setCondition(FHIRReference::jsonUnserialize(reset($json->condition), $config));
+            } else {
+                $type->setCondition(FHIRReference::jsonUnserialize($json->condition, $config));
+            }
+        }
+        if (isset($json->encounter) || property_exists($json, self::FIELD_ENCOUNTER)) {
+            if (is_array($json->encounter)) {
+                $type->setEncounter(FHIRReference::jsonUnserialize(reset($json->encounter), $config));
+            } else {
+                $type->setEncounter(FHIRReference::jsonUnserialize($json->encounter, $config));
+            }
+        }
+        if (isset($json->performer) || property_exists($json, self::FIELD_PERFORMER)) {
+            if (is_array($json->performer)) {
+                $type->setPerformer(FHIRReference::jsonUnserialize(reset($json->performer), $config));
+            } else {
+                $type->setPerformer(FHIRReference::jsonUnserialize($json->performer, $config));
+            }
+        }
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_array($json->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+            } else {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
+            }
+        }
+        if (isset($json->method) || property_exists($json, self::FIELD_METHOD)) {
+            if (is_array($json->method)) {
+                $type->setMethod(FHIRCodeableConcept::jsonUnserialize(reset($json->method), $config));
+            } else {
+                $type->setMethod(FHIRCodeableConcept::jsonUnserialize($json->method, $config));
+            }
+        }
+        if (isset($json->basis) || property_exists($json, self::FIELD_BASIS)) {
+            if (is_object($json->basis)) {
+                $vals = [$json->basis];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_BASIS, true);
+            } else {
+                $vals = $json->basis;
+            }
+            foreach($vals as $v) {
                 $type->addBasis(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PREDICTION]) || array_key_exists(self::FIELD_PREDICTION, $json)) {
-            $vs = $json[self::FIELD_PREDICTION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->prediction) || property_exists($json, self::FIELD_PREDICTION)) {
+            if (is_object($json->prediction)) {
+                $vals = [$json->prediction];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PREDICTION, true);
+            } else {
+                $vals = $json->prediction;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addPrediction(FHIRRiskAssessmentPrediction::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MITIGATION])
-            || isset($json[self::FIELD_MITIGATION_EXT])
-            || array_key_exists(self::FIELD_MITIGATION, $json)
-            || array_key_exists(self::FIELD_MITIGATION_EXT, $json)) {
-            $value = $json[self::FIELD_MITIGATION] ?? null;
-            $type->setMitigation(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MITIGATION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->mitigation)
+            || isset($json->_mitigation)
+            || property_exists($json, self::FIELD_MITIGATION)
+            || property_exists($json, self::FIELD_MITIGATION_EXT)) {
+            $v = $json->_mitigation ?? new \stdClass();
+            $v->value = $json->mitigation ?? null;
+            $type->setMitigation(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -1155,10 +1123,18 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
             $out->method = $this->method;
         }
         if (isset($this->basis) && [] !== $this->basis) {
-            $out->basis = $this->basis;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_BASIS) && 1 === count($this->basis)) {
+                $out->basis = $this->basis[0];
+            } else {
+                $out->basis = $this->basis;
+            }
         }
         if (isset($this->prediction) && [] !== $this->prediction) {
-            $out->prediction = $this->prediction;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PREDICTION) && 1 === count($this->prediction)) {
+                $out->prediction = $this->prediction[0];
+            } else {
+                $out->prediction = $this->prediction;
+            }
         }
         if (isset($this->mitigation)) {
             if (null !== ($val = $this->mitigation->getValue())) {

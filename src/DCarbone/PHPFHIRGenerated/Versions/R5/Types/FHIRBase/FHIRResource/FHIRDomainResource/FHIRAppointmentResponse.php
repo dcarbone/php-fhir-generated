@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -127,12 +129,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
  */
 class FHIRAppointmentResponse extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_APPOINTMENT_RESPONSE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_APPOINTMENT = 'appointment';
     public const FIELD_PROPOSED_NEW_TIME = 'proposedNewTime';
@@ -154,7 +158,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
     public const FIELD_RECURRENCE_ID = 'recurrenceId';
     public const FIELD_RECURRENCE_ID_EXT = '_recurrenceId';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_APPOINTMENT => [
@@ -165,7 +169,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_PROPOSED_NEW_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_START => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -177,7 +181,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         self::FIELD_RECURRENCE_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -323,7 +327,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      */
     protected FHIRPositiveInt $recurrenceId;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAppointmentResponse Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -345,7 +349,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $comment
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $recurring
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $occurrenceDate
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $recurrenceId
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $recurrenceId
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -367,7 +371,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $comment = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $recurring = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $occurrenceDate = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $recurrenceId = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $recurrenceId = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(id: $id,
@@ -417,7 +421,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -426,7 +430,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -435,7 +439,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -567,11 +571,9 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * properties.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $proposedNewTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setProposedNewTime(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $proposedNewTime,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setProposedNewTime(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $proposedNewTime): self
     {
         if (null === $proposedNewTime) {
             unset($this->proposedNewTime);
@@ -581,33 +583,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $proposedNewTime = new FHIRBoolean(value: $proposedNewTime);
         }
         $this->proposedNewTime = $proposedNewTime;
-        if ($this->_valueXMLLocations[self::FIELD_PROPOSED_NEW_TIME] !== $valueXMLLocation) {
-            $this->_setProposedNewTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the proposedNewTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getProposedNewTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PROPOSED_NEW_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the proposedNewTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setProposedNewTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PROPOSED_NEW_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -639,11 +614,9 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * Date/Time that the appointment is to take place, or requested new start time.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $start
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start): self
     {
         if (null === $start) {
             unset($this->start);
@@ -653,33 +626,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $start = new FHIRInstant(value: $start);
         }
         $this->start = $start;
-        if ($this->_valueXMLLocations[self::FIELD_START] !== $valueXMLLocation) {
-            $this->_setStartValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the start element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStartValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_START];
-    }
-
-    /**
-     * Set the location the "value" field of the start element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStartValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_START] = $valueXMLLocation;
         return $this;
     }
 
@@ -715,11 +661,9 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * end time.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $end
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
     {
         if (null === $end) {
             unset($this->end);
@@ -729,33 +673,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $end = new FHIRInstant(value: $end);
         }
         $this->end = $end;
-        if ($this->_valueXMLLocations[self::FIELD_END] !== $valueXMLLocation) {
-            $this->_setEndValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the end element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getEndValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_END];
-    }
-
-    /**
-     * Set the location the "value" field of the end element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setEndValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_END] = $valueXMLLocation;
         return $this;
     }
 
@@ -888,11 +805,9 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * of the time) or can be empty.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAppointmentResponseStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAppointmentResponseStatus $participantStatus
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setParticipantStatus(null|string|FHIRAppointmentResponseStatusEnum|FHIRAppointmentResponseStatus $participantStatus,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setParticipantStatus(null|string|FHIRAppointmentResponseStatusEnum|FHIRAppointmentResponseStatus $participantStatus): self
     {
         if (null === $participantStatus) {
             unset($this->participantStatus);
@@ -902,33 +817,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $participantStatus = new FHIRAppointmentResponseStatus(value: $participantStatus);
         }
         $this->participantStatus = $participantStatus;
-        if ($this->_valueXMLLocations[self::FIELD_PARTICIPANT_STATUS] !== $valueXMLLocation) {
-            $this->_setParticipantStatusValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the participantStatus element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getParticipantStatusValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PARTICIPANT_STATUS];
-    }
-
-    /**
-     * Set the location the "value" field of the participantStatus element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setParticipantStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PARTICIPANT_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -962,11 +850,9 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * Additional comments about the appointment.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $comment
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setComment(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $comment,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setComment(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $comment): self
     {
         if (null === $comment) {
             unset($this->comment);
@@ -976,33 +862,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $comment = new FHIRMarkdown(value: $comment);
         }
         $this->comment = $comment;
-        if ($this->_valueXMLLocations[self::FIELD_COMMENT] !== $valueXMLLocation) {
-            $this->_setCommentValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the comment element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCommentValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COMMENT];
-    }
-
-    /**
-     * Set the location the "value" field of the comment element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCommentValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COMMENT] = $valueXMLLocation;
         return $this;
     }
 
@@ -1028,11 +887,9 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * recurring request.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $recurring
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRecurring(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $recurring,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRecurring(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $recurring): self
     {
         if (null === $recurring) {
             unset($this->recurring);
@@ -1042,33 +899,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $recurring = new FHIRBoolean(value: $recurring);
         }
         $this->recurring = $recurring;
-        if ($this->_valueXMLLocations[self::FIELD_RECURRING] !== $valueXMLLocation) {
-            $this->_setRecurringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the recurring element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRecurringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RECURRING];
-    }
-
-    /**
-     * Set the location the "value" field of the recurring element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRecurringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RECURRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -1100,11 +930,9 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * simple list of dates in `Appointment.occurrenceDate`).
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $occurrenceDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOccurrenceDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $occurrenceDate,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOccurrenceDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $occurrenceDate): self
     {
         if (null === $occurrenceDate) {
             unset($this->occurrenceDate);
@@ -1114,33 +942,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $occurrenceDate = new FHIRDate(value: $occurrenceDate);
         }
         $this->occurrenceDate = $occurrenceDate;
-        if ($this->_valueXMLLocations[self::FIELD_OCCURRENCE_DATE] !== $valueXMLLocation) {
-            $this->_setOccurrenceDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the occurrenceDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOccurrenceDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_OCCURRENCE_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the occurrenceDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOccurrenceDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_OCCURRENCE_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -1167,12 +968,10 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * The recurrence ID (sequence number) of the specific appointment when responding
      * to a recurring request.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $recurrenceId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $recurrenceId
      * @return static
      */
-    public function setRecurrenceId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $recurrenceId,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRecurrenceId(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $recurrenceId): self
     {
         if (null === $recurrenceId) {
             unset($this->recurrenceId);
@@ -1182,37 +981,10 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $recurrenceId = new FHIRPositiveInt(value: $recurrenceId);
         }
         $this->recurrenceId = $recurrenceId;
-        if ($this->_valueXMLLocations[self::FIELD_RECURRENCE_ID] !== $valueXMLLocation) {
-            $this->_setRecurrenceIdValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the recurrenceId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRecurrenceIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RECURRENCE_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the recurrenceId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRecurrenceIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RECURRENCE_ID] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1295,90 +1067,90 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PROPOSED_NEW_TIME])) {
             if (isset($type->proposedNewTime)) {
                 $type->proposedNewTime->setValue((string)$attributes[self::FIELD_PROPOSED_NEW_TIME]);
-                $type->_setProposedNewTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setProposedNewTime((string)$attributes[self::FIELD_PROPOSED_NEW_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setProposedNewTime((string)$attributes[self::FIELD_PROPOSED_NEW_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PROPOSED_NEW_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_START])) {
             if (isset($type->start)) {
                 $type->start->setValue((string)$attributes[self::FIELD_START]);
-                $type->_setStartValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStart((string)$attributes[self::FIELD_START], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStart((string)$attributes[self::FIELD_START]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_START, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_END])) {
             if (isset($type->end)) {
                 $type->end->setValue((string)$attributes[self::FIELD_END]);
-                $type->_setEndValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setEnd((string)$attributes[self::FIELD_END], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setEnd((string)$attributes[self::FIELD_END]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_END, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PARTICIPANT_STATUS])) {
             if (isset($type->participantStatus)) {
                 $type->participantStatus->setValue((string)$attributes[self::FIELD_PARTICIPANT_STATUS]);
-                $type->_setParticipantStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setParticipantStatus((string)$attributes[self::FIELD_PARTICIPANT_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setParticipantStatus((string)$attributes[self::FIELD_PARTICIPANT_STATUS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PARTICIPANT_STATUS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_COMMENT])) {
             if (isset($type->comment)) {
                 $type->comment->setValue((string)$attributes[self::FIELD_COMMENT]);
-                $type->_setCommentValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setComment((string)$attributes[self::FIELD_COMMENT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setComment((string)$attributes[self::FIELD_COMMENT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_COMMENT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RECURRING])) {
             if (isset($type->recurring)) {
                 $type->recurring->setValue((string)$attributes[self::FIELD_RECURRING]);
-                $type->_setRecurringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRecurring((string)$attributes[self::FIELD_RECURRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRecurring((string)$attributes[self::FIELD_RECURRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RECURRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_OCCURRENCE_DATE])) {
             if (isset($type->occurrenceDate)) {
                 $type->occurrenceDate->setValue((string)$attributes[self::FIELD_OCCURRENCE_DATE]);
-                $type->_setOccurrenceDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOccurrenceDate((string)$attributes[self::FIELD_OCCURRENCE_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setOccurrenceDate((string)$attributes[self::FIELD_OCCURRENCE_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_OCCURRENCE_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RECURRENCE_ID])) {
             if (isset($type->recurrenceId)) {
                 $type->recurrenceId->setValue((string)$attributes[self::FIELD_RECURRENCE_ID]);
-                $type->_setRecurrenceIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRecurrenceId((string)$attributes[self::FIELD_RECURRENCE_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRecurrenceId((string)$attributes[self::FIELD_RECURRENCE_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RECURRENCE_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1409,28 +1181,28 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $xw->openRootNode('AppointmentResponse', $this->_getSourceXMLNS());
         }
         if (isset($this->proposedNewTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PROPOSED_NEW_TIME]) {
-            $xw->writeAttribute(self::FIELD_PROPOSED_NEW_TIME, $this->proposedNewTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PROPOSED_NEW_TIME, $this->proposedNewTime->_getValueAsString());
         }
         if (isset($this->start) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_START]) {
-            $xw->writeAttribute(self::FIELD_START, $this->start->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_START, $this->start->_getValueAsString());
         }
         if (isset($this->end) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_END]) {
-            $xw->writeAttribute(self::FIELD_END, $this->end->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_END, $this->end->_getValueAsString());
         }
         if (isset($this->participantStatus) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PARTICIPANT_STATUS]) {
-            $xw->writeAttribute(self::FIELD_PARTICIPANT_STATUS, $this->participantStatus->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PARTICIPANT_STATUS, $this->participantStatus->_getValueAsString());
         }
         if (isset($this->comment) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COMMENT]) {
-            $xw->writeAttribute(self::FIELD_COMMENT, $this->comment->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_COMMENT, $this->comment->_getValueAsString());
         }
         if (isset($this->recurring) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RECURRING]) {
-            $xw->writeAttribute(self::FIELD_RECURRING, $this->recurring->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RECURRING, $this->recurring->_getValueAsString());
         }
         if (isset($this->occurrenceDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_OCCURRENCE_DATE]) {
-            $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE, $this->occurrenceDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE, $this->occurrenceDate->_getValueAsString());
         }
         if (isset($this->recurrenceId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RECURRENCE_ID]) {
-            $xw->writeAttribute(self::FIELD_RECURRENCE_ID, $this->recurrenceId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RECURRENCE_ID, $this->recurrenceId->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1523,13 +1295,13 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1547,114 +1319,108 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $vs = $json[self::FIELD_IDENTIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_object($json->identifier)) {
+                $vals = [$json->identifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
+            } else {
+                $vals = $json->identifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_APPOINTMENT]) || array_key_exists(self::FIELD_APPOINTMENT, $json)) {
-            $type->setAppointment(FHIRReference::jsonUnserialize($json[self::FIELD_APPOINTMENT], $config));
-        }
-        if (isset($json[self::FIELD_PROPOSED_NEW_TIME])
-            || isset($json[self::FIELD_PROPOSED_NEW_TIME_EXT])
-            || array_key_exists(self::FIELD_PROPOSED_NEW_TIME, $json)
-            || array_key_exists(self::FIELD_PROPOSED_NEW_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_PROPOSED_NEW_TIME] ?? null;
-            $type->setProposedNewTime(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_PROPOSED_NEW_TIME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_START])
-            || isset($json[self::FIELD_START_EXT])
-            || array_key_exists(self::FIELD_START, $json)
-            || array_key_exists(self::FIELD_START_EXT, $json)) {
-            $value = $json[self::FIELD_START] ?? null;
-            $type->setStart(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_START_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_END])
-            || isset($json[self::FIELD_END_EXT])
-            || array_key_exists(self::FIELD_END, $json)
-            || array_key_exists(self::FIELD_END_EXT, $json)) {
-            $value = $json[self::FIELD_END] ?? null;
-            $type->setEnd(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_END_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_PARTICIPANT_TYPE]) || array_key_exists(self::FIELD_PARTICIPANT_TYPE, $json)) {
-            $vs = $json[self::FIELD_PARTICIPANT_TYPE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->appointment) || property_exists($json, self::FIELD_APPOINTMENT)) {
+            if (is_array($json->appointment)) {
+                $type->setAppointment(FHIRReference::jsonUnserialize(reset($json->appointment), $config));
+            } else {
+                $type->setAppointment(FHIRReference::jsonUnserialize($json->appointment, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->proposedNewTime)
+            || isset($json->_proposedNewTime)
+            || property_exists($json, self::FIELD_PROPOSED_NEW_TIME)
+            || property_exists($json, self::FIELD_PROPOSED_NEW_TIME_EXT)) {
+            $v = $json->_proposedNewTime ?? new \stdClass();
+            $v->value = $json->proposedNewTime ?? null;
+            $type->setProposedNewTime(FHIRBoolean::jsonUnserialize($v, $config));
+        }
+        if (isset($json->start)
+            || isset($json->_start)
+            || property_exists($json, self::FIELD_START)
+            || property_exists($json, self::FIELD_START_EXT)) {
+            $v = $json->_start ?? new \stdClass();
+            $v->value = $json->start ?? null;
+            $type->setStart(FHIRInstant::jsonUnserialize($v, $config));
+        }
+        if (isset($json->end)
+            || isset($json->_end)
+            || property_exists($json, self::FIELD_END)
+            || property_exists($json, self::FIELD_END_EXT)) {
+            $v = $json->_end ?? new \stdClass();
+            $v->value = $json->end ?? null;
+            $type->setEnd(FHIRInstant::jsonUnserialize($v, $config));
+        }
+        if (isset($json->participantType) || property_exists($json, self::FIELD_PARTICIPANT_TYPE)) {
+            if (is_object($json->participantType)) {
+                $vals = [$json->participantType];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PARTICIPANT_TYPE, true);
+            } else {
+                $vals = $json->participantType;
+            }
+            foreach($vals as $v) {
                 $type->addParticipantType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ACTOR]) || array_key_exists(self::FIELD_ACTOR, $json)) {
-            $type->setActor(FHIRReference::jsonUnserialize($json[self::FIELD_ACTOR], $config));
+        if (isset($json->actor) || property_exists($json, self::FIELD_ACTOR)) {
+            if (is_array($json->actor)) {
+                $type->setActor(FHIRReference::jsonUnserialize(reset($json->actor), $config));
+            } else {
+                $type->setActor(FHIRReference::jsonUnserialize($json->actor, $config));
+            }
         }
-        if (isset($json[self::FIELD_PARTICIPANT_STATUS])
-            || isset($json[self::FIELD_PARTICIPANT_STATUS_EXT])
-            || array_key_exists(self::FIELD_PARTICIPANT_STATUS, $json)
-            || array_key_exists(self::FIELD_PARTICIPANT_STATUS_EXT, $json)) {
-            $value = $json[self::FIELD_PARTICIPANT_STATUS] ?? null;
-            $type->setParticipantStatus(FHIRAppointmentResponseStatus::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRAppointmentResponseStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_PARTICIPANT_STATUS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->participantStatus)
+            || isset($json->_participantStatus)
+            || property_exists($json, self::FIELD_PARTICIPANT_STATUS)
+            || property_exists($json, self::FIELD_PARTICIPANT_STATUS_EXT)) {
+            $v = $json->_participantStatus ?? new \stdClass();
+            $v->value = $json->participantStatus ?? null;
+            $type->setParticipantStatus(FHIRAppointmentResponseStatus::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_COMMENT])
-            || isset($json[self::FIELD_COMMENT_EXT])
-            || array_key_exists(self::FIELD_COMMENT, $json)
-            || array_key_exists(self::FIELD_COMMENT_EXT, $json)) {
-            $value = $json[self::FIELD_COMMENT] ?? null;
-            $type->setComment(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_COMMENT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->comment)
+            || isset($json->_comment)
+            || property_exists($json, self::FIELD_COMMENT)
+            || property_exists($json, self::FIELD_COMMENT_EXT)) {
+            $v = $json->_comment ?? new \stdClass();
+            $v->value = $json->comment ?? null;
+            $type->setComment(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_RECURRING])
-            || isset($json[self::FIELD_RECURRING_EXT])
-            || array_key_exists(self::FIELD_RECURRING, $json)
-            || array_key_exists(self::FIELD_RECURRING_EXT, $json)) {
-            $value = $json[self::FIELD_RECURRING] ?? null;
-            $type->setRecurring(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_RECURRING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->recurring)
+            || isset($json->_recurring)
+            || property_exists($json, self::FIELD_RECURRING)
+            || property_exists($json, self::FIELD_RECURRING_EXT)) {
+            $v = $json->_recurring ?? new \stdClass();
+            $v->value = $json->recurring ?? null;
+            $type->setRecurring(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_OCCURRENCE_DATE])
-            || isset($json[self::FIELD_OCCURRENCE_DATE_EXT])
-            || array_key_exists(self::FIELD_OCCURRENCE_DATE, $json)
-            || array_key_exists(self::FIELD_OCCURRENCE_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_OCCURRENCE_DATE] ?? null;
-            $type->setOccurrenceDate(FHIRDate::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_OCCURRENCE_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->occurrenceDate)
+            || isset($json->_occurrenceDate)
+            || property_exists($json, self::FIELD_OCCURRENCE_DATE)
+            || property_exists($json, self::FIELD_OCCURRENCE_DATE_EXT)) {
+            $v = $json->_occurrenceDate ?? new \stdClass();
+            $v->value = $json->occurrenceDate ?? null;
+            $type->setOccurrenceDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_RECURRENCE_ID])
-            || isset($json[self::FIELD_RECURRENCE_ID_EXT])
-            || array_key_exists(self::FIELD_RECURRENCE_ID, $json)
-            || array_key_exists(self::FIELD_RECURRENCE_ID_EXT, $json)) {
-            $value = $json[self::FIELD_RECURRENCE_ID] ?? null;
-            $type->setRecurrenceId(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_RECURRENCE_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->recurrenceId)
+            || isset($json->_recurrenceId)
+            || property_exists($json, self::FIELD_RECURRENCE_ID)
+            || property_exists($json, self::FIELD_RECURRENCE_ID_EXT)) {
+            $v = $json->_recurrenceId ?? new \stdClass();
+            $v->value = $json->recurrenceId ?? null;
+            $type->setRecurrenceId(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -1666,7 +1432,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
     {
         $out = parent::jsonSerialize();
         if (isset($this->identifier) && [] !== $this->identifier) {
-            $out->identifier = $this->identifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER) && 1 === count($this->identifier)) {
+                $out->identifier = $this->identifier[0];
+            } else {
+                $out->identifier = $this->identifier;
+            }
         }
         if (isset($this->appointment)) {
             $out->appointment = $this->appointment;
@@ -1702,7 +1472,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             }
         }
         if (isset($this->participantType) && [] !== $this->participantType) {
-            $out->participantType = $this->participantType;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PARTICIPANT_TYPE) && 1 === count($this->participantType)) {
+                $out->participantType = $this->participantType[0];
+            } else {
+                $out->participantType = $this->participantType;
+            }
         }
         if (isset($this->actor)) {
             $out->actor = $this->actor;

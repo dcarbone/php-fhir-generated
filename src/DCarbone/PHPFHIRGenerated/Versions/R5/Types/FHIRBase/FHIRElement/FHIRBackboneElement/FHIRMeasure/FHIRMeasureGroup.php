@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -107,12 +109,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRMeasureGroup extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEASURE_DOT_GROUP;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_LINK_ID = 'linkId';
     public const FIELD_LINK_ID_EXT = '_linkId';
     public const FIELD_CODE = 'code';
@@ -133,11 +137,11 @@ class FHIRMeasureGroup extends FHIRBackboneElement
     public const FIELD_POPULATION = 'population';
     public const FIELD_STRATIFIER = 'stratifier';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_LINK_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -145,7 +149,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
         self::FIELD_RATE_AGGREGATION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -204,6 +208,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
@@ -215,6 +220,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
@@ -318,7 +324,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      */
     protected array $stratifier;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMeasureGroup Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -407,7 +413,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -416,7 +422,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -441,11 +447,9 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * equivalent item in a MeasureReport resource.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
         if (null === $linkId) {
             unset($this->linkId);
@@ -455,33 +459,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             $linkId = new FHIRString(value: $linkId);
         }
         $this->linkId = $linkId;
-        if ($this->_valueXMLLocations[self::FIELD_LINK_ID] !== $valueXMLLocation) {
-            $this->_setLinkIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the linkId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLinkIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LINK_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the linkId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLinkIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LINK_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -555,11 +532,9 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * The human readable description of this population group.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
         if (null === $description) {
             unset($this->description);
@@ -569,33 +544,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             $description = new FHIRMarkdown(value: $description);
         }
         $this->description = $description;
-        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
-            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the description element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
-    }
-
-    /**
-     * Set the location the "value" field of the description element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -677,6 +625,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
@@ -693,6 +642,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subjectCodeableConcept
      * @return static
@@ -714,6 +664,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
@@ -729,6 +680,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subjectReference
      * @return static
@@ -775,11 +727,9 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * Encounters.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFHIRTypesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes $basis
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setBasis(null|string|FHIRFHIRTypesEnum|FHIRFHIRTypes $basis,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setBasis(null|string|FHIRFHIRTypesEnum|FHIRFHIRTypes $basis): self
     {
         if (null === $basis) {
             unset($this->basis);
@@ -789,33 +739,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             $basis = new FHIRFHIRTypes(value: $basis);
         }
         $this->basis = $basis;
-        if ($this->_valueXMLLocations[self::FIELD_BASIS] !== $valueXMLLocation) {
-            $this->_setBasisValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the basis element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getBasisValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_BASIS];
-    }
-
-    /**
-     * Set the location the "value" field of the basis element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setBasisValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_BASIS] = $valueXMLLocation;
         return $this;
     }
 
@@ -929,11 +852,9 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * several populations, into one summarized result.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $rateAggregation
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRateAggregation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $rateAggregation,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRateAggregation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $rateAggregation): self
     {
         if (null === $rateAggregation) {
             unset($this->rateAggregation);
@@ -943,33 +864,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             $rateAggregation = new FHIRMarkdown(value: $rateAggregation);
         }
         $this->rateAggregation = $rateAggregation;
-        if ($this->_valueXMLLocations[self::FIELD_RATE_AGGREGATION] !== $valueXMLLocation) {
-            $this->_setRateAggregationValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the rateAggregation element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRateAggregationValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RATE_AGGREGATION];
-    }
-
-    /**
-     * Set the location the "value" field of the rateAggregation element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRateAggregationValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RATE_AGGREGATION] = $valueXMLLocation;
         return $this;
     }
 
@@ -1215,7 +1109,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1244,9 +1138,11 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1282,39 +1178,40 @@ class FHIRMeasureGroup extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LINK_ID])) {
             if (isset($type->linkId)) {
                 $type->linkId->setValue((string)$attributes[self::FIELD_LINK_ID]);
-                $type->_setLinkIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLinkId((string)$attributes[self::FIELD_LINK_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLinkId((string)$attributes[self::FIELD_LINK_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LINK_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             if (isset($type->description)) {
                 $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DESCRIPTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_BASIS])) {
             if (isset($type->basis)) {
                 $type->basis->setValue((string)$attributes[self::FIELD_BASIS]);
-                $type->_setBasisValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setBasis((string)$attributes[self::FIELD_BASIS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setBasis((string)$attributes[self::FIELD_BASIS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_BASIS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RATE_AGGREGATION])) {
             if (isset($type->rateAggregation)) {
                 $type->rateAggregation->setValue((string)$attributes[self::FIELD_RATE_AGGREGATION]);
-                $type->_setRateAggregationValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRateAggregation((string)$attributes[self::FIELD_RATE_AGGREGATION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRateAggregation((string)$attributes[self::FIELD_RATE_AGGREGATION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RATE_AGGREGATION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1327,16 +1224,16 @@ class FHIRMeasureGroup extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->linkId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LINK_ID]) {
-            $xw->writeAttribute(self::FIELD_LINK_ID, $this->linkId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LINK_ID, $this->linkId->_getValueAsString());
         }
         if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getValueAsString());
         }
         if (isset($this->basis) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_BASIS]) {
-            $xw->writeAttribute(self::FIELD_BASIS, $this->basis->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_BASIS, $this->basis->_getValueAsString());
         }
         if (isset($this->rateAggregation) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RATE_AGGREGATION]) {
-            $xw->writeAttribute(self::FIELD_RATE_AGGREGATION, $this->rateAggregation->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RATE_AGGREGATION, $this->rateAggregation->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->linkId)
@@ -1428,13 +1325,13 @@ class FHIRMeasureGroup extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1449,106 +1346,127 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LINK_ID])
-            || isset($json[self::FIELD_LINK_ID_EXT])
-            || array_key_exists(self::FIELD_LINK_ID, $json)
-            || array_key_exists(self::FIELD_LINK_ID_EXT, $json)) {
-            $value = $json[self::FIELD_LINK_ID] ?? null;
-            $type->setLinkId(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_LINK_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->linkId)
+            || isset($json->_linkId)
+            || property_exists($json, self::FIELD_LINK_ID)
+            || property_exists($json, self::FIELD_LINK_ID_EXT)) {
+            $v = $json->_linkId ?? new \stdClass();
+            $v->value = $json->linkId ?? null;
+            $type->setLinkId(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
-        }
-        if (isset($json[self::FIELD_DESCRIPTION])
-            || isset($json[self::FIELD_DESCRIPTION_EXT])
-            || array_key_exists(self::FIELD_DESCRIPTION, $json)
-            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
-            $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $type->setDescription(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $vs = $json[self::FIELD_TYPE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
+            if (is_array($json->code)) {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($json->code), $config));
+            } else {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize($json->code, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->description)
+            || isset($json->_description)
+            || property_exists($json, self::FIELD_DESCRIPTION)
+            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $json->_description ?? new \stdClass();
+            $v->value = $json->description ?? null;
+            $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
+        }
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_object($json->type)) {
+                $vals = [$json->type];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TYPE, true);
+            } else {
+                $vals = $json->type;
+            }
+            foreach($vals as $v) {
                 $type->addType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SUBJECT_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_SUBJECT_CODEABLE_CONCEPT, $json)) {
-            $type->setSubjectCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SUBJECT_CODEABLE_CONCEPT], $config));
-        }
-        if (isset($json[self::FIELD_SUBJECT_REFERENCE]) || array_key_exists(self::FIELD_SUBJECT_REFERENCE, $json)) {
-            $type->setSubjectReference(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT_REFERENCE], $config));
-        }
-        if (isset($json[self::FIELD_BASIS])
-            || isset($json[self::FIELD_BASIS_EXT])
-            || array_key_exists(self::FIELD_BASIS, $json)
-            || array_key_exists(self::FIELD_BASIS_EXT, $json)) {
-            $value = $json[self::FIELD_BASIS] ?? null;
-            $type->setBasis(FHIRFHIRTypes::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRFHIRTypes::FIELD_VALUE => $value]) + ($json[self::FIELD_BASIS_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_SCORING]) || array_key_exists(self::FIELD_SCORING, $json)) {
-            $type->setScoring(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SCORING], $config));
-        }
-        if (isset($json[self::FIELD_SCORING_UNIT]) || array_key_exists(self::FIELD_SCORING_UNIT, $json)) {
-            $type->setScoringUnit(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SCORING_UNIT], $config));
-        }
-        if (isset($json[self::FIELD_RATE_AGGREGATION])
-            || isset($json[self::FIELD_RATE_AGGREGATION_EXT])
-            || array_key_exists(self::FIELD_RATE_AGGREGATION, $json)
-            || array_key_exists(self::FIELD_RATE_AGGREGATION_EXT, $json)) {
-            $value = $json[self::FIELD_RATE_AGGREGATION] ?? null;
-            $type->setRateAggregation(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_RATE_AGGREGATION_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_IMPROVEMENT_NOTATION]) || array_key_exists(self::FIELD_IMPROVEMENT_NOTATION, $json)) {
-            $type->setImprovementNotation(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_IMPROVEMENT_NOTATION], $config));
-        }
-        if (isset($json[self::FIELD_LIBRARY])
-            || isset($json[self::FIELD_LIBRARY_EXT])
-            || array_key_exists(self::FIELD_LIBRARY, $json)
-            || array_key_exists(self::FIELD_LIBRARY_EXT, $json)) {
-            $value = (array)($json[self::FIELD_LIBRARY] ?? []);
-            $ext = (array)($json[self::FIELD_LIBRARY_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
-            }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addLibrary(FHIRCanonical::jsonUnserialize(
-                    [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+        if (isset($json->subjectCodeableConcept) || property_exists($json, self::FIELD_SUBJECT_CODEABLE_CONCEPT)) {
+            if (is_array($json->subjectCodeableConcept)) {
+                $type->setSubjectCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->subjectCodeableConcept), $config));
+            } else {
+                $type->setSubjectCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->subjectCodeableConcept, $config));
             }
         }
-        if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
-            $vs = $json[self::FIELD_POPULATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->subjectReference) || property_exists($json, self::FIELD_SUBJECT_REFERENCE)) {
+            if (is_array($json->subjectReference)) {
+                $type->setSubjectReference(FHIRReference::jsonUnserialize(reset($json->subjectReference), $config));
+            } else {
+                $type->setSubjectReference(FHIRReference::jsonUnserialize($json->subjectReference, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->basis)
+            || isset($json->_basis)
+            || property_exists($json, self::FIELD_BASIS)
+            || property_exists($json, self::FIELD_BASIS_EXT)) {
+            $v = $json->_basis ?? new \stdClass();
+            $v->value = $json->basis ?? null;
+            $type->setBasis(FHIRFHIRTypes::jsonUnserialize($v, $config));
+        }
+        if (isset($json->scoring) || property_exists($json, self::FIELD_SCORING)) {
+            if (is_array($json->scoring)) {
+                $type->setScoring(FHIRCodeableConcept::jsonUnserialize(reset($json->scoring), $config));
+            } else {
+                $type->setScoring(FHIRCodeableConcept::jsonUnserialize($json->scoring, $config));
+            }
+        }
+        if (isset($json->scoringUnit) || property_exists($json, self::FIELD_SCORING_UNIT)) {
+            if (is_array($json->scoringUnit)) {
+                $type->setScoringUnit(FHIRCodeableConcept::jsonUnserialize(reset($json->scoringUnit), $config));
+            } else {
+                $type->setScoringUnit(FHIRCodeableConcept::jsonUnserialize($json->scoringUnit, $config));
+            }
+        }
+        if (isset($json->rateAggregation)
+            || isset($json->_rateAggregation)
+            || property_exists($json, self::FIELD_RATE_AGGREGATION)
+            || property_exists($json, self::FIELD_RATE_AGGREGATION_EXT)) {
+            $v = $json->_rateAggregation ?? new \stdClass();
+            $v->value = $json->rateAggregation ?? null;
+            $type->setRateAggregation(FHIRMarkdown::jsonUnserialize($v, $config));
+        }
+        if (isset($json->improvementNotation) || property_exists($json, self::FIELD_IMPROVEMENT_NOTATION)) {
+            if (is_array($json->improvementNotation)) {
+                $type->setImprovementNotation(FHIRCodeableConcept::jsonUnserialize(reset($json->improvementNotation), $config));
+            } else {
+                $type->setImprovementNotation(FHIRCodeableConcept::jsonUnserialize($json->improvementNotation, $config));
+            }
+        }
+        if (isset($json->library)
+            || isset($json->_library)
+            || property_exists($json, self::FIELD_LIBRARY)
+            || property_exists($json, self::FIELD_LIBRARY_EXT)) {
+            $vals = (array)($json->library ?? []);
+            $exts = (array)($json->FIELD_LIBRARY_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
+            }
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addLibrary(FHIRCanonical::jsonUnserialize($v, $config));
+            }
+        }
+        if (isset($json->population) || property_exists($json, self::FIELD_POPULATION)) {
+            if (is_object($json->population)) {
+                $vals = [$json->population];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_POPULATION, true);
+            } else {
+                $vals = $json->population;
+            }
+            foreach($vals as $v) {
                 $type->addPopulation(FHIRMeasurePopulation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STRATIFIER]) || array_key_exists(self::FIELD_STRATIFIER, $json)) {
-            $vs = $json[self::FIELD_STRATIFIER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->stratifier) || property_exists($json, self::FIELD_STRATIFIER)) {
+            if (is_object($json->stratifier)) {
+                $vals = [$json->stratifier];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_STRATIFIER, true);
+            } else {
+                $vals = $json->stratifier;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addStratifier(FHIRMeasureStratifier::jsonUnserialize($v, $config));
             }
         }
@@ -1585,7 +1503,11 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             }
         }
         if (isset($this->type) && [] !== $this->type) {
-            $out->type = $this->type;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TYPE) && 1 === count($this->type)) {
+                $out->type = $this->type[0];
+            } else {
+                $out->type = $this->type;
+            }
         }
         if (isset($this->subjectCodeableConcept)) {
             $out->subjectCodeableConcept = $this->subjectCodeableConcept;
@@ -1652,10 +1574,18 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             }
         }
         if (isset($this->population) && [] !== $this->population) {
-            $out->population = $this->population;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_POPULATION) && 1 === count($this->population)) {
+                $out->population = $this->population[0];
+            } else {
+                $out->population = $this->population;
+            }
         }
         if (isset($this->stratifier) && [] !== $this->stratifier) {
-            $out->stratifier = $this->stratifier;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_STRATIFIER) && 1 === count($this->stratifier)) {
+                $out->stratifier = $this->stratifier[0];
+            } else {
+                $out->stratifier = $this->stratifier;
+            }
         }
         return $out;
     }

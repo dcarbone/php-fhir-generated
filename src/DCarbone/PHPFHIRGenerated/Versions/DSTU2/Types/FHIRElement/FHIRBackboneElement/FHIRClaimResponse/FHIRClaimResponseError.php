@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -83,12 +85,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  */
 class FHIRClaimResponseError extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ERROR;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SEQUENCE_LINK_ID = 'sequenceLinkId';
     public const FIELD_SEQUENCE_LINK_ID_EXT = '_sequenceLinkId';
     public const FIELD_DETAIL_SEQUENCE_LINK_ID = 'detailSequenceLinkId';
@@ -97,7 +101,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
     public const FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT = '_subdetailSequenceLinkId';
     public const FIELD_CODE = 'code';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CODE => [
@@ -105,14 +109,14 @@ class FHIRClaimResponseError extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SEQUENCE_LINK_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DETAIL_SEQUENCE_LINK_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -160,24 +164,24 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      */
     protected FHIRCoding $code;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRClaimResponseError Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $sequenceLinkId
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $detailSequenceLinkId
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $subdetailSequenceLinkId
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $sequenceLinkId
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $detailSequenceLinkId
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $subdetailSequenceLinkId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $code
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequenceLinkId = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $detailSequenceLinkId = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $subdetailSequenceLinkId = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequenceLinkId = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $detailSequenceLinkId = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $subdetailSequenceLinkId = null,
                                 null|FHIRCoding $code = null,
                                 null|iterable $fhirComments = null)
     {
@@ -199,7 +203,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -208,7 +212,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -232,12 +236,10 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the line item submitted which contains the error. This
      * value is omitted when the error is elsewhere.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $sequenceLinkId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $sequenceLinkId
      * @return static
      */
-    public function setSequenceLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequenceLinkId,
-                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSequenceLinkId(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequenceLinkId): self
     {
         if (null === $sequenceLinkId) {
             unset($this->sequenceLinkId);
@@ -247,33 +249,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             $sequenceLinkId = new FHIRPositiveInt(value: $sequenceLinkId);
         }
         $this->sequenceLinkId = $sequenceLinkId;
-        if ($this->_valueXMLLocations[self::FIELD_SEQUENCE_LINK_ID] !== $valueXMLLocation) {
-            $this->_setSequenceLinkIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the sequenceLinkId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSequenceLinkIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SEQUENCE_LINK_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the sequenceLinkId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSequenceLinkIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SEQUENCE_LINK_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -302,12 +277,10 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * contains the error. This value is omitted when the error is not related to an
      * Addition.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $detailSequenceLinkId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $detailSequenceLinkId
      * @return static
      */
-    public function setDetailSequenceLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $detailSequenceLinkId,
-                                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDetailSequenceLinkId(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $detailSequenceLinkId): self
     {
         if (null === $detailSequenceLinkId) {
             unset($this->detailSequenceLinkId);
@@ -317,33 +290,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             $detailSequenceLinkId = new FHIRPositiveInt(value: $detailSequenceLinkId);
         }
         $this->detailSequenceLinkId = $detailSequenceLinkId;
-        if ($this->_valueXMLLocations[self::FIELD_DETAIL_SEQUENCE_LINK_ID] !== $valueXMLLocation) {
-            $this->_setDetailSequenceLinkIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the detailSequenceLinkId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDetailSequenceLinkIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DETAIL_SEQUENCE_LINK_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the detailSequenceLinkId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDetailSequenceLinkIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DETAIL_SEQUENCE_LINK_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -372,12 +318,10 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * contains the error. This value is omitted when the error is not related to an
      * Addition.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $subdetailSequenceLinkId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $subdetailSequenceLinkId
      * @return static
      */
-    public function setSubdetailSequenceLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $subdetailSequenceLinkId,
-                                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSubdetailSequenceLinkId(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $subdetailSequenceLinkId): self
     {
         if (null === $subdetailSequenceLinkId) {
             unset($this->subdetailSequenceLinkId);
@@ -387,33 +331,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             $subdetailSequenceLinkId = new FHIRPositiveInt(value: $subdetailSequenceLinkId);
         }
         $this->subdetailSequenceLinkId = $subdetailSequenceLinkId;
-        if ($this->_valueXMLLocations[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID] !== $valueXMLLocation) {
-            $this->_setSubdetailSequenceLinkIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the subdetailSequenceLinkId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSubdetailSequenceLinkIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the subdetailSequenceLinkId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSubdetailSequenceLinkIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -453,7 +370,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -482,9 +399,11 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -500,31 +419,32 @@ class FHIRClaimResponseError extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SEQUENCE_LINK_ID])) {
             if (isset($type->sequenceLinkId)) {
                 $type->sequenceLinkId->setValue((string)$attributes[self::FIELD_SEQUENCE_LINK_ID]);
-                $type->_setSequenceLinkIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSequenceLinkId((string)$attributes[self::FIELD_SEQUENCE_LINK_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSequenceLinkId((string)$attributes[self::FIELD_SEQUENCE_LINK_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SEQUENCE_LINK_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DETAIL_SEQUENCE_LINK_ID])) {
             if (isset($type->detailSequenceLinkId)) {
                 $type->detailSequenceLinkId->setValue((string)$attributes[self::FIELD_DETAIL_SEQUENCE_LINK_ID]);
-                $type->_setDetailSequenceLinkIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDetailSequenceLinkId((string)$attributes[self::FIELD_DETAIL_SEQUENCE_LINK_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDetailSequenceLinkId((string)$attributes[self::FIELD_DETAIL_SEQUENCE_LINK_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DETAIL_SEQUENCE_LINK_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID])) {
             if (isset($type->subdetailSequenceLinkId)) {
                 $type->subdetailSequenceLinkId->setValue((string)$attributes[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID]);
-                $type->_setSubdetailSequenceLinkIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSubdetailSequenceLinkId((string)$attributes[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSubdetailSequenceLinkId((string)$attributes[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -537,13 +457,13 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->sequenceLinkId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SEQUENCE_LINK_ID]) {
-            $xw->writeAttribute(self::FIELD_SEQUENCE_LINK_ID, $this->sequenceLinkId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SEQUENCE_LINK_ID, $this->sequenceLinkId->_getValueAsString());
         }
         if (isset($this->detailSequenceLinkId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DETAIL_SEQUENCE_LINK_ID]) {
-            $xw->writeAttribute(self::FIELD_DETAIL_SEQUENCE_LINK_ID, $this->detailSequenceLinkId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DETAIL_SEQUENCE_LINK_ID, $this->detailSequenceLinkId->_getValueAsString());
         }
         if (isset($this->subdetailSequenceLinkId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID]) {
-            $xw->writeAttribute(self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID, $this->subdetailSequenceLinkId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID, $this->subdetailSequenceLinkId->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->sequenceLinkId)
@@ -575,13 +495,13 @@ class FHIRClaimResponseError extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -596,38 +516,36 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SEQUENCE_LINK_ID])
-            || isset($json[self::FIELD_SEQUENCE_LINK_ID_EXT])
-            || array_key_exists(self::FIELD_SEQUENCE_LINK_ID, $json)
-            || array_key_exists(self::FIELD_SEQUENCE_LINK_ID_EXT, $json)) {
-            $value = $json[self::FIELD_SEQUENCE_LINK_ID] ?? null;
-            $type->setSequenceLinkId(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_LINK_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sequenceLinkId)
+            || isset($json->_sequenceLinkId)
+            || property_exists($json, self::FIELD_SEQUENCE_LINK_ID)
+            || property_exists($json, self::FIELD_SEQUENCE_LINK_ID_EXT)) {
+            $v = $json->_sequenceLinkId ?? new \stdClass();
+            $v->value = $json->sequenceLinkId ?? null;
+            $type->setSequenceLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DETAIL_SEQUENCE_LINK_ID])
-            || isset($json[self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT])
-            || array_key_exists(self::FIELD_DETAIL_SEQUENCE_LINK_ID, $json)
-            || array_key_exists(self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT, $json)) {
-            $value = $json[self::FIELD_DETAIL_SEQUENCE_LINK_ID] ?? null;
-            $type->setDetailSequenceLinkId(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->detailSequenceLinkId)
+            || isset($json->_detailSequenceLinkId)
+            || property_exists($json, self::FIELD_DETAIL_SEQUENCE_LINK_ID)
+            || property_exists($json, self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT)) {
+            $v = $json->_detailSequenceLinkId ?? new \stdClass();
+            $v->value = $json->detailSequenceLinkId ?? null;
+            $type->setDetailSequenceLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID])
-            || isset($json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT])
-            || array_key_exists(self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID, $json)
-            || array_key_exists(self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT, $json)) {
-            $value = $json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID] ?? null;
-            $type->setSubdetailSequenceLinkId(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->subdetailSequenceLinkId)
+            || isset($json->_subdetailSequenceLinkId)
+            || property_exists($json, self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID)
+            || property_exists($json, self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT)) {
+            $v = $json->_subdetailSequenceLinkId ?? new \stdClass();
+            $v->value = $json->subdetailSequenceLinkId ?? null;
+            $type->setSubdetailSequenceLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCoding::jsonUnserialize($json[self::FIELD_CODE], $config));
+        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
+            if (is_array($json->code)) {
+                $type->setCode(FHIRCoding::jsonUnserialize(reset($json->code), $config));
+            } else {
+                $type->setCode(FHIRCoding::jsonUnserialize($json->code, $config));
+            }
         }
         return $type;
     }

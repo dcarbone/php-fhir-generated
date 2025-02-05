@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,12 +105,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRClaimResponseSubDetail extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_SUB_DETAIL;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SUB_DETAIL_SEQUENCE = 'subDetailSequence';
     public const FIELD_SUB_DETAIL_SEQUENCE_EXT = '_subDetailSequence';
     public const FIELD_TRACE_NUMBER = 'traceNumber';
@@ -117,7 +121,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     public const FIELD_REVIEW_OUTCOME = 'reviewOutcome';
     public const FIELD_ADJUDICATION = 'adjudication';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SUB_DETAIL_SEQUENCE => [
@@ -125,12 +129,12 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SUB_DETAIL_SEQUENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -183,15 +187,15 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
      */
     protected array $adjudication;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRClaimResponseSubDetail Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $subDetailSequence
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $subDetailSequence
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $traceNumber
-     * @param null|string[]|int[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $noteNumber
+     * @param null|string[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt[] $noteNumber
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseReviewOutcome $reviewOutcome
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[] $adjudication
      * @param null|string[] $fhirComments
@@ -199,7 +203,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $subDetailSequence = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $subDetailSequence = null,
                                 null|iterable $traceNumber = null,
                                 null|iterable $noteNumber = null,
                                 null|FHIRClaimResponseReviewOutcome $reviewOutcome = null,
@@ -227,7 +231,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -236,7 +240,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -258,12 +262,10 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
      *
      * A number to uniquely reference the claim sub-detail entry.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $subDetailSequence
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $subDetailSequence
      * @return static
      */
-    public function setSubDetailSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $subDetailSequence,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSubDetailSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $subDetailSequence): self
     {
         if (null === $subDetailSequence) {
             unset($this->subDetailSequence);
@@ -273,33 +275,6 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
             $subDetailSequence = new FHIRPositiveInt(value: $subDetailSequence);
         }
         $this->subDetailSequence = $subDetailSequence;
-        if ($this->_valueXMLLocations[self::FIELD_SUB_DETAIL_SEQUENCE] !== $valueXMLLocation) {
-            $this->_setSubDetailSequenceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the subDetailSequence element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSubDetailSequenceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SUB_DETAIL_SEQUENCE];
-    }
-
-    /**
-     * Set the location the "value" field of the subDetailSequence element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSubDetailSequenceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SUB_DETAIL_SEQUENCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -407,10 +382,10 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $noteNumber
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $noteNumber
      * @return static
      */
-    public function addNoteNumber(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
+    public function addNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
     {
         if (!($noteNumber instanceof FHIRPositiveInt)) {
             $noteNumber = new FHIRPositiveInt(value: $noteNumber);
@@ -430,10 +405,10 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
      *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$noteNumber
+     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$noteNumber
      * @return static
      */
-    public function setNoteNumber(string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
+    public function setNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
     {
         if ([] === $noteNumber) {
             unset($this->noteNumber);
@@ -543,7 +518,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -572,9 +547,11 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -592,15 +569,16 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SUB_DETAIL_SEQUENCE])) {
             if (isset($type->subDetailSequence)) {
                 $type->subDetailSequence->setValue((string)$attributes[self::FIELD_SUB_DETAIL_SEQUENCE]);
-                $type->_setSubDetailSequenceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSubDetailSequence((string)$attributes[self::FIELD_SUB_DETAIL_SEQUENCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSubDetailSequence((string)$attributes[self::FIELD_SUB_DETAIL_SEQUENCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SUB_DETAIL_SEQUENCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -613,7 +591,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->subDetailSequence) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SUB_DETAIL_SEQUENCE]) {
-            $xw->writeAttribute(self::FIELD_SUB_DETAIL_SEQUENCE, $this->subDetailSequence->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SUB_DETAIL_SEQUENCE, $this->subDetailSequence->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->subDetailSequence)
@@ -652,13 +630,13 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -673,52 +651,57 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SUB_DETAIL_SEQUENCE])
-            || isset($json[self::FIELD_SUB_DETAIL_SEQUENCE_EXT])
-            || array_key_exists(self::FIELD_SUB_DETAIL_SEQUENCE, $json)
-            || array_key_exists(self::FIELD_SUB_DETAIL_SEQUENCE_EXT, $json)) {
-            $value = $json[self::FIELD_SUB_DETAIL_SEQUENCE] ?? null;
-            $type->setSubDetailSequence(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SUB_DETAIL_SEQUENCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->subDetailSequence)
+            || isset($json->_subDetailSequence)
+            || property_exists($json, self::FIELD_SUB_DETAIL_SEQUENCE)
+            || property_exists($json, self::FIELD_SUB_DETAIL_SEQUENCE_EXT)) {
+            $v = $json->_subDetailSequence ?? new \stdClass();
+            $v->value = $json->subDetailSequence ?? null;
+            $type->setSubDetailSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TRACE_NUMBER]) || array_key_exists(self::FIELD_TRACE_NUMBER, $json)) {
-            $vs = $json[self::FIELD_TRACE_NUMBER];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->traceNumber) || property_exists($json, self::FIELD_TRACE_NUMBER)) {
+            if (is_object($json->traceNumber)) {
+                $vals = [$json->traceNumber];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TRACE_NUMBER, true);
+            } else {
+                $vals = $json->traceNumber;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTraceNumber(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_NOTE_NUMBER])
-            || isset($json[self::FIELD_NOTE_NUMBER_EXT])
-            || array_key_exists(self::FIELD_NOTE_NUMBER, $json)
-            || array_key_exists(self::FIELD_NOTE_NUMBER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_NOTE_NUMBER] ?? []);
-            $ext = (array)($json[self::FIELD_NOTE_NUMBER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->noteNumber)
+            || isset($json->_noteNumber)
+            || property_exists($json, self::FIELD_NOTE_NUMBER)
+            || property_exists($json, self::FIELD_NOTE_NUMBER_EXT)) {
+            $vals = (array)($json->noteNumber ?? []);
+            $exts = (array)($json->FIELD_NOTE_NUMBER_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize(
-                    [FHIRPositiveInt::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REVIEW_OUTCOME]) || array_key_exists(self::FIELD_REVIEW_OUTCOME, $json)) {
-            $type->setReviewOutcome(FHIRClaimResponseReviewOutcome::jsonUnserialize($json[self::FIELD_REVIEW_OUTCOME], $config));
-        }
-        if (isset($json[self::FIELD_ADJUDICATION]) || array_key_exists(self::FIELD_ADJUDICATION, $json)) {
-            $vs = $json[self::FIELD_ADJUDICATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->reviewOutcome) || property_exists($json, self::FIELD_REVIEW_OUTCOME)) {
+            if (is_array($json->reviewOutcome)) {
+                $type->setReviewOutcome(FHIRClaimResponseReviewOutcome::jsonUnserialize(reset($json->reviewOutcome), $config));
+            } else {
+                $type->setReviewOutcome(FHIRClaimResponseReviewOutcome::jsonUnserialize($json->reviewOutcome, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->adjudication) || property_exists($json, self::FIELD_ADJUDICATION)) {
+            if (is_object($json->adjudication)) {
+                $vals = [$json->adjudication];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ADJUDICATION, true);
+            } else {
+                $vals = $json->adjudication;
+            }
+            foreach($vals as $v) {
                 $type->addAdjudication(FHIRClaimResponseAdjudication::jsonUnserialize($v, $config));
             }
         }
@@ -742,7 +725,11 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
             }
         }
         if (isset($this->traceNumber) && [] !== $this->traceNumber) {
-            $out->traceNumber = $this->traceNumber;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TRACE_NUMBER) && 1 === count($this->traceNumber)) {
+                $out->traceNumber = $this->traceNumber[0];
+            } else {
+                $out->traceNumber = $this->traceNumber;
+            }
         }
         if (isset($this->noteNumber) && [] !== $this->noteNumber) {
             $vals = [];
@@ -777,7 +764,11 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
             $out->reviewOutcome = $this->reviewOutcome;
         }
         if (isset($this->adjudication) && [] !== $this->adjudication) {
-            $out->adjudication = $this->adjudication;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ADJUDICATION) && 1 === count($this->adjudication)) {
+                $out->adjudication = $this->adjudication[0];
+            } else {
+                $out->adjudication = $this->adjudication;
+            }
         }
         return $out;
     }

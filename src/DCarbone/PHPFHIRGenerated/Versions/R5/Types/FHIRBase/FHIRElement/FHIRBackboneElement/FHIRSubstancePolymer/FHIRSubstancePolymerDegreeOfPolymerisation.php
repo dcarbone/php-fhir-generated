@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -101,12 +103,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_DEGREE_OF_POLYMERISATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_AVERAGE = 'average';
     public const FIELD_AVERAGE_EXT = '_average';
@@ -115,18 +119,18 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
     public const FIELD_HIGH = 'high';
     public const FIELD_HIGH_EXT = '_high';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_AVERAGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LOW => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_HIGH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -170,25 +174,25 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
      */
     protected FHIRInteger $high;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstancePolymerDegreeOfPolymerisation Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $average
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $low
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $high
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $average
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $low
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $high
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $average = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $low = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $high = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $average = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $low = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $high = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -209,7 +213,7 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -218,7 +222,7 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -278,12 +282,10 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
      *
      * An average amount of polymerisation.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $average
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $average
      * @return static
      */
-    public function setAverage(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $average,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAverage(null|string|float|FHIRIntegerPrimitive|FHIRInteger $average): self
     {
         if (null === $average) {
             unset($this->average);
@@ -293,33 +295,6 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
             $average = new FHIRInteger(value: $average);
         }
         $this->average = $average;
-        if ($this->_valueXMLLocations[self::FIELD_AVERAGE] !== $valueXMLLocation) {
-            $this->_setAverageValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the average element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAverageValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AVERAGE];
-    }
-
-    /**
-     * Set the location the "value" field of the average element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAverageValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AVERAGE] = $valueXMLLocation;
         return $this;
     }
 
@@ -344,12 +319,10 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
      *
      * A low expected limit of the amount.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $low
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $low
      * @return static
      */
-    public function setLow(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $low,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLow(null|string|float|FHIRIntegerPrimitive|FHIRInteger $low): self
     {
         if (null === $low) {
             unset($this->low);
@@ -359,33 +332,6 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
             $low = new FHIRInteger(value: $low);
         }
         $this->low = $low;
-        if ($this->_valueXMLLocations[self::FIELD_LOW] !== $valueXMLLocation) {
-            $this->_setLowValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the low element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLowValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LOW];
-    }
-
-    /**
-     * Set the location the "value" field of the low element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLowValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LOW] = $valueXMLLocation;
         return $this;
     }
 
@@ -410,12 +356,10 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
      *
      * A high expected limit of the amount.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $high
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $high
      * @return static
      */
-    public function setHigh(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $high,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setHigh(null|string|float|FHIRIntegerPrimitive|FHIRInteger $high): self
     {
         if (null === $high) {
             unset($this->high);
@@ -425,37 +369,10 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
             $high = new FHIRInteger(value: $high);
         }
         $this->high = $high;
-        if ($this->_valueXMLLocations[self::FIELD_HIGH] !== $valueXMLLocation) {
-            $this->_setHighValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the high element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getHighValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_HIGH];
-    }
-
-    /**
-     * Set the location the "value" field of the high element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setHighValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_HIGH] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -484,9 +401,11 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -502,31 +421,32 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_AVERAGE])) {
             if (isset($type->average)) {
                 $type->average->setValue((string)$attributes[self::FIELD_AVERAGE]);
-                $type->_setAverageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAverage((string)$attributes[self::FIELD_AVERAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAverage((string)$attributes[self::FIELD_AVERAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_AVERAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LOW])) {
             if (isset($type->low)) {
                 $type->low->setValue((string)$attributes[self::FIELD_LOW]);
-                $type->_setLowValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLow((string)$attributes[self::FIELD_LOW], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLow((string)$attributes[self::FIELD_LOW]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LOW, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_HIGH])) {
             if (isset($type->high)) {
                 $type->high->setValue((string)$attributes[self::FIELD_HIGH]);
-                $type->_setHighValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setHigh((string)$attributes[self::FIELD_HIGH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setHigh((string)$attributes[self::FIELD_HIGH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_HIGH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -539,13 +459,13 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->average) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AVERAGE]) {
-            $xw->writeAttribute(self::FIELD_AVERAGE, $this->average->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_AVERAGE, $this->average->_getValueAsString());
         }
         if (isset($this->low) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LOW]) {
-            $xw->writeAttribute(self::FIELD_LOW, $this->low->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LOW, $this->low->_getValueAsString());
         }
         if (isset($this->high) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_HIGH]) {
-            $xw->writeAttribute(self::FIELD_HIGH, $this->high->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_HIGH, $this->high->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -577,13 +497,13 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -598,38 +518,36 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
         }
-        if (isset($json[self::FIELD_AVERAGE])
-            || isset($json[self::FIELD_AVERAGE_EXT])
-            || array_key_exists(self::FIELD_AVERAGE, $json)
-            || array_key_exists(self::FIELD_AVERAGE_EXT, $json)) {
-            $value = $json[self::FIELD_AVERAGE] ?? null;
-            $type->setAverage(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_AVERAGE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->average)
+            || isset($json->_average)
+            || property_exists($json, self::FIELD_AVERAGE)
+            || property_exists($json, self::FIELD_AVERAGE_EXT)) {
+            $v = $json->_average ?? new \stdClass();
+            $v->value = $json->average ?? null;
+            $type->setAverage(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_LOW])
-            || isset($json[self::FIELD_LOW_EXT])
-            || array_key_exists(self::FIELD_LOW, $json)
-            || array_key_exists(self::FIELD_LOW_EXT, $json)) {
-            $value = $json[self::FIELD_LOW] ?? null;
-            $type->setLow(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_LOW_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->low)
+            || isset($json->_low)
+            || property_exists($json, self::FIELD_LOW)
+            || property_exists($json, self::FIELD_LOW_EXT)) {
+            $v = $json->_low ?? new \stdClass();
+            $v->value = $json->low ?? null;
+            $type->setLow(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_HIGH])
-            || isset($json[self::FIELD_HIGH_EXT])
-            || array_key_exists(self::FIELD_HIGH, $json)
-            || array_key_exists(self::FIELD_HIGH_EXT, $json)) {
-            $value = $json[self::FIELD_HIGH] ?? null;
-            $type->setHigh(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_HIGH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->high)
+            || isset($json->_high)
+            || property_exists($json, self::FIELD_HIGH)
+            || property_exists($json, self::FIELD_HIGH_EXT)) {
+            $v = $json->_high ?? new \stdClass();
+            $v->value = $json->high ?? null;
+            $type->setHigh(FHIRInteger::jsonUnserialize($v, $config));
         }
         return $type;
     }

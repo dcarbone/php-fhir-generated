@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -82,12 +84,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_STRENGTH;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_PRESENTATION = 'presentation';
     public const FIELD_PRESENTATION_LOW_LIMIT = 'presentationLowLimit';
     public const FIELD_CONCENTRATION = 'concentration';
@@ -97,7 +101,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     public const FIELD_COUNTRY = 'country';
     public const FIELD_REFERENCE_STRENGTH = 'referenceStrength';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PRESENTATION => [
@@ -105,12 +109,12 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_MEASUREMENT_POINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
@@ -189,7 +193,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      */
     protected array $referenceStrength;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedicinalProductIngredientStrength Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -243,7 +247,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -252,7 +256,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
@@ -427,11 +431,9 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * For when strength is measured at a particular point or distance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $measurementPoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint): self
     {
         if (null === $measurementPoint) {
             unset($this->measurementPoint);
@@ -441,33 +443,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
             $measurementPoint = new FHIRString(value: $measurementPoint);
         }
         $this->measurementPoint = $measurementPoint;
-        if ($this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT] !== $valueXMLLocation) {
-            $this->_setMeasurementPointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the measurementPoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMeasurementPointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT];
-    }
-
-    /**
-     * Set the location the "value" field of the measurementPoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMeasurementPointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -596,7 +571,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -625,9 +600,11 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -649,15 +626,16 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MEASUREMENT_POINT])) {
             if (isset($type->measurementPoint)) {
                 $type->measurementPoint->setValue((string)$attributes[self::FIELD_MEASUREMENT_POINT]);
-                $type->_setMeasurementPointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMeasurementPoint((string)$attributes[self::FIELD_MEASUREMENT_POINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMeasurementPoint((string)$attributes[self::FIELD_MEASUREMENT_POINT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MEASUREMENT_POINT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -670,7 +648,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->measurementPoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MEASUREMENT_POINT]) {
-            $xw->writeAttribute(self::FIELD_MEASUREMENT_POINT, $this->measurementPoint->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MEASUREMENT_POINT, $this->measurementPoint->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->presentation)) {
@@ -717,13 +695,13 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -738,43 +716,61 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PRESENTATION]) || array_key_exists(self::FIELD_PRESENTATION, $json)) {
-            $type->setPresentation(FHIRRatio::jsonUnserialize($json[self::FIELD_PRESENTATION], $config));
-        }
-        if (isset($json[self::FIELD_PRESENTATION_LOW_LIMIT]) || array_key_exists(self::FIELD_PRESENTATION_LOW_LIMIT, $json)) {
-            $type->setPresentationLowLimit(FHIRRatio::jsonUnserialize($json[self::FIELD_PRESENTATION_LOW_LIMIT], $config));
-        }
-        if (isset($json[self::FIELD_CONCENTRATION]) || array_key_exists(self::FIELD_CONCENTRATION, $json)) {
-            $type->setConcentration(FHIRRatio::jsonUnserialize($json[self::FIELD_CONCENTRATION], $config));
-        }
-        if (isset($json[self::FIELD_CONCENTRATION_LOW_LIMIT]) || array_key_exists(self::FIELD_CONCENTRATION_LOW_LIMIT, $json)) {
-            $type->setConcentrationLowLimit(FHIRRatio::jsonUnserialize($json[self::FIELD_CONCENTRATION_LOW_LIMIT], $config));
-        }
-        if (isset($json[self::FIELD_MEASUREMENT_POINT])
-            || isset($json[self::FIELD_MEASUREMENT_POINT_EXT])
-            || array_key_exists(self::FIELD_MEASUREMENT_POINT, $json)
-            || array_key_exists(self::FIELD_MEASUREMENT_POINT_EXT, $json)) {
-            $value = $json[self::FIELD_MEASUREMENT_POINT] ?? null;
-            $type->setMeasurementPoint(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MEASUREMENT_POINT_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_COUNTRY]) || array_key_exists(self::FIELD_COUNTRY, $json)) {
-            $vs = $json[self::FIELD_COUNTRY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->presentation) || property_exists($json, self::FIELD_PRESENTATION)) {
+            if (is_array($json->presentation)) {
+                $type->setPresentation(FHIRRatio::jsonUnserialize(reset($json->presentation), $config));
+            } else {
+                $type->setPresentation(FHIRRatio::jsonUnserialize($json->presentation, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->presentationLowLimit) || property_exists($json, self::FIELD_PRESENTATION_LOW_LIMIT)) {
+            if (is_array($json->presentationLowLimit)) {
+                $type->setPresentationLowLimit(FHIRRatio::jsonUnserialize(reset($json->presentationLowLimit), $config));
+            } else {
+                $type->setPresentationLowLimit(FHIRRatio::jsonUnserialize($json->presentationLowLimit, $config));
+            }
+        }
+        if (isset($json->concentration) || property_exists($json, self::FIELD_CONCENTRATION)) {
+            if (is_array($json->concentration)) {
+                $type->setConcentration(FHIRRatio::jsonUnserialize(reset($json->concentration), $config));
+            } else {
+                $type->setConcentration(FHIRRatio::jsonUnserialize($json->concentration, $config));
+            }
+        }
+        if (isset($json->concentrationLowLimit) || property_exists($json, self::FIELD_CONCENTRATION_LOW_LIMIT)) {
+            if (is_array($json->concentrationLowLimit)) {
+                $type->setConcentrationLowLimit(FHIRRatio::jsonUnserialize(reset($json->concentrationLowLimit), $config));
+            } else {
+                $type->setConcentrationLowLimit(FHIRRatio::jsonUnserialize($json->concentrationLowLimit, $config));
+            }
+        }
+        if (isset($json->measurementPoint)
+            || isset($json->_measurementPoint)
+            || property_exists($json, self::FIELD_MEASUREMENT_POINT)
+            || property_exists($json, self::FIELD_MEASUREMENT_POINT_EXT)) {
+            $v = $json->_measurementPoint ?? new \stdClass();
+            $v->value = $json->measurementPoint ?? null;
+            $type->setMeasurementPoint(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->country) || property_exists($json, self::FIELD_COUNTRY)) {
+            if (is_object($json->country)) {
+                $vals = [$json->country];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_COUNTRY, true);
+            } else {
+                $vals = $json->country;
+            }
+            foreach($vals as $v) {
                 $type->addCountry(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REFERENCE_STRENGTH]) || array_key_exists(self::FIELD_REFERENCE_STRENGTH, $json)) {
-            $vs = $json[self::FIELD_REFERENCE_STRENGTH];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->referenceStrength) || property_exists($json, self::FIELD_REFERENCE_STRENGTH)) {
+            if (is_object($json->referenceStrength)) {
+                $vals = [$json->referenceStrength];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_REFERENCE_STRENGTH, true);
+            } else {
+                $vals = $json->referenceStrength;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addReferenceStrength(FHIRMedicinalProductIngredientReferenceStrength::jsonUnserialize($v, $config));
             }
         }
@@ -810,10 +806,18 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
             }
         }
         if (isset($this->country) && [] !== $this->country) {
-            $out->country = $this->country;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_COUNTRY) && 1 === count($this->country)) {
+                $out->country = $this->country[0];
+            } else {
+                $out->country = $this->country;
+            }
         }
         if (isset($this->referenceStrength) && [] !== $this->referenceStrength) {
-            $out->referenceStrength = $this->referenceStrength;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_REFERENCE_STRENGTH) && 1 === count($this->referenceStrength)) {
+                $out->referenceStrength = $this->referenceStrength[0];
+            } else {
+                $out->referenceStrength = $this->referenceStrength;
+            }
         }
         return $out;
     }

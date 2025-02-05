@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -107,12 +109,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRSubscriptionFilterBy extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSCRIPTION_DOT_FILTER_BY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_RESOURCE_TYPE = 'resourceType';
     public const FIELD_RESOURCE_TYPE_EXT = '_resourceType';
     public const FIELD_FILTER_PARAMETER = 'filterParameter';
@@ -124,7 +128,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
     public const FIELD_VALUE = 'value';
     public const FIELD_VALUE_EXT = '_value';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_FILTER_PARAMETER => [
@@ -135,7 +139,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_RESOURCE_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_FILTER_PARAMETER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -144,7 +148,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
         self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -196,7 +200,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      */
     protected FHIRString $value;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubscriptionFilterBy Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -240,7 +244,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -249,7 +253,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -276,11 +280,9 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * differentiate filters for topics that include more than one resource type.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $resourceType
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setResourceType(null|string|FHIRUriPrimitive|FHIRUri $resourceType,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setResourceType(null|string|FHIRUriPrimitive|FHIRUri $resourceType): self
     {
         if (null === $resourceType) {
             unset($this->resourceType);
@@ -290,33 +292,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
             $resourceType = new FHIRUri(value: $resourceType);
         }
         $this->resourceType = $resourceType;
-        if ($this->_valueXMLLocations[self::FIELD_RESOURCE_TYPE] !== $valueXMLLocation) {
-            $this->_setResourceTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the resourceType element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getResourceTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RESOURCE_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the resourceType element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setResourceTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RESOURCE_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -344,11 +319,9 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * element.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $filterParameter
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFilterParameter(null|string|FHIRStringPrimitive|FHIRString $filterParameter,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFilterParameter(null|string|FHIRStringPrimitive|FHIRString $filterParameter): self
     {
         if (null === $filterParameter) {
             unset($this->filterParameter);
@@ -358,33 +331,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
             $filterParameter = new FHIRString(value: $filterParameter);
         }
         $this->filterParameter = $filterParameter;
-        if ($this->_valueXMLLocations[self::FIELD_FILTER_PARAMETER] !== $valueXMLLocation) {
-            $this->_setFilterParameterValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the filterParameter element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFilterParameterValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FILTER_PARAMETER];
-    }
-
-    /**
-     * Set the location the "value" field of the filterParameter element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFilterParameterValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FILTER_PARAMETER] = $valueXMLLocation;
         return $this;
     }
 
@@ -406,11 +352,9 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * Comparator applied to this filter parameter.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchComparatorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator $comparator
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setComparator(null|string|FHIRSearchComparatorEnum|FHIRSearchComparator $comparator,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setComparator(null|string|FHIRSearchComparatorEnum|FHIRSearchComparator $comparator): self
     {
         if (null === $comparator) {
             unset($this->comparator);
@@ -420,33 +364,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
             $comparator = new FHIRSearchComparator(value: $comparator);
         }
         $this->comparator = $comparator;
-        if ($this->_valueXMLLocations[self::FIELD_COMPARATOR] !== $valueXMLLocation) {
-            $this->_setComparatorValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the comparator element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getComparatorValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COMPARATOR];
-    }
-
-    /**
-     * Set the location the "value" field of the comparator element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setComparatorValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COMPARATOR] = $valueXMLLocation;
         return $this;
     }
 
@@ -468,11 +385,9 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * Modifier applied to this filter parameter.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchModifierCodeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode $modifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setModifier(null|string|FHIRSearchModifierCodeEnum|FHIRSearchModifierCode $modifier,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setModifier(null|string|FHIRSearchModifierCodeEnum|FHIRSearchModifierCode $modifier): self
     {
         if (null === $modifier) {
             unset($this->modifier);
@@ -482,33 +397,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
             $modifier = new FHIRSearchModifierCode(value: $modifier);
         }
         $this->modifier = $modifier;
-        if ($this->_valueXMLLocations[self::FIELD_MODIFIER] !== $valueXMLLocation) {
-            $this->_setModifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the modifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getModifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MODIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the modifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setModifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MODIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -536,11 +424,9 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * `Patient/123` or `le1950`.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
         if (null === $value) {
             unset($this->value);
@@ -550,37 +436,10 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
             $value = new FHIRString(value: $value);
         }
         $this->value = $value;
-        if ($this->_valueXMLLocations[self::FIELD_VALUE] !== $valueXMLLocation) {
-            $this->_setValueValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the value element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getValueValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_VALUE];
-    }
-
-    /**
-     * Set the location the "value" field of the value element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setValueValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_VALUE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -609,9 +468,11 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -629,47 +490,48 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RESOURCE_TYPE])) {
             if (isset($type->resourceType)) {
                 $type->resourceType->setValue((string)$attributes[self::FIELD_RESOURCE_TYPE]);
-                $type->_setResourceTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setResourceType((string)$attributes[self::FIELD_RESOURCE_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setResourceType((string)$attributes[self::FIELD_RESOURCE_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RESOURCE_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_FILTER_PARAMETER])) {
             if (isset($type->filterParameter)) {
                 $type->filterParameter->setValue((string)$attributes[self::FIELD_FILTER_PARAMETER]);
-                $type->_setFilterParameterValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setFilterParameter((string)$attributes[self::FIELD_FILTER_PARAMETER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setFilterParameter((string)$attributes[self::FIELD_FILTER_PARAMETER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_FILTER_PARAMETER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_COMPARATOR])) {
             if (isset($type->comparator)) {
                 $type->comparator->setValue((string)$attributes[self::FIELD_COMPARATOR]);
-                $type->_setComparatorValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setComparator((string)$attributes[self::FIELD_COMPARATOR], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setComparator((string)$attributes[self::FIELD_COMPARATOR]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_COMPARATOR, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MODIFIER])) {
             if (isset($type->modifier)) {
                 $type->modifier->setValue((string)$attributes[self::FIELD_MODIFIER]);
-                $type->_setModifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setModifier((string)$attributes[self::FIELD_MODIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setModifier((string)$attributes[self::FIELD_MODIFIER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MODIFIER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_VALUE])) {
             if (isset($type->value)) {
                 $type->value->setValue((string)$attributes[self::FIELD_VALUE]);
-                $type->_setValueValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setValue((string)$attributes[self::FIELD_VALUE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setValue((string)$attributes[self::FIELD_VALUE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_VALUE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -682,19 +544,19 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->resourceType) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RESOURCE_TYPE]) {
-            $xw->writeAttribute(self::FIELD_RESOURCE_TYPE, $this->resourceType->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RESOURCE_TYPE, $this->resourceType->_getValueAsString());
         }
         if (isset($this->filterParameter) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FILTER_PARAMETER]) {
-            $xw->writeAttribute(self::FIELD_FILTER_PARAMETER, $this->filterParameter->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_FILTER_PARAMETER, $this->filterParameter->_getValueAsString());
         }
         if (isset($this->comparator) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COMPARATOR]) {
-            $xw->writeAttribute(self::FIELD_COMPARATOR, $this->comparator->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_COMPARATOR, $this->comparator->_getValueAsString());
         }
         if (isset($this->modifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MODIFIER]) {
-            $xw->writeAttribute(self::FIELD_MODIFIER, $this->modifier->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MODIFIER, $this->modifier->_getValueAsString());
         }
         if (isset($this->value) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_VALUE]) {
-            $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->resourceType)
@@ -735,13 +597,13 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -756,55 +618,45 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_RESOURCE_TYPE])
-            || isset($json[self::FIELD_RESOURCE_TYPE_EXT])
-            || array_key_exists(self::FIELD_RESOURCE_TYPE, $json)
-            || array_key_exists(self::FIELD_RESOURCE_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_RESOURCE_TYPE] ?? null;
-            $type->setResourceType(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_RESOURCE_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->resourceType)
+            || isset($json->_resourceType)
+            || property_exists($json, self::FIELD_RESOURCE_TYPE)
+            || property_exists($json, self::FIELD_RESOURCE_TYPE_EXT)) {
+            $v = $json->_resourceType ?? new \stdClass();
+            $v->value = $json->resourceType ?? null;
+            $type->setResourceType(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_FILTER_PARAMETER])
-            || isset($json[self::FIELD_FILTER_PARAMETER_EXT])
-            || array_key_exists(self::FIELD_FILTER_PARAMETER, $json)
-            || array_key_exists(self::FIELD_FILTER_PARAMETER_EXT, $json)) {
-            $value = $json[self::FIELD_FILTER_PARAMETER] ?? null;
-            $type->setFilterParameter(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_FILTER_PARAMETER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->filterParameter)
+            || isset($json->_filterParameter)
+            || property_exists($json, self::FIELD_FILTER_PARAMETER)
+            || property_exists($json, self::FIELD_FILTER_PARAMETER_EXT)) {
+            $v = $json->_filterParameter ?? new \stdClass();
+            $v->value = $json->filterParameter ?? null;
+            $type->setFilterParameter(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_COMPARATOR])
-            || isset($json[self::FIELD_COMPARATOR_EXT])
-            || array_key_exists(self::FIELD_COMPARATOR, $json)
-            || array_key_exists(self::FIELD_COMPARATOR_EXT, $json)) {
-            $value = $json[self::FIELD_COMPARATOR] ?? null;
-            $type->setComparator(FHIRSearchComparator::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSearchComparator::FIELD_VALUE => $value]) + ($json[self::FIELD_COMPARATOR_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->comparator)
+            || isset($json->_comparator)
+            || property_exists($json, self::FIELD_COMPARATOR)
+            || property_exists($json, self::FIELD_COMPARATOR_EXT)) {
+            $v = $json->_comparator ?? new \stdClass();
+            $v->value = $json->comparator ?? null;
+            $type->setComparator(FHIRSearchComparator::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_MODIFIER])
-            || isset($json[self::FIELD_MODIFIER_EXT])
-            || array_key_exists(self::FIELD_MODIFIER, $json)
-            || array_key_exists(self::FIELD_MODIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_MODIFIER] ?? null;
-            $type->setModifier(FHIRSearchModifierCode::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSearchModifierCode::FIELD_VALUE => $value]) + ($json[self::FIELD_MODIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->modifier)
+            || isset($json->_modifier)
+            || property_exists($json, self::FIELD_MODIFIER)
+            || property_exists($json, self::FIELD_MODIFIER_EXT)) {
+            $v = $json->_modifier ?? new \stdClass();
+            $v->value = $json->modifier ?? null;
+            $type->setModifier(FHIRSearchModifierCode::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_VALUE])
-            || isset($json[self::FIELD_VALUE_EXT])
-            || array_key_exists(self::FIELD_VALUE, $json)
-            || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
-            $value = $json[self::FIELD_VALUE] ?? null;
-            $type->setValue(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->value)
+            || isset($json->_value)
+            || property_exists($json, self::FIELD_VALUE)
+            || property_exists($json, self::FIELD_VALUE_EXT)) {
+            $v = $json->_value ?? new \stdClass();
+            $v->value = $json->value ?? null;
+            $type->setValue(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

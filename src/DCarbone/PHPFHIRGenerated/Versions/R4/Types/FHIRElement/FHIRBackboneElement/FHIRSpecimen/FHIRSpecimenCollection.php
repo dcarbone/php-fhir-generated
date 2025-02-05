@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -85,12 +87,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRSpecimenCollection extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SPECIMEN_DOT_COLLECTION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_COLLECTOR = 'collector';
     public const FIELD_COLLECTED_DATE_TIME = 'collectedDateTime';
     public const FIELD_COLLECTED_DATE_TIME_EXT = '_collectedDateTime';
@@ -102,16 +106,16 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
     public const FIELD_FASTING_STATUS_CODEABLE_CONCEPT = 'fastingStatusCodeableConcept';
     public const FIELD_FASTING_STATUS_DURATION = 'fastingStatusDuration';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_COLLECTED_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -218,7 +222,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      */
     protected FHIRDuration $fastingStatusDuration;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSpecimenCollection Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -282,7 +286,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -291,7 +295,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -356,11 +360,9 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * time.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $collectedDateTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCollectedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $collectedDateTime,
-                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCollectedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $collectedDateTime): self
     {
         if (null === $collectedDateTime) {
             unset($this->collectedDateTime);
@@ -370,33 +372,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
             $collectedDateTime = new FHIRDateTime(value: $collectedDateTime);
         }
         $this->collectedDateTime = $collectedDateTime;
-        if ($this->_valueXMLLocations[self::FIELD_COLLECTED_DATE_TIME] !== $valueXMLLocation) {
-            $this->_setCollectedDateTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the collectedDateTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCollectedDateTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COLLECTED_DATE_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the collectedDateTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCollectedDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COLLECTED_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -660,7 +635,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -689,9 +664,11 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -717,15 +694,16 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_COLLECTED_DATE_TIME])) {
             if (isset($type->collectedDateTime)) {
                 $type->collectedDateTime->setValue((string)$attributes[self::FIELD_COLLECTED_DATE_TIME]);
-                $type->_setCollectedDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCollectedDateTime((string)$attributes[self::FIELD_COLLECTED_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCollectedDateTime((string)$attributes[self::FIELD_COLLECTED_DATE_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_COLLECTED_DATE_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -738,7 +716,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->collectedDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COLLECTED_DATE_TIME]) {
-            $xw->writeAttribute(self::FIELD_COLLECTED_DATE_TIME, $this->collectedDateTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_COLLECTED_DATE_TIME, $this->collectedDateTime->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->collector)) {
@@ -791,13 +769,13 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -812,39 +790,69 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_COLLECTOR]) || array_key_exists(self::FIELD_COLLECTOR, $json)) {
-            $type->setCollector(FHIRReference::jsonUnserialize($json[self::FIELD_COLLECTOR], $config));
+        if (isset($json->collector) || property_exists($json, self::FIELD_COLLECTOR)) {
+            if (is_array($json->collector)) {
+                $type->setCollector(FHIRReference::jsonUnserialize(reset($json->collector), $config));
+            } else {
+                $type->setCollector(FHIRReference::jsonUnserialize($json->collector, $config));
+            }
         }
-        if (isset($json[self::FIELD_COLLECTED_DATE_TIME])
-            || isset($json[self::FIELD_COLLECTED_DATE_TIME_EXT])
-            || array_key_exists(self::FIELD_COLLECTED_DATE_TIME, $json)
-            || array_key_exists(self::FIELD_COLLECTED_DATE_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_COLLECTED_DATE_TIME] ?? null;
-            $type->setCollectedDateTime(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_COLLECTED_DATE_TIME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->collectedDateTime)
+            || isset($json->_collectedDateTime)
+            || property_exists($json, self::FIELD_COLLECTED_DATE_TIME)
+            || property_exists($json, self::FIELD_COLLECTED_DATE_TIME_EXT)) {
+            $v = $json->_collectedDateTime ?? new \stdClass();
+            $v->value = $json->collectedDateTime ?? null;
+            $type->setCollectedDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_COLLECTED_PERIOD]) || array_key_exists(self::FIELD_COLLECTED_PERIOD, $json)) {
-            $type->setCollectedPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_COLLECTED_PERIOD], $config));
+        if (isset($json->collectedPeriod) || property_exists($json, self::FIELD_COLLECTED_PERIOD)) {
+            if (is_array($json->collectedPeriod)) {
+                $type->setCollectedPeriod(FHIRPeriod::jsonUnserialize(reset($json->collectedPeriod), $config));
+            } else {
+                $type->setCollectedPeriod(FHIRPeriod::jsonUnserialize($json->collectedPeriod, $config));
+            }
         }
-        if (isset($json[self::FIELD_DURATION]) || array_key_exists(self::FIELD_DURATION, $json)) {
-            $type->setDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_DURATION], $config));
+        if (isset($json->duration) || property_exists($json, self::FIELD_DURATION)) {
+            if (is_array($json->duration)) {
+                $type->setDuration(FHIRDuration::jsonUnserialize(reset($json->duration), $config));
+            } else {
+                $type->setDuration(FHIRDuration::jsonUnserialize($json->duration, $config));
+            }
         }
-        if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
+        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
+            if (is_array($json->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+            } else {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+            }
         }
-        if (isset($json[self::FIELD_METHOD]) || array_key_exists(self::FIELD_METHOD, $json)) {
-            $type->setMethod(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_METHOD], $config));
+        if (isset($json->method) || property_exists($json, self::FIELD_METHOD)) {
+            if (is_array($json->method)) {
+                $type->setMethod(FHIRCodeableConcept::jsonUnserialize(reset($json->method), $config));
+            } else {
+                $type->setMethod(FHIRCodeableConcept::jsonUnserialize($json->method, $config));
+            }
         }
-        if (isset($json[self::FIELD_BODY_SITE]) || array_key_exists(self::FIELD_BODY_SITE, $json)) {
-            $type->setBodySite(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_BODY_SITE], $config));
+        if (isset($json->bodySite) || property_exists($json, self::FIELD_BODY_SITE)) {
+            if (is_array($json->bodySite)) {
+                $type->setBodySite(FHIRCodeableConcept::jsonUnserialize(reset($json->bodySite), $config));
+            } else {
+                $type->setBodySite(FHIRCodeableConcept::jsonUnserialize($json->bodySite, $config));
+            }
         }
-        if (isset($json[self::FIELD_FASTING_STATUS_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_FASTING_STATUS_CODEABLE_CONCEPT, $json)) {
-            $type->setFastingStatusCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FASTING_STATUS_CODEABLE_CONCEPT], $config));
+        if (isset($json->fastingStatusCodeableConcept) || property_exists($json, self::FIELD_FASTING_STATUS_CODEABLE_CONCEPT)) {
+            if (is_array($json->fastingStatusCodeableConcept)) {
+                $type->setFastingStatusCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->fastingStatusCodeableConcept), $config));
+            } else {
+                $type->setFastingStatusCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->fastingStatusCodeableConcept, $config));
+            }
         }
-        if (isset($json[self::FIELD_FASTING_STATUS_DURATION]) || array_key_exists(self::FIELD_FASTING_STATUS_DURATION, $json)) {
-            $type->setFastingStatusDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_FASTING_STATUS_DURATION], $config));
+        if (isset($json->fastingStatusDuration) || property_exists($json, self::FIELD_FASTING_STATUS_DURATION)) {
+            if (is_array($json->fastingStatusDuration)) {
+                $type->setFastingStatusDuration(FHIRDuration::jsonUnserialize(reset($json->fastingStatusDuration), $config));
+            } else {
+                $type->setFastingStatusDuration(FHIRDuration::jsonUnserialize($json->fastingStatusDuration, $config));
+            }
         }
         return $type;
     }

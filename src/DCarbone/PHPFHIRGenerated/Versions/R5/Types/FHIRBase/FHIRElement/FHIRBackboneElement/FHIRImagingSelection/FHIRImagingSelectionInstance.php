@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -108,12 +110,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRImagingSelectionInstance extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMAGING_SELECTION_DOT_INSTANCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_UID = 'uid';
     public const FIELD_UID_EXT = '_uid';
     public const FIELD_NUMBER = 'number';
@@ -124,7 +128,7 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
     public const FIELD_IMAGE_REGION_2D = 'imageRegion2D';
     public const FIELD_IMAGE_REGION_3D = 'imageRegion3D';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_UID => [
@@ -132,13 +136,13 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_UID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -215,7 +219,7 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      */
     protected array $imageRegion3D;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRImagingSelectionInstance Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -264,7 +268,7 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -273,7 +277,7 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -302,11 +306,9 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * The SOP Instance UID for the selected DICOM instance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $uid
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUid(null|string|FHIRIdPrimitive|FHIRId $uid,
-                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUid(null|string|FHIRIdPrimitive|FHIRId $uid): self
     {
         if (null === $uid) {
             unset($this->uid);
@@ -316,33 +318,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
             $uid = new FHIRId(value: $uid);
         }
         $this->uid = $uid;
-        if ($this->_valueXMLLocations[self::FIELD_UID] !== $valueXMLLocation) {
-            $this->_setUidValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the uid element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUidValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_UID];
-    }
-
-    /**
-     * Set the location the "value" field of the uid element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUidValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_UID] = $valueXMLLocation;
         return $this;
     }
 
@@ -368,11 +343,9 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * The Instance Number for the selected DICOM instance.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $number
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number): self
     {
         if (null === $number) {
             unset($this->number);
@@ -382,33 +355,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
             $number = new FHIRUnsignedInt(value: $number);
         }
         $this->number = $number;
-        if ($this->_valueXMLLocations[self::FIELD_NUMBER] !== $valueXMLLocation) {
-            $this->_setNumberValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the number element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNumberValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NUMBER];
-    }
-
-    /**
-     * Set the location the "value" field of the number element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNumberValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NUMBER] = $valueXMLLocation;
         return $this;
     }
 
@@ -684,7 +630,7 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -713,9 +659,11 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -735,23 +683,24 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_UID])) {
             if (isset($type->uid)) {
                 $type->uid->setValue((string)$attributes[self::FIELD_UID]);
-                $type->_setUidValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUid((string)$attributes[self::FIELD_UID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUid((string)$attributes[self::FIELD_UID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_UID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NUMBER])) {
             if (isset($type->number)) {
                 $type->number->setValue((string)$attributes[self::FIELD_NUMBER]);
-                $type->_setNumberValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNumber((string)$attributes[self::FIELD_NUMBER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setNumber((string)$attributes[self::FIELD_NUMBER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NUMBER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -764,10 +713,10 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->uid) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_UID]) {
-            $xw->writeAttribute(self::FIELD_UID, $this->uid->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_UID, $this->uid->_getValueAsString());
         }
         if (isset($this->number) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NUMBER]) {
-            $xw->writeAttribute(self::FIELD_NUMBER, $this->number->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NUMBER, $this->number->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->uid)
@@ -813,13 +762,13 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionInstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionInstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -834,62 +783,65 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_UID])
-            || isset($json[self::FIELD_UID_EXT])
-            || array_key_exists(self::FIELD_UID, $json)
-            || array_key_exists(self::FIELD_UID_EXT, $json)) {
-            $value = $json[self::FIELD_UID] ?? null;
-            $type->setUid(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_UID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->uid)
+            || isset($json->_uid)
+            || property_exists($json, self::FIELD_UID)
+            || property_exists($json, self::FIELD_UID_EXT)) {
+            $v = $json->_uid ?? new \stdClass();
+            $v->value = $json->uid ?? null;
+            $type->setUid(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_NUMBER])
-            || isset($json[self::FIELD_NUMBER_EXT])
-            || array_key_exists(self::FIELD_NUMBER, $json)
-            || array_key_exists(self::FIELD_NUMBER_EXT, $json)) {
-            $value = $json[self::FIELD_NUMBER] ?? null;
-            $type->setNumber(FHIRUnsignedInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_NUMBER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->number)
+            || isset($json->_number)
+            || property_exists($json, self::FIELD_NUMBER)
+            || property_exists($json, self::FIELD_NUMBER_EXT)) {
+            $v = $json->_number ?? new \stdClass();
+            $v->value = $json->number ?? null;
+            $type->setNumber(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SOP_CLASS]) || array_key_exists(self::FIELD_SOP_CLASS, $json)) {
-            $type->setSopClass(FHIRCoding::jsonUnserialize($json[self::FIELD_SOP_CLASS], $config));
-        }
-        if (isset($json[self::FIELD_SUBSET])
-            || isset($json[self::FIELD_SUBSET_EXT])
-            || array_key_exists(self::FIELD_SUBSET, $json)
-            || array_key_exists(self::FIELD_SUBSET_EXT, $json)) {
-            $value = (array)($json[self::FIELD_SUBSET] ?? []);
-            $ext = (array)($json[self::FIELD_SUBSET_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
-            }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addSubset(FHIRString::jsonUnserialize(
-                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+        if (isset($json->sopClass) || property_exists($json, self::FIELD_SOP_CLASS)) {
+            if (is_array($json->sopClass)) {
+                $type->setSopClass(FHIRCoding::jsonUnserialize(reset($json->sopClass), $config));
+            } else {
+                $type->setSopClass(FHIRCoding::jsonUnserialize($json->sopClass, $config));
             }
         }
-        if (isset($json[self::FIELD_IMAGE_REGION_2D]) || array_key_exists(self::FIELD_IMAGE_REGION_2D, $json)) {
-            $vs = $json[self::FIELD_IMAGE_REGION_2D];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->subset)
+            || isset($json->_subset)
+            || property_exists($json, self::FIELD_SUBSET)
+            || property_exists($json, self::FIELD_SUBSET_EXT)) {
+            $vals = (array)($json->subset ?? []);
+            $exts = (array)($json->FIELD_SUBSET_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            foreach($vs as $v) {
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addSubset(FHIRString::jsonUnserialize($v, $config));
+            }
+        }
+        if (isset($json->imageRegion2D) || property_exists($json, self::FIELD_IMAGE_REGION_2D)) {
+            if (is_object($json->imageRegion2D)) {
+                $vals = [$json->imageRegion2D];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IMAGE_REGION_2D, true);
+            } else {
+                $vals = $json->imageRegion2D;
+            }
+            foreach($vals as $v) {
                 $type->addImageRegion2D(FHIRImagingSelectionImageRegion2D::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_IMAGE_REGION_3D]) || array_key_exists(self::FIELD_IMAGE_REGION_3D, $json)) {
-            $vs = $json[self::FIELD_IMAGE_REGION_3D];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->imageRegion3D) || property_exists($json, self::FIELD_IMAGE_REGION_3D)) {
+            if (is_object($json->imageRegion3D)) {
+                $vals = [$json->imageRegion3D];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_IMAGE_REGION_3D, true);
+            } else {
+                $vals = $json->imageRegion3D;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addImageRegion3D(FHIRImagingSelectionImageRegion3D::jsonUnserialize($v, $config));
             }
         }
@@ -955,10 +907,18 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
             }
         }
         if (isset($this->imageRegion2D) && [] !== $this->imageRegion2D) {
-            $out->imageRegion2D = $this->imageRegion2D;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IMAGE_REGION_2D) && 1 === count($this->imageRegion2D)) {
+                $out->imageRegion2D = $this->imageRegion2D[0];
+            } else {
+                $out->imageRegion2D = $this->imageRegion2D;
+            }
         }
         if (isset($this->imageRegion3D) && [] !== $this->imageRegion3D) {
-            $out->imageRegion3D = $this->imageRegion3D;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_IMAGE_REGION_3D) && 1 === count($this->imageRegion3D)) {
+                $out->imageRegion3D = $this->imageRegion3D[0];
+            } else {
+                $out->imageRegion3D = $this->imageRegion3D;
+            }
         }
         return $out;
     }

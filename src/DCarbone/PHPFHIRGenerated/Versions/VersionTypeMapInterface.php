@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,8 +74,8 @@ interface VersionTypeMapInterface
     public static function getContainedTypeClassNameFromXML(\SimpleXMLElement $node): string;
 
     /**
-     * @param array $data
+     * @param \stdClass $json
      * @return string Fully qualified class name of contained resource type
      */
-    public static function getContainedTypeClassNameFromArray(array $data): string;
+    public static function getContainedTypeClassNameFromJSON(\stdClass $json): string;
 }

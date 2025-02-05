@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -104,12 +106,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_TARGET;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TARGET = 'target';
     public const FIELD_TYPE = 'type';
     public const FIELD_INTERACTION = 'interaction';
@@ -122,16 +126,16 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
     public const FIELD_AMOUNT_TYPE = 'amountType';
     public const FIELD_SOURCE = 'source';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_AMOUNT_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -194,7 +198,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo.
+     * Todo. (choose any one of amount*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
@@ -204,7 +208,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo.
+     * Todo. (choose any one of amount*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
@@ -214,7 +218,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Todo.
+     * Todo. (choose any one of amount*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
@@ -241,7 +245,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      */
     protected array $source;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstanceReferenceInformationTarget Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -310,7 +314,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -319,7 +323,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -507,7 +511,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo.
+     * Todo. (choose any one of amount*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
@@ -523,7 +527,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo.
+     * Todo. (choose any one of amount*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $amountQuantity
      * @return static
@@ -543,7 +547,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo.
+     * Todo. (choose any one of amount*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
@@ -557,7 +561,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo.
+     * Todo. (choose any one of amount*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $amountRange
      * @return static
@@ -577,7 +581,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Todo.
+     * Todo. (choose any one of amount*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
@@ -591,14 +595,12 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Todo.
+     * Todo. (choose any one of amount*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $amountString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
         if (null === $amountString) {
             unset($this->amountString);
@@ -608,33 +610,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
             $amountString = new FHIRString(value: $amountString);
         }
         $this->amountString = $amountString;
-        if ($this->_valueXMLLocations[self::FIELD_AMOUNT_STRING] !== $valueXMLLocation) {
-            $this->_setAmountStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the amountString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAmountStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_AMOUNT_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the amountString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAmountStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_AMOUNT_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -738,7 +713,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -767,9 +742,11 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -797,15 +774,16 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_AMOUNT_STRING])) {
             if (isset($type->amountString)) {
                 $type->amountString->setValue((string)$attributes[self::FIELD_AMOUNT_STRING]);
-                $type->_setAmountStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAmountString((string)$attributes[self::FIELD_AMOUNT_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAmountString((string)$attributes[self::FIELD_AMOUNT_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_AMOUNT_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -818,7 +796,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->amountString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_AMOUNT_STRING]) {
-            $xw->writeAttribute(self::FIELD_AMOUNT_STRING, $this->amountString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_AMOUNT_STRING, $this->amountString->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->target)) {
@@ -878,13 +856,13 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -899,46 +877,78 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TARGET]) || array_key_exists(self::FIELD_TARGET, $json)) {
-            $type->setTarget(FHIRIdentifier::jsonUnserialize($json[self::FIELD_TARGET], $config));
-        }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_INTERACTION]) || array_key_exists(self::FIELD_INTERACTION, $json)) {
-            $type->setInteraction(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_INTERACTION], $config));
-        }
-        if (isset($json[self::FIELD_ORGANISM]) || array_key_exists(self::FIELD_ORGANISM, $json)) {
-            $type->setOrganism(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ORGANISM], $config));
-        }
-        if (isset($json[self::FIELD_ORGANISM_TYPE]) || array_key_exists(self::FIELD_ORGANISM_TYPE, $json)) {
-            $type->setOrganismType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ORGANISM_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_AMOUNT_QUANTITY]) || array_key_exists(self::FIELD_AMOUNT_QUANTITY, $json)) {
-            $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_AMOUNT_QUANTITY], $config));
-        }
-        if (isset($json[self::FIELD_AMOUNT_RANGE]) || array_key_exists(self::FIELD_AMOUNT_RANGE, $json)) {
-            $type->setAmountRange(FHIRRange::jsonUnserialize($json[self::FIELD_AMOUNT_RANGE], $config));
-        }
-        if (isset($json[self::FIELD_AMOUNT_STRING])
-            || isset($json[self::FIELD_AMOUNT_STRING_EXT])
-            || array_key_exists(self::FIELD_AMOUNT_STRING, $json)
-            || array_key_exists(self::FIELD_AMOUNT_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_AMOUNT_STRING] ?? null;
-            $type->setAmountString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_AMOUNT_STRING_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_AMOUNT_TYPE]) || array_key_exists(self::FIELD_AMOUNT_TYPE, $json)) {
-            $type->setAmountType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_AMOUNT_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $vs = $json[self::FIELD_SOURCE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->target) || property_exists($json, self::FIELD_TARGET)) {
+            if (is_array($json->target)) {
+                $type->setTarget(FHIRIdentifier::jsonUnserialize(reset($json->target), $config));
+            } else {
+                $type->setTarget(FHIRIdentifier::jsonUnserialize($json->target, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
+        }
+        if (isset($json->interaction) || property_exists($json, self::FIELD_INTERACTION)) {
+            if (is_array($json->interaction)) {
+                $type->setInteraction(FHIRCodeableConcept::jsonUnserialize(reset($json->interaction), $config));
+            } else {
+                $type->setInteraction(FHIRCodeableConcept::jsonUnserialize($json->interaction, $config));
+            }
+        }
+        if (isset($json->organism) || property_exists($json, self::FIELD_ORGANISM)) {
+            if (is_array($json->organism)) {
+                $type->setOrganism(FHIRCodeableConcept::jsonUnserialize(reset($json->organism), $config));
+            } else {
+                $type->setOrganism(FHIRCodeableConcept::jsonUnserialize($json->organism, $config));
+            }
+        }
+        if (isset($json->organismType) || property_exists($json, self::FIELD_ORGANISM_TYPE)) {
+            if (is_array($json->organismType)) {
+                $type->setOrganismType(FHIRCodeableConcept::jsonUnserialize(reset($json->organismType), $config));
+            } else {
+                $type->setOrganismType(FHIRCodeableConcept::jsonUnserialize($json->organismType, $config));
+            }
+        }
+        if (isset($json->amountQuantity) || property_exists($json, self::FIELD_AMOUNT_QUANTITY)) {
+            if (is_array($json->amountQuantity)) {
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize(reset($json->amountQuantity), $config));
+            } else {
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($json->amountQuantity, $config));
+            }
+        }
+        if (isset($json->amountRange) || property_exists($json, self::FIELD_AMOUNT_RANGE)) {
+            if (is_array($json->amountRange)) {
+                $type->setAmountRange(FHIRRange::jsonUnserialize(reset($json->amountRange), $config));
+            } else {
+                $type->setAmountRange(FHIRRange::jsonUnserialize($json->amountRange, $config));
+            }
+        }
+        if (isset($json->amountString)
+            || isset($json->_amountString)
+            || property_exists($json, self::FIELD_AMOUNT_STRING)
+            || property_exists($json, self::FIELD_AMOUNT_STRING_EXT)) {
+            $v = $json->_amountString ?? new \stdClass();
+            $v->value = $json->amountString ?? null;
+            $type->setAmountString(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->amountType) || property_exists($json, self::FIELD_AMOUNT_TYPE)) {
+            if (is_array($json->amountType)) {
+                $type->setAmountType(FHIRCodeableConcept::jsonUnserialize(reset($json->amountType), $config));
+            } else {
+                $type->setAmountType(FHIRCodeableConcept::jsonUnserialize($json->amountType, $config));
+            }
+        }
+        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
+            if (is_object($json->source)) {
+                $vals = [$json->source];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SOURCE, true);
+            } else {
+                $vals = $json->source;
+            }
+            foreach($vals as $v) {
                 $type->addSource(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -986,7 +996,11 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
             $out->amountType = $this->amountType;
         }
         if (isset($this->source) && [] !== $this->source) {
-            $out->source = $this->source;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SOURCE) && 1 === count($this->source)) {
+                $out->source = $this->source[0];
+            } else {
+                $out->source = $this->source;
+            }
         }
         return $out;
     }

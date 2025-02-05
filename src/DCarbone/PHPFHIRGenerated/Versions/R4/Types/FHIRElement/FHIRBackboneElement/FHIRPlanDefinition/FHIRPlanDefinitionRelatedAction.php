@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -88,12 +90,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PLAN_DEFINITION_DOT_RELATED_ACTION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ACTION_ID = 'actionId';
     public const FIELD_ACTION_ID_EXT = '_actionId';
     public const FIELD_RELATIONSHIP = 'relationship';
@@ -101,7 +105,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     public const FIELD_OFFSET_DURATION = 'offsetDuration';
     public const FIELD_OFFSET_RANGE = 'offsetRange';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ACTION_ID => [
@@ -112,13 +116,13 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_ACTION_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RELATIONSHIP => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -164,7 +168,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      */
     protected FHIRRange $offsetRange;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRPlanDefinitionRelatedAction Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -203,7 +207,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -212,7 +216,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -241,11 +245,9 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * The element id of the related action.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $actionId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setActionId(null|string|FHIRIdPrimitive|FHIRId $actionId,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setActionId(null|string|FHIRIdPrimitive|FHIRId $actionId): self
     {
         if (null === $actionId) {
             unset($this->actionId);
@@ -255,33 +257,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             $actionId = new FHIRId(value: $actionId);
         }
         $this->actionId = $actionId;
-        if ($this->_valueXMLLocations[self::FIELD_ACTION_ID] !== $valueXMLLocation) {
-            $this->_setActionIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the actionId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getActionIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ACTION_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the actionId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setActionIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ACTION_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -305,11 +280,9 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * The relationship of this action to the related action.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRActionRelationshipType $relationship
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRelationship(null|string|FHIRActionRelationshipTypeList|FHIRActionRelationshipType $relationship,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRelationship(null|string|FHIRActionRelationshipTypeList|FHIRActionRelationshipType $relationship): self
     {
         if (null === $relationship) {
             unset($this->relationship);
@@ -319,33 +292,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             $relationship = new FHIRActionRelationshipType(value: $relationship);
         }
         $this->relationship = $relationship;
-        if ($this->_valueXMLLocations[self::FIELD_RELATIONSHIP] !== $valueXMLLocation) {
-            $this->_setRelationshipValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the relationship element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRelationshipValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RELATIONSHIP];
-    }
-
-    /**
-     * Set the location the "value" field of the relationship element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRelationshipValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RELATIONSHIP] = $valueXMLLocation;
         return $this;
     }
 
@@ -421,7 +367,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -450,9 +396,11 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -468,23 +416,24 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ACTION_ID])) {
             if (isset($type->actionId)) {
                 $type->actionId->setValue((string)$attributes[self::FIELD_ACTION_ID]);
-                $type->_setActionIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setActionId((string)$attributes[self::FIELD_ACTION_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setActionId((string)$attributes[self::FIELD_ACTION_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ACTION_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RELATIONSHIP])) {
             if (isset($type->relationship)) {
                 $type->relationship->setValue((string)$attributes[self::FIELD_RELATIONSHIP]);
-                $type->_setRelationshipValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRelationship((string)$attributes[self::FIELD_RELATIONSHIP], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRelationship((string)$attributes[self::FIELD_RELATIONSHIP]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RELATIONSHIP, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -497,10 +446,10 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->actionId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ACTION_ID]) {
-            $xw->writeAttribute(self::FIELD_ACTION_ID, $this->actionId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ACTION_ID, $this->actionId->_getValueAsString());
         }
         if (isset($this->relationship) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RELATIONSHIP]) {
-            $xw->writeAttribute(self::FIELD_RELATIONSHIP, $this->relationship->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RELATIONSHIP, $this->relationship->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->actionId)
@@ -530,13 +479,13 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -551,31 +500,35 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ACTION_ID])
-            || isset($json[self::FIELD_ACTION_ID_EXT])
-            || array_key_exists(self::FIELD_ACTION_ID, $json)
-            || array_key_exists(self::FIELD_ACTION_ID_EXT, $json)) {
-            $value = $json[self::FIELD_ACTION_ID] ?? null;
-            $type->setActionId(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_ACTION_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->actionId)
+            || isset($json->_actionId)
+            || property_exists($json, self::FIELD_ACTION_ID)
+            || property_exists($json, self::FIELD_ACTION_ID_EXT)) {
+            $v = $json->_actionId ?? new \stdClass();
+            $v->value = $json->actionId ?? null;
+            $type->setActionId(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_RELATIONSHIP])
-            || isset($json[self::FIELD_RELATIONSHIP_EXT])
-            || array_key_exists(self::FIELD_RELATIONSHIP, $json)
-            || array_key_exists(self::FIELD_RELATIONSHIP_EXT, $json)) {
-            $value = $json[self::FIELD_RELATIONSHIP] ?? null;
-            $type->setRelationship(FHIRActionRelationshipType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRActionRelationshipType::FIELD_VALUE => $value]) + ($json[self::FIELD_RELATIONSHIP_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->relationship)
+            || isset($json->_relationship)
+            || property_exists($json, self::FIELD_RELATIONSHIP)
+            || property_exists($json, self::FIELD_RELATIONSHIP_EXT)) {
+            $v = $json->_relationship ?? new \stdClass();
+            $v->value = $json->relationship ?? null;
+            $type->setRelationship(FHIRActionRelationshipType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_OFFSET_DURATION]) || array_key_exists(self::FIELD_OFFSET_DURATION, $json)) {
-            $type->setOffsetDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_OFFSET_DURATION], $config));
+        if (isset($json->offsetDuration) || property_exists($json, self::FIELD_OFFSET_DURATION)) {
+            if (is_array($json->offsetDuration)) {
+                $type->setOffsetDuration(FHIRDuration::jsonUnserialize(reset($json->offsetDuration), $config));
+            } else {
+                $type->setOffsetDuration(FHIRDuration::jsonUnserialize($json->offsetDuration, $config));
+            }
         }
-        if (isset($json[self::FIELD_OFFSET_RANGE]) || array_key_exists(self::FIELD_OFFSET_RANGE, $json)) {
-            $type->setOffsetRange(FHIRRange::jsonUnserialize($json[self::FIELD_OFFSET_RANGE], $config));
+        if (isset($json->offsetRange) || property_exists($json, self::FIELD_OFFSET_RANGE)) {
+            if (is_array($json->offsetRange)) {
+                $type->setOffsetRange(FHIRRange::jsonUnserialize(reset($json->offsetRange), $config));
+            } else {
+                $type->setOffsetRange(FHIRRange::jsonUnserialize($json->offsetRange, $config));
+            }
         }
         return $type;
     }

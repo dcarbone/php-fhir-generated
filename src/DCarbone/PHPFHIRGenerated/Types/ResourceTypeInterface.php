@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -59,12 +59,12 @@ interface ResourceTypeInterface extends TypeInterface
                                  null|SerializeConfig $config = null): XMLWriter;
 
     /**
-     * @param string|array|\stdClass $json Raw or already un-encoded JSON
+     * @param string|\stdClass $json Encoded or decoded JSON.
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface $type Instance of this class to unserialize into.  If left null, a new instance will be created.
      * @return static
      */
-    public static function jsonUnserialize(string|array|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self;
 }

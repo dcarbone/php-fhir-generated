@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -105,12 +107,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_DEFINITION_DOT_GUIDELINE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_USE_CONTEXT = 'useContext';
     public const FIELD_USAGE_INSTRUCTION = 'usageInstruction';
     public const FIELD_USAGE_INSTRUCTION_EXT = '_usageInstruction';
@@ -121,17 +125,17 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
     public const FIELD_INTENDED_USE = 'intendedUse';
     public const FIELD_INTENDED_USE_EXT = '_intendedUse';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_USAGE_INSTRUCTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_INTENDED_USE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
@@ -216,7 +220,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      */
     protected FHIRString $intendedUse;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDeviceDefinitionGuideline Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -270,7 +274,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -279,7 +283,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
@@ -383,11 +387,9 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * Detailed written and visual directions for the user on how to use the device.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $usageInstruction
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUsageInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $usageInstruction,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUsageInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $usageInstruction): self
     {
         if (null === $usageInstruction) {
             unset($this->usageInstruction);
@@ -397,33 +399,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
             $usageInstruction = new FHIRMarkdown(value: $usageInstruction);
         }
         $this->usageInstruction = $usageInstruction;
-        if ($this->_valueXMLLocations[self::FIELD_USAGE_INSTRUCTION] !== $valueXMLLocation) {
-            $this->_setUsageInstructionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the usageInstruction element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUsageInstructionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_USAGE_INSTRUCTION];
-    }
-
-    /**
-     * Set the location the "value" field of the usageInstruction element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUsageInstructionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_USAGE_INSTRUCTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -722,11 +697,9 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * function.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $intendedUse
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIntendedUse(null|string|FHIRStringPrimitive|FHIRString $intendedUse,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIntendedUse(null|string|FHIRStringPrimitive|FHIRString $intendedUse): self
     {
         if (null === $intendedUse) {
             unset($this->intendedUse);
@@ -736,37 +709,10 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
             $intendedUse = new FHIRString(value: $intendedUse);
         }
         $this->intendedUse = $intendedUse;
-        if ($this->_valueXMLLocations[self::FIELD_INTENDED_USE] !== $valueXMLLocation) {
-            $this->_setIntendedUseValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the intendedUse element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIntendedUseValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INTENDED_USE];
-    }
-
-    /**
-     * Set the location the "value" field of the intendedUse element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIntendedUseValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INTENDED_USE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -795,9 +741,11 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -819,23 +767,24 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_USAGE_INSTRUCTION])) {
             if (isset($type->usageInstruction)) {
                 $type->usageInstruction->setValue((string)$attributes[self::FIELD_USAGE_INSTRUCTION]);
-                $type->_setUsageInstructionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUsageInstruction((string)$attributes[self::FIELD_USAGE_INSTRUCTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUsageInstruction((string)$attributes[self::FIELD_USAGE_INSTRUCTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_USAGE_INSTRUCTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INTENDED_USE])) {
             if (isset($type->intendedUse)) {
                 $type->intendedUse->setValue((string)$attributes[self::FIELD_INTENDED_USE]);
-                $type->_setIntendedUseValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIntendedUse((string)$attributes[self::FIELD_INTENDED_USE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIntendedUse((string)$attributes[self::FIELD_INTENDED_USE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INTENDED_USE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -848,10 +797,10 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->usageInstruction) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_USAGE_INSTRUCTION]) {
-            $xw->writeAttribute(self::FIELD_USAGE_INSTRUCTION, $this->usageInstruction->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_USAGE_INSTRUCTION, $this->usageInstruction->_getValueAsString());
         }
         if (isset($this->intendedUse) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INTENDED_USE]) {
-            $xw->writeAttribute(self::FIELD_INTENDED_USE, $this->intendedUse->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INTENDED_USE, $this->intendedUse->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->useContext)) {
@@ -906,13 +855,13 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionGuideline $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionGuideline
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -927,70 +876,76 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_USE_CONTEXT]) || array_key_exists(self::FIELD_USE_CONTEXT, $json)) {
-            $vs = $json[self::FIELD_USE_CONTEXT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->useContext) || property_exists($json, self::FIELD_USE_CONTEXT)) {
+            if (is_object($json->useContext)) {
+                $vals = [$json->useContext];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_USE_CONTEXT, true);
+            } else {
+                $vals = $json->useContext;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addUseContext(FHIRUsageContext::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_USAGE_INSTRUCTION])
-            || isset($json[self::FIELD_USAGE_INSTRUCTION_EXT])
-            || array_key_exists(self::FIELD_USAGE_INSTRUCTION, $json)
-            || array_key_exists(self::FIELD_USAGE_INSTRUCTION_EXT, $json)) {
-            $value = $json[self::FIELD_USAGE_INSTRUCTION] ?? null;
-            $type->setUsageInstruction(FHIRMarkdown::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_USAGE_INSTRUCTION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->usageInstruction)
+            || isset($json->_usageInstruction)
+            || property_exists($json, self::FIELD_USAGE_INSTRUCTION)
+            || property_exists($json, self::FIELD_USAGE_INSTRUCTION_EXT)) {
+            $v = $json->_usageInstruction ?? new \stdClass();
+            $v->value = $json->usageInstruction ?? null;
+            $type->setUsageInstruction(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_RELATED_ARTIFACT]) || array_key_exists(self::FIELD_RELATED_ARTIFACT, $json)) {
-            $vs = $json[self::FIELD_RELATED_ARTIFACT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->relatedArtifact) || property_exists($json, self::FIELD_RELATED_ARTIFACT)) {
+            if (is_object($json->relatedArtifact)) {
+                $vals = [$json->relatedArtifact];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RELATED_ARTIFACT, true);
+            } else {
+                $vals = $json->relatedArtifact;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addRelatedArtifact(FHIRRelatedArtifact::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_INDICATION]) || array_key_exists(self::FIELD_INDICATION, $json)) {
-            $vs = $json[self::FIELD_INDICATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->indication) || property_exists($json, self::FIELD_INDICATION)) {
+            if (is_object($json->indication)) {
+                $vals = [$json->indication];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_INDICATION, true);
+            } else {
+                $vals = $json->indication;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addIndication(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CONTRAINDICATION]) || array_key_exists(self::FIELD_CONTRAINDICATION, $json)) {
-            $vs = $json[self::FIELD_CONTRAINDICATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->contraindication) || property_exists($json, self::FIELD_CONTRAINDICATION)) {
+            if (is_object($json->contraindication)) {
+                $vals = [$json->contraindication];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTRAINDICATION, true);
+            } else {
+                $vals = $json->contraindication;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addContraindication(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_WARNING]) || array_key_exists(self::FIELD_WARNING, $json)) {
-            $vs = $json[self::FIELD_WARNING];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->warning) || property_exists($json, self::FIELD_WARNING)) {
+            if (is_object($json->warning)) {
+                $vals = [$json->warning];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_WARNING, true);
+            } else {
+                $vals = $json->warning;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addWarning(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_INTENDED_USE])
-            || isset($json[self::FIELD_INTENDED_USE_EXT])
-            || array_key_exists(self::FIELD_INTENDED_USE, $json)
-            || array_key_exists(self::FIELD_INTENDED_USE_EXT, $json)) {
-            $value = $json[self::FIELD_INTENDED_USE] ?? null;
-            $type->setIntendedUse(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_INTENDED_USE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->intendedUse)
+            || isset($json->_intendedUse)
+            || property_exists($json, self::FIELD_INTENDED_USE)
+            || property_exists($json, self::FIELD_INTENDED_USE_EXT)) {
+            $v = $json->_intendedUse ?? new \stdClass();
+            $v->value = $json->intendedUse ?? null;
+            $type->setIntendedUse(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -1002,7 +957,11 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->useContext) && [] !== $this->useContext) {
-            $out->useContext = $this->useContext;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_USE_CONTEXT) && 1 === count($this->useContext)) {
+                $out->useContext = $this->useContext[0];
+            } else {
+                $out->useContext = $this->useContext;
+            }
         }
         if (isset($this->usageInstruction)) {
             if (null !== ($val = $this->usageInstruction->getValue())) {
@@ -1015,16 +974,32 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
             }
         }
         if (isset($this->relatedArtifact) && [] !== $this->relatedArtifact) {
-            $out->relatedArtifact = $this->relatedArtifact;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RELATED_ARTIFACT) && 1 === count($this->relatedArtifact)) {
+                $out->relatedArtifact = $this->relatedArtifact[0];
+            } else {
+                $out->relatedArtifact = $this->relatedArtifact;
+            }
         }
         if (isset($this->indication) && [] !== $this->indication) {
-            $out->indication = $this->indication;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_INDICATION) && 1 === count($this->indication)) {
+                $out->indication = $this->indication[0];
+            } else {
+                $out->indication = $this->indication;
+            }
         }
         if (isset($this->contraindication) && [] !== $this->contraindication) {
-            $out->contraindication = $this->contraindication;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_CONTRAINDICATION) && 1 === count($this->contraindication)) {
+                $out->contraindication = $this->contraindication[0];
+            } else {
+                $out->contraindication = $this->contraindication;
+            }
         }
         if (isset($this->warning) && [] !== $this->warning) {
-            $out->warning = $this->warning;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_WARNING) && 1 === count($this->warning)) {
+                $out->warning = $this->warning[0];
+            } else {
+                $out->warning = $this->warning;
+            }
         }
         if (isset($this->intendedUse)) {
             if (null !== ($val = $this->intendedUse->getValue())) {

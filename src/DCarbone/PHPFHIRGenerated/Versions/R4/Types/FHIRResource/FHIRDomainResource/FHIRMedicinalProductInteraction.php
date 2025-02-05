@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -97,12 +99,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionTypeMap;
  */
 class FHIRMedicinalProductInteraction extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICINAL_PRODUCT_INTERACTION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SUBJECT = 'subject';
     public const FIELD_DESCRIPTION = 'description';
     public const FIELD_DESCRIPTION_EXT = '_description';
@@ -112,16 +116,16 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
     public const FIELD_INCIDENCE = 'incidence';
     public const FIELD_MANAGEMENT = 'management';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -198,7 +202,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      */
     protected FHIRCodeableConcept $management;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedicinalProductInteraction Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
@@ -267,7 +271,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -276,7 +280,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -285,7 +289,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -372,11 +376,9 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * The interaction described.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
         if (null === $description) {
             unset($this->description);
@@ -386,33 +388,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
             $description = new FHIRString(value: $description);
         }
         $this->description = $description;
-        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
-            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the description element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
-    }
-
-    /**
-     * Set the location the "value" field of the description element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -625,7 +600,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -698,34 +673,34 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             if (isset($type->description)) {
                 $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DESCRIPTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -756,7 +731,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
             $xw->openRootNode('MedicinalProductInteraction', $this->_getSourceXMLNS());
         }
         if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->subject)) {
@@ -810,13 +785,13 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -834,50 +809,66 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $vs = $json[self::FIELD_SUBJECT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
+            if (is_object($json->subject)) {
+                $vals = [$json->subject];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBJECT, true);
+            } else {
+                $vals = $json->subject;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSubject(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DESCRIPTION])
-            || isset($json[self::FIELD_DESCRIPTION_EXT])
-            || array_key_exists(self::FIELD_DESCRIPTION, $json)
-            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
-            $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $type->setDescription(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->description)
+            || isset($json->_description)
+            || property_exists($json, self::FIELD_DESCRIPTION)
+            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $json->_description ?? new \stdClass();
+            $v->value = $json->description ?? null;
+            $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_INTERACTANT]) || array_key_exists(self::FIELD_INTERACTANT, $json)) {
-            $vs = $json[self::FIELD_INTERACTANT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->interactant) || property_exists($json, self::FIELD_INTERACTANT)) {
+            if (is_object($json->interactant)) {
+                $vals = [$json->interactant];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_INTERACTANT, true);
+            } else {
+                $vals = $json->interactant;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addInteractant(FHIRMedicinalProductInteractionInteractant::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
         }
-        if (isset($json[self::FIELD_EFFECT]) || array_key_exists(self::FIELD_EFFECT, $json)) {
-            $type->setEffect(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_EFFECT], $config));
+        if (isset($json->effect) || property_exists($json, self::FIELD_EFFECT)) {
+            if (is_array($json->effect)) {
+                $type->setEffect(FHIRCodeableConcept::jsonUnserialize(reset($json->effect), $config));
+            } else {
+                $type->setEffect(FHIRCodeableConcept::jsonUnserialize($json->effect, $config));
+            }
         }
-        if (isset($json[self::FIELD_INCIDENCE]) || array_key_exists(self::FIELD_INCIDENCE, $json)) {
-            $type->setIncidence(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_INCIDENCE], $config));
+        if (isset($json->incidence) || property_exists($json, self::FIELD_INCIDENCE)) {
+            if (is_array($json->incidence)) {
+                $type->setIncidence(FHIRCodeableConcept::jsonUnserialize(reset($json->incidence), $config));
+            } else {
+                $type->setIncidence(FHIRCodeableConcept::jsonUnserialize($json->incidence, $config));
+            }
         }
-        if (isset($json[self::FIELD_MANAGEMENT]) || array_key_exists(self::FIELD_MANAGEMENT, $json)) {
-            $type->setManagement(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MANAGEMENT], $config));
+        if (isset($json->management) || property_exists($json, self::FIELD_MANAGEMENT)) {
+            if (is_array($json->management)) {
+                $type->setManagement(FHIRCodeableConcept::jsonUnserialize(reset($json->management), $config));
+            } else {
+                $type->setManagement(FHIRCodeableConcept::jsonUnserialize($json->management, $config));
+            }
         }
         return $type;
     }
@@ -889,7 +880,11 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
     {
         $out = parent::jsonSerialize();
         if (isset($this->subject) && [] !== $this->subject) {
-            $out->subject = $this->subject;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUBJECT) && 1 === count($this->subject)) {
+                $out->subject = $this->subject[0];
+            } else {
+                $out->subject = $this->subject;
+            }
         }
         if (isset($this->description)) {
             if (null !== ($val = $this->description->getValue())) {
@@ -902,7 +897,11 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
             }
         }
         if (isset($this->interactant) && [] !== $this->interactant) {
-            $out->interactant = $this->interactant;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_INTERACTANT) && 1 === count($this->interactant)) {
+                $out->interactant = $this->interactant[0];
+            } else {
+                $out->interactant = $this->interactant;
+            }
         }
         if (isset($this->type)) {
             $out->type = $this->type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -109,12 +111,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PLAN_DEFINITION_DOT_PARTICIPANT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ACTOR_ID = 'actorId';
     public const FIELD_ACTOR_ID_EXT = '_actorId';
     public const FIELD_TYPE = 'type';
@@ -125,18 +129,18 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
     public const FIELD_ROLE = 'role';
     public const FIELD_FUNCTION = 'function';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_ACTOR_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TYPE_CANONICAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -200,7 +204,7 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
      */
     protected FHIRCodeableConcept $function;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRPlanDefinitionParticipant Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -249,7 +253,7 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -258,7 +262,7 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -281,11 +285,9 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
      * A reference to the id element of the actor who will participate in this action.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $actorId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setActorId(null|string|FHIRStringPrimitive|FHIRString $actorId,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setActorId(null|string|FHIRStringPrimitive|FHIRString $actorId): self
     {
         if (null === $actorId) {
             unset($this->actorId);
@@ -295,33 +297,6 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
             $actorId = new FHIRString(value: $actorId);
         }
         $this->actorId = $actorId;
-        if ($this->_valueXMLLocations[self::FIELD_ACTOR_ID] !== $valueXMLLocation) {
-            $this->_setActorIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the actorId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getActorIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ACTOR_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the actorId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setActorIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ACTOR_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -343,11 +318,9 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
      * The type of participant in the action.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionParticipantTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionParticipantType $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRActionParticipantTypeEnum|FHIRActionParticipantType $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRActionParticipantTypeEnum|FHIRActionParticipantType $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -357,33 +330,6 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
             $type = new FHIRActionParticipantType(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -411,11 +357,9 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
      * The type of participant in the action.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $typeCanonical
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTypeCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $typeCanonical,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTypeCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $typeCanonical): self
     {
         if (null === $typeCanonical) {
             unset($this->typeCanonical);
@@ -425,33 +369,6 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
             $typeCanonical = new FHIRCanonical(value: $typeCanonical);
         }
         $this->typeCanonical = $typeCanonical;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE_CANONICAL] !== $valueXMLLocation) {
-            $this->_setTypeCanonicalValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the typeCanonical element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeCanonicalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE_CANONICAL];
-    }
-
-    /**
-     * Set the location the "value" field of the typeCanonical element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeCanonicalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE_CANONICAL] = $valueXMLLocation;
         return $this;
     }
 
@@ -563,7 +480,7 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -592,9 +509,11 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -614,31 +533,32 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ACTOR_ID])) {
             if (isset($type->actorId)) {
                 $type->actorId->setValue((string)$attributes[self::FIELD_ACTOR_ID]);
-                $type->_setActorIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setActorId((string)$attributes[self::FIELD_ACTOR_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setActorId((string)$attributes[self::FIELD_ACTOR_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ACTOR_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE_CANONICAL])) {
             if (isset($type->typeCanonical)) {
                 $type->typeCanonical->setValue((string)$attributes[self::FIELD_TYPE_CANONICAL]);
-                $type->_setTypeCanonicalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTypeCanonical((string)$attributes[self::FIELD_TYPE_CANONICAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTypeCanonical((string)$attributes[self::FIELD_TYPE_CANONICAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE_CANONICAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -651,13 +571,13 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->actorId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ACTOR_ID]) {
-            $xw->writeAttribute(self::FIELD_ACTOR_ID, $this->actorId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ACTOR_ID, $this->actorId->_getValueAsString());
         }
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         if (isset($this->typeCanonical) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE_CANONICAL]) {
-            $xw->writeAttribute(self::FIELD_TYPE_CANONICAL, $this->typeCanonical->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE_CANONICAL, $this->typeCanonical->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->actorId)
@@ -699,13 +619,13 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -720,44 +640,50 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ACTOR_ID])
-            || isset($json[self::FIELD_ACTOR_ID_EXT])
-            || array_key_exists(self::FIELD_ACTOR_ID, $json)
-            || array_key_exists(self::FIELD_ACTOR_ID_EXT, $json)) {
-            $value = $json[self::FIELD_ACTOR_ID] ?? null;
-            $type->setActorId(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ACTOR_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->actorId)
+            || isset($json->_actorId)
+            || property_exists($json, self::FIELD_ACTOR_ID)
+            || property_exists($json, self::FIELD_ACTOR_ID_EXT)) {
+            $v = $json->_actorId ?? new \stdClass();
+            $v->value = $json->actorId ?? null;
+            $type->setActorId(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRActionParticipantType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRActionParticipantType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRActionParticipantType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TYPE_CANONICAL])
-            || isset($json[self::FIELD_TYPE_CANONICAL_EXT])
-            || array_key_exists(self::FIELD_TYPE_CANONICAL, $json)
-            || array_key_exists(self::FIELD_TYPE_CANONICAL_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE_CANONICAL] ?? null;
-            $type->setTypeCanonical(FHIRCanonical::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_CANONICAL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->typeCanonical)
+            || isset($json->_typeCanonical)
+            || property_exists($json, self::FIELD_TYPE_CANONICAL)
+            || property_exists($json, self::FIELD_TYPE_CANONICAL_EXT)) {
+            $v = $json->_typeCanonical ?? new \stdClass();
+            $v->value = $json->typeCanonical ?? null;
+            $type->setTypeCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TYPE_REFERENCE]) || array_key_exists(self::FIELD_TYPE_REFERENCE, $json)) {
-            $type->setTypeReference(FHIRReference::jsonUnserialize($json[self::FIELD_TYPE_REFERENCE], $config));
+        if (isset($json->typeReference) || property_exists($json, self::FIELD_TYPE_REFERENCE)) {
+            if (is_array($json->typeReference)) {
+                $type->setTypeReference(FHIRReference::jsonUnserialize(reset($json->typeReference), $config));
+            } else {
+                $type->setTypeReference(FHIRReference::jsonUnserialize($json->typeReference, $config));
+            }
         }
-        if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            $type->setRole(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ROLE], $config));
+        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
+            if (is_array($json->role)) {
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($json->role), $config));
+            } else {
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize($json->role, $config));
+            }
         }
-        if (isset($json[self::FIELD_FUNCTION]) || array_key_exists(self::FIELD_FUNCTION, $json)) {
-            $type->setFunction(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FUNCTION], $config));
+        if (isset($json->function) || property_exists($json, self::FIELD_FUNCTION)) {
+            if (is_array($json->function)) {
+                $type->setFunction(FHIRCodeableConcept::jsonUnserialize(reset($json->function), $config));
+            } else {
+                $type->setFunction(FHIRCodeableConcept::jsonUnserialize($json->function, $config));
+            }
         }
         return $type;
     }

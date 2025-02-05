@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -80,26 +82,28 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_CLASSIFICATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DOMAIN = 'domain';
     public const FIELD_CLASSIFICATION = 'classification';
     public const FIELD_SUBTYPE = 'subtype';
     public const FIELD_SOURCE = 'source';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -144,7 +148,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      */
     protected array $source;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstanceReferenceInformationClassification Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -183,7 +187,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -192,7 +196,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -396,7 +400,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -425,9 +429,11 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -443,7 +449,8 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -483,13 +490,13 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -504,27 +511,39 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DOMAIN]) || array_key_exists(self::FIELD_DOMAIN, $json)) {
-            $type->setDomain(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DOMAIN], $config));
-        }
-        if (isset($json[self::FIELD_CLASSIFICATION]) || array_key_exists(self::FIELD_CLASSIFICATION, $json)) {
-            $type->setClassification(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CLASSIFICATION], $config));
-        }
-        if (isset($json[self::FIELD_SUBTYPE]) || array_key_exists(self::FIELD_SUBTYPE, $json)) {
-            $vs = $json[self::FIELD_SUBTYPE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->domain) || property_exists($json, self::FIELD_DOMAIN)) {
+            if (is_array($json->domain)) {
+                $type->setDomain(FHIRCodeableConcept::jsonUnserialize(reset($json->domain), $config));
+            } else {
+                $type->setDomain(FHIRCodeableConcept::jsonUnserialize($json->domain, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->classification) || property_exists($json, self::FIELD_CLASSIFICATION)) {
+            if (is_array($json->classification)) {
+                $type->setClassification(FHIRCodeableConcept::jsonUnserialize(reset($json->classification), $config));
+            } else {
+                $type->setClassification(FHIRCodeableConcept::jsonUnserialize($json->classification, $config));
+            }
+        }
+        if (isset($json->subtype) || property_exists($json, self::FIELD_SUBTYPE)) {
+            if (is_object($json->subtype)) {
+                $vals = [$json->subtype];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBTYPE, true);
+            } else {
+                $vals = $json->subtype;
+            }
+            foreach($vals as $v) {
                 $type->addSubtype(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $vs = $json[self::FIELD_SOURCE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
+            if (is_object($json->source)) {
+                $vals = [$json->source];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SOURCE, true);
+            } else {
+                $vals = $json->source;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSource(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -544,10 +563,18 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
             $out->classification = $this->classification;
         }
         if (isset($this->subtype) && [] !== $this->subtype) {
-            $out->subtype = $this->subtype;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SUBTYPE) && 1 === count($this->subtype)) {
+                $out->subtype = $this->subtype[0];
+            } else {
+                $out->subtype = $this->subtype;
+            }
         }
         if (isset($this->source) && [] !== $this->source) {
-            $out->source = $this->source;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SOURCE) && 1 === count($this->source)) {
+                $out->source = $this->source[0];
+            } else {
+                $out->source = $this->source;
+            }
         }
         return $out;
     }

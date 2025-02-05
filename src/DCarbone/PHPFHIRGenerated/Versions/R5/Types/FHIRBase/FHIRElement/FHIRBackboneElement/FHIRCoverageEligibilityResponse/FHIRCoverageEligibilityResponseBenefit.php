@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -105,12 +107,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_BENEFIT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_ALLOWED_UNSIGNED_INT = 'allowedUnsignedInt';
     public const FIELD_ALLOWED_UNSIGNED_INT_EXT = '_allowedUnsignedInt';
@@ -123,7 +127,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     public const FIELD_USED_STRING_EXT = '_usedString';
     public const FIELD_USED_MONEY = 'usedMoney';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -131,7 +135,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_ALLOWED_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ALLOWED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -139,7 +143,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         self::FIELD_USED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -156,7 +160,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt 
      */
@@ -166,7 +171,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
@@ -176,7 +182,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney 
      */
@@ -186,7 +193,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt 
      */
@@ -196,7 +204,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
@@ -206,13 +215,14 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney 
      */
     protected FHIRMoney $usedMoney;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCoverageEligibilityResponseBenefit Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -266,7 +276,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -275,7 +285,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -317,7 +327,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
@@ -331,14 +342,13 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAllowedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $allowedUnsignedInt,
-                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAllowedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $allowedUnsignedInt): self
     {
         if (null === $allowedUnsignedInt) {
             unset($this->allowedUnsignedInt);
@@ -348,33 +358,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             $allowedUnsignedInt = new FHIRUnsignedInt(value: $allowedUnsignedInt);
         }
         $this->allowedUnsignedInt = $allowedUnsignedInt;
-        if ($this->_valueXMLLocations[self::FIELD_ALLOWED_UNSIGNED_INT] !== $valueXMLLocation) {
-            $this->_setAllowedUnsignedIntValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the allowedUnsignedInt element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAllowedUnsignedIntValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ALLOWED_UNSIGNED_INT];
-    }
-
-    /**
-     * Set the location the "value" field of the allowedUnsignedInt element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAllowedUnsignedIntValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ALLOWED_UNSIGNED_INT] = $valueXMLLocation;
         return $this;
     }
 
@@ -383,7 +366,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
@@ -397,14 +381,13 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $allowedString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAllowedString(null|string|FHIRStringPrimitive|FHIRString $allowedString,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setAllowedString(null|string|FHIRStringPrimitive|FHIRString $allowedString): self
     {
         if (null === $allowedString) {
             unset($this->allowedString);
@@ -414,33 +397,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             $allowedString = new FHIRString(value: $allowedString);
         }
         $this->allowedString = $allowedString;
-        if ($this->_valueXMLLocations[self::FIELD_ALLOWED_STRING] !== $valueXMLLocation) {
-            $this->_setAllowedStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the allowedString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getAllowedStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ALLOWED_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the allowedString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setAllowedStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ALLOWED_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -449,7 +405,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
@@ -463,7 +420,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $allowedMoney
      * @return static
@@ -483,7 +441,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
@@ -497,14 +456,13 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUsedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $usedUnsignedInt,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUsedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $usedUnsignedInt): self
     {
         if (null === $usedUnsignedInt) {
             unset($this->usedUnsignedInt);
@@ -514,33 +472,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             $usedUnsignedInt = new FHIRUnsignedInt(value: $usedUnsignedInt);
         }
         $this->usedUnsignedInt = $usedUnsignedInt;
-        if ($this->_valueXMLLocations[self::FIELD_USED_UNSIGNED_INT] !== $valueXMLLocation) {
-            $this->_setUsedUnsignedIntValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the usedUnsignedInt element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUsedUnsignedIntValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_USED_UNSIGNED_INT];
-    }
-
-    /**
-     * Set the location the "value" field of the usedUnsignedInt element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUsedUnsignedIntValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_USED_UNSIGNED_INT] = $valueXMLLocation;
         return $this;
     }
 
@@ -549,7 +480,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
@@ -563,14 +495,13 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $usedString
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUsedString(null|string|FHIRStringPrimitive|FHIRString $usedString,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setUsedString(null|string|FHIRStringPrimitive|FHIRString $usedString): self
     {
         if (null === $usedString) {
             unset($this->usedString);
@@ -580,33 +511,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             $usedString = new FHIRString(value: $usedString);
         }
         $this->usedString = $usedString;
-        if ($this->_valueXMLLocations[self::FIELD_USED_STRING] !== $valueXMLLocation) {
-            $this->_setUsedStringValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the usedString element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getUsedStringValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_USED_STRING];
-    }
-
-    /**
-     * Set the location the "value" field of the usedString element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setUsedStringValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_USED_STRING] = $valueXMLLocation;
         return $this;
     }
 
@@ -615,7 +519,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
@@ -629,7 +534,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $usedMoney
      * @return static
@@ -644,7 +550,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -673,9 +579,11 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -697,39 +605,40 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ALLOWED_UNSIGNED_INT])) {
             if (isset($type->allowedUnsignedInt)) {
                 $type->allowedUnsignedInt->setValue((string)$attributes[self::FIELD_ALLOWED_UNSIGNED_INT]);
-                $type->_setAllowedUnsignedIntValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAllowedUnsignedInt((string)$attributes[self::FIELD_ALLOWED_UNSIGNED_INT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAllowedUnsignedInt((string)$attributes[self::FIELD_ALLOWED_UNSIGNED_INT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ALLOWED_UNSIGNED_INT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ALLOWED_STRING])) {
             if (isset($type->allowedString)) {
                 $type->allowedString->setValue((string)$attributes[self::FIELD_ALLOWED_STRING]);
-                $type->_setAllowedStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setAllowedString((string)$attributes[self::FIELD_ALLOWED_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setAllowedString((string)$attributes[self::FIELD_ALLOWED_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ALLOWED_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_USED_UNSIGNED_INT])) {
             if (isset($type->usedUnsignedInt)) {
                 $type->usedUnsignedInt->setValue((string)$attributes[self::FIELD_USED_UNSIGNED_INT]);
-                $type->_setUsedUnsignedIntValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUsedUnsignedInt((string)$attributes[self::FIELD_USED_UNSIGNED_INT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUsedUnsignedInt((string)$attributes[self::FIELD_USED_UNSIGNED_INT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_USED_UNSIGNED_INT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_USED_STRING])) {
             if (isset($type->usedString)) {
                 $type->usedString->setValue((string)$attributes[self::FIELD_USED_STRING]);
-                $type->_setUsedStringValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setUsedString((string)$attributes[self::FIELD_USED_STRING], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setUsedString((string)$attributes[self::FIELD_USED_STRING]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_USED_STRING, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -742,16 +651,16 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->allowedUnsignedInt) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ALLOWED_UNSIGNED_INT]) {
-            $xw->writeAttribute(self::FIELD_ALLOWED_UNSIGNED_INT, $this->allowedUnsignedInt->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ALLOWED_UNSIGNED_INT, $this->allowedUnsignedInt->_getValueAsString());
         }
         if (isset($this->allowedString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ALLOWED_STRING]) {
-            $xw->writeAttribute(self::FIELD_ALLOWED_STRING, $this->allowedString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ALLOWED_STRING, $this->allowedString->_getValueAsString());
         }
         if (isset($this->usedUnsignedInt) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_USED_UNSIGNED_INT]) {
-            $xw->writeAttribute(self::FIELD_USED_UNSIGNED_INT, $this->usedUnsignedInt->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_USED_UNSIGNED_INT, $this->usedUnsignedInt->_getValueAsString());
         }
         if (isset($this->usedString) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_USED_STRING]) {
-            $xw->writeAttribute(self::FIELD_USED_STRING, $this->usedString->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_USED_STRING, $this->usedString->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -800,13 +709,13 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -821,54 +730,58 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
         }
-        if (isset($json[self::FIELD_ALLOWED_UNSIGNED_INT])
-            || isset($json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT])
-            || array_key_exists(self::FIELD_ALLOWED_UNSIGNED_INT, $json)
-            || array_key_exists(self::FIELD_ALLOWED_UNSIGNED_INT_EXT, $json)) {
-            $value = $json[self::FIELD_ALLOWED_UNSIGNED_INT] ?? null;
-            $type->setAllowedUnsignedInt(FHIRUnsignedInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->allowedUnsignedInt)
+            || isset($json->_allowedUnsignedInt)
+            || property_exists($json, self::FIELD_ALLOWED_UNSIGNED_INT)
+            || property_exists($json, self::FIELD_ALLOWED_UNSIGNED_INT_EXT)) {
+            $v = $json->_allowedUnsignedInt ?? new \stdClass();
+            $v->value = $json->allowedUnsignedInt ?? null;
+            $type->setAllowedUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ALLOWED_STRING])
-            || isset($json[self::FIELD_ALLOWED_STRING_EXT])
-            || array_key_exists(self::FIELD_ALLOWED_STRING, $json)
-            || array_key_exists(self::FIELD_ALLOWED_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_ALLOWED_STRING] ?? null;
-            $type->setAllowedString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ALLOWED_STRING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->allowedString)
+            || isset($json->_allowedString)
+            || property_exists($json, self::FIELD_ALLOWED_STRING)
+            || property_exists($json, self::FIELD_ALLOWED_STRING_EXT)) {
+            $v = $json->_allowedString ?? new \stdClass();
+            $v->value = $json->allowedString ?? null;
+            $type->setAllowedString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ALLOWED_MONEY]) || array_key_exists(self::FIELD_ALLOWED_MONEY, $json)) {
-            $type->setAllowedMoney(FHIRMoney::jsonUnserialize($json[self::FIELD_ALLOWED_MONEY], $config));
+        if (isset($json->allowedMoney) || property_exists($json, self::FIELD_ALLOWED_MONEY)) {
+            if (is_array($json->allowedMoney)) {
+                $type->setAllowedMoney(FHIRMoney::jsonUnserialize(reset($json->allowedMoney), $config));
+            } else {
+                $type->setAllowedMoney(FHIRMoney::jsonUnserialize($json->allowedMoney, $config));
+            }
         }
-        if (isset($json[self::FIELD_USED_UNSIGNED_INT])
-            || isset($json[self::FIELD_USED_UNSIGNED_INT_EXT])
-            || array_key_exists(self::FIELD_USED_UNSIGNED_INT, $json)
-            || array_key_exists(self::FIELD_USED_UNSIGNED_INT_EXT, $json)) {
-            $value = $json[self::FIELD_USED_UNSIGNED_INT] ?? null;
-            $type->setUsedUnsignedInt(FHIRUnsignedInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_USED_UNSIGNED_INT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->usedUnsignedInt)
+            || isset($json->_usedUnsignedInt)
+            || property_exists($json, self::FIELD_USED_UNSIGNED_INT)
+            || property_exists($json, self::FIELD_USED_UNSIGNED_INT_EXT)) {
+            $v = $json->_usedUnsignedInt ?? new \stdClass();
+            $v->value = $json->usedUnsignedInt ?? null;
+            $type->setUsedUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_USED_STRING])
-            || isset($json[self::FIELD_USED_STRING_EXT])
-            || array_key_exists(self::FIELD_USED_STRING, $json)
-            || array_key_exists(self::FIELD_USED_STRING_EXT, $json)) {
-            $value = $json[self::FIELD_USED_STRING] ?? null;
-            $type->setUsedString(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_USED_STRING_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->usedString)
+            || isset($json->_usedString)
+            || property_exists($json, self::FIELD_USED_STRING)
+            || property_exists($json, self::FIELD_USED_STRING_EXT)) {
+            $v = $json->_usedString ?? new \stdClass();
+            $v->value = $json->usedString ?? null;
+            $type->setUsedString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_USED_MONEY]) || array_key_exists(self::FIELD_USED_MONEY, $json)) {
-            $type->setUsedMoney(FHIRMoney::jsonUnserialize($json[self::FIELD_USED_MONEY], $config));
+        if (isset($json->usedMoney) || property_exists($json, self::FIELD_USED_MONEY)) {
+            if (is_array($json->usedMoney)) {
+                $type->setUsedMoney(FHIRMoney::jsonUnserialize(reset($json->usedMoney), $config));
+            } else {
+                $type->setUsedMoney(FHIRMoney::jsonUnserialize($json->usedMoney, $config));
+            }
         }
         return $type;
     }

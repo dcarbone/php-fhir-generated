@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -88,12 +90,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRSubscriptionChannel extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSCRIPTION_DOT_CHANNEL;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_ENDPOINT = 'endpoint';
@@ -103,7 +107,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
     public const FIELD_HEADER = 'header';
     public const FIELD_HEADER_EXT = '_header';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -111,14 +115,14 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ENDPOINT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PAYLOAD => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * The type of method used to execute a subscription.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -161,7 +165,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      */
     protected array $header;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubscriptionChannel Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -200,7 +204,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -209,7 +213,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * The type of method used to execute a subscription.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -230,11 +234,9 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * The type of channel to send notifications on.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRSubscriptionChannelTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSubscriptionChannelType $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRSubscriptionChannelTypeList|FHIRSubscriptionChannelType $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRSubscriptionChannelTypeList|FHIRSubscriptionChannelType $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -244,33 +246,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
             $type = new FHIRSubscriptionChannelType(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -296,11 +271,9 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * The uri that describes the actual end-point to send messages to.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $endpoint
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEndpoint(null|string|FHIRUriPrimitive|FHIRUri $endpoint,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setEndpoint(null|string|FHIRUriPrimitive|FHIRUri $endpoint): self
     {
         if (null === $endpoint) {
             unset($this->endpoint);
@@ -310,33 +283,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
             $endpoint = new FHIRUri(value: $endpoint);
         }
         $this->endpoint = $endpoint;
-        if ($this->_valueXMLLocations[self::FIELD_ENDPOINT] !== $valueXMLLocation) {
-            $this->_setEndpointValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the endpoint element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getEndpointValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ENDPOINT];
-    }
-
-    /**
-     * Set the location the "value" field of the endpoint element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setEndpointValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ENDPOINT] = $valueXMLLocation;
         return $this;
     }
 
@@ -366,11 +312,9 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * in the notification, just a notification.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $payload
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPayload(null|string|FHIRStringPrimitive|FHIRString $payload,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPayload(null|string|FHIRStringPrimitive|FHIRString $payload): self
     {
         if (null === $payload) {
             unset($this->payload);
@@ -380,33 +324,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
             $payload = new FHIRString(value: $payload);
         }
         $this->payload = $payload;
-        if ($this->_valueXMLLocations[self::FIELD_PAYLOAD] !== $valueXMLLocation) {
-            $this->_setPayloadValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the payload element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPayloadValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PAYLOAD];
-    }
-
-    /**
-     * Set the location the "value" field of the payload element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPayloadValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PAYLOAD] = $valueXMLLocation;
         return $this;
     }
 
@@ -484,7 +401,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -513,9 +430,11 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -531,31 +450,32 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ENDPOINT])) {
             if (isset($type->endpoint)) {
                 $type->endpoint->setValue((string)$attributes[self::FIELD_ENDPOINT]);
-                $type->_setEndpointValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setEndpoint((string)$attributes[self::FIELD_ENDPOINT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setEndpoint((string)$attributes[self::FIELD_ENDPOINT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ENDPOINT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PAYLOAD])) {
             if (isset($type->payload)) {
                 $type->payload->setValue((string)$attributes[self::FIELD_PAYLOAD]);
-                $type->_setPayloadValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPayload((string)$attributes[self::FIELD_PAYLOAD], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPayload((string)$attributes[self::FIELD_PAYLOAD]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PAYLOAD, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -568,13 +488,13 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         if (isset($this->endpoint) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ENDPOINT]) {
-            $xw->writeAttribute(self::FIELD_ENDPOINT, $this->endpoint->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ENDPOINT, $this->endpoint->_getValueAsString());
         }
         if (isset($this->payload) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PAYLOAD]) {
-            $xw->writeAttribute(self::FIELD_PAYLOAD, $this->payload->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PAYLOAD, $this->payload->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)
@@ -608,13 +528,13 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -629,52 +549,45 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRSubscriptionChannelType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRSubscriptionChannelType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRSubscriptionChannelType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ENDPOINT])
-            || isset($json[self::FIELD_ENDPOINT_EXT])
-            || array_key_exists(self::FIELD_ENDPOINT, $json)
-            || array_key_exists(self::FIELD_ENDPOINT_EXT, $json)) {
-            $value = $json[self::FIELD_ENDPOINT] ?? null;
-            $type->setEndpoint(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ENDPOINT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->endpoint)
+            || isset($json->_endpoint)
+            || property_exists($json, self::FIELD_ENDPOINT)
+            || property_exists($json, self::FIELD_ENDPOINT_EXT)) {
+            $v = $json->_endpoint ?? new \stdClass();
+            $v->value = $json->endpoint ?? null;
+            $type->setEndpoint(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PAYLOAD])
-            || isset($json[self::FIELD_PAYLOAD_EXT])
-            || array_key_exists(self::FIELD_PAYLOAD, $json)
-            || array_key_exists(self::FIELD_PAYLOAD_EXT, $json)) {
-            $value = $json[self::FIELD_PAYLOAD] ?? null;
-            $type->setPayload(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PAYLOAD_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->payload)
+            || isset($json->_payload)
+            || property_exists($json, self::FIELD_PAYLOAD)
+            || property_exists($json, self::FIELD_PAYLOAD_EXT)) {
+            $v = $json->_payload ?? new \stdClass();
+            $v->value = $json->payload ?? null;
+            $type->setPayload(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_HEADER])
-            || isset($json[self::FIELD_HEADER_EXT])
-            || array_key_exists(self::FIELD_HEADER, $json)
-            || array_key_exists(self::FIELD_HEADER_EXT, $json)) {
-            $value = (array)($json[self::FIELD_HEADER] ?? []);
-            $ext = (array)($json[self::FIELD_HEADER_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->header)
+            || isset($json->_header)
+            || property_exists($json, self::FIELD_HEADER)
+            || property_exists($json, self::FIELD_HEADER_EXT)) {
+            $vals = (array)($json->header ?? []);
+            $exts = (array)($json->FIELD_HEADER_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addHeader(FHIRString::jsonUnserialize(
-                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addHeader(FHIRString::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -85,12 +87,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRSubstanceSpecificationName extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_NAME;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_NAME = 'name';
     public const FIELD_NAME_EXT = '_name';
     public const FIELD_TYPE = 'type';
@@ -105,7 +109,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
     public const FIELD_OFFICIAL = 'official';
     public const FIELD_SOURCE = 'source';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_NAME => [
@@ -113,13 +117,13 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_PREFERRED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -233,7 +237,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     protected array $source;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstanceSpecificationName Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -307,7 +311,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -316,7 +320,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -339,11 +343,9 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * The actual name.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
         if (null === $name) {
             unset($this->name);
@@ -353,33 +355,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             $name = new FHIRString(value: $name);
         }
         $this->name = $name;
-        if ($this->_valueXMLLocations[self::FIELD_NAME] !== $valueXMLLocation) {
-            $this->_setNameValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the name element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNameValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NAME];
-    }
-
-    /**
-     * Set the location the "value" field of the name element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNameValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NAME] = $valueXMLLocation;
         return $this;
     }
 
@@ -475,11 +450,9 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * If this is the preferred name for this substance.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $preferred
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred): self
     {
         if (null === $preferred) {
             unset($this->preferred);
@@ -489,33 +462,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             $preferred = new FHIRBoolean(value: $preferred);
         }
         $this->preferred = $preferred;
-        if ($this->_valueXMLLocations[self::FIELD_PREFERRED] !== $valueXMLLocation) {
-            $this->_setPreferredValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the preferred element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPreferredValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PREFERRED];
-    }
-
-    /**
-     * Set the location the "value" field of the preferred element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPreferredValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PREFERRED] = $valueXMLLocation;
         return $this;
     }
 
@@ -970,7 +916,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -999,9 +945,11 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1031,23 +979,24 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NAME])) {
             if (isset($type->name)) {
                 $type->name->setValue((string)$attributes[self::FIELD_NAME]);
-                $type->_setNameValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setName((string)$attributes[self::FIELD_NAME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setName((string)$attributes[self::FIELD_NAME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NAME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PREFERRED])) {
             if (isset($type->preferred)) {
                 $type->preferred->setValue((string)$attributes[self::FIELD_PREFERRED]);
-                $type->_setPreferredValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPreferred((string)$attributes[self::FIELD_PREFERRED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPreferred((string)$attributes[self::FIELD_PREFERRED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PREFERRED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1060,10 +1009,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->name) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NAME]) {
-            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NAME, $this->name->_getValueAsString());
         }
         if (isset($this->preferred) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PREFERRED]) {
-            $xw->writeAttribute(self::FIELD_PREFERRED, $this->preferred->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PREFERRED, $this->preferred->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->name)
@@ -1142,13 +1091,13 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1163,92 +1112,110 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_NAME])
-            || isset($json[self::FIELD_NAME_EXT])
-            || array_key_exists(self::FIELD_NAME, $json)
-            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
-            $value = $json[self::FIELD_NAME] ?? null;
-            $type->setName(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->name)
+            || isset($json->_name)
+            || property_exists($json, self::FIELD_NAME)
+            || property_exists($json, self::FIELD_NAME_EXT)) {
+            $v = $json->_name ?? new \stdClass();
+            $v->value = $json->name ?? null;
+            $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_STATUS]) || array_key_exists(self::FIELD_STATUS, $json)) {
-            $type->setStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_STATUS], $config));
-        }
-        if (isset($json[self::FIELD_PREFERRED])
-            || isset($json[self::FIELD_PREFERRED_EXT])
-            || array_key_exists(self::FIELD_PREFERRED, $json)
-            || array_key_exists(self::FIELD_PREFERRED_EXT, $json)) {
-            $value = $json[self::FIELD_PREFERRED] ?? null;
-            $type->setPreferred(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_PREFERRED_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_LANGUAGE]) || array_key_exists(self::FIELD_LANGUAGE, $json)) {
-            $vs = $json[self::FIELD_LANGUAGE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->status) || property_exists($json, self::FIELD_STATUS)) {
+            if (is_array($json->status)) {
+                $type->setStatus(FHIRCodeableConcept::jsonUnserialize(reset($json->status), $config));
+            } else {
+                $type->setStatus(FHIRCodeableConcept::jsonUnserialize($json->status, $config));
+            }
+        }
+        if (isset($json->preferred)
+            || isset($json->_preferred)
+            || property_exists($json, self::FIELD_PREFERRED)
+            || property_exists($json, self::FIELD_PREFERRED_EXT)) {
+            $v = $json->_preferred ?? new \stdClass();
+            $v->value = $json->preferred ?? null;
+            $type->setPreferred(FHIRBoolean::jsonUnserialize($v, $config));
+        }
+        if (isset($json->language) || property_exists($json, self::FIELD_LANGUAGE)) {
+            if (is_object($json->language)) {
+                $vals = [$json->language];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_LANGUAGE, true);
+            } else {
+                $vals = $json->language;
+            }
+            foreach($vals as $v) {
                 $type->addLanguage(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DOMAIN]) || array_key_exists(self::FIELD_DOMAIN, $json)) {
-            $vs = $json[self::FIELD_DOMAIN];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->domain) || property_exists($json, self::FIELD_DOMAIN)) {
+            if (is_object($json->domain)) {
+                $vals = [$json->domain];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DOMAIN, true);
+            } else {
+                $vals = $json->domain;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addDomain(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_JURISDICTION]) || array_key_exists(self::FIELD_JURISDICTION, $json)) {
-            $vs = $json[self::FIELD_JURISDICTION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->jurisdiction) || property_exists($json, self::FIELD_JURISDICTION)) {
+            if (is_object($json->jurisdiction)) {
+                $vals = [$json->jurisdiction];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_JURISDICTION, true);
+            } else {
+                $vals = $json->jurisdiction;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addJurisdiction(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SYNONYM]) || array_key_exists(self::FIELD_SYNONYM, $json)) {
-            $vs = $json[self::FIELD_SYNONYM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->synonym) || property_exists($json, self::FIELD_SYNONYM)) {
+            if (is_object($json->synonym)) {
+                $vals = [$json->synonym];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SYNONYM, true);
+            } else {
+                $vals = $json->synonym;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSynonym(FHIRSubstanceSpecificationName::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TRANSLATION]) || array_key_exists(self::FIELD_TRANSLATION, $json)) {
-            $vs = $json[self::FIELD_TRANSLATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->translation) || property_exists($json, self::FIELD_TRANSLATION)) {
+            if (is_object($json->translation)) {
+                $vals = [$json->translation];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_TRANSLATION, true);
+            } else {
+                $vals = $json->translation;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addTranslation(FHIRSubstanceSpecificationName::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_OFFICIAL]) || array_key_exists(self::FIELD_OFFICIAL, $json)) {
-            $vs = $json[self::FIELD_OFFICIAL];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->official) || property_exists($json, self::FIELD_OFFICIAL)) {
+            if (is_object($json->official)) {
+                $vals = [$json->official];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_OFFICIAL, true);
+            } else {
+                $vals = $json->official;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addOfficial(FHIRSubstanceSpecificationOfficial::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $vs = $json[self::FIELD_SOURCE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
+            if (is_object($json->source)) {
+                $vals = [$json->source];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SOURCE, true);
+            } else {
+                $vals = $json->source;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSource(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -1288,25 +1255,53 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             }
         }
         if (isset($this->language) && [] !== $this->language) {
-            $out->language = $this->language;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_LANGUAGE) && 1 === count($this->language)) {
+                $out->language = $this->language[0];
+            } else {
+                $out->language = $this->language;
+            }
         }
         if (isset($this->domain) && [] !== $this->domain) {
-            $out->domain = $this->domain;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DOMAIN) && 1 === count($this->domain)) {
+                $out->domain = $this->domain[0];
+            } else {
+                $out->domain = $this->domain;
+            }
         }
         if (isset($this->jurisdiction) && [] !== $this->jurisdiction) {
-            $out->jurisdiction = $this->jurisdiction;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_JURISDICTION) && 1 === count($this->jurisdiction)) {
+                $out->jurisdiction = $this->jurisdiction[0];
+            } else {
+                $out->jurisdiction = $this->jurisdiction;
+            }
         }
         if (isset($this->synonym) && [] !== $this->synonym) {
-            $out->synonym = $this->synonym;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SYNONYM) && 1 === count($this->synonym)) {
+                $out->synonym = $this->synonym[0];
+            } else {
+                $out->synonym = $this->synonym;
+            }
         }
         if (isset($this->translation) && [] !== $this->translation) {
-            $out->translation = $this->translation;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_TRANSLATION) && 1 === count($this->translation)) {
+                $out->translation = $this->translation[0];
+            } else {
+                $out->translation = $this->translation;
+            }
         }
         if (isset($this->official) && [] !== $this->official) {
-            $out->official = $this->official;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_OFFICIAL) && 1 === count($this->official)) {
+                $out->official = $this->official[0];
+            } else {
+                $out->official = $this->official;
+            }
         }
         if (isset($this->source) && [] !== $this->source) {
-            $out->source = $this->source;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SOURCE) && 1 === count($this->source)) {
+                $out->source = $this->source[0];
+            } else {
+                $out->source = $this->source;
+            }
         }
         return $out;
     }

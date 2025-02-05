@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -91,12 +93,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  */
 class FHIRProvenanceAgent extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROVENANCE_DOT_AGENT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ROLE = 'role';
     public const FIELD_WHO_URI = 'whoUri';
     public const FIELD_WHO_URI_EXT = '_whoUri';
@@ -106,7 +110,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
     public const FIELD_ON_BEHALF_OF_REFERENCE = 'onBehalfOfReference';
     public const FIELD_RELATED_AGENT_TYPE = 'relatedAgentType';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_WHO_URI => [
@@ -117,13 +121,13 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_WHO_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ON_BEHALF_OF_URI => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -188,7 +192,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      */
     protected FHIRCodeableConcept $relatedAgentType;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRProvenanceAgent Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -237,7 +241,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -246,7 +250,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -339,11 +343,9 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * The individual, device or organization that participated in the event.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $whoUri
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWhoUri(null|string|FHIRUriPrimitive|FHIRUri $whoUri,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setWhoUri(null|string|FHIRUriPrimitive|FHIRUri $whoUri): self
     {
         if (null === $whoUri) {
             unset($this->whoUri);
@@ -353,33 +355,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
             $whoUri = new FHIRUri(value: $whoUri);
         }
         $this->whoUri = $whoUri;
-        if ($this->_valueXMLLocations[self::FIELD_WHO_URI] !== $valueXMLLocation) {
-            $this->_setWhoUriValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the whoUri element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getWhoUriValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_WHO_URI];
-    }
-
-    /**
-     * Set the location the "value" field of the whoUri element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setWhoUriValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_WHO_URI] = $valueXMLLocation;
         return $this;
     }
 
@@ -439,11 +414,9 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * The individual, device, or organization for whom the change was made.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $onBehalfOfUri
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOnBehalfOfUri(null|string|FHIRUriPrimitive|FHIRUri $onBehalfOfUri,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setOnBehalfOfUri(null|string|FHIRUriPrimitive|FHIRUri $onBehalfOfUri): self
     {
         if (null === $onBehalfOfUri) {
             unset($this->onBehalfOfUri);
@@ -453,33 +426,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
             $onBehalfOfUri = new FHIRUri(value: $onBehalfOfUri);
         }
         $this->onBehalfOfUri = $onBehalfOfUri;
-        if ($this->_valueXMLLocations[self::FIELD_ON_BEHALF_OF_URI] !== $valueXMLLocation) {
-            $this->_setOnBehalfOfUriValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the onBehalfOfUri element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getOnBehalfOfUriValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ON_BEHALF_OF_URI];
-    }
-
-    /**
-     * Set the location the "value" field of the onBehalfOfUri element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setOnBehalfOfUriValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ON_BEHALF_OF_URI] = $valueXMLLocation;
         return $this;
     }
 
@@ -553,7 +499,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -582,9 +528,11 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -604,23 +552,24 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_WHO_URI])) {
             if (isset($type->whoUri)) {
                 $type->whoUri->setValue((string)$attributes[self::FIELD_WHO_URI]);
-                $type->_setWhoUriValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setWhoUri((string)$attributes[self::FIELD_WHO_URI], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setWhoUri((string)$attributes[self::FIELD_WHO_URI]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_WHO_URI, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ON_BEHALF_OF_URI])) {
             if (isset($type->onBehalfOfUri)) {
                 $type->onBehalfOfUri->setValue((string)$attributes[self::FIELD_ON_BEHALF_OF_URI]);
-                $type->_setOnBehalfOfUriValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setOnBehalfOfUri((string)$attributes[self::FIELD_ON_BEHALF_OF_URI], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setOnBehalfOfUri((string)$attributes[self::FIELD_ON_BEHALF_OF_URI]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ON_BEHALF_OF_URI, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -633,10 +582,10 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->whoUri) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_WHO_URI]) {
-            $xw->writeAttribute(self::FIELD_WHO_URI, $this->whoUri->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_WHO_URI, $this->whoUri->_getValueAsString());
         }
         if (isset($this->onBehalfOfUri) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ON_BEHALF_OF_URI]) {
-            $xw->writeAttribute(self::FIELD_ON_BEHALF_OF_URI, $this->onBehalfOfUri->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ON_BEHALF_OF_URI, $this->onBehalfOfUri->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->role)) {
@@ -678,13 +627,13 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -699,43 +648,53 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            $vs = $json[self::FIELD_ROLE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
+            if (is_object($json->role)) {
+                $vals = [$json->role];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ROLE, true);
+            } else {
+                $vals = $json->role;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addRole(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_WHO_URI])
-            || isset($json[self::FIELD_WHO_URI_EXT])
-            || array_key_exists(self::FIELD_WHO_URI, $json)
-            || array_key_exists(self::FIELD_WHO_URI_EXT, $json)) {
-            $value = $json[self::FIELD_WHO_URI] ?? null;
-            $type->setWhoUri(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_WHO_URI_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->whoUri)
+            || isset($json->_whoUri)
+            || property_exists($json, self::FIELD_WHO_URI)
+            || property_exists($json, self::FIELD_WHO_URI_EXT)) {
+            $v = $json->_whoUri ?? new \stdClass();
+            $v->value = $json->whoUri ?? null;
+            $type->setWhoUri(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_WHO_REFERENCE]) || array_key_exists(self::FIELD_WHO_REFERENCE, $json)) {
-            $type->setWhoReference(FHIRReference::jsonUnserialize($json[self::FIELD_WHO_REFERENCE], $config));
+        if (isset($json->whoReference) || property_exists($json, self::FIELD_WHO_REFERENCE)) {
+            if (is_array($json->whoReference)) {
+                $type->setWhoReference(FHIRReference::jsonUnserialize(reset($json->whoReference), $config));
+            } else {
+                $type->setWhoReference(FHIRReference::jsonUnserialize($json->whoReference, $config));
+            }
         }
-        if (isset($json[self::FIELD_ON_BEHALF_OF_URI])
-            || isset($json[self::FIELD_ON_BEHALF_OF_URI_EXT])
-            || array_key_exists(self::FIELD_ON_BEHALF_OF_URI, $json)
-            || array_key_exists(self::FIELD_ON_BEHALF_OF_URI_EXT, $json)) {
-            $value = $json[self::FIELD_ON_BEHALF_OF_URI] ?? null;
-            $type->setOnBehalfOfUri(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ON_BEHALF_OF_URI_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->onBehalfOfUri)
+            || isset($json->_onBehalfOfUri)
+            || property_exists($json, self::FIELD_ON_BEHALF_OF_URI)
+            || property_exists($json, self::FIELD_ON_BEHALF_OF_URI_EXT)) {
+            $v = $json->_onBehalfOfUri ?? new \stdClass();
+            $v->value = $json->onBehalfOfUri ?? null;
+            $type->setOnBehalfOfUri(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ON_BEHALF_OF_REFERENCE]) || array_key_exists(self::FIELD_ON_BEHALF_OF_REFERENCE, $json)) {
-            $type->setOnBehalfOfReference(FHIRReference::jsonUnserialize($json[self::FIELD_ON_BEHALF_OF_REFERENCE], $config));
+        if (isset($json->onBehalfOfReference) || property_exists($json, self::FIELD_ON_BEHALF_OF_REFERENCE)) {
+            if (is_array($json->onBehalfOfReference)) {
+                $type->setOnBehalfOfReference(FHIRReference::jsonUnserialize(reset($json->onBehalfOfReference), $config));
+            } else {
+                $type->setOnBehalfOfReference(FHIRReference::jsonUnserialize($json->onBehalfOfReference, $config));
+            }
         }
-        if (isset($json[self::FIELD_RELATED_AGENT_TYPE]) || array_key_exists(self::FIELD_RELATED_AGENT_TYPE, $json)) {
-            $type->setRelatedAgentType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_RELATED_AGENT_TYPE], $config));
+        if (isset($json->relatedAgentType) || property_exists($json, self::FIELD_RELATED_AGENT_TYPE)) {
+            if (is_array($json->relatedAgentType)) {
+                $type->setRelatedAgentType(FHIRCodeableConcept::jsonUnserialize(reset($json->relatedAgentType), $config));
+            } else {
+                $type->setRelatedAgentType(FHIRCodeableConcept::jsonUnserialize($json->relatedAgentType, $config));
+            }
         }
         return $type;
     }
@@ -747,7 +706,11 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->role) && [] !== $this->role) {
-            $out->role = $this->role;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ROLE) && 1 === count($this->role)) {
+                $out->role = $this->role[0];
+            } else {
+                $out->role = $this->role;
+            }
         }
         if (isset($this->whoUri)) {
             if (null !== ($val = $this->whoUri->getValue())) {

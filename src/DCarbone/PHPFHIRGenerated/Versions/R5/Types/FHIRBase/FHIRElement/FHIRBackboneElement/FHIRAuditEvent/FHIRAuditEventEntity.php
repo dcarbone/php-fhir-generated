@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,12 +105,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRAuditEventEntity extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_AUDIT_EVENT_DOT_ENTITY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_WHAT = 'what';
     public const FIELD_ROLE = 'role';
     public const FIELD_SECURITY_LABEL = 'securityLabel';
@@ -117,16 +121,16 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     public const FIELD_DETAIL = 'detail';
     public const FIELD_AGENT = 'agent';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_QUERY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -193,7 +197,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      */
     protected array $agent;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAuditEventEntity Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -242,7 +246,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -251,7 +255,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -413,11 +417,9 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * The query parameters for a query-type entities.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $query
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setQuery(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $query,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setQuery(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $query): self
     {
         if (null === $query) {
             unset($this->query);
@@ -427,33 +429,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
             $query = new FHIRBase64Binary(value: $query);
         }
         $this->query = $query;
-        if ($this->_valueXMLLocations[self::FIELD_QUERY] !== $valueXMLLocation) {
-            $this->_setQueryValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the query element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getQueryValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_QUERY];
-    }
-
-    /**
-     * Set the location the "value" field of the query element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setQueryValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_QUERY] = $valueXMLLocation;
         return $this;
     }
 
@@ -591,7 +566,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -620,9 +595,11 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -642,15 +619,16 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_QUERY])) {
             if (isset($type->query)) {
                 $type->query->setValue((string)$attributes[self::FIELD_QUERY]);
-                $type->_setQueryValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setQuery((string)$attributes[self::FIELD_QUERY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setQuery((string)$attributes[self::FIELD_QUERY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_QUERY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -663,7 +641,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->query) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_QUERY]) {
-            $xw->writeAttribute(self::FIELD_QUERY, $this->query->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_QUERY, $this->query->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->what)) {
@@ -707,13 +685,13 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -728,46 +706,58 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_WHAT]) || array_key_exists(self::FIELD_WHAT, $json)) {
-            $type->setWhat(FHIRReference::jsonUnserialize($json[self::FIELD_WHAT], $config));
-        }
-        if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            $type->setRole(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ROLE], $config));
-        }
-        if (isset($json[self::FIELD_SECURITY_LABEL]) || array_key_exists(self::FIELD_SECURITY_LABEL, $json)) {
-            $vs = $json[self::FIELD_SECURITY_LABEL];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->what) || property_exists($json, self::FIELD_WHAT)) {
+            if (is_array($json->what)) {
+                $type->setWhat(FHIRReference::jsonUnserialize(reset($json->what), $config));
+            } else {
+                $type->setWhat(FHIRReference::jsonUnserialize($json->what, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
+            if (is_array($json->role)) {
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($json->role), $config));
+            } else {
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize($json->role, $config));
+            }
+        }
+        if (isset($json->securityLabel) || property_exists($json, self::FIELD_SECURITY_LABEL)) {
+            if (is_object($json->securityLabel)) {
+                $vals = [$json->securityLabel];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SECURITY_LABEL, true);
+            } else {
+                $vals = $json->securityLabel;
+            }
+            foreach($vals as $v) {
                 $type->addSecurityLabel(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_QUERY])
-            || isset($json[self::FIELD_QUERY_EXT])
-            || array_key_exists(self::FIELD_QUERY, $json)
-            || array_key_exists(self::FIELD_QUERY_EXT, $json)) {
-            $value = $json[self::FIELD_QUERY] ?? null;
-            $type->setQuery(FHIRBase64Binary::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBase64Binary::FIELD_VALUE => $value]) + ($json[self::FIELD_QUERY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->query)
+            || isset($json->_query)
+            || property_exists($json, self::FIELD_QUERY)
+            || property_exists($json, self::FIELD_QUERY_EXT)) {
+            $v = $json->_query ?? new \stdClass();
+            $v->value = $json->query ?? null;
+            $type->setQuery(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DETAIL]) || array_key_exists(self::FIELD_DETAIL, $json)) {
-            $vs = $json[self::FIELD_DETAIL];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->detail) || property_exists($json, self::FIELD_DETAIL)) {
+            if (is_object($json->detail)) {
+                $vals = [$json->detail];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DETAIL, true);
+            } else {
+                $vals = $json->detail;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addDetail(FHIRAuditEventDetail::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_AGENT]) || array_key_exists(self::FIELD_AGENT, $json)) {
-            $vs = $json[self::FIELD_AGENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->agent) || property_exists($json, self::FIELD_AGENT)) {
+            if (is_object($json->agent)) {
+                $vals = [$json->agent];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_AGENT, true);
+            } else {
+                $vals = $json->agent;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAgent(FHIRAuditEventAgent::jsonUnserialize($v, $config));
             }
         }
@@ -787,7 +777,11 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
             $out->role = $this->role;
         }
         if (isset($this->securityLabel) && [] !== $this->securityLabel) {
-            $out->securityLabel = $this->securityLabel;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SECURITY_LABEL) && 1 === count($this->securityLabel)) {
+                $out->securityLabel = $this->securityLabel[0];
+            } else {
+                $out->securityLabel = $this->securityLabel;
+            }
         }
         if (isset($this->query)) {
             if (null !== ($val = $this->query->getValue())) {
@@ -800,10 +794,18 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
             }
         }
         if (isset($this->detail) && [] !== $this->detail) {
-            $out->detail = $this->detail;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DETAIL) && 1 === count($this->detail)) {
+                $out->detail = $this->detail[0];
+            } else {
+                $out->detail = $this->detail;
+            }
         }
         if (isset($this->agent) && [] !== $this->agent) {
-            $out->agent = $this->agent;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_AGENT) && 1 === count($this->agent)) {
+                $out->agent = $this->agent[0];
+            } else {
+                $out->agent = $this->agent;
+            }
         }
         return $out;
     }

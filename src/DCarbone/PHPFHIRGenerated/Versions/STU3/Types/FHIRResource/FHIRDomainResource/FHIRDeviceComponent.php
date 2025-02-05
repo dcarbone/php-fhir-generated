@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -100,12 +102,14 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionTypeMap;
  */
 class FHIRDeviceComponent extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_COMPONENT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_TYPE = 'type';
     public const FIELD_LAST_SYSTEM_CHANGE = 'lastSystemChange';
@@ -119,7 +123,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
     public const FIELD_PRODUCTION_SPECIFICATION = 'productionSpecification';
     public const FIELD_LANGUAGE_CODE = 'languageCode';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_IDENTIFIER => [
@@ -130,13 +134,13 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_LAST_SYSTEM_CHANGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MEASUREMENT_PRINCIPLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -251,7 +255,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      */
     protected FHIRCodeableConcept $languageCode;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDeviceComponent Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
@@ -335,7 +339,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -344,7 +348,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -353,7 +357,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -456,11 +460,9 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      * configuration or setting change.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $lastSystemChange
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLastSystemChange(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastSystemChange,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLastSystemChange(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastSystemChange): self
     {
         if (null === $lastSystemChange) {
             unset($this->lastSystemChange);
@@ -470,33 +472,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
             $lastSystemChange = new FHIRInstant(value: $lastSystemChange);
         }
         $this->lastSystemChange = $lastSystemChange;
-        if ($this->_valueXMLLocations[self::FIELD_LAST_SYSTEM_CHANGE] !== $valueXMLLocation) {
-            $this->_setLastSystemChangeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the lastSystemChange element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLastSystemChangeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LAST_SYSTEM_CHANGE];
-    }
-
-    /**
-     * Set the location the "value" field of the lastSystemChange element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLastSystemChangeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LAST_SYSTEM_CHANGE] = $valueXMLLocation;
         return $this;
     }
 
@@ -702,11 +677,9 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      * acoustical, etc.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRMeasmntPrincipleList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeasmntPrinciple $measurementPrinciple
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMeasurementPrinciple(null|string|FHIRMeasmntPrincipleList|FHIRMeasmntPrinciple $measurementPrinciple,
-                                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMeasurementPrinciple(null|string|FHIRMeasmntPrincipleList|FHIRMeasmntPrinciple $measurementPrinciple): self
     {
         if (null === $measurementPrinciple) {
             unset($this->measurementPrinciple);
@@ -716,33 +689,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
             $measurementPrinciple = new FHIRMeasmntPrinciple(value: $measurementPrinciple);
         }
         $this->measurementPrinciple = $measurementPrinciple;
-        if ($this->_valueXMLLocations[self::FIELD_MEASUREMENT_PRINCIPLE] !== $valueXMLLocation) {
-            $this->_setMeasurementPrincipleValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the measurementPrinciple element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMeasurementPrincipleValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MEASUREMENT_PRINCIPLE];
-    }
-
-    /**
-     * Set the location the "value" field of the measurementPrinciple element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMeasurementPrincipleValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MEASUREMENT_PRINCIPLE] = $valueXMLLocation;
         return $this;
     }
 
@@ -845,7 +791,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -924,42 +870,42 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LAST_SYSTEM_CHANGE])) {
             if (isset($type->lastSystemChange)) {
                 $type->lastSystemChange->setValue((string)$attributes[self::FIELD_LAST_SYSTEM_CHANGE]);
-                $type->_setLastSystemChangeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLastSystemChange((string)$attributes[self::FIELD_LAST_SYSTEM_CHANGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLastSystemChange((string)$attributes[self::FIELD_LAST_SYSTEM_CHANGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LAST_SYSTEM_CHANGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MEASUREMENT_PRINCIPLE])) {
             if (isset($type->measurementPrinciple)) {
                 $type->measurementPrinciple->setValue((string)$attributes[self::FIELD_MEASUREMENT_PRINCIPLE]);
-                $type->_setMeasurementPrincipleValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMeasurementPrinciple((string)$attributes[self::FIELD_MEASUREMENT_PRINCIPLE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMeasurementPrinciple((string)$attributes[self::FIELD_MEASUREMENT_PRINCIPLE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MEASUREMENT_PRINCIPLE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -990,10 +936,10 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
             $xw->openRootNode('DeviceComponent', $this->_getSourceXMLNS());
         }
         if (isset($this->lastSystemChange) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LAST_SYSTEM_CHANGE]) {
-            $xw->writeAttribute(self::FIELD_LAST_SYSTEM_CHANGE, $this->lastSystemChange->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LAST_SYSTEM_CHANGE, $this->lastSystemChange->_getValueAsString());
         }
         if (isset($this->measurementPrinciple) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MEASUREMENT_PRINCIPLE]) {
-            $xw->writeAttribute(self::FIELD_MEASUREMENT_PRINCIPLE, $this->measurementPrinciple->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MEASUREMENT_PRINCIPLE, $this->measurementPrinciple->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1064,13 +1010,13 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRDeviceComponent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRDeviceComponent
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1088,66 +1034,88 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_IDENTIFIER], $config));
-        }
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
-        }
-        if (isset($json[self::FIELD_LAST_SYSTEM_CHANGE])
-            || isset($json[self::FIELD_LAST_SYSTEM_CHANGE_EXT])
-            || array_key_exists(self::FIELD_LAST_SYSTEM_CHANGE, $json)
-            || array_key_exists(self::FIELD_LAST_SYSTEM_CHANGE_EXT, $json)) {
-            $value = $json[self::FIELD_LAST_SYSTEM_CHANGE] ?? null;
-            $type->setLastSystemChange(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_LAST_SYSTEM_CHANGE_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $type->setSource(FHIRReference::jsonUnserialize($json[self::FIELD_SOURCE], $config));
-        }
-        if (isset($json[self::FIELD_PARENT]) || array_key_exists(self::FIELD_PARENT, $json)) {
-            $type->setParent(FHIRReference::jsonUnserialize($json[self::FIELD_PARENT], $config));
-        }
-        if (isset($json[self::FIELD_OPERATIONAL_STATUS]) || array_key_exists(self::FIELD_OPERATIONAL_STATUS, $json)) {
-            $vs = $json[self::FIELD_OPERATIONAL_STATUS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_array($json->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+            } else {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
+        }
+        if (isset($json->lastSystemChange)
+            || isset($json->_lastSystemChange)
+            || property_exists($json, self::FIELD_LAST_SYSTEM_CHANGE)
+            || property_exists($json, self::FIELD_LAST_SYSTEM_CHANGE_EXT)) {
+            $v = $json->_lastSystemChange ?? new \stdClass();
+            $v->value = $json->lastSystemChange ?? null;
+            $type->setLastSystemChange(FHIRInstant::jsonUnserialize($v, $config));
+        }
+        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
+            if (is_array($json->source)) {
+                $type->setSource(FHIRReference::jsonUnserialize(reset($json->source), $config));
+            } else {
+                $type->setSource(FHIRReference::jsonUnserialize($json->source, $config));
+            }
+        }
+        if (isset($json->parent) || property_exists($json, self::FIELD_PARENT)) {
+            if (is_array($json->parent)) {
+                $type->setParent(FHIRReference::jsonUnserialize(reset($json->parent), $config));
+            } else {
+                $type->setParent(FHIRReference::jsonUnserialize($json->parent, $config));
+            }
+        }
+        if (isset($json->operationalStatus) || property_exists($json, self::FIELD_OPERATIONAL_STATUS)) {
+            if (is_object($json->operationalStatus)) {
+                $vals = [$json->operationalStatus];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_OPERATIONAL_STATUS, true);
+            } else {
+                $vals = $json->operationalStatus;
+            }
+            foreach($vals as $v) {
                 $type->addOperationalStatus(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PARAMETER_GROUP]) || array_key_exists(self::FIELD_PARAMETER_GROUP, $json)) {
-            $type->setParameterGroup(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PARAMETER_GROUP], $config));
-        }
-        if (isset($json[self::FIELD_MEASUREMENT_PRINCIPLE])
-            || isset($json[self::FIELD_MEASUREMENT_PRINCIPLE_EXT])
-            || array_key_exists(self::FIELD_MEASUREMENT_PRINCIPLE, $json)
-            || array_key_exists(self::FIELD_MEASUREMENT_PRINCIPLE_EXT, $json)) {
-            $value = $json[self::FIELD_MEASUREMENT_PRINCIPLE] ?? null;
-            $type->setMeasurementPrinciple(FHIRMeasmntPrinciple::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRMeasmntPrinciple::FIELD_VALUE => $value]) + ($json[self::FIELD_MEASUREMENT_PRINCIPLE_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_PRODUCTION_SPECIFICATION]) || array_key_exists(self::FIELD_PRODUCTION_SPECIFICATION, $json)) {
-            $vs = $json[self::FIELD_PRODUCTION_SPECIFICATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->parameterGroup) || property_exists($json, self::FIELD_PARAMETER_GROUP)) {
+            if (is_array($json->parameterGroup)) {
+                $type->setParameterGroup(FHIRCodeableConcept::jsonUnserialize(reset($json->parameterGroup), $config));
+            } else {
+                $type->setParameterGroup(FHIRCodeableConcept::jsonUnserialize($json->parameterGroup, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->measurementPrinciple)
+            || isset($json->_measurementPrinciple)
+            || property_exists($json, self::FIELD_MEASUREMENT_PRINCIPLE)
+            || property_exists($json, self::FIELD_MEASUREMENT_PRINCIPLE_EXT)) {
+            $v = $json->_measurementPrinciple ?? new \stdClass();
+            $v->value = $json->measurementPrinciple ?? null;
+            $type->setMeasurementPrinciple(FHIRMeasmntPrinciple::jsonUnserialize($v, $config));
+        }
+        if (isset($json->productionSpecification) || property_exists($json, self::FIELD_PRODUCTION_SPECIFICATION)) {
+            if (is_object($json->productionSpecification)) {
+                $vals = [$json->productionSpecification];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PRODUCTION_SPECIFICATION, true);
+            } else {
+                $vals = $json->productionSpecification;
+            }
+            foreach($vals as $v) {
                 $type->addProductionSpecification(FHIRDeviceComponentProductionSpecification::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_LANGUAGE_CODE]) || array_key_exists(self::FIELD_LANGUAGE_CODE, $json)) {
-            $type->setLanguageCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_LANGUAGE_CODE], $config));
+        if (isset($json->languageCode) || property_exists($json, self::FIELD_LANGUAGE_CODE)) {
+            if (is_array($json->languageCode)) {
+                $type->setLanguageCode(FHIRCodeableConcept::jsonUnserialize(reset($json->languageCode), $config));
+            } else {
+                $type->setLanguageCode(FHIRCodeableConcept::jsonUnserialize($json->languageCode, $config));
+            }
         }
         return $type;
     }
@@ -1181,7 +1149,11 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
             $out->parent = $this->parent;
         }
         if (isset($this->operationalStatus) && [] !== $this->operationalStatus) {
-            $out->operationalStatus = $this->operationalStatus;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_OPERATIONAL_STATUS) && 1 === count($this->operationalStatus)) {
+                $out->operationalStatus = $this->operationalStatus[0];
+            } else {
+                $out->operationalStatus = $this->operationalStatus;
+            }
         }
         if (isset($this->parameterGroup)) {
             $out->parameterGroup = $this->parameterGroup;
@@ -1197,7 +1169,11 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
             }
         }
         if (isset($this->productionSpecification) && [] !== $this->productionSpecification) {
-            $out->productionSpecification = $this->productionSpecification;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PRODUCTION_SPECIFICATION) && 1 === count($this->productionSpecification)) {
+                $out->productionSpecification = $this->productionSpecification[0];
+            } else {
+                $out->productionSpecification = $this->productionSpecification;
+            }
         }
         if (isset($this->languageCode)) {
             $out->languageCode = $this->languageCode;

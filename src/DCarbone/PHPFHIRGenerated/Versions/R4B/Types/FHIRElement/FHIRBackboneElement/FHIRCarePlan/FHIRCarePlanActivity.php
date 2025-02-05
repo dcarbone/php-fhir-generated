@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,27 +105,29 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRCarePlanActivity extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CARE_PLAN_DOT_ACTIVITY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_OUTCOME_CODEABLE_CONCEPT = 'outcomeCodeableConcept';
     public const FIELD_OUTCOME_REFERENCE = 'outcomeReference';
     public const FIELD_PROGRESS = 'progress';
     public const FIELD_REFERENCE = 'reference';
     public const FIELD_DETAIL = 'detail';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -185,7 +189,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      */
     protected FHIRCarePlanDetail $detail;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCarePlanActivity Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -229,7 +233,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -238,7 +242,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -527,7 +531,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -556,9 +560,11 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -576,7 +582,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -623,13 +630,13 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -644,38 +651,52 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_OUTCOME_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_OUTCOME_CODEABLE_CONCEPT, $json)) {
-            $vs = $json[self::FIELD_OUTCOME_CODEABLE_CONCEPT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->outcomeCodeableConcept) || property_exists($json, self::FIELD_OUTCOME_CODEABLE_CONCEPT)) {
+            if (is_object($json->outcomeCodeableConcept)) {
+                $vals = [$json->outcomeCodeableConcept];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_OUTCOME_CODEABLE_CONCEPT, true);
+            } else {
+                $vals = $json->outcomeCodeableConcept;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addOutcomeCodeableConcept(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_OUTCOME_REFERENCE]) || array_key_exists(self::FIELD_OUTCOME_REFERENCE, $json)) {
-            $vs = $json[self::FIELD_OUTCOME_REFERENCE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->outcomeReference) || property_exists($json, self::FIELD_OUTCOME_REFERENCE)) {
+            if (is_object($json->outcomeReference)) {
+                $vals = [$json->outcomeReference];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_OUTCOME_REFERENCE, true);
+            } else {
+                $vals = $json->outcomeReference;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addOutcomeReference(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PROGRESS]) || array_key_exists(self::FIELD_PROGRESS, $json)) {
-            $vs = $json[self::FIELD_PROGRESS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->progress) || property_exists($json, self::FIELD_PROGRESS)) {
+            if (is_object($json->progress)) {
+                $vals = [$json->progress];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PROGRESS, true);
+            } else {
+                $vals = $json->progress;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addProgress(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REFERENCE]) || array_key_exists(self::FIELD_REFERENCE, $json)) {
-            $type->setReference(FHIRReference::jsonUnserialize($json[self::FIELD_REFERENCE], $config));
+        if (isset($json->reference) || property_exists($json, self::FIELD_REFERENCE)) {
+            if (is_array($json->reference)) {
+                $type->setReference(FHIRReference::jsonUnserialize(reset($json->reference), $config));
+            } else {
+                $type->setReference(FHIRReference::jsonUnserialize($json->reference, $config));
+            }
         }
-        if (isset($json[self::FIELD_DETAIL]) || array_key_exists(self::FIELD_DETAIL, $json)) {
-            $type->setDetail(FHIRCarePlanDetail::jsonUnserialize($json[self::FIELD_DETAIL], $config));
+        if (isset($json->detail) || property_exists($json, self::FIELD_DETAIL)) {
+            if (is_array($json->detail)) {
+                $type->setDetail(FHIRCarePlanDetail::jsonUnserialize(reset($json->detail), $config));
+            } else {
+                $type->setDetail(FHIRCarePlanDetail::jsonUnserialize($json->detail, $config));
+            }
         }
         return $type;
     }
@@ -687,13 +708,25 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->outcomeCodeableConcept) && [] !== $this->outcomeCodeableConcept) {
-            $out->outcomeCodeableConcept = $this->outcomeCodeableConcept;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_OUTCOME_CODEABLE_CONCEPT) && 1 === count($this->outcomeCodeableConcept)) {
+                $out->outcomeCodeableConcept = $this->outcomeCodeableConcept[0];
+            } else {
+                $out->outcomeCodeableConcept = $this->outcomeCodeableConcept;
+            }
         }
         if (isset($this->outcomeReference) && [] !== $this->outcomeReference) {
-            $out->outcomeReference = $this->outcomeReference;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_OUTCOME_REFERENCE) && 1 === count($this->outcomeReference)) {
+                $out->outcomeReference = $this->outcomeReference[0];
+            } else {
+                $out->outcomeReference = $this->outcomeReference;
+            }
         }
         if (isset($this->progress) && [] !== $this->progress) {
-            $out->progress = $this->progress;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PROGRESS) && 1 === count($this->progress)) {
+                $out->progress = $this->progress[0];
+            } else {
+                $out->progress = $this->progress;
+            }
         }
         if (isset($this->reference)) {
             $out->reference = $this->reference;

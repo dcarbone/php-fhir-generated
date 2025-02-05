@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -57,9 +57,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -80,12 +82,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  */
 class FHIREncounterHospitalization extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_PRE_ADMISSION_IDENTIFIER = 'preAdmissionIdentifier';
     public const FIELD_ORIGIN = 'origin';
     public const FIELD_ADMIT_SOURCE = 'admitSource';
@@ -100,16 +104,16 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     public const FIELD_RE_ADMISSION = 'reAdmission';
     public const FIELD_RE_ADMISSION_EXT = '_reAdmission';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_RE_ADMISSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -235,7 +239,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      */
     protected FHIRBoolean $reAdmission;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIREncounterHospitalization Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -314,7 +318,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -323,7 +327,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -819,11 +823,9 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * Whether this hospitalization is a readmission.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $reAdmission
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReAdmission(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $reAdmission,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setReAdmission(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $reAdmission): self
     {
         if (null === $reAdmission) {
             unset($this->reAdmission);
@@ -833,37 +835,10 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             $reAdmission = new FHIRBoolean(value: $reAdmission);
         }
         $this->reAdmission = $reAdmission;
-        if ($this->_valueXMLLocations[self::FIELD_RE_ADMISSION] !== $valueXMLLocation) {
-            $this->_setReAdmissionValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the reAdmission element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getReAdmissionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_RE_ADMISSION];
-    }
-
-    /**
-     * Set the location the "value" field of the reAdmission element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setReAdmissionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_RE_ADMISSION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -901,9 +876,11 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -935,15 +912,16 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_RE_ADMISSION])) {
             if (isset($type->reAdmission)) {
                 $type->reAdmission->setValue((string)$attributes[self::FIELD_RE_ADMISSION]);
-                $type->_setReAdmissionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setReAdmission((string)$attributes[self::FIELD_RE_ADMISSION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setReAdmission((string)$attributes[self::FIELD_RE_ADMISSION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_RE_ADMISSION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -974,7 +952,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             $xw->openRootNode('EncounterHospitalization', $this->_getSourceXMLNS());
         }
         if (isset($this->reAdmission) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_RE_ADMISSION]) {
-            $xw->writeAttribute(self::FIELD_RE_ADMISSION, $this->reAdmission->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_RE_ADMISSION, $this->reAdmission->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->preAdmissionIdentifier)) {
@@ -1055,13 +1033,13 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1079,71 +1057,105 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PRE_ADMISSION_IDENTIFIER]) || array_key_exists(self::FIELD_PRE_ADMISSION_IDENTIFIER, $json)) {
-            $type->setPreAdmissionIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_PRE_ADMISSION_IDENTIFIER], $config));
-        }
-        if (isset($json[self::FIELD_ORIGIN]) || array_key_exists(self::FIELD_ORIGIN, $json)) {
-            $type->setOrigin(FHIRResourceReference::jsonUnserialize($json[self::FIELD_ORIGIN], $config));
-        }
-        if (isset($json[self::FIELD_ADMIT_SOURCE]) || array_key_exists(self::FIELD_ADMIT_SOURCE, $json)) {
-            $type->setAdmitSource(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ADMIT_SOURCE], $config));
-        }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_ACCOMODATION]) || array_key_exists(self::FIELD_ACCOMODATION, $json)) {
-            $vs = $json[self::FIELD_ACCOMODATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->preAdmissionIdentifier) || property_exists($json, self::FIELD_PRE_ADMISSION_IDENTIFIER)) {
+            if (is_array($json->preAdmissionIdentifier)) {
+                $type->setPreAdmissionIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->preAdmissionIdentifier), $config));
+            } else {
+                $type->setPreAdmissionIdentifier(FHIRIdentifier::jsonUnserialize($json->preAdmissionIdentifier, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->origin) || property_exists($json, self::FIELD_ORIGIN)) {
+            if (is_array($json->origin)) {
+                $type->setOrigin(FHIRResourceReference::jsonUnserialize(reset($json->origin), $config));
+            } else {
+                $type->setOrigin(FHIRResourceReference::jsonUnserialize($json->origin, $config));
+            }
+        }
+        if (isset($json->admitSource) || property_exists($json, self::FIELD_ADMIT_SOURCE)) {
+            if (is_array($json->admitSource)) {
+                $type->setAdmitSource(FHIRCodeableConcept::jsonUnserialize(reset($json->admitSource), $config));
+            } else {
+                $type->setAdmitSource(FHIRCodeableConcept::jsonUnserialize($json->admitSource, $config));
+            }
+        }
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_array($json->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+            } else {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+            }
+        }
+        if (isset($json->accomodation) || property_exists($json, self::FIELD_ACCOMODATION)) {
+            if (is_object($json->accomodation)) {
+                $vals = [$json->accomodation];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ACCOMODATION, true);
+            } else {
+                $vals = $json->accomodation;
+            }
+            foreach($vals as $v) {
                 $type->addAccomodation(FHIREncounterAccomodation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DIET]) || array_key_exists(self::FIELD_DIET, $json)) {
-            $type->setDiet(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DIET], $config));
-        }
-        if (isset($json[self::FIELD_SPECIAL_COURTESY]) || array_key_exists(self::FIELD_SPECIAL_COURTESY, $json)) {
-            $vs = $json[self::FIELD_SPECIAL_COURTESY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->diet) || property_exists($json, self::FIELD_DIET)) {
+            if (is_array($json->diet)) {
+                $type->setDiet(FHIRCodeableConcept::jsonUnserialize(reset($json->diet), $config));
+            } else {
+                $type->setDiet(FHIRCodeableConcept::jsonUnserialize($json->diet, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->specialCourtesy) || property_exists($json, self::FIELD_SPECIAL_COURTESY)) {
+            if (is_object($json->specialCourtesy)) {
+                $vals = [$json->specialCourtesy];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SPECIAL_COURTESY, true);
+            } else {
+                $vals = $json->specialCourtesy;
+            }
+            foreach($vals as $v) {
                 $type->addSpecialCourtesy(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SPECIAL_ARRANGEMENT]) || array_key_exists(self::FIELD_SPECIAL_ARRANGEMENT, $json)) {
-            $vs = $json[self::FIELD_SPECIAL_ARRANGEMENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->specialArrangement) || property_exists($json, self::FIELD_SPECIAL_ARRANGEMENT)) {
+            if (is_object($json->specialArrangement)) {
+                $vals = [$json->specialArrangement];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SPECIAL_ARRANGEMENT, true);
+            } else {
+                $vals = $json->specialArrangement;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSpecialArrangement(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DESTINATION]) || array_key_exists(self::FIELD_DESTINATION, $json)) {
-            $type->setDestination(FHIRResourceReference::jsonUnserialize($json[self::FIELD_DESTINATION], $config));
+        if (isset($json->destination) || property_exists($json, self::FIELD_DESTINATION)) {
+            if (is_array($json->destination)) {
+                $type->setDestination(FHIRResourceReference::jsonUnserialize(reset($json->destination), $config));
+            } else {
+                $type->setDestination(FHIRResourceReference::jsonUnserialize($json->destination, $config));
+            }
         }
-        if (isset($json[self::FIELD_DISCHARGE_DISPOSITION]) || array_key_exists(self::FIELD_DISCHARGE_DISPOSITION, $json)) {
-            $type->setDischargeDisposition(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DISCHARGE_DISPOSITION], $config));
+        if (isset($json->dischargeDisposition) || property_exists($json, self::FIELD_DISCHARGE_DISPOSITION)) {
+            if (is_array($json->dischargeDisposition)) {
+                $type->setDischargeDisposition(FHIRCodeableConcept::jsonUnserialize(reset($json->dischargeDisposition), $config));
+            } else {
+                $type->setDischargeDisposition(FHIRCodeableConcept::jsonUnserialize($json->dischargeDisposition, $config));
+            }
         }
-        if (isset($json[self::FIELD_DISCHARGE_DIAGNOSIS]) || array_key_exists(self::FIELD_DISCHARGE_DIAGNOSIS, $json)) {
-            $type->setDischargeDiagnosis(FHIRResourceReference::jsonUnserialize($json[self::FIELD_DISCHARGE_DIAGNOSIS], $config));
+        if (isset($json->dischargeDiagnosis) || property_exists($json, self::FIELD_DISCHARGE_DIAGNOSIS)) {
+            if (is_array($json->dischargeDiagnosis)) {
+                $type->setDischargeDiagnosis(FHIRResourceReference::jsonUnserialize(reset($json->dischargeDiagnosis), $config));
+            } else {
+                $type->setDischargeDiagnosis(FHIRResourceReference::jsonUnserialize($json->dischargeDiagnosis, $config));
+            }
         }
-        if (isset($json[self::FIELD_RE_ADMISSION])
-            || isset($json[self::FIELD_RE_ADMISSION_EXT])
-            || array_key_exists(self::FIELD_RE_ADMISSION, $json)
-            || array_key_exists(self::FIELD_RE_ADMISSION_EXT, $json)) {
-            $value = $json[self::FIELD_RE_ADMISSION] ?? null;
-            $type->setReAdmission(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_RE_ADMISSION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->reAdmission)
+            || isset($json->_reAdmission)
+            || property_exists($json, self::FIELD_RE_ADMISSION)
+            || property_exists($json, self::FIELD_RE_ADMISSION_EXT)) {
+            $v = $json->_reAdmission ?? new \stdClass();
+            $v->value = $json->reAdmission ?? null;
+            $type->setReAdmission(FHIRBoolean::jsonUnserialize($v, $config));
         }
         return $type;
     }
@@ -1167,16 +1179,28 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             $out->period = $this->period;
         }
         if (isset($this->accomodation) && [] !== $this->accomodation) {
-            $out->accomodation = $this->accomodation;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ACCOMODATION) && 1 === count($this->accomodation)) {
+                $out->accomodation = $this->accomodation[0];
+            } else {
+                $out->accomodation = $this->accomodation;
+            }
         }
         if (isset($this->diet)) {
             $out->diet = $this->diet;
         }
         if (isset($this->specialCourtesy) && [] !== $this->specialCourtesy) {
-            $out->specialCourtesy = $this->specialCourtesy;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SPECIAL_COURTESY) && 1 === count($this->specialCourtesy)) {
+                $out->specialCourtesy = $this->specialCourtesy[0];
+            } else {
+                $out->specialCourtesy = $this->specialCourtesy;
+            }
         }
         if (isset($this->specialArrangement) && [] !== $this->specialArrangement) {
-            $out->specialArrangement = $this->specialArrangement;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SPECIAL_ARRANGEMENT) && 1 === count($this->specialArrangement)) {
+                $out->specialArrangement = $this->specialArrangement[0];
+            } else {
+                $out->specialArrangement = $this->specialArrangement;
+            }
         }
         if (isset($this->destination)) {
             $out->destination = $this->destination;

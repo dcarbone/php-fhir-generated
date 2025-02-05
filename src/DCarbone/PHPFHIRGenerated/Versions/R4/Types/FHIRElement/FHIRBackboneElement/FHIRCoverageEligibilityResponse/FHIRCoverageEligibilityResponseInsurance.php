@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -84,19 +86,21 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_INSURANCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_COVERAGE = 'coverage';
     public const FIELD_INFORCE = 'inforce';
     public const FIELD_INFORCE_EXT = '_inforce';
     public const FIELD_BENEFIT_PERIOD = 'benefitPeriod';
     public const FIELD_ITEM = 'item';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_COVERAGE => [
@@ -104,12 +108,12 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_INFORCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -153,7 +157,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      */
     protected array $item;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCoverageEligibilityResponseInsurance Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -192,7 +196,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -201,7 +205,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -262,11 +266,9 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      * date(s) specified or for the whole duration of the service dates.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $inforce
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setInforce(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inforce,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setInforce(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inforce): self
     {
         if (null === $inforce) {
             unset($this->inforce);
@@ -276,33 +278,6 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
             $inforce = new FHIRBoolean(value: $inforce);
         }
         $this->inforce = $inforce;
-        if ($this->_valueXMLLocations[self::FIELD_INFORCE] !== $valueXMLLocation) {
-            $this->_setInforceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the inforce element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getInforceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INFORCE];
-    }
-
-    /**
-     * Set the location the "value" field of the inforce element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setInforceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INFORCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -404,7 +379,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -433,9 +408,11 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -451,15 +428,16 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INFORCE])) {
             if (isset($type->inforce)) {
                 $type->inforce->setValue((string)$attributes[self::FIELD_INFORCE]);
-                $type->_setInforceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInforce((string)$attributes[self::FIELD_INFORCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setInforce((string)$attributes[self::FIELD_INFORCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INFORCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -472,7 +450,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->inforce) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INFORCE]) {
-            $xw->writeAttribute(self::FIELD_INFORCE, $this->inforce->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INFORCE, $this->inforce->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->coverage)) {
@@ -502,13 +480,13 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -523,28 +501,36 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_COVERAGE]) || array_key_exists(self::FIELD_COVERAGE, $json)) {
-            $type->setCoverage(FHIRReference::jsonUnserialize($json[self::FIELD_COVERAGE], $config));
-        }
-        if (isset($json[self::FIELD_INFORCE])
-            || isset($json[self::FIELD_INFORCE_EXT])
-            || array_key_exists(self::FIELD_INFORCE, $json)
-            || array_key_exists(self::FIELD_INFORCE_EXT, $json)) {
-            $value = $json[self::FIELD_INFORCE] ?? null;
-            $type->setInforce(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_INFORCE_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_BENEFIT_PERIOD]) || array_key_exists(self::FIELD_BENEFIT_PERIOD, $json)) {
-            $type->setBenefitPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_BENEFIT_PERIOD], $config));
-        }
-        if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
-            $vs = $json[self::FIELD_ITEM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->coverage) || property_exists($json, self::FIELD_COVERAGE)) {
+            if (is_array($json->coverage)) {
+                $type->setCoverage(FHIRReference::jsonUnserialize(reset($json->coverage), $config));
+            } else {
+                $type->setCoverage(FHIRReference::jsonUnserialize($json->coverage, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->inforce)
+            || isset($json->_inforce)
+            || property_exists($json, self::FIELD_INFORCE)
+            || property_exists($json, self::FIELD_INFORCE_EXT)) {
+            $v = $json->_inforce ?? new \stdClass();
+            $v->value = $json->inforce ?? null;
+            $type->setInforce(FHIRBoolean::jsonUnserialize($v, $config));
+        }
+        if (isset($json->benefitPeriod) || property_exists($json, self::FIELD_BENEFIT_PERIOD)) {
+            if (is_array($json->benefitPeriod)) {
+                $type->setBenefitPeriod(FHIRPeriod::jsonUnserialize(reset($json->benefitPeriod), $config));
+            } else {
+                $type->setBenefitPeriod(FHIRPeriod::jsonUnserialize($json->benefitPeriod, $config));
+            }
+        }
+        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
+            if (is_object($json->item)) {
+                $vals = [$json->item];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ITEM, true);
+            } else {
+                $vals = $json->item;
+            }
+            foreach($vals as $v) {
                 $type->addItem(FHIRCoverageEligibilityResponseItem::jsonUnserialize($v, $config));
             }
         }
@@ -574,7 +560,11 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
             $out->benefitPeriod = $this->benefitPeriod;
         }
         if (isset($this->item) && [] !== $this->item) {
-            $out->item = $this->item;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ITEM) && 1 === count($this->item)) {
+                $out->item = $this->item[0];
+            } else {
+                $out->item = $this->item;
+            }
         }
         return $out;
     }

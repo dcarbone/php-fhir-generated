@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -82,28 +84,30 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SPECIMEN_DEFINITION_DOT_HANDLING;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TEMPERATURE_QUALIFIER = 'temperatureQualifier';
     public const FIELD_TEMPERATURE_RANGE = 'temperatureRange';
     public const FIELD_MAX_DURATION = 'maxDuration';
     public const FIELD_INSTRUCTION = 'instruction';
     public const FIELD_INSTRUCTION_EXT = '_instruction';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_INSTRUCTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -149,7 +153,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      */
     protected FHIRString $instruction;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSpecimenDefinitionHandling Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -188,7 +192,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -197,7 +201,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -330,11 +334,9 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * specimen. For instance, 'Protect from light exposure'.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $instruction
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setInstruction(null|string|FHIRStringPrimitive|FHIRString $instruction,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setInstruction(null|string|FHIRStringPrimitive|FHIRString $instruction): self
     {
         if (null === $instruction) {
             unset($this->instruction);
@@ -344,37 +346,10 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
             $instruction = new FHIRString(value: $instruction);
         }
         $this->instruction = $instruction;
-        if ($this->_valueXMLLocations[self::FIELD_INSTRUCTION] !== $valueXMLLocation) {
-            $this->_setInstructionValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the instruction element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getInstructionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INSTRUCTION];
-    }
-
-    /**
-     * Set the location the "value" field of the instruction element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setInstructionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INSTRUCTION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -403,9 +378,11 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -421,15 +398,16 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INSTRUCTION])) {
             if (isset($type->instruction)) {
                 $type->instruction->setValue((string)$attributes[self::FIELD_INSTRUCTION]);
-                $type->_setInstructionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInstruction((string)$attributes[self::FIELD_INSTRUCTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setInstruction((string)$attributes[self::FIELD_INSTRUCTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INSTRUCTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -442,7 +420,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->instruction) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INSTRUCTION]) {
-            $xw->writeAttribute(self::FIELD_INSTRUCTION, $this->instruction->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INSTRUCTION, $this->instruction->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->temperatureQualifier)) {
@@ -470,13 +448,13 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -491,24 +469,34 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TEMPERATURE_QUALIFIER]) || array_key_exists(self::FIELD_TEMPERATURE_QUALIFIER, $json)) {
-            $type->setTemperatureQualifier(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TEMPERATURE_QUALIFIER], $config));
+        if (isset($json->temperatureQualifier) || property_exists($json, self::FIELD_TEMPERATURE_QUALIFIER)) {
+            if (is_array($json->temperatureQualifier)) {
+                $type->setTemperatureQualifier(FHIRCodeableConcept::jsonUnserialize(reset($json->temperatureQualifier), $config));
+            } else {
+                $type->setTemperatureQualifier(FHIRCodeableConcept::jsonUnserialize($json->temperatureQualifier, $config));
+            }
         }
-        if (isset($json[self::FIELD_TEMPERATURE_RANGE]) || array_key_exists(self::FIELD_TEMPERATURE_RANGE, $json)) {
-            $type->setTemperatureRange(FHIRRange::jsonUnserialize($json[self::FIELD_TEMPERATURE_RANGE], $config));
+        if (isset($json->temperatureRange) || property_exists($json, self::FIELD_TEMPERATURE_RANGE)) {
+            if (is_array($json->temperatureRange)) {
+                $type->setTemperatureRange(FHIRRange::jsonUnserialize(reset($json->temperatureRange), $config));
+            } else {
+                $type->setTemperatureRange(FHIRRange::jsonUnserialize($json->temperatureRange, $config));
+            }
         }
-        if (isset($json[self::FIELD_MAX_DURATION]) || array_key_exists(self::FIELD_MAX_DURATION, $json)) {
-            $type->setMaxDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_MAX_DURATION], $config));
+        if (isset($json->maxDuration) || property_exists($json, self::FIELD_MAX_DURATION)) {
+            if (is_array($json->maxDuration)) {
+                $type->setMaxDuration(FHIRDuration::jsonUnserialize(reset($json->maxDuration), $config));
+            } else {
+                $type->setMaxDuration(FHIRDuration::jsonUnserialize($json->maxDuration, $config));
+            }
         }
-        if (isset($json[self::FIELD_INSTRUCTION])
-            || isset($json[self::FIELD_INSTRUCTION_EXT])
-            || array_key_exists(self::FIELD_INSTRUCTION, $json)
-            || array_key_exists(self::FIELD_INSTRUCTION_EXT, $json)) {
-            $value = $json[self::FIELD_INSTRUCTION] ?? null;
-            $type->setInstruction(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_INSTRUCTION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->instruction)
+            || isset($json->_instruction)
+            || property_exists($json, self::FIELD_INSTRUCTION)
+            || property_exists($json, self::FIELD_INSTRUCTION_EXT)) {
+            $v = $json->_instruction ?? new \stdClass();
+            $v->value = $json->instruction ?? null;
+            $type->setInstruction(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

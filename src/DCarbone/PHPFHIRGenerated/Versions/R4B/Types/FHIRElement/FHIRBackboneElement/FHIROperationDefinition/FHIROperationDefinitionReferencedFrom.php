@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -101,18 +103,20 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OPERATION_DEFINITION_DOT_REFERENCED_FROM;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SOURCE = 'source';
     public const FIELD_SOURCE_EXT = '_source';
     public const FIELD_SOURCE_ID = 'sourceId';
     public const FIELD_SOURCE_ID_EXT = '_sourceId';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SOURCE => [
@@ -120,13 +124,13 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SOURCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_SOURCE_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -150,7 +154,7 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      */
     protected FHIRString $sourceId;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIROperationDefinitionReferencedFrom Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -179,7 +183,7 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -188,7 +192,7 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -213,11 +217,9 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      * the resource parameter that is expected to contain a reference to this resource.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $source
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSource(null|string|FHIRStringPrimitive|FHIRString $source,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSource(null|string|FHIRStringPrimitive|FHIRString $source): self
     {
         if (null === $source) {
             unset($this->source);
@@ -227,33 +229,6 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
             $source = new FHIRString(value: $source);
         }
         $this->source = $source;
-        if ($this->_valueXMLLocations[self::FIELD_SOURCE] !== $valueXMLLocation) {
-            $this->_setSourceValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the source element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSourceValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SOURCE];
-    }
-
-    /**
-     * Set the location the "value" field of the source element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSourceValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SOURCE] = $valueXMLLocation;
         return $this;
     }
 
@@ -281,11 +256,9 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      * this resource.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $sourceId
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSourceId(null|string|FHIRStringPrimitive|FHIRString $sourceId,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSourceId(null|string|FHIRStringPrimitive|FHIRString $sourceId): self
     {
         if (null === $sourceId) {
             unset($this->sourceId);
@@ -295,37 +268,10 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
             $sourceId = new FHIRString(value: $sourceId);
         }
         $this->sourceId = $sourceId;
-        if ($this->_valueXMLLocations[self::FIELD_SOURCE_ID] !== $valueXMLLocation) {
-            $this->_setSourceIdValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the sourceId element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSourceIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SOURCE_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the sourceId element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSourceIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SOURCE_ID] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -354,9 +300,11 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -368,23 +316,24 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SOURCE])) {
             if (isset($type->source)) {
                 $type->source->setValue((string)$attributes[self::FIELD_SOURCE]);
-                $type->_setSourceValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSource((string)$attributes[self::FIELD_SOURCE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSource((string)$attributes[self::FIELD_SOURCE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SOURCE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SOURCE_ID])) {
             if (isset($type->sourceId)) {
                 $type->sourceId->setValue((string)$attributes[self::FIELD_SOURCE_ID]);
-                $type->_setSourceIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSourceId((string)$attributes[self::FIELD_SOURCE_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSourceId((string)$attributes[self::FIELD_SOURCE_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SOURCE_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -397,10 +346,10 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->source) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SOURCE]) {
-            $xw->writeAttribute(self::FIELD_SOURCE, $this->source->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SOURCE, $this->source->_getValueAsString());
         }
         if (isset($this->sourceId) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SOURCE_ID]) {
-            $xw->writeAttribute(self::FIELD_SOURCE_ID, $this->sourceId->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SOURCE_ID, $this->sourceId->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->source)
@@ -420,13 +369,13 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -441,25 +390,21 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SOURCE])
-            || isset($json[self::FIELD_SOURCE_EXT])
-            || array_key_exists(self::FIELD_SOURCE, $json)
-            || array_key_exists(self::FIELD_SOURCE_EXT, $json)) {
-            $value = $json[self::FIELD_SOURCE] ?? null;
-            $type->setSource(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->source)
+            || isset($json->_source)
+            || property_exists($json, self::FIELD_SOURCE)
+            || property_exists($json, self::FIELD_SOURCE_EXT)) {
+            $v = $json->_source ?? new \stdClass();
+            $v->value = $json->source ?? null;
+            $type->setSource(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SOURCE_ID])
-            || isset($json[self::FIELD_SOURCE_ID_EXT])
-            || array_key_exists(self::FIELD_SOURCE_ID, $json)
-            || array_key_exists(self::FIELD_SOURCE_ID_EXT, $json)) {
-            $value = $json[self::FIELD_SOURCE_ID] ?? null;
-            $type->setSourceId(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->sourceId)
+            || isset($json->_sourceId)
+            || property_exists($json, self::FIELD_SOURCE_ID)
+            || property_exists($json, self::FIELD_SOURCE_ID_EXT)) {
+            $v = $json->_sourceId ?? new \stdClass();
+            $v->value = $json->sourceId ?? null;
+            $type->setSourceId(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;
     }

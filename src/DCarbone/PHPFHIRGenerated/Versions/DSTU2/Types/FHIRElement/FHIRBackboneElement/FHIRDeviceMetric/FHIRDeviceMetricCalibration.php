@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -84,12 +86,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  */
 class FHIRDeviceMetricCalibration extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_METRIC_DOT_CALIBRATION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_TYPE_EXT = '_type';
     public const FIELD_STATE = 'state';
@@ -97,18 +101,18 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
     public const FIELD_TIME = 'time';
     public const FIELD_TIME_EXT = '_time';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_STATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Describes the type of a metric calibration.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -140,7 +144,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      */
     protected FHIRInstant $time;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDeviceMetricCalibration Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
@@ -174,7 +178,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -183,7 +187,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Describes the type of a metric calibration.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -204,11 +208,9 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * Describes the type of the calibration method.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDeviceMetricCalibrationTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationType $type
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRDeviceMetricCalibrationTypeList|FHIRDeviceMetricCalibrationType $type,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setType(null|string|FHIRDeviceMetricCalibrationTypeList|FHIRDeviceMetricCalibrationType $type): self
     {
         if (null === $type) {
             unset($this->type);
@@ -218,33 +220,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
             $type = new FHIRDeviceMetricCalibrationType(value: $type);
         }
         $this->type = $type;
-        if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
-            $this->_setTypeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the type element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the type element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TYPE] = $valueXMLLocation;
         return $this;
     }
 
@@ -268,11 +243,9 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * Describes the state of the calibration.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDeviceMetricCalibrationStateList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationState $state
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setState(null|string|FHIRDeviceMetricCalibrationStateList|FHIRDeviceMetricCalibrationState $state,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setState(null|string|FHIRDeviceMetricCalibrationStateList|FHIRDeviceMetricCalibrationState $state): self
     {
         if (null === $state) {
             unset($this->state);
@@ -282,33 +255,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
             $state = new FHIRDeviceMetricCalibrationState(value: $state);
         }
         $this->state = $state;
-        if ($this->_valueXMLLocations[self::FIELD_STATE] !== $valueXMLLocation) {
-            $this->_setStateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the state element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STATE];
-    }
-
-    /**
-     * Set the location the "value" field of the state element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -338,11 +284,9 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * Describes the time last calibration has been performed.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $time
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTime(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $time,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setTime(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $time): self
     {
         if (null === $time) {
             unset($this->time);
@@ -352,37 +296,10 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
             $time = new FHIRInstant(value: $time);
         }
         $this->time = $time;
-        if ($this->_valueXMLLocations[self::FIELD_TIME] !== $valueXMLLocation) {
-            $this->_setTimeValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the time element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the time element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_TIME] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -411,9 +328,11 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -427,31 +346,32 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             if (isset($type->type)) {
                 $type->type->setValue((string)$attributes[self::FIELD_TYPE]);
-                $type->_setTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setType((string)$attributes[self::FIELD_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setType((string)$attributes[self::FIELD_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STATE])) {
             if (isset($type->state)) {
                 $type->state->setValue((string)$attributes[self::FIELD_STATE]);
-                $type->_setStateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setState((string)$attributes[self::FIELD_STATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setState((string)$attributes[self::FIELD_STATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_TIME])) {
             if (isset($type->time)) {
                 $type->time->setValue((string)$attributes[self::FIELD_TIME]);
-                $type->_setTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setTime((string)$attributes[self::FIELD_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setTime((string)$attributes[self::FIELD_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -464,13 +384,13 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->type) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TYPE]) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->_getValueAsString());
         }
         if (isset($this->state) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATE]) {
-            $xw->writeAttribute(self::FIELD_STATE, $this->state->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STATE, $this->state->_getValueAsString());
         }
         if (isset($this->time) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_TIME]) {
-            $xw->writeAttribute(self::FIELD_TIME, $this->time->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_TIME, $this->time->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)
@@ -497,13 +417,13 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -518,35 +438,29 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE])
-            || isset($json[self::FIELD_TYPE_EXT])
-            || array_key_exists(self::FIELD_TYPE, $json)
-            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_TYPE] ?? null;
-            $type->setType(FHIRDeviceMetricCalibrationType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDeviceMetricCalibrationType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->type)
+            || isset($json->_type)
+            || property_exists($json, self::FIELD_TYPE)
+            || property_exists($json, self::FIELD_TYPE_EXT)) {
+            $v = $json->_type ?? new \stdClass();
+            $v->value = $json->type ?? null;
+            $type->setType(FHIRDeviceMetricCalibrationType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_STATE])
-            || isset($json[self::FIELD_STATE_EXT])
-            || array_key_exists(self::FIELD_STATE, $json)
-            || array_key_exists(self::FIELD_STATE_EXT, $json)) {
-            $value = $json[self::FIELD_STATE] ?? null;
-            $type->setState(FHIRDeviceMetricCalibrationState::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDeviceMetricCalibrationState::FIELD_VALUE => $value]) + ($json[self::FIELD_STATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->state)
+            || isset($json->_state)
+            || property_exists($json, self::FIELD_STATE)
+            || property_exists($json, self::FIELD_STATE_EXT)) {
+            $v = $json->_state ?? new \stdClass();
+            $v->value = $json->state ?? null;
+            $type->setState(FHIRDeviceMetricCalibrationState::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_TIME])
-            || isset($json[self::FIELD_TIME_EXT])
-            || array_key_exists(self::FIELD_TIME, $json)
-            || array_key_exists(self::FIELD_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_TIME] ?? null;
-            $type->setTime(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_TIME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->time)
+            || isset($json->_time)
+            || property_exists($json, self::FIELD_TIME)
+            || property_exists($json, self::FIELD_TIME_EXT)) {
+            $v = $json->_time ?? new \stdClass();
+            $v->value = $json->time ?? null;
+            $type->setTime(FHIRInstant::jsonUnserialize($v, $config));
         }
         return $type;
     }

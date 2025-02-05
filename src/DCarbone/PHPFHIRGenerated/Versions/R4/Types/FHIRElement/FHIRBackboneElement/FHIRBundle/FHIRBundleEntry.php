@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -85,12 +87,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionTypeMap;
  */
 class FHIRBundleEntry extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BUNDLE_DOT_ENTRY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_LINK = 'link';
     public const FIELD_FULL_URL = 'fullUrl';
     public const FIELD_FULL_URL_EXT = '_fullUrl';
@@ -99,16 +103,16 @@ class FHIRBundleEntry extends FHIRBackboneElement
     public const FIELD_REQUEST = 'request';
     public const FIELD_RESPONSE = 'response';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_FULL_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A container for a collection of resources.
      *
@@ -169,7 +173,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
      */
     protected FHIRBundleResponse $response;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRBundleEntry Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -218,7 +222,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -227,7 +231,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A container for a collection of resources.
      *
@@ -320,11 +324,9 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * operations might involve resources that are not identified.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $fullUrl
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFullUrl(null|string|FHIRUriPrimitive|FHIRUri $fullUrl,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setFullUrl(null|string|FHIRUriPrimitive|FHIRUri $fullUrl): self
     {
         if (null === $fullUrl) {
             unset($this->fullUrl);
@@ -334,33 +336,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
             $fullUrl = new FHIRUri(value: $fullUrl);
         }
         $this->fullUrl = $fullUrl;
-        if ($this->_valueXMLLocations[self::FIELD_FULL_URL] !== $valueXMLLocation) {
-            $this->_setFullUrlValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the fullUrl element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getFullUrlValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_FULL_URL];
-    }
-
-    /**
-     * Set the location the "value" field of the fullUrl element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setFullUrlValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_FULL_URL] = $valueXMLLocation;
         return $this;
     }
 
@@ -493,7 +468,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -522,9 +497,11 @@ class FHIRBundleEntry extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -548,15 +525,16 @@ class FHIRBundleEntry extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_FULL_URL])) {
             if (isset($type->fullUrl)) {
                 $type->fullUrl->setValue((string)$attributes[self::FIELD_FULL_URL]);
-                $type->_setFullUrlValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setFullUrl((string)$attributes[self::FIELD_FULL_URL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setFullUrl((string)$attributes[self::FIELD_FULL_URL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_FULL_URL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -569,7 +547,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->fullUrl) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_FULL_URL]) {
-            $xw->writeAttribute(self::FIELD_FULL_URL, $this->fullUrl->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_FULL_URL, $this->fullUrl->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->link)) {
@@ -611,13 +589,13 @@ class FHIRBundleEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -632,39 +610,51 @@ class FHIRBundleEntry extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LINK]) || array_key_exists(self::FIELD_LINK, $json)) {
-            $vs = $json[self::FIELD_LINK];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->link) || property_exists($json, self::FIELD_LINK)) {
+            if (is_object($json->link)) {
+                $vals = [$json->link];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_LINK, true);
+            } else {
+                $vals = $json->link;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addLink(FHIRBundleLink::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_FULL_URL])
-            || isset($json[self::FIELD_FULL_URL_EXT])
-            || array_key_exists(self::FIELD_FULL_URL, $json)
-            || array_key_exists(self::FIELD_FULL_URL_EXT, $json)) {
-            $value = $json[self::FIELD_FULL_URL] ?? null;
-            $type->setFullUrl(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_FULL_URL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->fullUrl)
+            || isset($json->_fullUrl)
+            || property_exists($json, self::FIELD_FULL_URL)
+            || property_exists($json, self::FIELD_FULL_URL_EXT)) {
+            $v = $json->_fullUrl ?? new \stdClass();
+            $v->value = $json->fullUrl ?? null;
+            $type->setFullUrl(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_RESOURCE])) {
-            $typeClassName = VersionTypeMap::getContainedTypeClassNameFromArray($json[self::FIELD_RESOURCE]);
-            $d = $json[self::FIELD_RESOURCE];
-            unset($d[Constants::JSON_FIELD_RESOURCE_TYPE]);
-            $type->setResource($typeClassName::jsonUnserialize($d, $config));
+        if (isset($json->resource)) {
+            $typeClassName = VersionTypeMap::getContainedTypeClassNameFromJSON($json->resource);
+            $v = $json->resource;
+            unset($v->resourceType);
+            $type->setResource($typeClassName::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SEARCH]) || array_key_exists(self::FIELD_SEARCH, $json)) {
-            $type->setSearch(FHIRBundleSearch::jsonUnserialize($json[self::FIELD_SEARCH], $config));
+        if (isset($json->search) || property_exists($json, self::FIELD_SEARCH)) {
+            if (is_array($json->search)) {
+                $type->setSearch(FHIRBundleSearch::jsonUnserialize(reset($json->search), $config));
+            } else {
+                $type->setSearch(FHIRBundleSearch::jsonUnserialize($json->search, $config));
+            }
         }
-        if (isset($json[self::FIELD_REQUEST]) || array_key_exists(self::FIELD_REQUEST, $json)) {
-            $type->setRequest(FHIRBundleRequest::jsonUnserialize($json[self::FIELD_REQUEST], $config));
+        if (isset($json->request) || property_exists($json, self::FIELD_REQUEST)) {
+            if (is_array($json->request)) {
+                $type->setRequest(FHIRBundleRequest::jsonUnserialize(reset($json->request), $config));
+            } else {
+                $type->setRequest(FHIRBundleRequest::jsonUnserialize($json->request, $config));
+            }
         }
-        if (isset($json[self::FIELD_RESPONSE]) || array_key_exists(self::FIELD_RESPONSE, $json)) {
-            $type->setResponse(FHIRBundleResponse::jsonUnserialize($json[self::FIELD_RESPONSE], $config));
+        if (isset($json->response) || property_exists($json, self::FIELD_RESPONSE)) {
+            if (is_array($json->response)) {
+                $type->setResponse(FHIRBundleResponse::jsonUnserialize(reset($json->response), $config));
+            } else {
+                $type->setResponse(FHIRBundleResponse::jsonUnserialize($json->response, $config));
+            }
         }
         return $type;
     }
@@ -676,7 +666,11 @@ class FHIRBundleEntry extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->link) && [] !== $this->link) {
-            $out->link = $this->link;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_LINK) && 1 === count($this->link)) {
+                $out->link = $this->link[0];
+            } else {
+                $out->link = $this->link;
+            }
         }
         if (isset($this->fullUrl)) {
             if (null !== ($val = $this->fullUrl->getValue())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -106,12 +108,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIROperationOutcomeIssue extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OPERATION_OUTCOME_DOT_ISSUE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_SEVERITY = 'severity';
     public const FIELD_SEVERITY_EXT = '_severity';
     public const FIELD_CODE = 'code';
@@ -124,7 +128,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     public const FIELD_EXPRESSION = 'expression';
     public const FIELD_EXPRESSION_EXT = '_expression';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SEVERITY => [
@@ -135,14 +139,14 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SEVERITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CODE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DIAGNOSTICS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -211,7 +215,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      */
     protected array $expression;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIROperationOutcomeIssue Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -260,7 +264,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -269,7 +273,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -288,11 +292,9 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * Indicates whether the issue indicates a variation from successful processing.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRIssueSeverityEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIssueSeverity $severity
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSeverity(null|string|FHIRIssueSeverityEnum|FHIRIssueSeverity $severity,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSeverity(null|string|FHIRIssueSeverityEnum|FHIRIssueSeverity $severity): self
     {
         if (null === $severity) {
             unset($this->severity);
@@ -302,33 +304,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
             $severity = new FHIRIssueSeverity(value: $severity);
         }
         $this->severity = $severity;
-        if ($this->_valueXMLLocations[self::FIELD_SEVERITY] !== $valueXMLLocation) {
-            $this->_setSeverityValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the severity element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSeverityValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SEVERITY];
-    }
-
-    /**
-     * Set the location the "value" field of the severity element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSeverityValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SEVERITY] = $valueXMLLocation;
         return $this;
     }
 
@@ -354,11 +329,9 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * additional provide its own code for the error in the details element.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRIssueTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIssueType $code
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCode(null|string|FHIRIssueTypeEnum|FHIRIssueType $code,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCode(null|string|FHIRIssueTypeEnum|FHIRIssueType $code): self
     {
         if (null === $code) {
             unset($this->code);
@@ -368,33 +341,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
             $code = new FHIRIssueType(value: $code);
         }
         $this->code = $code;
-        if ($this->_valueXMLLocations[self::FIELD_CODE] !== $valueXMLLocation) {
-            $this->_setCodeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the code element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCodeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CODE];
-    }
-
-    /**
-     * Set the location the "value" field of the code element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCodeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CODE] = $valueXMLLocation;
         return $this;
     }
 
@@ -458,11 +404,9 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * Additional diagnostic information about the issue.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $diagnostics
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDiagnostics(null|string|FHIRStringPrimitive|FHIRString $diagnostics,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDiagnostics(null|string|FHIRStringPrimitive|FHIRString $diagnostics): self
     {
         if (null === $diagnostics) {
             unset($this->diagnostics);
@@ -472,33 +416,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
             $diagnostics = new FHIRString(value: $diagnostics);
         }
         $this->diagnostics = $diagnostics;
-        if ($this->_valueXMLLocations[self::FIELD_DIAGNOSTICS] !== $valueXMLLocation) {
-            $this->_setDiagnosticsValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the diagnostics element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDiagnosticsValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DIAGNOSTICS];
-    }
-
-    /**
-     * Set the location the "value" field of the diagnostics element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDiagnosticsValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DIAGNOSTICS] = $valueXMLLocation;
         return $this;
     }
 
@@ -671,7 +588,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -700,9 +617,11 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -722,31 +641,32 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SEVERITY])) {
             if (isset($type->severity)) {
                 $type->severity->setValue((string)$attributes[self::FIELD_SEVERITY]);
-                $type->_setSeverityValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSeverity((string)$attributes[self::FIELD_SEVERITY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSeverity((string)$attributes[self::FIELD_SEVERITY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SEVERITY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CODE])) {
             if (isset($type->code)) {
                 $type->code->setValue((string)$attributes[self::FIELD_CODE]);
-                $type->_setCodeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCode((string)$attributes[self::FIELD_CODE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCode((string)$attributes[self::FIELD_CODE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CODE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DIAGNOSTICS])) {
             if (isset($type->diagnostics)) {
                 $type->diagnostics->setValue((string)$attributes[self::FIELD_DIAGNOSTICS]);
-                $type->_setDiagnosticsValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDiagnostics((string)$attributes[self::FIELD_DIAGNOSTICS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDiagnostics((string)$attributes[self::FIELD_DIAGNOSTICS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DIAGNOSTICS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -759,13 +679,13 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->severity) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SEVERITY]) {
-            $xw->writeAttribute(self::FIELD_SEVERITY, $this->severity->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SEVERITY, $this->severity->_getValueAsString());
         }
         if (isset($this->code) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CODE]) {
-            $xw->writeAttribute(self::FIELD_CODE, $this->code->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CODE, $this->code->_getValueAsString());
         }
         if (isset($this->diagnostics) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DIAGNOSTICS]) {
-            $xw->writeAttribute(self::FIELD_DIAGNOSTICS, $this->diagnostics->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DIAGNOSTICS, $this->diagnostics->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->severity)
@@ -811,13 +731,13 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -832,73 +752,69 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_SEVERITY])
-            || isset($json[self::FIELD_SEVERITY_EXT])
-            || array_key_exists(self::FIELD_SEVERITY, $json)
-            || array_key_exists(self::FIELD_SEVERITY_EXT, $json)) {
-            $value = $json[self::FIELD_SEVERITY] ?? null;
-            $type->setSeverity(FHIRIssueSeverity::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIssueSeverity::FIELD_VALUE => $value]) + ($json[self::FIELD_SEVERITY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->severity)
+            || isset($json->_severity)
+            || property_exists($json, self::FIELD_SEVERITY)
+            || property_exists($json, self::FIELD_SEVERITY_EXT)) {
+            $v = $json->_severity ?? new \stdClass();
+            $v->value = $json->severity ?? null;
+            $type->setSeverity(FHIRIssueSeverity::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CODE])
-            || isset($json[self::FIELD_CODE_EXT])
-            || array_key_exists(self::FIELD_CODE, $json)
-            || array_key_exists(self::FIELD_CODE_EXT, $json)) {
-            $value = $json[self::FIELD_CODE] ?? null;
-            $type->setCode(FHIRIssueType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRIssueType::FIELD_VALUE => $value]) + ($json[self::FIELD_CODE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->code)
+            || isset($json->_code)
+            || property_exists($json, self::FIELD_CODE)
+            || property_exists($json, self::FIELD_CODE_EXT)) {
+            $v = $json->_code ?? new \stdClass();
+            $v->value = $json->code ?? null;
+            $type->setCode(FHIRIssueType::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_DETAILS]) || array_key_exists(self::FIELD_DETAILS, $json)) {
-            $type->setDetails(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DETAILS], $config));
-        }
-        if (isset($json[self::FIELD_DIAGNOSTICS])
-            || isset($json[self::FIELD_DIAGNOSTICS_EXT])
-            || array_key_exists(self::FIELD_DIAGNOSTICS, $json)
-            || array_key_exists(self::FIELD_DIAGNOSTICS_EXT, $json)) {
-            $value = $json[self::FIELD_DIAGNOSTICS] ?? null;
-            $type->setDiagnostics(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DIAGNOSTICS_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_LOCATION])
-            || isset($json[self::FIELD_LOCATION_EXT])
-            || array_key_exists(self::FIELD_LOCATION, $json)
-            || array_key_exists(self::FIELD_LOCATION_EXT, $json)) {
-            $value = (array)($json[self::FIELD_LOCATION] ?? []);
-            $ext = (array)($json[self::FIELD_LOCATION_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
-            }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addLocation(FHIRString::jsonUnserialize(
-                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+        if (isset($json->details) || property_exists($json, self::FIELD_DETAILS)) {
+            if (is_array($json->details)) {
+                $type->setDetails(FHIRCodeableConcept::jsonUnserialize(reset($json->details), $config));
+            } else {
+                $type->setDetails(FHIRCodeableConcept::jsonUnserialize($json->details, $config));
             }
         }
-        if (isset($json[self::FIELD_EXPRESSION])
-            || isset($json[self::FIELD_EXPRESSION_EXT])
-            || array_key_exists(self::FIELD_EXPRESSION, $json)
-            || array_key_exists(self::FIELD_EXPRESSION_EXT, $json)) {
-            $value = (array)($json[self::FIELD_EXPRESSION] ?? []);
-            $ext = (array)($json[self::FIELD_EXPRESSION_EXT] ?? []);
-            $cnt = count($value);
-            $extCnt = count($ext);
-            if ($extCnt > $cnt) {
-                $cnt = $extCnt;
+        if (isset($json->diagnostics)
+            || isset($json->_diagnostics)
+            || property_exists($json, self::FIELD_DIAGNOSTICS)
+            || property_exists($json, self::FIELD_DIAGNOSTICS_EXT)) {
+            $v = $json->_diagnostics ?? new \stdClass();
+            $v->value = $json->diagnostics ?? null;
+            $type->setDiagnostics(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->location)
+            || isset($json->_location)
+            || property_exists($json, self::FIELD_LOCATION)
+            || property_exists($json, self::FIELD_LOCATION_EXT)) {
+            $vals = (array)($json->location ?? []);
+            $exts = (array)($json->FIELD_LOCATION_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
             }
-            for ($i = 0; $i < $cnt; $i++) {
-                $type->addExpression(FHIRString::jsonUnserialize(
-                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
-                    $config,
-                ));
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addLocation(FHIRString::jsonUnserialize($v, $config));
+            }
+        }
+        if (isset($json->expression)
+            || isset($json->_expression)
+            || property_exists($json, self::FIELD_EXPRESSION)
+            || property_exists($json, self::FIELD_EXPRESSION_EXT)) {
+            $vals = (array)($json->expression ?? []);
+            $exts = (array)($json->FIELD_EXPRESSION_EXT ?? []);
+            $valCnt = count($vals);
+            $extCnt = count($exts);
+            if ($extCnt > $valCnt) {
+                $valCnt = $extCnt;
+            }
+            for ($i = 0; $i < $valCnt; $i++) {
+                $v = $exts[$i] ?? new \stdClass();
+                $v->value = $vals[$i] ?? null;
+                $type->addExpression(FHIRString::jsonUnserialize($v, $config));
             }
         }
         return $type;

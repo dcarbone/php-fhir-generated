@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -99,24 +101,26 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_PACKAGING;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_COST = 'cost';
     public const FIELD_PACKAGED_PRODUCT = 'packagedProduct';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -137,7 +141,7 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
      */
     protected FHIRReference $packagedProduct;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMedicationKnowledgePackaging Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -166,7 +170,7 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -175,7 +179,7 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -270,7 +274,7 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -299,9 +303,11 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -313,7 +319,8 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -341,13 +348,13 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -362,17 +369,23 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_COST]) || array_key_exists(self::FIELD_COST, $json)) {
-            $vs = $json[self::FIELD_COST];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->cost) || property_exists($json, self::FIELD_COST)) {
+            if (is_object($json->cost)) {
+                $vals = [$json->cost];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_COST, true);
+            } else {
+                $vals = $json->cost;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addCost(FHIRMedicationKnowledgeCost::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PACKAGED_PRODUCT]) || array_key_exists(self::FIELD_PACKAGED_PRODUCT, $json)) {
-            $type->setPackagedProduct(FHIRReference::jsonUnserialize($json[self::FIELD_PACKAGED_PRODUCT], $config));
+        if (isset($json->packagedProduct) || property_exists($json, self::FIELD_PACKAGED_PRODUCT)) {
+            if (is_array($json->packagedProduct)) {
+                $type->setPackagedProduct(FHIRReference::jsonUnserialize(reset($json->packagedProduct), $config));
+            } else {
+                $type->setPackagedProduct(FHIRReference::jsonUnserialize($json->packagedProduct, $config));
+            }
         }
         return $type;
     }
@@ -384,7 +397,11 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->cost) && [] !== $this->cost) {
-            $out->cost = $this->cost;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_COST) && 1 === count($this->cost)) {
+                $out->cost = $this->cost[0];
+            } else {
+                $out->cost = $this->cost;
+            }
         }
         if (isset($this->packagedProduct)) {
             $out->packagedProduct = $this->packagedProduct;

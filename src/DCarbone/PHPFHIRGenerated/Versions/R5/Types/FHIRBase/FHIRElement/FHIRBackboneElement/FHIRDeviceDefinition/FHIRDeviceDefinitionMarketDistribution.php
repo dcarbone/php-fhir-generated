@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,17 +105,19 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_DEFINITION_DOT_MARKET_DISTRIBUTION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_MARKET_PERIOD = 'marketPeriod';
     public const FIELD_SUB_JURISDICTION = 'subJurisdiction';
     public const FIELD_SUB_JURISDICTION_EXT = '_subJurisdiction';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_MARKET_PERIOD => [
@@ -124,12 +128,12 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_SUB_JURISDICTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -152,7 +156,7 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
      */
     protected FHIRUri $subJurisdiction;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDeviceDefinitionMarketDistribution Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -181,7 +185,7 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -190,7 +194,7 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -249,11 +253,9 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
      * where the device is commercialized.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $subJurisdiction
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSubJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $subJurisdiction,
-                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSubJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $subJurisdiction): self
     {
         if (null === $subJurisdiction) {
             unset($this->subJurisdiction);
@@ -263,37 +265,10 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
             $subJurisdiction = new FHIRUri(value: $subJurisdiction);
         }
         $this->subJurisdiction = $subJurisdiction;
-        if ($this->_valueXMLLocations[self::FIELD_SUB_JURISDICTION] !== $valueXMLLocation) {
-            $this->_setSubJurisdictionValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the subJurisdiction element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSubJurisdictionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SUB_JURISDICTION];
-    }
-
-    /**
-     * Set the location the "value" field of the subJurisdiction element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSubJurisdictionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SUB_JURISDICTION] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -322,9 +297,11 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -336,15 +313,16 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SUB_JURISDICTION])) {
             if (isset($type->subJurisdiction)) {
                 $type->subJurisdiction->setValue((string)$attributes[self::FIELD_SUB_JURISDICTION]);
-                $type->_setSubJurisdictionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSubJurisdiction((string)$attributes[self::FIELD_SUB_JURISDICTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSubJurisdiction((string)$attributes[self::FIELD_SUB_JURISDICTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SUB_JURISDICTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -357,7 +335,7 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->subJurisdiction) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SUB_JURISDICTION]) {
-            $xw->writeAttribute(self::FIELD_SUB_JURISDICTION, $this->subJurisdiction->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SUB_JURISDICTION, $this->subJurisdiction->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->marketPeriod)) {
@@ -375,13 +353,13 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionMarketDistribution $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionMarketDistribution
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -396,18 +374,20 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_MARKET_PERIOD]) || array_key_exists(self::FIELD_MARKET_PERIOD, $json)) {
-            $type->setMarketPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_MARKET_PERIOD], $config));
+        if (isset($json->marketPeriod) || property_exists($json, self::FIELD_MARKET_PERIOD)) {
+            if (is_array($json->marketPeriod)) {
+                $type->setMarketPeriod(FHIRPeriod::jsonUnserialize(reset($json->marketPeriod), $config));
+            } else {
+                $type->setMarketPeriod(FHIRPeriod::jsonUnserialize($json->marketPeriod, $config));
+            }
         }
-        if (isset($json[self::FIELD_SUB_JURISDICTION])
-            || isset($json[self::FIELD_SUB_JURISDICTION_EXT])
-            || array_key_exists(self::FIELD_SUB_JURISDICTION, $json)
-            || array_key_exists(self::FIELD_SUB_JURISDICTION_EXT, $json)) {
-            $value = $json[self::FIELD_SUB_JURISDICTION] ?? null;
-            $type->setSubJurisdiction(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_SUB_JURISDICTION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->subJurisdiction)
+            || isset($json->_subJurisdiction)
+            || property_exists($json, self::FIELD_SUB_JURISDICTION)
+            || property_exists($json, self::FIELD_SUB_JURISDICTION_EXT)) {
+            $v = $json->_subJurisdiction ?? new \stdClass();
+            $v->value = $json->subJurisdiction ?? null;
+            $type->setSubJurisdiction(FHIRUri::jsonUnserialize($v, $config));
         }
         return $type;
     }

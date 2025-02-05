@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -81,12 +83,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_REPEAT_UNIT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ORIENTATION_OF_POLYMERISATION = 'orientationOfPolymerisation';
     public const FIELD_REPEAT_UNIT = 'repeatUnit';
     public const FIELD_REPEAT_UNIT_EXT = '_repeatUnit';
@@ -94,16 +98,16 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     public const FIELD_DEGREE_OF_POLYMERISATION = 'degreeOfPolymerisation';
     public const FIELD_STRUCTURAL_REPRESENTATION = 'structuralRepresentation';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_REPEAT_UNIT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -157,7 +161,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      */
     protected array $structuralRepresentation;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRSubstancePolymerRepeatUnit Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -201,7 +205,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -210,7 +214,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -269,11 +273,9 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Todo.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $repeatUnit
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRepeatUnit(null|string|FHIRStringPrimitive|FHIRString $repeatUnit,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRepeatUnit(null|string|FHIRStringPrimitive|FHIRString $repeatUnit): self
     {
         if (null === $repeatUnit) {
             unset($this->repeatUnit);
@@ -283,33 +285,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             $repeatUnit = new FHIRString(value: $repeatUnit);
         }
         $this->repeatUnit = $repeatUnit;
-        if ($this->_valueXMLLocations[self::FIELD_REPEAT_UNIT] !== $valueXMLLocation) {
-            $this->_setRepeatUnitValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the repeatUnit element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRepeatUnitValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_REPEAT_UNIT];
-    }
-
-    /**
-     * Set the location the "value" field of the repeatUnit element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRepeatUnitValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_REPEAT_UNIT] = $valueXMLLocation;
         return $this;
     }
 
@@ -473,7 +448,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -502,9 +477,11 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -522,15 +499,16 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_REPEAT_UNIT])) {
             if (isset($type->repeatUnit)) {
                 $type->repeatUnit->setValue((string)$attributes[self::FIELD_REPEAT_UNIT]);
-                $type->_setRepeatUnitValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRepeatUnit((string)$attributes[self::FIELD_REPEAT_UNIT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRepeatUnit((string)$attributes[self::FIELD_REPEAT_UNIT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_REPEAT_UNIT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -543,7 +521,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->repeatUnit) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_REPEAT_UNIT]) {
-            $xw->writeAttribute(self::FIELD_REPEAT_UNIT, $this->repeatUnit->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_REPEAT_UNIT, $this->repeatUnit->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->orientationOfPolymerisation)) {
@@ -580,13 +558,13 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -601,37 +579,47 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ORIENTATION_OF_POLYMERISATION]) || array_key_exists(self::FIELD_ORIENTATION_OF_POLYMERISATION, $json)) {
-            $type->setOrientationOfPolymerisation(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ORIENTATION_OF_POLYMERISATION], $config));
-        }
-        if (isset($json[self::FIELD_REPEAT_UNIT])
-            || isset($json[self::FIELD_REPEAT_UNIT_EXT])
-            || array_key_exists(self::FIELD_REPEAT_UNIT, $json)
-            || array_key_exists(self::FIELD_REPEAT_UNIT_EXT, $json)) {
-            $value = $json[self::FIELD_REPEAT_UNIT] ?? null;
-            $type->setRepeatUnit(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REPEAT_UNIT_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
-            $type->setAmount(FHIRSubstanceAmount::jsonUnserialize($json[self::FIELD_AMOUNT], $config));
-        }
-        if (isset($json[self::FIELD_DEGREE_OF_POLYMERISATION]) || array_key_exists(self::FIELD_DEGREE_OF_POLYMERISATION, $json)) {
-            $vs = $json[self::FIELD_DEGREE_OF_POLYMERISATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->orientationOfPolymerisation) || property_exists($json, self::FIELD_ORIENTATION_OF_POLYMERISATION)) {
+            if (is_array($json->orientationOfPolymerisation)) {
+                $type->setOrientationOfPolymerisation(FHIRCodeableConcept::jsonUnserialize(reset($json->orientationOfPolymerisation), $config));
+            } else {
+                $type->setOrientationOfPolymerisation(FHIRCodeableConcept::jsonUnserialize($json->orientationOfPolymerisation, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->repeatUnit)
+            || isset($json->_repeatUnit)
+            || property_exists($json, self::FIELD_REPEAT_UNIT)
+            || property_exists($json, self::FIELD_REPEAT_UNIT_EXT)) {
+            $v = $json->_repeatUnit ?? new \stdClass();
+            $v->value = $json->repeatUnit ?? null;
+            $type->setRepeatUnit(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->amount) || property_exists($json, self::FIELD_AMOUNT)) {
+            if (is_array($json->amount)) {
+                $type->setAmount(FHIRSubstanceAmount::jsonUnserialize(reset($json->amount), $config));
+            } else {
+                $type->setAmount(FHIRSubstanceAmount::jsonUnserialize($json->amount, $config));
+            }
+        }
+        if (isset($json->degreeOfPolymerisation) || property_exists($json, self::FIELD_DEGREE_OF_POLYMERISATION)) {
+            if (is_object($json->degreeOfPolymerisation)) {
+                $vals = [$json->degreeOfPolymerisation];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_DEGREE_OF_POLYMERISATION, true);
+            } else {
+                $vals = $json->degreeOfPolymerisation;
+            }
+            foreach($vals as $v) {
                 $type->addDegreeOfPolymerisation(FHIRSubstancePolymerDegreeOfPolymerisation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STRUCTURAL_REPRESENTATION]) || array_key_exists(self::FIELD_STRUCTURAL_REPRESENTATION, $json)) {
-            $vs = $json[self::FIELD_STRUCTURAL_REPRESENTATION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->structuralRepresentation) || property_exists($json, self::FIELD_STRUCTURAL_REPRESENTATION)) {
+            if (is_object($json->structuralRepresentation)) {
+                $vals = [$json->structuralRepresentation];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_STRUCTURAL_REPRESENTATION, true);
+            } else {
+                $vals = $json->structuralRepresentation;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addStructuralRepresentation(FHIRSubstancePolymerStructuralRepresentation::jsonUnserialize($v, $config));
             }
         }
@@ -661,10 +649,18 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             $out->amount = $this->amount;
         }
         if (isset($this->degreeOfPolymerisation) && [] !== $this->degreeOfPolymerisation) {
-            $out->degreeOfPolymerisation = $this->degreeOfPolymerisation;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_DEGREE_OF_POLYMERISATION) && 1 === count($this->degreeOfPolymerisation)) {
+                $out->degreeOfPolymerisation = $this->degreeOfPolymerisation[0];
+            } else {
+                $out->degreeOfPolymerisation = $this->degreeOfPolymerisation;
+            }
         }
         if (isset($this->structuralRepresentation) && [] !== $this->structuralRepresentation) {
-            $out->structuralRepresentation = $this->structuralRepresentation;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_STRUCTURAL_REPRESENTATION) && 1 === count($this->structuralRepresentation)) {
+                $out->structuralRepresentation = $this->structuralRepresentation[0];
+            } else {
+                $out->structuralRepresentation = $this->structuralRepresentation;
+            }
         }
         return $out;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,28 +104,30 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_INVENTORY_REPORT_DOT_INVENTORY_LISTING;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_LOCATION = 'location';
     public const FIELD_ITEM_STATUS = 'itemStatus';
     public const FIELD_COUNTING_DATE_TIME = 'countingDateTime';
     public const FIELD_COUNTING_DATE_TIME_EXT = '_countingDateTime';
     public const FIELD_ITEM = 'item';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_COUNTING_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -168,7 +172,7 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
      */
     protected array $item;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRInventoryReportInventoryListing Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -207,7 +211,7 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -216,7 +220,7 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -317,11 +321,9 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
      * The date and time when the items were counted.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $countingDateTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCountingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $countingDateTime,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCountingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $countingDateTime): self
     {
         if (null === $countingDateTime) {
             unset($this->countingDateTime);
@@ -331,33 +333,6 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
             $countingDateTime = new FHIRDateTime(value: $countingDateTime);
         }
         $this->countingDateTime = $countingDateTime;
-        if ($this->_valueXMLLocations[self::FIELD_COUNTING_DATE_TIME] !== $valueXMLLocation) {
-            $this->_setCountingDateTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the countingDateTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCountingDateTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_COUNTING_DATE_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the countingDateTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCountingDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_COUNTING_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -419,7 +394,7 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -448,9 +423,11 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -466,15 +443,16 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_COUNTING_DATE_TIME])) {
             if (isset($type->countingDateTime)) {
                 $type->countingDateTime->setValue((string)$attributes[self::FIELD_COUNTING_DATE_TIME]);
-                $type->_setCountingDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCountingDateTime((string)$attributes[self::FIELD_COUNTING_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCountingDateTime((string)$attributes[self::FIELD_COUNTING_DATE_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_COUNTING_DATE_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -487,7 +465,7 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->countingDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_COUNTING_DATE_TIME]) {
-            $xw->writeAttribute(self::FIELD_COUNTING_DATE_TIME, $this->countingDateTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_COUNTING_DATE_TIME, $this->countingDateTime->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->location)) {
@@ -517,13 +495,13 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryReport\FHIRInventoryReportInventoryListing $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryReport\FHIRInventoryReportInventoryListing
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -538,28 +516,36 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_LOCATION]) || array_key_exists(self::FIELD_LOCATION, $json)) {
-            $type->setLocation(FHIRReference::jsonUnserialize($json[self::FIELD_LOCATION], $config));
-        }
-        if (isset($json[self::FIELD_ITEM_STATUS]) || array_key_exists(self::FIELD_ITEM_STATUS, $json)) {
-            $type->setItemStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ITEM_STATUS], $config));
-        }
-        if (isset($json[self::FIELD_COUNTING_DATE_TIME])
-            || isset($json[self::FIELD_COUNTING_DATE_TIME_EXT])
-            || array_key_exists(self::FIELD_COUNTING_DATE_TIME, $json)
-            || array_key_exists(self::FIELD_COUNTING_DATE_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_COUNTING_DATE_TIME] ?? null;
-            $type->setCountingDateTime(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_COUNTING_DATE_TIME_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
-            $vs = $json[self::FIELD_ITEM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->location) || property_exists($json, self::FIELD_LOCATION)) {
+            if (is_array($json->location)) {
+                $type->setLocation(FHIRReference::jsonUnserialize(reset($json->location), $config));
+            } else {
+                $type->setLocation(FHIRReference::jsonUnserialize($json->location, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->itemStatus) || property_exists($json, self::FIELD_ITEM_STATUS)) {
+            if (is_array($json->itemStatus)) {
+                $type->setItemStatus(FHIRCodeableConcept::jsonUnserialize(reset($json->itemStatus), $config));
+            } else {
+                $type->setItemStatus(FHIRCodeableConcept::jsonUnserialize($json->itemStatus, $config));
+            }
+        }
+        if (isset($json->countingDateTime)
+            || isset($json->_countingDateTime)
+            || property_exists($json, self::FIELD_COUNTING_DATE_TIME)
+            || property_exists($json, self::FIELD_COUNTING_DATE_TIME_EXT)) {
+            $v = $json->_countingDateTime ?? new \stdClass();
+            $v->value = $json->countingDateTime ?? null;
+            $type->setCountingDateTime(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
+            if (is_object($json->item)) {
+                $vals = [$json->item];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ITEM, true);
+            } else {
+                $vals = $json->item;
+            }
+            foreach($vals as $v) {
                 $type->addItem(FHIRInventoryReportItem::jsonUnserialize($v, $config));
             }
         }
@@ -589,7 +575,11 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
             }
         }
         if (isset($this->item) && [] !== $this->item) {
-            $out->item = $this->item;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ITEM) && 1 === count($this->item)) {
+                $out->item = $this->item[0];
+            } else {
+                $out->item = $this->item;
+            }
         }
         return $out;
     }

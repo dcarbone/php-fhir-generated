@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,21 +83,24 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
 
 class FHIRUnsignedIntPrimitive implements PrimitiveTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_UNSIGNED_INT_HYPHEN_PRIMITIVE;
 
-    /* class_default.php:47 */
     public const FIELD_VALUE = 'value';
 
-    /* class_default.php:66 */
+    /* class_primitive.php:60 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
@@ -105,21 +108,27 @@ class FHIRUnsignedIntPrimitive implements PrimitiveTypeInterface
         ],
     ];
 
-    /* class_default.php:111 */
+    /* class_primitive.php:80 */
     /** @var string */
     protected string $value;
 
-    /* constructor.php:49 */
+    /** @var bool */
+    private bool $_jsonAsString;
+
+    /* class_primitive.php:98 */
     /**
      * FHIRUnsignedIntPrimitive Constructor
      * @param null|string|int|float $value
+     * @param bool $jsonAsString If true forces this value to string during JSON serialization.
      */
-    public function __construct(null|string|int|float $value = null)
+    public function __construct(null|string|int|float $value = null,
+                                bool $jsonAsString = false)
     {
         $this->setValue(value: $value);
+        $this->_jsonAsString = $jsonAsString;
     }
 
-    /* class_default.php:143 */
+    /* class_primitive.php:116 */
     /**
      * @return string
      */
@@ -128,7 +137,26 @@ class FHIRUnsignedIntPrimitive implements PrimitiveTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /**
+     * Specify whether this value must be represented as a string when serializing to JSON.
+     *
+     * @param bool $jsonAsString
+     * @return self
+     */
+    public function _setJSONAsString(bool $jsonAsString): self
+    {
+        $this->_jsonAsString = $jsonAsString;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function _getJSONAsString(): bool
+    {
+        return $this->_jsonAsString;
+    }
+
     /**
      * @return null|string
      */
@@ -136,10 +164,6 @@ class FHIRUnsignedIntPrimitive implements PrimitiveTypeInterface
     {
         return $this->value ?? null;
     }
-
-    /** @var bool */
-    private bool $_commas = false;
-
     /**
      * @param null|string|int|float $value
      * @return static
@@ -148,64 +172,35 @@ class FHIRUnsignedIntPrimitive implements PrimitiveTypeInterface
     {
         if (null === $value) {
             unset($this->value);
-            $this->_commas = false;
             return $this;
         }
+        $this->_jsonAsString = is_string($value);
         if (is_float($value)) {
-            $value = intval($value);
+            $this->value = (string)intval($value);
+        } else {
+            $this->value = (string)$value;
         }
-        if (is_int($value)) {
-            if (0 > $value) {
-                throw new \OutOfBoundsException(sprintf('Value must be >= 0, %d seen.', $value));
-            }
-            $value = (string)$value;
-            $this->_commas = false;
-        } else if (is_string($value)) {
-            if ('' === $value) {
-                $value = '0';
-            }
-            if ($this->_commas = str_contains($value, ',')) {
-                $value = str_replace(',', '', $value);
-            }
-            if (!ctype_digit($value)) {
-                throw new \InvalidArgumentException(sprintf('Value must be null, positive integer, or string representation of positive integer, "%s" seen.', gettype($value)));
-            }
-        }
-        $this->value = $value;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function _getFormattedValue(): string
+    public function _getValueAsString(): string
     {
-        $v = $this->getValue();
-        if (null === $v) {
-            return '0';
-        }
-        if ($this->_commas) {
-            return strrev(wordwrap(strrev((string)$v), 3, ',', true));
-        }
-        return (string)$v;
+        return $this->value ?? '';
     }
 
-    /* class_default.php:208 */
-
-    /**
-     * @return null|string
-     */
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): int|string
     {
-        return intval($this->getValue(), 10);
+        if ($this->_jsonAsString) {
+            return $this->value ?? '';
+        }
+        return intval($this->value ?? 0);
     }
 
-    /* class_default.php:235 */
-    /**
-     * @return string
-     */
     public function __toString(): string
     {
-        return $this->_getFormattedValue();
+        return $this->_getValueAsString();
     }
 }

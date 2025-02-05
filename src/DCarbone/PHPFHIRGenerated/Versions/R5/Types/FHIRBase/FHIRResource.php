@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
@@ -106,12 +108,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
 class FHIRResource extends FHIRBase implements ResourceTypeInterface
 {
     use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait,
         SourceXMLNamespaceTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESOURCE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ID = 'id';
     public const FIELD_ID_EXT = '_id';
     public const FIELD_META = 'meta';
@@ -120,18 +124,18 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
     public const FIELD_LANGUAGE = 'language';
     public const FIELD_LANGUAGE_EXT = '_language';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_IMPLICIT_RULES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LANGUAGE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -185,7 +189,7 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
      */
     protected FHIRCode $language;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRResource Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
@@ -215,7 +219,7 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -224,7 +228,7 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -255,11 +259,9 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
      * assigned, this value never changes.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setId(null|string|FHIRIdPrimitive|FHIRId $id,
-                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setId(null|string|FHIRIdPrimitive|FHIRId $id): self
     {
         if (null === $id) {
             unset($this->id);
@@ -269,33 +271,6 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
             $id = new FHIRId(value: $id);
         }
         $this->id = $id;
-        if ($this->_valueXMLLocations[self::FIELD_ID] !== $valueXMLLocation) {
-            $this->_setIdValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the id element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIdValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ID];
-    }
-
-    /**
-     * Set the location the "value" field of the id element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIdValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ID] = $valueXMLLocation;
         return $this;
     }
 
@@ -369,11 +344,9 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
      * along with other profiles etc.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setImplicitRules(null|string|FHIRUriPrimitive|FHIRUri $implicitRules,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setImplicitRules(null|string|FHIRUriPrimitive|FHIRUri $implicitRules): self
     {
         if (null === $implicitRules) {
             unset($this->implicitRules);
@@ -383,33 +356,6 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
             $implicitRules = new FHIRUri(value: $implicitRules);
         }
         $this->implicitRules = $implicitRules;
-        if ($this->_valueXMLLocations[self::FIELD_IMPLICIT_RULES] !== $valueXMLLocation) {
-            $this->_setImplicitRulesValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the implicitRules element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getImplicitRulesValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_IMPLICIT_RULES];
-    }
-
-    /**
-     * Set the location the "value" field of the implicitRules element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setImplicitRulesValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_IMPLICIT_RULES] = $valueXMLLocation;
         return $this;
     }
 
@@ -437,11 +383,9 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
      * The base language in which the resource is written.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
         if (null === $language) {
             unset($this->language);
@@ -451,37 +395,10 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
             $language = new FHIRCode(value: $language);
         }
         $this->language = $language;
-        if ($this->_valueXMLLocations[self::FIELD_LANGUAGE] !== $valueXMLLocation) {
-            $this->_setLanguageValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the language element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLanguageValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LANGUAGE];
-    }
-
-    /**
-     * Set the location the "value" field of the language element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLanguageValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LANGUAGE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -528,26 +445,26 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -578,13 +495,13 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
             $xw->openRootNode('Resource', $this->_getSourceXMLNS());
         }
         if (isset($this->id) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ID]) {
-            $xw->writeAttribute(self::FIELD_ID, $this->id->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ID, $this->id->_getValueAsString());
         }
         if (isset($this->implicitRules) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_IMPLICIT_RULES]) {
-            $xw->writeAttribute(self::FIELD_IMPLICIT_RULES, $this->implicitRules->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_IMPLICIT_RULES, $this->implicitRules->_getValueAsString());
         }
         if (isset($this->language) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LANGUAGE]) {
-            $xw->writeAttribute(self::FIELD_LANGUAGE, $this->language->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LANGUAGE, $this->language->_getValueAsString());
         }
         if (isset($this->id)
             && (ValueXMLLocationEnum::PARENT_ATTRIBUTE !== $this->_valueXMLLocations[self::FIELD_ID]
@@ -622,13 +539,13 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -646,43 +563,39 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
 
-        if (isset($json[self::FIELD_ID])
-            || isset($json[self::FIELD_ID_EXT])
-            || array_key_exists(self::FIELD_ID, $json)
-            || array_key_exists(self::FIELD_ID_EXT, $json)) {
-            $value = $json[self::FIELD_ID] ?? null;
-            $type->setId(FHIRId::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_ID_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->id)
+            || isset($json->_id)
+            || property_exists($json, self::FIELD_ID)
+            || property_exists($json, self::FIELD_ID_EXT)) {
+            $v = $json->_id ?? new \stdClass();
+            $v->value = $json->id ?? null;
+            $type->setId(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_META]) || array_key_exists(self::FIELD_META, $json)) {
-            $type->setMeta(FHIRMeta::jsonUnserialize($json[self::FIELD_META], $config));
+        if (isset($json->meta) || property_exists($json, self::FIELD_META)) {
+            if (is_array($json->meta)) {
+                $type->setMeta(FHIRMeta::jsonUnserialize(reset($json->meta), $config));
+            } else {
+                $type->setMeta(FHIRMeta::jsonUnserialize($json->meta, $config));
+            }
         }
-        if (isset($json[self::FIELD_IMPLICIT_RULES])
-            || isset($json[self::FIELD_IMPLICIT_RULES_EXT])
-            || array_key_exists(self::FIELD_IMPLICIT_RULES, $json)
-            || array_key_exists(self::FIELD_IMPLICIT_RULES_EXT, $json)) {
-            $value = $json[self::FIELD_IMPLICIT_RULES] ?? null;
-            $type->setImplicitRules(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_IMPLICIT_RULES_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->implicitRules)
+            || isset($json->_implicitRules)
+            || property_exists($json, self::FIELD_IMPLICIT_RULES)
+            || property_exists($json, self::FIELD_IMPLICIT_RULES_EXT)) {
+            $v = $json->_implicitRules ?? new \stdClass();
+            $v->value = $json->implicitRules ?? null;
+            $type->setImplicitRules(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_LANGUAGE])
-            || isset($json[self::FIELD_LANGUAGE_EXT])
-            || array_key_exists(self::FIELD_LANGUAGE, $json)
-            || array_key_exists(self::FIELD_LANGUAGE_EXT, $json)) {
-            $value = $json[self::FIELD_LANGUAGE] ?? null;
-            $type->setLanguage(FHIRCode::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_LANGUAGE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->language)
+            || isset($json->_language)
+            || property_exists($json, self::FIELD_LANGUAGE)
+            || property_exists($json, self::FIELD_LANGUAGE_EXT)) {
+            $v = $json->_language ?? new \stdClass();
+            $v->value = $json->language ?? null;
+            $type->setLanguage(FHIRCode::jsonUnserialize($v, $config));
         }
         return $type;
     }

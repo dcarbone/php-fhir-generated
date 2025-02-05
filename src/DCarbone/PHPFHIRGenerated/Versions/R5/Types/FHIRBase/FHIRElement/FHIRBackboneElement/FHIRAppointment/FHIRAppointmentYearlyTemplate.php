@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,16 +105,18 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_APPOINTMENT_DOT_YEARLY_TEMPLATE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_YEAR_INTERVAL = 'yearInterval';
     public const FIELD_YEAR_INTERVAL_EXT = '_yearInterval';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_YEAR_INTERVAL => [
@@ -120,12 +124,12 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_YEAR_INTERVAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -137,19 +141,19 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
      */
     protected FHIRPositiveInt $yearInterval;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAppointmentYearlyTemplate Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $yearInterval
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $yearInterval
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $yearInterval = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $yearInterval = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -161,7 +165,7 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -170,7 +174,7 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -192,12 +196,10 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
      *
      * Appointment recurs every nth year.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $yearInterval
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $yearInterval
      * @return static
      */
-    public function setYearInterval(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $yearInterval,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setYearInterval(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $yearInterval): self
     {
         if (null === $yearInterval) {
             unset($this->yearInterval);
@@ -207,37 +209,10 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
             $yearInterval = new FHIRPositiveInt(value: $yearInterval);
         }
         $this->yearInterval = $yearInterval;
-        if ($this->_valueXMLLocations[self::FIELD_YEAR_INTERVAL] !== $valueXMLLocation) {
-            $this->_setYearIntervalValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the yearInterval element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getYearIntervalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_YEAR_INTERVAL];
-    }
-
-    /**
-     * Set the location the "value" field of the yearInterval element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setYearIntervalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_YEAR_INTERVAL] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -266,9 +241,11 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -278,15 +255,16 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_YEAR_INTERVAL])) {
             if (isset($type->yearInterval)) {
                 $type->yearInterval->setValue((string)$attributes[self::FIELD_YEAR_INTERVAL]);
-                $type->_setYearIntervalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setYearInterval((string)$attributes[self::FIELD_YEAR_INTERVAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setYearInterval((string)$attributes[self::FIELD_YEAR_INTERVAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_YEAR_INTERVAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -299,7 +277,7 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->yearInterval) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_YEAR_INTERVAL]) {
-            $xw->writeAttribute(self::FIELD_YEAR_INTERVAL, $this->yearInterval->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_YEAR_INTERVAL, $this->yearInterval->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->yearInterval)
@@ -312,13 +290,13 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentYearlyTemplate $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentYearlyTemplate
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -333,15 +311,13 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_YEAR_INTERVAL])
-            || isset($json[self::FIELD_YEAR_INTERVAL_EXT])
-            || array_key_exists(self::FIELD_YEAR_INTERVAL, $json)
-            || array_key_exists(self::FIELD_YEAR_INTERVAL_EXT, $json)) {
-            $value = $json[self::FIELD_YEAR_INTERVAL] ?? null;
-            $type->setYearInterval(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_YEAR_INTERVAL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->yearInterval)
+            || isset($json->_yearInterval)
+            || property_exists($json, self::FIELD_YEAR_INTERVAL)
+            || property_exists($json, self::FIELD_YEAR_INTERVAL_EXT)) {
+            $v = $json->_yearInterval ?? new \stdClass();
+            $v->value = $json->yearInterval ?? null;
+            $type->setYearInterval(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
         return $type;
     }

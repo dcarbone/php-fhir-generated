@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,9 +62,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,12 +89,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRDeviceUdiCarrier extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_DOT_UDI_CARRIER;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DEVICE_IDENTIFIER = 'deviceIdentifier';
     public const FIELD_DEVICE_IDENTIFIER_EXT = '_deviceIdentifier';
     public const FIELD_ISSUER = 'issuer';
@@ -106,11 +110,11 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     public const FIELD_ENTRY_TYPE = 'entryType';
     public const FIELD_ENTRY_TYPE_EXT = '_entryType';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DEVICE_IDENTIFIER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ISSUER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -120,7 +124,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
         self::FIELD_ENTRY_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -194,7 +198,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      */
     protected FHIRUDIEntryType $entryType;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDeviceUdiCarrier Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -243,7 +247,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -252,7 +256,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -277,11 +281,9 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * identifies the labeler and the specific version or model of a device.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $deviceIdentifier
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDeviceIdentifier(null|string|FHIRStringPrimitive|FHIRString $deviceIdentifier,
-                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDeviceIdentifier(null|string|FHIRStringPrimitive|FHIRString $deviceIdentifier): self
     {
         if (null === $deviceIdentifier) {
             unset($this->deviceIdentifier);
@@ -291,33 +293,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
             $deviceIdentifier = new FHIRString(value: $deviceIdentifier);
         }
         $this->deviceIdentifier = $deviceIdentifier;
-        if ($this->_valueXMLLocations[self::FIELD_DEVICE_IDENTIFIER] !== $valueXMLLocation) {
-            $this->_setDeviceIdentifierValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the deviceIdentifier element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDeviceIdentifierValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DEVICE_IDENTIFIER];
-    }
-
-    /**
-     * Set the location the "value" field of the deviceIdentifier element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDeviceIdentifierValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DEVICE_IDENTIFIER] = $valueXMLLocation;
         return $this;
     }
 
@@ -351,11 +326,9 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $issuer
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIssuer(null|string|FHIRUriPrimitive|FHIRUri $issuer,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setIssuer(null|string|FHIRUriPrimitive|FHIRUri $issuer): self
     {
         if (null === $issuer) {
             unset($this->issuer);
@@ -365,33 +338,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
             $issuer = new FHIRUri(value: $issuer);
         }
         $this->issuer = $issuer;
-        if ($this->_valueXMLLocations[self::FIELD_ISSUER] !== $valueXMLLocation) {
-            $this->_setIssuerValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the issuer element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getIssuerValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ISSUER];
-    }
-
-    /**
-     * Set the location the "value" field of the issuer element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setIssuerValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ISSUER] = $valueXMLLocation;
         return $this;
     }
 
@@ -423,11 +369,9 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $jurisdiction
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $jurisdiction,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $jurisdiction): self
     {
         if (null === $jurisdiction) {
             unset($this->jurisdiction);
@@ -437,33 +381,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
             $jurisdiction = new FHIRUri(value: $jurisdiction);
         }
         $this->jurisdiction = $jurisdiction;
-        if ($this->_valueXMLLocations[self::FIELD_JURISDICTION] !== $valueXMLLocation) {
-            $this->_setJurisdictionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the jurisdiction element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getJurisdictionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_JURISDICTION];
-    }
-
-    /**
-     * Set the location the "value" field of the jurisdiction element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setJurisdictionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_JURISDICTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -497,11 +414,9 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * base64 encoded.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBase64Binary $carrierAIDC
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCarrierAIDC(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $carrierAIDC,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCarrierAIDC(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $carrierAIDC): self
     {
         if (null === $carrierAIDC) {
             unset($this->carrierAIDC);
@@ -511,33 +426,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
             $carrierAIDC = new FHIRBase64Binary(value: $carrierAIDC);
         }
         $this->carrierAIDC = $carrierAIDC;
-        if ($this->_valueXMLLocations[self::FIELD_CARRIER_AIDC] !== $valueXMLLocation) {
-            $this->_setCarrierAIDCValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the carrierAIDC element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCarrierAIDCValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CARRIER_AIDC];
-    }
-
-    /**
-     * Set the location the "value" field of the carrierAIDC element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCarrierAIDCValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CARRIER_AIDC] = $valueXMLLocation;
         return $this;
     }
 
@@ -565,11 +453,9 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * barcode string as printed on the packaging of the device.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $carrierHRF
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCarrierHRF(null|string|FHIRStringPrimitive|FHIRString $carrierHRF,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setCarrierHRF(null|string|FHIRStringPrimitive|FHIRString $carrierHRF): self
     {
         if (null === $carrierHRF) {
             unset($this->carrierHRF);
@@ -579,33 +465,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
             $carrierHRF = new FHIRString(value: $carrierHRF);
         }
         $this->carrierHRF = $carrierHRF;
-        if ($this->_valueXMLLocations[self::FIELD_CARRIER_HRF] !== $valueXMLLocation) {
-            $this->_setCarrierHRFValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the carrierHRF element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getCarrierHRFValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_CARRIER_HRF];
-    }
-
-    /**
-     * Set the location the "value" field of the carrierHRF element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setCarrierHRFValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_CARRIER_HRF] = $valueXMLLocation;
         return $this;
     }
 
@@ -629,11 +488,9 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * A coded entry to indicate how the data was entered.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRUDIEntryTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUDIEntryType $entryType
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEntryType(null|string|FHIRUDIEntryTypeList|FHIRUDIEntryType $entryType,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setEntryType(null|string|FHIRUDIEntryTypeList|FHIRUDIEntryType $entryType): self
     {
         if (null === $entryType) {
             unset($this->entryType);
@@ -643,37 +500,10 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
             $entryType = new FHIRUDIEntryType(value: $entryType);
         }
         $this->entryType = $entryType;
-        if ($this->_valueXMLLocations[self::FIELD_ENTRY_TYPE] !== $valueXMLLocation) {
-            $this->_setEntryTypeValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the entryType element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getEntryTypeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ENTRY_TYPE];
-    }
-
-    /**
-     * Set the location the "value" field of the entryType element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setEntryTypeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ENTRY_TYPE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -702,9 +532,11 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -724,55 +556,56 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DEVICE_IDENTIFIER])) {
             if (isset($type->deviceIdentifier)) {
                 $type->deviceIdentifier->setValue((string)$attributes[self::FIELD_DEVICE_IDENTIFIER]);
-                $type->_setDeviceIdentifierValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDeviceIdentifier((string)$attributes[self::FIELD_DEVICE_IDENTIFIER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDeviceIdentifier((string)$attributes[self::FIELD_DEVICE_IDENTIFIER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DEVICE_IDENTIFIER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ISSUER])) {
             if (isset($type->issuer)) {
                 $type->issuer->setValue((string)$attributes[self::FIELD_ISSUER]);
-                $type->_setIssuerValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setIssuer((string)$attributes[self::FIELD_ISSUER], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setIssuer((string)$attributes[self::FIELD_ISSUER]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ISSUER, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_JURISDICTION])) {
             if (isset($type->jurisdiction)) {
                 $type->jurisdiction->setValue((string)$attributes[self::FIELD_JURISDICTION]);
-                $type->_setJurisdictionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setJurisdiction((string)$attributes[self::FIELD_JURISDICTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setJurisdiction((string)$attributes[self::FIELD_JURISDICTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_JURISDICTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CARRIER_AIDC])) {
             if (isset($type->carrierAIDC)) {
                 $type->carrierAIDC->setValue((string)$attributes[self::FIELD_CARRIER_AIDC]);
-                $type->_setCarrierAIDCValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCarrierAIDC((string)$attributes[self::FIELD_CARRIER_AIDC], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCarrierAIDC((string)$attributes[self::FIELD_CARRIER_AIDC]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CARRIER_AIDC, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_CARRIER_HRF])) {
             if (isset($type->carrierHRF)) {
                 $type->carrierHRF->setValue((string)$attributes[self::FIELD_CARRIER_HRF]);
-                $type->_setCarrierHRFValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setCarrierHRF((string)$attributes[self::FIELD_CARRIER_HRF], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setCarrierHRF((string)$attributes[self::FIELD_CARRIER_HRF]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_CARRIER_HRF, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ENTRY_TYPE])) {
             if (isset($type->entryType)) {
                 $type->entryType->setValue((string)$attributes[self::FIELD_ENTRY_TYPE]);
-                $type->_setEntryTypeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setEntryType((string)$attributes[self::FIELD_ENTRY_TYPE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setEntryType((string)$attributes[self::FIELD_ENTRY_TYPE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ENTRY_TYPE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -785,22 +618,22 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->deviceIdentifier) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DEVICE_IDENTIFIER]) {
-            $xw->writeAttribute(self::FIELD_DEVICE_IDENTIFIER, $this->deviceIdentifier->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DEVICE_IDENTIFIER, $this->deviceIdentifier->_getValueAsString());
         }
         if (isset($this->issuer) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ISSUER]) {
-            $xw->writeAttribute(self::FIELD_ISSUER, $this->issuer->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ISSUER, $this->issuer->_getValueAsString());
         }
         if (isset($this->jurisdiction) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_JURISDICTION]) {
-            $xw->writeAttribute(self::FIELD_JURISDICTION, $this->jurisdiction->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_JURISDICTION, $this->jurisdiction->_getValueAsString());
         }
         if (isset($this->carrierAIDC) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CARRIER_AIDC]) {
-            $xw->writeAttribute(self::FIELD_CARRIER_AIDC, $this->carrierAIDC->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CARRIER_AIDC, $this->carrierAIDC->_getValueAsString());
         }
         if (isset($this->carrierHRF) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_CARRIER_HRF]) {
-            $xw->writeAttribute(self::FIELD_CARRIER_HRF, $this->carrierHRF->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_CARRIER_HRF, $this->carrierHRF->_getValueAsString());
         }
         if (isset($this->entryType) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ENTRY_TYPE]) {
-            $xw->writeAttribute(self::FIELD_ENTRY_TYPE, $this->entryType->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ENTRY_TYPE, $this->entryType->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->deviceIdentifier)
@@ -848,13 +681,13 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -869,65 +702,53 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DEVICE_IDENTIFIER])
-            || isset($json[self::FIELD_DEVICE_IDENTIFIER_EXT])
-            || array_key_exists(self::FIELD_DEVICE_IDENTIFIER, $json)
-            || array_key_exists(self::FIELD_DEVICE_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_DEVICE_IDENTIFIER] ?? null;
-            $type->setDeviceIdentifier(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DEVICE_IDENTIFIER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->deviceIdentifier)
+            || isset($json->_deviceIdentifier)
+            || property_exists($json, self::FIELD_DEVICE_IDENTIFIER)
+            || property_exists($json, self::FIELD_DEVICE_IDENTIFIER_EXT)) {
+            $v = $json->_deviceIdentifier ?? new \stdClass();
+            $v->value = $json->deviceIdentifier ?? null;
+            $type->setDeviceIdentifier(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ISSUER])
-            || isset($json[self::FIELD_ISSUER_EXT])
-            || array_key_exists(self::FIELD_ISSUER, $json)
-            || array_key_exists(self::FIELD_ISSUER_EXT, $json)) {
-            $value = $json[self::FIELD_ISSUER] ?? null;
-            $type->setIssuer(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ISSUER_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->issuer)
+            || isset($json->_issuer)
+            || property_exists($json, self::FIELD_ISSUER)
+            || property_exists($json, self::FIELD_ISSUER_EXT)) {
+            $v = $json->_issuer ?? new \stdClass();
+            $v->value = $json->issuer ?? null;
+            $type->setIssuer(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_JURISDICTION])
-            || isset($json[self::FIELD_JURISDICTION_EXT])
-            || array_key_exists(self::FIELD_JURISDICTION, $json)
-            || array_key_exists(self::FIELD_JURISDICTION_EXT, $json)) {
-            $value = $json[self::FIELD_JURISDICTION] ?? null;
-            $type->setJurisdiction(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_JURISDICTION_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->jurisdiction)
+            || isset($json->_jurisdiction)
+            || property_exists($json, self::FIELD_JURISDICTION)
+            || property_exists($json, self::FIELD_JURISDICTION_EXT)) {
+            $v = $json->_jurisdiction ?? new \stdClass();
+            $v->value = $json->jurisdiction ?? null;
+            $type->setJurisdiction(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CARRIER_AIDC])
-            || isset($json[self::FIELD_CARRIER_AIDC_EXT])
-            || array_key_exists(self::FIELD_CARRIER_AIDC, $json)
-            || array_key_exists(self::FIELD_CARRIER_AIDC_EXT, $json)) {
-            $value = $json[self::FIELD_CARRIER_AIDC] ?? null;
-            $type->setCarrierAIDC(FHIRBase64Binary::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBase64Binary::FIELD_VALUE => $value]) + ($json[self::FIELD_CARRIER_AIDC_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->carrierAIDC)
+            || isset($json->_carrierAIDC)
+            || property_exists($json, self::FIELD_CARRIER_AIDC)
+            || property_exists($json, self::FIELD_CARRIER_AIDC_EXT)) {
+            $v = $json->_carrierAIDC ?? new \stdClass();
+            $v->value = $json->carrierAIDC ?? null;
+            $type->setCarrierAIDC(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_CARRIER_HRF])
-            || isset($json[self::FIELD_CARRIER_HRF_EXT])
-            || array_key_exists(self::FIELD_CARRIER_HRF, $json)
-            || array_key_exists(self::FIELD_CARRIER_HRF_EXT, $json)) {
-            $value = $json[self::FIELD_CARRIER_HRF] ?? null;
-            $type->setCarrierHRF(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CARRIER_HRF_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->carrierHRF)
+            || isset($json->_carrierHRF)
+            || property_exists($json, self::FIELD_CARRIER_HRF)
+            || property_exists($json, self::FIELD_CARRIER_HRF_EXT)) {
+            $v = $json->_carrierHRF ?? new \stdClass();
+            $v->value = $json->carrierHRF ?? null;
+            $type->setCarrierHRF(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_ENTRY_TYPE])
-            || isset($json[self::FIELD_ENTRY_TYPE_EXT])
-            || array_key_exists(self::FIELD_ENTRY_TYPE, $json)
-            || array_key_exists(self::FIELD_ENTRY_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_ENTRY_TYPE] ?? null;
-            $type->setEntryType(FHIRUDIEntryType::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUDIEntryType::FIELD_VALUE => $value]) + ($json[self::FIELD_ENTRY_TYPE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->entryType)
+            || isset($json->_entryType)
+            || property_exists($json, self::FIELD_ENTRY_TYPE)
+            || property_exists($json, self::FIELD_ENTRY_TYPE_EXT)) {
+            $v = $json->_entryType ?? new \stdClass();
+            $v->value = $json->entryType ?? null;
+            $type->setEntryType(FHIRUDIEntryType::jsonUnserialize($v, $config));
         }
         return $type;
     }

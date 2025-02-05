@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -101,26 +103,28 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRPermissionData extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PERMISSION_DOT_DATA;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_RESOURCE = 'resource';
     public const FIELD_SECURITY = 'security';
     public const FIELD_PERIOD = 'period';
     public const FIELD_EXPRESSION = 'expression';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * Permission resource holds access rules for a given data and context.
      *
@@ -164,7 +168,7 @@ class FHIRPermissionData extends FHIRBackboneElement
      */
     protected FHIRExpression $expression;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRPermissionData Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -203,7 +207,7 @@ class FHIRPermissionData extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -212,7 +216,7 @@ class FHIRPermissionData extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * Permission resource holds access rules for a given data and context.
      *
@@ -443,7 +447,7 @@ class FHIRPermissionData extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -472,9 +476,11 @@ class FHIRPermissionData extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -490,7 +496,8 @@ class FHIRPermissionData extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -532,13 +539,13 @@ class FHIRPermissionData extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionData $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionData
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -553,35 +560,45 @@ class FHIRPermissionData extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_RESOURCE]) || array_key_exists(self::FIELD_RESOURCE, $json)) {
-            $vs = $json[self::FIELD_RESOURCE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->resource) || property_exists($json, self::FIELD_RESOURCE)) {
+            if (is_object($json->resource)) {
+                $vals = [$json->resource];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RESOURCE, true);
+            } else {
+                $vals = $json->resource;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addResource(FHIRPermissionResource::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SECURITY]) || array_key_exists(self::FIELD_SECURITY, $json)) {
-            $vs = $json[self::FIELD_SECURITY];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->security) || property_exists($json, self::FIELD_SECURITY)) {
+            if (is_object($json->security)) {
+                $vals = [$json->security];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_SECURITY, true);
+            } else {
+                $vals = $json->security;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addSecurity(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $vs = $json[self::FIELD_PERIOD];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
+            if (is_object($json->period)) {
+                $vals = [$json->period];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PERIOD, true);
+            } else {
+                $vals = $json->period;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addPeriod(FHIRPeriod::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_EXPRESSION]) || array_key_exists(self::FIELD_EXPRESSION, $json)) {
-            $type->setExpression(FHIRExpression::jsonUnserialize($json[self::FIELD_EXPRESSION], $config));
+        if (isset($json->expression) || property_exists($json, self::FIELD_EXPRESSION)) {
+            if (is_array($json->expression)) {
+                $type->setExpression(FHIRExpression::jsonUnserialize(reset($json->expression), $config));
+            } else {
+                $type->setExpression(FHIRExpression::jsonUnserialize($json->expression, $config));
+            }
         }
         return $type;
     }
@@ -593,13 +610,25 @@ class FHIRPermissionData extends FHIRBackboneElement
     {
         $out = parent::jsonSerialize();
         if (isset($this->resource) && [] !== $this->resource) {
-            $out->resource = $this->resource;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RESOURCE) && 1 === count($this->resource)) {
+                $out->resource = $this->resource[0];
+            } else {
+                $out->resource = $this->resource;
+            }
         }
         if (isset($this->security) && [] !== $this->security) {
-            $out->security = $this->security;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_SECURITY) && 1 === count($this->security)) {
+                $out->security = $this->security[0];
+            } else {
+                $out->security = $this->security;
+            }
         }
         if (isset($this->period) && [] !== $this->period) {
-            $out->period = $this->period;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PERIOD) && 1 === count($this->period)) {
+                $out->period = $this->period[0];
+            } else {
+                $out->period = $this->period;
+            }
         }
         if (isset($this->expression)) {
             $out->expression = $this->expression;

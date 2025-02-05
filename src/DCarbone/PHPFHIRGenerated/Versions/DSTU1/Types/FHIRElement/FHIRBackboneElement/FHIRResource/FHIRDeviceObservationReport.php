@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,12 +89,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypeMap;
  */
 class FHIRDeviceObservationReport extends FHIRResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_OBSERVATION_REPORT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_INSTANT = 'instant';
     public const FIELD_INSTANT_EXT = '_instant';
     public const FIELD_IDENTIFIER = 'identifier';
@@ -100,7 +104,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
     public const FIELD_SUBJECT = 'subject';
     public const FIELD_VIRTUAL_DEVICE = 'virtualDevice';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_INSTANT => [
@@ -111,12 +115,12 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_INSTANT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An instant in time - known at least to the second
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -166,7 +170,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
      */
     protected array $virtualDevice;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRDeviceObservationReport Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
@@ -219,7 +223,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -228,7 +232,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -237,7 +241,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An instant in time - known at least to the second
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -258,11 +262,9 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
      * The point in time that the values are reported.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant $instant
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $instant,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $instant): self
     {
         if (null === $instant) {
             unset($this->instant);
@@ -272,33 +274,6 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
             $instant = new FHIRInstant(value: $instant);
         }
         $this->instant = $instant;
-        if ($this->_valueXMLLocations[self::FIELD_INSTANT] !== $valueXMLLocation) {
-            $this->_setInstantValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the instant element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getInstantValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_INSTANT];
-    }
-
-    /**
-     * Set the location the "value" field of the instant element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setInstantValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_INSTANT] = $valueXMLLocation;
         return $this;
     }
 
@@ -464,7 +439,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -502,9 +477,11 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -532,23 +509,24 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_INSTANT])) {
             if (isset($type->instant)) {
                 $type->instant->setValue((string)$attributes[self::FIELD_INSTANT]);
-                $type->_setInstantValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setInstant((string)$attributes[self::FIELD_INSTANT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setInstant((string)$attributes[self::FIELD_INSTANT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_INSTANT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -579,7 +557,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
             $xw->openRootNode('DeviceObservationReport', $this->_getSourceXMLNS());
         }
         if (isset($this->instant) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_INSTANT]) {
-            $xw->writeAttribute(self::FIELD_INSTANT, $this->instant->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_INSTANT, $this->instant->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->instant)
@@ -621,13 +599,13 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -645,36 +623,46 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_INSTANT])
-            || isset($json[self::FIELD_INSTANT_EXT])
-            || array_key_exists(self::FIELD_INSTANT, $json)
-            || array_key_exists(self::FIELD_INSTANT_EXT, $json)) {
-            $value = $json[self::FIELD_INSTANT] ?? null;
-            $type->setInstant(FHIRInstant::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_INSTANT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->instant)
+            || isset($json->_instant)
+            || property_exists($json, self::FIELD_INSTANT)
+            || property_exists($json, self::FIELD_INSTANT_EXT)) {
+            $v = $json->_instant ?? new \stdClass();
+            $v->value = $json->instant ?? null;
+            $type->setInstant(FHIRInstant::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json[self::FIELD_IDENTIFIER], $config));
-        }
-        if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $type->setSource(FHIRResourceReference::jsonUnserialize($json[self::FIELD_SOURCE], $config));
-        }
-        if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRResourceReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
-        }
-        if (isset($json[self::FIELD_VIRTUAL_DEVICE]) || array_key_exists(self::FIELD_VIRTUAL_DEVICE, $json)) {
-            $vs = $json[self::FIELD_VIRTUAL_DEVICE];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
+            if (is_array($json->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+            } else {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
+            if (is_array($json->source)) {
+                $type->setSource(FHIRResourceReference::jsonUnserialize(reset($json->source), $config));
+            } else {
+                $type->setSource(FHIRResourceReference::jsonUnserialize($json->source, $config));
+            }
+        }
+        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
+            if (is_array($json->subject)) {
+                $type->setSubject(FHIRResourceReference::jsonUnserialize(reset($json->subject), $config));
+            } else {
+                $type->setSubject(FHIRResourceReference::jsonUnserialize($json->subject, $config));
+            }
+        }
+        if (isset($json->virtualDevice) || property_exists($json, self::FIELD_VIRTUAL_DEVICE)) {
+            if (is_object($json->virtualDevice)) {
+                $vals = [$json->virtualDevice];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_VIRTUAL_DEVICE, true);
+            } else {
+                $vals = $json->virtualDevice;
+            }
+            foreach($vals as $v) {
                 $type->addVirtualDevice(FHIRDeviceObservationReportVirtualDevice::jsonUnserialize($v, $config));
             }
         }
@@ -707,7 +695,11 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
             $out->subject = $this->subject;
         }
         if (isset($this->virtualDevice) && [] !== $this->virtualDevice) {
-            $out->virtualDevice = $this->virtualDevice;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_VIRTUAL_DEVICE) && 1 === count($this->virtualDevice)) {
+                $out->virtualDevice = $this->virtualDevice[0];
+            } else {
+                $out->virtualDevice = $this->virtualDevice;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

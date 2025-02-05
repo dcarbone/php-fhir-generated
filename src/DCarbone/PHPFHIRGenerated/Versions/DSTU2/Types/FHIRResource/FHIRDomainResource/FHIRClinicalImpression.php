@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -108,12 +110,14 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionTypeMap;
  */
 class FHIRClinicalImpression extends FHIRDomainResource implements VersionContainedTypeInterface
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLINICAL_IMPRESSION;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_PATIENT = 'patient';
     public const FIELD_ASSESSOR = 'assessor';
     public const FIELD_STATUS = 'status';
@@ -139,7 +143,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
     public const FIELD_PLAN = 'plan';
     public const FIELD_ACTION = 'action';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PATIENT => [
@@ -150,7 +154,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -160,7 +164,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
         self::FIELD_PROGNOSIS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -371,7 +375,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      */
     protected array $action;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRClinicalImpression Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
@@ -495,7 +499,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -504,7 +508,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:155 */
+    /* class_default.php:158 */
     /**
      * @return string
      */
@@ -513,7 +517,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -602,11 +606,9 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Identifies the workflow status of the assessment.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRClinicalImpressionStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRClinicalImpressionStatus $status
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|string|FHIRClinicalImpressionStatusList|FHIRClinicalImpressionStatus $status,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStatus(null|string|FHIRClinicalImpressionStatusList|FHIRClinicalImpressionStatus $status): self
     {
         if (null === $status) {
             unset($this->status);
@@ -616,33 +618,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             $status = new FHIRClinicalImpressionStatus(value: $status);
         }
         $this->status = $status;
-        if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
-            $this->_setStatusValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the status element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStatusValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_STATUS];
-    }
-
-    /**
-     * Set the location the "value" field of the status element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStatusValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_STATUS] = $valueXMLLocation;
         return $this;
     }
 
@@ -676,11 +651,9 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * recorded).
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
         if (null === $date) {
             unset($this->date);
@@ -690,33 +663,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             $date = new FHIRDateTime(value: $date);
         }
         $this->date = $date;
-        if ($this->_valueXMLLocations[self::FIELD_DATE] !== $valueXMLLocation) {
-            $this->_setDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the date element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the date element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -744,11 +690,9 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * peformed, and what patient events/sstatus prompted it.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
         if (null === $description) {
             unset($this->description);
@@ -758,33 +702,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             $description = new FHIRString(value: $description);
         }
         $this->description = $description;
-        if ($this->_valueXMLLocations[self::FIELD_DESCRIPTION] !== $valueXMLLocation) {
-            $this->_setDescriptionValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the description element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDescriptionValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DESCRIPTION];
-    }
-
-    /**
-     * Set the location the "value" field of the description element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDescriptionValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DESCRIPTION] = $valueXMLLocation;
         return $this;
     }
 
@@ -1078,11 +995,9 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * this assessment, and/or that provides evidence in support of the diagnosis.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $protocol
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setProtocol(null|string|FHIRUriPrimitive|FHIRUri $protocol,
-                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setProtocol(null|string|FHIRUriPrimitive|FHIRUri $protocol): self
     {
         if (null === $protocol) {
             unset($this->protocol);
@@ -1092,33 +1007,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             $protocol = new FHIRUri(value: $protocol);
         }
         $this->protocol = $protocol;
-        if ($this->_valueXMLLocations[self::FIELD_PROTOCOL] !== $valueXMLLocation) {
-            $this->_setProtocolValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the protocol element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getProtocolValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PROTOCOL];
-    }
-
-    /**
-     * Set the location the "value" field of the protocol element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setProtocolValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PROTOCOL] = $valueXMLLocation;
         return $this;
     }
 
@@ -1144,11 +1032,9 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * A text summary of the investigations and the diagnosis.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $summary
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSummary(null|string|FHIRStringPrimitive|FHIRString $summary,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setSummary(null|string|FHIRStringPrimitive|FHIRString $summary): self
     {
         if (null === $summary) {
             unset($this->summary);
@@ -1158,33 +1044,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             $summary = new FHIRString(value: $summary);
         }
         $this->summary = $summary;
-        if ($this->_valueXMLLocations[self::FIELD_SUMMARY] !== $valueXMLLocation) {
-            $this->_setSummaryValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the summary element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getSummaryValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_SUMMARY];
-    }
-
-    /**
-     * Set the location the "value" field of the summary element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setSummaryValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_SUMMARY] = $valueXMLLocation;
         return $this;
     }
 
@@ -1432,11 +1291,9 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Estimate of likely outcome.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $prognosis
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPrognosis(null|string|FHIRStringPrimitive|FHIRString $prognosis,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setPrognosis(null|string|FHIRStringPrimitive|FHIRString $prognosis): self
     {
         if (null === $prognosis) {
             unset($this->prognosis);
@@ -1446,33 +1303,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             $prognosis = new FHIRString(value: $prognosis);
         }
         $this->prognosis = $prognosis;
-        if ($this->_valueXMLLocations[self::FIELD_PROGNOSIS] !== $valueXMLLocation) {
-            $this->_setPrognosisValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the prognosis element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getPrognosisValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_PROGNOSIS];
-    }
-
-    /**
-     * Set the location the "value" field of the prognosis element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setPrognosisValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_PROGNOSIS] = $valueXMLLocation;
         return $this;
     }
 
@@ -1604,7 +1434,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1699,74 +1529,74 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
         if (isset($attributes[self::FIELD_ID])) {
             if (isset($type->id)) {
                 $type->id->setValue((string)$attributes[self::FIELD_ID]);
-                $type->_setIdValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setId((string)$attributes[self::FIELD_ID]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             if (isset($type->implicitRules)) {
                 $type->implicitRules->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $type->_setImplicitRulesValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_IMPLICIT_RULES, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             if (isset($type->language)) {
                 $type->language->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $type->_setLanguageValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LANGUAGE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_STATUS])) {
             if (isset($type->status)) {
                 $type->status->setValue((string)$attributes[self::FIELD_STATUS]);
-                $type->_setStatusValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStatus((string)$attributes[self::FIELD_STATUS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStatus((string)$attributes[self::FIELD_STATUS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_STATUS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DATE])) {
             if (isset($type->date)) {
                 $type->date->setValue((string)$attributes[self::FIELD_DATE]);
-                $type->_setDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDate((string)$attributes[self::FIELD_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDate((string)$attributes[self::FIELD_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             if (isset($type->description)) {
                 $type->description->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $type->_setDescriptionValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DESCRIPTION, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PROTOCOL])) {
             if (isset($type->protocol)) {
                 $type->protocol->setValue((string)$attributes[self::FIELD_PROTOCOL]);
-                $type->_setProtocolValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setProtocol((string)$attributes[self::FIELD_PROTOCOL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setProtocol((string)$attributes[self::FIELD_PROTOCOL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PROTOCOL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_SUMMARY])) {
             if (isset($type->summary)) {
                 $type->summary->setValue((string)$attributes[self::FIELD_SUMMARY]);
-                $type->_setSummaryValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setSummary((string)$attributes[self::FIELD_SUMMARY], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setSummary((string)$attributes[self::FIELD_SUMMARY]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_SUMMARY, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_PROGNOSIS])) {
             if (isset($type->prognosis)) {
                 $type->prognosis->setValue((string)$attributes[self::FIELD_PROGNOSIS]);
-                $type->_setPrognosisValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setPrognosis((string)$attributes[self::FIELD_PROGNOSIS], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setPrognosis((string)$attributes[self::FIELD_PROGNOSIS]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_PROGNOSIS, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -1797,22 +1627,22 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             $xw->openRootNode('ClinicalImpression', $this->_getSourceXMLNS());
         }
         if (isset($this->status) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_STATUS]) {
-            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_STATUS, $this->status->_getValueAsString());
         }
         if (isset($this->date) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DATE]) {
-            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DATE, $this->date->_getValueAsString());
         }
         if (isset($this->description) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DESCRIPTION]) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->_getValueAsString());
         }
         if (isset($this->protocol) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PROTOCOL]) {
-            $xw->writeAttribute(self::FIELD_PROTOCOL, $this->protocol->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PROTOCOL, $this->protocol->_getValueAsString());
         }
         if (isset($this->summary) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_SUMMARY]) {
-            $xw->writeAttribute(self::FIELD_SUMMARY, $this->summary->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_SUMMARY, $this->summary->_getValueAsString());
         }
         if (isset($this->prognosis) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_PROGNOSIS]) {
-            $xw->writeAttribute(self::FIELD_PROGNOSIS, $this->prognosis->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_PROGNOSIS, $this->prognosis->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->patient)) {
@@ -1941,13 +1771,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass|array $json
+     * @param string|\stdClass $json
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRClinicalImpression $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass|array $json,
+    public static function jsonUnserialize(string|\stdClass $json,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1965,146 +1795,166 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
+            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_PATIENT]) || array_key_exists(self::FIELD_PATIENT, $json)) {
-            $type->setPatient(FHIRReference::jsonUnserialize($json[self::FIELD_PATIENT], $config));
-        }
-        if (isset($json[self::FIELD_ASSESSOR]) || array_key_exists(self::FIELD_ASSESSOR, $json)) {
-            $type->setAssessor(FHIRReference::jsonUnserialize($json[self::FIELD_ASSESSOR], $config));
-        }
-        if (isset($json[self::FIELD_STATUS])
-            || isset($json[self::FIELD_STATUS_EXT])
-            || array_key_exists(self::FIELD_STATUS, $json)
-            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
-            $value = $json[self::FIELD_STATUS] ?? null;
-            $type->setStatus(FHIRClinicalImpressionStatus::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRClinicalImpressionStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DATE])
-            || isset($json[self::FIELD_DATE_EXT])
-            || array_key_exists(self::FIELD_DATE, $json)
-            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_DATE] ?? null;
-            $type->setDate(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_DESCRIPTION])
-            || isset($json[self::FIELD_DESCRIPTION_EXT])
-            || array_key_exists(self::FIELD_DESCRIPTION, $json)
-            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
-            $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $type->setDescription(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
-                $config,
-            ));
-        }
-        if (isset($json[self::FIELD_PREVIOUS]) || array_key_exists(self::FIELD_PREVIOUS, $json)) {
-            $type->setPrevious(FHIRReference::jsonUnserialize($json[self::FIELD_PREVIOUS], $config));
-        }
-        if (isset($json[self::FIELD_PROBLEM]) || array_key_exists(self::FIELD_PROBLEM, $json)) {
-            $vs = $json[self::FIELD_PROBLEM];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->patient) || property_exists($json, self::FIELD_PATIENT)) {
+            if (is_array($json->patient)) {
+                $type->setPatient(FHIRReference::jsonUnserialize(reset($json->patient), $config));
+            } else {
+                $type->setPatient(FHIRReference::jsonUnserialize($json->patient, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->assessor) || property_exists($json, self::FIELD_ASSESSOR)) {
+            if (is_array($json->assessor)) {
+                $type->setAssessor(FHIRReference::jsonUnserialize(reset($json->assessor), $config));
+            } else {
+                $type->setAssessor(FHIRReference::jsonUnserialize($json->assessor, $config));
+            }
+        }
+        if (isset($json->status)
+            || isset($json->_status)
+            || property_exists($json, self::FIELD_STATUS)
+            || property_exists($json, self::FIELD_STATUS_EXT)) {
+            $v = $json->_status ?? new \stdClass();
+            $v->value = $json->status ?? null;
+            $type->setStatus(FHIRClinicalImpressionStatus::jsonUnserialize($v, $config));
+        }
+        if (isset($json->date)
+            || isset($json->_date)
+            || property_exists($json, self::FIELD_DATE)
+            || property_exists($json, self::FIELD_DATE_EXT)) {
+            $v = $json->_date ?? new \stdClass();
+            $v->value = $json->date ?? null;
+            $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
+        }
+        if (isset($json->description)
+            || isset($json->_description)
+            || property_exists($json, self::FIELD_DESCRIPTION)
+            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $json->_description ?? new \stdClass();
+            $v->value = $json->description ?? null;
+            $type->setDescription(FHIRString::jsonUnserialize($v, $config));
+        }
+        if (isset($json->previous) || property_exists($json, self::FIELD_PREVIOUS)) {
+            if (is_array($json->previous)) {
+                $type->setPrevious(FHIRReference::jsonUnserialize(reset($json->previous), $config));
+            } else {
+                $type->setPrevious(FHIRReference::jsonUnserialize($json->previous, $config));
+            }
+        }
+        if (isset($json->problem) || property_exists($json, self::FIELD_PROBLEM)) {
+            if (is_object($json->problem)) {
+                $vals = [$json->problem];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PROBLEM, true);
+            } else {
+                $vals = $json->problem;
+            }
+            foreach($vals as $v) {
                 $type->addProblem(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TRIGGER_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_TRIGGER_CODEABLE_CONCEPT, $json)) {
-            $type->setTriggerCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TRIGGER_CODEABLE_CONCEPT], $config));
-        }
-        if (isset($json[self::FIELD_TRIGGER_REFERENCE]) || array_key_exists(self::FIELD_TRIGGER_REFERENCE, $json)) {
-            $type->setTriggerReference(FHIRReference::jsonUnserialize($json[self::FIELD_TRIGGER_REFERENCE], $config));
-        }
-        if (isset($json[self::FIELD_INVESTIGATIONS]) || array_key_exists(self::FIELD_INVESTIGATIONS, $json)) {
-            $vs = $json[self::FIELD_INVESTIGATIONS];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->triggerCodeableConcept) || property_exists($json, self::FIELD_TRIGGER_CODEABLE_CONCEPT)) {
+            if (is_array($json->triggerCodeableConcept)) {
+                $type->setTriggerCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->triggerCodeableConcept), $config));
+            } else {
+                $type->setTriggerCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->triggerCodeableConcept, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->triggerReference) || property_exists($json, self::FIELD_TRIGGER_REFERENCE)) {
+            if (is_array($json->triggerReference)) {
+                $type->setTriggerReference(FHIRReference::jsonUnserialize(reset($json->triggerReference), $config));
+            } else {
+                $type->setTriggerReference(FHIRReference::jsonUnserialize($json->triggerReference, $config));
+            }
+        }
+        if (isset($json->investigations) || property_exists($json, self::FIELD_INVESTIGATIONS)) {
+            if (is_object($json->investigations)) {
+                $vals = [$json->investigations];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_INVESTIGATIONS, true);
+            } else {
+                $vals = $json->investigations;
+            }
+            foreach($vals as $v) {
                 $type->addInvestigations(FHIRClinicalImpressionInvestigations::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PROTOCOL])
-            || isset($json[self::FIELD_PROTOCOL_EXT])
-            || array_key_exists(self::FIELD_PROTOCOL, $json)
-            || array_key_exists(self::FIELD_PROTOCOL_EXT, $json)) {
-            $value = $json[self::FIELD_PROTOCOL] ?? null;
-            $type->setProtocol(FHIRUri::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_PROTOCOL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->protocol)
+            || isset($json->_protocol)
+            || property_exists($json, self::FIELD_PROTOCOL)
+            || property_exists($json, self::FIELD_PROTOCOL_EXT)) {
+            $v = $json->_protocol ?? new \stdClass();
+            $v->value = $json->protocol ?? null;
+            $type->setProtocol(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_SUMMARY])
-            || isset($json[self::FIELD_SUMMARY_EXT])
-            || array_key_exists(self::FIELD_SUMMARY, $json)
-            || array_key_exists(self::FIELD_SUMMARY_EXT, $json)) {
-            $value = $json[self::FIELD_SUMMARY] ?? null;
-            $type->setSummary(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SUMMARY_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->summary)
+            || isset($json->_summary)
+            || property_exists($json, self::FIELD_SUMMARY)
+            || property_exists($json, self::FIELD_SUMMARY_EXT)) {
+            $v = $json->_summary ?? new \stdClass();
+            $v->value = $json->summary ?? null;
+            $type->setSummary(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_FINDING]) || array_key_exists(self::FIELD_FINDING, $json)) {
-            $vs = $json[self::FIELD_FINDING];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->finding) || property_exists($json, self::FIELD_FINDING)) {
+            if (is_object($json->finding)) {
+                $vals = [$json->finding];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_FINDING, true);
+            } else {
+                $vals = $json->finding;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addFinding(FHIRClinicalImpressionFinding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_RESOLVED]) || array_key_exists(self::FIELD_RESOLVED, $json)) {
-            $vs = $json[self::FIELD_RESOLVED];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->resolved) || property_exists($json, self::FIELD_RESOLVED)) {
+            if (is_object($json->resolved)) {
+                $vals = [$json->resolved];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RESOLVED, true);
+            } else {
+                $vals = $json->resolved;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addResolved(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_RULED_OUT]) || array_key_exists(self::FIELD_RULED_OUT, $json)) {
-            $vs = $json[self::FIELD_RULED_OUT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->ruledOut) || property_exists($json, self::FIELD_RULED_OUT)) {
+            if (is_object($json->ruledOut)) {
+                $vals = [$json->ruledOut];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_RULED_OUT, true);
+            } else {
+                $vals = $json->ruledOut;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addRuledOut(FHIRClinicalImpressionRuledOut::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PROGNOSIS])
-            || isset($json[self::FIELD_PROGNOSIS_EXT])
-            || array_key_exists(self::FIELD_PROGNOSIS, $json)
-            || array_key_exists(self::FIELD_PROGNOSIS_EXT, $json)) {
-            $value = $json[self::FIELD_PROGNOSIS] ?? null;
-            $type->setPrognosis(FHIRString::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PROGNOSIS_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->prognosis)
+            || isset($json->_prognosis)
+            || property_exists($json, self::FIELD_PROGNOSIS)
+            || property_exists($json, self::FIELD_PROGNOSIS_EXT)) {
+            $v = $json->_prognosis ?? new \stdClass();
+            $v->value = $json->prognosis ?? null;
+            $type->setPrognosis(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_PLAN]) || array_key_exists(self::FIELD_PLAN, $json)) {
-            $vs = $json[self::FIELD_PLAN];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->plan) || property_exists($json, self::FIELD_PLAN)) {
+            if (is_object($json->plan)) {
+                $vals = [$json->plan];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_PLAN, true);
+            } else {
+                $vals = $json->plan;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addPlan(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ACTION]) || array_key_exists(self::FIELD_ACTION, $json)) {
-            $vs = $json[self::FIELD_ACTION];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->action) || property_exists($json, self::FIELD_ACTION)) {
+            if (is_object($json->action)) {
+                $vals = [$json->action];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_ACTION, true);
+            } else {
+                $vals = $json->action;
             }
-            foreach($vs as $v) {
+            foreach($vals as $v) {
                 $type->addAction(FHIRReference::jsonUnserialize($v, $config));
             }
         }
@@ -2157,7 +2007,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             $out->previous = $this->previous;
         }
         if (isset($this->problem) && [] !== $this->problem) {
-            $out->problem = $this->problem;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PROBLEM) && 1 === count($this->problem)) {
+                $out->problem = $this->problem[0];
+            } else {
+                $out->problem = $this->problem;
+            }
         }
         if (isset($this->triggerCodeableConcept)) {
             $out->triggerCodeableConcept = $this->triggerCodeableConcept;
@@ -2166,7 +2020,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             $out->triggerReference = $this->triggerReference;
         }
         if (isset($this->investigations) && [] !== $this->investigations) {
-            $out->investigations = $this->investigations;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_INVESTIGATIONS) && 1 === count($this->investigations)) {
+                $out->investigations = $this->investigations[0];
+            } else {
+                $out->investigations = $this->investigations;
+            }
         }
         if (isset($this->protocol)) {
             if (null !== ($val = $this->protocol->getValue())) {
@@ -2189,13 +2047,25 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             }
         }
         if (isset($this->finding) && [] !== $this->finding) {
-            $out->finding = $this->finding;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_FINDING) && 1 === count($this->finding)) {
+                $out->finding = $this->finding[0];
+            } else {
+                $out->finding = $this->finding;
+            }
         }
         if (isset($this->resolved) && [] !== $this->resolved) {
-            $out->resolved = $this->resolved;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RESOLVED) && 1 === count($this->resolved)) {
+                $out->resolved = $this->resolved[0];
+            } else {
+                $out->resolved = $this->resolved;
+            }
         }
         if (isset($this->ruledOut) && [] !== $this->ruledOut) {
-            $out->ruledOut = $this->ruledOut;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_RULED_OUT) && 1 === count($this->ruledOut)) {
+                $out->ruledOut = $this->ruledOut[0];
+            } else {
+                $out->ruledOut = $this->ruledOut;
+            }
         }
         if (isset($this->prognosis)) {
             if (null !== ($val = $this->prognosis->getValue())) {
@@ -2208,10 +2078,18 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             }
         }
         if (isset($this->plan) && [] !== $this->plan) {
-            $out->plan = $this->plan;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_PLAN) && 1 === count($this->plan)) {
+                $out->plan = $this->plan[0];
+            } else {
+                $out->plan = $this->plan;
+            }
         }
         if (isset($this->action) && [] !== $this->action) {
-            $out->action = $this->action;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_ACTION) && 1 === count($this->action)) {
+                $out->action = $this->action[0];
+            } else {
+                $out->action = $this->action;
+            }
         }
         $out->resourceType = $this->_getResourceType();
         return $out;

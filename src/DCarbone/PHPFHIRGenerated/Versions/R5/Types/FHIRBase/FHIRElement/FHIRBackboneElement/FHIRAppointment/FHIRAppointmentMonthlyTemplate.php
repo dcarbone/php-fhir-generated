@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -104,12 +106,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_APPOINTMENT_DOT_MONTHLY_TEMPLATE;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_DAY_OF_MONTH = 'dayOfMonth';
     public const FIELD_DAY_OF_MONTH_EXT = '_dayOfMonth';
     public const FIELD_NTH_WEEK_OF_MONTH = 'nthWeekOfMonth';
@@ -117,7 +121,7 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
     public const FIELD_MONTH_INTERVAL = 'monthInterval';
     public const FIELD_MONTH_INTERVAL_EXT = '_monthInterval';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_MONTH_INTERVAL => [
@@ -125,13 +129,13 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_DAY_OF_MONTH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_MONTH_INTERVAL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -176,25 +180,25 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      */
     protected FHIRPositiveInt $monthInterval;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRAppointmentMonthlyTemplate Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dayOfMonth
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dayOfMonth
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $nthWeekOfMonth
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $dayOfWeek
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $monthInterval
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $monthInterval
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dayOfMonth = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dayOfMonth = null,
                                 null|FHIRCoding $nthWeekOfMonth = null,
                                 null|FHIRCoding $dayOfWeek = null,
-                                null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $monthInterval = null,
+                                null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $monthInterval = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -215,7 +219,7 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -224,7 +228,7 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -248,12 +252,10 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      * Indicates that appointments in the series of recurring appointments should occur
      * on a specific day of the month.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dayOfMonth
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dayOfMonth
      * @return static
      */
-    public function setDayOfMonth(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dayOfMonth,
-                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setDayOfMonth(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dayOfMonth): self
     {
         if (null === $dayOfMonth) {
             unset($this->dayOfMonth);
@@ -263,33 +265,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
             $dayOfMonth = new FHIRPositiveInt(value: $dayOfMonth);
         }
         $this->dayOfMonth = $dayOfMonth;
-        if ($this->_valueXMLLocations[self::FIELD_DAY_OF_MONTH] !== $valueXMLLocation) {
-            $this->_setDayOfMonthValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the dayOfMonth element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getDayOfMonthValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_DAY_OF_MONTH];
-    }
-
-    /**
-     * Set the location the "value" field of the dayOfMonth element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setDayOfMonthValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_DAY_OF_MONTH] = $valueXMLLocation;
         return $this;
     }
 
@@ -386,12 +361,10 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates that recurring appointments should occur every nth month.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $monthInterval
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $monthInterval
      * @return static
      */
-    public function setMonthInterval(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $monthInterval,
-                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setMonthInterval(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $monthInterval): self
     {
         if (null === $monthInterval) {
             unset($this->monthInterval);
@@ -401,37 +374,10 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
             $monthInterval = new FHIRPositiveInt(value: $monthInterval);
         }
         $this->monthInterval = $monthInterval;
-        if ($this->_valueXMLLocations[self::FIELD_MONTH_INTERVAL] !== $valueXMLLocation) {
-            $this->_setMonthIntervalValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the monthInterval element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getMonthIntervalValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_MONTH_INTERVAL];
-    }
-
-    /**
-     * Set the location the "value" field of the monthInterval element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setMonthIntervalValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_MONTH_INTERVAL] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -460,9 +406,11 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -478,23 +426,24 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_DAY_OF_MONTH])) {
             if (isset($type->dayOfMonth)) {
                 $type->dayOfMonth->setValue((string)$attributes[self::FIELD_DAY_OF_MONTH]);
-                $type->_setDayOfMonthValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setDayOfMonth((string)$attributes[self::FIELD_DAY_OF_MONTH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setDayOfMonth((string)$attributes[self::FIELD_DAY_OF_MONTH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_DAY_OF_MONTH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_MONTH_INTERVAL])) {
             if (isset($type->monthInterval)) {
                 $type->monthInterval->setValue((string)$attributes[self::FIELD_MONTH_INTERVAL]);
-                $type->_setMonthIntervalValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setMonthInterval((string)$attributes[self::FIELD_MONTH_INTERVAL], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setMonthInterval((string)$attributes[self::FIELD_MONTH_INTERVAL]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_MONTH_INTERVAL, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -507,10 +456,10 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->dayOfMonth) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_DAY_OF_MONTH]) {
-            $xw->writeAttribute(self::FIELD_DAY_OF_MONTH, $this->dayOfMonth->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_DAY_OF_MONTH, $this->dayOfMonth->_getValueAsString());
         }
         if (isset($this->monthInterval) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_MONTH_INTERVAL]) {
-            $xw->writeAttribute(self::FIELD_MONTH_INTERVAL, $this->monthInterval->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_MONTH_INTERVAL, $this->monthInterval->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->dayOfMonth)
@@ -540,13 +489,13 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -561,31 +510,35 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_DAY_OF_MONTH])
-            || isset($json[self::FIELD_DAY_OF_MONTH_EXT])
-            || array_key_exists(self::FIELD_DAY_OF_MONTH, $json)
-            || array_key_exists(self::FIELD_DAY_OF_MONTH_EXT, $json)) {
-            $value = $json[self::FIELD_DAY_OF_MONTH] ?? null;
-            $type->setDayOfMonth(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_DAY_OF_MONTH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->dayOfMonth)
+            || isset($json->_dayOfMonth)
+            || property_exists($json, self::FIELD_DAY_OF_MONTH)
+            || property_exists($json, self::FIELD_DAY_OF_MONTH_EXT)) {
+            $v = $json->_dayOfMonth ?? new \stdClass();
+            $v->value = $json->dayOfMonth ?? null;
+            $type->setDayOfMonth(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_NTH_WEEK_OF_MONTH]) || array_key_exists(self::FIELD_NTH_WEEK_OF_MONTH, $json)) {
-            $type->setNthWeekOfMonth(FHIRCoding::jsonUnserialize($json[self::FIELD_NTH_WEEK_OF_MONTH], $config));
+        if (isset($json->nthWeekOfMonth) || property_exists($json, self::FIELD_NTH_WEEK_OF_MONTH)) {
+            if (is_array($json->nthWeekOfMonth)) {
+                $type->setNthWeekOfMonth(FHIRCoding::jsonUnserialize(reset($json->nthWeekOfMonth), $config));
+            } else {
+                $type->setNthWeekOfMonth(FHIRCoding::jsonUnserialize($json->nthWeekOfMonth, $config));
+            }
         }
-        if (isset($json[self::FIELD_DAY_OF_WEEK]) || array_key_exists(self::FIELD_DAY_OF_WEEK, $json)) {
-            $type->setDayOfWeek(FHIRCoding::jsonUnserialize($json[self::FIELD_DAY_OF_WEEK], $config));
+        if (isset($json->dayOfWeek) || property_exists($json, self::FIELD_DAY_OF_WEEK)) {
+            if (is_array($json->dayOfWeek)) {
+                $type->setDayOfWeek(FHIRCoding::jsonUnserialize(reset($json->dayOfWeek), $config));
+            } else {
+                $type->setDayOfWeek(FHIRCoding::jsonUnserialize($json->dayOfWeek, $config));
+            }
         }
-        if (isset($json[self::FIELD_MONTH_INTERVAL])
-            || isset($json[self::FIELD_MONTH_INTERVAL_EXT])
-            || array_key_exists(self::FIELD_MONTH_INTERVAL, $json)
-            || array_key_exists(self::FIELD_MONTH_INTERVAL_EXT, $json)) {
-            $value = $json[self::FIELD_MONTH_INTERVAL] ?? null;
-            $type->setMonthInterval(FHIRPositiveInt::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_MONTH_INTERVAL_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->monthInterval)
+            || isset($json->_monthInterval)
+            || property_exists($json, self::FIELD_MONTH_INTERVAL)
+            || property_exists($json, self::FIELD_MONTH_INTERVAL_EXT)) {
+            $v = $json->_monthInterval ?? new \stdClass();
+            $v->value = $json->monthInterval ?? null;
+            $type->setMonthInterval(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
         return $type;
     }

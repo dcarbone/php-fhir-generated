@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,12 +104,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRResearchSubjectProgress extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESEARCH_SUBJECT_DOT_PROGRESS;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_SUBJECT_STATE = 'subjectState';
     public const FIELD_MILESTONE = 'milestone';
@@ -117,17 +121,17 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
     public const FIELD_END_DATE = 'endDate';
     public const FIELD_END_DATE_EXT = '_endDate';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_START_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_END_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -202,7 +206,7 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      */
     protected FHIRDateTime $endDate;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRResearchSubjectProgress Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -251,7 +255,7 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -260,7 +264,7 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -437,11 +441,9 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * The date when the new status started.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $startDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $startDate,
-                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $startDate): self
     {
         if (null === $startDate) {
             unset($this->startDate);
@@ -451,33 +453,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
             $startDate = new FHIRDateTime(value: $startDate);
         }
         $this->startDate = $startDate;
-        if ($this->_valueXMLLocations[self::FIELD_START_DATE] !== $valueXMLLocation) {
-            $this->_setStartDateValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the startDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getStartDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_START_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the startDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setStartDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_START_DATE] = $valueXMLLocation;
         return $this;
     }
 
@@ -511,11 +486,9 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * The date when the state ended.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $endDate
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEndDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $endDate,
-                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setEndDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $endDate): self
     {
         if (null === $endDate) {
             unset($this->endDate);
@@ -525,37 +498,10 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
             $endDate = new FHIRDateTime(value: $endDate);
         }
         $this->endDate = $endDate;
-        if ($this->_valueXMLLocations[self::FIELD_END_DATE] !== $valueXMLLocation) {
-            $this->_setEndDateValueXMLLocation($valueXMLLocation);
-        }
         return $this;
     }
 
-    /**
-     * Return the current location the "value" field of the endDate element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getEndDateValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_END_DATE];
-    }
-
-    /**
-     * Set the location the "value" field of the endDate element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setEndDateValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_END_DATE] = $valueXMLLocation;
-        return $this;
-    }
-
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -584,9 +530,11 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -606,23 +554,24 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_START_DATE])) {
             if (isset($type->startDate)) {
                 $type->startDate->setValue((string)$attributes[self::FIELD_START_DATE]);
-                $type->_setStartDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setStartDate((string)$attributes[self::FIELD_START_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setStartDate((string)$attributes[self::FIELD_START_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_START_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_END_DATE])) {
             if (isset($type->endDate)) {
                 $type->endDate->setValue((string)$attributes[self::FIELD_END_DATE]);
-                $type->_setEndDateValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setEndDate((string)$attributes[self::FIELD_END_DATE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setEndDate((string)$attributes[self::FIELD_END_DATE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_END_DATE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -635,10 +584,10 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->startDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_START_DATE]) {
-            $xw->writeAttribute(self::FIELD_START_DATE, $this->startDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_START_DATE, $this->startDate->_getValueAsString());
         }
         if (isset($this->endDate) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_END_DATE]) {
-            $xw->writeAttribute(self::FIELD_END_DATE, $this->endDate->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_END_DATE, $this->endDate->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -678,13 +627,13 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchSubject\FHIRResearchSubjectProgress $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchSubject\FHIRResearchSubjectProgress
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -699,37 +648,49 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
         }
-        if (isset($json[self::FIELD_SUBJECT_STATE]) || array_key_exists(self::FIELD_SUBJECT_STATE, $json)) {
-            $type->setSubjectState(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SUBJECT_STATE], $config));
+        if (isset($json->subjectState) || property_exists($json, self::FIELD_SUBJECT_STATE)) {
+            if (is_array($json->subjectState)) {
+                $type->setSubjectState(FHIRCodeableConcept::jsonUnserialize(reset($json->subjectState), $config));
+            } else {
+                $type->setSubjectState(FHIRCodeableConcept::jsonUnserialize($json->subjectState, $config));
+            }
         }
-        if (isset($json[self::FIELD_MILESTONE]) || array_key_exists(self::FIELD_MILESTONE, $json)) {
-            $type->setMilestone(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MILESTONE], $config));
+        if (isset($json->milestone) || property_exists($json, self::FIELD_MILESTONE)) {
+            if (is_array($json->milestone)) {
+                $type->setMilestone(FHIRCodeableConcept::jsonUnserialize(reset($json->milestone), $config));
+            } else {
+                $type->setMilestone(FHIRCodeableConcept::jsonUnserialize($json->milestone, $config));
+            }
         }
-        if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            $type->setReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REASON], $config));
+        if (isset($json->reason) || property_exists($json, self::FIELD_REASON)) {
+            if (is_array($json->reason)) {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize(reset($json->reason), $config));
+            } else {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize($json->reason, $config));
+            }
         }
-        if (isset($json[self::FIELD_START_DATE])
-            || isset($json[self::FIELD_START_DATE_EXT])
-            || array_key_exists(self::FIELD_START_DATE, $json)
-            || array_key_exists(self::FIELD_START_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_START_DATE] ?? null;
-            $type->setStartDate(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_START_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->startDate)
+            || isset($json->_startDate)
+            || property_exists($json, self::FIELD_START_DATE)
+            || property_exists($json, self::FIELD_START_DATE_EXT)) {
+            $v = $json->_startDate ?? new \stdClass();
+            $v->value = $json->startDate ?? null;
+            $type->setStartDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_END_DATE])
-            || isset($json[self::FIELD_END_DATE_EXT])
-            || array_key_exists(self::FIELD_END_DATE, $json)
-            || array_key_exists(self::FIELD_END_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_END_DATE] ?? null;
-            $type->setEndDate(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_END_DATE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->endDate)
+            || isset($json->_endDate)
+            || property_exists($json, self::FIELD_END_DATE)
+            || property_exists($json, self::FIELD_END_DATE_EXT)) {
+            $v = $json->_endDate ?? new \stdClass();
+            $v->value = $json->endDate ?? null;
+            $type->setEndDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
         return $type;
     }

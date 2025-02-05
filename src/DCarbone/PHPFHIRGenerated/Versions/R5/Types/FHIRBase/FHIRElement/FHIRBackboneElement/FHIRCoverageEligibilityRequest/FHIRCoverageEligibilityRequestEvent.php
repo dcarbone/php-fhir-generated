@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -107,37 +109,33 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_EVENT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_WHEN_DATE_TIME = 'whenDateTime';
     public const FIELD_WHEN_DATE_TIME_EXT = '_whenDateTime';
     public const FIELD_WHEN_PERIOD = 'whenPeriod';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
             Constants::VALIDATE_MIN_OCCURS => 1,
         ],
-        self::FIELD_WHEN_DATE_TIME => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
-        self::FIELD_WHEN_PERIOD => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
-        ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_WHEN_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -159,7 +157,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
      */
@@ -170,13 +168,13 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
      */
     protected FHIRPeriod $whenPeriod;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRCoverageEligibilityRequestEvent Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -210,7 +208,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -219,7 +217,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -266,7 +264,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
@@ -285,14 +283,12 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $whenDateTime
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWhenDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenDateTime,
-                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setWhenDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenDateTime): self
     {
         if (null === $whenDateTime) {
             unset($this->whenDateTime);
@@ -302,33 +298,6 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
             $whenDateTime = new FHIRDateTime(value: $whenDateTime);
         }
         $this->whenDateTime = $whenDateTime;
-        if ($this->_valueXMLLocations[self::FIELD_WHEN_DATE_TIME] !== $valueXMLLocation) {
-            $this->_setWhenDateTimeValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the whenDateTime element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getWhenDateTimeValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_WHEN_DATE_TIME];
-    }
-
-    /**
-     * Set the location the "value" field of the whenDateTime element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setWhenDateTimeValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_WHEN_DATE_TIME] = $valueXMLLocation;
         return $this;
     }
 
@@ -338,7 +307,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
@@ -353,7 +322,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $whenPeriod
      * @return static
@@ -368,7 +337,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -397,9 +366,11 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -413,15 +384,16 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_WHEN_DATE_TIME])) {
             if (isset($type->whenDateTime)) {
                 $type->whenDateTime->setValue((string)$attributes[self::FIELD_WHEN_DATE_TIME]);
-                $type->_setWhenDateTimeValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setWhenDateTime((string)$attributes[self::FIELD_WHEN_DATE_TIME], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setWhenDateTime((string)$attributes[self::FIELD_WHEN_DATE_TIME]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_WHEN_DATE_TIME, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -434,7 +406,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->whenDateTime) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_WHEN_DATE_TIME]) {
-            $xw->writeAttribute(self::FIELD_WHEN_DATE_TIME, $this->whenDateTime->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_WHEN_DATE_TIME, $this->whenDateTime->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -457,13 +429,13 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestEvent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestEvent
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -478,21 +450,27 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
         }
-        if (isset($json[self::FIELD_WHEN_DATE_TIME])
-            || isset($json[self::FIELD_WHEN_DATE_TIME_EXT])
-            || array_key_exists(self::FIELD_WHEN_DATE_TIME, $json)
-            || array_key_exists(self::FIELD_WHEN_DATE_TIME_EXT, $json)) {
-            $value = $json[self::FIELD_WHEN_DATE_TIME] ?? null;
-            $type->setWhenDateTime(FHIRDateTime::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_WHEN_DATE_TIME_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->whenDateTime)
+            || isset($json->_whenDateTime)
+            || property_exists($json, self::FIELD_WHEN_DATE_TIME)
+            || property_exists($json, self::FIELD_WHEN_DATE_TIME_EXT)) {
+            $v = $json->_whenDateTime ?? new \stdClass();
+            $v->value = $json->whenDateTime ?? null;
+            $type->setWhenDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_WHEN_PERIOD]) || array_key_exists(self::FIELD_WHEN_PERIOD, $json)) {
-            $type->setWhenPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_WHEN_PERIOD], $config));
+        if (isset($json->whenPeriod) || property_exists($json, self::FIELD_WHEN_PERIOD)) {
+            if (is_array($json->whenPeriod)) {
+                $type->setWhenPeriod(FHIRPeriod::jsonUnserialize(reset($json->whenPeriod), $config));
+            } else {
+                $type->setWhenPeriod(FHIRPeriod::jsonUnserialize($json->whenPeriod, $config));
+            }
         }
         return $type;
     }

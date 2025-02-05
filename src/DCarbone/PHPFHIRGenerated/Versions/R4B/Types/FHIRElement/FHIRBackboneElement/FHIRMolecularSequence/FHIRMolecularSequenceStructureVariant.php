@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,9 +82,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,12 +105,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  */
 class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_STRUCTURE_VARIANT;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_VARIANT_TYPE = 'variantType';
     public const FIELD_EXACT = 'exact';
     public const FIELD_EXACT_EXT = '_exact';
@@ -117,17 +121,17 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
     public const FIELD_OUTER = 'outer';
     public const FIELD_INNER = 'inner';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_EXACT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_LENGTH => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -175,7 +179,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      */
     protected FHIRMolecularSequenceInner $inner;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRMolecularSequenceStructureVariant Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
@@ -183,7 +187,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $variantType
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $exact
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $length
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $length
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceOuter $outer
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceInner $inner
      * @param null|string[] $fhirComments
@@ -193,7 +197,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $variantType = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exact = null,
-                                null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $length = null,
+                                null|string|float|FHIRIntegerPrimitive|FHIRInteger $length = null,
                                 null|FHIRMolecularSequenceOuter $outer = null,
                                 null|FHIRMolecularSequenceInner $inner = null,
                                 null|iterable $fhirComments = null)
@@ -219,7 +223,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -228,7 +232,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -285,11 +289,9 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Used to indicate if the outer and inner start-end values have the same meaning.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $exact
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exact,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setExact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exact): self
     {
         if (null === $exact) {
             unset($this->exact);
@@ -299,33 +301,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
             $exact = new FHIRBoolean(value: $exact);
         }
         $this->exact = $exact;
-        if ($this->_valueXMLLocations[self::FIELD_EXACT] !== $valueXMLLocation) {
-            $this->_setExactValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the exact element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getExactValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_EXACT];
-    }
-
-    /**
-     * Set the location the "value" field of the exact element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setExactValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_EXACT] = $valueXMLLocation;
         return $this;
     }
 
@@ -350,12 +325,10 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      *
      * Length of the variant chromosome.
      *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $length
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $length
      * @return static
      */
-    public function setLength(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $length,
-                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $length): self
     {
         if (null === $length) {
             unset($this->length);
@@ -365,33 +338,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
             $length = new FHIRInteger(value: $length);
         }
         $this->length = $length;
-        if ($this->_valueXMLLocations[self::FIELD_LENGTH] !== $valueXMLLocation) {
-            $this->_setLengthValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the length element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getLengthValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_LENGTH];
-    }
-
-    /**
-     * Set the location the "value" field of the length element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setLengthValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_LENGTH] = $valueXMLLocation;
         return $this;
     }
 
@@ -455,7 +401,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -484,9 +430,11 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -504,23 +452,24 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_EXACT])) {
             if (isset($type->exact)) {
                 $type->exact->setValue((string)$attributes[self::FIELD_EXACT]);
-                $type->_setExactValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setExact((string)$attributes[self::FIELD_EXACT], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setExact((string)$attributes[self::FIELD_EXACT]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_EXACT, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_LENGTH])) {
             if (isset($type->length)) {
                 $type->length->setValue((string)$attributes[self::FIELD_LENGTH]);
-                $type->_setLengthValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setLength((string)$attributes[self::FIELD_LENGTH], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setLength((string)$attributes[self::FIELD_LENGTH]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_LENGTH, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -533,10 +482,10 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->exact) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_EXACT]) {
-            $xw->writeAttribute(self::FIELD_EXACT, $this->exact->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_EXACT, $this->exact->_getValueAsString());
         }
         if (isset($this->length) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_LENGTH]) {
-            $xw->writeAttribute(self::FIELD_LENGTH, $this->length->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_LENGTH, $this->length->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->variantType)) {
@@ -571,13 +520,13 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -592,34 +541,42 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_VARIANT_TYPE]) || array_key_exists(self::FIELD_VARIANT_TYPE, $json)) {
-            $type->setVariantType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VARIANT_TYPE], $config));
+        if (isset($json->variantType) || property_exists($json, self::FIELD_VARIANT_TYPE)) {
+            if (is_array($json->variantType)) {
+                $type->setVariantType(FHIRCodeableConcept::jsonUnserialize(reset($json->variantType), $config));
+            } else {
+                $type->setVariantType(FHIRCodeableConcept::jsonUnserialize($json->variantType, $config));
+            }
         }
-        if (isset($json[self::FIELD_EXACT])
-            || isset($json[self::FIELD_EXACT_EXT])
-            || array_key_exists(self::FIELD_EXACT, $json)
-            || array_key_exists(self::FIELD_EXACT_EXT, $json)) {
-            $value = $json[self::FIELD_EXACT] ?? null;
-            $type->setExact(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_EXACT_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->exact)
+            || isset($json->_exact)
+            || property_exists($json, self::FIELD_EXACT)
+            || property_exists($json, self::FIELD_EXACT_EXT)) {
+            $v = $json->_exact ?? new \stdClass();
+            $v->value = $json->exact ?? null;
+            $type->setExact(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_LENGTH])
-            || isset($json[self::FIELD_LENGTH_EXT])
-            || array_key_exists(self::FIELD_LENGTH, $json)
-            || array_key_exists(self::FIELD_LENGTH_EXT, $json)) {
-            $value = $json[self::FIELD_LENGTH] ?? null;
-            $type->setLength(FHIRInteger::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_LENGTH_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->length)
+            || isset($json->_length)
+            || property_exists($json, self::FIELD_LENGTH)
+            || property_exists($json, self::FIELD_LENGTH_EXT)) {
+            $v = $json->_length ?? new \stdClass();
+            $v->value = $json->length ?? null;
+            $type->setLength(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_OUTER]) || array_key_exists(self::FIELD_OUTER, $json)) {
-            $type->setOuter(FHIRMolecularSequenceOuter::jsonUnserialize($json[self::FIELD_OUTER], $config));
+        if (isset($json->outer) || property_exists($json, self::FIELD_OUTER)) {
+            if (is_array($json->outer)) {
+                $type->setOuter(FHIRMolecularSequenceOuter::jsonUnserialize(reset($json->outer), $config));
+            } else {
+                $type->setOuter(FHIRMolecularSequenceOuter::jsonUnserialize($json->outer, $config));
+            }
         }
-        if (isset($json[self::FIELD_INNER]) || array_key_exists(self::FIELD_INNER, $json)) {
-            $type->setInner(FHIRMolecularSequenceInner::jsonUnserialize($json[self::FIELD_INNER], $config));
+        if (isset($json->inner) || property_exists($json, self::FIELD_INNER)) {
+            if (is_array($json->inner)) {
+                $type->setInner(FHIRMolecularSequenceInner::jsonUnserialize(reset($json->inner), $config));
+            } else {
+                $type->setInner(FHIRMolecularSequenceInner::jsonUnserialize($json->inner, $config));
+            }
         }
         return $type;
     }

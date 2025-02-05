@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -28,11 +28,8 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
 
 class SerializeConfig
 {
-    /** @var bool */
     private bool $_overrideSourceXMLNS = false;
-    /** @var string */
     private string $_rootXMLNS;
-    /** @var int */
     private int $_xhtmlLibxmlOpts = LIBXML_NONET | LIBXML_BIGLINES | LIBXML_PARSEHUGE | LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD | LIBXML_NOXMLDECL;
 
     public function __construct(null|bool $overrideSourceXMLNS = null,
@@ -93,6 +90,11 @@ class SerializeConfig
     }
 
     /**
+     * Specifies the libxml option mask to apply when loading an XHTML type's value into an XMLReader instance for
+     * serialization.
+     *
+     * @see https://www.php.net/manual/en/libxml.constants.php for available options and their purpose.
+     *
      * @param int $xhtmlLibxmlOpts
      * @return self
      */

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -113,12 +115,14 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_NUTRITION_INTAKE_DOT_CONSUMED_ITEM;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_TYPE = 'type';
     public const FIELD_NUTRITION_PRODUCT = 'nutritionProduct';
     public const FIELD_SCHEDULE = 'schedule';
@@ -128,7 +132,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
     public const FIELD_NOT_CONSUMED_EXT = '_notConsumed';
     public const FIELD_NOT_CONSUMED_REASON = 'notConsumedReason';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -139,12 +143,12 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_NOT_CONSUMED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -234,7 +238,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      */
     protected FHIRCodeableConcept $notConsumedReason;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRNutritionIntakeConsumedItem Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -288,7 +292,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -297,7 +301,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -522,11 +526,9 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * MyFitnessPal, this indicator will likely not be used.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $notConsumed
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNotConsumed(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $notConsumed,
-                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setNotConsumed(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $notConsumed): self
     {
         if (null === $notConsumed) {
             unset($this->notConsumed);
@@ -536,33 +538,6 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
             $notConsumed = new FHIRBoolean(value: $notConsumed);
         }
         $this->notConsumed = $notConsumed;
-        if ($this->_valueXMLLocations[self::FIELD_NOT_CONSUMED] !== $valueXMLLocation) {
-            $this->_setNotConsumedValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the notConsumed element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getNotConsumedValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_NOT_CONSUMED];
-    }
-
-    /**
-     * Set the location the "value" field of the notConsumed element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setNotConsumedValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_NOT_CONSUMED] = $valueXMLLocation;
         return $this;
     }
 
@@ -604,7 +579,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -633,9 +608,11 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -657,15 +634,16 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_NOT_CONSUMED])) {
             if (isset($type->notConsumed)) {
                 $type->notConsumed->setValue((string)$attributes[self::FIELD_NOT_CONSUMED]);
-                $type->_setNotConsumedValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setNotConsumed((string)$attributes[self::FIELD_NOT_CONSUMED], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setNotConsumed((string)$attributes[self::FIELD_NOT_CONSUMED]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_NOT_CONSUMED, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -678,7 +656,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->notConsumed) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_NOT_CONSUMED]) {
-            $xw->writeAttribute(self::FIELD_NOT_CONSUMED, $this->notConsumed->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_NOT_CONSUMED, $this->notConsumed->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -721,13 +699,13 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakeConsumedItem $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakeConsumedItem
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -742,33 +720,55 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
+        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
+            if (is_array($json->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+            } else {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+            }
         }
-        if (isset($json[self::FIELD_NUTRITION_PRODUCT]) || array_key_exists(self::FIELD_NUTRITION_PRODUCT, $json)) {
-            $type->setNutritionProduct(FHIRCodeableReference::jsonUnserialize($json[self::FIELD_NUTRITION_PRODUCT], $config));
+        if (isset($json->nutritionProduct) || property_exists($json, self::FIELD_NUTRITION_PRODUCT)) {
+            if (is_array($json->nutritionProduct)) {
+                $type->setNutritionProduct(FHIRCodeableReference::jsonUnserialize(reset($json->nutritionProduct), $config));
+            } else {
+                $type->setNutritionProduct(FHIRCodeableReference::jsonUnserialize($json->nutritionProduct, $config));
+            }
         }
-        if (isset($json[self::FIELD_SCHEDULE]) || array_key_exists(self::FIELD_SCHEDULE, $json)) {
-            $type->setSchedule(FHIRTiming::jsonUnserialize($json[self::FIELD_SCHEDULE], $config));
+        if (isset($json->schedule) || property_exists($json, self::FIELD_SCHEDULE)) {
+            if (is_array($json->schedule)) {
+                $type->setSchedule(FHIRTiming::jsonUnserialize(reset($json->schedule), $config));
+            } else {
+                $type->setSchedule(FHIRTiming::jsonUnserialize($json->schedule, $config));
+            }
         }
-        if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
-            $type->setAmount(FHIRQuantity::jsonUnserialize($json[self::FIELD_AMOUNT], $config));
+        if (isset($json->amount) || property_exists($json, self::FIELD_AMOUNT)) {
+            if (is_array($json->amount)) {
+                $type->setAmount(FHIRQuantity::jsonUnserialize(reset($json->amount), $config));
+            } else {
+                $type->setAmount(FHIRQuantity::jsonUnserialize($json->amount, $config));
+            }
         }
-        if (isset($json[self::FIELD_RATE]) || array_key_exists(self::FIELD_RATE, $json)) {
-            $type->setRate(FHIRQuantity::jsonUnserialize($json[self::FIELD_RATE], $config));
+        if (isset($json->rate) || property_exists($json, self::FIELD_RATE)) {
+            if (is_array($json->rate)) {
+                $type->setRate(FHIRQuantity::jsonUnserialize(reset($json->rate), $config));
+            } else {
+                $type->setRate(FHIRQuantity::jsonUnserialize($json->rate, $config));
+            }
         }
-        if (isset($json[self::FIELD_NOT_CONSUMED])
-            || isset($json[self::FIELD_NOT_CONSUMED_EXT])
-            || array_key_exists(self::FIELD_NOT_CONSUMED, $json)
-            || array_key_exists(self::FIELD_NOT_CONSUMED_EXT, $json)) {
-            $value = $json[self::FIELD_NOT_CONSUMED] ?? null;
-            $type->setNotConsumed(FHIRBoolean::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_NOT_CONSUMED_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->notConsumed)
+            || isset($json->_notConsumed)
+            || property_exists($json, self::FIELD_NOT_CONSUMED)
+            || property_exists($json, self::FIELD_NOT_CONSUMED_EXT)) {
+            $v = $json->_notConsumed ?? new \stdClass();
+            $v->value = $json->notConsumed ?? null;
+            $type->setNotConsumed(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_NOT_CONSUMED_REASON]) || array_key_exists(self::FIELD_NOT_CONSUMED_REASON, $json)) {
-            $type->setNotConsumedReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_NOT_CONSUMED_REASON], $config));
+        if (isset($json->notConsumedReason) || property_exists($json, self::FIELD_NOT_CONSUMED_REASON)) {
+            if (is_array($json->notConsumedReason)) {
+                $type->setNotConsumedReason(FHIRCodeableConcept::jsonUnserialize(reset($json->notConsumedReason), $config));
+            } else {
+                $type->setNotConsumedReason(FHIRCodeableConcept::jsonUnserialize($json->notConsumedReason, $config));
+            }
         }
         return $type;
     }

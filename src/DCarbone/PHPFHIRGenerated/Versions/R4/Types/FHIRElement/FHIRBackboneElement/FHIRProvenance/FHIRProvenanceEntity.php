@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 3rd, 2025 23:46+0000
+ * Class creation date: February 5th, 2025 00:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -90,18 +92,20 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  */
 class FHIRProvenanceEntity extends FHIRBackboneElement
 {
-    use TypeValidationsTrait;
+    use TypeValidationsTrait,
+        JSONSerializationOptionsTrait,
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROVENANCE_DOT_ENTITY;
 
-    /* class_default.php:47 */
+    /* class_default.php:50 */
     public const FIELD_ROLE = 'role';
     public const FIELD_ROLE_EXT = '_role';
     public const FIELD_WHAT = 'what';
     public const FIELD_AGENT = 'agent';
 
-    /* class_default.php:66 */
+    /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ROLE => [
@@ -112,12 +116,12 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:95 */
+    /* class_default.php:98 */
     private array $_valueXMLLocations = [
         self::FIELD_ROLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:111 */
+    /* class_default.php:114 */
     /**
      * How an entity was used in an activity.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -158,7 +162,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      */
     protected array $agent;
 
-    /* constructor.php:62 */
+    /* constructor.php:61 */
     /**
      * FHIRProvenanceEntity Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -192,7 +196,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:143 */
+    /* class_default.php:146 */
     /**
      * @return string
      */
@@ -201,7 +205,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:169 */
+    /* class_default.php:172 */
     /**
      * How an entity was used in an activity.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -222,11 +226,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * How the entity was used during the activity.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRProvenanceEntityRoleList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRProvenanceEntityRole $role
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRole(null|string|FHIRProvenanceEntityRoleList|FHIRProvenanceEntityRole $role,
-                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+    public function setRole(null|string|FHIRProvenanceEntityRoleList|FHIRProvenanceEntityRole $role): self
     {
         if (null === $role) {
             unset($this->role);
@@ -236,33 +238,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             $role = new FHIRProvenanceEntityRole(value: $role);
         }
         $this->role = $role;
-        if ($this->_valueXMLLocations[self::FIELD_ROLE] !== $valueXMLLocation) {
-            $this->_setRoleValueXMLLocation($valueXMLLocation);
-        }
-        return $this;
-    }
-
-    /**
-     * Return the current location the "value" field of the role element will be placed
-     * when serializing this type to XML.
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
-     */
-    public function _getRoleValueXMLLocation() : ValueXMLLocationEnum
-    {
-        return $this->_valueXMLLocations[self::FIELD_ROLE];
-    }
-
-    /**
-     * Set the location the "value" field of the role element will be placed when
-     * serializing tihs type to XML.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
-     * @return static
-     */
-    public function _setRoleValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation) : self
-    {
-        $this->_valueXMLLocations[self::FIELD_ROLE] = $valueXMLLocation;
         return $this;
     }
 
@@ -393,7 +368,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:208 */
+    /* class_default.php:199 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -422,9 +397,11 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             } else if (self::FIELD_ID === $cen) {
                 $va = $ce->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
                 if (null !== $va) {
-                    $type->setId((string)$va, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
+                    $type->setId((string)$va);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_ATTRIBUTE);
                 } else {
-                    $type->setId((string)$ce, ValueXMLLocationEnum::ELEMENT_VALUE);
+                    $type->setId((string)$ce);
+                    $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::ELEMENT_VALUE);
                 }
             } else if (self::FIELD_MODIFIER_EXTENSION === $cen) {
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -438,15 +415,16 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
-            $type->setId((string)$attributes[self::FIELD_ID], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+            $type->setId((string)$attributes[self::FIELD_ID]);
+            $type->_setXMLFieldValueLocation(self::FIELD_ID, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         if (isset($attributes[self::FIELD_ROLE])) {
             if (isset($type->role)) {
                 $type->role->setValue((string)$attributes[self::FIELD_ROLE]);
-                $type->_setRoleValueXMLLocation(ValueXMLLocationEnum::PARENT_ATTRIBUTE);
             } else {
-                $type->setRole((string)$attributes[self::FIELD_ROLE], ValueXMLLocationEnum::PARENT_ATTRIBUTE);
+                $type->setRole((string)$attributes[self::FIELD_ROLE]);
             }
+            $type->_setXMLFieldValueLocation(self::FIELD_ROLE, ValueXMLLocationEnum::PARENT_ATTRIBUTE);
         }
         return $type;
     }
@@ -459,7 +437,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                                  SerializeConfig $config): void
     {
         if (isset($this->role) && ValueXMLLocationEnum::PARENT_ATTRIBUTE === $this->_valueXMLLocations[self::FIELD_ROLE]) {
-            $xw->writeAttribute(self::FIELD_ROLE, $this->role->_getFormattedValue());
+            $xw->writeAttribute(self::FIELD_ROLE, $this->role->_getValueAsString());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->role)
@@ -484,13 +462,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param array $json
+     * @param \stdClass $json
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
      * @throws \Exception
      */
-    public static function jsonUnserialize(array $json,
+    public static function jsonUnserialize(\stdClass $json,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -505,25 +483,29 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             ));
         }
         parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json[self::FIELD_ROLE])
-            || isset($json[self::FIELD_ROLE_EXT])
-            || array_key_exists(self::FIELD_ROLE, $json)
-            || array_key_exists(self::FIELD_ROLE_EXT, $json)) {
-            $value = $json[self::FIELD_ROLE] ?? null;
-            $type->setRole(FHIRProvenanceEntityRole::jsonUnserialize(
-                (is_array($value) ? $value : [FHIRProvenanceEntityRole::FIELD_VALUE => $value]) + ($json[self::FIELD_ROLE_EXT] ?? []),
-                $config,
-            ));
+        if (isset($json->role)
+            || isset($json->_role)
+            || property_exists($json, self::FIELD_ROLE)
+            || property_exists($json, self::FIELD_ROLE_EXT)) {
+            $v = $json->_role ?? new \stdClass();
+            $v->value = $json->role ?? null;
+            $type->setRole(FHIRProvenanceEntityRole::jsonUnserialize($v, $config));
         }
-        if (isset($json[self::FIELD_WHAT]) || array_key_exists(self::FIELD_WHAT, $json)) {
-            $type->setWhat(FHIRReference::jsonUnserialize($json[self::FIELD_WHAT], $config));
-        }
-        if (isset($json[self::FIELD_AGENT]) || array_key_exists(self::FIELD_AGENT, $json)) {
-            $vs = $json[self::FIELD_AGENT];
-            if (!is_int(key($vs))) {
-                $vs = [$vs];
+        if (isset($json->what) || property_exists($json, self::FIELD_WHAT)) {
+            if (is_array($json->what)) {
+                $type->setWhat(FHIRReference::jsonUnserialize(reset($json->what), $config));
+            } else {
+                $type->setWhat(FHIRReference::jsonUnserialize($json->what, $config));
             }
-            foreach($vs as $v) {
+        }
+        if (isset($json->agent) || property_exists($json, self::FIELD_AGENT)) {
+            if (is_object($json->agent)) {
+                $vals = [$json->agent];
+                $type->_setJSONFieldElideSingletonArray(self::FIELD_AGENT, true);
+            } else {
+                $vals = $json->agent;
+            }
+            foreach($vals as $v) {
                 $type->addAgent(FHIRProvenanceAgent::jsonUnserialize($v, $config));
             }
         }
@@ -550,7 +532,11 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             $out->what = $this->what;
         }
         if (isset($this->agent) && [] !== $this->agent) {
-            $out->agent = $this->agent;
+            if ($this->_getJSONFieldElideSingletonArray(self::FIELD_AGENT) && 1 === count($this->agent)) {
+                $out->agent = $this->agent[0];
+            } else {
+                $out->agent = $this->agent;
+            }
         }
         return $out;
     }
