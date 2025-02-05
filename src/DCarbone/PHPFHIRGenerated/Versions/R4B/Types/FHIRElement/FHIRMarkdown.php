@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,6 +92,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\ValueContainerTrait;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive;
@@ -124,7 +125,7 @@ class FHIRMarkdown extends FHIRElement implements PrimitiveContainerTypeInterfac
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            Constants::VALIDATE_PATTERN => '/^[ \\r\\n\\t\\S]+$/',
+            ValuePatternMatchRule::NAME => '/^[ \\r\\n\\t\\S]+$/',
         ],
     ];
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -57,11 +57,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
@@ -76,31 +77,30 @@ class FHIRIdPrimitive implements PrimitiveTypeInterface
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ID_HYPHEN_PRIMITIVE;
 
     public const FIELD_VALUE = 'value';
-
-    /* class_primitive.php:60 */
+    /* class_primitive.php:65 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            Constants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
-            Constants::VALIDATE_MIN_LENGTH => 1,
+            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            ValueMinLengthRule::NAME => 1,
         ],
     ];
 
-    /* class_primitive.php:80 */
+    /* class_primitive.php:85 */
     /** @var string */
     protected string $value;
 
-    /* class_primitive.php:98 */
+    /* class_primitive.php:103 */
     /**
      * FHIRIdPrimitive Constructor
      * @param null|string $value
      */
     public function __construct(null|string $value = null)
     {
-        $this->setValue(value: $value);
+        $this->setValue($value);
     }
 
-    /* class_primitive.php:116 */
+    /* class_primitive.php:121 */
     /**
      * @return string
      */
@@ -110,32 +110,13 @@ class FHIRIdPrimitive implements PrimitiveTypeInterface
     }
 
     /**
-     * Specify whether this value must be represented as a string when serializing to JSON.
-     *
-     * @param bool $jsonAsString
-     * @return self
-     */
-    public function _setJSONAsString(bool $jsonAsString): self
-    {
-        $this->_jsonAsString = $jsonAsString;
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _getJSONAsString(): bool
-    {
-        return $this->_jsonAsString;
-    }
-
-    /**
      * @return null|string
      */
     public function getValue(): null|string
     {
         return $this->value ?? null;
     }
+
     /**
      * @param null|string $value
      * @return static

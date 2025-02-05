@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProductDispense\FHIRBiologicallyDerivedProductDispensePerformer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBiologicallyDerivedProductDispenseCodes;
@@ -161,13 +162,13 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_PRODUCT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_PATIENT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
     ];
 
@@ -1528,10 +1529,10 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
             $this->usageInstruction->xmlSerialize($xw, $config, $this->_valueXMLLocations[self::FIELD_USAGE_INSTRUCTION]);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
+        if ($rootOpened ?? false) {
             $xw->endElement();
         }
-        if (isset($docStarted) && $docStarted) {
+        if ($docStarted ?? false) {
             $xw->endDocument();
         }
         return $xw;
@@ -1562,7 +1563,10 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
+            $json = json_decode(json: $json,
+                                associative: false,
+                                depth: $config->getJSONDecodeMaxDepth(),
+                                flags: $config->getJSONDecodeOpts());
         }
         parent::jsonUnserialize($json, $config, $type); 
         if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {

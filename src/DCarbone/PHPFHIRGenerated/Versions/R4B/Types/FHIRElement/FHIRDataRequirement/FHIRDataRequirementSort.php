@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSortDirectionEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
@@ -124,10 +125,10 @@ class FHIRDataRequirementSort extends FHIRElement
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PATH => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_DIRECTION => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
     ];
 

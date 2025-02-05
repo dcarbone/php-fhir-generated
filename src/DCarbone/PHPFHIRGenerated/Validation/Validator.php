@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,175 +26,79 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\Constants;
-use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MaxOccursRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMaxLengthRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 
 class Validator
 {
     /**
-     * Asserts that a given collection field is of a specific minimum length
+     * Map of rules, keyed by name.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
-     * @param string $fieldName
-     * @param int $expected
-     * @param null|array|\DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface $value
-     * @return null|string
+     * @var \DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface[]
      */
-    public static function assertMinOccurs(TypeInterface $type, string $fieldName, int $expected, null|array|PrimitiveTypeInterface $value): null|string
+    protected static array $_rules = [];
+
+    private static bool $_initialized = false;
+
+    /**
+     * Define a validation rule.  Will overwrite any pre-existing rule with the same name.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface $rule
+     */
+    public static function setRule(ValidationRuleInterface $rule): void
     {
-        if (0 >= $expected || (1 === $expected && $value instanceof TypeInterface)) {
-            return null;
-        }
-        if (null === $value || [] === $value) {
-            return sprintf('Field "%s" on type "%s" must have at least %d elements, but it is empty', $fieldName, $type->_getFHIRTypeName(), $expected);
-        }
-        $len = count($value);
-        if ($expected > $len) {
-            return sprintf('Field "%s" on type "%s" must have at least %d elements, %d seen.', $fieldName, $type->_getFHIRTypeName(), $expected, $len);
-        }
-        return null;
+        self::_init();
+        self::$_rules[$rule->getName()] = $rule;
     }
 
     /**
-     * Asserts that a given collection field has no more than the specified number of elements
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
-     * @param string $fieldName
-     * @param int $expected
-     * @param null|array|\DCarbone\PHPFHIRGenerated\Types\TypeInterface $value
-     * @return null|string
+     * Return the current map of rules
+     * @return \DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface[]
      */
-    public static function assertMaxOccurs(TypeInterface $type, string $fieldName, int $expected, null|array|TypeInterface $value): null|string
+    public static function getRules(): array
     {
-        if (Constants::UNLIMITED === $expected || null === $value || [] === $value || $value instanceof TypeInterface) {
-            return null;
-        }
-        $len = count($value);
-        if ($expected >= $len) {
-            return null;
-        }
-        return sprintf('Field "%s" on type "%s" must have no more than %d elements, %d seen', $fieldName, $type->_getFHIRTypeName(), $expected, $len);
-    }
-
-    /**
-     * Asserts that a given string value is at least x characters long
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
-     * @param string $fieldName
-     * @param int $expected
-     * @param null|string $value
-     * @return null|string
-     */
-    public static function assertMinLength(TypeInterface $type, string $fieldName, int $expected, null|string $value): null|string
-    {
-        if (0 >= $expected) {
-            return null;
-        }
-        if (null === $value || '' === $value) {
-            return sprintf('Field "%s" on type "%s" must be at least %d characters long, but it is empty', $fieldName, $type->_getFHIRTypeName(), $expected);
-        }
-        $len = strlen($value);
-        if ($expected <= $len) {
-            return null;
-        }
-        return sprintf('Field "%s" on type "%s" must be at least %d characters long, %d seen.', $fieldName, $type->_getFHIRTypeName(), $expected, $len);
-    }
-
-    /**
-     * Asserts that a given string value is no more than x characters long
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
-     * @param string $fieldName
-     * @param int $expected
-     * @param null|string $value
-     * @return null|string
-     */
-    public static function assertMaxLength(TypeInterface $type, string $fieldName, int $expected, null|string $value): null|string
-    {
-        if (Constants::UNLIMITED === $expected || null === $value || '' === $value) {
-            return null;
-        }
-        $len = strlen($value);
-        if ($expected >= $len) {
-            return null;
-        }
-        return sprintf('Field "%s" on type "%s" must be no more than %d characters long, %d seen', $fieldName, $type->_getFHIRTypeName(), $expected, $len);
-    }
-
-    /**
-     * Asserts that a given value is within the expected list of values
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
-     * @param string $fieldName
-     * @param array $expected
-     * @param mixed $value
-     * @return null|string
-     */
-    public static function assertValueInEnum(TypeInterface $type, string $fieldName, array $expected, mixed $value): null|string
-    {
-        if ([] === $expected || in_array($value, $expected, true)) {
-            return null;
-        }
-        return sprintf(
-            'Field "%s" on type "%s" value "%s" not in allowed list: [%s]',
-            $fieldName,
-            $type->_getFHIRTypeName(),
-            var_export($value, true),
-            implode(
-                ', ',
-                array_map(
-                    function($v) { return var_export($v, true); },
-                    $expected
-                )
-            )
-        );
-    }
-
-    /**
-     * Asserts that a given string value matches the specified pattern
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
-     * @param string $fieldName
-     * @param string $pattern
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface $value
-     * @return null|string
-     */
-    public static function assertPatternMatch(TypeInterface $type, string $fieldName, string $pattern, null|string|PrimitiveTypeInterface $value): null|string
-    {
-        if ('' === $pattern || null === $value) {
-            return null;
-        }
-        if ($value instanceof PrimitiveTypeInterface) {
-            $value = (string)$value;
-        }
-        if ('' === $value || (bool)preg_match($pattern, $value)) {
-            return null;
-        }
-        return sprintf('Field "%s" on type "%s" value of "%s" does not match pattern: %s', $fieldName, $type->_getFHIRTypeName(), $value, $pattern);
+        self::_init();
+        return self::$_rules;
     }
 
     /**
      * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
-     * @param string $fieldName
-     * @param string $rule
+     * @param string $field
+     * @param string|\DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface $rule Name of registered validation rule, or a specific rule instance to run.
      * @param mixed $constraint
      * @param mixed $value
      * @return null|string
      */
-    public static function validateField(TypeInterface $type, string $fieldName, string $rule, mixed $constraint, mixed $value): null|string
+    public static function runRule(TypeInterface $type,
+                                         string $field,
+                                         string|ValidationRuleInterface $rule,
+                                         mixed $constraint,
+                                         mixed $value): null|string
     {
-        if (null === $constraint) {
-            return null;
+        if ($rule instanceof ValidationRuleInterface) {
+            return $rule->assert($type, $field, $constraint, $value);
         }
-        return match ($rule) {
-            Constants::VALIDATE_ENUM => static::assertValueInEnum($type, $fieldName, $constraint, $value),
-            Constants::VALIDATE_MIN_LENGTH => static::assertMinLength($type, $fieldName, $constraint, $value),
-            Constants::VALIDATE_MAX_LENGTH => static::assertMaxLength($type, $fieldName, $constraint, $value),
-            Constants::VALIDATE_MIN_OCCURS => static::assertMinOccurs($type, $fieldName, $constraint, $value),
-            Constants::VALIDATE_MAX_OCCURS => static::assertMaxOccurs($type, $fieldName, $constraint, $value),
-            Constants::VALIDATE_PATTERN => static::assertPatternMatch($type, $fieldName, $constraint, $value),
-            default => sprintf('Type "%s" specifies unknown validation for field "%s": Name "%s"; Constraint "%s"', $type, $fieldName, $rule, var_export($constraint, true)),
-        };
+        self::_init();
+        if (isset(self::$_rules[$rule])) {
+            return self::$_rules[$rule]->assert($type, $field, $constraint, $value);
+        }
+    }
+
+    private static function _init(): void
+    {
+        if (self::$_initialized) {
+            return;
+        }
+        self::setRule(new ValueOneOfRule());
+        self::setRule(new ValueMinLengthRule());
+        self::setRule(new ValueMaxLengthRule());
+        self::setRule(new ValuePatternMatchRule());
+        self::setRule(new MinOccursRule());
+        self::setRule(new MaxOccursRule());
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -56,10 +56,10 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1;
  * 
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-
-use DCarbone\PHPFHIRGenerated\Versions\VersionInterface;
+use DCarbone\PHPFHIRGenerated\Client\ClientInterface;
 use DCarbone\PHPFHIRGenerated\Versions\VersionConfig;
 use DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface;
+use DCarbone\PHPFHIRGenerated\Versions\VersionInterface;
 use DCarbone\PHPFHIRGenerated\Versions\VersionTypeMapInterface;
 
 class Version implements VersionInterface
@@ -74,7 +74,7 @@ class Version implements VersionInterface
     private VersionConfigInterface $_config;
 
     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypeMap */
-    private static VersionTypeMap $_typeMap;
+    private static VersionTypeMapInterface $_typeMap;
 
     /**
      * Version Constructor

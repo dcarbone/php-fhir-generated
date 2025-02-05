@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,7 +62,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
@@ -80,18 +79,21 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
 
     public const FIELD_VALUE = 'value';
 
-    /* class_primitive.php:60 */
+    public const TRUE = 'true';
+    public const FALSE = 'false';
+
+    /* class_primitive.php:65 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_primitive.php:80 */
+    /* class_primitive.php:85 */
     /** @var bool */
     protected bool $value;
 
     /** @var bool */
     private bool $_jsonAsString;
 
-    /* class_primitive.php:98 */
+    /* class_primitive.php:103 */
     /**
      * FHIRBooleanPrimitive Constructor
      * @param null|string|bool $value
@@ -100,11 +102,11 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
     public function __construct(null|string|bool $value = null,
                                 bool $jsonAsString = false)
     {
-        $this->setValue(value: $value);
+        $this->setValue($value);
         $this->_jsonAsString = $jsonAsString;
     }
 
-    /* class_primitive.php:116 */
+    /* class_primitive.php:121 */
     /**
      * @return string
      */
@@ -140,6 +142,7 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
     {
         return $this->value ?? null;
     }
+
     /**
      * @param null|string|bool $value
      * @return static
@@ -150,9 +153,9 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
             unset($this->value);
         } elseif (is_string($value)) {
             $this->_jsonAsString = true;
-            $this->value = Constants::STRING_TRUE === strtolower($value);
+            $this->value = self::TRUE === strtolower($value);
         } else {
-            $this->value = (bool)$value;
+            $this->value = $value;
         }
         return $this;
     }
@@ -162,17 +165,13 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
      */
     public function _getValueAsString(): string
     {
-        return ($this->value ?? false)
-            ? Constants::STRING_TRUE
-            : Constants::STRING_FALSE;
+        return ($this->value ?? false) ? self::TRUE : self::FALSE;
     }
 
     public function jsonSerialize(): bool|string
     {
         if ($this->_jsonAsString) {
-            return ($this->value ?? false)
-                ? Constants::STRING_TRUE
-                : Constants::STRING_FALSE;
+            return ($this->value ?? false) ? self::TRUE : self::FALSE;
         }
         return $this->value ?? false;
     }

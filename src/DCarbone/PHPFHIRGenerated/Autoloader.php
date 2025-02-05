@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,14 @@ abstract class Autoloader
         'DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface' => __DIR__ . '/Versions/VersionConfigInterface.php',
         'DCarbone\PHPFHIRGenerated\Versions\VersionConfig' => __DIR__ . '/Versions/VersionConfig.php',
         'DCarbone\PHPFHIRGenerated\Validation\Validator' => __DIR__ . '/Validation/Validator.php',
+        'DCarbone\PHPFHIRGenerated\Validation\Rules\MaxOccursRule' => __DIR__ . '/Validation/Rules/MaxOccursRule.php',
+        'DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule' => __DIR__ . '/Validation/Rules/ValuePatternMatchRule.php',
+        'DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMaxLengthRule' => __DIR__ . '/Validation/Rules/ValueMaxLengthRule.php',
+        'DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule' => __DIR__ . '/Validation/Rules/ValueOneOfRule.php',
+        'DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule' => __DIR__ . '/Validation/Rules/MinOccursRule.php',
+        'DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule' => __DIR__ . '/Validation/Rules/ValueMinLengthRule.php',
         'DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait' => __DIR__ . '/Validation/TypeValidationsTrait.php',
+        'DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface' => __DIR__ . '/Validation/ValidationRuleInterface.php',
         'DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig' => __DIR__ . '/Encoding/SerializeConfig.php',
         'DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum' => __DIR__ . '/Encoding/ValueXMLLocationEnum.php',
         'DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait' => __DIR__ . '/Encoding/JSONSerializationOptionsTrait.php',

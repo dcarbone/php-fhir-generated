@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRQuestionnaireItemOperatorEnum;
@@ -155,40 +156,40 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_QUESTION => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_OPERATOR => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_ANSWER_BOOLEAN => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_ANSWER_DECIMAL => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_ANSWER_INTEGER => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_ANSWER_DATE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_ANSWER_DATE_TIME => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_ANSWER_TIME => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_ANSWER_STRING => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_ANSWER_CODING => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_ANSWER_QUANTITY => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_ANSWER_REFERENCE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
     ];
 

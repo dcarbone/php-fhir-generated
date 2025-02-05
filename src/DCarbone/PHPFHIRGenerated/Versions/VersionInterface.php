@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -30,7 +30,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
 interface VersionInterface
 {
     /**
-     * Must return the "name" of this version, e.g. DSTU1, STU3, R5, etc.
+     * Must return the "name" of this version.
      *
      * @return string
      */

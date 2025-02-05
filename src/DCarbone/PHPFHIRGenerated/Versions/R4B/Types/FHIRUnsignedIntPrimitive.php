@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,10 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
 
@@ -99,23 +99,22 @@ class FHIRUnsignedIntPrimitive implements PrimitiveTypeInterface
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_UNSIGNED_INT_HYPHEN_PRIMITIVE;
 
     public const FIELD_VALUE = 'value';
-
-    /* class_primitive.php:60 */
+    /* class_primitive.php:65 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            Constants::VALIDATE_PATTERN => '/^[0]|([1-9][0-9]*)$/',
+            ValuePatternMatchRule::NAME => '/^[0]|([1-9][0-9]*)$/',
         ],
     ];
 
-    /* class_primitive.php:80 */
+    /* class_primitive.php:85 */
     /** @var string */
     protected string $value;
 
     /** @var bool */
     private bool $_jsonAsString;
 
-    /* class_primitive.php:98 */
+    /* class_primitive.php:103 */
     /**
      * FHIRUnsignedIntPrimitive Constructor
      * @param null|string|int|float $value
@@ -124,11 +123,11 @@ class FHIRUnsignedIntPrimitive implements PrimitiveTypeInterface
     public function __construct(null|string|int|float $value = null,
                                 bool $jsonAsString = false)
     {
-        $this->setValue(value: $value);
+        $this->setValue($value);
         $this->_jsonAsString = $jsonAsString;
     }
 
-    /* class_primitive.php:116 */
+    /* class_primitive.php:121 */
     /**
      * @return string
      */
@@ -164,6 +163,7 @@ class FHIRUnsignedIntPrimitive implements PrimitiveTypeInterface
     {
         return $this->value ?? null;
     }
+
     /**
      * @param null|string|int|float $value
      * @return static

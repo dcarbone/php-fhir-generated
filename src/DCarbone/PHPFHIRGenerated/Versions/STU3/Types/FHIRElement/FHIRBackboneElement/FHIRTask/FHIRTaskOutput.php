@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBase64BinaryPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive;
@@ -202,121 +203,121 @@ class FHIRTaskOutput extends FHIRBackboneElement
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_BASE_64BINARY => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_BOOLEAN => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_CODE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_DATE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_DATE_TIME => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_DECIMAL => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_ID => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_INSTANT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_INTEGER => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_MARKDOWN => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_OID => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_POSITIVE_INT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_STRING => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_TIME => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_UNSIGNED_INT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_URI => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_ADDRESS => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_AGE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_ANNOTATION => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_ATTACHMENT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_CODEABLE_CONCEPT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_CODING => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_CONTACT_POINT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_COUNT => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_DISTANCE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_DURATION => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_HUMAN_NAME => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_IDENTIFIER => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_MONEY => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_PERIOD => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_QUANTITY => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_RANGE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_RATIO => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_REFERENCE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_SAMPLED_DATA => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_SIGNATURE => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_TIMING => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
         self::FIELD_VALUE_META => [
-            Constants::VALIDATE_MIN_OCCURS => 1,
+            MinOccursRule::NAME => 1,
         ],
     ];
 

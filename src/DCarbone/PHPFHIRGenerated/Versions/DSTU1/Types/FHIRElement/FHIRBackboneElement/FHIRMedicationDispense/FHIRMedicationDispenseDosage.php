@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 04:06+0000
+ * Class creation date: February 5th, 2025 20:30+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,6 +64,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive;
@@ -1037,10 +1038,10 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
             $this->maxDosePerPeriod->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($rootOpened) && $rootOpened) {
+        if ($rootOpened ?? false) {
             $xw->endElement();
         }
-        if (isset($docStarted) && $docStarted) {
+        if ($docStarted ?? false) {
             $xw->endDocument();
         }
         return $xw;
@@ -1071,7 +1072,10 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
         if (is_string($json)) {
-            $json = json_decode(json: $json, associative: false, depth: $config->getJSONDecodeMaxDepth());
+            $json = json_decode(json: $json,
+                                associative: false,
+                                depth: $config->getJSONDecodeMaxDepth(),
+                                flags: $config->getJSONDecodeOpts());
         }
         parent::jsonUnserialize($json, $config, $type); 
         if (isset($json->additionalInstructions) || property_exists($json, self::FIELD_ADDITIONAL_INSTRUCTIONS)) {
