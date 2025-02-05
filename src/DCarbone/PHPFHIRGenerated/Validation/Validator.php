@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 01:55+0000
+ * Class creation date: February 5th, 2025 04:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -34,36 +34,38 @@ class Validator
 {
     /**
      * Asserts that a given collection field is of a specific minimum length
-     * @param string $typeName
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
      * @param string $fieldName
      * @param int $expected
-     * @param null|array|\DCarbone\PHPFHIRGenerated\Types\TypeInterface $value
+     * @param null|array|\DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface $value
      * @return null|string
      */
-    public static function assertMinOccurs(string $typeName, string $fieldName, int $expected, null|array|PrimitiveTypeInterface $value): null|string
+    public static function assertMinOccurs(TypeInterface $type, string $fieldName, int $expected, null|array|PrimitiveTypeInterface $value): null|string
     {
         if (0 >= $expected || (1 === $expected && $value instanceof TypeInterface)) {
             return null;
         }
         if (null === $value || [] === $value) {
-            return sprintf('Field "%s" on type "%s" must have at least %d elements, but it is empty', $fieldName, $typeName, $expected);
+            return sprintf('Field "%s" on type "%s" must have at least %d elements, but it is empty', $fieldName, $type->_getFHIRTypeName(), $expected);
         }
         $len = count($value);
         if ($expected > $len) {
-            return sprintf('Field "%s" on type "%s" must have at least %d elements, %d seen.', $fieldName, $typeName, $expected, $len);
+            return sprintf('Field "%s" on type "%s" must have at least %d elements, %d seen.', $fieldName, $type->_getFHIRTypeName(), $expected, $len);
         }
         return null;
     }
 
     /**
      * Asserts that a given collection field has no more than the specified number of elements
-     * @param string $typeName
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
      * @param string $fieldName
      * @param int $expected
      * @param null|array|\DCarbone\PHPFHIRGenerated\Types\TypeInterface $value
      * @return null|string
      */
-    public static function assertMaxOccurs(string $typeName, string $fieldName, int $expected, null|array|TypeInterface $value): null|string
+    public static function assertMaxOccurs(TypeInterface $type, string $fieldName, int $expected, null|array|TypeInterface $value): null|string
     {
         if (Constants::UNLIMITED === $expected || null === $value || [] === $value || $value instanceof TypeInterface) {
             return null;
@@ -72,41 +74,43 @@ class Validator
         if ($expected >= $len) {
             return null;
         }
-        return sprintf('Field "%s" on type "%s" must have no more than %d elements, %d seen', $fieldName, $typeName, $expected, $len);
+        return sprintf('Field "%s" on type "%s" must have no more than %d elements, %d seen', $fieldName, $type->_getFHIRTypeName(), $expected, $len);
     }
 
     /**
      * Asserts that a given string value is at least x characters long
-     * @param string $typeName
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
      * @param string $fieldName
      * @param int $expected
      * @param null|string $value
      * @return null|string
      */
-    public static function assertMinLength(string $typeName, string $fieldName, int $expected, null|string $value): null|string
+    public static function assertMinLength(TypeInterface $type, string $fieldName, int $expected, null|string $value): null|string
     {
         if (0 >= $expected) {
             return null;
         }
         if (null === $value || '' === $value) {
-            return sprintf('Field "%s" on type "%s" must be at least %d characters long, but it is empty', $fieldName, $typeName, $expected);
+            return sprintf('Field "%s" on type "%s" must be at least %d characters long, but it is empty', $fieldName, $type->_getFHIRTypeName(), $expected);
         }
         $len = strlen($value);
         if ($expected <= $len) {
             return null;
         }
-        return sprintf('Field "%s" on type "%s" must be at least %d characters long, %d seen.', $fieldName, $typeName, $expected, $len);
+        return sprintf('Field "%s" on type "%s" must be at least %d characters long, %d seen.', $fieldName, $type->_getFHIRTypeName(), $expected, $len);
     }
 
     /**
      * Asserts that a given string value is no more than x characters long
-     * @param string $typeName
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
      * @param string $fieldName
      * @param int $expected
      * @param null|string $value
      * @return null|string
      */
-    public static function assertMaxLength(string $typeName, string $fieldName, int $expected, null|string $value): null|string
+    public static function assertMaxLength(TypeInterface $type, string $fieldName, int $expected, null|string $value): null|string
     {
         if (Constants::UNLIMITED === $expected || null === $value || '' === $value) {
             return null;
@@ -115,18 +119,19 @@ class Validator
         if ($expected >= $len) {
             return null;
         }
-        return sprintf('Field "%s" on type "%s" must be no more than %d characters long, %d seen', $fieldName, $typeName, $expected, $len);
+        return sprintf('Field "%s" on type "%s" must be no more than %d characters long, %d seen', $fieldName, $type->_getFHIRTypeName(), $expected, $len);
     }
 
     /**
      * Asserts that a given value is within the expected list of values
-     * @param string $typeName
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
      * @param string $fieldName
      * @param array $expected
      * @param mixed $value
      * @return null|string
      */
-    public static function assertValueInEnum(string $typeName, string $fieldName, array $expected, mixed $value): null|string
+    public static function assertValueInEnum(TypeInterface $type, string $fieldName, array $expected, mixed $value): null|string
     {
         if ([] === $expected || in_array($value, $expected, true)) {
             return null;
@@ -134,7 +139,7 @@ class Validator
         return sprintf(
             'Field "%s" on type "%s" value "%s" not in allowed list: [%s]',
             $fieldName,
-            $typeName,
+            $type->_getFHIRTypeName(),
             var_export($value, true),
             implode(
                 ', ',
@@ -148,13 +153,14 @@ class Validator
 
     /**
      * Asserts that a given string value matches the specified pattern
-     * @param string $typeName
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
      * @param string $fieldName
      * @param string $pattern
      * @param null|string|\DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface $value
      * @return null|string
      */
-    public static function assertPatternMatch(string $typeName, string $fieldName, string $pattern, null|string|PrimitiveTypeInterface $value): null|string
+    public static function assertPatternMatch(TypeInterface $type, string $fieldName, string $pattern, null|string|PrimitiveTypeInterface $value): null|string
     {
         if ('' === $pattern || null === $value) {
             return null;
@@ -165,30 +171,30 @@ class Validator
         if ('' === $value || (bool)preg_match($pattern, $value)) {
             return null;
         }
-        return sprintf('Field "%s" on type "%s" value of "%s" does not match pattern: %s', $fieldName, $typeName, $value, $pattern);
+        return sprintf('Field "%s" on type "%s" value of "%s" does not match pattern: %s', $fieldName, $type->_getFHIRTypeName(), $value, $pattern);
     }
 
     /**
-     * @param string $typeName
+     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
      * @param string $fieldName
      * @param string $rule
      * @param mixed $constraint
      * @param mixed $value
      * @return null|string
      */
-    public static function validateField(string $typeName, string $fieldName, string $rule, mixed $constraint, mixed $value): null|string
+    public static function validateField(TypeInterface $type, string $fieldName, string $rule, mixed $constraint, mixed $value): null|string
     {
         if (null === $constraint) {
             return null;
         }
         return match ($rule) {
-            Constants::VALIDATE_ENUM => static::assertValueInEnum($typeName, $fieldName, $constraint, $value),
-            Constants::VALIDATE_MIN_LENGTH => static::assertMinLength($typeName, $fieldName, $constraint, $value),
-            Constants::VALIDATE_MAX_LENGTH => static::assertMaxLength($typeName, $fieldName, $constraint, $value),
-            Constants::VALIDATE_MIN_OCCURS => static::assertMinOccurs($typeName, $fieldName, $constraint, $value),
-            Constants::VALIDATE_MAX_OCCURS => static::assertMaxOccurs($typeName, $fieldName, $constraint, $value),
-            Constants::VALIDATE_PATTERN => static::assertPatternMatch($typeName, $fieldName, $constraint, $value),
-            default => sprintf('Type "%s" specifies unknown validation for field "%s": Name "%s"; Constraint "%s"', $typeName, $fieldName, $rule, var_export($constraint, true)),
+            Constants::VALIDATE_ENUM => static::assertValueInEnum($type, $fieldName, $constraint, $value),
+            Constants::VALIDATE_MIN_LENGTH => static::assertMinLength($type, $fieldName, $constraint, $value),
+            Constants::VALIDATE_MAX_LENGTH => static::assertMaxLength($type, $fieldName, $constraint, $value),
+            Constants::VALIDATE_MIN_OCCURS => static::assertMinOccurs($type, $fieldName, $constraint, $value),
+            Constants::VALIDATE_MAX_OCCURS => static::assertMaxOccurs($type, $fieldName, $constraint, $value),
+            Constants::VALIDATE_PATTERN => static::assertPatternMatch($type, $fieldName, $constraint, $value),
+            default => sprintf('Type "%s" specifies unknown validation for field "%s": Name "%s"; Constraint "%s"', $type, $fieldName, $rule, var_export($constraint, true)),
         };
     }
 }

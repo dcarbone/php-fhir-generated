@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 01:55+0000
+ * Class creation date: February 5th, 2025 04:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,7 @@ trait TypeValidationsTrait
         foreach ($this->_getCombinedValidationRules() as $field => $rules) {
             $v = $this->{$field} ?? null;
             foreach ($rules as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, $field, $rule, $constraint, $v);
+                $err = Validator::validateField($this, $field, $rule, $constraint, $v);
                 if (null !== $err) {
                     if (!isset($errs[$field])) {
                         $errs[$field] = [];
