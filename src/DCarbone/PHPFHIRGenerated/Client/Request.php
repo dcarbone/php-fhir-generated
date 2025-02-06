@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 20:30+0000
+ * Class creation date: February 6th, 2025 03:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,9 +26,13 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Versions\VersionInterface;
 
 class Request
 {
+    /** @var  */
+    public VersionInterface $version;
+
     /** @var string */
     public string $method;
 
@@ -73,12 +77,11 @@ class Request
      *
      * If using the provided client (@see \DCarbone\PHPFHIRGenerated\Client\Client class),
      * these must be valid PHP curl options.
-     *
-     * @var array
      */
     public array $options;
 
-    public function __construct(HTTPMethodEnum $method,
+    public function __construct(VersionInterface $version,
+                                HTTPMethodEnum $method,
                                 string $path,
                                 null|int $count = null,
                                 null|string $since = null,
@@ -89,6 +92,7 @@ class Request
                                 null|bool $parseResponseHeaders = null,
                                 null|array $options = null)
     {
+        $this->version = $version;
         $this->method = $method->value;
         $this->path = $path;
         if (null !== $count) {

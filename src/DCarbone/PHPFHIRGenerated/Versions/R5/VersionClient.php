@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 20:30+0000
+ * Class creation date: February 6th, 2025 03:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Client\ClientErrorException;
 use DCarbone\PHPFHIRGenerated\Client\ClientInterface;
 use DCarbone\PHPFHIRGenerated\Client\HTTPMethodEnum;
@@ -91,7 +90,7 @@ use DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum;
 use DCarbone\PHPFHIRGenerated\Client\SortDirectionEnum;
 use DCarbone\PHPFHIRGenerated\Client\UnexpectedResponseCodeException;
 use DCarbone\PHPFHIRGenerated\Encoding\ResourceParser;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRBinary;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAccount;
@@ -306,6 +305,7 @@ class VersionClient
             $path .= "/{$resourceID}";
         }
         $req = new Request(
+            version: $this->_version,
             method: HTTPMethodEnum::GET,
             path: $path,
         );
@@ -339,7 +339,7 @@ class VersionClient
      * @param null|\DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum $format
      * @param null|array $queryParams
      * @param null|bool $parseResponseHeaders
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      * @throws \Exception
      */
     public function read(VersionTypesEnum $resourceType,
@@ -348,7 +348,20 @@ class VersionClient
                          null|string|SortDirectionEnum $sort = null,
                          null|ResponseFormatEnum $format = null,
                          null|array $queryParams = null,
-                         null|bool $parseResponseHeaders = null): null|TypeInterface
+                         null|bool $parseResponseHeaders = null): null|ResourceTypeInterface
+    {
+        $rc = $this->readRaw($resourceType, $resourceID, $count, $sort, $format, $queryParams, $parseResponseHeaders);
+        $this->_requireOK($rc);
+        return ResourceParser::parse($this->_version, $rc->resp);
+    }
+
+    public function update(VersionTypesEnum $resourceType,
+                           null|string|FHIRId|FHIRIdPrimitive $resourceID = null,
+                           null|int $count = null,
+                           null|string|SortDirectionEnum $sort = null,
+                           null|ResponseFormatEnum $format = null,
+                           null|array $queryParams = null,
+                           null|bool $parseResponseHeaders = null): null|ResourceTypeInterface
     {
         $rc = $this->readRaw($resourceType, $resourceID, $count, $sort, $format, $queryParams, $parseResponseHeaders);
         $this->_requireOK($rc);

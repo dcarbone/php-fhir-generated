@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 5th, 2025 20:30+0000
+ * Class creation date: February 6th, 2025 03:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -29,7 +29,7 @@ namespace DCarbone\PHPFHIRGenerated;
 final class Constants
 {
     // PHPFHIR
-    public const CODE_GENERATION_DATE = 'February 5th, 2025 20:30+0000';
+    public const CODE_GENERATION_DATE = 'February 6th, 2025 03:21+0000';
 
     // Common
     public const JSON_FIELD_RESOURCE_TYPE = 'resourceType';
