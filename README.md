@@ -1,20 +1,6 @@
 # php-fhir-generated
 Pre-generated classes from [dcarbone/php-fhir](https://github.com/dcarbone/php-fhir)
 
-This lib can either be used with [Composer](https://getcomposer.org) or on it's own.
+# Documentation
 
-### Inclusion with Composer
-
-composer.json require entry:
-
-```json
-{
-   "dcarbone/php-fhir-generated": "v3.2.*"
-}
-```
-
-### Autoloading without Composer
-
-If you do not wish to use Composer, for whatever reason, I provide the class `PHPFHIRAutoloader` per version generated.
-
-You can find it within the root of each versions' namespace path.
+Documentation is available on the wiki: https://github.com/dcarbone/php-fhir-generated/wiki

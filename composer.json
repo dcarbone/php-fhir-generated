@@ -34,5 +34,8 @@
     "psr-4": {
       "DCarbone\\PHPFHIRGenerated\\": "./src/DCarbone/PHPFHIRGenerated"
     }
+  },
+  "autoload-dev": {
+    "Tests\\DCarbone\\PHPFHIRGenerated\\": "./tests/Tests/DCarbone/PHPFHIRGenerated"
   }
 }
