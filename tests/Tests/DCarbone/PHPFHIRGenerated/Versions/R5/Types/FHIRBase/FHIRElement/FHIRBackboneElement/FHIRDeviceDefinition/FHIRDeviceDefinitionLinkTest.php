@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,6 @@ class FHIRDeviceDefinitionLinkTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRDeviceDefinitionLink();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionLink', $type);
+        $this->assertEquals('DeviceDefinition.Link', $type->_getFHIRTypeName());
     }
 }

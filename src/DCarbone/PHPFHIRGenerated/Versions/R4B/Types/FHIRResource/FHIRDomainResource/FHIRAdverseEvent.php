@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -169,7 +169,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
         ],
     ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ACTUALITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -177,7 +177,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
         self::FIELD_RECORDED_DATE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -541,7 +541,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -550,7 +550,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:158 */
+    /* class_default.php:151 */
     /**
      * @return string
      */
@@ -559,7 +559,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -1526,7 +1526,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

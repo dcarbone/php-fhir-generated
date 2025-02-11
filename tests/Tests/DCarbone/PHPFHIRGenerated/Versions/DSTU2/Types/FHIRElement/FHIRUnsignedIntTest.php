@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,28 @@ class FHIRUnsignedIntTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRUnsignedInt();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt', $type);
+        $this->assertEquals('unsignedInt', $type->_getFHIRTypeName());
     }
+    public function testCanConstructWithString()
+    {
+        $type = new FHIRUnsignedInt(value: '9223372036854775807');
+        $this->assertEquals('9223372036854775807', $type->_getValueAsString());
+        $this->assertEquals('9223372036854775807', (string)$type);
+        $type = new FHIRUnsignedInt(value: '1,000');
+        $this->assertEquals('1,000', $type->_getValueAsString());
+        $this->assertEquals('1,000', (string)$type);
+    }
+
+    public function testCanSetValueFromString()
+    {
+        $type = new FHIRUnsignedInt();
+        $type->setValue('9223372036854775807');
+        $this->assertEquals('9223372036854775807', $type->_getValueAsString());
+        $this->assertEquals('9223372036854775807', (string)$type);
+        $type = new FHIRUnsignedInt();
+        $type->setValue('1,000');
+        $this->assertEquals('1,000', $type->_getValueAsString());
+        $this->assertEquals('1,000', (string)$type);
+    }
+
 }

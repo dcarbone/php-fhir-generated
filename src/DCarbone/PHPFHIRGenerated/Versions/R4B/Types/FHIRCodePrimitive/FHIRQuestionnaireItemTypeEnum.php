@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,9 +103,33 @@ class FHIRQuestionnaireItemTypeEnum extends FHIRCodePrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValuePatternMatchRule::NAME => '/^[^\\s]+(\\s[^\\s]+)*$/',
+            ValueMinLengthRule::NAME => 1,
+            ValueOneOfRule::NAME => [
+                0 => 'group',
+                1 => 'display',
+                2 => 'question',
+                3 => 'boolean',
+                4 => 'decimal',
+                5 => 'integer',
+                6 => 'date',
+                7 => 'dateTime',
+                8 => 'time',
+                9 => 'string',
+                10 => 'text',
+                11 => 'url',
+                12 => 'choice',
+                13 => 'open-choice',
+                14 => 'attachment',
+                15 => 'reference',
+                16 => 'quantity',
+            ],
+        ],
+    ];
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -114,5 +138,5 @@ class FHIRQuestionnaireItemTypeEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

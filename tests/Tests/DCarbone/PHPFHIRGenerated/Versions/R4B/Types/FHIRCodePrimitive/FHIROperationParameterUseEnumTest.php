@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,19 +89,21 @@ class FHIROperationParameterUseEnumTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIROperationParameterUseEnum();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIROperationParameterUseEnum', $type);
+        $this->assertEquals('OperationParameterUseEnum', $type->_getFHIRTypeName());
     }
-
     public function testCanConstructWithString()
     {
-        $n = new FHIROperationParameterUseEnum('randomstring');
-        $this->assertEquals('randomstring', (string)$n);
+        $type = new FHIROperationParameterUseEnum(value: 'randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
     }
 
     public function testCanSetValueFromString()
     {
-        $n = new FHIROperationParameterUseEnum;
-        $n->setValue('randomstring');
-        $this->assertEquals('randomstring', (string)$n);
+        $type = new FHIROperationParameterUseEnum();
+        $type->setValue('randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
     }
+
 }

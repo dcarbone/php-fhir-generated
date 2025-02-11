@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -27,11 +27,10 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
  */
 
 use DCarbone\PHPFHIRGenerated\Constants;
-use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface;
+use DCarbone\PHPFHIRGenerated\Validation\RuleInterface;
 
-class MaxOccursRule implements ValidationRuleInterface
+class MaxOccursRule implements RuleInterface
 {
     public const NAME = 'max_occurs';
     public const DESCRIPTION = 'Asserts that a given collection field has no more than the specified number of elements';
@@ -48,13 +47,13 @@ class MaxOccursRule implements ValidationRuleInterface
 
     public function assert(TypeInterface $type, string $field, mixed $constraint, mixed $value): null|string
     {
-        if (Constants::UNLIMITED === $constraint || null === $value || [] === $value || $value instanceof TypeInterface) {
+        if (Constants::UNLIMITED === $constraint || !is_array($value) || [] === $value) {
             return null;
         }
         $len = count($value);
-        if ($constraint >= $len) {
-            return null;
+        if ($constraint < $len) {
+            return sprintf('Field "%s" on type "%s" must have no more than %d elements, %d seen', $field, $type->_getFHIRTypeName(), $constraint, $len);
         }
-        return sprintf('Field "%s" on type "%s" must have no more than %d elements, %d seen', $field, $type->_getFHIRTypeName(), $constraint, $len);
+        return null;
     }
 }

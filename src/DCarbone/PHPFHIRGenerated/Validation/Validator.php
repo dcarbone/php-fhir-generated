@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -39,7 +39,7 @@ class Validator
     /**
      * Map of rules, keyed by name.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface[]
+     * @var \DCarbone\PHPFHIRGenerated\Validation\RuleInterface[]
      */
     protected static array $_rules = [];
 
@@ -48,57 +48,69 @@ class Validator
     /**
      * Define a validation rule.  Will overwrite any pre-existing rule with the same name.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface $rule
+     * @param \DCarbone\PHPFHIRGenerated\Validation\RuleInterface $rule
      */
-    public static function setRule(ValidationRuleInterface $rule): void
+    public static function setRule(RuleInterface $rule): void
     {
-        self::_init();
         self::$_rules[$rule->getName()] = $rule;
     }
 
     /**
+     * Return a rule by name, if it exists
+     *
+     * @param string $ruleName
+     * @return null|\DCarbone\PHPFHIRGenerated\Validation\RuleInterface
+     */
+    public static function getRule(string $ruleName): null|RuleInterface
+    {
+        return self::$_rules[$ruleName] ?? null;
+    }
+
+    /**
      * Return the current map of rules
-     * @return \DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface[]
+     * @return \DCarbone\PHPFHIRGenerated\Validation\RuleInterface[]
      */
     public static function getRules(): array
     {
-        self::_init();
         return self::$_rules;
     }
 
     /**
      * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
      * @param string $field
-     * @param string|\DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface $rule Name of registered validation rule, or a specific rule instance to run.
+     * @param string|\DCarbone\PHPFHIRGenerated\Validation\RuleInterface $rule Name of registered validation rule, or a specific rule instance to run.
      * @param mixed $constraint
      * @param mixed $value
      * @return null|string
      */
     public static function runRule(TypeInterface $type,
-                                         string $field,
-                                         string|ValidationRuleInterface $rule,
-                                         mixed $constraint,
-                                         mixed $value): null|string
+                                   string $field,
+                                   string|RuleInterface $rule,
+                                   mixed $constraint,
+                                   mixed $value): null|string
     {
-        if ($rule instanceof ValidationRuleInterface) {
+        if ($rule instanceof RuleInterface) {
             return $rule->assert($type, $field, $constraint, $value);
         }
-        self::_init();
         if (isset(self::$_rules[$rule])) {
             return self::$_rules[$rule]->assert($type, $field, $constraint, $value);
         }
+        throw new \OutOfBoundsException(sprintf('No rule named "%s" registered.', $rule));
     }
 
-    private static function _init(): void
+    public static function _init(): void
     {
         if (self::$_initialized) {
             return;
         }
-        self::setRule(new ValueOneOfRule());
-        self::setRule(new ValueMinLengthRule());
-        self::setRule(new ValueMaxLengthRule());
-        self::setRule(new ValuePatternMatchRule());
-        self::setRule(new MinOccursRule());
-        self::setRule(new MaxOccursRule());
+        self::$_initialized = true;
+        self::$_rules[ValueOneOfRule::NAME] = new ValueOneOfRule();
+        self::$_rules[ValueMinLengthRule::NAME] = new ValueMinLengthRule();
+        self::$_rules[ValueMaxLengthRule::NAME] = new ValueMaxLengthRule();
+        self::$_rules[ValuePatternMatchRule::NAME] = new ValuePatternMatchRule();
+        self::$_rules[MinOccursRule::NAME] = new MinOccursRule();
+        self::$_rules[MaxOccursRule::NAME] = new MaxOccursRule();
     }
 }
+
+Validator::_init();

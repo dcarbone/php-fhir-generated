@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,12 +121,12 @@ class FHIRSampledDataDataType extends FHIRElement implements PrimitiveContainerT
         ],
     ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRSampledDataDataTypePrimitive */
     protected FHIRSampledDataDataTypePrimitive $value;
 
@@ -151,7 +151,7 @@ class FHIRSampledDataDataType extends FHIRElement implements PrimitiveContainerT
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -160,7 +160,7 @@ class FHIRSampledDataDataType extends FHIRElement implements PrimitiveContainerT
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRSampledDataDataTypePrimitive
      */
@@ -186,14 +186,14 @@ class FHIRSampledDataDataType extends FHIRElement implements PrimitiveContainerT
         return $this;
     }
 
-    /* class_default.php:188 */
+    /* class_default.php:181 */
     public function _nonValueFieldDefined(): bool
     {
     return isset($this->extension)
             || isset($this->id);
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -316,5 +316,14 @@ class FHIRSampledDataDataType extends FHIRElement implements PrimitiveContainerT
             $out->value = $this->value;
         }
         return $out;
+    }
+
+    /* class_default.php:218 */
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->_getValueAsString();
     }
 }

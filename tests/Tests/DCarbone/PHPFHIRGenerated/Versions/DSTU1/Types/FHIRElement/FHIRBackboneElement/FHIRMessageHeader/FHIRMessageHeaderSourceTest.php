@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,6 +64,6 @@ class FHIRMessageHeaderSourceTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRMessageHeaderSource();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource', $type);
+        $this->assertEquals('MessageHeader.Source', $type->_getFHIRTypeName());
     }
 }

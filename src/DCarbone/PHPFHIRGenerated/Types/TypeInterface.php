@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,6 +26,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * 
  */
 
+
 interface TypeInterface extends \JsonSerializable
 {
     /**
@@ -36,8 +37,7 @@ interface TypeInterface extends \JsonSerializable
     public function _getFHIRTypeName(): string;
 
     /**
-     * Must return associative array where, if there are validation errors, the keys are the names of fields within the
-     * type that failed validation.  The value must be a string message describing the manner of error
+     * Execute any and all validation rules present on this type and all nested field types.
      *
      * @return array
      */

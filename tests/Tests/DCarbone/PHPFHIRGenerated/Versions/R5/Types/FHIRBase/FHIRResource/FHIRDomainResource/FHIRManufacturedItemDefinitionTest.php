@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResourc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,9 +125,8 @@ class FHIRManufacturedItemDefinitionTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRManufacturedItemDefinition();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRManufacturedItemDefinition', $type);
+        $this->assertEquals('ManufacturedItemDefinition', $type->_getFHIRTypeName());
     }
-
     public function testCanTranscodeBundleJSON()
     {
         $client = $this->_getClient();

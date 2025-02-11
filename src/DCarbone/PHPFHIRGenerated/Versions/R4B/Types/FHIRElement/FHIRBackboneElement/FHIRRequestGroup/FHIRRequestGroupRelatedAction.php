@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,13 +135,13 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ACTION_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RELATIONSHIP => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -225,7 +225,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -234,7 +234,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -383,7 +383,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,6 @@ class FHIRExplanationOfBenefitBodySite1Test extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRExplanationOfBenefitBodySite1();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBodySite1', $type);
+        $this->assertEquals('ExplanationOfBenefit.BodySite1', $type->_getFHIRTypeName());
     }
 }

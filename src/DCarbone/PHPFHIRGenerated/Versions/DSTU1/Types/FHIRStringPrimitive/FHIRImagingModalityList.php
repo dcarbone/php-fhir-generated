@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,11 +77,52 @@ class FHIRImagingModalityList extends FHIRStringPrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValueOneOfRule::NAME => [
+                0 => 'AR',
+                1 => 'BMD',
+                2 => 'BDUS',
+                3 => 'EPS',
+                4 => 'CR',
+                5 => 'CT',
+                6 => 'DX',
+                7 => 'ECG',
+                8 => 'ES',
+                9 => 'XC',
+                10 => 'GM',
+                11 => 'HD',
+                12 => 'IO',
+                13 => 'IVOCT',
+                14 => 'IVUS',
+                15 => 'KER',
+                16 => 'LEN',
+                17 => 'MR',
+                18 => 'MG',
+                19 => 'NM',
+                20 => 'OAM',
+                21 => 'OCT',
+                22 => 'OPM',
+                23 => 'OP',
+                24 => 'OPR',
+                25 => 'OPT',
+                26 => 'OPV',
+                27 => 'PX',
+                28 => 'PT',
+                29 => 'RF',
+                30 => 'RG',
+                31 => 'SM',
+                32 => 'SRF',
+                33 => 'US',
+                34 => 'VA',
+                35 => 'XA',
+            ],
+        ],
+    ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -90,5 +131,5 @@ class FHIRImagingModalityList extends FHIRStringPrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

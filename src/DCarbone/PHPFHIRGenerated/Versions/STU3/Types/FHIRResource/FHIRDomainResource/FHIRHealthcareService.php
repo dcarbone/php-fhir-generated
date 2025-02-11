@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,9 +147,10 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+    ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_ACTIVE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -160,7 +161,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
         self::FIELD_AVAILABILITY_EXCEPTIONS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -573,7 +574,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -582,7 +583,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:158 */
+    /* class_default.php:151 */
     /**
      * @return string
      */
@@ -591,7 +592,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -1871,7 +1872,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

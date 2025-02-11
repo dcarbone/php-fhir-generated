@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,11 +128,11 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -247,7 +247,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -256,7 +256,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
@@ -465,7 +465,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

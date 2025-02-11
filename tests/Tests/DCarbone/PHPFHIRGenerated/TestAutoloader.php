@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -34,9 +34,19 @@ abstract class TestAutoloader
         'Tests\DCarbone\PHPFHIRGenerated\Client\ClientTest' => __DIR__ . '/Client/ClientTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\TestAutoloader' => __DIR__ . '/TestAutoloader.php',
         'Tests\DCarbone\PHPFHIRGenerated\Types\MockResourceType' => __DIR__ . '/Types/MockResourceType.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Types\MockTypeFieldsTrait' => __DIR__ . '/Types/MockTypeFieldsTrait.php',
         'Tests\DCarbone\PHPFHIRGenerated\Types\MockStringPrimitiveType' => __DIR__ . '/Types/MockStringPrimitiveType.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Types\MockElementType' => __DIR__ . '/Types/MockElementType.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Types\MockPrimitiveContainerType' => __DIR__ . '/Types/MockPrimitiveContainerType.php',
         'Tests\DCarbone\PHPFHIRGenerated\Versions\VersionConfigTest' => __DIR__ . '/Versions/VersionConfigTest.php',
-        'Tests\DCarbone\PHPFHIRGenerated\Validation\ValuePatternMatchRuleTest' => __DIR__ . '/Validation/ValuePatternMatchRuleTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Validation\ValidatorTest' => __DIR__ . '/Validation/ValidatorTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRuleTest' => __DIR__ . '/Validation/Rules/MinOccursRuleTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOnOfRuleTest' => __DIR__ . '/Validation/Rules/ValueOnOfRuleTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\MaxOccursRuleTest' => __DIR__ . '/Validation/Rules/MaxOccursRuleTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRuleTest' => __DIR__ . '/Validation/Rules/ValueMinLengthRuleTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRuleTest' => __DIR__ . '/Validation/Rules/ValuePatternMatchRuleTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMaxLengthRuleTest' => __DIR__ . '/Validation/Rules/ValueMaxLengthRuleTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTraitTest' => __DIR__ . '/Validation/TypeValidationsTraitTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfigTest' => __DIR__ . '/Encoding/SerializeConfigTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Encoding\XMLWriterTest' => __DIR__ . '/Encoding/XMLWriterTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfigTest' => __DIR__ . '/Encoding/UnserializeConfigTest.php',

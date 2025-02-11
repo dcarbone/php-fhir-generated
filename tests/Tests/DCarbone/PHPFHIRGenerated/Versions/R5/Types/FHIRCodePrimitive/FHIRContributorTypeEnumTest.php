@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,19 +89,21 @@ class FHIRContributorTypeEnumTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRContributorTypeEnum();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRContributorTypeEnum', $type);
+        $this->assertEquals('ContributorTypeEnum', $type->_getFHIRTypeName());
     }
-
     public function testCanConstructWithString()
     {
-        $n = new FHIRContributorTypeEnum('randomstring');
-        $this->assertEquals('randomstring', (string)$n);
+        $type = new FHIRContributorTypeEnum(value: 'randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
     }
 
     public function testCanSetValueFromString()
     {
-        $n = new FHIRContributorTypeEnum;
-        $n->setValue('randomstring');
-        $this->assertEquals('randomstring', (string)$n);
+        $type = new FHIRContributorTypeEnum();
+        $type->setValue('randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
     }
+
 }

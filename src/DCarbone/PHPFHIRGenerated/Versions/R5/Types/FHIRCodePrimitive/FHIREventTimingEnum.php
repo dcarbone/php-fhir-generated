@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,9 +103,43 @@ class FHIREventTimingEnum extends FHIRCodePrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValuePatternMatchRule::NAME => '/^[^\\s]+( [^\\s]+)*$/',
+            ValueMinLengthRule::NAME => 1,
+            ValueOneOfRule::NAME => [
+                0 => 'MORN',
+                1 => 'MORN.early',
+                2 => 'MORN.late',
+                3 => 'NOON',
+                4 => 'AFT',
+                5 => 'AFT.early',
+                6 => 'AFT.late',
+                7 => 'EVE',
+                8 => 'EVE.early',
+                9 => 'EVE.late',
+                10 => 'NIGHT',
+                11 => 'PHS',
+                12 => 'IMD',
+                13 => 'HS',
+                14 => 'WAKE',
+                15 => 'C',
+                16 => 'CM',
+                17 => 'CD',
+                18 => 'CV',
+                19 => 'AC',
+                20 => 'ACM',
+                21 => 'ACD',
+                22 => 'ACV',
+                23 => 'PC',
+                24 => 'PCM',
+                25 => 'PCD',
+                26 => 'PCV',
+            ],
+        ],
+    ];
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -114,5 +148,5 @@ class FHIREventTimingEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,28 @@ class FHIRInteger64Test extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRInteger64();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64', $type);
+        $this->assertEquals('integer64', $type->_getFHIRTypeName());
     }
+    public function testCanConstructWithString()
+    {
+        $type = new FHIRInteger64(value: '10');
+        $this->assertEquals('10', $type->_getValueAsString());
+        $this->assertEquals('10', (string)$type);
+        $type = new FHIRInteger64(value: '1,000');
+        $this->assertEquals('1,000', $type->_getValueAsString());
+        $this->assertEquals('1,000', (string)$type);
+    }
+
+    public function testCanSetValueFromString()
+    {
+        $type = new FHIRInteger64();
+        $type->setValue('10');
+        $this->assertEquals('10', $type->_getValueAsString());
+        $this->assertEquals('10', (string)$type);
+        $type = new FHIRInteger64();
+        $type->setValue('1,000');
+        $this->assertEquals('1,000', $type->_getValueAsString());
+        $this->assertEquals('1,000', (string)$type);
+    }
+
 }

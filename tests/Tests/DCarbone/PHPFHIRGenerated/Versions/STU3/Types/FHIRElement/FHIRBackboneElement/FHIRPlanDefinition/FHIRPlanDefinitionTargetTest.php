@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,6 @@ class FHIRPlanDefinitionTargetTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRPlanDefinitionTarget();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget', $type);
+        $this->assertEquals('PlanDefinition.Target', $type->_getFHIRTypeName());
     }
 }

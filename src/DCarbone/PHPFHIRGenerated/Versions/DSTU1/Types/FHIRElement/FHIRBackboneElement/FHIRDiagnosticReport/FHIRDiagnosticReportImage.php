@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,17 +100,20 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_ID => [
+            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+        ],
         self::FIELD_LINK => [
             MinOccursRule::NAME => 1,
         ],
     ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_COMMENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -162,7 +165,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -171,7 +174,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -245,7 +248,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

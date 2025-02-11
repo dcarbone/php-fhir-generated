@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,11 +82,26 @@ class FHIRAppointmentStatusList extends FHIRCodePrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValueOneOfRule::NAME => [
+                0 => 'proposed',
+                1 => 'pending',
+                2 => 'booked',
+                3 => 'arrived',
+                4 => 'fulfilled',
+                5 => 'cancelled',
+                6 => 'noshow',
+                7 => 'entered-in-error',
+                8 => 'checked-in',
+                9 => 'waitlist',
+            ],
+        ],
+    ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -95,5 +110,5 @@ class FHIRAppointmentStatusList extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

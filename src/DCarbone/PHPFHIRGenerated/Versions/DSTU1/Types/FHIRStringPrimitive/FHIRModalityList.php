@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,11 +77,69 @@ class FHIRModalityList extends FHIRStringPrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValueOneOfRule::NAME => [
+                0 => 'AR',
+                1 => 'AU',
+                2 => 'BDUS',
+                3 => 'BI',
+                4 => 'BMD',
+                5 => 'CR',
+                6 => 'CT',
+                7 => 'DG',
+                8 => 'DX',
+                9 => 'ECG',
+                10 => 'EPS',
+                11 => 'ES',
+                12 => 'GM',
+                13 => 'HC',
+                14 => 'HD',
+                15 => 'IO',
+                16 => 'IVOCT',
+                17 => 'IVUS',
+                18 => 'KER',
+                19 => 'KO',
+                20 => 'LEN',
+                21 => 'LS',
+                22 => 'MG',
+                23 => 'MR',
+                24 => 'NM',
+                25 => 'OAM',
+                26 => 'OCT',
+                27 => 'OP',
+                28 => 'OPM',
+                29 => 'OPT',
+                30 => 'OPV',
+                31 => 'OT',
+                32 => 'PR',
+                33 => 'PT',
+                34 => 'PX',
+                35 => 'REG',
+                36 => 'RF',
+                37 => 'RG',
+                38 => 'RTDOSE',
+                39 => 'RTIMAGE',
+                40 => 'RTPLAN',
+                41 => 'RTRECORD',
+                42 => 'RTSTRUCT',
+                43 => 'SEG',
+                44 => 'SM',
+                45 => 'SMR',
+                46 => 'SR',
+                47 => 'SRF',
+                48 => 'TG',
+                49 => 'US',
+                50 => 'VA',
+                51 => 'XA',
+                52 => 'XC',
+            ],
+        ],
+    ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -90,5 +148,5 @@ class FHIRModalityList extends FHIRStringPrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

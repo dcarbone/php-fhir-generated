@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,11 +77,40 @@ class FHIRSecurityEventObjectRoleList extends FHIRStringPrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValueOneOfRule::NAME => [
+                0 => '1',
+                1 => '2',
+                2 => '3',
+                3 => '4',
+                4 => '5',
+                5 => '6',
+                6 => '7',
+                7 => '8',
+                8 => '9',
+                9 => '10',
+                10 => '11',
+                11 => '12',
+                12 => '13',
+                13 => '14',
+                14 => '15',
+                15 => '16',
+                16 => '17',
+                17 => '18',
+                18 => '19',
+                19 => '20',
+                20 => '21',
+                21 => '22',
+                22 => '23',
+                23 => '24',
+            ],
+        ],
+    ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -90,5 +119,5 @@ class FHIRSecurityEventObjectRoleList extends FHIRStringPrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

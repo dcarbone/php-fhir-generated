@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,14 +113,14 @@ class FHIRElementDefinitionSlicing extends FHIRElement
         ],
     ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ORDERED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_RULES => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
@@ -204,7 +204,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -213,7 +213,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
@@ -405,7 +405,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

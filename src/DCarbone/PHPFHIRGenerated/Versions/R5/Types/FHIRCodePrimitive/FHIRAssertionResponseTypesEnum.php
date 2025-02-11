@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,9 +103,60 @@ class FHIRAssertionResponseTypesEnum extends FHIRCodePrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValuePatternMatchRule::NAME => '/^[^\\s]+( [^\\s]+)*$/',
+            ValueMinLengthRule::NAME => 1,
+            ValueOneOfRule::NAME => [
+                0 => 'continue',
+                1 => 'switchingProtocols',
+                2 => 'okay',
+                3 => 'created',
+                4 => 'accepted',
+                5 => 'nonAuthoritativeInformation',
+                6 => 'noContent',
+                7 => 'resetContent',
+                8 => 'partialContent',
+                9 => 'multipleChoices',
+                10 => 'movedPermanently',
+                11 => 'found',
+                12 => 'seeOther',
+                13 => 'notModified',
+                14 => 'useProxy',
+                15 => 'temporaryRedirect',
+                16 => 'permanentRedirect',
+                17 => 'badRequest',
+                18 => 'unauthorized',
+                19 => 'paymentRequired',
+                20 => 'forbidden',
+                21 => 'notFound',
+                22 => 'methodNotAllowed',
+                23 => 'notAcceptable',
+                24 => 'proxyAuthenticationRequired',
+                25 => 'requestTimeout',
+                26 => 'conflict',
+                27 => 'gone',
+                28 => 'lengthRequired',
+                29 => 'preconditionFailed',
+                30 => 'contentTooLarge',
+                31 => 'uriTooLong',
+                32 => 'unsupportedMediaType',
+                33 => 'rangeNotSatisfiable',
+                34 => 'expectationFailed',
+                35 => 'misdirectedRequest',
+                36 => 'unprocessableContent',
+                37 => 'upgradeRequired',
+                38 => 'internalServerError',
+                39 => 'notImplemented',
+                40 => 'badGateway',
+                41 => 'serviceUnavailable',
+                42 => 'gatewayTimeout',
+                43 => 'httpVersionNotSupported',
+            ],
+        ],
+    ];
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -114,5 +165,5 @@ class FHIRAssertionResponseTypesEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

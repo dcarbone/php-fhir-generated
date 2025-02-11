@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,9 +103,33 @@ class FHIRRequestResourceTypesEnum extends FHIRCodePrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValuePatternMatchRule::NAME => '/^[^\\s]+( [^\\s]+)*$/',
+            ValueMinLengthRule::NAME => 1,
+            ValueOneOfRule::NAME => [
+                0 => 'Appointment',
+                1 => 'AppointmentResponse',
+                2 => 'CarePlan',
+                3 => 'Claim',
+                4 => 'CommunicationRequest',
+                5 => 'CoverageEligibilityRequest',
+                6 => 'DeviceRequest',
+                7 => 'EnrollmentRequest',
+                8 => 'ImmunizationRecommendation',
+                9 => 'MedicationRequest',
+                10 => 'NutritionOrder',
+                11 => 'RequestOrchestration',
+                12 => 'ServiceRequest',
+                13 => 'SupplyRequest',
+                14 => 'Task',
+                15 => 'Transport',
+                16 => 'VisionPrescription',
+            ],
+        ],
+    ];
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -114,5 +138,5 @@ class FHIRRequestResourceTypesEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

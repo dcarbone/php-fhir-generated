@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBack
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,6 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledgeTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRMedicationKnowledgeRelatedMedicationKnowledge();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge', $type);
+        $this->assertEquals('MedicationKnowledge.RelatedMedicationKnowledge', $type->_getFHIRTypeName());
     }
 }

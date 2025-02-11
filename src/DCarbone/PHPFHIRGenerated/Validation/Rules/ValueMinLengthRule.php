@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -27,9 +27,9 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
  */
 
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface;
+use DCarbone\PHPFHIRGenerated\Validation\RuleInterface;
 
-class ValueMinLengthRule implements ValidationRuleInterface
+class ValueMinLengthRule implements RuleInterface
 {
     public const NAME = 'value_min_length';
     public const DESCRIPTION = 'Asserts that a given string value is at least x characters long';
@@ -51,11 +51,9 @@ class ValueMinLengthRule implements ValidationRuleInterface
         }
         if (null === $value || '' === $value) {
             return sprintf('Field "%s" on type "%s" must be at least %d characters long, but it is empty', $field, $type->_getFHIRTypeName(), $constraint);
+        } else if ($constraint > ($len = strlen($value))) {
+            return sprintf('Field "%s" on type "%s" must be at least %d characters long, %d seen.', $field, $type->_getFHIRTypeName(), $constraint, $len);
         }
-        $len = strlen($value);
-        if ($constraint <= $len) {
-            return null;
-        }
-        return sprintf('Field "%s" on type "%s" must be at least %d characters long, %d seen.', $field, $type->_getFHIRTypeName(), $constraint, $len);
+        return null;
     }
 }

@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:49+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,6 @@ class FHIRContractActor1Test extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRContractActor1();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractActor1', $type);
+        $this->assertEquals('Contract.Actor1', $type->_getFHIRTypeName());
     }
 }
