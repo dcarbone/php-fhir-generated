@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 15:51+0000
+ * Class creation date: February 11th, 2025 21:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,6 +107,7 @@ class FHIRLocationTest extends TestCase
         $type = new FHIRLocation();
         $this->assertEquals('Location', $type->_getFHIRTypeName());
     }
+
     public function testCanTranscodeBundleJSON()
     {
         $client = $this->_getClient();
@@ -169,5 +170,12 @@ class FHIRLocationTest extends TestCase
         }
         $xw = $bundle->xmlSerialize(config: $this->_version->getConfig()->getSerializeConfig());
         $this->assertXmlStringEqualsXmlString($rc->getResp(), $xw->outputMemory());
+    }
+
+    public function testCanExecuteValidations()
+    {
+        $type = new FHIRLocation();
+        $errs = $type->_getValidationErrors();
+        $this->assertIsArray($errs);
     }
 }

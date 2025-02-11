@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 15:51+0000
+ * Class creation date: February 11th, 2025 21:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -33,7 +33,7 @@ use DCarbone\PHPFHIRGenerated\Validation\RuleInterface;
 class MaxOccursRule implements RuleInterface
 {
     public const NAME = 'max_occurs';
-    public const DESCRIPTION = 'Asserts that a given collection field has no more than the specified number of elements';
+    public const DESCRIPTION = 'Asserts that a given collection field has no more than the specified number of elements.';
 
     public function getName(): string
     {

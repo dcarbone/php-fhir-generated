@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 15:51+0000
+ * Class creation date: February 11th, 2025 21:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -33,7 +33,7 @@ use DCarbone\PHPFHIRGenerated\Validation\RuleInterface;
 class ValuePatternMatchRule implements RuleInterface
 {
     public const NAME = 'value_pattern_match';
-    public const DESCRIPTION = 'Asserts that a given string value matches the specified pattern';
+    public const DESCRIPTION = 'Asserts that a given string value matches the specified pattern.';
 
     public function getName(): string
     {

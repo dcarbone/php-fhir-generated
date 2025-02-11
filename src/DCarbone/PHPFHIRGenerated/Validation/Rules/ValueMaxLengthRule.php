@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 15:51+0000
+ * Class creation date: February 11th, 2025 21:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -33,7 +33,7 @@ use DCarbone\PHPFHIRGenerated\Validation\RuleInterface;
 class ValueMaxLengthRule implements RuleInterface
 {
     public const NAME = 'value_max_length';
-    public const DESCRIPTION = 'Asserts that a given string value is no more than x characters long';
+    public const DESCRIPTION = 'Asserts that a given string value is no more than x characters long.';
 
     public function getName(): string
     {

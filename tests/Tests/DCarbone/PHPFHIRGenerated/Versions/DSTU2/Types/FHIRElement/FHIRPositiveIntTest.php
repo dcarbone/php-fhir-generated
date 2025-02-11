@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 15:51+0000
+ * Class creation date: February 11th, 2025 21:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,5 +92,4 @@ class FHIRPositiveIntTest extends TestCase
         $this->assertEquals('1,000', $type->_getValueAsString());
         $this->assertEquals('1,000', (string)$type);
     }
-
 }

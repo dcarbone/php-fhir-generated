@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResourc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 15:51+0000
+ * Class creation date: February 11th, 2025 21:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,6 +127,7 @@ class FHIRMedicationRequestTest extends TestCase
         $type = new FHIRMedicationRequest();
         $this->assertEquals('MedicationRequest', $type->_getFHIRTypeName());
     }
+
     public function testCanTranscodeBundleJSON()
     {
         $client = $this->_getClient();
@@ -189,5 +190,12 @@ class FHIRMedicationRequestTest extends TestCase
         }
         $xw = $bundle->xmlSerialize(config: $this->_version->getConfig()->getSerializeConfig());
         $this->assertXmlStringEqualsXmlString($rc->getResp(), $xw->outputMemory());
+    }
+
+    public function testCanExecuteValidations()
+    {
+        $type = new FHIRMedicationRequest();
+        $errs = $type->_getValidationErrors();
+        $this->assertIsArray($errs);
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 15:51+0000
+ * Class creation date: February 11th, 2025 21:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -32,6 +32,8 @@ use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 class FHIRXHTML implements TypeInterface
 {
     use TypeValidationsTrait;
+
+    private const _FHIR_VALIDATION_RULES = [];
 
     /** @var string */
     protected string $value;
