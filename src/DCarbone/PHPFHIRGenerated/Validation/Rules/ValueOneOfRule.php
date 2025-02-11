@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,10 +26,11 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface;
+use DCarbone\PHPFHIRGenerated\Validation\RuleInterface;
 
-class ValueOneOfRule implements ValidationRuleInterface
+class ValueOneOfRule implements RuleInterface
 {
     public const NAME = 'value_one_of';
     public const DESCRIPTION = 'Asserts that a given value is within the expected list of values';
@@ -46,7 +47,13 @@ class ValueOneOfRule implements ValidationRuleInterface
 
     public function assert(TypeInterface $type, string $field, mixed $constraint, mixed $value): null|string
     {
-        if ([] === $constraint || in_array($value, $constraint, true)) {
+        if (null === $value || [] === $constraint) {
+            return null;
+        }
+        if ($value instanceof PrimitiveTypeInterface) {
+            $value = (string)$value;
+        }
+        if (in_array($value, $constraint, true)) {
             return null;
         }
         return sprintf(

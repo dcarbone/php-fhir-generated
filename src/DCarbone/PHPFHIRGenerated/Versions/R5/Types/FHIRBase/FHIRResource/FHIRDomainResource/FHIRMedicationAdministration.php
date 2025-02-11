@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -183,7 +183,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
         ],
     ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_OCCURENCE_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -191,7 +191,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
         self::FIELD_IS_SUB_POTENT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -626,7 +626,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -635,7 +635,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:158 */
+    /* class_default.php:151 */
     /**
      * @return string
      */
@@ -644,7 +644,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -1932,7 +1932,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,9 +103,47 @@ class FHIRIssueTypeEnum extends FHIRCodePrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValuePatternMatchRule::NAME => '/^[^\\s]+(\\s[^\\s]+)*$/',
+            ValueMinLengthRule::NAME => 1,
+            ValueOneOfRule::NAME => [
+                0 => 'invalid',
+                1 => 'structure',
+                2 => 'required',
+                3 => 'value',
+                4 => 'invariant',
+                5 => 'security',
+                6 => 'login',
+                7 => 'unknown',
+                8 => 'expired',
+                9 => 'forbidden',
+                10 => 'suppressed',
+                11 => 'processing',
+                12 => 'not-supported',
+                13 => 'duplicate',
+                14 => 'multiple-matches',
+                15 => 'not-found',
+                16 => 'deleted',
+                17 => 'too-long',
+                18 => 'code-invalid',
+                19 => 'extension',
+                20 => 'too-costly',
+                21 => 'business-rule',
+                22 => 'conflict',
+                23 => 'transient',
+                24 => 'lock-error',
+                25 => 'no-store',
+                26 => 'exception',
+                27 => 'timeout',
+                28 => 'incomplete',
+                29 => 'throttled',
+                30 => 'informational',
+            ],
+        ],
+    ];
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -114,5 +152,5 @@ class FHIRIssueTypeEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

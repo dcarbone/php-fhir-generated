@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -142,9 +142,10 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+    ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_VALUE_ID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VALUE_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -156,7 +157,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
         self::FIELD_VALUE_DATE_TIME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -304,7 +305,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -313,7 +314,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -624,7 +625,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

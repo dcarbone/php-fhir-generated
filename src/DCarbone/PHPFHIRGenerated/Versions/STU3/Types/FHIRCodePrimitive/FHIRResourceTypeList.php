@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,11 +82,135 @@ class FHIRResourceTypeList extends FHIRCodePrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValueOneOfRule::NAME => [
+                0 => 'Account',
+                1 => 'ActivityDefinition',
+                2 => 'AdverseEvent',
+                3 => 'AllergyIntolerance',
+                4 => 'Appointment',
+                5 => 'AppointmentResponse',
+                6 => 'AuditEvent',
+                7 => 'Basic',
+                8 => 'Binary',
+                9 => 'BodySite',
+                10 => 'Bundle',
+                11 => 'CapabilityStatement',
+                12 => 'CarePlan',
+                13 => 'CareTeam',
+                14 => 'ChargeItem',
+                15 => 'Claim',
+                16 => 'ClaimResponse',
+                17 => 'ClinicalImpression',
+                18 => 'CodeSystem',
+                19 => 'Communication',
+                20 => 'CommunicationRequest',
+                21 => 'CompartmentDefinition',
+                22 => 'Composition',
+                23 => 'ConceptMap',
+                24 => 'Condition',
+                25 => 'Consent',
+                26 => 'Contract',
+                27 => 'Coverage',
+                28 => 'DataElement',
+                29 => 'DetectedIssue',
+                30 => 'Device',
+                31 => 'DeviceComponent',
+                32 => 'DeviceMetric',
+                33 => 'DeviceRequest',
+                34 => 'DeviceUseStatement',
+                35 => 'DiagnosticReport',
+                36 => 'DocumentManifest',
+                37 => 'DocumentReference',
+                38 => 'DomainResource',
+                39 => 'EligibilityRequest',
+                40 => 'EligibilityResponse',
+                41 => 'Encounter',
+                42 => 'Endpoint',
+                43 => 'EnrollmentRequest',
+                44 => 'EnrollmentResponse',
+                45 => 'EpisodeOfCare',
+                46 => 'ExpansionProfile',
+                47 => 'ExplanationOfBenefit',
+                48 => 'FamilyMemberHistory',
+                49 => 'Flag',
+                50 => 'Goal',
+                51 => 'GraphDefinition',
+                52 => 'Group',
+                53 => 'GuidanceResponse',
+                54 => 'HealthcareService',
+                55 => 'ImagingManifest',
+                56 => 'ImagingStudy',
+                57 => 'Immunization',
+                58 => 'ImmunizationRecommendation',
+                59 => 'ImplementationGuide',
+                60 => 'Library',
+                61 => 'Linkage',
+                62 => 'List',
+                63 => 'Location',
+                64 => 'Measure',
+                65 => 'MeasureReport',
+                66 => 'Media',
+                67 => 'Medication',
+                68 => 'MedicationAdministration',
+                69 => 'MedicationDispense',
+                70 => 'MedicationRequest',
+                71 => 'MedicationStatement',
+                72 => 'MessageDefinition',
+                73 => 'MessageHeader',
+                74 => 'NamingSystem',
+                75 => 'NutritionOrder',
+                76 => 'Observation',
+                77 => 'OperationDefinition',
+                78 => 'OperationOutcome',
+                79 => 'Organization',
+                80 => 'Parameters',
+                81 => 'Patient',
+                82 => 'PaymentNotice',
+                83 => 'PaymentReconciliation',
+                84 => 'Person',
+                85 => 'PlanDefinition',
+                86 => 'Practitioner',
+                87 => 'PractitionerRole',
+                88 => 'Procedure',
+                89 => 'ProcedureRequest',
+                90 => 'ProcessRequest',
+                91 => 'ProcessResponse',
+                92 => 'Provenance',
+                93 => 'Questionnaire',
+                94 => 'QuestionnaireResponse',
+                95 => 'ReferralRequest',
+                96 => 'RelatedPerson',
+                97 => 'RequestGroup',
+                98 => 'ResearchStudy',
+                99 => 'ResearchSubject',
+                100 => 'Resource',
+                101 => 'RiskAssessment',
+                102 => 'Schedule',
+                103 => 'SearchParameter',
+                104 => 'Sequence',
+                105 => 'ServiceDefinition',
+                106 => 'Slot',
+                107 => 'Specimen',
+                108 => 'StructureDefinition',
+                109 => 'StructureMap',
+                110 => 'Subscription',
+                111 => 'Substance',
+                112 => 'SupplyDelivery',
+                113 => 'SupplyRequest',
+                114 => 'Task',
+                115 => 'TestReport',
+                116 => 'TestScript',
+                117 => 'ValueSet',
+                118 => 'VisionPrescription',
+            ],
+        ],
+    ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -95,5 +219,5 @@ class FHIRResourceTypeList extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

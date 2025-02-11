@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Tests\DCarbone\PHPFHIRGenerated\Types;
 
@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -43,14 +43,14 @@ class MockStringPrimitiveType implements PrimitiveTypeInterface
 
     protected string $value;
 
-    public function __construct(string $typeName,
+    public function __construct(string $name = 'mock-string-primitive',
                                 null|string $value = null,
                                 array $validationRuleMap = [])
     {
-        $this->_name = $typeName;
+        $this->_name = $name;
         $this->setValue($value);
         foreach($validationRuleMap as $field => $rules) {
-            $this->_setFieldValidationRules($field, $validationRuleMap);
+            $this->_setFieldValidationRules($field, $rules);
         }
     }
 

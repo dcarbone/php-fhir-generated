@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -206,7 +206,7 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements VersionContai
         ],
     ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -228,7 +228,7 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements VersionContai
         self::FIELD_HANDLING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -796,7 +796,7 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements VersionContai
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -805,7 +805,7 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements VersionContai
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:158 */
+    /* class_default.php:151 */
     /**
      * @return string
      */
@@ -814,7 +814,7 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements VersionContai
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -2404,7 +2404,7 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements VersionContai
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

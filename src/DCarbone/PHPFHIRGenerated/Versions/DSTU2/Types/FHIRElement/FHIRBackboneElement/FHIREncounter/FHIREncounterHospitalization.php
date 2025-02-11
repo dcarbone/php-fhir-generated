@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,13 +107,17 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_ID => [
+            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+        ],
+    ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -308,7 +312,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -317,7 +321,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -866,7 +870,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

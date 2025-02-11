@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,9 +103,43 @@ class FHIRFHIRVersionEnum extends FHIRCodePrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValuePatternMatchRule::NAME => '/^[^\\s]+(\\s[^\\s]+)*$/',
+            ValueMinLengthRule::NAME => 1,
+            ValueOneOfRule::NAME => [
+                0 => '0.01',
+                1 => '0.05',
+                2 => '0.06',
+                3 => '0.11',
+                4 => '0.0.80',
+                5 => '0.0.81',
+                6 => '0.0.82',
+                7 => '0.4.0',
+                8 => '0.5.0',
+                9 => '1.0.0',
+                10 => '1.0.1',
+                11 => '1.0.2',
+                12 => '1.1.0',
+                13 => '1.4.0',
+                14 => '1.6.0',
+                15 => '1.8.0',
+                16 => '3.0.0',
+                17 => '3.0.1',
+                18 => '3.0.2',
+                19 => '3.3.0',
+                20 => '3.5.0',
+                21 => '4.0.0',
+                22 => '4.0.1',
+                23 => '4.1.0',
+                24 => '4.3.0-cibuild',
+                25 => '4.3.0-snapshot1',
+                26 => '4.3.0',
+            ],
+        ],
+    ];
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -114,5 +148,5 @@ class FHIRFHIRVersionEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

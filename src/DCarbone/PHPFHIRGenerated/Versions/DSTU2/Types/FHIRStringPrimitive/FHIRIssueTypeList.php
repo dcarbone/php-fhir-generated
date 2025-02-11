@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,11 +82,45 @@ class FHIRIssueTypeList extends FHIRStringPrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValueOneOfRule::NAME => [
+                0 => 'invalid',
+                1 => 'structure',
+                2 => 'required',
+                3 => 'value',
+                4 => 'invariant',
+                5 => 'security',
+                6 => 'login',
+                7 => 'unknown',
+                8 => 'expired',
+                9 => 'forbidden',
+                10 => 'suppressed',
+                11 => 'processing',
+                12 => 'not-supported',
+                13 => 'duplicate',
+                14 => 'not-found',
+                15 => 'too-long',
+                16 => 'code-invalid',
+                17 => 'extension',
+                18 => 'too-costly',
+                19 => 'business-rule',
+                20 => 'conflict',
+                21 => 'incomplete',
+                22 => 'transient',
+                23 => 'lock-error',
+                24 => 'no-store',
+                25 => 'exception',
+                26 => 'timeout',
+                27 => 'throttled',
+                28 => 'informational',
+            ],
+        ],
+    ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -95,5 +129,5 @@ class FHIRIssueTypeList extends FHIRStringPrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

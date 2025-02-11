@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,33 +109,34 @@ trait TypeValidationsTrait
      *
      * @return array
      */
-    public function _getValidationErrors(): array 
+    public function _getValidationErrors(): array
     {
+        $rules = $this->_getCombinedValidationRules();
         $errs = [];
-        foreach ($this->_getCombinedValidationRules() as $field => $rules) {
-            $v = $this->{$field} ?? null;
-            foreach ($rules as $rule => $constraint) {
-                $err = Validator::runRule($this, $field, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[$field])) {
-                        $errs[$field] = [];
+        foreach ($this as $prop => $value) {
+            if (str_starts_with($prop, '_')) {
+                continue;
+            }
+            if (isset($rules[$prop])) {
+                foreach ($rules[$prop] as $rule => $constraint) {
+                    $err = Validator::runRule($this, $prop, $rule, $constraint, $value);
+                    if (null !== $err) {
+                        if (!isset($errs[$prop])) {
+                            $errs[$prop] = [];
+                        }
+                        $errs[$prop][$rule] = $err;
                     }
-                    $errs[$field][] = $err;
                 }
             }
-            if ($v instanceof TypeInterface) {
-                $typeErrs = $v->_getValidationErrors();
-                if ([] !== $typeErrs) {
-                    foreach($typeErrs as $subField => $subErrs) {
-                        $errs["{$field}.{$subField}"] = $subErrs;
-                    }
+            if ($value instanceof TypeInterface) {
+                foreach ($value->_getValidationErrors() as $subPath => $subErrs) {
+                    $errs["{$prop}.{$subPath}"] = $subErrs;
                 }
-            } else if (is_array($v)) {
-                foreach($v as $i => $vv) {
-                    $typeErrs = $vv->_getValidationErrors();
-                    if ([] !== $typeErrs) {
-                        foreach($typeErrs as $subField => $subErrs) {
-                            $errs["{$field}.{$i}.{$subField}"] = $subErrs;
+            } else if (is_array($value)) {
+                foreach($value as $i => $vv) {
+                    if ($vv instanceof TypeInterface) {
+                        foreach ($vv->_getValidationErrors() as $subPath => $subErrs) {
+                            $errs["{$prop}.{$i}.{$subPath}"] = $subErrs;
                         }
                     }
                 }

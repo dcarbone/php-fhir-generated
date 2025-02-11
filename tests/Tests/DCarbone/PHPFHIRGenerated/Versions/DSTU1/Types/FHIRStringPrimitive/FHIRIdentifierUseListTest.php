@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimiti
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,6 +64,21 @@ class FHIRIdentifierUseListTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRIdentifierUseList();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRIdentifierUseList', $type);
+        $this->assertEquals('IdentifierUse-list', $type->_getFHIRTypeName());
     }
+    public function testCanConstructWithString()
+    {
+        $type = new FHIRIdentifierUseList(value: 'randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
+    }
+
+    public function testCanSetValueFromString()
+    {
+        $type = new FHIRIdentifierUseList();
+        $type->setValue('randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
+    }
+
 }

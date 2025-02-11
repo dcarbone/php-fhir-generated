@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,7 @@ class FHIRParameterDefinition extends FHIRElement
         ],
     ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_USE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -130,7 +130,7 @@ class FHIRParameterDefinition extends FHIRElement
         self::FIELD_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -261,7 +261,7 @@ class FHIRParameterDefinition extends FHIRElement
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -270,7 +270,7 @@ class FHIRParameterDefinition extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -543,7 +543,7 @@ class FHIRParameterDefinition extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

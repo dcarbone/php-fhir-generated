@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,24 +89,28 @@ class FHIRInteger64PrimitiveTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRInteger64Primitive();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive', $type);
+        $this->assertEquals('integer64-primitive', $type->_getFHIRTypeName());
     }
-
     public function testCanConstructWithString()
     {
-        $n = new FHIRInteger64Primitive('10');
-        $this->assertEquals('10', (string)$n);
-        $n = new FHIRInteger64Primitive('1,000');
-        $this->assertEquals('1,000', (string)$n);
+        $type = new FHIRInteger64Primitive(value: '10');
+        $this->assertEquals('10', $type->_getValueAsString());
+        $this->assertEquals('10', (string)$type);
+        $type = new FHIRInteger64Primitive(value: '1,000');
+        $this->assertEquals('1,000', $type->_getValueAsString());
+        $this->assertEquals('1,000', (string)$type);
     }
 
     public function testCanSetValueFromString()
     {
-        $n = new FHIRInteger64Primitive;
-        $n->setValue('10');
-        $this->assertEquals('10', (string)$n);
-        $n = new FHIRInteger64Primitive;
-        $n->setValue('1,000');
-        $this->assertEquals('1,000', (string)$n);
+        $type = new FHIRInteger64Primitive();
+        $type->setValue('10');
+        $this->assertEquals('10', $type->_getValueAsString());
+        $this->assertEquals('10', (string)$type);
+        $type = new FHIRInteger64Primitive();
+        $type->setValue('1,000');
+        $this->assertEquals('1,000', $type->_getValueAsString());
+        $this->assertEquals('1,000', (string)$type);
     }
+
 }

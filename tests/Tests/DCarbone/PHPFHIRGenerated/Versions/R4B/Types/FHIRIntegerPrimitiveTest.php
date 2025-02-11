@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,24 +89,28 @@ class FHIRIntegerPrimitiveTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRIntegerPrimitive();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive', $type);
+        $this->assertEquals('integer-primitive', $type->_getFHIRTypeName());
     }
-
     public function testCanConstructWithString()
     {
-        $n = new FHIRIntegerPrimitive('10');
-        $this->assertEquals('10', (string)$n);
-        $n = new FHIRIntegerPrimitive('1,000');
-        $this->assertEquals('1,000', (string)$n);
+        $type = new FHIRIntegerPrimitive(value: '10');
+        $this->assertEquals('10', $type->_getValueAsString());
+        $this->assertEquals('10', (string)$type);
+        $type = new FHIRIntegerPrimitive(value: '1,000');
+        $this->assertEquals('1,000', $type->_getValueAsString());
+        $this->assertEquals('1,000', (string)$type);
     }
 
     public function testCanSetValueFromString()
     {
-        $n = new FHIRIntegerPrimitive;
-        $n->setValue('10');
-        $this->assertEquals('10', (string)$n);
-        $n = new FHIRIntegerPrimitive;
-        $n->setValue('1,000');
-        $this->assertEquals('1,000', (string)$n);
+        $type = new FHIRIntegerPrimitive();
+        $type->setValue('10');
+        $this->assertEquals('10', $type->_getValueAsString());
+        $this->assertEquals('10', (string)$type);
+        $type = new FHIRIntegerPrimitive();
+        $type->setValue('1,000');
+        $this->assertEquals('1,000', $type->_getValueAsString());
+        $this->assertEquals('1,000', (string)$type);
     }
+
 }

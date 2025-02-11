@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimiti
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,6 +64,21 @@ class FHIRSecurityEventObjectLifecycleListTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRSecurityEventObjectLifecycleList();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSecurityEventObjectLifecycleList', $type);
+        $this->assertEquals('SecurityEventObjectLifecycle-list', $type->_getFHIRTypeName());
     }
+    public function testCanConstructWithString()
+    {
+        $type = new FHIRSecurityEventObjectLifecycleList(value: 'randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
+    }
+
+    public function testCanSetValueFromString()
+    {
+        $type = new FHIRSecurityEventObjectLifecycleList();
+        $type->setValue('randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
+    }
+
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,9 +103,73 @@ class FHIRFHIRVersionEnum extends FHIRCodePrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValuePatternMatchRule::NAME => '/^[^\\s]+( [^\\s]+)*$/',
+            ValueMinLengthRule::NAME => 1,
+            ValueOneOfRule::NAME => [
+                0 => '0.01',
+                1 => '0.05',
+                2 => '0.06',
+                3 => '0.11',
+                4 => '0.0',
+                5 => '0.0.80',
+                6 => '0.0.81',
+                7 => '0.0.82',
+                8 => '0.4',
+                9 => '0.4.0',
+                10 => '0.5',
+                11 => '0.5.0',
+                12 => '1.0',
+                13 => '1.0.0',
+                14 => '1.0.1',
+                15 => '1.0.2',
+                16 => '1.1',
+                17 => '1.1.0',
+                18 => '1.4',
+                19 => '1.4.0',
+                20 => '1.6',
+                21 => '1.6.0',
+                22 => '1.8',
+                23 => '1.8.0',
+                24 => '3.0',
+                25 => '3.0.0',
+                26 => '3.0.1',
+                27 => '3.0.2',
+                28 => '3.3',
+                29 => '3.3.0',
+                30 => '3.5',
+                31 => '3.5.0',
+                32 => '4.0',
+                33 => '4.0.0',
+                34 => '4.0.1',
+                35 => '4.1',
+                36 => '4.1.0',
+                37 => '4.2',
+                38 => '4.2.0',
+                39 => '4.3',
+                40 => '4.3.0',
+                41 => '4.3.0-cibuild',
+                42 => '4.3.0-snapshot1',
+                43 => '4.4',
+                44 => '4.4.0',
+                45 => '4.5',
+                46 => '4.5.0',
+                47 => '4.6',
+                48 => '4.6.0',
+                49 => '5.0',
+                50 => '5.0.0',
+                51 => '5.0.0-cibuild',
+                52 => '5.0.0-snapshot1',
+                53 => '5.0.0-snapshot2',
+                54 => '5.0.0-ballot',
+                55 => '5.0.0-snapshot3',
+                56 => '5.0.0-draft-final',
+            ],
+        ],
+    ];
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -114,5 +178,5 @@ class FHIRFHIRVersionEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

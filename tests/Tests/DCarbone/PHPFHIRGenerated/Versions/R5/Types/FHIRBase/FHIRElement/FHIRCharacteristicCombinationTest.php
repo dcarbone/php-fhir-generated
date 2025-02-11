@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,21 @@ class FHIRCharacteristicCombinationTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRCharacteristicCombination();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCharacteristicCombination', $type);
+        $this->assertEquals('CharacteristicCombination', $type->_getFHIRTypeName());
     }
+    public function testCanConstructWithString()
+    {
+        $type = new FHIRCharacteristicCombination(value: 'randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
+    }
+
+    public function testCanSetValueFromString()
+    {
+        $type = new FHIRCharacteristicCombination();
+        $type->setValue('randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
+    }
+
 }

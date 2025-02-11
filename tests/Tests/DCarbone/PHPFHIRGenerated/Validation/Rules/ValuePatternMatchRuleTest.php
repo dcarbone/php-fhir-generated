@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests\DCarbone\PHPFHIRGenerated\Validation;
+namespace Tests\DCarbone\PHPFHIRGenerated\Validation\Rules;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -38,7 +38,7 @@ class ValuePatternMatchRuleTest extends TestCase
         $type = new MockStringPrimitiveType('string-primitive', 'the quick brown fox jumped over the lazy dog');
         $rule = new ValuePatternMatchRule();
         $err = $rule->assert($type, 'value', '/^[a-z\s]+$/', $type->getValue());
-        $this->assertEquals('', $err);
+        $this->assertNull($err);
     }
 
     public function testErrorWithValidPatternAndInvalidValue()
@@ -46,7 +46,15 @@ class ValuePatternMatchRuleTest extends TestCase
         $type = new MockStringPrimitiveType('string-primitive', 'the quick brown fox jumped over the lazy dog');
         $rule = new ValuePatternMatchRule();
         $err = $rule->assert($type, 'value', '/^[a-z]+$/', $type->getValue());
-        $this->assertNotEmpty($err, 'Rule should have produced error');
+        $this->assertNotNull($err);
+    }
+
+    public function testErrorWithInvalidPattern()
+    {
+        $type = new MockStringPrimitiveType('string-primitive', 'the quick brown fox jumped over the lazy dog');
+        $rule = new ValuePatternMatchRule();
+        $err = $rule->assert($type, 'value', '/^[a-+$/', $type->getValue());
+        $this->assertNotNull($err);
     }
 
     /**
@@ -58,6 +66,6 @@ class ValuePatternMatchRuleTest extends TestCase
         $type = new MockStringPrimitiveType('base64-primitive', $bigval);
         $rule = new ValuePatternMatchRule();
         $err = $rule->assert($type, 'value', '/^(\\s*([0-9a-zA-Z\\+\\/=]){4}\\s*)+$/', $type->getValue());
-        $this->assertNotEmpty($err, 'Rule should have produced error');
+        $this->assertNotNull($err);
     }
 }

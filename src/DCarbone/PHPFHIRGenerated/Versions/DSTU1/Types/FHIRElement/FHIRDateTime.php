@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,17 +98,20 @@ class FHIRDateTime extends FHIRElement implements DSTU1PrimitiveContainerTypeInt
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_ID => [
+            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+        ],
         self::FIELD_VALUE => [
             ValuePatternMatchRule::NAME => '/^\\d{4}(\\-\\d{2}(\\-\\d{2}(T\\d{2}(:\\d{2}(:\\d{2}(\\.\\d+)?)?)?)?)?)?(Z|(\\+|\\-)\\d{2}:\\d{2})?$/',
         ],
     ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive */
     protected FHIRDateTimePrimitive $value;
 
@@ -133,7 +136,7 @@ class FHIRDateTime extends FHIRElement implements DSTU1PrimitiveContainerTypeInt
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -142,7 +145,7 @@ class FHIRDateTime extends FHIRElement implements DSTU1PrimitiveContainerTypeInt
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive
      */
@@ -168,14 +171,14 @@ class FHIRDateTime extends FHIRElement implements DSTU1PrimitiveContainerTypeInt
         return $this;
     }
 
-    /* class_default.php:188 */
+    /* class_default.php:181 */
     public function _nonValueFieldDefined(): bool
     {
     return isset($this->extension)
             || isset($this->id);
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -340,5 +343,14 @@ class FHIRDateTime extends FHIRElement implements DSTU1PrimitiveContainerTypeInt
             $out->value = $this->value;
         }
         return $out;
+    }
+
+    /* class_default.php:218 */
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->_getValueAsString();
     }
 }

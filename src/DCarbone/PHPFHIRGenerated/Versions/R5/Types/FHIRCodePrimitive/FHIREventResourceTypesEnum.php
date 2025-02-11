@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,9 +103,59 @@ class FHIREventResourceTypesEnum extends FHIRCodePrimitive
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            ValuePatternMatchRule::NAME => '/^[^\\s]+( [^\\s]+)*$/',
+            ValueMinLengthRule::NAME => 1,
+            ValueOneOfRule::NAME => [
+                0 => 'AdverseEvent',
+                1 => 'AuditEvent',
+                2 => 'ChargeItem',
+                3 => 'ClaimResponse',
+                4 => 'ClinicalImpression',
+                5 => 'Communication',
+                6 => 'Composition',
+                7 => 'Consent',
+                8 => 'Contract',
+                9 => 'Coverage',
+                10 => 'CoverageEligibilityResponse',
+                11 => 'DetectedIssue',
+                12 => 'DeviceDispense',
+                13 => 'DeviceUsage',
+                14 => 'DiagnosticReport',
+                15 => 'DocumentReference',
+                16 => 'Encounter',
+                17 => 'EnrollmentResponse',
+                18 => 'EpisodeOfCare',
+                19 => 'ExplanationOfBenefit',
+                20 => 'FamilyMemberHistory',
+                21 => 'GenomicStudy',
+                22 => 'GuidanceResponse',
+                23 => 'ImagingSelection',
+                24 => 'ImagingStudy',
+                25 => 'Immunization',
+                26 => 'ImmunizationEvaluation',
+                27 => 'InventoryReport',
+                28 => 'Invoice',
+                29 => 'MedicationAdministration',
+                30 => 'MedicationDispense',
+                31 => 'MedicationStatement',
+                32 => 'MessageHeader',
+                33 => 'NutritionIntake',
+                34 => 'Observation',
+                35 => 'PaymentNotice',
+                36 => 'PaymentReconciliation',
+                37 => 'Procedure',
+                38 => 'Provenance',
+                39 => 'QuestionnaireResponse',
+                40 => 'RiskAssessment',
+                41 => 'SupplyDelivery',
+                42 => 'Transport',
+            ],
+        ],
+    ];
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -114,5 +164,5 @@ class FHIREventResourceTypesEnum extends FHIRCodePrimitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
 }

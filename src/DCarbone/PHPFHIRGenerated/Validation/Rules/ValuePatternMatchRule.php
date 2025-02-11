@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -28,9 +28,9 @@ namespace DCarbone\PHPFHIRGenerated\Validation\Rules;
 
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\ValidationRuleInterface;
+use DCarbone\PHPFHIRGenerated\Validation\RuleInterface;
 
-class ValuePatternMatchRule implements ValidationRuleInterface
+class ValuePatternMatchRule implements RuleInterface
 {
     public const NAME = 'value_pattern_match';
     public const DESCRIPTION = 'Asserts that a given string value matches the specified pattern';
@@ -53,21 +53,24 @@ class ValuePatternMatchRule implements ValidationRuleInterface
         if ($value instanceof PrimitiveTypeInterface) {
             $value = (string)$value;
         }
-        $res = preg_match($constraint, $value);
-        if (PREG_NO_ERROR !== preg_last_error()) {
-            return sprintf(
-                'Rule %s failed to verify type "%s" field "%s" value of size %d with pattern "%s": %s',
-                self::NAME,
-                $type->_getFHIRTypeName(),
-                $field,
-                strlen((string)$value),
-                $constraint,
-                preg_last_error_msg(),
-            );
+        try {
+            $match = preg_match($constraint, $value);
+            if (PREG_NO_ERROR !== preg_last_error()) {
+                return sprintf(
+                    'Rule %s failed to verify type "%s" field "%s" value of size %d with pattern "%s": %s',
+                    self::NAME,
+                    $type->_getFHIRTypeName(),
+                    $field,
+                    strlen((string)$value),
+                    $constraint,
+                    preg_last_error_msg(),
+                );
+            } else if (!$match) {
+                return sprintf('Field "%s" on type "%s" value of "%s" does not match pattern: %s', $field, $type->_getFHIRTypeName(), $value, $constraint);
+            }
+        } catch (\Exception $e) {
+            return sprintf('Rule %s failed to verify type "%s" field "%s" value with pattern "%s": %s', self::NAME, $type->_getFHIRTypeName(), $field, $constraint, $e->getMessage());
         }
-        if ($res) {
-            return null;
-        }
-        return sprintf('Field "%s" on type "%s" value of "%s" does not match pattern: %s', $field, $type->_getFHIRTypeName(), $value, $constraint);
+        return null;
     }
 }

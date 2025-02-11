@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,21 @@ class FHIRDeviceMetricOperationalStatusTest extends TestCase
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRDeviceMetricOperationalStatus();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDeviceMetricOperationalStatus', $type);
+        $this->assertEquals('DeviceMetricOperationalStatus', $type->_getFHIRTypeName());
     }
+    public function testCanConstructWithString()
+    {
+        $type = new FHIRDeviceMetricOperationalStatus(value: 'randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
+    }
+
+    public function testCanSetValueFromString()
+    {
+        $type = new FHIRDeviceMetricOperationalStatus();
+        $type->setValue('randomstring');
+        $this->assertEquals('randomstring', $type->_getValueAsString());
+        $this->assertEquals('randomstring', (string)$type);
+    }
+
 }

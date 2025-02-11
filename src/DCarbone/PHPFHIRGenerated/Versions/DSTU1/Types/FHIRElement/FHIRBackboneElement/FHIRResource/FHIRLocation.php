@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 6th, 2025 03:21+0000
+ * Class creation date: February 11th, 2025 15:51+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,9 +126,13 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
 
     /* class_default.php:69 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
-    private const _FHIR_VALIDATION_RULES = [];
+    private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_ID => [
+            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+        ],
+    ];
 
-    /* class_default.php:98 */
+    /* class_default.php:91 */
     private array $_valueXMLLocations = [
         self::FIELD_NAME => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DESCRIPTION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -136,7 +140,7 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
         self::FIELD_MODE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:114 */
+    /* class_default.php:107 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -352,7 +356,7 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
         }
     }
 
-    /* class_default.php:146 */
+    /* class_default.php:139 */
     /**
      * @return string
      */
@@ -361,7 +365,7 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:158 */
+    /* class_default.php:151 */
     /**
      * @return string
      */
@@ -370,7 +374,7 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:172 */
+    /* class_default.php:165 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -836,7 +840,7 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
         return $this;
     }
 
-    /* class_default.php:199 */
+    /* class_default.php:192 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
