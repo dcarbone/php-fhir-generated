@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,6 +77,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
 /**
@@ -91,7 +92,7 @@ class FHIRValueSetDefine extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_VALUE_SET_DOT_DEFINE;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_SYSTEM = 'system';
     public const FIELD_SYSTEM_EXT = '_system';
     public const FIELD_VERSION = 'version';
@@ -100,7 +101,7 @@ class FHIRValueSetDefine extends FHIRBackboneElement
     public const FIELD_CASE_SENSITIVE_EXT = '_caseSensitive';
     public const FIELD_CONCEPT = 'concept';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
@@ -111,14 +112,14 @@ class FHIRValueSetDefine extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_SYSTEM => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_VERSION => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_CASE_SENSITIVE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /**
      * String of characters used to identify a name or a resource
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -199,16 +200,13 @@ class FHIRValueSetDefine extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:182 */
     /**
      * String of characters used to identify a name or a resource
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -382,7 +380,7 @@ class FHIRValueSetDefine extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,14 +102,14 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BINARY;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_CONTENT_TYPE = 'contentType';
     public const FIELD_CONTENT_TYPE_EXT = '_contentType';
     public const FIELD_SECURITY_CONTEXT = 'securityContext';
     public const FIELD_DATA = 'data';
     public const FIELD_DATA_EXT = '_data';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CONTENT_TYPE => [
@@ -117,13 +117,13 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         ],
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTENT_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DATA => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -201,25 +201,19 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:151 */
-    /**
-     * @return string
-     */
+    /* class_default.php:171 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:182 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -346,7 +340,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         return $this;
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_QUESTIONNAIRE_RESPONSE;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_BASED_ON = 'basedOn';
     public const FIELD_PARENT = 'parent';
@@ -125,7 +125,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
     public const FIELD_SOURCE = 'source';
     public const FIELD_ITEM = 'item';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
@@ -133,13 +133,13 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
         ],
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_AUTHORED => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -353,25 +353,19 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:151 */
-    /**
-     * @return string
-     */
+    /* class_default.php:171 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:182 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -873,7 +867,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
         return $this;
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -919,7 +913,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
             } else if (self::FIELD_CONTAINED === $cen) {
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface $cn */
-                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($cen);
+                    $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
                     $type->addContained($cn::xmlUnserialize($cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {

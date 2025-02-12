@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ class ResourceParser
         }
         if (isset($input[Constants::JSON_FIELD_RESOURCE_TYPE])) {
             /** @var \DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface $className */
-            $className = $version->getTypeMap()::getTypeClassName($input[Constants::JSON_FIELD_RESOURCE_TYPE]);
+            $className = $version->getTypeMap()::getTypeClassname($input[Constants::JSON_FIELD_RESOURCE_TYPE]);
             if (null === $className) {
                 throw new \UnexpectedValueException(sprintf(
                     'Provided input has "%s" value of "%s", but it does not map to any known type.  Other keys: ["%s"]',
@@ -106,7 +106,7 @@ class ResourceParser
     {
         $elementName = $input->getName();
         /** @var \DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface $fhirType */
-        $fhirType = $version->getTypeMap()::getTypeClassName($elementName);
+        $fhirType = $version->getTypeMap()::getTypeClassname($elementName);
         if (null === $fhirType) {
             throw new \UnexpectedValueException(sprintf(
                 'Unable to locate FHIR type for root XML element "%s". Input seen: %s',

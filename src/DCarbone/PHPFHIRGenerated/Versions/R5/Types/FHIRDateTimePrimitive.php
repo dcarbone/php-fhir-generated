@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,19 +99,19 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DATE_TIME_HYPHEN_PRIMITIVE;
 
     public const FIELD_VALUE = 'value';
-    /* class_primitive.php:65 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+
+    /* class_primitive.php:63 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
             ValuePatternMatchRule::NAME => '/^([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?$/',
         ],
     ];
 
-    /* class_primitive.php:85 */
+    /* class_primitive.php:82 */
     /** @var string */
     protected string $value;
 
-    /* class_primitive.php:103 */
+    /* class_primitive.php:100 */
     /**
      * FHIRDateTimePrimitive Constructor
      * @param null|string|\DateTimeInterface $value
@@ -121,7 +121,7 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
         $this->setValue($value);
     }
 
-    /* class_primitive.php:121 */
+    /* class_primitive.php:118 */
     /**
      * @return string
      */

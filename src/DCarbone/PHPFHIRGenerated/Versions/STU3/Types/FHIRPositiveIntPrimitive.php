@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,22 +79,22 @@ class FHIRPositiveIntPrimitive implements PrimitiveTypeInterface
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_POSITIVE_INT_HYPHEN_PRIMITIVE;
 
     public const FIELD_VALUE = 'value';
-    /* class_primitive.php:65 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+
+    /* class_primitive.php:63 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
             ValuePatternMatchRule::NAME => '/^[1-9][0-9]*$/',
         ],
     ];
 
-    /* class_primitive.php:85 */
+    /* class_primitive.php:82 */
     /** @var string */
     protected string $value;
 
     /** @var bool */
     private bool $_jsonAsString;
 
-    /* class_primitive.php:103 */
+    /* class_primitive.php:100 */
     /**
      * FHIRPositiveIntPrimitive Constructor
      * @param null|string|float $value
@@ -107,7 +107,7 @@ class FHIRPositiveIntPrimitive implements PrimitiveTypeInterface
         $this->_jsonAsString = $jsonAsString;
     }
 
-    /* class_primitive.php:121 */
+    /* class_primitive.php:118 */
     /**
      * @return string
      */

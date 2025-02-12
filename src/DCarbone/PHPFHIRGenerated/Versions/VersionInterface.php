@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -41,14 +41,21 @@ interface VersionInterface
      *
      * @return string
      */
-    public function getSourceVersion(): string;
+    public function getFHIRSemanticVersion(): string;
+
+    /*
+     * Must return the shortened Major.Minor representation of the source's semantic version.
+     *
+     * @return string
+     */
+    public function getFHIRShortVersion(): string;
 
     /**
      * Must return the date this FHIR version's source was generated
      *
      * @return string
      */
-    public function getSourceGenerationDate(): string;
+    public function getFHIRGenerationDate(): string;
 
     /**
      * Must return config for this version

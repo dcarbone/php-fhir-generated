@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -31,14 +31,6 @@ use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
 interface VersionTypeMapInterface
 {
     /**
-     * Must return the fully qualified class name for FHIR Type name.  Must return null if type not found.
-     *
-     * @param string $typeName
-     * @return string|null
-     */
-    public static function getTypeClassName(string $typeName): null|string;
-
-    /**
      * Must return the full internal class map
      *
      * @return array
@@ -53,29 +45,39 @@ interface VersionTypeMapInterface
     public static function getContainableTypes(): array;
 
     /**
-     * @param string $typeName Name of FHIR object reference by a version's container type
+     * Must return the fully qualified class name for FHIR Type name.  Must return null if type not found.
+     *
+     * @param string|\stdClass|\SimpleXMLElement $input Must expect either name of type, or unserialized JSON or XML.
+     * @return string|null
+     */
+    public static function getTypeClassname(string|\stdClass|\SimpleXMLElement $input): null|string;
+
+    /**
+     * Must attempt to return the fully qualified classname of a contained type from the provided input, if it
+     * if it represents one.
+     *
+     * @param string|\stdClass|\SimpleXMLElement $input Expects either name of type or unserialized JSON or XML.
      * @return string|null Name of class as string or null if type is not contained in map
      */
-    public static function getContainedTypeClassName(string $typeName): null|string;
+    public static function getContainedTypeClassname(string|\stdClass|\SimpleXMLElement $input): null|string;
 
     /**
      * Must attempt to determine if the provided value is or describes a containable resource type
      *
-     * @param string|array|\SimpleXMLElement|\DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
+     * @param string|\stdClass|\SimpleXMLElement|\DCarbone\PHPFHIRGenerated\Types\TypeInterface $input
      * @return bool
-     * @throws \InvalidArgumentException
      */
-    public static function isContainableResource(string|array|\SimpleXMLElement|TypeInterface $type): bool;
+    public static function isContainableType(string|\stdClass|\SimpleXMLElement|TypeInterface $input): bool;
 
     /**
      * @param \SimpleXMLElement $node Parent element containing inline resource
      * @return string Fully qualified class name of contained resource type
      */
-    public static function getContainedTypeClassNameFromXML(\SimpleXMLElement $node): string;
+    public static function mustGetContainedTypeClassnameFromXML(\SimpleXMLElement $node): string;
 
     /**
      * @param \stdClass $json
      * @return string Fully qualified class name of contained resource type
      */
-    public static function getContainedTypeClassNameFromJSON(\stdClass $json): string;
+    public static function mustGetContainedTypeClassnameFromJSON(\stdClass $json): string;
 }

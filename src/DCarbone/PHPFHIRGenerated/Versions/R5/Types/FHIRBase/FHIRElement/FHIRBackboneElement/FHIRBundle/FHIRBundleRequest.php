@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BUNDLE_DOT_REQUEST;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_METHOD = 'method';
     public const FIELD_METHOD_EXT = '_method';
     public const FIELD_URL = 'url';
@@ -130,7 +130,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     public const FIELD_IF_NONE_EXIST = 'ifNoneExist';
     public const FIELD_IF_NONE_EXIST_EXT = '_ifNoneExist';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_METHOD => [
@@ -141,7 +141,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_METHOD => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -151,7 +151,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
         self::FIELD_IF_NONE_EXIST => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -271,16 +271,13 @@ class FHIRBundleRequest extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:182 */
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -521,7 +518,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,6 +76,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
 /**
@@ -94,7 +95,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROVENANCE_DOT_AGENT;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_ROLE = 'role';
     public const FIELD_TYPE = 'type';
     public const FIELD_REFERENCE = 'reference';
@@ -102,7 +103,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
     public const FIELD_DISPLAY = 'display';
     public const FIELD_DISPLAY_EXT = '_display';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
@@ -119,13 +120,13 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_REFERENCE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_DISPLAY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -205,16 +206,13 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:182 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -355,7 +353,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

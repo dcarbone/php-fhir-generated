@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,7 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_DEVICE_USE_REQUEST;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_BODY_SITE_CODEABLE_CONCEPT = 'bodySiteCodeableConcept';
     public const FIELD_BODY_SITE_REFERENCE = 'bodySiteReference';
     public const FIELD_STATUS = 'status';
@@ -139,7 +139,7 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
     public const FIELD_PRIORITY = 'priority';
     public const FIELD_PRIORITY_EXT = '_priority';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_DEVICE => [
@@ -150,7 +150,7 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
         ],
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_STATUS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ORDERED_ON => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -159,7 +159,7 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
         self::FIELD_PRIORITY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -463,25 +463,19 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:151 */
-    /**
-     * @return string
-     */
+    /* class_default.php:171 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:182 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -1232,7 +1226,7 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
         return $this;
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1278,7 +1272,7 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
             } else if (self::FIELD_CONTAINED === $cen) {
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
-                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($cen);
+                    $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
                     $type->addContained($cn::xmlUnserialize($cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {

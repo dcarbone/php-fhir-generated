@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64B
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,6 +73,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface;
 
@@ -85,10 +86,10 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_BINARY;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_CONTENT_TYPE = 'contentType';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
@@ -96,12 +97,12 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
         ],
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_CONTENT_TYPE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive */
     protected FHIRStringPrimitive $contentType;
 
@@ -131,25 +132,19 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:151 */
-    /**
-     * @return string
-     */
+    /* class_default.php:171 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:182 */
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive
      */
@@ -175,7 +170,7 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
         return $this;
     }
 
-    /* class_default.php:181 */
+    /* class_default.php:198 */
     public function _nonValueFieldDefined(): bool
     {
     return isset($this->extension)
@@ -183,7 +178,7 @@ class FHIRBinary extends FHIRBase64Binary implements VersionContainedTypeInterfa
             || isset($this->contentType);
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

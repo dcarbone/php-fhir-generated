@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_IMAGING_STUDY_DOT_INSTANCE;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_NUMBER = 'number';
     public const FIELD_NUMBER_EXT = '_number';
     public const FIELD_UID = 'uid';
@@ -114,7 +114,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     public const FIELD_TITLE_EXT = '_title';
     public const FIELD_CONTENT = 'content';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
@@ -128,7 +128,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_NUMBER => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_UID => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -137,7 +137,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         self::FIELD_TITLE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -254,16 +254,13 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:182 */
     /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -529,7 +526,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

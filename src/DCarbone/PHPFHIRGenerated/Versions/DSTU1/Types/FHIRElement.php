@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,6 +72,7 @@ use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
 /**
@@ -89,11 +90,11 @@ class FHIRElement implements DSTU1TypeInterface, CommentContainerInterface
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_ELEMENT;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_EXTENSION = 'extension';
     public const FIELD_ID = 'id';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
@@ -101,12 +102,12 @@ class FHIRElement implements DSTU1TypeInterface, CommentContainerInterface
         ],
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_ID => ValueXMLLocationEnum::PARENT_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
@@ -142,16 +143,29 @@ class FHIRElement implements DSTU1TypeInterface, CommentContainerInterface
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:153 */
+    public function _getFHIRVersionName(): string
+    {
+        return Version::NAME;
+    }
+
+    public function _getFHIRSemanticVersion(): string
+    {
+        return Version::FHIR_SEMANTIC_VERSION;
+    }
+
+    public function _getFHIRShortVersion(): string
+    {
+        return Version::FHIR_SHORT_VERSION;
+    }
+
+    /* class_default.php:182 */
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
@@ -241,7 +255,7 @@ class FHIRElement implements DSTU1TypeInterface, CommentContainerInterface
         return $this;
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -423,10 +437,7 @@ class FHIRElement implements DSTU1TypeInterface, CommentContainerInterface
         return $out;
     }
 
-    /* class_default.php:218 */
-    /**
-     * @return string
-     */
+    /* class_default.php:235 */
     public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;

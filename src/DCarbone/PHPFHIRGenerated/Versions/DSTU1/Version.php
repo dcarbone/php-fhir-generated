@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -56,6 +56,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1;
  * 
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
+
 use DCarbone\PHPFHIRGenerated\Client\ClientInterface;
 use DCarbone\PHPFHIRGenerated\Versions\VersionConfig;
 use DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface;
@@ -65,8 +66,9 @@ use DCarbone\PHPFHIRGenerated\Versions\VersionTypeMapInterface;
 class Version implements VersionInterface
 {
     public const NAME = 'DSTU1';
-    public const SOURCE_VERSION = 'v0.0.82';
-    public const SOURCE_GENERATION_DATE = 'Tue, Sep 30, 2014 18:08+1000';
+    public const FHIR_SEMANTIC_VERSION = 'v0.0.82';
+    public const FHIR_SHORT_VERSION = 'v0.0';
+    public const FHIR_GENERATION_DATE = 'Tue, Sep 30, 2014 18:08+1000';
 
     private const _GENERATED_CONFIG = [];
 
@@ -105,17 +107,25 @@ class Version implements VersionInterface
     /**
      * @return string
      */
-    public function getSourceVersion(): string
+    public function getFHIRSemanticVersion(): string
     {
-        return self::SOURCE_VERSION;
+        return self::FHIR_SEMANTIC_VERSION;
     }
 
     /**
      * @return string
      */
-    public function getSourceGenerationDate(): string
+    public function getFHIRShortVersion(): string
     {
-        return self::SOURCE_GENERATION_DATE;
+        return self::FHIR_SHORT_VERSION;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRGenerationDate(): string
+    {
+        return self::FHIR_GENERATION_DATE;
     }
 
     /**

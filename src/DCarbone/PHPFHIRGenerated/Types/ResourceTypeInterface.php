@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -32,6 +32,27 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 
 interface ResourceTypeInterface extends TypeInterface
 {
+    /**
+     * Returns the name of the version this type was generated from.
+     *
+     * @return string
+     */
+    public function _getFHIRVersionName(): string;
+
+    /**
+     * Returns the semver of the version of FHIR this type was generated from.
+     *
+     * @return string
+     */
+    public function _getFHIRSemanticVersion(): string;
+
+    /**
+     * Returns the shortened Major.Minor representation of the FHIR semantic version this type was generated from.
+     *
+     * @return string
+     */
+    public function _getFHIRShortVersion(): string;
+
     /**
      * Returns the root XMLNS value found in the source.  Null indicates no "xmlns" was found.  Only defined when
      * unserializing XML, and only used when serializing XML.

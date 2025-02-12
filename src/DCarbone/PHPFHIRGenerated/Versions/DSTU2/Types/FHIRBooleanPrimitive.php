@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,18 +82,17 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
     public const TRUE = 'true';
     public const FALSE = 'false';
 
-    /* class_primitive.php:65 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_primitive.php:63 */
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_primitive.php:85 */
+    /* class_primitive.php:82 */
     /** @var bool */
     protected bool $value;
 
     /** @var bool */
     private bool $_jsonAsString;
 
-    /* class_primitive.php:103 */
+    /* class_primitive.php:100 */
     /**
      * FHIRBooleanPrimitive Constructor
      * @param null|string|bool $value
@@ -106,7 +105,7 @@ class FHIRBooleanPrimitive implements PrimitiveTypeInterface
         $this->_jsonAsString = $jsonAsString;
     }
 
-    /* class_primitive.php:121 */
+    /* class_primitive.php:118 */
     /**
      * @return string
      */

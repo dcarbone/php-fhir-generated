@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_VIRTUAL_SERVICE_DETAIL;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_CHANNEL_TYPE = 'channelType';
     public const FIELD_ADDRESS_URL = 'addressUrl';
     public const FIELD_ADDRESS_URL_EXT = '_addressUrl';
@@ -128,12 +128,12 @@ class FHIRVirtualServiceDetail extends FHIRDataType
     public const FIELD_SESSION_KEY = 'sessionKey';
     public const FIELD_SESSION_KEY_EXT = '_sessionKey';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_ADDRESS_URL => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ADDRESS_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -141,7 +141,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
         self::FIELD_SESSION_KEY => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -294,16 +294,13 @@ class FHIRVirtualServiceDetail extends FHIRDataType
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:182 */
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -658,7 +655,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
         return $this;
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

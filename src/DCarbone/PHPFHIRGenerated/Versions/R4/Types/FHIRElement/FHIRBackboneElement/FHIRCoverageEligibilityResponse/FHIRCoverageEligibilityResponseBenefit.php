@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_BENEFIT;
 
-    /* class_default.php:50 */
+    /* class_default.php:55 */
     public const FIELD_TYPE = 'type';
     public const FIELD_ALLOWED_UNSIGNED_INT = 'allowedUnsignedInt';
     public const FIELD_ALLOWED_UNSIGNED_INT_EXT = '_allowedUnsignedInt';
@@ -108,7 +108,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     public const FIELD_USED_STRING_EXT = '_usedString';
     public const FIELD_USED_MONEY = 'usedMoney';
 
-    /* class_default.php:69 */
+    /* class_default.php:74 */
     // The default validation rules for this type as defined in the FHIR schema used to generate this code.
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
@@ -116,7 +116,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         ],
     ];
 
-    /* class_default.php:91 */
+    /* class_default.php:96 */
     private array $_valueXMLLocations = [
         self::FIELD_ALLOWED_UNSIGNED_INT => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
         self::FIELD_ALLOWED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
@@ -124,7 +124,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         self::FIELD_USED_STRING => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
     ];
 
-    /* class_default.php:107 */
+    /* class_default.php:112 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -251,16 +251,13 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:139 */
-    /**
-     * @return string
-     */
+    /* class_default.php:144 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:165 */
+    /* class_default.php:182 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -513,7 +510,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:192 */
+    /* class_default.php:209 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

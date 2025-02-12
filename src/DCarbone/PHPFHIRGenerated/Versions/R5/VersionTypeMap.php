@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 11th, 2025 21:54+0000
+ * Class creation date: February 12th, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1631,16 +1631,6 @@ class VersionTypeMap implements VersionTypeMapInterface
     ];
 
     /**
-     * Get fully qualified class name for FHIR Type name.  Returns null if type not found
-     * @param string $typeName
-     * @return string|null
-     */
-    public static function getTypeClassName(string $typeName): null|string
-    {
-        return self::_TYPE_MAP[$typeName] ?? null;
-    }
-
-    /**
      * Returns the full internal class map
      * @return array
      */
@@ -1650,7 +1640,8 @@ class VersionTypeMap implements VersionTypeMapInterface
     }
 
     /**
-     * Returns the full list of containable resource types
+     * Returns a map of [ "typeName" => "typeClass" ] of all types that may be contained within a resource container.
+     *
      * @return array
      */
     public static function getContainableTypes(): array
@@ -1659,71 +1650,91 @@ class VersionTypeMap implements VersionTypeMapInterface
     }
 
     /**
-     * @param string $typeName Name of FHIR object reference by ResourceContainer
-     * @return string|null Name of class as string or null if type is not contained in map
+     * Returns the fully qualified classname for the provided input, if it represents a FHIR type.
+     *
+     * @param string|\stdClass|\SimpleXMLElement $input Expects either name of type or unserialized JSON or XML.
+     * @return string|null
      */
-    public static function getContainedTypeClassName(string $typeName): null|string
+    public static function getTypeClassname(string|\stdClass|\SimpleXMLElement $input): null|string
     {
-        return self::_CONTAINABLE_TYPES[$typeName] ?? null;
+        if (is_string($input)) {
+            return self::_TYPE_MAP[$input] ?? null;
+        } else if ($input instanceof \SimpleXMLElement) {
+            return self::_TYPE_MAP[$input->getName()] ?? null;
+        } else if (isset($input->resourceType)) {
+            return self::_TYPE_MAP[$input->resourceType] ?? null;
+        } else {
+            return null;
+        }
     }
 
     /**
-     * Will attempt to determine if the provided value is or describes a containable resource type
-     * @param string|array|\SimpleXMLElement|\DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
+     * Attempts to return the fully qualified classname of a contained type from the provided input, if it
+     * represents one.
+     *
+     * @param string|\stdClass|\SimpleXMLElement $input Expects either name of type or unserialized JSON or XML.
+     * @return string|null Name of class as string or null if type is not contained in map
+     */
+    public static function getContainedTypeClassname(string|\stdClass|\SimpleXMLElement $input): null|string
+    {
+        $classname = self::getTypeClassname($input);
+        if (null !== $classname && in_array($classname, self::_CONTAINABLE_TYPES, true)) {
+            return $classname;
+        }
+        return null;
+    }
+
+    /**
+     * Attempts to determine if the provided value is or represents a containable resource type
+     *
+     * @param string|\stdClass|\SimpleXMLElement|\DCarbone\PHPFHIRGenerated\Types\TypeInterface $input
      * @return bool
      * @throws \InvalidArgumentException
      */
-    public static function isContainableResource(string|array|\SimpleXMLElement|TypeInterface $type): bool
+    public static function isContainableType(string|\stdClass|\SimpleXMLElement|TypeInterface $input): bool
     {
-        $tt = gettype($type);
-        if ('object' === $tt) {
-            if ($type instanceof TypeInterface) {
-                return ($type instanceof VersionContainedTypeInterface);
-            }
-            return isset(self::_CONTAINABLE_TYPES[$type->getName()]);
+        if ($input instanceof TypeInterface) {
+            return ($input instanceof VersionContainedTypeInterface);
+        } else if (is_string($input) && str_contains($input, '\\')) {
+            return isset(self::_CONTAINABLE_TYPES[$input]) || in_array('\\' . ltrim($input, '\\'), self::_CONTAINABLE_TYPES, true);
+        } else {
+            return null !== self::getContainedTypeClassname($input);
         }
-        if ('string' === $tt) {
-            return isset(self::_CONTAINABLE_TYPES[$type]) || in_array('\\' . ltrim($type, '\\'), self::_CONTAINABLE_TYPES, true);
-        }
-        if (isset($type[Constants::JSON_FIELD_RESOURCE_TYPE])) {
-            return isset(self::_CONTAINABLE_TYPES[$type[Constants::JSON_FIELD_RESOURCE_TYPE]]);
-        }
-        return false;
     }
 
     /**
      * @param \SimpleXMLElement $node Parent element containing inline resource
      * @return string Fully qualified class name of contained resource type
+     * @throws \UnexpectedValueException
      */
-    public static function getContainedTypeClassNameFromXML(\SimpleXMLElement $node): string
+    public static function mustGetContainedTypeClassnameFromXML(\SimpleXMLElement $node): string
     {
         $typeName = $node->getName();
-        $className = self::getContainedTypeClassName($typeName);
-        if (null === $className) {
-            throw self::createdInvalidContainedTypeException($typeName);
+        if (isset(self::_CONTAINABLE_TYPES[$typeName])) {
+            return self::_CONTAINABLE_TYPES[$typeName];
         }
-        return $className;
+        throw self::createdInvalidContainedTypeException($typeName);
     }
 
     /**
      * @param \stdClass $json
      * @return string Fully qualified class name of contained resource type
+     * @throws \UnexpectedValueException
+     * @throws \DomainException
      */
-    public static function getContainedTypeClassNameFromJSON(\stdClass $json): string
+    public static function mustGetContainedTypeClassnameFromJSON(\stdClass $json): string
     {
-        $resourceType = $json->resourceType ?? null;
-        if (null === $resourceType) {
+        if (!isset($json->resourceType)) {
             throw new \DomainException(sprintf(
                 'Unable to determine contained Resource type from input (missing "%s" key).  Keys: ["%s"]',
                 Constants::JSON_FIELD_RESOURCE_TYPE,
                 implode('","', array_keys((array)$json))
             ));
         }
-        $className = self::getContainedTypeClassName($resourceType);
-        if (null === $className) {
-            throw self::createdInvalidContainedTypeException($resourceType);
+        if (isset(self::_CONTAINABLE_TYPES[$json->resourceType])) {
+            return self::_CONTAINABLE_TYPES[$json->resourceType];
         }
-        return $className;
+        throw self::createdInvalidContainedTypeException($json->resourceType);
     }
 
     /**
