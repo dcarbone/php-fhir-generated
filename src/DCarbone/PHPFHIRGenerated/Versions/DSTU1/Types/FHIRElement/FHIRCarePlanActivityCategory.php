@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -56,30 +56,27 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * 
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\DSTU1PrimitiveContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\PrimitiveContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\ValueContainerTrait;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanActivityCategoryList;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
 /**
  * High-level categorization of the type of activity in a care plan.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
-class FHIRCarePlanActivityCategory extends FHIRElement implements DSTU1PrimitiveContainerTypeInterface
+class FHIRCarePlanActivityCategory extends FHIRElement implements PrimitiveContainerTypeInterface
 {
     use TypeValidationsTrait,
         JSONSerializationOptionsTrait,
@@ -89,11 +86,10 @@ class FHIRCarePlanActivityCategory extends FHIRElement implements DSTU1Primitive
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CARE_PLAN_ACTIVITY_CATEGORY;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
     public const FIELD_VALUE = 'value';
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
             ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -136,7 +132,7 @@ class FHIRCarePlanActivityCategory extends FHIRElement implements DSTU1Primitive
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:182 */
+    /* class_default.php:173 */
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanActivityCategoryList
      */
@@ -162,24 +158,24 @@ class FHIRCarePlanActivityCategory extends FHIRElement implements DSTU1Primitive
         return $this;
     }
 
-    /* class_default.php:198 */
+    /* class_default.php:189 */
     public function _nonValueFieldDefined(): bool
     {
     return isset($this->extension)
             || isset($this->id);
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityCategory $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityCategory
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|UnserializeConfig $config = null,
-                                          null|ResourceTypeInterface $type = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -190,15 +186,6 @@ class FHIRCarePlanActivityCategory extends FHIRElement implements DSTU1Primitive
                 static::class,
                 get_class($type)
             ));
-        }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
         }
         foreach ($element->children() as $ce) {
             $cen = $ce->getName();
@@ -237,32 +224,15 @@ class FHIRCarePlanActivityCategory extends FHIRElement implements DSTU1Primitive
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
      */
-    public function xmlSerialize(null|XMLWriter $xw = null,
-                                 null|SerializeConfig $config = null,
-                                 null|ValueXMLLocationEnum $valueLocation = null): XMLWriter
+    public function xmlSerialize(XMLWriter $xw,
+                                 SerializeConfig $config,
+                                 null|ValueXMLLocationEnum $valueLocation = null): void
     {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('CarePlanActivityCategory', $this->_getSourceXMLNS());
-        }
+        $valueLocation = $valueLocation ?? $this->_valueXMLLocations[self::FIELD_VALUE];
         if (isset($this->value) && ValueXMLLocationEnum::CONTAINER_ATTRIBUTE === $valueLocation) {
             $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getValueAsString());
         }
@@ -278,25 +248,18 @@ class FHIRCarePlanActivityCategory extends FHIRElement implements DSTU1Primitive
                 $xw->writeElement(self::FIELD_VALUE, $this->value->_getValueAsString());
             }
         }
-        if ($rootOpened ?? false) {
-            $xw->endElement();
-        }
-        if ($docStarted ?? false) {
-            $xw->endDocument();
-        }
-        return $xw;
     }
 
     /**
-     * @param string|\stdClass $json
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param \stdClass $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityCategory $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityCategory
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
-                                           null|UnserializeConfig $config = null,
-                                           null|ResourceTypeInterface $type = null): self
+    public static function jsonUnserialize(\stdClass $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -307,15 +270,6 @@ class FHIRCarePlanActivityCategory extends FHIRElement implements DSTU1Primitive
                 static::class,
                 get_class($type)
             ));
-        }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
-                                associative: false,
-                                depth: $config->getJSONDecodeMaxDepth(),
-                                flags: $config->getJSONDecodeOpts());
         }
         parent::jsonUnserialize($json, $config, $type); 
         if (isset($json->value) || property_exists($json, self::FIELD_VALUE)) {
@@ -336,7 +290,7 @@ class FHIRCarePlanActivityCategory extends FHIRElement implements DSTU1Primitive
         return $out;
     }
 
-    /* class_default.php:235 */
+    /* class_default.php:226 */
     public function __toString(): string
     {
         return $this->_getValueAsString();

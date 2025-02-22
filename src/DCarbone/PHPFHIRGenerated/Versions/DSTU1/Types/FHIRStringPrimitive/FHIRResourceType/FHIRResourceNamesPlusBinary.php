@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHI
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHI
  * 
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
@@ -75,8 +74,7 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESOURCE_NAMES_PLUS_BINARY;
 
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
             ValueMinLengthRule::NAME => 1,
@@ -92,5 +90,5 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
 }

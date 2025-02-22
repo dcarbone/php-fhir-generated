@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -104,7 +103,7 @@ class FHIRTimingRepeat extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_TIMING_DOT_REPEAT;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
     public const FIELD_BOUNDS_QUANTITY = 'boundsQuantity';
     public const FIELD_BOUNDS_RANGE = 'boundsRange';
     public const FIELD_BOUNDS_PERIOD = 'boundsPeriod';
@@ -129,8 +128,7 @@ class FHIRTimingRepeat extends FHIRElement
     public const FIELD_WHEN = 'when';
     public const FIELD_WHEN_EXT = '_when';
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
             ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
@@ -375,7 +373,7 @@ class FHIRTimingRepeat extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:182 */
+    /* class_default.php:173 */
     /**
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
@@ -858,7 +856,7 @@ class FHIRTimingRepeat extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

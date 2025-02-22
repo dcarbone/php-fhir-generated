@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
@@ -93,14 +92,13 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_DETAIL;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
     public const FIELD_SEQUENCE_LINK_ID = 'sequenceLinkId';
     public const FIELD_SEQUENCE_LINK_ID_EXT = '_sequenceLinkId';
     public const FIELD_ADJUDICATION = 'adjudication';
     public const FIELD_SUB_DETAIL = 'subDetail';
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
             ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
@@ -185,7 +183,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:182 */
+    /* class_default.php:173 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -345,7 +343,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

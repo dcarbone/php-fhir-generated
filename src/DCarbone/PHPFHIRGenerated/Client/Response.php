@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,14 +26,16 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum;
+
 class Response
 {
     /**
      * HTTP request method.
      *
-     * @var string
+     * @var \DCarbone\PHPFHIRGenerated\Client\HTTPMethodEnum
      */
-    public string $method;
+    public HTTPMethodEnum $method;
 
     /**
      * Request URL.
@@ -41,6 +43,13 @@ class Response
      * @var string
      */
     public string $url;
+
+    /**
+     * The serialized format used to encode the request, if applicable.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum
+     */
+    public SerializeFormatEnum $requestFormat;
 
     /**
      * HTTP response status code.
@@ -77,38 +86,113 @@ class Response
      */
     public int $errno;
 
-    public function getMethod(): null|string
+    public function __construct(HTTPMethodEnum $method,
+                                string $url,
+                                SerializeFormatEnum $requestFormat)
+    {
+        $this->method = $method;
+        $this->url = $url;
+    }
+
+    /**
+     * Return the HTTP request method used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Client\HTTPMethodEnum
+     */
+    public function getMethod(): null|HTTPMethodEnum
     {
         return $this->method ?? null;
     }
 
+    /**
+     * Return the full URL used.
+     *
+     * @return null|string
+     */
     public function getURL(): null|string
     {
         return $this->url ?? null;
     }
 
+    /**
+     * Return the HTTP response code seen.
+     *
+     * @return null|int
+     */
     public function getCode(): null|int
     {
         return $this->code ?? null;
     }
 
+    /**
+     * Return the HTTP response headers seen.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Client\ResponseHeaders
+     */
     public function getHeaders(): null|ResponseHeaders
     {
         return $this->headers ?? null;
     }
 
+    /**
+     * Return the full response seen, if there was one.
+     *
+     * @return null|string
+     */
     public function getResp(): null|string
     {
         return $this->resp ?? null;
     }
 
+    /**
+     * Client error message, if there was one.
+     *
+     * @return null|string
+     */
     public function getErr(): null|string
     {
         return $this->err ?? null;
     }
 
+    /**
+     * Client error code, if there was one.
+     *
+     * @return null|int
+     */
     public function getErrno(): null|int
     {
         return $this->errno ?? null;
+    }
+
+    /**
+     * Attempts to extract the serialization format from the response Content-Type header.  Returns null if response
+     * headers were not parsed, if the Content-Type header is not present or parseable.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum
+     */
+    public function getResponseFormat(): null|SerializeFormatEnum
+    {
+        if (!isset($this->headers)) {
+            return $this->requestFormat ?? null;
+        }
+        $ctHeaders = $this->headers->get('content-type');
+        if ([] === $ctHeaders) {
+            return $this->requestFormat ?? null;
+        }
+        foreach ($ctHeaders as $header) {
+            $lower = strtolower($header);
+            switch (true) {
+                case str_contains($lower, 'application/json'):
+                case str_contains($lower, 'application/fhir+json'):
+                case str_contains($lower, 'application/json+fhir'):
+                    return SerializeFormatEnum::JSON;
+
+                case str_contains($lower, 'application/xml'):
+                case str_contains($lower, 'application/fhir+xml'):
+                case str_contains($lower, 'application/xml+fhir'):
+                    return SerializeFormatEnum::XML;
+            }
+        }
+        return $this->requestFormat ?? null;
     }
 }

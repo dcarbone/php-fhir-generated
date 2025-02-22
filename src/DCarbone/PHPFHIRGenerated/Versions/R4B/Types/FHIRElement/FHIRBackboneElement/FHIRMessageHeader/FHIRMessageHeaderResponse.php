@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
@@ -117,15 +116,14 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MESSAGE_HEADER_DOT_RESPONSE;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_IDENTIFIER_EXT = '_identifier';
     public const FIELD_CODE = 'code';
     public const FIELD_CODE_EXT = '_code';
     public const FIELD_DETAILS = 'details';
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_IDENTIFIER => [
             MinOccursRule::NAME => 1,
@@ -215,7 +213,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:182 */
+    /* class_default.php:173 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -328,7 +326,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

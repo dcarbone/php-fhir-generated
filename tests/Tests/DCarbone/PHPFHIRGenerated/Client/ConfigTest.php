@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -27,7 +27,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Client;
  */
 
 use DCarbone\PHPFHIRGenerated\Client\Config;
-use DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum;
 use PHPUnit\Framework\TestCase;
 
 class ConfigTest extends TestCase
@@ -36,24 +36,24 @@ class ConfigTest extends TestCase
     {
         $c = new Config('http://example.com');
         $this->assertEquals('http://example.com', $c->getAddress());
-        $this->assertNull($c->getDefaultFormat());
-        $this->assertEmpty($c->getQueryParams());
+        $this->assertEquals(SerializeFormatEnum::XML, $c->getDefaultFormat());
+        $this->assertEmpty($c->getDefaultQueryParams());
         $this->assertEmpty($c->getCurlOpts());
-        $this->assertFalse($c->getParseResponseHeaders());
+        $this->assertTrue($c->getParseResponseHeaders());
     }
 
     public function testCanConstructWithAllParams()
     {
         $c = new Config(
             address: 'http://example.com',
-            defaultFormat: ResponseFormatEnum::JSON,
-            queryParams: ['foo' => 'bar'],
+            defaultFormat: SerializeFormatEnum::JSON,
+            defaultQueryParams: ['foo' => 'bar'],
             curlOpts: ['bar' => 'baz'],
             parseResponseHeaders: true
         );
         $this->assertEquals('http://example.com', $c->getAddress());
-        $this->assertEquals(ResponseFormatEnum::JSON, $c->getDefaultFormat());
-        $this->assertEquals(['foo' => 'bar'], $c->getQueryParams());
+        $this->assertEquals(SerializeFormatEnum::JSON, $c->getDefaultFormat());
+        $this->assertEquals(['foo' => 'bar'], $c->getDefaultQueryParams());
         $this->assertEquals(['bar' => 'baz'], $c->getCurlOpts());
         $this->assertTrue($c->getParseResponseHeaders());
     }

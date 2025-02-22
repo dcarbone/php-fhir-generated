@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
@@ -69,6 +68,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -122,7 +122,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_FAMILY_MEMBER_HISTORY;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
     public const FIELD_IDENTIFIER = 'identifier';
     public const FIELD_INSTANTIATES_CANONICAL = 'instantiatesCanonical';
     public const FIELD_INSTANTIATES_CANONICAL_EXT = '_instantiatesCanonical';
@@ -162,8 +162,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     public const FIELD_NOTE = 'note';
     public const FIELD_CONDITION = 'condition';
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
             MinOccursRule::NAME => 1,
@@ -650,13 +649,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:171 */
+    /* class_default.php:162 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:182 */
+    /* class_default.php:173 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -1871,7 +1870,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         return $this;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

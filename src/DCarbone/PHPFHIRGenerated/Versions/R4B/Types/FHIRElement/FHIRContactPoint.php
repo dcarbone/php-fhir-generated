@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -112,7 +111,7 @@ class FHIRContactPoint extends FHIRElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_CONTACT_POINT;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
     public const FIELD_SYSTEM = 'system';
     public const FIELD_SYSTEM_EXT = '_system';
     public const FIELD_VALUE = 'value';
@@ -123,8 +122,7 @@ class FHIRContactPoint extends FHIRElement
     public const FIELD_RANK_EXT = '_rank';
     public const FIELD_PERIOD = 'period';
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
     ];
 
@@ -236,7 +234,7 @@ class FHIRContactPoint extends FHIRElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:182 */
+    /* class_default.php:173 */
     /**
      * Telecommunications form for contact point.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -421,7 +419,7 @@ class FHIRContactPoint extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

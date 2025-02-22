@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantit
  * 
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
@@ -64,7 +63,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
@@ -80,7 +79,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRQuantityCompararatorList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
 class FHIRAge extends FHIRQuantity
@@ -92,10 +90,9 @@ class FHIRAge extends FHIRQuantity
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_AGE;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
             ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
@@ -110,17 +107,17 @@ class FHIRAge extends FHIRQuantity
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param \SimpleXMLElement $element
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge
      * @throws \Exception
      */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|UnserializeConfig $config = null,
-                                          null|ResourceTypeInterface $type = null): self
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -131,15 +128,6 @@ class FHIRAge extends FHIRQuantity
                 static::class,
                 get_class($type)
             ));
-        }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
         }
         foreach ($element->children() as $ce) {
             $cen = $ce->getName();
@@ -215,15 +203,15 @@ class FHIRAge extends FHIRQuantity
     }
 
     /**
-     * @param string|\stdClass $json
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @param \stdClass $json
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
-                                           null|UnserializeConfig $config = null,
-                                           null|ResourceTypeInterface $type = null): self
+    public static function jsonUnserialize(\stdClass $json,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
             $type = new static();
@@ -234,15 +222,6 @@ class FHIRAge extends FHIRQuantity
                 static::class,
                 get_class($type)
             ));
-        }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
-                                associative: false,
-                                depth: $config->getJSONDecodeMaxDepth(),
-                                flags: $config->getJSONDecodeOpts());
         }
         parent::jsonUnserialize($json, $config, $type); 
         return $type;

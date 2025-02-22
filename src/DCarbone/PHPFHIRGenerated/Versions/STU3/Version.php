@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,8 +61,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
-use DCarbone\PHPFHIRGenerated\Client\ClientInterface;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Versions\VersionConfig;
 use DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface;
 use DCarbone\PHPFHIRGenerated\Versions\VersionInterface;
@@ -73,9 +72,12 @@ class Version implements VersionInterface
     public const NAME = 'STU3';
     public const FHIR_SEMANTIC_VERSION = 'v3.0.1';
     public const FHIR_SHORT_VERSION = 'v3.0';
+    public const FHIR_VERSION_INTEGER = 30100000;
     public const FHIR_GENERATION_DATE = 'Wed, Apr 19, 2017 07:44+1000';
 
     private const _GENERATED_CONFIG = [];
+
+    private static FHIRVersion $_fhirVersion;
 
     /** @var \DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface */
     private VersionConfigInterface $_config;
@@ -110,6 +112,22 @@ class Version implements VersionInterface
     }
 
     /**
+     * @return \DCarbone\PHPFHIRGenerated\FHIRVersion
+     */
+    public static function getFHIRVersion(): FHIRVersion
+    {
+        if (!isset(self::$_fhirVersion)) {
+            self::$_fhirVersion = new FHIRVersion(
+                self::NAME,
+                self::FHIR_SEMANTIC_VERSION,
+                self::FHIR_SHORT_VERSION,
+                self::FHIR_VERSION_INTEGER,
+            );
+        }
+        return self::$_fhirVersion;
+    }
+
+    /**
      * @return string
      */
     public function getFHIRSemanticVersion(): string
@@ -123,6 +141,14 @@ class Version implements VersionInterface
     public function getFHIRShortVersion(): string
     {
         return self::FHIR_SHORT_VERSION;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFHIRVersionInteger(): int
+    {
+        return self::FHIR_VERSION_INTEGER;
     }
 
     /**
@@ -150,5 +176,10 @@ class Version implements VersionInterface
             self::$_typeMap = new VersionTypeMap();
         }
         return self::$_typeMap;
+    }
+
+    public function __toString(): string
+    {
+        return (string)self::getFHIRVersion();
     }
 }

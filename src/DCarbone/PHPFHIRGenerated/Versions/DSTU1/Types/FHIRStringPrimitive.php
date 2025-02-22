@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -56,11 +56,9 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * 
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
-use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
@@ -69,8 +67,7 @@ class FHIRStringPrimitive implements PrimitiveTypeInterface
 {
     use TypeValidationsTrait,
         JSONSerializationOptionsTrait,
-        XMLSerializationOptionsTrait,
-        SourceXMLNamespaceTrait;
+        XMLSerializationOptionsTrait;
 
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_STRING_HYPHEN_PRIMITIVE;

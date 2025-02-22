@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,16 +61,16 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 abstract class Autoloader
 {
     /** @var array */
     private const _CLASS_MAP = [
         // version core types
+        'DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionResourceTypeEnum' => __DIR__ . '/VersionResourceTypeEnum.php',
         'DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants' => __DIR__ . '/VersionConstants.php',
         'DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionClient' => __DIR__ . '/VersionClient.php',
         'DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version' => __DIR__ . '/Version.php',
-        'DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionTypesEnum' => __DIR__ . '/VersionTypesEnum.php',
+        'DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionResourceTypeInterface' => __DIR__ . '/VersionResourceTypeInterface.php',
         'DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionTypeMap' => __DIR__ . '/VersionTypeMap.php',
         'DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface' => __DIR__ . '/VersionContainedTypeInterface.php',
 

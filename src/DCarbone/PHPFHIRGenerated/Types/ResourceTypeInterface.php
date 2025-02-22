@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -29,37 +29,31 @@ namespace DCarbone\PHPFHIRGenerated\Types;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 
 interface ResourceTypeInterface extends TypeInterface
 {
     /**
-     * Returns the name of the version this type was generated from.
+     * Must return the FHIR version of this type.
      *
-     * @return string
+     * @return \DCarbone\PHPFHIRGenerated\FHIRVersion
      */
-    public function _getFHIRVersionName(): string;
+    public function _getFHIRVersion(): FHIRVersion;
 
     /**
-     * Returns the semver of the version of FHIR this type was generated from.
-     *
-     * @return string
-     */
-    public function _getFHIRSemanticVersion(): string;
-
-    /**
-     * Returns the shortened Major.Minor representation of the FHIR semantic version this type was generated from.
-     *
-     * @return string
-     */
-    public function _getFHIRShortVersion(): string;
-
-    /**
-     * Returns the root XMLNS value found in the source.  Null indicates no "xmlns" was found.  Only defined when
+     * Must return the root XMLNS value found in the source.  Null indicates no "xmlns" was found.  Only defined when
      * unserializing XML, and only used when serializing XML.
      *
      * @return null|string
      */
     public function _getSourceXMLNS(): null|string;
+
+    /**
+     * Must return the ID-containing element of this resource, if defined.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceIDTypeInterface
+     */
+    public function getId(): null|ResourceIDTypeInterface;
 
     /**
      * @param string|\SimpleXMLElement $element

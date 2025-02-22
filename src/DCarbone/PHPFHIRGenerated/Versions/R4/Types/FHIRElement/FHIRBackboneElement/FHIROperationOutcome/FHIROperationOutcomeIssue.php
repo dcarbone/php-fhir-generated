@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
@@ -96,7 +95,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_OPERATION_OUTCOME_DOT_ISSUE;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
     public const FIELD_SEVERITY = 'severity';
     public const FIELD_SEVERITY_EXT = '_severity';
     public const FIELD_CODE = 'code';
@@ -109,8 +108,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     public const FIELD_EXPRESSION = 'expression';
     public const FIELD_EXPRESSION_EXT = '_expression';
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SEVERITY => [
             MinOccursRule::NAME => 1,
@@ -253,7 +251,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:182 */
+    /* class_default.php:173 */
     /**
      * How the issue affects the success of the action.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -572,7 +570,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

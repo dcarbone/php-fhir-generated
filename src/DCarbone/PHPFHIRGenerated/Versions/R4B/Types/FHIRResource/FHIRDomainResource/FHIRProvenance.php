@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
@@ -89,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -100,18 +100,18 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRInstantPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
@@ -139,7 +139,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_PROVENANCE;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
     public const FIELD_TARGET = 'target';
     public const FIELD_OCCURRED_PERIOD = 'occurredPeriod';
     public const FIELD_OCCURRED_DATE_TIME = 'occurredDateTime';
@@ -155,8 +155,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
     public const FIELD_ENTITY = 'entity';
     public const FIELD_SIGNATURE = 'signature';
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TARGET => [
             MinOccursRule::NAME => 1,
@@ -322,7 +321,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
     /* constructor.php:61 */
     /**
      * FHIRProvenance Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $id
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
@@ -343,7 +342,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature[] $signature
      * @param null|string[] $fhirComments
      */
-    public function __construct(null|string|FHIRStringPrimitive|FHIRString $id = null,
+    public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
                                 null|FHIRMeta $meta = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $implicitRules = null,
                                 null|string|FHIRCodePrimitive|FHIRCode $language = null,
@@ -414,13 +413,13 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:171 */
+    /* class_default.php:162 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:182 */
+    /* class_default.php:173 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -1078,7 +1077,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         return $this;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -1112,7 +1111,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         foreach ($element->children() as $ce) {
             $cen = $ce->getName();
             if (self::FIELD_ID === $cen) {
-                $type->setId(FHIRString::xmlUnserialize($ce, $config));
+                $type->setId(FHIRId::xmlUnserialize($ce, $config));
             } else if (self::FIELD_META === $cen) {
                 $type->setMeta(FHIRMeta::xmlUnserialize($ce, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $cen) {

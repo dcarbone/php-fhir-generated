@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -31,8 +31,10 @@ use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait;
+use DCarbone\PHPFHIRGenerated\Types\ResourceIDTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -50,12 +52,12 @@ class MockResourceType implements ResourceTypeInterface, CommentContainerInterfa
     private const _FHIR_VALIDATION_RULES = [];
 
     protected string $_name;
-    protected string $_versionName;
-    protected string $_semanticVersion;
+    protected FHIRVersion $_fhirVersion;
 
     private array $_valueXMLLocations = [];
 
     public function __construct(string $name,
+                                null|string|MockStringPrimitiveType|MockResourceIDType $id = null,
                                 array $fields = [],
                                 array $validationRuleMap = [],
                                 array $fhirComments = [],
@@ -63,12 +65,34 @@ class MockResourceType implements ResourceTypeInterface, CommentContainerInterfa
                                 string $semanticVersion = 'v0.0.0')
     {
         $this->_name = $name;
-        $this->_versionName = $versionName;
-        $this->_semanticVersion = $semanticVersion;
         $this->_setFHIRComments($fhirComments);
+
+        $shortVersion = ltrim($semanticVersion, 'v');
+        $shortVersion = match (substr_count($shortVersion, '.')) {
+            1 => $shortVersion,
+            2 => substr($shortVersion, 0, strrpos($shortVersion, '.')),
+            default => implode('.', array_chunk(explode('.', $shortVersion), 2)[0])
+        };
+
+        $this->_fhirVersion = new FHIRVersion(
+            $versionName,
+            $semanticVersion,
+            $shortVersion,
+            intval(sprintf("%'.-08s", str_replace(['v', '.'], '', $semanticVersion))),
+        );
+
+        $fields['id'] = [
+            'class' => MockResourceIDType::class,
+            'value' => match (true) {
+                $id instanceof MockResourceIDType => $id,
+                default => new MockResourceIDType($id ?? uniqid()),
+            },
+        ];
+
         foreach($validationRuleMap as $field => $rules) {
             $this->_setFieldValidationRules($field, $rules);
         }
+
         $this->_processFields($fields);
     }
 
@@ -77,24 +101,13 @@ class MockResourceType implements ResourceTypeInterface, CommentContainerInterfa
         return $this->_name;
     }
 
-    public function _getFHIRVersionName(): string
-    {
-        return $this->_versionName;
+    public function _getFHIRVersion(): FHIRVersion    {
+        return $this->_fhirVersion;
     }
 
-    public function _getFHIRSemanticVersion(): string
+    public function getId(): null|ResourceIDTypeInterface
     {
-        return $this->_semanticVersion;
-    }
-
-    public function _getFHIRShortVersion(): string
-    {
-        $v = ltrim($this->_semanticVersion, 'v');
-        return match (substr_count($v, '.')) {
-            1 => $v,
-            2 => substr($v, 0, strrpos($v, '.')),
-            default => implode('.', array_chunk(explode('.', $v), 2)[0])
-        };
+        return $this->_doGet('id');
     }
 
     public static function xmlUnserialize(\SimpleXMLElement|string $element,

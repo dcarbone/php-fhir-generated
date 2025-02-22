@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,15 +26,15 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\Versions\VersionInterface;
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
+use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 
 class Request
 {
-    /** @var  */
-    public VersionInterface $version;
-
-    /** @var string */
-    public string $method;
+    /** @var \DCarbone\PHPFHIRGenerated\Client\HTTPMethodEnum */
+    public HTTPMethodEnum $method;
 
     /** @var string */
     public string $path;
@@ -47,14 +47,35 @@ class Request
     public string $at;
 
     /**
-     * The serialization type to request from the server.  Typically this is 'json' or 'xml'.
+     * The serialization format to use.
      *
-     * @var string
+     * @var \DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum
      */
-    public string $format;
+    public SerializeFormatEnum $format;
 
     /** @var string */
     public string $sort;
+
+    /**
+     * FHIR version to set as the desired response version.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\FHIRVersion
+     */
+    public FHIRVersion $acceptVersion;
+
+    /**
+     * The resource to send as part of a write request.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
+     */
+    public ResourceTypeInterface $resource;
+
+    /**
+     * If a resource is defined, the config to use when serializing its data.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig
+     */
+    public SerializeConfig $resourceSerializeConfig;
 
     /**
      * Extra query parameters.
@@ -73,27 +94,28 @@ class Request
     public bool $parseResponseHeaders;
 
     /**
-     * Extra client options.  Possible entries will vary depending on what client implementation you are using.
+     * Extra client clientOptions.  Possible entries will vary depending on what client implementation you are using.
      *
      * If using the provided client (@see \DCarbone\PHPFHIRGenerated\Client\Client class),
-     * these must be valid PHP curl options.
+     * these must be valid PHP curl clientOptions.
      */
-    public array $options;
+    public array $clientOptions;
 
-    public function __construct(VersionInterface $version,
-                                HTTPMethodEnum $method,
+    public function __construct(HTTPMethodEnum $method,
                                 string $path,
                                 null|int $count = null,
                                 null|string $since = null,
                                 null|string $at = null,
-                                null|ResponseFormatEnum $format = null,
-                                null|SortDirectionEnum $sort = null,
+                                null|SerializeFormatEnum $format = null,
+                                null|string|SortDirectionEnum $sort = null,
+                                null|FHIRVersion $acceptVersion = null,
+                                null|ResourceTypeInterface $resource = null,
+                                null|SerializeConfig $resourceSerializeConfig = null,
                                 null|array $queryParams = null,
                                 null|bool $parseResponseHeaders = null,
-                                null|array $options = null)
+                                null|array $clientOptions = null)
     {
-        $this->version = $version;
-        $this->method = $method->value;
+        $this->method = $method;
         $this->path = $path;
         if (null !== $count) {
             $this->count = $count;
@@ -105,10 +127,19 @@ class Request
             $this->at = $at;
         }
         if (null !== $format) {
-            $this->format = $format->value;
+            $this->format = $format;
         }
         if (null !== $sort) {
-            $this->sort = $format->value;
+            $this->sort = ($sort instanceof SortDirectionEnum) ? $sort->value : $sort;
+        }
+        if (null !== $acceptVersion) {
+            $this->acceptVersion = $acceptVersion;
+        }
+        if (null !== $resource) {
+            $this->resource = $resource;
+        }
+        if (null !== $resourceSerializeConfig) {
+            $this->resourceSerializeConfig = $resourceSerializeConfig;
         }
         if (null !== $queryParams) {
             $this->queryParams = $queryParams;
@@ -116,8 +147,8 @@ class Request
         if (null !== $parseResponseHeaders) {
             $this->parseResponseHeaders = $parseResponseHeaders;
         }
-        if (null !== $options) {
-            $this->options = $options;
+        if (null !== $clientOptions) {
+            $this->clientOptions = $clientOptions;
         }
     }
 }

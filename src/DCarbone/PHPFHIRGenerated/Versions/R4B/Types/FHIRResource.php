@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
@@ -89,22 +88,24 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionResourceTypeInterface;
 
 /**
  * This is the base resource type for everything.
  */
-class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
+class FHIRResource implements VersionResourceTypeInterface, CommentContainerInterface
 {
     use TypeValidationsTrait,
         JSONSerializationOptionsTrait,
@@ -115,7 +116,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESOURCE;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
     public const FIELD_ID = 'id';
     public const FIELD_ID_EXT = '_id';
     public const FIELD_META = 'meta';
@@ -124,8 +125,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
     public const FIELD_LANGUAGE = 'language';
     public const FIELD_LANGUAGE_EXT = '_language';
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
     ];
 
@@ -138,16 +138,19 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
 
     /* class_default.php:112 */
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * Any combination of letters, numerals, "-" and ".", with a length limit of 64
+     * characters. (This might be an integer, an unprefixed OID, UUID or any other
+     * identifier pattern that meets these constraints.) Ids are case-insensitive.
+     * RFC 4122
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * The logical id of the resource, as used in the URL for the resource. Once
      * assigned, this value never changes.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId 
      */
-    protected FHIRString $id;
+    protected FHIRId $id;
     /**
      * The metadata about a resource. This is content in the resource that is
      * maintained by the infrastructure. Changes to the content might not always be
@@ -190,13 +193,13 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
     /* constructor.php:61 */
     /**
      * FHIRResource Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $id
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
      * @param null|string[] $fhirComments
      */
-    public function __construct(null|string|FHIRStringPrimitive|FHIRString $id = null,
+    public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
                                 null|FHIRMeta $meta = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $implicitRules = null,
                                 null|string|FHIRCodePrimitive|FHIRCode $language = null,
@@ -226,56 +229,52 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
     }
 
     /* class_default.php:153 */
-    public function _getFHIRVersionName(): string
+    public function _getFHIRVersion(): FHIRVersion
     {
-        return Version::NAME;
+        return Version::getFHIRVersion();
     }
 
-    public function _getFHIRSemanticVersion(): string
-    {
-        return Version::FHIR_SEMANTIC_VERSION;
-    }
-
-    public function _getFHIRShortVersion(): string
-    {
-        return Version::FHIR_SHORT_VERSION;
-    }
-
-    /* class_default.php:182 */
+    /* class_default.php:173 */
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * Any combination of letters, numerals, "-" and ".", with a length limit of 64
+     * characters. (This might be an integer, an unprefixed OID, UUID or any other
+     * identifier pattern that meets these constraints.) Ids are case-insensitive.
+     * RFC 4122
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * The logical id of the resource, as used in the URL for the resource. Once
      * assigned, this value never changes.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
-    public function getId(): null|FHIRString
+    public function getId(): null|FHIRId
     {
         return $this->id ?? null;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * Any combination of letters, numerals, "-" and ".", with a length limit of 64
+     * characters. (This might be an integer, an unprefixed OID, UUID or any other
+     * identifier pattern that meets these constraints.) Ids are case-insensitive.
+     * RFC 4122
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * The logical id of the resource, as used in the URL for the resource. Once
      * assigned, this value never changes.
      *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $id
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
      * @return static
      */
-    public function setId(null|string|FHIRStringPrimitive|FHIRString $id): self
+    public function setId(null|string|FHIRIdPrimitive|FHIRId $id): self
     {
         if (null === $id) {
             unset($this->id);
             return $this;
         }
-        if (!($id instanceof FHIRString)) {
-            $id = new FHIRString(value: $id);
+        if (!($id instanceof FHIRId)) {
+            $id = new FHIRId(value: $id);
         }
         $this->id = $id;
         return $this;
@@ -405,7 +404,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
         return $this;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -439,7 +438,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
         foreach ($element->children() as $ce) {
             $cen = $ce->getName();
             if (self::FIELD_ID === $cen) {
-                $type->setId(FHIRString::xmlUnserialize($ce, $config));
+                $type->setId(FHIRId::xmlUnserialize($ce, $config));
             } else if (self::FIELD_META === $cen) {
                 $type->setMeta(FHIRMeta::xmlUnserialize($ce, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $cen) {
@@ -584,7 +583,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
             || property_exists($json, self::FIELD_ID_EXT)) {
             $v = $json->_id ?? new \stdClass();
             $v->value = $json->id ?? null;
-            $type->setId(FHIRString::jsonUnserialize($v, $config));
+            $type->setId(FHIRId::jsonUnserialize($v, $config));
         }
         if (isset($json->meta) || property_exists($json, self::FIELD_META)) {
             if (is_array($json->meta)) {
@@ -660,7 +659,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
         return $out;
     }
 
-    /* class_default.php:235 */
+    /* class_default.php:226 */
     public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;

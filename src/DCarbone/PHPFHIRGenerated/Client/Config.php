@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,6 +26,8 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum;
+
 /**
  * Class Config
  *
@@ -34,35 +36,30 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  */
 class Config
 {
-    /** @var string */
     private string $_address;
-    /** @var array */
     private array $_curlOpts;
-    /** @var array */
-    private array $_queryParams;
-    /** @var null|\DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum */
-    private null|ResponseFormatEnum $_defaultFormat;
-    /** @var bool */
+    private array $_defaultQueryParams;
+    private SerializeFormatEnum $_defaultFormat;
     private bool $_parseResponseHeaders;
 
     /**
      * Config Constructor
      *
      * @param string $address Fully qualified address of FHIR server, including scheme, port, and any path prefix.
-     * @param null|\DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum $defaultFormat Default format to request from server.  If not provided, server default will be used.  May be overridden by an individual request.
-     * @param array $queryParams Base query parameters array.  These will be added to every request.  May be overridden by an individual request.
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $defaultFormat Default serialization format.  Defaults to XML.
+     * @param array $defaultQueryParams Base query parameters array.  These will be added to every request.  May be overridden by an individual request.
      * @param array $curlOpts Base curl options array.  These will be added to every request.  May be overridden by an individual request.
-     * @param bool $parseResponseHeaders Whether or not to parse headers from response.  This adds a small amount of overhead, so it is recommended to only set to true if actually used.
+     * @param bool $parseResponseHeaders Whether or not to parse headers from response.  This adds overhead to parsing each response, but is also necessary to extract response version information.
      */
     public function __construct(string $address,
-                                null|ResponseFormatEnum $defaultFormat = null,
-                                array $queryParams = [],
+                                SerializeFormatEnum $defaultFormat = SerializeFormatEnum::XML,
+                                array $defaultQueryParams = [],
                                 array $curlOpts = [],
-                                bool $parseResponseHeaders = false)
+                                bool $parseResponseHeaders = true)
     {
         $this->_address = $address;
         $this->_defaultFormat = $defaultFormat;
-        $this->_queryParams = $queryParams;
+        $this->_defaultQueryParams = $defaultQueryParams;
         $this->_curlOpts = $curlOpts;
         $this->_parseResponseHeaders = $parseResponseHeaders;
     }
@@ -76,9 +73,9 @@ class Config
     }
 
     /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum
      */
-    public function getDefaultFormat(): null|ResponseFormatEnum
+    public function getDefaultFormat(): SerializeFormatEnum
     {
         return $this->_defaultFormat;
     }
@@ -86,9 +83,9 @@ class Config
     /**
      * @return array
      */
-    public function getQueryParams(): array
+    public function getDefaultQueryParams(): array
     {
-        return $this->_queryParams;
+        return $this->_defaultQueryParams;
     }
 
     /**

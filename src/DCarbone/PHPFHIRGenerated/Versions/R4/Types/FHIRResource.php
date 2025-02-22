@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
@@ -69,6 +68,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
@@ -80,11 +80,12 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
+use DCarbone\PHPFHIRGenerated\Versions\R4\VersionResourceTypeInterface;
 
 /**
  * This is the base resource type for everything.
  */
-class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
+class FHIRResource implements VersionResourceTypeInterface, CommentContainerInterface
 {
     use TypeValidationsTrait,
         JSONSerializationOptionsTrait,
@@ -95,7 +96,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
     // name of FHIR type this class describes
     public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_RESOURCE;
 
-    /* class_default.php:55 */
+    /* class_default.php:56 */
     public const FIELD_ID = 'id';
     public const FIELD_ID_EXT = '_id';
     public const FIELD_META = 'meta';
@@ -104,8 +105,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
     public const FIELD_LANGUAGE = 'language';
     public const FIELD_LANGUAGE_EXT = '_language';
 
-    /* class_default.php:74 */
-    // The default validation rules for this type as defined in the FHIR schema used to generate this code.
+    /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
     ];
 
@@ -209,22 +209,12 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
     }
 
     /* class_default.php:153 */
-    public function _getFHIRVersionName(): string
+    public function _getFHIRVersion(): FHIRVersion
     {
-        return Version::NAME;
+        return Version::getFHIRVersion();
     }
 
-    public function _getFHIRSemanticVersion(): string
-    {
-        return Version::FHIR_SEMANTIC_VERSION;
-    }
-
-    public function _getFHIRShortVersion(): string
-    {
-        return Version::FHIR_SHORT_VERSION;
-    }
-
-    /* class_default.php:182 */
+    /* class_default.php:173 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -394,7 +384,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
         return $this;
     }
 
-    /* class_default.php:209 */
+    /* class_default.php:200 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -649,7 +639,7 @@ class FHIRResource implements ResourceTypeInterface, CommentContainerInterface
         return $out;
     }
 
-    /* class_default.php:235 */
+    /* class_default.php:226 */
     public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;

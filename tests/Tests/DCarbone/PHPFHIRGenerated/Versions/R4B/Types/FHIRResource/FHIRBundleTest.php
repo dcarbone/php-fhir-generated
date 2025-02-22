@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,6 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRBundle;
 use PHPUnit\Framework\TestCase;
 
@@ -93,22 +92,10 @@ class FHIRBundleTest extends TestCase
         $this->assertEquals('Bundle', $type->_getFHIRTypeName());
     }
 
-    public function testGetFHIRVersionName()
+    public function testGetFHIRVersion()
     {
-        $type = new \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRBundle;
-        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\R4B\Version::NAME, $type->_getFHIRVersionName());
-    }
-
-    public function testGetFHIRSemanticVersion()
-    {
-        $type = new \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRBundle;
-        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\R4B\Version::FHIR_SEMANTIC_VERSION, $type->_getFHIRSemanticVersion());
-    }
-
-    public function testGetFHIRShortVersion()
-    {
-        $type = new \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRBundle;
-        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\R4B\Version::FHIR_SHORT_VERSION, $type->_getFHIRShortVersion());
+        $type = new \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRBundle();
+        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\R4B\Version::getFHIRVersion(), $type->_getFHIRVersion());
     }
 
     public function testCanExecuteValidations()

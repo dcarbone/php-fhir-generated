@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 12th, 2025 19:32+0000
+ * Class creation date: February 22nd, 2025 18:56+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,16 +61,16 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRD
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
-
 use DCarbone\PHPFHIRGenerated\Client\Client;
 use DCarbone\PHPFHIRGenerated\Client\Config;
-use DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum;
 use DCarbone\PHPFHIRGenerated\Client\UnexpectedResponseCodeException;
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRBundle;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRClaimResponse;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Version;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionClient;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionTypesEnum;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionResourceTypeEnum;
 use PHPUnit\Framework\TestCase;
 
 class FHIRClaimResponseTest extends TestCase
@@ -109,31 +109,19 @@ class FHIRClaimResponseTest extends TestCase
         $this->assertEquals('ClaimResponse', $type->_getFHIRTypeName());
     }
 
-    public function testGetFHIRVersionName()
+    public function testGetFHIRVersion()
     {
-        $type = new \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRClaimResponse;
-        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\STU3\Version::NAME, $type->_getFHIRVersionName());
-    }
-
-    public function testGetFHIRSemanticVersion()
-    {
-        $type = new \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRClaimResponse;
-        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\STU3\Version::FHIR_SEMANTIC_VERSION, $type->_getFHIRSemanticVersion());
-    }
-
-    public function testGetFHIRShortVersion()
-    {
-        $type = new \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRClaimResponse;
-        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\STU3\Version::FHIR_SHORT_VERSION, $type->_getFHIRShortVersion());
+        $type = new \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRClaimResponse();
+        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\STU3\Version::getFHIRVersion(), $type->_getFHIRVersion());
     }
 
     public function testCanTranscodeBundleJSON()
     {
         $client = $this->_getClient();
-        $rc = $client->readRaw(
-            resourceType: VersionTypesEnum::CLAIM_RESPONSE,
+        $rc = $client->read(
+            resourceType: VersionResourceTypeEnum::CLAIM_RESPONSE,
             count: 5,
-            format: ResponseFormatEnum::JSON,
+            format: SerializeFormatEnum::JSON,
         );
         if (404 === $rc->getCode()) {
             $this->markTestSkipped(sprintf(
@@ -161,13 +149,46 @@ class FHIRClaimResponseTest extends TestCase
         $this->assertJsonStringEqualsJsonString($rc->getResp(), $enc);
     }
 
+    public function testCanTranscodeBundleJSONWithNullConfig()
+    {
+        $client = $this->_getClient();
+        $rc = $client->read(
+            resourceType: VersionResourceTypeEnum::CLAIM_RESPONSE,
+            count: 5,
+            format: SerializeFormatEnum::JSON,
+        );
+        if (404 === $rc->getCode()) {
+            $this->markTestSkipped(sprintf(
+                'Configured test endpoint "%s" has no resources of type "ClaimResponse"',
+                $this->_getTestEndpoint(),
+            ));
+        }
+        $this->assertIsString($rc->getResp());
+        $this->assertJSON($rc->getResp());
+        $this->assertEquals(200, $rc->getCode(), sprintf('Configured test endpoint "%s" returned non-200 response code', $this->_getTestEndpoint()));
+        $bundle = FHIRBundle::jsonUnserialize(
+            json: $rc->getResp(),
+        );
+        $entry = $bundle->getEntry();
+        $this->assertNotCount(0, $entry);
+        foreach($entry as $ent) {
+            $resource = $ent->getResource();
+            $this->assertInstanceOf(FHIRClaimResponse::class, $resource);
+            $enc = json_encode($resource);
+            $this->assertJson($enc);
+        }
+        $enc = json_encode($bundle);
+        $this->assertJson($enc);
+        $this->assertJsonStringEqualsJsonString($rc->getResp(), $enc);
+    }
+
     public function testCanTranscodeBundleXML()
     {
         $client = $this->_getClient();
-        $rc = $client->readRaw(
-            resourceType: VersionTypesEnum::CLAIM_RESPONSE,
+        $rc = $client->read(
+            resourceType: VersionResourceTypeEnum::CLAIM_RESPONSE,
             count: 5,
-            format: ResponseFormatEnum::XML,
+            format: SerializeFormatEnum::XML,
         );
         if (404 === $rc->getCode()) {
             $this->markTestSkipped(sprintf(
@@ -180,6 +201,35 @@ class FHIRClaimResponseTest extends TestCase
         $bundle = FHIRBundle::xmlUnserialize(
             element: $rc->getResp(),
             config: $this->_version->getConfig()->getUnserializeConfig(),
+        );
+        $entry = $bundle->getEntry();
+        $this->assertNotCount(0, $entry);
+        foreach($entry as $ent) {
+            $resource = $ent->getResource();
+            $this->assertInstanceOf(FHIRClaimResponse::class, $resource);
+        }
+        $xw = $bundle->xmlSerialize(config: $this->_version->getConfig()->getSerializeConfig());
+        $this->assertXmlStringEqualsXmlString($rc->getResp(), $xw->outputMemory());
+    }
+ 
+    public function testCanTranscodeBundleXMLWithNullConfig()
+    {
+        $client = $this->_getClient();
+        $rc = $client->read(
+            resourceType: VersionResourceTypeEnum::CLAIM_RESPONSE,
+            count: 5,
+            format: SerializeFormatEnum::XML,
+        );
+        if (404 === $rc->getCode()) {
+            $this->markTestSkipped(sprintf(
+                'Configured test endpoint "%s" has no resources of type "ClaimResponse"',
+                $this->_getTestEndpoint(),
+            ));
+        }
+        $this->assertIsString($rc->getResp());
+        $this->assertEquals(200, $rc->getCode(), sprintf('Configured test endpoint "%s" returned non-200 response code', $this->_getTestEndpoint()));
+        $bundle = FHIRBundle::xmlUnserialize(
+            element: $rc->getResp(),
         );
         $entry = $bundle->getEntry();
         $this->assertNotCount(0, $entry);
