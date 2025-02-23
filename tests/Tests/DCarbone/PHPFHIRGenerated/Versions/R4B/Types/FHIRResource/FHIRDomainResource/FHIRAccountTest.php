@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,12 +127,6 @@ class FHIRAccountTest extends TestCase
     {
         $type = new FHIRAccount();
         $this->assertEquals('Account', $type->_getFHIRTypeName());
-    }
-
-    public function testGetFHIRVersion()
-    {
-        $type = new \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRAccount();
-        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\R4B\Version::getFHIRVersion(), $type->_getFHIRVersion());
     }
 
     public function testCanTranscodeBundleJSON()

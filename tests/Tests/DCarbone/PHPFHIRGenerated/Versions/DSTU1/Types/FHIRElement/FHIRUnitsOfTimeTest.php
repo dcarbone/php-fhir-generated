@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,4 +80,11 @@ class FHIRUnitsOfTimeTest extends TestCase
         $this->assertEquals('randomstring', $type->_getValueAsString());
         $this->assertEquals('randomstring', (string)$type);
     }
+
+    public function testCanGetTypeFHIRVersion()
+    {
+        $type = new \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUnitsOfTime();
+        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version::getFHIRVersion(), $type->_getFHIRVersion());
+    }
+
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,12 +63,14 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface;
 use DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
 /**
@@ -141,6 +143,12 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
+    }
+
+    /* class_default.php:153 */
+    public function _getFHIRVersion(): FHIRVersion
+    {
+        return Version::getFHIRVersion();
     }
 
     /* class_default.php:173 */

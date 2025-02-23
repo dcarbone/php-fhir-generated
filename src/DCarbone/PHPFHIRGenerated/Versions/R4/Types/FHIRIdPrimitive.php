@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,11 +63,13 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMaxLengthRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
 
 class FHIRIdPrimitive implements PrimitiveTypeInterface
@@ -81,7 +83,7 @@ class FHIRIdPrimitive implements PrimitiveTypeInterface
 
     public const FIELD_VALUE = 'value';
 
-    /* class_primitive.php:63 */
+    /* class_primitive.php:74 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
             ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
@@ -90,11 +92,11 @@ class FHIRIdPrimitive implements PrimitiveTypeInterface
         ],
     ];
 
-    /* class_primitive.php:82 */
+    /* class_primitive.php:93 */
     /** @var string */
     protected string $value;
 
-    /* class_primitive.php:100 */
+    /* class_primitive.php:111 */
     /**
      * FHIRIdPrimitive Constructor
      * @param null|string $value
@@ -104,7 +106,7 @@ class FHIRIdPrimitive implements PrimitiveTypeInterface
         $this->setValue($value);
     }
 
-    /* class_primitive.php:118 */
+    /* class_primitive.php:129 */
     /**
      * @return string
      */
@@ -113,6 +115,11 @@ class FHIRIdPrimitive implements PrimitiveTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_primitive.php:139 */
+    public function _getFHIRVersion(): FHIRVersion
+    {
+        return Version::getFHIRVersion();
+    }
     /**
      * @return null|string
      */

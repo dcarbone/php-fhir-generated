@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -39,7 +39,7 @@ use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 
-class MockResourceType implements ResourceTypeInterface, CommentContainerInterface, \Iterator
+class MockResourceType extends AbstractMockType implements ResourceTypeInterface, CommentContainerInterface, \Iterator
 
 {
     use TypeValidationsTrait,
@@ -51,9 +51,6 @@ class MockResourceType implements ResourceTypeInterface, CommentContainerInterfa
 
     private const _FHIR_VALIDATION_RULES = [];
 
-    protected string $_name;
-    protected FHIRVersion $_fhirVersion;
-
     private array $_valueXMLLocations = [];
 
     public function __construct(string $name,
@@ -61,25 +58,12 @@ class MockResourceType implements ResourceTypeInterface, CommentContainerInterfa
                                 array $fields = [],
                                 array $validationRuleMap = [],
                                 array $fhirComments = [],
-                                string $versionName = 'mock',
-                                string $semanticVersion = 'v0.0.0')
+                                string $versionName = self::DEFAULT_MOCK_VERSION_NAME,
+                                string $semanticVersion = self::DEFAULT_MOCK_SEMANTIC_VERSION)
     {
-        $this->_name = $name;
+        parent::__construct($name, $versionName, $semanticVersion);
+
         $this->_setFHIRComments($fhirComments);
-
-        $shortVersion = ltrim($semanticVersion, 'v');
-        $shortVersion = match (substr_count($shortVersion, '.')) {
-            1 => $shortVersion,
-            2 => substr($shortVersion, 0, strrpos($shortVersion, '.')),
-            default => implode('.', array_chunk(explode('.', $shortVersion), 2)[0])
-        };
-
-        $this->_fhirVersion = new FHIRVersion(
-            $versionName,
-            $semanticVersion,
-            $shortVersion,
-            intval(sprintf("%'.-08s", str_replace(['v', '.'], '', $semanticVersion))),
-        );
 
         $fields['id'] = [
             'class' => MockResourceIDType::class,
@@ -96,15 +80,6 @@ class MockResourceType implements ResourceTypeInterface, CommentContainerInterfa
         $this->_processFields($fields);
     }
 
-    public function _getFHIRTypeName(): string
-    {
-        return $this->_name;
-    }
-
-    public function _getFHIRVersion(): FHIRVersion    {
-        return $this->_fhirVersion;
-    }
-
     public function getId(): null|ResourceIDTypeInterface
     {
         return $this->_doGet('id');
@@ -117,7 +92,8 @@ class MockResourceType implements ResourceTypeInterface, CommentContainerInterfa
         throw new \BadMethodCallException('xmlUnserialize not yet implemented');
     }
 
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    public function xmlSerialize(null|XMLWriter $xw = null,
+                                 null|SerializeConfig $config = null): XMLWriter
     {
         if (null === $config) {
             $config = new SerializeConfig();
@@ -148,7 +124,9 @@ class MockResourceType implements ResourceTypeInterface, CommentContainerInterfa
         return $xw;
     }
 
-    public static function jsonUnserialize(string|\stdClass $json, null|UnserializeConfig $config = null, null|ResourceTypeInterface $type = null): ResourceTypeInterface
+    public static function jsonUnserialize(string|\stdClass $json,
+                                           null|UnserializeConfig $config = null,
+                                           null|ResourceTypeInterface $type = null): ResourceTypeInterface
     {
         throw new \BadMethodCallException('jsonUnserialize not yet implemented');
     }

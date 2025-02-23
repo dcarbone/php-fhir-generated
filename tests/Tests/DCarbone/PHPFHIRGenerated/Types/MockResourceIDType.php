@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -32,11 +32,12 @@ use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 
 class MockResourceIDType extends MockPrimitiveContainerType implements ResourceIDTypeInterface
 {
-
     public function __construct(string|MockStringPrimitiveType $value,
                                 array $fields = [],
                                 array $validationRuleMap = [],
-                                array $fhirComments = [])
+                                array $fhirComments = [],
+                                string $versionName = self::DEFAULT_MOCK_VERSION_NAME,
+                                string $semanticVersion = self::DEFAULT_MOCK_SEMANTIC_VERSION)
     {
         parent::__construct(
             name: 'id',
@@ -53,6 +54,8 @@ class MockResourceIDType extends MockPrimitiveContainerType implements ResourceI
                 ],
             ] + $validationRuleMap,
             fhirComments: $fhirComments,
+            versionName: $versionName,
+            semanticVersion: $semanticVersion,
         );
     }
 }

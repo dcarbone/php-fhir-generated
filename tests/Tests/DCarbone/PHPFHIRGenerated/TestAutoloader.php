@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -35,6 +35,7 @@ abstract class TestAutoloader
         'Tests\DCarbone\PHPFHIRGenerated\TestAutoloader' => __DIR__ . '/TestAutoloader.php',
         'Tests\DCarbone\PHPFHIRGenerated\Types\MockResourceType' => __DIR__ . '/Types/MockResourceType.php',
         'Tests\DCarbone\PHPFHIRGenerated\Types\MockTypeFieldsTrait' => __DIR__ . '/Types/MockTypeFieldsTrait.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Types\AbstractMockType' => __DIR__ . '/Types/AbstractMockType.php',
         'Tests\DCarbone\PHPFHIRGenerated\Types\MockStringPrimitiveType' => __DIR__ . '/Types/MockStringPrimitiveType.php',
         'Tests\DCarbone\PHPFHIRGenerated\Types\MockElementType' => __DIR__ . '/Types/MockElementType.php',
         'Tests\DCarbone\PHPFHIRGenerated\Types\MockPrimitiveContainerType' => __DIR__ . '/Types/MockPrimitiveContainerType.php',

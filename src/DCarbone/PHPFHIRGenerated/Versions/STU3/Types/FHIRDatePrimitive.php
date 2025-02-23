@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Version;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
 
 class FHIRDatePrimitive implements PrimitiveTypeInterface
@@ -79,18 +81,18 @@ class FHIRDatePrimitive implements PrimitiveTypeInterface
 
     public const FIELD_VALUE = 'value';
 
-    /* class_primitive.php:63 */
+    /* class_primitive.php:74 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
             ValuePatternMatchRule::NAME => '/^-?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1]))?)?$/',
         ],
     ];
 
-    /* class_primitive.php:82 */
+    /* class_primitive.php:93 */
     /** @var string */
     protected string $value;
 
-    /* class_primitive.php:100 */
+    /* class_primitive.php:111 */
     /**
      * FHIRDatePrimitive Constructor
      * @param null|string|\DateTimeInterface $value
@@ -100,7 +102,7 @@ class FHIRDatePrimitive implements PrimitiveTypeInterface
         $this->setValue($value);
     }
 
-    /* class_primitive.php:118 */
+    /* class_primitive.php:129 */
     /**
      * @return string
      */
@@ -109,6 +111,11 @@ class FHIRDatePrimitive implements PrimitiveTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
+    /* class_primitive.php:139 */
+    public function _getFHIRVersion(): FHIRVersion
+    {
+        return Version::getFHIRVersion();
+    }
     /**
      * @return null|string
      */

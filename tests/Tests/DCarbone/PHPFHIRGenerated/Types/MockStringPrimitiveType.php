@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -31,7 +31,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 
-class MockStringPrimitiveType implements PrimitiveTypeInterface
+class MockStringPrimitiveType extends AbstractMockType implements PrimitiveTypeInterface
 {
     use TypeValidationsTrait,
         JSONSerializationOptionsTrait,
@@ -39,24 +39,20 @@ class MockStringPrimitiveType implements PrimitiveTypeInterface
 
     private const _FHIR_VALIDATION_RULES = [];
 
-    private string $_name;
-
     protected string $value;
 
     public function __construct(string $name = 'mock-string-primitive',
                                 null|string $value = null,
-                                array $validationRuleMap = [])
+                                array $validationRuleMap = [],
+                                string $versionName = self::DEFAULT_MOCK_VERSION_NAME,
+                                string $semanticVersion = self::DEFAULT_MOCK_SEMANTIC_VERSION)
     {
-        $this->_name = $name;
+        parent::__construct($name, $versionName, $semanticVersion);
+
         $this->setValue($value);
         foreach($validationRuleMap as $field => $rules) {
             $this->_setFieldValidationRules($field, $rules);
         }
-    }
-
-    public function _getFHIRTypeName(): string
-    {
-        return $this->_name;
     }
 
     public function getValue(): null|string

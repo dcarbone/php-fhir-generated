@@ -6,7 +6,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,6 +26,7 @@
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\ResourceContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -54,6 +55,12 @@ class FHIRResourceInline implements ResourceContainerTypeInterface
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
+    }
+
+    /* class_resource_container.php:82 */
+    public function _getFHIRVersion(): FHIRVersion
+    {
+        return Version::getFHIRVersion();
     }
 
     /**

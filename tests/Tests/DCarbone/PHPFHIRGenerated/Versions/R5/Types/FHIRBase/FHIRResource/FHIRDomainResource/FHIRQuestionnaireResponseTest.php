@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResourc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,12 +127,6 @@ class FHIRQuestionnaireResponseTest extends TestCase
     {
         $type = new FHIRQuestionnaireResponse();
         $this->assertEquals('QuestionnaireResponse', $type->_getFHIRTypeName());
-    }
-
-    public function testGetFHIRVersion()
-    {
-        $type = new \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse();
-        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\R5\Version::getFHIRVersion(), $type->_getFHIRVersion());
     }
 
     public function testCanTranscodeBundleJSON()

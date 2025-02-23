@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,12 +107,6 @@ class FHIRSearchParameterTest extends TestCase
     {
         $type = new FHIRSearchParameter();
         $this->assertEquals('SearchParameter', $type->_getFHIRTypeName());
-    }
-
-    public function testGetFHIRVersion()
-    {
-        $type = new \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSearchParameter();
-        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\R4\Version::getFHIRVersion(), $type->_getFHIRVersion());
     }
 
     public function testCanTranscodeBundleJSON()

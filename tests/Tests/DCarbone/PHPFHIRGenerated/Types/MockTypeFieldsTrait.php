@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -181,7 +181,11 @@ trait MockTypeFieldsTrait
                     }
                     // if this is a primitive or primitive container, set the initial value to be the type instance.
                     if ($primitive || $primitiveContainer) {
-                        $fields[$field]['value'][$i] = new $class(value: $v);
+                        $fields[$field]['value'][$i] = new $class(
+                            value: $v,
+                            versionName: $this->_fhirVersion->getName(),
+                            semanticVersion: $this->_fhirVersion->getFHIRSemanticVersion(),
+                        );
                         continue;
                     }
                     // all other types must be instances
@@ -229,7 +233,11 @@ trait MockTypeFieldsTrait
                 ));
             }
 
-            $fields[$field]['value'] = new $class(value: $value);
+            $fields[$field]['value'] = new $class(
+                value: $value,
+                versionName: $this->_fhirVersion->getName(),
+                semanticVersion: $this->_fhirVersion->getFHIRSemanticVersion(),
+            );
         }
 
         // finally set fields

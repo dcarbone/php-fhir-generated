@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -42,7 +42,6 @@ class MockPrimitiveContainerType extends MockElementType implements PrimitiveCon
         XMLSerializationOptionsTrait,
         MockTypeFieldsTrait;
 
-
     private const _FHIR_VALIDATION_RULES = [];
 
     private array $_valueXMLLocations = [];
@@ -51,7 +50,9 @@ class MockPrimitiveContainerType extends MockElementType implements PrimitiveCon
                                 array $fields = [],
                                 array $validationRuleMap = [],
                                 array $fhirComments = [],
-                                mixed $value = null)
+                                mixed $value = null,
+                                string $versionName = self::DEFAULT_MOCK_VERSION_NAME,
+                                string $semanticVersion = self::DEFAULT_MOCK_SEMANTIC_VERSION)
     {
         if (!isset($fields['value'])
             || !isset($fields['value']['class'])
@@ -64,7 +65,7 @@ class MockPrimitiveContainerType extends MockElementType implements PrimitiveCon
         if (null !== $value) {
             $fields['value']['value'] = $value;
         }
-        parent::__construct($name, $fields, $validationRuleMap, $fhirComments);
+        parent::__construct($name, $fields, $validationRuleMap, $fhirComments, $versionName, $semanticVersion);
     }
 
     public function _nonValueFieldDefined(): bool

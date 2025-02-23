@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,8 +26,10 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 
 class FHIRXHTML implements TypeInterface
 {
@@ -53,6 +55,12 @@ class FHIRXHTML implements TypeInterface
     public function _getFHIRTypeName(): string
     {
         return 'XHTML';
+    }
+
+    /* class_xhtml.php:81 */
+    public function _getFHIRVersion(): FHIRVersion
+    {
+        return Version::getFHIRVersion();
     }
 
     /**

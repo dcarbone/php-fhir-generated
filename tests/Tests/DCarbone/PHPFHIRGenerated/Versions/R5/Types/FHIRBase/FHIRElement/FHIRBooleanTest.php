@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 22nd, 2025 18:56+0000
+ * Class creation date: February 23rd, 2025 20:44+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,4 +105,11 @@ class FHIRBooleanTest extends TestCase
         $this->assertEquals('true', $type->_getValueAsString());
         $this->assertEquals('true', (string)$type);
     }
+
+    public function testCanGetTypeFHIRVersion()
+    {
+        $type = new \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean();
+        $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\R5\Version::getFHIRVersion(), $type->_getFHIRVersion());
+    }
+
 }
