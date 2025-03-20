@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -394,13 +394,13 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -414,27 +414,27 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->tissue) || property_exists($json, self::FIELD_TISSUE)) {
-            if (is_array($json->tissue)) {
-                $type->setTissue(FHIRCodeableConcept::jsonUnserialize(reset($json->tissue), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->tissue) || property_exists($decoded, self::FIELD_TISSUE)) {
+            if (is_array($decoded->tissue)) {
+                $type->setTissue(FHIRCodeableConcept::jsonUnserialize(reset($decoded->tissue), $config));
             } else {
-                $type->setTissue(FHIRCodeableConcept::jsonUnserialize($json->tissue, $config));
+                $type->setTissue(FHIRCodeableConcept::jsonUnserialize($decoded->tissue, $config));
             }
         }
-        if (isset($json->value) || property_exists($json, self::FIELD_VALUE)) {
-            if (is_array($json->value)) {
-                $type->setValue(FHIRQuantity::jsonUnserialize(reset($json->value), $config));
+        if (isset($decoded->value) || property_exists($decoded, self::FIELD_VALUE)) {
+            if (is_array($decoded->value)) {
+                $type->setValue(FHIRQuantity::jsonUnserialize(reset($decoded->value), $config));
             } else {
-                $type->setValue(FHIRQuantity::jsonUnserialize($json->value, $config));
+                $type->setValue(FHIRQuantity::jsonUnserialize($decoded->value, $config));
             }
         }
-        if (isset($json->supportingInformation)
-            || isset($json->_supportingInformation)
-            || property_exists($json, self::FIELD_SUPPORTING_INFORMATION)
-            || property_exists($json, self::FIELD_SUPPORTING_INFORMATION_EXT)) {
-            $v = $json->_supportingInformation ?? new \stdClass();
-            $v->value = $json->supportingInformation ?? null;
+        if (isset($decoded->supportingInformation)
+            || isset($decoded->_supportingInformation)
+            || property_exists($decoded, self::FIELD_SUPPORTING_INFORMATION)
+            || property_exists($decoded, self::FIELD_SUPPORTING_INFORMATION_EXT)) {
+            $v = $decoded->_supportingInformation ?? new \stdClass();
+            $v->value = $decoded->supportingInformation ?? null;
             $type->setSupportingInformation(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -872,13 +872,13 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -892,79 +892,79 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->date)
-            || isset($json->_date)
-            || property_exists($json, self::FIELD_DATE)
-            || property_exists($json, self::FIELD_DATE_EXT)) {
-            $v = $json->_date ?? new \stdClass();
-            $v->value = $json->date ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->date)
+            || isset($decoded->_date)
+            || property_exists($decoded, self::FIELD_DATE)
+            || property_exists($decoded, self::FIELD_DATE_EXT)) {
+            $v = $decoded->_date ?? new \stdClass();
+            $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->vaccineCode) || property_exists($json, self::FIELD_VACCINE_CODE)) {
-            if (is_array($json->vaccineCode)) {
-                $type->setVaccineCode(FHIRCodeableConcept::jsonUnserialize(reset($json->vaccineCode), $config));
+        if (isset($decoded->vaccineCode) || property_exists($decoded, self::FIELD_VACCINE_CODE)) {
+            if (is_array($decoded->vaccineCode)) {
+                $type->setVaccineCode(FHIRCodeableConcept::jsonUnserialize(reset($decoded->vaccineCode), $config));
             } else {
-                $type->setVaccineCode(FHIRCodeableConcept::jsonUnserialize($json->vaccineCode, $config));
+                $type->setVaccineCode(FHIRCodeableConcept::jsonUnserialize($decoded->vaccineCode, $config));
             }
         }
-        if (isset($json->targetDisease) || property_exists($json, self::FIELD_TARGET_DISEASE)) {
-            if (is_array($json->targetDisease)) {
-                $type->setTargetDisease(FHIRCodeableConcept::jsonUnserialize(reset($json->targetDisease), $config));
+        if (isset($decoded->targetDisease) || property_exists($decoded, self::FIELD_TARGET_DISEASE)) {
+            if (is_array($decoded->targetDisease)) {
+                $type->setTargetDisease(FHIRCodeableConcept::jsonUnserialize(reset($decoded->targetDisease), $config));
             } else {
-                $type->setTargetDisease(FHIRCodeableConcept::jsonUnserialize($json->targetDisease, $config));
+                $type->setTargetDisease(FHIRCodeableConcept::jsonUnserialize($decoded->targetDisease, $config));
             }
         }
-        if (isset($json->doseNumber)
-            || isset($json->_doseNumber)
-            || property_exists($json, self::FIELD_DOSE_NUMBER)
-            || property_exists($json, self::FIELD_DOSE_NUMBER_EXT)) {
-            $v = $json->_doseNumber ?? new \stdClass();
-            $v->value = $json->doseNumber ?? null;
+        if (isset($decoded->doseNumber)
+            || isset($decoded->_doseNumber)
+            || property_exists($decoded, self::FIELD_DOSE_NUMBER)
+            || property_exists($decoded, self::FIELD_DOSE_NUMBER_EXT)) {
+            $v = $decoded->_doseNumber ?? new \stdClass();
+            $v->value = $decoded->doseNumber ?? null;
             $type->setDoseNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->forecastStatus) || property_exists($json, self::FIELD_FORECAST_STATUS)) {
-            if (is_array($json->forecastStatus)) {
-                $type->setForecastStatus(FHIRCodeableConcept::jsonUnserialize(reset($json->forecastStatus), $config));
+        if (isset($decoded->forecastStatus) || property_exists($decoded, self::FIELD_FORECAST_STATUS)) {
+            if (is_array($decoded->forecastStatus)) {
+                $type->setForecastStatus(FHIRCodeableConcept::jsonUnserialize(reset($decoded->forecastStatus), $config));
             } else {
-                $type->setForecastStatus(FHIRCodeableConcept::jsonUnserialize($json->forecastStatus, $config));
+                $type->setForecastStatus(FHIRCodeableConcept::jsonUnserialize($decoded->forecastStatus, $config));
             }
         }
-        if (isset($json->dateCriterion) || property_exists($json, self::FIELD_DATE_CRITERION)) {
-            if (is_object($json->dateCriterion)) {
-                $vals = [$json->dateCriterion];
+        if (isset($decoded->dateCriterion) || property_exists($decoded, self::FIELD_DATE_CRITERION)) {
+            if (is_object($decoded->dateCriterion)) {
+                $vals = [$decoded->dateCriterion];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DATE_CRITERION, true);
             } else {
-                $vals = $json->dateCriterion;
+                $vals = $decoded->dateCriterion;
             }
             foreach($vals as $v) {
                 $type->addDateCriterion(FHIRImmunizationRecommendationDateCriterion::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->protocol) || property_exists($json, self::FIELD_PROTOCOL)) {
-            if (is_array($json->protocol)) {
-                $type->setProtocol(FHIRImmunizationRecommendationProtocol::jsonUnserialize(reset($json->protocol), $config));
+        if (isset($decoded->protocol) || property_exists($decoded, self::FIELD_PROTOCOL)) {
+            if (is_array($decoded->protocol)) {
+                $type->setProtocol(FHIRImmunizationRecommendationProtocol::jsonUnserialize(reset($decoded->protocol), $config));
             } else {
-                $type->setProtocol(FHIRImmunizationRecommendationProtocol::jsonUnserialize($json->protocol, $config));
+                $type->setProtocol(FHIRImmunizationRecommendationProtocol::jsonUnserialize($decoded->protocol, $config));
             }
         }
-        if (isset($json->supportingImmunization) || property_exists($json, self::FIELD_SUPPORTING_IMMUNIZATION)) {
-            if (is_object($json->supportingImmunization)) {
-                $vals = [$json->supportingImmunization];
+        if (isset($decoded->supportingImmunization) || property_exists($decoded, self::FIELD_SUPPORTING_IMMUNIZATION)) {
+            if (is_object($decoded->supportingImmunization)) {
+                $vals = [$decoded->supportingImmunization];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUPPORTING_IMMUNIZATION, true);
             } else {
-                $vals = $json->supportingImmunization;
+                $vals = $decoded->supportingImmunization;
             }
             foreach($vals as $v) {
                 $type->addSupportingImmunization(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->supportingPatientInformation) || property_exists($json, self::FIELD_SUPPORTING_PATIENT_INFORMATION)) {
-            if (is_object($json->supportingPatientInformation)) {
-                $vals = [$json->supportingPatientInformation];
+        if (isset($decoded->supportingPatientInformation) || property_exists($decoded, self::FIELD_SUPPORTING_PATIENT_INFORMATION)) {
+            if (is_object($decoded->supportingPatientInformation)) {
+                $vals = [$decoded->supportingPatientInformation];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUPPORTING_PATIENT_INFORMATION, true);
             } else {
-                $vals = $json->supportingPatientInformation;
+                $vals = $decoded->supportingPatientInformation;
             }
             foreach($vals as $v) {
                 $type->addSupportingPatientInformation(FHIRReference::jsonUnserialize($v, $config));

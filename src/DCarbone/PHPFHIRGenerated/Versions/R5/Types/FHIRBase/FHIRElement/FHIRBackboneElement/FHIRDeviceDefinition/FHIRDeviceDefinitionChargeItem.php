@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -496,13 +496,13 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionChargeItem $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionChargeItem
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -516,34 +516,34 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->chargeItemCode) || property_exists($json, self::FIELD_CHARGE_ITEM_CODE)) {
-            if (is_array($json->chargeItemCode)) {
-                $type->setChargeItemCode(FHIRCodeableReference::jsonUnserialize(reset($json->chargeItemCode), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->chargeItemCode) || property_exists($decoded, self::FIELD_CHARGE_ITEM_CODE)) {
+            if (is_array($decoded->chargeItemCode)) {
+                $type->setChargeItemCode(FHIRCodeableReference::jsonUnserialize(reset($decoded->chargeItemCode), $config));
             } else {
-                $type->setChargeItemCode(FHIRCodeableReference::jsonUnserialize($json->chargeItemCode, $config));
+                $type->setChargeItemCode(FHIRCodeableReference::jsonUnserialize($decoded->chargeItemCode, $config));
             }
         }
-        if (isset($json->count) || property_exists($json, self::FIELD_COUNT)) {
-            if (is_array($json->count)) {
-                $type->setCount(FHIRQuantity::jsonUnserialize(reset($json->count), $config));
+        if (isset($decoded->count) || property_exists($decoded, self::FIELD_COUNT)) {
+            if (is_array($decoded->count)) {
+                $type->setCount(FHIRQuantity::jsonUnserialize(reset($decoded->count), $config));
             } else {
-                $type->setCount(FHIRQuantity::jsonUnserialize($json->count, $config));
+                $type->setCount(FHIRQuantity::jsonUnserialize($decoded->count, $config));
             }
         }
-        if (isset($json->effectivePeriod) || property_exists($json, self::FIELD_EFFECTIVE_PERIOD)) {
-            if (is_array($json->effectivePeriod)) {
-                $type->setEffectivePeriod(FHIRPeriod::jsonUnserialize(reset($json->effectivePeriod), $config));
+        if (isset($decoded->effectivePeriod) || property_exists($decoded, self::FIELD_EFFECTIVE_PERIOD)) {
+            if (is_array($decoded->effectivePeriod)) {
+                $type->setEffectivePeriod(FHIRPeriod::jsonUnserialize(reset($decoded->effectivePeriod), $config));
             } else {
-                $type->setEffectivePeriod(FHIRPeriod::jsonUnserialize($json->effectivePeriod, $config));
+                $type->setEffectivePeriod(FHIRPeriod::jsonUnserialize($decoded->effectivePeriod, $config));
             }
         }
-        if (isset($json->useContext) || property_exists($json, self::FIELD_USE_CONTEXT)) {
-            if (is_object($json->useContext)) {
-                $vals = [$json->useContext];
+        if (isset($decoded->useContext) || property_exists($decoded, self::FIELD_USE_CONTEXT)) {
+            if (is_object($decoded->useContext)) {
+                $vals = [$decoded->useContext];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_USE_CONTEXT, true);
             } else {
-                $vals = $json->useContext;
+                $vals = $decoded->useContext;
             }
             foreach($vals as $v) {
                 $type->addUseContext(FHIRUsageContext::jsonUnserialize($v, $config));

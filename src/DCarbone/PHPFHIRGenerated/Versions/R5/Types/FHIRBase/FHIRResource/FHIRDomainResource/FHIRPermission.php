@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -815,13 +815,13 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRPermission $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRPermission
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -838,34 +838,34 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->status)
-            || isset($json->_status)
-            || property_exists($json, self::FIELD_STATUS)
-            || property_exists($json, self::FIELD_STATUS_EXT)) {
-            $v = $json->_status ?? new \stdClass();
-            $v->value = $json->status ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->status)
+            || isset($decoded->_status)
+            || property_exists($decoded, self::FIELD_STATUS)
+            || property_exists($decoded, self::FIELD_STATUS_EXT)) {
+            $v = $decoded->_status ?? new \stdClass();
+            $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRPermissionStatus::jsonUnserialize($v, $config));
         }
-        if (isset($json->asserter) || property_exists($json, self::FIELD_ASSERTER)) {
-            if (is_array($json->asserter)) {
-                $type->setAsserter(FHIRReference::jsonUnserialize(reset($json->asserter), $config));
+        if (isset($decoded->asserter) || property_exists($decoded, self::FIELD_ASSERTER)) {
+            if (is_array($decoded->asserter)) {
+                $type->setAsserter(FHIRReference::jsonUnserialize(reset($decoded->asserter), $config));
             } else {
-                $type->setAsserter(FHIRReference::jsonUnserialize($json->asserter, $config));
+                $type->setAsserter(FHIRReference::jsonUnserialize($decoded->asserter, $config));
             }
         }
-        if (isset($json->date)
-            || isset($json->_date)
-            || property_exists($json, self::FIELD_DATE)
-            || property_exists($json, self::FIELD_DATE_EXT)) {
-            $vals = (array)($json->date ?? []);
-            $exts = (array)($json->FIELD_DATE_EXT ?? []);
+        if (isset($decoded->date)
+            || isset($decoded->_date)
+            || property_exists($decoded, self::FIELD_DATE)
+            || property_exists($decoded, self::FIELD_DATE_EXT)) {
+            $vals = (array)($decoded->date ?? []);
+            $exts = (array)($decoded->FIELD_DATE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -877,34 +877,34 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
                 $type->addDate(FHIRDateTime::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->validity) || property_exists($json, self::FIELD_VALIDITY)) {
-            if (is_array($json->validity)) {
-                $type->setValidity(FHIRPeriod::jsonUnserialize(reset($json->validity), $config));
+        if (isset($decoded->validity) || property_exists($decoded, self::FIELD_VALIDITY)) {
+            if (is_array($decoded->validity)) {
+                $type->setValidity(FHIRPeriod::jsonUnserialize(reset($decoded->validity), $config));
             } else {
-                $type->setValidity(FHIRPeriod::jsonUnserialize($json->validity, $config));
+                $type->setValidity(FHIRPeriod::jsonUnserialize($decoded->validity, $config));
             }
         }
-        if (isset($json->justification) || property_exists($json, self::FIELD_JUSTIFICATION)) {
-            if (is_array($json->justification)) {
-                $type->setJustification(FHIRPermissionJustification::jsonUnserialize(reset($json->justification), $config));
+        if (isset($decoded->justification) || property_exists($decoded, self::FIELD_JUSTIFICATION)) {
+            if (is_array($decoded->justification)) {
+                $type->setJustification(FHIRPermissionJustification::jsonUnserialize(reset($decoded->justification), $config));
             } else {
-                $type->setJustification(FHIRPermissionJustification::jsonUnserialize($json->justification, $config));
+                $type->setJustification(FHIRPermissionJustification::jsonUnserialize($decoded->justification, $config));
             }
         }
-        if (isset($json->combining)
-            || isset($json->_combining)
-            || property_exists($json, self::FIELD_COMBINING)
-            || property_exists($json, self::FIELD_COMBINING_EXT)) {
-            $v = $json->_combining ?? new \stdClass();
-            $v->value = $json->combining ?? null;
+        if (isset($decoded->combining)
+            || isset($decoded->_combining)
+            || property_exists($decoded, self::FIELD_COMBINING)
+            || property_exists($decoded, self::FIELD_COMBINING_EXT)) {
+            $v = $decoded->_combining ?? new \stdClass();
+            $v->value = $decoded->combining ?? null;
             $type->setCombining(FHIRPermissionRuleCombining::jsonUnserialize($v, $config));
         }
-        if (isset($json->rule) || property_exists($json, self::FIELD_RULE)) {
-            if (is_object($json->rule)) {
-                $vals = [$json->rule];
+        if (isset($decoded->rule) || property_exists($decoded, self::FIELD_RULE)) {
+            if (is_object($decoded->rule)) {
+                $vals = [$decoded->rule];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_RULE, true);
             } else {
-                $vals = $json->rule;
+                $vals = $decoded->rule;
             }
             foreach($vals as $v) {
                 $type->addRule(FHIRPermissionRule::jsonUnserialize($v, $config));

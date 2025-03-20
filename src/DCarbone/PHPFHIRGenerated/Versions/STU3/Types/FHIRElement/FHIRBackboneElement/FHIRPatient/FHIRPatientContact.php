@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -695,13 +695,13 @@ class FHIRPatientContact extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -715,63 +715,63 @@ class FHIRPatientContact extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->relationship) || property_exists($json, self::FIELD_RELATIONSHIP)) {
-            if (is_object($json->relationship)) {
-                $vals = [$json->relationship];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->relationship) || property_exists($decoded, self::FIELD_RELATIONSHIP)) {
+            if (is_object($decoded->relationship)) {
+                $vals = [$decoded->relationship];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_RELATIONSHIP, true);
             } else {
-                $vals = $json->relationship;
+                $vals = $decoded->relationship;
             }
             foreach($vals as $v) {
                 $type->addRelationship(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->name) || property_exists($json, self::FIELD_NAME)) {
-            if (is_array($json->name)) {
-                $type->setName(FHIRHumanName::jsonUnserialize(reset($json->name), $config));
+        if (isset($decoded->name) || property_exists($decoded, self::FIELD_NAME)) {
+            if (is_array($decoded->name)) {
+                $type->setName(FHIRHumanName::jsonUnserialize(reset($decoded->name), $config));
             } else {
-                $type->setName(FHIRHumanName::jsonUnserialize($json->name, $config));
+                $type->setName(FHIRHumanName::jsonUnserialize($decoded->name, $config));
             }
         }
-        if (isset($json->telecom) || property_exists($json, self::FIELD_TELECOM)) {
-            if (is_object($json->telecom)) {
-                $vals = [$json->telecom];
+        if (isset($decoded->telecom) || property_exists($decoded, self::FIELD_TELECOM)) {
+            if (is_object($decoded->telecom)) {
+                $vals = [$decoded->telecom];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TELECOM, true);
             } else {
-                $vals = $json->telecom;
+                $vals = $decoded->telecom;
             }
             foreach($vals as $v) {
                 $type->addTelecom(FHIRContactPoint::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->address) || property_exists($json, self::FIELD_ADDRESS)) {
-            if (is_array($json->address)) {
-                $type->setAddress(FHIRAddress::jsonUnserialize(reset($json->address), $config));
+        if (isset($decoded->address) || property_exists($decoded, self::FIELD_ADDRESS)) {
+            if (is_array($decoded->address)) {
+                $type->setAddress(FHIRAddress::jsonUnserialize(reset($decoded->address), $config));
             } else {
-                $type->setAddress(FHIRAddress::jsonUnserialize($json->address, $config));
+                $type->setAddress(FHIRAddress::jsonUnserialize($decoded->address, $config));
             }
         }
-        if (isset($json->gender)
-            || isset($json->_gender)
-            || property_exists($json, self::FIELD_GENDER)
-            || property_exists($json, self::FIELD_GENDER_EXT)) {
-            $v = $json->_gender ?? new \stdClass();
-            $v->value = $json->gender ?? null;
+        if (isset($decoded->gender)
+            || isset($decoded->_gender)
+            || property_exists($decoded, self::FIELD_GENDER)
+            || property_exists($decoded, self::FIELD_GENDER_EXT)) {
+            $v = $decoded->_gender ?? new \stdClass();
+            $v->value = $decoded->gender ?? null;
             $type->setGender(FHIRAdministrativeGender::jsonUnserialize($v, $config));
         }
-        if (isset($json->organization) || property_exists($json, self::FIELD_ORGANIZATION)) {
-            if (is_array($json->organization)) {
-                $type->setOrganization(FHIRReference::jsonUnserialize(reset($json->organization), $config));
+        if (isset($decoded->organization) || property_exists($decoded, self::FIELD_ORGANIZATION)) {
+            if (is_array($decoded->organization)) {
+                $type->setOrganization(FHIRReference::jsonUnserialize(reset($decoded->organization), $config));
             } else {
-                $type->setOrganization(FHIRReference::jsonUnserialize($json->organization, $config));
+                $type->setOrganization(FHIRReference::jsonUnserialize($decoded->organization, $config));
             }
         }
-        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
-            if (is_array($json->period)) {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+        if (isset($decoded->period) || property_exists($decoded, self::FIELD_PERIOD)) {
+            if (is_array($decoded->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->period), $config));
             } else {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($decoded->period, $config));
             }
         }
         return $type;

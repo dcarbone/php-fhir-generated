@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -283,13 +283,13 @@ class FHIRTerminologyCapabilitiesValidateCode extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -303,13 +303,13 @@ class FHIRTerminologyCapabilitiesValidateCode extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->translations)
-            || isset($json->_translations)
-            || property_exists($json, self::FIELD_TRANSLATIONS)
-            || property_exists($json, self::FIELD_TRANSLATIONS_EXT)) {
-            $v = $json->_translations ?? new \stdClass();
-            $v->value = $json->translations ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->translations)
+            || isset($decoded->_translations)
+            || property_exists($decoded, self::FIELD_TRANSLATIONS)
+            || property_exists($decoded, self::FIELD_TRANSLATIONS_EXT)) {
+            $v = $decoded->_translations ?? new \stdClass();
+            $v->value = $decoded->translations ?? null;
             $type->setTranslations(FHIRBoolean::jsonUnserialize($v, $config));
         }
         return $type;

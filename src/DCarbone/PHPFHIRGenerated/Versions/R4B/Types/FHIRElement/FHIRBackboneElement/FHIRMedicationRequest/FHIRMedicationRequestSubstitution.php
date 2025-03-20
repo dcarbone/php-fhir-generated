@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -418,13 +418,13 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -438,27 +438,27 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->allowedBoolean)
-            || isset($json->_allowedBoolean)
-            || property_exists($json, self::FIELD_ALLOWED_BOOLEAN)
-            || property_exists($json, self::FIELD_ALLOWED_BOOLEAN_EXT)) {
-            $v = $json->_allowedBoolean ?? new \stdClass();
-            $v->value = $json->allowedBoolean ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->allowedBoolean)
+            || isset($decoded->_allowedBoolean)
+            || property_exists($decoded, self::FIELD_ALLOWED_BOOLEAN)
+            || property_exists($decoded, self::FIELD_ALLOWED_BOOLEAN_EXT)) {
+            $v = $decoded->_allowedBoolean ?? new \stdClass();
+            $v->value = $decoded->allowedBoolean ?? null;
             $type->setAllowedBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->allowedCodeableConcept) || property_exists($json, self::FIELD_ALLOWED_CODEABLE_CONCEPT)) {
-            if (is_array($json->allowedCodeableConcept)) {
-                $type->setAllowedCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->allowedCodeableConcept), $config));
+        if (isset($decoded->allowedCodeableConcept) || property_exists($decoded, self::FIELD_ALLOWED_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->allowedCodeableConcept)) {
+                $type->setAllowedCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->allowedCodeableConcept), $config));
             } else {
-                $type->setAllowedCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->allowedCodeableConcept, $config));
+                $type->setAllowedCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->allowedCodeableConcept, $config));
             }
         }
-        if (isset($json->reason) || property_exists($json, self::FIELD_REASON)) {
-            if (is_array($json->reason)) {
-                $type->setReason(FHIRCodeableConcept::jsonUnserialize(reset($json->reason), $config));
+        if (isset($decoded->reason) || property_exists($decoded, self::FIELD_REASON)) {
+            if (is_array($decoded->reason)) {
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize(reset($decoded->reason), $config));
             } else {
-                $type->setReason(FHIRCodeableConcept::jsonUnserialize($json->reason, $config));
+                $type->setReason(FHIRCodeableConcept::jsonUnserialize($decoded->reason, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -966,13 +966,13 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentRecurrenceTemplate $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentRecurrenceTemplate
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -986,43 +986,43 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->timezone) || property_exists($json, self::FIELD_TIMEZONE)) {
-            if (is_array($json->timezone)) {
-                $type->setTimezone(FHIRCodeableConcept::jsonUnserialize(reset($json->timezone), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->timezone) || property_exists($decoded, self::FIELD_TIMEZONE)) {
+            if (is_array($decoded->timezone)) {
+                $type->setTimezone(FHIRCodeableConcept::jsonUnserialize(reset($decoded->timezone), $config));
             } else {
-                $type->setTimezone(FHIRCodeableConcept::jsonUnserialize($json->timezone, $config));
+                $type->setTimezone(FHIRCodeableConcept::jsonUnserialize($decoded->timezone, $config));
             }
         }
-        if (isset($json->recurrenceType) || property_exists($json, self::FIELD_RECURRENCE_TYPE)) {
-            if (is_array($json->recurrenceType)) {
-                $type->setRecurrenceType(FHIRCodeableConcept::jsonUnserialize(reset($json->recurrenceType), $config));
+        if (isset($decoded->recurrenceType) || property_exists($decoded, self::FIELD_RECURRENCE_TYPE)) {
+            if (is_array($decoded->recurrenceType)) {
+                $type->setRecurrenceType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->recurrenceType), $config));
             } else {
-                $type->setRecurrenceType(FHIRCodeableConcept::jsonUnserialize($json->recurrenceType, $config));
+                $type->setRecurrenceType(FHIRCodeableConcept::jsonUnserialize($decoded->recurrenceType, $config));
             }
         }
-        if (isset($json->lastOccurrenceDate)
-            || isset($json->_lastOccurrenceDate)
-            || property_exists($json, self::FIELD_LAST_OCCURRENCE_DATE)
-            || property_exists($json, self::FIELD_LAST_OCCURRENCE_DATE_EXT)) {
-            $v = $json->_lastOccurrenceDate ?? new \stdClass();
-            $v->value = $json->lastOccurrenceDate ?? null;
+        if (isset($decoded->lastOccurrenceDate)
+            || isset($decoded->_lastOccurrenceDate)
+            || property_exists($decoded, self::FIELD_LAST_OCCURRENCE_DATE)
+            || property_exists($decoded, self::FIELD_LAST_OCCURRENCE_DATE_EXT)) {
+            $v = $decoded->_lastOccurrenceDate ?? new \stdClass();
+            $v->value = $decoded->lastOccurrenceDate ?? null;
             $type->setLastOccurrenceDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json->occurrenceCount)
-            || isset($json->_occurrenceCount)
-            || property_exists($json, self::FIELD_OCCURRENCE_COUNT)
-            || property_exists($json, self::FIELD_OCCURRENCE_COUNT_EXT)) {
-            $v = $json->_occurrenceCount ?? new \stdClass();
-            $v->value = $json->occurrenceCount ?? null;
+        if (isset($decoded->occurrenceCount)
+            || isset($decoded->_occurrenceCount)
+            || property_exists($decoded, self::FIELD_OCCURRENCE_COUNT)
+            || property_exists($decoded, self::FIELD_OCCURRENCE_COUNT_EXT)) {
+            $v = $decoded->_occurrenceCount ?? new \stdClass();
+            $v->value = $decoded->occurrenceCount ?? null;
             $type->setOccurrenceCount(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->occurrenceDate)
-            || isset($json->_occurrenceDate)
-            || property_exists($json, self::FIELD_OCCURRENCE_DATE)
-            || property_exists($json, self::FIELD_OCCURRENCE_DATE_EXT)) {
-            $vals = (array)($json->occurrenceDate ?? []);
-            $exts = (array)($json->FIELD_OCCURRENCE_DATE_EXT ?? []);
+        if (isset($decoded->occurrenceDate)
+            || isset($decoded->_occurrenceDate)
+            || property_exists($decoded, self::FIELD_OCCURRENCE_DATE)
+            || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_EXT)) {
+            $vals = (array)($decoded->occurrenceDate ?? []);
+            $exts = (array)($decoded->FIELD_OCCURRENCE_DATE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1034,33 +1034,33 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
                 $type->addOccurrenceDate(FHIRDate::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->weeklyTemplate) || property_exists($json, self::FIELD_WEEKLY_TEMPLATE)) {
-            if (is_array($json->weeklyTemplate)) {
-                $type->setWeeklyTemplate(FHIRAppointmentWeeklyTemplate::jsonUnserialize(reset($json->weeklyTemplate), $config));
+        if (isset($decoded->weeklyTemplate) || property_exists($decoded, self::FIELD_WEEKLY_TEMPLATE)) {
+            if (is_array($decoded->weeklyTemplate)) {
+                $type->setWeeklyTemplate(FHIRAppointmentWeeklyTemplate::jsonUnserialize(reset($decoded->weeklyTemplate), $config));
             } else {
-                $type->setWeeklyTemplate(FHIRAppointmentWeeklyTemplate::jsonUnserialize($json->weeklyTemplate, $config));
+                $type->setWeeklyTemplate(FHIRAppointmentWeeklyTemplate::jsonUnserialize($decoded->weeklyTemplate, $config));
             }
         }
-        if (isset($json->monthlyTemplate) || property_exists($json, self::FIELD_MONTHLY_TEMPLATE)) {
-            if (is_array($json->monthlyTemplate)) {
-                $type->setMonthlyTemplate(FHIRAppointmentMonthlyTemplate::jsonUnserialize(reset($json->monthlyTemplate), $config));
+        if (isset($decoded->monthlyTemplate) || property_exists($decoded, self::FIELD_MONTHLY_TEMPLATE)) {
+            if (is_array($decoded->monthlyTemplate)) {
+                $type->setMonthlyTemplate(FHIRAppointmentMonthlyTemplate::jsonUnserialize(reset($decoded->monthlyTemplate), $config));
             } else {
-                $type->setMonthlyTemplate(FHIRAppointmentMonthlyTemplate::jsonUnserialize($json->monthlyTemplate, $config));
+                $type->setMonthlyTemplate(FHIRAppointmentMonthlyTemplate::jsonUnserialize($decoded->monthlyTemplate, $config));
             }
         }
-        if (isset($json->yearlyTemplate) || property_exists($json, self::FIELD_YEARLY_TEMPLATE)) {
-            if (is_array($json->yearlyTemplate)) {
-                $type->setYearlyTemplate(FHIRAppointmentYearlyTemplate::jsonUnserialize(reset($json->yearlyTemplate), $config));
+        if (isset($decoded->yearlyTemplate) || property_exists($decoded, self::FIELD_YEARLY_TEMPLATE)) {
+            if (is_array($decoded->yearlyTemplate)) {
+                $type->setYearlyTemplate(FHIRAppointmentYearlyTemplate::jsonUnserialize(reset($decoded->yearlyTemplate), $config));
             } else {
-                $type->setYearlyTemplate(FHIRAppointmentYearlyTemplate::jsonUnserialize($json->yearlyTemplate, $config));
+                $type->setYearlyTemplate(FHIRAppointmentYearlyTemplate::jsonUnserialize($decoded->yearlyTemplate, $config));
             }
         }
-        if (isset($json->excludingDate)
-            || isset($json->_excludingDate)
-            || property_exists($json, self::FIELD_EXCLUDING_DATE)
-            || property_exists($json, self::FIELD_EXCLUDING_DATE_EXT)) {
-            $vals = (array)($json->excludingDate ?? []);
-            $exts = (array)($json->FIELD_EXCLUDING_DATE_EXT ?? []);
+        if (isset($decoded->excludingDate)
+            || isset($decoded->_excludingDate)
+            || property_exists($decoded, self::FIELD_EXCLUDING_DATE)
+            || property_exists($decoded, self::FIELD_EXCLUDING_DATE_EXT)) {
+            $vals = (array)($decoded->excludingDate ?? []);
+            $exts = (array)($decoded->FIELD_EXCLUDING_DATE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1072,12 +1072,12 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
                 $type->addExcludingDate(FHIRDate::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->excludingRecurrenceId)
-            || isset($json->_excludingRecurrenceId)
-            || property_exists($json, self::FIELD_EXCLUDING_RECURRENCE_ID)
-            || property_exists($json, self::FIELD_EXCLUDING_RECURRENCE_ID_EXT)) {
-            $vals = (array)($json->excludingRecurrenceId ?? []);
-            $exts = (array)($json->FIELD_EXCLUDING_RECURRENCE_ID_EXT ?? []);
+        if (isset($decoded->excludingRecurrenceId)
+            || isset($decoded->_excludingRecurrenceId)
+            || property_exists($decoded, self::FIELD_EXCLUDING_RECURRENCE_ID)
+            || property_exists($decoded, self::FIELD_EXCLUDING_RECURRENCE_ID_EXT)) {
+            $vals = (array)($decoded->excludingRecurrenceId ?? []);
+            $exts = (array)($decoded->FIELD_EXCLUDING_RECURRENCE_ID_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

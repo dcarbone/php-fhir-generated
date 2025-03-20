@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -356,13 +356,13 @@ class FHIRValueSetScope extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetScope $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetScope
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -376,21 +376,21 @@ class FHIRValueSetScope extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->inclusionCriteria)
-            || isset($json->_inclusionCriteria)
-            || property_exists($json, self::FIELD_INCLUSION_CRITERIA)
-            || property_exists($json, self::FIELD_INCLUSION_CRITERIA_EXT)) {
-            $v = $json->_inclusionCriteria ?? new \stdClass();
-            $v->value = $json->inclusionCriteria ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->inclusionCriteria)
+            || isset($decoded->_inclusionCriteria)
+            || property_exists($decoded, self::FIELD_INCLUSION_CRITERIA)
+            || property_exists($decoded, self::FIELD_INCLUSION_CRITERIA_EXT)) {
+            $v = $decoded->_inclusionCriteria ?? new \stdClass();
+            $v->value = $decoded->inclusionCriteria ?? null;
             $type->setInclusionCriteria(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->exclusionCriteria)
-            || isset($json->_exclusionCriteria)
-            || property_exists($json, self::FIELD_EXCLUSION_CRITERIA)
-            || property_exists($json, self::FIELD_EXCLUSION_CRITERIA_EXT)) {
-            $v = $json->_exclusionCriteria ?? new \stdClass();
-            $v->value = $json->exclusionCriteria ?? null;
+        if (isset($decoded->exclusionCriteria)
+            || isset($decoded->_exclusionCriteria)
+            || property_exists($decoded, self::FIELD_EXCLUSION_CRITERIA)
+            || property_exists($decoded, self::FIELD_EXCLUSION_CRITERIA_EXT)) {
+            $v = $decoded->_exclusionCriteria ?? new \stdClass();
+            $v->value = $decoded->exclusionCriteria ?? null;
             $type->setExclusionCriteria(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

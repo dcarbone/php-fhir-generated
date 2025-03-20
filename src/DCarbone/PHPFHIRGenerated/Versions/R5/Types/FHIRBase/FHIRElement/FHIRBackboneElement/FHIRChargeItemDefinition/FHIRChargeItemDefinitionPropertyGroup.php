@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -408,13 +408,13 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -428,24 +428,24 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->applicability) || property_exists($json, self::FIELD_APPLICABILITY)) {
-            if (is_object($json->applicability)) {
-                $vals = [$json->applicability];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->applicability) || property_exists($decoded, self::FIELD_APPLICABILITY)) {
+            if (is_object($decoded->applicability)) {
+                $vals = [$decoded->applicability];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_APPLICABILITY, true);
             } else {
-                $vals = $json->applicability;
+                $vals = $decoded->applicability;
             }
             foreach($vals as $v) {
                 $type->addApplicability(FHIRChargeItemDefinitionApplicability::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->priceComponent) || property_exists($json, self::FIELD_PRICE_COMPONENT)) {
-            if (is_object($json->priceComponent)) {
-                $vals = [$json->priceComponent];
+        if (isset($decoded->priceComponent) || property_exists($decoded, self::FIELD_PRICE_COMPONENT)) {
+            if (is_object($decoded->priceComponent)) {
+                $vals = [$decoded->priceComponent];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PRICE_COMPONENT, true);
             } else {
-                $vals = $json->priceComponent;
+                $vals = $decoded->priceComponent;
             }
             foreach($vals as $v) {
                 $type->addPriceComponent(FHIRMonetaryComponent::jsonUnserialize($v, $config));

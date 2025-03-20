@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -591,13 +591,13 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRMedication $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRMedication
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -614,47 +614,47 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
-            if (is_array($json->code)) {
-                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($json->code), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->code) || property_exists($decoded, self::FIELD_CODE)) {
+            if (is_array($decoded->code)) {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($decoded->code), $config));
             } else {
-                $type->setCode(FHIRCodeableConcept::jsonUnserialize($json->code, $config));
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize($decoded->code, $config));
             }
         }
-        if (isset($json->isBrand)
-            || isset($json->_isBrand)
-            || property_exists($json, self::FIELD_IS_BRAND)
-            || property_exists($json, self::FIELD_IS_BRAND_EXT)) {
-            $v = $json->_isBrand ?? new \stdClass();
-            $v->value = $json->isBrand ?? null;
+        if (isset($decoded->isBrand)
+            || isset($decoded->_isBrand)
+            || property_exists($decoded, self::FIELD_IS_BRAND)
+            || property_exists($decoded, self::FIELD_IS_BRAND_EXT)) {
+            $v = $decoded->_isBrand ?? new \stdClass();
+            $v->value = $decoded->isBrand ?? null;
             $type->setIsBrand(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->manufacturer) || property_exists($json, self::FIELD_MANUFACTURER)) {
-            if (is_array($json->manufacturer)) {
-                $type->setManufacturer(FHIRReference::jsonUnserialize(reset($json->manufacturer), $config));
+        if (isset($decoded->manufacturer) || property_exists($decoded, self::FIELD_MANUFACTURER)) {
+            if (is_array($decoded->manufacturer)) {
+                $type->setManufacturer(FHIRReference::jsonUnserialize(reset($decoded->manufacturer), $config));
             } else {
-                $type->setManufacturer(FHIRReference::jsonUnserialize($json->manufacturer, $config));
+                $type->setManufacturer(FHIRReference::jsonUnserialize($decoded->manufacturer, $config));
             }
         }
-        if (isset($json->product) || property_exists($json, self::FIELD_PRODUCT)) {
-            if (is_array($json->product)) {
-                $type->setProduct(FHIRMedicationProduct::jsonUnserialize(reset($json->product), $config));
+        if (isset($decoded->product) || property_exists($decoded, self::FIELD_PRODUCT)) {
+            if (is_array($decoded->product)) {
+                $type->setProduct(FHIRMedicationProduct::jsonUnserialize(reset($decoded->product), $config));
             } else {
-                $type->setProduct(FHIRMedicationProduct::jsonUnserialize($json->product, $config));
+                $type->setProduct(FHIRMedicationProduct::jsonUnserialize($decoded->product, $config));
             }
         }
-        if (isset($json->package) || property_exists($json, self::FIELD_PACKAGE)) {
-            if (is_array($json->package)) {
-                $type->setPackage(FHIRMedicationPackage::jsonUnserialize(reset($json->package), $config));
+        if (isset($decoded->package) || property_exists($decoded, self::FIELD_PACKAGE)) {
+            if (is_array($decoded->package)) {
+                $type->setPackage(FHIRMedicationPackage::jsonUnserialize(reset($decoded->package), $config));
             } else {
-                $type->setPackage(FHIRMedicationPackage::jsonUnserialize($json->package, $config));
+                $type->setPackage(FHIRMedicationPackage::jsonUnserialize($decoded->package, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -623,13 +623,13 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -643,53 +643,53 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
-            if (is_object($json->role)) {
-                $vals = [$json->role];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->role) || property_exists($decoded, self::FIELD_ROLE)) {
+            if (is_object($decoded->role)) {
+                $vals = [$decoded->role];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ROLE, true);
             } else {
-                $vals = $json->role;
+                $vals = $decoded->role;
             }
             foreach($vals as $v) {
                 $type->addRole(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->whoUri)
-            || isset($json->_whoUri)
-            || property_exists($json, self::FIELD_WHO_URI)
-            || property_exists($json, self::FIELD_WHO_URI_EXT)) {
-            $v = $json->_whoUri ?? new \stdClass();
-            $v->value = $json->whoUri ?? null;
+        if (isset($decoded->whoUri)
+            || isset($decoded->_whoUri)
+            || property_exists($decoded, self::FIELD_WHO_URI)
+            || property_exists($decoded, self::FIELD_WHO_URI_EXT)) {
+            $v = $decoded->_whoUri ?? new \stdClass();
+            $v->value = $decoded->whoUri ?? null;
             $type->setWhoUri(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->whoReference) || property_exists($json, self::FIELD_WHO_REFERENCE)) {
-            if (is_array($json->whoReference)) {
-                $type->setWhoReference(FHIRReference::jsonUnserialize(reset($json->whoReference), $config));
+        if (isset($decoded->whoReference) || property_exists($decoded, self::FIELD_WHO_REFERENCE)) {
+            if (is_array($decoded->whoReference)) {
+                $type->setWhoReference(FHIRReference::jsonUnserialize(reset($decoded->whoReference), $config));
             } else {
-                $type->setWhoReference(FHIRReference::jsonUnserialize($json->whoReference, $config));
+                $type->setWhoReference(FHIRReference::jsonUnserialize($decoded->whoReference, $config));
             }
         }
-        if (isset($json->onBehalfOfUri)
-            || isset($json->_onBehalfOfUri)
-            || property_exists($json, self::FIELD_ON_BEHALF_OF_URI)
-            || property_exists($json, self::FIELD_ON_BEHALF_OF_URI_EXT)) {
-            $v = $json->_onBehalfOfUri ?? new \stdClass();
-            $v->value = $json->onBehalfOfUri ?? null;
+        if (isset($decoded->onBehalfOfUri)
+            || isset($decoded->_onBehalfOfUri)
+            || property_exists($decoded, self::FIELD_ON_BEHALF_OF_URI)
+            || property_exists($decoded, self::FIELD_ON_BEHALF_OF_URI_EXT)) {
+            $v = $decoded->_onBehalfOfUri ?? new \stdClass();
+            $v->value = $decoded->onBehalfOfUri ?? null;
             $type->setOnBehalfOfUri(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->onBehalfOfReference) || property_exists($json, self::FIELD_ON_BEHALF_OF_REFERENCE)) {
-            if (is_array($json->onBehalfOfReference)) {
-                $type->setOnBehalfOfReference(FHIRReference::jsonUnserialize(reset($json->onBehalfOfReference), $config));
+        if (isset($decoded->onBehalfOfReference) || property_exists($decoded, self::FIELD_ON_BEHALF_OF_REFERENCE)) {
+            if (is_array($decoded->onBehalfOfReference)) {
+                $type->setOnBehalfOfReference(FHIRReference::jsonUnserialize(reset($decoded->onBehalfOfReference), $config));
             } else {
-                $type->setOnBehalfOfReference(FHIRReference::jsonUnserialize($json->onBehalfOfReference, $config));
+                $type->setOnBehalfOfReference(FHIRReference::jsonUnserialize($decoded->onBehalfOfReference, $config));
             }
         }
-        if (isset($json->relatedAgentType) || property_exists($json, self::FIELD_RELATED_AGENT_TYPE)) {
-            if (is_array($json->relatedAgentType)) {
-                $type->setRelatedAgentType(FHIRCodeableConcept::jsonUnserialize(reset($json->relatedAgentType), $config));
+        if (isset($decoded->relatedAgentType) || property_exists($decoded, self::FIELD_RELATED_AGENT_TYPE)) {
+            if (is_array($decoded->relatedAgentType)) {
+                $type->setRelatedAgentType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->relatedAgentType), $config));
             } else {
-                $type->setRelatedAgentType(FHIRCodeableConcept::jsonUnserialize($json->relatedAgentType, $config));
+                $type->setRelatedAgentType(FHIRCodeableConcept::jsonUnserialize($decoded->relatedAgentType, $config));
             }
         }
         return $type;

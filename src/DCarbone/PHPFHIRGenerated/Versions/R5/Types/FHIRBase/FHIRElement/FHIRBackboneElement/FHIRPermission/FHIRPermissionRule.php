@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -537,13 +537,13 @@ class FHIRPermissionRule extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionRule $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionRule
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -557,43 +557,43 @@ class FHIRPermissionRule extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type)
-            || isset($json->_type)
-            || property_exists($json, self::FIELD_TYPE)
-            || property_exists($json, self::FIELD_TYPE_EXT)) {
-            $v = $json->_type ?? new \stdClass();
-            $v->value = $json->type ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type)
+            || isset($decoded->_type)
+            || property_exists($decoded, self::FIELD_TYPE)
+            || property_exists($decoded, self::FIELD_TYPE_EXT)) {
+            $v = $decoded->_type ?? new \stdClass();
+            $v->value = $decoded->type ?? null;
             $type->setType(FHIRConsentProvisionType::jsonUnserialize($v, $config));
         }
-        if (isset($json->data) || property_exists($json, self::FIELD_DATA)) {
-            if (is_object($json->data)) {
-                $vals = [$json->data];
+        if (isset($decoded->data) || property_exists($decoded, self::FIELD_DATA)) {
+            if (is_object($decoded->data)) {
+                $vals = [$decoded->data];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DATA, true);
             } else {
-                $vals = $json->data;
+                $vals = $decoded->data;
             }
             foreach($vals as $v) {
                 $type->addData(FHIRPermissionData::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->activity) || property_exists($json, self::FIELD_ACTIVITY)) {
-            if (is_object($json->activity)) {
-                $vals = [$json->activity];
+        if (isset($decoded->activity) || property_exists($decoded, self::FIELD_ACTIVITY)) {
+            if (is_object($decoded->activity)) {
+                $vals = [$decoded->activity];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ACTIVITY, true);
             } else {
-                $vals = $json->activity;
+                $vals = $decoded->activity;
             }
             foreach($vals as $v) {
                 $type->addActivity(FHIRPermissionActivity::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->limit) || property_exists($json, self::FIELD_LIMIT)) {
-            if (is_object($json->limit)) {
-                $vals = [$json->limit];
+        if (isset($decoded->limit) || property_exists($decoded, self::FIELD_LIMIT)) {
+            if (is_object($decoded->limit)) {
+                $vals = [$decoded->limit];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_LIMIT, true);
             } else {
-                $vals = $json->limit;
+                $vals = $decoded->limit;
             }
             foreach($vals as $v) {
                 $type->addLimit(FHIRCodeableConcept::jsonUnserialize($v, $config));

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -420,13 +420,13 @@ class FHIRAuditEventSource extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -440,27 +440,27 @@ class FHIRAuditEventSource extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->site) || property_exists($json, self::FIELD_SITE)) {
-            if (is_array($json->site)) {
-                $type->setSite(FHIRReference::jsonUnserialize(reset($json->site), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->site) || property_exists($decoded, self::FIELD_SITE)) {
+            if (is_array($decoded->site)) {
+                $type->setSite(FHIRReference::jsonUnserialize(reset($decoded->site), $config));
             } else {
-                $type->setSite(FHIRReference::jsonUnserialize($json->site, $config));
+                $type->setSite(FHIRReference::jsonUnserialize($decoded->site, $config));
             }
         }
-        if (isset($json->observer) || property_exists($json, self::FIELD_OBSERVER)) {
-            if (is_array($json->observer)) {
-                $type->setObserver(FHIRReference::jsonUnserialize(reset($json->observer), $config));
+        if (isset($decoded->observer) || property_exists($decoded, self::FIELD_OBSERVER)) {
+            if (is_array($decoded->observer)) {
+                $type->setObserver(FHIRReference::jsonUnserialize(reset($decoded->observer), $config));
             } else {
-                $type->setObserver(FHIRReference::jsonUnserialize($json->observer, $config));
+                $type->setObserver(FHIRReference::jsonUnserialize($decoded->observer, $config));
             }
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_object($json->type)) {
-                $vals = [$json->type];
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_object($decoded->type)) {
+                $vals = [$decoded->type];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TYPE, true);
             } else {
-                $vals = $json->type;
+                $vals = $decoded->type;
             }
             foreach($vals as $v) {
                 $type->addType(FHIRCodeableConcept::jsonUnserialize($v, $config));

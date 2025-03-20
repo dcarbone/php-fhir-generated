@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -597,13 +597,13 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -617,44 +617,44 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->nameUrl)
-            || isset($json->_nameUrl)
-            || property_exists($json, self::FIELD_NAME_URL)
-            || property_exists($json, self::FIELD_NAME_URL_EXT)) {
-            $v = $json->_nameUrl ?? new \stdClass();
-            $v->value = $json->nameUrl ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->nameUrl)
+            || isset($decoded->_nameUrl)
+            || property_exists($decoded, self::FIELD_NAME_URL)
+            || property_exists($decoded, self::FIELD_NAME_URL_EXT)) {
+            $v = $decoded->_nameUrl ?? new \stdClass();
+            $v->value = $decoded->nameUrl ?? null;
             $type->setNameUrl(FHIRUrl::jsonUnserialize($v, $config));
         }
-        if (isset($json->nameReference) || property_exists($json, self::FIELD_NAME_REFERENCE)) {
-            if (is_array($json->nameReference)) {
-                $type->setNameReference(FHIRReference::jsonUnserialize(reset($json->nameReference), $config));
+        if (isset($decoded->nameReference) || property_exists($decoded, self::FIELD_NAME_REFERENCE)) {
+            if (is_array($decoded->nameReference)) {
+                $type->setNameReference(FHIRReference::jsonUnserialize(reset($decoded->nameReference), $config));
             } else {
-                $type->setNameReference(FHIRReference::jsonUnserialize($json->nameReference, $config));
+                $type->setNameReference(FHIRReference::jsonUnserialize($decoded->nameReference, $config));
             }
         }
-        if (isset($json->title)
-            || isset($json->_title)
-            || property_exists($json, self::FIELD_TITLE)
-            || property_exists($json, self::FIELD_TITLE_EXT)) {
-            $v = $json->_title ?? new \stdClass();
-            $v->value = $json->title ?? null;
+        if (isset($decoded->title)
+            || isset($decoded->_title)
+            || property_exists($decoded, self::FIELD_TITLE)
+            || property_exists($decoded, self::FIELD_TITLE_EXT)) {
+            $v = $decoded->_title ?? new \stdClass();
+            $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->generation)
-            || isset($json->_generation)
-            || property_exists($json, self::FIELD_GENERATION)
-            || property_exists($json, self::FIELD_GENERATION_EXT)) {
-            $v = $json->_generation ?? new \stdClass();
-            $v->value = $json->generation ?? null;
+        if (isset($decoded->generation)
+            || isset($decoded->_generation)
+            || property_exists($decoded, self::FIELD_GENERATION)
+            || property_exists($decoded, self::FIELD_GENERATION_EXT)) {
+            $v = $decoded->_generation ?? new \stdClass();
+            $v->value = $decoded->generation ?? null;
             $type->setGeneration(FHIRGuidePageGeneration::jsonUnserialize($v, $config));
         }
-        if (isset($json->page) || property_exists($json, self::FIELD_PAGE)) {
-            if (is_object($json->page)) {
-                $vals = [$json->page];
+        if (isset($decoded->page) || property_exists($decoded, self::FIELD_PAGE)) {
+            if (is_object($decoded->page)) {
+                $vals = [$decoded->page];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PAGE, true);
             } else {
-                $vals = $json->page;
+                $vals = $decoded->page;
             }
             foreach($vals as $v) {
                 $type->addPage(FHIRImplementationGuidePage::jsonUnserialize($v, $config));

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -399,13 +399,13 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProsthesis $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProsthesis
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -419,28 +419,28 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->initial)
-            || isset($json->_initial)
-            || property_exists($json, self::FIELD_INITIAL)
-            || property_exists($json, self::FIELD_INITIAL_EXT)) {
-            $v = $json->_initial ?? new \stdClass();
-            $v->value = $json->initial ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->initial)
+            || isset($decoded->_initial)
+            || property_exists($decoded, self::FIELD_INITIAL)
+            || property_exists($decoded, self::FIELD_INITIAL_EXT)) {
+            $v = $decoded->_initial ?? new \stdClass();
+            $v->value = $decoded->initial ?? null;
             $type->setInitial(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->priorDate)
-            || isset($json->_priorDate)
-            || property_exists($json, self::FIELD_PRIOR_DATE)
-            || property_exists($json, self::FIELD_PRIOR_DATE_EXT)) {
-            $v = $json->_priorDate ?? new \stdClass();
-            $v->value = $json->priorDate ?? null;
+        if (isset($decoded->priorDate)
+            || isset($decoded->_priorDate)
+            || property_exists($decoded, self::FIELD_PRIOR_DATE)
+            || property_exists($decoded, self::FIELD_PRIOR_DATE_EXT)) {
+            $v = $decoded->_priorDate ?? new \stdClass();
+            $v->value = $decoded->priorDate ?? null;
             $type->setPriorDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json->priorMaterial) || property_exists($json, self::FIELD_PRIOR_MATERIAL)) {
-            if (is_array($json->priorMaterial)) {
-                $type->setPriorMaterial(FHIRCoding::jsonUnserialize(reset($json->priorMaterial), $config));
+        if (isset($decoded->priorMaterial) || property_exists($decoded, self::FIELD_PRIOR_MATERIAL)) {
+            if (is_array($decoded->priorMaterial)) {
+                $type->setPriorMaterial(FHIRCoding::jsonUnserialize(reset($decoded->priorMaterial), $config));
             } else {
-                $type->setPriorMaterial(FHIRCoding::jsonUnserialize($json->priorMaterial, $config));
+                $type->setPriorMaterial(FHIRCoding::jsonUnserialize($decoded->priorMaterial, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -349,13 +349,13 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionMarketDistribution $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionMarketDistribution
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -369,20 +369,20 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->marketPeriod) || property_exists($json, self::FIELD_MARKET_PERIOD)) {
-            if (is_array($json->marketPeriod)) {
-                $type->setMarketPeriod(FHIRPeriod::jsonUnserialize(reset($json->marketPeriod), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->marketPeriod) || property_exists($decoded, self::FIELD_MARKET_PERIOD)) {
+            if (is_array($decoded->marketPeriod)) {
+                $type->setMarketPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->marketPeriod), $config));
             } else {
-                $type->setMarketPeriod(FHIRPeriod::jsonUnserialize($json->marketPeriod, $config));
+                $type->setMarketPeriod(FHIRPeriod::jsonUnserialize($decoded->marketPeriod, $config));
             }
         }
-        if (isset($json->subJurisdiction)
-            || isset($json->_subJurisdiction)
-            || property_exists($json, self::FIELD_SUB_JURISDICTION)
-            || property_exists($json, self::FIELD_SUB_JURISDICTION_EXT)) {
-            $v = $json->_subJurisdiction ?? new \stdClass();
-            $v->value = $json->subJurisdiction ?? null;
+        if (isset($decoded->subJurisdiction)
+            || isset($decoded->_subJurisdiction)
+            || property_exists($decoded, self::FIELD_SUB_JURISDICTION)
+            || property_exists($decoded, self::FIELD_SUB_JURISDICTION_EXT)) {
+            $v = $decoded->_subJurisdiction ?? new \stdClass();
+            $v->value = $decoded->subJurisdiction ?? null;
             $type->setSubJurisdiction(FHIRUri::jsonUnserialize($v, $config));
         }
         return $type;

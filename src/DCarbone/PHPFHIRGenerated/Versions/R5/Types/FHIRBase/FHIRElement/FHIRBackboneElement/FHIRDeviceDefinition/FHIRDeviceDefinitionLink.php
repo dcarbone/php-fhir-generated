@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -333,13 +333,13 @@ class FHIRDeviceDefinitionLink extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionLink $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionLink
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -353,19 +353,19 @@ class FHIRDeviceDefinitionLink extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->relation) || property_exists($json, self::FIELD_RELATION)) {
-            if (is_array($json->relation)) {
-                $type->setRelation(FHIRCoding::jsonUnserialize(reset($json->relation), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->relation) || property_exists($decoded, self::FIELD_RELATION)) {
+            if (is_array($decoded->relation)) {
+                $type->setRelation(FHIRCoding::jsonUnserialize(reset($decoded->relation), $config));
             } else {
-                $type->setRelation(FHIRCoding::jsonUnserialize($json->relation, $config));
+                $type->setRelation(FHIRCoding::jsonUnserialize($decoded->relation, $config));
             }
         }
-        if (isset($json->relatedDevice) || property_exists($json, self::FIELD_RELATED_DEVICE)) {
-            if (is_array($json->relatedDevice)) {
-                $type->setRelatedDevice(FHIRCodeableReference::jsonUnserialize(reset($json->relatedDevice), $config));
+        if (isset($decoded->relatedDevice) || property_exists($decoded, self::FIELD_RELATED_DEVICE)) {
+            if (is_array($decoded->relatedDevice)) {
+                $type->setRelatedDevice(FHIRCodeableReference::jsonUnserialize(reset($decoded->relatedDevice), $config));
             } else {
-                $type->setRelatedDevice(FHIRCodeableReference::jsonUnserialize($json->relatedDevice, $config));
+                $type->setRelatedDevice(FHIRCodeableReference::jsonUnserialize($decoded->relatedDevice, $config));
             }
         }
         return $type;

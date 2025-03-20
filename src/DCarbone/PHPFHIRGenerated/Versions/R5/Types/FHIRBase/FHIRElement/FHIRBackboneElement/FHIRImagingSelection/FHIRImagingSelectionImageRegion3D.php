@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -402,13 +402,13 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion3D $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion3D
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -422,21 +422,21 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->regionType)
-            || isset($json->_regionType)
-            || property_exists($json, self::FIELD_REGION_TYPE)
-            || property_exists($json, self::FIELD_REGION_TYPE_EXT)) {
-            $v = $json->_regionType ?? new \stdClass();
-            $v->value = $json->regionType ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->regionType)
+            || isset($decoded->_regionType)
+            || property_exists($decoded, self::FIELD_REGION_TYPE)
+            || property_exists($decoded, self::FIELD_REGION_TYPE_EXT)) {
+            $v = $decoded->_regionType ?? new \stdClass();
+            $v->value = $decoded->regionType ?? null;
             $type->setRegionType(FHIRImagingSelectionDGraphicType::jsonUnserialize($v, $config));
         }
-        if (isset($json->coordinate)
-            || isset($json->_coordinate)
-            || property_exists($json, self::FIELD_COORDINATE)
-            || property_exists($json, self::FIELD_COORDINATE_EXT)) {
-            $vals = (array)($json->coordinate ?? []);
-            $exts = (array)($json->FIELD_COORDINATE_EXT ?? []);
+        if (isset($decoded->coordinate)
+            || isset($decoded->_coordinate)
+            || property_exists($decoded, self::FIELD_COORDINATE)
+            || property_exists($decoded, self::FIELD_COORDINATE_EXT)) {
+            $vals = (array)($decoded->coordinate ?? []);
+            $exts = (array)($decoded->FIELD_COORDINATE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

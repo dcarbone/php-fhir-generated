@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1117,13 +1117,13 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRNutritionProduct $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRNutritionProduct
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1140,107 +1140,107 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->status)
-            || isset($json->_status)
-            || property_exists($json, self::FIELD_STATUS)
-            || property_exists($json, self::FIELD_STATUS_EXT)) {
-            $v = $json->_status ?? new \stdClass();
-            $v->value = $json->status ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->status)
+            || isset($decoded->_status)
+            || property_exists($decoded, self::FIELD_STATUS)
+            || property_exists($decoded, self::FIELD_STATUS_EXT)) {
+            $v = $decoded->_status ?? new \stdClass();
+            $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRNutritionProductStatus::jsonUnserialize($v, $config));
         }
-        if (isset($json->category) || property_exists($json, self::FIELD_CATEGORY)) {
-            if (is_object($json->category)) {
-                $vals = [$json->category];
+        if (isset($decoded->category) || property_exists($decoded, self::FIELD_CATEGORY)) {
+            if (is_object($decoded->category)) {
+                $vals = [$decoded->category];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CATEGORY, true);
             } else {
-                $vals = $json->category;
+                $vals = $decoded->category;
             }
             foreach($vals as $v) {
                 $type->addCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
-            if (is_array($json->code)) {
-                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($json->code), $config));
+        if (isset($decoded->code) || property_exists($decoded, self::FIELD_CODE)) {
+            if (is_array($decoded->code)) {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($decoded->code), $config));
             } else {
-                $type->setCode(FHIRCodeableConcept::jsonUnserialize($json->code, $config));
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize($decoded->code, $config));
             }
         }
-        if (isset($json->manufacturer) || property_exists($json, self::FIELD_MANUFACTURER)) {
-            if (is_object($json->manufacturer)) {
-                $vals = [$json->manufacturer];
+        if (isset($decoded->manufacturer) || property_exists($decoded, self::FIELD_MANUFACTURER)) {
+            if (is_object($decoded->manufacturer)) {
+                $vals = [$decoded->manufacturer];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_MANUFACTURER, true);
             } else {
-                $vals = $json->manufacturer;
+                $vals = $decoded->manufacturer;
             }
             foreach($vals as $v) {
                 $type->addManufacturer(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->nutrient) || property_exists($json, self::FIELD_NUTRIENT)) {
-            if (is_object($json->nutrient)) {
-                $vals = [$json->nutrient];
+        if (isset($decoded->nutrient) || property_exists($decoded, self::FIELD_NUTRIENT)) {
+            if (is_object($decoded->nutrient)) {
+                $vals = [$decoded->nutrient];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_NUTRIENT, true);
             } else {
-                $vals = $json->nutrient;
+                $vals = $decoded->nutrient;
             }
             foreach($vals as $v) {
                 $type->addNutrient(FHIRNutritionProductNutrient::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->ingredient) || property_exists($json, self::FIELD_INGREDIENT)) {
-            if (is_object($json->ingredient)) {
-                $vals = [$json->ingredient];
+        if (isset($decoded->ingredient) || property_exists($decoded, self::FIELD_INGREDIENT)) {
+            if (is_object($decoded->ingredient)) {
+                $vals = [$decoded->ingredient];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_INGREDIENT, true);
             } else {
-                $vals = $json->ingredient;
+                $vals = $decoded->ingredient;
             }
             foreach($vals as $v) {
                 $type->addIngredient(FHIRNutritionProductIngredient::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->knownAllergen) || property_exists($json, self::FIELD_KNOWN_ALLERGEN)) {
-            if (is_object($json->knownAllergen)) {
-                $vals = [$json->knownAllergen];
+        if (isset($decoded->knownAllergen) || property_exists($decoded, self::FIELD_KNOWN_ALLERGEN)) {
+            if (is_object($decoded->knownAllergen)) {
+                $vals = [$decoded->knownAllergen];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_KNOWN_ALLERGEN, true);
             } else {
-                $vals = $json->knownAllergen;
+                $vals = $decoded->knownAllergen;
             }
             foreach($vals as $v) {
                 $type->addKnownAllergen(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->productCharacteristic) || property_exists($json, self::FIELD_PRODUCT_CHARACTERISTIC)) {
-            if (is_object($json->productCharacteristic)) {
-                $vals = [$json->productCharacteristic];
+        if (isset($decoded->productCharacteristic) || property_exists($decoded, self::FIELD_PRODUCT_CHARACTERISTIC)) {
+            if (is_object($decoded->productCharacteristic)) {
+                $vals = [$decoded->productCharacteristic];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PRODUCT_CHARACTERISTIC, true);
             } else {
-                $vals = $json->productCharacteristic;
+                $vals = $decoded->productCharacteristic;
             }
             foreach($vals as $v) {
                 $type->addProductCharacteristic(FHIRNutritionProductProductCharacteristic::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->instance) || property_exists($json, self::FIELD_INSTANCE)) {
-            if (is_array($json->instance)) {
-                $type->setInstance(FHIRNutritionProductInstance::jsonUnserialize(reset($json->instance), $config));
+        if (isset($decoded->instance) || property_exists($decoded, self::FIELD_INSTANCE)) {
+            if (is_array($decoded->instance)) {
+                $type->setInstance(FHIRNutritionProductInstance::jsonUnserialize(reset($decoded->instance), $config));
             } else {
-                $type->setInstance(FHIRNutritionProductInstance::jsonUnserialize($json->instance, $config));
+                $type->setInstance(FHIRNutritionProductInstance::jsonUnserialize($decoded->instance, $config));
             }
         }
-        if (isset($json->note) || property_exists($json, self::FIELD_NOTE)) {
-            if (is_object($json->note)) {
-                $vals = [$json->note];
+        if (isset($decoded->note) || property_exists($decoded, self::FIELD_NOTE)) {
+            if (is_object($decoded->note)) {
+                $vals = [$decoded->note];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTE, true);
             } else {
-                $vals = $json->note;
+                $vals = $decoded->note;
             }
             foreach($vals as $v) {
                 $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));

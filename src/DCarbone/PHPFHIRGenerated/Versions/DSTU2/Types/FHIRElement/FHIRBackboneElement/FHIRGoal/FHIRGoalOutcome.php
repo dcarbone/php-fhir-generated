@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -307,13 +307,13 @@ class FHIRGoalOutcome extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalOutcome $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalOutcome
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -327,19 +327,19 @@ class FHIRGoalOutcome extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->resultCodeableConcept) || property_exists($json, self::FIELD_RESULT_CODEABLE_CONCEPT)) {
-            if (is_array($json->resultCodeableConcept)) {
-                $type->setResultCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->resultCodeableConcept), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->resultCodeableConcept) || property_exists($decoded, self::FIELD_RESULT_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->resultCodeableConcept)) {
+                $type->setResultCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->resultCodeableConcept), $config));
             } else {
-                $type->setResultCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->resultCodeableConcept, $config));
+                $type->setResultCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->resultCodeableConcept, $config));
             }
         }
-        if (isset($json->resultReference) || property_exists($json, self::FIELD_RESULT_REFERENCE)) {
-            if (is_array($json->resultReference)) {
-                $type->setResultReference(FHIRReference::jsonUnserialize(reset($json->resultReference), $config));
+        if (isset($decoded->resultReference) || property_exists($decoded, self::FIELD_RESULT_REFERENCE)) {
+            if (is_array($decoded->resultReference)) {
+                $type->setResultReference(FHIRReference::jsonUnserialize(reset($decoded->resultReference), $config));
             } else {
-                $type->setResultReference(FHIRReference::jsonUnserialize($json->resultReference, $config));
+                $type->setResultReference(FHIRReference::jsonUnserialize($decoded->resultReference, $config));
             }
         }
         return $type;

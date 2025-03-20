@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -314,13 +314,13 @@ class FHIRNutritionOrderTexture extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -334,19 +334,19 @@ class FHIRNutritionOrderTexture extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->modifier) || property_exists($json, self::FIELD_MODIFIER)) {
-            if (is_array($json->modifier)) {
-                $type->setModifier(FHIRCodeableConcept::jsonUnserialize(reset($json->modifier), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->modifier) || property_exists($decoded, self::FIELD_MODIFIER)) {
+            if (is_array($decoded->modifier)) {
+                $type->setModifier(FHIRCodeableConcept::jsonUnserialize(reset($decoded->modifier), $config));
             } else {
-                $type->setModifier(FHIRCodeableConcept::jsonUnserialize($json->modifier, $config));
+                $type->setModifier(FHIRCodeableConcept::jsonUnserialize($decoded->modifier, $config));
             }
         }
-        if (isset($json->foodType) || property_exists($json, self::FIELD_FOOD_TYPE)) {
-            if (is_array($json->foodType)) {
-                $type->setFoodType(FHIRCodeableConcept::jsonUnserialize(reset($json->foodType), $config));
+        if (isset($decoded->foodType) || property_exists($decoded, self::FIELD_FOOD_TYPE)) {
+            if (is_array($decoded->foodType)) {
+                $type->setFoodType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->foodType), $config));
             } else {
-                $type->setFoodType(FHIRCodeableConcept::jsonUnserialize($json->foodType, $config));
+                $type->setFoodType(FHIRCodeableConcept::jsonUnserialize($decoded->foodType, $config));
             }
         }
         return $type;

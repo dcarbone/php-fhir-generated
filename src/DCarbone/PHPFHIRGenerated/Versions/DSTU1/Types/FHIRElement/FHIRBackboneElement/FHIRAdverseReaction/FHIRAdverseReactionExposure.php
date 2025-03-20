@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -477,13 +477,13 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -497,36 +497,36 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->date)
-            || isset($json->_date)
-            || property_exists($json, self::FIELD_DATE)
-            || property_exists($json, self::FIELD_DATE_EXT)) {
-            $v = $json->_date ?? new \stdClass();
-            $v->value = $json->date ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->date)
+            || isset($decoded->_date)
+            || property_exists($decoded, self::FIELD_DATE)
+            || property_exists($decoded, self::FIELD_DATE_EXT)) {
+            $v = $decoded->_date ?? new \stdClass();
+            $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->type)
-            || isset($json->_type)
-            || property_exists($json, self::FIELD_TYPE)
-            || property_exists($json, self::FIELD_TYPE_EXT)) {
-            $v = $json->_type ?? new \stdClass();
-            $v->value = $json->type ?? null;
+        if (isset($decoded->type)
+            || isset($decoded->_type)
+            || property_exists($decoded, self::FIELD_TYPE)
+            || property_exists($decoded, self::FIELD_TYPE_EXT)) {
+            $v = $decoded->_type ?? new \stdClass();
+            $v->value = $decoded->type ?? null;
             $type->setType(FHIRExposureType::jsonUnserialize($v, $config));
         }
-        if (isset($json->causalityExpectation)
-            || isset($json->_causalityExpectation)
-            || property_exists($json, self::FIELD_CAUSALITY_EXPECTATION)
-            || property_exists($json, self::FIELD_CAUSALITY_EXPECTATION_EXT)) {
-            $v = $json->_causalityExpectation ?? new \stdClass();
-            $v->value = $json->causalityExpectation ?? null;
+        if (isset($decoded->causalityExpectation)
+            || isset($decoded->_causalityExpectation)
+            || property_exists($decoded, self::FIELD_CAUSALITY_EXPECTATION)
+            || property_exists($decoded, self::FIELD_CAUSALITY_EXPECTATION_EXT)) {
+            $v = $decoded->_causalityExpectation ?? new \stdClass();
+            $v->value = $decoded->causalityExpectation ?? null;
             $type->setCausalityExpectation(FHIRCausalityExpectation::jsonUnserialize($v, $config));
         }
-        if (isset($json->substance) || property_exists($json, self::FIELD_SUBSTANCE)) {
-            if (is_array($json->substance)) {
-                $type->setSubstance(FHIRResourceReference::jsonUnserialize(reset($json->substance), $config));
+        if (isset($decoded->substance) || property_exists($decoded, self::FIELD_SUBSTANCE)) {
+            if (is_array($decoded->substance)) {
+                $type->setSubstance(FHIRResourceReference::jsonUnserialize(reset($decoded->substance), $config));
             } else {
-                $type->setSubstance(FHIRResourceReference::jsonUnserialize($json->substance, $config));
+                $type->setSubstance(FHIRResourceReference::jsonUnserialize($decoded->substance, $config));
             }
         }
         return $type;

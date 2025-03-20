@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -595,13 +595,13 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -615,45 +615,45 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->previous)
-            || isset($json->_previous)
-            || property_exists($json, self::FIELD_PREVIOUS)
-            || property_exists($json, self::FIELD_PREVIOUS_EXT)) {
-            $v = $json->_previous ?? new \stdClass();
-            $v->value = $json->previous ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->previous)
+            || isset($decoded->_previous)
+            || property_exists($decoded, self::FIELD_PREVIOUS)
+            || property_exists($decoded, self::FIELD_PREVIOUS_EXT)) {
+            $v = $decoded->_previous ?? new \stdClass();
+            $v->value = $decoded->previous ?? null;
             $type->setPrevious(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->resultForCreate)
-            || isset($json->_resultForCreate)
-            || property_exists($json, self::FIELD_RESULT_FOR_CREATE)
-            || property_exists($json, self::FIELD_RESULT_FOR_CREATE_EXT)) {
-            $v = $json->_resultForCreate ?? new \stdClass();
-            $v->value = $json->resultForCreate ?? null;
+        if (isset($decoded->resultForCreate)
+            || isset($decoded->_resultForCreate)
+            || property_exists($decoded, self::FIELD_RESULT_FOR_CREATE)
+            || property_exists($decoded, self::FIELD_RESULT_FOR_CREATE_EXT)) {
+            $v = $decoded->_resultForCreate ?? new \stdClass();
+            $v->value = $decoded->resultForCreate ?? null;
             $type->setResultForCreate(FHIRCriteriaNotExistsBehavior::jsonUnserialize($v, $config));
         }
-        if (isset($json->current)
-            || isset($json->_current)
-            || property_exists($json, self::FIELD_CURRENT)
-            || property_exists($json, self::FIELD_CURRENT_EXT)) {
-            $v = $json->_current ?? new \stdClass();
-            $v->value = $json->current ?? null;
+        if (isset($decoded->current)
+            || isset($decoded->_current)
+            || property_exists($decoded, self::FIELD_CURRENT)
+            || property_exists($decoded, self::FIELD_CURRENT_EXT)) {
+            $v = $decoded->_current ?? new \stdClass();
+            $v->value = $decoded->current ?? null;
             $type->setCurrent(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->resultForDelete)
-            || isset($json->_resultForDelete)
-            || property_exists($json, self::FIELD_RESULT_FOR_DELETE)
-            || property_exists($json, self::FIELD_RESULT_FOR_DELETE_EXT)) {
-            $v = $json->_resultForDelete ?? new \stdClass();
-            $v->value = $json->resultForDelete ?? null;
+        if (isset($decoded->resultForDelete)
+            || isset($decoded->_resultForDelete)
+            || property_exists($decoded, self::FIELD_RESULT_FOR_DELETE)
+            || property_exists($decoded, self::FIELD_RESULT_FOR_DELETE_EXT)) {
+            $v = $decoded->_resultForDelete ?? new \stdClass();
+            $v->value = $decoded->resultForDelete ?? null;
             $type->setResultForDelete(FHIRCriteriaNotExistsBehavior::jsonUnserialize($v, $config));
         }
-        if (isset($json->requireBoth)
-            || isset($json->_requireBoth)
-            || property_exists($json, self::FIELD_REQUIRE_BOTH)
-            || property_exists($json, self::FIELD_REQUIRE_BOTH_EXT)) {
-            $v = $json->_requireBoth ?? new \stdClass();
-            $v->value = $json->requireBoth ?? null;
+        if (isset($decoded->requireBoth)
+            || isset($decoded->_requireBoth)
+            || property_exists($decoded, self::FIELD_REQUIRE_BOTH)
+            || property_exists($decoded, self::FIELD_REQUIRE_BOTH_EXT)) {
+            $v = $decoded->_requireBoth ?? new \stdClass();
+            $v->value = $decoded->requireBoth ?? null;
             $type->setRequireBoth(FHIRBoolean::jsonUnserialize($v, $config));
         }
         return $type;

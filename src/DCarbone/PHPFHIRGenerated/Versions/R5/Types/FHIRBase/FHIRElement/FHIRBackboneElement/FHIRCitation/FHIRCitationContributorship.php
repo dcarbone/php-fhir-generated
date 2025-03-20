@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -473,13 +473,13 @@ class FHIRCitationContributorship extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributorship $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributorship
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -493,32 +493,32 @@ class FHIRCitationContributorship extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->complete)
-            || isset($json->_complete)
-            || property_exists($json, self::FIELD_COMPLETE)
-            || property_exists($json, self::FIELD_COMPLETE_EXT)) {
-            $v = $json->_complete ?? new \stdClass();
-            $v->value = $json->complete ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->complete)
+            || isset($decoded->_complete)
+            || property_exists($decoded, self::FIELD_COMPLETE)
+            || property_exists($decoded, self::FIELD_COMPLETE_EXT)) {
+            $v = $decoded->_complete ?? new \stdClass();
+            $v->value = $decoded->complete ?? null;
             $type->setComplete(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->entry) || property_exists($json, self::FIELD_ENTRY)) {
-            if (is_object($json->entry)) {
-                $vals = [$json->entry];
+        if (isset($decoded->entry) || property_exists($decoded, self::FIELD_ENTRY)) {
+            if (is_object($decoded->entry)) {
+                $vals = [$decoded->entry];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ENTRY, true);
             } else {
-                $vals = $json->entry;
+                $vals = $decoded->entry;
             }
             foreach($vals as $v) {
                 $type->addEntry(FHIRCitationEntry::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->summary) || property_exists($json, self::FIELD_SUMMARY)) {
-            if (is_object($json->summary)) {
-                $vals = [$json->summary];
+        if (isset($decoded->summary) || property_exists($decoded, self::FIELD_SUMMARY)) {
+            if (is_object($decoded->summary)) {
+                $vals = [$decoded->summary];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUMMARY, true);
             } else {
-                $vals = $json->summary;
+                $vals = $decoded->summary;
             }
             foreach($vals as $v) {
                 $type->addSummary(FHIRCitationSummary1::jsonUnserialize($v, $config));

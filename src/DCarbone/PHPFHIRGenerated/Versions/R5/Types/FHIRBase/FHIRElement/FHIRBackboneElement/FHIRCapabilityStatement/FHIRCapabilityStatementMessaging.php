@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -570,13 +570,13 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -590,40 +590,40 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->endpoint) || property_exists($json, self::FIELD_ENDPOINT)) {
-            if (is_object($json->endpoint)) {
-                $vals = [$json->endpoint];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->endpoint) || property_exists($decoded, self::FIELD_ENDPOINT)) {
+            if (is_object($decoded->endpoint)) {
+                $vals = [$decoded->endpoint];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ENDPOINT, true);
             } else {
-                $vals = $json->endpoint;
+                $vals = $decoded->endpoint;
             }
             foreach($vals as $v) {
                 $type->addEndpoint(FHIRCapabilityStatementEndpoint::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->reliableCache)
-            || isset($json->_reliableCache)
-            || property_exists($json, self::FIELD_RELIABLE_CACHE)
-            || property_exists($json, self::FIELD_RELIABLE_CACHE_EXT)) {
-            $v = $json->_reliableCache ?? new \stdClass();
-            $v->value = $json->reliableCache ?? null;
+        if (isset($decoded->reliableCache)
+            || isset($decoded->_reliableCache)
+            || property_exists($decoded, self::FIELD_RELIABLE_CACHE)
+            || property_exists($decoded, self::FIELD_RELIABLE_CACHE_EXT)) {
+            $v = $decoded->_reliableCache ?? new \stdClass();
+            $v->value = $decoded->reliableCache ?? null;
             $type->setReliableCache(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->documentation)
-            || isset($json->_documentation)
-            || property_exists($json, self::FIELD_DOCUMENTATION)
-            || property_exists($json, self::FIELD_DOCUMENTATION_EXT)) {
-            $v = $json->_documentation ?? new \stdClass();
-            $v->value = $json->documentation ?? null;
+        if (isset($decoded->documentation)
+            || isset($decoded->_documentation)
+            || property_exists($decoded, self::FIELD_DOCUMENTATION)
+            || property_exists($decoded, self::FIELD_DOCUMENTATION_EXT)) {
+            $v = $decoded->_documentation ?? new \stdClass();
+            $v->value = $decoded->documentation ?? null;
             $type->setDocumentation(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->supportedMessage) || property_exists($json, self::FIELD_SUPPORTED_MESSAGE)) {
-            if (is_object($json->supportedMessage)) {
-                $vals = [$json->supportedMessage];
+        if (isset($decoded->supportedMessage) || property_exists($decoded, self::FIELD_SUPPORTED_MESSAGE)) {
+            if (is_object($decoded->supportedMessage)) {
+                $vals = [$decoded->supportedMessage];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUPPORTED_MESSAGE, true);
             } else {
-                $vals = $json->supportedMessage;
+                $vals = $decoded->supportedMessage;
             }
             foreach($vals as $v) {
                 $type->addSupportedMessage(FHIRCapabilityStatementSupportedMessage::jsonUnserialize($v, $config));

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1336,13 +1336,13 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail1 $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail1
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1356,99 +1356,99 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->traceNumber) || property_exists($json, self::FIELD_TRACE_NUMBER)) {
-            if (is_object($json->traceNumber)) {
-                $vals = [$json->traceNumber];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->traceNumber) || property_exists($decoded, self::FIELD_TRACE_NUMBER)) {
+            if (is_object($decoded->traceNumber)) {
+                $vals = [$decoded->traceNumber];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TRACE_NUMBER, true);
             } else {
-                $vals = $json->traceNumber;
+                $vals = $decoded->traceNumber;
             }
             foreach($vals as $v) {
                 $type->addTraceNumber(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->revenue) || property_exists($json, self::FIELD_REVENUE)) {
-            if (is_array($json->revenue)) {
-                $type->setRevenue(FHIRCodeableConcept::jsonUnserialize(reset($json->revenue), $config));
+        if (isset($decoded->revenue) || property_exists($decoded, self::FIELD_REVENUE)) {
+            if (is_array($decoded->revenue)) {
+                $type->setRevenue(FHIRCodeableConcept::jsonUnserialize(reset($decoded->revenue), $config));
             } else {
-                $type->setRevenue(FHIRCodeableConcept::jsonUnserialize($json->revenue, $config));
+                $type->setRevenue(FHIRCodeableConcept::jsonUnserialize($decoded->revenue, $config));
             }
         }
-        if (isset($json->productOrService) || property_exists($json, self::FIELD_PRODUCT_OR_SERVICE)) {
-            if (is_array($json->productOrService)) {
-                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize(reset($json->productOrService), $config));
+        if (isset($decoded->productOrService) || property_exists($decoded, self::FIELD_PRODUCT_OR_SERVICE)) {
+            if (is_array($decoded->productOrService)) {
+                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize(reset($decoded->productOrService), $config));
             } else {
-                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize($json->productOrService, $config));
+                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize($decoded->productOrService, $config));
             }
         }
-        if (isset($json->productOrServiceEnd) || property_exists($json, self::FIELD_PRODUCT_OR_SERVICE_END)) {
-            if (is_array($json->productOrServiceEnd)) {
-                $type->setProductOrServiceEnd(FHIRCodeableConcept::jsonUnserialize(reset($json->productOrServiceEnd), $config));
+        if (isset($decoded->productOrServiceEnd) || property_exists($decoded, self::FIELD_PRODUCT_OR_SERVICE_END)) {
+            if (is_array($decoded->productOrServiceEnd)) {
+                $type->setProductOrServiceEnd(FHIRCodeableConcept::jsonUnserialize(reset($decoded->productOrServiceEnd), $config));
             } else {
-                $type->setProductOrServiceEnd(FHIRCodeableConcept::jsonUnserialize($json->productOrServiceEnd, $config));
+                $type->setProductOrServiceEnd(FHIRCodeableConcept::jsonUnserialize($decoded->productOrServiceEnd, $config));
             }
         }
-        if (isset($json->modifier) || property_exists($json, self::FIELD_MODIFIER)) {
-            if (is_object($json->modifier)) {
-                $vals = [$json->modifier];
+        if (isset($decoded->modifier) || property_exists($decoded, self::FIELD_MODIFIER)) {
+            if (is_object($decoded->modifier)) {
+                $vals = [$decoded->modifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_MODIFIER, true);
             } else {
-                $vals = $json->modifier;
+                $vals = $decoded->modifier;
             }
             foreach($vals as $v) {
                 $type->addModifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->patientPaid) || property_exists($json, self::FIELD_PATIENT_PAID)) {
-            if (is_array($json->patientPaid)) {
-                $type->setPatientPaid(FHIRMoney::jsonUnserialize(reset($json->patientPaid), $config));
+        if (isset($decoded->patientPaid) || property_exists($decoded, self::FIELD_PATIENT_PAID)) {
+            if (is_array($decoded->patientPaid)) {
+                $type->setPatientPaid(FHIRMoney::jsonUnserialize(reset($decoded->patientPaid), $config));
             } else {
-                $type->setPatientPaid(FHIRMoney::jsonUnserialize($json->patientPaid, $config));
+                $type->setPatientPaid(FHIRMoney::jsonUnserialize($decoded->patientPaid, $config));
             }
         }
-        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
-            if (is_array($json->quantity)) {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+        if (isset($decoded->quantity) || property_exists($decoded, self::FIELD_QUANTITY)) {
+            if (is_array($decoded->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->quantity), $config));
             } else {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($decoded->quantity, $config));
             }
         }
-        if (isset($json->unitPrice) || property_exists($json, self::FIELD_UNIT_PRICE)) {
-            if (is_array($json->unitPrice)) {
-                $type->setUnitPrice(FHIRMoney::jsonUnserialize(reset($json->unitPrice), $config));
+        if (isset($decoded->unitPrice) || property_exists($decoded, self::FIELD_UNIT_PRICE)) {
+            if (is_array($decoded->unitPrice)) {
+                $type->setUnitPrice(FHIRMoney::jsonUnserialize(reset($decoded->unitPrice), $config));
             } else {
-                $type->setUnitPrice(FHIRMoney::jsonUnserialize($json->unitPrice, $config));
+                $type->setUnitPrice(FHIRMoney::jsonUnserialize($decoded->unitPrice, $config));
             }
         }
-        if (isset($json->factor)
-            || isset($json->_factor)
-            || property_exists($json, self::FIELD_FACTOR)
-            || property_exists($json, self::FIELD_FACTOR_EXT)) {
-            $v = $json->_factor ?? new \stdClass();
-            $v->value = $json->factor ?? null;
+        if (isset($decoded->factor)
+            || isset($decoded->_factor)
+            || property_exists($decoded, self::FIELD_FACTOR)
+            || property_exists($decoded, self::FIELD_FACTOR_EXT)) {
+            $v = $decoded->_factor ?? new \stdClass();
+            $v->value = $decoded->factor ?? null;
             $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->tax) || property_exists($json, self::FIELD_TAX)) {
-            if (is_array($json->tax)) {
-                $type->setTax(FHIRMoney::jsonUnserialize(reset($json->tax), $config));
+        if (isset($decoded->tax) || property_exists($decoded, self::FIELD_TAX)) {
+            if (is_array($decoded->tax)) {
+                $type->setTax(FHIRMoney::jsonUnserialize(reset($decoded->tax), $config));
             } else {
-                $type->setTax(FHIRMoney::jsonUnserialize($json->tax, $config));
+                $type->setTax(FHIRMoney::jsonUnserialize($decoded->tax, $config));
             }
         }
-        if (isset($json->net) || property_exists($json, self::FIELD_NET)) {
-            if (is_array($json->net)) {
-                $type->setNet(FHIRMoney::jsonUnserialize(reset($json->net), $config));
+        if (isset($decoded->net) || property_exists($decoded, self::FIELD_NET)) {
+            if (is_array($decoded->net)) {
+                $type->setNet(FHIRMoney::jsonUnserialize(reset($decoded->net), $config));
             } else {
-                $type->setNet(FHIRMoney::jsonUnserialize($json->net, $config));
+                $type->setNet(FHIRMoney::jsonUnserialize($decoded->net, $config));
             }
         }
-        if (isset($json->noteNumber)
-            || isset($json->_noteNumber)
-            || property_exists($json, self::FIELD_NOTE_NUMBER)
-            || property_exists($json, self::FIELD_NOTE_NUMBER_EXT)) {
-            $vals = (array)($json->noteNumber ?? []);
-            $exts = (array)($json->FIELD_NOTE_NUMBER_EXT ?? []);
+        if (isset($decoded->noteNumber)
+            || isset($decoded->_noteNumber)
+            || property_exists($decoded, self::FIELD_NOTE_NUMBER)
+            || property_exists($decoded, self::FIELD_NOTE_NUMBER_EXT)) {
+            $vals = (array)($decoded->noteNumber ?? []);
+            $exts = (array)($decoded->FIELD_NOTE_NUMBER_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1460,30 +1460,30 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
                 $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->reviewOutcome) || property_exists($json, self::FIELD_REVIEW_OUTCOME)) {
-            if (is_array($json->reviewOutcome)) {
-                $type->setReviewOutcome(FHIRExplanationOfBenefitReviewOutcome::jsonUnserialize(reset($json->reviewOutcome), $config));
+        if (isset($decoded->reviewOutcome) || property_exists($decoded, self::FIELD_REVIEW_OUTCOME)) {
+            if (is_array($decoded->reviewOutcome)) {
+                $type->setReviewOutcome(FHIRExplanationOfBenefitReviewOutcome::jsonUnserialize(reset($decoded->reviewOutcome), $config));
             } else {
-                $type->setReviewOutcome(FHIRExplanationOfBenefitReviewOutcome::jsonUnserialize($json->reviewOutcome, $config));
+                $type->setReviewOutcome(FHIRExplanationOfBenefitReviewOutcome::jsonUnserialize($decoded->reviewOutcome, $config));
             }
         }
-        if (isset($json->adjudication) || property_exists($json, self::FIELD_ADJUDICATION)) {
-            if (is_object($json->adjudication)) {
-                $vals = [$json->adjudication];
+        if (isset($decoded->adjudication) || property_exists($decoded, self::FIELD_ADJUDICATION)) {
+            if (is_object($decoded->adjudication)) {
+                $vals = [$decoded->adjudication];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ADJUDICATION, true);
             } else {
-                $vals = $json->adjudication;
+                $vals = $decoded->adjudication;
             }
             foreach($vals as $v) {
                 $type->addAdjudication(FHIRExplanationOfBenefitAdjudication::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->subDetail) || property_exists($json, self::FIELD_SUB_DETAIL)) {
-            if (is_object($json->subDetail)) {
-                $vals = [$json->subDetail];
+        if (isset($decoded->subDetail) || property_exists($decoded, self::FIELD_SUB_DETAIL)) {
+            if (is_object($decoded->subDetail)) {
+                $vals = [$decoded->subDetail];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUB_DETAIL, true);
             } else {
-                $vals = $json->subDetail;
+                $vals = $decoded->subDetail;
             }
             foreach($vals as $v) {
                 $type->addSubDetail(FHIRExplanationOfBenefitSubDetail1::jsonUnserialize($v, $config));

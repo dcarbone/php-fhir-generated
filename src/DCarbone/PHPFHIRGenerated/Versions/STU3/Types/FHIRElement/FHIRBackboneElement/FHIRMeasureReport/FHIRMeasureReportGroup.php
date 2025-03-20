@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -501,13 +501,13 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -521,39 +521,39 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_array($json->identifier)) {
-                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_array($decoded->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($decoded->identifier), $config));
             } else {
-                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($decoded->identifier, $config));
             }
         }
-        if (isset($json->population) || property_exists($json, self::FIELD_POPULATION)) {
-            if (is_object($json->population)) {
-                $vals = [$json->population];
+        if (isset($decoded->population) || property_exists($decoded, self::FIELD_POPULATION)) {
+            if (is_object($decoded->population)) {
+                $vals = [$decoded->population];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_POPULATION, true);
             } else {
-                $vals = $json->population;
+                $vals = $decoded->population;
             }
             foreach($vals as $v) {
                 $type->addPopulation(FHIRMeasureReportPopulation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->measureScore)
-            || isset($json->_measureScore)
-            || property_exists($json, self::FIELD_MEASURE_SCORE)
-            || property_exists($json, self::FIELD_MEASURE_SCORE_EXT)) {
-            $v = $json->_measureScore ?? new \stdClass();
-            $v->value = $json->measureScore ?? null;
+        if (isset($decoded->measureScore)
+            || isset($decoded->_measureScore)
+            || property_exists($decoded, self::FIELD_MEASURE_SCORE)
+            || property_exists($decoded, self::FIELD_MEASURE_SCORE_EXT)) {
+            $v = $decoded->_measureScore ?? new \stdClass();
+            $v->value = $decoded->measureScore ?? null;
             $type->setMeasureScore(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->stratifier) || property_exists($json, self::FIELD_STRATIFIER)) {
-            if (is_object($json->stratifier)) {
-                $vals = [$json->stratifier];
+        if (isset($decoded->stratifier) || property_exists($decoded, self::FIELD_STRATIFIER)) {
+            if (is_object($decoded->stratifier)) {
+                $vals = [$decoded->stratifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_STRATIFIER, true);
             } else {
-                $vals = $json->stratifier;
+                $vals = $decoded->stratifier;
             }
             foreach($vals as $v) {
                 $type->addStratifier(FHIRMeasureReportStratifier::jsonUnserialize($v, $config));

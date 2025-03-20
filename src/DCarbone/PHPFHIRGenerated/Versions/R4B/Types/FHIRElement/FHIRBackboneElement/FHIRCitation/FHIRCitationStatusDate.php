@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -406,13 +406,13 @@ class FHIRCitationStatusDate extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationStatusDate $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationStatusDate
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -426,27 +426,27 @@ class FHIRCitationStatusDate extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->activity) || property_exists($json, self::FIELD_ACTIVITY)) {
-            if (is_array($json->activity)) {
-                $type->setActivity(FHIRCodeableConcept::jsonUnserialize(reset($json->activity), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->activity) || property_exists($decoded, self::FIELD_ACTIVITY)) {
+            if (is_array($decoded->activity)) {
+                $type->setActivity(FHIRCodeableConcept::jsonUnserialize(reset($decoded->activity), $config));
             } else {
-                $type->setActivity(FHIRCodeableConcept::jsonUnserialize($json->activity, $config));
+                $type->setActivity(FHIRCodeableConcept::jsonUnserialize($decoded->activity, $config));
             }
         }
-        if (isset($json->actual)
-            || isset($json->_actual)
-            || property_exists($json, self::FIELD_ACTUAL)
-            || property_exists($json, self::FIELD_ACTUAL_EXT)) {
-            $v = $json->_actual ?? new \stdClass();
-            $v->value = $json->actual ?? null;
+        if (isset($decoded->actual)
+            || isset($decoded->_actual)
+            || property_exists($decoded, self::FIELD_ACTUAL)
+            || property_exists($decoded, self::FIELD_ACTUAL_EXT)) {
+            $v = $decoded->_actual ?? new \stdClass();
+            $v->value = $decoded->actual ?? null;
             $type->setActual(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
-            if (is_array($json->period)) {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+        if (isset($decoded->period) || property_exists($decoded, self::FIELD_PERIOD)) {
+            if (is_array($decoded->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->period), $config));
             } else {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($decoded->period, $config));
             }
         }
         return $type;

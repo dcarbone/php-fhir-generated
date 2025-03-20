@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -368,13 +368,13 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -388,24 +388,24 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->reason) || property_exists($json, self::FIELD_REASON)) {
-            if (is_object($json->reason)) {
-                $vals = [$json->reason];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->reason) || property_exists($decoded, self::FIELD_REASON)) {
+            if (is_object($decoded->reason)) {
+                $vals = [$decoded->reason];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_REASON, true);
             } else {
-                $vals = $json->reason;
+                $vals = $decoded->reason;
             }
             foreach($vals as $v) {
                 $type->addReason(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->refusalReason) || property_exists($json, self::FIELD_REFUSAL_REASON)) {
-            if (is_object($json->refusalReason)) {
-                $vals = [$json->refusalReason];
+        if (isset($decoded->refusalReason) || property_exists($decoded, self::FIELD_REFUSAL_REASON)) {
+            if (is_object($decoded->refusalReason)) {
+                $vals = [$decoded->refusalReason];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_REFUSAL_REASON, true);
             } else {
-                $vals = $json->refusalReason;
+                $vals = $decoded->refusalReason;
             }
             foreach($vals as $v) {
                 $type->addRefusalReason(FHIRCodeableConcept::jsonUnserialize($v, $config));

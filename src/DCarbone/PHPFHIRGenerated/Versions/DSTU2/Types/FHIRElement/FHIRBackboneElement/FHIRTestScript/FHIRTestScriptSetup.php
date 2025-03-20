@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -334,13 +334,13 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -354,20 +354,20 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->metadata) || property_exists($json, self::FIELD_METADATA)) {
-            if (is_array($json->metadata)) {
-                $type->setMetadata(FHIRTestScriptMetadata::jsonUnserialize(reset($json->metadata), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->metadata) || property_exists($decoded, self::FIELD_METADATA)) {
+            if (is_array($decoded->metadata)) {
+                $type->setMetadata(FHIRTestScriptMetadata::jsonUnserialize(reset($decoded->metadata), $config));
             } else {
-                $type->setMetadata(FHIRTestScriptMetadata::jsonUnserialize($json->metadata, $config));
+                $type->setMetadata(FHIRTestScriptMetadata::jsonUnserialize($decoded->metadata, $config));
             }
         }
-        if (isset($json->action) || property_exists($json, self::FIELD_ACTION)) {
-            if (is_object($json->action)) {
-                $vals = [$json->action];
+        if (isset($decoded->action) || property_exists($decoded, self::FIELD_ACTION)) {
+            if (is_object($decoded->action)) {
+                $vals = [$decoded->action];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ACTION, true);
             } else {
-                $vals = $json->action;
+                $vals = $decoded->action;
             }
             foreach($vals as $v) {
                 $type->addAction(FHIRTestScriptAction::jsonUnserialize($v, $config));

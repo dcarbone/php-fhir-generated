@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -697,13 +697,13 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -717,43 +717,43 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->rendering)
-            || isset($json->_rendering)
-            || property_exists($json, self::FIELD_RENDERING)
-            || property_exists($json, self::FIELD_RENDERING_EXT)) {
-            $v = $json->_rendering ?? new \stdClass();
-            $v->value = $json->rendering ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->rendering)
+            || isset($decoded->_rendering)
+            || property_exists($decoded, self::FIELD_RENDERING)
+            || property_exists($decoded, self::FIELD_RENDERING_EXT)) {
+            $v = $decoded->_rendering ?? new \stdClass();
+            $v->value = $decoded->rendering ?? null;
             $type->setRendering(FHIRUrl::jsonUnserialize($v, $config));
         }
-        if (isset($json->resource) || property_exists($json, self::FIELD_RESOURCE)) {
-            if (is_object($json->resource)) {
-                $vals = [$json->resource];
+        if (isset($decoded->resource) || property_exists($decoded, self::FIELD_RESOURCE)) {
+            if (is_object($decoded->resource)) {
+                $vals = [$decoded->resource];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_RESOURCE, true);
             } else {
-                $vals = $json->resource;
+                $vals = $decoded->resource;
             }
             foreach($vals as $v) {
                 $type->addResource(FHIRImplementationGuideResource1::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->page) || property_exists($json, self::FIELD_PAGE)) {
-            if (is_object($json->page)) {
-                $vals = [$json->page];
+        if (isset($decoded->page) || property_exists($decoded, self::FIELD_PAGE)) {
+            if (is_object($decoded->page)) {
+                $vals = [$decoded->page];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PAGE, true);
             } else {
-                $vals = $json->page;
+                $vals = $decoded->page;
             }
             foreach($vals as $v) {
                 $type->addPage(FHIRImplementationGuidePage1::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->image)
-            || isset($json->_image)
-            || property_exists($json, self::FIELD_IMAGE)
-            || property_exists($json, self::FIELD_IMAGE_EXT)) {
-            $vals = (array)($json->image ?? []);
-            $exts = (array)($json->FIELD_IMAGE_EXT ?? []);
+        if (isset($decoded->image)
+            || isset($decoded->_image)
+            || property_exists($decoded, self::FIELD_IMAGE)
+            || property_exists($decoded, self::FIELD_IMAGE_EXT)) {
+            $vals = (array)($decoded->image ?? []);
+            $exts = (array)($decoded->FIELD_IMAGE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -765,12 +765,12 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
                 $type->addImage(FHIRString::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->other)
-            || isset($json->_other)
-            || property_exists($json, self::FIELD_OTHER)
-            || property_exists($json, self::FIELD_OTHER_EXT)) {
-            $vals = (array)($json->other ?? []);
-            $exts = (array)($json->FIELD_OTHER_EXT ?? []);
+        if (isset($decoded->other)
+            || isset($decoded->_other)
+            || property_exists($decoded, self::FIELD_OTHER)
+            || property_exists($decoded, self::FIELD_OTHER_EXT)) {
+            $vals = (array)($decoded->other ?? []);
+            $exts = (array)($decoded->FIELD_OTHER_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

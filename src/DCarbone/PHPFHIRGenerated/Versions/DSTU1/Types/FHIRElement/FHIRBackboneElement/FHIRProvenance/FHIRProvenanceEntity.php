@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -554,13 +554,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -574,43 +574,43 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->role)
-            || isset($json->_role)
-            || property_exists($json, self::FIELD_ROLE)
-            || property_exists($json, self::FIELD_ROLE_EXT)) {
-            $v = $json->_role ?? new \stdClass();
-            $v->value = $json->role ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->role)
+            || isset($decoded->_role)
+            || property_exists($decoded, self::FIELD_ROLE)
+            || property_exists($decoded, self::FIELD_ROLE_EXT)) {
+            $v = $decoded->_role ?? new \stdClass();
+            $v->value = $decoded->role ?? null;
             $type->setRole(FHIRProvenanceEntityRole::jsonUnserialize($v, $config));
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCoding::jsonUnserialize(reset($json->type), $config));
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCoding::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCoding::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCoding::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->reference)
-            || isset($json->_reference)
-            || property_exists($json, self::FIELD_REFERENCE)
-            || property_exists($json, self::FIELD_REFERENCE_EXT)) {
-            $v = $json->_reference ?? new \stdClass();
-            $v->value = $json->reference ?? null;
+        if (isset($decoded->reference)
+            || isset($decoded->_reference)
+            || property_exists($decoded, self::FIELD_REFERENCE)
+            || property_exists($decoded, self::FIELD_REFERENCE_EXT)) {
+            $v = $decoded->_reference ?? new \stdClass();
+            $v->value = $decoded->reference ?? null;
             $type->setReference(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->display)
-            || isset($json->_display)
-            || property_exists($json, self::FIELD_DISPLAY)
-            || property_exists($json, self::FIELD_DISPLAY_EXT)) {
-            $v = $json->_display ?? new \stdClass();
-            $v->value = $json->display ?? null;
+        if (isset($decoded->display)
+            || isset($decoded->_display)
+            || property_exists($decoded, self::FIELD_DISPLAY)
+            || property_exists($decoded, self::FIELD_DISPLAY_EXT)) {
+            $v = $decoded->_display ?? new \stdClass();
+            $v->value = $decoded->display ?? null;
             $type->setDisplay(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->agent) || property_exists($json, self::FIELD_AGENT)) {
-            if (is_array($json->agent)) {
-                $type->setAgent(FHIRProvenanceAgent::jsonUnserialize(reset($json->agent), $config));
+        if (isset($decoded->agent) || property_exists($decoded, self::FIELD_AGENT)) {
+            if (is_array($decoded->agent)) {
+                $type->setAgent(FHIRProvenanceAgent::jsonUnserialize(reset($decoded->agent), $config));
             } else {
-                $type->setAgent(FHIRProvenanceAgent::jsonUnserialize($json->agent, $config));
+                $type->setAgent(FHIRProvenanceAgent::jsonUnserialize($decoded->agent, $config));
             }
         }
         return $type;

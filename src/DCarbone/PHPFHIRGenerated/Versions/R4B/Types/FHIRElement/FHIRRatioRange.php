@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -387,13 +387,13 @@ class FHIRRatioRange extends FHIRElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -407,26 +407,26 @@ class FHIRRatioRange extends FHIRElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->lowNumerator) || property_exists($json, self::FIELD_LOW_NUMERATOR)) {
-            if (is_array($json->lowNumerator)) {
-                $type->setLowNumerator(FHIRQuantity::jsonUnserialize(reset($json->lowNumerator), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->lowNumerator) || property_exists($decoded, self::FIELD_LOW_NUMERATOR)) {
+            if (is_array($decoded->lowNumerator)) {
+                $type->setLowNumerator(FHIRQuantity::jsonUnserialize(reset($decoded->lowNumerator), $config));
             } else {
-                $type->setLowNumerator(FHIRQuantity::jsonUnserialize($json->lowNumerator, $config));
+                $type->setLowNumerator(FHIRQuantity::jsonUnserialize($decoded->lowNumerator, $config));
             }
         }
-        if (isset($json->highNumerator) || property_exists($json, self::FIELD_HIGH_NUMERATOR)) {
-            if (is_array($json->highNumerator)) {
-                $type->setHighNumerator(FHIRQuantity::jsonUnserialize(reset($json->highNumerator), $config));
+        if (isset($decoded->highNumerator) || property_exists($decoded, self::FIELD_HIGH_NUMERATOR)) {
+            if (is_array($decoded->highNumerator)) {
+                $type->setHighNumerator(FHIRQuantity::jsonUnserialize(reset($decoded->highNumerator), $config));
             } else {
-                $type->setHighNumerator(FHIRQuantity::jsonUnserialize($json->highNumerator, $config));
+                $type->setHighNumerator(FHIRQuantity::jsonUnserialize($decoded->highNumerator, $config));
             }
         }
-        if (isset($json->denominator) || property_exists($json, self::FIELD_DENOMINATOR)) {
-            if (is_array($json->denominator)) {
-                $type->setDenominator(FHIRQuantity::jsonUnserialize(reset($json->denominator), $config));
+        if (isset($decoded->denominator) || property_exists($decoded, self::FIELD_DENOMINATOR)) {
+            if (is_array($decoded->denominator)) {
+                $type->setDenominator(FHIRQuantity::jsonUnserialize(reset($decoded->denominator), $config));
             } else {
-                $type->setDenominator(FHIRQuantity::jsonUnserialize($json->denominator, $config));
+                $type->setDenominator(FHIRQuantity::jsonUnserialize($decoded->denominator, $config));
             }
         }
         return $type;

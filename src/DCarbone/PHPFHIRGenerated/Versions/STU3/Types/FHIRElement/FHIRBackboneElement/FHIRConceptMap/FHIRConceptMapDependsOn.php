@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -509,13 +509,13 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -529,37 +529,37 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->property)
-            || isset($json->_property)
-            || property_exists($json, self::FIELD_PROPERTY)
-            || property_exists($json, self::FIELD_PROPERTY_EXT)) {
-            $v = $json->_property ?? new \stdClass();
-            $v->value = $json->property ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->property)
+            || isset($decoded->_property)
+            || property_exists($decoded, self::FIELD_PROPERTY)
+            || property_exists($decoded, self::FIELD_PROPERTY_EXT)) {
+            $v = $decoded->_property ?? new \stdClass();
+            $v->value = $decoded->property ?? null;
             $type->setProperty(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->system)
-            || isset($json->_system)
-            || property_exists($json, self::FIELD_SYSTEM)
-            || property_exists($json, self::FIELD_SYSTEM_EXT)) {
-            $v = $json->_system ?? new \stdClass();
-            $v->value = $json->system ?? null;
+        if (isset($decoded->system)
+            || isset($decoded->_system)
+            || property_exists($decoded, self::FIELD_SYSTEM)
+            || property_exists($decoded, self::FIELD_SYSTEM_EXT)) {
+            $v = $decoded->_system ?? new \stdClass();
+            $v->value = $decoded->system ?? null;
             $type->setSystem(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->code)
-            || isset($json->_code)
-            || property_exists($json, self::FIELD_CODE)
-            || property_exists($json, self::FIELD_CODE_EXT)) {
-            $v = $json->_code ?? new \stdClass();
-            $v->value = $json->code ?? null;
+        if (isset($decoded->code)
+            || isset($decoded->_code)
+            || property_exists($decoded, self::FIELD_CODE)
+            || property_exists($decoded, self::FIELD_CODE_EXT)) {
+            $v = $decoded->_code ?? new \stdClass();
+            $v->value = $decoded->code ?? null;
             $type->setCode(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->display)
-            || isset($json->_display)
-            || property_exists($json, self::FIELD_DISPLAY)
-            || property_exists($json, self::FIELD_DISPLAY_EXT)) {
-            $v = $json->_display ?? new \stdClass();
-            $v->value = $json->display ?? null;
+        if (isset($decoded->display)
+            || isset($decoded->_display)
+            || property_exists($decoded, self::FIELD_DISPLAY)
+            || property_exists($decoded, self::FIELD_DISPLAY_EXT)) {
+            $v = $decoded->_display ?? new \stdClass();
+            $v->value = $decoded->display ?? null;
             $type->setDisplay(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

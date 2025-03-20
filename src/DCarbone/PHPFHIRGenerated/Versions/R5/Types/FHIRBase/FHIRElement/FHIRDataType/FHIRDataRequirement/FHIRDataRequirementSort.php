@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -367,13 +367,13 @@ class FHIRDataRequirementSort extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementSort $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementSort
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -387,21 +387,21 @@ class FHIRDataRequirementSort extends FHIRDataType
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->path)
-            || isset($json->_path)
-            || property_exists($json, self::FIELD_PATH)
-            || property_exists($json, self::FIELD_PATH_EXT)) {
-            $v = $json->_path ?? new \stdClass();
-            $v->value = $json->path ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->path)
+            || isset($decoded->_path)
+            || property_exists($decoded, self::FIELD_PATH)
+            || property_exists($decoded, self::FIELD_PATH_EXT)) {
+            $v = $decoded->_path ?? new \stdClass();
+            $v->value = $decoded->path ?? null;
             $type->setPath(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->direction)
-            || isset($json->_direction)
-            || property_exists($json, self::FIELD_DIRECTION)
-            || property_exists($json, self::FIELD_DIRECTION_EXT)) {
-            $v = $json->_direction ?? new \stdClass();
-            $v->value = $json->direction ?? null;
+        if (isset($decoded->direction)
+            || isset($decoded->_direction)
+            || property_exists($decoded, self::FIELD_DIRECTION)
+            || property_exists($decoded, self::FIELD_DIRECTION_EXT)) {
+            $v = $decoded->_direction ?? new \stdClass();
+            $v->value = $decoded->direction ?? null;
             $type->setDirection(FHIRSortDirection::jsonUnserialize($v, $config));
         }
         return $type;

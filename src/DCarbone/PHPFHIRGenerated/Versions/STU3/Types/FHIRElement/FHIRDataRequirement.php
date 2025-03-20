@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -691,13 +691,13 @@ class FHIRDataRequirement extends FHIRElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -711,21 +711,21 @@ class FHIRDataRequirement extends FHIRElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type)
-            || isset($json->_type)
-            || property_exists($json, self::FIELD_TYPE)
-            || property_exists($json, self::FIELD_TYPE_EXT)) {
-            $v = $json->_type ?? new \stdClass();
-            $v->value = $json->type ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type)
+            || isset($decoded->_type)
+            || property_exists($decoded, self::FIELD_TYPE)
+            || property_exists($decoded, self::FIELD_TYPE_EXT)) {
+            $v = $decoded->_type ?? new \stdClass();
+            $v->value = $decoded->type ?? null;
             $type->setType(FHIRCode::jsonUnserialize($v, $config));
         }
-        if (isset($json->profile)
-            || isset($json->_profile)
-            || property_exists($json, self::FIELD_PROFILE)
-            || property_exists($json, self::FIELD_PROFILE_EXT)) {
-            $vals = (array)($json->profile ?? []);
-            $exts = (array)($json->FIELD_PROFILE_EXT ?? []);
+        if (isset($decoded->profile)
+            || isset($decoded->_profile)
+            || property_exists($decoded, self::FIELD_PROFILE)
+            || property_exists($decoded, self::FIELD_PROFILE_EXT)) {
+            $vals = (array)($decoded->profile ?? []);
+            $exts = (array)($decoded->FIELD_PROFILE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -737,12 +737,12 @@ class FHIRDataRequirement extends FHIRElement
                 $type->addProfile(FHIRUri::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->mustSupport)
-            || isset($json->_mustSupport)
-            || property_exists($json, self::FIELD_MUST_SUPPORT)
-            || property_exists($json, self::FIELD_MUST_SUPPORT_EXT)) {
-            $vals = (array)($json->mustSupport ?? []);
-            $exts = (array)($json->FIELD_MUST_SUPPORT_EXT ?? []);
+        if (isset($decoded->mustSupport)
+            || isset($decoded->_mustSupport)
+            || property_exists($decoded, self::FIELD_MUST_SUPPORT)
+            || property_exists($decoded, self::FIELD_MUST_SUPPORT_EXT)) {
+            $vals = (array)($decoded->mustSupport ?? []);
+            $exts = (array)($decoded->FIELD_MUST_SUPPORT_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -754,23 +754,23 @@ class FHIRDataRequirement extends FHIRElement
                 $type->addMustSupport(FHIRString::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->codeFilter) || property_exists($json, self::FIELD_CODE_FILTER)) {
-            if (is_object($json->codeFilter)) {
-                $vals = [$json->codeFilter];
+        if (isset($decoded->codeFilter) || property_exists($decoded, self::FIELD_CODE_FILTER)) {
+            if (is_object($decoded->codeFilter)) {
+                $vals = [$decoded->codeFilter];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CODE_FILTER, true);
             } else {
-                $vals = $json->codeFilter;
+                $vals = $decoded->codeFilter;
             }
             foreach($vals as $v) {
                 $type->addCodeFilter(FHIRDataRequirementCodeFilter::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->dateFilter) || property_exists($json, self::FIELD_DATE_FILTER)) {
-            if (is_object($json->dateFilter)) {
-                $vals = [$json->dateFilter];
+        if (isset($decoded->dateFilter) || property_exists($decoded, self::FIELD_DATE_FILTER)) {
+            if (is_object($decoded->dateFilter)) {
+                $vals = [$decoded->dateFilter];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DATE_FILTER, true);
             } else {
-                $vals = $json->dateFilter;
+                $vals = $decoded->dateFilter;
             }
             foreach($vals as $v) {
                 $type->addDateFilter(FHIRDataRequirementDateFilter::jsonUnserialize($v, $config));

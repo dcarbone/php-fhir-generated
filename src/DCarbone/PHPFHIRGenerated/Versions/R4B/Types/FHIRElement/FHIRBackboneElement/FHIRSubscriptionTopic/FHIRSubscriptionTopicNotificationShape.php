@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -522,13 +522,13 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicNotificationShape $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicNotificationShape
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -542,21 +542,21 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->resource)
-            || isset($json->_resource)
-            || property_exists($json, self::FIELD_RESOURCE)
-            || property_exists($json, self::FIELD_RESOURCE_EXT)) {
-            $v = $json->_resource ?? new \stdClass();
-            $v->value = $json->resource ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->resource)
+            || isset($decoded->_resource)
+            || property_exists($decoded, self::FIELD_RESOURCE)
+            || property_exists($decoded, self::FIELD_RESOURCE_EXT)) {
+            $v = $decoded->_resource ?? new \stdClass();
+            $v->value = $decoded->resource ?? null;
             $type->setResource(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->include)
-            || isset($json->_include)
-            || property_exists($json, self::FIELD_INCLUDE)
-            || property_exists($json, self::FIELD_INCLUDE_EXT)) {
-            $vals = (array)($json->include ?? []);
-            $exts = (array)($json->FIELD_INCLUDE_EXT ?? []);
+        if (isset($decoded->include)
+            || isset($decoded->_include)
+            || property_exists($decoded, self::FIELD_INCLUDE)
+            || property_exists($decoded, self::FIELD_INCLUDE_EXT)) {
+            $vals = (array)($decoded->include ?? []);
+            $exts = (array)($decoded->FIELD_INCLUDE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -568,12 +568,12 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
                 $type->addInclude(FHIRString::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->revInclude)
-            || isset($json->_revInclude)
-            || property_exists($json, self::FIELD_REV_INCLUDE)
-            || property_exists($json, self::FIELD_REV_INCLUDE_EXT)) {
-            $vals = (array)($json->revInclude ?? []);
-            $exts = (array)($json->FIELD_REV_INCLUDE_EXT ?? []);
+        if (isset($decoded->revInclude)
+            || isset($decoded->_revInclude)
+            || property_exists($decoded, self::FIELD_REV_INCLUDE)
+            || property_exists($decoded, self::FIELD_REV_INCLUDE_EXT)) {
+            $vals = (array)($decoded->revInclude ?? []);
+            $exts = (array)($decoded->FIELD_REV_INCLUDE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

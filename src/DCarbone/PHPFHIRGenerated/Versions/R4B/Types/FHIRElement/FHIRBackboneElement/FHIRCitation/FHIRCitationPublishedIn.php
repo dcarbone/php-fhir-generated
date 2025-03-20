@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -573,13 +573,13 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublishedIn $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublishedIn
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -593,46 +593,46 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_object($json->identifier)) {
-                $vals = [$json->identifier];
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_object($decoded->identifier)) {
+                $vals = [$decoded->identifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
             } else {
-                $vals = $json->identifier;
+                $vals = $decoded->identifier;
             }
             foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->title)
-            || isset($json->_title)
-            || property_exists($json, self::FIELD_TITLE)
-            || property_exists($json, self::FIELD_TITLE_EXT)) {
-            $v = $json->_title ?? new \stdClass();
-            $v->value = $json->title ?? null;
+        if (isset($decoded->title)
+            || isset($decoded->_title)
+            || property_exists($decoded, self::FIELD_TITLE)
+            || property_exists($decoded, self::FIELD_TITLE_EXT)) {
+            $v = $decoded->_title ?? new \stdClass();
+            $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->publisher) || property_exists($json, self::FIELD_PUBLISHER)) {
-            if (is_array($json->publisher)) {
-                $type->setPublisher(FHIRReference::jsonUnserialize(reset($json->publisher), $config));
+        if (isset($decoded->publisher) || property_exists($decoded, self::FIELD_PUBLISHER)) {
+            if (is_array($decoded->publisher)) {
+                $type->setPublisher(FHIRReference::jsonUnserialize(reset($decoded->publisher), $config));
             } else {
-                $type->setPublisher(FHIRReference::jsonUnserialize($json->publisher, $config));
+                $type->setPublisher(FHIRReference::jsonUnserialize($decoded->publisher, $config));
             }
         }
-        if (isset($json->publisherLocation)
-            || isset($json->_publisherLocation)
-            || property_exists($json, self::FIELD_PUBLISHER_LOCATION)
-            || property_exists($json, self::FIELD_PUBLISHER_LOCATION_EXT)) {
-            $v = $json->_publisherLocation ?? new \stdClass();
-            $v->value = $json->publisherLocation ?? null;
+        if (isset($decoded->publisherLocation)
+            || isset($decoded->_publisherLocation)
+            || property_exists($decoded, self::FIELD_PUBLISHER_LOCATION)
+            || property_exists($decoded, self::FIELD_PUBLISHER_LOCATION_EXT)) {
+            $v = $decoded->_publisherLocation ?? new \stdClass();
+            $v->value = $decoded->publisherLocation ?? null;
             $type->setPublisherLocation(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

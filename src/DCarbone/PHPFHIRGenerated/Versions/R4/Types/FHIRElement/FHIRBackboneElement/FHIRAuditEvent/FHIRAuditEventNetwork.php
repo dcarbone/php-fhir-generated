@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -340,13 +340,13 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -360,21 +360,21 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->address)
-            || isset($json->_address)
-            || property_exists($json, self::FIELD_ADDRESS)
-            || property_exists($json, self::FIELD_ADDRESS_EXT)) {
-            $v = $json->_address ?? new \stdClass();
-            $v->value = $json->address ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->address)
+            || isset($decoded->_address)
+            || property_exists($decoded, self::FIELD_ADDRESS)
+            || property_exists($decoded, self::FIELD_ADDRESS_EXT)) {
+            $v = $decoded->_address ?? new \stdClass();
+            $v->value = $decoded->address ?? null;
             $type->setAddress(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->type)
-            || isset($json->_type)
-            || property_exists($json, self::FIELD_TYPE)
-            || property_exists($json, self::FIELD_TYPE_EXT)) {
-            $v = $json->_type ?? new \stdClass();
-            $v->value = $json->type ?? null;
+        if (isset($decoded->type)
+            || isset($decoded->_type)
+            || property_exists($decoded, self::FIELD_TYPE)
+            || property_exists($decoded, self::FIELD_TYPE_EXT)) {
+            $v = $decoded->_type ?? new \stdClass();
+            $v->value = $decoded->type ?? null;
             $type->setType(FHIRAuditEventAgentNetworkType::jsonUnserialize($v, $config));
         }
         return $type;

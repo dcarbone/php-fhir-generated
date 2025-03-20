@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -262,13 +262,13 @@ class FHIRTestScriptAction2 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction2 $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction2
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -282,12 +282,12 @@ class FHIRTestScriptAction2 extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->operation) || property_exists($json, self::FIELD_OPERATION)) {
-            if (is_array($json->operation)) {
-                $type->setOperation(FHIRTestScriptOperation::jsonUnserialize(reset($json->operation), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->operation) || property_exists($decoded, self::FIELD_OPERATION)) {
+            if (is_array($decoded->operation)) {
+                $type->setOperation(FHIRTestScriptOperation::jsonUnserialize(reset($decoded->operation), $config));
             } else {
-                $type->setOperation(FHIRTestScriptOperation::jsonUnserialize($json->operation, $config));
+                $type->setOperation(FHIRTestScriptOperation::jsonUnserialize($decoded->operation, $config));
             }
         }
         return $type;

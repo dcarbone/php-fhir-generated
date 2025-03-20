@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -922,13 +922,13 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail1 $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail1
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -942,60 +942,60 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->productOrService) || property_exists($json, self::FIELD_PRODUCT_OR_SERVICE)) {
-            if (is_array($json->productOrService)) {
-                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize(reset($json->productOrService), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->productOrService) || property_exists($decoded, self::FIELD_PRODUCT_OR_SERVICE)) {
+            if (is_array($decoded->productOrService)) {
+                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize(reset($decoded->productOrService), $config));
             } else {
-                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize($json->productOrService, $config));
+                $type->setProductOrService(FHIRCodeableConcept::jsonUnserialize($decoded->productOrService, $config));
             }
         }
-        if (isset($json->modifier) || property_exists($json, self::FIELD_MODIFIER)) {
-            if (is_object($json->modifier)) {
-                $vals = [$json->modifier];
+        if (isset($decoded->modifier) || property_exists($decoded, self::FIELD_MODIFIER)) {
+            if (is_object($decoded->modifier)) {
+                $vals = [$decoded->modifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_MODIFIER, true);
             } else {
-                $vals = $json->modifier;
+                $vals = $decoded->modifier;
             }
             foreach($vals as $v) {
                 $type->addModifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
-            if (is_array($json->quantity)) {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+        if (isset($decoded->quantity) || property_exists($decoded, self::FIELD_QUANTITY)) {
+            if (is_array($decoded->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->quantity), $config));
             } else {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($decoded->quantity, $config));
             }
         }
-        if (isset($json->unitPrice) || property_exists($json, self::FIELD_UNIT_PRICE)) {
-            if (is_array($json->unitPrice)) {
-                $type->setUnitPrice(FHIRMoney::jsonUnserialize(reset($json->unitPrice), $config));
+        if (isset($decoded->unitPrice) || property_exists($decoded, self::FIELD_UNIT_PRICE)) {
+            if (is_array($decoded->unitPrice)) {
+                $type->setUnitPrice(FHIRMoney::jsonUnserialize(reset($decoded->unitPrice), $config));
             } else {
-                $type->setUnitPrice(FHIRMoney::jsonUnserialize($json->unitPrice, $config));
+                $type->setUnitPrice(FHIRMoney::jsonUnserialize($decoded->unitPrice, $config));
             }
         }
-        if (isset($json->factor)
-            || isset($json->_factor)
-            || property_exists($json, self::FIELD_FACTOR)
-            || property_exists($json, self::FIELD_FACTOR_EXT)) {
-            $v = $json->_factor ?? new \stdClass();
-            $v->value = $json->factor ?? null;
+        if (isset($decoded->factor)
+            || isset($decoded->_factor)
+            || property_exists($decoded, self::FIELD_FACTOR)
+            || property_exists($decoded, self::FIELD_FACTOR_EXT)) {
+            $v = $decoded->_factor ?? new \stdClass();
+            $v->value = $decoded->factor ?? null;
             $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->net) || property_exists($json, self::FIELD_NET)) {
-            if (is_array($json->net)) {
-                $type->setNet(FHIRMoney::jsonUnserialize(reset($json->net), $config));
+        if (isset($decoded->net) || property_exists($decoded, self::FIELD_NET)) {
+            if (is_array($decoded->net)) {
+                $type->setNet(FHIRMoney::jsonUnserialize(reset($decoded->net), $config));
             } else {
-                $type->setNet(FHIRMoney::jsonUnserialize($json->net, $config));
+                $type->setNet(FHIRMoney::jsonUnserialize($decoded->net, $config));
             }
         }
-        if (isset($json->noteNumber)
-            || isset($json->_noteNumber)
-            || property_exists($json, self::FIELD_NOTE_NUMBER)
-            || property_exists($json, self::FIELD_NOTE_NUMBER_EXT)) {
-            $vals = (array)($json->noteNumber ?? []);
-            $exts = (array)($json->FIELD_NOTE_NUMBER_EXT ?? []);
+        if (isset($decoded->noteNumber)
+            || isset($decoded->_noteNumber)
+            || property_exists($decoded, self::FIELD_NOTE_NUMBER)
+            || property_exists($decoded, self::FIELD_NOTE_NUMBER_EXT)) {
+            $vals = (array)($decoded->noteNumber ?? []);
+            $exts = (array)($decoded->FIELD_NOTE_NUMBER_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1007,23 +1007,23 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
                 $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->adjudication) || property_exists($json, self::FIELD_ADJUDICATION)) {
-            if (is_object($json->adjudication)) {
-                $vals = [$json->adjudication];
+        if (isset($decoded->adjudication) || property_exists($decoded, self::FIELD_ADJUDICATION)) {
+            if (is_object($decoded->adjudication)) {
+                $vals = [$decoded->adjudication];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ADJUDICATION, true);
             } else {
-                $vals = $json->adjudication;
+                $vals = $decoded->adjudication;
             }
             foreach($vals as $v) {
                 $type->addAdjudication(FHIRClaimResponseAdjudication::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->subDetail) || property_exists($json, self::FIELD_SUB_DETAIL)) {
-            if (is_object($json->subDetail)) {
-                $vals = [$json->subDetail];
+        if (isset($decoded->subDetail) || property_exists($decoded, self::FIELD_SUB_DETAIL)) {
+            if (is_object($decoded->subDetail)) {
+                $vals = [$decoded->subDetail];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUB_DETAIL, true);
             } else {
-                $vals = $json->subDetail;
+                $vals = $decoded->subDetail;
             }
             foreach($vals as $v) {
                 $type->addSubDetail(FHIRClaimResponseSubDetail1::jsonUnserialize($v, $config));

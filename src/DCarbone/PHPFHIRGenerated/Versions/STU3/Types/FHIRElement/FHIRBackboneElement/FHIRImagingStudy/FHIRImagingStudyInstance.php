@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -505,13 +505,13 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -525,37 +525,37 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->uid)
-            || isset($json->_uid)
-            || property_exists($json, self::FIELD_UID)
-            || property_exists($json, self::FIELD_UID_EXT)) {
-            $v = $json->_uid ?? new \stdClass();
-            $v->value = $json->uid ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->uid)
+            || isset($decoded->_uid)
+            || property_exists($decoded, self::FIELD_UID)
+            || property_exists($decoded, self::FIELD_UID_EXT)) {
+            $v = $decoded->_uid ?? new \stdClass();
+            $v->value = $decoded->uid ?? null;
             $type->setUid(FHIROid::jsonUnserialize($v, $config));
         }
-        if (isset($json->number)
-            || isset($json->_number)
-            || property_exists($json, self::FIELD_NUMBER)
-            || property_exists($json, self::FIELD_NUMBER_EXT)) {
-            $v = $json->_number ?? new \stdClass();
-            $v->value = $json->number ?? null;
+        if (isset($decoded->number)
+            || isset($decoded->_number)
+            || property_exists($decoded, self::FIELD_NUMBER)
+            || property_exists($decoded, self::FIELD_NUMBER_EXT)) {
+            $v = $decoded->_number ?? new \stdClass();
+            $v->value = $decoded->number ?? null;
             $type->setNumber(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->sopClass)
-            || isset($json->_sopClass)
-            || property_exists($json, self::FIELD_SOP_CLASS)
-            || property_exists($json, self::FIELD_SOP_CLASS_EXT)) {
-            $v = $json->_sopClass ?? new \stdClass();
-            $v->value = $json->sopClass ?? null;
+        if (isset($decoded->sopClass)
+            || isset($decoded->_sopClass)
+            || property_exists($decoded, self::FIELD_SOP_CLASS)
+            || property_exists($decoded, self::FIELD_SOP_CLASS_EXT)) {
+            $v = $decoded->_sopClass ?? new \stdClass();
+            $v->value = $decoded->sopClass ?? null;
             $type->setSopClass(FHIROid::jsonUnserialize($v, $config));
         }
-        if (isset($json->title)
-            || isset($json->_title)
-            || property_exists($json, self::FIELD_TITLE)
-            || property_exists($json, self::FIELD_TITLE_EXT)) {
-            $v = $json->_title ?? new \stdClass();
-            $v->value = $json->title ?? null;
+        if (isset($decoded->title)
+            || isset($decoded->_title)
+            || property_exists($decoded, self::FIELD_TITLE)
+            || property_exists($decoded, self::FIELD_TITLE_EXT)) {
+            $v = $decoded->_title ?? new \stdClass();
+            $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

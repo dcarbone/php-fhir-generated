@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -819,13 +819,13 @@ class FHIRVirtualServiceDetail extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -839,50 +839,50 @@ class FHIRVirtualServiceDetail extends FHIRDataType
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->channelType) || property_exists($json, self::FIELD_CHANNEL_TYPE)) {
-            if (is_array($json->channelType)) {
-                $type->setChannelType(FHIRCoding::jsonUnserialize(reset($json->channelType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->channelType) || property_exists($decoded, self::FIELD_CHANNEL_TYPE)) {
+            if (is_array($decoded->channelType)) {
+                $type->setChannelType(FHIRCoding::jsonUnserialize(reset($decoded->channelType), $config));
             } else {
-                $type->setChannelType(FHIRCoding::jsonUnserialize($json->channelType, $config));
+                $type->setChannelType(FHIRCoding::jsonUnserialize($decoded->channelType, $config));
             }
         }
-        if (isset($json->addressUrl)
-            || isset($json->_addressUrl)
-            || property_exists($json, self::FIELD_ADDRESS_URL)
-            || property_exists($json, self::FIELD_ADDRESS_URL_EXT)) {
-            $v = $json->_addressUrl ?? new \stdClass();
-            $v->value = $json->addressUrl ?? null;
+        if (isset($decoded->addressUrl)
+            || isset($decoded->_addressUrl)
+            || property_exists($decoded, self::FIELD_ADDRESS_URL)
+            || property_exists($decoded, self::FIELD_ADDRESS_URL_EXT)) {
+            $v = $decoded->_addressUrl ?? new \stdClass();
+            $v->value = $decoded->addressUrl ?? null;
             $type->setAddressUrl(FHIRUrl::jsonUnserialize($v, $config));
         }
-        if (isset($json->addressString)
-            || isset($json->_addressString)
-            || property_exists($json, self::FIELD_ADDRESS_STRING)
-            || property_exists($json, self::FIELD_ADDRESS_STRING_EXT)) {
-            $v = $json->_addressString ?? new \stdClass();
-            $v->value = $json->addressString ?? null;
+        if (isset($decoded->addressString)
+            || isset($decoded->_addressString)
+            || property_exists($decoded, self::FIELD_ADDRESS_STRING)
+            || property_exists($decoded, self::FIELD_ADDRESS_STRING_EXT)) {
+            $v = $decoded->_addressString ?? new \stdClass();
+            $v->value = $decoded->addressString ?? null;
             $type->setAddressString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->addressContactPoint) || property_exists($json, self::FIELD_ADDRESS_CONTACT_POINT)) {
-            if (is_array($json->addressContactPoint)) {
-                $type->setAddressContactPoint(FHIRContactPoint::jsonUnserialize(reset($json->addressContactPoint), $config));
+        if (isset($decoded->addressContactPoint) || property_exists($decoded, self::FIELD_ADDRESS_CONTACT_POINT)) {
+            if (is_array($decoded->addressContactPoint)) {
+                $type->setAddressContactPoint(FHIRContactPoint::jsonUnserialize(reset($decoded->addressContactPoint), $config));
             } else {
-                $type->setAddressContactPoint(FHIRContactPoint::jsonUnserialize($json->addressContactPoint, $config));
+                $type->setAddressContactPoint(FHIRContactPoint::jsonUnserialize($decoded->addressContactPoint, $config));
             }
         }
-        if (isset($json->addressExtendedContactDetail) || property_exists($json, self::FIELD_ADDRESS_EXTENDED_CONTACT_DETAIL)) {
-            if (is_array($json->addressExtendedContactDetail)) {
-                $type->setAddressExtendedContactDetail(FHIRExtendedContactDetail::jsonUnserialize(reset($json->addressExtendedContactDetail), $config));
+        if (isset($decoded->addressExtendedContactDetail) || property_exists($decoded, self::FIELD_ADDRESS_EXTENDED_CONTACT_DETAIL)) {
+            if (is_array($decoded->addressExtendedContactDetail)) {
+                $type->setAddressExtendedContactDetail(FHIRExtendedContactDetail::jsonUnserialize(reset($decoded->addressExtendedContactDetail), $config));
             } else {
-                $type->setAddressExtendedContactDetail(FHIRExtendedContactDetail::jsonUnserialize($json->addressExtendedContactDetail, $config));
+                $type->setAddressExtendedContactDetail(FHIRExtendedContactDetail::jsonUnserialize($decoded->addressExtendedContactDetail, $config));
             }
         }
-        if (isset($json->additionalInfo)
-            || isset($json->_additionalInfo)
-            || property_exists($json, self::FIELD_ADDITIONAL_INFO)
-            || property_exists($json, self::FIELD_ADDITIONAL_INFO_EXT)) {
-            $vals = (array)($json->additionalInfo ?? []);
-            $exts = (array)($json->FIELD_ADDITIONAL_INFO_EXT ?? []);
+        if (isset($decoded->additionalInfo)
+            || isset($decoded->_additionalInfo)
+            || property_exists($decoded, self::FIELD_ADDITIONAL_INFO)
+            || property_exists($decoded, self::FIELD_ADDITIONAL_INFO_EXT)) {
+            $vals = (array)($decoded->additionalInfo ?? []);
+            $exts = (array)($decoded->FIELD_ADDITIONAL_INFO_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -894,20 +894,20 @@ class FHIRVirtualServiceDetail extends FHIRDataType
                 $type->addAdditionalInfo(FHIRUrl::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->maxParticipants)
-            || isset($json->_maxParticipants)
-            || property_exists($json, self::FIELD_MAX_PARTICIPANTS)
-            || property_exists($json, self::FIELD_MAX_PARTICIPANTS_EXT)) {
-            $v = $json->_maxParticipants ?? new \stdClass();
-            $v->value = $json->maxParticipants ?? null;
+        if (isset($decoded->maxParticipants)
+            || isset($decoded->_maxParticipants)
+            || property_exists($decoded, self::FIELD_MAX_PARTICIPANTS)
+            || property_exists($decoded, self::FIELD_MAX_PARTICIPANTS_EXT)) {
+            $v = $decoded->_maxParticipants ?? new \stdClass();
+            $v->value = $decoded->maxParticipants ?? null;
             $type->setMaxParticipants(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->sessionKey)
-            || isset($json->_sessionKey)
-            || property_exists($json, self::FIELD_SESSION_KEY)
-            || property_exists($json, self::FIELD_SESSION_KEY_EXT)) {
-            $v = $json->_sessionKey ?? new \stdClass();
-            $v->value = $json->sessionKey ?? null;
+        if (isset($decoded->sessionKey)
+            || isset($decoded->_sessionKey)
+            || property_exists($decoded, self::FIELD_SESSION_KEY)
+            || property_exists($decoded, self::FIELD_SESSION_KEY_EXT)) {
+            $v = $decoded->_sessionKey ?? new \stdClass();
+            $v->value = $decoded->sessionKey ?? null;
             $type->setSessionKey(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

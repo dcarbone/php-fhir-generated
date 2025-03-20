@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -425,13 +425,13 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceProfile $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceProfile
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -445,28 +445,28 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->valueCoding) || property_exists($json, self::FIELD_VALUE_CODING)) {
-            if (is_array($json->valueCoding)) {
-                $type->setValueCoding(FHIRCoding::jsonUnserialize(reset($json->valueCoding), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->valueCoding) || property_exists($decoded, self::FIELD_VALUE_CODING)) {
+            if (is_array($decoded->valueCoding)) {
+                $type->setValueCoding(FHIRCoding::jsonUnserialize(reset($decoded->valueCoding), $config));
             } else {
-                $type->setValueCoding(FHIRCoding::jsonUnserialize($json->valueCoding, $config));
+                $type->setValueCoding(FHIRCoding::jsonUnserialize($decoded->valueCoding, $config));
             }
         }
-        if (isset($json->valueUri)
-            || isset($json->_valueUri)
-            || property_exists($json, self::FIELD_VALUE_URI)
-            || property_exists($json, self::FIELD_VALUE_URI_EXT)) {
-            $v = $json->_valueUri ?? new \stdClass();
-            $v->value = $json->valueUri ?? null;
+        if (isset($decoded->valueUri)
+            || isset($decoded->_valueUri)
+            || property_exists($decoded, self::FIELD_VALUE_URI)
+            || property_exists($decoded, self::FIELD_VALUE_URI_EXT)) {
+            $v = $decoded->_valueUri ?? new \stdClass();
+            $v->value = $decoded->valueUri ?? null;
             $type->setValueUri(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->valueCanonical)
-            || isset($json->_valueCanonical)
-            || property_exists($json, self::FIELD_VALUE_CANONICAL)
-            || property_exists($json, self::FIELD_VALUE_CANONICAL_EXT)) {
-            $v = $json->_valueCanonical ?? new \stdClass();
-            $v->value = $json->valueCanonical ?? null;
+        if (isset($decoded->valueCanonical)
+            || isset($decoded->_valueCanonical)
+            || property_exists($decoded, self::FIELD_VALUE_CANONICAL)
+            || property_exists($decoded, self::FIELD_VALUE_CANONICAL_EXT)) {
+            $v = $decoded->_valueCanonical ?? new \stdClass();
+            $v->value = $decoded->valueCanonical ?? null;
             $type->setValueCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
         return $type;

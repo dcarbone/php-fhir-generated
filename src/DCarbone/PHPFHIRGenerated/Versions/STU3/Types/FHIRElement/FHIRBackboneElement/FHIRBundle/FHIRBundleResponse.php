@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -571,13 +571,13 @@ class FHIRBundleResponse extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -591,42 +591,42 @@ class FHIRBundleResponse extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->status)
-            || isset($json->_status)
-            || property_exists($json, self::FIELD_STATUS)
-            || property_exists($json, self::FIELD_STATUS_EXT)) {
-            $v = $json->_status ?? new \stdClass();
-            $v->value = $json->status ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->status)
+            || isset($decoded->_status)
+            || property_exists($decoded, self::FIELD_STATUS)
+            || property_exists($decoded, self::FIELD_STATUS_EXT)) {
+            $v = $decoded->_status ?? new \stdClass();
+            $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->location)
-            || isset($json->_location)
-            || property_exists($json, self::FIELD_LOCATION)
-            || property_exists($json, self::FIELD_LOCATION_EXT)) {
-            $v = $json->_location ?? new \stdClass();
-            $v->value = $json->location ?? null;
+        if (isset($decoded->location)
+            || isset($decoded->_location)
+            || property_exists($decoded, self::FIELD_LOCATION)
+            || property_exists($decoded, self::FIELD_LOCATION_EXT)) {
+            $v = $decoded->_location ?? new \stdClass();
+            $v->value = $decoded->location ?? null;
             $type->setLocation(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->etag)
-            || isset($json->_etag)
-            || property_exists($json, self::FIELD_ETAG)
-            || property_exists($json, self::FIELD_ETAG_EXT)) {
-            $v = $json->_etag ?? new \stdClass();
-            $v->value = $json->etag ?? null;
+        if (isset($decoded->etag)
+            || isset($decoded->_etag)
+            || property_exists($decoded, self::FIELD_ETAG)
+            || property_exists($decoded, self::FIELD_ETAG_EXT)) {
+            $v = $decoded->_etag ?? new \stdClass();
+            $v->value = $decoded->etag ?? null;
             $type->setEtag(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->lastModified)
-            || isset($json->_lastModified)
-            || property_exists($json, self::FIELD_LAST_MODIFIED)
-            || property_exists($json, self::FIELD_LAST_MODIFIED_EXT)) {
-            $v = $json->_lastModified ?? new \stdClass();
-            $v->value = $json->lastModified ?? null;
+        if (isset($decoded->lastModified)
+            || isset($decoded->_lastModified)
+            || property_exists($decoded, self::FIELD_LAST_MODIFIED)
+            || property_exists($decoded, self::FIELD_LAST_MODIFIED_EXT)) {
+            $v = $decoded->_lastModified ?? new \stdClass();
+            $v->value = $decoded->lastModified ?? null;
             $type->setLastModified(FHIRInstant::jsonUnserialize($v, $config));
         }
-        if (isset($json->outcome)) {
-            $typeClassName = VersionTypeMap::mustGetContainedTypeClassnameFromJSON($json->outcome);
-            $v = $json->outcome;
+        if (isset($decoded->outcome)) {
+            $typeClassName = VersionTypeMap::mustGetContainedTypeClassnameFromJSON($decoded->outcome);
+            $v = $decoded->outcome;
             unset($v->resourceType);
             $type->setOutcome($typeClassName::jsonUnserialize($v, $config));
         }

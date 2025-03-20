@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -416,13 +416,13 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -436,29 +436,29 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type)
-            || isset($json->_type)
-            || property_exists($json, self::FIELD_TYPE)
-            || property_exists($json, self::FIELD_TYPE_EXT)) {
-            $v = $json->_type ?? new \stdClass();
-            $v->value = $json->type ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type)
+            || isset($decoded->_type)
+            || property_exists($decoded, self::FIELD_TYPE)
+            || property_exists($decoded, self::FIELD_TYPE_EXT)) {
+            $v = $decoded->_type ?? new \stdClass();
+            $v->value = $decoded->type ?? null;
             $type->setType(FHIRDeviceMetricCalibrationType::jsonUnserialize($v, $config));
         }
-        if (isset($json->state)
-            || isset($json->_state)
-            || property_exists($json, self::FIELD_STATE)
-            || property_exists($json, self::FIELD_STATE_EXT)) {
-            $v = $json->_state ?? new \stdClass();
-            $v->value = $json->state ?? null;
+        if (isset($decoded->state)
+            || isset($decoded->_state)
+            || property_exists($decoded, self::FIELD_STATE)
+            || property_exists($decoded, self::FIELD_STATE_EXT)) {
+            $v = $decoded->_state ?? new \stdClass();
+            $v->value = $decoded->state ?? null;
             $type->setState(FHIRDeviceMetricCalibrationState::jsonUnserialize($v, $config));
         }
-        if (isset($json->time)
-            || isset($json->_time)
-            || property_exists($json, self::FIELD_TIME)
-            || property_exists($json, self::FIELD_TIME_EXT)) {
-            $v = $json->_time ?? new \stdClass();
-            $v->value = $json->time ?? null;
+        if (isset($decoded->time)
+            || isset($decoded->_time)
+            || property_exists($decoded, self::FIELD_TIME)
+            || property_exists($decoded, self::FIELD_TIME_EXT)) {
+            $v = $decoded->_time ?? new \stdClass();
+            $v->value = $decoded->time ?? null;
             $type->setTime(FHIRInstant::jsonUnserialize($v, $config));
         }
         return $type;

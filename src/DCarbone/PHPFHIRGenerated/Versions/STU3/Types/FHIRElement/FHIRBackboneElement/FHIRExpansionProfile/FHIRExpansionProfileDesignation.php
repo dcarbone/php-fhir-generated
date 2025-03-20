@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -284,13 +284,13 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -304,19 +304,19 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->include) || property_exists($json, self::FIELD_INCLUDE)) {
-            if (is_array($json->include)) {
-                $type->setInclude(FHIRExpansionProfileInclude::jsonUnserialize(reset($json->include), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->include) || property_exists($decoded, self::FIELD_INCLUDE)) {
+            if (is_array($decoded->include)) {
+                $type->setInclude(FHIRExpansionProfileInclude::jsonUnserialize(reset($decoded->include), $config));
             } else {
-                $type->setInclude(FHIRExpansionProfileInclude::jsonUnserialize($json->include, $config));
+                $type->setInclude(FHIRExpansionProfileInclude::jsonUnserialize($decoded->include, $config));
             }
         }
-        if (isset($json->exclude) || property_exists($json, self::FIELD_EXCLUDE)) {
-            if (is_array($json->exclude)) {
-                $type->setExclude(FHIRExpansionProfileExclude::jsonUnserialize(reset($json->exclude), $config));
+        if (isset($decoded->exclude) || property_exists($decoded, self::FIELD_EXCLUDE)) {
+            if (is_array($decoded->exclude)) {
+                $type->setExclude(FHIRExpansionProfileExclude::jsonUnserialize(reset($decoded->exclude), $config));
             } else {
-                $type->setExclude(FHIRExpansionProfileExclude::jsonUnserialize($json->exclude, $config));
+                $type->setExclude(FHIRExpansionProfileExclude::jsonUnserialize($decoded->exclude, $config));
             }
         }
         return $type;

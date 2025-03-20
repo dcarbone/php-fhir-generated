@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -758,13 +758,13 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -781,44 +781,44 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->class) || property_exists($json, self::FIELD_CLASS)) {
-            if (is_array($json->class)) {
-                $type->setClass(FHIRCodeableConcept::jsonUnserialize(reset($json->class), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->class) || property_exists($decoded, self::FIELD_CLASS)) {
+            if (is_array($decoded->class)) {
+                $type->setClass(FHIRCodeableConcept::jsonUnserialize(reset($decoded->class), $config));
             } else {
-                $type->setClass(FHIRCodeableConcept::jsonUnserialize($json->class, $config));
+                $type->setClass(FHIRCodeableConcept::jsonUnserialize($decoded->class, $config));
             }
         }
-        if (isset($json->geometry) || property_exists($json, self::FIELD_GEOMETRY)) {
-            if (is_array($json->geometry)) {
-                $type->setGeometry(FHIRCodeableConcept::jsonUnserialize(reset($json->geometry), $config));
+        if (isset($decoded->geometry) || property_exists($decoded, self::FIELD_GEOMETRY)) {
+            if (is_array($decoded->geometry)) {
+                $type->setGeometry(FHIRCodeableConcept::jsonUnserialize(reset($decoded->geometry), $config));
             } else {
-                $type->setGeometry(FHIRCodeableConcept::jsonUnserialize($json->geometry, $config));
+                $type->setGeometry(FHIRCodeableConcept::jsonUnserialize($decoded->geometry, $config));
             }
         }
-        if (isset($json->copolymerConnectivity) || property_exists($json, self::FIELD_COPOLYMER_CONNECTIVITY)) {
-            if (is_object($json->copolymerConnectivity)) {
-                $vals = [$json->copolymerConnectivity];
+        if (isset($decoded->copolymerConnectivity) || property_exists($decoded, self::FIELD_COPOLYMER_CONNECTIVITY)) {
+            if (is_object($decoded->copolymerConnectivity)) {
+                $vals = [$decoded->copolymerConnectivity];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_COPOLYMER_CONNECTIVITY, true);
             } else {
-                $vals = $json->copolymerConnectivity;
+                $vals = $decoded->copolymerConnectivity;
             }
             foreach($vals as $v) {
                 $type->addCopolymerConnectivity(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->modification)
-            || isset($json->_modification)
-            || property_exists($json, self::FIELD_MODIFICATION)
-            || property_exists($json, self::FIELD_MODIFICATION_EXT)) {
-            $vals = (array)($json->modification ?? []);
-            $exts = (array)($json->FIELD_MODIFICATION_EXT ?? []);
+        if (isset($decoded->modification)
+            || isset($decoded->_modification)
+            || property_exists($decoded, self::FIELD_MODIFICATION)
+            || property_exists($decoded, self::FIELD_MODIFICATION_EXT)) {
+            $vals = (array)($decoded->modification ?? []);
+            $exts = (array)($decoded->FIELD_MODIFICATION_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -830,23 +830,23 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
                 $type->addModification(FHIRString::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->monomerSet) || property_exists($json, self::FIELD_MONOMER_SET)) {
-            if (is_object($json->monomerSet)) {
-                $vals = [$json->monomerSet];
+        if (isset($decoded->monomerSet) || property_exists($decoded, self::FIELD_MONOMER_SET)) {
+            if (is_object($decoded->monomerSet)) {
+                $vals = [$decoded->monomerSet];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_MONOMER_SET, true);
             } else {
-                $vals = $json->monomerSet;
+                $vals = $decoded->monomerSet;
             }
             foreach($vals as $v) {
                 $type->addMonomerSet(FHIRSubstancePolymerMonomerSet::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->repeat) || property_exists($json, self::FIELD_REPEAT)) {
-            if (is_object($json->repeat)) {
-                $vals = [$json->repeat];
+        if (isset($decoded->repeat) || property_exists($decoded, self::FIELD_REPEAT)) {
+            if (is_object($decoded->repeat)) {
+                $vals = [$decoded->repeat];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_REPEAT, true);
             } else {
-                $vals = $json->repeat;
+                $vals = $decoded->repeat;
             }
             foreach($vals as $v) {
                 $type->addRepeat(FHIRSubstancePolymerRepeat::jsonUnserialize($v, $config));

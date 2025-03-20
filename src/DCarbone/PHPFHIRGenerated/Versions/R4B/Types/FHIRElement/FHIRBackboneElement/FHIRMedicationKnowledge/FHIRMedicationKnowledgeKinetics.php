@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -458,13 +458,13 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -478,34 +478,34 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->areaUnderCurve) || property_exists($json, self::FIELD_AREA_UNDER_CURVE)) {
-            if (is_object($json->areaUnderCurve)) {
-                $vals = [$json->areaUnderCurve];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->areaUnderCurve) || property_exists($decoded, self::FIELD_AREA_UNDER_CURVE)) {
+            if (is_object($decoded->areaUnderCurve)) {
+                $vals = [$decoded->areaUnderCurve];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_AREA_UNDER_CURVE, true);
             } else {
-                $vals = $json->areaUnderCurve;
+                $vals = $decoded->areaUnderCurve;
             }
             foreach($vals as $v) {
                 $type->addAreaUnderCurve(FHIRQuantity::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->lethalDose50) || property_exists($json, self::FIELD_LETHAL_DOSE_50)) {
-            if (is_object($json->lethalDose50)) {
-                $vals = [$json->lethalDose50];
+        if (isset($decoded->lethalDose50) || property_exists($decoded, self::FIELD_LETHAL_DOSE_50)) {
+            if (is_object($decoded->lethalDose50)) {
+                $vals = [$decoded->lethalDose50];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_LETHAL_DOSE_50, true);
             } else {
-                $vals = $json->lethalDose50;
+                $vals = $decoded->lethalDose50;
             }
             foreach($vals as $v) {
                 $type->addLethalDose50(FHIRQuantity::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->halfLifePeriod) || property_exists($json, self::FIELD_HALF_LIFE_PERIOD)) {
-            if (is_array($json->halfLifePeriod)) {
-                $type->setHalfLifePeriod(FHIRDuration::jsonUnserialize(reset($json->halfLifePeriod), $config));
+        if (isset($decoded->halfLifePeriod) || property_exists($decoded, self::FIELD_HALF_LIFE_PERIOD)) {
+            if (is_array($decoded->halfLifePeriod)) {
+                $type->setHalfLifePeriod(FHIRDuration::jsonUnserialize(reset($decoded->halfLifePeriod), $config));
             } else {
-                $type->setHalfLifePeriod(FHIRDuration::jsonUnserialize($json->halfLifePeriod, $config));
+                $type->setHalfLifePeriod(FHIRDuration::jsonUnserialize($decoded->halfLifePeriod, $config));
             }
         }
         return $type;

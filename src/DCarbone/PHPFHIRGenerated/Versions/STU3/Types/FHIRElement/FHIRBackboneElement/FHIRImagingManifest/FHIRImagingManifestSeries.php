@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -458,13 +458,13 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -478,32 +478,32 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->uid)
-            || isset($json->_uid)
-            || property_exists($json, self::FIELD_UID)
-            || property_exists($json, self::FIELD_UID_EXT)) {
-            $v = $json->_uid ?? new \stdClass();
-            $v->value = $json->uid ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->uid)
+            || isset($decoded->_uid)
+            || property_exists($decoded, self::FIELD_UID)
+            || property_exists($decoded, self::FIELD_UID_EXT)) {
+            $v = $decoded->_uid ?? new \stdClass();
+            $v->value = $decoded->uid ?? null;
             $type->setUid(FHIROid::jsonUnserialize($v, $config));
         }
-        if (isset($json->endpoint) || property_exists($json, self::FIELD_ENDPOINT)) {
-            if (is_object($json->endpoint)) {
-                $vals = [$json->endpoint];
+        if (isset($decoded->endpoint) || property_exists($decoded, self::FIELD_ENDPOINT)) {
+            if (is_object($decoded->endpoint)) {
+                $vals = [$decoded->endpoint];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ENDPOINT, true);
             } else {
-                $vals = $json->endpoint;
+                $vals = $decoded->endpoint;
             }
             foreach($vals as $v) {
                 $type->addEndpoint(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->instance) || property_exists($json, self::FIELD_INSTANCE)) {
-            if (is_object($json->instance)) {
-                $vals = [$json->instance];
+        if (isset($decoded->instance) || property_exists($decoded, self::FIELD_INSTANCE)) {
+            if (is_object($decoded->instance)) {
+                $vals = [$decoded->instance];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_INSTANCE, true);
             } else {
-                $vals = $json->instance;
+                $vals = $decoded->instance;
             }
             foreach($vals as $v) {
                 $type->addInstance(FHIRImagingManifestInstance::jsonUnserialize($v, $config));

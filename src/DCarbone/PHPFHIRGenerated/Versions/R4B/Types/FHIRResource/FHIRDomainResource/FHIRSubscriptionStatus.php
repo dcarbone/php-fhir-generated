@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -858,13 +858,13 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubscriptionStatus $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubscriptionStatus
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -881,69 +881,69 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->status)
-            || isset($json->_status)
-            || property_exists($json, self::FIELD_STATUS)
-            || property_exists($json, self::FIELD_STATUS_EXT)) {
-            $v = $json->_status ?? new \stdClass();
-            $v->value = $json->status ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->status)
+            || isset($decoded->_status)
+            || property_exists($decoded, self::FIELD_STATUS)
+            || property_exists($decoded, self::FIELD_STATUS_EXT)) {
+            $v = $decoded->_status ?? new \stdClass();
+            $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRSubscriptionStatusCodes::jsonUnserialize($v, $config));
         }
-        if (isset($json->type)
-            || isset($json->_type)
-            || property_exists($json, self::FIELD_TYPE)
-            || property_exists($json, self::FIELD_TYPE_EXT)) {
-            $v = $json->_type ?? new \stdClass();
-            $v->value = $json->type ?? null;
+        if (isset($decoded->type)
+            || isset($decoded->_type)
+            || property_exists($decoded, self::FIELD_TYPE)
+            || property_exists($decoded, self::FIELD_TYPE_EXT)) {
+            $v = $decoded->_type ?? new \stdClass();
+            $v->value = $decoded->type ?? null;
             $type->setType(FHIRSubscriptionNotificationType::jsonUnserialize($v, $config));
         }
-        if (isset($json->eventsSinceSubscriptionStart)
-            || isset($json->_eventsSinceSubscriptionStart)
-            || property_exists($json, self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START)
-            || property_exists($json, self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START_EXT)) {
-            $v = $json->_eventsSinceSubscriptionStart ?? new \stdClass();
-            $v->value = $json->eventsSinceSubscriptionStart ?? null;
+        if (isset($decoded->eventsSinceSubscriptionStart)
+            || isset($decoded->_eventsSinceSubscriptionStart)
+            || property_exists($decoded, self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START)
+            || property_exists($decoded, self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START_EXT)) {
+            $v = $decoded->_eventsSinceSubscriptionStart ?? new \stdClass();
+            $v->value = $decoded->eventsSinceSubscriptionStart ?? null;
             $type->setEventsSinceSubscriptionStart(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->notificationEvent) || property_exists($json, self::FIELD_NOTIFICATION_EVENT)) {
-            if (is_object($json->notificationEvent)) {
-                $vals = [$json->notificationEvent];
+        if (isset($decoded->notificationEvent) || property_exists($decoded, self::FIELD_NOTIFICATION_EVENT)) {
+            if (is_object($decoded->notificationEvent)) {
+                $vals = [$decoded->notificationEvent];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTIFICATION_EVENT, true);
             } else {
-                $vals = $json->notificationEvent;
+                $vals = $decoded->notificationEvent;
             }
             foreach($vals as $v) {
                 $type->addNotificationEvent(FHIRSubscriptionStatusNotificationEvent::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->subscription) || property_exists($json, self::FIELD_SUBSCRIPTION)) {
-            if (is_array($json->subscription)) {
-                $type->setSubscription(FHIRReference::jsonUnserialize(reset($json->subscription), $config));
+        if (isset($decoded->subscription) || property_exists($decoded, self::FIELD_SUBSCRIPTION)) {
+            if (is_array($decoded->subscription)) {
+                $type->setSubscription(FHIRReference::jsonUnserialize(reset($decoded->subscription), $config));
             } else {
-                $type->setSubscription(FHIRReference::jsonUnserialize($json->subscription, $config));
+                $type->setSubscription(FHIRReference::jsonUnserialize($decoded->subscription, $config));
             }
         }
-        if (isset($json->topic)
-            || isset($json->_topic)
-            || property_exists($json, self::FIELD_TOPIC)
-            || property_exists($json, self::FIELD_TOPIC_EXT)) {
-            $v = $json->_topic ?? new \stdClass();
-            $v->value = $json->topic ?? null;
+        if (isset($decoded->topic)
+            || isset($decoded->_topic)
+            || property_exists($decoded, self::FIELD_TOPIC)
+            || property_exists($decoded, self::FIELD_TOPIC_EXT)) {
+            $v = $decoded->_topic ?? new \stdClass();
+            $v->value = $decoded->topic ?? null;
             $type->setTopic(FHIRCanonical::jsonUnserialize($v, $config));
         }
-        if (isset($json->error) || property_exists($json, self::FIELD_ERROR)) {
-            if (is_object($json->error)) {
-                $vals = [$json->error];
+        if (isset($decoded->error) || property_exists($decoded, self::FIELD_ERROR)) {
+            if (is_object($decoded->error)) {
+                $vals = [$decoded->error];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ERROR, true);
             } else {
-                $vals = $json->error;
+                $vals = $decoded->error;
             }
             foreach($vals as $v) {
                 $type->addError(FHIRCodeableConcept::jsonUnserialize($v, $config));

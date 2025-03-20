@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -535,13 +535,13 @@ class FHIRLinkage extends FHIRDomainResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRLinkage $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRLinkage
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -558,34 +558,34 @@ class FHIRLinkage extends FHIRDomainResource implements VersionContainedTypeInte
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->active)
-            || isset($json->_active)
-            || property_exists($json, self::FIELD_ACTIVE)
-            || property_exists($json, self::FIELD_ACTIVE_EXT)) {
-            $v = $json->_active ?? new \stdClass();
-            $v->value = $json->active ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->active)
+            || isset($decoded->_active)
+            || property_exists($decoded, self::FIELD_ACTIVE)
+            || property_exists($decoded, self::FIELD_ACTIVE_EXT)) {
+            $v = $decoded->_active ?? new \stdClass();
+            $v->value = $decoded->active ?? null;
             $type->setActive(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->author) || property_exists($json, self::FIELD_AUTHOR)) {
-            if (is_array($json->author)) {
-                $type->setAuthor(FHIRReference::jsonUnserialize(reset($json->author), $config));
+        if (isset($decoded->author) || property_exists($decoded, self::FIELD_AUTHOR)) {
+            if (is_array($decoded->author)) {
+                $type->setAuthor(FHIRReference::jsonUnserialize(reset($decoded->author), $config));
             } else {
-                $type->setAuthor(FHIRReference::jsonUnserialize($json->author, $config));
+                $type->setAuthor(FHIRReference::jsonUnserialize($decoded->author, $config));
             }
         }
-        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
-            if (is_object($json->item)) {
-                $vals = [$json->item];
+        if (isset($decoded->item) || property_exists($decoded, self::FIELD_ITEM)) {
+            if (is_object($decoded->item)) {
+                $vals = [$decoded->item];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ITEM, true);
             } else {
-                $vals = $json->item;
+                $vals = $decoded->item;
             }
             foreach($vals as $v) {
                 $type->addItem(FHIRLinkageItem::jsonUnserialize($v, $config));

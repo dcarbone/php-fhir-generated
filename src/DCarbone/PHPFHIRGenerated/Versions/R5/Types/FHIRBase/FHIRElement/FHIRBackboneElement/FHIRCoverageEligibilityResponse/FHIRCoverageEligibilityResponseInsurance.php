@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -496,13 +496,13 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -516,35 +516,35 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->coverage) || property_exists($json, self::FIELD_COVERAGE)) {
-            if (is_array($json->coverage)) {
-                $type->setCoverage(FHIRReference::jsonUnserialize(reset($json->coverage), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->coverage) || property_exists($decoded, self::FIELD_COVERAGE)) {
+            if (is_array($decoded->coverage)) {
+                $type->setCoverage(FHIRReference::jsonUnserialize(reset($decoded->coverage), $config));
             } else {
-                $type->setCoverage(FHIRReference::jsonUnserialize($json->coverage, $config));
+                $type->setCoverage(FHIRReference::jsonUnserialize($decoded->coverage, $config));
             }
         }
-        if (isset($json->inforce)
-            || isset($json->_inforce)
-            || property_exists($json, self::FIELD_INFORCE)
-            || property_exists($json, self::FIELD_INFORCE_EXT)) {
-            $v = $json->_inforce ?? new \stdClass();
-            $v->value = $json->inforce ?? null;
+        if (isset($decoded->inforce)
+            || isset($decoded->_inforce)
+            || property_exists($decoded, self::FIELD_INFORCE)
+            || property_exists($decoded, self::FIELD_INFORCE_EXT)) {
+            $v = $decoded->_inforce ?? new \stdClass();
+            $v->value = $decoded->inforce ?? null;
             $type->setInforce(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->benefitPeriod) || property_exists($json, self::FIELD_BENEFIT_PERIOD)) {
-            if (is_array($json->benefitPeriod)) {
-                $type->setBenefitPeriod(FHIRPeriod::jsonUnserialize(reset($json->benefitPeriod), $config));
+        if (isset($decoded->benefitPeriod) || property_exists($decoded, self::FIELD_BENEFIT_PERIOD)) {
+            if (is_array($decoded->benefitPeriod)) {
+                $type->setBenefitPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->benefitPeriod), $config));
             } else {
-                $type->setBenefitPeriod(FHIRPeriod::jsonUnserialize($json->benefitPeriod, $config));
+                $type->setBenefitPeriod(FHIRPeriod::jsonUnserialize($decoded->benefitPeriod, $config));
             }
         }
-        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
-            if (is_object($json->item)) {
-                $vals = [$json->item];
+        if (isset($decoded->item) || property_exists($decoded, self::FIELD_ITEM)) {
+            if (is_object($decoded->item)) {
+                $vals = [$decoded->item];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ITEM, true);
             } else {
-                $vals = $json->item;
+                $vals = $decoded->item;
             }
             foreach($vals as $v) {
                 $type->addItem(FHIRCoverageEligibilityResponseItem::jsonUnserialize($v, $config));

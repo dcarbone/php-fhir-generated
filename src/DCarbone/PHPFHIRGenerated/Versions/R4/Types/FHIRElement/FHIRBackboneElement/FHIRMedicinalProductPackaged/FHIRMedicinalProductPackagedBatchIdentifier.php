@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -308,13 +308,13 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -328,19 +328,19 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->outerPackaging) || property_exists($json, self::FIELD_OUTER_PACKAGING)) {
-            if (is_array($json->outerPackaging)) {
-                $type->setOuterPackaging(FHIRIdentifier::jsonUnserialize(reset($json->outerPackaging), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->outerPackaging) || property_exists($decoded, self::FIELD_OUTER_PACKAGING)) {
+            if (is_array($decoded->outerPackaging)) {
+                $type->setOuterPackaging(FHIRIdentifier::jsonUnserialize(reset($decoded->outerPackaging), $config));
             } else {
-                $type->setOuterPackaging(FHIRIdentifier::jsonUnserialize($json->outerPackaging, $config));
+                $type->setOuterPackaging(FHIRIdentifier::jsonUnserialize($decoded->outerPackaging, $config));
             }
         }
-        if (isset($json->immediatePackaging) || property_exists($json, self::FIELD_IMMEDIATE_PACKAGING)) {
-            if (is_array($json->immediatePackaging)) {
-                $type->setImmediatePackaging(FHIRIdentifier::jsonUnserialize(reset($json->immediatePackaging), $config));
+        if (isset($decoded->immediatePackaging) || property_exists($decoded, self::FIELD_IMMEDIATE_PACKAGING)) {
+            if (is_array($decoded->immediatePackaging)) {
+                $type->setImmediatePackaging(FHIRIdentifier::jsonUnserialize(reset($decoded->immediatePackaging), $config));
             } else {
-                $type->setImmediatePackaging(FHIRIdentifier::jsonUnserialize($json->immediatePackaging, $config));
+                $type->setImmediatePackaging(FHIRIdentifier::jsonUnserialize($decoded->immediatePackaging, $config));
             }
         }
         return $type;

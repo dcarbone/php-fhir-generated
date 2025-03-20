@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -328,13 +328,13 @@ class FHIRBackboneType extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -348,13 +348,13 @@ class FHIRBackboneType extends FHIRDataType
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->modifierExtension) || property_exists($json, self::FIELD_MODIFIER_EXTENSION)) {
-            if (is_object($json->modifierExtension)) {
-                $vals = [$json->modifierExtension];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->modifierExtension) || property_exists($decoded, self::FIELD_MODIFIER_EXTENSION)) {
+            if (is_object($decoded->modifierExtension)) {
+                $vals = [$decoded->modifierExtension];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_MODIFIER_EXTENSION, true);
             } else {
-                $vals = $json->modifierExtension;
+                $vals = $decoded->modifierExtension;
             }
             foreach($vals as $v) {
                 $type->addModifierExtension(FHIRExtension::jsonUnserialize($v, $config));

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -418,13 +418,13 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -438,33 +438,33 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->schedule) || property_exists($json, self::FIELD_SCHEDULE)) {
-            if (is_array($json->schedule)) {
-                $type->setSchedule(FHIRTiming::jsonUnserialize(reset($json->schedule), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->schedule) || property_exists($decoded, self::FIELD_SCHEDULE)) {
+            if (is_array($decoded->schedule)) {
+                $type->setSchedule(FHIRTiming::jsonUnserialize(reset($decoded->schedule), $config));
             } else {
-                $type->setSchedule(FHIRTiming::jsonUnserialize($json->schedule, $config));
+                $type->setSchedule(FHIRTiming::jsonUnserialize($decoded->schedule, $config));
             }
         }
-        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
-            if (is_array($json->quantity)) {
-                $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize(reset($json->quantity), $config));
+        if (isset($decoded->quantity) || property_exists($decoded, self::FIELD_QUANTITY)) {
+            if (is_array($decoded->quantity)) {
+                $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize(reset($decoded->quantity), $config));
             } else {
-                $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize($json->quantity, $config));
+                $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize($decoded->quantity, $config));
             }
         }
-        if (isset($json->rateQuantity) || property_exists($json, self::FIELD_RATE_QUANTITY)) {
-            if (is_array($json->rateQuantity)) {
-                $type->setRateQuantity(FHIRSimpleQuantity::jsonUnserialize(reset($json->rateQuantity), $config));
+        if (isset($decoded->rateQuantity) || property_exists($decoded, self::FIELD_RATE_QUANTITY)) {
+            if (is_array($decoded->rateQuantity)) {
+                $type->setRateQuantity(FHIRSimpleQuantity::jsonUnserialize(reset($decoded->rateQuantity), $config));
             } else {
-                $type->setRateQuantity(FHIRSimpleQuantity::jsonUnserialize($json->rateQuantity, $config));
+                $type->setRateQuantity(FHIRSimpleQuantity::jsonUnserialize($decoded->rateQuantity, $config));
             }
         }
-        if (isset($json->rateRatio) || property_exists($json, self::FIELD_RATE_RATIO)) {
-            if (is_array($json->rateRatio)) {
-                $type->setRateRatio(FHIRRatio::jsonUnserialize(reset($json->rateRatio), $config));
+        if (isset($decoded->rateRatio) || property_exists($decoded, self::FIELD_RATE_RATIO)) {
+            if (is_array($decoded->rateRatio)) {
+                $type->setRateRatio(FHIRRatio::jsonUnserialize(reset($decoded->rateRatio), $config));
             } else {
-                $type->setRateRatio(FHIRRatio::jsonUnserialize($json->rateRatio, $config));
+                $type->setRateRatio(FHIRRatio::jsonUnserialize($decoded->rateRatio, $config));
             }
         }
         return $type;

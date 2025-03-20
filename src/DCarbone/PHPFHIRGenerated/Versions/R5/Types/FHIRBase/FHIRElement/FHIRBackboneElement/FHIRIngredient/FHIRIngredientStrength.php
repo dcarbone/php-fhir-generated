@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1256,13 +1256,13 @@ class FHIRIngredientStrength extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1276,111 +1276,111 @@ class FHIRIngredientStrength extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->presentationRatio) || property_exists($json, self::FIELD_PRESENTATION_RATIO)) {
-            if (is_array($json->presentationRatio)) {
-                $type->setPresentationRatio(FHIRRatio::jsonUnserialize(reset($json->presentationRatio), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->presentationRatio) || property_exists($decoded, self::FIELD_PRESENTATION_RATIO)) {
+            if (is_array($decoded->presentationRatio)) {
+                $type->setPresentationRatio(FHIRRatio::jsonUnserialize(reset($decoded->presentationRatio), $config));
             } else {
-                $type->setPresentationRatio(FHIRRatio::jsonUnserialize($json->presentationRatio, $config));
+                $type->setPresentationRatio(FHIRRatio::jsonUnserialize($decoded->presentationRatio, $config));
             }
         }
-        if (isset($json->presentationRatioRange) || property_exists($json, self::FIELD_PRESENTATION_RATIO_RANGE)) {
-            if (is_array($json->presentationRatioRange)) {
-                $type->setPresentationRatioRange(FHIRRatioRange::jsonUnserialize(reset($json->presentationRatioRange), $config));
+        if (isset($decoded->presentationRatioRange) || property_exists($decoded, self::FIELD_PRESENTATION_RATIO_RANGE)) {
+            if (is_array($decoded->presentationRatioRange)) {
+                $type->setPresentationRatioRange(FHIRRatioRange::jsonUnserialize(reset($decoded->presentationRatioRange), $config));
             } else {
-                $type->setPresentationRatioRange(FHIRRatioRange::jsonUnserialize($json->presentationRatioRange, $config));
+                $type->setPresentationRatioRange(FHIRRatioRange::jsonUnserialize($decoded->presentationRatioRange, $config));
             }
         }
-        if (isset($json->presentationCodeableConcept) || property_exists($json, self::FIELD_PRESENTATION_CODEABLE_CONCEPT)) {
-            if (is_array($json->presentationCodeableConcept)) {
-                $type->setPresentationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->presentationCodeableConcept), $config));
+        if (isset($decoded->presentationCodeableConcept) || property_exists($decoded, self::FIELD_PRESENTATION_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->presentationCodeableConcept)) {
+                $type->setPresentationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->presentationCodeableConcept), $config));
             } else {
-                $type->setPresentationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->presentationCodeableConcept, $config));
+                $type->setPresentationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->presentationCodeableConcept, $config));
             }
         }
-        if (isset($json->presentationQuantity) || property_exists($json, self::FIELD_PRESENTATION_QUANTITY)) {
-            if (is_array($json->presentationQuantity)) {
-                $type->setPresentationQuantity(FHIRQuantity::jsonUnserialize(reset($json->presentationQuantity), $config));
+        if (isset($decoded->presentationQuantity) || property_exists($decoded, self::FIELD_PRESENTATION_QUANTITY)) {
+            if (is_array($decoded->presentationQuantity)) {
+                $type->setPresentationQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->presentationQuantity), $config));
             } else {
-                $type->setPresentationQuantity(FHIRQuantity::jsonUnserialize($json->presentationQuantity, $config));
+                $type->setPresentationQuantity(FHIRQuantity::jsonUnserialize($decoded->presentationQuantity, $config));
             }
         }
-        if (isset($json->textPresentation)
-            || isset($json->_textPresentation)
-            || property_exists($json, self::FIELD_TEXT_PRESENTATION)
-            || property_exists($json, self::FIELD_TEXT_PRESENTATION_EXT)) {
-            $v = $json->_textPresentation ?? new \stdClass();
-            $v->value = $json->textPresentation ?? null;
+        if (isset($decoded->textPresentation)
+            || isset($decoded->_textPresentation)
+            || property_exists($decoded, self::FIELD_TEXT_PRESENTATION)
+            || property_exists($decoded, self::FIELD_TEXT_PRESENTATION_EXT)) {
+            $v = $decoded->_textPresentation ?? new \stdClass();
+            $v->value = $decoded->textPresentation ?? null;
             $type->setTextPresentation(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->concentrationRatio) || property_exists($json, self::FIELD_CONCENTRATION_RATIO)) {
-            if (is_array($json->concentrationRatio)) {
-                $type->setConcentrationRatio(FHIRRatio::jsonUnserialize(reset($json->concentrationRatio), $config));
+        if (isset($decoded->concentrationRatio) || property_exists($decoded, self::FIELD_CONCENTRATION_RATIO)) {
+            if (is_array($decoded->concentrationRatio)) {
+                $type->setConcentrationRatio(FHIRRatio::jsonUnserialize(reset($decoded->concentrationRatio), $config));
             } else {
-                $type->setConcentrationRatio(FHIRRatio::jsonUnserialize($json->concentrationRatio, $config));
+                $type->setConcentrationRatio(FHIRRatio::jsonUnserialize($decoded->concentrationRatio, $config));
             }
         }
-        if (isset($json->concentrationRatioRange) || property_exists($json, self::FIELD_CONCENTRATION_RATIO_RANGE)) {
-            if (is_array($json->concentrationRatioRange)) {
-                $type->setConcentrationRatioRange(FHIRRatioRange::jsonUnserialize(reset($json->concentrationRatioRange), $config));
+        if (isset($decoded->concentrationRatioRange) || property_exists($decoded, self::FIELD_CONCENTRATION_RATIO_RANGE)) {
+            if (is_array($decoded->concentrationRatioRange)) {
+                $type->setConcentrationRatioRange(FHIRRatioRange::jsonUnserialize(reset($decoded->concentrationRatioRange), $config));
             } else {
-                $type->setConcentrationRatioRange(FHIRRatioRange::jsonUnserialize($json->concentrationRatioRange, $config));
+                $type->setConcentrationRatioRange(FHIRRatioRange::jsonUnserialize($decoded->concentrationRatioRange, $config));
             }
         }
-        if (isset($json->concentrationCodeableConcept) || property_exists($json, self::FIELD_CONCENTRATION_CODEABLE_CONCEPT)) {
-            if (is_array($json->concentrationCodeableConcept)) {
-                $type->setConcentrationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->concentrationCodeableConcept), $config));
+        if (isset($decoded->concentrationCodeableConcept) || property_exists($decoded, self::FIELD_CONCENTRATION_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->concentrationCodeableConcept)) {
+                $type->setConcentrationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->concentrationCodeableConcept), $config));
             } else {
-                $type->setConcentrationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->concentrationCodeableConcept, $config));
+                $type->setConcentrationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->concentrationCodeableConcept, $config));
             }
         }
-        if (isset($json->concentrationQuantity) || property_exists($json, self::FIELD_CONCENTRATION_QUANTITY)) {
-            if (is_array($json->concentrationQuantity)) {
-                $type->setConcentrationQuantity(FHIRQuantity::jsonUnserialize(reset($json->concentrationQuantity), $config));
+        if (isset($decoded->concentrationQuantity) || property_exists($decoded, self::FIELD_CONCENTRATION_QUANTITY)) {
+            if (is_array($decoded->concentrationQuantity)) {
+                $type->setConcentrationQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->concentrationQuantity), $config));
             } else {
-                $type->setConcentrationQuantity(FHIRQuantity::jsonUnserialize($json->concentrationQuantity, $config));
+                $type->setConcentrationQuantity(FHIRQuantity::jsonUnserialize($decoded->concentrationQuantity, $config));
             }
         }
-        if (isset($json->textConcentration)
-            || isset($json->_textConcentration)
-            || property_exists($json, self::FIELD_TEXT_CONCENTRATION)
-            || property_exists($json, self::FIELD_TEXT_CONCENTRATION_EXT)) {
-            $v = $json->_textConcentration ?? new \stdClass();
-            $v->value = $json->textConcentration ?? null;
+        if (isset($decoded->textConcentration)
+            || isset($decoded->_textConcentration)
+            || property_exists($decoded, self::FIELD_TEXT_CONCENTRATION)
+            || property_exists($decoded, self::FIELD_TEXT_CONCENTRATION_EXT)) {
+            $v = $decoded->_textConcentration ?? new \stdClass();
+            $v->value = $decoded->textConcentration ?? null;
             $type->setTextConcentration(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->basis) || property_exists($json, self::FIELD_BASIS)) {
-            if (is_array($json->basis)) {
-                $type->setBasis(FHIRCodeableConcept::jsonUnserialize(reset($json->basis), $config));
+        if (isset($decoded->basis) || property_exists($decoded, self::FIELD_BASIS)) {
+            if (is_array($decoded->basis)) {
+                $type->setBasis(FHIRCodeableConcept::jsonUnserialize(reset($decoded->basis), $config));
             } else {
-                $type->setBasis(FHIRCodeableConcept::jsonUnserialize($json->basis, $config));
+                $type->setBasis(FHIRCodeableConcept::jsonUnserialize($decoded->basis, $config));
             }
         }
-        if (isset($json->measurementPoint)
-            || isset($json->_measurementPoint)
-            || property_exists($json, self::FIELD_MEASUREMENT_POINT)
-            || property_exists($json, self::FIELD_MEASUREMENT_POINT_EXT)) {
-            $v = $json->_measurementPoint ?? new \stdClass();
-            $v->value = $json->measurementPoint ?? null;
+        if (isset($decoded->measurementPoint)
+            || isset($decoded->_measurementPoint)
+            || property_exists($decoded, self::FIELD_MEASUREMENT_POINT)
+            || property_exists($decoded, self::FIELD_MEASUREMENT_POINT_EXT)) {
+            $v = $decoded->_measurementPoint ?? new \stdClass();
+            $v->value = $decoded->measurementPoint ?? null;
             $type->setMeasurementPoint(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->country) || property_exists($json, self::FIELD_COUNTRY)) {
-            if (is_object($json->country)) {
-                $vals = [$json->country];
+        if (isset($decoded->country) || property_exists($decoded, self::FIELD_COUNTRY)) {
+            if (is_object($decoded->country)) {
+                $vals = [$decoded->country];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_COUNTRY, true);
             } else {
-                $vals = $json->country;
+                $vals = $decoded->country;
             }
             foreach($vals as $v) {
                 $type->addCountry(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->referenceStrength) || property_exists($json, self::FIELD_REFERENCE_STRENGTH)) {
-            if (is_object($json->referenceStrength)) {
-                $vals = [$json->referenceStrength];
+        if (isset($decoded->referenceStrength) || property_exists($decoded, self::FIELD_REFERENCE_STRENGTH)) {
+            if (is_object($decoded->referenceStrength)) {
+                $vals = [$decoded->referenceStrength];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_REFERENCE_STRENGTH, true);
             } else {
-                $vals = $json->referenceStrength;
+                $vals = $decoded->referenceStrength;
             }
             foreach($vals as $v) {
                 $type->addReferenceStrength(FHIRIngredientReferenceStrength::jsonUnserialize($v, $config));

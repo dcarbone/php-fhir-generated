@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -923,13 +923,13 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRPaymentNotice $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRPaymentNotice
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -946,86 +946,86 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_object($json->identifier)) {
-                $vals = [$json->identifier];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_object($decoded->identifier)) {
+                $vals = [$decoded->identifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
             } else {
-                $vals = $json->identifier;
+                $vals = $decoded->identifier;
             }
             foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->ruleset) || property_exists($json, self::FIELD_RULESET)) {
-            if (is_array($json->ruleset)) {
-                $type->setRuleset(FHIRCoding::jsonUnserialize(reset($json->ruleset), $config));
+        if (isset($decoded->ruleset) || property_exists($decoded, self::FIELD_RULESET)) {
+            if (is_array($decoded->ruleset)) {
+                $type->setRuleset(FHIRCoding::jsonUnserialize(reset($decoded->ruleset), $config));
             } else {
-                $type->setRuleset(FHIRCoding::jsonUnserialize($json->ruleset, $config));
+                $type->setRuleset(FHIRCoding::jsonUnserialize($decoded->ruleset, $config));
             }
         }
-        if (isset($json->originalRuleset) || property_exists($json, self::FIELD_ORIGINAL_RULESET)) {
-            if (is_array($json->originalRuleset)) {
-                $type->setOriginalRuleset(FHIRCoding::jsonUnserialize(reset($json->originalRuleset), $config));
+        if (isset($decoded->originalRuleset) || property_exists($decoded, self::FIELD_ORIGINAL_RULESET)) {
+            if (is_array($decoded->originalRuleset)) {
+                $type->setOriginalRuleset(FHIRCoding::jsonUnserialize(reset($decoded->originalRuleset), $config));
             } else {
-                $type->setOriginalRuleset(FHIRCoding::jsonUnserialize($json->originalRuleset, $config));
+                $type->setOriginalRuleset(FHIRCoding::jsonUnserialize($decoded->originalRuleset, $config));
             }
         }
-        if (isset($json->created)
-            || isset($json->_created)
-            || property_exists($json, self::FIELD_CREATED)
-            || property_exists($json, self::FIELD_CREATED_EXT)) {
-            $v = $json->_created ?? new \stdClass();
-            $v->value = $json->created ?? null;
+        if (isset($decoded->created)
+            || isset($decoded->_created)
+            || property_exists($decoded, self::FIELD_CREATED)
+            || property_exists($decoded, self::FIELD_CREATED_EXT)) {
+            $v = $decoded->_created ?? new \stdClass();
+            $v->value = $decoded->created ?? null;
             $type->setCreated(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->target) || property_exists($json, self::FIELD_TARGET)) {
-            if (is_array($json->target)) {
-                $type->setTarget(FHIRReference::jsonUnserialize(reset($json->target), $config));
+        if (isset($decoded->target) || property_exists($decoded, self::FIELD_TARGET)) {
+            if (is_array($decoded->target)) {
+                $type->setTarget(FHIRReference::jsonUnserialize(reset($decoded->target), $config));
             } else {
-                $type->setTarget(FHIRReference::jsonUnserialize($json->target, $config));
+                $type->setTarget(FHIRReference::jsonUnserialize($decoded->target, $config));
             }
         }
-        if (isset($json->provider) || property_exists($json, self::FIELD_PROVIDER)) {
-            if (is_array($json->provider)) {
-                $type->setProvider(FHIRReference::jsonUnserialize(reset($json->provider), $config));
+        if (isset($decoded->provider) || property_exists($decoded, self::FIELD_PROVIDER)) {
+            if (is_array($decoded->provider)) {
+                $type->setProvider(FHIRReference::jsonUnserialize(reset($decoded->provider), $config));
             } else {
-                $type->setProvider(FHIRReference::jsonUnserialize($json->provider, $config));
+                $type->setProvider(FHIRReference::jsonUnserialize($decoded->provider, $config));
             }
         }
-        if (isset($json->organization) || property_exists($json, self::FIELD_ORGANIZATION)) {
-            if (is_array($json->organization)) {
-                $type->setOrganization(FHIRReference::jsonUnserialize(reset($json->organization), $config));
+        if (isset($decoded->organization) || property_exists($decoded, self::FIELD_ORGANIZATION)) {
+            if (is_array($decoded->organization)) {
+                $type->setOrganization(FHIRReference::jsonUnserialize(reset($decoded->organization), $config));
             } else {
-                $type->setOrganization(FHIRReference::jsonUnserialize($json->organization, $config));
+                $type->setOrganization(FHIRReference::jsonUnserialize($decoded->organization, $config));
             }
         }
-        if (isset($json->request) || property_exists($json, self::FIELD_REQUEST)) {
-            if (is_array($json->request)) {
-                $type->setRequest(FHIRReference::jsonUnserialize(reset($json->request), $config));
+        if (isset($decoded->request) || property_exists($decoded, self::FIELD_REQUEST)) {
+            if (is_array($decoded->request)) {
+                $type->setRequest(FHIRReference::jsonUnserialize(reset($decoded->request), $config));
             } else {
-                $type->setRequest(FHIRReference::jsonUnserialize($json->request, $config));
+                $type->setRequest(FHIRReference::jsonUnserialize($decoded->request, $config));
             }
         }
-        if (isset($json->response) || property_exists($json, self::FIELD_RESPONSE)) {
-            if (is_array($json->response)) {
-                $type->setResponse(FHIRReference::jsonUnserialize(reset($json->response), $config));
+        if (isset($decoded->response) || property_exists($decoded, self::FIELD_RESPONSE)) {
+            if (is_array($decoded->response)) {
+                $type->setResponse(FHIRReference::jsonUnserialize(reset($decoded->response), $config));
             } else {
-                $type->setResponse(FHIRReference::jsonUnserialize($json->response, $config));
+                $type->setResponse(FHIRReference::jsonUnserialize($decoded->response, $config));
             }
         }
-        if (isset($json->paymentStatus) || property_exists($json, self::FIELD_PAYMENT_STATUS)) {
-            if (is_array($json->paymentStatus)) {
-                $type->setPaymentStatus(FHIRCoding::jsonUnserialize(reset($json->paymentStatus), $config));
+        if (isset($decoded->paymentStatus) || property_exists($decoded, self::FIELD_PAYMENT_STATUS)) {
+            if (is_array($decoded->paymentStatus)) {
+                $type->setPaymentStatus(FHIRCoding::jsonUnserialize(reset($decoded->paymentStatus), $config));
             } else {
-                $type->setPaymentStatus(FHIRCoding::jsonUnserialize($json->paymentStatus, $config));
+                $type->setPaymentStatus(FHIRCoding::jsonUnserialize($decoded->paymentStatus, $config));
             }
         }
         return $type;

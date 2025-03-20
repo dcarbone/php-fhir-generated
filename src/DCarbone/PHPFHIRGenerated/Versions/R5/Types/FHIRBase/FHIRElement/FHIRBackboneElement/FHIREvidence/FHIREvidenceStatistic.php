@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -983,13 +983,13 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceStatistic $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceStatistic
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1003,87 +1003,87 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->note) || property_exists($json, self::FIELD_NOTE)) {
-            if (is_object($json->note)) {
-                $vals = [$json->note];
+        if (isset($decoded->note) || property_exists($decoded, self::FIELD_NOTE)) {
+            if (is_object($decoded->note)) {
+                $vals = [$decoded->note];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTE, true);
             } else {
-                $vals = $json->note;
+                $vals = $decoded->note;
             }
             foreach($vals as $v) {
                 $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->statisticType) || property_exists($json, self::FIELD_STATISTIC_TYPE)) {
-            if (is_array($json->statisticType)) {
-                $type->setStatisticType(FHIRCodeableConcept::jsonUnserialize(reset($json->statisticType), $config));
+        if (isset($decoded->statisticType) || property_exists($decoded, self::FIELD_STATISTIC_TYPE)) {
+            if (is_array($decoded->statisticType)) {
+                $type->setStatisticType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->statisticType), $config));
             } else {
-                $type->setStatisticType(FHIRCodeableConcept::jsonUnserialize($json->statisticType, $config));
+                $type->setStatisticType(FHIRCodeableConcept::jsonUnserialize($decoded->statisticType, $config));
             }
         }
-        if (isset($json->category) || property_exists($json, self::FIELD_CATEGORY)) {
-            if (is_array($json->category)) {
-                $type->setCategory(FHIRCodeableConcept::jsonUnserialize(reset($json->category), $config));
+        if (isset($decoded->category) || property_exists($decoded, self::FIELD_CATEGORY)) {
+            if (is_array($decoded->category)) {
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize(reset($decoded->category), $config));
             } else {
-                $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json->category, $config));
+                $type->setCategory(FHIRCodeableConcept::jsonUnserialize($decoded->category, $config));
             }
         }
-        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
-            if (is_array($json->quantity)) {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+        if (isset($decoded->quantity) || property_exists($decoded, self::FIELD_QUANTITY)) {
+            if (is_array($decoded->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->quantity), $config));
             } else {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($decoded->quantity, $config));
             }
         }
-        if (isset($json->numberOfEvents)
-            || isset($json->_numberOfEvents)
-            || property_exists($json, self::FIELD_NUMBER_OF_EVENTS)
-            || property_exists($json, self::FIELD_NUMBER_OF_EVENTS_EXT)) {
-            $v = $json->_numberOfEvents ?? new \stdClass();
-            $v->value = $json->numberOfEvents ?? null;
+        if (isset($decoded->numberOfEvents)
+            || isset($decoded->_numberOfEvents)
+            || property_exists($decoded, self::FIELD_NUMBER_OF_EVENTS)
+            || property_exists($decoded, self::FIELD_NUMBER_OF_EVENTS_EXT)) {
+            $v = $decoded->_numberOfEvents ?? new \stdClass();
+            $v->value = $decoded->numberOfEvents ?? null;
             $type->setNumberOfEvents(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->numberAffected)
-            || isset($json->_numberAffected)
-            || property_exists($json, self::FIELD_NUMBER_AFFECTED)
-            || property_exists($json, self::FIELD_NUMBER_AFFECTED_EXT)) {
-            $v = $json->_numberAffected ?? new \stdClass();
-            $v->value = $json->numberAffected ?? null;
+        if (isset($decoded->numberAffected)
+            || isset($decoded->_numberAffected)
+            || property_exists($decoded, self::FIELD_NUMBER_AFFECTED)
+            || property_exists($decoded, self::FIELD_NUMBER_AFFECTED_EXT)) {
+            $v = $decoded->_numberAffected ?? new \stdClass();
+            $v->value = $decoded->numberAffected ?? null;
             $type->setNumberAffected(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->sampleSize) || property_exists($json, self::FIELD_SAMPLE_SIZE)) {
-            if (is_array($json->sampleSize)) {
-                $type->setSampleSize(FHIREvidenceSampleSize::jsonUnserialize(reset($json->sampleSize), $config));
+        if (isset($decoded->sampleSize) || property_exists($decoded, self::FIELD_SAMPLE_SIZE)) {
+            if (is_array($decoded->sampleSize)) {
+                $type->setSampleSize(FHIREvidenceSampleSize::jsonUnserialize(reset($decoded->sampleSize), $config));
             } else {
-                $type->setSampleSize(FHIREvidenceSampleSize::jsonUnserialize($json->sampleSize, $config));
+                $type->setSampleSize(FHIREvidenceSampleSize::jsonUnserialize($decoded->sampleSize, $config));
             }
         }
-        if (isset($json->attributeEstimate) || property_exists($json, self::FIELD_ATTRIBUTE_ESTIMATE)) {
-            if (is_object($json->attributeEstimate)) {
-                $vals = [$json->attributeEstimate];
+        if (isset($decoded->attributeEstimate) || property_exists($decoded, self::FIELD_ATTRIBUTE_ESTIMATE)) {
+            if (is_object($decoded->attributeEstimate)) {
+                $vals = [$decoded->attributeEstimate];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ATTRIBUTE_ESTIMATE, true);
             } else {
-                $vals = $json->attributeEstimate;
+                $vals = $decoded->attributeEstimate;
             }
             foreach($vals as $v) {
                 $type->addAttributeEstimate(FHIREvidenceAttributeEstimate::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->modelCharacteristic) || property_exists($json, self::FIELD_MODEL_CHARACTERISTIC)) {
-            if (is_object($json->modelCharacteristic)) {
-                $vals = [$json->modelCharacteristic];
+        if (isset($decoded->modelCharacteristic) || property_exists($decoded, self::FIELD_MODEL_CHARACTERISTIC)) {
+            if (is_object($decoded->modelCharacteristic)) {
+                $vals = [$decoded->modelCharacteristic];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_MODEL_CHARACTERISTIC, true);
             } else {
-                $vals = $json->modelCharacteristic;
+                $vals = $decoded->modelCharacteristic;
             }
             foreach($vals as $v) {
                 $type->addModelCharacteristic(FHIREvidenceModelCharacteristic::jsonUnserialize($v, $config));

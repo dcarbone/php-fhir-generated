@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -462,13 +462,13 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -482,41 +482,41 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->regulatoryAuthority) || property_exists($json, self::FIELD_REGULATORY_AUTHORITY)) {
-            if (is_array($json->regulatoryAuthority)) {
-                $type->setRegulatoryAuthority(FHIRReference::jsonUnserialize(reset($json->regulatoryAuthority), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->regulatoryAuthority) || property_exists($decoded, self::FIELD_REGULATORY_AUTHORITY)) {
+            if (is_array($decoded->regulatoryAuthority)) {
+                $type->setRegulatoryAuthority(FHIRReference::jsonUnserialize(reset($decoded->regulatoryAuthority), $config));
             } else {
-                $type->setRegulatoryAuthority(FHIRReference::jsonUnserialize($json->regulatoryAuthority, $config));
+                $type->setRegulatoryAuthority(FHIRReference::jsonUnserialize($decoded->regulatoryAuthority, $config));
             }
         }
-        if (isset($json->substitution) || property_exists($json, self::FIELD_SUBSTITUTION)) {
-            if (is_object($json->substitution)) {
-                $vals = [$json->substitution];
+        if (isset($decoded->substitution) || property_exists($decoded, self::FIELD_SUBSTITUTION)) {
+            if (is_object($decoded->substitution)) {
+                $vals = [$decoded->substitution];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBSTITUTION, true);
             } else {
-                $vals = $json->substitution;
+                $vals = $decoded->substitution;
             }
             foreach($vals as $v) {
                 $type->addSubstitution(FHIRMedicationKnowledgeSubstitution::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->schedule) || property_exists($json, self::FIELD_SCHEDULE)) {
-            if (is_object($json->schedule)) {
-                $vals = [$json->schedule];
+        if (isset($decoded->schedule) || property_exists($decoded, self::FIELD_SCHEDULE)) {
+            if (is_object($decoded->schedule)) {
+                $vals = [$decoded->schedule];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SCHEDULE, true);
             } else {
-                $vals = $json->schedule;
+                $vals = $decoded->schedule;
             }
             foreach($vals as $v) {
                 $type->addSchedule(FHIRMedicationKnowledgeSchedule::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->maxDispense) || property_exists($json, self::FIELD_MAX_DISPENSE)) {
-            if (is_array($json->maxDispense)) {
-                $type->setMaxDispense(FHIRMedicationKnowledgeMaxDispense::jsonUnserialize(reset($json->maxDispense), $config));
+        if (isset($decoded->maxDispense) || property_exists($decoded, self::FIELD_MAX_DISPENSE)) {
+            if (is_array($decoded->maxDispense)) {
+                $type->setMaxDispense(FHIRMedicationKnowledgeMaxDispense::jsonUnserialize(reset($decoded->maxDispense), $config));
             } else {
-                $type->setMaxDispense(FHIRMedicationKnowledgeMaxDispense::jsonUnserialize($json->maxDispense, $config));
+                $type->setMaxDispense(FHIRMedicationKnowledgeMaxDispense::jsonUnserialize($decoded->maxDispense, $config));
             }
         }
         return $type;

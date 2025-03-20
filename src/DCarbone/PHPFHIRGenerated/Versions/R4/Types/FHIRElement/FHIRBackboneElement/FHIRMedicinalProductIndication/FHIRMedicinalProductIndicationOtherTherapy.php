@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -381,13 +381,13 @@ class FHIRMedicinalProductIndicationOtherTherapy extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -401,26 +401,26 @@ class FHIRMedicinalProductIndicationOtherTherapy extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->therapyRelationshipType) || property_exists($json, self::FIELD_THERAPY_RELATIONSHIP_TYPE)) {
-            if (is_array($json->therapyRelationshipType)) {
-                $type->setTherapyRelationshipType(FHIRCodeableConcept::jsonUnserialize(reset($json->therapyRelationshipType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->therapyRelationshipType) || property_exists($decoded, self::FIELD_THERAPY_RELATIONSHIP_TYPE)) {
+            if (is_array($decoded->therapyRelationshipType)) {
+                $type->setTherapyRelationshipType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->therapyRelationshipType), $config));
             } else {
-                $type->setTherapyRelationshipType(FHIRCodeableConcept::jsonUnserialize($json->therapyRelationshipType, $config));
+                $type->setTherapyRelationshipType(FHIRCodeableConcept::jsonUnserialize($decoded->therapyRelationshipType, $config));
             }
         }
-        if (isset($json->medicationCodeableConcept) || property_exists($json, self::FIELD_MEDICATION_CODEABLE_CONCEPT)) {
-            if (is_array($json->medicationCodeableConcept)) {
-                $type->setMedicationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->medicationCodeableConcept), $config));
+        if (isset($decoded->medicationCodeableConcept) || property_exists($decoded, self::FIELD_MEDICATION_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->medicationCodeableConcept)) {
+                $type->setMedicationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->medicationCodeableConcept), $config));
             } else {
-                $type->setMedicationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->medicationCodeableConcept, $config));
+                $type->setMedicationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->medicationCodeableConcept, $config));
             }
         }
-        if (isset($json->medicationReference) || property_exists($json, self::FIELD_MEDICATION_REFERENCE)) {
-            if (is_array($json->medicationReference)) {
-                $type->setMedicationReference(FHIRReference::jsonUnserialize(reset($json->medicationReference), $config));
+        if (isset($decoded->medicationReference) || property_exists($decoded, self::FIELD_MEDICATION_REFERENCE)) {
+            if (is_array($decoded->medicationReference)) {
+                $type->setMedicationReference(FHIRReference::jsonUnserialize(reset($decoded->medicationReference), $config));
             } else {
-                $type->setMedicationReference(FHIRReference::jsonUnserialize($json->medicationReference, $config));
+                $type->setMedicationReference(FHIRReference::jsonUnserialize($decoded->medicationReference, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -663,13 +663,13 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementValueFilter $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementValueFilter
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -683,51 +683,51 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->path)
-            || isset($json->_path)
-            || property_exists($json, self::FIELD_PATH)
-            || property_exists($json, self::FIELD_PATH_EXT)) {
-            $v = $json->_path ?? new \stdClass();
-            $v->value = $json->path ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->path)
+            || isset($decoded->_path)
+            || property_exists($decoded, self::FIELD_PATH)
+            || property_exists($decoded, self::FIELD_PATH_EXT)) {
+            $v = $decoded->_path ?? new \stdClass();
+            $v->value = $decoded->path ?? null;
             $type->setPath(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->searchParam)
-            || isset($json->_searchParam)
-            || property_exists($json, self::FIELD_SEARCH_PARAM)
-            || property_exists($json, self::FIELD_SEARCH_PARAM_EXT)) {
-            $v = $json->_searchParam ?? new \stdClass();
-            $v->value = $json->searchParam ?? null;
+        if (isset($decoded->searchParam)
+            || isset($decoded->_searchParam)
+            || property_exists($decoded, self::FIELD_SEARCH_PARAM)
+            || property_exists($decoded, self::FIELD_SEARCH_PARAM_EXT)) {
+            $v = $decoded->_searchParam ?? new \stdClass();
+            $v->value = $decoded->searchParam ?? null;
             $type->setSearchParam(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->comparator)
-            || isset($json->_comparator)
-            || property_exists($json, self::FIELD_COMPARATOR)
-            || property_exists($json, self::FIELD_COMPARATOR_EXT)) {
-            $v = $json->_comparator ?? new \stdClass();
-            $v->value = $json->comparator ?? null;
+        if (isset($decoded->comparator)
+            || isset($decoded->_comparator)
+            || property_exists($decoded, self::FIELD_COMPARATOR)
+            || property_exists($decoded, self::FIELD_COMPARATOR_EXT)) {
+            $v = $decoded->_comparator ?? new \stdClass();
+            $v->value = $decoded->comparator ?? null;
             $type->setComparator(FHIRCode::jsonUnserialize($v, $config));
         }
-        if (isset($json->valueDateTime)
-            || isset($json->_valueDateTime)
-            || property_exists($json, self::FIELD_VALUE_DATE_TIME)
-            || property_exists($json, self::FIELD_VALUE_DATE_TIME_EXT)) {
-            $v = $json->_valueDateTime ?? new \stdClass();
-            $v->value = $json->valueDateTime ?? null;
+        if (isset($decoded->valueDateTime)
+            || isset($decoded->_valueDateTime)
+            || property_exists($decoded, self::FIELD_VALUE_DATE_TIME)
+            || property_exists($decoded, self::FIELD_VALUE_DATE_TIME_EXT)) {
+            $v = $decoded->_valueDateTime ?? new \stdClass();
+            $v->value = $decoded->valueDateTime ?? null;
             $type->setValueDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->valuePeriod) || property_exists($json, self::FIELD_VALUE_PERIOD)) {
-            if (is_array($json->valuePeriod)) {
-                $type->setValuePeriod(FHIRPeriod::jsonUnserialize(reset($json->valuePeriod), $config));
+        if (isset($decoded->valuePeriod) || property_exists($decoded, self::FIELD_VALUE_PERIOD)) {
+            if (is_array($decoded->valuePeriod)) {
+                $type->setValuePeriod(FHIRPeriod::jsonUnserialize(reset($decoded->valuePeriod), $config));
             } else {
-                $type->setValuePeriod(FHIRPeriod::jsonUnserialize($json->valuePeriod, $config));
+                $type->setValuePeriod(FHIRPeriod::jsonUnserialize($decoded->valuePeriod, $config));
             }
         }
-        if (isset($json->valueDuration) || property_exists($json, self::FIELD_VALUE_DURATION)) {
-            if (is_array($json->valueDuration)) {
-                $type->setValueDuration(FHIRDuration::jsonUnserialize(reset($json->valueDuration), $config));
+        if (isset($decoded->valueDuration) || property_exists($decoded, self::FIELD_VALUE_DURATION)) {
+            if (is_array($decoded->valueDuration)) {
+                $type->setValueDuration(FHIRDuration::jsonUnserialize(reset($decoded->valueDuration), $config));
             } else {
-                $type->setValueDuration(FHIRDuration::jsonUnserialize($json->valueDuration, $config));
+                $type->setValueDuration(FHIRDuration::jsonUnserialize($decoded->valueDuration, $config));
             }
         }
         return $type;

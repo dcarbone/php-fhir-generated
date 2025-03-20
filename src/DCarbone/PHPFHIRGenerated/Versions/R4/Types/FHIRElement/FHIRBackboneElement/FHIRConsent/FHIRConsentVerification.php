@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -407,13 +407,13 @@ class FHIRConsentVerification extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -427,28 +427,28 @@ class FHIRConsentVerification extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->verified)
-            || isset($json->_verified)
-            || property_exists($json, self::FIELD_VERIFIED)
-            || property_exists($json, self::FIELD_VERIFIED_EXT)) {
-            $v = $json->_verified ?? new \stdClass();
-            $v->value = $json->verified ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->verified)
+            || isset($decoded->_verified)
+            || property_exists($decoded, self::FIELD_VERIFIED)
+            || property_exists($decoded, self::FIELD_VERIFIED_EXT)) {
+            $v = $decoded->_verified ?? new \stdClass();
+            $v->value = $decoded->verified ?? null;
             $type->setVerified(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->verifiedWith) || property_exists($json, self::FIELD_VERIFIED_WITH)) {
-            if (is_array($json->verifiedWith)) {
-                $type->setVerifiedWith(FHIRReference::jsonUnserialize(reset($json->verifiedWith), $config));
+        if (isset($decoded->verifiedWith) || property_exists($decoded, self::FIELD_VERIFIED_WITH)) {
+            if (is_array($decoded->verifiedWith)) {
+                $type->setVerifiedWith(FHIRReference::jsonUnserialize(reset($decoded->verifiedWith), $config));
             } else {
-                $type->setVerifiedWith(FHIRReference::jsonUnserialize($json->verifiedWith, $config));
+                $type->setVerifiedWith(FHIRReference::jsonUnserialize($decoded->verifiedWith, $config));
             }
         }
-        if (isset($json->verificationDate)
-            || isset($json->_verificationDate)
-            || property_exists($json, self::FIELD_VERIFICATION_DATE)
-            || property_exists($json, self::FIELD_VERIFICATION_DATE_EXT)) {
-            $v = $json->_verificationDate ?? new \stdClass();
-            $v->value = $json->verificationDate ?? null;
+        if (isset($decoded->verificationDate)
+            || isset($decoded->_verificationDate)
+            || property_exists($decoded, self::FIELD_VERIFICATION_DATE)
+            || property_exists($decoded, self::FIELD_VERIFICATION_DATE_EXT)) {
+            $v = $decoded->_verificationDate ?? new \stdClass();
+            $v->value = $decoded->verificationDate ?? null;
             $type->setVerificationDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -479,13 +479,13 @@ class FHIRPermissionActivity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionActivity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionActivity
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -499,35 +499,35 @@ class FHIRPermissionActivity extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->actor) || property_exists($json, self::FIELD_ACTOR)) {
-            if (is_object($json->actor)) {
-                $vals = [$json->actor];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->actor) || property_exists($decoded, self::FIELD_ACTOR)) {
+            if (is_object($decoded->actor)) {
+                $vals = [$decoded->actor];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ACTOR, true);
             } else {
-                $vals = $json->actor;
+                $vals = $decoded->actor;
             }
             foreach($vals as $v) {
                 $type->addActor(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->action) || property_exists($json, self::FIELD_ACTION)) {
-            if (is_object($json->action)) {
-                $vals = [$json->action];
+        if (isset($decoded->action) || property_exists($decoded, self::FIELD_ACTION)) {
+            if (is_object($decoded->action)) {
+                $vals = [$decoded->action];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ACTION, true);
             } else {
-                $vals = $json->action;
+                $vals = $decoded->action;
             }
             foreach($vals as $v) {
                 $type->addAction(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->purpose) || property_exists($json, self::FIELD_PURPOSE)) {
-            if (is_object($json->purpose)) {
-                $vals = [$json->purpose];
+        if (isset($decoded->purpose) || property_exists($decoded, self::FIELD_PURPOSE)) {
+            if (is_object($decoded->purpose)) {
+                $vals = [$decoded->purpose];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PURPOSE, true);
             } else {
-                $vals = $json->purpose;
+                $vals = $decoded->purpose;
             }
             foreach($vals as $v) {
                 $type->addPurpose(FHIRCodeableConcept::jsonUnserialize($v, $config));

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -354,13 +354,13 @@ class FHIRServiceRequestOrderDetail extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestOrderDetail $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestOrderDetail
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -374,20 +374,20 @@ class FHIRServiceRequestOrderDetail extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->parameterFocus) || property_exists($json, self::FIELD_PARAMETER_FOCUS)) {
-            if (is_array($json->parameterFocus)) {
-                $type->setParameterFocus(FHIRCodeableReference::jsonUnserialize(reset($json->parameterFocus), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->parameterFocus) || property_exists($decoded, self::FIELD_PARAMETER_FOCUS)) {
+            if (is_array($decoded->parameterFocus)) {
+                $type->setParameterFocus(FHIRCodeableReference::jsonUnserialize(reset($decoded->parameterFocus), $config));
             } else {
-                $type->setParameterFocus(FHIRCodeableReference::jsonUnserialize($json->parameterFocus, $config));
+                $type->setParameterFocus(FHIRCodeableReference::jsonUnserialize($decoded->parameterFocus, $config));
             }
         }
-        if (isset($json->parameter) || property_exists($json, self::FIELD_PARAMETER)) {
-            if (is_object($json->parameter)) {
-                $vals = [$json->parameter];
+        if (isset($decoded->parameter) || property_exists($decoded, self::FIELD_PARAMETER)) {
+            if (is_object($decoded->parameter)) {
+                $vals = [$decoded->parameter];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PARAMETER, true);
             } else {
-                $vals = $json->parameter;
+                $vals = $decoded->parameter;
             }
             foreach($vals as $v) {
                 $type->addParameter(FHIRServiceRequestParameter::jsonUnserialize($v, $config));

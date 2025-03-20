@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -647,13 +647,13 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventEvent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventEvent
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -667,55 +667,55 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->subtype) || property_exists($json, self::FIELD_SUBTYPE)) {
-            if (is_object($json->subtype)) {
-                $vals = [$json->subtype];
+        if (isset($decoded->subtype) || property_exists($decoded, self::FIELD_SUBTYPE)) {
+            if (is_object($decoded->subtype)) {
+                $vals = [$decoded->subtype];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBTYPE, true);
             } else {
-                $vals = $json->subtype;
+                $vals = $decoded->subtype;
             }
             foreach($vals as $v) {
                 $type->addSubtype(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->action)
-            || isset($json->_action)
-            || property_exists($json, self::FIELD_ACTION)
-            || property_exists($json, self::FIELD_ACTION_EXT)) {
-            $v = $json->_action ?? new \stdClass();
-            $v->value = $json->action ?? null;
+        if (isset($decoded->action)
+            || isset($decoded->_action)
+            || property_exists($decoded, self::FIELD_ACTION)
+            || property_exists($decoded, self::FIELD_ACTION_EXT)) {
+            $v = $decoded->_action ?? new \stdClass();
+            $v->value = $decoded->action ?? null;
             $type->setAction(FHIRSecurityEventAction::jsonUnserialize($v, $config));
         }
-        if (isset($json->dateTime)
-            || isset($json->_dateTime)
-            || property_exists($json, self::FIELD_DATE_TIME)
-            || property_exists($json, self::FIELD_DATE_TIME_EXT)) {
-            $v = $json->_dateTime ?? new \stdClass();
-            $v->value = $json->dateTime ?? null;
+        if (isset($decoded->dateTime)
+            || isset($decoded->_dateTime)
+            || property_exists($decoded, self::FIELD_DATE_TIME)
+            || property_exists($decoded, self::FIELD_DATE_TIME_EXT)) {
+            $v = $decoded->_dateTime ?? new \stdClass();
+            $v->value = $decoded->dateTime ?? null;
             $type->setDateTime(FHIRInstant::jsonUnserialize($v, $config));
         }
-        if (isset($json->outcome)
-            || isset($json->_outcome)
-            || property_exists($json, self::FIELD_OUTCOME)
-            || property_exists($json, self::FIELD_OUTCOME_EXT)) {
-            $v = $json->_outcome ?? new \stdClass();
-            $v->value = $json->outcome ?? null;
+        if (isset($decoded->outcome)
+            || isset($decoded->_outcome)
+            || property_exists($decoded, self::FIELD_OUTCOME)
+            || property_exists($decoded, self::FIELD_OUTCOME_EXT)) {
+            $v = $decoded->_outcome ?? new \stdClass();
+            $v->value = $decoded->outcome ?? null;
             $type->setOutcome(FHIRSecurityEventOutcome::jsonUnserialize($v, $config));
         }
-        if (isset($json->outcomeDesc)
-            || isset($json->_outcomeDesc)
-            || property_exists($json, self::FIELD_OUTCOME_DESC)
-            || property_exists($json, self::FIELD_OUTCOME_DESC_EXT)) {
-            $v = $json->_outcomeDesc ?? new \stdClass();
-            $v->value = $json->outcomeDesc ?? null;
+        if (isset($decoded->outcomeDesc)
+            || isset($decoded->_outcomeDesc)
+            || property_exists($decoded, self::FIELD_OUTCOME_DESC)
+            || property_exists($decoded, self::FIELD_OUTCOME_DESC_EXT)) {
+            $v = $decoded->_outcomeDesc ?? new \stdClass();
+            $v->value = $decoded->outcomeDesc ?? null;
             $type->setOutcomeDesc(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

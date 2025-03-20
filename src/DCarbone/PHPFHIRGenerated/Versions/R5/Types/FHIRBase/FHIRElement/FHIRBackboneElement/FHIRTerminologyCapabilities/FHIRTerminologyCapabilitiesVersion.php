@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -722,13 +722,13 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -742,37 +742,37 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->code)
-            || isset($json->_code)
-            || property_exists($json, self::FIELD_CODE)
-            || property_exists($json, self::FIELD_CODE_EXT)) {
-            $v = $json->_code ?? new \stdClass();
-            $v->value = $json->code ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->code)
+            || isset($decoded->_code)
+            || property_exists($decoded, self::FIELD_CODE)
+            || property_exists($decoded, self::FIELD_CODE_EXT)) {
+            $v = $decoded->_code ?? new \stdClass();
+            $v->value = $decoded->code ?? null;
             $type->setCode(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->isDefault)
-            || isset($json->_isDefault)
-            || property_exists($json, self::FIELD_IS_DEFAULT)
-            || property_exists($json, self::FIELD_IS_DEFAULT_EXT)) {
-            $v = $json->_isDefault ?? new \stdClass();
-            $v->value = $json->isDefault ?? null;
+        if (isset($decoded->isDefault)
+            || isset($decoded->_isDefault)
+            || property_exists($decoded, self::FIELD_IS_DEFAULT)
+            || property_exists($decoded, self::FIELD_IS_DEFAULT_EXT)) {
+            $v = $decoded->_isDefault ?? new \stdClass();
+            $v->value = $decoded->isDefault ?? null;
             $type->setIsDefault(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->compositional)
-            || isset($json->_compositional)
-            || property_exists($json, self::FIELD_COMPOSITIONAL)
-            || property_exists($json, self::FIELD_COMPOSITIONAL_EXT)) {
-            $v = $json->_compositional ?? new \stdClass();
-            $v->value = $json->compositional ?? null;
+        if (isset($decoded->compositional)
+            || isset($decoded->_compositional)
+            || property_exists($decoded, self::FIELD_COMPOSITIONAL)
+            || property_exists($decoded, self::FIELD_COMPOSITIONAL_EXT)) {
+            $v = $decoded->_compositional ?? new \stdClass();
+            $v->value = $decoded->compositional ?? null;
             $type->setCompositional(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->language)
-            || isset($json->_language)
-            || property_exists($json, self::FIELD_LANGUAGE)
-            || property_exists($json, self::FIELD_LANGUAGE_EXT)) {
-            $vals = (array)($json->language ?? []);
-            $exts = (array)($json->FIELD_LANGUAGE_EXT ?? []);
+        if (isset($decoded->language)
+            || isset($decoded->_language)
+            || property_exists($decoded, self::FIELD_LANGUAGE)
+            || property_exists($decoded, self::FIELD_LANGUAGE_EXT)) {
+            $vals = (array)($decoded->language ?? []);
+            $exts = (array)($decoded->FIELD_LANGUAGE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -784,23 +784,23 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
                 $type->addLanguage(FHIRCommonLanguages::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->filter) || property_exists($json, self::FIELD_FILTER)) {
-            if (is_object($json->filter)) {
-                $vals = [$json->filter];
+        if (isset($decoded->filter) || property_exists($decoded, self::FIELD_FILTER)) {
+            if (is_object($decoded->filter)) {
+                $vals = [$decoded->filter];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_FILTER, true);
             } else {
-                $vals = $json->filter;
+                $vals = $decoded->filter;
             }
             foreach($vals as $v) {
                 $type->addFilter(FHIRTerminologyCapabilitiesFilter::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->property)
-            || isset($json->_property)
-            || property_exists($json, self::FIELD_PROPERTY)
-            || property_exists($json, self::FIELD_PROPERTY_EXT)) {
-            $vals = (array)($json->property ?? []);
-            $exts = (array)($json->FIELD_PROPERTY_EXT ?? []);
+        if (isset($decoded->property)
+            || isset($decoded->_property)
+            || property_exists($decoded, self::FIELD_PROPERTY)
+            || property_exists($decoded, self::FIELD_PROPERTY_EXT)) {
+            $vals = (array)($decoded->property ?? []);
+            $exts = (array)($decoded->FIELD_PROPERTY_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -530,13 +530,13 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionSlicing $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionSlicing
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -550,40 +550,40 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->discriminator) || property_exists($json, self::FIELD_DISCRIMINATOR)) {
-            if (is_object($json->discriminator)) {
-                $vals = [$json->discriminator];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->discriminator) || property_exists($decoded, self::FIELD_DISCRIMINATOR)) {
+            if (is_object($decoded->discriminator)) {
+                $vals = [$decoded->discriminator];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DISCRIMINATOR, true);
             } else {
-                $vals = $json->discriminator;
+                $vals = $decoded->discriminator;
             }
             foreach($vals as $v) {
                 $type->addDiscriminator(FHIRElementDefinitionDiscriminator::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->ordered)
-            || isset($json->_ordered)
-            || property_exists($json, self::FIELD_ORDERED)
-            || property_exists($json, self::FIELD_ORDERED_EXT)) {
-            $v = $json->_ordered ?? new \stdClass();
-            $v->value = $json->ordered ?? null;
+        if (isset($decoded->ordered)
+            || isset($decoded->_ordered)
+            || property_exists($decoded, self::FIELD_ORDERED)
+            || property_exists($decoded, self::FIELD_ORDERED_EXT)) {
+            $v = $decoded->_ordered ?? new \stdClass();
+            $v->value = $decoded->ordered ?? null;
             $type->setOrdered(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->rules)
-            || isset($json->_rules)
-            || property_exists($json, self::FIELD_RULES)
-            || property_exists($json, self::FIELD_RULES_EXT)) {
-            $v = $json->_rules ?? new \stdClass();
-            $v->value = $json->rules ?? null;
+        if (isset($decoded->rules)
+            || isset($decoded->_rules)
+            || property_exists($decoded, self::FIELD_RULES)
+            || property_exists($decoded, self::FIELD_RULES_EXT)) {
+            $v = $decoded->_rules ?? new \stdClass();
+            $v->value = $decoded->rules ?? null;
             $type->setRules(FHIRSlicingRules::jsonUnserialize($v, $config));
         }
         return $type;

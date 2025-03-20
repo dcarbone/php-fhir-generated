@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -342,13 +342,13 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionOtherTherapy $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionOtherTherapy
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -362,19 +362,19 @@ class FHIRClinicalUseDefinitionOtherTherapy extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->relationshipType) || property_exists($json, self::FIELD_RELATIONSHIP_TYPE)) {
-            if (is_array($json->relationshipType)) {
-                $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize(reset($json->relationshipType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->relationshipType) || property_exists($decoded, self::FIELD_RELATIONSHIP_TYPE)) {
+            if (is_array($decoded->relationshipType)) {
+                $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->relationshipType), $config));
             } else {
-                $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize($json->relationshipType, $config));
+                $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize($decoded->relationshipType, $config));
             }
         }
-        if (isset($json->treatment) || property_exists($json, self::FIELD_TREATMENT)) {
-            if (is_array($json->treatment)) {
-                $type->setTreatment(FHIRCodeableReference::jsonUnserialize(reset($json->treatment), $config));
+        if (isset($decoded->treatment) || property_exists($decoded, self::FIELD_TREATMENT)) {
+            if (is_array($decoded->treatment)) {
+                $type->setTreatment(FHIRCodeableReference::jsonUnserialize(reset($decoded->treatment), $config));
             } else {
-                $type->setTreatment(FHIRCodeableReference::jsonUnserialize($json->treatment, $config));
+                $type->setTreatment(FHIRCodeableReference::jsonUnserialize($decoded->treatment, $config));
             }
         }
         return $type;

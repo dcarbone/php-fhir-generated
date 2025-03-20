@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -524,13 +524,13 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -544,38 +544,38 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
-            if (is_array($json->code)) {
-                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($json->code), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->code) || property_exists($decoded, self::FIELD_CODE)) {
+            if (is_array($decoded->code)) {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($decoded->code), $config));
             } else {
-                $type->setCode(FHIRCodeableConcept::jsonUnserialize($json->code, $config));
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize($decoded->code, $config));
             }
         }
-        if (isset($json->value) || property_exists($json, self::FIELD_VALUE)) {
-            if (is_array($json->value)) {
-                $type->setValue(FHIRQuantity::jsonUnserialize(reset($json->value), $config));
+        if (isset($decoded->value) || property_exists($decoded, self::FIELD_VALUE)) {
+            if (is_array($decoded->value)) {
+                $type->setValue(FHIRQuantity::jsonUnserialize(reset($decoded->value), $config));
             } else {
-                $type->setValue(FHIRQuantity::jsonUnserialize($json->value, $config));
+                $type->setValue(FHIRQuantity::jsonUnserialize($decoded->value, $config));
             }
         }
-        if (isset($json->variable) || property_exists($json, self::FIELD_VARIABLE)) {
-            if (is_object($json->variable)) {
-                $vals = [$json->variable];
+        if (isset($decoded->variable) || property_exists($decoded, self::FIELD_VARIABLE)) {
+            if (is_object($decoded->variable)) {
+                $vals = [$decoded->variable];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_VARIABLE, true);
             } else {
-                $vals = $json->variable;
+                $vals = $decoded->variable;
             }
             foreach($vals as $v) {
                 $type->addVariable(FHIREvidenceVariable::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->attributeEstimate) || property_exists($json, self::FIELD_ATTRIBUTE_ESTIMATE)) {
-            if (is_object($json->attributeEstimate)) {
-                $vals = [$json->attributeEstimate];
+        if (isset($decoded->attributeEstimate) || property_exists($decoded, self::FIELD_ATTRIBUTE_ESTIMATE)) {
+            if (is_object($decoded->attributeEstimate)) {
+                $vals = [$decoded->attributeEstimate];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ATTRIBUTE_ESTIMATE, true);
             } else {
-                $vals = $json->attributeEstimate;
+                $vals = $decoded->attributeEstimate;
             }
             foreach($vals as $v) {
                 $type->addAttributeEstimate(FHIREvidenceAttributeEstimate::jsonUnserialize($v, $config));

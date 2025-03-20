@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -558,13 +558,13 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -578,37 +578,37 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->sopClass)
-            || isset($json->_sopClass)
-            || property_exists($json, self::FIELD_SOP_CLASS)
-            || property_exists($json, self::FIELD_SOP_CLASS_EXT)) {
-            $v = $json->_sopClass ?? new \stdClass();
-            $v->value = $json->sopClass ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->sopClass)
+            || isset($decoded->_sopClass)
+            || property_exists($decoded, self::FIELD_SOP_CLASS)
+            || property_exists($decoded, self::FIELD_SOP_CLASS_EXT)) {
+            $v = $decoded->_sopClass ?? new \stdClass();
+            $v->value = $decoded->sopClass ?? null;
             $type->setSopClass(FHIROid::jsonUnserialize($v, $config));
         }
-        if (isset($json->uid)
-            || isset($json->_uid)
-            || property_exists($json, self::FIELD_UID)
-            || property_exists($json, self::FIELD_UID_EXT)) {
-            $v = $json->_uid ?? new \stdClass();
-            $v->value = $json->uid ?? null;
+        if (isset($decoded->uid)
+            || isset($decoded->_uid)
+            || property_exists($decoded, self::FIELD_UID)
+            || property_exists($decoded, self::FIELD_UID_EXT)) {
+            $v = $decoded->_uid ?? new \stdClass();
+            $v->value = $decoded->uid ?? null;
             $type->setUid(FHIROid::jsonUnserialize($v, $config));
         }
-        if (isset($json->url)
-            || isset($json->_url)
-            || property_exists($json, self::FIELD_URL)
-            || property_exists($json, self::FIELD_URL_EXT)) {
-            $v = $json->_url ?? new \stdClass();
-            $v->value = $json->url ?? null;
+        if (isset($decoded->url)
+            || isset($decoded->_url)
+            || property_exists($decoded, self::FIELD_URL)
+            || property_exists($decoded, self::FIELD_URL_EXT)) {
+            $v = $decoded->_url ?? new \stdClass();
+            $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->frames) || property_exists($json, self::FIELD_FRAMES)) {
-            if (is_object($json->frames)) {
-                $vals = [$json->frames];
+        if (isset($decoded->frames) || property_exists($decoded, self::FIELD_FRAMES)) {
+            if (is_object($decoded->frames)) {
+                $vals = [$decoded->frames];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_FRAMES, true);
             } else {
-                $vals = $json->frames;
+                $vals = $decoded->frames;
             }
             foreach($vals as $v) {
                 $type->addFrames(FHIRImagingObjectSelectionFrames::jsonUnserialize($v, $config));

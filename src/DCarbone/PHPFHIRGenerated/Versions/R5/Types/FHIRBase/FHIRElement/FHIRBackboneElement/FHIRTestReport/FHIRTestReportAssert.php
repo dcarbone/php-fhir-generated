@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -531,13 +531,13 @@ class FHIRTestReportAssert extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -551,37 +551,37 @@ class FHIRTestReportAssert extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->result)
-            || isset($json->_result)
-            || property_exists($json, self::FIELD_RESULT)
-            || property_exists($json, self::FIELD_RESULT_EXT)) {
-            $v = $json->_result ?? new \stdClass();
-            $v->value = $json->result ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->result)
+            || isset($decoded->_result)
+            || property_exists($decoded, self::FIELD_RESULT)
+            || property_exists($decoded, self::FIELD_RESULT_EXT)) {
+            $v = $decoded->_result ?? new \stdClass();
+            $v->value = $decoded->result ?? null;
             $type->setResult(FHIRTestReportActionResult::jsonUnserialize($v, $config));
         }
-        if (isset($json->message)
-            || isset($json->_message)
-            || property_exists($json, self::FIELD_MESSAGE)
-            || property_exists($json, self::FIELD_MESSAGE_EXT)) {
-            $v = $json->_message ?? new \stdClass();
-            $v->value = $json->message ?? null;
+        if (isset($decoded->message)
+            || isset($decoded->_message)
+            || property_exists($decoded, self::FIELD_MESSAGE)
+            || property_exists($decoded, self::FIELD_MESSAGE_EXT)) {
+            $v = $decoded->_message ?? new \stdClass();
+            $v->value = $decoded->message ?? null;
             $type->setMessage(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->detail)
-            || isset($json->_detail)
-            || property_exists($json, self::FIELD_DETAIL)
-            || property_exists($json, self::FIELD_DETAIL_EXT)) {
-            $v = $json->_detail ?? new \stdClass();
-            $v->value = $json->detail ?? null;
+        if (isset($decoded->detail)
+            || isset($decoded->_detail)
+            || property_exists($decoded, self::FIELD_DETAIL)
+            || property_exists($decoded, self::FIELD_DETAIL_EXT)) {
+            $v = $decoded->_detail ?? new \stdClass();
+            $v->value = $decoded->detail ?? null;
             $type->setDetail(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->requirement) || property_exists($json, self::FIELD_REQUIREMENT)) {
-            if (is_object($json->requirement)) {
-                $vals = [$json->requirement];
+        if (isset($decoded->requirement) || property_exists($decoded, self::FIELD_REQUIREMENT)) {
+            if (is_object($decoded->requirement)) {
+                $vals = [$decoded->requirement];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_REQUIREMENT, true);
             } else {
-                $vals = $json->requirement;
+                $vals = $decoded->requirement;
             }
             foreach($vals as $v) {
                 $type->addRequirement(FHIRTestReportRequirement::jsonUnserialize($v, $config));

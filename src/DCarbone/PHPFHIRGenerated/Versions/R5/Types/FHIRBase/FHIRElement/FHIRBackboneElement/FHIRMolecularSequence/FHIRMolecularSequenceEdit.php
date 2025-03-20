@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -541,13 +541,13 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceEdit $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceEdit
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -561,37 +561,37 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->start)
-            || isset($json->_start)
-            || property_exists($json, self::FIELD_START)
-            || property_exists($json, self::FIELD_START_EXT)) {
-            $v = $json->_start ?? new \stdClass();
-            $v->value = $json->start ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->start)
+            || isset($decoded->_start)
+            || property_exists($decoded, self::FIELD_START)
+            || property_exists($decoded, self::FIELD_START_EXT)) {
+            $v = $decoded->_start ?? new \stdClass();
+            $v->value = $decoded->start ?? null;
             $type->setStart(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->end)
-            || isset($json->_end)
-            || property_exists($json, self::FIELD_END)
-            || property_exists($json, self::FIELD_END_EXT)) {
-            $v = $json->_end ?? new \stdClass();
-            $v->value = $json->end ?? null;
+        if (isset($decoded->end)
+            || isset($decoded->_end)
+            || property_exists($decoded, self::FIELD_END)
+            || property_exists($decoded, self::FIELD_END_EXT)) {
+            $v = $decoded->_end ?? new \stdClass();
+            $v->value = $decoded->end ?? null;
             $type->setEnd(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->replacementSequence)
-            || isset($json->_replacementSequence)
-            || property_exists($json, self::FIELD_REPLACEMENT_SEQUENCE)
-            || property_exists($json, self::FIELD_REPLACEMENT_SEQUENCE_EXT)) {
-            $v = $json->_replacementSequence ?? new \stdClass();
-            $v->value = $json->replacementSequence ?? null;
+        if (isset($decoded->replacementSequence)
+            || isset($decoded->_replacementSequence)
+            || property_exists($decoded, self::FIELD_REPLACEMENT_SEQUENCE)
+            || property_exists($decoded, self::FIELD_REPLACEMENT_SEQUENCE_EXT)) {
+            $v = $decoded->_replacementSequence ?? new \stdClass();
+            $v->value = $decoded->replacementSequence ?? null;
             $type->setReplacementSequence(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->replacedSequence)
-            || isset($json->_replacedSequence)
-            || property_exists($json, self::FIELD_REPLACED_SEQUENCE)
-            || property_exists($json, self::FIELD_REPLACED_SEQUENCE_EXT)) {
-            $v = $json->_replacedSequence ?? new \stdClass();
-            $v->value = $json->replacedSequence ?? null;
+        if (isset($decoded->replacedSequence)
+            || isset($decoded->_replacedSequence)
+            || property_exists($decoded, self::FIELD_REPLACED_SEQUENCE)
+            || property_exists($decoded, self::FIELD_REPLACED_SEQUENCE_EXT)) {
+            $v = $decoded->_replacedSequence ?? new \stdClass();
+            $v->value = $decoded->replacedSequence ?? null;
             $type->setReplacedSequence(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

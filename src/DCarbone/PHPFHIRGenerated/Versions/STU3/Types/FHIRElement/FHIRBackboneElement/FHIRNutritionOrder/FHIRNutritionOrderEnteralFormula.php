@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -847,13 +847,13 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -867,75 +867,75 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->baseFormulaType) || property_exists($json, self::FIELD_BASE_FORMULA_TYPE)) {
-            if (is_array($json->baseFormulaType)) {
-                $type->setBaseFormulaType(FHIRCodeableConcept::jsonUnserialize(reset($json->baseFormulaType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->baseFormulaType) || property_exists($decoded, self::FIELD_BASE_FORMULA_TYPE)) {
+            if (is_array($decoded->baseFormulaType)) {
+                $type->setBaseFormulaType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->baseFormulaType), $config));
             } else {
-                $type->setBaseFormulaType(FHIRCodeableConcept::jsonUnserialize($json->baseFormulaType, $config));
+                $type->setBaseFormulaType(FHIRCodeableConcept::jsonUnserialize($decoded->baseFormulaType, $config));
             }
         }
-        if (isset($json->baseFormulaProductName)
-            || isset($json->_baseFormulaProductName)
-            || property_exists($json, self::FIELD_BASE_FORMULA_PRODUCT_NAME)
-            || property_exists($json, self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT)) {
-            $v = $json->_baseFormulaProductName ?? new \stdClass();
-            $v->value = $json->baseFormulaProductName ?? null;
+        if (isset($decoded->baseFormulaProductName)
+            || isset($decoded->_baseFormulaProductName)
+            || property_exists($decoded, self::FIELD_BASE_FORMULA_PRODUCT_NAME)
+            || property_exists($decoded, self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT)) {
+            $v = $decoded->_baseFormulaProductName ?? new \stdClass();
+            $v->value = $decoded->baseFormulaProductName ?? null;
             $type->setBaseFormulaProductName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->additiveType) || property_exists($json, self::FIELD_ADDITIVE_TYPE)) {
-            if (is_array($json->additiveType)) {
-                $type->setAdditiveType(FHIRCodeableConcept::jsonUnserialize(reset($json->additiveType), $config));
+        if (isset($decoded->additiveType) || property_exists($decoded, self::FIELD_ADDITIVE_TYPE)) {
+            if (is_array($decoded->additiveType)) {
+                $type->setAdditiveType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->additiveType), $config));
             } else {
-                $type->setAdditiveType(FHIRCodeableConcept::jsonUnserialize($json->additiveType, $config));
+                $type->setAdditiveType(FHIRCodeableConcept::jsonUnserialize($decoded->additiveType, $config));
             }
         }
-        if (isset($json->additiveProductName)
-            || isset($json->_additiveProductName)
-            || property_exists($json, self::FIELD_ADDITIVE_PRODUCT_NAME)
-            || property_exists($json, self::FIELD_ADDITIVE_PRODUCT_NAME_EXT)) {
-            $v = $json->_additiveProductName ?? new \stdClass();
-            $v->value = $json->additiveProductName ?? null;
+        if (isset($decoded->additiveProductName)
+            || isset($decoded->_additiveProductName)
+            || property_exists($decoded, self::FIELD_ADDITIVE_PRODUCT_NAME)
+            || property_exists($decoded, self::FIELD_ADDITIVE_PRODUCT_NAME_EXT)) {
+            $v = $decoded->_additiveProductName ?? new \stdClass();
+            $v->value = $decoded->additiveProductName ?? null;
             $type->setAdditiveProductName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->caloricDensity) || property_exists($json, self::FIELD_CALORIC_DENSITY)) {
-            if (is_array($json->caloricDensity)) {
-                $type->setCaloricDensity(FHIRQuantity::jsonUnserialize(reset($json->caloricDensity), $config));
+        if (isset($decoded->caloricDensity) || property_exists($decoded, self::FIELD_CALORIC_DENSITY)) {
+            if (is_array($decoded->caloricDensity)) {
+                $type->setCaloricDensity(FHIRQuantity::jsonUnserialize(reset($decoded->caloricDensity), $config));
             } else {
-                $type->setCaloricDensity(FHIRQuantity::jsonUnserialize($json->caloricDensity, $config));
+                $type->setCaloricDensity(FHIRQuantity::jsonUnserialize($decoded->caloricDensity, $config));
             }
         }
-        if (isset($json->routeofAdministration) || property_exists($json, self::FIELD_ROUTEOF_ADMINISTRATION)) {
-            if (is_array($json->routeofAdministration)) {
-                $type->setRouteofAdministration(FHIRCodeableConcept::jsonUnserialize(reset($json->routeofAdministration), $config));
+        if (isset($decoded->routeofAdministration) || property_exists($decoded, self::FIELD_ROUTEOF_ADMINISTRATION)) {
+            if (is_array($decoded->routeofAdministration)) {
+                $type->setRouteofAdministration(FHIRCodeableConcept::jsonUnserialize(reset($decoded->routeofAdministration), $config));
             } else {
-                $type->setRouteofAdministration(FHIRCodeableConcept::jsonUnserialize($json->routeofAdministration, $config));
+                $type->setRouteofAdministration(FHIRCodeableConcept::jsonUnserialize($decoded->routeofAdministration, $config));
             }
         }
-        if (isset($json->administration) || property_exists($json, self::FIELD_ADMINISTRATION)) {
-            if (is_object($json->administration)) {
-                $vals = [$json->administration];
+        if (isset($decoded->administration) || property_exists($decoded, self::FIELD_ADMINISTRATION)) {
+            if (is_object($decoded->administration)) {
+                $vals = [$decoded->administration];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ADMINISTRATION, true);
             } else {
-                $vals = $json->administration;
+                $vals = $decoded->administration;
             }
             foreach($vals as $v) {
                 $type->addAdministration(FHIRNutritionOrderAdministration::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->maxVolumeToDeliver) || property_exists($json, self::FIELD_MAX_VOLUME_TO_DELIVER)) {
-            if (is_array($json->maxVolumeToDeliver)) {
-                $type->setMaxVolumeToDeliver(FHIRQuantity::jsonUnserialize(reset($json->maxVolumeToDeliver), $config));
+        if (isset($decoded->maxVolumeToDeliver) || property_exists($decoded, self::FIELD_MAX_VOLUME_TO_DELIVER)) {
+            if (is_array($decoded->maxVolumeToDeliver)) {
+                $type->setMaxVolumeToDeliver(FHIRQuantity::jsonUnserialize(reset($decoded->maxVolumeToDeliver), $config));
             } else {
-                $type->setMaxVolumeToDeliver(FHIRQuantity::jsonUnserialize($json->maxVolumeToDeliver, $config));
+                $type->setMaxVolumeToDeliver(FHIRQuantity::jsonUnserialize($decoded->maxVolumeToDeliver, $config));
             }
         }
-        if (isset($json->administrationInstruction)
-            || isset($json->_administrationInstruction)
-            || property_exists($json, self::FIELD_ADMINISTRATION_INSTRUCTION)
-            || property_exists($json, self::FIELD_ADMINISTRATION_INSTRUCTION_EXT)) {
-            $v = $json->_administrationInstruction ?? new \stdClass();
-            $v->value = $json->administrationInstruction ?? null;
+        if (isset($decoded->administrationInstruction)
+            || isset($decoded->_administrationInstruction)
+            || property_exists($decoded, self::FIELD_ADMINISTRATION_INSTRUCTION)
+            || property_exists($decoded, self::FIELD_ADMINISTRATION_INSTRUCTION_EXT)) {
+            $v = $decoded->_administrationInstruction ?? new \stdClass();
+            $v->value = $decoded->administrationInstruction ?? null;
             $type->setAdministrationInstruction(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

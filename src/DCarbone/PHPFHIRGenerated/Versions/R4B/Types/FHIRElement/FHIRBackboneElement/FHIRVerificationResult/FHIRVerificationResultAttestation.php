@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -761,13 +761,13 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -781,64 +781,64 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->who) || property_exists($json, self::FIELD_WHO)) {
-            if (is_array($json->who)) {
-                $type->setWho(FHIRReference::jsonUnserialize(reset($json->who), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->who) || property_exists($decoded, self::FIELD_WHO)) {
+            if (is_array($decoded->who)) {
+                $type->setWho(FHIRReference::jsonUnserialize(reset($decoded->who), $config));
             } else {
-                $type->setWho(FHIRReference::jsonUnserialize($json->who, $config));
+                $type->setWho(FHIRReference::jsonUnserialize($decoded->who, $config));
             }
         }
-        if (isset($json->onBehalfOf) || property_exists($json, self::FIELD_ON_BEHALF_OF)) {
-            if (is_array($json->onBehalfOf)) {
-                $type->setOnBehalfOf(FHIRReference::jsonUnserialize(reset($json->onBehalfOf), $config));
+        if (isset($decoded->onBehalfOf) || property_exists($decoded, self::FIELD_ON_BEHALF_OF)) {
+            if (is_array($decoded->onBehalfOf)) {
+                $type->setOnBehalfOf(FHIRReference::jsonUnserialize(reset($decoded->onBehalfOf), $config));
             } else {
-                $type->setOnBehalfOf(FHIRReference::jsonUnserialize($json->onBehalfOf, $config));
+                $type->setOnBehalfOf(FHIRReference::jsonUnserialize($decoded->onBehalfOf, $config));
             }
         }
-        if (isset($json->communicationMethod) || property_exists($json, self::FIELD_COMMUNICATION_METHOD)) {
-            if (is_array($json->communicationMethod)) {
-                $type->setCommunicationMethod(FHIRCodeableConcept::jsonUnserialize(reset($json->communicationMethod), $config));
+        if (isset($decoded->communicationMethod) || property_exists($decoded, self::FIELD_COMMUNICATION_METHOD)) {
+            if (is_array($decoded->communicationMethod)) {
+                $type->setCommunicationMethod(FHIRCodeableConcept::jsonUnserialize(reset($decoded->communicationMethod), $config));
             } else {
-                $type->setCommunicationMethod(FHIRCodeableConcept::jsonUnserialize($json->communicationMethod, $config));
+                $type->setCommunicationMethod(FHIRCodeableConcept::jsonUnserialize($decoded->communicationMethod, $config));
             }
         }
-        if (isset($json->date)
-            || isset($json->_date)
-            || property_exists($json, self::FIELD_DATE)
-            || property_exists($json, self::FIELD_DATE_EXT)) {
-            $v = $json->_date ?? new \stdClass();
-            $v->value = $json->date ?? null;
+        if (isset($decoded->date)
+            || isset($decoded->_date)
+            || property_exists($decoded, self::FIELD_DATE)
+            || property_exists($decoded, self::FIELD_DATE_EXT)) {
+            $v = $decoded->_date ?? new \stdClass();
+            $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json->sourceIdentityCertificate)
-            || isset($json->_sourceIdentityCertificate)
-            || property_exists($json, self::FIELD_SOURCE_IDENTITY_CERTIFICATE)
-            || property_exists($json, self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT)) {
-            $v = $json->_sourceIdentityCertificate ?? new \stdClass();
-            $v->value = $json->sourceIdentityCertificate ?? null;
+        if (isset($decoded->sourceIdentityCertificate)
+            || isset($decoded->_sourceIdentityCertificate)
+            || property_exists($decoded, self::FIELD_SOURCE_IDENTITY_CERTIFICATE)
+            || property_exists($decoded, self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT)) {
+            $v = $decoded->_sourceIdentityCertificate ?? new \stdClass();
+            $v->value = $decoded->sourceIdentityCertificate ?? null;
             $type->setSourceIdentityCertificate(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->proxyIdentityCertificate)
-            || isset($json->_proxyIdentityCertificate)
-            || property_exists($json, self::FIELD_PROXY_IDENTITY_CERTIFICATE)
-            || property_exists($json, self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT)) {
-            $v = $json->_proxyIdentityCertificate ?? new \stdClass();
-            $v->value = $json->proxyIdentityCertificate ?? null;
+        if (isset($decoded->proxyIdentityCertificate)
+            || isset($decoded->_proxyIdentityCertificate)
+            || property_exists($decoded, self::FIELD_PROXY_IDENTITY_CERTIFICATE)
+            || property_exists($decoded, self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT)) {
+            $v = $decoded->_proxyIdentityCertificate ?? new \stdClass();
+            $v->value = $decoded->proxyIdentityCertificate ?? null;
             $type->setProxyIdentityCertificate(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->proxySignature) || property_exists($json, self::FIELD_PROXY_SIGNATURE)) {
-            if (is_array($json->proxySignature)) {
-                $type->setProxySignature(FHIRSignature::jsonUnserialize(reset($json->proxySignature), $config));
+        if (isset($decoded->proxySignature) || property_exists($decoded, self::FIELD_PROXY_SIGNATURE)) {
+            if (is_array($decoded->proxySignature)) {
+                $type->setProxySignature(FHIRSignature::jsonUnserialize(reset($decoded->proxySignature), $config));
             } else {
-                $type->setProxySignature(FHIRSignature::jsonUnserialize($json->proxySignature, $config));
+                $type->setProxySignature(FHIRSignature::jsonUnserialize($decoded->proxySignature, $config));
             }
         }
-        if (isset($json->sourceSignature) || property_exists($json, self::FIELD_SOURCE_SIGNATURE)) {
-            if (is_array($json->sourceSignature)) {
-                $type->setSourceSignature(FHIRSignature::jsonUnserialize(reset($json->sourceSignature), $config));
+        if (isset($decoded->sourceSignature) || property_exists($decoded, self::FIELD_SOURCE_SIGNATURE)) {
+            if (is_array($decoded->sourceSignature)) {
+                $type->setSourceSignature(FHIRSignature::jsonUnserialize(reset($decoded->sourceSignature), $config));
             } else {
-                $type->setSourceSignature(FHIRSignature::jsonUnserialize($json->sourceSignature, $config));
+                $type->setSourceSignature(FHIRSignature::jsonUnserialize($decoded->sourceSignature, $config));
             }
         }
         return $type;

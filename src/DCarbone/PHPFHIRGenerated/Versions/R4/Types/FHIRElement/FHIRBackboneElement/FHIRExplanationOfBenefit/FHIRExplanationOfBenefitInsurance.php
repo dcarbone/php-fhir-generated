@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -442,13 +442,13 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -462,28 +462,28 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->focal)
-            || isset($json->_focal)
-            || property_exists($json, self::FIELD_FOCAL)
-            || property_exists($json, self::FIELD_FOCAL_EXT)) {
-            $v = $json->_focal ?? new \stdClass();
-            $v->value = $json->focal ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->focal)
+            || isset($decoded->_focal)
+            || property_exists($decoded, self::FIELD_FOCAL)
+            || property_exists($decoded, self::FIELD_FOCAL_EXT)) {
+            $v = $decoded->_focal ?? new \stdClass();
+            $v->value = $decoded->focal ?? null;
             $type->setFocal(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->coverage) || property_exists($json, self::FIELD_COVERAGE)) {
-            if (is_array($json->coverage)) {
-                $type->setCoverage(FHIRReference::jsonUnserialize(reset($json->coverage), $config));
+        if (isset($decoded->coverage) || property_exists($decoded, self::FIELD_COVERAGE)) {
+            if (is_array($decoded->coverage)) {
+                $type->setCoverage(FHIRReference::jsonUnserialize(reset($decoded->coverage), $config));
             } else {
-                $type->setCoverage(FHIRReference::jsonUnserialize($json->coverage, $config));
+                $type->setCoverage(FHIRReference::jsonUnserialize($decoded->coverage, $config));
             }
         }
-        if (isset($json->preAuthRef)
-            || isset($json->_preAuthRef)
-            || property_exists($json, self::FIELD_PRE_AUTH_REF)
-            || property_exists($json, self::FIELD_PRE_AUTH_REF_EXT)) {
-            $vals = (array)($json->preAuthRef ?? []);
-            $exts = (array)($json->FIELD_PRE_AUTH_REF_EXT ?? []);
+        if (isset($decoded->preAuthRef)
+            || isset($decoded->_preAuthRef)
+            || property_exists($decoded, self::FIELD_PRE_AUTH_REF)
+            || property_exists($decoded, self::FIELD_PRE_AUTH_REF_EXT)) {
+            $vals = (array)($decoded->preAuthRef ?? []);
+            $exts = (array)($decoded->FIELD_PRE_AUTH_REF_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

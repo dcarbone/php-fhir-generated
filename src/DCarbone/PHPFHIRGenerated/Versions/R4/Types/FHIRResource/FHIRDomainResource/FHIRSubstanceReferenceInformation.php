@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -683,13 +683,13 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -706,60 +706,60 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->comment)
-            || isset($json->_comment)
-            || property_exists($json, self::FIELD_COMMENT)
-            || property_exists($json, self::FIELD_COMMENT_EXT)) {
-            $v = $json->_comment ?? new \stdClass();
-            $v->value = $json->comment ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->comment)
+            || isset($decoded->_comment)
+            || property_exists($decoded, self::FIELD_COMMENT)
+            || property_exists($decoded, self::FIELD_COMMENT_EXT)) {
+            $v = $decoded->_comment ?? new \stdClass();
+            $v->value = $decoded->comment ?? null;
             $type->setComment(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->gene) || property_exists($json, self::FIELD_GENE)) {
-            if (is_object($json->gene)) {
-                $vals = [$json->gene];
+        if (isset($decoded->gene) || property_exists($decoded, self::FIELD_GENE)) {
+            if (is_object($decoded->gene)) {
+                $vals = [$decoded->gene];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_GENE, true);
             } else {
-                $vals = $json->gene;
+                $vals = $decoded->gene;
             }
             foreach($vals as $v) {
                 $type->addGene(FHIRSubstanceReferenceInformationGene::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->geneElement) || property_exists($json, self::FIELD_GENE_ELEMENT)) {
-            if (is_object($json->geneElement)) {
-                $vals = [$json->geneElement];
+        if (isset($decoded->geneElement) || property_exists($decoded, self::FIELD_GENE_ELEMENT)) {
+            if (is_object($decoded->geneElement)) {
+                $vals = [$decoded->geneElement];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_GENE_ELEMENT, true);
             } else {
-                $vals = $json->geneElement;
+                $vals = $decoded->geneElement;
             }
             foreach($vals as $v) {
                 $type->addGeneElement(FHIRSubstanceReferenceInformationGeneElement::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->classification) || property_exists($json, self::FIELD_CLASSIFICATION)) {
-            if (is_object($json->classification)) {
-                $vals = [$json->classification];
+        if (isset($decoded->classification) || property_exists($decoded, self::FIELD_CLASSIFICATION)) {
+            if (is_object($decoded->classification)) {
+                $vals = [$decoded->classification];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CLASSIFICATION, true);
             } else {
-                $vals = $json->classification;
+                $vals = $decoded->classification;
             }
             foreach($vals as $v) {
                 $type->addClassification(FHIRSubstanceReferenceInformationClassification::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->target) || property_exists($json, self::FIELD_TARGET)) {
-            if (is_object($json->target)) {
-                $vals = [$json->target];
+        if (isset($decoded->target) || property_exists($decoded, self::FIELD_TARGET)) {
+            if (is_object($decoded->target)) {
+                $vals = [$decoded->target];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TARGET, true);
             } else {
-                $vals = $json->target;
+                $vals = $decoded->target;
             }
             foreach($vals as $v) {
                 $type->addTarget(FHIRSubstanceReferenceInformationTarget::jsonUnserialize($v, $config));

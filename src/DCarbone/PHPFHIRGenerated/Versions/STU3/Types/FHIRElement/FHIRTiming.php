@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -440,13 +440,13 @@ class FHIRTiming extends FHIRElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -460,13 +460,13 @@ class FHIRTiming extends FHIRElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->event)
-            || isset($json->_event)
-            || property_exists($json, self::FIELD_EVENT)
-            || property_exists($json, self::FIELD_EVENT_EXT)) {
-            $vals = (array)($json->event ?? []);
-            $exts = (array)($json->FIELD_EVENT_EXT ?? []);
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->event)
+            || isset($decoded->_event)
+            || property_exists($decoded, self::FIELD_EVENT)
+            || property_exists($decoded, self::FIELD_EVENT_EXT)) {
+            $vals = (array)($decoded->event ?? []);
+            $exts = (array)($decoded->FIELD_EVENT_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -478,18 +478,18 @@ class FHIRTiming extends FHIRElement
                 $type->addEvent(FHIRDateTime::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->repeat) || property_exists($json, self::FIELD_REPEAT)) {
-            if (is_array($json->repeat)) {
-                $type->setRepeat(FHIRTimingRepeat::jsonUnserialize(reset($json->repeat), $config));
+        if (isset($decoded->repeat) || property_exists($decoded, self::FIELD_REPEAT)) {
+            if (is_array($decoded->repeat)) {
+                $type->setRepeat(FHIRTimingRepeat::jsonUnserialize(reset($decoded->repeat), $config));
             } else {
-                $type->setRepeat(FHIRTimingRepeat::jsonUnserialize($json->repeat, $config));
+                $type->setRepeat(FHIRTimingRepeat::jsonUnserialize($decoded->repeat, $config));
             }
         }
-        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
-            if (is_array($json->code)) {
-                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($json->code), $config));
+        if (isset($decoded->code) || property_exists($decoded, self::FIELD_CODE)) {
+            if (is_array($decoded->code)) {
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize(reset($decoded->code), $config));
             } else {
-                $type->setCode(FHIRCodeableConcept::jsonUnserialize($json->code, $config));
+                $type->setCode(FHIRCodeableConcept::jsonUnserialize($decoded->code, $config));
             }
         }
         return $type;

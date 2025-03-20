@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -330,13 +330,13 @@ class FHIRClinicalUseDefinitionInteractant extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteractant $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteractant
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -350,19 +350,19 @@ class FHIRClinicalUseDefinitionInteractant extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->itemReference) || property_exists($json, self::FIELD_ITEM_REFERENCE)) {
-            if (is_array($json->itemReference)) {
-                $type->setItemReference(FHIRReference::jsonUnserialize(reset($json->itemReference), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->itemReference) || property_exists($decoded, self::FIELD_ITEM_REFERENCE)) {
+            if (is_array($decoded->itemReference)) {
+                $type->setItemReference(FHIRReference::jsonUnserialize(reset($decoded->itemReference), $config));
             } else {
-                $type->setItemReference(FHIRReference::jsonUnserialize($json->itemReference, $config));
+                $type->setItemReference(FHIRReference::jsonUnserialize($decoded->itemReference, $config));
             }
         }
-        if (isset($json->itemCodeableConcept) || property_exists($json, self::FIELD_ITEM_CODEABLE_CONCEPT)) {
-            if (is_array($json->itemCodeableConcept)) {
-                $type->setItemCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->itemCodeableConcept), $config));
+        if (isset($decoded->itemCodeableConcept) || property_exists($decoded, self::FIELD_ITEM_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->itemCodeableConcept)) {
+                $type->setItemCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->itemCodeableConcept), $config));
             } else {
-                $type->setItemCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->itemCodeableConcept, $config));
+                $type->setItemCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->itemCodeableConcept, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -284,13 +284,13 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1 $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -304,19 +304,19 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->operation) || property_exists($json, self::FIELD_OPERATION)) {
-            if (is_array($json->operation)) {
-                $type->setOperation(FHIRTestReportOperation::jsonUnserialize(reset($json->operation), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->operation) || property_exists($decoded, self::FIELD_OPERATION)) {
+            if (is_array($decoded->operation)) {
+                $type->setOperation(FHIRTestReportOperation::jsonUnserialize(reset($decoded->operation), $config));
             } else {
-                $type->setOperation(FHIRTestReportOperation::jsonUnserialize($json->operation, $config));
+                $type->setOperation(FHIRTestReportOperation::jsonUnserialize($decoded->operation, $config));
             }
         }
-        if (isset($json->assert) || property_exists($json, self::FIELD_ASSERT)) {
-            if (is_array($json->assert)) {
-                $type->setAssert(FHIRTestReportAssert::jsonUnserialize(reset($json->assert), $config));
+        if (isset($decoded->assert) || property_exists($decoded, self::FIELD_ASSERT)) {
+            if (is_array($decoded->assert)) {
+                $type->setAssert(FHIRTestReportAssert::jsonUnserialize(reset($decoded->assert), $config));
             } else {
-                $type->setAssert(FHIRTestReportAssert::jsonUnserialize($json->assert, $config));
+                $type->setAssert(FHIRTestReportAssert::jsonUnserialize($decoded->assert, $config));
             }
         }
         return $type;

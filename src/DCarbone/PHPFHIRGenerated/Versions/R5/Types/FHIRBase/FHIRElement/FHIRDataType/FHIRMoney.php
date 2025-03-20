@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -358,13 +358,13 @@ class FHIRMoney extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -378,21 +378,21 @@ class FHIRMoney extends FHIRDataType
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->value)
-            || isset($json->_value)
-            || property_exists($json, self::FIELD_VALUE)
-            || property_exists($json, self::FIELD_VALUE_EXT)) {
-            $v = $json->_value ?? new \stdClass();
-            $v->value = $json->value ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->value)
+            || isset($decoded->_value)
+            || property_exists($decoded, self::FIELD_VALUE)
+            || property_exists($decoded, self::FIELD_VALUE_EXT)) {
+            $v = $decoded->_value ?? new \stdClass();
+            $v->value = $decoded->value ?? null;
             $type->setValue(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->currency)
-            || isset($json->_currency)
-            || property_exists($json, self::FIELD_CURRENCY)
-            || property_exists($json, self::FIELD_CURRENCY_EXT)) {
-            $v = $json->_currency ?? new \stdClass();
-            $v->value = $json->currency ?? null;
+        if (isset($decoded->currency)
+            || isset($decoded->_currency)
+            || property_exists($decoded, self::FIELD_CURRENCY)
+            || property_exists($decoded, self::FIELD_CURRENCY_EXT)) {
+            $v = $decoded->_currency ?? new \stdClass();
+            $v->value = $decoded->currency ?? null;
             $type->setCurrency(FHIRCode::jsonUnserialize($v, $config));
         }
         return $type;

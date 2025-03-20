@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -479,13 +479,13 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -499,36 +499,36 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->doseSequence)
-            || isset($json->_doseSequence)
-            || property_exists($json, self::FIELD_DOSE_SEQUENCE)
-            || property_exists($json, self::FIELD_DOSE_SEQUENCE_EXT)) {
-            $v = $json->_doseSequence ?? new \stdClass();
-            $v->value = $json->doseSequence ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->doseSequence)
+            || isset($decoded->_doseSequence)
+            || property_exists($decoded, self::FIELD_DOSE_SEQUENCE)
+            || property_exists($decoded, self::FIELD_DOSE_SEQUENCE_EXT)) {
+            $v = $decoded->_doseSequence ?? new \stdClass();
+            $v->value = $decoded->doseSequence ?? null;
             $type->setDoseSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->authority) || property_exists($json, self::FIELD_AUTHORITY)) {
-            if (is_array($json->authority)) {
-                $type->setAuthority(FHIRReference::jsonUnserialize(reset($json->authority), $config));
+        if (isset($decoded->authority) || property_exists($decoded, self::FIELD_AUTHORITY)) {
+            if (is_array($decoded->authority)) {
+                $type->setAuthority(FHIRReference::jsonUnserialize(reset($decoded->authority), $config));
             } else {
-                $type->setAuthority(FHIRReference::jsonUnserialize($json->authority, $config));
+                $type->setAuthority(FHIRReference::jsonUnserialize($decoded->authority, $config));
             }
         }
-        if (isset($json->series)
-            || isset($json->_series)
-            || property_exists($json, self::FIELD_SERIES)
-            || property_exists($json, self::FIELD_SERIES_EXT)) {
-            $v = $json->_series ?? new \stdClass();
-            $v->value = $json->series ?? null;
+        if (isset($decoded->series)
+            || isset($decoded->_series)
+            || property_exists($decoded, self::FIELD_SERIES)
+            || property_exists($decoded, self::FIELD_SERIES_EXT)) {
+            $v = $decoded->_series ?? new \stdClass();
+            $v->value = $decoded->series ?? null;
             $type->setSeries(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

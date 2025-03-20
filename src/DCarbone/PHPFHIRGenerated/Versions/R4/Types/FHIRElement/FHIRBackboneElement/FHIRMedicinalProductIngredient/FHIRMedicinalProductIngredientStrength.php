@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -691,13 +691,13 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -711,60 +711,60 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->presentation) || property_exists($json, self::FIELD_PRESENTATION)) {
-            if (is_array($json->presentation)) {
-                $type->setPresentation(FHIRRatio::jsonUnserialize(reset($json->presentation), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->presentation) || property_exists($decoded, self::FIELD_PRESENTATION)) {
+            if (is_array($decoded->presentation)) {
+                $type->setPresentation(FHIRRatio::jsonUnserialize(reset($decoded->presentation), $config));
             } else {
-                $type->setPresentation(FHIRRatio::jsonUnserialize($json->presentation, $config));
+                $type->setPresentation(FHIRRatio::jsonUnserialize($decoded->presentation, $config));
             }
         }
-        if (isset($json->presentationLowLimit) || property_exists($json, self::FIELD_PRESENTATION_LOW_LIMIT)) {
-            if (is_array($json->presentationLowLimit)) {
-                $type->setPresentationLowLimit(FHIRRatio::jsonUnserialize(reset($json->presentationLowLimit), $config));
+        if (isset($decoded->presentationLowLimit) || property_exists($decoded, self::FIELD_PRESENTATION_LOW_LIMIT)) {
+            if (is_array($decoded->presentationLowLimit)) {
+                $type->setPresentationLowLimit(FHIRRatio::jsonUnserialize(reset($decoded->presentationLowLimit), $config));
             } else {
-                $type->setPresentationLowLimit(FHIRRatio::jsonUnserialize($json->presentationLowLimit, $config));
+                $type->setPresentationLowLimit(FHIRRatio::jsonUnserialize($decoded->presentationLowLimit, $config));
             }
         }
-        if (isset($json->concentration) || property_exists($json, self::FIELD_CONCENTRATION)) {
-            if (is_array($json->concentration)) {
-                $type->setConcentration(FHIRRatio::jsonUnserialize(reset($json->concentration), $config));
+        if (isset($decoded->concentration) || property_exists($decoded, self::FIELD_CONCENTRATION)) {
+            if (is_array($decoded->concentration)) {
+                $type->setConcentration(FHIRRatio::jsonUnserialize(reset($decoded->concentration), $config));
             } else {
-                $type->setConcentration(FHIRRatio::jsonUnserialize($json->concentration, $config));
+                $type->setConcentration(FHIRRatio::jsonUnserialize($decoded->concentration, $config));
             }
         }
-        if (isset($json->concentrationLowLimit) || property_exists($json, self::FIELD_CONCENTRATION_LOW_LIMIT)) {
-            if (is_array($json->concentrationLowLimit)) {
-                $type->setConcentrationLowLimit(FHIRRatio::jsonUnserialize(reset($json->concentrationLowLimit), $config));
+        if (isset($decoded->concentrationLowLimit) || property_exists($decoded, self::FIELD_CONCENTRATION_LOW_LIMIT)) {
+            if (is_array($decoded->concentrationLowLimit)) {
+                $type->setConcentrationLowLimit(FHIRRatio::jsonUnserialize(reset($decoded->concentrationLowLimit), $config));
             } else {
-                $type->setConcentrationLowLimit(FHIRRatio::jsonUnserialize($json->concentrationLowLimit, $config));
+                $type->setConcentrationLowLimit(FHIRRatio::jsonUnserialize($decoded->concentrationLowLimit, $config));
             }
         }
-        if (isset($json->measurementPoint)
-            || isset($json->_measurementPoint)
-            || property_exists($json, self::FIELD_MEASUREMENT_POINT)
-            || property_exists($json, self::FIELD_MEASUREMENT_POINT_EXT)) {
-            $v = $json->_measurementPoint ?? new \stdClass();
-            $v->value = $json->measurementPoint ?? null;
+        if (isset($decoded->measurementPoint)
+            || isset($decoded->_measurementPoint)
+            || property_exists($decoded, self::FIELD_MEASUREMENT_POINT)
+            || property_exists($decoded, self::FIELD_MEASUREMENT_POINT_EXT)) {
+            $v = $decoded->_measurementPoint ?? new \stdClass();
+            $v->value = $decoded->measurementPoint ?? null;
             $type->setMeasurementPoint(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->country) || property_exists($json, self::FIELD_COUNTRY)) {
-            if (is_object($json->country)) {
-                $vals = [$json->country];
+        if (isset($decoded->country) || property_exists($decoded, self::FIELD_COUNTRY)) {
+            if (is_object($decoded->country)) {
+                $vals = [$decoded->country];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_COUNTRY, true);
             } else {
-                $vals = $json->country;
+                $vals = $decoded->country;
             }
             foreach($vals as $v) {
                 $type->addCountry(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->referenceStrength) || property_exists($json, self::FIELD_REFERENCE_STRENGTH)) {
-            if (is_object($json->referenceStrength)) {
-                $vals = [$json->referenceStrength];
+        if (isset($decoded->referenceStrength) || property_exists($decoded, self::FIELD_REFERENCE_STRENGTH)) {
+            if (is_object($decoded->referenceStrength)) {
+                $vals = [$decoded->referenceStrength];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_REFERENCE_STRENGTH, true);
             } else {
-                $vals = $json->referenceStrength;
+                $vals = $decoded->referenceStrength;
             }
             foreach($vals as $v) {
                 $type->addReferenceStrength(FHIRMedicinalProductIngredientReferenceStrength::jsonUnserialize($v, $config));

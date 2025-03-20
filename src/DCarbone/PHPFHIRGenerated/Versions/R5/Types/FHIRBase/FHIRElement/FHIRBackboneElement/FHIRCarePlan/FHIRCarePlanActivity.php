@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -470,13 +470,13 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -490,34 +490,34 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->performedActivity) || property_exists($json, self::FIELD_PERFORMED_ACTIVITY)) {
-            if (is_object($json->performedActivity)) {
-                $vals = [$json->performedActivity];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->performedActivity) || property_exists($decoded, self::FIELD_PERFORMED_ACTIVITY)) {
+            if (is_object($decoded->performedActivity)) {
+                $vals = [$decoded->performedActivity];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PERFORMED_ACTIVITY, true);
             } else {
-                $vals = $json->performedActivity;
+                $vals = $decoded->performedActivity;
             }
             foreach($vals as $v) {
                 $type->addPerformedActivity(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->progress) || property_exists($json, self::FIELD_PROGRESS)) {
-            if (is_object($json->progress)) {
-                $vals = [$json->progress];
+        if (isset($decoded->progress) || property_exists($decoded, self::FIELD_PROGRESS)) {
+            if (is_object($decoded->progress)) {
+                $vals = [$decoded->progress];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PROGRESS, true);
             } else {
-                $vals = $json->progress;
+                $vals = $decoded->progress;
             }
             foreach($vals as $v) {
                 $type->addProgress(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->plannedActivityReference) || property_exists($json, self::FIELD_PLANNED_ACTIVITY_REFERENCE)) {
-            if (is_array($json->plannedActivityReference)) {
-                $type->setPlannedActivityReference(FHIRReference::jsonUnserialize(reset($json->plannedActivityReference), $config));
+        if (isset($decoded->plannedActivityReference) || property_exists($decoded, self::FIELD_PLANNED_ACTIVITY_REFERENCE)) {
+            if (is_array($decoded->plannedActivityReference)) {
+                $type->setPlannedActivityReference(FHIRReference::jsonUnserialize(reset($decoded->plannedActivityReference), $config));
             } else {
-                $type->setPlannedActivityReference(FHIRReference::jsonUnserialize($json->plannedActivityReference, $config));
+                $type->setPlannedActivityReference(FHIRReference::jsonUnserialize($decoded->plannedActivityReference, $config));
             }
         }
         return $type;

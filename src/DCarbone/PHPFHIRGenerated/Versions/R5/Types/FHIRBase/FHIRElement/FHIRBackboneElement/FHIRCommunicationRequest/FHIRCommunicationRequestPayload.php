@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -390,13 +390,13 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -410,26 +410,26 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->contentAttachment) || property_exists($json, self::FIELD_CONTENT_ATTACHMENT)) {
-            if (is_array($json->contentAttachment)) {
-                $type->setContentAttachment(FHIRAttachment::jsonUnserialize(reset($json->contentAttachment), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->contentAttachment) || property_exists($decoded, self::FIELD_CONTENT_ATTACHMENT)) {
+            if (is_array($decoded->contentAttachment)) {
+                $type->setContentAttachment(FHIRAttachment::jsonUnserialize(reset($decoded->contentAttachment), $config));
             } else {
-                $type->setContentAttachment(FHIRAttachment::jsonUnserialize($json->contentAttachment, $config));
+                $type->setContentAttachment(FHIRAttachment::jsonUnserialize($decoded->contentAttachment, $config));
             }
         }
-        if (isset($json->contentReference) || property_exists($json, self::FIELD_CONTENT_REFERENCE)) {
-            if (is_array($json->contentReference)) {
-                $type->setContentReference(FHIRReference::jsonUnserialize(reset($json->contentReference), $config));
+        if (isset($decoded->contentReference) || property_exists($decoded, self::FIELD_CONTENT_REFERENCE)) {
+            if (is_array($decoded->contentReference)) {
+                $type->setContentReference(FHIRReference::jsonUnserialize(reset($decoded->contentReference), $config));
             } else {
-                $type->setContentReference(FHIRReference::jsonUnserialize($json->contentReference, $config));
+                $type->setContentReference(FHIRReference::jsonUnserialize($decoded->contentReference, $config));
             }
         }
-        if (isset($json->contentCodeableConcept) || property_exists($json, self::FIELD_CONTENT_CODEABLE_CONCEPT)) {
-            if (is_array($json->contentCodeableConcept)) {
-                $type->setContentCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->contentCodeableConcept), $config));
+        if (isset($decoded->contentCodeableConcept) || property_exists($decoded, self::FIELD_CONTENT_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->contentCodeableConcept)) {
+                $type->setContentCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->contentCodeableConcept), $config));
             } else {
-                $type->setContentCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->contentCodeableConcept, $config));
+                $type->setContentCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->contentCodeableConcept, $config));
             }
         }
         return $type;

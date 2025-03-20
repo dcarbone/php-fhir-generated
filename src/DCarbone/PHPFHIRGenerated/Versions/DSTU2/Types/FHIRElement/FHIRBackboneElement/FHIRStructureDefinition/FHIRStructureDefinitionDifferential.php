@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -283,13 +283,13 @@ class FHIRStructureDefinitionDifferential extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -303,13 +303,13 @@ class FHIRStructureDefinitionDifferential extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->element) || property_exists($json, self::FIELD_ELEMENT)) {
-            if (is_object($json->element)) {
-                $vals = [$json->element];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->element) || property_exists($decoded, self::FIELD_ELEMENT)) {
+            if (is_object($decoded->element)) {
+                $vals = [$decoded->element];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ELEMENT, true);
             } else {
-                $vals = $json->element;
+                $vals = $decoded->element;
             }
             foreach($vals as $v) {
                 $type->addElement(FHIRElementDefinition::jsonUnserialize($v, $config));

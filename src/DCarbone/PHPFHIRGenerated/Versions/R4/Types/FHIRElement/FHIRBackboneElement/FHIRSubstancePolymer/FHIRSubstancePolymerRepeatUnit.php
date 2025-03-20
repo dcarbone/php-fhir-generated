@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -554,13 +554,13 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -574,46 +574,46 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->orientationOfPolymerisation) || property_exists($json, self::FIELD_ORIENTATION_OF_POLYMERISATION)) {
-            if (is_array($json->orientationOfPolymerisation)) {
-                $type->setOrientationOfPolymerisation(FHIRCodeableConcept::jsonUnserialize(reset($json->orientationOfPolymerisation), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->orientationOfPolymerisation) || property_exists($decoded, self::FIELD_ORIENTATION_OF_POLYMERISATION)) {
+            if (is_array($decoded->orientationOfPolymerisation)) {
+                $type->setOrientationOfPolymerisation(FHIRCodeableConcept::jsonUnserialize(reset($decoded->orientationOfPolymerisation), $config));
             } else {
-                $type->setOrientationOfPolymerisation(FHIRCodeableConcept::jsonUnserialize($json->orientationOfPolymerisation, $config));
+                $type->setOrientationOfPolymerisation(FHIRCodeableConcept::jsonUnserialize($decoded->orientationOfPolymerisation, $config));
             }
         }
-        if (isset($json->repeatUnit)
-            || isset($json->_repeatUnit)
-            || property_exists($json, self::FIELD_REPEAT_UNIT)
-            || property_exists($json, self::FIELD_REPEAT_UNIT_EXT)) {
-            $v = $json->_repeatUnit ?? new \stdClass();
-            $v->value = $json->repeatUnit ?? null;
+        if (isset($decoded->repeatUnit)
+            || isset($decoded->_repeatUnit)
+            || property_exists($decoded, self::FIELD_REPEAT_UNIT)
+            || property_exists($decoded, self::FIELD_REPEAT_UNIT_EXT)) {
+            $v = $decoded->_repeatUnit ?? new \stdClass();
+            $v->value = $decoded->repeatUnit ?? null;
             $type->setRepeatUnit(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->amount) || property_exists($json, self::FIELD_AMOUNT)) {
-            if (is_array($json->amount)) {
-                $type->setAmount(FHIRSubstanceAmount::jsonUnserialize(reset($json->amount), $config));
+        if (isset($decoded->amount) || property_exists($decoded, self::FIELD_AMOUNT)) {
+            if (is_array($decoded->amount)) {
+                $type->setAmount(FHIRSubstanceAmount::jsonUnserialize(reset($decoded->amount), $config));
             } else {
-                $type->setAmount(FHIRSubstanceAmount::jsonUnserialize($json->amount, $config));
+                $type->setAmount(FHIRSubstanceAmount::jsonUnserialize($decoded->amount, $config));
             }
         }
-        if (isset($json->degreeOfPolymerisation) || property_exists($json, self::FIELD_DEGREE_OF_POLYMERISATION)) {
-            if (is_object($json->degreeOfPolymerisation)) {
-                $vals = [$json->degreeOfPolymerisation];
+        if (isset($decoded->degreeOfPolymerisation) || property_exists($decoded, self::FIELD_DEGREE_OF_POLYMERISATION)) {
+            if (is_object($decoded->degreeOfPolymerisation)) {
+                $vals = [$decoded->degreeOfPolymerisation];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DEGREE_OF_POLYMERISATION, true);
             } else {
-                $vals = $json->degreeOfPolymerisation;
+                $vals = $decoded->degreeOfPolymerisation;
             }
             foreach($vals as $v) {
                 $type->addDegreeOfPolymerisation(FHIRSubstancePolymerDegreeOfPolymerisation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->structuralRepresentation) || property_exists($json, self::FIELD_STRUCTURAL_REPRESENTATION)) {
-            if (is_object($json->structuralRepresentation)) {
-                $vals = [$json->structuralRepresentation];
+        if (isset($decoded->structuralRepresentation) || property_exists($decoded, self::FIELD_STRUCTURAL_REPRESENTATION)) {
+            if (is_object($decoded->structuralRepresentation)) {
+                $vals = [$decoded->structuralRepresentation];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_STRUCTURAL_REPRESENTATION, true);
             } else {
-                $vals = $json->structuralRepresentation;
+                $vals = $decoded->structuralRepresentation;
             }
             foreach($vals as $v) {
                 $type->addStructuralRepresentation(FHIRSubstancePolymerStructuralRepresentation::jsonUnserialize($v, $config));

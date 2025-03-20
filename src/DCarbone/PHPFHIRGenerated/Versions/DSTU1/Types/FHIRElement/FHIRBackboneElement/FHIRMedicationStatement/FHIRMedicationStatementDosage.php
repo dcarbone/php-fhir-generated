@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -792,13 +792,13 @@ class FHIRMedicationStatementDosage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationStatement\FHIRMedicationStatementDosage $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationStatement\FHIRMedicationStatementDosage
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -812,69 +812,69 @@ class FHIRMedicationStatementDosage extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->timing) || property_exists($json, self::FIELD_TIMING)) {
-            if (is_array($json->timing)) {
-                $type->setTiming(FHIRSchedule::jsonUnserialize(reset($json->timing), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->timing) || property_exists($decoded, self::FIELD_TIMING)) {
+            if (is_array($decoded->timing)) {
+                $type->setTiming(FHIRSchedule::jsonUnserialize(reset($decoded->timing), $config));
             } else {
-                $type->setTiming(FHIRSchedule::jsonUnserialize($json->timing, $config));
+                $type->setTiming(FHIRSchedule::jsonUnserialize($decoded->timing, $config));
             }
         }
-        if (isset($json->asNeededBoolean)
-            || isset($json->_asNeededBoolean)
-            || property_exists($json, self::FIELD_AS_NEEDED_BOOLEAN)
-            || property_exists($json, self::FIELD_AS_NEEDED_BOOLEAN_EXT)) {
-            $v = $json->_asNeededBoolean ?? new \stdClass();
-            $v->value = $json->asNeededBoolean ?? null;
+        if (isset($decoded->asNeededBoolean)
+            || isset($decoded->_asNeededBoolean)
+            || property_exists($decoded, self::FIELD_AS_NEEDED_BOOLEAN)
+            || property_exists($decoded, self::FIELD_AS_NEEDED_BOOLEAN_EXT)) {
+            $v = $decoded->_asNeededBoolean ?? new \stdClass();
+            $v->value = $decoded->asNeededBoolean ?? null;
             $type->setAsNeededBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->asNeededCodeableConcept) || property_exists($json, self::FIELD_AS_NEEDED_CODEABLE_CONCEPT)) {
-            if (is_array($json->asNeededCodeableConcept)) {
-                $type->setAsNeededCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->asNeededCodeableConcept), $config));
+        if (isset($decoded->asNeededCodeableConcept) || property_exists($decoded, self::FIELD_AS_NEEDED_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->asNeededCodeableConcept)) {
+                $type->setAsNeededCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->asNeededCodeableConcept), $config));
             } else {
-                $type->setAsNeededCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->asNeededCodeableConcept, $config));
+                $type->setAsNeededCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->asNeededCodeableConcept, $config));
             }
         }
-        if (isset($json->site) || property_exists($json, self::FIELD_SITE)) {
-            if (is_array($json->site)) {
-                $type->setSite(FHIRCodeableConcept::jsonUnserialize(reset($json->site), $config));
+        if (isset($decoded->site) || property_exists($decoded, self::FIELD_SITE)) {
+            if (is_array($decoded->site)) {
+                $type->setSite(FHIRCodeableConcept::jsonUnserialize(reset($decoded->site), $config));
             } else {
-                $type->setSite(FHIRCodeableConcept::jsonUnserialize($json->site, $config));
+                $type->setSite(FHIRCodeableConcept::jsonUnserialize($decoded->site, $config));
             }
         }
-        if (isset($json->route) || property_exists($json, self::FIELD_ROUTE)) {
-            if (is_array($json->route)) {
-                $type->setRoute(FHIRCodeableConcept::jsonUnserialize(reset($json->route), $config));
+        if (isset($decoded->route) || property_exists($decoded, self::FIELD_ROUTE)) {
+            if (is_array($decoded->route)) {
+                $type->setRoute(FHIRCodeableConcept::jsonUnserialize(reset($decoded->route), $config));
             } else {
-                $type->setRoute(FHIRCodeableConcept::jsonUnserialize($json->route, $config));
+                $type->setRoute(FHIRCodeableConcept::jsonUnserialize($decoded->route, $config));
             }
         }
-        if (isset($json->method) || property_exists($json, self::FIELD_METHOD)) {
-            if (is_array($json->method)) {
-                $type->setMethod(FHIRCodeableConcept::jsonUnserialize(reset($json->method), $config));
+        if (isset($decoded->method) || property_exists($decoded, self::FIELD_METHOD)) {
+            if (is_array($decoded->method)) {
+                $type->setMethod(FHIRCodeableConcept::jsonUnserialize(reset($decoded->method), $config));
             } else {
-                $type->setMethod(FHIRCodeableConcept::jsonUnserialize($json->method, $config));
+                $type->setMethod(FHIRCodeableConcept::jsonUnserialize($decoded->method, $config));
             }
         }
-        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
-            if (is_array($json->quantity)) {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+        if (isset($decoded->quantity) || property_exists($decoded, self::FIELD_QUANTITY)) {
+            if (is_array($decoded->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->quantity), $config));
             } else {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($decoded->quantity, $config));
             }
         }
-        if (isset($json->rate) || property_exists($json, self::FIELD_RATE)) {
-            if (is_array($json->rate)) {
-                $type->setRate(FHIRRatio::jsonUnserialize(reset($json->rate), $config));
+        if (isset($decoded->rate) || property_exists($decoded, self::FIELD_RATE)) {
+            if (is_array($decoded->rate)) {
+                $type->setRate(FHIRRatio::jsonUnserialize(reset($decoded->rate), $config));
             } else {
-                $type->setRate(FHIRRatio::jsonUnserialize($json->rate, $config));
+                $type->setRate(FHIRRatio::jsonUnserialize($decoded->rate, $config));
             }
         }
-        if (isset($json->maxDosePerPeriod) || property_exists($json, self::FIELD_MAX_DOSE_PER_PERIOD)) {
-            if (is_array($json->maxDosePerPeriod)) {
-                $type->setMaxDosePerPeriod(FHIRRatio::jsonUnserialize(reset($json->maxDosePerPeriod), $config));
+        if (isset($decoded->maxDosePerPeriod) || property_exists($decoded, self::FIELD_MAX_DOSE_PER_PERIOD)) {
+            if (is_array($decoded->maxDosePerPeriod)) {
+                $type->setMaxDosePerPeriod(FHIRRatio::jsonUnserialize(reset($decoded->maxDosePerPeriod), $config));
             } else {
-                $type->setMaxDosePerPeriod(FHIRRatio::jsonUnserialize($json->maxDosePerPeriod, $config));
+                $type->setMaxDosePerPeriod(FHIRRatio::jsonUnserialize($decoded->maxDosePerPeriod, $config));
             }
         }
         return $type;

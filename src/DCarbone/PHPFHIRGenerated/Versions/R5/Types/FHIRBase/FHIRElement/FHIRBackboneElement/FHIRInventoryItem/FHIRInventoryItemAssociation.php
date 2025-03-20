@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -412,13 +412,13 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -432,26 +432,26 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->associationType) || property_exists($json, self::FIELD_ASSOCIATION_TYPE)) {
-            if (is_array($json->associationType)) {
-                $type->setAssociationType(FHIRCodeableConcept::jsonUnserialize(reset($json->associationType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->associationType) || property_exists($decoded, self::FIELD_ASSOCIATION_TYPE)) {
+            if (is_array($decoded->associationType)) {
+                $type->setAssociationType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->associationType), $config));
             } else {
-                $type->setAssociationType(FHIRCodeableConcept::jsonUnserialize($json->associationType, $config));
+                $type->setAssociationType(FHIRCodeableConcept::jsonUnserialize($decoded->associationType, $config));
             }
         }
-        if (isset($json->relatedItem) || property_exists($json, self::FIELD_RELATED_ITEM)) {
-            if (is_array($json->relatedItem)) {
-                $type->setRelatedItem(FHIRReference::jsonUnserialize(reset($json->relatedItem), $config));
+        if (isset($decoded->relatedItem) || property_exists($decoded, self::FIELD_RELATED_ITEM)) {
+            if (is_array($decoded->relatedItem)) {
+                $type->setRelatedItem(FHIRReference::jsonUnserialize(reset($decoded->relatedItem), $config));
             } else {
-                $type->setRelatedItem(FHIRReference::jsonUnserialize($json->relatedItem, $config));
+                $type->setRelatedItem(FHIRReference::jsonUnserialize($decoded->relatedItem, $config));
             }
         }
-        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
-            if (is_array($json->quantity)) {
-                $type->setQuantity(FHIRRatio::jsonUnserialize(reset($json->quantity), $config));
+        if (isset($decoded->quantity) || property_exists($decoded, self::FIELD_QUANTITY)) {
+            if (is_array($decoded->quantity)) {
+                $type->setQuantity(FHIRRatio::jsonUnserialize(reset($decoded->quantity), $config));
             } else {
-                $type->setQuantity(FHIRRatio::jsonUnserialize($json->quantity, $config));
+                $type->setQuantity(FHIRRatio::jsonUnserialize($decoded->quantity, $config));
             }
         }
         return $type;

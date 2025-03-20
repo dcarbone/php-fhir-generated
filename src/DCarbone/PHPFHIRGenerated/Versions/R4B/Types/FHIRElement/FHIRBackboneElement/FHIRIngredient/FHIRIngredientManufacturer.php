@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -345,13 +345,13 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientManufacturer $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientManufacturer
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -365,20 +365,20 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->role)
-            || isset($json->_role)
-            || property_exists($json, self::FIELD_ROLE)
-            || property_exists($json, self::FIELD_ROLE_EXT)) {
-            $v = $json->_role ?? new \stdClass();
-            $v->value = $json->role ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->role)
+            || isset($decoded->_role)
+            || property_exists($decoded, self::FIELD_ROLE)
+            || property_exists($decoded, self::FIELD_ROLE_EXT)) {
+            $v = $decoded->_role ?? new \stdClass();
+            $v->value = $decoded->role ?? null;
             $type->setRole(FHIRIngredientManufacturerRole::jsonUnserialize($v, $config));
         }
-        if (isset($json->manufacturer) || property_exists($json, self::FIELD_MANUFACTURER)) {
-            if (is_array($json->manufacturer)) {
-                $type->setManufacturer(FHIRReference::jsonUnserialize(reset($json->manufacturer), $config));
+        if (isset($decoded->manufacturer) || property_exists($decoded, self::FIELD_MANUFACTURER)) {
+            if (is_array($decoded->manufacturer)) {
+                $type->setManufacturer(FHIRReference::jsonUnserialize(reset($decoded->manufacturer), $config));
             } else {
-                $type->setManufacturer(FHIRReference::jsonUnserialize($json->manufacturer, $config));
+                $type->setManufacturer(FHIRReference::jsonUnserialize($decoded->manufacturer, $config));
             }
         }
         return $type;

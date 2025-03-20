@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -448,13 +448,13 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -468,29 +468,29 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->deviceIdentifier)
-            || isset($json->_deviceIdentifier)
-            || property_exists($json, self::FIELD_DEVICE_IDENTIFIER)
-            || property_exists($json, self::FIELD_DEVICE_IDENTIFIER_EXT)) {
-            $v = $json->_deviceIdentifier ?? new \stdClass();
-            $v->value = $json->deviceIdentifier ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->deviceIdentifier)
+            || isset($decoded->_deviceIdentifier)
+            || property_exists($decoded, self::FIELD_DEVICE_IDENTIFIER)
+            || property_exists($decoded, self::FIELD_DEVICE_IDENTIFIER_EXT)) {
+            $v = $decoded->_deviceIdentifier ?? new \stdClass();
+            $v->value = $decoded->deviceIdentifier ?? null;
             $type->setDeviceIdentifier(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->issuer)
-            || isset($json->_issuer)
-            || property_exists($json, self::FIELD_ISSUER)
-            || property_exists($json, self::FIELD_ISSUER_EXT)) {
-            $v = $json->_issuer ?? new \stdClass();
-            $v->value = $json->issuer ?? null;
+        if (isset($decoded->issuer)
+            || isset($decoded->_issuer)
+            || property_exists($decoded, self::FIELD_ISSUER)
+            || property_exists($decoded, self::FIELD_ISSUER_EXT)) {
+            $v = $decoded->_issuer ?? new \stdClass();
+            $v->value = $decoded->issuer ?? null;
             $type->setIssuer(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->jurisdiction)
-            || isset($json->_jurisdiction)
-            || property_exists($json, self::FIELD_JURISDICTION)
-            || property_exists($json, self::FIELD_JURISDICTION_EXT)) {
-            $v = $json->_jurisdiction ?? new \stdClass();
-            $v->value = $json->jurisdiction ?? null;
+        if (isset($decoded->jurisdiction)
+            || isset($decoded->_jurisdiction)
+            || property_exists($decoded, self::FIELD_JURISDICTION)
+            || property_exists($decoded, self::FIELD_JURISDICTION_EXT)) {
+            $v = $decoded->_jurisdiction ?? new \stdClass();
+            $v->value = $decoded->jurisdiction ?? null;
             $type->setJurisdiction(FHIRUri::jsonUnserialize($v, $config));
         }
         return $type;

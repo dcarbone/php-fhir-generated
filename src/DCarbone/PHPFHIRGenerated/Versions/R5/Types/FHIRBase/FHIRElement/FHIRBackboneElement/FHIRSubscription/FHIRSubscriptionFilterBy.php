@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -593,13 +593,13 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -613,45 +613,45 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->resourceType)
-            || isset($json->_resourceType)
-            || property_exists($json, self::FIELD_RESOURCE_TYPE)
-            || property_exists($json, self::FIELD_RESOURCE_TYPE_EXT)) {
-            $v = $json->_resourceType ?? new \stdClass();
-            $v->value = $json->resourceType ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->resourceType)
+            || isset($decoded->_resourceType)
+            || property_exists($decoded, self::FIELD_RESOURCE_TYPE)
+            || property_exists($decoded, self::FIELD_RESOURCE_TYPE_EXT)) {
+            $v = $decoded->_resourceType ?? new \stdClass();
+            $v->value = $decoded->resourceType ?? null;
             $type->setResourceType(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->filterParameter)
-            || isset($json->_filterParameter)
-            || property_exists($json, self::FIELD_FILTER_PARAMETER)
-            || property_exists($json, self::FIELD_FILTER_PARAMETER_EXT)) {
-            $v = $json->_filterParameter ?? new \stdClass();
-            $v->value = $json->filterParameter ?? null;
+        if (isset($decoded->filterParameter)
+            || isset($decoded->_filterParameter)
+            || property_exists($decoded, self::FIELD_FILTER_PARAMETER)
+            || property_exists($decoded, self::FIELD_FILTER_PARAMETER_EXT)) {
+            $v = $decoded->_filterParameter ?? new \stdClass();
+            $v->value = $decoded->filterParameter ?? null;
             $type->setFilterParameter(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->comparator)
-            || isset($json->_comparator)
-            || property_exists($json, self::FIELD_COMPARATOR)
-            || property_exists($json, self::FIELD_COMPARATOR_EXT)) {
-            $v = $json->_comparator ?? new \stdClass();
-            $v->value = $json->comparator ?? null;
+        if (isset($decoded->comparator)
+            || isset($decoded->_comparator)
+            || property_exists($decoded, self::FIELD_COMPARATOR)
+            || property_exists($decoded, self::FIELD_COMPARATOR_EXT)) {
+            $v = $decoded->_comparator ?? new \stdClass();
+            $v->value = $decoded->comparator ?? null;
             $type->setComparator(FHIRSearchComparator::jsonUnserialize($v, $config));
         }
-        if (isset($json->modifier)
-            || isset($json->_modifier)
-            || property_exists($json, self::FIELD_MODIFIER)
-            || property_exists($json, self::FIELD_MODIFIER_EXT)) {
-            $v = $json->_modifier ?? new \stdClass();
-            $v->value = $json->modifier ?? null;
+        if (isset($decoded->modifier)
+            || isset($decoded->_modifier)
+            || property_exists($decoded, self::FIELD_MODIFIER)
+            || property_exists($decoded, self::FIELD_MODIFIER_EXT)) {
+            $v = $decoded->_modifier ?? new \stdClass();
+            $v->value = $decoded->modifier ?? null;
             $type->setModifier(FHIRSearchModifierCode::jsonUnserialize($v, $config));
         }
-        if (isset($json->value)
-            || isset($json->_value)
-            || property_exists($json, self::FIELD_VALUE)
-            || property_exists($json, self::FIELD_VALUE_EXT)) {
-            $v = $json->_value ?? new \stdClass();
-            $v->value = $json->value ?? null;
+        if (isset($decoded->value)
+            || isset($decoded->_value)
+            || property_exists($decoded, self::FIELD_VALUE)
+            || property_exists($decoded, self::FIELD_VALUE_EXT)) {
+            $v = $decoded->_value ?? new \stdClass();
+            $v->value = $decoded->value ?? null;
             $type->setValue(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

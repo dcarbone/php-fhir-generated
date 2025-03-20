@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -473,13 +473,13 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -493,39 +493,39 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->process) || property_exists($json, self::FIELD_PROCESS)) {
-            if (is_object($json->process)) {
-                $vals = [$json->process];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->process) || property_exists($decoded, self::FIELD_PROCESS)) {
+            if (is_object($decoded->process)) {
+                $vals = [$decoded->process];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PROCESS, true);
             } else {
-                $vals = $json->process;
+                $vals = $decoded->process;
             }
             foreach($vals as $v) {
                 $type->addProcess(FHIRExampleScenarioProcess::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->pause)
-            || isset($json->_pause)
-            || property_exists($json, self::FIELD_PAUSE)
-            || property_exists($json, self::FIELD_PAUSE_EXT)) {
-            $v = $json->_pause ?? new \stdClass();
-            $v->value = $json->pause ?? null;
+        if (isset($decoded->pause)
+            || isset($decoded->_pause)
+            || property_exists($decoded, self::FIELD_PAUSE)
+            || property_exists($decoded, self::FIELD_PAUSE_EXT)) {
+            $v = $decoded->_pause ?? new \stdClass();
+            $v->value = $decoded->pause ?? null;
             $type->setPause(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->operation) || property_exists($json, self::FIELD_OPERATION)) {
-            if (is_array($json->operation)) {
-                $type->setOperation(FHIRExampleScenarioOperation::jsonUnserialize(reset($json->operation), $config));
+        if (isset($decoded->operation) || property_exists($decoded, self::FIELD_OPERATION)) {
+            if (is_array($decoded->operation)) {
+                $type->setOperation(FHIRExampleScenarioOperation::jsonUnserialize(reset($decoded->operation), $config));
             } else {
-                $type->setOperation(FHIRExampleScenarioOperation::jsonUnserialize($json->operation, $config));
+                $type->setOperation(FHIRExampleScenarioOperation::jsonUnserialize($decoded->operation, $config));
             }
         }
-        if (isset($json->alternative) || property_exists($json, self::FIELD_ALTERNATIVE)) {
-            if (is_object($json->alternative)) {
-                $vals = [$json->alternative];
+        if (isset($decoded->alternative) || property_exists($decoded, self::FIELD_ALTERNATIVE)) {
+            if (is_object($decoded->alternative)) {
+                $vals = [$decoded->alternative];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ALTERNATIVE, true);
             } else {
-                $vals = $json->alternative;
+                $vals = $decoded->alternative;
             }
             foreach($vals as $v) {
                 $type->addAlternative(FHIRExampleScenarioAlternative::jsonUnserialize($v, $config));

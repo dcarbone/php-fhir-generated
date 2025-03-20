@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1535,13 +1535,13 @@ class FHIRTimingRepeat extends FHIRElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming\FHIRTimingRepeat $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming\FHIRTimingRepeat
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1555,114 +1555,114 @@ class FHIRTimingRepeat extends FHIRElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->boundsDuration) || property_exists($json, self::FIELD_BOUNDS_DURATION)) {
-            if (is_array($json->boundsDuration)) {
-                $type->setBoundsDuration(FHIRDuration::jsonUnserialize(reset($json->boundsDuration), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->boundsDuration) || property_exists($decoded, self::FIELD_BOUNDS_DURATION)) {
+            if (is_array($decoded->boundsDuration)) {
+                $type->setBoundsDuration(FHIRDuration::jsonUnserialize(reset($decoded->boundsDuration), $config));
             } else {
-                $type->setBoundsDuration(FHIRDuration::jsonUnserialize($json->boundsDuration, $config));
+                $type->setBoundsDuration(FHIRDuration::jsonUnserialize($decoded->boundsDuration, $config));
             }
         }
-        if (isset($json->boundsRange) || property_exists($json, self::FIELD_BOUNDS_RANGE)) {
-            if (is_array($json->boundsRange)) {
-                $type->setBoundsRange(FHIRRange::jsonUnserialize(reset($json->boundsRange), $config));
+        if (isset($decoded->boundsRange) || property_exists($decoded, self::FIELD_BOUNDS_RANGE)) {
+            if (is_array($decoded->boundsRange)) {
+                $type->setBoundsRange(FHIRRange::jsonUnserialize(reset($decoded->boundsRange), $config));
             } else {
-                $type->setBoundsRange(FHIRRange::jsonUnserialize($json->boundsRange, $config));
+                $type->setBoundsRange(FHIRRange::jsonUnserialize($decoded->boundsRange, $config));
             }
         }
-        if (isset($json->boundsPeriod) || property_exists($json, self::FIELD_BOUNDS_PERIOD)) {
-            if (is_array($json->boundsPeriod)) {
-                $type->setBoundsPeriod(FHIRPeriod::jsonUnserialize(reset($json->boundsPeriod), $config));
+        if (isset($decoded->boundsPeriod) || property_exists($decoded, self::FIELD_BOUNDS_PERIOD)) {
+            if (is_array($decoded->boundsPeriod)) {
+                $type->setBoundsPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->boundsPeriod), $config));
             } else {
-                $type->setBoundsPeriod(FHIRPeriod::jsonUnserialize($json->boundsPeriod, $config));
+                $type->setBoundsPeriod(FHIRPeriod::jsonUnserialize($decoded->boundsPeriod, $config));
             }
         }
-        if (isset($json->count)
-            || isset($json->_count)
-            || property_exists($json, self::FIELD_COUNT)
-            || property_exists($json, self::FIELD_COUNT_EXT)) {
-            $v = $json->_count ?? new \stdClass();
-            $v->value = $json->count ?? null;
+        if (isset($decoded->count)
+            || isset($decoded->_count)
+            || property_exists($decoded, self::FIELD_COUNT)
+            || property_exists($decoded, self::FIELD_COUNT_EXT)) {
+            $v = $decoded->_count ?? new \stdClass();
+            $v->value = $decoded->count ?? null;
             $type->setCount(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->countMax)
-            || isset($json->_countMax)
-            || property_exists($json, self::FIELD_COUNT_MAX)
-            || property_exists($json, self::FIELD_COUNT_MAX_EXT)) {
-            $v = $json->_countMax ?? new \stdClass();
-            $v->value = $json->countMax ?? null;
+        if (isset($decoded->countMax)
+            || isset($decoded->_countMax)
+            || property_exists($decoded, self::FIELD_COUNT_MAX)
+            || property_exists($decoded, self::FIELD_COUNT_MAX_EXT)) {
+            $v = $decoded->_countMax ?? new \stdClass();
+            $v->value = $decoded->countMax ?? null;
             $type->setCountMax(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->duration)
-            || isset($json->_duration)
-            || property_exists($json, self::FIELD_DURATION)
-            || property_exists($json, self::FIELD_DURATION_EXT)) {
-            $v = $json->_duration ?? new \stdClass();
-            $v->value = $json->duration ?? null;
+        if (isset($decoded->duration)
+            || isset($decoded->_duration)
+            || property_exists($decoded, self::FIELD_DURATION)
+            || property_exists($decoded, self::FIELD_DURATION_EXT)) {
+            $v = $decoded->_duration ?? new \stdClass();
+            $v->value = $decoded->duration ?? null;
             $type->setDuration(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->durationMax)
-            || isset($json->_durationMax)
-            || property_exists($json, self::FIELD_DURATION_MAX)
-            || property_exists($json, self::FIELD_DURATION_MAX_EXT)) {
-            $v = $json->_durationMax ?? new \stdClass();
-            $v->value = $json->durationMax ?? null;
+        if (isset($decoded->durationMax)
+            || isset($decoded->_durationMax)
+            || property_exists($decoded, self::FIELD_DURATION_MAX)
+            || property_exists($decoded, self::FIELD_DURATION_MAX_EXT)) {
+            $v = $decoded->_durationMax ?? new \stdClass();
+            $v->value = $decoded->durationMax ?? null;
             $type->setDurationMax(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->durationUnit)
-            || isset($json->_durationUnit)
-            || property_exists($json, self::FIELD_DURATION_UNIT)
-            || property_exists($json, self::FIELD_DURATION_UNIT_EXT)) {
-            $v = $json->_durationUnit ?? new \stdClass();
-            $v->value = $json->durationUnit ?? null;
+        if (isset($decoded->durationUnit)
+            || isset($decoded->_durationUnit)
+            || property_exists($decoded, self::FIELD_DURATION_UNIT)
+            || property_exists($decoded, self::FIELD_DURATION_UNIT_EXT)) {
+            $v = $decoded->_durationUnit ?? new \stdClass();
+            $v->value = $decoded->durationUnit ?? null;
             $type->setDurationUnit(FHIRUnitsOfTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->frequency)
-            || isset($json->_frequency)
-            || property_exists($json, self::FIELD_FREQUENCY)
-            || property_exists($json, self::FIELD_FREQUENCY_EXT)) {
-            $v = $json->_frequency ?? new \stdClass();
-            $v->value = $json->frequency ?? null;
+        if (isset($decoded->frequency)
+            || isset($decoded->_frequency)
+            || property_exists($decoded, self::FIELD_FREQUENCY)
+            || property_exists($decoded, self::FIELD_FREQUENCY_EXT)) {
+            $v = $decoded->_frequency ?? new \stdClass();
+            $v->value = $decoded->frequency ?? null;
             $type->setFrequency(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->frequencyMax)
-            || isset($json->_frequencyMax)
-            || property_exists($json, self::FIELD_FREQUENCY_MAX)
-            || property_exists($json, self::FIELD_FREQUENCY_MAX_EXT)) {
-            $v = $json->_frequencyMax ?? new \stdClass();
-            $v->value = $json->frequencyMax ?? null;
+        if (isset($decoded->frequencyMax)
+            || isset($decoded->_frequencyMax)
+            || property_exists($decoded, self::FIELD_FREQUENCY_MAX)
+            || property_exists($decoded, self::FIELD_FREQUENCY_MAX_EXT)) {
+            $v = $decoded->_frequencyMax ?? new \stdClass();
+            $v->value = $decoded->frequencyMax ?? null;
             $type->setFrequencyMax(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->period)
-            || isset($json->_period)
-            || property_exists($json, self::FIELD_PERIOD)
-            || property_exists($json, self::FIELD_PERIOD_EXT)) {
-            $v = $json->_period ?? new \stdClass();
-            $v->value = $json->period ?? null;
+        if (isset($decoded->period)
+            || isset($decoded->_period)
+            || property_exists($decoded, self::FIELD_PERIOD)
+            || property_exists($decoded, self::FIELD_PERIOD_EXT)) {
+            $v = $decoded->_period ?? new \stdClass();
+            $v->value = $decoded->period ?? null;
             $type->setPeriod(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->periodMax)
-            || isset($json->_periodMax)
-            || property_exists($json, self::FIELD_PERIOD_MAX)
-            || property_exists($json, self::FIELD_PERIOD_MAX_EXT)) {
-            $v = $json->_periodMax ?? new \stdClass();
-            $v->value = $json->periodMax ?? null;
+        if (isset($decoded->periodMax)
+            || isset($decoded->_periodMax)
+            || property_exists($decoded, self::FIELD_PERIOD_MAX)
+            || property_exists($decoded, self::FIELD_PERIOD_MAX_EXT)) {
+            $v = $decoded->_periodMax ?? new \stdClass();
+            $v->value = $decoded->periodMax ?? null;
             $type->setPeriodMax(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->periodUnit)
-            || isset($json->_periodUnit)
-            || property_exists($json, self::FIELD_PERIOD_UNIT)
-            || property_exists($json, self::FIELD_PERIOD_UNIT_EXT)) {
-            $v = $json->_periodUnit ?? new \stdClass();
-            $v->value = $json->periodUnit ?? null;
+        if (isset($decoded->periodUnit)
+            || isset($decoded->_periodUnit)
+            || property_exists($decoded, self::FIELD_PERIOD_UNIT)
+            || property_exists($decoded, self::FIELD_PERIOD_UNIT_EXT)) {
+            $v = $decoded->_periodUnit ?? new \stdClass();
+            $v->value = $decoded->periodUnit ?? null;
             $type->setPeriodUnit(FHIRUnitsOfTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->dayOfWeek)
-            || isset($json->_dayOfWeek)
-            || property_exists($json, self::FIELD_DAY_OF_WEEK)
-            || property_exists($json, self::FIELD_DAY_OF_WEEK_EXT)) {
-            $vals = (array)($json->dayOfWeek ?? []);
-            $exts = (array)($json->FIELD_DAY_OF_WEEK_EXT ?? []);
+        if (isset($decoded->dayOfWeek)
+            || isset($decoded->_dayOfWeek)
+            || property_exists($decoded, self::FIELD_DAY_OF_WEEK)
+            || property_exists($decoded, self::FIELD_DAY_OF_WEEK_EXT)) {
+            $vals = (array)($decoded->dayOfWeek ?? []);
+            $exts = (array)($decoded->FIELD_DAY_OF_WEEK_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1674,12 +1674,12 @@ class FHIRTimingRepeat extends FHIRElement
                 $type->addDayOfWeek(FHIRCode::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->timeOfDay)
-            || isset($json->_timeOfDay)
-            || property_exists($json, self::FIELD_TIME_OF_DAY)
-            || property_exists($json, self::FIELD_TIME_OF_DAY_EXT)) {
-            $vals = (array)($json->timeOfDay ?? []);
-            $exts = (array)($json->FIELD_TIME_OF_DAY_EXT ?? []);
+        if (isset($decoded->timeOfDay)
+            || isset($decoded->_timeOfDay)
+            || property_exists($decoded, self::FIELD_TIME_OF_DAY)
+            || property_exists($decoded, self::FIELD_TIME_OF_DAY_EXT)) {
+            $vals = (array)($decoded->timeOfDay ?? []);
+            $exts = (array)($decoded->FIELD_TIME_OF_DAY_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1691,12 +1691,12 @@ class FHIRTimingRepeat extends FHIRElement
                 $type->addTimeOfDay(FHIRTime::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->when)
-            || isset($json->_when)
-            || property_exists($json, self::FIELD_WHEN)
-            || property_exists($json, self::FIELD_WHEN_EXT)) {
-            $vals = (array)($json->when ?? []);
-            $exts = (array)($json->FIELD_WHEN_EXT ?? []);
+        if (isset($decoded->when)
+            || isset($decoded->_when)
+            || property_exists($decoded, self::FIELD_WHEN)
+            || property_exists($decoded, self::FIELD_WHEN_EXT)) {
+            $vals = (array)($decoded->when ?? []);
+            $exts = (array)($decoded->FIELD_WHEN_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1708,12 +1708,12 @@ class FHIRTimingRepeat extends FHIRElement
                 $type->addWhen(FHIREventTiming::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->offset)
-            || isset($json->_offset)
-            || property_exists($json, self::FIELD_OFFSET)
-            || property_exists($json, self::FIELD_OFFSET_EXT)) {
-            $v = $json->_offset ?? new \stdClass();
-            $v->value = $json->offset ?? null;
+        if (isset($decoded->offset)
+            || isset($decoded->_offset)
+            || property_exists($decoded, self::FIELD_OFFSET)
+            || property_exists($decoded, self::FIELD_OFFSET_EXT)) {
+            $v = $decoded->_offset ?? new \stdClass();
+            $v->value = $decoded->offset ?? null;
             $type->setOffset(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -743,13 +743,13 @@ class FHIRElementDefinitionType extends FHIRBackboneType
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionType $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionType
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -763,21 +763,21 @@ class FHIRElementDefinitionType extends FHIRBackboneType
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->code)
-            || isset($json->_code)
-            || property_exists($json, self::FIELD_CODE)
-            || property_exists($json, self::FIELD_CODE_EXT)) {
-            $v = $json->_code ?? new \stdClass();
-            $v->value = $json->code ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->code)
+            || isset($decoded->_code)
+            || property_exists($decoded, self::FIELD_CODE)
+            || property_exists($decoded, self::FIELD_CODE_EXT)) {
+            $v = $decoded->_code ?? new \stdClass();
+            $v->value = $decoded->code ?? null;
             $type->setCode(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->profile)
-            || isset($json->_profile)
-            || property_exists($json, self::FIELD_PROFILE)
-            || property_exists($json, self::FIELD_PROFILE_EXT)) {
-            $vals = (array)($json->profile ?? []);
-            $exts = (array)($json->FIELD_PROFILE_EXT ?? []);
+        if (isset($decoded->profile)
+            || isset($decoded->_profile)
+            || property_exists($decoded, self::FIELD_PROFILE)
+            || property_exists($decoded, self::FIELD_PROFILE_EXT)) {
+            $vals = (array)($decoded->profile ?? []);
+            $exts = (array)($decoded->FIELD_PROFILE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -789,12 +789,12 @@ class FHIRElementDefinitionType extends FHIRBackboneType
                 $type->addProfile(FHIRCanonical::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->targetProfile)
-            || isset($json->_targetProfile)
-            || property_exists($json, self::FIELD_TARGET_PROFILE)
-            || property_exists($json, self::FIELD_TARGET_PROFILE_EXT)) {
-            $vals = (array)($json->targetProfile ?? []);
-            $exts = (array)($json->FIELD_TARGET_PROFILE_EXT ?? []);
+        if (isset($decoded->targetProfile)
+            || isset($decoded->_targetProfile)
+            || property_exists($decoded, self::FIELD_TARGET_PROFILE)
+            || property_exists($decoded, self::FIELD_TARGET_PROFILE_EXT)) {
+            $vals = (array)($decoded->targetProfile ?? []);
+            $exts = (array)($decoded->FIELD_TARGET_PROFILE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -806,12 +806,12 @@ class FHIRElementDefinitionType extends FHIRBackboneType
                 $type->addTargetProfile(FHIRCanonical::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->aggregation)
-            || isset($json->_aggregation)
-            || property_exists($json, self::FIELD_AGGREGATION)
-            || property_exists($json, self::FIELD_AGGREGATION_EXT)) {
-            $vals = (array)($json->aggregation ?? []);
-            $exts = (array)($json->FIELD_AGGREGATION_EXT ?? []);
+        if (isset($decoded->aggregation)
+            || isset($decoded->_aggregation)
+            || property_exists($decoded, self::FIELD_AGGREGATION)
+            || property_exists($decoded, self::FIELD_AGGREGATION_EXT)) {
+            $vals = (array)($decoded->aggregation ?? []);
+            $exts = (array)($decoded->FIELD_AGGREGATION_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -823,12 +823,12 @@ class FHIRElementDefinitionType extends FHIRBackboneType
                 $type->addAggregation(FHIRAggregationMode::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->versioning)
-            || isset($json->_versioning)
-            || property_exists($json, self::FIELD_VERSIONING)
-            || property_exists($json, self::FIELD_VERSIONING_EXT)) {
-            $v = $json->_versioning ?? new \stdClass();
-            $v->value = $json->versioning ?? null;
+        if (isset($decoded->versioning)
+            || isset($decoded->_versioning)
+            || property_exists($decoded, self::FIELD_VERSIONING)
+            || property_exists($decoded, self::FIELD_VERSIONING_EXT)) {
+            $v = $decoded->_versioning ?? new \stdClass();
+            $v->value = $decoded->versioning ?? null;
             $type->setVersioning(FHIRReferenceVersionRules::jsonUnserialize($v, $config));
         }
         return $type;

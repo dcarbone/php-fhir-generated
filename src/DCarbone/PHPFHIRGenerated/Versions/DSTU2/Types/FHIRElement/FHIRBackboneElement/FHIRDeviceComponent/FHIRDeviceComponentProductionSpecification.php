@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -392,13 +392,13 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -412,27 +412,27 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->specType) || property_exists($json, self::FIELD_SPEC_TYPE)) {
-            if (is_array($json->specType)) {
-                $type->setSpecType(FHIRCodeableConcept::jsonUnserialize(reset($json->specType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->specType) || property_exists($decoded, self::FIELD_SPEC_TYPE)) {
+            if (is_array($decoded->specType)) {
+                $type->setSpecType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->specType), $config));
             } else {
-                $type->setSpecType(FHIRCodeableConcept::jsonUnserialize($json->specType, $config));
+                $type->setSpecType(FHIRCodeableConcept::jsonUnserialize($decoded->specType, $config));
             }
         }
-        if (isset($json->componentId) || property_exists($json, self::FIELD_COMPONENT_ID)) {
-            if (is_array($json->componentId)) {
-                $type->setComponentId(FHIRIdentifier::jsonUnserialize(reset($json->componentId), $config));
+        if (isset($decoded->componentId) || property_exists($decoded, self::FIELD_COMPONENT_ID)) {
+            if (is_array($decoded->componentId)) {
+                $type->setComponentId(FHIRIdentifier::jsonUnserialize(reset($decoded->componentId), $config));
             } else {
-                $type->setComponentId(FHIRIdentifier::jsonUnserialize($json->componentId, $config));
+                $type->setComponentId(FHIRIdentifier::jsonUnserialize($decoded->componentId, $config));
             }
         }
-        if (isset($json->productionSpec)
-            || isset($json->_productionSpec)
-            || property_exists($json, self::FIELD_PRODUCTION_SPEC)
-            || property_exists($json, self::FIELD_PRODUCTION_SPEC_EXT)) {
-            $v = $json->_productionSpec ?? new \stdClass();
-            $v->value = $json->productionSpec ?? null;
+        if (isset($decoded->productionSpec)
+            || isset($decoded->_productionSpec)
+            || property_exists($decoded, self::FIELD_PRODUCTION_SPEC)
+            || property_exists($decoded, self::FIELD_PRODUCTION_SPEC_EXT)) {
+            $v = $decoded->_productionSpec ?? new \stdClass();
+            $v->value = $decoded->productionSpec ?? null;
             $type->setProductionSpec(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

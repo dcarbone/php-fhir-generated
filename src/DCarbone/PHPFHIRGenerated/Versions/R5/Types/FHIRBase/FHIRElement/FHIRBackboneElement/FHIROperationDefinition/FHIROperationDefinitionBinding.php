@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -371,13 +371,13 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -391,21 +391,21 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->strength)
-            || isset($json->_strength)
-            || property_exists($json, self::FIELD_STRENGTH)
-            || property_exists($json, self::FIELD_STRENGTH_EXT)) {
-            $v = $json->_strength ?? new \stdClass();
-            $v->value = $json->strength ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->strength)
+            || isset($decoded->_strength)
+            || property_exists($decoded, self::FIELD_STRENGTH)
+            || property_exists($decoded, self::FIELD_STRENGTH_EXT)) {
+            $v = $decoded->_strength ?? new \stdClass();
+            $v->value = $decoded->strength ?? null;
             $type->setStrength(FHIRBindingStrength::jsonUnserialize($v, $config));
         }
-        if (isset($json->valueSet)
-            || isset($json->_valueSet)
-            || property_exists($json, self::FIELD_VALUE_SET)
-            || property_exists($json, self::FIELD_VALUE_SET_EXT)) {
-            $v = $json->_valueSet ?? new \stdClass();
-            $v->value = $json->valueSet ?? null;
+        if (isset($decoded->valueSet)
+            || isset($decoded->_valueSet)
+            || property_exists($decoded, self::FIELD_VALUE_SET)
+            || property_exists($decoded, self::FIELD_VALUE_SET_EXT)) {
+            $v = $decoded->_valueSet ?? new \stdClass();
+            $v->value = $decoded->valueSet ?? null;
             $type->setValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }
         return $type;

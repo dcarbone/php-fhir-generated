@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -630,13 +630,13 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationRelatesTo1 $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationRelatesTo1
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -650,52 +650,52 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->relationshipType) || property_exists($json, self::FIELD_RELATIONSHIP_TYPE)) {
-            if (is_array($json->relationshipType)) {
-                $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize(reset($json->relationshipType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->relationshipType) || property_exists($decoded, self::FIELD_RELATIONSHIP_TYPE)) {
+            if (is_array($decoded->relationshipType)) {
+                $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->relationshipType), $config));
             } else {
-                $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize($json->relationshipType, $config));
+                $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize($decoded->relationshipType, $config));
             }
         }
-        if (isset($json->targetClassifier) || property_exists($json, self::FIELD_TARGET_CLASSIFIER)) {
-            if (is_object($json->targetClassifier)) {
-                $vals = [$json->targetClassifier];
+        if (isset($decoded->targetClassifier) || property_exists($decoded, self::FIELD_TARGET_CLASSIFIER)) {
+            if (is_object($decoded->targetClassifier)) {
+                $vals = [$decoded->targetClassifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TARGET_CLASSIFIER, true);
             } else {
-                $vals = $json->targetClassifier;
+                $vals = $decoded->targetClassifier;
             }
             foreach($vals as $v) {
                 $type->addTargetClassifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->targetUri)
-            || isset($json->_targetUri)
-            || property_exists($json, self::FIELD_TARGET_URI)
-            || property_exists($json, self::FIELD_TARGET_URI_EXT)) {
-            $v = $json->_targetUri ?? new \stdClass();
-            $v->value = $json->targetUri ?? null;
+        if (isset($decoded->targetUri)
+            || isset($decoded->_targetUri)
+            || property_exists($decoded, self::FIELD_TARGET_URI)
+            || property_exists($decoded, self::FIELD_TARGET_URI_EXT)) {
+            $v = $decoded->_targetUri ?? new \stdClass();
+            $v->value = $decoded->targetUri ?? null;
             $type->setTargetUri(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->targetIdentifier) || property_exists($json, self::FIELD_TARGET_IDENTIFIER)) {
-            if (is_array($json->targetIdentifier)) {
-                $type->setTargetIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->targetIdentifier), $config));
+        if (isset($decoded->targetIdentifier) || property_exists($decoded, self::FIELD_TARGET_IDENTIFIER)) {
+            if (is_array($decoded->targetIdentifier)) {
+                $type->setTargetIdentifier(FHIRIdentifier::jsonUnserialize(reset($decoded->targetIdentifier), $config));
             } else {
-                $type->setTargetIdentifier(FHIRIdentifier::jsonUnserialize($json->targetIdentifier, $config));
+                $type->setTargetIdentifier(FHIRIdentifier::jsonUnserialize($decoded->targetIdentifier, $config));
             }
         }
-        if (isset($json->targetReference) || property_exists($json, self::FIELD_TARGET_REFERENCE)) {
-            if (is_array($json->targetReference)) {
-                $type->setTargetReference(FHIRReference::jsonUnserialize(reset($json->targetReference), $config));
+        if (isset($decoded->targetReference) || property_exists($decoded, self::FIELD_TARGET_REFERENCE)) {
+            if (is_array($decoded->targetReference)) {
+                $type->setTargetReference(FHIRReference::jsonUnserialize(reset($decoded->targetReference), $config));
             } else {
-                $type->setTargetReference(FHIRReference::jsonUnserialize($json->targetReference, $config));
+                $type->setTargetReference(FHIRReference::jsonUnserialize($decoded->targetReference, $config));
             }
         }
-        if (isset($json->targetAttachment) || property_exists($json, self::FIELD_TARGET_ATTACHMENT)) {
-            if (is_array($json->targetAttachment)) {
-                $type->setTargetAttachment(FHIRAttachment::jsonUnserialize(reset($json->targetAttachment), $config));
+        if (isset($decoded->targetAttachment) || property_exists($decoded, self::FIELD_TARGET_ATTACHMENT)) {
+            if (is_array($decoded->targetAttachment)) {
+                $type->setTargetAttachment(FHIRAttachment::jsonUnserialize(reset($decoded->targetAttachment), $config));
             } else {
-                $type->setTargetAttachment(FHIRAttachment::jsonUnserialize($json->targetAttachment, $config));
+                $type->setTargetAttachment(FHIRAttachment::jsonUnserialize($decoded->targetAttachment, $config));
             }
         }
         return $type;

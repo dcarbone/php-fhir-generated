@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -516,13 +516,13 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -536,42 +536,42 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->variantType) || property_exists($json, self::FIELD_VARIANT_TYPE)) {
-            if (is_array($json->variantType)) {
-                $type->setVariantType(FHIRCodeableConcept::jsonUnserialize(reset($json->variantType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->variantType) || property_exists($decoded, self::FIELD_VARIANT_TYPE)) {
+            if (is_array($decoded->variantType)) {
+                $type->setVariantType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->variantType), $config));
             } else {
-                $type->setVariantType(FHIRCodeableConcept::jsonUnserialize($json->variantType, $config));
+                $type->setVariantType(FHIRCodeableConcept::jsonUnserialize($decoded->variantType, $config));
             }
         }
-        if (isset($json->exact)
-            || isset($json->_exact)
-            || property_exists($json, self::FIELD_EXACT)
-            || property_exists($json, self::FIELD_EXACT_EXT)) {
-            $v = $json->_exact ?? new \stdClass();
-            $v->value = $json->exact ?? null;
+        if (isset($decoded->exact)
+            || isset($decoded->_exact)
+            || property_exists($decoded, self::FIELD_EXACT)
+            || property_exists($decoded, self::FIELD_EXACT_EXT)) {
+            $v = $decoded->_exact ?? new \stdClass();
+            $v->value = $decoded->exact ?? null;
             $type->setExact(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->length)
-            || isset($json->_length)
-            || property_exists($json, self::FIELD_LENGTH)
-            || property_exists($json, self::FIELD_LENGTH_EXT)) {
-            $v = $json->_length ?? new \stdClass();
-            $v->value = $json->length ?? null;
+        if (isset($decoded->length)
+            || isset($decoded->_length)
+            || property_exists($decoded, self::FIELD_LENGTH)
+            || property_exists($decoded, self::FIELD_LENGTH_EXT)) {
+            $v = $decoded->_length ?? new \stdClass();
+            $v->value = $decoded->length ?? null;
             $type->setLength(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->outer) || property_exists($json, self::FIELD_OUTER)) {
-            if (is_array($json->outer)) {
-                $type->setOuter(FHIRMolecularSequenceOuter::jsonUnserialize(reset($json->outer), $config));
+        if (isset($decoded->outer) || property_exists($decoded, self::FIELD_OUTER)) {
+            if (is_array($decoded->outer)) {
+                $type->setOuter(FHIRMolecularSequenceOuter::jsonUnserialize(reset($decoded->outer), $config));
             } else {
-                $type->setOuter(FHIRMolecularSequenceOuter::jsonUnserialize($json->outer, $config));
+                $type->setOuter(FHIRMolecularSequenceOuter::jsonUnserialize($decoded->outer, $config));
             }
         }
-        if (isset($json->inner) || property_exists($json, self::FIELD_INNER)) {
-            if (is_array($json->inner)) {
-                $type->setInner(FHIRMolecularSequenceInner::jsonUnserialize(reset($json->inner), $config));
+        if (isset($decoded->inner) || property_exists($decoded, self::FIELD_INNER)) {
+            if (is_array($decoded->inner)) {
+                $type->setInner(FHIRMolecularSequenceInner::jsonUnserialize(reset($decoded->inner), $config));
             } else {
-                $type->setInner(FHIRMolecularSequenceInner::jsonUnserialize($json->inner, $config));
+                $type->setInner(FHIRMolecularSequenceInner::jsonUnserialize($decoded->inner, $config));
             }
         }
         return $type;

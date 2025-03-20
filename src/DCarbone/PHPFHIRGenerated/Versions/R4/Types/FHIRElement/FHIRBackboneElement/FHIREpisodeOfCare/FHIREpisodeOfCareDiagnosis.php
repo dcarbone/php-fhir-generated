@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -391,13 +391,13 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -411,27 +411,27 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->condition) || property_exists($json, self::FIELD_CONDITION)) {
-            if (is_array($json->condition)) {
-                $type->setCondition(FHIRReference::jsonUnserialize(reset($json->condition), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->condition) || property_exists($decoded, self::FIELD_CONDITION)) {
+            if (is_array($decoded->condition)) {
+                $type->setCondition(FHIRReference::jsonUnserialize(reset($decoded->condition), $config));
             } else {
-                $type->setCondition(FHIRReference::jsonUnserialize($json->condition, $config));
+                $type->setCondition(FHIRReference::jsonUnserialize($decoded->condition, $config));
             }
         }
-        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
-            if (is_array($json->role)) {
-                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($json->role), $config));
+        if (isset($decoded->role) || property_exists($decoded, self::FIELD_ROLE)) {
+            if (is_array($decoded->role)) {
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($decoded->role), $config));
             } else {
-                $type->setRole(FHIRCodeableConcept::jsonUnserialize($json->role, $config));
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize($decoded->role, $config));
             }
         }
-        if (isset($json->rank)
-            || isset($json->_rank)
-            || property_exists($json, self::FIELD_RANK)
-            || property_exists($json, self::FIELD_RANK_EXT)) {
-            $v = $json->_rank ?? new \stdClass();
-            $v->value = $json->rank ?? null;
+        if (isset($decoded->rank)
+            || isset($decoded->_rank)
+            || property_exists($decoded, self::FIELD_RANK)
+            || property_exists($decoded, self::FIELD_RANK_EXT)) {
+            $v = $decoded->_rank ?? new \stdClass();
+            $v->value = $decoded->rank ?? null;
             $type->setRank(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
         return $type;

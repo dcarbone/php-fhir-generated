@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Tests\DCarbone\PHPFHIRGenerated\Types;
+namespace Tests\DCarbone\PHPFHIRGenerated\Mock;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -28,18 +28,21 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Types;
 
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\Types\PrimitiveContainerTypeInterface;
-use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface;
+use DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait;
+use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 
-class MockPrimitiveContainerType extends MockElementType implements PrimitiveContainerTypeInterface
+class MockElementType extends AbstractMockType implements ElementTypeInterface, CommentContainerInterface, \Iterator
+
 {
     use TypeValidationsTrait,
         JSONSerializationOptionsTrait,
         XMLSerializationOptionsTrait,
+        CommentContainerTrait,
         MockTypeFieldsTrait;
 
     private const _FHIR_VALIDATION_RULES = [];
@@ -50,43 +53,40 @@ class MockPrimitiveContainerType extends MockElementType implements PrimitiveCon
                                 array $fields = [],
                                 array $validationRuleMap = [],
                                 array $fhirComments = [],
-                                mixed $value = null,
                                 string $versionName = self::DEFAULT_MOCK_VERSION_NAME,
                                 string $semanticVersion = self::DEFAULT_MOCK_SEMANTIC_VERSION)
     {
-        if (!isset($fields['value'])
-            || !isset($fields['value']['class'])
-            || !is_a($fields['value']['class'], PrimitiveTypeInterface::class, true)) {
-            throw new \InvalidArgumentException(sprintf(
-                'Primitive container type "%s" must have a "value" field and it must be a primitive type.',
-                $name,
-            ));
+        parent::__construct($name, $versionName, $semanticVersion);
+
+        $this->_setFHIRComments($fhirComments);
+        foreach($validationRuleMap as $field => $rules) {
+            $this->_setFieldValidationRules($field, $rules);
         }
-        if (null !== $value) {
-            $fields['value']['value'] = $value;
-        }
-        parent::__construct($name, $fields, $validationRuleMap, $fhirComments, $versionName, $semanticVersion);
+        $this->_processFields($fields);
     }
 
-    public function _nonValueFieldDefined(): bool
+    public static function xmlUnserialize(\SimpleXMLElement $element,
+                                          UnserializeConfig $config,
+                                          null|ElementTypeInterface $type = null): self
     {
-        foreach($this->_fields as $field => $def) {
-            if ('value' !== $field && isset($def['value']) && [] !== $def['value']) {
-                return true;
-            }
-        }
-        return false;
+        throw new \BadMethodCallException('xmlUnserialize not yet implemented');
     }
 
     public function xmlSerialize(XMLWriter $xw,
-                                 SerializeConfig $config,
-                                 null|ValueXMLLocationEnum $valueLocation = null): void
+                                 SerializeConfig $config): void
     {
-        $this->_xmlSerialize($xw, $config, $valueLocation);
+        $this->_xmlSerialize($xw, $config);
     }
 
-    public function _getValueAsString(): string
+    public static function jsonUnserialize(\stdClass $decoded,
+                                           UnserializeConfig $config,
+                                           null|ElementTypeInterface $type = null): self
     {
-        return (string)$this->getValue();
+        throw new \BadMethodCallException('jsonUnserialize not yet implemented');
+    }
+
+    public function __toString(): string
+    {
+        return $this->_name;
     }
 }

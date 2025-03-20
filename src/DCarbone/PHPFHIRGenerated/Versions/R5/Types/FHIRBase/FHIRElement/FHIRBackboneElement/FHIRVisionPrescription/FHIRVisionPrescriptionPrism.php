@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -362,13 +362,13 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -382,21 +382,21 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->amount)
-            || isset($json->_amount)
-            || property_exists($json, self::FIELD_AMOUNT)
-            || property_exists($json, self::FIELD_AMOUNT_EXT)) {
-            $v = $json->_amount ?? new \stdClass();
-            $v->value = $json->amount ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->amount)
+            || isset($decoded->_amount)
+            || property_exists($decoded, self::FIELD_AMOUNT)
+            || property_exists($decoded, self::FIELD_AMOUNT_EXT)) {
+            $v = $decoded->_amount ?? new \stdClass();
+            $v->value = $decoded->amount ?? null;
             $type->setAmount(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->base)
-            || isset($json->_base)
-            || property_exists($json, self::FIELD_BASE)
-            || property_exists($json, self::FIELD_BASE_EXT)) {
-            $v = $json->_base ?? new \stdClass();
-            $v->value = $json->base ?? null;
+        if (isset($decoded->base)
+            || isset($decoded->_base)
+            || property_exists($decoded, self::FIELD_BASE)
+            || property_exists($decoded, self::FIELD_BASE_EXT)) {
+            $v = $decoded->_base ?? new \stdClass();
+            $v->value = $decoded->base ?? null;
             $type->setBase(FHIRVisionBase::jsonUnserialize($v, $config));
         }
         return $type;

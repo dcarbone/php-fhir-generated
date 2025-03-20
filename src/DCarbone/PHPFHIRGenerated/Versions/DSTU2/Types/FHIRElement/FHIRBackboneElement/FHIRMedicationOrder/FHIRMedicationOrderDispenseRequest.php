@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -571,13 +571,13 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationOrder\FHIRMedicationOrderDispenseRequest $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationOrder\FHIRMedicationOrderDispenseRequest
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -591,48 +591,48 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->medicationCodeableConcept) || property_exists($json, self::FIELD_MEDICATION_CODEABLE_CONCEPT)) {
-            if (is_array($json->medicationCodeableConcept)) {
-                $type->setMedicationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->medicationCodeableConcept), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->medicationCodeableConcept) || property_exists($decoded, self::FIELD_MEDICATION_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->medicationCodeableConcept)) {
+                $type->setMedicationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->medicationCodeableConcept), $config));
             } else {
-                $type->setMedicationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->medicationCodeableConcept, $config));
+                $type->setMedicationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->medicationCodeableConcept, $config));
             }
         }
-        if (isset($json->medicationReference) || property_exists($json, self::FIELD_MEDICATION_REFERENCE)) {
-            if (is_array($json->medicationReference)) {
-                $type->setMedicationReference(FHIRReference::jsonUnserialize(reset($json->medicationReference), $config));
+        if (isset($decoded->medicationReference) || property_exists($decoded, self::FIELD_MEDICATION_REFERENCE)) {
+            if (is_array($decoded->medicationReference)) {
+                $type->setMedicationReference(FHIRReference::jsonUnserialize(reset($decoded->medicationReference), $config));
             } else {
-                $type->setMedicationReference(FHIRReference::jsonUnserialize($json->medicationReference, $config));
+                $type->setMedicationReference(FHIRReference::jsonUnserialize($decoded->medicationReference, $config));
             }
         }
-        if (isset($json->validityPeriod) || property_exists($json, self::FIELD_VALIDITY_PERIOD)) {
-            if (is_array($json->validityPeriod)) {
-                $type->setValidityPeriod(FHIRPeriod::jsonUnserialize(reset($json->validityPeriod), $config));
+        if (isset($decoded->validityPeriod) || property_exists($decoded, self::FIELD_VALIDITY_PERIOD)) {
+            if (is_array($decoded->validityPeriod)) {
+                $type->setValidityPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->validityPeriod), $config));
             } else {
-                $type->setValidityPeriod(FHIRPeriod::jsonUnserialize($json->validityPeriod, $config));
+                $type->setValidityPeriod(FHIRPeriod::jsonUnserialize($decoded->validityPeriod, $config));
             }
         }
-        if (isset($json->numberOfRepeatsAllowed)
-            || isset($json->_numberOfRepeatsAllowed)
-            || property_exists($json, self::FIELD_NUMBER_OF_REPEATS_ALLOWED)
-            || property_exists($json, self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT)) {
-            $v = $json->_numberOfRepeatsAllowed ?? new \stdClass();
-            $v->value = $json->numberOfRepeatsAllowed ?? null;
+        if (isset($decoded->numberOfRepeatsAllowed)
+            || isset($decoded->_numberOfRepeatsAllowed)
+            || property_exists($decoded, self::FIELD_NUMBER_OF_REPEATS_ALLOWED)
+            || property_exists($decoded, self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT)) {
+            $v = $decoded->_numberOfRepeatsAllowed ?? new \stdClass();
+            $v->value = $decoded->numberOfRepeatsAllowed ?? null;
             $type->setNumberOfRepeatsAllowed(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
-            if (is_array($json->quantity)) {
-                $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize(reset($json->quantity), $config));
+        if (isset($decoded->quantity) || property_exists($decoded, self::FIELD_QUANTITY)) {
+            if (is_array($decoded->quantity)) {
+                $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize(reset($decoded->quantity), $config));
             } else {
-                $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize($json->quantity, $config));
+                $type->setQuantity(FHIRSimpleQuantity::jsonUnserialize($decoded->quantity, $config));
             }
         }
-        if (isset($json->expectedSupplyDuration) || property_exists($json, self::FIELD_EXPECTED_SUPPLY_DURATION)) {
-            if (is_array($json->expectedSupplyDuration)) {
-                $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize(reset($json->expectedSupplyDuration), $config));
+        if (isset($decoded->expectedSupplyDuration) || property_exists($decoded, self::FIELD_EXPECTED_SUPPLY_DURATION)) {
+            if (is_array($decoded->expectedSupplyDuration)) {
+                $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize(reset($decoded->expectedSupplyDuration), $config));
             } else {
-                $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize($json->expectedSupplyDuration, $config));
+                $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize($decoded->expectedSupplyDuration, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -390,13 +390,13 @@ class FHIRPermissionJustification extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionJustification $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionJustification
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -410,24 +410,24 @@ class FHIRPermissionJustification extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->basis) || property_exists($json, self::FIELD_BASIS)) {
-            if (is_object($json->basis)) {
-                $vals = [$json->basis];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->basis) || property_exists($decoded, self::FIELD_BASIS)) {
+            if (is_object($decoded->basis)) {
+                $vals = [$decoded->basis];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_BASIS, true);
             } else {
-                $vals = $json->basis;
+                $vals = $decoded->basis;
             }
             foreach($vals as $v) {
                 $type->addBasis(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->evidence) || property_exists($json, self::FIELD_EVIDENCE)) {
-            if (is_object($json->evidence)) {
-                $vals = [$json->evidence];
+        if (isset($decoded->evidence) || property_exists($decoded, self::FIELD_EVIDENCE)) {
+            if (is_object($decoded->evidence)) {
+                $vals = [$decoded->evidence];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_EVIDENCE, true);
             } else {
-                $vals = $json->evidence;
+                $vals = $decoded->evidence;
             }
             foreach($vals as $v) {
                 $type->addEvidence(FHIRReference::jsonUnserialize($v, $config));

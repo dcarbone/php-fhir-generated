@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -514,13 +514,13 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -534,37 +534,37 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->code)
-            || isset($json->_code)
-            || property_exists($json, self::FIELD_CODE)
-            || property_exists($json, self::FIELD_CODE_EXT)) {
-            $v = $json->_code ?? new \stdClass();
-            $v->value = $json->code ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->code)
+            || isset($decoded->_code)
+            || property_exists($decoded, self::FIELD_CODE)
+            || property_exists($decoded, self::FIELD_CODE_EXT)) {
+            $v = $decoded->_code ?? new \stdClass();
+            $v->value = $decoded->code ?? null;
             $type->setCode(FHIRCode::jsonUnserialize($v, $config));
         }
-        if (isset($json->profile)
-            || isset($json->_profile)
-            || property_exists($json, self::FIELD_PROFILE)
-            || property_exists($json, self::FIELD_PROFILE_EXT)) {
-            $v = $json->_profile ?? new \stdClass();
-            $v->value = $json->profile ?? null;
+        if (isset($decoded->profile)
+            || isset($decoded->_profile)
+            || property_exists($decoded, self::FIELD_PROFILE)
+            || property_exists($decoded, self::FIELD_PROFILE_EXT)) {
+            $v = $decoded->_profile ?? new \stdClass();
+            $v->value = $decoded->profile ?? null;
             $type->setProfile(FHIRCanonical::jsonUnserialize($v, $config));
         }
-        if (isset($json->min)
-            || isset($json->_min)
-            || property_exists($json, self::FIELD_MIN)
-            || property_exists($json, self::FIELD_MIN_EXT)) {
-            $v = $json->_min ?? new \stdClass();
-            $v->value = $json->min ?? null;
+        if (isset($decoded->min)
+            || isset($decoded->_min)
+            || property_exists($decoded, self::FIELD_MIN)
+            || property_exists($decoded, self::FIELD_MIN_EXT)) {
+            $v = $decoded->_min ?? new \stdClass();
+            $v->value = $decoded->min ?? null;
             $type->setMin(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->max)
-            || isset($json->_max)
-            || property_exists($json, self::FIELD_MAX)
-            || property_exists($json, self::FIELD_MAX_EXT)) {
-            $v = $json->_max ?? new \stdClass();
-            $v->value = $json->max ?? null;
+        if (isset($decoded->max)
+            || isset($decoded->_max)
+            || property_exists($decoded, self::FIELD_MAX)
+            || property_exists($decoded, self::FIELD_MAX_EXT)) {
+            $v = $decoded->_max ?? new \stdClass();
+            $v->value = $decoded->max ?? null;
             $type->setMax(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

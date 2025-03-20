@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -597,13 +597,13 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -617,44 +617,44 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->maternalOrganismId)
-            || isset($json->_maternalOrganismId)
-            || property_exists($json, self::FIELD_MATERNAL_ORGANISM_ID)
-            || property_exists($json, self::FIELD_MATERNAL_ORGANISM_ID_EXT)) {
-            $v = $json->_maternalOrganismId ?? new \stdClass();
-            $v->value = $json->maternalOrganismId ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->maternalOrganismId)
+            || isset($decoded->_maternalOrganismId)
+            || property_exists($decoded, self::FIELD_MATERNAL_ORGANISM_ID)
+            || property_exists($decoded, self::FIELD_MATERNAL_ORGANISM_ID_EXT)) {
+            $v = $decoded->_maternalOrganismId ?? new \stdClass();
+            $v->value = $decoded->maternalOrganismId ?? null;
             $type->setMaternalOrganismId(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->maternalOrganismName)
-            || isset($json->_maternalOrganismName)
-            || property_exists($json, self::FIELD_MATERNAL_ORGANISM_NAME)
-            || property_exists($json, self::FIELD_MATERNAL_ORGANISM_NAME_EXT)) {
-            $v = $json->_maternalOrganismName ?? new \stdClass();
-            $v->value = $json->maternalOrganismName ?? null;
+        if (isset($decoded->maternalOrganismName)
+            || isset($decoded->_maternalOrganismName)
+            || property_exists($decoded, self::FIELD_MATERNAL_ORGANISM_NAME)
+            || property_exists($decoded, self::FIELD_MATERNAL_ORGANISM_NAME_EXT)) {
+            $v = $decoded->_maternalOrganismName ?? new \stdClass();
+            $v->value = $decoded->maternalOrganismName ?? null;
             $type->setMaternalOrganismName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->paternalOrganismId)
-            || isset($json->_paternalOrganismId)
-            || property_exists($json, self::FIELD_PATERNAL_ORGANISM_ID)
-            || property_exists($json, self::FIELD_PATERNAL_ORGANISM_ID_EXT)) {
-            $v = $json->_paternalOrganismId ?? new \stdClass();
-            $v->value = $json->paternalOrganismId ?? null;
+        if (isset($decoded->paternalOrganismId)
+            || isset($decoded->_paternalOrganismId)
+            || property_exists($decoded, self::FIELD_PATERNAL_ORGANISM_ID)
+            || property_exists($decoded, self::FIELD_PATERNAL_ORGANISM_ID_EXT)) {
+            $v = $decoded->_paternalOrganismId ?? new \stdClass();
+            $v->value = $decoded->paternalOrganismId ?? null;
             $type->setPaternalOrganismId(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->paternalOrganismName)
-            || isset($json->_paternalOrganismName)
-            || property_exists($json, self::FIELD_PATERNAL_ORGANISM_NAME)
-            || property_exists($json, self::FIELD_PATERNAL_ORGANISM_NAME_EXT)) {
-            $v = $json->_paternalOrganismName ?? new \stdClass();
-            $v->value = $json->paternalOrganismName ?? null;
+        if (isset($decoded->paternalOrganismName)
+            || isset($decoded->_paternalOrganismName)
+            || property_exists($decoded, self::FIELD_PATERNAL_ORGANISM_NAME)
+            || property_exists($decoded, self::FIELD_PATERNAL_ORGANISM_NAME_EXT)) {
+            $v = $decoded->_paternalOrganismName ?? new \stdClass();
+            $v->value = $decoded->paternalOrganismName ?? null;
             $type->setPaternalOrganismName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->hybridType) || property_exists($json, self::FIELD_HYBRID_TYPE)) {
-            if (is_array($json->hybridType)) {
-                $type->setHybridType(FHIRCodeableConcept::jsonUnserialize(reset($json->hybridType), $config));
+        if (isset($decoded->hybridType) || property_exists($decoded, self::FIELD_HYBRID_TYPE)) {
+            if (is_array($decoded->hybridType)) {
+                $type->setHybridType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->hybridType), $config));
             } else {
-                $type->setHybridType(FHIRCodeableConcept::jsonUnserialize($json->hybridType, $config));
+                $type->setHybridType(FHIRCodeableConcept::jsonUnserialize($decoded->hybridType, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1117,13 +1117,13 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1137,101 +1137,101 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->group)
-            || isset($json->_group)
-            || property_exists($json, self::FIELD_GROUP)
-            || property_exists($json, self::FIELD_GROUP_EXT)) {
-            $v = $json->_group ?? new \stdClass();
-            $v->value = $json->group ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->group)
+            || isset($decoded->_group)
+            || property_exists($decoded, self::FIELD_GROUP)
+            || property_exists($decoded, self::FIELD_GROUP_EXT)) {
+            $v = $decoded->_group ?? new \stdClass();
+            $v->value = $decoded->group ?? null;
             $type->setGroup(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->groupDisplay)
-            || isset($json->_groupDisplay)
-            || property_exists($json, self::FIELD_GROUP_DISPLAY)
-            || property_exists($json, self::FIELD_GROUP_DISPLAY_EXT)) {
-            $v = $json->_groupDisplay ?? new \stdClass();
-            $v->value = $json->groupDisplay ?? null;
+        if (isset($decoded->groupDisplay)
+            || isset($decoded->_groupDisplay)
+            || property_exists($decoded, self::FIELD_GROUP_DISPLAY)
+            || property_exists($decoded, self::FIELD_GROUP_DISPLAY_EXT)) {
+            $v = $decoded->_groupDisplay ?? new \stdClass();
+            $v->value = $decoded->groupDisplay ?? null;
             $type->setGroupDisplay(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->subGroup)
-            || isset($json->_subGroup)
-            || property_exists($json, self::FIELD_SUB_GROUP)
-            || property_exists($json, self::FIELD_SUB_GROUP_EXT)) {
-            $v = $json->_subGroup ?? new \stdClass();
-            $v->value = $json->subGroup ?? null;
+        if (isset($decoded->subGroup)
+            || isset($decoded->_subGroup)
+            || property_exists($decoded, self::FIELD_SUB_GROUP)
+            || property_exists($decoded, self::FIELD_SUB_GROUP_EXT)) {
+            $v = $decoded->_subGroup ?? new \stdClass();
+            $v->value = $decoded->subGroup ?? null;
             $type->setSubGroup(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->subGroupDisplay)
-            || isset($json->_subGroupDisplay)
-            || property_exists($json, self::FIELD_SUB_GROUP_DISPLAY)
-            || property_exists($json, self::FIELD_SUB_GROUP_DISPLAY_EXT)) {
-            $v = $json->_subGroupDisplay ?? new \stdClass();
-            $v->value = $json->subGroupDisplay ?? null;
+        if (isset($decoded->subGroupDisplay)
+            || isset($decoded->_subGroupDisplay)
+            || property_exists($decoded, self::FIELD_SUB_GROUP_DISPLAY)
+            || property_exists($decoded, self::FIELD_SUB_GROUP_DISPLAY_EXT)) {
+            $v = $decoded->_subGroupDisplay ?? new \stdClass();
+            $v->value = $decoded->subGroupDisplay ?? null;
             $type->setSubGroupDisplay(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->plan)
-            || isset($json->_plan)
-            || property_exists($json, self::FIELD_PLAN)
-            || property_exists($json, self::FIELD_PLAN_EXT)) {
-            $v = $json->_plan ?? new \stdClass();
-            $v->value = $json->plan ?? null;
+        if (isset($decoded->plan)
+            || isset($decoded->_plan)
+            || property_exists($decoded, self::FIELD_PLAN)
+            || property_exists($decoded, self::FIELD_PLAN_EXT)) {
+            $v = $decoded->_plan ?? new \stdClass();
+            $v->value = $decoded->plan ?? null;
             $type->setPlan(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->planDisplay)
-            || isset($json->_planDisplay)
-            || property_exists($json, self::FIELD_PLAN_DISPLAY)
-            || property_exists($json, self::FIELD_PLAN_DISPLAY_EXT)) {
-            $v = $json->_planDisplay ?? new \stdClass();
-            $v->value = $json->planDisplay ?? null;
+        if (isset($decoded->planDisplay)
+            || isset($decoded->_planDisplay)
+            || property_exists($decoded, self::FIELD_PLAN_DISPLAY)
+            || property_exists($decoded, self::FIELD_PLAN_DISPLAY_EXT)) {
+            $v = $decoded->_planDisplay ?? new \stdClass();
+            $v->value = $decoded->planDisplay ?? null;
             $type->setPlanDisplay(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->subPlan)
-            || isset($json->_subPlan)
-            || property_exists($json, self::FIELD_SUB_PLAN)
-            || property_exists($json, self::FIELD_SUB_PLAN_EXT)) {
-            $v = $json->_subPlan ?? new \stdClass();
-            $v->value = $json->subPlan ?? null;
+        if (isset($decoded->subPlan)
+            || isset($decoded->_subPlan)
+            || property_exists($decoded, self::FIELD_SUB_PLAN)
+            || property_exists($decoded, self::FIELD_SUB_PLAN_EXT)) {
+            $v = $decoded->_subPlan ?? new \stdClass();
+            $v->value = $decoded->subPlan ?? null;
             $type->setSubPlan(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->subPlanDisplay)
-            || isset($json->_subPlanDisplay)
-            || property_exists($json, self::FIELD_SUB_PLAN_DISPLAY)
-            || property_exists($json, self::FIELD_SUB_PLAN_DISPLAY_EXT)) {
-            $v = $json->_subPlanDisplay ?? new \stdClass();
-            $v->value = $json->subPlanDisplay ?? null;
+        if (isset($decoded->subPlanDisplay)
+            || isset($decoded->_subPlanDisplay)
+            || property_exists($decoded, self::FIELD_SUB_PLAN_DISPLAY)
+            || property_exists($decoded, self::FIELD_SUB_PLAN_DISPLAY_EXT)) {
+            $v = $decoded->_subPlanDisplay ?? new \stdClass();
+            $v->value = $decoded->subPlanDisplay ?? null;
             $type->setSubPlanDisplay(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->class)
-            || isset($json->_class)
-            || property_exists($json, self::FIELD_CLASS)
-            || property_exists($json, self::FIELD_CLASS_EXT)) {
-            $v = $json->_class ?? new \stdClass();
-            $v->value = $json->class ?? null;
+        if (isset($decoded->class)
+            || isset($decoded->_class)
+            || property_exists($decoded, self::FIELD_CLASS)
+            || property_exists($decoded, self::FIELD_CLASS_EXT)) {
+            $v = $decoded->_class ?? new \stdClass();
+            $v->value = $decoded->class ?? null;
             $type->setClass(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->classDisplay)
-            || isset($json->_classDisplay)
-            || property_exists($json, self::FIELD_CLASS_DISPLAY)
-            || property_exists($json, self::FIELD_CLASS_DISPLAY_EXT)) {
-            $v = $json->_classDisplay ?? new \stdClass();
-            $v->value = $json->classDisplay ?? null;
+        if (isset($decoded->classDisplay)
+            || isset($decoded->_classDisplay)
+            || property_exists($decoded, self::FIELD_CLASS_DISPLAY)
+            || property_exists($decoded, self::FIELD_CLASS_DISPLAY_EXT)) {
+            $v = $decoded->_classDisplay ?? new \stdClass();
+            $v->value = $decoded->classDisplay ?? null;
             $type->setClassDisplay(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->subClass)
-            || isset($json->_subClass)
-            || property_exists($json, self::FIELD_SUB_CLASS)
-            || property_exists($json, self::FIELD_SUB_CLASS_EXT)) {
-            $v = $json->_subClass ?? new \stdClass();
-            $v->value = $json->subClass ?? null;
+        if (isset($decoded->subClass)
+            || isset($decoded->_subClass)
+            || property_exists($decoded, self::FIELD_SUB_CLASS)
+            || property_exists($decoded, self::FIELD_SUB_CLASS_EXT)) {
+            $v = $decoded->_subClass ?? new \stdClass();
+            $v->value = $decoded->subClass ?? null;
             $type->setSubClass(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->subClassDisplay)
-            || isset($json->_subClassDisplay)
-            || property_exists($json, self::FIELD_SUB_CLASS_DISPLAY)
-            || property_exists($json, self::FIELD_SUB_CLASS_DISPLAY_EXT)) {
-            $v = $json->_subClassDisplay ?? new \stdClass();
-            $v->value = $json->subClassDisplay ?? null;
+        if (isset($decoded->subClassDisplay)
+            || isset($decoded->_subClassDisplay)
+            || property_exists($decoded, self::FIELD_SUB_CLASS_DISPLAY)
+            || property_exists($decoded, self::FIELD_SUB_CLASS_DISPLAY_EXT)) {
+            $v = $decoded->_subClassDisplay ?? new \stdClass();
+            $v->value = $decoded->subClassDisplay ?? null;
             $type->setSubClassDisplay(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

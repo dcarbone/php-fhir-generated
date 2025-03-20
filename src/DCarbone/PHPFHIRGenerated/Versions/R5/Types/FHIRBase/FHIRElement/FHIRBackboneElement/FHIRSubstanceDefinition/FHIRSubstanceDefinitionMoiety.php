@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -804,13 +804,13 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionMoiety $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionMoiety
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -824,71 +824,71 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
-            if (is_array($json->role)) {
-                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($json->role), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->role) || property_exists($decoded, self::FIELD_ROLE)) {
+            if (is_array($decoded->role)) {
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($decoded->role), $config));
             } else {
-                $type->setRole(FHIRCodeableConcept::jsonUnserialize($json->role, $config));
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize($decoded->role, $config));
             }
         }
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_array($json->identifier)) {
-                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_array($decoded->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($decoded->identifier), $config));
             } else {
-                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($decoded->identifier, $config));
             }
         }
-        if (isset($json->name)
-            || isset($json->_name)
-            || property_exists($json, self::FIELD_NAME)
-            || property_exists($json, self::FIELD_NAME_EXT)) {
-            $v = $json->_name ?? new \stdClass();
-            $v->value = $json->name ?? null;
+        if (isset($decoded->name)
+            || isset($decoded->_name)
+            || property_exists($decoded, self::FIELD_NAME)
+            || property_exists($decoded, self::FIELD_NAME_EXT)) {
+            $v = $decoded->_name ?? new \stdClass();
+            $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->stereochemistry) || property_exists($json, self::FIELD_STEREOCHEMISTRY)) {
-            if (is_array($json->stereochemistry)) {
-                $type->setStereochemistry(FHIRCodeableConcept::jsonUnserialize(reset($json->stereochemistry), $config));
+        if (isset($decoded->stereochemistry) || property_exists($decoded, self::FIELD_STEREOCHEMISTRY)) {
+            if (is_array($decoded->stereochemistry)) {
+                $type->setStereochemistry(FHIRCodeableConcept::jsonUnserialize(reset($decoded->stereochemistry), $config));
             } else {
-                $type->setStereochemistry(FHIRCodeableConcept::jsonUnserialize($json->stereochemistry, $config));
+                $type->setStereochemistry(FHIRCodeableConcept::jsonUnserialize($decoded->stereochemistry, $config));
             }
         }
-        if (isset($json->opticalActivity) || property_exists($json, self::FIELD_OPTICAL_ACTIVITY)) {
-            if (is_array($json->opticalActivity)) {
-                $type->setOpticalActivity(FHIRCodeableConcept::jsonUnserialize(reset($json->opticalActivity), $config));
+        if (isset($decoded->opticalActivity) || property_exists($decoded, self::FIELD_OPTICAL_ACTIVITY)) {
+            if (is_array($decoded->opticalActivity)) {
+                $type->setOpticalActivity(FHIRCodeableConcept::jsonUnserialize(reset($decoded->opticalActivity), $config));
             } else {
-                $type->setOpticalActivity(FHIRCodeableConcept::jsonUnserialize($json->opticalActivity, $config));
+                $type->setOpticalActivity(FHIRCodeableConcept::jsonUnserialize($decoded->opticalActivity, $config));
             }
         }
-        if (isset($json->molecularFormula)
-            || isset($json->_molecularFormula)
-            || property_exists($json, self::FIELD_MOLECULAR_FORMULA)
-            || property_exists($json, self::FIELD_MOLECULAR_FORMULA_EXT)) {
-            $v = $json->_molecularFormula ?? new \stdClass();
-            $v->value = $json->molecularFormula ?? null;
+        if (isset($decoded->molecularFormula)
+            || isset($decoded->_molecularFormula)
+            || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA)
+            || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA_EXT)) {
+            $v = $decoded->_molecularFormula ?? new \stdClass();
+            $v->value = $decoded->molecularFormula ?? null;
             $type->setMolecularFormula(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->amountQuantity) || property_exists($json, self::FIELD_AMOUNT_QUANTITY)) {
-            if (is_array($json->amountQuantity)) {
-                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize(reset($json->amountQuantity), $config));
+        if (isset($decoded->amountQuantity) || property_exists($decoded, self::FIELD_AMOUNT_QUANTITY)) {
+            if (is_array($decoded->amountQuantity)) {
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->amountQuantity), $config));
             } else {
-                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($json->amountQuantity, $config));
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($decoded->amountQuantity, $config));
             }
         }
-        if (isset($json->amountString)
-            || isset($json->_amountString)
-            || property_exists($json, self::FIELD_AMOUNT_STRING)
-            || property_exists($json, self::FIELD_AMOUNT_STRING_EXT)) {
-            $v = $json->_amountString ?? new \stdClass();
-            $v->value = $json->amountString ?? null;
+        if (isset($decoded->amountString)
+            || isset($decoded->_amountString)
+            || property_exists($decoded, self::FIELD_AMOUNT_STRING)
+            || property_exists($decoded, self::FIELD_AMOUNT_STRING_EXT)) {
+            $v = $decoded->_amountString ?? new \stdClass();
+            $v->value = $decoded->amountString ?? null;
             $type->setAmountString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->measurementType) || property_exists($json, self::FIELD_MEASUREMENT_TYPE)) {
-            if (is_array($json->measurementType)) {
-                $type->setMeasurementType(FHIRCodeableConcept::jsonUnserialize(reset($json->measurementType), $config));
+        if (isset($decoded->measurementType) || property_exists($decoded, self::FIELD_MEASUREMENT_TYPE)) {
+            if (is_array($decoded->measurementType)) {
+                $type->setMeasurementType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->measurementType), $config));
             } else {
-                $type->setMeasurementType(FHIRCodeableConcept::jsonUnserialize($json->measurementType, $config));
+                $type->setMeasurementType(FHIRCodeableConcept::jsonUnserialize($decoded->measurementType, $config));
             }
         }
         return $type;

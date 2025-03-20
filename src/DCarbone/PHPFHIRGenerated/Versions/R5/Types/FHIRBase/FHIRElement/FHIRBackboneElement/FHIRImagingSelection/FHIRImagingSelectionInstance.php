@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -758,13 +758,13 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionInstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionInstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -778,36 +778,36 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->uid)
-            || isset($json->_uid)
-            || property_exists($json, self::FIELD_UID)
-            || property_exists($json, self::FIELD_UID_EXT)) {
-            $v = $json->_uid ?? new \stdClass();
-            $v->value = $json->uid ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->uid)
+            || isset($decoded->_uid)
+            || property_exists($decoded, self::FIELD_UID)
+            || property_exists($decoded, self::FIELD_UID_EXT)) {
+            $v = $decoded->_uid ?? new \stdClass();
+            $v->value = $decoded->uid ?? null;
             $type->setUid(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json->number)
-            || isset($json->_number)
-            || property_exists($json, self::FIELD_NUMBER)
-            || property_exists($json, self::FIELD_NUMBER_EXT)) {
-            $v = $json->_number ?? new \stdClass();
-            $v->value = $json->number ?? null;
+        if (isset($decoded->number)
+            || isset($decoded->_number)
+            || property_exists($decoded, self::FIELD_NUMBER)
+            || property_exists($decoded, self::FIELD_NUMBER_EXT)) {
+            $v = $decoded->_number ?? new \stdClass();
+            $v->value = $decoded->number ?? null;
             $type->setNumber(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->sopClass) || property_exists($json, self::FIELD_SOP_CLASS)) {
-            if (is_array($json->sopClass)) {
-                $type->setSopClass(FHIRCoding::jsonUnserialize(reset($json->sopClass), $config));
+        if (isset($decoded->sopClass) || property_exists($decoded, self::FIELD_SOP_CLASS)) {
+            if (is_array($decoded->sopClass)) {
+                $type->setSopClass(FHIRCoding::jsonUnserialize(reset($decoded->sopClass), $config));
             } else {
-                $type->setSopClass(FHIRCoding::jsonUnserialize($json->sopClass, $config));
+                $type->setSopClass(FHIRCoding::jsonUnserialize($decoded->sopClass, $config));
             }
         }
-        if (isset($json->subset)
-            || isset($json->_subset)
-            || property_exists($json, self::FIELD_SUBSET)
-            || property_exists($json, self::FIELD_SUBSET_EXT)) {
-            $vals = (array)($json->subset ?? []);
-            $exts = (array)($json->FIELD_SUBSET_EXT ?? []);
+        if (isset($decoded->subset)
+            || isset($decoded->_subset)
+            || property_exists($decoded, self::FIELD_SUBSET)
+            || property_exists($decoded, self::FIELD_SUBSET_EXT)) {
+            $vals = (array)($decoded->subset ?? []);
+            $exts = (array)($decoded->FIELD_SUBSET_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -819,23 +819,23 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
                 $type->addSubset(FHIRString::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->imageRegion2D) || property_exists($json, self::FIELD_IMAGE_REGION_2D)) {
-            if (is_object($json->imageRegion2D)) {
-                $vals = [$json->imageRegion2D];
+        if (isset($decoded->imageRegion2D) || property_exists($decoded, self::FIELD_IMAGE_REGION_2D)) {
+            if (is_object($decoded->imageRegion2D)) {
+                $vals = [$decoded->imageRegion2D];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_IMAGE_REGION_2D, true);
             } else {
-                $vals = $json->imageRegion2D;
+                $vals = $decoded->imageRegion2D;
             }
             foreach($vals as $v) {
                 $type->addImageRegion2D(FHIRImagingSelectionImageRegion2D::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->imageRegion3D) || property_exists($json, self::FIELD_IMAGE_REGION_3D)) {
-            if (is_object($json->imageRegion3D)) {
-                $vals = [$json->imageRegion3D];
+        if (isset($decoded->imageRegion3D) || property_exists($decoded, self::FIELD_IMAGE_REGION_3D)) {
+            if (is_object($decoded->imageRegion3D)) {
+                $vals = [$decoded->imageRegion3D];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_IMAGE_REGION_3D, true);
             } else {
-                $vals = $json->imageRegion3D;
+                $vals = $decoded->imageRegion3D;
             }
             foreach($vals as $v) {
                 $type->addImageRegion3D(FHIRImagingSelectionImageRegion3D::jsonUnserialize($v, $config));

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -817,13 +817,13 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -837,68 +837,68 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->note) || property_exists($json, self::FIELD_NOTE)) {
-            if (is_object($json->note)) {
-                $vals = [$json->note];
+        if (isset($decoded->note) || property_exists($decoded, self::FIELD_NOTE)) {
+            if (is_object($decoded->note)) {
+                $vals = [$decoded->note];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTE, true);
             } else {
-                $vals = $json->note;
+                $vals = $decoded->note;
             }
             foreach($vals as $v) {
                 $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->eventCodeableConcept) || property_exists($json, self::FIELD_EVENT_CODEABLE_CONCEPT)) {
-            if (is_array($json->eventCodeableConcept)) {
-                $type->setEventCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->eventCodeableConcept), $config));
+        if (isset($decoded->eventCodeableConcept) || property_exists($decoded, self::FIELD_EVENT_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->eventCodeableConcept)) {
+                $type->setEventCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->eventCodeableConcept), $config));
             } else {
-                $type->setEventCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->eventCodeableConcept, $config));
+                $type->setEventCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->eventCodeableConcept, $config));
             }
         }
-        if (isset($json->eventReference) || property_exists($json, self::FIELD_EVENT_REFERENCE)) {
-            if (is_array($json->eventReference)) {
-                $type->setEventReference(FHIRReference::jsonUnserialize(reset($json->eventReference), $config));
+        if (isset($decoded->eventReference) || property_exists($decoded, self::FIELD_EVENT_REFERENCE)) {
+            if (is_array($decoded->eventReference)) {
+                $type->setEventReference(FHIRReference::jsonUnserialize(reset($decoded->eventReference), $config));
             } else {
-                $type->setEventReference(FHIRReference::jsonUnserialize($json->eventReference, $config));
+                $type->setEventReference(FHIRReference::jsonUnserialize($decoded->eventReference, $config));
             }
         }
-        if (isset($json->eventDateTime)
-            || isset($json->_eventDateTime)
-            || property_exists($json, self::FIELD_EVENT_DATE_TIME)
-            || property_exists($json, self::FIELD_EVENT_DATE_TIME_EXT)) {
-            $v = $json->_eventDateTime ?? new \stdClass();
-            $v->value = $json->eventDateTime ?? null;
+        if (isset($decoded->eventDateTime)
+            || isset($decoded->_eventDateTime)
+            || property_exists($decoded, self::FIELD_EVENT_DATE_TIME)
+            || property_exists($decoded, self::FIELD_EVENT_DATE_TIME_EXT)) {
+            $v = $decoded->_eventDateTime ?? new \stdClass();
+            $v->value = $decoded->eventDateTime ?? null;
             $type->setEventDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->eventId)
-            || isset($json->_eventId)
-            || property_exists($json, self::FIELD_EVENT_ID)
-            || property_exists($json, self::FIELD_EVENT_ID_EXT)) {
-            $v = $json->_eventId ?? new \stdClass();
-            $v->value = $json->eventId ?? null;
+        if (isset($decoded->eventId)
+            || isset($decoded->_eventId)
+            || property_exists($decoded, self::FIELD_EVENT_ID)
+            || property_exists($decoded, self::FIELD_EVENT_ID_EXT)) {
+            $v = $decoded->_eventId ?? new \stdClass();
+            $v->value = $decoded->eventId ?? null;
             $type->setEventId(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
-            if (is_array($json->quantity)) {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+        if (isset($decoded->quantity) || property_exists($decoded, self::FIELD_QUANTITY)) {
+            if (is_array($decoded->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->quantity), $config));
             } else {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($decoded->quantity, $config));
             }
         }
-        if (isset($json->range) || property_exists($json, self::FIELD_RANGE)) {
-            if (is_array($json->range)) {
-                $type->setRange(FHIRRange::jsonUnserialize(reset($json->range), $config));
+        if (isset($decoded->range) || property_exists($decoded, self::FIELD_RANGE)) {
+            if (is_array($decoded->range)) {
+                $type->setRange(FHIRRange::jsonUnserialize(reset($decoded->range), $config));
             } else {
-                $type->setRange(FHIRRange::jsonUnserialize($json->range, $config));
+                $type->setRange(FHIRRange::jsonUnserialize($decoded->range, $config));
             }
         }
         return $type;

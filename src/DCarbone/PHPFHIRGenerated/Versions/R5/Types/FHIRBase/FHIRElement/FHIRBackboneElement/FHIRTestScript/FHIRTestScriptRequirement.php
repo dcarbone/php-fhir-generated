@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -366,13 +366,13 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequirement $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequirement
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -386,21 +386,21 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->linkUri)
-            || isset($json->_linkUri)
-            || property_exists($json, self::FIELD_LINK_URI)
-            || property_exists($json, self::FIELD_LINK_URI_EXT)) {
-            $v = $json->_linkUri ?? new \stdClass();
-            $v->value = $json->linkUri ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->linkUri)
+            || isset($decoded->_linkUri)
+            || property_exists($decoded, self::FIELD_LINK_URI)
+            || property_exists($decoded, self::FIELD_LINK_URI_EXT)) {
+            $v = $decoded->_linkUri ?? new \stdClass();
+            $v->value = $decoded->linkUri ?? null;
             $type->setLinkUri(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->linkCanonical)
-            || isset($json->_linkCanonical)
-            || property_exists($json, self::FIELD_LINK_CANONICAL)
-            || property_exists($json, self::FIELD_LINK_CANONICAL_EXT)) {
-            $v = $json->_linkCanonical ?? new \stdClass();
-            $v->value = $json->linkCanonical ?? null;
+        if (isset($decoded->linkCanonical)
+            || isset($decoded->_linkCanonical)
+            || property_exists($decoded, self::FIELD_LINK_CANONICAL)
+            || property_exists($decoded, self::FIELD_LINK_CANONICAL_EXT)) {
+            $v = $decoded->_linkCanonical ?? new \stdClass();
+            $v->value = $decoded->linkCanonical ?? null;
             $type->setLinkCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
         return $type;

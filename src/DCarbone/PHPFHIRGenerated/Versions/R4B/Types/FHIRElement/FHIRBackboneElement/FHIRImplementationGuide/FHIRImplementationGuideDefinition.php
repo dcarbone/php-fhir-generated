@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -657,13 +657,13 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -677,53 +677,53 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->grouping) || property_exists($json, self::FIELD_GROUPING)) {
-            if (is_object($json->grouping)) {
-                $vals = [$json->grouping];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->grouping) || property_exists($decoded, self::FIELD_GROUPING)) {
+            if (is_object($decoded->grouping)) {
+                $vals = [$decoded->grouping];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_GROUPING, true);
             } else {
-                $vals = $json->grouping;
+                $vals = $decoded->grouping;
             }
             foreach($vals as $v) {
                 $type->addGrouping(FHIRImplementationGuideGrouping::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->resource) || property_exists($json, self::FIELD_RESOURCE)) {
-            if (is_object($json->resource)) {
-                $vals = [$json->resource];
+        if (isset($decoded->resource) || property_exists($decoded, self::FIELD_RESOURCE)) {
+            if (is_object($decoded->resource)) {
+                $vals = [$decoded->resource];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_RESOURCE, true);
             } else {
-                $vals = $json->resource;
+                $vals = $decoded->resource;
             }
             foreach($vals as $v) {
                 $type->addResource(FHIRImplementationGuideResource::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->page) || property_exists($json, self::FIELD_PAGE)) {
-            if (is_array($json->page)) {
-                $type->setPage(FHIRImplementationGuidePage::jsonUnserialize(reset($json->page), $config));
+        if (isset($decoded->page) || property_exists($decoded, self::FIELD_PAGE)) {
+            if (is_array($decoded->page)) {
+                $type->setPage(FHIRImplementationGuidePage::jsonUnserialize(reset($decoded->page), $config));
             } else {
-                $type->setPage(FHIRImplementationGuidePage::jsonUnserialize($json->page, $config));
+                $type->setPage(FHIRImplementationGuidePage::jsonUnserialize($decoded->page, $config));
             }
         }
-        if (isset($json->parameter) || property_exists($json, self::FIELD_PARAMETER)) {
-            if (is_object($json->parameter)) {
-                $vals = [$json->parameter];
+        if (isset($decoded->parameter) || property_exists($decoded, self::FIELD_PARAMETER)) {
+            if (is_object($decoded->parameter)) {
+                $vals = [$decoded->parameter];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PARAMETER, true);
             } else {
-                $vals = $json->parameter;
+                $vals = $decoded->parameter;
             }
             foreach($vals as $v) {
                 $type->addParameter(FHIRImplementationGuideParameter::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->template) || property_exists($json, self::FIELD_TEMPLATE)) {
-            if (is_object($json->template)) {
-                $vals = [$json->template];
+        if (isset($decoded->template) || property_exists($decoded, self::FIELD_TEMPLATE)) {
+            if (is_object($decoded->template)) {
+                $vals = [$decoded->template];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TEMPLATE, true);
             } else {
-                $vals = $json->template;
+                $vals = $decoded->template;
             }
             foreach($vals as $v) {
                 $type->addTemplate(FHIRImplementationGuideTemplate::jsonUnserialize($v, $config));

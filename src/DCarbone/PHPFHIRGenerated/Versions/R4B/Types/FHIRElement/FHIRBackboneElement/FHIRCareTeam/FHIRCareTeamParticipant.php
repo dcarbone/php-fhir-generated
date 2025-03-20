@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -480,13 +480,13 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -500,37 +500,37 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
-            if (is_object($json->role)) {
-                $vals = [$json->role];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->role) || property_exists($decoded, self::FIELD_ROLE)) {
+            if (is_object($decoded->role)) {
+                $vals = [$decoded->role];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ROLE, true);
             } else {
-                $vals = $json->role;
+                $vals = $decoded->role;
             }
             foreach($vals as $v) {
                 $type->addRole(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->member) || property_exists($json, self::FIELD_MEMBER)) {
-            if (is_array($json->member)) {
-                $type->setMember(FHIRReference::jsonUnserialize(reset($json->member), $config));
+        if (isset($decoded->member) || property_exists($decoded, self::FIELD_MEMBER)) {
+            if (is_array($decoded->member)) {
+                $type->setMember(FHIRReference::jsonUnserialize(reset($decoded->member), $config));
             } else {
-                $type->setMember(FHIRReference::jsonUnserialize($json->member, $config));
+                $type->setMember(FHIRReference::jsonUnserialize($decoded->member, $config));
             }
         }
-        if (isset($json->onBehalfOf) || property_exists($json, self::FIELD_ON_BEHALF_OF)) {
-            if (is_array($json->onBehalfOf)) {
-                $type->setOnBehalfOf(FHIRReference::jsonUnserialize(reset($json->onBehalfOf), $config));
+        if (isset($decoded->onBehalfOf) || property_exists($decoded, self::FIELD_ON_BEHALF_OF)) {
+            if (is_array($decoded->onBehalfOf)) {
+                $type->setOnBehalfOf(FHIRReference::jsonUnserialize(reset($decoded->onBehalfOf), $config));
             } else {
-                $type->setOnBehalfOf(FHIRReference::jsonUnserialize($json->onBehalfOf, $config));
+                $type->setOnBehalfOf(FHIRReference::jsonUnserialize($decoded->onBehalfOf, $config));
             }
         }
-        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
-            if (is_array($json->period)) {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+        if (isset($decoded->period) || property_exists($decoded, self::FIELD_PERIOD)) {
+            if (is_array($decoded->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->period), $config));
             } else {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($decoded->period, $config));
             }
         }
         return $type;

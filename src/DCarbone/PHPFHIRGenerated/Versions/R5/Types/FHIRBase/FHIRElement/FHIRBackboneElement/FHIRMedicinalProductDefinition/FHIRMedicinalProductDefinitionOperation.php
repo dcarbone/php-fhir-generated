@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -490,13 +490,13 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionOperation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionOperation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -510,37 +510,37 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableReference::jsonUnserialize(reset($json->type), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableReference::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableReference::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableReference::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->effectiveDate) || property_exists($json, self::FIELD_EFFECTIVE_DATE)) {
-            if (is_array($json->effectiveDate)) {
-                $type->setEffectiveDate(FHIRPeriod::jsonUnserialize(reset($json->effectiveDate), $config));
+        if (isset($decoded->effectiveDate) || property_exists($decoded, self::FIELD_EFFECTIVE_DATE)) {
+            if (is_array($decoded->effectiveDate)) {
+                $type->setEffectiveDate(FHIRPeriod::jsonUnserialize(reset($decoded->effectiveDate), $config));
             } else {
-                $type->setEffectiveDate(FHIRPeriod::jsonUnserialize($json->effectiveDate, $config));
+                $type->setEffectiveDate(FHIRPeriod::jsonUnserialize($decoded->effectiveDate, $config));
             }
         }
-        if (isset($json->organization) || property_exists($json, self::FIELD_ORGANIZATION)) {
-            if (is_object($json->organization)) {
-                $vals = [$json->organization];
+        if (isset($decoded->organization) || property_exists($decoded, self::FIELD_ORGANIZATION)) {
+            if (is_object($decoded->organization)) {
+                $vals = [$decoded->organization];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ORGANIZATION, true);
             } else {
-                $vals = $json->organization;
+                $vals = $decoded->organization;
             }
             foreach($vals as $v) {
                 $type->addOrganization(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->confidentialityIndicator) || property_exists($json, self::FIELD_CONFIDENTIALITY_INDICATOR)) {
-            if (is_array($json->confidentialityIndicator)) {
-                $type->setConfidentialityIndicator(FHIRCodeableConcept::jsonUnserialize(reset($json->confidentialityIndicator), $config));
+        if (isset($decoded->confidentialityIndicator) || property_exists($decoded, self::FIELD_CONFIDENTIALITY_INDICATOR)) {
+            if (is_array($decoded->confidentialityIndicator)) {
+                $type->setConfidentialityIndicator(FHIRCodeableConcept::jsonUnserialize(reset($decoded->confidentialityIndicator), $config));
             } else {
-                $type->setConfidentialityIndicator(FHIRCodeableConcept::jsonUnserialize($json->confidentialityIndicator, $config));
+                $type->setConfidentialityIndicator(FHIRCodeableConcept::jsonUnserialize($decoded->confidentialityIndicator, $config));
             }
         }
         return $type;

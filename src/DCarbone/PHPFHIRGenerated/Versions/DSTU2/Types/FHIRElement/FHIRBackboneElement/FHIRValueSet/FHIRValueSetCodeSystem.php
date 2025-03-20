@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -529,13 +529,13 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -549,37 +549,37 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->system)
-            || isset($json->_system)
-            || property_exists($json, self::FIELD_SYSTEM)
-            || property_exists($json, self::FIELD_SYSTEM_EXT)) {
-            $v = $json->_system ?? new \stdClass();
-            $v->value = $json->system ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->system)
+            || isset($decoded->_system)
+            || property_exists($decoded, self::FIELD_SYSTEM)
+            || property_exists($decoded, self::FIELD_SYSTEM_EXT)) {
+            $v = $decoded->_system ?? new \stdClass();
+            $v->value = $decoded->system ?? null;
             $type->setSystem(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->version)
-            || isset($json->_version)
-            || property_exists($json, self::FIELD_VERSION)
-            || property_exists($json, self::FIELD_VERSION_EXT)) {
-            $v = $json->_version ?? new \stdClass();
-            $v->value = $json->version ?? null;
+        if (isset($decoded->version)
+            || isset($decoded->_version)
+            || property_exists($decoded, self::FIELD_VERSION)
+            || property_exists($decoded, self::FIELD_VERSION_EXT)) {
+            $v = $decoded->_version ?? new \stdClass();
+            $v->value = $decoded->version ?? null;
             $type->setVersion(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->caseSensitive)
-            || isset($json->_caseSensitive)
-            || property_exists($json, self::FIELD_CASE_SENSITIVE)
-            || property_exists($json, self::FIELD_CASE_SENSITIVE_EXT)) {
-            $v = $json->_caseSensitive ?? new \stdClass();
-            $v->value = $json->caseSensitive ?? null;
+        if (isset($decoded->caseSensitive)
+            || isset($decoded->_caseSensitive)
+            || property_exists($decoded, self::FIELD_CASE_SENSITIVE)
+            || property_exists($decoded, self::FIELD_CASE_SENSITIVE_EXT)) {
+            $v = $decoded->_caseSensitive ?? new \stdClass();
+            $v->value = $decoded->caseSensitive ?? null;
             $type->setCaseSensitive(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->concept) || property_exists($json, self::FIELD_CONCEPT)) {
-            if (is_object($json->concept)) {
-                $vals = [$json->concept];
+        if (isset($decoded->concept) || property_exists($decoded, self::FIELD_CONCEPT)) {
+            if (is_object($decoded->concept)) {
+                $vals = [$decoded->concept];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CONCEPT, true);
             } else {
-                $vals = $json->concept;
+                $vals = $decoded->concept;
             }
             foreach($vals as $v) {
                 $type->addConcept(FHIRValueSetConcept::jsonUnserialize($v, $config));

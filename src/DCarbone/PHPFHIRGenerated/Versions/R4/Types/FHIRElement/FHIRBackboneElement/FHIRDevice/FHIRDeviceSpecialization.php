@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -326,13 +326,13 @@ class FHIRDeviceSpecialization extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceSpecialization $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceSpecialization
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -346,20 +346,20 @@ class FHIRDeviceSpecialization extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->systemType) || property_exists($json, self::FIELD_SYSTEM_TYPE)) {
-            if (is_array($json->systemType)) {
-                $type->setSystemType(FHIRCodeableConcept::jsonUnserialize(reset($json->systemType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->systemType) || property_exists($decoded, self::FIELD_SYSTEM_TYPE)) {
+            if (is_array($decoded->systemType)) {
+                $type->setSystemType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->systemType), $config));
             } else {
-                $type->setSystemType(FHIRCodeableConcept::jsonUnserialize($json->systemType, $config));
+                $type->setSystemType(FHIRCodeableConcept::jsonUnserialize($decoded->systemType, $config));
             }
         }
-        if (isset($json->version)
-            || isset($json->_version)
-            || property_exists($json, self::FIELD_VERSION)
-            || property_exists($json, self::FIELD_VERSION_EXT)) {
-            $v = $json->_version ?? new \stdClass();
-            $v->value = $json->version ?? null;
+        if (isset($decoded->version)
+            || isset($decoded->_version)
+            || property_exists($decoded, self::FIELD_VERSION)
+            || property_exists($decoded, self::FIELD_VERSION_EXT)) {
+            $v = $decoded->_version ?? new \stdClass();
+            $v->value = $decoded->version ?? null;
             $type->setVersion(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

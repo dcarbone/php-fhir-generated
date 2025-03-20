@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -473,13 +473,13 @@ class FHIRQuery extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRQuery $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRQuery
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -496,37 +496,37 @@ class FHIRQuery extends FHIRResource implements VersionContainedTypeInterface
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->identifier)
-            || isset($json->_identifier)
-            || property_exists($json, self::FIELD_IDENTIFIER)
-            || property_exists($json, self::FIELD_IDENTIFIER_EXT)) {
-            $v = $json->_identifier ?? new \stdClass();
-            $v->value = $json->identifier ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->identifier)
+            || isset($decoded->_identifier)
+            || property_exists($decoded, self::FIELD_IDENTIFIER)
+            || property_exists($decoded, self::FIELD_IDENTIFIER_EXT)) {
+            $v = $decoded->_identifier ?? new \stdClass();
+            $v->value = $decoded->identifier ?? null;
             $type->setIdentifier(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->parameter) || property_exists($json, self::FIELD_PARAMETER)) {
-            if (is_object($json->parameter)) {
-                $vals = [$json->parameter];
+        if (isset($decoded->parameter) || property_exists($decoded, self::FIELD_PARAMETER)) {
+            if (is_object($decoded->parameter)) {
+                $vals = [$decoded->parameter];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PARAMETER, true);
             } else {
-                $vals = $json->parameter;
+                $vals = $decoded->parameter;
             }
             foreach($vals as $v) {
                 $type->addParameter(FHIRExtension::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->response) || property_exists($json, self::FIELD_RESPONSE)) {
-            if (is_array($json->response)) {
-                $type->setResponse(FHIRQueryResponse::jsonUnserialize(reset($json->response), $config));
+        if (isset($decoded->response) || property_exists($decoded, self::FIELD_RESPONSE)) {
+            if (is_array($decoded->response)) {
+                $type->setResponse(FHIRQueryResponse::jsonUnserialize(reset($decoded->response), $config));
             } else {
-                $type->setResponse(FHIRQueryResponse::jsonUnserialize($json->response, $config));
+                $type->setResponse(FHIRQueryResponse::jsonUnserialize($decoded->response, $config));
             }
         }
         return $type;

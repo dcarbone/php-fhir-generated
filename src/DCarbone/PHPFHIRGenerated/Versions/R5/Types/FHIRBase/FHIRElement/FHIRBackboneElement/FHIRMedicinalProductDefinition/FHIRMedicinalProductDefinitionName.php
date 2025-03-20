@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -551,13 +551,13 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionName $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionName
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -571,39 +571,39 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->productName)
-            || isset($json->_productName)
-            || property_exists($json, self::FIELD_PRODUCT_NAME)
-            || property_exists($json, self::FIELD_PRODUCT_NAME_EXT)) {
-            $v = $json->_productName ?? new \stdClass();
-            $v->value = $json->productName ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->productName)
+            || isset($decoded->_productName)
+            || property_exists($decoded, self::FIELD_PRODUCT_NAME)
+            || property_exists($decoded, self::FIELD_PRODUCT_NAME_EXT)) {
+            $v = $decoded->_productName ?? new \stdClass();
+            $v->value = $decoded->productName ?? null;
             $type->setProductName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->part) || property_exists($json, self::FIELD_PART)) {
-            if (is_object($json->part)) {
-                $vals = [$json->part];
+        if (isset($decoded->part) || property_exists($decoded, self::FIELD_PART)) {
+            if (is_object($decoded->part)) {
+                $vals = [$decoded->part];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PART, true);
             } else {
-                $vals = $json->part;
+                $vals = $decoded->part;
             }
             foreach($vals as $v) {
                 $type->addPart(FHIRMedicinalProductDefinitionPart::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->usage) || property_exists($json, self::FIELD_USAGE)) {
-            if (is_object($json->usage)) {
-                $vals = [$json->usage];
+        if (isset($decoded->usage) || property_exists($decoded, self::FIELD_USAGE)) {
+            if (is_object($decoded->usage)) {
+                $vals = [$decoded->usage];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_USAGE, true);
             } else {
-                $vals = $json->usage;
+                $vals = $decoded->usage;
             }
             foreach($vals as $v) {
                 $type->addUsage(FHIRMedicinalProductDefinitionUsage::jsonUnserialize($v, $config));

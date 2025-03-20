@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1203,13 +1203,13 @@ class FHIRCitationEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1223,117 +1223,117 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->name) || property_exists($json, self::FIELD_NAME)) {
-            if (is_array($json->name)) {
-                $type->setName(FHIRHumanName::jsonUnserialize(reset($json->name), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->name) || property_exists($decoded, self::FIELD_NAME)) {
+            if (is_array($decoded->name)) {
+                $type->setName(FHIRHumanName::jsonUnserialize(reset($decoded->name), $config));
             } else {
-                $type->setName(FHIRHumanName::jsonUnserialize($json->name, $config));
+                $type->setName(FHIRHumanName::jsonUnserialize($decoded->name, $config));
             }
         }
-        if (isset($json->initials)
-            || isset($json->_initials)
-            || property_exists($json, self::FIELD_INITIALS)
-            || property_exists($json, self::FIELD_INITIALS_EXT)) {
-            $v = $json->_initials ?? new \stdClass();
-            $v->value = $json->initials ?? null;
+        if (isset($decoded->initials)
+            || isset($decoded->_initials)
+            || property_exists($decoded, self::FIELD_INITIALS)
+            || property_exists($decoded, self::FIELD_INITIALS_EXT)) {
+            $v = $decoded->_initials ?? new \stdClass();
+            $v->value = $decoded->initials ?? null;
             $type->setInitials(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->collectiveName)
-            || isset($json->_collectiveName)
-            || property_exists($json, self::FIELD_COLLECTIVE_NAME)
-            || property_exists($json, self::FIELD_COLLECTIVE_NAME_EXT)) {
-            $v = $json->_collectiveName ?? new \stdClass();
-            $v->value = $json->collectiveName ?? null;
+        if (isset($decoded->collectiveName)
+            || isset($decoded->_collectiveName)
+            || property_exists($decoded, self::FIELD_COLLECTIVE_NAME)
+            || property_exists($decoded, self::FIELD_COLLECTIVE_NAME_EXT)) {
+            $v = $decoded->_collectiveName ?? new \stdClass();
+            $v->value = $decoded->collectiveName ?? null;
             $type->setCollectiveName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_object($json->identifier)) {
-                $vals = [$json->identifier];
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_object($decoded->identifier)) {
+                $vals = [$decoded->identifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
             } else {
-                $vals = $json->identifier;
+                $vals = $decoded->identifier;
             }
             foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->affiliationInfo) || property_exists($json, self::FIELD_AFFILIATION_INFO)) {
-            if (is_object($json->affiliationInfo)) {
-                $vals = [$json->affiliationInfo];
+        if (isset($decoded->affiliationInfo) || property_exists($decoded, self::FIELD_AFFILIATION_INFO)) {
+            if (is_object($decoded->affiliationInfo)) {
+                $vals = [$decoded->affiliationInfo];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_AFFILIATION_INFO, true);
             } else {
-                $vals = $json->affiliationInfo;
+                $vals = $decoded->affiliationInfo;
             }
             foreach($vals as $v) {
                 $type->addAffiliationInfo(FHIRCitationAffiliationInfo::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->address) || property_exists($json, self::FIELD_ADDRESS)) {
-            if (is_object($json->address)) {
-                $vals = [$json->address];
+        if (isset($decoded->address) || property_exists($decoded, self::FIELD_ADDRESS)) {
+            if (is_object($decoded->address)) {
+                $vals = [$decoded->address];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ADDRESS, true);
             } else {
-                $vals = $json->address;
+                $vals = $decoded->address;
             }
             foreach($vals as $v) {
                 $type->addAddress(FHIRAddress::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->telecom) || property_exists($json, self::FIELD_TELECOM)) {
-            if (is_object($json->telecom)) {
-                $vals = [$json->telecom];
+        if (isset($decoded->telecom) || property_exists($decoded, self::FIELD_TELECOM)) {
+            if (is_object($decoded->telecom)) {
+                $vals = [$decoded->telecom];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TELECOM, true);
             } else {
-                $vals = $json->telecom;
+                $vals = $decoded->telecom;
             }
             foreach($vals as $v) {
                 $type->addTelecom(FHIRContactPoint::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->contributionType) || property_exists($json, self::FIELD_CONTRIBUTION_TYPE)) {
-            if (is_object($json->contributionType)) {
-                $vals = [$json->contributionType];
+        if (isset($decoded->contributionType) || property_exists($decoded, self::FIELD_CONTRIBUTION_TYPE)) {
+            if (is_object($decoded->contributionType)) {
+                $vals = [$decoded->contributionType];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTRIBUTION_TYPE, true);
             } else {
-                $vals = $json->contributionType;
+                $vals = $decoded->contributionType;
             }
             foreach($vals as $v) {
                 $type->addContributionType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
-            if (is_array($json->role)) {
-                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($json->role), $config));
+        if (isset($decoded->role) || property_exists($decoded, self::FIELD_ROLE)) {
+            if (is_array($decoded->role)) {
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($decoded->role), $config));
             } else {
-                $type->setRole(FHIRCodeableConcept::jsonUnserialize($json->role, $config));
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize($decoded->role, $config));
             }
         }
-        if (isset($json->contributionInstance) || property_exists($json, self::FIELD_CONTRIBUTION_INSTANCE)) {
-            if (is_object($json->contributionInstance)) {
-                $vals = [$json->contributionInstance];
+        if (isset($decoded->contributionInstance) || property_exists($decoded, self::FIELD_CONTRIBUTION_INSTANCE)) {
+            if (is_object($decoded->contributionInstance)) {
+                $vals = [$decoded->contributionInstance];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTRIBUTION_INSTANCE, true);
             } else {
-                $vals = $json->contributionInstance;
+                $vals = $decoded->contributionInstance;
             }
             foreach($vals as $v) {
                 $type->addContributionInstance(FHIRCitationContributionInstance::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->correspondingContact)
-            || isset($json->_correspondingContact)
-            || property_exists($json, self::FIELD_CORRESPONDING_CONTACT)
-            || property_exists($json, self::FIELD_CORRESPONDING_CONTACT_EXT)) {
-            $v = $json->_correspondingContact ?? new \stdClass();
-            $v->value = $json->correspondingContact ?? null;
+        if (isset($decoded->correspondingContact)
+            || isset($decoded->_correspondingContact)
+            || property_exists($decoded, self::FIELD_CORRESPONDING_CONTACT)
+            || property_exists($decoded, self::FIELD_CORRESPONDING_CONTACT_EXT)) {
+            $v = $decoded->_correspondingContact ?? new \stdClass();
+            $v->value = $decoded->correspondingContact ?? null;
             $type->setCorrespondingContact(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->listOrder)
-            || isset($json->_listOrder)
-            || property_exists($json, self::FIELD_LIST_ORDER)
-            || property_exists($json, self::FIELD_LIST_ORDER_EXT)) {
-            $v = $json->_listOrder ?? new \stdClass();
-            $v->value = $json->listOrder ?? null;
+        if (isset($decoded->listOrder)
+            || isset($decoded->_listOrder)
+            || property_exists($decoded, self::FIELD_LIST_ORDER)
+            || property_exists($decoded, self::FIELD_LIST_ORDER_EXT)) {
+            $v = $decoded->_listOrder ?? new \stdClass();
+            $v->value = $decoded->listOrder ?? null;
             $type->setListOrder(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
         return $type;

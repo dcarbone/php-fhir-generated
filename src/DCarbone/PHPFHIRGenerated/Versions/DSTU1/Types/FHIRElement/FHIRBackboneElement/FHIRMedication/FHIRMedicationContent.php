@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -309,13 +309,13 @@ class FHIRMedicationContent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationContent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationContent
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -329,19 +329,19 @@ class FHIRMedicationContent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
-            if (is_array($json->item)) {
-                $type->setItem(FHIRResourceReference::jsonUnserialize(reset($json->item), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->item) || property_exists($decoded, self::FIELD_ITEM)) {
+            if (is_array($decoded->item)) {
+                $type->setItem(FHIRResourceReference::jsonUnserialize(reset($decoded->item), $config));
             } else {
-                $type->setItem(FHIRResourceReference::jsonUnserialize($json->item, $config));
+                $type->setItem(FHIRResourceReference::jsonUnserialize($decoded->item, $config));
             }
         }
-        if (isset($json->amount) || property_exists($json, self::FIELD_AMOUNT)) {
-            if (is_array($json->amount)) {
-                $type->setAmount(FHIRQuantity::jsonUnserialize(reset($json->amount), $config));
+        if (isset($decoded->amount) || property_exists($decoded, self::FIELD_AMOUNT)) {
+            if (is_array($decoded->amount)) {
+                $type->setAmount(FHIRQuantity::jsonUnserialize(reset($decoded->amount), $config));
             } else {
-                $type->setAmount(FHIRQuantity::jsonUnserialize($json->amount, $config));
+                $type->setAmount(FHIRQuantity::jsonUnserialize($decoded->amount, $config));
             }
         }
         return $type;

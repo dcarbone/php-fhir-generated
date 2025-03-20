@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -461,13 +461,13 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -481,35 +481,35 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->rating) || property_exists($json, self::FIELD_RATING)) {
-            if (is_object($json->rating)) {
-                $vals = [$json->rating];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->rating) || property_exists($decoded, self::FIELD_RATING)) {
+            if (is_object($decoded->rating)) {
+                $vals = [$decoded->rating];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_RATING, true);
             } else {
-                $vals = $json->rating;
+                $vals = $decoded->rating;
             }
             foreach($vals as $v) {
                 $type->addRating(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->note) || property_exists($json, self::FIELD_NOTE)) {
-            if (is_object($json->note)) {
-                $vals = [$json->note];
+        if (isset($decoded->note) || property_exists($decoded, self::FIELD_NOTE)) {
+            if (is_object($decoded->note)) {
+                $vals = [$decoded->note];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTE, true);
             } else {
-                $vals = $json->note;
+                $vals = $decoded->note;
             }
             foreach($vals as $v) {
                 $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->certaintySubcomponent) || property_exists($json, self::FIELD_CERTAINTY_SUBCOMPONENT)) {
-            if (is_object($json->certaintySubcomponent)) {
-                $vals = [$json->certaintySubcomponent];
+        if (isset($decoded->certaintySubcomponent) || property_exists($decoded, self::FIELD_CERTAINTY_SUBCOMPONENT)) {
+            if (is_object($decoded->certaintySubcomponent)) {
+                $vals = [$decoded->certaintySubcomponent];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CERTAINTY_SUBCOMPONENT, true);
             } else {
-                $vals = $json->certaintySubcomponent;
+                $vals = $decoded->certaintySubcomponent;
             }
             foreach($vals as $v) {
                 $type->addCertaintySubcomponent(FHIREffectEvidenceSynthesisCertaintySubcomponent::jsonUnserialize($v, $config));

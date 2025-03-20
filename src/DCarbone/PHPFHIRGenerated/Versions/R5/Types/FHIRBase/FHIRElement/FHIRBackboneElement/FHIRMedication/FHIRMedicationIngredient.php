@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -576,13 +576,13 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -596,41 +596,41 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
-            if (is_array($json->item)) {
-                $type->setItem(FHIRCodeableReference::jsonUnserialize(reset($json->item), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->item) || property_exists($decoded, self::FIELD_ITEM)) {
+            if (is_array($decoded->item)) {
+                $type->setItem(FHIRCodeableReference::jsonUnserialize(reset($decoded->item), $config));
             } else {
-                $type->setItem(FHIRCodeableReference::jsonUnserialize($json->item, $config));
+                $type->setItem(FHIRCodeableReference::jsonUnserialize($decoded->item, $config));
             }
         }
-        if (isset($json->isActive)
-            || isset($json->_isActive)
-            || property_exists($json, self::FIELD_IS_ACTIVE)
-            || property_exists($json, self::FIELD_IS_ACTIVE_EXT)) {
-            $v = $json->_isActive ?? new \stdClass();
-            $v->value = $json->isActive ?? null;
+        if (isset($decoded->isActive)
+            || isset($decoded->_isActive)
+            || property_exists($decoded, self::FIELD_IS_ACTIVE)
+            || property_exists($decoded, self::FIELD_IS_ACTIVE_EXT)) {
+            $v = $decoded->_isActive ?? new \stdClass();
+            $v->value = $decoded->isActive ?? null;
             $type->setIsActive(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->strengthRatio) || property_exists($json, self::FIELD_STRENGTH_RATIO)) {
-            if (is_array($json->strengthRatio)) {
-                $type->setStrengthRatio(FHIRRatio::jsonUnserialize(reset($json->strengthRatio), $config));
+        if (isset($decoded->strengthRatio) || property_exists($decoded, self::FIELD_STRENGTH_RATIO)) {
+            if (is_array($decoded->strengthRatio)) {
+                $type->setStrengthRatio(FHIRRatio::jsonUnserialize(reset($decoded->strengthRatio), $config));
             } else {
-                $type->setStrengthRatio(FHIRRatio::jsonUnserialize($json->strengthRatio, $config));
+                $type->setStrengthRatio(FHIRRatio::jsonUnserialize($decoded->strengthRatio, $config));
             }
         }
-        if (isset($json->strengthCodeableConcept) || property_exists($json, self::FIELD_STRENGTH_CODEABLE_CONCEPT)) {
-            if (is_array($json->strengthCodeableConcept)) {
-                $type->setStrengthCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->strengthCodeableConcept), $config));
+        if (isset($decoded->strengthCodeableConcept) || property_exists($decoded, self::FIELD_STRENGTH_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->strengthCodeableConcept)) {
+                $type->setStrengthCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->strengthCodeableConcept), $config));
             } else {
-                $type->setStrengthCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->strengthCodeableConcept, $config));
+                $type->setStrengthCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->strengthCodeableConcept, $config));
             }
         }
-        if (isset($json->strengthQuantity) || property_exists($json, self::FIELD_STRENGTH_QUANTITY)) {
-            if (is_array($json->strengthQuantity)) {
-                $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize(reset($json->strengthQuantity), $config));
+        if (isset($decoded->strengthQuantity) || property_exists($decoded, self::FIELD_STRENGTH_QUANTITY)) {
+            if (is_array($decoded->strengthQuantity)) {
+                $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->strengthQuantity), $config));
             } else {
-                $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize($json->strengthQuantity, $config));
+                $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize($decoded->strengthQuantity, $config));
             }
         }
         return $type;

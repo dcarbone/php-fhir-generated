@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -548,13 +548,13 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -568,48 +568,48 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_object($json->identifier)) {
-                $vals = [$json->identifier];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_object($decoded->identifier)) {
+                $vals = [$decoded->identifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
             } else {
-                $vals = $json->identifier;
+                $vals = $decoded->identifier;
             }
             foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->country) || property_exists($json, self::FIELD_COUNTRY)) {
-            if (is_array($json->country)) {
-                $type->setCountry(FHIRCodeableConcept::jsonUnserialize(reset($json->country), $config));
+        if (isset($decoded->country) || property_exists($decoded, self::FIELD_COUNTRY)) {
+            if (is_array($decoded->country)) {
+                $type->setCountry(FHIRCodeableConcept::jsonUnserialize(reset($decoded->country), $config));
             } else {
-                $type->setCountry(FHIRCodeableConcept::jsonUnserialize($json->country, $config));
+                $type->setCountry(FHIRCodeableConcept::jsonUnserialize($decoded->country, $config));
             }
         }
-        if (isset($json->jurisdiction) || property_exists($json, self::FIELD_JURISDICTION)) {
-            if (is_object($json->jurisdiction)) {
-                $vals = [$json->jurisdiction];
+        if (isset($decoded->jurisdiction) || property_exists($decoded, self::FIELD_JURISDICTION)) {
+            if (is_object($decoded->jurisdiction)) {
+                $vals = [$decoded->jurisdiction];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_JURISDICTION, true);
             } else {
-                $vals = $json->jurisdiction;
+                $vals = $decoded->jurisdiction;
             }
             foreach($vals as $v) {
                 $type->addJurisdiction(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->legalStatusOfSupply) || property_exists($json, self::FIELD_LEGAL_STATUS_OF_SUPPLY)) {
-            if (is_array($json->legalStatusOfSupply)) {
-                $type->setLegalStatusOfSupply(FHIRCodeableConcept::jsonUnserialize(reset($json->legalStatusOfSupply), $config));
+        if (isset($decoded->legalStatusOfSupply) || property_exists($decoded, self::FIELD_LEGAL_STATUS_OF_SUPPLY)) {
+            if (is_array($decoded->legalStatusOfSupply)) {
+                $type->setLegalStatusOfSupply(FHIRCodeableConcept::jsonUnserialize(reset($decoded->legalStatusOfSupply), $config));
             } else {
-                $type->setLegalStatusOfSupply(FHIRCodeableConcept::jsonUnserialize($json->legalStatusOfSupply, $config));
+                $type->setLegalStatusOfSupply(FHIRCodeableConcept::jsonUnserialize($decoded->legalStatusOfSupply, $config));
             }
         }
-        if (isset($json->validityPeriod) || property_exists($json, self::FIELD_VALIDITY_PERIOD)) {
-            if (is_array($json->validityPeriod)) {
-                $type->setValidityPeriod(FHIRPeriod::jsonUnserialize(reset($json->validityPeriod), $config));
+        if (isset($decoded->validityPeriod) || property_exists($decoded, self::FIELD_VALIDITY_PERIOD)) {
+            if (is_array($decoded->validityPeriod)) {
+                $type->setValidityPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->validityPeriod), $config));
             } else {
-                $type->setValidityPeriod(FHIRPeriod::jsonUnserialize($json->validityPeriod, $config));
+                $type->setValidityPeriod(FHIRPeriod::jsonUnserialize($decoded->validityPeriod, $config));
             }
         }
         return $type;

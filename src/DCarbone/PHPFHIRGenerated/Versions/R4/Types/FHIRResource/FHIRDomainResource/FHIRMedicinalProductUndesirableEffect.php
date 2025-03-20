@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -639,13 +639,13 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -662,51 +662,51 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
-            if (is_object($json->subject)) {
-                $vals = [$json->subject];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->subject) || property_exists($decoded, self::FIELD_SUBJECT)) {
+            if (is_object($decoded->subject)) {
+                $vals = [$decoded->subject];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBJECT, true);
             } else {
-                $vals = $json->subject;
+                $vals = $decoded->subject;
             }
             foreach($vals as $v) {
                 $type->addSubject(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->symptomConditionEffect) || property_exists($json, self::FIELD_SYMPTOM_CONDITION_EFFECT)) {
-            if (is_array($json->symptomConditionEffect)) {
-                $type->setSymptomConditionEffect(FHIRCodeableConcept::jsonUnserialize(reset($json->symptomConditionEffect), $config));
+        if (isset($decoded->symptomConditionEffect) || property_exists($decoded, self::FIELD_SYMPTOM_CONDITION_EFFECT)) {
+            if (is_array($decoded->symptomConditionEffect)) {
+                $type->setSymptomConditionEffect(FHIRCodeableConcept::jsonUnserialize(reset($decoded->symptomConditionEffect), $config));
             } else {
-                $type->setSymptomConditionEffect(FHIRCodeableConcept::jsonUnserialize($json->symptomConditionEffect, $config));
+                $type->setSymptomConditionEffect(FHIRCodeableConcept::jsonUnserialize($decoded->symptomConditionEffect, $config));
             }
         }
-        if (isset($json->classification) || property_exists($json, self::FIELD_CLASSIFICATION)) {
-            if (is_array($json->classification)) {
-                $type->setClassification(FHIRCodeableConcept::jsonUnserialize(reset($json->classification), $config));
+        if (isset($decoded->classification) || property_exists($decoded, self::FIELD_CLASSIFICATION)) {
+            if (is_array($decoded->classification)) {
+                $type->setClassification(FHIRCodeableConcept::jsonUnserialize(reset($decoded->classification), $config));
             } else {
-                $type->setClassification(FHIRCodeableConcept::jsonUnserialize($json->classification, $config));
+                $type->setClassification(FHIRCodeableConcept::jsonUnserialize($decoded->classification, $config));
             }
         }
-        if (isset($json->frequencyOfOccurrence) || property_exists($json, self::FIELD_FREQUENCY_OF_OCCURRENCE)) {
-            if (is_array($json->frequencyOfOccurrence)) {
-                $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize(reset($json->frequencyOfOccurrence), $config));
+        if (isset($decoded->frequencyOfOccurrence) || property_exists($decoded, self::FIELD_FREQUENCY_OF_OCCURRENCE)) {
+            if (is_array($decoded->frequencyOfOccurrence)) {
+                $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize(reset($decoded->frequencyOfOccurrence), $config));
             } else {
-                $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize($json->frequencyOfOccurrence, $config));
+                $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize($decoded->frequencyOfOccurrence, $config));
             }
         }
-        if (isset($json->population) || property_exists($json, self::FIELD_POPULATION)) {
-            if (is_object($json->population)) {
-                $vals = [$json->population];
+        if (isset($decoded->population) || property_exists($decoded, self::FIELD_POPULATION)) {
+            if (is_object($decoded->population)) {
+                $vals = [$decoded->population];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_POPULATION, true);
             } else {
-                $vals = $json->population;
+                $vals = $decoded->population;
             }
             foreach($vals as $v) {
                 $type->addPopulation(FHIRPopulation::jsonUnserialize($v, $config));

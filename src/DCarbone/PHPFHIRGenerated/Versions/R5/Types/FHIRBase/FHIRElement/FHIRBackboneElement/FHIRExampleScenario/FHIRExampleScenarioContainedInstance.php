@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -358,13 +358,13 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -378,21 +378,21 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->instanceReference)
-            || isset($json->_instanceReference)
-            || property_exists($json, self::FIELD_INSTANCE_REFERENCE)
-            || property_exists($json, self::FIELD_INSTANCE_REFERENCE_EXT)) {
-            $v = $json->_instanceReference ?? new \stdClass();
-            $v->value = $json->instanceReference ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->instanceReference)
+            || isset($decoded->_instanceReference)
+            || property_exists($decoded, self::FIELD_INSTANCE_REFERENCE)
+            || property_exists($decoded, self::FIELD_INSTANCE_REFERENCE_EXT)) {
+            $v = $decoded->_instanceReference ?? new \stdClass();
+            $v->value = $decoded->instanceReference ?? null;
             $type->setInstanceReference(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->versionReference)
-            || isset($json->_versionReference)
-            || property_exists($json, self::FIELD_VERSION_REFERENCE)
-            || property_exists($json, self::FIELD_VERSION_REFERENCE_EXT)) {
-            $v = $json->_versionReference ?? new \stdClass();
-            $v->value = $json->versionReference ?? null;
+        if (isset($decoded->versionReference)
+            || isset($decoded->_versionReference)
+            || property_exists($decoded, self::FIELD_VERSION_REFERENCE)
+            || property_exists($decoded, self::FIELD_VERSION_REFERENCE_EXT)) {
+            $v = $decoded->_versionReference ?? new \stdClass();
+            $v->value = $decoded->versionReference ?? null;
             $type->setVersionReference(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

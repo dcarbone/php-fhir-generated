@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -328,13 +328,13 @@ class FHIRMedicationProduct extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationProduct $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationProduct
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -348,20 +348,20 @@ class FHIRMedicationProduct extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->form) || property_exists($json, self::FIELD_FORM)) {
-            if (is_array($json->form)) {
-                $type->setForm(FHIRCodeableConcept::jsonUnserialize(reset($json->form), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->form) || property_exists($decoded, self::FIELD_FORM)) {
+            if (is_array($decoded->form)) {
+                $type->setForm(FHIRCodeableConcept::jsonUnserialize(reset($decoded->form), $config));
             } else {
-                $type->setForm(FHIRCodeableConcept::jsonUnserialize($json->form, $config));
+                $type->setForm(FHIRCodeableConcept::jsonUnserialize($decoded->form, $config));
             }
         }
-        if (isset($json->ingredient) || property_exists($json, self::FIELD_INGREDIENT)) {
-            if (is_object($json->ingredient)) {
-                $vals = [$json->ingredient];
+        if (isset($decoded->ingredient) || property_exists($decoded, self::FIELD_INGREDIENT)) {
+            if (is_object($decoded->ingredient)) {
+                $vals = [$decoded->ingredient];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_INGREDIENT, true);
             } else {
-                $vals = $json->ingredient;
+                $vals = $decoded->ingredient;
             }
             foreach($vals as $v) {
                 $type->addIngredient(FHIRMedicationIngredient::jsonUnserialize($v, $config));

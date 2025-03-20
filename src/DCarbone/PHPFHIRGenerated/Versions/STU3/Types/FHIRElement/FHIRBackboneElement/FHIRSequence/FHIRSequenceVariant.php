@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -666,13 +666,13 @@ class FHIRSequenceVariant extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -686,52 +686,52 @@ class FHIRSequenceVariant extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->start)
-            || isset($json->_start)
-            || property_exists($json, self::FIELD_START)
-            || property_exists($json, self::FIELD_START_EXT)) {
-            $v = $json->_start ?? new \stdClass();
-            $v->value = $json->start ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->start)
+            || isset($decoded->_start)
+            || property_exists($decoded, self::FIELD_START)
+            || property_exists($decoded, self::FIELD_START_EXT)) {
+            $v = $decoded->_start ?? new \stdClass();
+            $v->value = $decoded->start ?? null;
             $type->setStart(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->end)
-            || isset($json->_end)
-            || property_exists($json, self::FIELD_END)
-            || property_exists($json, self::FIELD_END_EXT)) {
-            $v = $json->_end ?? new \stdClass();
-            $v->value = $json->end ?? null;
+        if (isset($decoded->end)
+            || isset($decoded->_end)
+            || property_exists($decoded, self::FIELD_END)
+            || property_exists($decoded, self::FIELD_END_EXT)) {
+            $v = $decoded->_end ?? new \stdClass();
+            $v->value = $decoded->end ?? null;
             $type->setEnd(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->observedAllele)
-            || isset($json->_observedAllele)
-            || property_exists($json, self::FIELD_OBSERVED_ALLELE)
-            || property_exists($json, self::FIELD_OBSERVED_ALLELE_EXT)) {
-            $v = $json->_observedAllele ?? new \stdClass();
-            $v->value = $json->observedAllele ?? null;
+        if (isset($decoded->observedAllele)
+            || isset($decoded->_observedAllele)
+            || property_exists($decoded, self::FIELD_OBSERVED_ALLELE)
+            || property_exists($decoded, self::FIELD_OBSERVED_ALLELE_EXT)) {
+            $v = $decoded->_observedAllele ?? new \stdClass();
+            $v->value = $decoded->observedAllele ?? null;
             $type->setObservedAllele(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->referenceAllele)
-            || isset($json->_referenceAllele)
-            || property_exists($json, self::FIELD_REFERENCE_ALLELE)
-            || property_exists($json, self::FIELD_REFERENCE_ALLELE_EXT)) {
-            $v = $json->_referenceAllele ?? new \stdClass();
-            $v->value = $json->referenceAllele ?? null;
+        if (isset($decoded->referenceAllele)
+            || isset($decoded->_referenceAllele)
+            || property_exists($decoded, self::FIELD_REFERENCE_ALLELE)
+            || property_exists($decoded, self::FIELD_REFERENCE_ALLELE_EXT)) {
+            $v = $decoded->_referenceAllele ?? new \stdClass();
+            $v->value = $decoded->referenceAllele ?? null;
             $type->setReferenceAllele(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->cigar)
-            || isset($json->_cigar)
-            || property_exists($json, self::FIELD_CIGAR)
-            || property_exists($json, self::FIELD_CIGAR_EXT)) {
-            $v = $json->_cigar ?? new \stdClass();
-            $v->value = $json->cigar ?? null;
+        if (isset($decoded->cigar)
+            || isset($decoded->_cigar)
+            || property_exists($decoded, self::FIELD_CIGAR)
+            || property_exists($decoded, self::FIELD_CIGAR_EXT)) {
+            $v = $decoded->_cigar ?? new \stdClass();
+            $v->value = $decoded->cigar ?? null;
             $type->setCigar(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->variantPointer) || property_exists($json, self::FIELD_VARIANT_POINTER)) {
-            if (is_array($json->variantPointer)) {
-                $type->setVariantPointer(FHIRReference::jsonUnserialize(reset($json->variantPointer), $config));
+        if (isset($decoded->variantPointer) || property_exists($decoded, self::FIELD_VARIANT_POINTER)) {
+            if (is_array($decoded->variantPointer)) {
+                $type->setVariantPointer(FHIRReference::jsonUnserialize(reset($decoded->variantPointer), $config));
             } else {
-                $type->setVariantPointer(FHIRReference::jsonUnserialize($json->variantPointer, $config));
+                $type->setVariantPointer(FHIRReference::jsonUnserialize($decoded->variantPointer, $config));
             }
         }
         return $type;

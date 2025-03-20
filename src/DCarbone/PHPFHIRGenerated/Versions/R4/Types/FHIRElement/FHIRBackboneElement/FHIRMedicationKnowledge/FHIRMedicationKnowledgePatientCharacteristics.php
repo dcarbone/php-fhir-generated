@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -422,13 +422,13 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -442,27 +442,27 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->characteristicCodeableConcept) || property_exists($json, self::FIELD_CHARACTERISTIC_CODEABLE_CONCEPT)) {
-            if (is_array($json->characteristicCodeableConcept)) {
-                $type->setCharacteristicCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->characteristicCodeableConcept), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->characteristicCodeableConcept) || property_exists($decoded, self::FIELD_CHARACTERISTIC_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->characteristicCodeableConcept)) {
+                $type->setCharacteristicCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->characteristicCodeableConcept), $config));
             } else {
-                $type->setCharacteristicCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->characteristicCodeableConcept, $config));
+                $type->setCharacteristicCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->characteristicCodeableConcept, $config));
             }
         }
-        if (isset($json->characteristicQuantity) || property_exists($json, self::FIELD_CHARACTERISTIC_QUANTITY)) {
-            if (is_array($json->characteristicQuantity)) {
-                $type->setCharacteristicQuantity(FHIRQuantity::jsonUnserialize(reset($json->characteristicQuantity), $config));
+        if (isset($decoded->characteristicQuantity) || property_exists($decoded, self::FIELD_CHARACTERISTIC_QUANTITY)) {
+            if (is_array($decoded->characteristicQuantity)) {
+                $type->setCharacteristicQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->characteristicQuantity), $config));
             } else {
-                $type->setCharacteristicQuantity(FHIRQuantity::jsonUnserialize($json->characteristicQuantity, $config));
+                $type->setCharacteristicQuantity(FHIRQuantity::jsonUnserialize($decoded->characteristicQuantity, $config));
             }
         }
-        if (isset($json->value)
-            || isset($json->_value)
-            || property_exists($json, self::FIELD_VALUE)
-            || property_exists($json, self::FIELD_VALUE_EXT)) {
-            $vals = (array)($json->value ?? []);
-            $exts = (array)($json->FIELD_VALUE_EXT ?? []);
+        if (isset($decoded->value)
+            || isset($decoded->_value)
+            || property_exists($decoded, self::FIELD_VALUE)
+            || property_exists($decoded, self::FIELD_VALUE_EXT)) {
+            $vals = (array)($decoded->value ?? []);
+            $exts = (array)($decoded->FIELD_VALUE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

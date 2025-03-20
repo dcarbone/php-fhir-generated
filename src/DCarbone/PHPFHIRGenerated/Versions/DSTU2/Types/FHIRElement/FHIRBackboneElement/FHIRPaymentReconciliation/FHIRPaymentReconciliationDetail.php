@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -605,13 +605,13 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -625,55 +625,55 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCoding::jsonUnserialize(reset($json->type), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCoding::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCoding::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCoding::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->request) || property_exists($json, self::FIELD_REQUEST)) {
-            if (is_array($json->request)) {
-                $type->setRequest(FHIRReference::jsonUnserialize(reset($json->request), $config));
+        if (isset($decoded->request) || property_exists($decoded, self::FIELD_REQUEST)) {
+            if (is_array($decoded->request)) {
+                $type->setRequest(FHIRReference::jsonUnserialize(reset($decoded->request), $config));
             } else {
-                $type->setRequest(FHIRReference::jsonUnserialize($json->request, $config));
+                $type->setRequest(FHIRReference::jsonUnserialize($decoded->request, $config));
             }
         }
-        if (isset($json->responce) || property_exists($json, self::FIELD_RESPONCE)) {
-            if (is_array($json->responce)) {
-                $type->setResponce(FHIRReference::jsonUnserialize(reset($json->responce), $config));
+        if (isset($decoded->responce) || property_exists($decoded, self::FIELD_RESPONCE)) {
+            if (is_array($decoded->responce)) {
+                $type->setResponce(FHIRReference::jsonUnserialize(reset($decoded->responce), $config));
             } else {
-                $type->setResponce(FHIRReference::jsonUnserialize($json->responce, $config));
+                $type->setResponce(FHIRReference::jsonUnserialize($decoded->responce, $config));
             }
         }
-        if (isset($json->submitter) || property_exists($json, self::FIELD_SUBMITTER)) {
-            if (is_array($json->submitter)) {
-                $type->setSubmitter(FHIRReference::jsonUnserialize(reset($json->submitter), $config));
+        if (isset($decoded->submitter) || property_exists($decoded, self::FIELD_SUBMITTER)) {
+            if (is_array($decoded->submitter)) {
+                $type->setSubmitter(FHIRReference::jsonUnserialize(reset($decoded->submitter), $config));
             } else {
-                $type->setSubmitter(FHIRReference::jsonUnserialize($json->submitter, $config));
+                $type->setSubmitter(FHIRReference::jsonUnserialize($decoded->submitter, $config));
             }
         }
-        if (isset($json->payee) || property_exists($json, self::FIELD_PAYEE)) {
-            if (is_array($json->payee)) {
-                $type->setPayee(FHIRReference::jsonUnserialize(reset($json->payee), $config));
+        if (isset($decoded->payee) || property_exists($decoded, self::FIELD_PAYEE)) {
+            if (is_array($decoded->payee)) {
+                $type->setPayee(FHIRReference::jsonUnserialize(reset($decoded->payee), $config));
             } else {
-                $type->setPayee(FHIRReference::jsonUnserialize($json->payee, $config));
+                $type->setPayee(FHIRReference::jsonUnserialize($decoded->payee, $config));
             }
         }
-        if (isset($json->date)
-            || isset($json->_date)
-            || property_exists($json, self::FIELD_DATE)
-            || property_exists($json, self::FIELD_DATE_EXT)) {
-            $v = $json->_date ?? new \stdClass();
-            $v->value = $json->date ?? null;
+        if (isset($decoded->date)
+            || isset($decoded->_date)
+            || property_exists($decoded, self::FIELD_DATE)
+            || property_exists($decoded, self::FIELD_DATE_EXT)) {
+            $v = $decoded->_date ?? new \stdClass();
+            $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json->amount) || property_exists($json, self::FIELD_AMOUNT)) {
-            if (is_array($json->amount)) {
-                $type->setAmount(FHIRMoney::jsonUnserialize(reset($json->amount), $config));
+        if (isset($decoded->amount) || property_exists($decoded, self::FIELD_AMOUNT)) {
+            if (is_array($decoded->amount)) {
+                $type->setAmount(FHIRMoney::jsonUnserialize(reset($decoded->amount), $config));
             } else {
-                $type->setAmount(FHIRMoney::jsonUnserialize($json->amount, $config));
+                $type->setAmount(FHIRMoney::jsonUnserialize($decoded->amount, $config));
             }
         }
         return $type;

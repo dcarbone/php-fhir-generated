@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -610,13 +610,13 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -630,50 +630,50 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->variantState) || property_exists($json, self::FIELD_VARIANT_STATE)) {
-            if (is_array($json->variantState)) {
-                $type->setVariantState(FHIRCodeableConcept::jsonUnserialize(reset($json->variantState), $config));
+        if (isset($decoded->variantState) || property_exists($decoded, self::FIELD_VARIANT_STATE)) {
+            if (is_array($decoded->variantState)) {
+                $type->setVariantState(FHIRCodeableConcept::jsonUnserialize(reset($decoded->variantState), $config));
             } else {
-                $type->setVariantState(FHIRCodeableConcept::jsonUnserialize($json->variantState, $config));
+                $type->setVariantState(FHIRCodeableConcept::jsonUnserialize($decoded->variantState, $config));
             }
         }
-        if (isset($json->value)
-            || isset($json->_value)
-            || property_exists($json, self::FIELD_VALUE)
-            || property_exists($json, self::FIELD_VALUE_EXT)) {
-            $v = $json->_value ?? new \stdClass();
-            $v->value = $json->value ?? null;
+        if (isset($decoded->value)
+            || isset($decoded->_value)
+            || property_exists($decoded, self::FIELD_VALUE)
+            || property_exists($decoded, self::FIELD_VALUE_EXT)) {
+            $v = $decoded->_value ?? new \stdClass();
+            $v->value = $decoded->value ?? null;
             $type->setValue(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->unitOfMeasure) || property_exists($json, self::FIELD_UNIT_OF_MEASURE)) {
-            if (is_array($json->unitOfMeasure)) {
-                $type->setUnitOfMeasure(FHIRCodeableConcept::jsonUnserialize(reset($json->unitOfMeasure), $config));
+        if (isset($decoded->unitOfMeasure) || property_exists($decoded, self::FIELD_UNIT_OF_MEASURE)) {
+            if (is_array($decoded->unitOfMeasure)) {
+                $type->setUnitOfMeasure(FHIRCodeableConcept::jsonUnserialize(reset($decoded->unitOfMeasure), $config));
             } else {
-                $type->setUnitOfMeasure(FHIRCodeableConcept::jsonUnserialize($json->unitOfMeasure, $config));
+                $type->setUnitOfMeasure(FHIRCodeableConcept::jsonUnserialize($decoded->unitOfMeasure, $config));
             }
         }
-        if (isset($json->precisionEstimate) || property_exists($json, self::FIELD_PRECISION_ESTIMATE)) {
-            if (is_object($json->precisionEstimate)) {
-                $vals = [$json->precisionEstimate];
+        if (isset($decoded->precisionEstimate) || property_exists($decoded, self::FIELD_PRECISION_ESTIMATE)) {
+            if (is_object($decoded->precisionEstimate)) {
+                $vals = [$decoded->precisionEstimate];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PRECISION_ESTIMATE, true);
             } else {
-                $vals = $json->precisionEstimate;
+                $vals = $decoded->precisionEstimate;
             }
             foreach($vals as $v) {
                 $type->addPrecisionEstimate(FHIREffectEvidenceSynthesisPrecisionEstimate::jsonUnserialize($v, $config));

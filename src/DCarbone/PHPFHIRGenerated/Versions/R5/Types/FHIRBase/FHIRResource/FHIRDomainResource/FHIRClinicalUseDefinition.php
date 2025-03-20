@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1206,13 +1206,13 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRClinicalUseDefinition $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRClinicalUseDefinition
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -1229,99 +1229,99 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_object($json->identifier)) {
-                $vals = [$json->identifier];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_object($decoded->identifier)) {
+                $vals = [$decoded->identifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
             } else {
-                $vals = $json->identifier;
+                $vals = $decoded->identifier;
             }
             foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->type)
-            || isset($json->_type)
-            || property_exists($json, self::FIELD_TYPE)
-            || property_exists($json, self::FIELD_TYPE_EXT)) {
-            $v = $json->_type ?? new \stdClass();
-            $v->value = $json->type ?? null;
+        if (isset($decoded->type)
+            || isset($decoded->_type)
+            || property_exists($decoded, self::FIELD_TYPE)
+            || property_exists($decoded, self::FIELD_TYPE_EXT)) {
+            $v = $decoded->_type ?? new \stdClass();
+            $v->value = $decoded->type ?? null;
             $type->setType(FHIRClinicalUseDefinitionType::jsonUnserialize($v, $config));
         }
-        if (isset($json->category) || property_exists($json, self::FIELD_CATEGORY)) {
-            if (is_object($json->category)) {
-                $vals = [$json->category];
+        if (isset($decoded->category) || property_exists($decoded, self::FIELD_CATEGORY)) {
+            if (is_object($decoded->category)) {
+                $vals = [$decoded->category];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CATEGORY, true);
             } else {
-                $vals = $json->category;
+                $vals = $decoded->category;
             }
             foreach($vals as $v) {
                 $type->addCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->subject) || property_exists($json, self::FIELD_SUBJECT)) {
-            if (is_object($json->subject)) {
-                $vals = [$json->subject];
+        if (isset($decoded->subject) || property_exists($decoded, self::FIELD_SUBJECT)) {
+            if (is_object($decoded->subject)) {
+                $vals = [$decoded->subject];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBJECT, true);
             } else {
-                $vals = $json->subject;
+                $vals = $decoded->subject;
             }
             foreach($vals as $v) {
                 $type->addSubject(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->status) || property_exists($json, self::FIELD_STATUS)) {
-            if (is_array($json->status)) {
-                $type->setStatus(FHIRCodeableConcept::jsonUnserialize(reset($json->status), $config));
+        if (isset($decoded->status) || property_exists($decoded, self::FIELD_STATUS)) {
+            if (is_array($decoded->status)) {
+                $type->setStatus(FHIRCodeableConcept::jsonUnserialize(reset($decoded->status), $config));
             } else {
-                $type->setStatus(FHIRCodeableConcept::jsonUnserialize($json->status, $config));
+                $type->setStatus(FHIRCodeableConcept::jsonUnserialize($decoded->status, $config));
             }
         }
-        if (isset($json->contraindication) || property_exists($json, self::FIELD_CONTRAINDICATION)) {
-            if (is_array($json->contraindication)) {
-                $type->setContraindication(FHIRClinicalUseDefinitionContraindication::jsonUnserialize(reset($json->contraindication), $config));
+        if (isset($decoded->contraindication) || property_exists($decoded, self::FIELD_CONTRAINDICATION)) {
+            if (is_array($decoded->contraindication)) {
+                $type->setContraindication(FHIRClinicalUseDefinitionContraindication::jsonUnserialize(reset($decoded->contraindication), $config));
             } else {
-                $type->setContraindication(FHIRClinicalUseDefinitionContraindication::jsonUnserialize($json->contraindication, $config));
+                $type->setContraindication(FHIRClinicalUseDefinitionContraindication::jsonUnserialize($decoded->contraindication, $config));
             }
         }
-        if (isset($json->indication) || property_exists($json, self::FIELD_INDICATION)) {
-            if (is_array($json->indication)) {
-                $type->setIndication(FHIRClinicalUseDefinitionIndication::jsonUnserialize(reset($json->indication), $config));
+        if (isset($decoded->indication) || property_exists($decoded, self::FIELD_INDICATION)) {
+            if (is_array($decoded->indication)) {
+                $type->setIndication(FHIRClinicalUseDefinitionIndication::jsonUnserialize(reset($decoded->indication), $config));
             } else {
-                $type->setIndication(FHIRClinicalUseDefinitionIndication::jsonUnserialize($json->indication, $config));
+                $type->setIndication(FHIRClinicalUseDefinitionIndication::jsonUnserialize($decoded->indication, $config));
             }
         }
-        if (isset($json->interaction) || property_exists($json, self::FIELD_INTERACTION)) {
-            if (is_array($json->interaction)) {
-                $type->setInteraction(FHIRClinicalUseDefinitionInteraction::jsonUnserialize(reset($json->interaction), $config));
+        if (isset($decoded->interaction) || property_exists($decoded, self::FIELD_INTERACTION)) {
+            if (is_array($decoded->interaction)) {
+                $type->setInteraction(FHIRClinicalUseDefinitionInteraction::jsonUnserialize(reset($decoded->interaction), $config));
             } else {
-                $type->setInteraction(FHIRClinicalUseDefinitionInteraction::jsonUnserialize($json->interaction, $config));
+                $type->setInteraction(FHIRClinicalUseDefinitionInteraction::jsonUnserialize($decoded->interaction, $config));
             }
         }
-        if (isset($json->population) || property_exists($json, self::FIELD_POPULATION)) {
-            if (is_object($json->population)) {
-                $vals = [$json->population];
+        if (isset($decoded->population) || property_exists($decoded, self::FIELD_POPULATION)) {
+            if (is_object($decoded->population)) {
+                $vals = [$decoded->population];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_POPULATION, true);
             } else {
-                $vals = $json->population;
+                $vals = $decoded->population;
             }
             foreach($vals as $v) {
                 $type->addPopulation(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->library)
-            || isset($json->_library)
-            || property_exists($json, self::FIELD_LIBRARY)
-            || property_exists($json, self::FIELD_LIBRARY_EXT)) {
-            $vals = (array)($json->library ?? []);
-            $exts = (array)($json->FIELD_LIBRARY_EXT ?? []);
+        if (isset($decoded->library)
+            || isset($decoded->_library)
+            || property_exists($decoded, self::FIELD_LIBRARY)
+            || property_exists($decoded, self::FIELD_LIBRARY_EXT)) {
+            $vals = (array)($decoded->library ?? []);
+            $exts = (array)($decoded->FIELD_LIBRARY_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1333,18 +1333,18 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
                 $type->addLibrary(FHIRCanonical::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->undesirableEffect) || property_exists($json, self::FIELD_UNDESIRABLE_EFFECT)) {
-            if (is_array($json->undesirableEffect)) {
-                $type->setUndesirableEffect(FHIRClinicalUseDefinitionUndesirableEffect::jsonUnserialize(reset($json->undesirableEffect), $config));
+        if (isset($decoded->undesirableEffect) || property_exists($decoded, self::FIELD_UNDESIRABLE_EFFECT)) {
+            if (is_array($decoded->undesirableEffect)) {
+                $type->setUndesirableEffect(FHIRClinicalUseDefinitionUndesirableEffect::jsonUnserialize(reset($decoded->undesirableEffect), $config));
             } else {
-                $type->setUndesirableEffect(FHIRClinicalUseDefinitionUndesirableEffect::jsonUnserialize($json->undesirableEffect, $config));
+                $type->setUndesirableEffect(FHIRClinicalUseDefinitionUndesirableEffect::jsonUnserialize($decoded->undesirableEffect, $config));
             }
         }
-        if (isset($json->warning) || property_exists($json, self::FIELD_WARNING)) {
-            if (is_array($json->warning)) {
-                $type->setWarning(FHIRClinicalUseDefinitionWarning::jsonUnserialize(reset($json->warning), $config));
+        if (isset($decoded->warning) || property_exists($decoded, self::FIELD_WARNING)) {
+            if (is_array($decoded->warning)) {
+                $type->setWarning(FHIRClinicalUseDefinitionWarning::jsonUnserialize(reset($decoded->warning), $config));
             } else {
-                $type->setWarning(FHIRClinicalUseDefinitionWarning::jsonUnserialize($json->warning, $config));
+                $type->setWarning(FHIRClinicalUseDefinitionWarning::jsonUnserialize($decoded->warning, $config));
             }
         }
         return $type;

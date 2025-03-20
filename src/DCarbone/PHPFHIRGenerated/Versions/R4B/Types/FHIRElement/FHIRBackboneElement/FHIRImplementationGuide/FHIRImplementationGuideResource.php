@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -779,13 +779,13 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -799,20 +799,20 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->reference) || property_exists($json, self::FIELD_REFERENCE)) {
-            if (is_array($json->reference)) {
-                $type->setReference(FHIRReference::jsonUnserialize(reset($json->reference), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->reference) || property_exists($decoded, self::FIELD_REFERENCE)) {
+            if (is_array($decoded->reference)) {
+                $type->setReference(FHIRReference::jsonUnserialize(reset($decoded->reference), $config));
             } else {
-                $type->setReference(FHIRReference::jsonUnserialize($json->reference, $config));
+                $type->setReference(FHIRReference::jsonUnserialize($decoded->reference, $config));
             }
         }
-        if (isset($json->fhirVersion)
-            || isset($json->_fhirVersion)
-            || property_exists($json, self::FIELD_FHIR_VERSION)
-            || property_exists($json, self::FIELD_FHIR_VERSION_EXT)) {
-            $vals = (array)($json->fhirVersion ?? []);
-            $exts = (array)($json->FIELD_FHIR_VERSION_EXT ?? []);
+        if (isset($decoded->fhirVersion)
+            || isset($decoded->_fhirVersion)
+            || property_exists($decoded, self::FIELD_FHIR_VERSION)
+            || property_exists($decoded, self::FIELD_FHIR_VERSION_EXT)) {
+            $vals = (array)($decoded->fhirVersion ?? []);
+            $exts = (array)($decoded->FIELD_FHIR_VERSION_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -824,44 +824,44 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
                 $type->addFhirVersion(FHIRFHIRVersion::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->name)
-            || isset($json->_name)
-            || property_exists($json, self::FIELD_NAME)
-            || property_exists($json, self::FIELD_NAME_EXT)) {
-            $v = $json->_name ?? new \stdClass();
-            $v->value = $json->name ?? null;
+        if (isset($decoded->name)
+            || isset($decoded->_name)
+            || property_exists($decoded, self::FIELD_NAME)
+            || property_exists($decoded, self::FIELD_NAME_EXT)) {
+            $v = $decoded->_name ?? new \stdClass();
+            $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->exampleBoolean)
-            || isset($json->_exampleBoolean)
-            || property_exists($json, self::FIELD_EXAMPLE_BOOLEAN)
-            || property_exists($json, self::FIELD_EXAMPLE_BOOLEAN_EXT)) {
-            $v = $json->_exampleBoolean ?? new \stdClass();
-            $v->value = $json->exampleBoolean ?? null;
+        if (isset($decoded->exampleBoolean)
+            || isset($decoded->_exampleBoolean)
+            || property_exists($decoded, self::FIELD_EXAMPLE_BOOLEAN)
+            || property_exists($decoded, self::FIELD_EXAMPLE_BOOLEAN_EXT)) {
+            $v = $decoded->_exampleBoolean ?? new \stdClass();
+            $v->value = $decoded->exampleBoolean ?? null;
             $type->setExampleBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->exampleCanonical)
-            || isset($json->_exampleCanonical)
-            || property_exists($json, self::FIELD_EXAMPLE_CANONICAL)
-            || property_exists($json, self::FIELD_EXAMPLE_CANONICAL_EXT)) {
-            $v = $json->_exampleCanonical ?? new \stdClass();
-            $v->value = $json->exampleCanonical ?? null;
+        if (isset($decoded->exampleCanonical)
+            || isset($decoded->_exampleCanonical)
+            || property_exists($decoded, self::FIELD_EXAMPLE_CANONICAL)
+            || property_exists($decoded, self::FIELD_EXAMPLE_CANONICAL_EXT)) {
+            $v = $decoded->_exampleCanonical ?? new \stdClass();
+            $v->value = $decoded->exampleCanonical ?? null;
             $type->setExampleCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
-        if (isset($json->groupingId)
-            || isset($json->_groupingId)
-            || property_exists($json, self::FIELD_GROUPING_ID)
-            || property_exists($json, self::FIELD_GROUPING_ID_EXT)) {
-            $v = $json->_groupingId ?? new \stdClass();
-            $v->value = $json->groupingId ?? null;
+        if (isset($decoded->groupingId)
+            || isset($decoded->_groupingId)
+            || property_exists($decoded, self::FIELD_GROUPING_ID)
+            || property_exists($decoded, self::FIELD_GROUPING_ID_EXT)) {
+            $v = $decoded->_groupingId ?? new \stdClass();
+            $v->value = $decoded->groupingId ?? null;
             $type->setGroupingId(FHIRId::jsonUnserialize($v, $config));
         }
         return $type;

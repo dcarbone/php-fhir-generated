@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -445,13 +445,13 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -465,34 +465,34 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->collector) || property_exists($json, self::FIELD_COLLECTOR)) {
-            if (is_array($json->collector)) {
-                $type->setCollector(FHIRReference::jsonUnserialize(reset($json->collector), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->collector) || property_exists($decoded, self::FIELD_COLLECTOR)) {
+            if (is_array($decoded->collector)) {
+                $type->setCollector(FHIRReference::jsonUnserialize(reset($decoded->collector), $config));
             } else {
-                $type->setCollector(FHIRReference::jsonUnserialize($json->collector, $config));
+                $type->setCollector(FHIRReference::jsonUnserialize($decoded->collector, $config));
             }
         }
-        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
-            if (is_array($json->source)) {
-                $type->setSource(FHIRReference::jsonUnserialize(reset($json->source), $config));
+        if (isset($decoded->source) || property_exists($decoded, self::FIELD_SOURCE)) {
+            if (is_array($decoded->source)) {
+                $type->setSource(FHIRReference::jsonUnserialize(reset($decoded->source), $config));
             } else {
-                $type->setSource(FHIRReference::jsonUnserialize($json->source, $config));
+                $type->setSource(FHIRReference::jsonUnserialize($decoded->source, $config));
             }
         }
-        if (isset($json->collectedDateTime)
-            || isset($json->_collectedDateTime)
-            || property_exists($json, self::FIELD_COLLECTED_DATE_TIME)
-            || property_exists($json, self::FIELD_COLLECTED_DATE_TIME_EXT)) {
-            $v = $json->_collectedDateTime ?? new \stdClass();
-            $v->value = $json->collectedDateTime ?? null;
+        if (isset($decoded->collectedDateTime)
+            || isset($decoded->_collectedDateTime)
+            || property_exists($decoded, self::FIELD_COLLECTED_DATE_TIME)
+            || property_exists($decoded, self::FIELD_COLLECTED_DATE_TIME_EXT)) {
+            $v = $decoded->_collectedDateTime ?? new \stdClass();
+            $v->value = $decoded->collectedDateTime ?? null;
             $type->setCollectedDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->collectedPeriod) || property_exists($json, self::FIELD_COLLECTED_PERIOD)) {
-            if (is_array($json->collectedPeriod)) {
-                $type->setCollectedPeriod(FHIRPeriod::jsonUnserialize(reset($json->collectedPeriod), $config));
+        if (isset($decoded->collectedPeriod) || property_exists($decoded, self::FIELD_COLLECTED_PERIOD)) {
+            if (is_array($decoded->collectedPeriod)) {
+                $type->setCollectedPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->collectedPeriod), $config));
             } else {
-                $type->setCollectedPeriod(FHIRPeriod::jsonUnserialize($json->collectedPeriod, $config));
+                $type->setCollectedPeriod(FHIRPeriod::jsonUnserialize($decoded->collectedPeriod, $config));
             }
         }
         return $type;

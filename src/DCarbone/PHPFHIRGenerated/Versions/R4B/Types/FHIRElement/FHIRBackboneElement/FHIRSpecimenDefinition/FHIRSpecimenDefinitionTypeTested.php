@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -782,13 +782,13 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -802,69 +802,69 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->isDerived)
-            || isset($json->_isDerived)
-            || property_exists($json, self::FIELD_IS_DERIVED)
-            || property_exists($json, self::FIELD_IS_DERIVED_EXT)) {
-            $v = $json->_isDerived ?? new \stdClass();
-            $v->value = $json->isDerived ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->isDerived)
+            || isset($decoded->_isDerived)
+            || property_exists($decoded, self::FIELD_IS_DERIVED)
+            || property_exists($decoded, self::FIELD_IS_DERIVED_EXT)) {
+            $v = $decoded->_isDerived ?? new \stdClass();
+            $v->value = $decoded->isDerived ?? null;
             $type->setIsDerived(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->preference)
-            || isset($json->_preference)
-            || property_exists($json, self::FIELD_PREFERENCE)
-            || property_exists($json, self::FIELD_PREFERENCE_EXT)) {
-            $v = $json->_preference ?? new \stdClass();
-            $v->value = $json->preference ?? null;
+        if (isset($decoded->preference)
+            || isset($decoded->_preference)
+            || property_exists($decoded, self::FIELD_PREFERENCE)
+            || property_exists($decoded, self::FIELD_PREFERENCE_EXT)) {
+            $v = $decoded->_preference ?? new \stdClass();
+            $v->value = $decoded->preference ?? null;
             $type->setPreference(FHIRSpecimenContainedPreference::jsonUnserialize($v, $config));
         }
-        if (isset($json->container) || property_exists($json, self::FIELD_CONTAINER)) {
-            if (is_array($json->container)) {
-                $type->setContainer(FHIRSpecimenDefinitionContainer::jsonUnserialize(reset($json->container), $config));
+        if (isset($decoded->container) || property_exists($decoded, self::FIELD_CONTAINER)) {
+            if (is_array($decoded->container)) {
+                $type->setContainer(FHIRSpecimenDefinitionContainer::jsonUnserialize(reset($decoded->container), $config));
             } else {
-                $type->setContainer(FHIRSpecimenDefinitionContainer::jsonUnserialize($json->container, $config));
+                $type->setContainer(FHIRSpecimenDefinitionContainer::jsonUnserialize($decoded->container, $config));
             }
         }
-        if (isset($json->requirement)
-            || isset($json->_requirement)
-            || property_exists($json, self::FIELD_REQUIREMENT)
-            || property_exists($json, self::FIELD_REQUIREMENT_EXT)) {
-            $v = $json->_requirement ?? new \stdClass();
-            $v->value = $json->requirement ?? null;
+        if (isset($decoded->requirement)
+            || isset($decoded->_requirement)
+            || property_exists($decoded, self::FIELD_REQUIREMENT)
+            || property_exists($decoded, self::FIELD_REQUIREMENT_EXT)) {
+            $v = $decoded->_requirement ?? new \stdClass();
+            $v->value = $decoded->requirement ?? null;
             $type->setRequirement(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->retentionTime) || property_exists($json, self::FIELD_RETENTION_TIME)) {
-            if (is_array($json->retentionTime)) {
-                $type->setRetentionTime(FHIRDuration::jsonUnserialize(reset($json->retentionTime), $config));
+        if (isset($decoded->retentionTime) || property_exists($decoded, self::FIELD_RETENTION_TIME)) {
+            if (is_array($decoded->retentionTime)) {
+                $type->setRetentionTime(FHIRDuration::jsonUnserialize(reset($decoded->retentionTime), $config));
             } else {
-                $type->setRetentionTime(FHIRDuration::jsonUnserialize($json->retentionTime, $config));
+                $type->setRetentionTime(FHIRDuration::jsonUnserialize($decoded->retentionTime, $config));
             }
         }
-        if (isset($json->rejectionCriterion) || property_exists($json, self::FIELD_REJECTION_CRITERION)) {
-            if (is_object($json->rejectionCriterion)) {
-                $vals = [$json->rejectionCriterion];
+        if (isset($decoded->rejectionCriterion) || property_exists($decoded, self::FIELD_REJECTION_CRITERION)) {
+            if (is_object($decoded->rejectionCriterion)) {
+                $vals = [$decoded->rejectionCriterion];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_REJECTION_CRITERION, true);
             } else {
-                $vals = $json->rejectionCriterion;
+                $vals = $decoded->rejectionCriterion;
             }
             foreach($vals as $v) {
                 $type->addRejectionCriterion(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->handling) || property_exists($json, self::FIELD_HANDLING)) {
-            if (is_object($json->handling)) {
-                $vals = [$json->handling];
+        if (isset($decoded->handling) || property_exists($decoded, self::FIELD_HANDLING)) {
+            if (is_object($decoded->handling)) {
+                $vals = [$decoded->handling];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_HANDLING, true);
             } else {
-                $vals = $json->handling;
+                $vals = $decoded->handling;
             }
             foreach($vals as $v) {
                 $type->addHandling(FHIRSpecimenDefinitionHandling::jsonUnserialize($v, $config));

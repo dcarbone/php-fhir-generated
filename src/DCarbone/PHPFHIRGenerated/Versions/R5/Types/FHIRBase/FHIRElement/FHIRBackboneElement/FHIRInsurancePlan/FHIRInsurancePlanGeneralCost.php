@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -474,13 +474,13 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -494,35 +494,35 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->groupSize)
-            || isset($json->_groupSize)
-            || property_exists($json, self::FIELD_GROUP_SIZE)
-            || property_exists($json, self::FIELD_GROUP_SIZE_EXT)) {
-            $v = $json->_groupSize ?? new \stdClass();
-            $v->value = $json->groupSize ?? null;
+        if (isset($decoded->groupSize)
+            || isset($decoded->_groupSize)
+            || property_exists($decoded, self::FIELD_GROUP_SIZE)
+            || property_exists($decoded, self::FIELD_GROUP_SIZE_EXT)) {
+            $v = $decoded->_groupSize ?? new \stdClass();
+            $v->value = $decoded->groupSize ?? null;
             $type->setGroupSize(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->cost) || property_exists($json, self::FIELD_COST)) {
-            if (is_array($json->cost)) {
-                $type->setCost(FHIRMoney::jsonUnserialize(reset($json->cost), $config));
+        if (isset($decoded->cost) || property_exists($decoded, self::FIELD_COST)) {
+            if (is_array($decoded->cost)) {
+                $type->setCost(FHIRMoney::jsonUnserialize(reset($decoded->cost), $config));
             } else {
-                $type->setCost(FHIRMoney::jsonUnserialize($json->cost, $config));
+                $type->setCost(FHIRMoney::jsonUnserialize($decoded->cost, $config));
             }
         }
-        if (isset($json->comment)
-            || isset($json->_comment)
-            || property_exists($json, self::FIELD_COMMENT)
-            || property_exists($json, self::FIELD_COMMENT_EXT)) {
-            $v = $json->_comment ?? new \stdClass();
-            $v->value = $json->comment ?? null;
+        if (isset($decoded->comment)
+            || isset($decoded->_comment)
+            || property_exists($decoded, self::FIELD_COMMENT)
+            || property_exists($decoded, self::FIELD_COMMENT_EXT)) {
+            $v = $decoded->_comment ?? new \stdClass();
+            $v->value = $decoded->comment ?? null;
             $type->setComment(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

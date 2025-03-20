@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -914,24 +914,24 @@ class VersionTypeMap implements VersionTypeMapInterface
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @return string Fully qualified class name of contained resource type
      * @throws \UnexpectedValueException
      * @throws \DomainException
      */
-    public static function mustGetContainedTypeClassnameFromJSON(\stdClass $json): string
+    public static function mustGetContainedTypeClassnameFromJSON(\stdClass $decoded): string
     {
-        if (!isset($json->resourceType)) {
+        if (!isset($decoded->resourceType)) {
             throw new \DomainException(sprintf(
                 'Unable to determine contained Resource type from input (missing "%s" key).  Keys: ["%s"]',
                 Constants::JSON_FIELD_RESOURCE_TYPE,
-                implode('","', array_keys((array)$json))
+                implode('","', array_keys((array)$decoded))
             ));
         }
-        if (isset(self::_CONTAINABLE_TYPES[$json->resourceType])) {
-            return self::_CONTAINABLE_TYPES[$json->resourceType];
+        if (isset(self::_CONTAINABLE_TYPES[$decoded->resourceType])) {
+            return self::_CONTAINABLE_TYPES[$decoded->resourceType];
         }
-        throw self::createdInvalidContainedTypeException($json->resourceType);
+        throw self::createdInvalidContainedTypeException($decoded->resourceType);
     }
 
     /**

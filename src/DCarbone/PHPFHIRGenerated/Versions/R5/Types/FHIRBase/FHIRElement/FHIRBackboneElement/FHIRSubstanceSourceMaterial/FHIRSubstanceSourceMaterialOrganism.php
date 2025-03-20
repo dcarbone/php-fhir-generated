@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -852,13 +852,13 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -872,66 +872,66 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->family) || property_exists($json, self::FIELD_FAMILY)) {
-            if (is_array($json->family)) {
-                $type->setFamily(FHIRCodeableConcept::jsonUnserialize(reset($json->family), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->family) || property_exists($decoded, self::FIELD_FAMILY)) {
+            if (is_array($decoded->family)) {
+                $type->setFamily(FHIRCodeableConcept::jsonUnserialize(reset($decoded->family), $config));
             } else {
-                $type->setFamily(FHIRCodeableConcept::jsonUnserialize($json->family, $config));
+                $type->setFamily(FHIRCodeableConcept::jsonUnserialize($decoded->family, $config));
             }
         }
-        if (isset($json->genus) || property_exists($json, self::FIELD_GENUS)) {
-            if (is_array($json->genus)) {
-                $type->setGenus(FHIRCodeableConcept::jsonUnserialize(reset($json->genus), $config));
+        if (isset($decoded->genus) || property_exists($decoded, self::FIELD_GENUS)) {
+            if (is_array($decoded->genus)) {
+                $type->setGenus(FHIRCodeableConcept::jsonUnserialize(reset($decoded->genus), $config));
             } else {
-                $type->setGenus(FHIRCodeableConcept::jsonUnserialize($json->genus, $config));
+                $type->setGenus(FHIRCodeableConcept::jsonUnserialize($decoded->genus, $config));
             }
         }
-        if (isset($json->species) || property_exists($json, self::FIELD_SPECIES)) {
-            if (is_array($json->species)) {
-                $type->setSpecies(FHIRCodeableConcept::jsonUnserialize(reset($json->species), $config));
+        if (isset($decoded->species) || property_exists($decoded, self::FIELD_SPECIES)) {
+            if (is_array($decoded->species)) {
+                $type->setSpecies(FHIRCodeableConcept::jsonUnserialize(reset($decoded->species), $config));
             } else {
-                $type->setSpecies(FHIRCodeableConcept::jsonUnserialize($json->species, $config));
+                $type->setSpecies(FHIRCodeableConcept::jsonUnserialize($decoded->species, $config));
             }
         }
-        if (isset($json->intraspecificType) || property_exists($json, self::FIELD_INTRASPECIFIC_TYPE)) {
-            if (is_array($json->intraspecificType)) {
-                $type->setIntraspecificType(FHIRCodeableConcept::jsonUnserialize(reset($json->intraspecificType), $config));
+        if (isset($decoded->intraspecificType) || property_exists($decoded, self::FIELD_INTRASPECIFIC_TYPE)) {
+            if (is_array($decoded->intraspecificType)) {
+                $type->setIntraspecificType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->intraspecificType), $config));
             } else {
-                $type->setIntraspecificType(FHIRCodeableConcept::jsonUnserialize($json->intraspecificType, $config));
+                $type->setIntraspecificType(FHIRCodeableConcept::jsonUnserialize($decoded->intraspecificType, $config));
             }
         }
-        if (isset($json->intraspecificDescription)
-            || isset($json->_intraspecificDescription)
-            || property_exists($json, self::FIELD_INTRASPECIFIC_DESCRIPTION)
-            || property_exists($json, self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT)) {
-            $v = $json->_intraspecificDescription ?? new \stdClass();
-            $v->value = $json->intraspecificDescription ?? null;
+        if (isset($decoded->intraspecificDescription)
+            || isset($decoded->_intraspecificDescription)
+            || property_exists($decoded, self::FIELD_INTRASPECIFIC_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT)) {
+            $v = $decoded->_intraspecificDescription ?? new \stdClass();
+            $v->value = $decoded->intraspecificDescription ?? null;
             $type->setIntraspecificDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->author) || property_exists($json, self::FIELD_AUTHOR)) {
-            if (is_object($json->author)) {
-                $vals = [$json->author];
+        if (isset($decoded->author) || property_exists($decoded, self::FIELD_AUTHOR)) {
+            if (is_object($decoded->author)) {
+                $vals = [$decoded->author];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_AUTHOR, true);
             } else {
-                $vals = $json->author;
+                $vals = $decoded->author;
             }
             foreach($vals as $v) {
                 $type->addAuthor(FHIRSubstanceSourceMaterialAuthor::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->hybrid) || property_exists($json, self::FIELD_HYBRID)) {
-            if (is_array($json->hybrid)) {
-                $type->setHybrid(FHIRSubstanceSourceMaterialHybrid::jsonUnserialize(reset($json->hybrid), $config));
+        if (isset($decoded->hybrid) || property_exists($decoded, self::FIELD_HYBRID)) {
+            if (is_array($decoded->hybrid)) {
+                $type->setHybrid(FHIRSubstanceSourceMaterialHybrid::jsonUnserialize(reset($decoded->hybrid), $config));
             } else {
-                $type->setHybrid(FHIRSubstanceSourceMaterialHybrid::jsonUnserialize($json->hybrid, $config));
+                $type->setHybrid(FHIRSubstanceSourceMaterialHybrid::jsonUnserialize($decoded->hybrid, $config));
             }
         }
-        if (isset($json->organismGeneral) || property_exists($json, self::FIELD_ORGANISM_GENERAL)) {
-            if (is_array($json->organismGeneral)) {
-                $type->setOrganismGeneral(FHIRSubstanceSourceMaterialOrganismGeneral::jsonUnserialize(reset($json->organismGeneral), $config));
+        if (isset($decoded->organismGeneral) || property_exists($decoded, self::FIELD_ORGANISM_GENERAL)) {
+            if (is_array($decoded->organismGeneral)) {
+                $type->setOrganismGeneral(FHIRSubstanceSourceMaterialOrganismGeneral::jsonUnserialize(reset($decoded->organismGeneral), $config));
             } else {
-                $type->setOrganismGeneral(FHIRSubstanceSourceMaterialOrganismGeneral::jsonUnserialize($json->organismGeneral, $config));
+                $type->setOrganismGeneral(FHIRSubstanceSourceMaterialOrganismGeneral::jsonUnserialize($decoded->organismGeneral, $config));
             }
         }
         return $type;

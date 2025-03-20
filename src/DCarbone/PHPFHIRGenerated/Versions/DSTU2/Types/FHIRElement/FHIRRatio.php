@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -309,13 +309,13 @@ class FHIRRatio extends FHIRElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -329,19 +329,19 @@ class FHIRRatio extends FHIRElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->numerator) || property_exists($json, self::FIELD_NUMERATOR)) {
-            if (is_array($json->numerator)) {
-                $type->setNumerator(FHIRQuantity::jsonUnserialize(reset($json->numerator), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->numerator) || property_exists($decoded, self::FIELD_NUMERATOR)) {
+            if (is_array($decoded->numerator)) {
+                $type->setNumerator(FHIRQuantity::jsonUnserialize(reset($decoded->numerator), $config));
             } else {
-                $type->setNumerator(FHIRQuantity::jsonUnserialize($json->numerator, $config));
+                $type->setNumerator(FHIRQuantity::jsonUnserialize($decoded->numerator, $config));
             }
         }
-        if (isset($json->denominator) || property_exists($json, self::FIELD_DENOMINATOR)) {
-            if (is_array($json->denominator)) {
-                $type->setDenominator(FHIRQuantity::jsonUnserialize(reset($json->denominator), $config));
+        if (isset($decoded->denominator) || property_exists($decoded, self::FIELD_DENOMINATOR)) {
+            if (is_array($decoded->denominator)) {
+                $type->setDenominator(FHIRQuantity::jsonUnserialize(reset($decoded->denominator), $config));
             } else {
-                $type->setDenominator(FHIRQuantity::jsonUnserialize($json->denominator, $config));
+                $type->setDenominator(FHIRQuantity::jsonUnserialize($decoded->denominator, $config));
             }
         }
         return $type;

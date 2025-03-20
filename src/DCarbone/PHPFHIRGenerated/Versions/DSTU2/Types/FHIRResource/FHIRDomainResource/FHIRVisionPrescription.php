@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -836,13 +836,13 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRVisionPrescription $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRVisionPrescription
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -859,73 +859,73 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_object($json->identifier)) {
-                $vals = [$json->identifier];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_object($decoded->identifier)) {
+                $vals = [$decoded->identifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
             } else {
-                $vals = $json->identifier;
+                $vals = $decoded->identifier;
             }
             foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->dateWritten)
-            || isset($json->_dateWritten)
-            || property_exists($json, self::FIELD_DATE_WRITTEN)
-            || property_exists($json, self::FIELD_DATE_WRITTEN_EXT)) {
-            $v = $json->_dateWritten ?? new \stdClass();
-            $v->value = $json->dateWritten ?? null;
+        if (isset($decoded->dateWritten)
+            || isset($decoded->_dateWritten)
+            || property_exists($decoded, self::FIELD_DATE_WRITTEN)
+            || property_exists($decoded, self::FIELD_DATE_WRITTEN_EXT)) {
+            $v = $decoded->_dateWritten ?? new \stdClass();
+            $v->value = $decoded->dateWritten ?? null;
             $type->setDateWritten(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->patient) || property_exists($json, self::FIELD_PATIENT)) {
-            if (is_array($json->patient)) {
-                $type->setPatient(FHIRReference::jsonUnserialize(reset($json->patient), $config));
+        if (isset($decoded->patient) || property_exists($decoded, self::FIELD_PATIENT)) {
+            if (is_array($decoded->patient)) {
+                $type->setPatient(FHIRReference::jsonUnserialize(reset($decoded->patient), $config));
             } else {
-                $type->setPatient(FHIRReference::jsonUnserialize($json->patient, $config));
+                $type->setPatient(FHIRReference::jsonUnserialize($decoded->patient, $config));
             }
         }
-        if (isset($json->prescriber) || property_exists($json, self::FIELD_PRESCRIBER)) {
-            if (is_array($json->prescriber)) {
-                $type->setPrescriber(FHIRReference::jsonUnserialize(reset($json->prescriber), $config));
+        if (isset($decoded->prescriber) || property_exists($decoded, self::FIELD_PRESCRIBER)) {
+            if (is_array($decoded->prescriber)) {
+                $type->setPrescriber(FHIRReference::jsonUnserialize(reset($decoded->prescriber), $config));
             } else {
-                $type->setPrescriber(FHIRReference::jsonUnserialize($json->prescriber, $config));
+                $type->setPrescriber(FHIRReference::jsonUnserialize($decoded->prescriber, $config));
             }
         }
-        if (isset($json->encounter) || property_exists($json, self::FIELD_ENCOUNTER)) {
-            if (is_array($json->encounter)) {
-                $type->setEncounter(FHIRReference::jsonUnserialize(reset($json->encounter), $config));
+        if (isset($decoded->encounter) || property_exists($decoded, self::FIELD_ENCOUNTER)) {
+            if (is_array($decoded->encounter)) {
+                $type->setEncounter(FHIRReference::jsonUnserialize(reset($decoded->encounter), $config));
             } else {
-                $type->setEncounter(FHIRReference::jsonUnserialize($json->encounter, $config));
+                $type->setEncounter(FHIRReference::jsonUnserialize($decoded->encounter, $config));
             }
         }
-        if (isset($json->reasonCodeableConcept) || property_exists($json, self::FIELD_REASON_CODEABLE_CONCEPT)) {
-            if (is_array($json->reasonCodeableConcept)) {
-                $type->setReasonCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->reasonCodeableConcept), $config));
+        if (isset($decoded->reasonCodeableConcept) || property_exists($decoded, self::FIELD_REASON_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->reasonCodeableConcept)) {
+                $type->setReasonCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->reasonCodeableConcept), $config));
             } else {
-                $type->setReasonCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->reasonCodeableConcept, $config));
+                $type->setReasonCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->reasonCodeableConcept, $config));
             }
         }
-        if (isset($json->reasonReference) || property_exists($json, self::FIELD_REASON_REFERENCE)) {
-            if (is_array($json->reasonReference)) {
-                $type->setReasonReference(FHIRReference::jsonUnserialize(reset($json->reasonReference), $config));
+        if (isset($decoded->reasonReference) || property_exists($decoded, self::FIELD_REASON_REFERENCE)) {
+            if (is_array($decoded->reasonReference)) {
+                $type->setReasonReference(FHIRReference::jsonUnserialize(reset($decoded->reasonReference), $config));
             } else {
-                $type->setReasonReference(FHIRReference::jsonUnserialize($json->reasonReference, $config));
+                $type->setReasonReference(FHIRReference::jsonUnserialize($decoded->reasonReference, $config));
             }
         }
-        if (isset($json->dispense) || property_exists($json, self::FIELD_DISPENSE)) {
-            if (is_object($json->dispense)) {
-                $vals = [$json->dispense];
+        if (isset($decoded->dispense) || property_exists($decoded, self::FIELD_DISPENSE)) {
+            if (is_object($decoded->dispense)) {
+                $vals = [$decoded->dispense];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DISPENSE, true);
             } else {
-                $vals = $json->dispense;
+                $vals = $decoded->dispense;
             }
             foreach($vals as $v) {
                 $type->addDispense(FHIRVisionPrescriptionDispense::jsonUnserialize($v, $config));

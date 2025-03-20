@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Validation\Rules;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -27,8 +27,8 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Validation\Rules;
  */
 
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MaxOccursRule;
-use Tests\DCarbone\PHPFHIRGenerated\Types\MockResourceType;
-use Tests\DCarbone\PHPFHIRGenerated\Types\MockStringPrimitiveType;
+use Tests\DCarbone\PHPFHIRGenerated\Mock\MockResourceType;
+use Tests\DCarbone\PHPFHIRGenerated\Mock\MockStringPrimitiveType;
 use PHPUnit\Framework\TestCase;
 
 class MaxOccursRuleTest extends TestCase

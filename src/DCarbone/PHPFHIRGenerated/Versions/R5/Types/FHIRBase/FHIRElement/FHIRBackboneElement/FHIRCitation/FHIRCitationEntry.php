@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -838,13 +838,13 @@ class FHIRCitationEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -858,76 +858,76 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->contributor) || property_exists($json, self::FIELD_CONTRIBUTOR)) {
-            if (is_array($json->contributor)) {
-                $type->setContributor(FHIRReference::jsonUnserialize(reset($json->contributor), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->contributor) || property_exists($decoded, self::FIELD_CONTRIBUTOR)) {
+            if (is_array($decoded->contributor)) {
+                $type->setContributor(FHIRReference::jsonUnserialize(reset($decoded->contributor), $config));
             } else {
-                $type->setContributor(FHIRReference::jsonUnserialize($json->contributor, $config));
+                $type->setContributor(FHIRReference::jsonUnserialize($decoded->contributor, $config));
             }
         }
-        if (isset($json->forenameInitials)
-            || isset($json->_forenameInitials)
-            || property_exists($json, self::FIELD_FORENAME_INITIALS)
-            || property_exists($json, self::FIELD_FORENAME_INITIALS_EXT)) {
-            $v = $json->_forenameInitials ?? new \stdClass();
-            $v->value = $json->forenameInitials ?? null;
+        if (isset($decoded->forenameInitials)
+            || isset($decoded->_forenameInitials)
+            || property_exists($decoded, self::FIELD_FORENAME_INITIALS)
+            || property_exists($decoded, self::FIELD_FORENAME_INITIALS_EXT)) {
+            $v = $decoded->_forenameInitials ?? new \stdClass();
+            $v->value = $decoded->forenameInitials ?? null;
             $type->setForenameInitials(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->affiliation) || property_exists($json, self::FIELD_AFFILIATION)) {
-            if (is_object($json->affiliation)) {
-                $vals = [$json->affiliation];
+        if (isset($decoded->affiliation) || property_exists($decoded, self::FIELD_AFFILIATION)) {
+            if (is_object($decoded->affiliation)) {
+                $vals = [$decoded->affiliation];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_AFFILIATION, true);
             } else {
-                $vals = $json->affiliation;
+                $vals = $decoded->affiliation;
             }
             foreach($vals as $v) {
                 $type->addAffiliation(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->contributionType) || property_exists($json, self::FIELD_CONTRIBUTION_TYPE)) {
-            if (is_object($json->contributionType)) {
-                $vals = [$json->contributionType];
+        if (isset($decoded->contributionType) || property_exists($decoded, self::FIELD_CONTRIBUTION_TYPE)) {
+            if (is_object($decoded->contributionType)) {
+                $vals = [$decoded->contributionType];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTRIBUTION_TYPE, true);
             } else {
-                $vals = $json->contributionType;
+                $vals = $decoded->contributionType;
             }
             foreach($vals as $v) {
                 $type->addContributionType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->role) || property_exists($json, self::FIELD_ROLE)) {
-            if (is_array($json->role)) {
-                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($json->role), $config));
+        if (isset($decoded->role) || property_exists($decoded, self::FIELD_ROLE)) {
+            if (is_array($decoded->role)) {
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize(reset($decoded->role), $config));
             } else {
-                $type->setRole(FHIRCodeableConcept::jsonUnserialize($json->role, $config));
+                $type->setRole(FHIRCodeableConcept::jsonUnserialize($decoded->role, $config));
             }
         }
-        if (isset($json->contributionInstance) || property_exists($json, self::FIELD_CONTRIBUTION_INSTANCE)) {
-            if (is_object($json->contributionInstance)) {
-                $vals = [$json->contributionInstance];
+        if (isset($decoded->contributionInstance) || property_exists($decoded, self::FIELD_CONTRIBUTION_INSTANCE)) {
+            if (is_object($decoded->contributionInstance)) {
+                $vals = [$decoded->contributionInstance];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTRIBUTION_INSTANCE, true);
             } else {
-                $vals = $json->contributionInstance;
+                $vals = $decoded->contributionInstance;
             }
             foreach($vals as $v) {
                 $type->addContributionInstance(FHIRCitationContributionInstance::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->correspondingContact)
-            || isset($json->_correspondingContact)
-            || property_exists($json, self::FIELD_CORRESPONDING_CONTACT)
-            || property_exists($json, self::FIELD_CORRESPONDING_CONTACT_EXT)) {
-            $v = $json->_correspondingContact ?? new \stdClass();
-            $v->value = $json->correspondingContact ?? null;
+        if (isset($decoded->correspondingContact)
+            || isset($decoded->_correspondingContact)
+            || property_exists($decoded, self::FIELD_CORRESPONDING_CONTACT)
+            || property_exists($decoded, self::FIELD_CORRESPONDING_CONTACT_EXT)) {
+            $v = $decoded->_correspondingContact ?? new \stdClass();
+            $v->value = $decoded->correspondingContact ?? null;
             $type->setCorrespondingContact(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->rankingOrder)
-            || isset($json->_rankingOrder)
-            || property_exists($json, self::FIELD_RANKING_ORDER)
-            || property_exists($json, self::FIELD_RANKING_ORDER_EXT)) {
-            $v = $json->_rankingOrder ?? new \stdClass();
-            $v->value = $json->rankingOrder ?? null;
+        if (isset($decoded->rankingOrder)
+            || isset($decoded->_rankingOrder)
+            || property_exists($decoded, self::FIELD_RANKING_ORDER)
+            || property_exists($decoded, self::FIELD_RANKING_ORDER_EXT)) {
+            $v = $decoded->_rankingOrder ?? new \stdClass();
+            $v->value = $decoded->rankingOrder ?? null;
             $type->setRankingOrder(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
         return $type;

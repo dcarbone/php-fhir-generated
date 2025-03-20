@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -668,13 +668,13 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -688,13 +688,13 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->sequenceLinkId)
-            || isset($json->_sequenceLinkId)
-            || property_exists($json, self::FIELD_SEQUENCE_LINK_ID)
-            || property_exists($json, self::FIELD_SEQUENCE_LINK_ID_EXT)) {
-            $vals = (array)($json->sequenceLinkId ?? []);
-            $exts = (array)($json->FIELD_SEQUENCE_LINK_ID_EXT ?? []);
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->sequenceLinkId)
+            || isset($decoded->_sequenceLinkId)
+            || property_exists($decoded, self::FIELD_SEQUENCE_LINK_ID)
+            || property_exists($decoded, self::FIELD_SEQUENCE_LINK_ID_EXT)) {
+            $vals = (array)($decoded->sequenceLinkId ?? []);
+            $exts = (array)($decoded->FIELD_SEQUENCE_LINK_ID_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -706,26 +706,26 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                 $type->addSequenceLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->service) || property_exists($json, self::FIELD_SERVICE)) {
-            if (is_array($json->service)) {
-                $type->setService(FHIRCoding::jsonUnserialize(reset($json->service), $config));
+        if (isset($decoded->service) || property_exists($decoded, self::FIELD_SERVICE)) {
+            if (is_array($decoded->service)) {
+                $type->setService(FHIRCoding::jsonUnserialize(reset($decoded->service), $config));
             } else {
-                $type->setService(FHIRCoding::jsonUnserialize($json->service, $config));
+                $type->setService(FHIRCoding::jsonUnserialize($decoded->service, $config));
             }
         }
-        if (isset($json->fee) || property_exists($json, self::FIELD_FEE)) {
-            if (is_array($json->fee)) {
-                $type->setFee(FHIRMoney::jsonUnserialize(reset($json->fee), $config));
+        if (isset($decoded->fee) || property_exists($decoded, self::FIELD_FEE)) {
+            if (is_array($decoded->fee)) {
+                $type->setFee(FHIRMoney::jsonUnserialize(reset($decoded->fee), $config));
             } else {
-                $type->setFee(FHIRMoney::jsonUnserialize($json->fee, $config));
+                $type->setFee(FHIRMoney::jsonUnserialize($decoded->fee, $config));
             }
         }
-        if (isset($json->noteNumberLinkId)
-            || isset($json->_noteNumberLinkId)
-            || property_exists($json, self::FIELD_NOTE_NUMBER_LINK_ID)
-            || property_exists($json, self::FIELD_NOTE_NUMBER_LINK_ID_EXT)) {
-            $vals = (array)($json->noteNumberLinkId ?? []);
-            $exts = (array)($json->FIELD_NOTE_NUMBER_LINK_ID_EXT ?? []);
+        if (isset($decoded->noteNumberLinkId)
+            || isset($decoded->_noteNumberLinkId)
+            || property_exists($decoded, self::FIELD_NOTE_NUMBER_LINK_ID)
+            || property_exists($decoded, self::FIELD_NOTE_NUMBER_LINK_ID_EXT)) {
+            $vals = (array)($decoded->noteNumberLinkId ?? []);
+            $exts = (array)($decoded->FIELD_NOTE_NUMBER_LINK_ID_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -737,23 +737,23 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                 $type->addNoteNumberLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->adjudication) || property_exists($json, self::FIELD_ADJUDICATION)) {
-            if (is_object($json->adjudication)) {
-                $vals = [$json->adjudication];
+        if (isset($decoded->adjudication) || property_exists($decoded, self::FIELD_ADJUDICATION)) {
+            if (is_object($decoded->adjudication)) {
+                $vals = [$decoded->adjudication];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ADJUDICATION, true);
             } else {
-                $vals = $json->adjudication;
+                $vals = $decoded->adjudication;
             }
             foreach($vals as $v) {
                 $type->addAdjudication(FHIRClaimResponseAdjudication3::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->detail) || property_exists($json, self::FIELD_DETAIL)) {
-            if (is_object($json->detail)) {
-                $vals = [$json->detail];
+        if (isset($decoded->detail) || property_exists($decoded, self::FIELD_DETAIL)) {
+            if (is_object($decoded->detail)) {
+                $vals = [$decoded->detail];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DETAIL, true);
             } else {
-                $vals = $json->detail;
+                $vals = $decoded->detail;
             }
             foreach($vals as $v) {
                 $type->addDetail(FHIRClaimResponseDetail1::jsonUnserialize($v, $config));

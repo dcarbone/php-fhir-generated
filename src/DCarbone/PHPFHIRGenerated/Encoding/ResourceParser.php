@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,24 +67,7 @@ class ResourceParser
         if ([] === $input) {
             return null;
         }
-        if (isset($input[Constants::JSON_FIELD_RESOURCE_TYPE])) {
-            /** @var \DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface $className */
-            $className = $version->getTypeMap()::getTypeClassname($input[Constants::JSON_FIELD_RESOURCE_TYPE]);
-            if (null === $className) {
-                throw new \UnexpectedValueException(sprintf(
-                    'Provided input has "%s" value of "%s", but it does not map to any known type.  Other keys: ["%s"]',
-                    Constants::JSON_FIELD_RESOURCE_TYPE,
-                    $input[Constants::JSON_FIELD_RESOURCE_TYPE],
-                    implode('","', array_keys($input))
-                ));
-            }
-            return $className::jsonUnserialize($input, $version->getConfig()->getUnserializeConfig());
-        }
-        throw new \DomainException(sprintf(
-            'Unable to determine FHIR Type from provided array: missing "%s" key.  Available keys: ["%s"]',
-            Constants::JSON_FIELD_RESOURCE_TYPE,
-            implode('","', array_keys($input))
-        ));
+        return static::parseStdClass($version, (object)$input);
     }
 
     /**
@@ -94,7 +77,24 @@ class ResourceParser
      */
     public static function parseStdClass(VersionInterface $version, \stdClass $input): null|ResourceTypeInterface
     {
-        return static::parseArray($version, (array)$input);
+        if (isset($input->resourceType)) {
+            /** @var \DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface $className */
+            $className = $version->getTypeMap()::getTypeClassname($input->resourceType);
+            if (null === $className) {
+                throw new \UnexpectedValueException(sprintf(
+                    'Provided input has "%s" value of "%s", but it does not map to any known type.  Other keys: ["%s"]',
+                    Constants::JSON_FIELD_RESOURCE_TYPE,
+                    $input->resourceType,
+                    implode('","', array_keys((array)$input))
+                ));
+            }
+            return $className::jsonUnserialize($input, $version->getConfig()->getUnserializeConfig());
+        }
+        throw new \DomainException(sprintf(
+            'Unable to determine FHIR Type from provided array: missing "%s" key.  Available keys: ["%s"]',
+            Constants::JSON_FIELD_RESOURCE_TYPE,
+            implode('","', array_keys((array)$input))
+        ));
     }
 
     /**
@@ -164,7 +164,13 @@ class ResourceParser
      */
     public static function parseJSON(VersionInterface $version, string $input): null|ResourceTypeInterface
     {
-        $decoded = json_decode($input, true, $version->getConfig()->getUnserializeConfig()->getJSONDecodeMaxDepth());
+        $config = $version->getConfig()->getUnserializeConfig();
+        $decoded = json_decode(
+            json: $input,
+            associative: false,
+            depth: $config->getJSONDecodeMaxDepth(),
+            flags: $config->getJSONDecodeOpts(),
+        );
         $err = json_last_error();
         if (JSON_ERROR_NONE !== $err) {
             throw new \DomainException(sprintf(
@@ -174,7 +180,7 @@ class ResourceParser
             ));
         }
 
-        return static::parseArray($version, $decoded);
+        return static::parseStdClass($version, $decoded);
     }
 
     /**

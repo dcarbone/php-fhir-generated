@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -348,13 +348,13 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -368,20 +368,20 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->message) || property_exists($json, self::FIELD_MESSAGE)) {
-            if (is_array($json->message)) {
-                $type->setMessage(FHIRReference::jsonUnserialize(reset($json->message), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->message) || property_exists($decoded, self::FIELD_MESSAGE)) {
+            if (is_array($decoded->message)) {
+                $type->setMessage(FHIRReference::jsonUnserialize(reset($decoded->message), $config));
             } else {
-                $type->setMessage(FHIRReference::jsonUnserialize($json->message, $config));
+                $type->setMessage(FHIRReference::jsonUnserialize($decoded->message, $config));
             }
         }
-        if (isset($json->situation)
-            || isset($json->_situation)
-            || property_exists($json, self::FIELD_SITUATION)
-            || property_exists($json, self::FIELD_SITUATION_EXT)) {
-            $v = $json->_situation ?? new \stdClass();
-            $v->value = $json->situation ?? null;
+        if (isset($decoded->situation)
+            || isset($decoded->_situation)
+            || property_exists($decoded, self::FIELD_SITUATION)
+            || property_exists($decoded, self::FIELD_SITUATION_EXT)) {
+            $v = $decoded->_situation ?? new \stdClass();
+            $v->value = $decoded->situation ?? null;
             $type->setSituation(FHIRMarkdown::jsonUnserialize($v, $config));
         }
         return $type;

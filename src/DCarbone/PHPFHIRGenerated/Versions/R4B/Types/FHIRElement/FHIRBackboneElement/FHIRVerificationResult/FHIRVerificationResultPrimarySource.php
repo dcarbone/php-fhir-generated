@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -762,13 +762,13 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -782,64 +782,64 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->who) || property_exists($json, self::FIELD_WHO)) {
-            if (is_array($json->who)) {
-                $type->setWho(FHIRReference::jsonUnserialize(reset($json->who), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->who) || property_exists($decoded, self::FIELD_WHO)) {
+            if (is_array($decoded->who)) {
+                $type->setWho(FHIRReference::jsonUnserialize(reset($decoded->who), $config));
             } else {
-                $type->setWho(FHIRReference::jsonUnserialize($json->who, $config));
+                $type->setWho(FHIRReference::jsonUnserialize($decoded->who, $config));
             }
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_object($json->type)) {
-                $vals = [$json->type];
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_object($decoded->type)) {
+                $vals = [$decoded->type];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TYPE, true);
             } else {
-                $vals = $json->type;
+                $vals = $decoded->type;
             }
             foreach($vals as $v) {
                 $type->addType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->communicationMethod) || property_exists($json, self::FIELD_COMMUNICATION_METHOD)) {
-            if (is_object($json->communicationMethod)) {
-                $vals = [$json->communicationMethod];
+        if (isset($decoded->communicationMethod) || property_exists($decoded, self::FIELD_COMMUNICATION_METHOD)) {
+            if (is_object($decoded->communicationMethod)) {
+                $vals = [$decoded->communicationMethod];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_COMMUNICATION_METHOD, true);
             } else {
-                $vals = $json->communicationMethod;
+                $vals = $decoded->communicationMethod;
             }
             foreach($vals as $v) {
                 $type->addCommunicationMethod(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->validationStatus) || property_exists($json, self::FIELD_VALIDATION_STATUS)) {
-            if (is_array($json->validationStatus)) {
-                $type->setValidationStatus(FHIRCodeableConcept::jsonUnserialize(reset($json->validationStatus), $config));
+        if (isset($decoded->validationStatus) || property_exists($decoded, self::FIELD_VALIDATION_STATUS)) {
+            if (is_array($decoded->validationStatus)) {
+                $type->setValidationStatus(FHIRCodeableConcept::jsonUnserialize(reset($decoded->validationStatus), $config));
             } else {
-                $type->setValidationStatus(FHIRCodeableConcept::jsonUnserialize($json->validationStatus, $config));
+                $type->setValidationStatus(FHIRCodeableConcept::jsonUnserialize($decoded->validationStatus, $config));
             }
         }
-        if (isset($json->validationDate)
-            || isset($json->_validationDate)
-            || property_exists($json, self::FIELD_VALIDATION_DATE)
-            || property_exists($json, self::FIELD_VALIDATION_DATE_EXT)) {
-            $v = $json->_validationDate ?? new \stdClass();
-            $v->value = $json->validationDate ?? null;
+        if (isset($decoded->validationDate)
+            || isset($decoded->_validationDate)
+            || property_exists($decoded, self::FIELD_VALIDATION_DATE)
+            || property_exists($decoded, self::FIELD_VALIDATION_DATE_EXT)) {
+            $v = $decoded->_validationDate ?? new \stdClass();
+            $v->value = $decoded->validationDate ?? null;
             $type->setValidationDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->canPushUpdates) || property_exists($json, self::FIELD_CAN_PUSH_UPDATES)) {
-            if (is_array($json->canPushUpdates)) {
-                $type->setCanPushUpdates(FHIRCodeableConcept::jsonUnserialize(reset($json->canPushUpdates), $config));
+        if (isset($decoded->canPushUpdates) || property_exists($decoded, self::FIELD_CAN_PUSH_UPDATES)) {
+            if (is_array($decoded->canPushUpdates)) {
+                $type->setCanPushUpdates(FHIRCodeableConcept::jsonUnserialize(reset($decoded->canPushUpdates), $config));
             } else {
-                $type->setCanPushUpdates(FHIRCodeableConcept::jsonUnserialize($json->canPushUpdates, $config));
+                $type->setCanPushUpdates(FHIRCodeableConcept::jsonUnserialize($decoded->canPushUpdates, $config));
             }
         }
-        if (isset($json->pushTypeAvailable) || property_exists($json, self::FIELD_PUSH_TYPE_AVAILABLE)) {
-            if (is_object($json->pushTypeAvailable)) {
-                $vals = [$json->pushTypeAvailable];
+        if (isset($decoded->pushTypeAvailable) || property_exists($decoded, self::FIELD_PUSH_TYPE_AVAILABLE)) {
+            if (is_object($decoded->pushTypeAvailable)) {
+                $vals = [$decoded->pushTypeAvailable];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PUSH_TYPE_AVAILABLE, true);
             } else {
-                $vals = $json->pushTypeAvailable;
+                $vals = $decoded->pushTypeAvailable;
             }
             foreach($vals as $v) {
                 $type->addPushTypeAvailable(FHIRCodeableConcept::jsonUnserialize($v, $config));

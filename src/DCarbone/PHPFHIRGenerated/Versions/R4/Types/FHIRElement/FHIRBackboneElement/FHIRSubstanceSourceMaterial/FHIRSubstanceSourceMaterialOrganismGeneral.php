@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -435,13 +435,13 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -455,33 +455,33 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->kingdom) || property_exists($json, self::FIELD_KINGDOM)) {
-            if (is_array($json->kingdom)) {
-                $type->setKingdom(FHIRCodeableConcept::jsonUnserialize(reset($json->kingdom), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->kingdom) || property_exists($decoded, self::FIELD_KINGDOM)) {
+            if (is_array($decoded->kingdom)) {
+                $type->setKingdom(FHIRCodeableConcept::jsonUnserialize(reset($decoded->kingdom), $config));
             } else {
-                $type->setKingdom(FHIRCodeableConcept::jsonUnserialize($json->kingdom, $config));
+                $type->setKingdom(FHIRCodeableConcept::jsonUnserialize($decoded->kingdom, $config));
             }
         }
-        if (isset($json->phylum) || property_exists($json, self::FIELD_PHYLUM)) {
-            if (is_array($json->phylum)) {
-                $type->setPhylum(FHIRCodeableConcept::jsonUnserialize(reset($json->phylum), $config));
+        if (isset($decoded->phylum) || property_exists($decoded, self::FIELD_PHYLUM)) {
+            if (is_array($decoded->phylum)) {
+                $type->setPhylum(FHIRCodeableConcept::jsonUnserialize(reset($decoded->phylum), $config));
             } else {
-                $type->setPhylum(FHIRCodeableConcept::jsonUnserialize($json->phylum, $config));
+                $type->setPhylum(FHIRCodeableConcept::jsonUnserialize($decoded->phylum, $config));
             }
         }
-        if (isset($json->class) || property_exists($json, self::FIELD_CLASS)) {
-            if (is_array($json->class)) {
-                $type->setClass(FHIRCodeableConcept::jsonUnserialize(reset($json->class), $config));
+        if (isset($decoded->class) || property_exists($decoded, self::FIELD_CLASS)) {
+            if (is_array($decoded->class)) {
+                $type->setClass(FHIRCodeableConcept::jsonUnserialize(reset($decoded->class), $config));
             } else {
-                $type->setClass(FHIRCodeableConcept::jsonUnserialize($json->class, $config));
+                $type->setClass(FHIRCodeableConcept::jsonUnserialize($decoded->class, $config));
             }
         }
-        if (isset($json->order) || property_exists($json, self::FIELD_ORDER)) {
-            if (is_array($json->order)) {
-                $type->setOrder(FHIRCodeableConcept::jsonUnserialize(reset($json->order), $config));
+        if (isset($decoded->order) || property_exists($decoded, self::FIELD_ORDER)) {
+            if (is_array($decoded->order)) {
+                $type->setOrder(FHIRCodeableConcept::jsonUnserialize(reset($decoded->order), $config));
             } else {
-                $type->setOrder(FHIRCodeableConcept::jsonUnserialize($json->order, $config));
+                $type->setOrder(FHIRCodeableConcept::jsonUnserialize($decoded->order, $config));
             }
         }
         return $type;

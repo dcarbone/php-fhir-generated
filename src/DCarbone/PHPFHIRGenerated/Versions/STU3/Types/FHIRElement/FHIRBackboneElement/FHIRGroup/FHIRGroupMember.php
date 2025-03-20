@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -385,13 +385,13 @@ class FHIRGroupMember extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -405,27 +405,27 @@ class FHIRGroupMember extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->entity) || property_exists($json, self::FIELD_ENTITY)) {
-            if (is_array($json->entity)) {
-                $type->setEntity(FHIRReference::jsonUnserialize(reset($json->entity), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->entity) || property_exists($decoded, self::FIELD_ENTITY)) {
+            if (is_array($decoded->entity)) {
+                $type->setEntity(FHIRReference::jsonUnserialize(reset($decoded->entity), $config));
             } else {
-                $type->setEntity(FHIRReference::jsonUnserialize($json->entity, $config));
+                $type->setEntity(FHIRReference::jsonUnserialize($decoded->entity, $config));
             }
         }
-        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
-            if (is_array($json->period)) {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+        if (isset($decoded->period) || property_exists($decoded, self::FIELD_PERIOD)) {
+            if (is_array($decoded->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->period), $config));
             } else {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($decoded->period, $config));
             }
         }
-        if (isset($json->inactive)
-            || isset($json->_inactive)
-            || property_exists($json, self::FIELD_INACTIVE)
-            || property_exists($json, self::FIELD_INACTIVE_EXT)) {
-            $v = $json->_inactive ?? new \stdClass();
-            $v->value = $json->inactive ?? null;
+        if (isset($decoded->inactive)
+            || isset($decoded->_inactive)
+            || property_exists($decoded, self::FIELD_INACTIVE)
+            || property_exists($decoded, self::FIELD_INACTIVE_EXT)) {
+            $v = $decoded->_inactive ?? new \stdClass();
+            $v->value = $decoded->inactive ?? null;
             $type->setInactive(FHIRBoolean::jsonUnserialize($v, $config));
         }
         return $type;

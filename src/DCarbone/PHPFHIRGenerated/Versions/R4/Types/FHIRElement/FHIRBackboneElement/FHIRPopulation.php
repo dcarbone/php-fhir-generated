@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -486,13 +486,13 @@ class FHIRPopulation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPopulation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPopulation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -506,40 +506,40 @@ class FHIRPopulation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->ageRange) || property_exists($json, self::FIELD_AGE_RANGE)) {
-            if (is_array($json->ageRange)) {
-                $type->setAgeRange(FHIRRange::jsonUnserialize(reset($json->ageRange), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->ageRange) || property_exists($decoded, self::FIELD_AGE_RANGE)) {
+            if (is_array($decoded->ageRange)) {
+                $type->setAgeRange(FHIRRange::jsonUnserialize(reset($decoded->ageRange), $config));
             } else {
-                $type->setAgeRange(FHIRRange::jsonUnserialize($json->ageRange, $config));
+                $type->setAgeRange(FHIRRange::jsonUnserialize($decoded->ageRange, $config));
             }
         }
-        if (isset($json->ageCodeableConcept) || property_exists($json, self::FIELD_AGE_CODEABLE_CONCEPT)) {
-            if (is_array($json->ageCodeableConcept)) {
-                $type->setAgeCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->ageCodeableConcept), $config));
+        if (isset($decoded->ageCodeableConcept) || property_exists($decoded, self::FIELD_AGE_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->ageCodeableConcept)) {
+                $type->setAgeCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->ageCodeableConcept), $config));
             } else {
-                $type->setAgeCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->ageCodeableConcept, $config));
+                $type->setAgeCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->ageCodeableConcept, $config));
             }
         }
-        if (isset($json->gender) || property_exists($json, self::FIELD_GENDER)) {
-            if (is_array($json->gender)) {
-                $type->setGender(FHIRCodeableConcept::jsonUnserialize(reset($json->gender), $config));
+        if (isset($decoded->gender) || property_exists($decoded, self::FIELD_GENDER)) {
+            if (is_array($decoded->gender)) {
+                $type->setGender(FHIRCodeableConcept::jsonUnserialize(reset($decoded->gender), $config));
             } else {
-                $type->setGender(FHIRCodeableConcept::jsonUnserialize($json->gender, $config));
+                $type->setGender(FHIRCodeableConcept::jsonUnserialize($decoded->gender, $config));
             }
         }
-        if (isset($json->race) || property_exists($json, self::FIELD_RACE)) {
-            if (is_array($json->race)) {
-                $type->setRace(FHIRCodeableConcept::jsonUnserialize(reset($json->race), $config));
+        if (isset($decoded->race) || property_exists($decoded, self::FIELD_RACE)) {
+            if (is_array($decoded->race)) {
+                $type->setRace(FHIRCodeableConcept::jsonUnserialize(reset($decoded->race), $config));
             } else {
-                $type->setRace(FHIRCodeableConcept::jsonUnserialize($json->race, $config));
+                $type->setRace(FHIRCodeableConcept::jsonUnserialize($decoded->race, $config));
             }
         }
-        if (isset($json->physiologicalCondition) || property_exists($json, self::FIELD_PHYSIOLOGICAL_CONDITION)) {
-            if (is_array($json->physiologicalCondition)) {
-                $type->setPhysiologicalCondition(FHIRCodeableConcept::jsonUnserialize(reset($json->physiologicalCondition), $config));
+        if (isset($decoded->physiologicalCondition) || property_exists($decoded, self::FIELD_PHYSIOLOGICAL_CONDITION)) {
+            if (is_array($decoded->physiologicalCondition)) {
+                $type->setPhysiologicalCondition(FHIRCodeableConcept::jsonUnserialize(reset($decoded->physiologicalCondition), $config));
             } else {
-                $type->setPhysiologicalCondition(FHIRCodeableConcept::jsonUnserialize($json->physiologicalCondition, $config));
+                $type->setPhysiologicalCondition(FHIRCodeableConcept::jsonUnserialize($decoded->physiologicalCondition, $config));
             }
         }
         return $type;

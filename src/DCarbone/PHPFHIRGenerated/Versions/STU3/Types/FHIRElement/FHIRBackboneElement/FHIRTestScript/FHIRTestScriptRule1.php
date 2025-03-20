@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -359,13 +359,13 @@ class FHIRTestScriptRule1 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule1 $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule1
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -379,21 +379,21 @@ class FHIRTestScriptRule1 extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->ruleId)
-            || isset($json->_ruleId)
-            || property_exists($json, self::FIELD_RULE_ID)
-            || property_exists($json, self::FIELD_RULE_ID_EXT)) {
-            $v = $json->_ruleId ?? new \stdClass();
-            $v->value = $json->ruleId ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->ruleId)
+            || isset($decoded->_ruleId)
+            || property_exists($decoded, self::FIELD_RULE_ID)
+            || property_exists($decoded, self::FIELD_RULE_ID_EXT)) {
+            $v = $decoded->_ruleId ?? new \stdClass();
+            $v->value = $decoded->ruleId ?? null;
             $type->setRuleId(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json->param) || property_exists($json, self::FIELD_PARAM)) {
-            if (is_object($json->param)) {
-                $vals = [$json->param];
+        if (isset($decoded->param) || property_exists($decoded, self::FIELD_PARAM)) {
+            if (is_object($decoded->param)) {
+                $vals = [$decoded->param];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PARAM, true);
             } else {
-                $vals = $json->param;
+                $vals = $decoded->param;
             }
             foreach($vals as $v) {
                 $type->addParam(FHIRTestScriptParam1::jsonUnserialize($v, $config));

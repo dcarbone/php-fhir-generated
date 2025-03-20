@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -385,13 +385,13 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -405,26 +405,26 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->symptomConditionEffect) || property_exists($json, self::FIELD_SYMPTOM_CONDITION_EFFECT)) {
-            if (is_array($json->symptomConditionEffect)) {
-                $type->setSymptomConditionEffect(FHIRCodeableReference::jsonUnserialize(reset($json->symptomConditionEffect), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->symptomConditionEffect) || property_exists($decoded, self::FIELD_SYMPTOM_CONDITION_EFFECT)) {
+            if (is_array($decoded->symptomConditionEffect)) {
+                $type->setSymptomConditionEffect(FHIRCodeableReference::jsonUnserialize(reset($decoded->symptomConditionEffect), $config));
             } else {
-                $type->setSymptomConditionEffect(FHIRCodeableReference::jsonUnserialize($json->symptomConditionEffect, $config));
+                $type->setSymptomConditionEffect(FHIRCodeableReference::jsonUnserialize($decoded->symptomConditionEffect, $config));
             }
         }
-        if (isset($json->classification) || property_exists($json, self::FIELD_CLASSIFICATION)) {
-            if (is_array($json->classification)) {
-                $type->setClassification(FHIRCodeableConcept::jsonUnserialize(reset($json->classification), $config));
+        if (isset($decoded->classification) || property_exists($decoded, self::FIELD_CLASSIFICATION)) {
+            if (is_array($decoded->classification)) {
+                $type->setClassification(FHIRCodeableConcept::jsonUnserialize(reset($decoded->classification), $config));
             } else {
-                $type->setClassification(FHIRCodeableConcept::jsonUnserialize($json->classification, $config));
+                $type->setClassification(FHIRCodeableConcept::jsonUnserialize($decoded->classification, $config));
             }
         }
-        if (isset($json->frequencyOfOccurrence) || property_exists($json, self::FIELD_FREQUENCY_OF_OCCURRENCE)) {
-            if (is_array($json->frequencyOfOccurrence)) {
-                $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize(reset($json->frequencyOfOccurrence), $config));
+        if (isset($decoded->frequencyOfOccurrence) || property_exists($decoded, self::FIELD_FREQUENCY_OF_OCCURRENCE)) {
+            if (is_array($decoded->frequencyOfOccurrence)) {
+                $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize(reset($decoded->frequencyOfOccurrence), $config));
             } else {
-                $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize($json->frequencyOfOccurrence, $config));
+                $type->setFrequencyOfOccurrence(FHIRCodeableConcept::jsonUnserialize($decoded->frequencyOfOccurrence, $config));
             }
         }
         return $type;

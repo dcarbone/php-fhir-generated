@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -473,13 +473,13 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -493,35 +493,35 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->customaryUnit) || property_exists($json, self::FIELD_CUSTOMARY_UNIT)) {
-            if (is_array($json->customaryUnit)) {
-                $type->setCustomaryUnit(FHIRCodeableConcept::jsonUnserialize(reset($json->customaryUnit), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->customaryUnit) || property_exists($decoded, self::FIELD_CUSTOMARY_UNIT)) {
+            if (is_array($decoded->customaryUnit)) {
+                $type->setCustomaryUnit(FHIRCodeableConcept::jsonUnserialize(reset($decoded->customaryUnit), $config));
             } else {
-                $type->setCustomaryUnit(FHIRCodeableConcept::jsonUnserialize($json->customaryUnit, $config));
+                $type->setCustomaryUnit(FHIRCodeableConcept::jsonUnserialize($decoded->customaryUnit, $config));
             }
         }
-        if (isset($json->unit) || property_exists($json, self::FIELD_UNIT)) {
-            if (is_array($json->unit)) {
-                $type->setUnit(FHIRCodeableConcept::jsonUnserialize(reset($json->unit), $config));
+        if (isset($decoded->unit) || property_exists($decoded, self::FIELD_UNIT)) {
+            if (is_array($decoded->unit)) {
+                $type->setUnit(FHIRCodeableConcept::jsonUnserialize(reset($decoded->unit), $config));
             } else {
-                $type->setUnit(FHIRCodeableConcept::jsonUnserialize($json->unit, $config));
+                $type->setUnit(FHIRCodeableConcept::jsonUnserialize($decoded->unit, $config));
             }
         }
-        if (isset($json->conversionFactor)
-            || isset($json->_conversionFactor)
-            || property_exists($json, self::FIELD_CONVERSION_FACTOR)
-            || property_exists($json, self::FIELD_CONVERSION_FACTOR_EXT)) {
-            $v = $json->_conversionFactor ?? new \stdClass();
-            $v->value = $json->conversionFactor ?? null;
+        if (isset($decoded->conversionFactor)
+            || isset($decoded->_conversionFactor)
+            || property_exists($decoded, self::FIELD_CONVERSION_FACTOR)
+            || property_exists($decoded, self::FIELD_CONVERSION_FACTOR_EXT)) {
+            $v = $decoded->_conversionFactor ?? new \stdClass();
+            $v->value = $decoded->conversionFactor ?? null;
             $type->setConversionFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->decimalPrecision)
-            || isset($json->_decimalPrecision)
-            || property_exists($json, self::FIELD_DECIMAL_PRECISION)
-            || property_exists($json, self::FIELD_DECIMAL_PRECISION_EXT)) {
-            $v = $json->_decimalPrecision ?? new \stdClass();
-            $v->value = $json->decimalPrecision ?? null;
+        if (isset($decoded->decimalPrecision)
+            || isset($decoded->_decimalPrecision)
+            || property_exists($decoded, self::FIELD_DECIMAL_PRECISION)
+            || property_exists($decoded, self::FIELD_DECIMAL_PRECISION_EXT)) {
+            $v = $decoded->_decimalPrecision ?? new \stdClass();
+            $v->value = $decoded->decimalPrecision ?? null;
             $type->setDecimalPrecision(FHIRInteger::jsonUnserialize($v, $config));
         }
         return $type;

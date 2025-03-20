@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -344,13 +344,13 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -364,23 +364,23 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->cost) || property_exists($json, self::FIELD_COST)) {
-            if (is_object($json->cost)) {
-                $vals = [$json->cost];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->cost) || property_exists($decoded, self::FIELD_COST)) {
+            if (is_object($decoded->cost)) {
+                $vals = [$decoded->cost];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_COST, true);
             } else {
-                $vals = $json->cost;
+                $vals = $decoded->cost;
             }
             foreach($vals as $v) {
                 $type->addCost(FHIRMedicationKnowledgeCost::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->packagedProduct) || property_exists($json, self::FIELD_PACKAGED_PRODUCT)) {
-            if (is_array($json->packagedProduct)) {
-                $type->setPackagedProduct(FHIRReference::jsonUnserialize(reset($json->packagedProduct), $config));
+        if (isset($decoded->packagedProduct) || property_exists($decoded, self::FIELD_PACKAGED_PRODUCT)) {
+            if (is_array($decoded->packagedProduct)) {
+                $type->setPackagedProduct(FHIRReference::jsonUnserialize(reset($decoded->packagedProduct), $config));
             } else {
-                $type->setPackagedProduct(FHIRReference::jsonUnserialize($json->packagedProduct, $config));
+                $type->setPackagedProduct(FHIRReference::jsonUnserialize($decoded->packagedProduct, $config));
             }
         }
         return $type;

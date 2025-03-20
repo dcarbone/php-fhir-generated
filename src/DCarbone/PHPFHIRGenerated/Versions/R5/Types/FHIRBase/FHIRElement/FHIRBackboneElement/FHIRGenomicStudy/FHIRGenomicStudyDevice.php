@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -322,13 +322,13 @@ class FHIRGenomicStudyDevice extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyDevice $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyDevice
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -342,19 +342,19 @@ class FHIRGenomicStudyDevice extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->device) || property_exists($json, self::FIELD_DEVICE)) {
-            if (is_array($json->device)) {
-                $type->setDevice(FHIRReference::jsonUnserialize(reset($json->device), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->device) || property_exists($decoded, self::FIELD_DEVICE)) {
+            if (is_array($decoded->device)) {
+                $type->setDevice(FHIRReference::jsonUnserialize(reset($decoded->device), $config));
             } else {
-                $type->setDevice(FHIRReference::jsonUnserialize($json->device, $config));
+                $type->setDevice(FHIRReference::jsonUnserialize($decoded->device, $config));
             }
         }
-        if (isset($json->function) || property_exists($json, self::FIELD_FUNCTION)) {
-            if (is_array($json->function)) {
-                $type->setFunction(FHIRCodeableConcept::jsonUnserialize(reset($json->function), $config));
+        if (isset($decoded->function) || property_exists($decoded, self::FIELD_FUNCTION)) {
+            if (is_array($decoded->function)) {
+                $type->setFunction(FHIRCodeableConcept::jsonUnserialize(reset($decoded->function), $config));
             } else {
-                $type->setFunction(FHIRCodeableConcept::jsonUnserialize($json->function, $config));
+                $type->setFunction(FHIRCodeableConcept::jsonUnserialize($decoded->function, $config));
             }
         }
         return $type;

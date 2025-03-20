@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -642,13 +642,13 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -662,56 +662,56 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->instance) || property_exists($json, self::FIELD_INSTANCE)) {
-            if (is_array($json->instance)) {
-                $type->setInstance(FHIRReference::jsonUnserialize(reset($json->instance), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->instance) || property_exists($decoded, self::FIELD_INSTANCE)) {
+            if (is_array($decoded->instance)) {
+                $type->setInstance(FHIRReference::jsonUnserialize(reset($decoded->instance), $config));
             } else {
-                $type->setInstance(FHIRReference::jsonUnserialize($json->instance, $config));
+                $type->setInstance(FHIRReference::jsonUnserialize($decoded->instance, $config));
             }
         }
-        if (isset($json->causality)
-            || isset($json->_causality)
-            || property_exists($json, self::FIELD_CAUSALITY)
-            || property_exists($json, self::FIELD_CAUSALITY_EXT)) {
-            $v = $json->_causality ?? new \stdClass();
-            $v->value = $json->causality ?? null;
+        if (isset($decoded->causality)
+            || isset($decoded->_causality)
+            || property_exists($decoded, self::FIELD_CAUSALITY)
+            || property_exists($decoded, self::FIELD_CAUSALITY_EXT)) {
+            $v = $decoded->_causality ?? new \stdClass();
+            $v->value = $decoded->causality ?? null;
             $type->setCausality(FHIRAdverseEventCausality::jsonUnserialize($v, $config));
         }
-        if (isset($json->causalityAssessment) || property_exists($json, self::FIELD_CAUSALITY_ASSESSMENT)) {
-            if (is_array($json->causalityAssessment)) {
-                $type->setCausalityAssessment(FHIRCodeableConcept::jsonUnserialize(reset($json->causalityAssessment), $config));
+        if (isset($decoded->causalityAssessment) || property_exists($decoded, self::FIELD_CAUSALITY_ASSESSMENT)) {
+            if (is_array($decoded->causalityAssessment)) {
+                $type->setCausalityAssessment(FHIRCodeableConcept::jsonUnserialize(reset($decoded->causalityAssessment), $config));
             } else {
-                $type->setCausalityAssessment(FHIRCodeableConcept::jsonUnserialize($json->causalityAssessment, $config));
+                $type->setCausalityAssessment(FHIRCodeableConcept::jsonUnserialize($decoded->causalityAssessment, $config));
             }
         }
-        if (isset($json->causalityProductRelatedness)
-            || isset($json->_causalityProductRelatedness)
-            || property_exists($json, self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS)
-            || property_exists($json, self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT)) {
-            $v = $json->_causalityProductRelatedness ?? new \stdClass();
-            $v->value = $json->causalityProductRelatedness ?? null;
+        if (isset($decoded->causalityProductRelatedness)
+            || isset($decoded->_causalityProductRelatedness)
+            || property_exists($decoded, self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS)
+            || property_exists($decoded, self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT)) {
+            $v = $decoded->_causalityProductRelatedness ?? new \stdClass();
+            $v->value = $decoded->causalityProductRelatedness ?? null;
             $type->setCausalityProductRelatedness(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->causalityMethod) || property_exists($json, self::FIELD_CAUSALITY_METHOD)) {
-            if (is_array($json->causalityMethod)) {
-                $type->setCausalityMethod(FHIRCodeableConcept::jsonUnserialize(reset($json->causalityMethod), $config));
+        if (isset($decoded->causalityMethod) || property_exists($decoded, self::FIELD_CAUSALITY_METHOD)) {
+            if (is_array($decoded->causalityMethod)) {
+                $type->setCausalityMethod(FHIRCodeableConcept::jsonUnserialize(reset($decoded->causalityMethod), $config));
             } else {
-                $type->setCausalityMethod(FHIRCodeableConcept::jsonUnserialize($json->causalityMethod, $config));
+                $type->setCausalityMethod(FHIRCodeableConcept::jsonUnserialize($decoded->causalityMethod, $config));
             }
         }
-        if (isset($json->causalityAuthor) || property_exists($json, self::FIELD_CAUSALITY_AUTHOR)) {
-            if (is_array($json->causalityAuthor)) {
-                $type->setCausalityAuthor(FHIRReference::jsonUnserialize(reset($json->causalityAuthor), $config));
+        if (isset($decoded->causalityAuthor) || property_exists($decoded, self::FIELD_CAUSALITY_AUTHOR)) {
+            if (is_array($decoded->causalityAuthor)) {
+                $type->setCausalityAuthor(FHIRReference::jsonUnserialize(reset($decoded->causalityAuthor), $config));
             } else {
-                $type->setCausalityAuthor(FHIRReference::jsonUnserialize($json->causalityAuthor, $config));
+                $type->setCausalityAuthor(FHIRReference::jsonUnserialize($decoded->causalityAuthor, $config));
             }
         }
-        if (isset($json->causalityResult) || property_exists($json, self::FIELD_CAUSALITY_RESULT)) {
-            if (is_array($json->causalityResult)) {
-                $type->setCausalityResult(FHIRCodeableConcept::jsonUnserialize(reset($json->causalityResult), $config));
+        if (isset($decoded->causalityResult) || property_exists($decoded, self::FIELD_CAUSALITY_RESULT)) {
+            if (is_array($decoded->causalityResult)) {
+                $type->setCausalityResult(FHIRCodeableConcept::jsonUnserialize(reset($decoded->causalityResult), $config));
             } else {
-                $type->setCausalityResult(FHIRCodeableConcept::jsonUnserialize($json->causalityResult, $config));
+                $type->setCausalityResult(FHIRCodeableConcept::jsonUnserialize($decoded->causalityResult, $config));
             }
         }
         return $type;

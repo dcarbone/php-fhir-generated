@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -342,13 +342,13 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -362,20 +362,20 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->relationtype)
-            || isset($json->_relationtype)
-            || property_exists($json, self::FIELD_RELATIONTYPE)
-            || property_exists($json, self::FIELD_RELATIONTYPE_EXT)) {
-            $v = $json->_relationtype ?? new \stdClass();
-            $v->value = $json->relationtype ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->relationtype)
+            || isset($decoded->_relationtype)
+            || property_exists($decoded, self::FIELD_RELATIONTYPE)
+            || property_exists($decoded, self::FIELD_RELATIONTYPE_EXT)) {
+            $v = $decoded->_relationtype ?? new \stdClass();
+            $v->value = $decoded->relationtype ?? null;
             $type->setRelationtype(FHIRCatalogEntryRelationType::jsonUnserialize($v, $config));
         }
-        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
-            if (is_array($json->item)) {
-                $type->setItem(FHIRReference::jsonUnserialize(reset($json->item), $config));
+        if (isset($decoded->item) || property_exists($decoded, self::FIELD_ITEM)) {
+            if (is_array($decoded->item)) {
+                $type->setItem(FHIRReference::jsonUnserialize(reset($decoded->item), $config));
             } else {
-                $type->setItem(FHIRReference::jsonUnserialize($json->item, $config));
+                $type->setItem(FHIRReference::jsonUnserialize($decoded->item, $config));
             }
         }
         return $type;

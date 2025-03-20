@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -671,13 +671,13 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptCapability $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptCapability
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -691,45 +691,45 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->required)
-            || isset($json->_required)
-            || property_exists($json, self::FIELD_REQUIRED)
-            || property_exists($json, self::FIELD_REQUIRED_EXT)) {
-            $v = $json->_required ?? new \stdClass();
-            $v->value = $json->required ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->required)
+            || isset($decoded->_required)
+            || property_exists($decoded, self::FIELD_REQUIRED)
+            || property_exists($decoded, self::FIELD_REQUIRED_EXT)) {
+            $v = $decoded->_required ?? new \stdClass();
+            $v->value = $decoded->required ?? null;
             $type->setRequired(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->validated)
-            || isset($json->_validated)
-            || property_exists($json, self::FIELD_VALIDATED)
-            || property_exists($json, self::FIELD_VALIDATED_EXT)) {
-            $v = $json->_validated ?? new \stdClass();
-            $v->value = $json->validated ?? null;
+        if (isset($decoded->validated)
+            || isset($decoded->_validated)
+            || property_exists($decoded, self::FIELD_VALIDATED)
+            || property_exists($decoded, self::FIELD_VALIDATED_EXT)) {
+            $v = $decoded->_validated ?? new \stdClass();
+            $v->value = $decoded->validated ?? null;
             $type->setValidated(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->destination)
-            || isset($json->_destination)
-            || property_exists($json, self::FIELD_DESTINATION)
-            || property_exists($json, self::FIELD_DESTINATION_EXT)) {
-            $v = $json->_destination ?? new \stdClass();
-            $v->value = $json->destination ?? null;
+        if (isset($decoded->destination)
+            || isset($decoded->_destination)
+            || property_exists($decoded, self::FIELD_DESTINATION)
+            || property_exists($decoded, self::FIELD_DESTINATION_EXT)) {
+            $v = $decoded->_destination ?? new \stdClass();
+            $v->value = $decoded->destination ?? null;
             $type->setDestination(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->link)
-            || isset($json->_link)
-            || property_exists($json, self::FIELD_LINK)
-            || property_exists($json, self::FIELD_LINK_EXT)) {
-            $vals = (array)($json->link ?? []);
-            $exts = (array)($json->FIELD_LINK_EXT ?? []);
+        if (isset($decoded->link)
+            || isset($decoded->_link)
+            || property_exists($decoded, self::FIELD_LINK)
+            || property_exists($decoded, self::FIELD_LINK_EXT)) {
+            $vals = (array)($decoded->link ?? []);
+            $exts = (array)($decoded->FIELD_LINK_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -741,11 +741,11 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 $type->addLink(FHIRUri::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->conformance) || property_exists($json, self::FIELD_CONFORMANCE)) {
-            if (is_array($json->conformance)) {
-                $type->setConformance(FHIRReference::jsonUnserialize(reset($json->conformance), $config));
+        if (isset($decoded->conformance) || property_exists($decoded, self::FIELD_CONFORMANCE)) {
+            if (is_array($decoded->conformance)) {
+                $type->setConformance(FHIRReference::jsonUnserialize(reset($decoded->conformance), $config));
             } else {
-                $type->setConformance(FHIRReference::jsonUnserialize($json->conformance, $config));
+                $type->setConformance(FHIRReference::jsonUnserialize($decoded->conformance, $config));
             }
         }
         return $type;

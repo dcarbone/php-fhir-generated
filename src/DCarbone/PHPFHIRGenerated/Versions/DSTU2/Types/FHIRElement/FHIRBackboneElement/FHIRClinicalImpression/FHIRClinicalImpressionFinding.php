@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -335,13 +335,13 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -355,20 +355,20 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->item) || property_exists($json, self::FIELD_ITEM)) {
-            if (is_array($json->item)) {
-                $type->setItem(FHIRCodeableConcept::jsonUnserialize(reset($json->item), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->item) || property_exists($decoded, self::FIELD_ITEM)) {
+            if (is_array($decoded->item)) {
+                $type->setItem(FHIRCodeableConcept::jsonUnserialize(reset($decoded->item), $config));
             } else {
-                $type->setItem(FHIRCodeableConcept::jsonUnserialize($json->item, $config));
+                $type->setItem(FHIRCodeableConcept::jsonUnserialize($decoded->item, $config));
             }
         }
-        if (isset($json->cause)
-            || isset($json->_cause)
-            || property_exists($json, self::FIELD_CAUSE)
-            || property_exists($json, self::FIELD_CAUSE_EXT)) {
-            $v = $json->_cause ?? new \stdClass();
-            $v->value = $json->cause ?? null;
+        if (isset($decoded->cause)
+            || isset($decoded->_cause)
+            || property_exists($decoded, self::FIELD_CAUSE)
+            || property_exists($decoded, self::FIELD_CAUSE_EXT)) {
+            $v = $decoded->_cause ?? new \stdClass();
+            $v->value = $decoded->cause ?? null;
             $type->setCause(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

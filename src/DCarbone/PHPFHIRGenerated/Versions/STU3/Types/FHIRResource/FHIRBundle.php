@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -704,13 +704,13 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRBundle $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRBundle
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -727,63 +727,63 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_array($json->identifier)) {
-                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->identifier), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_array($decoded->identifier)) {
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize(reset($decoded->identifier), $config));
             } else {
-                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($json->identifier, $config));
+                $type->setIdentifier(FHIRIdentifier::jsonUnserialize($decoded->identifier, $config));
             }
         }
-        if (isset($json->type)
-            || isset($json->_type)
-            || property_exists($json, self::FIELD_TYPE)
-            || property_exists($json, self::FIELD_TYPE_EXT)) {
-            $v = $json->_type ?? new \stdClass();
-            $v->value = $json->type ?? null;
+        if (isset($decoded->type)
+            || isset($decoded->_type)
+            || property_exists($decoded, self::FIELD_TYPE)
+            || property_exists($decoded, self::FIELD_TYPE_EXT)) {
+            $v = $decoded->_type ?? new \stdClass();
+            $v->value = $decoded->type ?? null;
             $type->setType(FHIRBundleType::jsonUnserialize($v, $config));
         }
-        if (isset($json->total)
-            || isset($json->_total)
-            || property_exists($json, self::FIELD_TOTAL)
-            || property_exists($json, self::FIELD_TOTAL_EXT)) {
-            $v = $json->_total ?? new \stdClass();
-            $v->value = $json->total ?? null;
+        if (isset($decoded->total)
+            || isset($decoded->_total)
+            || property_exists($decoded, self::FIELD_TOTAL)
+            || property_exists($decoded, self::FIELD_TOTAL_EXT)) {
+            $v = $decoded->_total ?? new \stdClass();
+            $v->value = $decoded->total ?? null;
             $type->setTotal(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->link) || property_exists($json, self::FIELD_LINK)) {
-            if (is_object($json->link)) {
-                $vals = [$json->link];
+        if (isset($decoded->link) || property_exists($decoded, self::FIELD_LINK)) {
+            if (is_object($decoded->link)) {
+                $vals = [$decoded->link];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_LINK, true);
             } else {
-                $vals = $json->link;
+                $vals = $decoded->link;
             }
             foreach($vals as $v) {
                 $type->addLink(FHIRBundleLink::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->entry) || property_exists($json, self::FIELD_ENTRY)) {
-            if (is_object($json->entry)) {
-                $vals = [$json->entry];
+        if (isset($decoded->entry) || property_exists($decoded, self::FIELD_ENTRY)) {
+            if (is_object($decoded->entry)) {
+                $vals = [$decoded->entry];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ENTRY, true);
             } else {
-                $vals = $json->entry;
+                $vals = $decoded->entry;
             }
             foreach($vals as $v) {
                 $type->addEntry(FHIRBundleEntry::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->signature) || property_exists($json, self::FIELD_SIGNATURE)) {
-            if (is_array($json->signature)) {
-                $type->setSignature(FHIRSignature::jsonUnserialize(reset($json->signature), $config));
+        if (isset($decoded->signature) || property_exists($decoded, self::FIELD_SIGNATURE)) {
+            if (is_array($decoded->signature)) {
+                $type->setSignature(FHIRSignature::jsonUnserialize(reset($decoded->signature), $config));
             } else {
-                $type->setSignature(FHIRSignature::jsonUnserialize($json->signature, $config));
+                $type->setSignature(FHIRSignature::jsonUnserialize($decoded->signature, $config));
             }
         }
         return $type;

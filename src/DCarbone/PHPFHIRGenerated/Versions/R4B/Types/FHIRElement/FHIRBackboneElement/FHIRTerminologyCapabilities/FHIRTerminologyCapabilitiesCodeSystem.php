@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -447,13 +447,13 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -467,32 +467,32 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->uri)
-            || isset($json->_uri)
-            || property_exists($json, self::FIELD_URI)
-            || property_exists($json, self::FIELD_URI_EXT)) {
-            $v = $json->_uri ?? new \stdClass();
-            $v->value = $json->uri ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->uri)
+            || isset($decoded->_uri)
+            || property_exists($decoded, self::FIELD_URI)
+            || property_exists($decoded, self::FIELD_URI_EXT)) {
+            $v = $decoded->_uri ?? new \stdClass();
+            $v->value = $decoded->uri ?? null;
             $type->setUri(FHIRCanonical::jsonUnserialize($v, $config));
         }
-        if (isset($json->version) || property_exists($json, self::FIELD_VERSION)) {
-            if (is_object($json->version)) {
-                $vals = [$json->version];
+        if (isset($decoded->version) || property_exists($decoded, self::FIELD_VERSION)) {
+            if (is_object($decoded->version)) {
+                $vals = [$decoded->version];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_VERSION, true);
             } else {
-                $vals = $json->version;
+                $vals = $decoded->version;
             }
             foreach($vals as $v) {
                 $type->addVersion(FHIRTerminologyCapabilitiesVersion::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->subsumption)
-            || isset($json->_subsumption)
-            || property_exists($json, self::FIELD_SUBSUMPTION)
-            || property_exists($json, self::FIELD_SUBSUMPTION_EXT)) {
-            $v = $json->_subsumption ?? new \stdClass();
-            $v->value = $json->subsumption ?? null;
+        if (isset($decoded->subsumption)
+            || isset($decoded->_subsumption)
+            || property_exists($decoded, self::FIELD_SUBSUMPTION)
+            || property_exists($decoded, self::FIELD_SUBSUMPTION_EXT)) {
+            $v = $decoded->_subsumption ?? new \stdClass();
+            $v->value = $decoded->subsumption ?? null;
             $type->setSubsumption(FHIRBoolean::jsonUnserialize($v, $config));
         }
         return $type;

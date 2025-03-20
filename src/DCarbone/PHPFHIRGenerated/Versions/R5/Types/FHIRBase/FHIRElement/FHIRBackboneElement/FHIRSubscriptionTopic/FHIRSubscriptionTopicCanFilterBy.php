@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -737,13 +737,13 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -757,45 +757,45 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->resource)
-            || isset($json->_resource)
-            || property_exists($json, self::FIELD_RESOURCE)
-            || property_exists($json, self::FIELD_RESOURCE_EXT)) {
-            $v = $json->_resource ?? new \stdClass();
-            $v->value = $json->resource ?? null;
+        if (isset($decoded->resource)
+            || isset($decoded->_resource)
+            || property_exists($decoded, self::FIELD_RESOURCE)
+            || property_exists($decoded, self::FIELD_RESOURCE_EXT)) {
+            $v = $decoded->_resource ?? new \stdClass();
+            $v->value = $decoded->resource ?? null;
             $type->setResource(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->filterParameter)
-            || isset($json->_filterParameter)
-            || property_exists($json, self::FIELD_FILTER_PARAMETER)
-            || property_exists($json, self::FIELD_FILTER_PARAMETER_EXT)) {
-            $v = $json->_filterParameter ?? new \stdClass();
-            $v->value = $json->filterParameter ?? null;
+        if (isset($decoded->filterParameter)
+            || isset($decoded->_filterParameter)
+            || property_exists($decoded, self::FIELD_FILTER_PARAMETER)
+            || property_exists($decoded, self::FIELD_FILTER_PARAMETER_EXT)) {
+            $v = $decoded->_filterParameter ?? new \stdClass();
+            $v->value = $decoded->filterParameter ?? null;
             $type->setFilterParameter(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->filterDefinition)
-            || isset($json->_filterDefinition)
-            || property_exists($json, self::FIELD_FILTER_DEFINITION)
-            || property_exists($json, self::FIELD_FILTER_DEFINITION_EXT)) {
-            $v = $json->_filterDefinition ?? new \stdClass();
-            $v->value = $json->filterDefinition ?? null;
+        if (isset($decoded->filterDefinition)
+            || isset($decoded->_filterDefinition)
+            || property_exists($decoded, self::FIELD_FILTER_DEFINITION)
+            || property_exists($decoded, self::FIELD_FILTER_DEFINITION_EXT)) {
+            $v = $decoded->_filterDefinition ?? new \stdClass();
+            $v->value = $decoded->filterDefinition ?? null;
             $type->setFilterDefinition(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->comparator)
-            || isset($json->_comparator)
-            || property_exists($json, self::FIELD_COMPARATOR)
-            || property_exists($json, self::FIELD_COMPARATOR_EXT)) {
-            $vals = (array)($json->comparator ?? []);
-            $exts = (array)($json->FIELD_COMPARATOR_EXT ?? []);
+        if (isset($decoded->comparator)
+            || isset($decoded->_comparator)
+            || property_exists($decoded, self::FIELD_COMPARATOR)
+            || property_exists($decoded, self::FIELD_COMPARATOR_EXT)) {
+            $vals = (array)($decoded->comparator ?? []);
+            $exts = (array)($decoded->FIELD_COMPARATOR_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -807,12 +807,12 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
                 $type->addComparator(FHIRSearchComparator::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->modifier)
-            || isset($json->_modifier)
-            || property_exists($json, self::FIELD_MODIFIER)
-            || property_exists($json, self::FIELD_MODIFIER_EXT)) {
-            $vals = (array)($json->modifier ?? []);
-            $exts = (array)($json->FIELD_MODIFIER_EXT ?? []);
+        if (isset($decoded->modifier)
+            || isset($decoded->_modifier)
+            || property_exists($decoded, self::FIELD_MODIFIER)
+            || property_exists($decoded, self::FIELD_MODIFIER_EXT)) {
+            $vals = (array)($decoded->modifier ?? []);
+            $exts = (array)($decoded->FIELD_MODIFIER_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -787,13 +787,13 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionConstraint $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionConstraint
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -807,61 +807,61 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->key)
-            || isset($json->_key)
-            || property_exists($json, self::FIELD_KEY)
-            || property_exists($json, self::FIELD_KEY_EXT)) {
-            $v = $json->_key ?? new \stdClass();
-            $v->value = $json->key ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->key)
+            || isset($decoded->_key)
+            || property_exists($decoded, self::FIELD_KEY)
+            || property_exists($decoded, self::FIELD_KEY_EXT)) {
+            $v = $decoded->_key ?? new \stdClass();
+            $v->value = $decoded->key ?? null;
             $type->setKey(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json->requirements)
-            || isset($json->_requirements)
-            || property_exists($json, self::FIELD_REQUIREMENTS)
-            || property_exists($json, self::FIELD_REQUIREMENTS_EXT)) {
-            $v = $json->_requirements ?? new \stdClass();
-            $v->value = $json->requirements ?? null;
+        if (isset($decoded->requirements)
+            || isset($decoded->_requirements)
+            || property_exists($decoded, self::FIELD_REQUIREMENTS)
+            || property_exists($decoded, self::FIELD_REQUIREMENTS_EXT)) {
+            $v = $decoded->_requirements ?? new \stdClass();
+            $v->value = $decoded->requirements ?? null;
             $type->setRequirements(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->severity)
-            || isset($json->_severity)
-            || property_exists($json, self::FIELD_SEVERITY)
-            || property_exists($json, self::FIELD_SEVERITY_EXT)) {
-            $v = $json->_severity ?? new \stdClass();
-            $v->value = $json->severity ?? null;
+        if (isset($decoded->severity)
+            || isset($decoded->_severity)
+            || property_exists($decoded, self::FIELD_SEVERITY)
+            || property_exists($decoded, self::FIELD_SEVERITY_EXT)) {
+            $v = $decoded->_severity ?? new \stdClass();
+            $v->value = $decoded->severity ?? null;
             $type->setSeverity(FHIRConstraintSeverity::jsonUnserialize($v, $config));
         }
-        if (isset($json->suppress)
-            || isset($json->_suppress)
-            || property_exists($json, self::FIELD_SUPPRESS)
-            || property_exists($json, self::FIELD_SUPPRESS_EXT)) {
-            $v = $json->_suppress ?? new \stdClass();
-            $v->value = $json->suppress ?? null;
+        if (isset($decoded->suppress)
+            || isset($decoded->_suppress)
+            || property_exists($decoded, self::FIELD_SUPPRESS)
+            || property_exists($decoded, self::FIELD_SUPPRESS_EXT)) {
+            $v = $decoded->_suppress ?? new \stdClass();
+            $v->value = $decoded->suppress ?? null;
             $type->setSuppress(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->human)
-            || isset($json->_human)
-            || property_exists($json, self::FIELD_HUMAN)
-            || property_exists($json, self::FIELD_HUMAN_EXT)) {
-            $v = $json->_human ?? new \stdClass();
-            $v->value = $json->human ?? null;
+        if (isset($decoded->human)
+            || isset($decoded->_human)
+            || property_exists($decoded, self::FIELD_HUMAN)
+            || property_exists($decoded, self::FIELD_HUMAN_EXT)) {
+            $v = $decoded->_human ?? new \stdClass();
+            $v->value = $decoded->human ?? null;
             $type->setHuman(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->expression)
-            || isset($json->_expression)
-            || property_exists($json, self::FIELD_EXPRESSION)
-            || property_exists($json, self::FIELD_EXPRESSION_EXT)) {
-            $v = $json->_expression ?? new \stdClass();
-            $v->value = $json->expression ?? null;
+        if (isset($decoded->expression)
+            || isset($decoded->_expression)
+            || property_exists($decoded, self::FIELD_EXPRESSION)
+            || property_exists($decoded, self::FIELD_EXPRESSION_EXT)) {
+            $v = $decoded->_expression ?? new \stdClass();
+            $v->value = $decoded->expression ?? null;
             $type->setExpression(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->source)
-            || isset($json->_source)
-            || property_exists($json, self::FIELD_SOURCE)
-            || property_exists($json, self::FIELD_SOURCE_EXT)) {
-            $v = $json->_source ?? new \stdClass();
-            $v->value = $json->source ?? null;
+        if (isset($decoded->source)
+            || isset($decoded->_source)
+            || property_exists($decoded, self::FIELD_SOURCE)
+            || property_exists($decoded, self::FIELD_SOURCE_EXT)) {
+            $v = $decoded->_source ?? new \stdClass();
+            $v->value = $decoded->source ?? null;
             $type->setSource(FHIRCanonical::jsonUnserialize($v, $config));
         }
         return $type;

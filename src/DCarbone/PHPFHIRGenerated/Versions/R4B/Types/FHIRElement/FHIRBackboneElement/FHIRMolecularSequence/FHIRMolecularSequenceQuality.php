@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1349,13 +1349,13 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceQuality $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceQuality
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1369,121 +1369,121 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type)
-            || isset($json->_type)
-            || property_exists($json, self::FIELD_TYPE)
-            || property_exists($json, self::FIELD_TYPE_EXT)) {
-            $v = $json->_type ?? new \stdClass();
-            $v->value = $json->type ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type)
+            || isset($decoded->_type)
+            || property_exists($decoded, self::FIELD_TYPE)
+            || property_exists($decoded, self::FIELD_TYPE_EXT)) {
+            $v = $decoded->_type ?? new \stdClass();
+            $v->value = $decoded->type ?? null;
             $type->setType(FHIRQualityType::jsonUnserialize($v, $config));
         }
-        if (isset($json->standardSequence) || property_exists($json, self::FIELD_STANDARD_SEQUENCE)) {
-            if (is_array($json->standardSequence)) {
-                $type->setStandardSequence(FHIRCodeableConcept::jsonUnserialize(reset($json->standardSequence), $config));
+        if (isset($decoded->standardSequence) || property_exists($decoded, self::FIELD_STANDARD_SEQUENCE)) {
+            if (is_array($decoded->standardSequence)) {
+                $type->setStandardSequence(FHIRCodeableConcept::jsonUnserialize(reset($decoded->standardSequence), $config));
             } else {
-                $type->setStandardSequence(FHIRCodeableConcept::jsonUnserialize($json->standardSequence, $config));
+                $type->setStandardSequence(FHIRCodeableConcept::jsonUnserialize($decoded->standardSequence, $config));
             }
         }
-        if (isset($json->start)
-            || isset($json->_start)
-            || property_exists($json, self::FIELD_START)
-            || property_exists($json, self::FIELD_START_EXT)) {
-            $v = $json->_start ?? new \stdClass();
-            $v->value = $json->start ?? null;
+        if (isset($decoded->start)
+            || isset($decoded->_start)
+            || property_exists($decoded, self::FIELD_START)
+            || property_exists($decoded, self::FIELD_START_EXT)) {
+            $v = $decoded->_start ?? new \stdClass();
+            $v->value = $decoded->start ?? null;
             $type->setStart(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->end)
-            || isset($json->_end)
-            || property_exists($json, self::FIELD_END)
-            || property_exists($json, self::FIELD_END_EXT)) {
-            $v = $json->_end ?? new \stdClass();
-            $v->value = $json->end ?? null;
+        if (isset($decoded->end)
+            || isset($decoded->_end)
+            || property_exists($decoded, self::FIELD_END)
+            || property_exists($decoded, self::FIELD_END_EXT)) {
+            $v = $decoded->_end ?? new \stdClass();
+            $v->value = $decoded->end ?? null;
             $type->setEnd(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->score) || property_exists($json, self::FIELD_SCORE)) {
-            if (is_array($json->score)) {
-                $type->setScore(FHIRQuantity::jsonUnserialize(reset($json->score), $config));
+        if (isset($decoded->score) || property_exists($decoded, self::FIELD_SCORE)) {
+            if (is_array($decoded->score)) {
+                $type->setScore(FHIRQuantity::jsonUnserialize(reset($decoded->score), $config));
             } else {
-                $type->setScore(FHIRQuantity::jsonUnserialize($json->score, $config));
+                $type->setScore(FHIRQuantity::jsonUnserialize($decoded->score, $config));
             }
         }
-        if (isset($json->method) || property_exists($json, self::FIELD_METHOD)) {
-            if (is_array($json->method)) {
-                $type->setMethod(FHIRCodeableConcept::jsonUnserialize(reset($json->method), $config));
+        if (isset($decoded->method) || property_exists($decoded, self::FIELD_METHOD)) {
+            if (is_array($decoded->method)) {
+                $type->setMethod(FHIRCodeableConcept::jsonUnserialize(reset($decoded->method), $config));
             } else {
-                $type->setMethod(FHIRCodeableConcept::jsonUnserialize($json->method, $config));
+                $type->setMethod(FHIRCodeableConcept::jsonUnserialize($decoded->method, $config));
             }
         }
-        if (isset($json->truthTP)
-            || isset($json->_truthTP)
-            || property_exists($json, self::FIELD_TRUTH_TP)
-            || property_exists($json, self::FIELD_TRUTH_TP_EXT)) {
-            $v = $json->_truthTP ?? new \stdClass();
-            $v->value = $json->truthTP ?? null;
+        if (isset($decoded->truthTP)
+            || isset($decoded->_truthTP)
+            || property_exists($decoded, self::FIELD_TRUTH_TP)
+            || property_exists($decoded, self::FIELD_TRUTH_TP_EXT)) {
+            $v = $decoded->_truthTP ?? new \stdClass();
+            $v->value = $decoded->truthTP ?? null;
             $type->setTruthTP(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->queryTP)
-            || isset($json->_queryTP)
-            || property_exists($json, self::FIELD_QUERY_TP)
-            || property_exists($json, self::FIELD_QUERY_TP_EXT)) {
-            $v = $json->_queryTP ?? new \stdClass();
-            $v->value = $json->queryTP ?? null;
+        if (isset($decoded->queryTP)
+            || isset($decoded->_queryTP)
+            || property_exists($decoded, self::FIELD_QUERY_TP)
+            || property_exists($decoded, self::FIELD_QUERY_TP_EXT)) {
+            $v = $decoded->_queryTP ?? new \stdClass();
+            $v->value = $decoded->queryTP ?? null;
             $type->setQueryTP(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->truthFN)
-            || isset($json->_truthFN)
-            || property_exists($json, self::FIELD_TRUTH_FN)
-            || property_exists($json, self::FIELD_TRUTH_FN_EXT)) {
-            $v = $json->_truthFN ?? new \stdClass();
-            $v->value = $json->truthFN ?? null;
+        if (isset($decoded->truthFN)
+            || isset($decoded->_truthFN)
+            || property_exists($decoded, self::FIELD_TRUTH_FN)
+            || property_exists($decoded, self::FIELD_TRUTH_FN_EXT)) {
+            $v = $decoded->_truthFN ?? new \stdClass();
+            $v->value = $decoded->truthFN ?? null;
             $type->setTruthFN(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->queryFP)
-            || isset($json->_queryFP)
-            || property_exists($json, self::FIELD_QUERY_FP)
-            || property_exists($json, self::FIELD_QUERY_FP_EXT)) {
-            $v = $json->_queryFP ?? new \stdClass();
-            $v->value = $json->queryFP ?? null;
+        if (isset($decoded->queryFP)
+            || isset($decoded->_queryFP)
+            || property_exists($decoded, self::FIELD_QUERY_FP)
+            || property_exists($decoded, self::FIELD_QUERY_FP_EXT)) {
+            $v = $decoded->_queryFP ?? new \stdClass();
+            $v->value = $decoded->queryFP ?? null;
             $type->setQueryFP(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->gtFP)
-            || isset($json->_gtFP)
-            || property_exists($json, self::FIELD_GT_FP)
-            || property_exists($json, self::FIELD_GT_FP_EXT)) {
-            $v = $json->_gtFP ?? new \stdClass();
-            $v->value = $json->gtFP ?? null;
+        if (isset($decoded->gtFP)
+            || isset($decoded->_gtFP)
+            || property_exists($decoded, self::FIELD_GT_FP)
+            || property_exists($decoded, self::FIELD_GT_FP_EXT)) {
+            $v = $decoded->_gtFP ?? new \stdClass();
+            $v->value = $decoded->gtFP ?? null;
             $type->setGtFP(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->precision)
-            || isset($json->_precision)
-            || property_exists($json, self::FIELD_PRECISION)
-            || property_exists($json, self::FIELD_PRECISION_EXT)) {
-            $v = $json->_precision ?? new \stdClass();
-            $v->value = $json->precision ?? null;
+        if (isset($decoded->precision)
+            || isset($decoded->_precision)
+            || property_exists($decoded, self::FIELD_PRECISION)
+            || property_exists($decoded, self::FIELD_PRECISION_EXT)) {
+            $v = $decoded->_precision ?? new \stdClass();
+            $v->value = $decoded->precision ?? null;
             $type->setPrecision(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->recall)
-            || isset($json->_recall)
-            || property_exists($json, self::FIELD_RECALL)
-            || property_exists($json, self::FIELD_RECALL_EXT)) {
-            $v = $json->_recall ?? new \stdClass();
-            $v->value = $json->recall ?? null;
+        if (isset($decoded->recall)
+            || isset($decoded->_recall)
+            || property_exists($decoded, self::FIELD_RECALL)
+            || property_exists($decoded, self::FIELD_RECALL_EXT)) {
+            $v = $decoded->_recall ?? new \stdClass();
+            $v->value = $decoded->recall ?? null;
             $type->setRecall(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->fScore)
-            || isset($json->_fScore)
-            || property_exists($json, self::FIELD_F_SCORE)
-            || property_exists($json, self::FIELD_F_SCORE_EXT)) {
-            $v = $json->_fScore ?? new \stdClass();
-            $v->value = $json->fScore ?? null;
+        if (isset($decoded->fScore)
+            || isset($decoded->_fScore)
+            || property_exists($decoded, self::FIELD_F_SCORE)
+            || property_exists($decoded, self::FIELD_F_SCORE_EXT)) {
+            $v = $decoded->_fScore ?? new \stdClass();
+            $v->value = $decoded->fScore ?? null;
             $type->setFScore(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->roc) || property_exists($json, self::FIELD_ROC)) {
-            if (is_array($json->roc)) {
-                $type->setRoc(FHIRMolecularSequenceRoc::jsonUnserialize(reset($json->roc), $config));
+        if (isset($decoded->roc) || property_exists($decoded, self::FIELD_ROC)) {
+            if (is_array($decoded->roc)) {
+                $type->setRoc(FHIRMolecularSequenceRoc::jsonUnserialize(reset($decoded->roc), $config));
             } else {
-                $type->setRoc(FHIRMolecularSequenceRoc::jsonUnserialize($json->roc, $config));
+                $type->setRoc(FHIRMolecularSequenceRoc::jsonUnserialize($decoded->roc, $config));
             }
         }
         return $type;

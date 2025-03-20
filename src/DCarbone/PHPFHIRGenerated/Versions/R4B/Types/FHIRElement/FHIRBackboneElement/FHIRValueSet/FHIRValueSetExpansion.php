@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -743,13 +743,13 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -763,56 +763,56 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->identifier)
-            || isset($json->_identifier)
-            || property_exists($json, self::FIELD_IDENTIFIER)
-            || property_exists($json, self::FIELD_IDENTIFIER_EXT)) {
-            $v = $json->_identifier ?? new \stdClass();
-            $v->value = $json->identifier ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->identifier)
+            || isset($decoded->_identifier)
+            || property_exists($decoded, self::FIELD_IDENTIFIER)
+            || property_exists($decoded, self::FIELD_IDENTIFIER_EXT)) {
+            $v = $decoded->_identifier ?? new \stdClass();
+            $v->value = $decoded->identifier ?? null;
             $type->setIdentifier(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->timestamp)
-            || isset($json->_timestamp)
-            || property_exists($json, self::FIELD_TIMESTAMP)
-            || property_exists($json, self::FIELD_TIMESTAMP_EXT)) {
-            $v = $json->_timestamp ?? new \stdClass();
-            $v->value = $json->timestamp ?? null;
+        if (isset($decoded->timestamp)
+            || isset($decoded->_timestamp)
+            || property_exists($decoded, self::FIELD_TIMESTAMP)
+            || property_exists($decoded, self::FIELD_TIMESTAMP_EXT)) {
+            $v = $decoded->_timestamp ?? new \stdClass();
+            $v->value = $decoded->timestamp ?? null;
             $type->setTimestamp(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->total)
-            || isset($json->_total)
-            || property_exists($json, self::FIELD_TOTAL)
-            || property_exists($json, self::FIELD_TOTAL_EXT)) {
-            $v = $json->_total ?? new \stdClass();
-            $v->value = $json->total ?? null;
+        if (isset($decoded->total)
+            || isset($decoded->_total)
+            || property_exists($decoded, self::FIELD_TOTAL)
+            || property_exists($decoded, self::FIELD_TOTAL_EXT)) {
+            $v = $decoded->_total ?? new \stdClass();
+            $v->value = $decoded->total ?? null;
             $type->setTotal(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->offset)
-            || isset($json->_offset)
-            || property_exists($json, self::FIELD_OFFSET)
-            || property_exists($json, self::FIELD_OFFSET_EXT)) {
-            $v = $json->_offset ?? new \stdClass();
-            $v->value = $json->offset ?? null;
+        if (isset($decoded->offset)
+            || isset($decoded->_offset)
+            || property_exists($decoded, self::FIELD_OFFSET)
+            || property_exists($decoded, self::FIELD_OFFSET_EXT)) {
+            $v = $decoded->_offset ?? new \stdClass();
+            $v->value = $decoded->offset ?? null;
             $type->setOffset(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->parameter) || property_exists($json, self::FIELD_PARAMETER)) {
-            if (is_object($json->parameter)) {
-                $vals = [$json->parameter];
+        if (isset($decoded->parameter) || property_exists($decoded, self::FIELD_PARAMETER)) {
+            if (is_object($decoded->parameter)) {
+                $vals = [$decoded->parameter];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PARAMETER, true);
             } else {
-                $vals = $json->parameter;
+                $vals = $decoded->parameter;
             }
             foreach($vals as $v) {
                 $type->addParameter(FHIRValueSetParameter::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->contains) || property_exists($json, self::FIELD_CONTAINS)) {
-            if (is_object($json->contains)) {
-                $vals = [$json->contains];
+        if (isset($decoded->contains) || property_exists($decoded, self::FIELD_CONTAINS)) {
+            if (is_object($decoded->contains)) {
+                $vals = [$decoded->contains];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTAINS, true);
             } else {
-                $vals = $json->contains;
+                $vals = $decoded->contains;
             }
             foreach($vals as $v) {
                 $type->addContains(FHIRValueSetContains::jsonUnserialize($v, $config));

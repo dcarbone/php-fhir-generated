@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -715,13 +715,13 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -735,64 +735,64 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->goal) || property_exists($json, self::FIELD_GOAL)) {
-            if (is_array($json->goal)) {
-                foreach($json->goal as $v) {
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->goal) || property_exists($decoded, self::FIELD_GOAL)) {
+            if (is_array($decoded->goal)) {
+                foreach($decoded->goal as $v) {
                     $type->addGoal($v);
                 }
             } else {
-                $type->addGoal($json->goal);
+                $type->addGoal($decoded->goal);
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_GOAL, true);
             }
         }
-        if (isset($json->status)
-            || isset($json->_status)
-            || property_exists($json, self::FIELD_STATUS)
-            || property_exists($json, self::FIELD_STATUS_EXT)) {
-            $v = $json->_status ?? new \stdClass();
-            $v->value = $json->status ?? null;
+        if (isset($decoded->status)
+            || isset($decoded->_status)
+            || property_exists($decoded, self::FIELD_STATUS)
+            || property_exists($decoded, self::FIELD_STATUS_EXT)) {
+            $v = $decoded->_status ?? new \stdClass();
+            $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRCarePlanActivityStatus::jsonUnserialize($v, $config));
         }
-        if (isset($json->prohibited)
-            || isset($json->_prohibited)
-            || property_exists($json, self::FIELD_PROHIBITED)
-            || property_exists($json, self::FIELD_PROHIBITED_EXT)) {
-            $v = $json->_prohibited ?? new \stdClass();
-            $v->value = $json->prohibited ?? null;
+        if (isset($decoded->prohibited)
+            || isset($decoded->_prohibited)
+            || property_exists($decoded, self::FIELD_PROHIBITED)
+            || property_exists($decoded, self::FIELD_PROHIBITED_EXT)) {
+            $v = $decoded->_prohibited ?? new \stdClass();
+            $v->value = $decoded->prohibited ?? null;
             $type->setProhibited(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->actionResulting) || property_exists($json, self::FIELD_ACTION_RESULTING)) {
-            if (is_object($json->actionResulting)) {
-                $vals = [$json->actionResulting];
+        if (isset($decoded->actionResulting) || property_exists($decoded, self::FIELD_ACTION_RESULTING)) {
+            if (is_object($decoded->actionResulting)) {
+                $vals = [$decoded->actionResulting];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ACTION_RESULTING, true);
             } else {
-                $vals = $json->actionResulting;
+                $vals = $decoded->actionResulting;
             }
             foreach($vals as $v) {
                 $type->addActionResulting(FHIRResourceReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->notes)
-            || isset($json->_notes)
-            || property_exists($json, self::FIELD_NOTES)
-            || property_exists($json, self::FIELD_NOTES_EXT)) {
-            $v = $json->_notes ?? new \stdClass();
-            $v->value = $json->notes ?? null;
+        if (isset($decoded->notes)
+            || isset($decoded->_notes)
+            || property_exists($decoded, self::FIELD_NOTES)
+            || property_exists($decoded, self::FIELD_NOTES_EXT)) {
+            $v = $decoded->_notes ?? new \stdClass();
+            $v->value = $decoded->notes ?? null;
             $type->setNotes(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->detail) || property_exists($json, self::FIELD_DETAIL)) {
-            if (is_array($json->detail)) {
-                $type->setDetail(FHIRResourceReference::jsonUnserialize(reset($json->detail), $config));
+        if (isset($decoded->detail) || property_exists($decoded, self::FIELD_DETAIL)) {
+            if (is_array($decoded->detail)) {
+                $type->setDetail(FHIRResourceReference::jsonUnserialize(reset($decoded->detail), $config));
             } else {
-                $type->setDetail(FHIRResourceReference::jsonUnserialize($json->detail, $config));
+                $type->setDetail(FHIRResourceReference::jsonUnserialize($decoded->detail, $config));
             }
         }
-        if (isset($json->simple) || property_exists($json, self::FIELD_SIMPLE)) {
-            if (is_array($json->simple)) {
-                $type->setSimple(FHIRCarePlanSimple::jsonUnserialize(reset($json->simple), $config));
+        if (isset($decoded->simple) || property_exists($decoded, self::FIELD_SIMPLE)) {
+            if (is_array($decoded->simple)) {
+                $type->setSimple(FHIRCarePlanSimple::jsonUnserialize(reset($decoded->simple), $config));
             } else {
-                $type->setSimple(FHIRCarePlanSimple::jsonUnserialize($json->simple, $config));
+                $type->setSimple(FHIRCarePlanSimple::jsonUnserialize($decoded->simple, $config));
             }
         }
         return $type;

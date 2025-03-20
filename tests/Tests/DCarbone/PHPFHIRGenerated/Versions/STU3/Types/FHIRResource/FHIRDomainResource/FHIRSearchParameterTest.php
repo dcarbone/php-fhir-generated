@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,7 +127,7 @@ class FHIRSearchParameterTest extends TestCase
         $this->assertJSON($rc->getResp());
         $this->assertEquals(200, $rc->getCode(), sprintf('Configured test endpoint "%s" returned non-200 response code', $this->_getTestEndpoint()));
         $bundle = FHIRBundle::jsonUnserialize(
-            json: $rc->getResp(),
+            decoded: $rc->getResp(),
             config: $this->_version->getConfig()->getUnserializeConfig(),
         );
         $entry = $bundle->getEntry();
@@ -161,7 +161,7 @@ class FHIRSearchParameterTest extends TestCase
         $this->assertJSON($rc->getResp());
         $this->assertEquals(200, $rc->getCode(), sprintf('Configured test endpoint "%s" returned non-200 response code', $this->_getTestEndpoint()));
         $bundle = FHIRBundle::jsonUnserialize(
-            json: $rc->getResp(),
+            decoded: $rc->getResp(),
         );
         $entry = $bundle->getEntry();
         $this->assertNotCount(0, $entry);

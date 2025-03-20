@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -33,13 +33,6 @@ abstract class TestAutoloader
         'Tests\DCarbone\PHPFHIRGenerated\Client\ConfigTest' => __DIR__ . '/Client/ConfigTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Client\ClientTest' => __DIR__ . '/Client/ClientTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\TestAutoloader' => __DIR__ . '/TestAutoloader.php',
-        'Tests\DCarbone\PHPFHIRGenerated\Types\MockResourceType' => __DIR__ . '/Types/MockResourceType.php',
-        'Tests\DCarbone\PHPFHIRGenerated\Types\MockTypeFieldsTrait' => __DIR__ . '/Types/MockTypeFieldsTrait.php',
-        'Tests\DCarbone\PHPFHIRGenerated\Types\AbstractMockType' => __DIR__ . '/Types/AbstractMockType.php',
-        'Tests\DCarbone\PHPFHIRGenerated\Types\MockStringPrimitiveType' => __DIR__ . '/Types/MockStringPrimitiveType.php',
-        'Tests\DCarbone\PHPFHIRGenerated\Types\MockElementType' => __DIR__ . '/Types/MockElementType.php',
-        'Tests\DCarbone\PHPFHIRGenerated\Types\MockPrimitiveContainerType' => __DIR__ . '/Types/MockPrimitiveContainerType.php',
-        'Tests\DCarbone\PHPFHIRGenerated\Types\MockResourceIDType' => __DIR__ . '/Types/MockResourceIDType.php',
         'Tests\DCarbone\PHPFHIRGenerated\Versions\VersionConfigTest' => __DIR__ . '/Versions/VersionConfigTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Validation\ValidatorTest' => __DIR__ . '/Validation/ValidatorTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRuleTest' => __DIR__ . '/Validation/Rules/MinOccursRuleTest.php',
@@ -49,8 +42,20 @@ abstract class TestAutoloader
         'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRuleTest' => __DIR__ . '/Validation/Rules/ValuePatternMatchRuleTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMaxLengthRuleTest' => __DIR__ . '/Validation/Rules/ValueMaxLengthRuleTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTraitTest' => __DIR__ . '/Validation/TypeValidationsTraitTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\MockVersion' => __DIR__ . '/Mock/MockVersion.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\MockResourceType' => __DIR__ . '/Mock/MockResourceType.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\MockVersionTypeMap' => __DIR__ . '/Mock/MockVersionTypeMap.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\MockTypeFieldsTrait' => __DIR__ . '/Mock/MockTypeFieldsTrait.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\MockJSONFieldExtractorTrait' => __DIR__ . '/Mock/MockJSONFieldExtractorTrait.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\AbstractMockType' => __DIR__ . '/Mock/AbstractMockType.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\MockVersionConfig' => __DIR__ . '/Mock/MockVersionConfig.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\MockStringPrimitiveType' => __DIR__ . '/Mock/MockStringPrimitiveType.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\MockElementType' => __DIR__ . '/Mock/MockElementType.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\MockPrimitiveContainerType' => __DIR__ . '/Mock/MockPrimitiveContainerType.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Mock\MockResourceIDType' => __DIR__ . '/Mock/MockResourceIDType.php',
         'Tests\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfigTest' => __DIR__ . '/Encoding/SerializeConfigTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Encoding\XMLWriterTest' => __DIR__ . '/Encoding/XMLWriterTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Encoding\ResourceParserTest' => __DIR__ . '/Encoding/ResourceParserTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfigTest' => __DIR__ . '/Encoding/UnserializeConfigTest.php',
     ];
 

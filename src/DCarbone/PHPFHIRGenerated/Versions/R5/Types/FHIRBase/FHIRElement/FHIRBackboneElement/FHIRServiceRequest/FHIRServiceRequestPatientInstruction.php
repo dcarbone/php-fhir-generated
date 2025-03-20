@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -356,13 +356,13 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestPatientInstruction $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestPatientInstruction
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -376,20 +376,20 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->instructionMarkdown)
-            || isset($json->_instructionMarkdown)
-            || property_exists($json, self::FIELD_INSTRUCTION_MARKDOWN)
-            || property_exists($json, self::FIELD_INSTRUCTION_MARKDOWN_EXT)) {
-            $v = $json->_instructionMarkdown ?? new \stdClass();
-            $v->value = $json->instructionMarkdown ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->instructionMarkdown)
+            || isset($decoded->_instructionMarkdown)
+            || property_exists($decoded, self::FIELD_INSTRUCTION_MARKDOWN)
+            || property_exists($decoded, self::FIELD_INSTRUCTION_MARKDOWN_EXT)) {
+            $v = $decoded->_instructionMarkdown ?? new \stdClass();
+            $v->value = $decoded->instructionMarkdown ?? null;
             $type->setInstructionMarkdown(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->instructionReference) || property_exists($json, self::FIELD_INSTRUCTION_REFERENCE)) {
-            if (is_array($json->instructionReference)) {
-                $type->setInstructionReference(FHIRReference::jsonUnserialize(reset($json->instructionReference), $config));
+        if (isset($decoded->instructionReference) || property_exists($decoded, self::FIELD_INSTRUCTION_REFERENCE)) {
+            if (is_array($decoded->instructionReference)) {
+                $type->setInstructionReference(FHIRReference::jsonUnserialize(reset($decoded->instructionReference), $config));
             } else {
-                $type->setInstructionReference(FHIRReference::jsonUnserialize($json->instructionReference, $config));
+                $type->setInstructionReference(FHIRReference::jsonUnserialize($decoded->instructionReference, $config));
             }
         }
         return $type;

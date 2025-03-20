@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -342,13 +342,13 @@ class FHIRCoveragePaymentBy extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoveragePaymentBy $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoveragePaymentBy
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -362,20 +362,20 @@ class FHIRCoveragePaymentBy extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->party) || property_exists($json, self::FIELD_PARTY)) {
-            if (is_array($json->party)) {
-                $type->setParty(FHIRReference::jsonUnserialize(reset($json->party), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->party) || property_exists($decoded, self::FIELD_PARTY)) {
+            if (is_array($decoded->party)) {
+                $type->setParty(FHIRReference::jsonUnserialize(reset($decoded->party), $config));
             } else {
-                $type->setParty(FHIRReference::jsonUnserialize($json->party, $config));
+                $type->setParty(FHIRReference::jsonUnserialize($decoded->party, $config));
             }
         }
-        if (isset($json->responsibility)
-            || isset($json->_responsibility)
-            || property_exists($json, self::FIELD_RESPONSIBILITY)
-            || property_exists($json, self::FIELD_RESPONSIBILITY_EXT)) {
-            $v = $json->_responsibility ?? new \stdClass();
-            $v->value = $json->responsibility ?? null;
+        if (isset($decoded->responsibility)
+            || isset($decoded->_responsibility)
+            || property_exists($decoded, self::FIELD_RESPONSIBILITY)
+            || property_exists($decoded, self::FIELD_RESPONSIBILITY_EXT)) {
+            $v = $decoded->_responsibility ?? new \stdClass();
+            $v->value = $decoded->responsibility ?? null;
             $type->setResponsibility(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

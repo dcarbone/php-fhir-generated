@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -316,13 +316,13 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -336,19 +336,19 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->degree) || property_exists($json, self::FIELD_DEGREE)) {
-            if (is_array($json->degree)) {
-                $type->setDegree(FHIRCodeableConcept::jsonUnserialize(reset($json->degree), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->degree) || property_exists($decoded, self::FIELD_DEGREE)) {
+            if (is_array($decoded->degree)) {
+                $type->setDegree(FHIRCodeableConcept::jsonUnserialize(reset($decoded->degree), $config));
             } else {
-                $type->setDegree(FHIRCodeableConcept::jsonUnserialize($json->degree, $config));
+                $type->setDegree(FHIRCodeableConcept::jsonUnserialize($decoded->degree, $config));
             }
         }
-        if (isset($json->amount) || property_exists($json, self::FIELD_AMOUNT)) {
-            if (is_array($json->amount)) {
-                $type->setAmount(FHIRSubstanceAmount::jsonUnserialize(reset($json->amount), $config));
+        if (isset($decoded->amount) || property_exists($decoded, self::FIELD_AMOUNT)) {
+            if (is_array($decoded->amount)) {
+                $type->setAmount(FHIRSubstanceAmount::jsonUnserialize(reset($decoded->amount), $config));
             } else {
-                $type->setAmount(FHIRSubstanceAmount::jsonUnserialize($json->amount, $config));
+                $type->setAmount(FHIRSubstanceAmount::jsonUnserialize($decoded->amount, $config));
             }
         }
         return $type;

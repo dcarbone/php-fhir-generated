@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -630,13 +630,13 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicResourceTrigger $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicResourceTrigger
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -650,29 +650,29 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->resource)
-            || isset($json->_resource)
-            || property_exists($json, self::FIELD_RESOURCE)
-            || property_exists($json, self::FIELD_RESOURCE_EXT)) {
-            $v = $json->_resource ?? new \stdClass();
-            $v->value = $json->resource ?? null;
+        if (isset($decoded->resource)
+            || isset($decoded->_resource)
+            || property_exists($decoded, self::FIELD_RESOURCE)
+            || property_exists($decoded, self::FIELD_RESOURCE_EXT)) {
+            $v = $decoded->_resource ?? new \stdClass();
+            $v->value = $decoded->resource ?? null;
             $type->setResource(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->supportedInteraction)
-            || isset($json->_supportedInteraction)
-            || property_exists($json, self::FIELD_SUPPORTED_INTERACTION)
-            || property_exists($json, self::FIELD_SUPPORTED_INTERACTION_EXT)) {
-            $vals = (array)($json->supportedInteraction ?? []);
-            $exts = (array)($json->FIELD_SUPPORTED_INTERACTION_EXT ?? []);
+        if (isset($decoded->supportedInteraction)
+            || isset($decoded->_supportedInteraction)
+            || property_exists($decoded, self::FIELD_SUPPORTED_INTERACTION)
+            || property_exists($decoded, self::FIELD_SUPPORTED_INTERACTION_EXT)) {
+            $vals = (array)($decoded->supportedInteraction ?? []);
+            $exts = (array)($decoded->FIELD_SUPPORTED_INTERACTION_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -684,19 +684,19 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
                 $type->addSupportedInteraction(FHIRInteractionTrigger::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->queryCriteria) || property_exists($json, self::FIELD_QUERY_CRITERIA)) {
-            if (is_array($json->queryCriteria)) {
-                $type->setQueryCriteria(FHIRSubscriptionTopicQueryCriteria::jsonUnserialize(reset($json->queryCriteria), $config));
+        if (isset($decoded->queryCriteria) || property_exists($decoded, self::FIELD_QUERY_CRITERIA)) {
+            if (is_array($decoded->queryCriteria)) {
+                $type->setQueryCriteria(FHIRSubscriptionTopicQueryCriteria::jsonUnserialize(reset($decoded->queryCriteria), $config));
             } else {
-                $type->setQueryCriteria(FHIRSubscriptionTopicQueryCriteria::jsonUnserialize($json->queryCriteria, $config));
+                $type->setQueryCriteria(FHIRSubscriptionTopicQueryCriteria::jsonUnserialize($decoded->queryCriteria, $config));
             }
         }
-        if (isset($json->fhirPathCriteria)
-            || isset($json->_fhirPathCriteria)
-            || property_exists($json, self::FIELD_FHIR_PATH_CRITERIA)
-            || property_exists($json, self::FIELD_FHIR_PATH_CRITERIA_EXT)) {
-            $v = $json->_fhirPathCriteria ?? new \stdClass();
-            $v->value = $json->fhirPathCriteria ?? null;
+        if (isset($decoded->fhirPathCriteria)
+            || isset($decoded->_fhirPathCriteria)
+            || property_exists($decoded, self::FIELD_FHIR_PATH_CRITERIA)
+            || property_exists($decoded, self::FIELD_FHIR_PATH_CRITERIA_EXT)) {
+            $v = $decoded->_fhirPathCriteria ?? new \stdClass();
+            $v->value = $decoded->fhirPathCriteria ?? null;
             $type->setFhirPathCriteria(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

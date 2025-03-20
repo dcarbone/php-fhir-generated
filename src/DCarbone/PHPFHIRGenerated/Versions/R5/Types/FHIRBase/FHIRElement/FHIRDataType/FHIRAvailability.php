@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -378,13 +378,13 @@ class FHIRAvailability extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -398,24 +398,24 @@ class FHIRAvailability extends FHIRDataType
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->availableTime) || property_exists($json, self::FIELD_AVAILABLE_TIME)) {
-            if (is_object($json->availableTime)) {
-                $vals = [$json->availableTime];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->availableTime) || property_exists($decoded, self::FIELD_AVAILABLE_TIME)) {
+            if (is_object($decoded->availableTime)) {
+                $vals = [$decoded->availableTime];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_AVAILABLE_TIME, true);
             } else {
-                $vals = $json->availableTime;
+                $vals = $decoded->availableTime;
             }
             foreach($vals as $v) {
                 $type->addAvailableTime(FHIRAvailabilityAvailableTime::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->notAvailableTime) || property_exists($json, self::FIELD_NOT_AVAILABLE_TIME)) {
-            if (is_object($json->notAvailableTime)) {
-                $vals = [$json->notAvailableTime];
+        if (isset($decoded->notAvailableTime) || property_exists($decoded, self::FIELD_NOT_AVAILABLE_TIME)) {
+            if (is_object($decoded->notAvailableTime)) {
+                $vals = [$decoded->notAvailableTime];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_NOT_AVAILABLE_TIME, true);
             } else {
-                $vals = $json->notAvailableTime;
+                $vals = $decoded->notAvailableTime;
             }
             foreach($vals as $v) {
                 $type->addNotAvailableTime(FHIRAvailabilityNotAvailableTime::jsonUnserialize($v, $config));

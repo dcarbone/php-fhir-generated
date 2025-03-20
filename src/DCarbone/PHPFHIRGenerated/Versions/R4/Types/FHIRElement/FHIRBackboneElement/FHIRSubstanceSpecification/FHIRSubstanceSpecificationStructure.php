@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -776,13 +776,13 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -796,72 +796,72 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->stereochemistry) || property_exists($json, self::FIELD_STEREOCHEMISTRY)) {
-            if (is_array($json->stereochemistry)) {
-                $type->setStereochemistry(FHIRCodeableConcept::jsonUnserialize(reset($json->stereochemistry), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->stereochemistry) || property_exists($decoded, self::FIELD_STEREOCHEMISTRY)) {
+            if (is_array($decoded->stereochemistry)) {
+                $type->setStereochemistry(FHIRCodeableConcept::jsonUnserialize(reset($decoded->stereochemistry), $config));
             } else {
-                $type->setStereochemistry(FHIRCodeableConcept::jsonUnserialize($json->stereochemistry, $config));
+                $type->setStereochemistry(FHIRCodeableConcept::jsonUnserialize($decoded->stereochemistry, $config));
             }
         }
-        if (isset($json->opticalActivity) || property_exists($json, self::FIELD_OPTICAL_ACTIVITY)) {
-            if (is_array($json->opticalActivity)) {
-                $type->setOpticalActivity(FHIRCodeableConcept::jsonUnserialize(reset($json->opticalActivity), $config));
+        if (isset($decoded->opticalActivity) || property_exists($decoded, self::FIELD_OPTICAL_ACTIVITY)) {
+            if (is_array($decoded->opticalActivity)) {
+                $type->setOpticalActivity(FHIRCodeableConcept::jsonUnserialize(reset($decoded->opticalActivity), $config));
             } else {
-                $type->setOpticalActivity(FHIRCodeableConcept::jsonUnserialize($json->opticalActivity, $config));
+                $type->setOpticalActivity(FHIRCodeableConcept::jsonUnserialize($decoded->opticalActivity, $config));
             }
         }
-        if (isset($json->molecularFormula)
-            || isset($json->_molecularFormula)
-            || property_exists($json, self::FIELD_MOLECULAR_FORMULA)
-            || property_exists($json, self::FIELD_MOLECULAR_FORMULA_EXT)) {
-            $v = $json->_molecularFormula ?? new \stdClass();
-            $v->value = $json->molecularFormula ?? null;
+        if (isset($decoded->molecularFormula)
+            || isset($decoded->_molecularFormula)
+            || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA)
+            || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA_EXT)) {
+            $v = $decoded->_molecularFormula ?? new \stdClass();
+            $v->value = $decoded->molecularFormula ?? null;
             $type->setMolecularFormula(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->molecularFormulaByMoiety)
-            || isset($json->_molecularFormulaByMoiety)
-            || property_exists($json, self::FIELD_MOLECULAR_FORMULA_BY_MOIETY)
-            || property_exists($json, self::FIELD_MOLECULAR_FORMULA_BY_MOIETY_EXT)) {
-            $v = $json->_molecularFormulaByMoiety ?? new \stdClass();
-            $v->value = $json->molecularFormulaByMoiety ?? null;
+        if (isset($decoded->molecularFormulaByMoiety)
+            || isset($decoded->_molecularFormulaByMoiety)
+            || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA_BY_MOIETY)
+            || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA_BY_MOIETY_EXT)) {
+            $v = $decoded->_molecularFormulaByMoiety ?? new \stdClass();
+            $v->value = $decoded->molecularFormulaByMoiety ?? null;
             $type->setMolecularFormulaByMoiety(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->isotope) || property_exists($json, self::FIELD_ISOTOPE)) {
-            if (is_object($json->isotope)) {
-                $vals = [$json->isotope];
+        if (isset($decoded->isotope) || property_exists($decoded, self::FIELD_ISOTOPE)) {
+            if (is_object($decoded->isotope)) {
+                $vals = [$decoded->isotope];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ISOTOPE, true);
             } else {
-                $vals = $json->isotope;
+                $vals = $decoded->isotope;
             }
             foreach($vals as $v) {
                 $type->addIsotope(FHIRSubstanceSpecificationIsotope::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->molecularWeight) || property_exists($json, self::FIELD_MOLECULAR_WEIGHT)) {
-            if (is_array($json->molecularWeight)) {
-                $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::jsonUnserialize(reset($json->molecularWeight), $config));
+        if (isset($decoded->molecularWeight) || property_exists($decoded, self::FIELD_MOLECULAR_WEIGHT)) {
+            if (is_array($decoded->molecularWeight)) {
+                $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::jsonUnserialize(reset($decoded->molecularWeight), $config));
             } else {
-                $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::jsonUnserialize($json->molecularWeight, $config));
+                $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::jsonUnserialize($decoded->molecularWeight, $config));
             }
         }
-        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
-            if (is_object($json->source)) {
-                $vals = [$json->source];
+        if (isset($decoded->source) || property_exists($decoded, self::FIELD_SOURCE)) {
+            if (is_object($decoded->source)) {
+                $vals = [$decoded->source];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SOURCE, true);
             } else {
-                $vals = $json->source;
+                $vals = $decoded->source;
             }
             foreach($vals as $v) {
                 $type->addSource(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->representation) || property_exists($json, self::FIELD_REPRESENTATION)) {
-            if (is_object($json->representation)) {
-                $vals = [$json->representation];
+        if (isset($decoded->representation) || property_exists($decoded, self::FIELD_REPRESENTATION)) {
+            if (is_object($decoded->representation)) {
+                $vals = [$decoded->representation];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_REPRESENTATION, true);
             } else {
-                $vals = $json->representation;
+                $vals = $decoded->representation;
             }
             foreach($vals as $v) {
                 $type->addRepresentation(FHIRSubstanceSpecificationRepresentation::jsonUnserialize($v, $config));

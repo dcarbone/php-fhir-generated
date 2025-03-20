@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -450,13 +450,13 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -470,29 +470,29 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->affiliation)
-            || isset($json->_affiliation)
-            || property_exists($json, self::FIELD_AFFILIATION)
-            || property_exists($json, self::FIELD_AFFILIATION_EXT)) {
-            $v = $json->_affiliation ?? new \stdClass();
-            $v->value = $json->affiliation ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->affiliation)
+            || isset($decoded->_affiliation)
+            || property_exists($decoded, self::FIELD_AFFILIATION)
+            || property_exists($decoded, self::FIELD_AFFILIATION_EXT)) {
+            $v = $decoded->_affiliation ?? new \stdClass();
+            $v->value = $decoded->affiliation ?? null;
             $type->setAffiliation(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->role)
-            || isset($json->_role)
-            || property_exists($json, self::FIELD_ROLE)
-            || property_exists($json, self::FIELD_ROLE_EXT)) {
-            $v = $json->_role ?? new \stdClass();
-            $v->value = $json->role ?? null;
+        if (isset($decoded->role)
+            || isset($decoded->_role)
+            || property_exists($decoded, self::FIELD_ROLE)
+            || property_exists($decoded, self::FIELD_ROLE_EXT)) {
+            $v = $decoded->_role ?? new \stdClass();
+            $v->value = $decoded->role ?? null;
             $type->setRole(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_object($json->identifier)) {
-                $vals = [$json->identifier];
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_object($decoded->identifier)) {
+                $vals = [$decoded->identifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
             } else {
-                $vals = $json->identifier;
+                $vals = $decoded->identifier;
             }
             foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));

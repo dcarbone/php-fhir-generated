@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -485,13 +485,13 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -505,35 +505,35 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->dayOfMonth)
-            || isset($json->_dayOfMonth)
-            || property_exists($json, self::FIELD_DAY_OF_MONTH)
-            || property_exists($json, self::FIELD_DAY_OF_MONTH_EXT)) {
-            $v = $json->_dayOfMonth ?? new \stdClass();
-            $v->value = $json->dayOfMonth ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->dayOfMonth)
+            || isset($decoded->_dayOfMonth)
+            || property_exists($decoded, self::FIELD_DAY_OF_MONTH)
+            || property_exists($decoded, self::FIELD_DAY_OF_MONTH_EXT)) {
+            $v = $decoded->_dayOfMonth ?? new \stdClass();
+            $v->value = $decoded->dayOfMonth ?? null;
             $type->setDayOfMonth(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->nthWeekOfMonth) || property_exists($json, self::FIELD_NTH_WEEK_OF_MONTH)) {
-            if (is_array($json->nthWeekOfMonth)) {
-                $type->setNthWeekOfMonth(FHIRCoding::jsonUnserialize(reset($json->nthWeekOfMonth), $config));
+        if (isset($decoded->nthWeekOfMonth) || property_exists($decoded, self::FIELD_NTH_WEEK_OF_MONTH)) {
+            if (is_array($decoded->nthWeekOfMonth)) {
+                $type->setNthWeekOfMonth(FHIRCoding::jsonUnserialize(reset($decoded->nthWeekOfMonth), $config));
             } else {
-                $type->setNthWeekOfMonth(FHIRCoding::jsonUnserialize($json->nthWeekOfMonth, $config));
+                $type->setNthWeekOfMonth(FHIRCoding::jsonUnserialize($decoded->nthWeekOfMonth, $config));
             }
         }
-        if (isset($json->dayOfWeek) || property_exists($json, self::FIELD_DAY_OF_WEEK)) {
-            if (is_array($json->dayOfWeek)) {
-                $type->setDayOfWeek(FHIRCoding::jsonUnserialize(reset($json->dayOfWeek), $config));
+        if (isset($decoded->dayOfWeek) || property_exists($decoded, self::FIELD_DAY_OF_WEEK)) {
+            if (is_array($decoded->dayOfWeek)) {
+                $type->setDayOfWeek(FHIRCoding::jsonUnserialize(reset($decoded->dayOfWeek), $config));
             } else {
-                $type->setDayOfWeek(FHIRCoding::jsonUnserialize($json->dayOfWeek, $config));
+                $type->setDayOfWeek(FHIRCoding::jsonUnserialize($decoded->dayOfWeek, $config));
             }
         }
-        if (isset($json->monthInterval)
-            || isset($json->_monthInterval)
-            || property_exists($json, self::FIELD_MONTH_INTERVAL)
-            || property_exists($json, self::FIELD_MONTH_INTERVAL_EXT)) {
-            $v = $json->_monthInterval ?? new \stdClass();
-            $v->value = $json->monthInterval ?? null;
+        if (isset($decoded->monthInterval)
+            || isset($decoded->_monthInterval)
+            || property_exists($decoded, self::FIELD_MONTH_INTERVAL)
+            || property_exists($decoded, self::FIELD_MONTH_INTERVAL_EXT)) {
+            $v = $decoded->_monthInterval ?? new \stdClass();
+            $v->value = $decoded->monthInterval ?? null;
             $type->setMonthInterval(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
         return $type;

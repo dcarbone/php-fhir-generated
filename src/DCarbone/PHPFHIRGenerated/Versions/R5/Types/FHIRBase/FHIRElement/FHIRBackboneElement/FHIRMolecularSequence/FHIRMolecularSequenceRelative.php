@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -550,13 +550,13 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRelative $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRelative
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -570,42 +570,42 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->coordinateSystem) || property_exists($json, self::FIELD_COORDINATE_SYSTEM)) {
-            if (is_array($json->coordinateSystem)) {
-                $type->setCoordinateSystem(FHIRCodeableConcept::jsonUnserialize(reset($json->coordinateSystem), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->coordinateSystem) || property_exists($decoded, self::FIELD_COORDINATE_SYSTEM)) {
+            if (is_array($decoded->coordinateSystem)) {
+                $type->setCoordinateSystem(FHIRCodeableConcept::jsonUnserialize(reset($decoded->coordinateSystem), $config));
             } else {
-                $type->setCoordinateSystem(FHIRCodeableConcept::jsonUnserialize($json->coordinateSystem, $config));
+                $type->setCoordinateSystem(FHIRCodeableConcept::jsonUnserialize($decoded->coordinateSystem, $config));
             }
         }
-        if (isset($json->ordinalPosition)
-            || isset($json->_ordinalPosition)
-            || property_exists($json, self::FIELD_ORDINAL_POSITION)
-            || property_exists($json, self::FIELD_ORDINAL_POSITION_EXT)) {
-            $v = $json->_ordinalPosition ?? new \stdClass();
-            $v->value = $json->ordinalPosition ?? null;
+        if (isset($decoded->ordinalPosition)
+            || isset($decoded->_ordinalPosition)
+            || property_exists($decoded, self::FIELD_ORDINAL_POSITION)
+            || property_exists($decoded, self::FIELD_ORDINAL_POSITION_EXT)) {
+            $v = $decoded->_ordinalPosition ?? new \stdClass();
+            $v->value = $decoded->ordinalPosition ?? null;
             $type->setOrdinalPosition(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->sequenceRange) || property_exists($json, self::FIELD_SEQUENCE_RANGE)) {
-            if (is_array($json->sequenceRange)) {
-                $type->setSequenceRange(FHIRRange::jsonUnserialize(reset($json->sequenceRange), $config));
+        if (isset($decoded->sequenceRange) || property_exists($decoded, self::FIELD_SEQUENCE_RANGE)) {
+            if (is_array($decoded->sequenceRange)) {
+                $type->setSequenceRange(FHIRRange::jsonUnserialize(reset($decoded->sequenceRange), $config));
             } else {
-                $type->setSequenceRange(FHIRRange::jsonUnserialize($json->sequenceRange, $config));
+                $type->setSequenceRange(FHIRRange::jsonUnserialize($decoded->sequenceRange, $config));
             }
         }
-        if (isset($json->startingSequence) || property_exists($json, self::FIELD_STARTING_SEQUENCE)) {
-            if (is_array($json->startingSequence)) {
-                $type->setStartingSequence(FHIRMolecularSequenceStartingSequence::jsonUnserialize(reset($json->startingSequence), $config));
+        if (isset($decoded->startingSequence) || property_exists($decoded, self::FIELD_STARTING_SEQUENCE)) {
+            if (is_array($decoded->startingSequence)) {
+                $type->setStartingSequence(FHIRMolecularSequenceStartingSequence::jsonUnserialize(reset($decoded->startingSequence), $config));
             } else {
-                $type->setStartingSequence(FHIRMolecularSequenceStartingSequence::jsonUnserialize($json->startingSequence, $config));
+                $type->setStartingSequence(FHIRMolecularSequenceStartingSequence::jsonUnserialize($decoded->startingSequence, $config));
             }
         }
-        if (isset($json->edit) || property_exists($json, self::FIELD_EDIT)) {
-            if (is_object($json->edit)) {
-                $vals = [$json->edit];
+        if (isset($decoded->edit) || property_exists($decoded, self::FIELD_EDIT)) {
+            if (is_object($decoded->edit)) {
+                $vals = [$decoded->edit];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_EDIT, true);
             } else {
-                $vals = $json->edit;
+                $vals = $decoded->edit;
             }
             foreach($vals as $v) {
                 $type->addEdit(FHIRMolecularSequenceEdit::jsonUnserialize($v, $config));

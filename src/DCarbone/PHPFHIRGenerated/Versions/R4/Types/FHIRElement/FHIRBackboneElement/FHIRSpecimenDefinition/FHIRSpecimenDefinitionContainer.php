@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -804,13 +804,13 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -824,75 +824,75 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->material) || property_exists($json, self::FIELD_MATERIAL)) {
-            if (is_array($json->material)) {
-                $type->setMaterial(FHIRCodeableConcept::jsonUnserialize(reset($json->material), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->material) || property_exists($decoded, self::FIELD_MATERIAL)) {
+            if (is_array($decoded->material)) {
+                $type->setMaterial(FHIRCodeableConcept::jsonUnserialize(reset($decoded->material), $config));
             } else {
-                $type->setMaterial(FHIRCodeableConcept::jsonUnserialize($json->material, $config));
+                $type->setMaterial(FHIRCodeableConcept::jsonUnserialize($decoded->material, $config));
             }
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->cap) || property_exists($json, self::FIELD_CAP)) {
-            if (is_array($json->cap)) {
-                $type->setCap(FHIRCodeableConcept::jsonUnserialize(reset($json->cap), $config));
+        if (isset($decoded->cap) || property_exists($decoded, self::FIELD_CAP)) {
+            if (is_array($decoded->cap)) {
+                $type->setCap(FHIRCodeableConcept::jsonUnserialize(reset($decoded->cap), $config));
             } else {
-                $type->setCap(FHIRCodeableConcept::jsonUnserialize($json->cap, $config));
+                $type->setCap(FHIRCodeableConcept::jsonUnserialize($decoded->cap, $config));
             }
         }
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->capacity) || property_exists($json, self::FIELD_CAPACITY)) {
-            if (is_array($json->capacity)) {
-                $type->setCapacity(FHIRQuantity::jsonUnserialize(reset($json->capacity), $config));
+        if (isset($decoded->capacity) || property_exists($decoded, self::FIELD_CAPACITY)) {
+            if (is_array($decoded->capacity)) {
+                $type->setCapacity(FHIRQuantity::jsonUnserialize(reset($decoded->capacity), $config));
             } else {
-                $type->setCapacity(FHIRQuantity::jsonUnserialize($json->capacity, $config));
+                $type->setCapacity(FHIRQuantity::jsonUnserialize($decoded->capacity, $config));
             }
         }
-        if (isset($json->minimumVolumeQuantity) || property_exists($json, self::FIELD_MINIMUM_VOLUME_QUANTITY)) {
-            if (is_array($json->minimumVolumeQuantity)) {
-                $type->setMinimumVolumeQuantity(FHIRQuantity::jsonUnserialize(reset($json->minimumVolumeQuantity), $config));
+        if (isset($decoded->minimumVolumeQuantity) || property_exists($decoded, self::FIELD_MINIMUM_VOLUME_QUANTITY)) {
+            if (is_array($decoded->minimumVolumeQuantity)) {
+                $type->setMinimumVolumeQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->minimumVolumeQuantity), $config));
             } else {
-                $type->setMinimumVolumeQuantity(FHIRQuantity::jsonUnserialize($json->minimumVolumeQuantity, $config));
+                $type->setMinimumVolumeQuantity(FHIRQuantity::jsonUnserialize($decoded->minimumVolumeQuantity, $config));
             }
         }
-        if (isset($json->minimumVolumeString)
-            || isset($json->_minimumVolumeString)
-            || property_exists($json, self::FIELD_MINIMUM_VOLUME_STRING)
-            || property_exists($json, self::FIELD_MINIMUM_VOLUME_STRING_EXT)) {
-            $v = $json->_minimumVolumeString ?? new \stdClass();
-            $v->value = $json->minimumVolumeString ?? null;
+        if (isset($decoded->minimumVolumeString)
+            || isset($decoded->_minimumVolumeString)
+            || property_exists($decoded, self::FIELD_MINIMUM_VOLUME_STRING)
+            || property_exists($decoded, self::FIELD_MINIMUM_VOLUME_STRING_EXT)) {
+            $v = $decoded->_minimumVolumeString ?? new \stdClass();
+            $v->value = $decoded->minimumVolumeString ?? null;
             $type->setMinimumVolumeString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->additive) || property_exists($json, self::FIELD_ADDITIVE)) {
-            if (is_object($json->additive)) {
-                $vals = [$json->additive];
+        if (isset($decoded->additive) || property_exists($decoded, self::FIELD_ADDITIVE)) {
+            if (is_object($decoded->additive)) {
+                $vals = [$decoded->additive];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ADDITIVE, true);
             } else {
-                $vals = $json->additive;
+                $vals = $decoded->additive;
             }
             foreach($vals as $v) {
                 $type->addAdditive(FHIRSpecimenDefinitionAdditive::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->preparation)
-            || isset($json->_preparation)
-            || property_exists($json, self::FIELD_PREPARATION)
-            || property_exists($json, self::FIELD_PREPARATION_EXT)) {
-            $v = $json->_preparation ?? new \stdClass();
-            $v->value = $json->preparation ?? null;
+        if (isset($decoded->preparation)
+            || isset($decoded->_preparation)
+            || property_exists($decoded, self::FIELD_PREPARATION)
+            || property_exists($decoded, self::FIELD_PREPARATION_EXT)) {
+            $v = $decoded->_preparation ?? new \stdClass();
+            $v->value = $decoded->preparation ?? null;
             $type->setPreparation(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

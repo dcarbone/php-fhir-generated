@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -346,13 +346,13 @@ class FHIRBundleSearch extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -366,21 +366,21 @@ class FHIRBundleSearch extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->mode)
-            || isset($json->_mode)
-            || property_exists($json, self::FIELD_MODE)
-            || property_exists($json, self::FIELD_MODE_EXT)) {
-            $v = $json->_mode ?? new \stdClass();
-            $v->value = $json->mode ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->mode)
+            || isset($decoded->_mode)
+            || property_exists($decoded, self::FIELD_MODE)
+            || property_exists($decoded, self::FIELD_MODE_EXT)) {
+            $v = $decoded->_mode ?? new \stdClass();
+            $v->value = $decoded->mode ?? null;
             $type->setMode(FHIRSearchEntryMode::jsonUnserialize($v, $config));
         }
-        if (isset($json->score)
-            || isset($json->_score)
-            || property_exists($json, self::FIELD_SCORE)
-            || property_exists($json, self::FIELD_SCORE_EXT)) {
-            $v = $json->_score ?? new \stdClass();
-            $v->value = $json->score ?? null;
+        if (isset($decoded->score)
+            || isset($decoded->_score)
+            || property_exists($decoded, self::FIELD_SCORE)
+            || property_exists($decoded, self::FIELD_SCORE_EXT)) {
+            $v = $decoded->_score ?? new \stdClass();
+            $v->value = $decoded->score ?? null;
             $type->setScore(FHIRDecimal::jsonUnserialize($v, $config));
         }
         return $type;

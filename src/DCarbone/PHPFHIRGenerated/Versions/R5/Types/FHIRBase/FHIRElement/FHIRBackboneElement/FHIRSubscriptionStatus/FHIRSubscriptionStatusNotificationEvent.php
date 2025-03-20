@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -532,13 +532,13 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -552,36 +552,36 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->eventNumber)
-            || isset($json->_eventNumber)
-            || property_exists($json, self::FIELD_EVENT_NUMBER)
-            || property_exists($json, self::FIELD_EVENT_NUMBER_EXT)) {
-            $v = $json->_eventNumber ?? new \stdClass();
-            $v->value = $json->eventNumber ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->eventNumber)
+            || isset($decoded->_eventNumber)
+            || property_exists($decoded, self::FIELD_EVENT_NUMBER)
+            || property_exists($decoded, self::FIELD_EVENT_NUMBER_EXT)) {
+            $v = $decoded->_eventNumber ?? new \stdClass();
+            $v->value = $decoded->eventNumber ?? null;
             $type->setEventNumber(FHIRInteger64::jsonUnserialize($v, $config));
         }
-        if (isset($json->timestamp)
-            || isset($json->_timestamp)
-            || property_exists($json, self::FIELD_TIMESTAMP)
-            || property_exists($json, self::FIELD_TIMESTAMP_EXT)) {
-            $v = $json->_timestamp ?? new \stdClass();
-            $v->value = $json->timestamp ?? null;
+        if (isset($decoded->timestamp)
+            || isset($decoded->_timestamp)
+            || property_exists($decoded, self::FIELD_TIMESTAMP)
+            || property_exists($decoded, self::FIELD_TIMESTAMP_EXT)) {
+            $v = $decoded->_timestamp ?? new \stdClass();
+            $v->value = $decoded->timestamp ?? null;
             $type->setTimestamp(FHIRInstant::jsonUnserialize($v, $config));
         }
-        if (isset($json->focus) || property_exists($json, self::FIELD_FOCUS)) {
-            if (is_array($json->focus)) {
-                $type->setFocus(FHIRReference::jsonUnserialize(reset($json->focus), $config));
+        if (isset($decoded->focus) || property_exists($decoded, self::FIELD_FOCUS)) {
+            if (is_array($decoded->focus)) {
+                $type->setFocus(FHIRReference::jsonUnserialize(reset($decoded->focus), $config));
             } else {
-                $type->setFocus(FHIRReference::jsonUnserialize($json->focus, $config));
+                $type->setFocus(FHIRReference::jsonUnserialize($decoded->focus, $config));
             }
         }
-        if (isset($json->additionalContext) || property_exists($json, self::FIELD_ADDITIONAL_CONTEXT)) {
-            if (is_object($json->additionalContext)) {
-                $vals = [$json->additionalContext];
+        if (isset($decoded->additionalContext) || property_exists($decoded, self::FIELD_ADDITIONAL_CONTEXT)) {
+            if (is_object($decoded->additionalContext)) {
+                $vals = [$decoded->additionalContext];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ADDITIONAL_CONTEXT, true);
             } else {
-                $vals = $json->additionalContext;
+                $vals = $decoded->additionalContext;
             }
             foreach($vals as $v) {
                 $type->addAdditionalContext(FHIRReference::jsonUnserialize($v, $config));

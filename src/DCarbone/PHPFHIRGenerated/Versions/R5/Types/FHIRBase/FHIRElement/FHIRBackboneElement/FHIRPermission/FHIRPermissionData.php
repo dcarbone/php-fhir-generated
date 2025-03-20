@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -535,13 +535,13 @@ class FHIRPermissionData extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionData $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionData
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -555,45 +555,45 @@ class FHIRPermissionData extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->resource) || property_exists($json, self::FIELD_RESOURCE)) {
-            if (is_object($json->resource)) {
-                $vals = [$json->resource];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->resource) || property_exists($decoded, self::FIELD_RESOURCE)) {
+            if (is_object($decoded->resource)) {
+                $vals = [$decoded->resource];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_RESOURCE, true);
             } else {
-                $vals = $json->resource;
+                $vals = $decoded->resource;
             }
             foreach($vals as $v) {
                 $type->addResource(FHIRPermissionResource::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->security) || property_exists($json, self::FIELD_SECURITY)) {
-            if (is_object($json->security)) {
-                $vals = [$json->security];
+        if (isset($decoded->security) || property_exists($decoded, self::FIELD_SECURITY)) {
+            if (is_object($decoded->security)) {
+                $vals = [$decoded->security];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SECURITY, true);
             } else {
-                $vals = $json->security;
+                $vals = $decoded->security;
             }
             foreach($vals as $v) {
                 $type->addSecurity(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
-            if (is_object($json->period)) {
-                $vals = [$json->period];
+        if (isset($decoded->period) || property_exists($decoded, self::FIELD_PERIOD)) {
+            if (is_object($decoded->period)) {
+                $vals = [$decoded->period];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PERIOD, true);
             } else {
-                $vals = $json->period;
+                $vals = $decoded->period;
             }
             foreach($vals as $v) {
                 $type->addPeriod(FHIRPeriod::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->expression) || property_exists($json, self::FIELD_EXPRESSION)) {
-            if (is_array($json->expression)) {
-                $type->setExpression(FHIRExpression::jsonUnserialize(reset($json->expression), $config));
+        if (isset($decoded->expression) || property_exists($decoded, self::FIELD_EXPRESSION)) {
+            if (is_array($decoded->expression)) {
+                $type->setExpression(FHIRExpression::jsonUnserialize(reset($decoded->expression), $config));
             } else {
-                $type->setExpression(FHIRExpression::jsonUnserialize($json->expression, $config));
+                $type->setExpression(FHIRExpression::jsonUnserialize($decoded->expression, $config));
             }
         }
         return $type;

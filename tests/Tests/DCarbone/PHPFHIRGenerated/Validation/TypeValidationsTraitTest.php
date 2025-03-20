@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -32,10 +32,10 @@ use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMaxLengthRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
-use Tests\DCarbone\PHPFHIRGenerated\Types\MockElementType;
-use Tests\DCarbone\PHPFHIRGenerated\Types\MockPrimitiveContainerType;
-use Tests\DCarbone\PHPFHIRGenerated\Types\MockResourceType;
-use Tests\DCarbone\PHPFHIRGenerated\Types\MockStringPrimitiveType;
+use Tests\DCarbone\PHPFHIRGenerated\Mock\MockElementType;
+use Tests\DCarbone\PHPFHIRGenerated\Mock\MockPrimitiveContainerType;
+use Tests\DCarbone\PHPFHIRGenerated\Mock\MockResourceType;
+use Tests\DCarbone\PHPFHIRGenerated\Mock\MockStringPrimitiveType;
 use PHPUnit\Framework\TestCase;
 
 class TypeValidationsTraitTest extends TestCase

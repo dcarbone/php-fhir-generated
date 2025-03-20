@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -477,13 +477,13 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPeriodicRelease $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPeriodicRelease
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -497,35 +497,35 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->citedMedium) || property_exists($json, self::FIELD_CITED_MEDIUM)) {
-            if (is_array($json->citedMedium)) {
-                $type->setCitedMedium(FHIRCodeableConcept::jsonUnserialize(reset($json->citedMedium), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->citedMedium) || property_exists($decoded, self::FIELD_CITED_MEDIUM)) {
+            if (is_array($decoded->citedMedium)) {
+                $type->setCitedMedium(FHIRCodeableConcept::jsonUnserialize(reset($decoded->citedMedium), $config));
             } else {
-                $type->setCitedMedium(FHIRCodeableConcept::jsonUnserialize($json->citedMedium, $config));
+                $type->setCitedMedium(FHIRCodeableConcept::jsonUnserialize($decoded->citedMedium, $config));
             }
         }
-        if (isset($json->volume)
-            || isset($json->_volume)
-            || property_exists($json, self::FIELD_VOLUME)
-            || property_exists($json, self::FIELD_VOLUME_EXT)) {
-            $v = $json->_volume ?? new \stdClass();
-            $v->value = $json->volume ?? null;
+        if (isset($decoded->volume)
+            || isset($decoded->_volume)
+            || property_exists($decoded, self::FIELD_VOLUME)
+            || property_exists($decoded, self::FIELD_VOLUME_EXT)) {
+            $v = $decoded->_volume ?? new \stdClass();
+            $v->value = $decoded->volume ?? null;
             $type->setVolume(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->issue)
-            || isset($json->_issue)
-            || property_exists($json, self::FIELD_ISSUE)
-            || property_exists($json, self::FIELD_ISSUE_EXT)) {
-            $v = $json->_issue ?? new \stdClass();
-            $v->value = $json->issue ?? null;
+        if (isset($decoded->issue)
+            || isset($decoded->_issue)
+            || property_exists($decoded, self::FIELD_ISSUE)
+            || property_exists($decoded, self::FIELD_ISSUE_EXT)) {
+            $v = $decoded->_issue ?? new \stdClass();
+            $v->value = $decoded->issue ?? null;
             $type->setIssue(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->dateOfPublication) || property_exists($json, self::FIELD_DATE_OF_PUBLICATION)) {
-            if (is_array($json->dateOfPublication)) {
-                $type->setDateOfPublication(FHIRCitationDateOfPublication::jsonUnserialize(reset($json->dateOfPublication), $config));
+        if (isset($decoded->dateOfPublication) || property_exists($decoded, self::FIELD_DATE_OF_PUBLICATION)) {
+            if (is_array($decoded->dateOfPublication)) {
+                $type->setDateOfPublication(FHIRCitationDateOfPublication::jsonUnserialize(reset($decoded->dateOfPublication), $config));
             } else {
-                $type->setDateOfPublication(FHIRCitationDateOfPublication::jsonUnserialize($json->dateOfPublication, $config));
+                $type->setDateOfPublication(FHIRCitationDateOfPublication::jsonUnserialize($decoded->dateOfPublication, $config));
             }
         }
         return $type;

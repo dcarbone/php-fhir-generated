@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -347,13 +347,13 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -367,20 +367,20 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->ratioType) || property_exists($json, self::FIELD_RATIO_TYPE)) {
-            if (is_array($json->ratioType)) {
-                $type->setRatioType(FHIRCodeableConcept::jsonUnserialize(reset($json->ratioType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->ratioType) || property_exists($decoded, self::FIELD_RATIO_TYPE)) {
+            if (is_array($decoded->ratioType)) {
+                $type->setRatioType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->ratioType), $config));
             } else {
-                $type->setRatioType(FHIRCodeableConcept::jsonUnserialize($json->ratioType, $config));
+                $type->setRatioType(FHIRCodeableConcept::jsonUnserialize($decoded->ratioType, $config));
             }
         }
-        if (isset($json->startingMaterial) || property_exists($json, self::FIELD_STARTING_MATERIAL)) {
-            if (is_object($json->startingMaterial)) {
-                $vals = [$json->startingMaterial];
+        if (isset($decoded->startingMaterial) || property_exists($decoded, self::FIELD_STARTING_MATERIAL)) {
+            if (is_object($decoded->startingMaterial)) {
+                $vals = [$decoded->startingMaterial];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_STARTING_MATERIAL, true);
             } else {
-                $vals = $json->startingMaterial;
+                $vals = $decoded->startingMaterial;
             }
             foreach($vals as $v) {
                 $type->addStartingMaterial(FHIRSubstancePolymerStartingMaterial::jsonUnserialize($v, $config));

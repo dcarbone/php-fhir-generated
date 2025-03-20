@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -580,13 +580,13 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -600,48 +600,48 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->hierarchical)
-            || isset($json->_hierarchical)
-            || property_exists($json, self::FIELD_HIERARCHICAL)
-            || property_exists($json, self::FIELD_HIERARCHICAL_EXT)) {
-            $v = $json->_hierarchical ?? new \stdClass();
-            $v->value = $json->hierarchical ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->hierarchical)
+            || isset($decoded->_hierarchical)
+            || property_exists($decoded, self::FIELD_HIERARCHICAL)
+            || property_exists($decoded, self::FIELD_HIERARCHICAL_EXT)) {
+            $v = $decoded->_hierarchical ?? new \stdClass();
+            $v->value = $decoded->hierarchical ?? null;
             $type->setHierarchical(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->paging)
-            || isset($json->_paging)
-            || property_exists($json, self::FIELD_PAGING)
-            || property_exists($json, self::FIELD_PAGING_EXT)) {
-            $v = $json->_paging ?? new \stdClass();
-            $v->value = $json->paging ?? null;
+        if (isset($decoded->paging)
+            || isset($decoded->_paging)
+            || property_exists($decoded, self::FIELD_PAGING)
+            || property_exists($decoded, self::FIELD_PAGING_EXT)) {
+            $v = $decoded->_paging ?? new \stdClass();
+            $v->value = $decoded->paging ?? null;
             $type->setPaging(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->incomplete)
-            || isset($json->_incomplete)
-            || property_exists($json, self::FIELD_INCOMPLETE)
-            || property_exists($json, self::FIELD_INCOMPLETE_EXT)) {
-            $v = $json->_incomplete ?? new \stdClass();
-            $v->value = $json->incomplete ?? null;
+        if (isset($decoded->incomplete)
+            || isset($decoded->_incomplete)
+            || property_exists($decoded, self::FIELD_INCOMPLETE)
+            || property_exists($decoded, self::FIELD_INCOMPLETE_EXT)) {
+            $v = $decoded->_incomplete ?? new \stdClass();
+            $v->value = $decoded->incomplete ?? null;
             $type->setIncomplete(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->parameter) || property_exists($json, self::FIELD_PARAMETER)) {
-            if (is_object($json->parameter)) {
-                $vals = [$json->parameter];
+        if (isset($decoded->parameter) || property_exists($decoded, self::FIELD_PARAMETER)) {
+            if (is_object($decoded->parameter)) {
+                $vals = [$decoded->parameter];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PARAMETER, true);
             } else {
-                $vals = $json->parameter;
+                $vals = $decoded->parameter;
             }
             foreach($vals as $v) {
                 $type->addParameter(FHIRTerminologyCapabilitiesParameter::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->textFilter)
-            || isset($json->_textFilter)
-            || property_exists($json, self::FIELD_TEXT_FILTER)
-            || property_exists($json, self::FIELD_TEXT_FILTER_EXT)) {
-            $v = $json->_textFilter ?? new \stdClass();
-            $v->value = $json->textFilter ?? null;
+        if (isset($decoded->textFilter)
+            || isset($decoded->_textFilter)
+            || property_exists($decoded, self::FIELD_TEXT_FILTER)
+            || property_exists($decoded, self::FIELD_TEXT_FILTER_EXT)) {
+            $v = $decoded->_textFilter ?? new \stdClass();
+            $v->value = $decoded->textFilter ?? null;
             $type->setTextFilter(FHIRMarkdown::jsonUnserialize($v, $config));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -430,13 +430,13 @@ class FHIRCompositionAttester extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -450,28 +450,28 @@ class FHIRCompositionAttester extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->mode)
-            || isset($json->_mode)
-            || property_exists($json, self::FIELD_MODE)
-            || property_exists($json, self::FIELD_MODE_EXT)) {
-            $v = $json->_mode ?? new \stdClass();
-            $v->value = $json->mode ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->mode)
+            || isset($decoded->_mode)
+            || property_exists($decoded, self::FIELD_MODE)
+            || property_exists($decoded, self::FIELD_MODE_EXT)) {
+            $v = $decoded->_mode ?? new \stdClass();
+            $v->value = $decoded->mode ?? null;
             $type->setMode(FHIRCompositionAttestationMode::jsonUnserialize($v, $config));
         }
-        if (isset($json->time)
-            || isset($json->_time)
-            || property_exists($json, self::FIELD_TIME)
-            || property_exists($json, self::FIELD_TIME_EXT)) {
-            $v = $json->_time ?? new \stdClass();
-            $v->value = $json->time ?? null;
+        if (isset($decoded->time)
+            || isset($decoded->_time)
+            || property_exists($decoded, self::FIELD_TIME)
+            || property_exists($decoded, self::FIELD_TIME_EXT)) {
+            $v = $decoded->_time ?? new \stdClass();
+            $v->value = $decoded->time ?? null;
             $type->setTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->party) || property_exists($json, self::FIELD_PARTY)) {
-            if (is_array($json->party)) {
-                $type->setParty(FHIRReference::jsonUnserialize(reset($json->party), $config));
+        if (isset($decoded->party) || property_exists($decoded, self::FIELD_PARTY)) {
+            if (is_array($decoded->party)) {
+                $type->setParty(FHIRReference::jsonUnserialize(reset($decoded->party), $config));
             } else {
-                $type->setParty(FHIRReference::jsonUnserialize($json->party, $config));
+                $type->setParty(FHIRReference::jsonUnserialize($decoded->party, $config));
             }
         }
         return $type;

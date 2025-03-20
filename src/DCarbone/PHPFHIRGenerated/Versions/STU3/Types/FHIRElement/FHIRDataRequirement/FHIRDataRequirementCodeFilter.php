@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequ
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -753,13 +753,13 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -773,36 +773,36 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->path)
-            || isset($json->_path)
-            || property_exists($json, self::FIELD_PATH)
-            || property_exists($json, self::FIELD_PATH_EXT)) {
-            $v = $json->_path ?? new \stdClass();
-            $v->value = $json->path ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->path)
+            || isset($decoded->_path)
+            || property_exists($decoded, self::FIELD_PATH)
+            || property_exists($decoded, self::FIELD_PATH_EXT)) {
+            $v = $decoded->_path ?? new \stdClass();
+            $v->value = $decoded->path ?? null;
             $type->setPath(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->valueSetString)
-            || isset($json->_valueSetString)
-            || property_exists($json, self::FIELD_VALUE_SET_STRING)
-            || property_exists($json, self::FIELD_VALUE_SET_STRING_EXT)) {
-            $v = $json->_valueSetString ?? new \stdClass();
-            $v->value = $json->valueSetString ?? null;
+        if (isset($decoded->valueSetString)
+            || isset($decoded->_valueSetString)
+            || property_exists($decoded, self::FIELD_VALUE_SET_STRING)
+            || property_exists($decoded, self::FIELD_VALUE_SET_STRING_EXT)) {
+            $v = $decoded->_valueSetString ?? new \stdClass();
+            $v->value = $decoded->valueSetString ?? null;
             $type->setValueSetString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->valueSetReference) || property_exists($json, self::FIELD_VALUE_SET_REFERENCE)) {
-            if (is_array($json->valueSetReference)) {
-                $type->setValueSetReference(FHIRReference::jsonUnserialize(reset($json->valueSetReference), $config));
+        if (isset($decoded->valueSetReference) || property_exists($decoded, self::FIELD_VALUE_SET_REFERENCE)) {
+            if (is_array($decoded->valueSetReference)) {
+                $type->setValueSetReference(FHIRReference::jsonUnserialize(reset($decoded->valueSetReference), $config));
             } else {
-                $type->setValueSetReference(FHIRReference::jsonUnserialize($json->valueSetReference, $config));
+                $type->setValueSetReference(FHIRReference::jsonUnserialize($decoded->valueSetReference, $config));
             }
         }
-        if (isset($json->valueCode)
-            || isset($json->_valueCode)
-            || property_exists($json, self::FIELD_VALUE_CODE)
-            || property_exists($json, self::FIELD_VALUE_CODE_EXT)) {
-            $vals = (array)($json->valueCode ?? []);
-            $exts = (array)($json->FIELD_VALUE_CODE_EXT ?? []);
+        if (isset($decoded->valueCode)
+            || isset($decoded->_valueCode)
+            || property_exists($decoded, self::FIELD_VALUE_CODE)
+            || property_exists($decoded, self::FIELD_VALUE_CODE_EXT)) {
+            $vals = (array)($decoded->valueCode ?? []);
+            $exts = (array)($decoded->FIELD_VALUE_CODE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -814,23 +814,23 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 $type->addValueCode(FHIRCode::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->valueCoding) || property_exists($json, self::FIELD_VALUE_CODING)) {
-            if (is_object($json->valueCoding)) {
-                $vals = [$json->valueCoding];
+        if (isset($decoded->valueCoding) || property_exists($decoded, self::FIELD_VALUE_CODING)) {
+            if (is_object($decoded->valueCoding)) {
+                $vals = [$decoded->valueCoding];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_VALUE_CODING, true);
             } else {
-                $vals = $json->valueCoding;
+                $vals = $decoded->valueCoding;
             }
             foreach($vals as $v) {
                 $type->addValueCoding(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->valueCodeableConcept) || property_exists($json, self::FIELD_VALUE_CODEABLE_CONCEPT)) {
-            if (is_object($json->valueCodeableConcept)) {
-                $vals = [$json->valueCodeableConcept];
+        if (isset($decoded->valueCodeableConcept) || property_exists($decoded, self::FIELD_VALUE_CODEABLE_CONCEPT)) {
+            if (is_object($decoded->valueCodeableConcept)) {
+                $vals = [$decoded->valueCodeableConcept];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_VALUE_CODEABLE_CONCEPT, true);
             } else {
-                $vals = $json->valueCodeableConcept;
+                $vals = $decoded->valueCodeableConcept;
             }
             foreach($vals as $v) {
                 $type->addValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($v, $config));

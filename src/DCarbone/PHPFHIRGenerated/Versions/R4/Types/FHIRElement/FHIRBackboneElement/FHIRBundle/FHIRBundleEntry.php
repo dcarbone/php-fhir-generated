@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -585,13 +585,13 @@ class FHIRBundleEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -605,51 +605,51 @@ class FHIRBundleEntry extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->link) || property_exists($json, self::FIELD_LINK)) {
-            if (is_object($json->link)) {
-                $vals = [$json->link];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->link) || property_exists($decoded, self::FIELD_LINK)) {
+            if (is_object($decoded->link)) {
+                $vals = [$decoded->link];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_LINK, true);
             } else {
-                $vals = $json->link;
+                $vals = $decoded->link;
             }
             foreach($vals as $v) {
                 $type->addLink(FHIRBundleLink::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->fullUrl)
-            || isset($json->_fullUrl)
-            || property_exists($json, self::FIELD_FULL_URL)
-            || property_exists($json, self::FIELD_FULL_URL_EXT)) {
-            $v = $json->_fullUrl ?? new \stdClass();
-            $v->value = $json->fullUrl ?? null;
+        if (isset($decoded->fullUrl)
+            || isset($decoded->_fullUrl)
+            || property_exists($decoded, self::FIELD_FULL_URL)
+            || property_exists($decoded, self::FIELD_FULL_URL_EXT)) {
+            $v = $decoded->_fullUrl ?? new \stdClass();
+            $v->value = $decoded->fullUrl ?? null;
             $type->setFullUrl(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->resource)) {
-            $typeClassName = VersionTypeMap::mustGetContainedTypeClassnameFromJSON($json->resource);
-            $v = $json->resource;
+        if (isset($decoded->resource)) {
+            $typeClassName = VersionTypeMap::mustGetContainedTypeClassnameFromJSON($decoded->resource);
+            $v = $decoded->resource;
             unset($v->resourceType);
             $type->setResource($typeClassName::jsonUnserialize($v, $config));
         }
-        if (isset($json->search) || property_exists($json, self::FIELD_SEARCH)) {
-            if (is_array($json->search)) {
-                $type->setSearch(FHIRBundleSearch::jsonUnserialize(reset($json->search), $config));
+        if (isset($decoded->search) || property_exists($decoded, self::FIELD_SEARCH)) {
+            if (is_array($decoded->search)) {
+                $type->setSearch(FHIRBundleSearch::jsonUnserialize(reset($decoded->search), $config));
             } else {
-                $type->setSearch(FHIRBundleSearch::jsonUnserialize($json->search, $config));
+                $type->setSearch(FHIRBundleSearch::jsonUnserialize($decoded->search, $config));
             }
         }
-        if (isset($json->request) || property_exists($json, self::FIELD_REQUEST)) {
-            if (is_array($json->request)) {
-                $type->setRequest(FHIRBundleRequest::jsonUnserialize(reset($json->request), $config));
+        if (isset($decoded->request) || property_exists($decoded, self::FIELD_REQUEST)) {
+            if (is_array($decoded->request)) {
+                $type->setRequest(FHIRBundleRequest::jsonUnserialize(reset($decoded->request), $config));
             } else {
-                $type->setRequest(FHIRBundleRequest::jsonUnserialize($json->request, $config));
+                $type->setRequest(FHIRBundleRequest::jsonUnserialize($decoded->request, $config));
             }
         }
-        if (isset($json->response) || property_exists($json, self::FIELD_RESPONSE)) {
-            if (is_array($json->response)) {
-                $type->setResponse(FHIRBundleResponse::jsonUnserialize(reset($json->response), $config));
+        if (isset($decoded->response) || property_exists($decoded, self::FIELD_RESPONSE)) {
+            if (is_array($decoded->response)) {
+                $type->setResponse(FHIRBundleResponse::jsonUnserialize(reset($decoded->response), $config));
             } else {
-                $type->setResponse(FHIRBundleResponse::jsonUnserialize($json->response, $config));
+                $type->setResponse(FHIRBundleResponse::jsonUnserialize($decoded->response, $config));
             }
         }
         return $type;

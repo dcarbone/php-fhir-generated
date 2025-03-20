@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -473,13 +473,13 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -493,35 +493,35 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->targetNumber)
-            || isset($json->_targetNumber)
-            || property_exists($json, self::FIELD_TARGET_NUMBER)
-            || property_exists($json, self::FIELD_TARGET_NUMBER_EXT)) {
-            $v = $json->_targetNumber ?? new \stdClass();
-            $v->value = $json->targetNumber ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->targetNumber)
+            || isset($decoded->_targetNumber)
+            || property_exists($decoded, self::FIELD_TARGET_NUMBER)
+            || property_exists($decoded, self::FIELD_TARGET_NUMBER_EXT)) {
+            $v = $decoded->_targetNumber ?? new \stdClass();
+            $v->value = $decoded->targetNumber ?? null;
             $type->setTargetNumber(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->actualNumber)
-            || isset($json->_actualNumber)
-            || property_exists($json, self::FIELD_ACTUAL_NUMBER)
-            || property_exists($json, self::FIELD_ACTUAL_NUMBER_EXT)) {
-            $v = $json->_actualNumber ?? new \stdClass();
-            $v->value = $json->actualNumber ?? null;
+        if (isset($decoded->actualNumber)
+            || isset($decoded->_actualNumber)
+            || property_exists($decoded, self::FIELD_ACTUAL_NUMBER)
+            || property_exists($decoded, self::FIELD_ACTUAL_NUMBER_EXT)) {
+            $v = $decoded->_actualNumber ?? new \stdClass();
+            $v->value = $decoded->actualNumber ?? null;
             $type->setActualNumber(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->eligibility) || property_exists($json, self::FIELD_ELIGIBILITY)) {
-            if (is_array($json->eligibility)) {
-                $type->setEligibility(FHIRReference::jsonUnserialize(reset($json->eligibility), $config));
+        if (isset($decoded->eligibility) || property_exists($decoded, self::FIELD_ELIGIBILITY)) {
+            if (is_array($decoded->eligibility)) {
+                $type->setEligibility(FHIRReference::jsonUnserialize(reset($decoded->eligibility), $config));
             } else {
-                $type->setEligibility(FHIRReference::jsonUnserialize($json->eligibility, $config));
+                $type->setEligibility(FHIRReference::jsonUnserialize($decoded->eligibility, $config));
             }
         }
-        if (isset($json->actualGroup) || property_exists($json, self::FIELD_ACTUAL_GROUP)) {
-            if (is_array($json->actualGroup)) {
-                $type->setActualGroup(FHIRReference::jsonUnserialize(reset($json->actualGroup), $config));
+        if (isset($decoded->actualGroup) || property_exists($decoded, self::FIELD_ACTUAL_GROUP)) {
+            if (is_array($decoded->actualGroup)) {
+                $type->setActualGroup(FHIRReference::jsonUnserialize(reset($decoded->actualGroup), $config));
             } else {
-                $type->setActualGroup(FHIRReference::jsonUnserialize($json->actualGroup, $config));
+                $type->setActualGroup(FHIRReference::jsonUnserialize($decoded->actualGroup, $config));
             }
         }
         return $type;

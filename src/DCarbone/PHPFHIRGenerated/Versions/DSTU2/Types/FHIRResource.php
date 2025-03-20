@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -519,13 +519,13 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -542,44 +542,44 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        if (isset($json->{Constants::JSON_FIELD_FHIR_COMMENTS})) {
-            $type->_setFHIRComments((array)$json->{Constants::JSON_FIELD_FHIR_COMMENTS});
+        if (isset($decoded->{Constants::JSON_FIELD_FHIR_COMMENTS})) {
+            $type->_setFHIRComments((array)$decoded->{Constants::JSON_FIELD_FHIR_COMMENTS});
         }
-        if (isset($json->id)
-            || isset($json->_id)
-            || property_exists($json, self::FIELD_ID)
-            || property_exists($json, self::FIELD_ID_EXT)) {
-            $v = $json->_id ?? new \stdClass();
-            $v->value = $json->id ?? null;
+        if (isset($decoded->id)
+            || isset($decoded->_id)
+            || property_exists($decoded, self::FIELD_ID)
+            || property_exists($decoded, self::FIELD_ID_EXT)) {
+            $v = $decoded->_id ?? new \stdClass();
+            $v->value = $decoded->id ?? null;
             $type->setId(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json->meta) || property_exists($json, self::FIELD_META)) {
-            if (is_array($json->meta)) {
-                $type->setMeta(FHIRMeta::jsonUnserialize(reset($json->meta), $config));
+        if (isset($decoded->meta) || property_exists($decoded, self::FIELD_META)) {
+            if (is_array($decoded->meta)) {
+                $type->setMeta(FHIRMeta::jsonUnserialize(reset($decoded->meta), $config));
             } else {
-                $type->setMeta(FHIRMeta::jsonUnserialize($json->meta, $config));
+                $type->setMeta(FHIRMeta::jsonUnserialize($decoded->meta, $config));
             }
         }
-        if (isset($json->implicitRules)
-            || isset($json->_implicitRules)
-            || property_exists($json, self::FIELD_IMPLICIT_RULES)
-            || property_exists($json, self::FIELD_IMPLICIT_RULES_EXT)) {
-            $v = $json->_implicitRules ?? new \stdClass();
-            $v->value = $json->implicitRules ?? null;
+        if (isset($decoded->implicitRules)
+            || isset($decoded->_implicitRules)
+            || property_exists($decoded, self::FIELD_IMPLICIT_RULES)
+            || property_exists($decoded, self::FIELD_IMPLICIT_RULES_EXT)) {
+            $v = $decoded->_implicitRules ?? new \stdClass();
+            $v->value = $decoded->implicitRules ?? null;
             $type->setImplicitRules(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->language)
-            || isset($json->_language)
-            || property_exists($json, self::FIELD_LANGUAGE)
-            || property_exists($json, self::FIELD_LANGUAGE_EXT)) {
-            $v = $json->_language ?? new \stdClass();
-            $v->value = $json->language ?? null;
+        if (isset($decoded->language)
+            || isset($decoded->_language)
+            || property_exists($decoded, self::FIELD_LANGUAGE)
+            || property_exists($decoded, self::FIELD_LANGUAGE_EXT)) {
+            $v = $decoded->_language ?? new \stdClass();
+            $v->value = $decoded->language ?? null;
             $type->setLanguage(FHIRCode::jsonUnserialize($v, $config));
         }
         return $type;

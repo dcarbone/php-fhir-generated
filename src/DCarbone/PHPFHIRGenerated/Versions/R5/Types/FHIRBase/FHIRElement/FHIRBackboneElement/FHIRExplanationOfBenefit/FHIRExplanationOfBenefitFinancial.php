@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -628,13 +628,13 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -648,50 +648,50 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->allowedUnsignedInt)
-            || isset($json->_allowedUnsignedInt)
-            || property_exists($json, self::FIELD_ALLOWED_UNSIGNED_INT)
-            || property_exists($json, self::FIELD_ALLOWED_UNSIGNED_INT_EXT)) {
-            $v = $json->_allowedUnsignedInt ?? new \stdClass();
-            $v->value = $json->allowedUnsignedInt ?? null;
+        if (isset($decoded->allowedUnsignedInt)
+            || isset($decoded->_allowedUnsignedInt)
+            || property_exists($decoded, self::FIELD_ALLOWED_UNSIGNED_INT)
+            || property_exists($decoded, self::FIELD_ALLOWED_UNSIGNED_INT_EXT)) {
+            $v = $decoded->_allowedUnsignedInt ?? new \stdClass();
+            $v->value = $decoded->allowedUnsignedInt ?? null;
             $type->setAllowedUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->allowedString)
-            || isset($json->_allowedString)
-            || property_exists($json, self::FIELD_ALLOWED_STRING)
-            || property_exists($json, self::FIELD_ALLOWED_STRING_EXT)) {
-            $v = $json->_allowedString ?? new \stdClass();
-            $v->value = $json->allowedString ?? null;
+        if (isset($decoded->allowedString)
+            || isset($decoded->_allowedString)
+            || property_exists($decoded, self::FIELD_ALLOWED_STRING)
+            || property_exists($decoded, self::FIELD_ALLOWED_STRING_EXT)) {
+            $v = $decoded->_allowedString ?? new \stdClass();
+            $v->value = $decoded->allowedString ?? null;
             $type->setAllowedString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->allowedMoney) || property_exists($json, self::FIELD_ALLOWED_MONEY)) {
-            if (is_array($json->allowedMoney)) {
-                $type->setAllowedMoney(FHIRMoney::jsonUnserialize(reset($json->allowedMoney), $config));
+        if (isset($decoded->allowedMoney) || property_exists($decoded, self::FIELD_ALLOWED_MONEY)) {
+            if (is_array($decoded->allowedMoney)) {
+                $type->setAllowedMoney(FHIRMoney::jsonUnserialize(reset($decoded->allowedMoney), $config));
             } else {
-                $type->setAllowedMoney(FHIRMoney::jsonUnserialize($json->allowedMoney, $config));
+                $type->setAllowedMoney(FHIRMoney::jsonUnserialize($decoded->allowedMoney, $config));
             }
         }
-        if (isset($json->usedUnsignedInt)
-            || isset($json->_usedUnsignedInt)
-            || property_exists($json, self::FIELD_USED_UNSIGNED_INT)
-            || property_exists($json, self::FIELD_USED_UNSIGNED_INT_EXT)) {
-            $v = $json->_usedUnsignedInt ?? new \stdClass();
-            $v->value = $json->usedUnsignedInt ?? null;
+        if (isset($decoded->usedUnsignedInt)
+            || isset($decoded->_usedUnsignedInt)
+            || property_exists($decoded, self::FIELD_USED_UNSIGNED_INT)
+            || property_exists($decoded, self::FIELD_USED_UNSIGNED_INT_EXT)) {
+            $v = $decoded->_usedUnsignedInt ?? new \stdClass();
+            $v->value = $decoded->usedUnsignedInt ?? null;
             $type->setUsedUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->usedMoney) || property_exists($json, self::FIELD_USED_MONEY)) {
-            if (is_array($json->usedMoney)) {
-                $type->setUsedMoney(FHIRMoney::jsonUnserialize(reset($json->usedMoney), $config));
+        if (isset($decoded->usedMoney) || property_exists($decoded, self::FIELD_USED_MONEY)) {
+            if (is_array($decoded->usedMoney)) {
+                $type->setUsedMoney(FHIRMoney::jsonUnserialize(reset($decoded->usedMoney), $config));
             } else {
-                $type->setUsedMoney(FHIRMoney::jsonUnserialize($json->usedMoney, $config));
+                $type->setUsedMoney(FHIRMoney::jsonUnserialize($decoded->usedMoney, $config));
             }
         }
         return $type;

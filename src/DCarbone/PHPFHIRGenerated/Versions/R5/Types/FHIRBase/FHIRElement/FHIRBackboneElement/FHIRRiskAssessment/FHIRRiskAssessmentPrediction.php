@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -758,13 +758,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -778,64 +778,64 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->outcome) || property_exists($json, self::FIELD_OUTCOME)) {
-            if (is_array($json->outcome)) {
-                $type->setOutcome(FHIRCodeableConcept::jsonUnserialize(reset($json->outcome), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->outcome) || property_exists($decoded, self::FIELD_OUTCOME)) {
+            if (is_array($decoded->outcome)) {
+                $type->setOutcome(FHIRCodeableConcept::jsonUnserialize(reset($decoded->outcome), $config));
             } else {
-                $type->setOutcome(FHIRCodeableConcept::jsonUnserialize($json->outcome, $config));
+                $type->setOutcome(FHIRCodeableConcept::jsonUnserialize($decoded->outcome, $config));
             }
         }
-        if (isset($json->probabilityDecimal)
-            || isset($json->_probabilityDecimal)
-            || property_exists($json, self::FIELD_PROBABILITY_DECIMAL)
-            || property_exists($json, self::FIELD_PROBABILITY_DECIMAL_EXT)) {
-            $v = $json->_probabilityDecimal ?? new \stdClass();
-            $v->value = $json->probabilityDecimal ?? null;
+        if (isset($decoded->probabilityDecimal)
+            || isset($decoded->_probabilityDecimal)
+            || property_exists($decoded, self::FIELD_PROBABILITY_DECIMAL)
+            || property_exists($decoded, self::FIELD_PROBABILITY_DECIMAL_EXT)) {
+            $v = $decoded->_probabilityDecimal ?? new \stdClass();
+            $v->value = $decoded->probabilityDecimal ?? null;
             $type->setProbabilityDecimal(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->probabilityRange) || property_exists($json, self::FIELD_PROBABILITY_RANGE)) {
-            if (is_array($json->probabilityRange)) {
-                $type->setProbabilityRange(FHIRRange::jsonUnserialize(reset($json->probabilityRange), $config));
+        if (isset($decoded->probabilityRange) || property_exists($decoded, self::FIELD_PROBABILITY_RANGE)) {
+            if (is_array($decoded->probabilityRange)) {
+                $type->setProbabilityRange(FHIRRange::jsonUnserialize(reset($decoded->probabilityRange), $config));
             } else {
-                $type->setProbabilityRange(FHIRRange::jsonUnserialize($json->probabilityRange, $config));
+                $type->setProbabilityRange(FHIRRange::jsonUnserialize($decoded->probabilityRange, $config));
             }
         }
-        if (isset($json->qualitativeRisk) || property_exists($json, self::FIELD_QUALITATIVE_RISK)) {
-            if (is_array($json->qualitativeRisk)) {
-                $type->setQualitativeRisk(FHIRCodeableConcept::jsonUnserialize(reset($json->qualitativeRisk), $config));
+        if (isset($decoded->qualitativeRisk) || property_exists($decoded, self::FIELD_QUALITATIVE_RISK)) {
+            if (is_array($decoded->qualitativeRisk)) {
+                $type->setQualitativeRisk(FHIRCodeableConcept::jsonUnserialize(reset($decoded->qualitativeRisk), $config));
             } else {
-                $type->setQualitativeRisk(FHIRCodeableConcept::jsonUnserialize($json->qualitativeRisk, $config));
+                $type->setQualitativeRisk(FHIRCodeableConcept::jsonUnserialize($decoded->qualitativeRisk, $config));
             }
         }
-        if (isset($json->relativeRisk)
-            || isset($json->_relativeRisk)
-            || property_exists($json, self::FIELD_RELATIVE_RISK)
-            || property_exists($json, self::FIELD_RELATIVE_RISK_EXT)) {
-            $v = $json->_relativeRisk ?? new \stdClass();
-            $v->value = $json->relativeRisk ?? null;
+        if (isset($decoded->relativeRisk)
+            || isset($decoded->_relativeRisk)
+            || property_exists($decoded, self::FIELD_RELATIVE_RISK)
+            || property_exists($decoded, self::FIELD_RELATIVE_RISK_EXT)) {
+            $v = $decoded->_relativeRisk ?? new \stdClass();
+            $v->value = $decoded->relativeRisk ?? null;
             $type->setRelativeRisk(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->whenPeriod) || property_exists($json, self::FIELD_WHEN_PERIOD)) {
-            if (is_array($json->whenPeriod)) {
-                $type->setWhenPeriod(FHIRPeriod::jsonUnserialize(reset($json->whenPeriod), $config));
+        if (isset($decoded->whenPeriod) || property_exists($decoded, self::FIELD_WHEN_PERIOD)) {
+            if (is_array($decoded->whenPeriod)) {
+                $type->setWhenPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->whenPeriod), $config));
             } else {
-                $type->setWhenPeriod(FHIRPeriod::jsonUnserialize($json->whenPeriod, $config));
+                $type->setWhenPeriod(FHIRPeriod::jsonUnserialize($decoded->whenPeriod, $config));
             }
         }
-        if (isset($json->whenRange) || property_exists($json, self::FIELD_WHEN_RANGE)) {
-            if (is_array($json->whenRange)) {
-                $type->setWhenRange(FHIRRange::jsonUnserialize(reset($json->whenRange), $config));
+        if (isset($decoded->whenRange) || property_exists($decoded, self::FIELD_WHEN_RANGE)) {
+            if (is_array($decoded->whenRange)) {
+                $type->setWhenRange(FHIRRange::jsonUnserialize(reset($decoded->whenRange), $config));
             } else {
-                $type->setWhenRange(FHIRRange::jsonUnserialize($json->whenRange, $config));
+                $type->setWhenRange(FHIRRange::jsonUnserialize($decoded->whenRange, $config));
             }
         }
-        if (isset($json->rationale)
-            || isset($json->_rationale)
-            || property_exists($json, self::FIELD_RATIONALE)
-            || property_exists($json, self::FIELD_RATIONALE_EXT)) {
-            $v = $json->_rationale ?? new \stdClass();
-            $v->value = $json->rationale ?? null;
+        if (isset($decoded->rationale)
+            || isset($decoded->_rationale)
+            || property_exists($decoded, self::FIELD_RATIONALE)
+            || property_exists($decoded, self::FIELD_RATIONALE_EXT)) {
+            $v = $decoded->_rationale ?? new \stdClass();
+            $v->value = $decoded->rationale ?? null;
             $type->setRationale(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

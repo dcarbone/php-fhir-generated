@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -523,13 +523,13 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeStorageGuideline $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeStorageGuideline
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -543,39 +543,39 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->reference)
-            || isset($json->_reference)
-            || property_exists($json, self::FIELD_REFERENCE)
-            || property_exists($json, self::FIELD_REFERENCE_EXT)) {
-            $v = $json->_reference ?? new \stdClass();
-            $v->value = $json->reference ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->reference)
+            || isset($decoded->_reference)
+            || property_exists($decoded, self::FIELD_REFERENCE)
+            || property_exists($decoded, self::FIELD_REFERENCE_EXT)) {
+            $v = $decoded->_reference ?? new \stdClass();
+            $v->value = $decoded->reference ?? null;
             $type->setReference(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->note) || property_exists($json, self::FIELD_NOTE)) {
-            if (is_object($json->note)) {
-                $vals = [$json->note];
+        if (isset($decoded->note) || property_exists($decoded, self::FIELD_NOTE)) {
+            if (is_object($decoded->note)) {
+                $vals = [$decoded->note];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_NOTE, true);
             } else {
-                $vals = $json->note;
+                $vals = $decoded->note;
             }
             foreach($vals as $v) {
                 $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->stabilityDuration) || property_exists($json, self::FIELD_STABILITY_DURATION)) {
-            if (is_array($json->stabilityDuration)) {
-                $type->setStabilityDuration(FHIRDuration::jsonUnserialize(reset($json->stabilityDuration), $config));
+        if (isset($decoded->stabilityDuration) || property_exists($decoded, self::FIELD_STABILITY_DURATION)) {
+            if (is_array($decoded->stabilityDuration)) {
+                $type->setStabilityDuration(FHIRDuration::jsonUnserialize(reset($decoded->stabilityDuration), $config));
             } else {
-                $type->setStabilityDuration(FHIRDuration::jsonUnserialize($json->stabilityDuration, $config));
+                $type->setStabilityDuration(FHIRDuration::jsonUnserialize($decoded->stabilityDuration, $config));
             }
         }
-        if (isset($json->environmentalSetting) || property_exists($json, self::FIELD_ENVIRONMENTAL_SETTING)) {
-            if (is_object($json->environmentalSetting)) {
-                $vals = [$json->environmentalSetting];
+        if (isset($decoded->environmentalSetting) || property_exists($decoded, self::FIELD_ENVIRONMENTAL_SETTING)) {
+            if (is_object($decoded->environmentalSetting)) {
+                $vals = [$decoded->environmentalSetting];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ENVIRONMENTAL_SETTING, true);
             } else {
-                $vals = $json->environmentalSetting;
+                $vals = $decoded->environmentalSetting;
             }
             foreach($vals as $v) {
                 $type->addEnvironmentalSetting(FHIRMedicationKnowledgeEnvironmentalSetting::jsonUnserialize($v, $config));

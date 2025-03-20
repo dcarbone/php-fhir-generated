@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -615,13 +615,13 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -635,47 +635,47 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
-            if (is_array($json->quantity)) {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->quantity) || property_exists($decoded, self::FIELD_QUANTITY)) {
+            if (is_array($decoded->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->quantity), $config));
             } else {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($decoded->quantity, $config));
             }
         }
-        if (isset($json->identifier) || property_exists($json, self::FIELD_IDENTIFIER)) {
-            if (is_object($json->identifier)) {
-                $vals = [$json->identifier];
+        if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
+            if (is_object($decoded->identifier)) {
+                $vals = [$decoded->identifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_IDENTIFIER, true);
             } else {
-                $vals = $json->identifier;
+                $vals = $decoded->identifier;
             }
             foreach($vals as $v) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->lotNumber)
-            || isset($json->_lotNumber)
-            || property_exists($json, self::FIELD_LOT_NUMBER)
-            || property_exists($json, self::FIELD_LOT_NUMBER_EXT)) {
-            $v = $json->_lotNumber ?? new \stdClass();
-            $v->value = $json->lotNumber ?? null;
+        if (isset($decoded->lotNumber)
+            || isset($decoded->_lotNumber)
+            || property_exists($decoded, self::FIELD_LOT_NUMBER)
+            || property_exists($decoded, self::FIELD_LOT_NUMBER_EXT)) {
+            $v = $decoded->_lotNumber ?? new \stdClass();
+            $v->value = $decoded->lotNumber ?? null;
             $type->setLotNumber(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->expiry)
-            || isset($json->_expiry)
-            || property_exists($json, self::FIELD_EXPIRY)
-            || property_exists($json, self::FIELD_EXPIRY_EXT)) {
-            $v = $json->_expiry ?? new \stdClass();
-            $v->value = $json->expiry ?? null;
+        if (isset($decoded->expiry)
+            || isset($decoded->_expiry)
+            || property_exists($decoded, self::FIELD_EXPIRY)
+            || property_exists($decoded, self::FIELD_EXPIRY_EXT)) {
+            $v = $decoded->_expiry ?? new \stdClass();
+            $v->value = $decoded->expiry ?? null;
             $type->setExpiry(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->useBy)
-            || isset($json->_useBy)
-            || property_exists($json, self::FIELD_USE_BY)
-            || property_exists($json, self::FIELD_USE_BY_EXT)) {
-            $v = $json->_useBy ?? new \stdClass();
-            $v->value = $json->useBy ?? null;
+        if (isset($decoded->useBy)
+            || isset($decoded->_useBy)
+            || property_exists($decoded, self::FIELD_USE_BY)
+            || property_exists($decoded, self::FIELD_USE_BY_EXT)) {
+            $v = $decoded->_useBy ?? new \stdClass();
+            $v->value = $decoded->useBy ?? null;
             $type->setUseBy(FHIRDateTime::jsonUnserialize($v, $config));
         }
         return $type;

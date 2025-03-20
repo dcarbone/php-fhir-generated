@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1007,13 +1007,13 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1027,61 +1027,61 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->informationType)
-            || isset($json->_informationType)
-            || property_exists($json, self::FIELD_INFORMATION_TYPE)
-            || property_exists($json, self::FIELD_INFORMATION_TYPE_EXT)) {
-            $v = $json->_informationType ?? new \stdClass();
-            $v->value = $json->informationType ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->informationType)
+            || isset($decoded->_informationType)
+            || property_exists($decoded, self::FIELD_INFORMATION_TYPE)
+            || property_exists($decoded, self::FIELD_INFORMATION_TYPE_EXT)) {
+            $v = $decoded->_informationType ?? new \stdClass();
+            $v->value = $decoded->informationType ?? null;
             $type->setInformationType(FHIRArtifactAssessmentInformationType::jsonUnserialize($v, $config));
         }
-        if (isset($json->summary)
-            || isset($json->_summary)
-            || property_exists($json, self::FIELD_SUMMARY)
-            || property_exists($json, self::FIELD_SUMMARY_EXT)) {
-            $v = $json->_summary ?? new \stdClass();
-            $v->value = $json->summary ?? null;
+        if (isset($decoded->summary)
+            || isset($decoded->_summary)
+            || property_exists($decoded, self::FIELD_SUMMARY)
+            || property_exists($decoded, self::FIELD_SUMMARY_EXT)) {
+            $v = $decoded->_summary ?? new \stdClass();
+            $v->value = $decoded->summary ?? null;
             $type->setSummary(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->classifier) || property_exists($json, self::FIELD_CLASSIFIER)) {
-            if (is_object($json->classifier)) {
-                $vals = [$json->classifier];
+        if (isset($decoded->classifier) || property_exists($decoded, self::FIELD_CLASSIFIER)) {
+            if (is_object($decoded->classifier)) {
+                $vals = [$decoded->classifier];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CLASSIFIER, true);
             } else {
-                $vals = $json->classifier;
+                $vals = $decoded->classifier;
             }
             foreach($vals as $v) {
                 $type->addClassifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->quantity) || property_exists($json, self::FIELD_QUANTITY)) {
-            if (is_array($json->quantity)) {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($json->quantity), $config));
+        if (isset($decoded->quantity) || property_exists($decoded, self::FIELD_QUANTITY)) {
+            if (is_array($decoded->quantity)) {
+                $type->setQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->quantity), $config));
             } else {
-                $type->setQuantity(FHIRQuantity::jsonUnserialize($json->quantity, $config));
+                $type->setQuantity(FHIRQuantity::jsonUnserialize($decoded->quantity, $config));
             }
         }
-        if (isset($json->author) || property_exists($json, self::FIELD_AUTHOR)) {
-            if (is_array($json->author)) {
-                $type->setAuthor(FHIRReference::jsonUnserialize(reset($json->author), $config));
+        if (isset($decoded->author) || property_exists($decoded, self::FIELD_AUTHOR)) {
+            if (is_array($decoded->author)) {
+                $type->setAuthor(FHIRReference::jsonUnserialize(reset($decoded->author), $config));
             } else {
-                $type->setAuthor(FHIRReference::jsonUnserialize($json->author, $config));
+                $type->setAuthor(FHIRReference::jsonUnserialize($decoded->author, $config));
             }
         }
-        if (isset($json->path)
-            || isset($json->_path)
-            || property_exists($json, self::FIELD_PATH)
-            || property_exists($json, self::FIELD_PATH_EXT)) {
-            $vals = (array)($json->path ?? []);
-            $exts = (array)($json->FIELD_PATH_EXT ?? []);
+        if (isset($decoded->path)
+            || isset($decoded->_path)
+            || property_exists($decoded, self::FIELD_PATH)
+            || property_exists($decoded, self::FIELD_PATH_EXT)) {
+            $vals = (array)($decoded->path ?? []);
+            $exts = (array)($decoded->FIELD_PATH_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1093,31 +1093,31 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
                 $type->addPath(FHIRUri::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->relatedArtifact) || property_exists($json, self::FIELD_RELATED_ARTIFACT)) {
-            if (is_object($json->relatedArtifact)) {
-                $vals = [$json->relatedArtifact];
+        if (isset($decoded->relatedArtifact) || property_exists($decoded, self::FIELD_RELATED_ARTIFACT)) {
+            if (is_object($decoded->relatedArtifact)) {
+                $vals = [$decoded->relatedArtifact];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_RELATED_ARTIFACT, true);
             } else {
-                $vals = $json->relatedArtifact;
+                $vals = $decoded->relatedArtifact;
             }
             foreach($vals as $v) {
                 $type->addRelatedArtifact(FHIRRelatedArtifact::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->freeToShare)
-            || isset($json->_freeToShare)
-            || property_exists($json, self::FIELD_FREE_TO_SHARE)
-            || property_exists($json, self::FIELD_FREE_TO_SHARE_EXT)) {
-            $v = $json->_freeToShare ?? new \stdClass();
-            $v->value = $json->freeToShare ?? null;
+        if (isset($decoded->freeToShare)
+            || isset($decoded->_freeToShare)
+            || property_exists($decoded, self::FIELD_FREE_TO_SHARE)
+            || property_exists($decoded, self::FIELD_FREE_TO_SHARE_EXT)) {
+            $v = $decoded->_freeToShare ?? new \stdClass();
+            $v->value = $decoded->freeToShare ?? null;
             $type->setFreeToShare(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->component) || property_exists($json, self::FIELD_COMPONENT)) {
-            if (is_object($json->component)) {
-                $vals = [$json->component];
+        if (isset($decoded->component) || property_exists($decoded, self::FIELD_COMPONENT)) {
+            if (is_object($decoded->component)) {
+                $vals = [$decoded->component];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_COMPONENT, true);
             } else {
-                $vals = $json->component;
+                $vals = $decoded->component;
             }
             foreach($vals as $v) {
                 $type->addComponent(FHIRArtifactAssessmentContent::jsonUnserialize($v, $config));

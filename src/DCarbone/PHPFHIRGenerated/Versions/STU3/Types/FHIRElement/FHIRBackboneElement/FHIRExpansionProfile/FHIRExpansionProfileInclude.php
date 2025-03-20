@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -263,13 +263,13 @@ class FHIRExpansionProfileInclude extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -283,13 +283,13 @@ class FHIRExpansionProfileInclude extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->designation) || property_exists($json, self::FIELD_DESIGNATION)) {
-            if (is_object($json->designation)) {
-                $vals = [$json->designation];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->designation) || property_exists($decoded, self::FIELD_DESIGNATION)) {
+            if (is_object($decoded->designation)) {
+                $vals = [$decoded->designation];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DESIGNATION, true);
             } else {
-                $vals = $json->designation;
+                $vals = $decoded->designation;
             }
             foreach($vals as $v) {
                 $type->addDesignation(FHIRExpansionProfileDesignation1::jsonUnserialize($v, $config));

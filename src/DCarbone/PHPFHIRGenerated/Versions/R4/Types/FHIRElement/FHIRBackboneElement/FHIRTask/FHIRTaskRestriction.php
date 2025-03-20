@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -411,13 +411,13 @@ class FHIRTaskRestriction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -431,28 +431,28 @@ class FHIRTaskRestriction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->repetitions)
-            || isset($json->_repetitions)
-            || property_exists($json, self::FIELD_REPETITIONS)
-            || property_exists($json, self::FIELD_REPETITIONS_EXT)) {
-            $v = $json->_repetitions ?? new \stdClass();
-            $v->value = $json->repetitions ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->repetitions)
+            || isset($decoded->_repetitions)
+            || property_exists($decoded, self::FIELD_REPETITIONS)
+            || property_exists($decoded, self::FIELD_REPETITIONS_EXT)) {
+            $v = $decoded->_repetitions ?? new \stdClass();
+            $v->value = $decoded->repetitions ?? null;
             $type->setRepetitions(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
-            if (is_array($json->period)) {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+        if (isset($decoded->period) || property_exists($decoded, self::FIELD_PERIOD)) {
+            if (is_array($decoded->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->period), $config));
             } else {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($decoded->period, $config));
             }
         }
-        if (isset($json->recipient) || property_exists($json, self::FIELD_RECIPIENT)) {
-            if (is_object($json->recipient)) {
-                $vals = [$json->recipient];
+        if (isset($decoded->recipient) || property_exists($decoded, self::FIELD_RECIPIENT)) {
+            if (is_object($decoded->recipient)) {
+                $vals = [$decoded->recipient];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_RECIPIENT, true);
             } else {
-                $vals = $json->recipient;
+                $vals = $decoded->recipient;
             }
             foreach($vals as $v) {
                 $type->addRecipient(FHIRReference::jsonUnserialize($v, $config));

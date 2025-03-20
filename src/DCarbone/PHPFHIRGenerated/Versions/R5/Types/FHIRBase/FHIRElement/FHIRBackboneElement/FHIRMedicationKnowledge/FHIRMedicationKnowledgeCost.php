@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -561,13 +561,13 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -581,45 +581,45 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->effectiveDate) || property_exists($json, self::FIELD_EFFECTIVE_DATE)) {
-            if (is_object($json->effectiveDate)) {
-                $vals = [$json->effectiveDate];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->effectiveDate) || property_exists($decoded, self::FIELD_EFFECTIVE_DATE)) {
+            if (is_object($decoded->effectiveDate)) {
+                $vals = [$decoded->effectiveDate];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_EFFECTIVE_DATE, true);
             } else {
-                $vals = $json->effectiveDate;
+                $vals = $decoded->effectiveDate;
             }
             foreach($vals as $v) {
                 $type->addEffectiveDate(FHIRPeriod::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->source)
-            || isset($json->_source)
-            || property_exists($json, self::FIELD_SOURCE)
-            || property_exists($json, self::FIELD_SOURCE_EXT)) {
-            $v = $json->_source ?? new \stdClass();
-            $v->value = $json->source ?? null;
+        if (isset($decoded->source)
+            || isset($decoded->_source)
+            || property_exists($decoded, self::FIELD_SOURCE)
+            || property_exists($decoded, self::FIELD_SOURCE_EXT)) {
+            $v = $decoded->_source ?? new \stdClass();
+            $v->value = $decoded->source ?? null;
             $type->setSource(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->costMoney) || property_exists($json, self::FIELD_COST_MONEY)) {
-            if (is_array($json->costMoney)) {
-                $type->setCostMoney(FHIRMoney::jsonUnserialize(reset($json->costMoney), $config));
+        if (isset($decoded->costMoney) || property_exists($decoded, self::FIELD_COST_MONEY)) {
+            if (is_array($decoded->costMoney)) {
+                $type->setCostMoney(FHIRMoney::jsonUnserialize(reset($decoded->costMoney), $config));
             } else {
-                $type->setCostMoney(FHIRMoney::jsonUnserialize($json->costMoney, $config));
+                $type->setCostMoney(FHIRMoney::jsonUnserialize($decoded->costMoney, $config));
             }
         }
-        if (isset($json->costCodeableConcept) || property_exists($json, self::FIELD_COST_CODEABLE_CONCEPT)) {
-            if (is_array($json->costCodeableConcept)) {
-                $type->setCostCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->costCodeableConcept), $config));
+        if (isset($decoded->costCodeableConcept) || property_exists($decoded, self::FIELD_COST_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->costCodeableConcept)) {
+                $type->setCostCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->costCodeableConcept), $config));
             } else {
-                $type->setCostCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->costCodeableConcept, $config));
+                $type->setCostCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->costCodeableConcept, $config));
             }
         }
         return $type;

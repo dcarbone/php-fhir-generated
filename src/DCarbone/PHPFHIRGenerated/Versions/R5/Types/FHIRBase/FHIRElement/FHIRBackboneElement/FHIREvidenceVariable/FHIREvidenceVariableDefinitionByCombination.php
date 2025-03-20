@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -444,13 +444,13 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -464,29 +464,29 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->code)
-            || isset($json->_code)
-            || property_exists($json, self::FIELD_CODE)
-            || property_exists($json, self::FIELD_CODE_EXT)) {
-            $v = $json->_code ?? new \stdClass();
-            $v->value = $json->code ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->code)
+            || isset($decoded->_code)
+            || property_exists($decoded, self::FIELD_CODE)
+            || property_exists($decoded, self::FIELD_CODE_EXT)) {
+            $v = $decoded->_code ?? new \stdClass();
+            $v->value = $decoded->code ?? null;
             $type->setCode(FHIRCharacteristicCombination::jsonUnserialize($v, $config));
         }
-        if (isset($json->threshold)
-            || isset($json->_threshold)
-            || property_exists($json, self::FIELD_THRESHOLD)
-            || property_exists($json, self::FIELD_THRESHOLD_EXT)) {
-            $v = $json->_threshold ?? new \stdClass();
-            $v->value = $json->threshold ?? null;
+        if (isset($decoded->threshold)
+            || isset($decoded->_threshold)
+            || property_exists($decoded, self::FIELD_THRESHOLD)
+            || property_exists($decoded, self::FIELD_THRESHOLD_EXT)) {
+            $v = $decoded->_threshold ?? new \stdClass();
+            $v->value = $decoded->threshold ?? null;
             $type->setThreshold(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->characteristic) || property_exists($json, self::FIELD_CHARACTERISTIC)) {
-            if (is_object($json->characteristic)) {
-                $vals = [$json->characteristic];
+        if (isset($decoded->characteristic) || property_exists($decoded, self::FIELD_CHARACTERISTIC)) {
+            if (is_object($decoded->characteristic)) {
+                $vals = [$decoded->characteristic];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CHARACTERISTIC, true);
             } else {
-                $vals = $json->characteristic;
+                $vals = $decoded->characteristic;
             }
             foreach($vals as $v) {
                 $type->addCharacteristic(FHIREvidenceVariableCharacteristic::jsonUnserialize($v, $config));

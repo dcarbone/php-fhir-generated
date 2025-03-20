@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -529,13 +529,13 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -549,37 +549,37 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->documentType)
-            || isset($json->_documentType)
-            || property_exists($json, self::FIELD_DOCUMENT_TYPE)
-            || property_exists($json, self::FIELD_DOCUMENT_TYPE_EXT)) {
-            $v = $json->_documentType ?? new \stdClass();
-            $v->value = $json->documentType ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->documentType)
+            || isset($decoded->_documentType)
+            || property_exists($decoded, self::FIELD_DOCUMENT_TYPE)
+            || property_exists($decoded, self::FIELD_DOCUMENT_TYPE_EXT)) {
+            $v = $decoded->_documentType ?? new \stdClass();
+            $v->value = $decoded->documentType ?? null;
             $type->setDocumentType(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->reference)
-            || isset($json->_reference)
-            || property_exists($json, self::FIELD_REFERENCE)
-            || property_exists($json, self::FIELD_REFERENCE_EXT)) {
-            $v = $json->_reference ?? new \stdClass();
-            $v->value = $json->reference ?? null;
+        if (isset($decoded->reference)
+            || isset($decoded->_reference)
+            || property_exists($decoded, self::FIELD_REFERENCE)
+            || property_exists($decoded, self::FIELD_REFERENCE_EXT)) {
+            $v = $decoded->_reference ?? new \stdClass();
+            $v->value = $decoded->reference ?? null;
             $type->setReference(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->publicationDate)
-            || isset($json->_publicationDate)
-            || property_exists($json, self::FIELD_PUBLICATION_DATE)
-            || property_exists($json, self::FIELD_PUBLICATION_DATE_EXT)) {
-            $v = $json->_publicationDate ?? new \stdClass();
-            $v->value = $json->publicationDate ?? null;
+        if (isset($decoded->publicationDate)
+            || isset($decoded->_publicationDate)
+            || property_exists($decoded, self::FIELD_PUBLICATION_DATE)
+            || property_exists($decoded, self::FIELD_PUBLICATION_DATE_EXT)) {
+            $v = $decoded->_publicationDate ?? new \stdClass();
+            $v->value = $decoded->publicationDate ?? null;
             $type->setPublicationDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->presentationDate)
-            || isset($json->_presentationDate)
-            || property_exists($json, self::FIELD_PRESENTATION_DATE)
-            || property_exists($json, self::FIELD_PRESENTATION_DATE_EXT)) {
-            $v = $json->_presentationDate ?? new \stdClass();
-            $v->value = $json->presentationDate ?? null;
+        if (isset($decoded->presentationDate)
+            || isset($decoded->_presentationDate)
+            || property_exists($decoded, self::FIELD_PRESENTATION_DATE)
+            || property_exists($decoded, self::FIELD_PRESENTATION_DATE_EXT)) {
+            $v = $decoded->_presentationDate ?? new \stdClass();
+            $v->value = $decoded->presentationDate ?? null;
             $type->setPresentationDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
         return $type;

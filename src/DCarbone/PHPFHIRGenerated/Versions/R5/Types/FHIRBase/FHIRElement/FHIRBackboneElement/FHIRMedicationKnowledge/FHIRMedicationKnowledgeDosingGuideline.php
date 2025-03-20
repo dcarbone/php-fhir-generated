@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -495,13 +495,13 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosingGuideline $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosingGuideline
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -515,38 +515,38 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->treatmentIntent) || property_exists($json, self::FIELD_TREATMENT_INTENT)) {
-            if (is_array($json->treatmentIntent)) {
-                $type->setTreatmentIntent(FHIRCodeableConcept::jsonUnserialize(reset($json->treatmentIntent), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->treatmentIntent) || property_exists($decoded, self::FIELD_TREATMENT_INTENT)) {
+            if (is_array($decoded->treatmentIntent)) {
+                $type->setTreatmentIntent(FHIRCodeableConcept::jsonUnserialize(reset($decoded->treatmentIntent), $config));
             } else {
-                $type->setTreatmentIntent(FHIRCodeableConcept::jsonUnserialize($json->treatmentIntent, $config));
+                $type->setTreatmentIntent(FHIRCodeableConcept::jsonUnserialize($decoded->treatmentIntent, $config));
             }
         }
-        if (isset($json->dosage) || property_exists($json, self::FIELD_DOSAGE)) {
-            if (is_object($json->dosage)) {
-                $vals = [$json->dosage];
+        if (isset($decoded->dosage) || property_exists($decoded, self::FIELD_DOSAGE)) {
+            if (is_object($decoded->dosage)) {
+                $vals = [$decoded->dosage];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DOSAGE, true);
             } else {
-                $vals = $json->dosage;
+                $vals = $decoded->dosage;
             }
             foreach($vals as $v) {
                 $type->addDosage(FHIRMedicationKnowledgeDosage::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->administrationTreatment) || property_exists($json, self::FIELD_ADMINISTRATION_TREATMENT)) {
-            if (is_array($json->administrationTreatment)) {
-                $type->setAdministrationTreatment(FHIRCodeableConcept::jsonUnserialize(reset($json->administrationTreatment), $config));
+        if (isset($decoded->administrationTreatment) || property_exists($decoded, self::FIELD_ADMINISTRATION_TREATMENT)) {
+            if (is_array($decoded->administrationTreatment)) {
+                $type->setAdministrationTreatment(FHIRCodeableConcept::jsonUnserialize(reset($decoded->administrationTreatment), $config));
             } else {
-                $type->setAdministrationTreatment(FHIRCodeableConcept::jsonUnserialize($json->administrationTreatment, $config));
+                $type->setAdministrationTreatment(FHIRCodeableConcept::jsonUnserialize($decoded->administrationTreatment, $config));
             }
         }
-        if (isset($json->patientCharacteristic) || property_exists($json, self::FIELD_PATIENT_CHARACTERISTIC)) {
-            if (is_object($json->patientCharacteristic)) {
-                $vals = [$json->patientCharacteristic];
+        if (isset($decoded->patientCharacteristic) || property_exists($decoded, self::FIELD_PATIENT_CHARACTERISTIC)) {
+            if (is_object($decoded->patientCharacteristic)) {
+                $vals = [$decoded->patientCharacteristic];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PATIENT_CHARACTERISTIC, true);
             } else {
-                $vals = $json->patientCharacteristic;
+                $vals = $decoded->patientCharacteristic;
             }
             foreach($vals as $v) {
                 $type->addPatientCharacteristic(FHIRMedicationKnowledgePatientCharacteristic::jsonUnserialize($v, $config));

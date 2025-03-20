@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -420,13 +420,13 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionCorrectiveAction $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionCorrectiveAction
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -440,28 +440,28 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->recall)
-            || isset($json->_recall)
-            || property_exists($json, self::FIELD_RECALL)
-            || property_exists($json, self::FIELD_RECALL_EXT)) {
-            $v = $json->_recall ?? new \stdClass();
-            $v->value = $json->recall ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->recall)
+            || isset($decoded->_recall)
+            || property_exists($decoded, self::FIELD_RECALL)
+            || property_exists($decoded, self::FIELD_RECALL_EXT)) {
+            $v = $decoded->_recall ?? new \stdClass();
+            $v->value = $decoded->recall ?? null;
             $type->setRecall(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->scope)
-            || isset($json->_scope)
-            || property_exists($json, self::FIELD_SCOPE)
-            || property_exists($json, self::FIELD_SCOPE_EXT)) {
-            $v = $json->_scope ?? new \stdClass();
-            $v->value = $json->scope ?? null;
+        if (isset($decoded->scope)
+            || isset($decoded->_scope)
+            || property_exists($decoded, self::FIELD_SCOPE)
+            || property_exists($decoded, self::FIELD_SCOPE_EXT)) {
+            $v = $decoded->_scope ?? new \stdClass();
+            $v->value = $decoded->scope ?? null;
             $type->setScope(FHIRDeviceCorrectiveActionScope::jsonUnserialize($v, $config));
         }
-        if (isset($json->period) || property_exists($json, self::FIELD_PERIOD)) {
-            if (is_array($json->period)) {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($json->period), $config));
+        if (isset($decoded->period) || property_exists($decoded, self::FIELD_PERIOD)) {
+            if (is_array($decoded->period)) {
+                $type->setPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->period), $config));
             } else {
-                $type->setPeriod(FHIRPeriod::jsonUnserialize($json->period, $config));
+                $type->setPeriod(FHIRPeriod::jsonUnserialize($decoded->period, $config));
             }
         }
         return $type;

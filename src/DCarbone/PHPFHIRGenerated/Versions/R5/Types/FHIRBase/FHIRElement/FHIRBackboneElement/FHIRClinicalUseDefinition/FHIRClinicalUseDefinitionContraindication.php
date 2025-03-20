@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -666,13 +666,13 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -686,56 +686,56 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->diseaseSymptomProcedure) || property_exists($json, self::FIELD_DISEASE_SYMPTOM_PROCEDURE)) {
-            if (is_array($json->diseaseSymptomProcedure)) {
-                $type->setDiseaseSymptomProcedure(FHIRCodeableReference::jsonUnserialize(reset($json->diseaseSymptomProcedure), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->diseaseSymptomProcedure) || property_exists($decoded, self::FIELD_DISEASE_SYMPTOM_PROCEDURE)) {
+            if (is_array($decoded->diseaseSymptomProcedure)) {
+                $type->setDiseaseSymptomProcedure(FHIRCodeableReference::jsonUnserialize(reset($decoded->diseaseSymptomProcedure), $config));
             } else {
-                $type->setDiseaseSymptomProcedure(FHIRCodeableReference::jsonUnserialize($json->diseaseSymptomProcedure, $config));
+                $type->setDiseaseSymptomProcedure(FHIRCodeableReference::jsonUnserialize($decoded->diseaseSymptomProcedure, $config));
             }
         }
-        if (isset($json->diseaseStatus) || property_exists($json, self::FIELD_DISEASE_STATUS)) {
-            if (is_array($json->diseaseStatus)) {
-                $type->setDiseaseStatus(FHIRCodeableReference::jsonUnserialize(reset($json->diseaseStatus), $config));
+        if (isset($decoded->diseaseStatus) || property_exists($decoded, self::FIELD_DISEASE_STATUS)) {
+            if (is_array($decoded->diseaseStatus)) {
+                $type->setDiseaseStatus(FHIRCodeableReference::jsonUnserialize(reset($decoded->diseaseStatus), $config));
             } else {
-                $type->setDiseaseStatus(FHIRCodeableReference::jsonUnserialize($json->diseaseStatus, $config));
+                $type->setDiseaseStatus(FHIRCodeableReference::jsonUnserialize($decoded->diseaseStatus, $config));
             }
         }
-        if (isset($json->comorbidity) || property_exists($json, self::FIELD_COMORBIDITY)) {
-            if (is_object($json->comorbidity)) {
-                $vals = [$json->comorbidity];
+        if (isset($decoded->comorbidity) || property_exists($decoded, self::FIELD_COMORBIDITY)) {
+            if (is_object($decoded->comorbidity)) {
+                $vals = [$decoded->comorbidity];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_COMORBIDITY, true);
             } else {
-                $vals = $json->comorbidity;
+                $vals = $decoded->comorbidity;
             }
             foreach($vals as $v) {
                 $type->addComorbidity(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->indication) || property_exists($json, self::FIELD_INDICATION)) {
-            if (is_object($json->indication)) {
-                $vals = [$json->indication];
+        if (isset($decoded->indication) || property_exists($decoded, self::FIELD_INDICATION)) {
+            if (is_object($decoded->indication)) {
+                $vals = [$decoded->indication];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_INDICATION, true);
             } else {
-                $vals = $json->indication;
+                $vals = $decoded->indication;
             }
             foreach($vals as $v) {
                 $type->addIndication(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->applicability) || property_exists($json, self::FIELD_APPLICABILITY)) {
-            if (is_array($json->applicability)) {
-                $type->setApplicability(FHIRExpression::jsonUnserialize(reset($json->applicability), $config));
+        if (isset($decoded->applicability) || property_exists($decoded, self::FIELD_APPLICABILITY)) {
+            if (is_array($decoded->applicability)) {
+                $type->setApplicability(FHIRExpression::jsonUnserialize(reset($decoded->applicability), $config));
             } else {
-                $type->setApplicability(FHIRExpression::jsonUnserialize($json->applicability, $config));
+                $type->setApplicability(FHIRExpression::jsonUnserialize($decoded->applicability, $config));
             }
         }
-        if (isset($json->otherTherapy) || property_exists($json, self::FIELD_OTHER_THERAPY)) {
-            if (is_object($json->otherTherapy)) {
-                $vals = [$json->otherTherapy];
+        if (isset($decoded->otherTherapy) || property_exists($decoded, self::FIELD_OTHER_THERAPY)) {
+            if (is_object($decoded->otherTherapy)) {
+                $vals = [$decoded->otherTherapy];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_OTHER_THERAPY, true);
             } else {
-                $vals = $json->otherTherapy;
+                $vals = $decoded->otherTherapy;
             }
             foreach($vals as $v) {
                 $type->addOtherTherapy(FHIRClinicalUseDefinitionOtherTherapy::jsonUnserialize($v, $config));

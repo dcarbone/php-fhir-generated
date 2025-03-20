@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -361,13 +361,13 @@ class FHIRIngredientSubstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientSubstance $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientSubstance
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -381,20 +381,20 @@ class FHIRIngredientSubstance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->code) || property_exists($json, self::FIELD_CODE)) {
-            if (is_array($json->code)) {
-                $type->setCode(FHIRCodeableReference::jsonUnserialize(reset($json->code), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->code) || property_exists($decoded, self::FIELD_CODE)) {
+            if (is_array($decoded->code)) {
+                $type->setCode(FHIRCodeableReference::jsonUnserialize(reset($decoded->code), $config));
             } else {
-                $type->setCode(FHIRCodeableReference::jsonUnserialize($json->code, $config));
+                $type->setCode(FHIRCodeableReference::jsonUnserialize($decoded->code, $config));
             }
         }
-        if (isset($json->strength) || property_exists($json, self::FIELD_STRENGTH)) {
-            if (is_object($json->strength)) {
-                $vals = [$json->strength];
+        if (isset($decoded->strength) || property_exists($decoded, self::FIELD_STRENGTH)) {
+            if (is_object($decoded->strength)) {
+                $vals = [$decoded->strength];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_STRENGTH, true);
             } else {
-                $vals = $json->strength;
+                $vals = $decoded->strength;
             }
             foreach($vals as $v) {
                 $type->addStrength(FHIRIngredientStrength::jsonUnserialize($v, $config));

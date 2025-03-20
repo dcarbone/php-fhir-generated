@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -367,13 +367,13 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -387,20 +387,20 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->instance) || property_exists($json, self::FIELD_INSTANCE)) {
-            if (is_array($json->instance)) {
-                $type->setInstance(FHIRReference::jsonUnserialize(reset($json->instance), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->instance) || property_exists($decoded, self::FIELD_INSTANCE)) {
+            if (is_array($decoded->instance)) {
+                $type->setInstance(FHIRReference::jsonUnserialize(reset($decoded->instance), $config));
             } else {
-                $type->setInstance(FHIRReference::jsonUnserialize($json->instance, $config));
+                $type->setInstance(FHIRReference::jsonUnserialize($decoded->instance, $config));
             }
         }
-        if (isset($json->causality) || property_exists($json, self::FIELD_CAUSALITY)) {
-            if (is_object($json->causality)) {
-                $vals = [$json->causality];
+        if (isset($decoded->causality) || property_exists($decoded, self::FIELD_CAUSALITY)) {
+            if (is_object($decoded->causality)) {
+                $vals = [$decoded->causality];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CAUSALITY, true);
             } else {
-                $vals = $json->causality;
+                $vals = $decoded->causality;
             }
             foreach($vals as $v) {
                 $type->addCausality(FHIRAdverseEventCausality::jsonUnserialize($v, $config));

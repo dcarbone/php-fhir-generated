@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -627,13 +627,13 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -647,45 +647,45 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->title)
-            || isset($json->_title)
-            || property_exists($json, self::FIELD_TITLE)
-            || property_exists($json, self::FIELD_TITLE_EXT)) {
-            $v = $json->_title ?? new \stdClass();
-            $v->value = $json->title ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->title)
+            || isset($decoded->_title)
+            || property_exists($decoded, self::FIELD_TITLE)
+            || property_exists($decoded, self::FIELD_TITLE_EXT)) {
+            $v = $decoded->_title ?? new \stdClass();
+            $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->preConditions)
-            || isset($json->_preConditions)
-            || property_exists($json, self::FIELD_PRE_CONDITIONS)
-            || property_exists($json, self::FIELD_PRE_CONDITIONS_EXT)) {
-            $v = $json->_preConditions ?? new \stdClass();
-            $v->value = $json->preConditions ?? null;
+        if (isset($decoded->preConditions)
+            || isset($decoded->_preConditions)
+            || property_exists($decoded, self::FIELD_PRE_CONDITIONS)
+            || property_exists($decoded, self::FIELD_PRE_CONDITIONS_EXT)) {
+            $v = $decoded->_preConditions ?? new \stdClass();
+            $v->value = $decoded->preConditions ?? null;
             $type->setPreConditions(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->postConditions)
-            || isset($json->_postConditions)
-            || property_exists($json, self::FIELD_POST_CONDITIONS)
-            || property_exists($json, self::FIELD_POST_CONDITIONS_EXT)) {
-            $v = $json->_postConditions ?? new \stdClass();
-            $v->value = $json->postConditions ?? null;
+        if (isset($decoded->postConditions)
+            || isset($decoded->_postConditions)
+            || property_exists($decoded, self::FIELD_POST_CONDITIONS)
+            || property_exists($decoded, self::FIELD_POST_CONDITIONS_EXT)) {
+            $v = $decoded->_postConditions ?? new \stdClass();
+            $v->value = $decoded->postConditions ?? null;
             $type->setPostConditions(FHIRMarkdown::jsonUnserialize($v, $config));
         }
-        if (isset($json->step) || property_exists($json, self::FIELD_STEP)) {
-            if (is_object($json->step)) {
-                $vals = [$json->step];
+        if (isset($decoded->step) || property_exists($decoded, self::FIELD_STEP)) {
+            if (is_object($decoded->step)) {
+                $vals = [$decoded->step];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_STEP, true);
             } else {
-                $vals = $json->step;
+                $vals = $decoded->step;
             }
             foreach($vals as $v) {
                 $type->addStep(FHIRExampleScenarioStep::jsonUnserialize($v, $config));

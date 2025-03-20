@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -493,13 +493,13 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -513,35 +513,35 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->actionId)
-            || isset($json->_actionId)
-            || property_exists($json, self::FIELD_ACTION_ID)
-            || property_exists($json, self::FIELD_ACTION_ID_EXT)) {
-            $v = $json->_actionId ?? new \stdClass();
-            $v->value = $json->actionId ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->actionId)
+            || isset($decoded->_actionId)
+            || property_exists($decoded, self::FIELD_ACTION_ID)
+            || property_exists($decoded, self::FIELD_ACTION_ID_EXT)) {
+            $v = $decoded->_actionId ?? new \stdClass();
+            $v->value = $decoded->actionId ?? null;
             $type->setActionId(FHIRId::jsonUnserialize($v, $config));
         }
-        if (isset($json->relationship)
-            || isset($json->_relationship)
-            || property_exists($json, self::FIELD_RELATIONSHIP)
-            || property_exists($json, self::FIELD_RELATIONSHIP_EXT)) {
-            $v = $json->_relationship ?? new \stdClass();
-            $v->value = $json->relationship ?? null;
+        if (isset($decoded->relationship)
+            || isset($decoded->_relationship)
+            || property_exists($decoded, self::FIELD_RELATIONSHIP)
+            || property_exists($decoded, self::FIELD_RELATIONSHIP_EXT)) {
+            $v = $decoded->_relationship ?? new \stdClass();
+            $v->value = $decoded->relationship ?? null;
             $type->setRelationship(FHIRActionRelationshipType::jsonUnserialize($v, $config));
         }
-        if (isset($json->offsetDuration) || property_exists($json, self::FIELD_OFFSET_DURATION)) {
-            if (is_array($json->offsetDuration)) {
-                $type->setOffsetDuration(FHIRDuration::jsonUnserialize(reset($json->offsetDuration), $config));
+        if (isset($decoded->offsetDuration) || property_exists($decoded, self::FIELD_OFFSET_DURATION)) {
+            if (is_array($decoded->offsetDuration)) {
+                $type->setOffsetDuration(FHIRDuration::jsonUnserialize(reset($decoded->offsetDuration), $config));
             } else {
-                $type->setOffsetDuration(FHIRDuration::jsonUnserialize($json->offsetDuration, $config));
+                $type->setOffsetDuration(FHIRDuration::jsonUnserialize($decoded->offsetDuration, $config));
             }
         }
-        if (isset($json->offsetRange) || property_exists($json, self::FIELD_OFFSET_RANGE)) {
-            if (is_array($json->offsetRange)) {
-                $type->setOffsetRange(FHIRRange::jsonUnserialize(reset($json->offsetRange), $config));
+        if (isset($decoded->offsetRange) || property_exists($decoded, self::FIELD_OFFSET_RANGE)) {
+            if (is_array($decoded->offsetRange)) {
+                $type->setOffsetRange(FHIRRange::jsonUnserialize(reset($decoded->offsetRange), $config));
             } else {
-                $type->setOffsetRange(FHIRRange::jsonUnserialize($json->offsetRange, $config));
+                $type->setOffsetRange(FHIRRange::jsonUnserialize($decoded->offsetRange, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -530,13 +530,13 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationWhoClassified $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationWhoClassified
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -550,42 +550,42 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->person) || property_exists($json, self::FIELD_PERSON)) {
-            if (is_array($json->person)) {
-                $type->setPerson(FHIRReference::jsonUnserialize(reset($json->person), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->person) || property_exists($decoded, self::FIELD_PERSON)) {
+            if (is_array($decoded->person)) {
+                $type->setPerson(FHIRReference::jsonUnserialize(reset($decoded->person), $config));
             } else {
-                $type->setPerson(FHIRReference::jsonUnserialize($json->person, $config));
+                $type->setPerson(FHIRReference::jsonUnserialize($decoded->person, $config));
             }
         }
-        if (isset($json->organization) || property_exists($json, self::FIELD_ORGANIZATION)) {
-            if (is_array($json->organization)) {
-                $type->setOrganization(FHIRReference::jsonUnserialize(reset($json->organization), $config));
+        if (isset($decoded->organization) || property_exists($decoded, self::FIELD_ORGANIZATION)) {
+            if (is_array($decoded->organization)) {
+                $type->setOrganization(FHIRReference::jsonUnserialize(reset($decoded->organization), $config));
             } else {
-                $type->setOrganization(FHIRReference::jsonUnserialize($json->organization, $config));
+                $type->setOrganization(FHIRReference::jsonUnserialize($decoded->organization, $config));
             }
         }
-        if (isset($json->publisher) || property_exists($json, self::FIELD_PUBLISHER)) {
-            if (is_array($json->publisher)) {
-                $type->setPublisher(FHIRReference::jsonUnserialize(reset($json->publisher), $config));
+        if (isset($decoded->publisher) || property_exists($decoded, self::FIELD_PUBLISHER)) {
+            if (is_array($decoded->publisher)) {
+                $type->setPublisher(FHIRReference::jsonUnserialize(reset($decoded->publisher), $config));
             } else {
-                $type->setPublisher(FHIRReference::jsonUnserialize($json->publisher, $config));
+                $type->setPublisher(FHIRReference::jsonUnserialize($decoded->publisher, $config));
             }
         }
-        if (isset($json->classifierCopyright)
-            || isset($json->_classifierCopyright)
-            || property_exists($json, self::FIELD_CLASSIFIER_COPYRIGHT)
-            || property_exists($json, self::FIELD_CLASSIFIER_COPYRIGHT_EXT)) {
-            $v = $json->_classifierCopyright ?? new \stdClass();
-            $v->value = $json->classifierCopyright ?? null;
+        if (isset($decoded->classifierCopyright)
+            || isset($decoded->_classifierCopyright)
+            || property_exists($decoded, self::FIELD_CLASSIFIER_COPYRIGHT)
+            || property_exists($decoded, self::FIELD_CLASSIFIER_COPYRIGHT_EXT)) {
+            $v = $decoded->_classifierCopyright ?? new \stdClass();
+            $v->value = $decoded->classifierCopyright ?? null;
             $type->setClassifierCopyright(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->freeToShare)
-            || isset($json->_freeToShare)
-            || property_exists($json, self::FIELD_FREE_TO_SHARE)
-            || property_exists($json, self::FIELD_FREE_TO_SHARE_EXT)) {
-            $v = $json->_freeToShare ?? new \stdClass();
-            $v->value = $json->freeToShare ?? null;
+        if (isset($decoded->freeToShare)
+            || isset($decoded->_freeToShare)
+            || property_exists($decoded, self::FIELD_FREE_TO_SHARE)
+            || property_exists($decoded, self::FIELD_FREE_TO_SHARE_EXT)) {
+            $v = $decoded->_freeToShare ?? new \stdClass();
+            $v->value = $decoded->freeToShare ?? null;
             $type->setFreeToShare(FHIRBoolean::jsonUnserialize($v, $config));
         }
         return $type;

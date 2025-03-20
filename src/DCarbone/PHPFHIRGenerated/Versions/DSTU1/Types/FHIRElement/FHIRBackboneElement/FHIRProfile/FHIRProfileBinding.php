@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -635,13 +635,13 @@ class FHIRProfileBinding extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -655,52 +655,52 @@ class FHIRProfileBinding extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->name)
-            || isset($json->_name)
-            || property_exists($json, self::FIELD_NAME)
-            || property_exists($json, self::FIELD_NAME_EXT)) {
-            $v = $json->_name ?? new \stdClass();
-            $v->value = $json->name ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->name)
+            || isset($decoded->_name)
+            || property_exists($decoded, self::FIELD_NAME)
+            || property_exists($decoded, self::FIELD_NAME_EXT)) {
+            $v = $decoded->_name ?? new \stdClass();
+            $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->isExtensible)
-            || isset($json->_isExtensible)
-            || property_exists($json, self::FIELD_IS_EXTENSIBLE)
-            || property_exists($json, self::FIELD_IS_EXTENSIBLE_EXT)) {
-            $v = $json->_isExtensible ?? new \stdClass();
-            $v->value = $json->isExtensible ?? null;
+        if (isset($decoded->isExtensible)
+            || isset($decoded->_isExtensible)
+            || property_exists($decoded, self::FIELD_IS_EXTENSIBLE)
+            || property_exists($decoded, self::FIELD_IS_EXTENSIBLE_EXT)) {
+            $v = $decoded->_isExtensible ?? new \stdClass();
+            $v->value = $decoded->isExtensible ?? null;
             $type->setIsExtensible(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->conformance)
-            || isset($json->_conformance)
-            || property_exists($json, self::FIELD_CONFORMANCE)
-            || property_exists($json, self::FIELD_CONFORMANCE_EXT)) {
-            $v = $json->_conformance ?? new \stdClass();
-            $v->value = $json->conformance ?? null;
+        if (isset($decoded->conformance)
+            || isset($decoded->_conformance)
+            || property_exists($decoded, self::FIELD_CONFORMANCE)
+            || property_exists($decoded, self::FIELD_CONFORMANCE_EXT)) {
+            $v = $decoded->_conformance ?? new \stdClass();
+            $v->value = $decoded->conformance ?? null;
             $type->setConformance(FHIRBindingConformance::jsonUnserialize($v, $config));
         }
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->referenceUri)
-            || isset($json->_referenceUri)
-            || property_exists($json, self::FIELD_REFERENCE_URI)
-            || property_exists($json, self::FIELD_REFERENCE_URI_EXT)) {
-            $v = $json->_referenceUri ?? new \stdClass();
-            $v->value = $json->referenceUri ?? null;
+        if (isset($decoded->referenceUri)
+            || isset($decoded->_referenceUri)
+            || property_exists($decoded, self::FIELD_REFERENCE_URI)
+            || property_exists($decoded, self::FIELD_REFERENCE_URI_EXT)) {
+            $v = $decoded->_referenceUri ?? new \stdClass();
+            $v->value = $decoded->referenceUri ?? null;
             $type->setReferenceUri(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->referenceResource) || property_exists($json, self::FIELD_REFERENCE_RESOURCE)) {
-            if (is_array($json->referenceResource)) {
-                $type->setReferenceResource(FHIRResourceReference::jsonUnserialize(reset($json->referenceResource), $config));
+        if (isset($decoded->referenceResource) || property_exists($decoded, self::FIELD_REFERENCE_RESOURCE)) {
+            if (is_array($decoded->referenceResource)) {
+                $type->setReferenceResource(FHIRResourceReference::jsonUnserialize(reset($decoded->referenceResource), $config));
             } else {
-                $type->setReferenceResource(FHIRResourceReference::jsonUnserialize($json->referenceResource, $config));
+                $type->setReferenceResource(FHIRResourceReference::jsonUnserialize($decoded->referenceResource, $config));
             }
         }
         return $type;

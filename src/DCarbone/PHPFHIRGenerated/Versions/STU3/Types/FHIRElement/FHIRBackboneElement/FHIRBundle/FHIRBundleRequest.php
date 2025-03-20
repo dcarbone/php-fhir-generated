@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -674,13 +674,13 @@ class FHIRBundleRequest extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -694,53 +694,53 @@ class FHIRBundleRequest extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->method)
-            || isset($json->_method)
-            || property_exists($json, self::FIELD_METHOD)
-            || property_exists($json, self::FIELD_METHOD_EXT)) {
-            $v = $json->_method ?? new \stdClass();
-            $v->value = $json->method ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->method)
+            || isset($decoded->_method)
+            || property_exists($decoded, self::FIELD_METHOD)
+            || property_exists($decoded, self::FIELD_METHOD_EXT)) {
+            $v = $decoded->_method ?? new \stdClass();
+            $v->value = $decoded->method ?? null;
             $type->setMethod(FHIRHTTPVerb::jsonUnserialize($v, $config));
         }
-        if (isset($json->url)
-            || isset($json->_url)
-            || property_exists($json, self::FIELD_URL)
-            || property_exists($json, self::FIELD_URL_EXT)) {
-            $v = $json->_url ?? new \stdClass();
-            $v->value = $json->url ?? null;
+        if (isset($decoded->url)
+            || isset($decoded->_url)
+            || property_exists($decoded, self::FIELD_URL)
+            || property_exists($decoded, self::FIELD_URL_EXT)) {
+            $v = $decoded->_url ?? new \stdClass();
+            $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
-        if (isset($json->ifNoneMatch)
-            || isset($json->_ifNoneMatch)
-            || property_exists($json, self::FIELD_IF_NONE_MATCH)
-            || property_exists($json, self::FIELD_IF_NONE_MATCH_EXT)) {
-            $v = $json->_ifNoneMatch ?? new \stdClass();
-            $v->value = $json->ifNoneMatch ?? null;
+        if (isset($decoded->ifNoneMatch)
+            || isset($decoded->_ifNoneMatch)
+            || property_exists($decoded, self::FIELD_IF_NONE_MATCH)
+            || property_exists($decoded, self::FIELD_IF_NONE_MATCH_EXT)) {
+            $v = $decoded->_ifNoneMatch ?? new \stdClass();
+            $v->value = $decoded->ifNoneMatch ?? null;
             $type->setIfNoneMatch(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->ifModifiedSince)
-            || isset($json->_ifModifiedSince)
-            || property_exists($json, self::FIELD_IF_MODIFIED_SINCE)
-            || property_exists($json, self::FIELD_IF_MODIFIED_SINCE_EXT)) {
-            $v = $json->_ifModifiedSince ?? new \stdClass();
-            $v->value = $json->ifModifiedSince ?? null;
+        if (isset($decoded->ifModifiedSince)
+            || isset($decoded->_ifModifiedSince)
+            || property_exists($decoded, self::FIELD_IF_MODIFIED_SINCE)
+            || property_exists($decoded, self::FIELD_IF_MODIFIED_SINCE_EXT)) {
+            $v = $decoded->_ifModifiedSince ?? new \stdClass();
+            $v->value = $decoded->ifModifiedSince ?? null;
             $type->setIfModifiedSince(FHIRInstant::jsonUnserialize($v, $config));
         }
-        if (isset($json->ifMatch)
-            || isset($json->_ifMatch)
-            || property_exists($json, self::FIELD_IF_MATCH)
-            || property_exists($json, self::FIELD_IF_MATCH_EXT)) {
-            $v = $json->_ifMatch ?? new \stdClass();
-            $v->value = $json->ifMatch ?? null;
+        if (isset($decoded->ifMatch)
+            || isset($decoded->_ifMatch)
+            || property_exists($decoded, self::FIELD_IF_MATCH)
+            || property_exists($decoded, self::FIELD_IF_MATCH_EXT)) {
+            $v = $decoded->_ifMatch ?? new \stdClass();
+            $v->value = $decoded->ifMatch ?? null;
             $type->setIfMatch(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->ifNoneExist)
-            || isset($json->_ifNoneExist)
-            || property_exists($json, self::FIELD_IF_NONE_EXIST)
-            || property_exists($json, self::FIELD_IF_NONE_EXIST_EXT)) {
-            $v = $json->_ifNoneExist ?? new \stdClass();
-            $v->value = $json->ifNoneExist ?? null;
+        if (isset($decoded->ifNoneExist)
+            || isset($decoded->_ifNoneExist)
+            || property_exists($decoded, self::FIELD_IF_NONE_EXIST)
+            || property_exists($decoded, self::FIELD_IF_NONE_EXIST_EXT)) {
+            $v = $decoded->_ifNoneExist ?? new \stdClass();
+            $v->value = $decoded->ifNoneExist ?? null;
             $type->setIfNoneExist(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

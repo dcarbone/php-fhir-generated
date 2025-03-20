@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -695,13 +695,13 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceProtein $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceProtein
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -718,34 +718,34 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->sequenceType) || property_exists($json, self::FIELD_SEQUENCE_TYPE)) {
-            if (is_array($json->sequenceType)) {
-                $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize(reset($json->sequenceType), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->sequenceType) || property_exists($decoded, self::FIELD_SEQUENCE_TYPE)) {
+            if (is_array($decoded->sequenceType)) {
+                $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->sequenceType), $config));
             } else {
-                $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize($json->sequenceType, $config));
+                $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize($decoded->sequenceType, $config));
             }
         }
-        if (isset($json->numberOfSubunits)
-            || isset($json->_numberOfSubunits)
-            || property_exists($json, self::FIELD_NUMBER_OF_SUBUNITS)
-            || property_exists($json, self::FIELD_NUMBER_OF_SUBUNITS_EXT)) {
-            $v = $json->_numberOfSubunits ?? new \stdClass();
-            $v->value = $json->numberOfSubunits ?? null;
+        if (isset($decoded->numberOfSubunits)
+            || isset($decoded->_numberOfSubunits)
+            || property_exists($decoded, self::FIELD_NUMBER_OF_SUBUNITS)
+            || property_exists($decoded, self::FIELD_NUMBER_OF_SUBUNITS_EXT)) {
+            $v = $decoded->_numberOfSubunits ?? new \stdClass();
+            $v->value = $decoded->numberOfSubunits ?? null;
             $type->setNumberOfSubunits(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->disulfideLinkage)
-            || isset($json->_disulfideLinkage)
-            || property_exists($json, self::FIELD_DISULFIDE_LINKAGE)
-            || property_exists($json, self::FIELD_DISULFIDE_LINKAGE_EXT)) {
-            $vals = (array)($json->disulfideLinkage ?? []);
-            $exts = (array)($json->FIELD_DISULFIDE_LINKAGE_EXT ?? []);
+        if (isset($decoded->disulfideLinkage)
+            || isset($decoded->_disulfideLinkage)
+            || property_exists($decoded, self::FIELD_DISULFIDE_LINKAGE)
+            || property_exists($decoded, self::FIELD_DISULFIDE_LINKAGE_EXT)) {
+            $vals = (array)($decoded->disulfideLinkage ?? []);
+            $exts = (array)($decoded->FIELD_DISULFIDE_LINKAGE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -757,12 +757,12 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
                 $type->addDisulfideLinkage(FHIRString::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->subunit) || property_exists($json, self::FIELD_SUBUNIT)) {
-            if (is_object($json->subunit)) {
-                $vals = [$json->subunit];
+        if (isset($decoded->subunit) || property_exists($decoded, self::FIELD_SUBUNIT)) {
+            if (is_object($decoded->subunit)) {
+                $vals = [$decoded->subunit];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SUBUNIT, true);
             } else {
-                $vals = $json->subunit;
+                $vals = $decoded->subunit;
             }
             foreach($vals as $v) {
                 $type->addSubunit(FHIRSubstanceProteinSubunit::jsonUnserialize($v, $config));

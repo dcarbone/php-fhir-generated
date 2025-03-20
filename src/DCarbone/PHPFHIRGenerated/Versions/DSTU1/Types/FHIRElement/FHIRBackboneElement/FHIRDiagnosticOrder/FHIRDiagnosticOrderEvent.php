@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -468,13 +468,13 @@ class FHIRDiagnosticOrderEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -488,35 +488,35 @@ class FHIRDiagnosticOrderEvent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->status)
-            || isset($json->_status)
-            || property_exists($json, self::FIELD_STATUS)
-            || property_exists($json, self::FIELD_STATUS_EXT)) {
-            $v = $json->_status ?? new \stdClass();
-            $v->value = $json->status ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->status)
+            || isset($decoded->_status)
+            || property_exists($decoded, self::FIELD_STATUS)
+            || property_exists($decoded, self::FIELD_STATUS_EXT)) {
+            $v = $decoded->_status ?? new \stdClass();
+            $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRDiagnosticOrderStatus::jsonUnserialize($v, $config));
         }
-        if (isset($json->description) || property_exists($json, self::FIELD_DESCRIPTION)) {
-            if (is_array($json->description)) {
-                $type->setDescription(FHIRCodeableConcept::jsonUnserialize(reset($json->description), $config));
+        if (isset($decoded->description) || property_exists($decoded, self::FIELD_DESCRIPTION)) {
+            if (is_array($decoded->description)) {
+                $type->setDescription(FHIRCodeableConcept::jsonUnserialize(reset($decoded->description), $config));
             } else {
-                $type->setDescription(FHIRCodeableConcept::jsonUnserialize($json->description, $config));
+                $type->setDescription(FHIRCodeableConcept::jsonUnserialize($decoded->description, $config));
             }
         }
-        if (isset($json->dateTime)
-            || isset($json->_dateTime)
-            || property_exists($json, self::FIELD_DATE_TIME)
-            || property_exists($json, self::FIELD_DATE_TIME_EXT)) {
-            $v = $json->_dateTime ?? new \stdClass();
-            $v->value = $json->dateTime ?? null;
+        if (isset($decoded->dateTime)
+            || isset($decoded->_dateTime)
+            || property_exists($decoded, self::FIELD_DATE_TIME)
+            || property_exists($decoded, self::FIELD_DATE_TIME_EXT)) {
+            $v = $decoded->_dateTime ?? new \stdClass();
+            $v->value = $decoded->dateTime ?? null;
             $type->setDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->actor) || property_exists($json, self::FIELD_ACTOR)) {
-            if (is_array($json->actor)) {
-                $type->setActor(FHIRResourceReference::jsonUnserialize(reset($json->actor), $config));
+        if (isset($decoded->actor) || property_exists($decoded, self::FIELD_ACTOR)) {
+            if (is_array($decoded->actor)) {
+                $type->setActor(FHIRResourceReference::jsonUnserialize(reset($decoded->actor), $config));
             } else {
-                $type->setActor(FHIRResourceReference::jsonUnserialize($json->actor, $config));
+                $type->setActor(FHIRResourceReference::jsonUnserialize($decoded->actor, $config));
             }
         }
         return $type;

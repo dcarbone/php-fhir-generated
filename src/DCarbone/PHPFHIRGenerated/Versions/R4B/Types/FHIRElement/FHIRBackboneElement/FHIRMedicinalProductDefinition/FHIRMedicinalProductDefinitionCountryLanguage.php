@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -399,13 +399,13 @@ class FHIRMedicinalProductDefinitionCountryLanguage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionCountryLanguage $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionCountryLanguage
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -419,26 +419,26 @@ class FHIRMedicinalProductDefinitionCountryLanguage extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->country) || property_exists($json, self::FIELD_COUNTRY)) {
-            if (is_array($json->country)) {
-                $type->setCountry(FHIRCodeableConcept::jsonUnserialize(reset($json->country), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->country) || property_exists($decoded, self::FIELD_COUNTRY)) {
+            if (is_array($decoded->country)) {
+                $type->setCountry(FHIRCodeableConcept::jsonUnserialize(reset($decoded->country), $config));
             } else {
-                $type->setCountry(FHIRCodeableConcept::jsonUnserialize($json->country, $config));
+                $type->setCountry(FHIRCodeableConcept::jsonUnserialize($decoded->country, $config));
             }
         }
-        if (isset($json->jurisdiction) || property_exists($json, self::FIELD_JURISDICTION)) {
-            if (is_array($json->jurisdiction)) {
-                $type->setJurisdiction(FHIRCodeableConcept::jsonUnserialize(reset($json->jurisdiction), $config));
+        if (isset($decoded->jurisdiction) || property_exists($decoded, self::FIELD_JURISDICTION)) {
+            if (is_array($decoded->jurisdiction)) {
+                $type->setJurisdiction(FHIRCodeableConcept::jsonUnserialize(reset($decoded->jurisdiction), $config));
             } else {
-                $type->setJurisdiction(FHIRCodeableConcept::jsonUnserialize($json->jurisdiction, $config));
+                $type->setJurisdiction(FHIRCodeableConcept::jsonUnserialize($decoded->jurisdiction, $config));
             }
         }
-        if (isset($json->language) || property_exists($json, self::FIELD_LANGUAGE)) {
-            if (is_array($json->language)) {
-                $type->setLanguage(FHIRCodeableConcept::jsonUnserialize(reset($json->language), $config));
+        if (isset($decoded->language) || property_exists($decoded, self::FIELD_LANGUAGE)) {
+            if (is_array($decoded->language)) {
+                $type->setLanguage(FHIRCodeableConcept::jsonUnserialize(reset($decoded->language), $config));
             } else {
-                $type->setLanguage(FHIRCodeableConcept::jsonUnserialize($json->language, $config));
+                $type->setLanguage(FHIRCodeableConcept::jsonUnserialize($decoded->language, $config));
             }
         }
         return $type;

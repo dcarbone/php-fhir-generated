@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -632,13 +632,13 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -652,49 +652,49 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->amountQuantity) || property_exists($json, self::FIELD_AMOUNT_QUANTITY)) {
-            if (is_array($json->amountQuantity)) {
-                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize(reset($json->amountQuantity), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->amountQuantity) || property_exists($decoded, self::FIELD_AMOUNT_QUANTITY)) {
+            if (is_array($decoded->amountQuantity)) {
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->amountQuantity), $config));
             } else {
-                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($json->amountQuantity, $config));
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($decoded->amountQuantity, $config));
             }
         }
-        if (isset($json->amountRange) || property_exists($json, self::FIELD_AMOUNT_RANGE)) {
-            if (is_array($json->amountRange)) {
-                $type->setAmountRange(FHIRRange::jsonUnserialize(reset($json->amountRange), $config));
+        if (isset($decoded->amountRange) || property_exists($decoded, self::FIELD_AMOUNT_RANGE)) {
+            if (is_array($decoded->amountRange)) {
+                $type->setAmountRange(FHIRRange::jsonUnserialize(reset($decoded->amountRange), $config));
             } else {
-                $type->setAmountRange(FHIRRange::jsonUnserialize($json->amountRange, $config));
+                $type->setAmountRange(FHIRRange::jsonUnserialize($decoded->amountRange, $config));
             }
         }
-        if (isset($json->amountString)
-            || isset($json->_amountString)
-            || property_exists($json, self::FIELD_AMOUNT_STRING)
-            || property_exists($json, self::FIELD_AMOUNT_STRING_EXT)) {
-            $v = $json->_amountString ?? new \stdClass();
-            $v->value = $json->amountString ?? null;
+        if (isset($decoded->amountString)
+            || isset($decoded->_amountString)
+            || property_exists($decoded, self::FIELD_AMOUNT_STRING)
+            || property_exists($decoded, self::FIELD_AMOUNT_STRING_EXT)) {
+            $v = $decoded->_amountString ?? new \stdClass();
+            $v->value = $decoded->amountString ?? null;
             $type->setAmountString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->amountType) || property_exists($json, self::FIELD_AMOUNT_TYPE)) {
-            if (is_array($json->amountType)) {
-                $type->setAmountType(FHIRCodeableConcept::jsonUnserialize(reset($json->amountType), $config));
+        if (isset($decoded->amountType) || property_exists($decoded, self::FIELD_AMOUNT_TYPE)) {
+            if (is_array($decoded->amountType)) {
+                $type->setAmountType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->amountType), $config));
             } else {
-                $type->setAmountType(FHIRCodeableConcept::jsonUnserialize($json->amountType, $config));
+                $type->setAmountType(FHIRCodeableConcept::jsonUnserialize($decoded->amountType, $config));
             }
         }
-        if (isset($json->amountText)
-            || isset($json->_amountText)
-            || property_exists($json, self::FIELD_AMOUNT_TEXT)
-            || property_exists($json, self::FIELD_AMOUNT_TEXT_EXT)) {
-            $v = $json->_amountText ?? new \stdClass();
-            $v->value = $json->amountText ?? null;
+        if (isset($decoded->amountText)
+            || isset($decoded->_amountText)
+            || property_exists($decoded, self::FIELD_AMOUNT_TEXT)
+            || property_exists($decoded, self::FIELD_AMOUNT_TEXT_EXT)) {
+            $v = $decoded->_amountText ?? new \stdClass();
+            $v->value = $decoded->amountText ?? null;
             $type->setAmountText(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->referenceRange) || property_exists($json, self::FIELD_REFERENCE_RANGE)) {
-            if (is_array($json->referenceRange)) {
-                $type->setReferenceRange(FHIRSubstanceAmountReferenceRange::jsonUnserialize(reset($json->referenceRange), $config));
+        if (isset($decoded->referenceRange) || property_exists($decoded, self::FIELD_REFERENCE_RANGE)) {
+            if (is_array($decoded->referenceRange)) {
+                $type->setReferenceRange(FHIRSubstanceAmountReferenceRange::jsonUnserialize(reset($decoded->referenceRange), $config));
             } else {
-                $type->setReferenceRange(FHIRSubstanceAmountReferenceRange::jsonUnserialize($json->referenceRange, $config));
+                $type->setReferenceRange(FHIRSubstanceAmountReferenceRange::jsonUnserialize($decoded->referenceRange, $config));
             }
         }
         return $type;

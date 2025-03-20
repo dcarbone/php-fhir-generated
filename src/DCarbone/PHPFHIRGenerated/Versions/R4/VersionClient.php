@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -421,7 +421,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRAccount::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRAccount::xmlUnserialize(
@@ -448,7 +448,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRActivityDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRActivityDefinition::xmlUnserialize(
@@ -475,7 +475,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRAdverseEvent::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRAdverseEvent::xmlUnserialize(
@@ -502,7 +502,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRAllergyIntolerance::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRAllergyIntolerance::xmlUnserialize(
@@ -529,7 +529,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRAppointment::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRAppointment::xmlUnserialize(
@@ -556,7 +556,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRAppointmentResponse::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRAppointmentResponse::xmlUnserialize(
@@ -583,7 +583,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRAuditEvent::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRAuditEvent::xmlUnserialize(
@@ -610,7 +610,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRBasic::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRBasic::xmlUnserialize(
@@ -637,7 +637,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRBinary::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRBinary::xmlUnserialize(
@@ -664,7 +664,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRBiologicallyDerivedProduct::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRBiologicallyDerivedProduct::xmlUnserialize(
@@ -691,7 +691,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRBodyStructure::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRBodyStructure::xmlUnserialize(
@@ -718,7 +718,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCapabilityStatement::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCapabilityStatement::xmlUnserialize(
@@ -745,7 +745,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCarePlan::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCarePlan::xmlUnserialize(
@@ -772,7 +772,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCareTeam::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCareTeam::xmlUnserialize(
@@ -799,7 +799,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCatalogEntry::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCatalogEntry::xmlUnserialize(
@@ -826,7 +826,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRChargeItem::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRChargeItem::xmlUnserialize(
@@ -853,7 +853,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRChargeItemDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRChargeItemDefinition::xmlUnserialize(
@@ -880,7 +880,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRClaim::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRClaim::xmlUnserialize(
@@ -907,7 +907,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRClaimResponse::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRClaimResponse::xmlUnserialize(
@@ -934,7 +934,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRClinicalImpression::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRClinicalImpression::xmlUnserialize(
@@ -961,7 +961,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCodeSystem::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCodeSystem::xmlUnserialize(
@@ -988,7 +988,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCommunication::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCommunication::xmlUnserialize(
@@ -1015,7 +1015,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCommunicationRequest::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCommunicationRequest::xmlUnserialize(
@@ -1042,7 +1042,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCompartmentDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCompartmentDefinition::xmlUnserialize(
@@ -1069,7 +1069,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRComposition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRComposition::xmlUnserialize(
@@ -1096,7 +1096,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRConceptMap::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRConceptMap::xmlUnserialize(
@@ -1123,7 +1123,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCondition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCondition::xmlUnserialize(
@@ -1150,7 +1150,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRConsent::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRConsent::xmlUnserialize(
@@ -1177,7 +1177,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRContract::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRContract::xmlUnserialize(
@@ -1204,7 +1204,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCoverage::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCoverage::xmlUnserialize(
@@ -1231,7 +1231,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCoverageEligibilityRequest::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCoverageEligibilityRequest::xmlUnserialize(
@@ -1258,7 +1258,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRCoverageEligibilityResponse::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRCoverageEligibilityResponse::xmlUnserialize(
@@ -1285,7 +1285,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRDetectedIssue::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRDetectedIssue::xmlUnserialize(
@@ -1312,7 +1312,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRDevice::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRDevice::xmlUnserialize(
@@ -1339,7 +1339,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRDeviceDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRDeviceDefinition::xmlUnserialize(
@@ -1366,7 +1366,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRDeviceMetric::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRDeviceMetric::xmlUnserialize(
@@ -1393,7 +1393,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRDeviceRequest::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRDeviceRequest::xmlUnserialize(
@@ -1420,7 +1420,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRDeviceUseStatement::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRDeviceUseStatement::xmlUnserialize(
@@ -1447,7 +1447,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRDiagnosticReport::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRDiagnosticReport::xmlUnserialize(
@@ -1474,7 +1474,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRDocumentManifest::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRDocumentManifest::xmlUnserialize(
@@ -1501,7 +1501,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRDocumentReference::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRDocumentReference::xmlUnserialize(
@@ -1528,7 +1528,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIREffectEvidenceSynthesis::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIREffectEvidenceSynthesis::xmlUnserialize(
@@ -1555,7 +1555,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIREncounter::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIREncounter::xmlUnserialize(
@@ -1582,7 +1582,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIREndpoint::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIREndpoint::xmlUnserialize(
@@ -1609,7 +1609,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIREnrollmentRequest::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIREnrollmentRequest::xmlUnserialize(
@@ -1636,7 +1636,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIREnrollmentResponse::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIREnrollmentResponse::xmlUnserialize(
@@ -1663,7 +1663,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIREpisodeOfCare::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIREpisodeOfCare::xmlUnserialize(
@@ -1690,7 +1690,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIREventDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIREventDefinition::xmlUnserialize(
@@ -1717,7 +1717,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIREvidence::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIREvidence::xmlUnserialize(
@@ -1744,7 +1744,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIREvidenceVariable::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIREvidenceVariable::xmlUnserialize(
@@ -1771,7 +1771,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRExampleScenario::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRExampleScenario::xmlUnserialize(
@@ -1798,7 +1798,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRExplanationOfBenefit::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRExplanationOfBenefit::xmlUnserialize(
@@ -1825,7 +1825,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRFamilyMemberHistory::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRFamilyMemberHistory::xmlUnserialize(
@@ -1852,7 +1852,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRFlag::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRFlag::xmlUnserialize(
@@ -1879,7 +1879,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRGoal::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRGoal::xmlUnserialize(
@@ -1906,7 +1906,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRGraphDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRGraphDefinition::xmlUnserialize(
@@ -1933,7 +1933,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRGroup::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRGroup::xmlUnserialize(
@@ -1960,7 +1960,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRGuidanceResponse::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRGuidanceResponse::xmlUnserialize(
@@ -1987,7 +1987,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRHealthcareService::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRHealthcareService::xmlUnserialize(
@@ -2014,7 +2014,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRImagingStudy::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRImagingStudy::xmlUnserialize(
@@ -2041,7 +2041,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRImmunization::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRImmunization::xmlUnserialize(
@@ -2068,7 +2068,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRImmunizationEvaluation::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRImmunizationEvaluation::xmlUnserialize(
@@ -2095,7 +2095,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRImmunizationRecommendation::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRImmunizationRecommendation::xmlUnserialize(
@@ -2122,7 +2122,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRImplementationGuide::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRImplementationGuide::xmlUnserialize(
@@ -2149,7 +2149,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRInsurancePlan::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRInsurancePlan::xmlUnserialize(
@@ -2176,7 +2176,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRInvoice::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRInvoice::xmlUnserialize(
@@ -2203,7 +2203,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRLibrary::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRLibrary::xmlUnserialize(
@@ -2230,7 +2230,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRLinkage::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRLinkage::xmlUnserialize(
@@ -2257,7 +2257,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRList::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRList::xmlUnserialize(
@@ -2284,7 +2284,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRLocation::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRLocation::xmlUnserialize(
@@ -2311,7 +2311,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMeasure::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMeasure::xmlUnserialize(
@@ -2338,7 +2338,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMeasureReport::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMeasureReport::xmlUnserialize(
@@ -2365,7 +2365,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedia::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedia::xmlUnserialize(
@@ -2392,7 +2392,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedication::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedication::xmlUnserialize(
@@ -2419,7 +2419,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicationAdministration::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicationAdministration::xmlUnserialize(
@@ -2446,7 +2446,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicationDispense::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicationDispense::xmlUnserialize(
@@ -2473,7 +2473,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicationKnowledge::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicationKnowledge::xmlUnserialize(
@@ -2500,7 +2500,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicationRequest::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicationRequest::xmlUnserialize(
@@ -2527,7 +2527,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicationStatement::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicationStatement::xmlUnserialize(
@@ -2554,7 +2554,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicinalProduct::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicinalProduct::xmlUnserialize(
@@ -2581,7 +2581,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicinalProductAuthorization::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicinalProductAuthorization::xmlUnserialize(
@@ -2608,7 +2608,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicinalProductContraindication::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicinalProductContraindication::xmlUnserialize(
@@ -2635,7 +2635,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicinalProductIndication::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicinalProductIndication::xmlUnserialize(
@@ -2662,7 +2662,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicinalProductIngredient::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicinalProductIngredient::xmlUnserialize(
@@ -2689,7 +2689,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicinalProductInteraction::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicinalProductInteraction::xmlUnserialize(
@@ -2716,7 +2716,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicinalProductManufactured::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicinalProductManufactured::xmlUnserialize(
@@ -2743,7 +2743,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicinalProductPackaged::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicinalProductPackaged::xmlUnserialize(
@@ -2770,7 +2770,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicinalProductPharmaceutical::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicinalProductPharmaceutical::xmlUnserialize(
@@ -2797,7 +2797,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMedicinalProductUndesirableEffect::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMedicinalProductUndesirableEffect::xmlUnserialize(
@@ -2824,7 +2824,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMessageDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMessageDefinition::xmlUnserialize(
@@ -2851,7 +2851,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMessageHeader::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMessageHeader::xmlUnserialize(
@@ -2878,7 +2878,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRMolecularSequence::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRMolecularSequence::xmlUnserialize(
@@ -2905,7 +2905,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRNamingSystem::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRNamingSystem::xmlUnserialize(
@@ -2932,7 +2932,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRNutritionOrder::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRNutritionOrder::xmlUnserialize(
@@ -2959,7 +2959,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRObservation::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRObservation::xmlUnserialize(
@@ -2986,7 +2986,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRObservationDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRObservationDefinition::xmlUnserialize(
@@ -3013,7 +3013,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIROperationDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIROperationDefinition::xmlUnserialize(
@@ -3040,7 +3040,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIROperationOutcome::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIROperationOutcome::xmlUnserialize(
@@ -3067,7 +3067,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIROrganization::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIROrganization::xmlUnserialize(
@@ -3094,7 +3094,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIROrganizationAffiliation::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIROrganizationAffiliation::xmlUnserialize(
@@ -3121,7 +3121,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRParameters::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRParameters::xmlUnserialize(
@@ -3148,7 +3148,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRPatient::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRPatient::xmlUnserialize(
@@ -3175,7 +3175,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRPaymentNotice::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRPaymentNotice::xmlUnserialize(
@@ -3202,7 +3202,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRPaymentReconciliation::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRPaymentReconciliation::xmlUnserialize(
@@ -3229,7 +3229,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRPerson::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRPerson::xmlUnserialize(
@@ -3256,7 +3256,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRPlanDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRPlanDefinition::xmlUnserialize(
@@ -3283,7 +3283,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRPractitioner::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRPractitioner::xmlUnserialize(
@@ -3310,7 +3310,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRPractitionerRole::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRPractitionerRole::xmlUnserialize(
@@ -3337,7 +3337,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRProcedure::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRProcedure::xmlUnserialize(
@@ -3364,7 +3364,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRProvenance::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRProvenance::xmlUnserialize(
@@ -3391,7 +3391,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRQuestionnaire::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRQuestionnaire::xmlUnserialize(
@@ -3418,7 +3418,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRQuestionnaireResponse::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRQuestionnaireResponse::xmlUnserialize(
@@ -3445,7 +3445,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRRelatedPerson::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRRelatedPerson::xmlUnserialize(
@@ -3472,7 +3472,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRRequestGroup::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRRequestGroup::xmlUnserialize(
@@ -3499,7 +3499,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRResearchDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRResearchDefinition::xmlUnserialize(
@@ -3526,7 +3526,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRResearchElementDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRResearchElementDefinition::xmlUnserialize(
@@ -3553,7 +3553,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRResearchStudy::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRResearchStudy::xmlUnserialize(
@@ -3580,7 +3580,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRResearchSubject::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRResearchSubject::xmlUnserialize(
@@ -3607,7 +3607,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRRiskAssessment::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRRiskAssessment::xmlUnserialize(
@@ -3634,7 +3634,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRRiskEvidenceSynthesis::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRRiskEvidenceSynthesis::xmlUnserialize(
@@ -3661,7 +3661,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSchedule::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSchedule::xmlUnserialize(
@@ -3688,7 +3688,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSearchParameter::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSearchParameter::xmlUnserialize(
@@ -3715,7 +3715,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRServiceRequest::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRServiceRequest::xmlUnserialize(
@@ -3742,7 +3742,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSlot::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSlot::xmlUnserialize(
@@ -3769,7 +3769,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSpecimen::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSpecimen::xmlUnserialize(
@@ -3796,7 +3796,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSpecimenDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSpecimenDefinition::xmlUnserialize(
@@ -3823,7 +3823,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRStructureDefinition::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRStructureDefinition::xmlUnserialize(
@@ -3850,7 +3850,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRStructureMap::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRStructureMap::xmlUnserialize(
@@ -3877,7 +3877,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSubscription::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSubscription::xmlUnserialize(
@@ -3904,7 +3904,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSubstance::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSubstance::xmlUnserialize(
@@ -3931,7 +3931,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSubstanceNucleicAcid::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSubstanceNucleicAcid::xmlUnserialize(
@@ -3958,7 +3958,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSubstancePolymer::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSubstancePolymer::xmlUnserialize(
@@ -3985,7 +3985,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSubstanceProtein::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSubstanceProtein::xmlUnserialize(
@@ -4012,7 +4012,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSubstanceReferenceInformation::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSubstanceReferenceInformation::xmlUnserialize(
@@ -4039,7 +4039,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSubstanceSourceMaterial::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSubstanceSourceMaterial::xmlUnserialize(
@@ -4066,7 +4066,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSubstanceSpecification::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSubstanceSpecification::xmlUnserialize(
@@ -4093,7 +4093,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSupplyDelivery::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSupplyDelivery::xmlUnserialize(
@@ -4120,7 +4120,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRSupplyRequest::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRSupplyRequest::xmlUnserialize(
@@ -4147,7 +4147,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRTask::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRTask::xmlUnserialize(
@@ -4174,7 +4174,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRTerminologyCapabilities::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRTerminologyCapabilities::xmlUnserialize(
@@ -4201,7 +4201,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRTestReport::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRTestReport::xmlUnserialize(
@@ -4228,7 +4228,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRTestScript::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRTestScript::xmlUnserialize(
@@ -4255,7 +4255,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRValueSet::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRValueSet::xmlUnserialize(
@@ -4282,7 +4282,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRVerificationResult::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRVerificationResult::xmlUnserialize(
@@ -4309,7 +4309,7 @@ class VersionClient
         $this->_requireOK($rc);
         return match($format) {
             SerializeFormatEnum::JSON => FHIRVisionPrescription::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => FHIRVisionPrescription::xmlUnserialize(
@@ -4336,7 +4336,7 @@ class VersionClient
         $class = $this->_version->getTypeMap()::getTypeClassname($resourceType->name);
         return match ($rc->getResponseFormat()) {
             SerializeFormatEnum::JSON => $class::jsonUnserialize(
-                json: $rc->resp,
+                decoded: $rc->resp,
                 config: $this->_version->getConfig()->getUnserializeConfig(),
             ),
             SerializeFormatEnum::XML => $class::xmlUnserialize(

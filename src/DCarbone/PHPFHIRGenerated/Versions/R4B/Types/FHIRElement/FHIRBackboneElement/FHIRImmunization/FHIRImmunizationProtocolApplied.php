@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -747,13 +747,13 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -767,63 +767,63 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->series)
-            || isset($json->_series)
-            || property_exists($json, self::FIELD_SERIES)
-            || property_exists($json, self::FIELD_SERIES_EXT)) {
-            $v = $json->_series ?? new \stdClass();
-            $v->value = $json->series ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->series)
+            || isset($decoded->_series)
+            || property_exists($decoded, self::FIELD_SERIES)
+            || property_exists($decoded, self::FIELD_SERIES_EXT)) {
+            $v = $decoded->_series ?? new \stdClass();
+            $v->value = $decoded->series ?? null;
             $type->setSeries(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->authority) || property_exists($json, self::FIELD_AUTHORITY)) {
-            if (is_array($json->authority)) {
-                $type->setAuthority(FHIRReference::jsonUnserialize(reset($json->authority), $config));
+        if (isset($decoded->authority) || property_exists($decoded, self::FIELD_AUTHORITY)) {
+            if (is_array($decoded->authority)) {
+                $type->setAuthority(FHIRReference::jsonUnserialize(reset($decoded->authority), $config));
             } else {
-                $type->setAuthority(FHIRReference::jsonUnserialize($json->authority, $config));
+                $type->setAuthority(FHIRReference::jsonUnserialize($decoded->authority, $config));
             }
         }
-        if (isset($json->targetDisease) || property_exists($json, self::FIELD_TARGET_DISEASE)) {
-            if (is_object($json->targetDisease)) {
-                $vals = [$json->targetDisease];
+        if (isset($decoded->targetDisease) || property_exists($decoded, self::FIELD_TARGET_DISEASE)) {
+            if (is_object($decoded->targetDisease)) {
+                $vals = [$decoded->targetDisease];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TARGET_DISEASE, true);
             } else {
-                $vals = $json->targetDisease;
+                $vals = $decoded->targetDisease;
             }
             foreach($vals as $v) {
                 $type->addTargetDisease(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->doseNumberPositiveInt)
-            || isset($json->_doseNumberPositiveInt)
-            || property_exists($json, self::FIELD_DOSE_NUMBER_POSITIVE_INT)
-            || property_exists($json, self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT)) {
-            $v = $json->_doseNumberPositiveInt ?? new \stdClass();
-            $v->value = $json->doseNumberPositiveInt ?? null;
+        if (isset($decoded->doseNumberPositiveInt)
+            || isset($decoded->_doseNumberPositiveInt)
+            || property_exists($decoded, self::FIELD_DOSE_NUMBER_POSITIVE_INT)
+            || property_exists($decoded, self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT)) {
+            $v = $decoded->_doseNumberPositiveInt ?? new \stdClass();
+            $v->value = $decoded->doseNumberPositiveInt ?? null;
             $type->setDoseNumberPositiveInt(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->doseNumberString)
-            || isset($json->_doseNumberString)
-            || property_exists($json, self::FIELD_DOSE_NUMBER_STRING)
-            || property_exists($json, self::FIELD_DOSE_NUMBER_STRING_EXT)) {
-            $v = $json->_doseNumberString ?? new \stdClass();
-            $v->value = $json->doseNumberString ?? null;
+        if (isset($decoded->doseNumberString)
+            || isset($decoded->_doseNumberString)
+            || property_exists($decoded, self::FIELD_DOSE_NUMBER_STRING)
+            || property_exists($decoded, self::FIELD_DOSE_NUMBER_STRING_EXT)) {
+            $v = $decoded->_doseNumberString ?? new \stdClass();
+            $v->value = $decoded->doseNumberString ?? null;
             $type->setDoseNumberString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->seriesDosesPositiveInt)
-            || isset($json->_seriesDosesPositiveInt)
-            || property_exists($json, self::FIELD_SERIES_DOSES_POSITIVE_INT)
-            || property_exists($json, self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT)) {
-            $v = $json->_seriesDosesPositiveInt ?? new \stdClass();
-            $v->value = $json->seriesDosesPositiveInt ?? null;
+        if (isset($decoded->seriesDosesPositiveInt)
+            || isset($decoded->_seriesDosesPositiveInt)
+            || property_exists($decoded, self::FIELD_SERIES_DOSES_POSITIVE_INT)
+            || property_exists($decoded, self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT)) {
+            $v = $decoded->_seriesDosesPositiveInt ?? new \stdClass();
+            $v->value = $decoded->seriesDosesPositiveInt ?? null;
             $type->setSeriesDosesPositiveInt(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->seriesDosesString)
-            || isset($json->_seriesDosesString)
-            || property_exists($json, self::FIELD_SERIES_DOSES_STRING)
-            || property_exists($json, self::FIELD_SERIES_DOSES_STRING_EXT)) {
-            $v = $json->_seriesDosesString ?? new \stdClass();
-            $v->value = $json->seriesDosesString ?? null;
+        if (isset($decoded->seriesDosesString)
+            || isset($decoded->_seriesDosesString)
+            || property_exists($decoded, self::FIELD_SERIES_DOSES_STRING)
+            || property_exists($decoded, self::FIELD_SERIES_DOSES_STRING_EXT)) {
+            $v = $decoded->_seriesDosesString ?? new \stdClass();
+            $v->value = $decoded->seriesDosesString ?? null;
             $type->setSeriesDosesString(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

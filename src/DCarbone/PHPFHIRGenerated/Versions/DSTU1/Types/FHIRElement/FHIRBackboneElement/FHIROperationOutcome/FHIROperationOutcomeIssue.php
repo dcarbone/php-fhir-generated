@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -497,13 +497,13 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -517,36 +517,36 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->severity)
-            || isset($json->_severity)
-            || property_exists($json, self::FIELD_SEVERITY)
-            || property_exists($json, self::FIELD_SEVERITY_EXT)) {
-            $v = $json->_severity ?? new \stdClass();
-            $v->value = $json->severity ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->severity)
+            || isset($decoded->_severity)
+            || property_exists($decoded, self::FIELD_SEVERITY)
+            || property_exists($decoded, self::FIELD_SEVERITY_EXT)) {
+            $v = $decoded->_severity ?? new \stdClass();
+            $v->value = $decoded->severity ?? null;
             $type->setSeverity(FHIRIssueSeverity::jsonUnserialize($v, $config));
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCoding::jsonUnserialize(reset($json->type), $config));
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCoding::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCoding::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCoding::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->details)
-            || isset($json->_details)
-            || property_exists($json, self::FIELD_DETAILS)
-            || property_exists($json, self::FIELD_DETAILS_EXT)) {
-            $v = $json->_details ?? new \stdClass();
-            $v->value = $json->details ?? null;
+        if (isset($decoded->details)
+            || isset($decoded->_details)
+            || property_exists($decoded, self::FIELD_DETAILS)
+            || property_exists($decoded, self::FIELD_DETAILS_EXT)) {
+            $v = $decoded->_details ?? new \stdClass();
+            $v->value = $decoded->details ?? null;
             $type->setDetails(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->location)
-            || isset($json->_location)
-            || property_exists($json, self::FIELD_LOCATION)
-            || property_exists($json, self::FIELD_LOCATION_EXT)) {
-            $vals = (array)($json->location ?? []);
-            $exts = (array)($json->FIELD_LOCATION_EXT ?? []);
+        if (isset($decoded->location)
+            || isset($decoded->_location)
+            || property_exists($decoded, self::FIELD_LOCATION)
+            || property_exists($decoded, self::FIELD_LOCATION_EXT)) {
+            $vals = (array)($decoded->location ?? []);
+            $exts = (array)($decoded->FIELD_LOCATION_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -461,13 +461,13 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisResultsByExposure $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisResultsByExposure
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -481,35 +481,35 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->exposureState)
-            || isset($json->_exposureState)
-            || property_exists($json, self::FIELD_EXPOSURE_STATE)
-            || property_exists($json, self::FIELD_EXPOSURE_STATE_EXT)) {
-            $v = $json->_exposureState ?? new \stdClass();
-            $v->value = $json->exposureState ?? null;
+        if (isset($decoded->exposureState)
+            || isset($decoded->_exposureState)
+            || property_exists($decoded, self::FIELD_EXPOSURE_STATE)
+            || property_exists($decoded, self::FIELD_EXPOSURE_STATE_EXT)) {
+            $v = $decoded->_exposureState ?? new \stdClass();
+            $v->value = $decoded->exposureState ?? null;
             $type->setExposureState(FHIRExposureState::jsonUnserialize($v, $config));
         }
-        if (isset($json->variantState) || property_exists($json, self::FIELD_VARIANT_STATE)) {
-            if (is_array($json->variantState)) {
-                $type->setVariantState(FHIRCodeableConcept::jsonUnserialize(reset($json->variantState), $config));
+        if (isset($decoded->variantState) || property_exists($decoded, self::FIELD_VARIANT_STATE)) {
+            if (is_array($decoded->variantState)) {
+                $type->setVariantState(FHIRCodeableConcept::jsonUnserialize(reset($decoded->variantState), $config));
             } else {
-                $type->setVariantState(FHIRCodeableConcept::jsonUnserialize($json->variantState, $config));
+                $type->setVariantState(FHIRCodeableConcept::jsonUnserialize($decoded->variantState, $config));
             }
         }
-        if (isset($json->riskEvidenceSynthesis) || property_exists($json, self::FIELD_RISK_EVIDENCE_SYNTHESIS)) {
-            if (is_array($json->riskEvidenceSynthesis)) {
-                $type->setRiskEvidenceSynthesis(FHIRReference::jsonUnserialize(reset($json->riskEvidenceSynthesis), $config));
+        if (isset($decoded->riskEvidenceSynthesis) || property_exists($decoded, self::FIELD_RISK_EVIDENCE_SYNTHESIS)) {
+            if (is_array($decoded->riskEvidenceSynthesis)) {
+                $type->setRiskEvidenceSynthesis(FHIRReference::jsonUnserialize(reset($decoded->riskEvidenceSynthesis), $config));
             } else {
-                $type->setRiskEvidenceSynthesis(FHIRReference::jsonUnserialize($json->riskEvidenceSynthesis, $config));
+                $type->setRiskEvidenceSynthesis(FHIRReference::jsonUnserialize($decoded->riskEvidenceSynthesis, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -502,13 +502,13 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -522,13 +522,13 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->daysOfWeek)
-            || isset($json->_daysOfWeek)
-            || property_exists($json, self::FIELD_DAYS_OF_WEEK)
-            || property_exists($json, self::FIELD_DAYS_OF_WEEK_EXT)) {
-            $vals = (array)($json->daysOfWeek ?? []);
-            $exts = (array)($json->FIELD_DAYS_OF_WEEK_EXT ?? []);
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->daysOfWeek)
+            || isset($decoded->_daysOfWeek)
+            || property_exists($decoded, self::FIELD_DAYS_OF_WEEK)
+            || property_exists($decoded, self::FIELD_DAYS_OF_WEEK_EXT)) {
+            $vals = (array)($decoded->daysOfWeek ?? []);
+            $exts = (array)($decoded->FIELD_DAYS_OF_WEEK_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -540,28 +540,28 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
                 $type->addDaysOfWeek(FHIRDaysOfWeek::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->allDay)
-            || isset($json->_allDay)
-            || property_exists($json, self::FIELD_ALL_DAY)
-            || property_exists($json, self::FIELD_ALL_DAY_EXT)) {
-            $v = $json->_allDay ?? new \stdClass();
-            $v->value = $json->allDay ?? null;
+        if (isset($decoded->allDay)
+            || isset($decoded->_allDay)
+            || property_exists($decoded, self::FIELD_ALL_DAY)
+            || property_exists($decoded, self::FIELD_ALL_DAY_EXT)) {
+            $v = $decoded->_allDay ?? new \stdClass();
+            $v->value = $decoded->allDay ?? null;
             $type->setAllDay(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->openingTime)
-            || isset($json->_openingTime)
-            || property_exists($json, self::FIELD_OPENING_TIME)
-            || property_exists($json, self::FIELD_OPENING_TIME_EXT)) {
-            $v = $json->_openingTime ?? new \stdClass();
-            $v->value = $json->openingTime ?? null;
+        if (isset($decoded->openingTime)
+            || isset($decoded->_openingTime)
+            || property_exists($decoded, self::FIELD_OPENING_TIME)
+            || property_exists($decoded, self::FIELD_OPENING_TIME_EXT)) {
+            $v = $decoded->_openingTime ?? new \stdClass();
+            $v->value = $decoded->openingTime ?? null;
             $type->setOpeningTime(FHIRTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->closingTime)
-            || isset($json->_closingTime)
-            || property_exists($json, self::FIELD_CLOSING_TIME)
-            || property_exists($json, self::FIELD_CLOSING_TIME_EXT)) {
-            $v = $json->_closingTime ?? new \stdClass();
-            $v->value = $json->closingTime ?? null;
+        if (isset($decoded->closingTime)
+            || isset($decoded->_closingTime)
+            || property_exists($decoded, self::FIELD_CLOSING_TIME)
+            || property_exists($decoded, self::FIELD_CLOSING_TIME_EXT)) {
+            $v = $decoded->_closingTime ?? new \stdClass();
+            $v->value = $decoded->closingTime ?? null;
             $type->setClosingTime(FHIRTime::jsonUnserialize($v, $config));
         }
         return $type;

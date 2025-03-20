@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -787,13 +787,13 @@ class FHIRConformanceRest extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -807,69 +807,69 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->mode)
-            || isset($json->_mode)
-            || property_exists($json, self::FIELD_MODE)
-            || property_exists($json, self::FIELD_MODE_EXT)) {
-            $v = $json->_mode ?? new \stdClass();
-            $v->value = $json->mode ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->mode)
+            || isset($decoded->_mode)
+            || property_exists($decoded, self::FIELD_MODE)
+            || property_exists($decoded, self::FIELD_MODE_EXT)) {
+            $v = $decoded->_mode ?? new \stdClass();
+            $v->value = $decoded->mode ?? null;
             $type->setMode(FHIRRestfulConformanceMode::jsonUnserialize($v, $config));
         }
-        if (isset($json->documentation)
-            || isset($json->_documentation)
-            || property_exists($json, self::FIELD_DOCUMENTATION)
-            || property_exists($json, self::FIELD_DOCUMENTATION_EXT)) {
-            $v = $json->_documentation ?? new \stdClass();
-            $v->value = $json->documentation ?? null;
+        if (isset($decoded->documentation)
+            || isset($decoded->_documentation)
+            || property_exists($decoded, self::FIELD_DOCUMENTATION)
+            || property_exists($decoded, self::FIELD_DOCUMENTATION_EXT)) {
+            $v = $decoded->_documentation ?? new \stdClass();
+            $v->value = $decoded->documentation ?? null;
             $type->setDocumentation(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->security) || property_exists($json, self::FIELD_SECURITY)) {
-            if (is_array($json->security)) {
-                $type->setSecurity(FHIRConformanceSecurity::jsonUnserialize(reset($json->security), $config));
+        if (isset($decoded->security) || property_exists($decoded, self::FIELD_SECURITY)) {
+            if (is_array($decoded->security)) {
+                $type->setSecurity(FHIRConformanceSecurity::jsonUnserialize(reset($decoded->security), $config));
             } else {
-                $type->setSecurity(FHIRConformanceSecurity::jsonUnserialize($json->security, $config));
+                $type->setSecurity(FHIRConformanceSecurity::jsonUnserialize($decoded->security, $config));
             }
         }
-        if (isset($json->resource) || property_exists($json, self::FIELD_RESOURCE)) {
-            if (is_object($json->resource)) {
-                $vals = [$json->resource];
+        if (isset($decoded->resource) || property_exists($decoded, self::FIELD_RESOURCE)) {
+            if (is_object($decoded->resource)) {
+                $vals = [$decoded->resource];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_RESOURCE, true);
             } else {
-                $vals = $json->resource;
+                $vals = $decoded->resource;
             }
             foreach($vals as $v) {
                 $type->addResource(FHIRConformanceResource::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->operation) || property_exists($json, self::FIELD_OPERATION)) {
-            if (is_object($json->operation)) {
-                $vals = [$json->operation];
+        if (isset($decoded->operation) || property_exists($decoded, self::FIELD_OPERATION)) {
+            if (is_object($decoded->operation)) {
+                $vals = [$decoded->operation];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_OPERATION, true);
             } else {
-                $vals = $json->operation;
+                $vals = $decoded->operation;
             }
             foreach($vals as $v) {
                 $type->addOperation(FHIRConformanceOperation1::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->query) || property_exists($json, self::FIELD_QUERY)) {
-            if (is_object($json->query)) {
-                $vals = [$json->query];
+        if (isset($decoded->query) || property_exists($decoded, self::FIELD_QUERY)) {
+            if (is_object($decoded->query)) {
+                $vals = [$decoded->query];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_QUERY, true);
             } else {
-                $vals = $json->query;
+                $vals = $decoded->query;
             }
             foreach($vals as $v) {
                 $type->addQuery(FHIRConformanceQuery::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->documentMailbox)
-            || isset($json->_documentMailbox)
-            || property_exists($json, self::FIELD_DOCUMENT_MAILBOX)
-            || property_exists($json, self::FIELD_DOCUMENT_MAILBOX_EXT)) {
-            $vals = (array)($json->documentMailbox ?? []);
-            $exts = (array)($json->FIELD_DOCUMENT_MAILBOX_EXT ?? []);
+        if (isset($decoded->documentMailbox)
+            || isset($decoded->_documentMailbox)
+            || property_exists($decoded, self::FIELD_DOCUMENT_MAILBOX)
+            || property_exists($decoded, self::FIELD_DOCUMENT_MAILBOX_EXT)) {
+            $vals = (array)($decoded->documentMailbox ?? []);
+            $exts = (array)($decoded->FIELD_DOCUMENT_MAILBOX_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

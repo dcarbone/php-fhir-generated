@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -847,13 +847,13 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStartingSequence $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStartingSequence
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -867,73 +867,73 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->genomeAssembly) || property_exists($json, self::FIELD_GENOME_ASSEMBLY)) {
-            if (is_array($json->genomeAssembly)) {
-                $type->setGenomeAssembly(FHIRCodeableConcept::jsonUnserialize(reset($json->genomeAssembly), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->genomeAssembly) || property_exists($decoded, self::FIELD_GENOME_ASSEMBLY)) {
+            if (is_array($decoded->genomeAssembly)) {
+                $type->setGenomeAssembly(FHIRCodeableConcept::jsonUnserialize(reset($decoded->genomeAssembly), $config));
             } else {
-                $type->setGenomeAssembly(FHIRCodeableConcept::jsonUnserialize($json->genomeAssembly, $config));
+                $type->setGenomeAssembly(FHIRCodeableConcept::jsonUnserialize($decoded->genomeAssembly, $config));
             }
         }
-        if (isset($json->chromosome) || property_exists($json, self::FIELD_CHROMOSOME)) {
-            if (is_array($json->chromosome)) {
-                $type->setChromosome(FHIRCodeableConcept::jsonUnserialize(reset($json->chromosome), $config));
+        if (isset($decoded->chromosome) || property_exists($decoded, self::FIELD_CHROMOSOME)) {
+            if (is_array($decoded->chromosome)) {
+                $type->setChromosome(FHIRCodeableConcept::jsonUnserialize(reset($decoded->chromosome), $config));
             } else {
-                $type->setChromosome(FHIRCodeableConcept::jsonUnserialize($json->chromosome, $config));
+                $type->setChromosome(FHIRCodeableConcept::jsonUnserialize($decoded->chromosome, $config));
             }
         }
-        if (isset($json->sequenceCodeableConcept) || property_exists($json, self::FIELD_SEQUENCE_CODEABLE_CONCEPT)) {
-            if (is_array($json->sequenceCodeableConcept)) {
-                $type->setSequenceCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->sequenceCodeableConcept), $config));
+        if (isset($decoded->sequenceCodeableConcept) || property_exists($decoded, self::FIELD_SEQUENCE_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->sequenceCodeableConcept)) {
+                $type->setSequenceCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->sequenceCodeableConcept), $config));
             } else {
-                $type->setSequenceCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->sequenceCodeableConcept, $config));
+                $type->setSequenceCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->sequenceCodeableConcept, $config));
             }
         }
-        if (isset($json->sequenceString)
-            || isset($json->_sequenceString)
-            || property_exists($json, self::FIELD_SEQUENCE_STRING)
-            || property_exists($json, self::FIELD_SEQUENCE_STRING_EXT)) {
-            $v = $json->_sequenceString ?? new \stdClass();
-            $v->value = $json->sequenceString ?? null;
+        if (isset($decoded->sequenceString)
+            || isset($decoded->_sequenceString)
+            || property_exists($decoded, self::FIELD_SEQUENCE_STRING)
+            || property_exists($decoded, self::FIELD_SEQUENCE_STRING_EXT)) {
+            $v = $decoded->_sequenceString ?? new \stdClass();
+            $v->value = $decoded->sequenceString ?? null;
             $type->setSequenceString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->sequenceReference) || property_exists($json, self::FIELD_SEQUENCE_REFERENCE)) {
-            if (is_array($json->sequenceReference)) {
-                $type->setSequenceReference(FHIRReference::jsonUnserialize(reset($json->sequenceReference), $config));
+        if (isset($decoded->sequenceReference) || property_exists($decoded, self::FIELD_SEQUENCE_REFERENCE)) {
+            if (is_array($decoded->sequenceReference)) {
+                $type->setSequenceReference(FHIRReference::jsonUnserialize(reset($decoded->sequenceReference), $config));
             } else {
-                $type->setSequenceReference(FHIRReference::jsonUnserialize($json->sequenceReference, $config));
+                $type->setSequenceReference(FHIRReference::jsonUnserialize($decoded->sequenceReference, $config));
             }
         }
-        if (isset($json->windowStart)
-            || isset($json->_windowStart)
-            || property_exists($json, self::FIELD_WINDOW_START)
-            || property_exists($json, self::FIELD_WINDOW_START_EXT)) {
-            $v = $json->_windowStart ?? new \stdClass();
-            $v->value = $json->windowStart ?? null;
+        if (isset($decoded->windowStart)
+            || isset($decoded->_windowStart)
+            || property_exists($decoded, self::FIELD_WINDOW_START)
+            || property_exists($decoded, self::FIELD_WINDOW_START_EXT)) {
+            $v = $decoded->_windowStart ?? new \stdClass();
+            $v->value = $decoded->windowStart ?? null;
             $type->setWindowStart(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->windowEnd)
-            || isset($json->_windowEnd)
-            || property_exists($json, self::FIELD_WINDOW_END)
-            || property_exists($json, self::FIELD_WINDOW_END_EXT)) {
-            $v = $json->_windowEnd ?? new \stdClass();
-            $v->value = $json->windowEnd ?? null;
+        if (isset($decoded->windowEnd)
+            || isset($decoded->_windowEnd)
+            || property_exists($decoded, self::FIELD_WINDOW_END)
+            || property_exists($decoded, self::FIELD_WINDOW_END_EXT)) {
+            $v = $decoded->_windowEnd ?? new \stdClass();
+            $v->value = $decoded->windowEnd ?? null;
             $type->setWindowEnd(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->orientation)
-            || isset($json->_orientation)
-            || property_exists($json, self::FIELD_ORIENTATION)
-            || property_exists($json, self::FIELD_ORIENTATION_EXT)) {
-            $v = $json->_orientation ?? new \stdClass();
-            $v->value = $json->orientation ?? null;
+        if (isset($decoded->orientation)
+            || isset($decoded->_orientation)
+            || property_exists($decoded, self::FIELD_ORIENTATION)
+            || property_exists($decoded, self::FIELD_ORIENTATION_EXT)) {
+            $v = $decoded->_orientation ?? new \stdClass();
+            $v->value = $decoded->orientation ?? null;
             $type->setOrientation(FHIROrientationType::jsonUnserialize($v, $config));
         }
-        if (isset($json->strand)
-            || isset($json->_strand)
-            || property_exists($json, self::FIELD_STRAND)
-            || property_exists($json, self::FIELD_STRAND_EXT)) {
-            $v = $json->_strand ?? new \stdClass();
-            $v->value = $json->strand ?? null;
+        if (isset($decoded->strand)
+            || isset($decoded->_strand)
+            || property_exists($decoded, self::FIELD_STRAND)
+            || property_exists($decoded, self::FIELD_STRAND_EXT)) {
+            $v = $decoded->_strand ?? new \stdClass();
+            $v->value = $decoded->strand ?? null;
             $type->setStrand(FHIRStrandType::jsonUnserialize($v, $config));
         }
         return $type;

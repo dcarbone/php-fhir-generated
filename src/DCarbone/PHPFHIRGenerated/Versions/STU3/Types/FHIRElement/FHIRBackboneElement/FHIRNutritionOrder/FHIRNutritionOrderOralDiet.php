@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -746,13 +746,13 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -766,68 +766,68 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_object($json->type)) {
-                $vals = [$json->type];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_object($decoded->type)) {
+                $vals = [$decoded->type];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TYPE, true);
             } else {
-                $vals = $json->type;
+                $vals = $decoded->type;
             }
             foreach($vals as $v) {
                 $type->addType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->schedule) || property_exists($json, self::FIELD_SCHEDULE)) {
-            if (is_object($json->schedule)) {
-                $vals = [$json->schedule];
+        if (isset($decoded->schedule) || property_exists($decoded, self::FIELD_SCHEDULE)) {
+            if (is_object($decoded->schedule)) {
+                $vals = [$decoded->schedule];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SCHEDULE, true);
             } else {
-                $vals = $json->schedule;
+                $vals = $decoded->schedule;
             }
             foreach($vals as $v) {
                 $type->addSchedule(FHIRTiming::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->nutrient) || property_exists($json, self::FIELD_NUTRIENT)) {
-            if (is_object($json->nutrient)) {
-                $vals = [$json->nutrient];
+        if (isset($decoded->nutrient) || property_exists($decoded, self::FIELD_NUTRIENT)) {
+            if (is_object($decoded->nutrient)) {
+                $vals = [$decoded->nutrient];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_NUTRIENT, true);
             } else {
-                $vals = $json->nutrient;
+                $vals = $decoded->nutrient;
             }
             foreach($vals as $v) {
                 $type->addNutrient(FHIRNutritionOrderNutrient::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->texture) || property_exists($json, self::FIELD_TEXTURE)) {
-            if (is_object($json->texture)) {
-                $vals = [$json->texture];
+        if (isset($decoded->texture) || property_exists($decoded, self::FIELD_TEXTURE)) {
+            if (is_object($decoded->texture)) {
+                $vals = [$decoded->texture];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_TEXTURE, true);
             } else {
-                $vals = $json->texture;
+                $vals = $decoded->texture;
             }
             foreach($vals as $v) {
                 $type->addTexture(FHIRNutritionOrderTexture::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->fluidConsistencyType) || property_exists($json, self::FIELD_FLUID_CONSISTENCY_TYPE)) {
-            if (is_object($json->fluidConsistencyType)) {
-                $vals = [$json->fluidConsistencyType];
+        if (isset($decoded->fluidConsistencyType) || property_exists($decoded, self::FIELD_FLUID_CONSISTENCY_TYPE)) {
+            if (is_object($decoded->fluidConsistencyType)) {
+                $vals = [$decoded->fluidConsistencyType];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_FLUID_CONSISTENCY_TYPE, true);
             } else {
-                $vals = $json->fluidConsistencyType;
+                $vals = $decoded->fluidConsistencyType;
             }
             foreach($vals as $v) {
                 $type->addFluidConsistencyType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->instruction)
-            || isset($json->_instruction)
-            || property_exists($json, self::FIELD_INSTRUCTION)
-            || property_exists($json, self::FIELD_INSTRUCTION_EXT)) {
-            $v = $json->_instruction ?? new \stdClass();
-            $v->value = $json->instruction ?? null;
+        if (isset($decoded->instruction)
+            || isset($decoded->_instruction)
+            || property_exists($decoded, self::FIELD_INSTRUCTION)
+            || property_exists($decoded, self::FIELD_INSTRUCTION_EXT)) {
+            $v = $decoded->_instruction ?? new \stdClass();
+            $v->value = $decoded->instruction ?? null;
             $type->setInstruction(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

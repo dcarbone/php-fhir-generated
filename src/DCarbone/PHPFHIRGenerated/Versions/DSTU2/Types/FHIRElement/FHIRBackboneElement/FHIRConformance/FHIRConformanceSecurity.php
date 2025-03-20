@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -525,13 +525,13 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -545,40 +545,40 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->cors)
-            || isset($json->_cors)
-            || property_exists($json, self::FIELD_CORS)
-            || property_exists($json, self::FIELD_CORS_EXT)) {
-            $v = $json->_cors ?? new \stdClass();
-            $v->value = $json->cors ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->cors)
+            || isset($decoded->_cors)
+            || property_exists($decoded, self::FIELD_CORS)
+            || property_exists($decoded, self::FIELD_CORS_EXT)) {
+            $v = $decoded->_cors ?? new \stdClass();
+            $v->value = $decoded->cors ?? null;
             $type->setCors(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->service) || property_exists($json, self::FIELD_SERVICE)) {
-            if (is_object($json->service)) {
-                $vals = [$json->service];
+        if (isset($decoded->service) || property_exists($decoded, self::FIELD_SERVICE)) {
+            if (is_object($decoded->service)) {
+                $vals = [$decoded->service];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SERVICE, true);
             } else {
-                $vals = $json->service;
+                $vals = $decoded->service;
             }
             foreach($vals as $v) {
                 $type->addService(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->certificate) || property_exists($json, self::FIELD_CERTIFICATE)) {
-            if (is_object($json->certificate)) {
-                $vals = [$json->certificate];
+        if (isset($decoded->certificate) || property_exists($decoded, self::FIELD_CERTIFICATE)) {
+            if (is_object($decoded->certificate)) {
+                $vals = [$decoded->certificate];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CERTIFICATE, true);
             } else {
-                $vals = $json->certificate;
+                $vals = $decoded->certificate;
             }
             foreach($vals as $v) {
                 $type->addCertificate(FHIRConformanceCertificate::jsonUnserialize($v, $config));

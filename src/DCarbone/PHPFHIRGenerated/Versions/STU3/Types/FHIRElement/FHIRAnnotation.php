@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -476,13 +476,13 @@ class FHIRAnnotation extends FHIRElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -496,36 +496,36 @@ class FHIRAnnotation extends FHIRElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->authorReference) || property_exists($json, self::FIELD_AUTHOR_REFERENCE)) {
-            if (is_array($json->authorReference)) {
-                $type->setAuthorReference(FHIRReference::jsonUnserialize(reset($json->authorReference), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->authorReference) || property_exists($decoded, self::FIELD_AUTHOR_REFERENCE)) {
+            if (is_array($decoded->authorReference)) {
+                $type->setAuthorReference(FHIRReference::jsonUnserialize(reset($decoded->authorReference), $config));
             } else {
-                $type->setAuthorReference(FHIRReference::jsonUnserialize($json->authorReference, $config));
+                $type->setAuthorReference(FHIRReference::jsonUnserialize($decoded->authorReference, $config));
             }
         }
-        if (isset($json->authorString)
-            || isset($json->_authorString)
-            || property_exists($json, self::FIELD_AUTHOR_STRING)
-            || property_exists($json, self::FIELD_AUTHOR_STRING_EXT)) {
-            $v = $json->_authorString ?? new \stdClass();
-            $v->value = $json->authorString ?? null;
+        if (isset($decoded->authorString)
+            || isset($decoded->_authorString)
+            || property_exists($decoded, self::FIELD_AUTHOR_STRING)
+            || property_exists($decoded, self::FIELD_AUTHOR_STRING_EXT)) {
+            $v = $decoded->_authorString ?? new \stdClass();
+            $v->value = $decoded->authorString ?? null;
             $type->setAuthorString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->time)
-            || isset($json->_time)
-            || property_exists($json, self::FIELD_TIME)
-            || property_exists($json, self::FIELD_TIME_EXT)) {
-            $v = $json->_time ?? new \stdClass();
-            $v->value = $json->time ?? null;
+        if (isset($decoded->time)
+            || isset($decoded->_time)
+            || property_exists($decoded, self::FIELD_TIME)
+            || property_exists($decoded, self::FIELD_TIME_EXT)) {
+            $v = $decoded->_time ?? new \stdClass();
+            $v->value = $decoded->time ?? null;
             $type->setTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
-        if (isset($json->text)
-            || isset($json->_text)
-            || property_exists($json, self::FIELD_TEXT)
-            || property_exists($json, self::FIELD_TEXT_EXT)) {
-            $v = $json->_text ?? new \stdClass();
-            $v->value = $json->text ?? null;
+        if (isset($decoded->text)
+            || isset($decoded->_text)
+            || property_exists($decoded, self::FIELD_TEXT)
+            || property_exists($decoded, self::FIELD_TEXT_EXT)) {
+            $v = $decoded->_text ?? new \stdClass();
+            $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -437,13 +437,13 @@ class FHIRLocationPosition extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -457,29 +457,29 @@ class FHIRLocationPosition extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->longitude)
-            || isset($json->_longitude)
-            || property_exists($json, self::FIELD_LONGITUDE)
-            || property_exists($json, self::FIELD_LONGITUDE_EXT)) {
-            $v = $json->_longitude ?? new \stdClass();
-            $v->value = $json->longitude ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->longitude)
+            || isset($decoded->_longitude)
+            || property_exists($decoded, self::FIELD_LONGITUDE)
+            || property_exists($decoded, self::FIELD_LONGITUDE_EXT)) {
+            $v = $decoded->_longitude ?? new \stdClass();
+            $v->value = $decoded->longitude ?? null;
             $type->setLongitude(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->latitude)
-            || isset($json->_latitude)
-            || property_exists($json, self::FIELD_LATITUDE)
-            || property_exists($json, self::FIELD_LATITUDE_EXT)) {
-            $v = $json->_latitude ?? new \stdClass();
-            $v->value = $json->latitude ?? null;
+        if (isset($decoded->latitude)
+            || isset($decoded->_latitude)
+            || property_exists($decoded, self::FIELD_LATITUDE)
+            || property_exists($decoded, self::FIELD_LATITUDE_EXT)) {
+            $v = $decoded->_latitude ?? new \stdClass();
+            $v->value = $decoded->latitude ?? null;
             $type->setLatitude(FHIRDecimal::jsonUnserialize($v, $config));
         }
-        if (isset($json->altitude)
-            || isset($json->_altitude)
-            || property_exists($json, self::FIELD_ALTITUDE)
-            || property_exists($json, self::FIELD_ALTITUDE_EXT)) {
-            $v = $json->_altitude ?? new \stdClass();
-            $v->value = $json->altitude ?? null;
+        if (isset($decoded->altitude)
+            || isset($decoded->_altitude)
+            || property_exists($decoded, self::FIELD_ALTITUDE)
+            || property_exists($decoded, self::FIELD_ALTITUDE_EXT)) {
+            $v = $decoded->_altitude ?? new \stdClass();
+            $v->value = $decoded->altitude ?? null;
             $type->setAltitude(FHIRDecimal::jsonUnserialize($v, $config));
         }
         return $type;

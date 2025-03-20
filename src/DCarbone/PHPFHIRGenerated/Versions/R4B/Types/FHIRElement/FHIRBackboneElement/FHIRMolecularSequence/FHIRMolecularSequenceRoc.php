@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -930,13 +930,13 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -950,13 +950,13 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->score)
-            || isset($json->_score)
-            || property_exists($json, self::FIELD_SCORE)
-            || property_exists($json, self::FIELD_SCORE_EXT)) {
-            $vals = (array)($json->score ?? []);
-            $exts = (array)($json->FIELD_SCORE_EXT ?? []);
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->score)
+            || isset($decoded->_score)
+            || property_exists($decoded, self::FIELD_SCORE)
+            || property_exists($decoded, self::FIELD_SCORE_EXT)) {
+            $vals = (array)($decoded->score ?? []);
+            $exts = (array)($decoded->FIELD_SCORE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -968,12 +968,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $type->addScore(FHIRInteger::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->numTP)
-            || isset($json->_numTP)
-            || property_exists($json, self::FIELD_NUM_TP)
-            || property_exists($json, self::FIELD_NUM_TP_EXT)) {
-            $vals = (array)($json->numTP ?? []);
-            $exts = (array)($json->FIELD_NUM_TP_EXT ?? []);
+        if (isset($decoded->numTP)
+            || isset($decoded->_numTP)
+            || property_exists($decoded, self::FIELD_NUM_TP)
+            || property_exists($decoded, self::FIELD_NUM_TP_EXT)) {
+            $vals = (array)($decoded->numTP ?? []);
+            $exts = (array)($decoded->FIELD_NUM_TP_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -985,12 +985,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $type->addNumTP(FHIRInteger::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->numFP)
-            || isset($json->_numFP)
-            || property_exists($json, self::FIELD_NUM_FP)
-            || property_exists($json, self::FIELD_NUM_FP_EXT)) {
-            $vals = (array)($json->numFP ?? []);
-            $exts = (array)($json->FIELD_NUM_FP_EXT ?? []);
+        if (isset($decoded->numFP)
+            || isset($decoded->_numFP)
+            || property_exists($decoded, self::FIELD_NUM_FP)
+            || property_exists($decoded, self::FIELD_NUM_FP_EXT)) {
+            $vals = (array)($decoded->numFP ?? []);
+            $exts = (array)($decoded->FIELD_NUM_FP_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1002,12 +1002,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $type->addNumFP(FHIRInteger::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->numFN)
-            || isset($json->_numFN)
-            || property_exists($json, self::FIELD_NUM_FN)
-            || property_exists($json, self::FIELD_NUM_FN_EXT)) {
-            $vals = (array)($json->numFN ?? []);
-            $exts = (array)($json->FIELD_NUM_FN_EXT ?? []);
+        if (isset($decoded->numFN)
+            || isset($decoded->_numFN)
+            || property_exists($decoded, self::FIELD_NUM_FN)
+            || property_exists($decoded, self::FIELD_NUM_FN_EXT)) {
+            $vals = (array)($decoded->numFN ?? []);
+            $exts = (array)($decoded->FIELD_NUM_FN_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1019,12 +1019,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $type->addNumFN(FHIRInteger::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->precision)
-            || isset($json->_precision)
-            || property_exists($json, self::FIELD_PRECISION)
-            || property_exists($json, self::FIELD_PRECISION_EXT)) {
-            $vals = (array)($json->precision ?? []);
-            $exts = (array)($json->FIELD_PRECISION_EXT ?? []);
+        if (isset($decoded->precision)
+            || isset($decoded->_precision)
+            || property_exists($decoded, self::FIELD_PRECISION)
+            || property_exists($decoded, self::FIELD_PRECISION_EXT)) {
+            $vals = (array)($decoded->precision ?? []);
+            $exts = (array)($decoded->FIELD_PRECISION_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1036,12 +1036,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $type->addPrecision(FHIRDecimal::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->sensitivity)
-            || isset($json->_sensitivity)
-            || property_exists($json, self::FIELD_SENSITIVITY)
-            || property_exists($json, self::FIELD_SENSITIVITY_EXT)) {
-            $vals = (array)($json->sensitivity ?? []);
-            $exts = (array)($json->FIELD_SENSITIVITY_EXT ?? []);
+        if (isset($decoded->sensitivity)
+            || isset($decoded->_sensitivity)
+            || property_exists($decoded, self::FIELD_SENSITIVITY)
+            || property_exists($decoded, self::FIELD_SENSITIVITY_EXT)) {
+            $vals = (array)($decoded->sensitivity ?? []);
+            $exts = (array)($decoded->FIELD_SENSITIVITY_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1053,12 +1053,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $type->addSensitivity(FHIRDecimal::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->fMeasure)
-            || isset($json->_fMeasure)
-            || property_exists($json, self::FIELD_F_MEASURE)
-            || property_exists($json, self::FIELD_F_MEASURE_EXT)) {
-            $vals = (array)($json->fMeasure ?? []);
-            $exts = (array)($json->FIELD_F_MEASURE_EXT ?? []);
+        if (isset($decoded->fMeasure)
+            || isset($decoded->_fMeasure)
+            || property_exists($decoded, self::FIELD_F_MEASURE)
+            || property_exists($decoded, self::FIELD_F_MEASURE_EXT)) {
+            $vals = (array)($decoded->fMeasure ?? []);
+            $exts = (array)($decoded->FIELD_F_MEASURE_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -286,13 +286,13 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentYearlyTemplate $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentYearlyTemplate
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -306,13 +306,13 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->yearInterval)
-            || isset($json->_yearInterval)
-            || property_exists($json, self::FIELD_YEAR_INTERVAL)
-            || property_exists($json, self::FIELD_YEAR_INTERVAL_EXT)) {
-            $v = $json->_yearInterval ?? new \stdClass();
-            $v->value = $json->yearInterval ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->yearInterval)
+            || isset($decoded->_yearInterval)
+            || property_exists($decoded, self::FIELD_YEAR_INTERVAL)
+            || property_exists($decoded, self::FIELD_YEAR_INTERVAL_EXT)) {
+            $v = $decoded->_yearInterval ?? new \stdClass();
+            $v->value = $decoded->yearInterval ?? null;
             $type->setYearInterval(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
         return $type;

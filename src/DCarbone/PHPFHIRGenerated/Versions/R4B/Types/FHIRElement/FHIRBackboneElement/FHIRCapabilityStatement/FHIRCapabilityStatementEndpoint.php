@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -354,13 +354,13 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -374,20 +374,20 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->protocol) || property_exists($json, self::FIELD_PROTOCOL)) {
-            if (is_array($json->protocol)) {
-                $type->setProtocol(FHIRCoding::jsonUnserialize(reset($json->protocol), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->protocol) || property_exists($decoded, self::FIELD_PROTOCOL)) {
+            if (is_array($decoded->protocol)) {
+                $type->setProtocol(FHIRCoding::jsonUnserialize(reset($decoded->protocol), $config));
             } else {
-                $type->setProtocol(FHIRCoding::jsonUnserialize($json->protocol, $config));
+                $type->setProtocol(FHIRCoding::jsonUnserialize($decoded->protocol, $config));
             }
         }
-        if (isset($json->address)
-            || isset($json->_address)
-            || property_exists($json, self::FIELD_ADDRESS)
-            || property_exists($json, self::FIELD_ADDRESS_EXT)) {
-            $v = $json->_address ?? new \stdClass();
-            $v->value = $json->address ?? null;
+        if (isset($decoded->address)
+            || isset($decoded->_address)
+            || property_exists($decoded, self::FIELD_ADDRESS)
+            || property_exists($decoded, self::FIELD_ADDRESS_EXT)) {
+            $v = $decoded->_address ?? new \stdClass();
+            $v->value = $decoded->address ?? null;
             $type->setAddress(FHIRUrl::jsonUnserialize($v, $config));
         }
         return $type;

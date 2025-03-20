@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -559,13 +559,13 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRSecurityEvent $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRSecurityEvent
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -582,44 +582,44 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->event) || property_exists($json, self::FIELD_EVENT)) {
-            if (is_array($json->event)) {
-                $type->setEvent(FHIRSecurityEventEvent::jsonUnserialize(reset($json->event), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->event) || property_exists($decoded, self::FIELD_EVENT)) {
+            if (is_array($decoded->event)) {
+                $type->setEvent(FHIRSecurityEventEvent::jsonUnserialize(reset($decoded->event), $config));
             } else {
-                $type->setEvent(FHIRSecurityEventEvent::jsonUnserialize($json->event, $config));
+                $type->setEvent(FHIRSecurityEventEvent::jsonUnserialize($decoded->event, $config));
             }
         }
-        if (isset($json->participant) || property_exists($json, self::FIELD_PARTICIPANT)) {
-            if (is_object($json->participant)) {
-                $vals = [$json->participant];
+        if (isset($decoded->participant) || property_exists($decoded, self::FIELD_PARTICIPANT)) {
+            if (is_object($decoded->participant)) {
+                $vals = [$decoded->participant];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_PARTICIPANT, true);
             } else {
-                $vals = $json->participant;
+                $vals = $decoded->participant;
             }
             foreach($vals as $v) {
                 $type->addParticipant(FHIRSecurityEventParticipant::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
-            if (is_array($json->source)) {
-                $type->setSource(FHIRSecurityEventSource::jsonUnserialize(reset($json->source), $config));
+        if (isset($decoded->source) || property_exists($decoded, self::FIELD_SOURCE)) {
+            if (is_array($decoded->source)) {
+                $type->setSource(FHIRSecurityEventSource::jsonUnserialize(reset($decoded->source), $config));
             } else {
-                $type->setSource(FHIRSecurityEventSource::jsonUnserialize($json->source, $config));
+                $type->setSource(FHIRSecurityEventSource::jsonUnserialize($decoded->source, $config));
             }
         }
-        if (isset($json->object) || property_exists($json, self::FIELD_OBJECT)) {
-            if (is_object($json->object)) {
-                $vals = [$json->object];
+        if (isset($decoded->object) || property_exists($decoded, self::FIELD_OBJECT)) {
+            if (is_object($decoded->object)) {
+                $vals = [$decoded->object];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_OBJECT, true);
             } else {
-                $vals = $json->object;
+                $vals = $decoded->object;
             }
             foreach($vals as $v) {
                 $type->addObject(FHIRSecurityEventObject::jsonUnserialize($v, $config));

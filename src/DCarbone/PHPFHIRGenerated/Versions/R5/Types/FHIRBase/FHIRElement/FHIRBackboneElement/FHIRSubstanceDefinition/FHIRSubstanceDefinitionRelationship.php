@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -904,13 +904,13 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRelationship $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRelationship
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -924,78 +924,78 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->substanceDefinitionReference) || property_exists($json, self::FIELD_SUBSTANCE_DEFINITION_REFERENCE)) {
-            if (is_array($json->substanceDefinitionReference)) {
-                $type->setSubstanceDefinitionReference(FHIRReference::jsonUnserialize(reset($json->substanceDefinitionReference), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->substanceDefinitionReference) || property_exists($decoded, self::FIELD_SUBSTANCE_DEFINITION_REFERENCE)) {
+            if (is_array($decoded->substanceDefinitionReference)) {
+                $type->setSubstanceDefinitionReference(FHIRReference::jsonUnserialize(reset($decoded->substanceDefinitionReference), $config));
             } else {
-                $type->setSubstanceDefinitionReference(FHIRReference::jsonUnserialize($json->substanceDefinitionReference, $config));
+                $type->setSubstanceDefinitionReference(FHIRReference::jsonUnserialize($decoded->substanceDefinitionReference, $config));
             }
         }
-        if (isset($json->substanceDefinitionCodeableConcept) || property_exists($json, self::FIELD_SUBSTANCE_DEFINITION_CODEABLE_CONCEPT)) {
-            if (is_array($json->substanceDefinitionCodeableConcept)) {
-                $type->setSubstanceDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($json->substanceDefinitionCodeableConcept), $config));
+        if (isset($decoded->substanceDefinitionCodeableConcept) || property_exists($decoded, self::FIELD_SUBSTANCE_DEFINITION_CODEABLE_CONCEPT)) {
+            if (is_array($decoded->substanceDefinitionCodeableConcept)) {
+                $type->setSubstanceDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize(reset($decoded->substanceDefinitionCodeableConcept), $config));
             } else {
-                $type->setSubstanceDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json->substanceDefinitionCodeableConcept, $config));
+                $type->setSubstanceDefinitionCodeableConcept(FHIRCodeableConcept::jsonUnserialize($decoded->substanceDefinitionCodeableConcept, $config));
             }
         }
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->isDefining)
-            || isset($json->_isDefining)
-            || property_exists($json, self::FIELD_IS_DEFINING)
-            || property_exists($json, self::FIELD_IS_DEFINING_EXT)) {
-            $v = $json->_isDefining ?? new \stdClass();
-            $v->value = $json->isDefining ?? null;
+        if (isset($decoded->isDefining)
+            || isset($decoded->_isDefining)
+            || property_exists($decoded, self::FIELD_IS_DEFINING)
+            || property_exists($decoded, self::FIELD_IS_DEFINING_EXT)) {
+            $v = $decoded->_isDefining ?? new \stdClass();
+            $v->value = $decoded->isDefining ?? null;
             $type->setIsDefining(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->amountQuantity) || property_exists($json, self::FIELD_AMOUNT_QUANTITY)) {
-            if (is_array($json->amountQuantity)) {
-                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize(reset($json->amountQuantity), $config));
+        if (isset($decoded->amountQuantity) || property_exists($decoded, self::FIELD_AMOUNT_QUANTITY)) {
+            if (is_array($decoded->amountQuantity)) {
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->amountQuantity), $config));
             } else {
-                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($json->amountQuantity, $config));
+                $type->setAmountQuantity(FHIRQuantity::jsonUnserialize($decoded->amountQuantity, $config));
             }
         }
-        if (isset($json->amountRatio) || property_exists($json, self::FIELD_AMOUNT_RATIO)) {
-            if (is_array($json->amountRatio)) {
-                $type->setAmountRatio(FHIRRatio::jsonUnserialize(reset($json->amountRatio), $config));
+        if (isset($decoded->amountRatio) || property_exists($decoded, self::FIELD_AMOUNT_RATIO)) {
+            if (is_array($decoded->amountRatio)) {
+                $type->setAmountRatio(FHIRRatio::jsonUnserialize(reset($decoded->amountRatio), $config));
             } else {
-                $type->setAmountRatio(FHIRRatio::jsonUnserialize($json->amountRatio, $config));
+                $type->setAmountRatio(FHIRRatio::jsonUnserialize($decoded->amountRatio, $config));
             }
         }
-        if (isset($json->amountString)
-            || isset($json->_amountString)
-            || property_exists($json, self::FIELD_AMOUNT_STRING)
-            || property_exists($json, self::FIELD_AMOUNT_STRING_EXT)) {
-            $v = $json->_amountString ?? new \stdClass();
-            $v->value = $json->amountString ?? null;
+        if (isset($decoded->amountString)
+            || isset($decoded->_amountString)
+            || property_exists($decoded, self::FIELD_AMOUNT_STRING)
+            || property_exists($decoded, self::FIELD_AMOUNT_STRING_EXT)) {
+            $v = $decoded->_amountString ?? new \stdClass();
+            $v->value = $decoded->amountString ?? null;
             $type->setAmountString(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->ratioHighLimitAmount) || property_exists($json, self::FIELD_RATIO_HIGH_LIMIT_AMOUNT)) {
-            if (is_array($json->ratioHighLimitAmount)) {
-                $type->setRatioHighLimitAmount(FHIRRatio::jsonUnserialize(reset($json->ratioHighLimitAmount), $config));
+        if (isset($decoded->ratioHighLimitAmount) || property_exists($decoded, self::FIELD_RATIO_HIGH_LIMIT_AMOUNT)) {
+            if (is_array($decoded->ratioHighLimitAmount)) {
+                $type->setRatioHighLimitAmount(FHIRRatio::jsonUnserialize(reset($decoded->ratioHighLimitAmount), $config));
             } else {
-                $type->setRatioHighLimitAmount(FHIRRatio::jsonUnserialize($json->ratioHighLimitAmount, $config));
+                $type->setRatioHighLimitAmount(FHIRRatio::jsonUnserialize($decoded->ratioHighLimitAmount, $config));
             }
         }
-        if (isset($json->comparator) || property_exists($json, self::FIELD_COMPARATOR)) {
-            if (is_array($json->comparator)) {
-                $type->setComparator(FHIRCodeableConcept::jsonUnserialize(reset($json->comparator), $config));
+        if (isset($decoded->comparator) || property_exists($decoded, self::FIELD_COMPARATOR)) {
+            if (is_array($decoded->comparator)) {
+                $type->setComparator(FHIRCodeableConcept::jsonUnserialize(reset($decoded->comparator), $config));
             } else {
-                $type->setComparator(FHIRCodeableConcept::jsonUnserialize($json->comparator, $config));
+                $type->setComparator(FHIRCodeableConcept::jsonUnserialize($decoded->comparator, $config));
             }
         }
-        if (isset($json->source) || property_exists($json, self::FIELD_SOURCE)) {
-            if (is_object($json->source)) {
-                $vals = [$json->source];
+        if (isset($decoded->source) || property_exists($decoded, self::FIELD_SOURCE)) {
+            if (is_object($decoded->source)) {
+                $vals = [$decoded->source];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SOURCE, true);
             } else {
-                $vals = $json->source;
+                $vals = $decoded->source;
             }
             foreach($vals as $v) {
                 $type->addSource(FHIRReference::jsonUnserialize($v, $config));

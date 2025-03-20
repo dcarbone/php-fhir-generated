@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -843,13 +843,13 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -863,80 +863,80 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->preAdmissionIdentifier) || property_exists($json, self::FIELD_PRE_ADMISSION_IDENTIFIER)) {
-            if (is_array($json->preAdmissionIdentifier)) {
-                $type->setPreAdmissionIdentifier(FHIRIdentifier::jsonUnserialize(reset($json->preAdmissionIdentifier), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->preAdmissionIdentifier) || property_exists($decoded, self::FIELD_PRE_ADMISSION_IDENTIFIER)) {
+            if (is_array($decoded->preAdmissionIdentifier)) {
+                $type->setPreAdmissionIdentifier(FHIRIdentifier::jsonUnserialize(reset($decoded->preAdmissionIdentifier), $config));
             } else {
-                $type->setPreAdmissionIdentifier(FHIRIdentifier::jsonUnserialize($json->preAdmissionIdentifier, $config));
+                $type->setPreAdmissionIdentifier(FHIRIdentifier::jsonUnserialize($decoded->preAdmissionIdentifier, $config));
             }
         }
-        if (isset($json->origin) || property_exists($json, self::FIELD_ORIGIN)) {
-            if (is_array($json->origin)) {
-                $type->setOrigin(FHIRReference::jsonUnserialize(reset($json->origin), $config));
+        if (isset($decoded->origin) || property_exists($decoded, self::FIELD_ORIGIN)) {
+            if (is_array($decoded->origin)) {
+                $type->setOrigin(FHIRReference::jsonUnserialize(reset($decoded->origin), $config));
             } else {
-                $type->setOrigin(FHIRReference::jsonUnserialize($json->origin, $config));
+                $type->setOrigin(FHIRReference::jsonUnserialize($decoded->origin, $config));
             }
         }
-        if (isset($json->admitSource) || property_exists($json, self::FIELD_ADMIT_SOURCE)) {
-            if (is_array($json->admitSource)) {
-                $type->setAdmitSource(FHIRCodeableConcept::jsonUnserialize(reset($json->admitSource), $config));
+        if (isset($decoded->admitSource) || property_exists($decoded, self::FIELD_ADMIT_SOURCE)) {
+            if (is_array($decoded->admitSource)) {
+                $type->setAdmitSource(FHIRCodeableConcept::jsonUnserialize(reset($decoded->admitSource), $config));
             } else {
-                $type->setAdmitSource(FHIRCodeableConcept::jsonUnserialize($json->admitSource, $config));
+                $type->setAdmitSource(FHIRCodeableConcept::jsonUnserialize($decoded->admitSource, $config));
             }
         }
-        if (isset($json->reAdmission) || property_exists($json, self::FIELD_RE_ADMISSION)) {
-            if (is_array($json->reAdmission)) {
-                $type->setReAdmission(FHIRCodeableConcept::jsonUnserialize(reset($json->reAdmission), $config));
+        if (isset($decoded->reAdmission) || property_exists($decoded, self::FIELD_RE_ADMISSION)) {
+            if (is_array($decoded->reAdmission)) {
+                $type->setReAdmission(FHIRCodeableConcept::jsonUnserialize(reset($decoded->reAdmission), $config));
             } else {
-                $type->setReAdmission(FHIRCodeableConcept::jsonUnserialize($json->reAdmission, $config));
+                $type->setReAdmission(FHIRCodeableConcept::jsonUnserialize($decoded->reAdmission, $config));
             }
         }
-        if (isset($json->dietPreference) || property_exists($json, self::FIELD_DIET_PREFERENCE)) {
-            if (is_object($json->dietPreference)) {
-                $vals = [$json->dietPreference];
+        if (isset($decoded->dietPreference) || property_exists($decoded, self::FIELD_DIET_PREFERENCE)) {
+            if (is_object($decoded->dietPreference)) {
+                $vals = [$decoded->dietPreference];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DIET_PREFERENCE, true);
             } else {
-                $vals = $json->dietPreference;
+                $vals = $decoded->dietPreference;
             }
             foreach($vals as $v) {
                 $type->addDietPreference(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->specialCourtesy) || property_exists($json, self::FIELD_SPECIAL_COURTESY)) {
-            if (is_object($json->specialCourtesy)) {
-                $vals = [$json->specialCourtesy];
+        if (isset($decoded->specialCourtesy) || property_exists($decoded, self::FIELD_SPECIAL_COURTESY)) {
+            if (is_object($decoded->specialCourtesy)) {
+                $vals = [$decoded->specialCourtesy];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SPECIAL_COURTESY, true);
             } else {
-                $vals = $json->specialCourtesy;
+                $vals = $decoded->specialCourtesy;
             }
             foreach($vals as $v) {
                 $type->addSpecialCourtesy(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->specialArrangement) || property_exists($json, self::FIELD_SPECIAL_ARRANGEMENT)) {
-            if (is_object($json->specialArrangement)) {
-                $vals = [$json->specialArrangement];
+        if (isset($decoded->specialArrangement) || property_exists($decoded, self::FIELD_SPECIAL_ARRANGEMENT)) {
+            if (is_object($decoded->specialArrangement)) {
+                $vals = [$decoded->specialArrangement];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SPECIAL_ARRANGEMENT, true);
             } else {
-                $vals = $json->specialArrangement;
+                $vals = $decoded->specialArrangement;
             }
             foreach($vals as $v) {
                 $type->addSpecialArrangement(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->destination) || property_exists($json, self::FIELD_DESTINATION)) {
-            if (is_array($json->destination)) {
-                $type->setDestination(FHIRReference::jsonUnserialize(reset($json->destination), $config));
+        if (isset($decoded->destination) || property_exists($decoded, self::FIELD_DESTINATION)) {
+            if (is_array($decoded->destination)) {
+                $type->setDestination(FHIRReference::jsonUnserialize(reset($decoded->destination), $config));
             } else {
-                $type->setDestination(FHIRReference::jsonUnserialize($json->destination, $config));
+                $type->setDestination(FHIRReference::jsonUnserialize($decoded->destination, $config));
             }
         }
-        if (isset($json->dischargeDisposition) || property_exists($json, self::FIELD_DISCHARGE_DISPOSITION)) {
-            if (is_array($json->dischargeDisposition)) {
-                $type->setDischargeDisposition(FHIRCodeableConcept::jsonUnserialize(reset($json->dischargeDisposition), $config));
+        if (isset($decoded->dischargeDisposition) || property_exists($decoded, self::FIELD_DISCHARGE_DISPOSITION)) {
+            if (is_array($decoded->dischargeDisposition)) {
+                $type->setDischargeDisposition(FHIRCodeableConcept::jsonUnserialize(reset($decoded->dischargeDisposition), $config));
             } else {
-                $type->setDischargeDisposition(FHIRCodeableConcept::jsonUnserialize($json->dischargeDisposition, $config));
+                $type->setDischargeDisposition(FHIRCodeableConcept::jsonUnserialize($decoded->dischargeDisposition, $config));
             }
         }
         return $type;

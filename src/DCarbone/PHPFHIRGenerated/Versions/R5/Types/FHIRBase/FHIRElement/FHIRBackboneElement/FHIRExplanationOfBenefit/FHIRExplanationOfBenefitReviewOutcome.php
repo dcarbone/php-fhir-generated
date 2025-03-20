@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -499,13 +499,13 @@ class FHIRExplanationOfBenefitReviewOutcome extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitReviewOutcome $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitReviewOutcome
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -519,38 +519,38 @@ class FHIRExplanationOfBenefitReviewOutcome extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->decision) || property_exists($json, self::FIELD_DECISION)) {
-            if (is_array($json->decision)) {
-                $type->setDecision(FHIRCodeableConcept::jsonUnserialize(reset($json->decision), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->decision) || property_exists($decoded, self::FIELD_DECISION)) {
+            if (is_array($decoded->decision)) {
+                $type->setDecision(FHIRCodeableConcept::jsonUnserialize(reset($decoded->decision), $config));
             } else {
-                $type->setDecision(FHIRCodeableConcept::jsonUnserialize($json->decision, $config));
+                $type->setDecision(FHIRCodeableConcept::jsonUnserialize($decoded->decision, $config));
             }
         }
-        if (isset($json->reason) || property_exists($json, self::FIELD_REASON)) {
-            if (is_object($json->reason)) {
-                $vals = [$json->reason];
+        if (isset($decoded->reason) || property_exists($decoded, self::FIELD_REASON)) {
+            if (is_object($decoded->reason)) {
+                $vals = [$decoded->reason];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_REASON, true);
             } else {
-                $vals = $json->reason;
+                $vals = $decoded->reason;
             }
             foreach($vals as $v) {
                 $type->addReason(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->preAuthRef)
-            || isset($json->_preAuthRef)
-            || property_exists($json, self::FIELD_PRE_AUTH_REF)
-            || property_exists($json, self::FIELD_PRE_AUTH_REF_EXT)) {
-            $v = $json->_preAuthRef ?? new \stdClass();
-            $v->value = $json->preAuthRef ?? null;
+        if (isset($decoded->preAuthRef)
+            || isset($decoded->_preAuthRef)
+            || property_exists($decoded, self::FIELD_PRE_AUTH_REF)
+            || property_exists($decoded, self::FIELD_PRE_AUTH_REF_EXT)) {
+            $v = $decoded->_preAuthRef ?? new \stdClass();
+            $v->value = $decoded->preAuthRef ?? null;
             $type->setPreAuthRef(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->preAuthPeriod) || property_exists($json, self::FIELD_PRE_AUTH_PERIOD)) {
-            if (is_array($json->preAuthPeriod)) {
-                $type->setPreAuthPeriod(FHIRPeriod::jsonUnserialize(reset($json->preAuthPeriod), $config));
+        if (isset($decoded->preAuthPeriod) || property_exists($decoded, self::FIELD_PRE_AUTH_PERIOD)) {
+            if (is_array($decoded->preAuthPeriod)) {
+                $type->setPreAuthPeriod(FHIRPeriod::jsonUnserialize(reset($decoded->preAuthPeriod), $config));
             } else {
-                $type->setPreAuthPeriod(FHIRPeriod::jsonUnserialize($json->preAuthPeriod, $config));
+                $type->setPreAuthPeriod(FHIRPeriod::jsonUnserialize($decoded->preAuthPeriod, $config));
             }
         }
         return $type;

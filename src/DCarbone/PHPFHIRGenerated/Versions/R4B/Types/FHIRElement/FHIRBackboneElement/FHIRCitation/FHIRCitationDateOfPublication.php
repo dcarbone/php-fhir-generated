@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -661,13 +661,13 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationDateOfPublication $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationDateOfPublication
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -681,53 +681,53 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->date)
-            || isset($json->_date)
-            || property_exists($json, self::FIELD_DATE)
-            || property_exists($json, self::FIELD_DATE_EXT)) {
-            $v = $json->_date ?? new \stdClass();
-            $v->value = $json->date ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->date)
+            || isset($decoded->_date)
+            || property_exists($decoded, self::FIELD_DATE)
+            || property_exists($decoded, self::FIELD_DATE_EXT)) {
+            $v = $decoded->_date ?? new \stdClass();
+            $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json->year)
-            || isset($json->_year)
-            || property_exists($json, self::FIELD_YEAR)
-            || property_exists($json, self::FIELD_YEAR_EXT)) {
-            $v = $json->_year ?? new \stdClass();
-            $v->value = $json->year ?? null;
+        if (isset($decoded->year)
+            || isset($decoded->_year)
+            || property_exists($decoded, self::FIELD_YEAR)
+            || property_exists($decoded, self::FIELD_YEAR_EXT)) {
+            $v = $decoded->_year ?? new \stdClass();
+            $v->value = $decoded->year ?? null;
             $type->setYear(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->month)
-            || isset($json->_month)
-            || property_exists($json, self::FIELD_MONTH)
-            || property_exists($json, self::FIELD_MONTH_EXT)) {
-            $v = $json->_month ?? new \stdClass();
-            $v->value = $json->month ?? null;
+        if (isset($decoded->month)
+            || isset($decoded->_month)
+            || property_exists($decoded, self::FIELD_MONTH)
+            || property_exists($decoded, self::FIELD_MONTH_EXT)) {
+            $v = $decoded->_month ?? new \stdClass();
+            $v->value = $decoded->month ?? null;
             $type->setMonth(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->day)
-            || isset($json->_day)
-            || property_exists($json, self::FIELD_DAY)
-            || property_exists($json, self::FIELD_DAY_EXT)) {
-            $v = $json->_day ?? new \stdClass();
-            $v->value = $json->day ?? null;
+        if (isset($decoded->day)
+            || isset($decoded->_day)
+            || property_exists($decoded, self::FIELD_DAY)
+            || property_exists($decoded, self::FIELD_DAY_EXT)) {
+            $v = $decoded->_day ?? new \stdClass();
+            $v->value = $decoded->day ?? null;
             $type->setDay(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->season)
-            || isset($json->_season)
-            || property_exists($json, self::FIELD_SEASON)
-            || property_exists($json, self::FIELD_SEASON_EXT)) {
-            $v = $json->_season ?? new \stdClass();
-            $v->value = $json->season ?? null;
+        if (isset($decoded->season)
+            || isset($decoded->_season)
+            || property_exists($decoded, self::FIELD_SEASON)
+            || property_exists($decoded, self::FIELD_SEASON_EXT)) {
+            $v = $decoded->_season ?? new \stdClass();
+            $v->value = $decoded->season ?? null;
             $type->setSeason(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->text)
-            || isset($json->_text)
-            || property_exists($json, self::FIELD_TEXT)
-            || property_exists($json, self::FIELD_TEXT_EXT)) {
-            $v = $json->_text ?? new \stdClass();
-            $v->value = $json->text ?? null;
+        if (isset($decoded->text)
+            || isset($decoded->_text)
+            || property_exists($decoded, self::FIELD_TEXT)
+            || property_exists($decoded, self::FIELD_TEXT_EXT)) {
+            $v = $decoded->_text ?? new \stdClass();
+            $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

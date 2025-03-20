@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -450,13 +450,13 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -470,21 +470,21 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->sequenceLinkId)
-            || isset($json->_sequenceLinkId)
-            || property_exists($json, self::FIELD_SEQUENCE_LINK_ID)
-            || property_exists($json, self::FIELD_SEQUENCE_LINK_ID_EXT)) {
-            $v = $json->_sequenceLinkId ?? new \stdClass();
-            $v->value = $json->sequenceLinkId ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->sequenceLinkId)
+            || isset($decoded->_sequenceLinkId)
+            || property_exists($decoded, self::FIELD_SEQUENCE_LINK_ID)
+            || property_exists($decoded, self::FIELD_SEQUENCE_LINK_ID_EXT)) {
+            $v = $decoded->_sequenceLinkId ?? new \stdClass();
+            $v->value = $decoded->sequenceLinkId ?? null;
             $type->setSequenceLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
-        if (isset($json->noteNumber)
-            || isset($json->_noteNumber)
-            || property_exists($json, self::FIELD_NOTE_NUMBER)
-            || property_exists($json, self::FIELD_NOTE_NUMBER_EXT)) {
-            $vals = (array)($json->noteNumber ?? []);
-            $exts = (array)($json->FIELD_NOTE_NUMBER_EXT ?? []);
+        if (isset($decoded->noteNumber)
+            || isset($decoded->_noteNumber)
+            || property_exists($decoded, self::FIELD_NOTE_NUMBER)
+            || property_exists($decoded, self::FIELD_NOTE_NUMBER_EXT)) {
+            $vals = (array)($decoded->noteNumber ?? []);
+            $exts = (array)($decoded->FIELD_NOTE_NUMBER_EXT ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -496,12 +496,12 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
                 $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->adjudication) || property_exists($json, self::FIELD_ADJUDICATION)) {
-            if (is_object($json->adjudication)) {
-                $vals = [$json->adjudication];
+        if (isset($decoded->adjudication) || property_exists($decoded, self::FIELD_ADJUDICATION)) {
+            if (is_object($decoded->adjudication)) {
+                $vals = [$decoded->adjudication];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_ADJUDICATION, true);
             } else {
-                $vals = $json->adjudication;
+                $vals = $decoded->adjudication;
             }
             foreach($vals as $v) {
                 $type->addAdjudication(FHIRClaimResponseAdjudication::jsonUnserialize($v, $config));

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -657,13 +657,13 @@ class FHIRDomainResource extends FHIRResource
     }
 
     /**
-     * @param string|\stdClass $json
+     * @param string|\stdClass $decoded
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource
      * @throws \Exception
      */
-    public static function jsonUnserialize(string|\stdClass $json,
+    public static function jsonUnserialize(string|\stdClass $decoded,
                                            null|UnserializeConfig $config = null,
                                            null|ResourceTypeInterface $type = null): self
     {
@@ -680,26 +680,26 @@ class FHIRDomainResource extends FHIRResource
         if (null === $config) {
             $config = (new Version())->getConfig()->getUnserializeConfig();
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json,
+        if (is_string($decoded)) {
+            $decoded = json_decode(json: $decoded,
                                 associative: false,
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->text) || property_exists($json, self::FIELD_TEXT)) {
-            if (is_array($json->text)) {
-                $type->setText(FHIRNarrative::jsonUnserialize(reset($json->text), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->text) || property_exists($decoded, self::FIELD_TEXT)) {
+            if (is_array($decoded->text)) {
+                $type->setText(FHIRNarrative::jsonUnserialize(reset($decoded->text), $config));
             } else {
-                $type->setText(FHIRNarrative::jsonUnserialize($json->text, $config));
+                $type->setText(FHIRNarrative::jsonUnserialize($decoded->text, $config));
             }
         }
-        if (isset($json->contained)) {
-            if (is_object($json->contained)) {
-                $vals = [$json->contained];
+        if (isset($decoded->contained)) {
+            if (is_object($decoded->contained)) {
+                $vals = [$decoded->contained];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CONTAINED, true);
             } else {
-                $vals = $json->contained;
+                $vals = $decoded->contained;
             }
             foreach($vals as $v) {
                 $typeClassName = VersionTypeMap::mustGetContainedTypeClassnameFromJSON($v);
@@ -707,23 +707,23 @@ class FHIRDomainResource extends FHIRResource
                 $type->addContained($typeClassName::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->extension) || property_exists($json, self::FIELD_EXTENSION)) {
-            if (is_object($json->extension)) {
-                $vals = [$json->extension];
+        if (isset($decoded->extension) || property_exists($decoded, self::FIELD_EXTENSION)) {
+            if (is_object($decoded->extension)) {
+                $vals = [$decoded->extension];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_EXTENSION, true);
             } else {
-                $vals = $json->extension;
+                $vals = $decoded->extension;
             }
             foreach($vals as $v) {
                 $type->addExtension(FHIRExtension::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->modifierExtension) || property_exists($json, self::FIELD_MODIFIER_EXTENSION)) {
-            if (is_object($json->modifierExtension)) {
-                $vals = [$json->modifierExtension];
+        if (isset($decoded->modifierExtension) || property_exists($decoded, self::FIELD_MODIFIER_EXTENSION)) {
+            if (is_object($decoded->modifierExtension)) {
+                $vals = [$decoded->modifierExtension];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_MODIFIER_EXTENSION, true);
             } else {
-                $vals = $json->modifierExtension;
+                $vals = $decoded->modifierExtension;
             }
             foreach($vals as $v) {
                 $type->addModifierExtension(FHIRExtension::jsonUnserialize($v, $config));

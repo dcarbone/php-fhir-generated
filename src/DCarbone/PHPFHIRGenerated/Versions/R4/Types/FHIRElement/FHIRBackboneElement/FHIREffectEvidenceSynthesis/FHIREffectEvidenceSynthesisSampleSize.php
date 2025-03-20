@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -412,13 +412,13 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisSampleSize $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisSampleSize
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -432,29 +432,29 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->description)
-            || isset($json->_description)
-            || property_exists($json, self::FIELD_DESCRIPTION)
-            || property_exists($json, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $json->_description ?? new \stdClass();
-            $v->value = $json->description ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->description)
+            || isset($decoded->_description)
+            || property_exists($decoded, self::FIELD_DESCRIPTION)
+            || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
+            $v = $decoded->_description ?? new \stdClass();
+            $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->numberOfStudies)
-            || isset($json->_numberOfStudies)
-            || property_exists($json, self::FIELD_NUMBER_OF_STUDIES)
-            || property_exists($json, self::FIELD_NUMBER_OF_STUDIES_EXT)) {
-            $v = $json->_numberOfStudies ?? new \stdClass();
-            $v->value = $json->numberOfStudies ?? null;
+        if (isset($decoded->numberOfStudies)
+            || isset($decoded->_numberOfStudies)
+            || property_exists($decoded, self::FIELD_NUMBER_OF_STUDIES)
+            || property_exists($decoded, self::FIELD_NUMBER_OF_STUDIES_EXT)) {
+            $v = $decoded->_numberOfStudies ?? new \stdClass();
+            $v->value = $decoded->numberOfStudies ?? null;
             $type->setNumberOfStudies(FHIRInteger::jsonUnserialize($v, $config));
         }
-        if (isset($json->numberOfParticipants)
-            || isset($json->_numberOfParticipants)
-            || property_exists($json, self::FIELD_NUMBER_OF_PARTICIPANTS)
-            || property_exists($json, self::FIELD_NUMBER_OF_PARTICIPANTS_EXT)) {
-            $v = $json->_numberOfParticipants ?? new \stdClass();
-            $v->value = $json->numberOfParticipants ?? null;
+        if (isset($decoded->numberOfParticipants)
+            || isset($decoded->_numberOfParticipants)
+            || property_exists($decoded, self::FIELD_NUMBER_OF_PARTICIPANTS)
+            || property_exists($decoded, self::FIELD_NUMBER_OF_PARTICIPANTS_EXT)) {
+            $v = $decoded->_numberOfParticipants ?? new \stdClass();
+            $v->value = $decoded->numberOfParticipants ?? null;
             $type->setNumberOfParticipants(FHIRInteger::jsonUnserialize($v, $config));
         }
         return $type;

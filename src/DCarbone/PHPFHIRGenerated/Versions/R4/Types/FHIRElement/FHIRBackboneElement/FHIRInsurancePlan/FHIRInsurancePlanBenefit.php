@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -405,13 +405,13 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -425,28 +425,28 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->requirement)
-            || isset($json->_requirement)
-            || property_exists($json, self::FIELD_REQUIREMENT)
-            || property_exists($json, self::FIELD_REQUIREMENT_EXT)) {
-            $v = $json->_requirement ?? new \stdClass();
-            $v->value = $json->requirement ?? null;
+        if (isset($decoded->requirement)
+            || isset($decoded->_requirement)
+            || property_exists($decoded, self::FIELD_REQUIREMENT)
+            || property_exists($decoded, self::FIELD_REQUIREMENT_EXT)) {
+            $v = $decoded->_requirement ?? new \stdClass();
+            $v->value = $decoded->requirement ?? null;
             $type->setRequirement(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->limit) || property_exists($json, self::FIELD_LIMIT)) {
-            if (is_object($json->limit)) {
-                $vals = [$json->limit];
+        if (isset($decoded->limit) || property_exists($decoded, self::FIELD_LIMIT)) {
+            if (is_object($decoded->limit)) {
+                $vals = [$decoded->limit];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_LIMIT, true);
             } else {
-                $vals = $json->limit;
+                $vals = $decoded->limit;
             }
             foreach($vals as $v) {
                 $type->addLimit(FHIRInsurancePlanLimit::jsonUnserialize($v, $config));

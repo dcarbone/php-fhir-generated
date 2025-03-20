@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -576,13 +576,13 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureBodyLandmarkOrientation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureBodyLandmarkOrientation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -596,46 +596,46 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->landmarkDescription) || property_exists($json, self::FIELD_LANDMARK_DESCRIPTION)) {
-            if (is_object($json->landmarkDescription)) {
-                $vals = [$json->landmarkDescription];
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->landmarkDescription) || property_exists($decoded, self::FIELD_LANDMARK_DESCRIPTION)) {
+            if (is_object($decoded->landmarkDescription)) {
+                $vals = [$decoded->landmarkDescription];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_LANDMARK_DESCRIPTION, true);
             } else {
-                $vals = $json->landmarkDescription;
+                $vals = $decoded->landmarkDescription;
             }
             foreach($vals as $v) {
                 $type->addLandmarkDescription(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->clockFacePosition) || property_exists($json, self::FIELD_CLOCK_FACE_POSITION)) {
-            if (is_object($json->clockFacePosition)) {
-                $vals = [$json->clockFacePosition];
+        if (isset($decoded->clockFacePosition) || property_exists($decoded, self::FIELD_CLOCK_FACE_POSITION)) {
+            if (is_object($decoded->clockFacePosition)) {
+                $vals = [$decoded->clockFacePosition];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_CLOCK_FACE_POSITION, true);
             } else {
-                $vals = $json->clockFacePosition;
+                $vals = $decoded->clockFacePosition;
             }
             foreach($vals as $v) {
                 $type->addClockFacePosition(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->distanceFromLandmark) || property_exists($json, self::FIELD_DISTANCE_FROM_LANDMARK)) {
-            if (is_object($json->distanceFromLandmark)) {
-                $vals = [$json->distanceFromLandmark];
+        if (isset($decoded->distanceFromLandmark) || property_exists($decoded, self::FIELD_DISTANCE_FROM_LANDMARK)) {
+            if (is_object($decoded->distanceFromLandmark)) {
+                $vals = [$decoded->distanceFromLandmark];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_DISTANCE_FROM_LANDMARK, true);
             } else {
-                $vals = $json->distanceFromLandmark;
+                $vals = $decoded->distanceFromLandmark;
             }
             foreach($vals as $v) {
                 $type->addDistanceFromLandmark(FHIRBodyStructureDistanceFromLandmark::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->surfaceOrientation) || property_exists($json, self::FIELD_SURFACE_ORIENTATION)) {
-            if (is_object($json->surfaceOrientation)) {
-                $vals = [$json->surfaceOrientation];
+        if (isset($decoded->surfaceOrientation) || property_exists($decoded, self::FIELD_SURFACE_ORIENTATION)) {
+            if (is_object($decoded->surfaceOrientation)) {
+                $vals = [$decoded->surfaceOrientation];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_SURFACE_ORIENTATION, true);
             } else {
-                $vals = $json->surfaceOrientation;
+                $vals = $decoded->surfaceOrientation;
             }
             foreach($vals as $v) {
                 $type->addSurfaceOrientation(FHIRCodeableConcept::jsonUnserialize($v, $config));

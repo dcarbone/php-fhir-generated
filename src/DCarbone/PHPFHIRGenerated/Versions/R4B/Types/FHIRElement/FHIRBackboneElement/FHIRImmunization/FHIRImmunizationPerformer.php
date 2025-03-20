@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -330,13 +330,13 @@ class FHIRImmunizationPerformer extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPerformer $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPerformer
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -350,19 +350,19 @@ class FHIRImmunizationPerformer extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->function) || property_exists($json, self::FIELD_FUNCTION)) {
-            if (is_array($json->function)) {
-                $type->setFunction(FHIRCodeableConcept::jsonUnserialize(reset($json->function), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->function) || property_exists($decoded, self::FIELD_FUNCTION)) {
+            if (is_array($decoded->function)) {
+                $type->setFunction(FHIRCodeableConcept::jsonUnserialize(reset($decoded->function), $config));
             } else {
-                $type->setFunction(FHIRCodeableConcept::jsonUnserialize($json->function, $config));
+                $type->setFunction(FHIRCodeableConcept::jsonUnserialize($decoded->function, $config));
             }
         }
-        if (isset($json->actor) || property_exists($json, self::FIELD_ACTOR)) {
-            if (is_array($json->actor)) {
-                $type->setActor(FHIRReference::jsonUnserialize(reset($json->actor), $config));
+        if (isset($decoded->actor) || property_exists($decoded, self::FIELD_ACTOR)) {
+            if (is_array($decoded->actor)) {
+                $type->setActor(FHIRReference::jsonUnserialize(reset($decoded->actor), $config));
             } else {
-                $type->setActor(FHIRReference::jsonUnserialize($json->actor, $config));
+                $type->setActor(FHIRReference::jsonUnserialize($decoded->actor, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -630,13 +630,13 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -650,49 +650,49 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->substance) || property_exists($json, self::FIELD_SUBSTANCE)) {
-            if (is_array($json->substance)) {
-                $type->setSubstance(FHIRCodeableReference::jsonUnserialize(reset($json->substance), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->substance) || property_exists($decoded, self::FIELD_SUBSTANCE)) {
+            if (is_array($decoded->substance)) {
+                $type->setSubstance(FHIRCodeableReference::jsonUnserialize(reset($decoded->substance), $config));
             } else {
-                $type->setSubstance(FHIRCodeableReference::jsonUnserialize($json->substance, $config));
+                $type->setSubstance(FHIRCodeableReference::jsonUnserialize($decoded->substance, $config));
             }
         }
-        if (isset($json->strengthRatio) || property_exists($json, self::FIELD_STRENGTH_RATIO)) {
-            if (is_array($json->strengthRatio)) {
-                $type->setStrengthRatio(FHIRRatio::jsonUnserialize(reset($json->strengthRatio), $config));
+        if (isset($decoded->strengthRatio) || property_exists($decoded, self::FIELD_STRENGTH_RATIO)) {
+            if (is_array($decoded->strengthRatio)) {
+                $type->setStrengthRatio(FHIRRatio::jsonUnserialize(reset($decoded->strengthRatio), $config));
             } else {
-                $type->setStrengthRatio(FHIRRatio::jsonUnserialize($json->strengthRatio, $config));
+                $type->setStrengthRatio(FHIRRatio::jsonUnserialize($decoded->strengthRatio, $config));
             }
         }
-        if (isset($json->strengthRatioRange) || property_exists($json, self::FIELD_STRENGTH_RATIO_RANGE)) {
-            if (is_array($json->strengthRatioRange)) {
-                $type->setStrengthRatioRange(FHIRRatioRange::jsonUnserialize(reset($json->strengthRatioRange), $config));
+        if (isset($decoded->strengthRatioRange) || property_exists($decoded, self::FIELD_STRENGTH_RATIO_RANGE)) {
+            if (is_array($decoded->strengthRatioRange)) {
+                $type->setStrengthRatioRange(FHIRRatioRange::jsonUnserialize(reset($decoded->strengthRatioRange), $config));
             } else {
-                $type->setStrengthRatioRange(FHIRRatioRange::jsonUnserialize($json->strengthRatioRange, $config));
+                $type->setStrengthRatioRange(FHIRRatioRange::jsonUnserialize($decoded->strengthRatioRange, $config));
             }
         }
-        if (isset($json->strengthQuantity) || property_exists($json, self::FIELD_STRENGTH_QUANTITY)) {
-            if (is_array($json->strengthQuantity)) {
-                $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize(reset($json->strengthQuantity), $config));
+        if (isset($decoded->strengthQuantity) || property_exists($decoded, self::FIELD_STRENGTH_QUANTITY)) {
+            if (is_array($decoded->strengthQuantity)) {
+                $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize(reset($decoded->strengthQuantity), $config));
             } else {
-                $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize($json->strengthQuantity, $config));
+                $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize($decoded->strengthQuantity, $config));
             }
         }
-        if (isset($json->measurementPoint)
-            || isset($json->_measurementPoint)
-            || property_exists($json, self::FIELD_MEASUREMENT_POINT)
-            || property_exists($json, self::FIELD_MEASUREMENT_POINT_EXT)) {
-            $v = $json->_measurementPoint ?? new \stdClass();
-            $v->value = $json->measurementPoint ?? null;
+        if (isset($decoded->measurementPoint)
+            || isset($decoded->_measurementPoint)
+            || property_exists($decoded, self::FIELD_MEASUREMENT_POINT)
+            || property_exists($decoded, self::FIELD_MEASUREMENT_POINT_EXT)) {
+            $v = $decoded->_measurementPoint ?? new \stdClass();
+            $v->value = $decoded->measurementPoint ?? null;
             $type->setMeasurementPoint(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->country) || property_exists($json, self::FIELD_COUNTRY)) {
-            if (is_object($json->country)) {
-                $vals = [$json->country];
+        if (isset($decoded->country) || property_exists($decoded, self::FIELD_COUNTRY)) {
+            if (is_object($decoded->country)) {
+                $vals = [$decoded->country];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_COUNTRY, true);
             } else {
-                $vals = $json->country;
+                $vals = $decoded->country;
             }
             foreach($vals as $v) {
                 $type->addCountry(FHIRCodeableConcept::jsonUnserialize($v, $config));

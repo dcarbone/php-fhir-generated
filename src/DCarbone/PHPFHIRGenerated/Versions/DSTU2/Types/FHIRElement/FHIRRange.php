@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -273,13 +273,13 @@ class FHIRRange extends FHIRElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -293,19 +293,19 @@ class FHIRRange extends FHIRElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->low) || property_exists($json, self::FIELD_LOW)) {
-            if (is_array($json->low)) {
-                $type->setLow(FHIRSimpleQuantity::jsonUnserialize(reset($json->low), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->low) || property_exists($decoded, self::FIELD_LOW)) {
+            if (is_array($decoded->low)) {
+                $type->setLow(FHIRSimpleQuantity::jsonUnserialize(reset($decoded->low), $config));
             } else {
-                $type->setLow(FHIRSimpleQuantity::jsonUnserialize($json->low, $config));
+                $type->setLow(FHIRSimpleQuantity::jsonUnserialize($decoded->low, $config));
             }
         }
-        if (isset($json->high) || property_exists($json, self::FIELD_HIGH)) {
-            if (is_array($json->high)) {
-                $type->setHigh(FHIRSimpleQuantity::jsonUnserialize(reset($json->high), $config));
+        if (isset($decoded->high) || property_exists($decoded, self::FIELD_HIGH)) {
+            if (is_array($decoded->high)) {
+                $type->setHigh(FHIRSimpleQuantity::jsonUnserialize(reset($decoded->high), $config));
             } else {
-                $type->setHigh(FHIRSimpleQuantity::jsonUnserialize($json->high, $config));
+                $type->setHigh(FHIRSimpleQuantity::jsonUnserialize($decoded->high, $config));
             }
         }
         return $type;

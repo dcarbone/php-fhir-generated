@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -467,13 +467,13 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -487,34 +487,34 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->type) || property_exists($json, self::FIELD_TYPE)) {
-            if (is_array($json->type)) {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($json->type), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->type) || property_exists($decoded, self::FIELD_TYPE)) {
+            if (is_array($decoded->type)) {
+                $type->setType(FHIRCodeableConcept::jsonUnserialize(reset($decoded->type), $config));
             } else {
-                $type->setType(FHIRCodeableConcept::jsonUnserialize($json->type, $config));
+                $type->setType(FHIRCodeableConcept::jsonUnserialize($decoded->type, $config));
             }
         }
-        if (isset($json->representation)
-            || isset($json->_representation)
-            || property_exists($json, self::FIELD_REPRESENTATION)
-            || property_exists($json, self::FIELD_REPRESENTATION_EXT)) {
-            $v = $json->_representation ?? new \stdClass();
-            $v->value = $json->representation ?? null;
+        if (isset($decoded->representation)
+            || isset($decoded->_representation)
+            || property_exists($decoded, self::FIELD_REPRESENTATION)
+            || property_exists($decoded, self::FIELD_REPRESENTATION_EXT)) {
+            $v = $decoded->_representation ?? new \stdClass();
+            $v->value = $decoded->representation ?? null;
             $type->setRepresentation(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->format) || property_exists($json, self::FIELD_FORMAT)) {
-            if (is_array($json->format)) {
-                $type->setFormat(FHIRCodeableConcept::jsonUnserialize(reset($json->format), $config));
+        if (isset($decoded->format) || property_exists($decoded, self::FIELD_FORMAT)) {
+            if (is_array($decoded->format)) {
+                $type->setFormat(FHIRCodeableConcept::jsonUnserialize(reset($decoded->format), $config));
             } else {
-                $type->setFormat(FHIRCodeableConcept::jsonUnserialize($json->format, $config));
+                $type->setFormat(FHIRCodeableConcept::jsonUnserialize($decoded->format, $config));
             }
         }
-        if (isset($json->document) || property_exists($json, self::FIELD_DOCUMENT)) {
-            if (is_array($json->document)) {
-                $type->setDocument(FHIRReference::jsonUnserialize(reset($json->document), $config));
+        if (isset($decoded->document) || property_exists($decoded, self::FIELD_DOCUMENT)) {
+            if (is_array($decoded->document)) {
+                $type->setDocument(FHIRReference::jsonUnserialize(reset($decoded->document), $config));
             } else {
-                $type->setDocument(FHIRReference::jsonUnserialize($json->document, $config));
+                $type->setDocument(FHIRReference::jsonUnserialize($decoded->document, $config));
             }
         }
         return $type;

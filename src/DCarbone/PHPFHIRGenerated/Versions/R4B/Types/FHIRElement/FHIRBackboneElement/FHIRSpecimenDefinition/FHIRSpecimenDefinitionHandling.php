@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -464,13 +464,13 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -484,34 +484,34 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->temperatureQualifier) || property_exists($json, self::FIELD_TEMPERATURE_QUALIFIER)) {
-            if (is_array($json->temperatureQualifier)) {
-                $type->setTemperatureQualifier(FHIRCodeableConcept::jsonUnserialize(reset($json->temperatureQualifier), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->temperatureQualifier) || property_exists($decoded, self::FIELD_TEMPERATURE_QUALIFIER)) {
+            if (is_array($decoded->temperatureQualifier)) {
+                $type->setTemperatureQualifier(FHIRCodeableConcept::jsonUnserialize(reset($decoded->temperatureQualifier), $config));
             } else {
-                $type->setTemperatureQualifier(FHIRCodeableConcept::jsonUnserialize($json->temperatureQualifier, $config));
+                $type->setTemperatureQualifier(FHIRCodeableConcept::jsonUnserialize($decoded->temperatureQualifier, $config));
             }
         }
-        if (isset($json->temperatureRange) || property_exists($json, self::FIELD_TEMPERATURE_RANGE)) {
-            if (is_array($json->temperatureRange)) {
-                $type->setTemperatureRange(FHIRRange::jsonUnserialize(reset($json->temperatureRange), $config));
+        if (isset($decoded->temperatureRange) || property_exists($decoded, self::FIELD_TEMPERATURE_RANGE)) {
+            if (is_array($decoded->temperatureRange)) {
+                $type->setTemperatureRange(FHIRRange::jsonUnserialize(reset($decoded->temperatureRange), $config));
             } else {
-                $type->setTemperatureRange(FHIRRange::jsonUnserialize($json->temperatureRange, $config));
+                $type->setTemperatureRange(FHIRRange::jsonUnserialize($decoded->temperatureRange, $config));
             }
         }
-        if (isset($json->maxDuration) || property_exists($json, self::FIELD_MAX_DURATION)) {
-            if (is_array($json->maxDuration)) {
-                $type->setMaxDuration(FHIRDuration::jsonUnserialize(reset($json->maxDuration), $config));
+        if (isset($decoded->maxDuration) || property_exists($decoded, self::FIELD_MAX_DURATION)) {
+            if (is_array($decoded->maxDuration)) {
+                $type->setMaxDuration(FHIRDuration::jsonUnserialize(reset($decoded->maxDuration), $config));
             } else {
-                $type->setMaxDuration(FHIRDuration::jsonUnserialize($json->maxDuration, $config));
+                $type->setMaxDuration(FHIRDuration::jsonUnserialize($decoded->maxDuration, $config));
             }
         }
-        if (isset($json->instruction)
-            || isset($json->_instruction)
-            || property_exists($json, self::FIELD_INSTRUCTION)
-            || property_exists($json, self::FIELD_INSTRUCTION_EXT)) {
-            $v = $json->_instruction ?? new \stdClass();
-            $v->value = $json->instruction ?? null;
+        if (isset($decoded->instruction)
+            || isset($decoded->_instruction)
+            || property_exists($decoded, self::FIELD_INSTRUCTION)
+            || property_exists($decoded, self::FIELD_INSTRUCTION_EXT)) {
+            $v = $decoded->_instruction ?? new \stdClass();
+            $v->value = $decoded->instruction ?? null;
             $type->setInstruction(FHIRString::jsonUnserialize($v, $config));
         }
         return $type;

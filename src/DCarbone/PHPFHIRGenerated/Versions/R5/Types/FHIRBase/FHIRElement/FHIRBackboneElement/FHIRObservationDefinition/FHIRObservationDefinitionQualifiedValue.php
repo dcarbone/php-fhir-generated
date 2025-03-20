@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1079,13 +1079,13 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -1099,100 +1099,100 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->context) || property_exists($json, self::FIELD_CONTEXT)) {
-            if (is_array($json->context)) {
-                $type->setContext(FHIRCodeableConcept::jsonUnserialize(reset($json->context), $config));
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->context) || property_exists($decoded, self::FIELD_CONTEXT)) {
+            if (is_array($decoded->context)) {
+                $type->setContext(FHIRCodeableConcept::jsonUnserialize(reset($decoded->context), $config));
             } else {
-                $type->setContext(FHIRCodeableConcept::jsonUnserialize($json->context, $config));
+                $type->setContext(FHIRCodeableConcept::jsonUnserialize($decoded->context, $config));
             }
         }
-        if (isset($json->appliesTo) || property_exists($json, self::FIELD_APPLIES_TO)) {
-            if (is_object($json->appliesTo)) {
-                $vals = [$json->appliesTo];
+        if (isset($decoded->appliesTo) || property_exists($decoded, self::FIELD_APPLIES_TO)) {
+            if (is_object($decoded->appliesTo)) {
+                $vals = [$decoded->appliesTo];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_APPLIES_TO, true);
             } else {
-                $vals = $json->appliesTo;
+                $vals = $decoded->appliesTo;
             }
             foreach($vals as $v) {
                 $type->addAppliesTo(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->gender)
-            || isset($json->_gender)
-            || property_exists($json, self::FIELD_GENDER)
-            || property_exists($json, self::FIELD_GENDER_EXT)) {
-            $v = $json->_gender ?? new \stdClass();
-            $v->value = $json->gender ?? null;
+        if (isset($decoded->gender)
+            || isset($decoded->_gender)
+            || property_exists($decoded, self::FIELD_GENDER)
+            || property_exists($decoded, self::FIELD_GENDER_EXT)) {
+            $v = $decoded->_gender ?? new \stdClass();
+            $v->value = $decoded->gender ?? null;
             $type->setGender(FHIRAdministrativeGender::jsonUnserialize($v, $config));
         }
-        if (isset($json->age) || property_exists($json, self::FIELD_AGE)) {
-            if (is_array($json->age)) {
-                $type->setAge(FHIRRange::jsonUnserialize(reset($json->age), $config));
+        if (isset($decoded->age) || property_exists($decoded, self::FIELD_AGE)) {
+            if (is_array($decoded->age)) {
+                $type->setAge(FHIRRange::jsonUnserialize(reset($decoded->age), $config));
             } else {
-                $type->setAge(FHIRRange::jsonUnserialize($json->age, $config));
+                $type->setAge(FHIRRange::jsonUnserialize($decoded->age, $config));
             }
         }
-        if (isset($json->gestationalAge) || property_exists($json, self::FIELD_GESTATIONAL_AGE)) {
-            if (is_array($json->gestationalAge)) {
-                $type->setGestationalAge(FHIRRange::jsonUnserialize(reset($json->gestationalAge), $config));
+        if (isset($decoded->gestationalAge) || property_exists($decoded, self::FIELD_GESTATIONAL_AGE)) {
+            if (is_array($decoded->gestationalAge)) {
+                $type->setGestationalAge(FHIRRange::jsonUnserialize(reset($decoded->gestationalAge), $config));
             } else {
-                $type->setGestationalAge(FHIRRange::jsonUnserialize($json->gestationalAge, $config));
+                $type->setGestationalAge(FHIRRange::jsonUnserialize($decoded->gestationalAge, $config));
             }
         }
-        if (isset($json->condition)
-            || isset($json->_condition)
-            || property_exists($json, self::FIELD_CONDITION)
-            || property_exists($json, self::FIELD_CONDITION_EXT)) {
-            $v = $json->_condition ?? new \stdClass();
-            $v->value = $json->condition ?? null;
+        if (isset($decoded->condition)
+            || isset($decoded->_condition)
+            || property_exists($decoded, self::FIELD_CONDITION)
+            || property_exists($decoded, self::FIELD_CONDITION_EXT)) {
+            $v = $decoded->_condition ?? new \stdClass();
+            $v->value = $decoded->condition ?? null;
             $type->setCondition(FHIRString::jsonUnserialize($v, $config));
         }
-        if (isset($json->rangeCategory)
-            || isset($json->_rangeCategory)
-            || property_exists($json, self::FIELD_RANGE_CATEGORY)
-            || property_exists($json, self::FIELD_RANGE_CATEGORY_EXT)) {
-            $v = $json->_rangeCategory ?? new \stdClass();
-            $v->value = $json->rangeCategory ?? null;
+        if (isset($decoded->rangeCategory)
+            || isset($decoded->_rangeCategory)
+            || property_exists($decoded, self::FIELD_RANGE_CATEGORY)
+            || property_exists($decoded, self::FIELD_RANGE_CATEGORY_EXT)) {
+            $v = $decoded->_rangeCategory ?? new \stdClass();
+            $v->value = $decoded->rangeCategory ?? null;
             $type->setRangeCategory(FHIRObservationRangeCategory::jsonUnserialize($v, $config));
         }
-        if (isset($json->range) || property_exists($json, self::FIELD_RANGE)) {
-            if (is_array($json->range)) {
-                $type->setRange(FHIRRange::jsonUnserialize(reset($json->range), $config));
+        if (isset($decoded->range) || property_exists($decoded, self::FIELD_RANGE)) {
+            if (is_array($decoded->range)) {
+                $type->setRange(FHIRRange::jsonUnserialize(reset($decoded->range), $config));
             } else {
-                $type->setRange(FHIRRange::jsonUnserialize($json->range, $config));
+                $type->setRange(FHIRRange::jsonUnserialize($decoded->range, $config));
             }
         }
-        if (isset($json->validCodedValueSet)
-            || isset($json->_validCodedValueSet)
-            || property_exists($json, self::FIELD_VALID_CODED_VALUE_SET)
-            || property_exists($json, self::FIELD_VALID_CODED_VALUE_SET_EXT)) {
-            $v = $json->_validCodedValueSet ?? new \stdClass();
-            $v->value = $json->validCodedValueSet ?? null;
+        if (isset($decoded->validCodedValueSet)
+            || isset($decoded->_validCodedValueSet)
+            || property_exists($decoded, self::FIELD_VALID_CODED_VALUE_SET)
+            || property_exists($decoded, self::FIELD_VALID_CODED_VALUE_SET_EXT)) {
+            $v = $decoded->_validCodedValueSet ?? new \stdClass();
+            $v->value = $decoded->validCodedValueSet ?? null;
             $type->setValidCodedValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }
-        if (isset($json->normalCodedValueSet)
-            || isset($json->_normalCodedValueSet)
-            || property_exists($json, self::FIELD_NORMAL_CODED_VALUE_SET)
-            || property_exists($json, self::FIELD_NORMAL_CODED_VALUE_SET_EXT)) {
-            $v = $json->_normalCodedValueSet ?? new \stdClass();
-            $v->value = $json->normalCodedValueSet ?? null;
+        if (isset($decoded->normalCodedValueSet)
+            || isset($decoded->_normalCodedValueSet)
+            || property_exists($decoded, self::FIELD_NORMAL_CODED_VALUE_SET)
+            || property_exists($decoded, self::FIELD_NORMAL_CODED_VALUE_SET_EXT)) {
+            $v = $decoded->_normalCodedValueSet ?? new \stdClass();
+            $v->value = $decoded->normalCodedValueSet ?? null;
             $type->setNormalCodedValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }
-        if (isset($json->abnormalCodedValueSet)
-            || isset($json->_abnormalCodedValueSet)
-            || property_exists($json, self::FIELD_ABNORMAL_CODED_VALUE_SET)
-            || property_exists($json, self::FIELD_ABNORMAL_CODED_VALUE_SET_EXT)) {
-            $v = $json->_abnormalCodedValueSet ?? new \stdClass();
-            $v->value = $json->abnormalCodedValueSet ?? null;
+        if (isset($decoded->abnormalCodedValueSet)
+            || isset($decoded->_abnormalCodedValueSet)
+            || property_exists($decoded, self::FIELD_ABNORMAL_CODED_VALUE_SET)
+            || property_exists($decoded, self::FIELD_ABNORMAL_CODED_VALUE_SET_EXT)) {
+            $v = $decoded->_abnormalCodedValueSet ?? new \stdClass();
+            $v->value = $decoded->abnormalCodedValueSet ?? null;
             $type->setAbnormalCodedValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }
-        if (isset($json->criticalCodedValueSet)
-            || isset($json->_criticalCodedValueSet)
-            || property_exists($json, self::FIELD_CRITICAL_CODED_VALUE_SET)
-            || property_exists($json, self::FIELD_CRITICAL_CODED_VALUE_SET_EXT)) {
-            $v = $json->_criticalCodedValueSet ?? new \stdClass();
-            $v->value = $json->criticalCodedValueSet ?? null;
+        if (isset($decoded->criticalCodedValueSet)
+            || isset($decoded->_criticalCodedValueSet)
+            || property_exists($decoded, self::FIELD_CRITICAL_CODED_VALUE_SET)
+            || property_exists($decoded, self::FIELD_CRITICAL_CODED_VALUE_SET_EXT)) {
+            $v = $decoded->_criticalCodedValueSet ?? new \stdClass();
+            $v->value = $decoded->criticalCodedValueSet ?? null;
             $type->setCriticalCodedValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }
         return $type;

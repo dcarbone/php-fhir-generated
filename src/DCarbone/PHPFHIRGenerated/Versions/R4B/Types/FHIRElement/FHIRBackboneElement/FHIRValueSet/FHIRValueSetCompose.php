@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 23rd, 2025 20:44+0000
+ * Class creation date: March 20th, 2025 02:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -575,13 +575,13 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $json
+     * @param \stdClass $decoded
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose $type
      * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
      * @throws \Exception
      */
-    public static function jsonUnserialize(\stdClass $json,
+    public static function jsonUnserialize(\stdClass $decoded,
                                            UnserializeConfig $config,
                                            null|ElementTypeInterface $type = null): self
     {
@@ -595,40 +595,40 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        parent::jsonUnserialize($json, $config, $type); 
-        if (isset($json->lockedDate)
-            || isset($json->_lockedDate)
-            || property_exists($json, self::FIELD_LOCKED_DATE)
-            || property_exists($json, self::FIELD_LOCKED_DATE_EXT)) {
-            $v = $json->_lockedDate ?? new \stdClass();
-            $v->value = $json->lockedDate ?? null;
+        parent::jsonUnserialize($decoded, $config, $type); 
+        if (isset($decoded->lockedDate)
+            || isset($decoded->_lockedDate)
+            || property_exists($decoded, self::FIELD_LOCKED_DATE)
+            || property_exists($decoded, self::FIELD_LOCKED_DATE_EXT)) {
+            $v = $decoded->_lockedDate ?? new \stdClass();
+            $v->value = $decoded->lockedDate ?? null;
             $type->setLockedDate(FHIRDate::jsonUnserialize($v, $config));
         }
-        if (isset($json->inactive)
-            || isset($json->_inactive)
-            || property_exists($json, self::FIELD_INACTIVE)
-            || property_exists($json, self::FIELD_INACTIVE_EXT)) {
-            $v = $json->_inactive ?? new \stdClass();
-            $v->value = $json->inactive ?? null;
+        if (isset($decoded->inactive)
+            || isset($decoded->_inactive)
+            || property_exists($decoded, self::FIELD_INACTIVE)
+            || property_exists($decoded, self::FIELD_INACTIVE_EXT)) {
+            $v = $decoded->_inactive ?? new \stdClass();
+            $v->value = $decoded->inactive ?? null;
             $type->setInactive(FHIRBoolean::jsonUnserialize($v, $config));
         }
-        if (isset($json->include) || property_exists($json, self::FIELD_INCLUDE)) {
-            if (is_object($json->include)) {
-                $vals = [$json->include];
+        if (isset($decoded->include) || property_exists($decoded, self::FIELD_INCLUDE)) {
+            if (is_object($decoded->include)) {
+                $vals = [$decoded->include];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_INCLUDE, true);
             } else {
-                $vals = $json->include;
+                $vals = $decoded->include;
             }
             foreach($vals as $v) {
                 $type->addInclude(FHIRValueSetInclude::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json->exclude) || property_exists($json, self::FIELD_EXCLUDE)) {
-            if (is_object($json->exclude)) {
-                $vals = [$json->exclude];
+        if (isset($decoded->exclude) || property_exists($decoded, self::FIELD_EXCLUDE)) {
+            if (is_object($decoded->exclude)) {
+                $vals = [$decoded->exclude];
                 $type->_setJSONFieldElideSingletonArray(self::FIELD_EXCLUDE, true);
             } else {
-                $vals = $json->exclude;
+                $vals = $decoded->exclude;
             }
             foreach($vals as $v) {
                 $type->addExclude(FHIRValueSetInclude::jsonUnserialize($v, $config));
