@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,6 +105,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
  * policy or agreement.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRContractAsset extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -156,6 +157,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $scope;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -165,8 +167,9 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Target entity type about which the term may be concerned.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $type;
     /**
      * A reference from one resource to another.
@@ -175,8 +178,9 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Associated entities.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $typeReference;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -186,8 +190,9 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * May be a subtype or part of an offered asset.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $subtype;
     /**
      * A reference to a code defined by a terminology system.
@@ -200,6 +205,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $relationship;
     /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
@@ -207,8 +213,9 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Circumstance of the asset.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContext[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContext> 
      */
+    #[FHIRContractContext]
     protected array $context;
     /**
      * A sequence of Unicode characters
@@ -220,6 +227,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $condition;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -229,8 +237,9 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Type of Asset availability for use or ownership.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $periodType;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -239,8 +248,9 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Asset relevant contractual time period.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod> 
      */
+    #[FHIRPeriod]
     protected array $period;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -249,8 +259,9 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Time period of asset use.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod> 
      */
+    #[FHIRPeriod]
     protected array $usePeriod;
     /**
      * A sequence of Unicode characters
@@ -262,6 +273,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $text;
     /**
      * A sequence of Unicode characters
@@ -271,8 +283,9 @@ class FHIRContractAsset extends FHIRBackboneElement
      * Id [identifier??] of the clause or question text about the asset in the
      * referenced form or QuestionnaireResponse.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> 
      */
+    #[FHIRString]
     protected array $linkId;
     /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
@@ -280,8 +293,9 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Response to assets.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer> 
      */
+    #[FHIRContractAnswer]
     protected array $answer;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -290,8 +304,9 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Security labels that protects the asset.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt> 
      */
+    #[FHIRUnsignedInt]
     protected array $securityLabelNumber;
     /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
@@ -299,31 +314,32 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Contract Valued Item List.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem> 
      */
+    #[FHIRContractValuedItem]
     protected array $valuedItem;
 
     /* constructor.php:61 */
     /**
      * FHIRContractAsset Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $scope
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $typeReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $subtype
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $type
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $typeReference
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $subtype
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $relationship
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContext[] $context
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContext> $context
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $condition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $periodType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod[] $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod[] $usePeriod
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $periodType
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod> $period
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod> $usePeriod
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $text
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[] $linkId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[] $answer
-     * @param null|string[]|int[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt[] $securityLabelNumber
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem[] $valuedItem
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> $linkId
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer> $answer
+     * @param null|iterable<string>|iterable<int>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt> $securityLabelNumber
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem> $valuedItem
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -397,13 +413,13 @@ class FHIRContractAsset extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -448,7 +464,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Target entity type about which the term may be concerned.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getType(): array
     {
@@ -514,7 +530,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Associated entities.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getTypeReference(): array
     {
@@ -579,7 +595,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * May be a subtype or part of an offered asset.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getSubtype(): array
     {
@@ -682,7 +698,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Circumstance of the asset.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContext[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContext>
      */
     public function getContext(): array
     {
@@ -784,7 +800,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Type of Asset availability for use or ownership.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getPeriodType(): array
     {
@@ -850,7 +866,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Asset relevant contractual time period.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod>
      */
     public function getPeriod(): array
     {
@@ -914,7 +930,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Time period of asset use.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod>
      */
     public function getUsePeriod(): array
     {
@@ -1018,7 +1034,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      * Id [identifier??] of the clause or question text about the asset in the
      * referenced form or QuestionnaireResponse.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString>
      */
     public function getLinkId(): array
     {
@@ -1093,7 +1109,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Response to assets.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer>
      */
     public function getAnswer(): array
     {
@@ -1155,7 +1171,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Security labels that protects the asset.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt>
      */
     public function getSecurityLabelNumber(): array
     {
@@ -1228,7 +1244,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Contract Valued Item List.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem>
      */
     public function getValuedItem(): array
     {
@@ -1283,7 +1299,7 @@ class FHIRContractAsset extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

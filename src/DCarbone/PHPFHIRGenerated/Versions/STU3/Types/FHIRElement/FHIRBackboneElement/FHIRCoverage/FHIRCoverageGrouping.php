@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,6 +79,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * Financial instrument which may be used to reimburse or pay for health care
  * products and services.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRCoverageGrouping extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -146,6 +147,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $group;
     /**
      * A sequence of Unicode characters
@@ -156,6 +158,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $groupDisplay;
     /**
      * A sequence of Unicode characters
@@ -167,6 +170,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $subGroup;
     /**
      * A sequence of Unicode characters
@@ -177,6 +181,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $subGroupDisplay;
     /**
      * A sequence of Unicode characters
@@ -189,6 +194,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $plan;
     /**
      * A sequence of Unicode characters
@@ -199,6 +205,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $planDisplay;
     /**
      * A sequence of Unicode characters
@@ -211,6 +218,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $subPlan;
     /**
      * A sequence of Unicode characters
@@ -221,6 +229,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $subPlanDisplay;
     /**
      * A sequence of Unicode characters
@@ -233,6 +242,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $class;
     /**
      * A sequence of Unicode characters
@@ -243,6 +253,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $classDisplay;
     /**
      * A sequence of Unicode characters
@@ -255,6 +266,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $subClass;
     /**
      * A sequence of Unicode characters
@@ -265,14 +277,15 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $subClassDisplay;
 
     /* constructor.php:61 */
     /**
      * FHIRCoverageGrouping Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $group
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $groupDisplay
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subGroup
@@ -346,13 +359,13 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -819,7 +832,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

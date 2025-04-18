@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,6 +123,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
  * level of responsibility for the patient during this time.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -174,8 +175,9 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * of use, such as when an external agency is tracking the Episode for funding
      * purposes.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -184,6 +186,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREpisodeOfCareStatus 
      */
+    #[FHIREpisodeOfCareStatus]
     protected FHIREpisodeOfCareStatus $status;
     /**
      * An association between a patient and an organization / healthcare provider(s)
@@ -193,8 +196,9 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * The history of statuses that the EpisodeOfCare has been through (without
      * requiring processing the history of the resource).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory> 
      */
+    #[FHIREpisodeOfCareStatusHistory]
     protected array $statusHistory;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -205,8 +209,9 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * A classification of the type of episode of care; e.g. specialist referral,
      * disease management, type of funded care.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $type;
     /**
      * An association between a patient and an organization / healthcare provider(s)
@@ -216,8 +221,9 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * The list of medical reasons that are expected to be addressed during the episode
      * of care.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason> 
      */
+    #[FHIREpisodeOfCareReason]
     protected array $reason;
     /**
      * An association between a patient and an organization / healthcare provider(s)
@@ -226,8 +232,9 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * The list of medical conditions that were addressed during the episode of care.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis> 
      */
+    #[FHIREpisodeOfCareDiagnosis]
     protected array $diagnosis;
     /**
      * A reference from one resource to another.
@@ -238,6 +245,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $patient;
     /**
      * A reference from one resource to another.
@@ -249,6 +257,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $managingOrganization;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -260,6 +269,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $period;
     /**
      * A reference from one resource to another.
@@ -269,8 +279,9 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming
      * referrals.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $referralRequest;
     /**
      * A reference from one resource to another.
@@ -281,6 +292,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $careManager;
     /**
      * A reference from one resource to another.
@@ -290,8 +302,9 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * The list of practitioners that may be facilitating this episode of care for
      * specific purposes.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $careTeam;
     /**
      * A reference from one resource to another.
@@ -300,8 +313,9 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * The set of accounts that may be used for billing for this EpisodeOfCare.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $account;
 
     /* constructor.php:61 */
@@ -312,22 +326,22 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREpisodeOfCareStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREpisodeOfCareStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[] $statusHistory
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason[] $reason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[] $diagnosis
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory> $statusHistory
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $type
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason> $reason
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis> $diagnosis
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $managingOrganization
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $referralRequest
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $referralRequest
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $careManager
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $careTeam
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $account
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $careTeam
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $account
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -403,19 +417,19 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -426,7 +440,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * of use, such as when an external agency is tracking the Episode for funding
      * purposes.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -530,7 +544,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * The history of statuses that the EpisodeOfCare has been through (without
      * requiring processing the history of the resource).
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory>
      */
     public function getStatusHistory(): array
     {
@@ -598,7 +612,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * A classification of the type of episode of care; e.g. specialist referral,
      * disease management, type of funded care.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
      */
     public function getType(): array
     {
@@ -667,7 +681,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * The list of medical reasons that are expected to be addressed during the episode
      * of care.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason>
      */
     public function getReason(): array
     {
@@ -733,7 +747,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * The list of medical conditions that were addressed during the episode of care.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis>
      */
     public function getDiagnosis(): array
     {
@@ -904,7 +918,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming
      * referrals.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference>
      */
     public function getReferralRequest(): array
     {
@@ -1005,7 +1019,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * The list of practitioners that may be facilitating this episode of care for
      * specific purposes.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference>
      */
     public function getCareTeam(): array
     {
@@ -1071,7 +1085,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * The set of accounts that may be used for billing for this EpisodeOfCare.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference>
      */
     public function getAccount(): array
     {
@@ -1128,7 +1142,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

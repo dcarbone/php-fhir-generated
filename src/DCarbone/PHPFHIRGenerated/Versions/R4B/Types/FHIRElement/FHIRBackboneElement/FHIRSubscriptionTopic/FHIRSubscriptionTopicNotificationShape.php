@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,6 +103,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  * Describes a stream of resource state changes or events and annotated with labels
  * useful to filter projections from this topic.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -146,6 +147,7 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $resource;
     /**
      * A sequence of Unicode characters
@@ -157,8 +159,9 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * to receive them. Clients SHOULD be prepared to receive these additional
      * resources, but SHALL function properly without them.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> 
      */
+    #[FHIRString]
     protected array $include;
     /**
      * A sequence of Unicode characters
@@ -170,19 +173,20 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * authorized to receive them. Clients SHOULD be prepared to receive these
      * additional resources, but SHALL function properly without them.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> 
      */
+    #[FHIRString]
     protected array $revInclude;
 
     /* constructor.php:61 */
     /**
      * FHIRSubscriptionTopicNotificationShape Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $resource
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[] $include
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[] $revInclude
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> $include
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> $revInclude
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -208,13 +212,13 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -270,7 +274,7 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * to receive them. Clients SHOULD be prepared to receive these additional
      * resources, but SHALL function properly without them.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString>
      */
     public function getInclude(): array
     {
@@ -353,7 +357,7 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * authorized to receive them. Clients SHOULD be prepared to receive these
      * additional resources, but SHALL function properly without them.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString>
      */
     public function getRevInclude(): array
     {
@@ -426,7 +430,7 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

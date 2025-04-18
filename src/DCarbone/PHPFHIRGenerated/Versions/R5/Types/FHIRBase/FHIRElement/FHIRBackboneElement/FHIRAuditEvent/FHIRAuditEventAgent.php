@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,6 +107,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * A record of an event relevant for purposes such as operations, privacy,
  * security, maintenance, and performance analysis.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRAuditEventAgent extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -157,6 +158,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -167,8 +169,9 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * The structural roles of the agent indicating the agent's competency. The
      * security role enabling the agent with respect to the activity.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $role;
     /**
      * A reference from one resource to another.
@@ -179,6 +182,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $who;
     /**
      * Value of "true" or "false"
@@ -189,6 +193,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $requestor;
     /**
      * A reference from one resource to another.
@@ -199,6 +204,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $location;
     /**
      * String of characters used to identify a name or a resource
@@ -210,8 +216,9 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * as patient consent, guarantor funding, etc. The policy would also indicate the
      * security token used.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri> 
      */
+    #[FHIRUri]
     protected array $policy;
     /**
      * A reference from one resource to another.
@@ -224,6 +231,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $networkReference;
     /**
      * String of characters used to identify a name or a resource
@@ -236,6 +244,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $networkUri;
     /**
      * A sequence of Unicode characters
@@ -248,6 +257,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $networkString;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -258,26 +268,27 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $authorization;
 
     /* constructor.php:61 */
     /**
      * FHIRAuditEventAgent Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $role
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $role
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $who
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $requestor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri[] $policy
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri> $policy
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $networkReference
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $networkUri
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $networkString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $authorization
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $authorization
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -331,13 +342,13 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -383,7 +394,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * The structural roles of the agent indicating the agent's competency. The
      * security role enabling the agent with respect to the activity.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
      */
     public function getRole(): array
     {
@@ -559,7 +570,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * as patient consent, guarantor funding, etc. The policy would also indicate the
      * security token used.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri>
      */
     public function getPolicy(): array
     {
@@ -761,7 +772,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
      */
     public function getAuthorization(): array
     {
@@ -822,7 +833,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

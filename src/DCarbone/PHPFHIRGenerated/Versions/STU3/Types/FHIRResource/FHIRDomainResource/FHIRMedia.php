@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,6 +107,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionTypeMap;
  * content may be inline or provided by direct reference.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -173,8 +174,9 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * image itself, identifiers for the context of its collection (e.g. series ids)
      * and context ids such as accession numbers or other workflow identifiers.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * A reference from one resource to another.
@@ -183,8 +185,9 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * A procedure that is fulfilled in whole or in part by the creation of this media.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $basedOn;
     /**
      * Whether the media is a photo, video, or audio
@@ -195,6 +198,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDigitalMediaType 
      */
+    #[FHIRDigitalMediaType]
     protected FHIRDigitalMediaType $type;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -208,6 +212,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subtype;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -219,6 +224,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $view;
     /**
      * A reference from one resource to another.
@@ -229,6 +235,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $subject;
     /**
      * A reference from one resource to another.
@@ -239,6 +246,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $context;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -252,6 +260,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -262,6 +271,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
     /**
      * A reference from one resource to another.
@@ -272,6 +282,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $operator;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -281,8 +292,9 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Describes why the event occurred in coded or textual form.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $reasonCode;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -295,6 +307,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $bodySite;
     /**
      * A reference from one resource to another.
@@ -305,6 +318,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $device;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -315,6 +329,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $height;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -325,6 +340,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $width;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -339,6 +355,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $frames;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -349,6 +366,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $duration;
     /**
      * For referring to data content defined in other formats.
@@ -360,6 +378,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $content;
     /**
      * A text note which also contains information about who made the statement and
@@ -369,8 +388,9 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Comments made about the media by the performer, subject or other participants.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation> 
      */
+    #[FHIRAnnotation]
     protected array $note;
 
     /* constructor.php:61 */
@@ -381,11 +401,11 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] $basedOn
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $basedOn
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRDigitalMediaTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDigitalMediaType $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $subtype
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $view
@@ -394,7 +414,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $occurrencePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $operator
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[] $reasonCode
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $reasonCode
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $bodySite
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $device
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $height
@@ -402,7 +422,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $frames
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $duration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $content
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation[] $note
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -502,19 +522,19 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -524,7 +544,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * image itself, identifiers for the context of its collection (e.g. series ids)
      * and context ids such as accession numbers or other workflow identifiers.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -592,7 +612,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * A procedure that is fulfilled in whole or in part by the creation of this media.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference>
      */
     public function getBasedOn(): array
     {
@@ -949,7 +969,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Describes why the event occurred in coded or textual form.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getReasonCode(): array
     {
@@ -1280,7 +1300,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Comments made about the media by the performer, subject or other participants.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation>
      */
     public function getNote(): array
     {
@@ -1339,7 +1359,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

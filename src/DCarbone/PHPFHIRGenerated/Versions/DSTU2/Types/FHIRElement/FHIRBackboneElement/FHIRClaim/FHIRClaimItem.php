@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  * A provider issued list of services and products provided, or to be provided, to
  * a patient which is provided to an insurer for payment recovery.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRClaimItem extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -158,6 +159,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequence;
     /**
      * A reference to a code defined by a terminology system.
@@ -168,6 +170,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $type;
     /**
      * A reference from one resource to another.
@@ -178,6 +181,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $provider;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -186,8 +190,9 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Diagnosis applicable for this service or product line.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt> 
      */
+    #[FHIRPositiveInt]
     protected array $diagnosisLinkId;
     /**
      * A reference to a code defined by a terminology system.
@@ -199,6 +204,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $service;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -210,12 +216,14 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $serviceDate;
     /**
      * The number of repetitions of a service or product.
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity 
      */
+    #[FHIRSimpleQuantity]
     protected FHIRSimpleQuantity $quantity;
     /**
      * If the item is a node then this is the fee for the product or service, otherwise
@@ -223,6 +231,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney 
      */
+    #[FHIRMoney]
     protected FHIRMoney $unitPrice;
     /**
      * A rational number with implicit precision
@@ -236,6 +245,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $factor;
     /**
      * A rational number with implicit precision
@@ -250,6 +260,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $points;
     /**
      * The quantity times the unit price for an additional service or product or
@@ -259,6 +270,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney 
      */
+    #[FHIRMoney]
     protected FHIRMoney $net;
     /**
      * A reference to a code defined by a terminology system.
@@ -269,6 +281,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $udi;
     /**
      * A reference to a code defined by a terminology system.
@@ -279,6 +292,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $bodySite;
     /**
      * A reference to a code defined by a terminology system.
@@ -287,8 +301,9 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * A region or surface of the site, e.g. limb region or tooth surface(s).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> 
      */
+    #[FHIRCoding]
     protected array $subSite;
     /**
      * A reference to a code defined by a terminology system.
@@ -298,8 +313,9 @@ class FHIRClaimItem extends FHIRBackboneElement
      * Item typification or modifiers codes, e.g. for Oral whether the treatment is
      * cosmetic or associated with TMJ, or an appliance was lost or stolen.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> 
      */
+    #[FHIRCoding]
     protected array $modifier;
     /**
      * A provider issued list of services and products provided, or to be provided, to
@@ -307,8 +323,9 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Second tier of goods and services.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail> 
      */
+    #[FHIRClaimDetail]
     protected array $detail;
     /**
      * A provider issued list of services and products provided, or to be provided, to
@@ -318,18 +335,19 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProsthesis 
      */
+    #[FHIRClaimProsthesis]
     protected FHIRClaimProsthesis $prosthesis;
 
     /* constructor.php:61 */
     /**
      * FHIRClaimItem Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $sequence
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $provider
-     * @param null|string[]|float[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt[] $diagnosisLinkId
+     * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt> $diagnosisLinkId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $service
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $serviceDate
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
@@ -339,9 +357,9 @@ class FHIRClaimItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $net
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $udi
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $bodySite
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding[] $subSite
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding[] $modifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail[] $detail
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $subSite
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $modifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail> $detail
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProsthesis $prosthesis
      * @param null|string[] $fhirComments
      */
@@ -424,13 +442,13 @@ class FHIRClaimItem extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -543,7 +561,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Diagnosis applicable for this service or product line.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt>
      */
     public function getDiagnosisLinkId(): array
     {
@@ -934,7 +952,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * A region or surface of the site, e.g. limb region or tooth surface(s).
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding>
      */
     public function getSubSite(): array
     {
@@ -999,7 +1017,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * Item typification or modifiers codes, e.g. for Oral whether the treatment is
      * cosmetic or associated with TMJ, or an appliance was lost or stolen.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding>
      */
     public function getModifier(): array
     {
@@ -1064,7 +1082,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Second tier of goods and services.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail>
      */
     public function getDetail(): array
     {
@@ -1151,7 +1169,7 @@ class FHIRClaimItem extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

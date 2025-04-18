@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,6 +107,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * A financial tool for tracking value accrued for a particular purpose. In the
  * healthcare field, used to track charges for a patient, cost centers, etc.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRAccountProcedure extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -149,6 +150,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequence;
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
@@ -160,6 +162,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference 
      */
+    #[FHIRCodeableReference]
     protected FHIRCodeableReference $code;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -175,6 +178,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $dateOfService;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -184,8 +188,9 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * How this procedure value should be used in charging the account.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $type;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -196,8 +201,9 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * The package code can be used to group procedures that may be priced or delivered
      * as a single product. Such as DRGs.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $packageCode;
     /**
      * A reference from one resource to another.
@@ -206,22 +212,23 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * Any devices that were associated with the procedure relevant to the account.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $device;
 
     /* constructor.php:61 */
     /**
      * FHIRAccountProcedure Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $code
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $dateOfService
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $packageCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $device
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $type
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $packageCode
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $device
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -259,13 +266,13 @@ class FHIRAccountProcedure extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -394,7 +401,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * How this procedure value should be used in charging the account.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
      */
     public function getType(): array
     {
@@ -462,7 +469,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * The package code can be used to group procedures that may be priced or delivered
      * as a single product. Such as DRGs.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
      */
     public function getPackageCode(): array
     {
@@ -530,7 +537,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * Any devices that were associated with the procedure relevant to the account.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference>
      */
     public function getDevice(): array
     {
@@ -587,7 +594,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

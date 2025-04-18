@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,6 +100,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionTypeMap;
  * the subscriber of the benefits provided.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -143,8 +144,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The Response business identifier.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * A reference from one resource to another.
@@ -155,6 +157,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $request;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -166,6 +169,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $outcome;
     /**
      * A sequence of Unicode characters
@@ -176,6 +180,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $disposition;
     /**
      * A reference to a code defined by a terminology system.
@@ -187,6 +192,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $ruleset;
     /**
      * A reference to a code defined by a terminology system.
@@ -198,6 +204,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $originalRuleset;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -211,6 +218,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $created;
     /**
      * A reference from one resource to another.
@@ -221,6 +229,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $organization;
     /**
      * A reference from one resource to another.
@@ -231,6 +240,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $requestProvider;
     /**
      * A reference from one resource to another.
@@ -241,6 +251,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $requestOrganization;
 
     /* constructor.php:61 */
@@ -251,10 +262,10 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $request
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $outcome
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $disposition
@@ -327,19 +338,19 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -347,7 +358,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The Response business identifier.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -731,7 +742,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

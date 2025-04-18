@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,6 +134,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionTypeMap;
  * named query (using the search interaction).
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIROperationDefinition extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -257,6 +258,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $url;
     /**
      * A sequence of Unicode characters
@@ -272,6 +274,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $version;
     /**
      * A sequence of Unicode characters
@@ -284,6 +287,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $name;
     /**
      * A sequence of Unicode characters
@@ -294,6 +298,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $title;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -303,6 +308,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus 
      */
+    #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -311,6 +317,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROperationKind 
      */
+    #[FHIROperationKind]
     protected FHIROperationKind $kind;
     /**
      * Value of "true" or "false"
@@ -322,6 +329,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $experimental;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -338,6 +346,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $date;
     /**
      * A sequence of Unicode characters
@@ -349,6 +358,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $publisher;
     /**
      * Specifies contact information for a person or organization.
@@ -358,8 +368,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> 
      */
+    #[FHIRContactDetail]
     protected array $contact;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -375,6 +386,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $description;
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
@@ -390,8 +402,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      * be used to assist with indexing and searching for appropriate operation
      * definition instances.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext> 
      */
+    #[FHIRUsageContext]
     protected array $useContext;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -402,8 +415,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      * A legal or geographic region in which the operation definition is intended to be
      * used.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $jurisdiction;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -419,6 +433,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
     /**
      * Value of "true" or "false"
@@ -429,6 +444,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $affectsState;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -440,6 +456,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $code;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -454,6 +471,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $comment;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -465,14 +483,16 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical 
      */
+    #[FHIRCanonical]
     protected FHIRCanonical $base;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The types on which this operation can be executed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType> 
      */
+    #[FHIRResourceType]
     protected array $resource;
     /**
      * Value of "true" or "false"
@@ -483,6 +503,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $system;
     /**
      * Value of "true" or "false"
@@ -494,6 +515,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $type;
     /**
      * Value of "true" or "false"
@@ -504,6 +526,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $instance;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -517,6 +540,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical 
      */
+    #[FHIRCanonical]
     protected FHIRCanonical $inputProfile;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -530,6 +554,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical 
      */
+    #[FHIRCanonical]
     protected FHIRCanonical $outputProfile;
     /**
      * A formal computable definition of an operation (on the RESTful interface) or a
@@ -537,8 +562,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * The parameters for the operation/query.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter> 
      */
+    #[FHIROperationDefinitionParameter]
     protected array $parameter;
     /**
      * A formal computable definition of an operation (on the RESTful interface) or a
@@ -548,8 +574,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      * operation, to help code generators when generating overloaded parameter sets for
      * this operation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload> 
      */
+    #[FHIROperationDefinitionOverload]
     protected array $overload;
 
     /* constructor.php:61 */
@@ -560,9 +587,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
@@ -572,23 +599,23 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail[] $contact
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $contact
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext[] $useContext
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $jurisdiction
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext> $useContext
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $affectsState
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $comment
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $base
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType[] $resource
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType> $resource
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $system
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $type
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $instance
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $inputProfile
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $outputProfile
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[] $parameter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload[] $overload
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter> $parameter
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload> $overload
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -716,19 +743,19 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -1106,7 +1133,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail>
      */
     public function getContact(): array
     {
@@ -1226,7 +1253,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      * be used to assist with indexing and searching for appropriate operation
      * definition instances.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext>
      */
     public function getUseContext(): array
     {
@@ -1306,7 +1333,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      * A legal or geographic region in which the operation definition is intended to be
      * used.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getJurisdiction(): array
     {
@@ -1579,7 +1606,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * The types on which this operation can be executed.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType>
      */
     public function getResource(): array
     {
@@ -1847,7 +1874,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      *
      * The parameters for the operation/query.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter>
      */
     public function getParameter(): array
     {
@@ -1910,7 +1937,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
      * operation, to help code generators when generating overloaded parameter sets for
      * this operation.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload>
      */
     public function getOverload(): array
     {
@@ -1969,7 +1996,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements VersionConta
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

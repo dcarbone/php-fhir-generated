@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,6 +115,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionTypeMap;
  * phraseology and grouping to allow coherent, consistent data collection.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -202,6 +203,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $url;
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -213,8 +215,9 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * A sequence of Unicode characters
@@ -230,6 +233,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $version;
     /**
      * A sequence of Unicode characters
@@ -242,6 +246,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $name;
     /**
      * A sequence of Unicode characters
@@ -252,6 +257,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $title;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -261,8 +267,9 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * The URL of a Questionnaire that this Questionnaire is based on.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical> 
      */
+    #[FHIRCanonical]
     protected array $derivedFrom;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -272,6 +279,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus 
      */
+    #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
     /**
      * Value of "true" or "false"
@@ -283,6 +291,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $experimental;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -293,8 +302,9 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * The types of subjects that can be the subject of responses created for the
      * questionnaire.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode> 
      */
+    #[FHIRCode]
     protected array $subjectType;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -311,6 +321,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $date;
     /**
      * A sequence of Unicode characters
@@ -321,6 +332,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $publisher;
     /**
      * Specifies contact information for a person or organization.
@@ -330,8 +342,9 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
      */
+    #[FHIRContactDetail]
     protected array $contact;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -347,6 +360,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $description;
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
@@ -362,8 +376,9 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * be used to assist with indexing and searching for appropriate questionnaire
      * instances.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> 
      */
+    #[FHIRUsageContext]
     protected array $useContext;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -373,8 +388,9 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * A legal or geographic region in which the questionnaire is intended to be used.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $jurisdiction;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -390,6 +406,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -406,6 +423,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -418,6 +436,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $approvalDate;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -430,6 +449,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $lastReviewDate;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -441,6 +461,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
     /**
      * A reference to a code defined by a terminology system.
@@ -450,8 +471,9 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * An identifier for this question or group of questions in a particular
      * terminology such as LOINC.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding> 
      */
+    #[FHIRCoding]
     protected array $code;
     /**
      * A structured set of questions intended to guide the collection of answers from
@@ -461,8 +483,9 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * A particular question, question grouping or display text that is part of the
      * questionnaire.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem> 
      */
+    #[FHIRQuestionnaireItem]
     protected array $item;
 
     /* constructor.php:61 */
@@ -473,31 +496,31 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $url
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $version
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical[] $derivedFrom
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical> $derivedFrom
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus $status
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode[] $subjectType
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode> $subjectType
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $publisher
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail[] $contact
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $contact
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext[] $useContext
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $jurisdiction
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> $useContext
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $purpose
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $copyright
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $approvalDate
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $lastReviewDate
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $effectivePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[] $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[] $item
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding> $code
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem> $item
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -609,19 +632,19 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -679,7 +702,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -875,7 +898,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * The URL of a Questionnaire that this Questionnaire is based on.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical>
      */
     public function getDerivedFrom(): array
     {
@@ -1027,7 +1050,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * The types of subjects that can be the subject of responses created for the
      * questionnaire.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode>
      */
     public function getSubjectType(): array
     {
@@ -1192,7 +1215,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     public function getContact(): array
     {
@@ -1312,7 +1335,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * be used to assist with indexing and searching for appropriate questionnaire
      * instances.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext>
      */
     public function getUseContext(): array
     {
@@ -1391,7 +1414,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * A legal or geographic region in which the questionnaire is intended to be used.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getJurisdiction(): array
     {
@@ -1672,7 +1695,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * An identifier for this question or group of questions in a particular
      * terminology such as LOINC.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding>
      */
     public function getCode(): array
     {
@@ -1739,7 +1762,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * A particular question, question grouping or display text that is part of the
      * questionnaire.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem>
      */
     public function getItem(): array
     {
@@ -1798,7 +1821,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

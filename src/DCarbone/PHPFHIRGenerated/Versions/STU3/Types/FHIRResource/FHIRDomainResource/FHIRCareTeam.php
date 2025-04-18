@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,6 +102,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionTypeMap;
  * in the coordination and delivery of care for a patient.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -147,8 +148,9 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * Indicates the status of the care team.
@@ -158,6 +160,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCareTeamStatus 
      */
+    #[FHIRCareTeamStatus]
     protected FHIRCareTeamStatus $status;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -169,8 +172,9 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * multiple co-existing teams, such as care plan team, episode of care team,
      * longitudinal care team.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $category;
     /**
      * A sequence of Unicode characters
@@ -182,6 +186,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $name;
     /**
      * A reference from one resource to another.
@@ -192,6 +197,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $subject;
     /**
      * A reference from one resource to another.
@@ -203,6 +209,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $context;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -213,6 +220,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $period;
     /**
      * The Care Team includes all the people and organizations who plan to participate
@@ -221,8 +229,9 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies all people and organizations who are expected to be involved in the
      * care team.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant> 
      */
+    #[FHIRCareTeamParticipant]
     protected array $participant;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -232,8 +241,9 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Describes why the care team exists.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $reasonCode;
     /**
      * A reference from one resource to another.
@@ -242,8 +252,9 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Condition(s) that this care team addresses.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $reasonReference;
     /**
      * A reference from one resource to another.
@@ -252,8 +263,9 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The organization responsible for the care team.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $managingOrganization;
     /**
      * A text note which also contains information about who made the statement and
@@ -263,8 +275,9 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Comments made about the CareTeam.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation> 
      */
+    #[FHIRAnnotation]
     protected array $note;
 
     /* constructor.php:61 */
@@ -275,21 +288,21 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRCareTeamStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCareTeamStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[] $category
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $category
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $context
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant[] $participant
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[] $reasonCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] $reasonReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] $managingOrganization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation[] $note
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant> $participant
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $reasonCode
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $reasonReference
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $managingOrganization
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -361,19 +374,19 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -383,7 +396,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -489,7 +502,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * multiple co-existing teams, such as care plan team, episode of care team,
      * longitudinal care team.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getCategory(): array
     {
@@ -702,7 +715,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies all people and organizations who are expected to be involved in the
      * care team.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant>
      */
     public function getParticipant(): array
     {
@@ -767,7 +780,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Describes why the care team exists.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getReasonCode(): array
     {
@@ -833,7 +846,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Condition(s) that this care team addresses.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference>
      */
     public function getReasonReference(): array
     {
@@ -897,7 +910,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The organization responsible for the care team.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference>
      */
     public function getManagingOrganization(): array
     {
@@ -962,7 +975,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Comments made about the CareTeam.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation>
      */
     public function getNote(): array
     {
@@ -1021,7 +1034,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

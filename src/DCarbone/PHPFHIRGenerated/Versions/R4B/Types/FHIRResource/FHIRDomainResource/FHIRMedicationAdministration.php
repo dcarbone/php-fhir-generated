@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,6 +125,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionTypeMap;
  * practitioner.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRMedicationAdministration extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -201,8 +202,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * this resource by the performer or other systems and remain constant as the
      * resource is updated and propagates from server to server.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * String of characters used to identify a name or a resource
@@ -212,8 +214,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * A protocol, guideline, orderset, or other definition that was adhered to in
      * whole or in part by this event.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri> 
      */
+    #[FHIRUri]
     protected array $instantiates;
     /**
      * A reference from one resource to another.
@@ -222,8 +225,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A larger event of which this particular event is a component or step.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $partOf;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -238,6 +242,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $status;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -247,8 +252,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A code indicating why the administration was not performed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $statusReason;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -260,6 +266,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -273,6 +280,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $medicationCodeableConcept;
     /**
      * A reference from one resource to another.
@@ -285,6 +293,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $medicationReference;
     /**
      * A reference from one resource to another.
@@ -295,6 +304,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $subject;
     /**
      * A reference from one resource to another.
@@ -306,6 +316,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $context;
     /**
      * A reference from one resource to another.
@@ -315,8 +326,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * Additional information (for example, patient height and weight) that supports
      * the administration of the medication.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $supportingInformation;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -333,6 +345,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $effectiveDateTime;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -346,6 +359,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
     /**
      * Describes the event of a patient consuming or otherwise being administered a
@@ -357,8 +371,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * Indicates who or what performed the medication administration and how they were
      * involved.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer> 
      */
+    #[FHIRMedicationAdministrationPerformer]
     protected array $performer;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -368,8 +383,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A code indicating why the medication was given.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $reasonCode;
     /**
      * A reference from one resource to another.
@@ -378,8 +394,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * Condition or observation that supports why the medication was administered.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $reasonReference;
     /**
      * A reference from one resource to another.
@@ -390,6 +407,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $request;
     /**
      * A reference from one resource to another.
@@ -399,8 +417,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * The device used in administering the medication to the patient. For example, a
      * particular infusion pump.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $device;
     /**
      * A text note which also contains information about who made the statement and
@@ -411,8 +430,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * Extra information about the medication administration that is not conveyed by
      * the other attributes.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> 
      */
+    #[FHIRAnnotation]
     protected array $note;
     /**
      * Describes the event of a patient consuming or otherwise being administered a
@@ -426,6 +446,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage 
      */
+    #[FHIRMedicationAdministrationDosage]
     protected FHIRMedicationAdministrationDosage $dosage;
     /**
      * A reference from one resource to another.
@@ -435,8 +456,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * A summary of the events of interest that have occurred, such as when the
      * administration was verified.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $eventHistory;
 
     /* constructor.php:61 */
@@ -447,30 +469,30 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri[] $instantiates
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $partOf
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri> $instantiates
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $partOf
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $statusReason
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $statusReason
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $medicationReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $subject
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $context
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $supportingInformation
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $supportingInformation
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $effectiveDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $effectivePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer[] $performer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $reasonCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $reasonReference
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer> $performer
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $reasonCode
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $reasonReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $request
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $device
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation[] $note
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $device
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage $dosage
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $eventHistory
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $eventHistory
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -578,19 +600,19 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -603,7 +625,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * this resource by the performer or other systems and remain constant as the
      * resource is updated and propagates from server to server.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -678,7 +700,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * A protocol, guideline, orderset, or other definition that was adhered to in
      * whole or in part by this event.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri>
      */
     public function getInstantiates(): array
     {
@@ -754,7 +776,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A larger event of which this particular event is a component or step.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getPartOf(): array
     {
@@ -864,7 +886,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A code indicating why the administration was not performed.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getStatusReason(): array
     {
@@ -1115,7 +1137,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * Additional information (for example, patient height and weight) that supports
      * the administration of the medication.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getSupportingInformation(): array
     {
@@ -1273,7 +1295,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * Indicates who or what performed the medication administration and how they were
      * involved.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer>
      */
     public function getPerformer(): array
     {
@@ -1344,7 +1366,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A code indicating why the medication was given.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getReasonCode(): array
     {
@@ -1410,7 +1432,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * Condition or observation that supports why the medication was administered.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getReasonReference(): array
     {
@@ -1509,7 +1531,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * The device used in administering the medication to the patient. For example, a
      * particular infusion pump.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getDevice(): array
     {
@@ -1577,7 +1599,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * Extra information about the medication administration that is not conveyed by
      * the other attributes.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation>
      */
     public function getNote(): array
     {
@@ -1686,7 +1708,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * A summary of the events of interest that have occurred, such as when the
      * administration was verified.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getEventHistory(): array
     {
@@ -1745,7 +1767,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

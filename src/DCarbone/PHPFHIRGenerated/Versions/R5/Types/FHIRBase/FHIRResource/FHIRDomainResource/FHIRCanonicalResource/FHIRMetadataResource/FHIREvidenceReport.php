@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,6 +131,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
  * EvidenceVariable, and Citation resources and related concepts.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIREvidenceReport extends FHIRMetadataResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -199,6 +200,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $url;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -207,6 +209,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus 
      */
+    #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
@@ -222,8 +225,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * be used to assist with indexing and searching for appropriate evidence report
      * instances.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext> 
      */
+    #[FHIRUsageContext]
     protected array $useContext;
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -235,8 +239,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -247,8 +252,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * A formal identifier that is used to identify things closely related to this
      * EvidenceReport.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $relatedIdentifier;
     /**
      * A reference from one resource to another.
@@ -260,6 +266,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $citeAsReference;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -275,6 +282,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $citeAsMarkdown;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -287,6 +295,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
     /**
      * A text note which also contains information about who made the statement and
@@ -296,8 +305,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * Used for footnotes and annotations.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> 
      */
+    #[FHIRAnnotation]
     protected array $note;
     /**
      * Related artifacts such as additional documentation, justification, or
@@ -307,8 +317,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * Link, description or reference to artifact associated with the report.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact> 
      */
+    #[FHIRRelatedArtifact]
     protected array $relatedArtifact;
     /**
      * The EvidenceReport Resource is a specialized container for a collection of
@@ -320,6 +331,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSubject 
      */
+    #[FHIREvidenceReportSubject]
     protected FHIREvidenceReportSubject $subject;
     /**
      * A sequence of Unicode characters
@@ -331,6 +343,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $publisher;
     /**
      * Specifies contact information for a person or organization.
@@ -340,8 +353,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> 
      */
+    #[FHIRContactDetail]
     protected array $contact;
     /**
      * Specifies contact information for a person or organization.
@@ -351,8 +365,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * An individiual, organization, or device primarily involved in the creation and
      * maintenance of the content.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> 
      */
+    #[FHIRContactDetail]
     protected array $author;
     /**
      * Specifies contact information for a person or organization.
@@ -362,8 +377,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * An individiual, organization, or device primarily responsible for internal
      * coherence of the content.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> 
      */
+    #[FHIRContactDetail]
     protected array $editor;
     /**
      * Specifies contact information for a person or organization.
@@ -373,8 +389,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * An individiual, organization, or device primarily responsible for review of some
      * aspect of the content.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> 
      */
+    #[FHIRContactDetail]
     protected array $reviewer;
     /**
      * Specifies contact information for a person or organization.
@@ -384,8 +401,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * An individiual, organization, or device responsible for officially endorsing the
      * content for use in some setting.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> 
      */
+    #[FHIRContactDetail]
     protected array $endorser;
     /**
      * The EvidenceReport Resource is a specialized container for a collection of
@@ -395,8 +413,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * Relationships that this composition has with other compositions or documents
      * that already exist.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo> 
      */
+    #[FHIREvidenceReportRelatesTo]
     protected array $relatesTo;
     /**
      * The EvidenceReport Resource is a specialized container for a collection of
@@ -405,8 +424,9 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * The root of the sections that make up the composition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection> 
      */
+    #[FHIREvidenceReportSection]
     protected array $section;
 
     /* constructor.php:61 */
@@ -417,28 +437,28 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[] $useContext
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $relatedIdentifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext> $useContext
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $relatedIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $citeAsReference
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $citeAsMarkdown
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[] $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[] $relatedArtifact
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact> $relatedArtifact
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSubject $subject
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[] $contact
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[] $author
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[] $editor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[] $reviewer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[] $endorser
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo[] $relatesTo
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection[] $section
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $contact
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $author
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $editor
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $reviewer
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $endorser
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo> $relatesTo
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection> $section
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -538,19 +558,19 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -645,7 +665,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * be used to assist with indexing and searching for appropriate evidence report
      * instances.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext>
      */
     public function getUseContext(): array
     {
@@ -726,7 +746,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -798,7 +818,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * A formal identifier that is used to identify things closely related to this
      * EvidenceReport.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier>
      */
     public function getRelatedIdentifier(): array
     {
@@ -988,7 +1008,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * Used for footnotes and annotations.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation>
      */
     public function getNote(): array
     {
@@ -1055,7 +1075,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * Link, description or reference to artifact associated with the report.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact>
      */
     public function getRelatedArtifact(): array
     {
@@ -1197,7 +1217,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail>
      */
     public function getContact(): array
     {
@@ -1264,7 +1284,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * An individiual, organization, or device primarily involved in the creation and
      * maintenance of the content.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail>
      */
     public function getAuthor(): array
     {
@@ -1331,7 +1351,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * An individiual, organization, or device primarily responsible for internal
      * coherence of the content.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail>
      */
     public function getEditor(): array
     {
@@ -1398,7 +1418,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * An individiual, organization, or device primarily responsible for review of some
      * aspect of the content.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail>
      */
     public function getReviewer(): array
     {
@@ -1465,7 +1485,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * An individiual, organization, or device responsible for officially endorsing the
      * content for use in some setting.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail>
      */
     public function getEndorser(): array
     {
@@ -1532,7 +1552,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * Relationships that this composition has with other compositions or documents
      * that already exist.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo>
      */
     public function getRelatesTo(): array
     {
@@ -1598,7 +1618,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      *
      * The root of the sections that make up the composition.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection>
      */
     public function getSection(): array
     {
@@ -1655,7 +1675,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  * institutions, corporations, departments, community groups, healthcare practice
  * groups, etc.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIROrganizationContact extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -122,6 +123,7 @@ class FHIROrganizationContact extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $purpose;
     /**
      * A human's name with the ability to identify parts and usage.
@@ -132,6 +134,7 @@ class FHIROrganizationContact extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHumanName 
      */
+    #[FHIRHumanName]
     protected FHIRHumanName $name;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -142,8 +145,9 @@ class FHIROrganizationContact extends FHIRBackboneElement
      * A contact detail (e.g. a telephone number or an email address) by which the
      * party may be contacted.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint> 
      */
+    #[FHIRContactPoint]
     protected array $telecom;
     /**
      * There is a variety of postal address formats defined around the world. This
@@ -155,17 +159,18 @@ class FHIROrganizationContact extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAddress 
      */
+    #[FHIRAddress]
     protected FHIRAddress $address;
 
     /* constructor.php:61 */
     /**
      * FHIROrganizationContact Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $purpose
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHumanName $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint[] $telecom
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint> $telecom
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAddress $address
      * @param null|string[] $fhirComments
      */
@@ -196,13 +201,13 @@ class FHIROrganizationContact extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -282,7 +287,7 @@ class FHIROrganizationContact extends FHIRBackboneElement
      * A contact detail (e.g. a telephone number or an email address) by which the
      * party may be contacted.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint>
      */
     public function getTelecom(): array
     {
@@ -379,7 +384,7 @@ class FHIROrganizationContact extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * A collection of documents compiled for a purpose together with metadata that
  * applies to the collection.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRDocumentManifestContent extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -121,6 +122,7 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $pAttachment;
     /**
      * A reference from one resource to another.
@@ -133,14 +135,15 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $pReference;
 
     /* constructor.php:61 */
     /**
      * FHIRDocumentManifestContent Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $pAttachment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $pReference
      * @param null|string[] $fhirComments
@@ -164,13 +167,13 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
@@ -247,7 +250,7 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

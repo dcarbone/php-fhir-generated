@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
 /**
  * A compartment definition that defines how resources are accessed on a server.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -123,6 +124,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $code;
     /**
      * A sequence of Unicode characters
@@ -133,8 +135,9 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * than one may be listed because a resource may be linked to a compartment in more
      * than one way,.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString> 
      */
+    #[FHIRString]
     protected array $param;
     /**
      * A sequence of Unicode characters
@@ -145,16 +148,17 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $documentation;
 
     /* constructor.php:61 */
     /**
      * FHIRCompartmentDefinitionResource Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $code
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] $param
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString> $param
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $documentation
      * @param null|string[] $fhirComments
      */
@@ -181,13 +185,13 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -236,7 +240,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * than one may be listed because a resource may be linked to a compartment in more
      * than one way,.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString>
      */
     public function getParam(): array
     {
@@ -344,7 +348,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

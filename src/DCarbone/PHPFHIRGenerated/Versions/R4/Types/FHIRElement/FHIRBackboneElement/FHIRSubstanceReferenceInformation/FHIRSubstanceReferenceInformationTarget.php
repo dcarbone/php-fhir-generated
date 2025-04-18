@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
 /**
  * Todo.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -125,6 +126,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $target;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -136,6 +138,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -147,6 +150,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $interaction;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -158,6 +162,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $organism;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -169,6 +174,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $organismType;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -181,6 +187,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $amountQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -191,6 +198,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $amountRange;
     /**
      * A sequence of Unicode characters
@@ -201,6 +209,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $amountString;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -212,6 +221,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $amountType;
     /**
      * A reference from one resource to another.
@@ -220,16 +230,17 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * Todo.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $source;
 
     /* constructor.php:61 */
     /**
      * FHIRSubstanceReferenceInformationTarget Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $target
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $interaction
@@ -239,7 +250,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $amountRange
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $amountType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] $source
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $source
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -293,13 +304,13 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -632,7 +643,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      *
      * Todo.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     public function getSource(): array
     {
@@ -689,7 +700,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,12 +107,13 @@ class FHIRRemittanceOutcome extends FHIRElement implements PrimitiveContainerTyp
 
     /* class_default.php:112 */
     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRRemittanceOutcomeList */
+    #[FHIRRemittanceOutcomeList]
     protected FHIRRemittanceOutcomeList $value;
 
     /* constructor.php:61 */
     /**
      * FHIRRemittanceOutcome Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRRemittanceOutcomeList $value
      * @param null|string[] $fhirComments
@@ -130,13 +131,13 @@ class FHIRRemittanceOutcome extends FHIRElement implements PrimitiveContainerTyp
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRRemittanceOutcomeList
      */
@@ -162,14 +163,14 @@ class FHIRRemittanceOutcome extends FHIRElement implements PrimitiveContainerTyp
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:190 */
     public function _nonValueFieldDefined(): bool
     {
     return isset($this->extension)
             || isset($this->id);
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -294,7 +295,7 @@ class FHIRRemittanceOutcome extends FHIRElement implements PrimitiveContainerTyp
         return $out;
     }
 
-    /* class_default.php:226 */
+    /* class_default.php:227 */
     public function __toString(): string
     {
         return $this->_getValueAsString();

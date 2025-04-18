@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,6 +98,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypeMap;
  * Immunization event information.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRImmunization extends FHIRResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -168,8 +169,9 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * A unique identifier assigned to this adverse reaction record.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -182,6 +184,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $date;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -193,6 +196,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $vaccineType;
     /**
      * A reference from one resource to another.
@@ -203,6 +207,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference 
      */
+    #[FHIRResourceReference]
     protected FHIRResourceReference $subject;
     /**
      * Value of "true" or "false"
@@ -212,6 +217,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $refusedIndicator;
     /**
      * Value of "true" or "false"
@@ -221,6 +227,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $reported;
     /**
      * A reference from one resource to another.
@@ -231,6 +238,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference 
      */
+    #[FHIRResourceReference]
     protected FHIRResourceReference $performer;
     /**
      * A reference from one resource to another.
@@ -241,6 +249,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference 
      */
+    #[FHIRResourceReference]
     protected FHIRResourceReference $requester;
     /**
      * A reference from one resource to another.
@@ -251,6 +260,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference 
      */
+    #[FHIRResourceReference]
     protected FHIRResourceReference $manufacturer;
     /**
      * A reference from one resource to another.
@@ -261,6 +271,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference 
      */
+    #[FHIRResourceReference]
     protected FHIRResourceReference $location;
     /**
      * A sequence of Unicode characters
@@ -270,6 +281,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $lotNumber;
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
@@ -281,6 +293,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $expirationDate;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -292,6 +305,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $site;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -303,6 +317,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $route;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -315,6 +330,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $doseQuantity;
     /**
      * Immunization event information.
@@ -323,6 +339,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation 
      */
+    #[FHIRImmunizationExplanation]
     protected FHIRImmunizationExplanation $explanation;
     /**
      * Immunization event information.
@@ -330,8 +347,9 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      * Categorical data indicating that an adverse event is associated in time to an
      * immunization.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction> 
      */
+    #[FHIRImmunizationReaction]
     protected array $reaction;
     /**
      * Immunization event information.
@@ -339,8 +357,9 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      * Contains information about the protocol(s) under which the vaccine was
      * administered.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol> 
      */
+    #[FHIRImmunizationVaccinationProtocol]
     protected array $vaccinationProtocol;
 
     /* constructor.php:61 */
@@ -348,11 +367,11 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      * FHIRImmunization Constructor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $vaccineType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
@@ -368,8 +387,8 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $route
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $doseQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation $explanation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction[] $reaction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol[] $vaccinationProtocol
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction> $reaction
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol> $vaccinationProtocol
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRCodePrimitive|FHIRCode $language = null,
@@ -461,19 +480,19 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -481,7 +500,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      *
      * A unique identifier assigned to this adverse reaction record.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -1075,7 +1094,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      * Categorical data indicating that an adverse event is associated in time to an
      * immunization.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction>
      */
     public function getReaction(): array
     {
@@ -1136,7 +1155,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
      * Contains information about the protocol(s) under which the vaccine was
      * administered.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol>
      */
     public function getVaccinationProtocol(): array
     {
@@ -1191,7 +1210,7 @@ class FHIRImmunization extends FHIRResource implements VersionContainedTypeInter
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

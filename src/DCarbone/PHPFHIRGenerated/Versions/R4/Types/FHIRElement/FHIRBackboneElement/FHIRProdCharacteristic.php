@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRProdCharacteristic extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -133,6 +134,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $height;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -148,6 +150,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $width;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -163,6 +166,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $depth;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -178,6 +182,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $weight;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -193,6 +198,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $nominalVolume;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -208,6 +214,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $externalDiameter;
     /**
      * A sequence of Unicode characters
@@ -219,6 +226,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $shape;
     /**
      * A sequence of Unicode characters
@@ -228,8 +236,9 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * Where applicable, the color can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString> 
      */
+    #[FHIRString]
     protected array $color;
     /**
      * A sequence of Unicode characters
@@ -238,8 +247,9 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the imprint can be specified as text.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString> 
      */
+    #[FHIRString]
     protected array $imprint;
     /**
      * For referring to data content defined in other formats.
@@ -249,8 +259,9 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * Where applicable, the image can be provided The format of the image attachment
      * shall be specified by regional implementations.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment> 
      */
+    #[FHIRAttachment]
     protected array $image;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -263,14 +274,15 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $scoring;
 
     /* constructor.php:61 */
     /**
      * FHIRProdCharacteristic Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $height
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $width
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $depth
@@ -278,9 +290,9 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $nominalVolume
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $externalDiameter
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $shape
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] $color
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[] $imprint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment[] $image
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString> $color
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString> $imprint
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment> $image
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $scoring
      * @param null|string[] $fhirComments
      */
@@ -339,13 +351,13 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -657,7 +669,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * Where applicable, the color can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString>
      */
     public function getColor(): array
     {
@@ -733,7 +745,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the imprint can be specified as text.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString>
      */
     public function getImprint(): array
     {
@@ -808,7 +820,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * Where applicable, the image can be provided The format of the image attachment
      * shall be specified by regional implementations.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment>
      */
     public function getImage(): array
     {
@@ -905,7 +917,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

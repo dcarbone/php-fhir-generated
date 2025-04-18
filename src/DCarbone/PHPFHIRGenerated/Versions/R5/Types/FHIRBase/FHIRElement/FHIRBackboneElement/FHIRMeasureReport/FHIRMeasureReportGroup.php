@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,6 +107,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * The MeasureReport resource contains the results of the calculation of a measure;
  * and optionally a reference to the resources involved in that calculation.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRMeasureReportGroup extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -152,6 +153,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $linkId;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -163,6 +165,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
     /**
      * A reference from one resource to another.
@@ -173,6 +176,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $subject;
     /**
      * The MeasureReport resource contains the results of the calculation of a measure;
@@ -181,8 +185,9 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * The populations that make up the population group, one for each type of
      * population appropriate for the measure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation> 
      */
+    #[FHIRMeasureReportPopulation]
     protected array $population;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -197,6 +202,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $measureScoreQuantity;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -213,6 +219,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $measureScoreDateTime;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -226,6 +233,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $measureScoreCodeableConcept;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -238,6 +246,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $measureScorePeriod;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -250,6 +259,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $measureScoreRange;
     /**
      * A length of time.
@@ -262,6 +272,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $measureScoreDuration;
     /**
      * The MeasureReport resource contains the results of the calculation of a measure;
@@ -270,27 +281,28 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * When a measure includes multiple stratifiers, there will be a stratifier group
      * for each stratifier defined by the measure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier> 
      */
+    #[FHIRMeasureReportStratifier]
     protected array $stratifier;
 
     /* constructor.php:61 */
     /**
      * FHIRMeasureReportGroup Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation[] $population
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation> $population
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measureScoreQuantity
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $measureScoreDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $measureScoreCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $measureScorePeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $measureScoreRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $measureScoreDuration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier[] $stratifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier> $stratifier
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -348,13 +360,13 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
@@ -471,7 +483,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * The populations that make up the population group, one for each type of
      * population appropriate for the measure.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation>
      */
     public function getPopulation(): array
     {
@@ -780,7 +792,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * When a measure includes multiple stratifiers, there will be a stratifier group
      * for each stratifier defined by the measure.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier>
      */
     public function getStratifier(): array
     {
@@ -837,7 +849,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

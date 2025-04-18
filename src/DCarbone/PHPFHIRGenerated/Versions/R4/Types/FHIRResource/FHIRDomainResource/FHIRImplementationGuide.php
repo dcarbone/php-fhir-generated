@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,6 +116,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionTypeMap;
  * publish a computable definition of all the parts.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRImplementationGuide extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -211,6 +212,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $url;
     /**
      * A sequence of Unicode characters
@@ -226,6 +228,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $version;
     /**
      * A sequence of Unicode characters
@@ -238,6 +241,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $name;
     /**
      * A sequence of Unicode characters
@@ -248,6 +252,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $title;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -257,6 +262,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus 
      */
+    #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
     /**
      * Value of "true" or "false"
@@ -268,6 +274,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $experimental;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -284,6 +291,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $date;
     /**
      * A sequence of Unicode characters
@@ -295,6 +303,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $publisher;
     /**
      * Specifies contact information for a person or organization.
@@ -304,8 +313,9 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
      */
+    #[FHIRContactDetail]
     protected array $contact;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -321,6 +331,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $description;
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
@@ -336,8 +347,9 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * be used to assist with indexing and searching for appropriate implementation
      * guide instances.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> 
      */
+    #[FHIRUsageContext]
     protected array $useContext;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -348,8 +360,9 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * A legal or geographic region in which the implementation guide is intended to be
      * used.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $jurisdiction;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -366,6 +379,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -382,6 +396,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $packageId;
     /**
      * The license that applies to an Implementation Guide (using an SPDX license
@@ -394,6 +409,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSPDXLicense 
      */
+    #[FHIRSPDXLicense]
     protected FHIRSPDXLicense $license;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -403,8 +419,9 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * the specification, without the revision number, e.g.
      * [publication].[major].[minor], which is 4.0.1. for this version.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFHIRVersion[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFHIRVersion> 
      */
+    #[FHIRFHIRVersion]
     protected array $fhirVersion;
     /**
      * A set of rules of how a particular interoperability or standards problem is
@@ -416,8 +433,9 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * implementation guide uses value sets, profiles etc.defined in other
      * implementation guides.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn> 
      */
+    #[FHIRImplementationGuideDependsOn]
     protected array $dependsOn;
     /**
      * A set of rules of how a particular interoperability or standards problem is
@@ -428,8 +446,9 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * A set of profiles that all resources covered by this implementation guide must
      * conform to.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal> 
      */
+    #[FHIRImplementationGuideGlobal]
     protected array $global;
     /**
      * A set of rules of how a particular interoperability or standards problem is
@@ -442,6 +461,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition 
      */
+    #[FHIRImplementationGuideDefinition]
     protected FHIRImplementationGuideDefinition $definition;
     /**
      * A set of rules of how a particular interoperability or standards problem is
@@ -454,6 +474,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest 
      */
+    #[FHIRImplementationGuideManifest]
     protected FHIRImplementationGuideManifest $manifest;
 
     /* constructor.php:61 */
@@ -464,9 +485,9 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $url
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $version
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
@@ -475,16 +496,16 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $experimental
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $publisher
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail[] $contact
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $contact
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext[] $useContext
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $jurisdiction
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> $useContext
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $copyright
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $packageId
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSPDXLicenseList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSPDXLicense $license
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRFHIRVersionList[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFHIRVersion[] $fhirVersion
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn[] $dependsOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal[] $global
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRFHIRVersionList>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFHIRVersion> $fhirVersion
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn> $dependsOn
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal> $global
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition $definition
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest $manifest
      * @param null|string[] $fhirComments
@@ -590,19 +611,19 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -947,7 +968,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     public function getContact(): array
     {
@@ -1067,7 +1088,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * be used to assist with indexing and searching for appropriate implementation
      * guide instances.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext>
      */
     public function getUseContext(): array
     {
@@ -1147,7 +1168,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * A legal or geographic region in which the implementation guide is intended to be
      * used.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getJurisdiction(): array
     {
@@ -1355,7 +1376,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * the specification, without the revision number, e.g.
      * [publication].[major].[minor], which is 4.0.1. for this version.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFHIRVersion[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFHIRVersion>
      */
     public function getFhirVersion(): array
     {
@@ -1434,7 +1455,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * implementation guide uses value sets, profiles etc.defined in other
      * implementation guides.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn>
      */
     public function getDependsOn(): array
     {
@@ -1506,7 +1527,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * A set of profiles that all resources covered by this implementation guide must
      * conform to.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal>
      */
     public function getGlobal(): array
     {
@@ -1643,7 +1664,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

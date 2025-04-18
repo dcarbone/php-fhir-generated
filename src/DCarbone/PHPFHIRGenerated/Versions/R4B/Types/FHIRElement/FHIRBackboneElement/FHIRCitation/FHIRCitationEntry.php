@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,6 +110,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  * reference structures and developing publication practices such as versioning,
  * expressing complex contributorship roles, and referencing computable resources.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRCitationEntry extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -159,6 +160,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName 
      */
+    #[FHIRHumanName]
     protected FHIRHumanName $name;
     /**
      * A sequence of Unicode characters
@@ -169,6 +171,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $initials;
     /**
      * A sequence of Unicode characters
@@ -179,6 +182,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $collectiveName;
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -188,8 +192,9 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Unique person identifier.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * The Citation Resource enables reference to any knowledge artifact for purposes
@@ -199,8 +204,9 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Organization affiliated with the entity.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo> 
      */
+    #[FHIRCitationAffiliationInfo]
     protected array $affiliationInfo;
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
@@ -213,8 +219,9 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Physical mailing address for the author or contributor.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress> 
      */
+    #[FHIRAddress]
     protected array $address;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -224,8 +231,9 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Email or telephone contact methods for the author or contributor.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint> 
      */
+    #[FHIRContactPoint]
     protected array $telecom;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -236,8 +244,9 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $contributionType;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -249,6 +258,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
     /**
      * The Citation Resource enables reference to any knowledge artifact for purposes
@@ -258,8 +268,9 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Contributions with accounting for time or number.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance> 
      */
+    #[FHIRCitationContributionInstance]
     protected array $contributionInstance;
     /**
      * Value of "true" or "false"
@@ -269,6 +280,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $correspondingContact;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -279,24 +291,25 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $listOrder;
 
     /* constructor.php:61 */
     /**
      * FHIRCitationEntry Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $initials
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $collectiveName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo[] $affiliationInfo
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress[] $address
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[] $telecom
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $contributionType
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo> $affiliationInfo
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress> $address
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint> $telecom
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $contributionType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance[] $contributionInstance
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance> $contributionInstance
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $correspondingContact
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $listOrder
      * @param null|string[] $fhirComments
@@ -360,13 +373,13 @@ class FHIRCitationEntry extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
@@ -483,7 +496,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Unique person identifier.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -550,7 +563,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Organization affiliated with the entity.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo>
      */
     public function getAffiliationInfo(): array
     {
@@ -620,7 +633,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Physical mailing address for the author or contributor.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress>
      */
     public function getAddress(): array
     {
@@ -693,7 +706,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Email or telephone contact methods for the author or contributor.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint>
      */
     public function getTelecom(): array
     {
@@ -761,7 +774,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getContributionType(): array
     {
@@ -866,7 +879,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Contributions with accounting for time or number.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance>
      */
     public function getContributionInstance(): array
     {
@@ -997,7 +1010,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

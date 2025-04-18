@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,6 +125,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionTypeMap;
  * The details of a healthcare service available at a location.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRHealthcareService extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -189,8 +190,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * External identifiers for this item.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * Value of "true" or "false"
@@ -202,6 +204,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $active;
     /**
      * A reference from one resource to another.
@@ -212,6 +215,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $providedBy;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -221,8 +225,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Identifies the broad category of service being performed or delivered.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $category;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -232,8 +237,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The specific type of service that may be delivered or performed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $type;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -244,8 +250,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $specialty;
     /**
      * A reference from one resource to another.
@@ -254,8 +261,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The location(s) where this healthcare service may be provided.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $location;
     /**
      * A sequence of Unicode characters
@@ -267,6 +275,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $name;
     /**
      * A sequence of Unicode characters
@@ -279,6 +288,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $comment;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -293,6 +303,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $extraDetails;
     /**
      * For referring to data content defined in other formats.
@@ -304,6 +315,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $photo;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -313,8 +325,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * List of contacts related to this specific healthcare service.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint> 
      */
+    #[FHIRContactPoint]
     protected array $telecom;
     /**
      * A reference from one resource to another.
@@ -324,8 +337,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * The location(s) that this service is available to (not where the service is
      * provided).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $coverageArea;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -336,8 +350,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $serviceProvisionCode;
     /**
      * The details of a healthcare service available at a location.
@@ -345,8 +360,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceEligibility[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceEligibility> 
      */
+    #[FHIRHealthcareServiceEligibility]
     protected array $eligibility;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -356,8 +372,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Programs that this service is applicable to.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $program;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -367,8 +384,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Collection of characteristics (attributes).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $characteristic;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -381,8 +399,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Typically this is only provided where a service operates in communities with
      * mixed languages used.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $communication;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -393,8 +412,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $referralMethod;
     /**
      * Value of "true" or "false"
@@ -406,14 +426,16 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $appointmentRequired;
     /**
      * The details of a healthcare service available at a location.
      *
      * A collection of times that the Service Site is available.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime> 
      */
+    #[FHIRHealthcareServiceAvailableTime]
     protected array $availableTime;
     /**
      * The details of a healthcare service available at a location.
@@ -421,8 +443,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * The HealthcareService is not available during this period of time due to the
      * provided reason.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable> 
      */
+    #[FHIRHealthcareServiceNotAvailable]
     protected array $notAvailable;
     /**
      * A sequence of Unicode characters
@@ -435,6 +458,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $availabilityExceptions;
     /**
      * A reference from one resource to another.
@@ -444,8 +468,9 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $endpoint;
 
     /* constructor.php:61 */
@@ -456,33 +481,33 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $active
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $providedBy
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $specialty
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $location
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $category
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $type
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $specialty
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $location
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $comment
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $extraDetails
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAttachment $photo
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[] $telecom
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $coverageArea
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $serviceProvisionCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceEligibility[] $eligibility
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $program
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $characteristic
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $communication
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $referralMethod
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint> $telecom
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $coverageArea
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $serviceProvisionCode
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceEligibility> $eligibility
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $program
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $characteristic
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $communication
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $referralMethod
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $appointmentRequired
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[] $availableTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[] $notAvailable
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime> $availableTime
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable> $notAvailable
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $availabilityExceptions
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $endpoint
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $endpoint
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -602,19 +627,19 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -623,7 +648,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * External identifiers for this item.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -763,7 +788,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Identifies the broad category of service being performed or delivered.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getCategory(): array
     {
@@ -830,7 +855,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The specific type of service that may be delivered or performed.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getType(): array
     {
@@ -898,7 +923,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getSpecialty(): array
     {
@@ -966,7 +991,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The location(s) where this healthcare service may be provided.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getLocation(): array
     {
@@ -1192,7 +1217,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * List of contacts related to this specific healthcare service.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint>
      */
     public function getTelecom(): array
     {
@@ -1259,7 +1284,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * The location(s) that this service is available to (not where the service is
      * provided).
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getCoverageArea(): array
     {
@@ -1327,7 +1352,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getServiceProvisionCode(): array
     {
@@ -1394,7 +1419,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceEligibility[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceEligibility>
      */
     public function getEligibility(): array
     {
@@ -1457,7 +1482,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Programs that this service is applicable to.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getProgram(): array
     {
@@ -1524,7 +1549,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Collection of characteristics (attributes).
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getCharacteristic(): array
     {
@@ -1594,7 +1619,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Typically this is only provided where a service operates in communities with
      * mixed languages used.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getCommunication(): array
     {
@@ -1668,7 +1693,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getReferralMethod(): array
     {
@@ -1773,7 +1798,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * A collection of times that the Service Site is available.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime>
      */
     public function getAvailableTime(): array
     {
@@ -1832,7 +1857,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * The HealthcareService is not available during this period of time due to the
      * provided reason.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable>
      */
     public function getNotAvailable(): array
     {
@@ -1936,7 +1961,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getEndpoint(): array
     {
@@ -1995,7 +2020,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

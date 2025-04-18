@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,6 +80,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRSampledData extends FHIRElement
 {
     use TypeValidationsTrait,
@@ -146,6 +147,7 @@ class FHIRSampledData extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $origin;
     /**
      * A rational number with implicit precision
@@ -155,6 +157,7 @@ class FHIRSampledData extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $period;
     /**
      * A rational number with implicit precision
@@ -165,6 +168,7 @@ class FHIRSampledData extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $factor;
     /**
      * A rational number with implicit precision
@@ -175,6 +179,7 @@ class FHIRSampledData extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $lowerLimit;
     /**
      * A rational number with implicit precision
@@ -185,6 +190,7 @@ class FHIRSampledData extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $upperLimit;
     /**
      * A whole number
@@ -196,6 +202,7 @@ class FHIRSampledData extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $dimensions;
     /**
      * A series of data points which are decimal values separated by a single space
@@ -204,12 +211,13 @@ class FHIRSampledData extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledDataDataType 
      */
+    #[FHIRSampledDataDataType]
     protected FHIRSampledDataDataType $data;
 
     /* constructor.php:61 */
     /**
      * FHIRSampledData Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $origin
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $period
@@ -257,13 +265,13 @@ class FHIRSampledData extends FHIRElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -522,7 +530,7 @@ class FHIRSampledData extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

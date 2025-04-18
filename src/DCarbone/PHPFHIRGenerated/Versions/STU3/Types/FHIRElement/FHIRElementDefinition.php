@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,6 +108,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRElementDefinition extends FHIRElement
 {
     use TypeValidationsTrait,
@@ -463,6 +464,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $path;
     /**
      * How a property is represented when serialized.
@@ -471,8 +473,9 @@ class FHIRElementDefinition extends FHIRElement
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPropertyRepresentation[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPropertyRepresentation> 
      */
+    #[FHIRPropertyRepresentation]
     protected array $representation;
     /**
      * A sequence of Unicode characters
@@ -486,6 +489,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $sliceName;
     /**
      * A sequence of Unicode characters
@@ -498,6 +502,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $label;
     /**
      * A reference to a code defined by a terminology system.
@@ -506,8 +511,9 @@ class FHIRElementDefinition extends FHIRElement
      *
      * A code that has the same meaning as the element in a particular terminology.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding> 
      */
+    #[FHIRCoding]
     protected array $code;
     /**
      * Captures constraints on each element within the resource, profile, or extension.
@@ -524,6 +530,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionSlicing 
      */
+    #[FHIRElementDefinitionSlicing]
     protected FHIRElementDefinitionSlicing $slicing;
     /**
      * A sequence of Unicode characters
@@ -535,6 +542,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $short;
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -555,6 +563,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $definition;
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -572,6 +581,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $comment;
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -590,6 +600,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $requirements;
     /**
      * A sequence of Unicode characters
@@ -598,8 +609,9 @@ class FHIRElementDefinition extends FHIRElement
      *
      * Identifies additional names by which this element might also be known.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> 
      */
+    #[FHIRString]
     protected array $alias;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -610,6 +622,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $min;
     /**
      * A sequence of Unicode characters
@@ -620,6 +633,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $max;
     /**
      * Captures constraints on each element within the resource, profile, or extension.
@@ -634,6 +648,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBase 
      */
+    #[FHIRElementDefinitionBase]
     protected FHIRElementDefinitionBase $base;
     /**
      * String of characters used to identify a name or a resource
@@ -645,6 +660,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $contentReference;
     /**
      * Captures constraints on each element within the resource, profile, or extension.
@@ -653,8 +669,9 @@ class FHIRElementDefinition extends FHIRElement
      *
      * The data type or resource that the value of this element is permitted to be.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType> 
      */
+    #[FHIRElementDefinitionType]
     protected array $type;
     /**
      * A stream of bytes
@@ -666,6 +683,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary 
      */
+    #[FHIRBase64Binary]
     protected FHIRBase64Binary $defaultValueBase64Binary;
     /**
      * Value of "true" or "false"
@@ -676,6 +694,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $defaultValueBoolean;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -688,6 +707,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $defaultValueCode;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -700,6 +720,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $defaultValueDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -714,6 +735,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $defaultValueDateTime;
     /**
      * A rational number with implicit precision
@@ -726,6 +748,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $defaultValueDecimal;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -740,6 +763,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $defaultValueId;
     /**
      * An instant in time - known at least to the second
@@ -753,6 +777,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant 
      */
+    #[FHIRInstant]
     protected FHIRInstant $defaultValueInstant;
     /**
      * A whole number
@@ -764,6 +789,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $defaultValueInteger;
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -781,6 +807,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $defaultValueMarkdown;
     /**
      * An OID represented as a URI
@@ -793,6 +820,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid 
      */
+    #[FHIROid]
     protected FHIROid $defaultValueOid;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -804,6 +832,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $defaultValuePositiveInt;
     /**
      * A sequence of Unicode characters
@@ -815,6 +844,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $defaultValueString;
     /**
      * A time during the day, with no date specified
@@ -825,6 +855,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $defaultValueTime;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -836,6 +867,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $defaultValueUnsignedInt;
     /**
      * String of characters used to identify a name or a resource
@@ -847,6 +879,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $defaultValueUri;
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
@@ -862,6 +895,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAddress 
      */
+    #[FHIRAddress]
     protected FHIRAddress $defaultValueAddress;
     /**
      * A duration of time during which an organism (or a process) has existed.
@@ -873,6 +907,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge 
      */
+    #[FHIRAge]
     protected FHIRAge $defaultValueAge;
     /**
      * A text note which also contains information about who made the statement and
@@ -885,6 +920,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation 
      */
+    #[FHIRAnnotation]
     protected FHIRAnnotation $defaultValueAnnotation;
     /**
      * For referring to data content defined in other formats.
@@ -896,6 +932,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $defaultValueAttachment;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -908,6 +945,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $defaultValueCodeableConcept;
     /**
      * A reference to a code defined by a terminology system.
@@ -919,6 +957,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $defaultValueCoding;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -931,6 +970,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint 
      */
+    #[FHIRContactPoint]
     protected FHIRContactPoint $defaultValueContactPoint;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -944,6 +984,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRCount 
      */
+    #[FHIRCount]
     protected FHIRCount $defaultValueCount;
     /**
      * A length - a value with a unit that is a physical distance.
@@ -955,6 +996,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance 
      */
+    #[FHIRDistance]
     protected FHIRDistance $defaultValueDistance;
     /**
      * A length of time.
@@ -966,6 +1008,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $defaultValueDuration;
     /**
      * A human's name with the ability to identify parts and usage.
@@ -977,6 +1020,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHumanName 
      */
+    #[FHIRHumanName]
     protected FHIRHumanName $defaultValueHumanName;
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -988,6 +1032,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $defaultValueIdentifier;
     /**
      * An amount of economic utility in some recognized currency.
@@ -999,6 +1044,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney 
      */
+    #[FHIRMoney]
     protected FHIRMoney $defaultValueMoney;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -1010,6 +1056,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $defaultValuePeriod;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -1023,6 +1070,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $defaultValueQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -1034,6 +1082,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $defaultValueRange;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -1046,6 +1095,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $defaultValueRatio;
     /**
      * A reference from one resource to another.
@@ -1057,6 +1107,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $defaultValueReference;
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
@@ -1069,6 +1120,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSampledData 
      */
+    #[FHIRSampledData]
     protected FHIRSampledData $defaultValueSampledData;
     /**
      * A digital signature along with supporting context. The signature may be
@@ -1083,6 +1135,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSignature 
      */
+    #[FHIRSignature]
     protected FHIRSignature $defaultValueSignature;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -1098,6 +1151,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $defaultValueTiming;
     /**
      * The metadata about a resource. This is content in the resource that is
@@ -1111,6 +1165,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta 
      */
+    #[FHIRMeta]
     protected FHIRMeta $defaultValueMeta;
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -1128,6 +1183,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $meaningWhenMissing;
     /**
      * A sequence of Unicode characters
@@ -1140,6 +1196,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $orderMeaning;
     /**
      * A stream of bytes
@@ -1153,6 +1210,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary 
      */
+    #[FHIRBase64Binary]
     protected FHIRBase64Binary $fixedBase64Binary;
     /**
      * Value of "true" or "false"
@@ -1165,6 +1223,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $fixedBoolean;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -1179,6 +1238,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $fixedCode;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -1193,6 +1253,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $fixedDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -1209,6 +1270,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $fixedDateTime;
     /**
      * A rational number with implicit precision
@@ -1223,6 +1285,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $fixedDecimal;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -1239,6 +1302,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $fixedId;
     /**
      * An instant in time - known at least to the second
@@ -1254,6 +1318,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant 
      */
+    #[FHIRInstant]
     protected FHIRInstant $fixedInstant;
     /**
      * A whole number
@@ -1267,6 +1332,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $fixedInteger;
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -1286,6 +1352,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $fixedMarkdown;
     /**
      * An OID represented as a URI
@@ -1300,6 +1367,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid 
      */
+    #[FHIROid]
     protected FHIROid $fixedOid;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -1313,6 +1381,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $fixedPositiveInt;
     /**
      * A sequence of Unicode characters
@@ -1326,6 +1395,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $fixedString;
     /**
      * A time during the day, with no date specified
@@ -1338,6 +1408,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $fixedTime;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -1351,6 +1422,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $fixedUnsignedInt;
     /**
      * String of characters used to identify a name or a resource
@@ -1364,6 +1436,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $fixedUri;
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
@@ -1381,6 +1454,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAddress 
      */
+    #[FHIRAddress]
     protected FHIRAddress $fixedAddress;
     /**
      * A duration of time during which an organism (or a process) has existed.
@@ -1394,6 +1468,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge 
      */
+    #[FHIRAge]
     protected FHIRAge $fixedAge;
     /**
      * A text note which also contains information about who made the statement and
@@ -1408,6 +1483,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation 
      */
+    #[FHIRAnnotation]
     protected FHIRAnnotation $fixedAnnotation;
     /**
      * For referring to data content defined in other formats.
@@ -1421,6 +1497,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $fixedAttachment;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -1435,6 +1512,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $fixedCodeableConcept;
     /**
      * A reference to a code defined by a terminology system.
@@ -1448,6 +1526,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $fixedCoding;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -1462,6 +1541,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint 
      */
+    #[FHIRContactPoint]
     protected FHIRContactPoint $fixedContactPoint;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -1477,6 +1557,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRCount 
      */
+    #[FHIRCount]
     protected FHIRCount $fixedCount;
     /**
      * A length - a value with a unit that is a physical distance.
@@ -1490,6 +1571,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance 
      */
+    #[FHIRDistance]
     protected FHIRDistance $fixedDistance;
     /**
      * A length of time.
@@ -1503,6 +1585,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $fixedDuration;
     /**
      * A human's name with the ability to identify parts and usage.
@@ -1516,6 +1599,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHumanName 
      */
+    #[FHIRHumanName]
     protected FHIRHumanName $fixedHumanName;
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -1529,6 +1613,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $fixedIdentifier;
     /**
      * An amount of economic utility in some recognized currency.
@@ -1542,6 +1627,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney 
      */
+    #[FHIRMoney]
     protected FHIRMoney $fixedMoney;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -1555,6 +1641,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $fixedPeriod;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -1570,6 +1657,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $fixedQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -1583,6 +1671,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $fixedRange;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -1597,6 +1686,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $fixedRatio;
     /**
      * A reference from one resource to another.
@@ -1610,6 +1700,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $fixedReference;
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
@@ -1624,6 +1715,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSampledData 
      */
+    #[FHIRSampledData]
     protected FHIRSampledData $fixedSampledData;
     /**
      * A digital signature along with supporting context. The signature may be
@@ -1640,6 +1732,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSignature 
      */
+    #[FHIRSignature]
     protected FHIRSignature $fixedSignature;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -1657,6 +1750,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $fixedTiming;
     /**
      * The metadata about a resource. This is content in the resource that is
@@ -1672,6 +1766,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta 
      */
+    #[FHIRMeta]
     protected FHIRMeta $fixedMeta;
     /**
      * A stream of bytes
@@ -1686,6 +1781,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary 
      */
+    #[FHIRBase64Binary]
     protected FHIRBase64Binary $patternBase64Binary;
     /**
      * Value of "true" or "false"
@@ -1699,6 +1795,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $patternBoolean;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -1714,6 +1811,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $patternCode;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -1729,6 +1827,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $patternDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -1746,6 +1845,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $patternDateTime;
     /**
      * A rational number with implicit precision
@@ -1761,6 +1861,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $patternDecimal;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -1778,6 +1879,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $patternId;
     /**
      * An instant in time - known at least to the second
@@ -1794,6 +1896,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant 
      */
+    #[FHIRInstant]
     protected FHIRInstant $patternInstant;
     /**
      * A whole number
@@ -1808,6 +1911,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $patternInteger;
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -1828,6 +1932,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $patternMarkdown;
     /**
      * An OID represented as a URI
@@ -1843,6 +1948,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid 
      */
+    #[FHIROid]
     protected FHIROid $patternOid;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -1857,6 +1963,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $patternPositiveInt;
     /**
      * A sequence of Unicode characters
@@ -1871,6 +1978,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $patternString;
     /**
      * A time during the day, with no date specified
@@ -1884,6 +1992,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $patternTime;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -1898,6 +2007,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $patternUnsignedInt;
     /**
      * String of characters used to identify a name or a resource
@@ -1912,6 +2022,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $patternUri;
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
@@ -1930,6 +2041,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAddress 
      */
+    #[FHIRAddress]
     protected FHIRAddress $patternAddress;
     /**
      * A duration of time during which an organism (or a process) has existed.
@@ -1944,6 +2056,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge 
      */
+    #[FHIRAge]
     protected FHIRAge $patternAge;
     /**
      * A text note which also contains information about who made the statement and
@@ -1959,6 +2072,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation 
      */
+    #[FHIRAnnotation]
     protected FHIRAnnotation $patternAnnotation;
     /**
      * For referring to data content defined in other formats.
@@ -1973,6 +2087,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $patternAttachment;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -1988,6 +2103,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $patternCodeableConcept;
     /**
      * A reference to a code defined by a terminology system.
@@ -2002,6 +2118,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $patternCoding;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -2017,6 +2134,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint 
      */
+    #[FHIRContactPoint]
     protected FHIRContactPoint $patternContactPoint;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -2033,6 +2151,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRCount 
      */
+    #[FHIRCount]
     protected FHIRCount $patternCount;
     /**
      * A length - a value with a unit that is a physical distance.
@@ -2047,6 +2166,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance 
      */
+    #[FHIRDistance]
     protected FHIRDistance $patternDistance;
     /**
      * A length of time.
@@ -2061,6 +2181,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $patternDuration;
     /**
      * A human's name with the ability to identify parts and usage.
@@ -2075,6 +2196,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHumanName 
      */
+    #[FHIRHumanName]
     protected FHIRHumanName $patternHumanName;
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -2089,6 +2211,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $patternIdentifier;
     /**
      * An amount of economic utility in some recognized currency.
@@ -2103,6 +2226,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney 
      */
+    #[FHIRMoney]
     protected FHIRMoney $patternMoney;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -2117,6 +2241,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $patternPeriod;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -2133,6 +2258,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $patternQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -2147,6 +2273,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $patternRange;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -2162,6 +2289,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $patternRatio;
     /**
      * A reference from one resource to another.
@@ -2176,6 +2304,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $patternReference;
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
@@ -2191,6 +2320,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSampledData 
      */
+    #[FHIRSampledData]
     protected FHIRSampledData $patternSampledData;
     /**
      * A digital signature along with supporting context. The signature may be
@@ -2208,6 +2338,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSignature 
      */
+    #[FHIRSignature]
     protected FHIRSignature $patternSignature;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -2226,6 +2357,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $patternTiming;
     /**
      * The metadata about a resource. This is content in the resource that is
@@ -2242,6 +2374,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta 
      */
+    #[FHIRMeta]
     protected FHIRMeta $patternMeta;
     /**
      * Captures constraints on each element within the resource, profile, or extension.
@@ -2251,8 +2384,9 @@ class FHIRElementDefinition extends FHIRElement
      * A sample value for this element demonstrating the type of information that would
      * typically be found in the element.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionExample[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionExample> 
      */
+    #[FHIRElementDefinitionExample]
     protected array $example;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -2266,6 +2400,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $minValueDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -2281,6 +2416,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $minValueDateTime;
     /**
      * An instant in time - known at least to the second
@@ -2295,6 +2431,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant 
      */
+    #[FHIRInstant]
     protected FHIRInstant $minValueInstant;
     /**
      * A time during the day, with no date specified
@@ -2306,6 +2443,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $minValueTime;
     /**
      * A rational number with implicit precision
@@ -2319,6 +2457,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $minValueDecimal;
     /**
      * A whole number
@@ -2331,6 +2470,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $minValueInteger;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -2343,6 +2483,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $minValuePositiveInt;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -2355,6 +2496,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $minValueUnsignedInt;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -2369,6 +2511,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $minValueQuantity;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -2382,6 +2525,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $maxValueDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -2397,6 +2541,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $maxValueDateTime;
     /**
      * An instant in time - known at least to the second
@@ -2411,6 +2556,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant 
      */
+    #[FHIRInstant]
     protected FHIRInstant $maxValueInstant;
     /**
      * A time during the day, with no date specified
@@ -2422,6 +2568,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $maxValueTime;
     /**
      * A rational number with implicit precision
@@ -2435,6 +2582,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $maxValueDecimal;
     /**
      * A whole number
@@ -2447,6 +2595,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $maxValueInteger;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -2459,6 +2608,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $maxValuePositiveInt;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -2471,6 +2621,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $maxValueUnsignedInt;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -2485,6 +2636,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $maxValueQuantity;
     /**
      * A whole number
@@ -2497,6 +2649,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $maxLength;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -2509,8 +2662,9 @@ class FHIRElementDefinition extends FHIRElement
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId> 
      */
+    #[FHIRId]
     protected array $condition;
     /**
      * Captures constraints on each element within the resource, profile, or extension.
@@ -2520,8 +2674,9 @@ class FHIRElementDefinition extends FHIRElement
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint> 
      */
+    #[FHIRElementDefinitionConstraint]
     protected array $constraint;
     /**
      * Value of "true" or "false"
@@ -2533,6 +2688,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $mustSupport;
     /**
      * Value of "true" or "false"
@@ -2547,6 +2703,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $isModifier;
     /**
      * Value of "true" or "false"
@@ -2557,6 +2714,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $isSummary;
     /**
      * Captures constraints on each element within the resource, profile, or extension.
@@ -2568,6 +2726,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding 
      */
+    #[FHIRElementDefinitionBinding]
     protected FHIRElementDefinitionBinding $binding;
     /**
      * Captures constraints on each element within the resource, profile, or extension.
@@ -2577,31 +2736,32 @@ class FHIRElementDefinition extends FHIRElement
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping> 
      */
+    #[FHIRElementDefinitionMapping]
     protected array $mapping;
 
     /* constructor.php:61 */
     /**
      * FHIRElementDefinition Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $path
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRPropertyRepresentationList[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPropertyRepresentation[] $representation
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRPropertyRepresentationList>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPropertyRepresentation> $representation
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $sliceName
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $label
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding[] $code
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding> $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionSlicing $slicing
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $short
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $definition
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $comment
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $requirements
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[] $alias
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> $alias
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $min
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $max
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBase $base
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $contentReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType[] $type
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType> $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary $defaultValueBase64Binary
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $defaultValueBoolean
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $defaultValueCode
@@ -2718,7 +2878,7 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSignature $patternSignature
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $patternTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $patternMeta
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionExample[] $example
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionExample> $example
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $minValueDate
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $minValueDateTime
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $minValueInstant
@@ -2738,13 +2898,13 @@ class FHIRElementDefinition extends FHIRElement
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $maxValueUnsignedInt
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $maxValueQuantity
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $maxLength
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId[] $condition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint[] $constraint
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId> $condition
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint> $constraint
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $mustSupport
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $isModifier
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $isSummary
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding $binding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping[] $mapping
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping> $mapping
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -3392,13 +3552,13 @@ class FHIRElementDefinition extends FHIRElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -3445,7 +3605,7 @@ class FHIRElementDefinition extends FHIRElement
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPropertyRepresentation[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPropertyRepresentation>
      */
     public function getRepresentation(): array
     {
@@ -3603,7 +3763,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * A code that has the same meaning as the element in a particular terminology.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding>
      */
     public function getCode(): array
     {
@@ -3913,7 +4073,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * Identifies additional names by which this element might also be known.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString>
      */
     public function getAlias(): array
     {
@@ -4142,7 +4302,7 @@ class FHIRElementDefinition extends FHIRElement
      *
      * The data type or resource that the value of this element is permitted to be.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType>
      */
     public function getType(): array
     {
@@ -9155,7 +9315,7 @@ class FHIRElementDefinition extends FHIRElement
      * A sample value for this element demonstrating the type of information that would
      * typically be found in the element.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionExample[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionExample>
      */
     public function getExample(): array
     {
@@ -10030,7 +10190,7 @@ class FHIRElementDefinition extends FHIRElement
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId>
      */
     public function getCondition(): array
     {
@@ -10113,7 +10273,7 @@ class FHIRElementDefinition extends FHIRElement
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint>
      */
     public function getConstraint(): array
     {
@@ -10337,7 +10497,7 @@ class FHIRElementDefinition extends FHIRElement
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping>
      */
     public function getMapping(): array
     {
@@ -10396,7 +10556,7 @@ class FHIRElementDefinition extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

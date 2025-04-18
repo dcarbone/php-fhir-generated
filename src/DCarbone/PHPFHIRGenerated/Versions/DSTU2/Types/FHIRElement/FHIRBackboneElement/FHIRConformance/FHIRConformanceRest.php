@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  * used as a statement of actual server functionality or a statement of required or
  * desired server implementation.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRConformanceRest extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -144,6 +145,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRestfulConformanceMode 
      */
+    #[FHIRRestfulConformanceMode]
     protected FHIRRestfulConformanceMode $mode;
     /**
      * A sequence of Unicode characters
@@ -155,6 +157,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $documentation;
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
@@ -166,6 +169,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity 
      */
+    #[FHIRConformanceSecurity]
     protected FHIRConformanceSecurity $security;
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
@@ -175,8 +179,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource> 
      */
+    #[FHIRConformanceResource]
     protected array $resource;
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
@@ -185,8 +190,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * A specification of restful operations supported by the system.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1> 
      */
+    #[FHIRConformanceInteraction1]
     protected array $interaction;
     /**
      * A code that indicates how transactions are supported.
@@ -196,6 +202,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTransactionMode 
      */
+    #[FHIRTransactionMode]
     protected FHIRTransactionMode $transactionMode;
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
@@ -207,8 +214,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * defined in the specification, or additional ones defined for/by the
      * implementation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam> 
      */
+    #[FHIRConformanceSearchParam]
     protected array $searchParam;
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
@@ -218,8 +226,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * Definition of an operation or a named query and with its parameters and their
      * meaning and type.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation> 
      */
+    #[FHIRConformanceOperation]
     protected array $operation;
     /**
      * String of characters used to identify a name or a resource
@@ -229,25 +238,26 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * An absolute URI which is a reference to the definition of a compartment hosted
      * by the system.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri> 
      */
+    #[FHIRUri]
     protected array $compartment;
 
     /* constructor.php:61 */
     /**
      * FHIRConformanceRest Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRRestfulConformanceModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRestfulConformanceMode $mode
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $documentation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity $security
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[] $resource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1[] $interaction
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource> $resource
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1> $interaction
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRTransactionModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTransactionMode $transactionMode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[] $searchParam
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[] $operation
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri[] $compartment
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam> $searchParam
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation> $operation
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri> $compartment
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -297,13 +307,13 @@ class FHIRConformanceRest extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * The mode of a RESTful conformance statement.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -424,7 +434,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource>
      */
     public function getResource(): array
     {
@@ -490,7 +500,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * A specification of restful operations supported by the system.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1>
      */
     public function getInteraction(): array
     {
@@ -592,7 +602,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * defined in the specification, or additional ones defined for/by the
      * implementation.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam>
      */
     public function getSearchParam(): array
     {
@@ -663,7 +673,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * Definition of an operation or a named query and with its parameters and their
      * meaning and type.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation>
      */
     public function getOperation(): array
     {
@@ -730,7 +740,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * An absolute URI which is a reference to the definition of a compartment hosted
      * by the system.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri>
      */
     public function getCompartment(): array
     {
@@ -799,7 +809,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

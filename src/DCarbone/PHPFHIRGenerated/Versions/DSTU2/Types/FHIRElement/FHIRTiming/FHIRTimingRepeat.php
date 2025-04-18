@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRTimingRepeat extends FHIRElement
 {
     use TypeValidationsTrait,
@@ -156,6 +157,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $boundsQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -167,6 +169,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $boundsRange;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -178,6 +181,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $boundsPeriod;
     /**
      * A whole number
@@ -188,6 +192,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $count;
     /**
      * A rational number with implicit precision
@@ -199,6 +204,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $duration;
     /**
      * A rational number with implicit precision
@@ -210,6 +216,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $durationMax;
     /**
      * A unit of time (units from UCUM).
@@ -219,6 +226,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnitsOfTime 
      */
+    #[FHIRUnitsOfTime]
     protected FHIRUnitsOfTime $durationUnits;
     /**
      * A whole number
@@ -230,6 +238,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $frequency;
     /**
      * A whole number
@@ -241,6 +250,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $frequencyMax;
     /**
      * A rational number with implicit precision
@@ -254,6 +264,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $period;
     /**
      * A rational number with implicit precision
@@ -266,6 +277,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $periodMax;
     /**
      * A unit of time (units from UCUM).
@@ -275,6 +287,7 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnitsOfTime 
      */
+    #[FHIRUnitsOfTime]
     protected FHIRUnitsOfTime $periodUnits;
     /**
      * Real world event that the relating to the schedule.
@@ -284,12 +297,13 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIREventTiming 
      */
+    #[FHIREventTiming]
     protected FHIREventTiming $when;
 
     /* constructor.php:61 */
     /**
      * FHIRTimingRepeat Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration $boundsQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $boundsRange
@@ -367,13 +381,13 @@ class FHIRTimingRepeat extends FHIRElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
@@ -856,7 +870,7 @@ class FHIRTimingRepeat extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

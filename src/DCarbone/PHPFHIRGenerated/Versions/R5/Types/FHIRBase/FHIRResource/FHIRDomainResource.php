@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -149,6 +149,7 @@ class FHIRDomainResource extends FHIRResource
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative 
      */
+    #[FHIRNarrative]
     protected FHIRNarrative $text;
     /**
      * (choose any one of the elements, but only one)
@@ -159,8 +160,9 @@ class FHIRDomainResource extends FHIRResource
      * resource if and only if it is referenced by a resource that provides
      * context/meaning.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> 
      */
+    #[FHIRResourceContainer]
     protected array $contained;
     /**
      * Optional Extension Element - found in all resources.
@@ -173,8 +175,9 @@ class FHIRDomainResource extends FHIRResource
      * extensions. Though any implementer can define an extension, there is a set of
      * requirements that SHALL be met as part of the definition of the extension.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> 
      */
+    #[FHIRExtension]
     protected array $extension;
     /**
      * Optional Extension Element - found in all resources.
@@ -194,8 +197,9 @@ class FHIRDomainResource extends FHIRResource
      * DomainResource (including cannot change the meaning of modifierExtension
      * itself).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> 
      */
+    #[FHIRExtension]
     protected array $modifierExtension;
 
     /* constructor.php:61 */
@@ -206,9 +210,9 @@ class FHIRDomainResource extends FHIRResource
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -240,13 +244,13 @@ class FHIRDomainResource extends FHIRResource
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A human-readable summary of the resource conveying the essential clinical and
      * business information for the resource.
@@ -302,7 +306,7 @@ class FHIRDomainResource extends FHIRResource
      * resource if and only if it is referenced by a resource that provides
      * context/meaning.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface>
      */
     public function getContained(): array
     {
@@ -384,7 +388,7 @@ class FHIRDomainResource extends FHIRResource
      * extensions. Though any implementer can define an extension, there is a set of
      * requirements that SHALL be met as part of the definition of the extension.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension>
      */
     public function getExtension(): array
     {
@@ -467,7 +471,7 @@ class FHIRDomainResource extends FHIRResource
      * DomainResource (including cannot change the meaning of modifierExtension
      * itself).
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension>
      */
     public function getModifierExtension(): array
     {
@@ -546,7 +550,7 @@ class FHIRDomainResource extends FHIRResource
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

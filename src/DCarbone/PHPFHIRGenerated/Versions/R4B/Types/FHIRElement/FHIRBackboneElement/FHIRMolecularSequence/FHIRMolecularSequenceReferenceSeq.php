@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,6 +106,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
 /**
  * Raw data describing a biological sequence.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -160,6 +161,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $chromosome;
     /**
      * A sequence of Unicode characters
@@ -172,6 +174,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $genomeBuild;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -182,6 +185,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROrientationType 
      */
+    #[FHIROrientationType]
     protected FHIROrientationType $orientation;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -196,6 +200,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $referenceSeqId;
     /**
      * A reference from one resource to another.
@@ -206,6 +211,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $referenceSeqPointer;
     /**
      * A sequence of Unicode characters
@@ -216,6 +222,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $referenceSeqString;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -226,6 +233,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStrandType 
      */
+    #[FHIRStrandType]
     protected FHIRStrandType $strand;
     /**
      * A whole number
@@ -237,6 +245,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $windowStart;
     /**
      * A whole number
@@ -250,14 +259,15 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $windowEnd;
 
     /* constructor.php:61 */
     /**
      * FHIRMolecularSequenceReferenceSeq Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $chromosome
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $genomeBuild
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIROrientationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROrientationType $orientation
@@ -316,13 +326,13 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -675,7 +685,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

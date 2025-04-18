@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,6 +123,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionTypeMap;
  * healthcare field, used to track charges for a patient, cost centers, etc.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -172,8 +173,9 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * Unique identifier used to reference the account. Might or might not be intended
      * for human use (e.g. credit card number).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -182,6 +184,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAccountStatus 
      */
+    #[FHIRAccountStatus]
     protected FHIRAccountStatus $status;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -193,6 +196,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
     /**
      * A sequence of Unicode characters
@@ -203,6 +207,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $name;
     /**
      * A reference from one resource to another.
@@ -213,8 +218,9 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * of services or goods might be entities related to the subject, the expenses were
      * ultimately incurred by the subject of the Account.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $subject;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -225,6 +231,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $servicePeriod;
     /**
      * A financial tool for tracking value accrued for a particular purpose. In the
@@ -233,8 +240,9 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * The party(s) that are responsible for covering the payment of this account, and
      * what order should they be applied to the account.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage> 
      */
+    #[FHIRAccountCoverage]
     protected array $coverage;
     /**
      * A reference from one resource to another.
@@ -246,6 +254,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $owner;
     /**
      * A sequence of Unicode characters
@@ -257,6 +266,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $description;
     /**
      * A financial tool for tracking value accrued for a particular purpose. In the
@@ -265,8 +275,9 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * The parties responsible for balancing the account if other payment options fall
      * short.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor> 
      */
+    #[FHIRAccountGuarantor]
     protected array $guarantor;
     /**
      * A reference from one resource to another.
@@ -277,6 +288,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $partOf;
 
     /* constructor.php:61 */
@@ -287,19 +299,19 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRAccountStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAccountStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $subject
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $subject
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $servicePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage[] $coverage
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage> $coverage
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $owner
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor[] $guarantor
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor> $guarantor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $partOf
      * @param null|string[] $fhirComments
      */
@@ -368,19 +380,19 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -390,7 +402,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * Unique identifier used to reference the account. Might or might not be intended
      * for human use (e.g. credit card number).
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -566,7 +578,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * of services or goods might be entities related to the subject, the expenses were
      * ultimately incurred by the subject of the Account.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getSubject(): array
     {
@@ -668,7 +680,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * The party(s) that are responsible for covering the payment of this account, and
      * what order should they be applied to the account.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage>
      */
     public function getCoverage(): array
     {
@@ -807,7 +819,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * The parties responsible for balancing the account if other payment options fall
      * short.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor>
      */
     public function getGuarantor(): array
     {
@@ -898,7 +910,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

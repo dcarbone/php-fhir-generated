@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,6 +77,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  * An action that is performed on a patient. This can be a physical 'thing' like an
  * operation, or less invasive like counseling or hypnotherapy.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRProcedureRelatedItem extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -112,6 +113,7 @@ class FHIRProcedureRelatedItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRProcedureRelationshipType 
      */
+    #[FHIRProcedureRelationshipType]
     protected FHIRProcedureRelationshipType $type;
     /**
      * A reference from one resource to another.
@@ -122,14 +124,15 @@ class FHIRProcedureRelatedItem extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference 
      */
+    #[FHIRResourceReference]
     protected FHIRResourceReference $target;
 
     /* constructor.php:61 */
     /**
      * FHIRProcedureRelatedItem Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRProcedureRelationshipTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRProcedureRelationshipType $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $target
      * @param null|string[] $fhirComments
@@ -153,13 +156,13 @@ class FHIRProcedureRelatedItem extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * The nature of the relationship with this procedure
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -229,7 +232,7 @@ class FHIRProcedureRelatedItem extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

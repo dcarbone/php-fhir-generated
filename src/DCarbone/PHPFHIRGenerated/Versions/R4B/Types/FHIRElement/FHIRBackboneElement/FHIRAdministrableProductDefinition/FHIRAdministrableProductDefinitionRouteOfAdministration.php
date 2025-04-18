@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,6 +105,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  * patient (after any mixing of multiple components, dissolution etc. has been
  * performed).
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -145,6 +146,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -158,6 +160,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $firstDose;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -171,6 +174,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $maxSingleDose;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -184,6 +188,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $maxDosePerDay;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -195,6 +200,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $maxDosePerTreatmentPeriod;
     /**
      * A length of time.
@@ -205,6 +211,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $maxTreatmentPeriod;
     /**
      * A medicinal product in the final form which is suitable for administering to a
@@ -213,23 +220,24 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * A species for which this route applies.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies> 
      */
+    #[FHIRAdministrableProductDefinitionTargetSpecies]
     protected array $targetSpecies;
 
     /* constructor.php:61 */
     /**
      * FHIRAdministrableProductDefinitionRouteOfAdministration Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $firstDose
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $maxSingleDose
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $maxDosePerDay
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $maxDosePerTreatmentPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $maxTreatmentPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies[] $targetSpecies
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies> $targetSpecies
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -271,13 +279,13 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -511,7 +519,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * A species for which this route applies.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies>
      */
     public function getTargetSpecies(): array
     {
@@ -568,7 +576,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

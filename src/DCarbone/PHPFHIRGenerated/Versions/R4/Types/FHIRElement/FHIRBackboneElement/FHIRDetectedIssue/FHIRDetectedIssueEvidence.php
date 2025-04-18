@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,6 +81,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * active or proposed clinical actions for a patient; e.g. Drug-drug interaction,
  * Ineffective treatment frequency, Procedure-condition conflict, etc.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRDetectedIssueEvidence extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -111,8 +112,9 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
      *
      * A manifestation that led to the recording of this detected issue.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $code;
     /**
      * A reference from one resource to another.
@@ -122,18 +124,19 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
      * Links to resources that constitute evidence for the detected issue such as a
      * GuidanceResponse or MeasureReport.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $detail;
 
     /* constructor.php:61 */
     /**
      * FHIRDetectedIssueEvidence Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] $detail
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $code
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $detail
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -155,13 +158,13 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -170,7 +173,7 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
      *
      * A manifestation that led to the recording of this detected issue.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getCode(): array
     {
@@ -237,7 +240,7 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
      * Links to resources that constitute evidence for the detected issue such as a
      * GuidanceResponse or MeasureReport.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     public function getDetail(): array
     {
@@ -296,7 +299,7 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

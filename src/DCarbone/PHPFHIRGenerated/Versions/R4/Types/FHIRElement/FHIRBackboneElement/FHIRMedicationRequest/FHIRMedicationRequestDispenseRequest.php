@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,6 +87,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * generalize the use across inpatient and outpatient settings, including care
  * plans, etc., and to harmonize with workflow patterns.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -127,6 +128,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestInitialFill 
      */
+    #[FHIRMedicationRequestInitialFill]
     protected FHIRMedicationRequestInitialFill $initialFill;
     /**
      * A length of time.
@@ -137,6 +139,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $dispenseInterval;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -148,6 +151,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $validityPeriod;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -164,6 +168,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $numberOfRepeatsAllowed;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -176,6 +181,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $quantity;
     /**
      * A length of time.
@@ -187,6 +193,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $expectedSupplyDuration;
     /**
      * A reference from one resource to another.
@@ -197,14 +204,15 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $performer;
 
     /* constructor.php:61 */
     /**
      * FHIRMedicationRequestDispenseRequest Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestInitialFill $initialFill
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $dispenseInterval
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $validityPeriod
@@ -253,13 +261,13 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * An order or request for both supply of the medication and the instructions for
      * administration of the medication to a patient. The resource is called
@@ -525,7 +533,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

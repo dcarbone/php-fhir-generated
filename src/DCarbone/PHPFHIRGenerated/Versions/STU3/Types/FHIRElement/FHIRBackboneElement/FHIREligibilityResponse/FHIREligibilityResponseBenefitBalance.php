@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * This resource provides eligibility and plan details from the processing of an
  * Eligibility resource.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -132,6 +133,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -143,6 +145,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subCategory;
     /**
      * Value of "true" or "false"
@@ -153,6 +156,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $excluded;
     /**
      * A sequence of Unicode characters
@@ -163,6 +167,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $name;
     /**
      * A sequence of Unicode characters
@@ -174,6 +179,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $description;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -185,6 +191,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $network;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -196,6 +203,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unit;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -208,6 +216,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $term;
     /**
      * This resource provides eligibility and plan details from the processing of an
@@ -215,16 +224,17 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * Benefits Used to date.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial> 
      */
+    #[FHIREligibilityResponseFinancial]
     protected array $financial;
 
     /* constructor.php:61 */
     /**
      * FHIREligibilityResponseBenefitBalance Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $subCategory
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $excluded
@@ -233,7 +243,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $network
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $unit
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $term
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial[] $financial
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial> $financial
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -283,13 +293,13 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -591,7 +601,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * Benefits Used to date.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial>
      */
     public function getFinancial(): array
     {
@@ -646,7 +656,7 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

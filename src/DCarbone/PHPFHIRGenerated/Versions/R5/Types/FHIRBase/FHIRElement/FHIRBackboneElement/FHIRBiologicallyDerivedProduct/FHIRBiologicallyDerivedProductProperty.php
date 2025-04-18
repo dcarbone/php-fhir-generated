@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,6 +112,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * substance originating from a biological entity intended to be transplanted or
  * infused into another (possibly the same) biological entity.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -162,6 +163,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
     /**
      * Value of "true" or "false"
@@ -171,6 +173,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
     /**
      * A whole number
@@ -181,6 +184,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $valueInteger;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -192,6 +196,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -202,6 +207,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -214,6 +220,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -224,6 +231,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $valueRange;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -235,6 +243,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $valueRatio;
     /**
      * A sequence of Unicode characters
@@ -245,6 +254,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $valueString;
     /**
      * For referring to data content defined in other formats.
@@ -255,14 +265,15 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
 
     /* constructor.php:61 */
     /**
      * FHIRBiologicallyDerivedProductProperty Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
@@ -326,13 +337,13 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -692,7 +703,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

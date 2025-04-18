@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,6 +118,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * grouped into coherent subsets, corresponding to the structure of the grouping of
  * the questionnaire being responded to.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -176,6 +177,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
     /**
      * A rational number with implicit precision
@@ -188,6 +190,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
     /**
      * A whole number
@@ -199,6 +202,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $valueInteger;
     /**
      * A date or partial date (e.g. just year or year + month). There is no UTC offset.
@@ -211,6 +215,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $valueDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -226,6 +231,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
     /**
      * A time during the day, with no date specified
@@ -236,6 +242,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $valueTime;
     /**
      * A sequence of Unicode characters
@@ -247,6 +254,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $valueString;
     /**
      * String of characters used to identify a name or a resource
@@ -258,6 +266,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $valueUri;
     /**
      * For referring to data content defined in other formats.
@@ -269,6 +278,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
     /**
      * A reference to a code defined by a terminology system.
@@ -280,6 +290,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $valueCoding;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -293,6 +304,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
     /**
      * A reference from one resource to another.
@@ -304,6 +316,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $valueReference;
     /**
      * A structured set of questions and their answers. The questions are ordered and
@@ -312,16 +325,17 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * Nested groups and/or questions found within this particular answer.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem> 
      */
+    #[FHIRQuestionnaireResponseItem]
     protected array $item;
 
     /* constructor.php:61 */
     /**
      * FHIRQuestionnaireResponseAnswer Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $valueDecimal
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
@@ -334,7 +348,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[] $item
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem> $item
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -400,13 +414,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -882,7 +896,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * Nested groups and/or questions found within this particular answer.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem>
      */
     public function getItem(): array
     {
@@ -939,7 +953,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

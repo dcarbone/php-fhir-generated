@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRDataRequirement extends FHIRElement
 {
     use TypeValidationsTrait,
@@ -128,6 +129,7 @@ class FHIRDataRequirement extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $type;
     /**
      * String of characters used to identify a name or a resource
@@ -137,8 +139,9 @@ class FHIRDataRequirement extends FHIRElement
      * The profile of the required data, specified as the uri of the profile
      * definition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri> 
      */
+    #[FHIRUri]
     protected array $profile;
     /**
      * A sequence of Unicode characters
@@ -153,8 +156,9 @@ class FHIRDataRequirement extends FHIRElement
      * a path to allow references to nested elements. In that case, all the elements
      * along the path must be supported.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> 
      */
+    #[FHIRString]
     protected array $mustSupport;
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -165,8 +169,9 @@ class FHIRDataRequirement extends FHIRElement
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter> 
      */
+    #[FHIRDataRequirementCodeFilter]
     protected array $codeFilter;
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -177,20 +182,21 @@ class FHIRDataRequirement extends FHIRElement
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter> 
      */
+    #[FHIRDataRequirementDateFilter]
     protected array $dateFilter;
 
     /* constructor.php:61 */
     /**
      * FHIRDataRequirement Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $type
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri[] $profile
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[] $mustSupport
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter[] $codeFilter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter[] $dateFilter
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri> $profile
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> $mustSupport
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter> $codeFilter
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter> $dateFilter
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -222,13 +228,13 @@ class FHIRDataRequirement extends FHIRElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -278,7 +284,7 @@ class FHIRDataRequirement extends FHIRElement
      * The profile of the required data, specified as the uri of the profile
      * definition.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri>
      */
     public function getProfile(): array
     {
@@ -360,7 +366,7 @@ class FHIRDataRequirement extends FHIRElement
      * a path to allow references to nested elements. In that case, all the elements
      * along the path must be supported.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString>
      */
     public function getMustSupport(): array
     {
@@ -448,7 +454,7 @@ class FHIRDataRequirement extends FHIRElement
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter>
      */
     public function getCodeFilter(): array
     {
@@ -518,7 +524,7 @@ class FHIRDataRequirement extends FHIRElement
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter>
      */
     public function getDateFilter(): array
     {
@@ -579,7 +585,7 @@ class FHIRDataRequirement extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

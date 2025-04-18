@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRRelatedArtifact extends FHIRElement
 {
     use TypeValidationsTrait,
@@ -135,6 +136,7 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifactType 
      */
+    #[FHIRRelatedArtifactType]
     protected FHIRRelatedArtifactType $type;
     /**
      * A sequence of Unicode characters
@@ -146,6 +148,7 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $label;
     /**
      * A sequence of Unicode characters
@@ -157,6 +160,7 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $display;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -172,6 +176,7 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $citation;
     /**
      * A URI that is a literal reference
@@ -182,6 +187,7 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl 
      */
+    #[FHIRUrl]
     protected FHIRUrl $url;
     /**
      * For referring to data content defined in other formats.
@@ -193,6 +199,7 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $document;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -205,12 +212,13 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical 
      */
+    #[FHIRCanonical]
     protected FHIRCanonical $resource;
 
     /* constructor.php:61 */
     /**
      * FHIRRelatedArtifact Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRRelatedArtifactTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifactType $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $label
@@ -258,13 +266,13 @@ class FHIRRelatedArtifact extends FHIRElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * The type of relationship to the related artifact.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -539,7 +547,7 @@ class FHIRRelatedArtifact extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

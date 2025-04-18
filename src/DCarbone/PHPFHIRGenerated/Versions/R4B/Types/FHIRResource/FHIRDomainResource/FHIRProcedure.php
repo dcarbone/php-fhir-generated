@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,6 +131,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionTypeMap;
  * counseling, or hypnotherapy.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -207,8 +208,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * systems which remain constant as the resource is updated and is propagated from
      * server to server.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> 
      */
+    #[FHIRIdentifier]
     protected array $identifier;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -219,8 +221,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * The URL pointing to a FHIR-defined protocol, guideline, order set or other
      * definition that is adhered to in whole or in part by this Procedure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> 
      */
+    #[FHIRCanonical]
     protected array $instantiatesCanonical;
     /**
      * String of characters used to identify a name or a resource
@@ -230,8 +233,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * The URL pointing to an externally maintained protocol, guideline, order set or
      * other definition that is adhered to in whole or in part by this Procedure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri> 
      */
+    #[FHIRUri]
     protected array $instantiatesUri;
     /**
      * A reference from one resource to another.
@@ -241,8 +245,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * A reference to a resource that contains details of the request for this
      * procedure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $basedOn;
     /**
      * A reference from one resource to another.
@@ -251,8 +256,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A larger event of which this particular procedure is a component or step.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $partOf;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -262,6 +268,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREventStatus 
      */
+    #[FHIREventStatus]
     protected FHIREventStatus $status;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -273,6 +280,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $statusReason;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -285,6 +293,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -297,6 +306,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
     /**
      * A reference from one resource to another.
@@ -307,6 +317,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $subject;
     /**
      * A reference from one resource to another.
@@ -318,6 +329,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $encounter;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -333,6 +345,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $performedDateTime;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -345,6 +358,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $performedPeriod;
     /**
      * A sequence of Unicode characters
@@ -357,6 +371,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $performedString;
     /**
      * A duration of time during which an organism (or a process) has existed.
@@ -369,6 +384,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge 
      */
+    #[FHIRAge]
     protected FHIRAge $performedAge;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -381,6 +397,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $performedRange;
     /**
      * A reference from one resource to another.
@@ -391,6 +408,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $recorder;
     /**
      * A reference from one resource to another.
@@ -401,6 +419,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $asserter;
     /**
      * An action that is or was performed on or for a patient. This can be a physical
@@ -409,8 +428,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Limited to "real" people rather than equipment.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer> 
      */
+    #[FHIRProcedurePerformer]
     protected array $performer;
     /**
      * A reference from one resource to another.
@@ -422,6 +442,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $location;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -432,8 +453,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * The coded reason why the procedure was performed. This may be a coded entity of
      * some type, or may simply be present as text.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $reasonCode;
     /**
      * A reference from one resource to another.
@@ -442,8 +464,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The justification of why the procedure was performed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $reasonReference;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -454,8 +477,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $bodySite;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -468,6 +492,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $outcome;
     /**
      * A reference from one resource to another.
@@ -476,8 +501,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * This could be a histology result, pathology report, surgical report, etc.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $report;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -490,8 +516,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * which will typically describe the procedure itself rather than any 'post
      * procedure' issues.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $complication;
     /**
      * A reference from one resource to another.
@@ -501,8 +528,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Any complications that occurred during the procedure, or in the immediate
      * post-performance period.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $complicationDetail;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -514,8 +542,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * follow up may be represented as a simple note or could potentially be more
      * complex, in which case the CarePlan resource can be used.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $followUp;
     /**
      * A text note which also contains information about who made the statement and
@@ -525,8 +554,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Any other notes and comments about the procedure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> 
      */
+    #[FHIRAnnotation]
     protected array $note;
     /**
      * An action that is or was performed on or for a patient. This can be a physical
@@ -537,8 +567,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a
      * focal portion of the Procedure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice> 
      */
+    #[FHIRProcedureFocalDevice]
     protected array $focalDevice;
     /**
      * A reference from one resource to another.
@@ -548,8 +579,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Identifies medications, devices and any other substance used as part of the
      * procedure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $usedReference;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -559,8 +591,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Identifies coded items that were used as part of the procedure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $usedCode;
 
     /* constructor.php:61 */
@@ -571,14 +604,14 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical[] $instantiatesCanonical
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri[] $instantiatesUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $basedOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $partOf
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> $instantiatesCanonical
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri> $instantiatesUri
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $basedOn
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $partOf
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREventStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREventStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $statusReason
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $category
@@ -592,20 +625,20 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $performedRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $recorder
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $asserter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer[] $performer
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer> $performer
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $location
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $reasonCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $reasonReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $bodySite
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $reasonCode
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $reasonReference
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $bodySite
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $outcome
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $report
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $complication
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $complicationDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $followUp
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation[] $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice[] $focalDevice
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $usedReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $usedCode
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $report
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $complication
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $complicationDetail
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $followUp
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> $note
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice> $focalDevice
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $usedReference
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $usedCode
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -757,19 +790,19 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -780,7 +813,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * systems which remain constant as the resource is updated and is propagated from
      * server to server.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier>
      */
     public function getIdentifier(): array
     {
@@ -852,7 +885,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * The URL pointing to a FHIR-defined protocol, guideline, order set or other
      * definition that is adhered to in whole or in part by this Procedure.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical>
      */
     public function getInstantiatesCanonical(): array
     {
@@ -931,7 +964,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * The URL pointing to an externally maintained protocol, guideline, order set or
      * other definition that is adhered to in whole or in part by this Procedure.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri>
      */
     public function getInstantiatesUri(): array
     {
@@ -1008,7 +1041,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * A reference to a resource that contains details of the request for this
      * procedure.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getBasedOn(): array
     {
@@ -1074,7 +1107,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A larger event of which this particular procedure is a component or step.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getPartOf(): array
     {
@@ -1625,7 +1658,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Limited to "real" people rather than equipment.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer>
      */
     public function getPerformer(): array
     {
@@ -1727,7 +1760,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * The coded reason why the procedure was performed. This may be a coded entity of
      * some type, or may simply be present as text.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getReasonCode(): array
     {
@@ -1795,7 +1828,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The justification of why the procedure was performed.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getReasonReference(): array
     {
@@ -1861,7 +1894,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getBodySite(): array
     {
@@ -1967,7 +2000,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * This could be a histology result, pathology report, surgical report, etc.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getReport(): array
     {
@@ -2035,7 +2068,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * which will typically describe the procedure itself rather than any 'post
      * procedure' issues.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getComplication(): array
     {
@@ -2108,7 +2141,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Any complications that occurred during the procedure, or in the immediate
      * post-performance period.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getComplicationDetail(): array
     {
@@ -2177,7 +2210,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * follow up may be represented as a simple note or could potentially be more
      * complex, in which case the CarePlan resource can be used.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getFollowUp(): array
     {
@@ -2248,7 +2281,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Any other notes and comments about the procedure.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation>
      */
     public function getNote(): array
     {
@@ -2316,7 +2349,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a
      * focal portion of the Procedure.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice>
      */
     public function getFocalDevice(): array
     {
@@ -2385,7 +2418,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Identifies medications, devices and any other substance used as part of the
      * procedure.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getUsedReference(): array
     {
@@ -2452,7 +2485,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Identifies coded items that were used as part of the procedure.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getUsedCode(): array
     {
@@ -2511,7 +2544,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

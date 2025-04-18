@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,6 +113,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  * A formal computable definition of an operation (on the RESTful interface) or a
  * named query (using the search interaction).
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIROperationDefinitionParameter extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -181,6 +182,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $name;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -189,6 +191,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROperationParameterUse 
      */
+    #[FHIROperationParameterUse]
     protected FHIROperationParameterUse $use;
     /**
      * A whole number
@@ -200,6 +203,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $min;
     /**
      * A sequence of Unicode characters
@@ -211,6 +215,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $max;
     /**
      * A sequence of Unicode characters
@@ -221,6 +226,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $documentation;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -229,6 +235,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFHIRAllTypes 
      */
+    #[FHIRFHIRAllTypes]
     protected FHIRFHIRAllTypes $type;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -245,8 +252,9 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * specified, the target resource SHALL conform to at least one profile defined in
      * the implementation guide.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> 
      */
+    #[FHIRCanonical]
     protected array $targetProfile;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -256,6 +264,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchParamType 
      */
+    #[FHIRSearchParamType]
     protected FHIRSearchParamType $searchType;
     /**
      * A formal computable definition of an operation (on the RESTful interface) or a
@@ -265,6 +274,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding 
      */
+    #[FHIROperationDefinitionBinding]
     protected FHIROperationDefinitionBinding $binding;
     /**
      * A formal computable definition of an operation (on the RESTful interface) or a
@@ -273,8 +283,9 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * Identifies other resource parameters within the operation invocation that are
      * expected to resolve to this resource.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom> 
      */
+    #[FHIROperationDefinitionReferencedFrom]
     protected array $referencedFrom;
     /**
      * A formal computable definition of an operation (on the RESTful interface) or a
@@ -282,27 +293,28 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * The parts of a nested Parameter.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter> 
      */
+    #[FHIROperationDefinitionParameter]
     protected array $part;
 
     /* constructor.php:61 */
     /**
      * FHIROperationDefinitionParameter Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIROperationParameterUseEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROperationParameterUse $use
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $min
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $max
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $documentation
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRFHIRAllTypesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFHIRAllTypes $type
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical[] $targetProfile
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> $targetProfile
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSearchParamTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchParamType $searchType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding $binding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom[] $referencedFrom
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[] $part
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom> $referencedFrom
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter> $part
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -360,13 +372,13 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -602,7 +614,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * specified, the target resource SHALL conform to at least one profile defined in
      * the implementation guide.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical>
      */
     public function getTargetProfile(): array
     {
@@ -759,7 +771,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * Identifies other resource parameters within the operation invocation that are
      * expected to resolve to this resource.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom>
      */
     public function getReferencedFrom(): array
     {
@@ -822,7 +834,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * The parts of a nested Parameter.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter>
      */
     public function getPart(): array
     {
@@ -877,7 +889,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

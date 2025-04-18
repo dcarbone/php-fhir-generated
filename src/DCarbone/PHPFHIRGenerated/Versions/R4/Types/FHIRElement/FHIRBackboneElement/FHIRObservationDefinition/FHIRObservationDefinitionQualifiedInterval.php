@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * Set of definitional characteristics for a kind of observation or measurement
  * produced or consumed by an orderable health care service.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -128,6 +129,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRObservationRangeCategory 
      */
+    #[FHIRObservationRangeCategory]
     protected FHIRObservationRangeCategory $category;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -139,6 +141,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $range;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -151,6 +154,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $context;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -160,8 +164,9 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * Codes to indicate the target population this reference range applies to.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $appliesTo;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -170,6 +175,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender 
      */
+    #[FHIRAdministrativeGender]
     protected FHIRAdministrativeGender $gender;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -181,6 +187,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $age;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -192,6 +199,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $gestationalAge;
     /**
      * A sequence of Unicode characters
@@ -202,18 +210,19 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $condition;
 
     /* constructor.php:61 */
     /**
      * FHIRObservationDefinitionQualifiedInterval Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRObservationRangeCategoryList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRObservationRangeCategory $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $range
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $context
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $appliesTo
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $appliesTo
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender $gender
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $age
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $gestationalAge
@@ -263,13 +272,13 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * Codes identifying the category of observation range.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -389,7 +398,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * Codes to indicate the target population this reference range applies to.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getAppliesTo(): array
     {
@@ -590,7 +599,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

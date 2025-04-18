@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,6 +112,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * The EvidenceVariable resource describes an element that knowledge (Evidence) is
  * about.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -170,6 +171,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $linkId;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -185,6 +187,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $description;
     /**
      * A text note which also contains information about who made the statement and
@@ -194,8 +197,9 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * A human-readable string to clarify or explain concepts about the characteristic.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> 
      */
+    #[FHIRAnnotation]
     protected array $note;
     /**
      * Value of "true" or "false"
@@ -206,6 +210,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $exclude;
     /**
      * A reference from one resource to another.
@@ -216,6 +221,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $definitionReference;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -227,6 +233,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical 
      */
+    #[FHIRCanonical]
     protected FHIRCanonical $definitionCanonical;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -238,6 +245,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $definitionCodeableConcept;
     /**
      * A expression that is evaluated in a specified context and returns a value. The
@@ -250,6 +258,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression 
      */
+    #[FHIRExpression]
     protected FHIRExpression $definitionExpression;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -263,6 +272,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $definitionId;
     /**
      * The EvidenceVariable resource describes an element that knowledge (Evidence) is
@@ -272,6 +282,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue 
      */
+    #[FHIREvidenceVariableDefinitionByTypeAndValue]
     protected FHIREvidenceVariableDefinitionByTypeAndValue $definitionByTypeAndValue;
     /**
      * The EvidenceVariable resource describes an element that knowledge (Evidence) is
@@ -281,6 +292,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination 
      */
+    #[FHIREvidenceVariableDefinitionByCombination]
     protected FHIREvidenceVariableDefinitionByCombination $definitionByCombination;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -294,6 +306,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $instancesQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -305,6 +318,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $instancesRange;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -318,6 +332,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $durationQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -329,6 +344,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $durationRange;
     /**
      * The EvidenceVariable resource describes an element that knowledge (Evidence) is
@@ -336,19 +352,20 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * Timing in which the characteristic is determined.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent> 
      */
+    #[FHIREvidenceVariableTimeFromEvent]
     protected array $timeFromEvent;
 
     /* constructor.php:61 */
     /**
      * FHIREvidenceVariableCharacteristic Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $linkId
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[] $note
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $exclude
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $definitionReference
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $definitionCanonical
@@ -361,7 +378,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $instancesRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $durationRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent[] $timeFromEvent
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent> $timeFromEvent
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -439,13 +456,13 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -544,7 +561,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * A human-readable string to clarify or explain concepts about the characteristic.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation>
      */
     public function getNote(): array
     {
@@ -1052,7 +1069,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * Timing in which the characteristic is determined.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent>
      */
     public function getTimeFromEvent(): array
     {
@@ -1107,7 +1124,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

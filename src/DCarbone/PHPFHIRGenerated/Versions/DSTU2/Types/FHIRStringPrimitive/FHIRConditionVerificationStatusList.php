@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,6 +68,7 @@ use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
 
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRConditionVerificationStatusList extends FHIRStringPrimitive
 {
     use TypeValidationsTrait,
@@ -95,11 +96,11 @@ class FHIRConditionVerificationStatusList extends FHIRStringPrimitive
 
     /* class_default.php:112 */
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
 }

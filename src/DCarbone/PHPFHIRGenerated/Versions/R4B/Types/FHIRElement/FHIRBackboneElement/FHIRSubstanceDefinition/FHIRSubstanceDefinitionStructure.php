@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,6 +101,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  * The detailed description of a substance, typically at a level beyond what is
  * used for prescribing.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -143,6 +144,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $stereochemistry;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -154,6 +156,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $opticalActivity;
     /**
      * A sequence of Unicode characters
@@ -164,6 +167,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $molecularFormula;
     /**
      * A sequence of Unicode characters
@@ -175,6 +179,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $molecularFormulaByMoiety;
     /**
      * The detailed description of a substance, typically at a level beyond what is
@@ -184,6 +189,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionMolecularWeight 
      */
+    #[FHIRSubstanceDefinitionMolecularWeight]
     protected FHIRSubstanceDefinitionMolecularWeight $molecularWeight;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -194,8 +200,9 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * The method used to elucidate the structure or characterization of the drug
      * substance. Examples: X-ray, HPLC, NMR, Peptide mapping, Ligand binding assay.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $technique;
     /**
      * A reference from one resource to another.
@@ -204,8 +211,9 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * The source of information about the structure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $sourceDocument;
     /**
      * The detailed description of a substance, typically at a level beyond what is
@@ -213,24 +221,25 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * A depiction of the structure or characterization of the substance.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation> 
      */
+    #[FHIRSubstanceDefinitionRepresentation]
     protected array $representation;
 
     /* constructor.php:61 */
     /**
      * FHIRSubstanceDefinitionStructure Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $stereochemistry
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $opticalActivity
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $molecularFormula
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $molecularFormulaByMoiety
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionMolecularWeight $molecularWeight
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $technique
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $sourceDocument
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation[] $representation
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $technique
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $sourceDocument
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation> $representation
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -276,13 +285,13 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -472,7 +481,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * The method used to elucidate the structure or characterization of the drug
      * substance. Examples: X-ray, HPLC, NMR, Peptide mapping, Ligand binding assay.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getTechnique(): array
     {
@@ -540,7 +549,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * The source of information about the structure.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference>
      */
     public function getSourceDocument(): array
     {
@@ -603,7 +612,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * A depiction of the structure or characterization of the substance.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation>
      */
     public function getRepresentation(): array
     {
@@ -658,7 +667,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

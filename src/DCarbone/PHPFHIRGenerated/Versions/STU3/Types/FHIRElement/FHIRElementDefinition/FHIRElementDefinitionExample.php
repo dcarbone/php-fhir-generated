@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,6 +134,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRElementDefinitionExample extends FHIRElement
 {
     use TypeValidationsTrait,
@@ -353,6 +354,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $label;
     /**
      * A stream of bytes
@@ -364,6 +366,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary 
      */
+    #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
     /**
      * Value of "true" or "false"
@@ -374,6 +377,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -386,6 +390,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $valueCode;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -398,6 +403,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $valueDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -412,6 +418,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
     /**
      * A rational number with implicit precision
@@ -424,6 +431,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -438,6 +446,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $valueId;
     /**
      * An instant in time - known at least to the second
@@ -451,6 +460,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant 
      */
+    #[FHIRInstant]
     protected FHIRInstant $valueInstant;
     /**
      * A whole number
@@ -462,6 +472,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $valueInteger;
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -479,6 +490,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $valueMarkdown;
     /**
      * An OID represented as a URI
@@ -491,6 +503,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid 
      */
+    #[FHIROid]
     protected FHIROid $valueOid;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -502,6 +515,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $valuePositiveInt;
     /**
      * A sequence of Unicode characters
@@ -513,6 +527,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $valueString;
     /**
      * A time during the day, with no date specified
@@ -523,6 +538,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $valueTime;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -534,6 +550,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $valueUnsignedInt;
     /**
      * String of characters used to identify a name or a resource
@@ -545,6 +562,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $valueUri;
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
@@ -560,6 +578,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAddress 
      */
+    #[FHIRAddress]
     protected FHIRAddress $valueAddress;
     /**
      * A duration of time during which an organism (or a process) has existed.
@@ -571,6 +590,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge 
      */
+    #[FHIRAge]
     protected FHIRAge $valueAge;
     /**
      * A text note which also contains information about who made the statement and
@@ -583,6 +603,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation 
      */
+    #[FHIRAnnotation]
     protected FHIRAnnotation $valueAnnotation;
     /**
      * For referring to data content defined in other formats.
@@ -594,6 +615,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -606,6 +628,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
     /**
      * A reference to a code defined by a terminology system.
@@ -617,6 +640,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $valueCoding;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -629,6 +653,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint 
      */
+    #[FHIRContactPoint]
     protected FHIRContactPoint $valueContactPoint;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -642,6 +667,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRCount 
      */
+    #[FHIRCount]
     protected FHIRCount $valueCount;
     /**
      * A length - a value with a unit that is a physical distance.
@@ -653,6 +679,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance 
      */
+    #[FHIRDistance]
     protected FHIRDistance $valueDistance;
     /**
      * A length of time.
@@ -664,6 +691,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $valueDuration;
     /**
      * A human's name with the ability to identify parts and usage.
@@ -675,6 +703,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHumanName 
      */
+    #[FHIRHumanName]
     protected FHIRHumanName $valueHumanName;
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -686,6 +715,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $valueIdentifier;
     /**
      * An amount of economic utility in some recognized currency.
@@ -697,6 +727,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney 
      */
+    #[FHIRMoney]
     protected FHIRMoney $valueMoney;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -708,6 +739,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -721,6 +753,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -732,6 +765,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $valueRange;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -744,6 +778,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $valueRatio;
     /**
      * A reference from one resource to another.
@@ -755,6 +790,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $valueReference;
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
@@ -767,6 +803,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSampledData 
      */
+    #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
     /**
      * A digital signature along with supporting context. The signature may be
@@ -781,6 +818,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSignature 
      */
+    #[FHIRSignature]
     protected FHIRSignature $valueSignature;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -796,6 +834,7 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $valueTiming;
     /**
      * The metadata about a resource. This is content in the resource that is
@@ -809,12 +848,13 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta 
      */
+    #[FHIRMeta]
     protected FHIRMeta $valueMeta;
 
     /* constructor.php:61 */
     /**
      * FHIRElementDefinitionExample Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $label
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary $valueBase64Binary
@@ -1022,13 +1062,13 @@ class FHIRElementDefinitionExample extends FHIRElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -2558,7 +2598,7 @@ class FHIRElementDefinitionExample extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

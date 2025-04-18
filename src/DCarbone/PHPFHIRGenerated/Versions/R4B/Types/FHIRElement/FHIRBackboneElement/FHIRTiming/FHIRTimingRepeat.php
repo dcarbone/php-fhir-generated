@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,6 +120,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRTimingRepeat extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -192,6 +193,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $boundsDuration;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -203,6 +205,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $boundsRange;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -214,6 +217,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $boundsPeriod;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -226,6 +230,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $count;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -237,6 +242,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $countMax;
     /**
      * A rational number with implicit precision
@@ -249,6 +255,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $duration;
     /**
      * A rational number with implicit precision
@@ -261,6 +268,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $durationMax;
     /**
      * A unit of time (units from UCUM).
@@ -270,6 +278,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnitsOfTime 
      */
+    #[FHIRUnitsOfTime]
     protected FHIRUnitsOfTime $durationUnit;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -282,6 +291,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $frequency;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -293,6 +303,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $frequencyMax;
     /**
      * A rational number with implicit precision
@@ -307,6 +318,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $period;
     /**
      * A rational number with implicit precision
@@ -319,6 +331,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $periodMax;
     /**
      * A unit of time (units from UCUM).
@@ -328,6 +341,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnitsOfTime 
      */
+    #[FHIRUnitsOfTime]
     protected FHIRUnitsOfTime $periodUnit;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -338,8 +352,9 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If one or more days of week is provided, then the action happens only on the
      * specified day(s).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode> 
      */
+    #[FHIRCode]
     protected array $dayOfWeek;
     /**
      * A time during the day, with no date specified
@@ -347,8 +362,9 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Specified time of day for action to take place.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime> 
      */
+    #[FHIRTime]
     protected array $timeOfDay;
     /**
      * Real world event relating to the schedule.
@@ -357,8 +373,9 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * An approximate time period during the day, potentially linked to an event of
      * daily living that indicates when the action should occur.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREventTiming[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREventTiming> 
      */
+    #[FHIREventTiming]
     protected array $when;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -371,14 +388,15 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $offset;
 
     /* constructor.php:61 */
     /**
      * FHIRTimingRepeat Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $boundsRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $boundsPeriod
@@ -392,9 +410,9 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $period
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $periodMax
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRUnitsOfTimeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnitsOfTime $periodUnit
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode[] $dayOfWeek
-     * @param null|string[]|\DateTimeInterface[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime[] $timeOfDay
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREventTimingEnum[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREventTiming[] $when
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode> $dayOfWeek
+     * @param null|iterable<string>|iterable<\DateTimeInterface>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime> $timeOfDay
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREventTimingEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREventTiming> $when
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $offset
      * @param null|string[] $fhirComments
      */
@@ -477,13 +495,13 @@ class FHIRTimingRepeat extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
@@ -999,7 +1017,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If one or more days of week is provided, then the action happens only on the
      * specified day(s).
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode>
      */
     public function getDayOfWeek(): array
     {
@@ -1076,7 +1094,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Specified time of day for action to take place.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime>
      */
     public function getTimeOfDay(): array
     {
@@ -1148,7 +1166,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * An approximate time period during the day, potentially linked to an event of
      * daily living that indicates when the action should occur.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREventTiming[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREventTiming>
      */
     public function getWhen(): array
     {
@@ -1256,7 +1274,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

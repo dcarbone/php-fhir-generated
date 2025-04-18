@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,6 +101,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * A group of related requests that can be used to capture intended activities that
  * have inter-dependencies such as "give this medication after that one".
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRRequestGroupAction extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -176,6 +177,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $prefix;
     /**
      * A sequence of Unicode characters
@@ -186,6 +188,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $title;
     /**
      * A sequence of Unicode characters
@@ -197,6 +200,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $description;
     /**
      * A sequence of Unicode characters
@@ -209,6 +213,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $textEquivalent;
     /**
      * Identifies the level of importance to be assigned to actioning the request.
@@ -219,6 +224,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRequestPriority 
      */
+    #[FHIRRequestPriority]
     protected FHIRRequestPriority $priority;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -229,8 +235,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a section of a documentation template.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $code;
     /**
      * Related artifacts such as additional documentation, justification, or
@@ -242,8 +249,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact> 
      */
+    #[FHIRRelatedArtifact]
     protected array $documentation;
     /**
      * A group of related requests that can be used to capture intended activities that
@@ -252,8 +260,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * An expression that describes applicability criteria, or start/stop conditions
      * for the action.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition> 
      */
+    #[FHIRRequestGroupCondition]
     protected array $condition;
     /**
      * A group of related requests that can be used to capture intended activities that
@@ -262,8 +271,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction> 
      */
+    #[FHIRRequestGroupRelatedAction]
     protected array $relatedAction;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -277,6 +287,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $timingDateTime;
     /**
      * A duration of time during which an organism (or a process) has existed.
@@ -287,6 +298,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge 
      */
+    #[FHIRAge]
     protected FHIRAge $timingAge;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -297,6 +309,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $timingPeriod;
     /**
      * A length of time.
@@ -307,6 +320,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $timingDuration;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -317,6 +331,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $timingRange;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -331,6 +346,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $timingTiming;
     /**
      * A reference from one resource to another.
@@ -339,8 +355,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * The participant that should perform or be responsible for this action.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $participant;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -352,6 +369,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
     /**
      * Defines organization behavior of a group.
@@ -361,6 +379,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRActionGroupingBehavior 
      */
+    #[FHIRActionGroupingBehavior]
     protected FHIRActionGroupingBehavior $groupingBehavior;
     /**
      * Defines selection behavior of a group.
@@ -370,6 +389,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRActionSelectionBehavior 
      */
+    #[FHIRActionSelectionBehavior]
     protected FHIRActionSelectionBehavior $selectionBehavior;
     /**
      * Defines expectations around whether an action or action group is required.
@@ -379,6 +399,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRActionRequiredBehavior 
      */
+    #[FHIRActionRequiredBehavior]
     protected FHIRActionRequiredBehavior $requiredBehavior;
     /**
      * Defines selection frequency behavior for an action or group.
@@ -388,6 +409,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRActionPrecheckBehavior 
      */
+    #[FHIRActionPrecheckBehavior]
     protected FHIRActionPrecheckBehavior $precheckBehavior;
     /**
      * Defines behavior for an action or a group for how many times that item may be
@@ -398,6 +420,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRActionCardinalityBehavior 
      */
+    #[FHIRActionCardinalityBehavior]
     protected FHIRActionCardinalityBehavior $cardinalityBehavior;
     /**
      * A reference from one resource to another.
@@ -408,6 +431,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $resource;
     /**
      * A group of related requests that can be used to capture intended activities that
@@ -415,32 +439,33 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * Sub actions.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction> 
      */
+    #[FHIRRequestGroupAction]
     protected array $action;
 
     /* constructor.php:61 */
     /**
      * FHIRRequestGroupAction Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $prefix
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $textEquivalent
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRRequestPriorityList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRequestPriority $priority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact[] $documentation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition[] $condition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction[] $relatedAction
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $code
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact> $documentation
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition> $condition
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction> $relatedAction
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $timingDateTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $timingAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $timingPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $timingRange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $timingTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] $participant
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $participant
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRActionGroupingBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRActionSelectionBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
@@ -448,7 +473,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRActionPrecheckBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRActionCardinalityBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $resource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[] $action
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction> $action
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -558,13 +583,13 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -765,7 +790,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a section of a documentation template.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getCode(): array
     {
@@ -836,7 +861,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact>
      */
     public function getDocumentation(): array
     {
@@ -906,7 +931,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * An expression that describes applicability criteria, or start/stop conditions
      * for the action.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition>
      */
     public function getCondition(): array
     {
@@ -970,7 +995,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction>
      */
     public function getRelatedAction(): array
     {
@@ -1255,7 +1280,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * The participant that should perform or be responsible for this action.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     public function getParticipant(): array
     {
@@ -1565,7 +1590,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * Sub actions.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction>
      */
     public function getAction(): array
     {
@@ -1620,7 +1645,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

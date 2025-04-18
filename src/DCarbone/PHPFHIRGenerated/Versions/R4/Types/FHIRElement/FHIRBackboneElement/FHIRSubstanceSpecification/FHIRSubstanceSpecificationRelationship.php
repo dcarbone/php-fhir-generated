@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * The detailed description of a substance, typically at a level beyond what is
  * used for prescribing.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -130,6 +131,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $substanceReference;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -141,6 +143,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $substanceCodeableConcept;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -152,6 +155,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $relationship;
     /**
      * Value of "true" or "false"
@@ -163,6 +167,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $isDefining;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -177,6 +182,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $amountQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -189,6 +195,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $amountRange;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -202,6 +209,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $amountRatio;
     /**
      * A sequence of Unicode characters
@@ -214,6 +222,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $amountString;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -225,6 +234,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $amountRatioLowLimit;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -236,6 +246,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $amountType;
     /**
      * A reference from one resource to another.
@@ -244,16 +255,17 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * Supporting literature.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $source;
 
     /* constructor.php:61 */
     /**
      * FHIRSubstanceSpecificationRelationship Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $substanceReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $substanceCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $relationship
@@ -264,7 +276,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $amountRatioLowLimit
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $amountType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] $source
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $source
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -322,13 +334,13 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -714,7 +726,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * Supporting literature.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     public function getSource(): array
     {
@@ -771,7 +783,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * A collection of error, warning or information messages that result from a system
  * action.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIROperationOutcomeIssue extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -134,6 +135,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIssueSeverity 
      */
+    #[FHIRIssueSeverity]
     protected FHIRIssueSeverity $severity;
     /**
      * A code that describes the type of issue.
@@ -145,6 +147,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIssueType 
      */
+    #[FHIRIssueType]
     protected FHIRIssueType $code;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -157,6 +160,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $details;
     /**
      * A sequence of Unicode characters
@@ -169,6 +173,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $diagnostics;
     /**
      * A sequence of Unicode characters
@@ -180,8 +185,9 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * elements in the resource that caused this issue to be raised. For HTTP errors,
      * will be "http." + the parameter name.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> 
      */
+    #[FHIRString]
     protected array $location;
     /**
      * A sequence of Unicode characters
@@ -192,22 +198,23 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * default child access that identifies one of the elements in the resource that
      * caused this issue to be raised.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> 
      */
+    #[FHIRString]
     protected array $expression;
 
     /* constructor.php:61 */
     /**
      * FHIROperationOutcomeIssue Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRIssueSeverityList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIssueSeverity $severity
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRIssueTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIssueType $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $details
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $diagnostics
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[] $location
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[] $expression
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> $location
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> $expression
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -245,13 +252,13 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * How the issue affects the success of the action.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -415,7 +422,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * elements in the resource that caused this issue to be raised. For HTTP errors,
      * will be "http." + the parameter name.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString>
      */
     public function getLocation(): array
     {
@@ -497,7 +504,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * default child access that identifies one of the elements in the resource that
      * caused this issue to be raised.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString>
      */
     public function getExpression(): array
     {
@@ -568,7 +575,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

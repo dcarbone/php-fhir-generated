@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * stage in lifecycle (e.g. Document Completion - has the artifact been legally
  * authenticated), all of which may impact security, privacy, and trust policies.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRProvenanceEntity extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -142,6 +143,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRProvenanceEntityRole 
      */
+    #[FHIRProvenanceEntityRole]
     protected FHIRProvenanceEntityRole $role;
     /**
      * String of characters used to identify a name or a resource
@@ -153,6 +155,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $whatUri;
     /**
      * A reference from one resource to another.
@@ -164,6 +167,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $whatReference;
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -175,6 +179,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $whatIdentifier;
     /**
      * Provenance of a resource is a record that describes entities and processes
@@ -192,21 +197,22 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * understood as shorthand for saying that the agent was responsible for the
      * activity which generated the entity.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent> 
      */
+    #[FHIRProvenanceAgent]
     protected array $agent;
 
     /* constructor.php:61 */
     /**
      * FHIRProvenanceEntity Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRProvenanceEntityRoleList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRProvenanceEntityRole $role
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $whatUri
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $whatReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $whatIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[] $agent
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent> $agent
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -240,13 +246,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * How an entity was used in an activity.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -409,7 +415,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * understood as shorthand for saying that the agent was responsible for the
      * activity which generated the entity.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent>
      */
     public function getAgent(): array
     {
@@ -484,7 +490,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

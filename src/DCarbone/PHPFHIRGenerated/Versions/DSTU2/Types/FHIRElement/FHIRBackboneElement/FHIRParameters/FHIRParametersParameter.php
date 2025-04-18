@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,6 +137,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionTypeMap;
  * response (operations.html). It has no other use, and there is no RESTful
  * endpoint associated with it.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRParametersParameter extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -246,6 +247,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $name;
     /**
      * Value of "true" or "false"
@@ -255,6 +257,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
     /**
      * A whole number
@@ -265,6 +268,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $valueInteger;
     /**
      * A rational number with implicit precision
@@ -276,6 +280,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
     /**
      * A stream of bytes
@@ -286,6 +291,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBase64Binary 
      */
+    #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
     /**
      * An instant in time - known at least to the second
@@ -298,6 +304,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant 
      */
+    #[FHIRInstant]
     protected FHIRInstant $valueInstant;
     /**
      * A sequence of Unicode characters
@@ -308,6 +315,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $valueString;
     /**
      * String of characters used to identify a name or a resource
@@ -318,6 +326,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $valueUri;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -329,6 +338,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $valueDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -342,6 +352,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
     /**
      * A time during the day, with no date specified
@@ -351,6 +362,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $valueTime;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -362,6 +374,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $valueCode;
     /**
      * An oid represented as a URI
@@ -373,6 +386,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIROid 
      */
+    #[FHIROid]
     protected FHIROid $valueOid;
     /**
      * A UUID, represented as a URI
@@ -384,6 +398,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUuid 
      */
+    #[FHIRUuid]
     protected FHIRUuid $valueUuid;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -397,6 +412,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $valueId;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -407,6 +423,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $valueUnsignedInt;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -417,6 +434,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $valuePositiveInt;
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -433,6 +451,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $valueMarkdown;
     /**
      * A text note which also contains information about who made the statement and
@@ -444,6 +463,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation 
      */
+    #[FHIRAnnotation]
     protected FHIRAnnotation $valueAnnotation;
     /**
      * For referring to data content defined in other formats.
@@ -454,6 +474,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -464,6 +485,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $valueIdentifier;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -475,6 +497,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
     /**
      * A reference to a code defined by a terminology system.
@@ -485,6 +508,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $valueCoding;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -497,6 +521,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -507,6 +532,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $valueRange;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -517,6 +543,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -528,6 +555,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $valueRatio;
     /**
      * A reference from one resource to another.
@@ -538,6 +566,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $valueReference;
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
@@ -549,6 +578,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSampledData 
      */
+    #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
     /**
      * A digital signature along with supporting context. The signature may be
@@ -562,6 +592,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSignature 
      */
+    #[FHIRSignature]
     protected FHIRSignature $valueSignature;
     /**
      * A human's name with the ability to identify parts and usage.
@@ -572,6 +603,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHumanName 
      */
+    #[FHIRHumanName]
     protected FHIRHumanName $valueHumanName;
     /**
      * There is a variety of postal address formats defined around the world. This
@@ -583,6 +615,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAddress 
      */
+    #[FHIRAddress]
     protected FHIRAddress $valueAddress;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -594,6 +627,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint 
      */
+    #[FHIRContactPoint]
     protected FHIRContactPoint $valueContactPoint;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -607,6 +641,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $valueTiming;
     /**
      * The metadata about a resource. This is content in the resource that is
@@ -619,6 +654,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta 
      */
+    #[FHIRMeta]
     protected FHIRMeta $valueMeta;
     /**
      * Captures constraints on each element within the resource, profile, or extension.
@@ -629,12 +665,14 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElementDefinition 
      */
+    #[FHIRElementDefinition]
     protected FHIRElementDefinition $valueElementDefinition;
     /**
      * If the parameter is a whole resource.
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface 
      */
+    #[FHIRResourceContainer]
     protected VersionContainedTypeInterface $resource;
     /**
      * This special resource type is used to represent an operation request and
@@ -644,16 +682,17 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * A named part of a parameter. In many implementation context, a set of named
      * parts is known as a "Tuple".
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter> 
      */
+    #[FHIRParametersParameter]
     protected array $part;
 
     /* constructor.php:61 */
     /**
      * FHIRParametersParameter Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $valueBoolean
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger $valueInteger
@@ -691,7 +730,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $valueMeta
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElementDefinition $valueElementDefinition
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $resource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[] $part
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter> $part
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -857,13 +896,13 @@ class FHIRParametersParameter extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -2245,7 +2284,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * A named part of a parameter. In many implementation context, a set of named
      * parts is known as a "Tuple".
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter>
      */
     public function getPart(): array
     {
@@ -2304,7 +2343,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

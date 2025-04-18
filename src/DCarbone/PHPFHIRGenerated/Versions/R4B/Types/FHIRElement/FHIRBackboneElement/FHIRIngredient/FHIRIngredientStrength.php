@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,6 +101,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
 /**
  * An ingredient of a manufactured item or pharmaceutical product.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRIngredientStrength extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -150,6 +151,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $presentationRatio;
     /**
      * A range of ratios expressed as a low and high numerator and a denominator.
@@ -164,6 +166,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange 
      */
+    #[FHIRRatioRange]
     protected FHIRRatioRange $presentationRatioRange;
     /**
      * A sequence of Unicode characters
@@ -175,6 +178,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $textPresentation;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -186,6 +190,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $concentrationRatio;
     /**
      * A range of ratios expressed as a low and high numerator and a denominator.
@@ -196,6 +201,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange 
      */
+    #[FHIRRatioRange]
     protected FHIRRatioRange $concentrationRatioRange;
     /**
      * A sequence of Unicode characters
@@ -207,6 +213,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $textConcentration;
     /**
      * A sequence of Unicode characters
@@ -220,6 +227,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $measurementPoint;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -229,8 +237,9 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * The country or countries for which the strength range applies.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $country;
     /**
      * An ingredient of a manufactured item or pharmaceutical product.
@@ -242,16 +251,17 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * substance. There are situations when the active substance and active moiety are
      * different, therefore both a strength and a reference strength are needed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength> 
      */
+    #[FHIRIngredientReferenceStrength]
     protected array $referenceStrength;
 
     /* constructor.php:61 */
     /**
      * FHIRIngredientStrength Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $presentationRatio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange $presentationRatioRange
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $textPresentation
@@ -259,8 +269,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange $concentrationRatioRange
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $textConcentration
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $measurementPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $country
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength[] $referenceStrength
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $country
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength> $referenceStrength
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -310,13 +320,13 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
@@ -602,7 +612,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * The country or countries for which the strength range applies.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getCountry(): array
     {
@@ -671,7 +681,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * substance. There are situations when the active substance and active moiety are
      * different, therefore both a strength and a reference strength are needed.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength>
      */
     public function getReferenceStrength(): array
     {
@@ -734,7 +744,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

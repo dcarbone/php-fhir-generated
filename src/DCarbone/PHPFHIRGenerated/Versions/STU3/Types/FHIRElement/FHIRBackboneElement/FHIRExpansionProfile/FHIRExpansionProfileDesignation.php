@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,6 +77,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
 /**
  * Resource to define constraints on the Expansion of a FHIR ValueSet.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRExpansionProfileDesignation extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -106,6 +107,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude 
      */
+    #[FHIRExpansionProfileInclude]
     protected FHIRExpansionProfileInclude $include;
     /**
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
@@ -114,14 +116,15 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExclude 
      */
+    #[FHIRExpansionProfileExclude]
     protected FHIRExpansionProfileExclude $exclude;
 
     /* constructor.php:61 */
     /**
      * FHIRExpansionProfileDesignation Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude $include
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExclude $exclude
      * @param null|string[] $fhirComments
@@ -145,13 +148,13 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
      *
@@ -212,7 +215,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

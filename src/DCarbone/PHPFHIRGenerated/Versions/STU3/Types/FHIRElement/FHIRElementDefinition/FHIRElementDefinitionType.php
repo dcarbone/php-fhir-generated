@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,6 +87,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRElementDefinitionType extends FHIRElement
 {
     use TypeValidationsTrait,
@@ -136,6 +137,7 @@ class FHIRElementDefinitionType extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $code;
     /**
      * String of characters used to identify a name or a resource
@@ -151,6 +153,7 @@ class FHIRElementDefinitionType extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $profile;
     /**
      * String of characters used to identify a name or a resource
@@ -166,6 +169,7 @@ class FHIRElementDefinitionType extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $targetProfile;
     /**
      * How resource references can be aggregated.
@@ -175,8 +179,9 @@ class FHIRElementDefinitionType extends FHIRElement
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAggregationMode[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAggregationMode> 
      */
+    #[FHIRAggregationMode]
     protected array $aggregation;
     /**
      * Whether a reference needs to be version specific or version independent, or
@@ -188,17 +193,18 @@ class FHIRElementDefinitionType extends FHIRElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReferenceVersionRules 
      */
+    #[FHIRReferenceVersionRules]
     protected FHIRReferenceVersionRules $versioning;
 
     /* constructor.php:61 */
     /**
      * FHIRElementDefinitionType Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $profile
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $targetProfile
-     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAggregationModeList[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAggregationMode[] $aggregation
+     * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAggregationModeList>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAggregationMode> $aggregation
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRReferenceVersionRulesList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReferenceVersionRules $versioning
      * @param null|string[] $fhirComments
      */
@@ -231,13 +237,13 @@ class FHIRElementDefinitionType extends FHIRElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -383,7 +389,7 @@ class FHIRElementDefinitionType extends FHIRElement
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAggregationMode[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAggregationMode>
      */
     public function getAggregation(): array
     {
@@ -491,7 +497,7 @@ class FHIRElementDefinitionType extends FHIRElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

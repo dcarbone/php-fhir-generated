@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,6 +79,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
 /**
  * Information about a medication that is used to support knowledge.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -111,8 +112,9 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      *
      * The drug concentration measured at certain discrete points in time.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity> 
      */
+    #[FHIRQuantity]
     protected array $areaUnderCurve;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -123,8 +125,9 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      *
      * The median lethal dose of a drug.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity> 
      */
+    #[FHIRQuantity]
     protected array $lethalDose50;
     /**
      * A length of time.
@@ -136,16 +139,17 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $halfLifePeriod;
 
     /* constructor.php:61 */
     /**
      * FHIRMedicationKnowledgeKinetics Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity[] $areaUnderCurve
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity[] $lethalDose50
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity> $areaUnderCurve
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity> $lethalDose50
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $halfLifePeriod
      * @param null|string[] $fhirComments
      */
@@ -172,13 +176,13 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -188,7 +192,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      *
      * The drug concentration measured at certain discrete points in time.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity>
      */
     public function getAreaUnderCurve(): array
     {
@@ -258,7 +262,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      *
      * The median lethal dose of a drug.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity>
      */
     public function getLethalDose50(): array
     {
@@ -355,7 +359,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

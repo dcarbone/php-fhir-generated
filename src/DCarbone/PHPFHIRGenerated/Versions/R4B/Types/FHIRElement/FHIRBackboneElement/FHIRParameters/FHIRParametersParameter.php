@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -173,6 +173,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionTypeMap;
  * from an [operation](operations.html). It has no other use, and there is no
  * RESTful endpoint associated with it.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRParametersParameter extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -298,6 +299,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $name;
     /**
      * A stream of bytes
@@ -308,6 +310,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary 
      */
+    #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
     /**
      * Value of "true" or "false"
@@ -317,6 +320,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -328,6 +332,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical 
      */
+    #[FHIRCanonical]
     protected FHIRCanonical $valueCanonical;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -339,6 +344,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $valueCode;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -350,6 +356,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $valueDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -363,6 +370,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
     /**
      * A rational number with implicit precision
@@ -374,6 +382,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -387,6 +396,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $valueId;
     /**
      * An instant in time - known at least to the second
@@ -400,6 +410,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant 
      */
+    #[FHIRInstant]
     protected FHIRInstant $valueInstant;
     /**
      * A whole number
@@ -410,6 +421,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $valueInteger;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -424,6 +436,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $valueMarkdown;
     /**
      * An OID represented as a URI
@@ -435,6 +448,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROid 
      */
+    #[FHIROid]
     protected FHIROid $valueOid;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -445,6 +459,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $valuePositiveInt;
     /**
      * A sequence of Unicode characters
@@ -455,6 +470,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $valueString;
     /**
      * A time during the day, with no date specified
@@ -464,6 +480,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $valueTime;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -474,6 +491,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $valueUnsignedInt;
     /**
      * String of characters used to identify a name or a resource
@@ -484,6 +502,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $valueUri;
     /**
      * A URI that is a literal reference
@@ -494,6 +513,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUrl 
      */
+    #[FHIRUrl]
     protected FHIRUrl $valueUrl;
     /**
      * A UUID, represented as a URI
@@ -505,6 +525,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUuid 
      */
+    #[FHIRUuid]
     protected FHIRUuid $valueUuid;
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
@@ -519,6 +540,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress 
      */
+    #[FHIRAddress]
     protected FHIRAddress $valueAddress;
     /**
      * A duration of time during which an organism (or a process) has existed.
@@ -529,6 +551,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge 
      */
+    #[FHIRAge]
     protected FHIRAge $valueAge;
     /**
      * A text note which also contains information about who made the statement and
@@ -540,6 +563,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation 
      */
+    #[FHIRAnnotation]
     protected FHIRAnnotation $valueAnnotation;
     /**
      * For referring to data content defined in other formats.
@@ -550,6 +574,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -561,6 +586,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
     /**
      * A reference to a code defined by a terminology system.
@@ -571,6 +597,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $valueCoding;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -582,6 +609,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint 
      */
+    #[FHIRContactPoint]
     protected FHIRContactPoint $valueContactPoint;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -594,6 +622,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRCount 
      */
+    #[FHIRCount]
     protected FHIRCount $valueCount;
     /**
      * A length - a value with a unit that is a physical distance.
@@ -604,6 +633,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDistance 
      */
+    #[FHIRDistance]
     protected FHIRDistance $valueDistance;
     /**
      * A length of time.
@@ -614,6 +644,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $valueDuration;
     /**
      * A human's name with the ability to identify parts and usage.
@@ -624,6 +655,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName 
      */
+    #[FHIRHumanName]
     protected FHIRHumanName $valueHumanName;
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -635,6 +667,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $valueIdentifier;
     /**
      * An amount of economic utility in some recognized currency.
@@ -645,6 +678,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney 
      */
+    #[FHIRMoney]
     protected FHIRMoney $valueMoney;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -655,6 +689,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -667,6 +702,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -677,6 +713,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $valueRange;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -688,6 +725,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $valueRatio;
     /**
      * A reference from one resource to another.
@@ -698,6 +736,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $valueReference;
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
@@ -709,6 +748,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSampledData 
      */
+    #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
     /**
      * A signature along with supporting context. The signature may be a digital
@@ -723,6 +763,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature 
      */
+    #[FHIRSignature]
     protected FHIRSignature $valueSignature;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -737,6 +778,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $valueTiming;
     /**
      * Specifies contact information for a person or organization.
@@ -747,6 +789,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail 
      */
+    #[FHIRContactDetail]
     protected FHIRContactDetail $valueContactDetail;
     /**
      * A contributor to the content of a knowledge asset, including authors, editors,
@@ -758,6 +801,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributor 
      */
+    #[FHIRContributor]
     protected FHIRContributor $valueContributor;
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -769,6 +813,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement 
      */
+    #[FHIRDataRequirement]
     protected FHIRDataRequirement $valueDataRequirement;
     /**
      * A expression that is evaluated in a specified context and returns a value. The
@@ -781,6 +826,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExpression 
      */
+    #[FHIRExpression]
     protected FHIRExpression $valueExpression;
     /**
      * The parameters to the module. This collection specifies both the input and
@@ -793,6 +839,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRParameterDefinition 
      */
+    #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $valueParameterDefinition;
     /**
      * Related artifacts such as additional documentation, justification, or
@@ -804,6 +851,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact 
      */
+    #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $valueRelatedArtifact;
     /**
      * A description of a triggering event. Triggering events can be named events, data
@@ -815,6 +863,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTriggerDefinition 
      */
+    #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $valueTriggerDefinition;
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
@@ -828,6 +877,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext 
      */
+    #[FHIRUsageContext]
     protected FHIRUsageContext $valueUsageContext;
     /**
      * Indicates how the medication is/was taken or should be taken by the patient.
@@ -838,6 +888,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage 
      */
+    #[FHIRDosage]
     protected FHIRDosage $valueDosage;
     /**
      * The metadata about a resource. This is content in the resource that is
@@ -850,12 +901,14 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta 
      */
+    #[FHIRMeta]
     protected FHIRMeta $valueMeta;
     /**
      * If the parameter is a whole resource.
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface 
      */
+    #[FHIRResourceContainer]
     protected VersionContainedTypeInterface $resource;
     /**
      * This resource is a non-persisted resource used to pass information into and back
@@ -864,16 +917,17 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * A named part of a multi-part parameter.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter> 
      */
+    #[FHIRParametersParameter]
     protected array $part;
 
     /* constructor.php:61 */
     /**
      * FHIRParametersParameter Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary $valueBase64Binary
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $valueBoolean
@@ -926,7 +980,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage $valueDosage
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $valueMeta
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $resource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[] $part
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter> $part
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -1152,13 +1206,13 @@ class FHIRParametersParameter extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -3093,7 +3147,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * A named part of a multi-part parameter.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter>
      */
     public function getPart(): array
     {
@@ -3150,7 +3204,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

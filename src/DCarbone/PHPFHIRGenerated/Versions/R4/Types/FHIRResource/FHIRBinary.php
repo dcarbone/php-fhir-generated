@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface;
  * whether text, image, pdf, zip archive, etc.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -133,6 +134,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $contentType;
     /**
      * A reference from one resource to another.
@@ -151,6 +153,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $securityContext;
     /**
      * A stream of bytes
@@ -161,6 +164,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBase64Binary 
      */
+    #[FHIRBase64Binary]
     protected FHIRBase64Binary $data;
 
     /* constructor.php:61 */
@@ -200,19 +204,19 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -339,7 +343,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

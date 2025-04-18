@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,6 +112,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionTypeMap;
  * in a Bundle, of which the Composition is the first resource contained.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRComposition extends FHIRDomainResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -183,6 +184,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
     /**
      * The workflow/clinical status of the composition.
@@ -193,6 +195,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCompositionStatus 
      */
+    #[FHIRCompositionStatus]
     protected FHIRCompositionStatus $status;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -206,6 +209,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -219,6 +223,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $class;
     /**
      * A reference from one resource to another.
@@ -232,6 +237,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $subject;
     /**
      * A reference from one resource to another.
@@ -243,6 +249,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $encounter;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -257,6 +264,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $date;
     /**
      * A reference from one resource to another.
@@ -266,8 +274,9 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * Identifies who is responsible for the information in the composition, not
      * necessarily who typed it in.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> 
      */
+    #[FHIRReference]
     protected array $author;
     /**
      * A sequence of Unicode characters
@@ -278,6 +287,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $title;
     /**
      * Codes specifying the level of confidentiality of the composition.
@@ -287,6 +297,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConfidentialityClassification 
      */
+    #[FHIRConfidentialityClassification]
     protected FHIRConfidentialityClassification $confidentiality;
     /**
      * A set of healthcare-related information that is assembled together into a single
@@ -298,8 +309,9 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * A participant who has attested to the accuracy of the composition/document.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester> 
      */
+    #[FHIRCompositionAttester]
     protected array $attester;
     /**
      * A reference from one resource to another.
@@ -311,6 +323,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $custodian;
     /**
      * A set of healthcare-related information that is assembled together into a single
@@ -323,8 +336,9 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * Relationships that this composition has with other compositions or documents
      * that already exist.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo> 
      */
+    #[FHIRCompositionRelatesTo]
     protected array $relatesTo;
     /**
      * A set of healthcare-related information that is assembled together into a single
@@ -337,8 +351,9 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * The clinical service, such as a colonoscopy or an appendectomy, being
      * documented.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent> 
      */
+    #[FHIRCompositionEvent]
     protected array $event;
     /**
      * A set of healthcare-related information that is assembled together into a single
@@ -350,8 +365,9 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * The root of the sections that make up the composition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection> 
      */
+    #[FHIRCompositionSection]
     protected array $section;
 
     /* constructor.php:61 */
@@ -362,9 +378,9 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRCompositionStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCompositionStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
@@ -372,14 +388,14 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $encounter
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] $author
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $author
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $title
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConfidentialityClassificationList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConfidentialityClassification $confidentiality
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester[] $attester
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester> $attester
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $custodian
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo[] $relatesTo
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent[] $event
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[] $section
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo> $relatesTo
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent> $event
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection> $section
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -463,19 +479,19 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -758,7 +774,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * Identifies who is responsible for the information in the composition, not
      * necessarily who typed it in.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference>
      */
     public function getAuthor(): array
     {
@@ -899,7 +915,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * A participant who has attested to the accuracy of the composition/document.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester>
      */
     public function getAttester(): array
     {
@@ -1009,7 +1025,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * Relationships that this composition has with other compositions or documents
      * that already exist.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo>
      */
     public function getRelatesTo(): array
     {
@@ -1085,7 +1101,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * The clinical service, such as a colonoscopy or an appendectomy, being
      * documented.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent>
      */
     public function getEvent(): array
     {
@@ -1160,7 +1176,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * The root of the sections that make up the composition.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection>
      */
     public function getSection(): array
     {
@@ -1223,7 +1239,7 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

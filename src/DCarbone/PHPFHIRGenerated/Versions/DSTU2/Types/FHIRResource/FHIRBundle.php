@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface;
  * A container for a collection of resources.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
 {
     use TypeValidationsTrait,
@@ -135,6 +136,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBundleType 
      */
+    #[FHIRBundleType]
     protected FHIRBundleType $type;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -146,14 +148,16 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $total;
     /**
      * A container for a collection of resources.
      *
      * A series of links that provide context to this bundle.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink> 
      */
+    #[FHIRBundleLink]
     protected array $link;
     /**
      * A container for a collection of resources.
@@ -161,8 +165,9 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * An entry in a bundle resource - will either contain a resource, or information
      * about a resource (transactions and history only).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry> 
      */
+    #[FHIRBundleEntry]
     protected array $entry;
     /**
      * A digital signature along with supporting context. The signature may be
@@ -176,6 +181,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSignature 
      */
+    #[FHIRSignature]
     protected FHIRSignature $signature;
 
     /* constructor.php:61 */
@@ -187,8 +193,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRBundleTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBundleType $type
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt $total
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[] $link
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[] $entry
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink> $link
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry> $entry
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSignature $signature
      * @param null|string[] $fhirComments
      */
@@ -225,19 +231,19 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:162 */
+    /* class_default.php:163 */
     public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * Indicates the purpose of a bundle - how it was intended to be used.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -317,7 +323,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * A series of links that provide context to this bundle.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink>
      */
     public function getLink(): array
     {
@@ -376,7 +382,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * An entry in a bundle resource - will either contain a resource, or information
      * about a resource (transactions and history only).
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry>
      */
     public function getEntry(): array
     {
@@ -471,7 +477,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

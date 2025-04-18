@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,6 +101,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * The type of the measure report.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRMeasureReportType extends FHIRElement implements PrimitiveContainerTypeInterface
 {
     use TypeValidationsTrait,
@@ -125,12 +126,13 @@ class FHIRMeasureReportType extends FHIRElement implements PrimitiveContainerTyp
 
     /* class_default.php:112 */
     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMeasureReportTypeEnum */
+    #[FHIRMeasureReportTypeEnum]
     protected FHIRMeasureReportTypeEnum $value;
 
     /* constructor.php:61 */
     /**
      * FHIRMeasureReportType Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMeasureReportTypeEnum $value
      * @param null|string[] $fhirComments
@@ -148,13 +150,13 @@ class FHIRMeasureReportType extends FHIRElement implements PrimitiveContainerTyp
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMeasureReportTypeEnum
      */
@@ -180,14 +182,14 @@ class FHIRMeasureReportType extends FHIRElement implements PrimitiveContainerTyp
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:190 */
     public function _nonValueFieldDefined(): bool
     {
     return isset($this->extension)
             || isset($this->id);
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -312,7 +314,7 @@ class FHIRMeasureReportType extends FHIRElement implements PrimitiveContainerTyp
         return $out;
     }
 
-    /* class_default.php:226 */
+    /* class_default.php:227 */
     public function __toString(): string
     {
         return $this->_getValueAsString();

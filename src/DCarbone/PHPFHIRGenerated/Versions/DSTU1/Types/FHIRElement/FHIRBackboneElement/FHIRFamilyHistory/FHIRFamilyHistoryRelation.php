@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
  * Significant health events and conditions for people related to the subject
  * relevant in the context of care for the subject.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRFamilyHistoryRelation extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -147,6 +148,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $name;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -159,6 +161,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $relationship;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -169,6 +172,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $bornPeriod;
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
@@ -180,6 +184,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $bornDate;
     /**
      * A sequence of Unicode characters
@@ -189,6 +194,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $bornString;
     /**
      * Value of "true" or "false"
@@ -202,6 +208,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $deceasedBoolean;
     /**
      * If this resource is indicating that the related person is deceased, then an
@@ -212,6 +219,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge 
      */
+    #[FHIRAge]
     protected FHIRAge $deceasedAge;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -226,6 +234,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $deceasedRange;
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
@@ -241,6 +250,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $deceasedDate;
     /**
      * A sequence of Unicode characters
@@ -254,6 +264,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $deceasedString;
     /**
      * A sequence of Unicode characters
@@ -265,6 +276,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $note;
     /**
      * Significant health events and conditions for people related to the subject
@@ -275,16 +287,17 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * resource, though there is nothing stopping multiple resources - one per
      * condition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition> 
      */
+    #[FHIRFamilyHistoryCondition]
     protected array $condition;
 
     /* constructor.php:61 */
     /**
      * FHIRFamilyHistoryRelation Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $relationship
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $bornPeriod
@@ -296,7 +309,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate $deceasedDate
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $deceasedString
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition[] $condition
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition> $condition
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -358,13 +371,13 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -805,7 +818,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * resource, though there is nothing stopping multiple resources - one per
      * condition.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition>
      */
     public function getCondition(): array
     {
@@ -866,7 +879,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,16 +111,18 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
      *
      * An extension - additional local content. The extension URL defines it's meaning
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> 
      */
+    #[FHIRExtension]
     protected array $extension;
     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive */
+    #[FHIRIdPrimitive]
     protected FHIRIdPrimitive $id;
 
     /* constructor.php:61 */
     /**
      * FHIRElement Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|string[] $fhirComments
      */
@@ -139,19 +141,19 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:153 */
+    /* class_default.php:154 */
     public function _getFHIRVersion(): FHIRVersion
     {
         return Version::getFHIRVersion();
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
@@ -159,7 +161,7 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
      *
      * An extension - additional local content. The extension URL defines it's meaning
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension>
      */
     public function getExtension(): array
     {
@@ -241,7 +243,7 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -380,7 +382,7 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
         return $out;
     }
 
-    /* class_default.php:226 */
+    /* class_default.php:227 */
     public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;

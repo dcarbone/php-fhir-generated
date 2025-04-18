@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -117,6 +117,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
  * A structured set of tests against a FHIR server or client implementation to
  * determine compliance against the FHIR specification.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRTestScriptAssert extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -215,6 +216,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $label;
     /**
      * A sequence of Unicode characters
@@ -226,6 +228,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $description;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -234,6 +237,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAssertionDirectionType 
      */
+    #[FHIRAssertionDirectionType]
     protected FHIRAssertionDirectionType $direction;
     /**
      * A sequence of Unicode characters
@@ -245,6 +249,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $compareToSourceId;
     /**
      * A sequence of Unicode characters
@@ -257,6 +262,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $compareToSourceExpression;
     /**
      * A sequence of Unicode characters
@@ -269,6 +275,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $compareToSourcePath;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -281,6 +288,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $contentType;
     /**
      * A sequence of Unicode characters
@@ -292,6 +300,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $expression;
     /**
      * A sequence of Unicode characters
@@ -302,6 +311,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $headerField;
     /**
      * A sequence of Unicode characters
@@ -313,6 +323,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $minimumId;
     /**
      * Value of "true" or "false"
@@ -323,6 +334,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $navigationLinks;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -332,6 +344,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAssertionOperatorType 
      */
+    #[FHIRAssertionOperatorType]
     protected FHIRAssertionOperatorType $operator;
     /**
      * A sequence of Unicode characters
@@ -343,6 +356,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $path;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -352,6 +366,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTestScriptRequestMethodCode 
      */
+    #[FHIRTestScriptRequestMethodCode]
     protected FHIRTestScriptRequestMethodCode $requestMethod;
     /**
      * A sequence of Unicode characters
@@ -362,6 +377,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $requestURL;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -370,6 +386,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFHIRDefinedType 
      */
+    #[FHIRFHIRDefinedType]
     protected FHIRFHIRDefinedType $resource;
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -379,6 +396,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAssertionResponseTypes 
      */
+    #[FHIRAssertionResponseTypes]
     protected FHIRAssertionResponseTypes $response;
     /**
      * A sequence of Unicode characters
@@ -389,6 +407,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $responseCode;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -402,6 +421,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $sourceId;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -415,6 +435,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $validateProfileId;
     /**
      * A sequence of Unicode characters
@@ -425,6 +446,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $value;
     /**
      * Value of "true" or "false"
@@ -435,14 +457,15 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $warningOnly;
 
     /* constructor.php:61 */
     /**
      * FHIRTestScriptAssert Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $label
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRAssertionDirectionTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAssertionDirectionType $direction
@@ -566,13 +589,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -1407,7 +1430,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

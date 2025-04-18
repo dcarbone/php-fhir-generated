@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
  * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
  * If the element is present, it must have either a \@value, an \@id, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
 {
     use TypeValidationsTrait,
@@ -111,12 +112,13 @@ class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
 
     /* class_default.php:112 */
     /** @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive */
+    #[FHIRDecimalPrimitive]
     protected FHIRDecimalPrimitive $value;
 
     /* constructor.php:61 */
     /**
      * FHIRDecimal Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive $value
      * @param null|string[] $fhirComments
@@ -134,13 +136,13 @@ class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive
      */
@@ -166,14 +168,14 @@ class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
         return $this;
     }
 
-    /* class_default.php:189 */
+    /* class_default.php:190 */
     public function _nonValueFieldDefined(): bool
     {
     return isset($this->extension)
             || isset($this->id);
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -298,7 +300,7 @@ class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
         return $out;
     }
 
-    /* class_default.php:226 */
+    /* class_default.php:227 */
     public function __toString(): string
     {
         return $this->_getValueAsString();

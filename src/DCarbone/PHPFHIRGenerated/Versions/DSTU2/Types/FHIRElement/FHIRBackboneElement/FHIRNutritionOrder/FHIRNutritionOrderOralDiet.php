@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  * A request to supply a diet, formula feeding (enteral) or oral nutritional
  * supplement to a patient/resident.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -123,8 +124,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $type;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -136,8 +138,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The time period and frequency at which the diet should be given.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming> 
      */
+    #[FHIRTiming]
     protected array $schedule;
     /**
      * A request to supply a diet, formula feeding (enteral) or oral nutritional
@@ -146,8 +149,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * Class that defines the quantity and type of nutrient modifications required for
      * the oral diet.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient> 
      */
+    #[FHIRNutritionOrderNutrient]
     protected array $nutrient;
     /**
      * A request to supply a diet, formula feeding (enteral) or oral nutritional
@@ -156,8 +160,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * Class that describes any texture modifications required for the patient to
      * safely consume various types of solid foods.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture> 
      */
+    #[FHIRNutritionOrderTexture]
     protected array $texture;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -168,8 +173,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $fluidConsistencyType;
     /**
      * A sequence of Unicode characters
@@ -180,19 +186,20 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $instruction;
 
     /* constructor.php:61 */
     /**
      * FHIRNutritionOrderOralDiet Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept[] $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming[] $schedule
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient[] $nutrient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture[] $texture
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept[] $fluidConsistencyType
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $type
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming> $schedule
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient> $nutrient
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture> $texture
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $fluidConsistencyType
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $instruction
      * @param null|string[] $fhirComments
      */
@@ -231,13 +238,13 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -247,7 +254,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getType(): array
     {
@@ -318,7 +325,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The time period and frequency at which the diet should be given.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming>
      */
     public function getSchedule(): array
     {
@@ -388,7 +395,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * Class that defines the quantity and type of nutrient modifications required for
      * the oral diet.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient>
      */
     public function getNutrient(): array
     {
@@ -452,7 +459,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * Class that describes any texture modifications required for the patient to
      * safely consume various types of solid foods.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture>
      */
     public function getTexture(): array
     {
@@ -518,7 +525,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getFluidConsistencyType(): array
     {
@@ -616,7 +623,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

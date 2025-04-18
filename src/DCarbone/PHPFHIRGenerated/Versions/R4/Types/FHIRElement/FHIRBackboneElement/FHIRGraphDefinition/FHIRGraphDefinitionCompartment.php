@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * of resources that form a graph by following references. The Graph Definition
  * resource defines a set and makes rules about the set.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -142,6 +143,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGraphCompartmentUse 
      */
+    #[FHIRGraphCompartmentUse]
     protected FHIRGraphCompartmentUse $use;
     /**
      * Which type a compartment definition describes.
@@ -151,6 +153,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCompartmentType 
      */
+    #[FHIRCompartmentType]
     protected FHIRCompartmentType $code;
     /**
      * How a compartment must be linked.
@@ -160,6 +163,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGraphCompartmentRule 
      */
+    #[FHIRGraphCompartmentRule]
     protected FHIRGraphCompartmentRule $rule;
     /**
      * A sequence of Unicode characters
@@ -170,6 +174,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $expression;
     /**
      * A sequence of Unicode characters
@@ -180,14 +185,15 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $description;
 
     /* constructor.php:61 */
     /**
      * FHIRGraphDefinitionCompartment Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRGraphCompartmentUseList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGraphCompartmentUse $use
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCompartmentTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCompartmentType $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRGraphCompartmentRuleList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGraphCompartmentRule $rule
@@ -226,13 +232,13 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * Defines how a compartment rule is used.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -416,7 +422,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

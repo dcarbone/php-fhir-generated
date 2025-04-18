@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,14 +128,16 @@ class FHIRDomainResource extends FHIRResource
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative 
      */
+    #[FHIRNarrative]
     protected FHIRNarrative $text;
     /**
      * These resources do not have an independent existence apart from the resource
      * that contains them - they cannot be identified independently, and nor can they
      * have their own independent transaction scope.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> 
      */
+    #[FHIRResourceContainer]
     protected array $contained;
     /**
      * Optional Extensions Element - found in all resources.
@@ -149,8 +151,9 @@ class FHIRDomainResource extends FHIRResource
      * there is a set of requirements that SHALL be met as part of the definition of
      * the extension.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> 
      */
+    #[FHIRExtension]
     protected array $extension;
     /**
      * Optional Extensions Element - found in all resources.
@@ -166,8 +169,9 @@ class FHIRDomainResource extends FHIRResource
      * that SHALL be met as part of the definition of the extension. Applications
      * processing a resource are required to check for modifier extensions.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> 
      */
+    #[FHIRExtension]
     protected array $modifierExtension;
 
     /* constructor.php:61 */
@@ -178,9 +182,9 @@ class FHIRDomainResource extends FHIRResource
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -212,13 +216,13 @@ class FHIRDomainResource extends FHIRResource
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A human-readable formatted text, including images.
      * If the element is present, it must have a value for at least one of the defined
@@ -268,7 +272,7 @@ class FHIRDomainResource extends FHIRResource
      * that contains them - they cannot be identified independently, and nor can they
      * have their own independent transaction scope.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface>
      */
     public function getContained(): array
     {
@@ -343,7 +347,7 @@ class FHIRDomainResource extends FHIRResource
      * there is a set of requirements that SHALL be met as part of the definition of
      * the extension.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension>
      */
     public function getExtension(): array
     {
@@ -424,7 +428,7 @@ class FHIRDomainResource extends FHIRResource
      * that SHALL be met as part of the definition of the extension. Applications
      * processing a resource are required to check for modifier extensions.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension>
      */
     public function getModifierExtension(): array
     {
@@ -495,7 +499,7 @@ class FHIRDomainResource extends FHIRResource
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

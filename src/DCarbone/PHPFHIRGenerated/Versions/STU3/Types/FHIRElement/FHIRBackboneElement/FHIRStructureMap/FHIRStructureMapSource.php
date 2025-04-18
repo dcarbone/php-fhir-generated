@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,6 +134,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRStructureMapSource extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -266,6 +267,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $context;
     /**
      * A whole number
@@ -277,6 +279,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $min;
     /**
      * A sequence of Unicode characters
@@ -289,6 +292,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $max;
     /**
      * A sequence of Unicode characters
@@ -300,6 +304,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $type;
     /**
      * A stream of bytes
@@ -310,6 +315,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary 
      */
+    #[FHIRBase64Binary]
     protected FHIRBase64Binary $defaultValueBase64Binary;
     /**
      * Value of "true" or "false"
@@ -319,6 +325,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $defaultValueBoolean;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -330,6 +337,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $defaultValueCode;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -341,6 +349,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $defaultValueDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -354,6 +363,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $defaultValueDateTime;
     /**
      * A rational number with implicit precision
@@ -365,6 +375,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $defaultValueDecimal;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -378,6 +389,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $defaultValueId;
     /**
      * An instant in time - known at least to the second
@@ -390,6 +402,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant 
      */
+    #[FHIRInstant]
     protected FHIRInstant $defaultValueInstant;
     /**
      * A whole number
@@ -400,6 +413,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $defaultValueInteger;
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -416,6 +430,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $defaultValueMarkdown;
     /**
      * An OID represented as a URI
@@ -427,6 +442,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid 
      */
+    #[FHIROid]
     protected FHIROid $defaultValueOid;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -437,6 +453,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $defaultValuePositiveInt;
     /**
      * A sequence of Unicode characters
@@ -447,6 +464,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $defaultValueString;
     /**
      * A time during the day, with no date specified
@@ -456,6 +474,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $defaultValueTime;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -466,6 +485,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $defaultValueUnsignedInt;
     /**
      * String of characters used to identify a name or a resource
@@ -476,6 +496,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $defaultValueUri;
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
@@ -490,6 +511,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAddress 
      */
+    #[FHIRAddress]
     protected FHIRAddress $defaultValueAddress;
     /**
      * A duration of time during which an organism (or a process) has existed.
@@ -500,6 +522,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge 
      */
+    #[FHIRAge]
     protected FHIRAge $defaultValueAge;
     /**
      * A text note which also contains information about who made the statement and
@@ -511,6 +534,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation 
      */
+    #[FHIRAnnotation]
     protected FHIRAnnotation $defaultValueAnnotation;
     /**
      * For referring to data content defined in other formats.
@@ -521,6 +545,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $defaultValueAttachment;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -532,6 +557,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $defaultValueCodeableConcept;
     /**
      * A reference to a code defined by a terminology system.
@@ -542,6 +568,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $defaultValueCoding;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -553,6 +580,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint 
      */
+    #[FHIRContactPoint]
     protected FHIRContactPoint $defaultValueContactPoint;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -565,6 +593,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRCount 
      */
+    #[FHIRCount]
     protected FHIRCount $defaultValueCount;
     /**
      * A length - a value with a unit that is a physical distance.
@@ -575,6 +604,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDistance 
      */
+    #[FHIRDistance]
     protected FHIRDistance $defaultValueDistance;
     /**
      * A length of time.
@@ -585,6 +615,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $defaultValueDuration;
     /**
      * A human's name with the ability to identify parts and usage.
@@ -595,6 +626,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHumanName 
      */
+    #[FHIRHumanName]
     protected FHIRHumanName $defaultValueHumanName;
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -605,6 +637,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $defaultValueIdentifier;
     /**
      * An amount of economic utility in some recognized currency.
@@ -615,6 +648,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney 
      */
+    #[FHIRMoney]
     protected FHIRMoney $defaultValueMoney;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -625,6 +659,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $defaultValuePeriod;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -637,6 +672,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $defaultValueQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -647,6 +683,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $defaultValueRange;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -658,6 +695,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $defaultValueRatio;
     /**
      * A reference from one resource to another.
@@ -668,6 +706,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $defaultValueReference;
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
@@ -679,6 +718,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSampledData 
      */
+    #[FHIRSampledData]
     protected FHIRSampledData $defaultValueSampledData;
     /**
      * A digital signature along with supporting context. The signature may be
@@ -692,6 +732,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSignature 
      */
+    #[FHIRSignature]
     protected FHIRSignature $defaultValueSignature;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -706,6 +747,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $defaultValueTiming;
     /**
      * The metadata about a resource. This is content in the resource that is
@@ -718,6 +760,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta 
      */
+    #[FHIRMeta]
     protected FHIRMeta $defaultValueMeta;
     /**
      * A sequence of Unicode characters
@@ -728,6 +771,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $element;
     /**
      * If field is a list, how to manage the source
@@ -737,6 +781,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRStructureMapSourceListMode 
      */
+    #[FHIRStructureMapSourceListMode]
     protected FHIRStructureMapSourceListMode $listMode;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -750,6 +795,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $variable;
     /**
      * A sequence of Unicode characters
@@ -760,6 +806,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $condition;
     /**
      * A sequence of Unicode characters
@@ -771,14 +818,15 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $check;
 
     /* constructor.php:61 */
     /**
      * FHIRStructureMapSource Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $context
      * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $min
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $max
@@ -1027,13 +1075,13 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -2803,7 +2851,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

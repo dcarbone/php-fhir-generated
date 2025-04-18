@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,6 +145,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  * If the element is present, it must have a value for at least one of the defined
  * elements, an \@id referenced from the Narrative, or extensions
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRExtension extends FHIRDataType
 {
     use TypeValidationsTrait,
@@ -275,6 +276,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary 
      */
+    #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
     /**
      * Value of "true" or "false"
@@ -286,6 +288,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -299,6 +302,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical 
      */
+    #[FHIRCanonical]
     protected FHIRCanonical $valueCanonical;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -312,6 +316,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $valueCode;
     /**
      * A date or partial date (e.g. just year or year + month). There is no UTC offset.
@@ -325,6 +330,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate 
      */
+    #[FHIRDate]
     protected FHIRDate $valueDate;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -341,6 +347,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
     /**
      * A rational number with implicit precision
@@ -354,6 +361,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal 
      */
+    #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -369,6 +377,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $valueId;
     /**
      * An instant in time - known at least to the second
@@ -384,6 +393,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant 
      */
+    #[FHIRInstant]
     protected FHIRInstant $valueInstant;
     /**
      * A whole number
@@ -396,6 +406,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger 
      */
+    #[FHIRInteger]
     protected FHIRInteger $valueInteger;
     /**
      * A very large whole number
@@ -408,6 +419,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 
      */
+    #[FHIRInteger64]
     protected FHIRInteger64 $valueInteger64;
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -424,6 +436,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
      */
+    #[FHIRMarkdown]
     protected FHIRMarkdown $valueMarkdown;
     /**
      * An OID represented as a URI
@@ -437,6 +450,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid 
      */
+    #[FHIROid]
     protected FHIROid $valueOid;
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -449,6 +463,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt 
      */
+    #[FHIRPositiveInt]
     protected FHIRPositiveInt $valuePositiveInt;
     /**
      * A sequence of Unicode characters
@@ -461,6 +476,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $valueString;
     /**
      * A time during the day, with no date specified
@@ -472,6 +488,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime 
      */
+    #[FHIRTime]
     protected FHIRTime $valueTime;
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -484,6 +501,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt 
      */
+    #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $valueUnsignedInt;
     /**
      * String of characters used to identify a name or a resource
@@ -496,6 +514,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $valueUri;
     /**
      * A URI that is a literal reference
@@ -508,6 +527,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl 
      */
+    #[FHIRUrl]
     protected FHIRUrl $valueUrl;
     /**
      * A UUID, represented as a URI
@@ -521,6 +541,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid 
      */
+    #[FHIRUuid]
     protected FHIRUuid $valueUuid;
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
@@ -538,6 +559,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress 
      */
+    #[FHIRAddress]
     protected FHIRAddress $valueAddress;
     /**
      * A duration of time during which an organism (or a process) has existed.
@@ -550,6 +572,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge 
      */
+    #[FHIRAge]
     protected FHIRAge $valueAge;
     /**
      * A text note which also contains information about who made the statement and
@@ -563,6 +586,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation 
      */
+    #[FHIRAnnotation]
     protected FHIRAnnotation $valueAnnotation;
     /**
      * For referring to data content defined in other formats.
@@ -575,6 +599,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment 
      */
+    #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -588,6 +613,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
     /**
      * A reference to a resource (by instance), or instead, a reference to a concept
@@ -601,6 +627,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference 
      */
+    #[FHIRCodeableReference]
     protected FHIRCodeableReference $valueCodeableReference;
     /**
      * A reference to a code defined by a terminology system.
@@ -613,6 +640,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding 
      */
+    #[FHIRCoding]
     protected FHIRCoding $valueCoding;
     /**
      * Details for all kinds of technology mediated contact points for a person or
@@ -626,6 +654,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint 
      */
+    #[FHIRContactPoint]
     protected FHIRContactPoint $valueContactPoint;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -640,6 +669,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount 
      */
+    #[FHIRCount]
     protected FHIRCount $valueCount;
     /**
      * A length - a value with a unit that is a physical distance.
@@ -652,6 +682,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance 
      */
+    #[FHIRDistance]
     protected FHIRDistance $valueDistance;
     /**
      * A length of time.
@@ -664,6 +695,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $valueDuration;
     /**
      * A name, normally of a human, that can be used for other living entities (e.g.
@@ -678,6 +710,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName 
      */
+    #[FHIRHumanName]
     protected FHIRHumanName $valueHumanName;
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -691,6 +724,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier 
      */
+    #[FHIRIdentifier]
     protected FHIRIdentifier $valueIdentifier;
     /**
      * An amount of economic utility in some recognized currency.
@@ -703,6 +737,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney 
      */
+    #[FHIRMoney]
     protected FHIRMoney $valueMoney;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -715,6 +750,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -729,6 +765,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
      */
+    #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -741,6 +778,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
      */
+    #[FHIRRange]
     protected FHIRRange $valueRange;
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -754,6 +792,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio 
      */
+    #[FHIRRatio]
     protected FHIRRatio $valueRatio;
     /**
      * A range of ratios expressed as a low and high numerator and a denominator.
@@ -766,6 +805,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange 
      */
+    #[FHIRRatioRange]
     protected FHIRRatioRange $valueRatioRange;
     /**
      * A reference from one resource to another.
@@ -778,6 +818,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
      */
+    #[FHIRReference]
     protected FHIRReference $valueReference;
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
@@ -791,6 +832,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData 
      */
+    #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
     /**
      * A signature along with supporting context. The signature may be a digital
@@ -807,6 +849,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature 
      */
+    #[FHIRSignature]
     protected FHIRSignature $valueSignature;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -823,6 +866,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $valueTiming;
     /**
      * Specifies contact information for a person or organization.
@@ -835,6 +879,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail 
      */
+    #[FHIRContactDetail]
     protected FHIRContactDetail $valueContactDetail;
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -848,6 +893,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement 
      */
+    #[FHIRDataRequirement]
     protected FHIRDataRequirement $valueDataRequirement;
     /**
      * A expression that is evaluated in a specified context and returns a value. The
@@ -862,6 +908,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression 
      */
+    #[FHIRExpression]
     protected FHIRExpression $valueExpression;
     /**
      * The parameters to the module. This collection specifies both the input and
@@ -876,6 +923,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition 
      */
+    #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $valueParameterDefinition;
     /**
      * Related artifacts such as additional documentation, justification, or
@@ -889,6 +937,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact 
      */
+    #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $valueRelatedArtifact;
     /**
      * A description of a triggering event. Triggering events can be named events, data
@@ -902,6 +951,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition 
      */
+    #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $valueTriggerDefinition;
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
@@ -917,6 +967,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext 
      */
+    #[FHIRUsageContext]
     protected FHIRUsageContext $valueUsageContext;
     /**
      * Availability data for an {item}.
@@ -929,6 +980,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability 
      */
+    #[FHIRAvailability]
     protected FHIRAvailability $valueAvailability;
     /**
      * Specifies contact information for a specific purpose over a period of time,
@@ -942,6 +994,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail 
      */
+    #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $valueExtendedContactDetail;
     /**
      * Indicates how the medication is/was taken or should be taken by the patient.
@@ -954,6 +1007,7 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage 
      */
+    #[FHIRDosage]
     protected FHIRDosage $valueDosage;
     /**
      * The metadata about a resource. This is content in the resource that is
@@ -968,14 +1022,16 @@ class FHIRExtension extends FHIRDataType
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta 
      */
+    #[FHIRMeta]
     protected FHIRMeta $valueMeta;
     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive */
+    #[FHIRUriPrimitive]
     protected FHIRUriPrimitive $url;
 
     /* constructor.php:61 */
     /**
      * FHIRExtension Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $valueBase64Binary
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
@@ -1263,13 +1319,13 @@ class FHIRExtension extends FHIRDataType
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
@@ -3521,7 +3577,7 @@ class FHIRExtension extends FHIRDataType
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

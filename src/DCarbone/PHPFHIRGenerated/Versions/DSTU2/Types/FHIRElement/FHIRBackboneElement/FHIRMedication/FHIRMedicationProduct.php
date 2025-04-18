@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,6 +80,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
  * This resource is primarily used for the identification and definition of a
  * medication. It covers the ingredients and the packaging for a medication.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRMedicationProduct extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -116,6 +117,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $form;
     /**
      * This resource is primarily used for the identification and definition of a
@@ -123,8 +125,9 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      *
      * Identifies a particular constituent of interest in the product.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient> 
      */
+    #[FHIRMedicationIngredient]
     protected array $ingredient;
     /**
      * This resource is primarily used for the identification and definition of a
@@ -133,19 +136,20 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * Information about a group of medication produced or packaged from one production
      * run.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch> 
      */
+    #[FHIRMedicationBatch]
     protected array $batch;
 
     /* constructor.php:61 */
     /**
      * FHIRMedicationProduct Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $form
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient[] $ingredient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch[] $batch
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient> $ingredient
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch> $batch
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -171,13 +175,13 @@ class FHIRMedicationProduct extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -220,7 +224,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      *
      * Identifies a particular constituent of interest in the product.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient>
      */
     public function getIngredient(): array
     {
@@ -282,7 +286,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * Information about a group of medication produced or packaged from one production
      * run.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch>
      */
     public function getBatch(): array
     {
@@ -339,7 +343,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

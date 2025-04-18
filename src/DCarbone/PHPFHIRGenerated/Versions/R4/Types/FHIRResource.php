@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,6 +130,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId 
      */
+    #[FHIRId]
     protected FHIRId $id;
     /**
      * The metadata about a resource. This is content in the resource that is
@@ -144,6 +145,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta 
      */
+    #[FHIRMeta]
     protected FHIRMeta $meta;
     /**
      * String of characters used to identify a name or a resource
@@ -157,6 +159,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri 
      */
+    #[FHIRUri]
     protected FHIRUri $implicitRules;
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -168,6 +171,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode 
      */
+    #[FHIRCode]
     protected FHIRCode $language;
 
     /* constructor.php:61 */
@@ -202,19 +206,19 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:153 */
+    /* class_default.php:154 */
     public function _getFHIRVersion(): FHIRVersion
     {
         return Version::getFHIRVersion();
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -384,7 +388,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
@@ -639,7 +643,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
         return $out;
     }
 
-    /* class_default.php:226 */
+    /* class_default.php:227 */
     public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;

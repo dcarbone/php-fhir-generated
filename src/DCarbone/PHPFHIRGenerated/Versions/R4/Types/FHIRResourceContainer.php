@@ -6,7 +6,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -34,6 +34,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface;
 
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRResourceContainer implements ResourceContainerTypeInterface
 {
     use TypeValidationsTrait;
@@ -57,7 +58,7 @@ class FHIRResourceContainer implements ResourceContainerTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_resource_container.php:82 */
+    /* class_resource_container.php:83 */
     public function _getFHIRVersion(): FHIRVersion
     {
         return Version::getFHIRVersion();

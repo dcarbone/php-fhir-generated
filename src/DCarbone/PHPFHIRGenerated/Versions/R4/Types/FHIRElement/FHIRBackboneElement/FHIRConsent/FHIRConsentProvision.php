@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * identified recipient(s) or recipient role(s) to perform one or more actions
  * within a given policy context, for specific purposes and periods of time.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRConsentProvision extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -127,6 +128,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRConsentProvisionType 
      */
+    #[FHIRConsentProvisionType]
     protected FHIRConsentProvisionType $type;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -137,6 +139,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $period;
     /**
      * A record of a healthcare consumer’s choices, which permits or denies
@@ -146,8 +149,9 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * Who or what is controlled by this rule. Use group to identify a set of actors by
      * some property they share (e.g. 'admitting officers').
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor> 
      */
+    #[FHIRConsentActor]
     protected array $actor;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -157,8 +161,9 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Actions controlled by this Rule.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $action;
     /**
      * A reference to a code defined by a terminology system.
@@ -168,8 +173,9 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * A security label, comprised of 0..* security label fields (Privacy tags), which
      * define which resources are controlled by this exception.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding> 
      */
+    #[FHIRCoding]
     protected array $securityLabel;
     /**
      * A reference to a code defined by a terminology system.
@@ -179,8 +185,9 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this rule.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding> 
      */
+    #[FHIRCoding]
     protected array $purpose;
     /**
      * A reference to a code defined by a terminology system.
@@ -191,8 +198,9 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * type, a profile on a type, or a CDA document, or some other type that indicates
      * what sort of information the consent relates to.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding> 
      */
+    #[FHIRCoding]
     protected array $class;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -202,8 +210,9 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * If this code is found in an instance, then the rule applies.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
      */
+    #[FHIRCodeableConcept]
     protected array $code;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -215,6 +224,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $dataPeriod;
     /**
      * A record of a healthcare consumer’s choices, which permits or denies
@@ -223,8 +233,9 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * The resources controlled by this rule if specific resources are referenced.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData> 
      */
+    #[FHIRConsentData]
     protected array $data;
     /**
      * A record of a healthcare consumer’s choices, which permits or denies
@@ -233,27 +244,28 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Rules which provide exceptions to the base rule or subrules.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision> 
      */
+    #[FHIRConsentProvision]
     protected array $provision;
 
     /* constructor.php:61 */
     /**
      * FHIRConsentProvision Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRConsentProvisionTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRConsentProvisionType $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor[] $actor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $action
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[] $securityLabel
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[] $purpose
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[] $class
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $code
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor> $actor
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $action
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding> $securityLabel
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding> $purpose
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding> $class
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $dataPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData[] $data
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision[] $provision
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData> $data
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision> $provision
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -311,13 +323,13 @@ class FHIRConsentProvision extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * How a rule statement is applied, such as adding additional consent or removing
      * consent.
@@ -399,7 +411,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * Who or what is controlled by this rule. Use group to identify a set of actors by
      * some property they share (e.g. 'admitting officers').
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor>
      */
     public function getActor(): array
     {
@@ -466,7 +478,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Actions controlled by this Rule.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getAction(): array
     {
@@ -533,7 +545,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * A security label, comprised of 0..* security label fields (Privacy tags), which
      * define which resources are controlled by this exception.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding>
      */
     public function getSecurityLabel(): array
     {
@@ -600,7 +612,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this rule.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding>
      */
     public function getPurpose(): array
     {
@@ -668,7 +680,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * type, a profile on a type, or a CDA document, or some other type that indicates
      * what sort of information the consent relates to.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding>
      */
     public function getClass(): array
     {
@@ -737,7 +749,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * If this code is found in an instance, then the rule applies.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     public function getCode(): array
     {
@@ -839,7 +851,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * The resources controlled by this rule if specific resources are referenced.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData>
      */
     public function getData(): array
     {
@@ -903,7 +915,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Rules which provide exceptions to the base rule or subrules.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision>
      */
     public function getProvision(): array
     {
@@ -960,7 +972,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config

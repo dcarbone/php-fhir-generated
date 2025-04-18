@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: March 20th, 2025 02:50+0000
+ * Class creation date: April 18th, 2025 00:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,6 +96,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
  * The ResearchElementDefinition resource describes a "PICO" element that knowledge
  * (evidence, assertion, recommendation) is about.
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
 {
     use TypeValidationsTrait,
@@ -178,6 +179,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $definitionCodeableConcept;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -192,6 +194,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical 
      */
+    #[FHIRCanonical]
     protected FHIRCanonical $definitionCanonical;
     /**
      * A expression that is evaluated in a specified context and returns a value. The
@@ -207,6 +210,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExpression 
      */
+    #[FHIRExpression]
     protected FHIRExpression $definitionExpression;
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -221,6 +225,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement 
      */
+    #[FHIRDataRequirement]
     protected FHIRDataRequirement $definitionDataRequirement;
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
@@ -233,8 +238,9 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * Use UsageContext to define the members of the population, such as Age Ranges,
      * Genders, Settings.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext[] 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> 
      */
+    #[FHIRUsageContext]
     protected array $usageContext;
     /**
      * Value of "true" or "false"
@@ -244,6 +250,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean 
      */
+    #[FHIRBoolean]
     protected FHIRBoolean $exclude;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -255,6 +262,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
      */
+    #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unitOfMeasure;
     /**
      * A sequence of Unicode characters
@@ -265,6 +273,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $studyEffectiveDescription;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -278,6 +287,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $studyEffectiveDateTime;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -288,6 +298,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $studyEffectivePeriod;
     /**
      * A length of time.
@@ -298,6 +309,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $studyEffectiveDuration;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -312,6 +324,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $studyEffectiveTiming;
     /**
      * A length of time.
@@ -322,6 +335,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $studyEffectiveTimeFromStart;
     /**
      * Possible group measure aggregates (E.g. Mean, Median).
@@ -331,6 +345,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGroupMeasure 
      */
+    #[FHIRGroupMeasure]
     protected FHIRGroupMeasure $studyEffectiveGroupMeasure;
     /**
      * A sequence of Unicode characters
@@ -341,6 +356,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
      */
+    #[FHIRString]
     protected FHIRString $participantEffectiveDescription;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -354,6 +370,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
      */
+    #[FHIRDateTime]
     protected FHIRDateTime $participantEffectiveDateTime;
     /**
      * A time period defined by a start and end date and optionally time.
@@ -364,6 +381,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
      */
+    #[FHIRPeriod]
     protected FHIRPeriod $participantEffectivePeriod;
     /**
      * A length of time.
@@ -374,6 +392,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $participantEffectiveDuration;
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -388,6 +407,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming 
      */
+    #[FHIRTiming]
     protected FHIRTiming $participantEffectiveTiming;
     /**
      * A length of time.
@@ -398,6 +418,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration 
      */
+    #[FHIRDuration]
     protected FHIRDuration $participantEffectiveTimeFromStart;
     /**
      * Possible group measure aggregates (E.g. Mean, Median).
@@ -407,19 +428,20 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGroupMeasure 
      */
+    #[FHIRGroupMeasure]
     protected FHIRGroupMeasure $participantEffectiveGroupMeasure;
 
     /* constructor.php:61 */
     /**
      * FHIRResearchElementDefinitionCharacteristic Constructor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $definitionCodeableConcept
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $definitionCanonical
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExpression $definitionExpression
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement $definitionDataRequirement
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext[] $usageContext
+     * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> $usageContext
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $exclude
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unitOfMeasure
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $studyEffectiveDescription
@@ -533,13 +555,13 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         }
     }
 
-    /* class_default.php:144 */
+    /* class_default.php:145 */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_default.php:173 */
+    /* class_default.php:174 */
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -724,7 +746,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * Use UsageContext to define the members of the population, such as Age Ranges,
      * Genders, Settings.
      *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext[]
+     * @return iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext>
      */
     public function getUsageContext(): array
     {
@@ -1378,7 +1400,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         return $this;
     }
 
-    /* class_default.php:200 */
+    /* class_default.php:201 */
     /**
      * @param \SimpleXMLElement $element
      * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
