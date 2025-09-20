@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 19th, 2025 16:36+0000
+ * Class creation date: September 20th, 2025 13:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,18 +77,18 @@ class FHIRCodePrimitive implements PrimitiveTypeInterface
 
     public const FIELD_VALUE = 'value';
 
-    /* class_primitive.php:74 */
+    /* class_primitive.php:79 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
             ValueMinLengthRule::NAME => 1,
         ],
     ];
 
-    /* class_primitive.php:93 */
+    /* class_primitive.php:98 */
     /** @var string */
     protected string $value;
 
-    /* class_primitive.php:111 */
+    /* class_primitive.php:116 */
     /**
      * FHIRCodePrimitive Constructor
      * @param null|string $value
@@ -98,7 +98,7 @@ class FHIRCodePrimitive implements PrimitiveTypeInterface
         $this->setValue($value);
     }
 
-    /* class_primitive.php:129 */
+    /* class_primitive.php:134 */
     /**
      * @return string
      */
@@ -107,7 +107,7 @@ class FHIRCodePrimitive implements PrimitiveTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_primitive.php:139 */
+    /* class_primitive.php:144 */
     public function _getFHIRVersion(): FHIRVersion
     {
         return Version::getFHIRVersion();

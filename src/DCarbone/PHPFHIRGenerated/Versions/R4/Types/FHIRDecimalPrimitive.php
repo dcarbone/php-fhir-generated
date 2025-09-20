@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 19th, 2025 16:36+0000
+ * Class creation date: September 20th, 2025 13:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,17 +81,17 @@ class FHIRDecimalPrimitive implements PrimitiveTypeInterface
 
     public const FIELD_VALUE = 'value';
 
-    /* class_primitive.php:74 */
+    /* class_primitive.php:79 */
     private const _FHIR_VALIDATION_RULES = [];
 
-    /* class_primitive.php:93 */
+    /* class_primitive.php:98 */
     /** @var string */
     protected string $value;
 
     /** @var bool */
     private bool $_jsonAsString;
 
-    /* class_primitive.php:111 */
+    /* class_primitive.php:116 */
     /**
      * FHIRDecimalPrimitive Constructor
      * @param null|string|int|float $value
@@ -104,7 +104,7 @@ class FHIRDecimalPrimitive implements PrimitiveTypeInterface
         $this->_jsonAsString = $jsonAsString;
     }
 
-    /* class_primitive.php:129 */
+    /* class_primitive.php:134 */
     /**
      * @return string
      */
@@ -113,7 +113,7 @@ class FHIRDecimalPrimitive implements PrimitiveTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_primitive.php:139 */
+    /* class_primitive.php:144 */
     public function _getFHIRVersion(): FHIRVersion
     {
         return Version::getFHIRVersion();

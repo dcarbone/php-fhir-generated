@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 19th, 2025 16:36+0000
+ * Class creation date: September 20th, 2025 13:35+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,6 +61,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  * 
  */
+use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\FHIRVersion;
@@ -82,18 +83,18 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
 
     public const FIELD_VALUE = 'value';
 
-    /* class_primitive.php:74 */
+    /* class_primitive.php:79 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
             ValuePatternMatchRule::NAME => '/^([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?$/',
         ],
     ];
 
-    /* class_primitive.php:93 */
+    /* class_primitive.php:98 */
     /** @var string */
     protected string $value;
 
-    /* class_primitive.php:111 */
+    /* class_primitive.php:116 */
     /**
      * FHIRDateTimePrimitive Constructor
      * @param null|string|\DateTimeInterface $value
@@ -103,7 +104,7 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
         $this->setValue($value);
     }
 
-    /* class_primitive.php:129 */
+    /* class_primitive.php:134 */
     /**
      * @return string
      */
@@ -112,7 +113,7 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
         return self::FHIR_TYPE_NAME;
     }
 
-    /* class_primitive.php:139 */
+    /* class_primitive.php:144 */
     public function _getFHIRVersion(): FHIRVersion
     {
         return Version::getFHIRVersion();
